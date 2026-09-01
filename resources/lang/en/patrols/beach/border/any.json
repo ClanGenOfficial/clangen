@@ -2671,16 +2671,19 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "Never threaten a mother's young. The red vixen kills r_c0 in the skirmish."
+                    "Never threaten a mother's young. The red vixen kills s_c0 in the skirmish.",
+                    "s_c0 is caught in the vixen's jaws during the skirmish, {PRONOUN/s_c0/subject} {VERB/s_c0/don't/doesn't} manage to free {PRONOUN/s_c0/self} before {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} killed."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol_cats"
+                            "patrol_cats", "-s_c0"
                         ],
                         "cats_from": [
                             "clan"
@@ -2691,30 +2694,14 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from heard that cat_to was unable to save r_c0 in a fight with a red vixen."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "r_c0"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "This is intended to balance the negative value associated with this cat's death. Report this text as a bug if you see it."
+                            "cats_from": "cat_from heard that cat_to was unable to save s_c0 in a fight with a red vixen."
                         }
                     }
                 ],
                 "death": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "history": "m_c fell in battle with a red fox."
                     }
@@ -2723,10 +2710,13 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "The mother red fox's snapping jaws leave r_c0 dripping blood on the sand, forcing the patrol to back off."
+                    "The mother red fox's snapping jaws leave s_c0 dripping blood on the sand, forcing the patrol to back off.",
+                    "s_c0 is caught momentarily by the fox, and the patrol decides to retreat before more are hurt."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -2750,7 +2740,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
