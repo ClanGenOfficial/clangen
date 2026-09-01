@@ -540,10 +540,7 @@ class Patrol:
         chosen_success, self.outcome_cats["success"] = get_valid_event(
             primary_cat=self.involved_cats["p_l"],
             involved_cats=self.involved_cats,
-            interactable_cats=[
-                c
-                for c in self.involved_cats["patrol_cats"]
-            ],
+            interactable_cats=[c for c in self.involved_cats["patrol_cats"]],
             possible_events=success_outcomes,
             other_clan=self.other_clan,
             ensured_id=debug_outcome,
