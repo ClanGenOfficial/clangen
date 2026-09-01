@@ -5379,7 +5379,7 @@
         ]
     },
     {
-        "event_id": "bch_hunt_wareprey_lorelocked1",
+        "event_id": "bch_hunt_stingray1",
         "types": [
             "hunting"
         ],
@@ -5405,14 +5405,6 @@
             ]
         },
         "involved_cats": {
-            "p_l": {
-                "stat": {
-                    "skill": [
-                        "LORE,1"
-                    ],
-                    "trait": []
-                }
-            },
             "r_c1": {
                 "status": [
                     "apprentice"
@@ -5433,13 +5425,6 @@
                 "strings": [
                     "p_l waves a tail across r_c1's path, stopping {PRONOUN/r_c1/object} with a stern stare. Remember that the suffocating stingray still has its barbs. It's not a joking matter. r_c1 nods and apologizes. Every hunt deserves respect."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
@@ -5506,13 +5491,6 @@
                 "strings": [
                     "Confident of {PRONOUN/r_c1/poss} success, r_c1 pounces on the struggling stingray — only to feel a sharp, deep pain in {PRONOUN/r_c1/poss} side where the stingray's barb hits home."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "supply": [
                     {
