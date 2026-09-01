@@ -7012,10 +7012,12 @@
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
         "intro_strings": [
-            "The sun's out, and p_l has been assigned a moderately tolerable hunting patrol — {PRONOUN/p_l/poss} family!"
+            "The sun's out, and p_l has been assigned a moderately tolerable hunting patrol — {PRONOUN/p_l/poss} family!",
+            "The hunting patrol heads out early, when the sun is just peeking over the horizon."
         ],
         "decline_strings": [
-            "Cancel that — a border patrol needs backup."
+            "Cancel that — a border patrol needs backup.",
+            "They encounter a dawn patrol on their way back to camp and join up with them instead."
         ],
         "success_outcomes": [
             {
@@ -7144,111 +7146,28 @@
                         "adjust": "increase_large"
                     }
                 ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "Sometimes, the prey just doesn't run, and today is one of those times."
-                ],
-                "exp_gained": 0,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ]
             },
             {
-                "frequency": 2,
+                "frequency": 3,
                 "strings": [
-                    "s_c0 sees a fish {PRONOUN/s_c0/subject}'d like for the fresh-kill pile, but while perched on a rock setting up a good pounce, a rogue wave washes {PRONOUN/s_c0/object} into the ocean. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/bob/bobs} to the surface and splutter {PRONOUN/s_c0/poss} way to shore, but {PRONOUN/s_c0/poss} breath comes short and wheezing after the dunking. Fleas and ticks!"
+                    "s_c0 grabs a massive b_mp_a_s that {PRONOUN/s_c0/subject} can barely carry, and s_c1 congratulates {PRONOUN/s_c0/object}, secretly wondering if {PRONOUN/s_c1/subject}'ll ever manage to surpass {PRONOUN/s_c1/poss} sibling's achievements."
                 ],
                 "involved_cats": {
                     "s_c0": {
                         "prior_abbreviation": ["any"]
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": ["-s_c0"]
                     }
-                },
-                "exp_gained": 0,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ],
-                "condition": [
-                    {
-                        "cats": [
-                            "s_c0"
-                        ],
-                        "condition": [
-                            "water in their lungs"
-                        ],
-                        "death_history": "m_c died from the water in {PRONOUN/m_c/poss} lungs after a rogue wave struck {PRONOUN/m_c/object} during a hunt."
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "bch_hunt_random_siblings2warriorslocked4",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 4,
-        "location": [
-            "beach"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                2,
-                6
-            ],
-            "all apprentices": [
-                -1,
-                -1
-            ]
-        },
-        "relationship_constraint": [
-            {
-                "cats_from": [
-                    "p_l"
-                ],
-                "cats_to": [
-                    "patrol_cats"
-                ],
-                "mutual": false,
-                "constraints": [
-                    "siblings"
-                ]
-            }
-        ],
-        "chance_of_success": 50,
-        "patrol_art": "hunt_general_intro",
-        "intro_strings": [
-            "The hunting patrol heads out early, when the sun is just peeking over the horizon."
-        ],
-        "decline_strings": [
-            "They encounter a dawn patrol on their way back to camp and join up with them instead."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l grabs a massive b_mp_a_s that {PRONOUN/p_l/subject} can barely carry, and r_c0 congratulates {PRONOUN/p_l/object}, secretly wondering if {PRONOUN/r_c0/subject}'ll ever manage to surpass {PRONOUN/r_c0/poss} sibling's achievements."
-                ],
-                "involved_cats": {
-                    "r_c0": {}
                 },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -7268,7 +7187,7 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 2,
                 "strings": [
                     "r_c0 always feels like {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} haul back such a good catch of prey for the Clan, a contribution that more than makes up for r_c0's meager offerings."
                 ],
@@ -7317,12 +7236,43 @@
                 ]
             },
             {
-                "frequency": 2,
+                "frequency": 3,
                 "strings": [
-                    "r_c0 comes down with a debilitating headache, making {PRONOUN/r_c0/object} stagger, dizzy and weak, as {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} helped back to camp."
+                    "s_c0 sees a fish {PRONOUN/s_c0/subject}'d like for the fresh-kill pile, but while perched on a rock setting up a good pounce, a rogue wave washes {PRONOUN/s_c0/object} into the ocean. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/bob/bobs} to the surface and splutter {PRONOUN/s_c0/poss} way to shore, but {PRONOUN/s_c0/poss} breath comes short and wheezing after the dunking. Fleas and ticks!"
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "exp_gained": 0,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "condition": [
+                            "water in their lungs"
+                        ],
+                        "death_history": "m_c died from the water in {PRONOUN/m_c/poss} lungs after a rogue wave struck {PRONOUN/m_c/object} during a hunt."
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "strings": [
+                    "s_c0 comes down with a debilitating headache, making {PRONOUN/s_c0/object} stagger, dizzy and weak, as {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} helped back to camp."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -7331,7 +7281,7 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
