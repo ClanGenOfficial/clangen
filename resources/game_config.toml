@@ -1,5 +1,5 @@
 # whether or not development tools are disabled
-dev_tools = true
+dev_tools = false
 
 [seasons]
   # set to true to force the season to be locked at the Clan's starting_season
@@ -601,7 +601,7 @@ dev_tools = true
 
   [patrol_generation.debug_ensure]
     # forces patrol with this id to occur, assuming it's possible by constraints
-    patrol_id = ""
+    patrol_id = "farmhouse_hunting"
 
     # set to true to remove all constraints for patrols regarding location, season, biomes, etc.
     override_patrol_stat_requirements = false
