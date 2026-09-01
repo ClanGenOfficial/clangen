@@ -27,7 +27,7 @@ class EvalCommand(Command):
     name = "eval"
     description = "Evaluate a python expression"
     usage = "<expression: str>"
-    bypassConjoinedStrings = True
+    bypass_conjoined_strings = True
 
     sub_commands = [UnderstandRisksCommand()]
 

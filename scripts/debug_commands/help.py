@@ -52,11 +52,17 @@ class HelpCommand(Command):
 
                 if len(args) > 1:
                     while len(args) > 1 and len(command.sub_commands) > 0:
+                        command_found = False
                         for sub_command in command.sub_commands:
                             if args[1] not in sub_command.valid_names:
                                 continue
+
+                            command_found = True
                             args = args[1:]
                             command = sub_command
+
+                        if not command_found:
+                            break
 
                 self._get_command_help_text(command)
                 return
