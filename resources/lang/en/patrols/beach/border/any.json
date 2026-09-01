@@ -945,7 +945,7 @@
                 ],
                 "involved_cats": {
                     "n_c0": {
-                "can_create_new_cat": {},
+                        "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1007,7 +1007,7 @@
                         }
                     },
                     "n_c0": {
-                "can_create_new_cat": {},
+                        "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1059,7 +1059,7 @@
                         }
                     },
                     "n_c0": {
-                "can_create_new_cat": {},
+                        "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1126,7 +1126,7 @@
                         }
                     },
                     "n_c0": {
-                "can_create_new_cat": {},
+                        "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1171,7 +1171,7 @@
                 ],
                 "involved_cats": {
                     "n_c0": {
-                "can_create_new_cat": {},
+                        "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1432,7 +1432,7 @@
                 ],
                 "involved_cats": {
                     "n_c0": {
-                "can_create_new_cat": {},
+                        "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1508,7 +1508,7 @@
                         "prior_abbreviation": ["-s_c0"]
                     },
                     "n_c0": {
-                "can_create_new_cat": {},
+                        "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1561,7 +1561,7 @@
                         }
                     },
                     "n_c0": {
-                "can_create_new_cat": {},
+                        "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1632,7 +1632,7 @@
                         "prior_abbreviation": ["s_c0"]
                     },
                     "n_c0": {
-                "can_create_new_cat": {},
+                        "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1718,7 +1718,7 @@
                         }
                     },
                     "n_c0": {
-                "can_create_new_cat": {},
+                        "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1760,7 +1760,7 @@
                 ],
                 "involved_cats": {
                     "n_c0": {
-                "can_create_new_cat": {},
+                        "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1840,7 +1840,7 @@
                         ]
                     },
                     "n_c0": {
-                "can_create_new_cat": {},
+                        "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1897,7 +1897,7 @@
                 ],
                 "involved_cats": {
                     "n_c0": {
-                "can_create_new_cat": {},
+                        "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1973,7 +1973,7 @@
                         }
                     },
                     "n_c0": {
-                "can_create_new_cat": {},
+                        "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -2030,7 +2030,7 @@
                         "prior_abbreviation": ["-s_c0"]
                     },
                     "n_c0": {
-                "can_create_new_cat": {},
+                        "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -2102,7 +2102,7 @@
                         "prior_abbreviation": ["-s_c0"]
                     },
                     "n_c0": {
-                "can_create_new_cat": {},
+                        "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -2189,7 +2189,7 @@
                         }
                     },
                     "n_c0": {
-                "can_create_new_cat": {},
+                        "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -2294,10 +2294,6 @@
         ],
         "required_cat_types": {
             "patrol_cats": [
-                2,
-                6
-            ],
-            "normal adult": [
                 2,
                 6
             ],
