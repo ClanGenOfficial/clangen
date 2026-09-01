@@ -543,7 +543,6 @@ class Patrol:
             interactable_cats=[
                 c
                 for c in self.involved_cats["patrol_cats"]
-                if c != self.involved_cats["p_l"]
             ],
             possible_events=success_outcomes,
             other_clan=self.other_clan,
