@@ -166,6 +166,8 @@ class Patrol:
         Sorts and categorizes patrol cats, then determines a patrol leader.
         :param patrol_cats: list of cats which are on the patrol
         """
+        self.involved_cats.clear()
+
         # ADD TO PATROL_CATS
 
         self.patrol_cats = patrol_cats
