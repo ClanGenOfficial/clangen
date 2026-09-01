@@ -19,13 +19,17 @@
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As p_l crosses a beach, shivering with the cold, {PRONOUN\/p_l\/subject} {VERB\/p_l\/hear\/hears} a creaking, rushing sound, like a wave \u2014 but out of sync with the ocean.",
-        "decline_text": "p_l decides to head back early.",
+        "intro_strings": [
+            "As p_l crosses a beach, shivering with the cold, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a creaking, rushing sound, like a wave \u2014 but out of sync with the ocean."
+        ],
+        "decline_strings": [
+            "p_l decides to head back early."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l leaps forward, dashing to the other side of the beach and up onto the rocks. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/make\/makes} it in time to watch the beach get lost under a tide of water from inland."
+                    "p_l leaps forward, dashing to the other side of the beach and up onto the rocks. {PRONOUN/p_l/subject/CAP} {VERB/p_l/make/makes} it in time to watch the beach get lost under a tide of water from inland."
                 ],
                 "exp_gained": 20,
                 "supply": [
@@ -38,7 +42,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 scrambles back the way {PRONOUN\/s_c0\/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris \u2014 and a large dead sheep. s_c0 pounces on the opportunity to scavenge."
+                    "s_c0 scrambles back the way {PRONOUN/s_c0/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris \u2014 and a large dead sheep. s_c0 pounces on the opportunity to scavenge."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -63,7 +67,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 shrieks at the strange sound, paws digging into the sand as {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/turn\/turns} and {VERB\/s_c0\/run\/runs} for home. {PRONOUN\/s_c0\/subject\/CAP} {VERB\/s_c0\/are\/is} proven right when the beach disappears under a flood of water from inland. {PRONOUN\/s_c0\/poss\/CAP} caution saved {PRONOUN\/s_c0\/poss} life."
+                    "s_c0 shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c0/subject} {VERB/s_c0/turn/turns} and {VERB/s_c0/run/runs} for home. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/are/is} proven right when the beach disappears under a flood of water from inland. {PRONOUN/s_c0/poss/CAP} caution saved {PRONOUN/s_c0/poss} life."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -92,7 +96,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l is in the middle of the beach when the flood hits {PRONOUN\/p_l\/object}. Freezing water rushes from inland, sweeping {PRONOUN\/p_l\/object} straight out to sea to die in the cold ocean."
+                    "p_l is in the middle of the beach when the flood hits {PRONOUN/p_l/object}. Freezing water rushes from inland, sweeping {PRONOUN/p_l/object} straight out to sea to die in the cold ocean."
                 ],
                 "exp_gained": 0,
                 "death": [
@@ -130,8 +134,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "bord_general_intro",
-        "intro_text": "p_l's patrol pads along the shore towards the border. A recent storm washed away some of the markers near the waterline and they need to be refreshed. There in the surf, however, they find a great wooden thing\u2014a piece of a floating nest. Towering over the cats, its jagged edges jut out at broken angles. Beneath the salt, Twoleg scent lingers in the air.",
-        "decline_text": "p_l decides to turn back to camp and report the encounter, rather than risk investigating something potentially dangerous.",
+        "intro_strings": [
+            "p_l's patrol pads along the shore towards the border. A recent storm washed away some of the markers near the waterline and they need to be refreshed. There in the surf, however, they find a great wooden thing\u2014a piece of a floating nest. Towering over the cats, its jagged edges jut out at broken angles. Beneath the salt, Twoleg scent lingers in the air."
+        ],
+        "decline_strings": [
+            "p_l decides to turn back to camp and report the encounter, rather than risk investigating something potentially dangerous."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -162,7 +170,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "With a deep, probing breath, s_c0 perks up. There's something else in there, beside the salt and Twoleg stench. Following {PRONOUN\/s_c0\/poss} nose through the shaded debris, {PRONOUN\/s_c0\/subject} eventually {VERB\/s_c0\/sink\/sinks} {PRONOUN\/s_c0\/poss} teeth into one of the several still-fresh fishes, tangled in giant cobwebs inside. c_n will feast tonight!"
+                    "With a deep, probing breath, s_c0 perks up. There's something else in there, beside the salt and Twoleg stench. Following {PRONOUN/s_c0/poss} nose through the shaded debris, {PRONOUN/s_c0/subject} eventually {VERB/s_c0/sink/sinks} {PRONOUN/s_c0/poss} teeth into one of the several still-fresh fishes, tangled in giant cobwebs inside. c_n will feast tonight!"
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -206,7 +214,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "s_c0 ambles inside, sticking {PRONOUN\/s_c0\/poss} nose into the tangled debris. Searching for anything useful, {PRONOUN\/s_c0\/subject} eventually {VERB\/s_c0\/present\/presents} p_l with a long, straight stick, colourful wrapping and caps adorning it. It's taller than a cat! This, stuck into the sand\u2014as s_c0 soon demonstrates\u2014will be an excellent border marker that no one can pretend to overlook."
+                    "s_c0 ambles inside, sticking {PRONOUN/s_c0/poss} nose into the tangled debris. Searching for anything useful, {PRONOUN/s_c0/subject} eventually {VERB/s_c0/present/presents} p_l with a long, straight stick, colourful wrapping and caps adorning it. It's taller than a cat! This, stuck into the sand\u2014as s_c0 soon demonstrates\u2014will be an excellent border marker that no one can pretend to overlook."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -237,7 +245,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "cat_from was impressed by s_c0's ingenious border marker, scavenged from a wrecked floating Twoleg nest, and knows {PRONOUN\/cat_from\/subject} can rely on {PRONOUN\/s_c0\/poss} resourcefulness."
+                            "cats_from": "cat_from was impressed by s_c0's ingenious border marker, scavenged from a wrecked floating Twoleg nest, and knows {PRONOUN/cat_from/subject} can rely on {PRONOUN/s_c0/poss} resourcefulness."
                         }
                     }
                 ]
@@ -245,7 +253,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "s_c0 stalks closer, then freezes, eyes trained on a twisted carcass half-pinned under the wreckage. A great serpentine fish lies with eyes glazed and empty, flies starting to crawl over its smooth scales. s_c0 trembles, watching the oarfish's characteristic long, draped antennae fan out and ride on the lapping waves. This is an omen, {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/explain\/explains} to p_l. Grave danger is coming, but if c_n prepares now, they can weather the storm."
+                    "s_c0 stalks closer, then freezes, eyes trained on a twisted carcass half-pinned under the wreckage. A great serpentine fish lies with eyes glazed and empty, flies starting to crawl over its smooth scales. s_c0 trembles, watching the oarfish's characteristic long, draped antennae fan out and ride on the lapping waves. This is an omen, {PRONOUN/s_c0/subject} {VERB/s_c0/explain/explains} to p_l. Grave danger is coming, but if c_n prepares now, they can weather the storm."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -276,7 +284,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "cat_from witnessed s_c0 interpret the dire omen of a washed-up oarfish and felt glad to have {PRONOUN\/s_c0\/object} in the Clan."
+                            "cats_from": "cat_from witnessed s_c0 interpret the dire omen of a washed-up oarfish and felt glad to have {PRONOUN/s_c0/object} in the Clan."
                         }
                     }
                 ]
@@ -337,7 +345,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from didn't enjoy patrolling beside a s_c0 stinking of rotting fish due to {PRONOUN\/s_c0\/poss} own carelessness. Or the looks {PRONOUN\/cat_from\/subject} got from a o_c_n patrol because of it."
+                            "cats_from": "cat_from didn't enjoy patrolling beside a s_c0 stinking of rotting fish due to {PRONOUN/s_c0/poss} own carelessness. Or the looks {PRONOUN/cat_from/subject} got from a o_c_n patrol because of it."
                         }
                     }
                 ]

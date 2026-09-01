@@ -37,8 +37,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_vision_McWr",
-        "intro_text": "p_l takes the apprentices out at dusk, setting the atmosphere for a fun story.",
-        "decline_text": "They're stopped — chores around camp demand their attention. This will have to wait for another night.",
+        "intro_strings": [
+            "p_l takes the apprentices out at dusk, setting the atmosphere for a fun story."
+        ],
+        "decline_strings": [
+            "They're stopped — chores around camp demand their attention. This will have to wait for another night."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

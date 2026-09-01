@@ -23,8 +23,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/pln_med_herblocation_Ap",
-        "intro_text": "Sea-scented mist blows across the salt meadow in damp gusts. p_l's whiskers bead with water as {PRONOUN/p_l/subject} {VERB/p_l/stalk/stalks} through the growing grass, fixating on each plant in turn, scanning for the right herb.",
-        "decline_text": "The fog thickens, and p_l turns right around. {PRONOUN/p_l/subject/CAP} won't find any herbs like this.",
+        "intro_strings": [
+            "Sea-scented mist blows across the salt meadow in damp gusts. p_l's whiskers bead with water as {PRONOUN/p_l/subject} {VERB/p_l/stalk/stalks} through the growing grass, fixating on each plant in turn, scanning for the right herb."
+        ],
+        "decline_strings": [
+            "The fog thickens, and p_l turns right around. {PRONOUN/p_l/subject/CAP} won't find any herbs like this."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -134,8 +138,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_med_meadow_ApMc",
-        "intro_text": "Sea-scented mist blows across the salt meadow in damp gusts. p_l and r_c1's whiskers bead with water as they stalk through the growing grass, fixating on each plant in turn, scanning for the right herb.",
-        "decline_text": "The fog thickens, and p_l turns right around. They won't find any herbs like this.",
+        "intro_strings": [
+            "Sea-scented mist blows across the salt meadow in damp gusts. p_l and r_c1's whiskers bead with water as they stalk through the growing grass, fixating on each plant in turn, scanning for the right herb."
+        ],
+        "decline_strings": [
+            "The fog thickens, and p_l turns right around. They won't find any herbs like this."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

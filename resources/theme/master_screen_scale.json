@@ -610,6 +610,10 @@
         },
         "colours": {"normal_border": "#2F2918", "dark_bg": "#AC9D72"}
     },
+    "#log": {
+      "font": { "name": "JetBrainsMono", "size": 14 },
+      "colours": {"normal_text": "#FFFFFF", "dark_bg": "#000000" }
+    },
     "window.#title_bar": {
         "colours": {
             "normal_text": "#EFE5CE",
