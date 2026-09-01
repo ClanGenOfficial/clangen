@@ -6244,7 +6244,7 @@
         ]
     },
     {
-        "event_id": "bch_hunt_random_siblings1warrior1applocked2",
+        "event_id": "bch_hunt_random_siblingstraininghelp2",
         "types": [
             "hunting"
         ],
@@ -6259,15 +6259,7 @@
             ],
             "apprentice": [
                 1,
-                6
-            ],
-            "all apprentices": [
-                1,
                 1
-            ],
-            "normal adult": [
-                1,
-                6
             ]
         },
         "relationship_constraint": [
@@ -6276,7 +6268,7 @@
                     "p_l"
                 ],
                 "cats_to": [
-                    "patrol_cats"
+                    "r_c1"
                 ],
                 "mutual": false,
                 "constraints": [
@@ -6305,13 +6297,6 @@
                 "strings": [
                     "Giving in and accepting that {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} just going to look stupid in front of {PRONOUN/r_c1/poss} cool older sibling, r_c1 tells p_l about the trouble {PRONOUN/r_c1/subject}{VERB/r_c1/'ve/'s} been having with {PRONOUN/r_c1/poss} pounce. It's such a simple thing — {PRONOUN/r_c1/subject} should have it by now! But p_l is actually super helpful and reassuring about it — it's nice."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -6342,15 +6327,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "If r_c1 ever wanted help — s_c0 knows they're not littermates, but they're still siblings, and s_c0 is totally here for {PRONOUN/r_c1/object} if r_c1 ever wants extra training. It's still an awkward offer. But it's nice."
+                    "If r_c1 ever wanted help — p_l knows they're not littermates, but they're still siblings, and s_c0 is totally here for {PRONOUN/r_c1/object} if r_c1 ever wants extra training. It's still an awkward offer. But it's nice."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "CLIMBER,1",
@@ -6358,12 +6338,17 @@
                                 "RUNNER,1",
                                 "SWIMMER,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
+                        }
                     }
                 },
+                "relationship_constraint": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["r_c1"],
+                        "mutual": false,
+                        "constraint": ["-mentor/app"]
+                    }
+                ],
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -6398,13 +6383,6 @@
                 "strings": [
                     "r_c1 doesn't want to talk about it. Like. At all. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/stalk/stalks} off in a huff."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
