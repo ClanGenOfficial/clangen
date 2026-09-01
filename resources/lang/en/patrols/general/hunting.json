@@ -10691,7 +10691,7 @@
     },
     {
     "event_id": "farmhouse_hunting",
-    "types": ["hunting"],
+    "types": ["hunt"],
     "frequency": 3,
     "required_cat_types": {
         "patrol_cats": [3, 6]
