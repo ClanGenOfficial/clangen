@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "bch_bord_rogue1",
+        "event_id": "bch_bord_rogue_group1",
         "types": [
             "border"
         ],
@@ -422,7 +422,7 @@
         ]
     },
     {
-        "event_id": "bch_bord_rogue2",
+        "event_id": "bch_bord_rogue_solo1",
         "types": [
             "border"
         ],
@@ -632,7 +632,7 @@
         ]
     },
     {
-        "event_id": "bch_bord_flashflood1",
+        "event_id": "bch_bord_flashflood_group1",
         "types": [
             "border"
         ],
@@ -785,7 +785,7 @@
         ]
     },
     {
-        "event_id": "bch_bord_flashflood2",
+        "event_id": "bch_bord_flashflood_solo2",
         "types": [
             "border"
         ],
@@ -911,7 +911,103 @@
         ]
     },
     {
-        "event_id": "bch_bord_trackrogue1",
+        "event_id": "bch_bord_flashflood_tidal1",
+        "types": [
+            "border"
+        ],
+        "frequency": 3,
+        "location": [
+            "beach"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ]
+        },
+        "chance_of_success": 30,
+        "patrol_art": "bord_general_intro",
+        "intro_strings": [
+            "As p_l crosses a beach, shivering with the cold, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a creaking, rushing sound, like a wave — but out of sync with the ocean."
+        ],
+        "decline_strings": [
+            "p_l decides to head back early."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l leaps forward, dashing to the other side of the beach and up onto the rocks. {PRONOUN/p_l/subject/CAP} {VERB/p_l/make/makes} it in time to watch the beach get lost under a tide of water from inland."
+                ],
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l scrambles back the way {PRONOUN/p_l/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris — and a large dead sheep. p_l pounces on the opportunity to scavenge."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "CLEVER,3"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l shrieks at the strange sound, paws digging into the sand as {PRONOUN/p_l/subject} {VERB/p_l/turn/turns} and {VERB/p_l/run/runs} for home. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} proven right when the beach disappears under a flood of water from inland. {PRONOUN/p_l/poss/CAP} caution saved {PRONOUN/p_l/poss} life."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "careful",
+                                "insecure",
+                                "nervous"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l is in the middle of the beach when the flood hits {PRONOUN/p_l/object}. Freezing water rushes from inland, sweeping {PRONOUN/p_l/object} straight out to sea to die in the cold ocean."
+                ],
+                "exp_gained": 0,
+                "death": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "history": "m_c was swept out to sea by a flood."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "bch_bord_trackrogue1_solo1",
         "types": [
             "border"
         ],
@@ -1398,7 +1494,7 @@
         ]
     },
     {
-        "event_id": "bch_bord_trackrogue2",
+        "event_id": "bch_bord_trackrogue_group1",
         "types": [
             "border"
         ],
@@ -1859,7 +1955,7 @@
         ]
     },
     {
-        "event_id": "bch_bord_trackrogue3",
+        "event_id": "bch_bord_trackrogue_group2",
         "types": [
             "border"
         ],
