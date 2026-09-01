@@ -68,16 +68,6 @@ class SettingsCommand(Command):
             )
             return
 
-        setting_value = None
-        if setting_op in ["set", "toggle"]:
-            setting_value = args[3]
-            if setting_value in ["True", "true"]:
-                setting_value = True
-            elif setting_value in ["False", "false"]:
-                setting_value = False
-            elif setting_value.isnumeric():
-                setting_value = int(setting_value)
-
         try:
             if setting_type == "game":
                 get_function = game_setting_get
@@ -93,25 +83,34 @@ class SettingsCommand(Command):
                 add_output_line_to_log(f"Unknown setting type '{setting_type}'")
                 return
 
-            previous_value = get_function(setting_name)
-            if isinstance(previous_value, (int, str, bool)):
-                if type(previous_value) != type(setting_value):
-                    add_output_line_to_log(
-                        f"Invalid value type for setting '{setting_name}'"
-                    )
-                    add_output_line_to_log(
-                        f"   Expected: {type(previous_value)}, got: {type(setting_value)}"
-                    )
-                    return
+            if setting_op in ["set", "toggle"]:
+                previous_value = get_function(setting_name)
+                setting_value = args[3]
 
-                if setting_op == "set":
+                if setting_op == "toggle":
+                    setting_value = not previous_value
+                elif setting_value in ["True", "true"]:
+                    setting_value = True
+                elif setting_value in ["False", "false"]:
+                    setting_value = False
+                elif setting_value.isnumeric():
+                    setting_value = int(setting_value)
+
+                if isinstance(previous_value, (int, str, bool)):
+                    if type(previous_value) != type(setting_value):
+                        add_output_line_to_log(
+                            f"Invalid value type for setting '{setting_name}'"
+                        )
+                        add_output_line_to_log(
+                            f"   Expected: {type(previous_value)}, got: {type(setting_value)}"
+                        )
+                        return
+
                     set_function(setting_name, setting_value)
-                elif setting_op == "toggle":
-                    set_function(setting_name, not previous_value)
-            else:
-                add_output_line_to_log(
-                    f"Can't modify setting '{setting_name}' because it not an int, string, or boolean"
-                )
+                else:
+                    add_output_line_to_log(
+                        f"Can't modify setting '{setting_name}' because it not an int, string, or boolean"
+                    )
 
             add_output_line_to_log(f"{setting_name} is {get_function(setting_name)}")
         except KeyError:
