@@ -1828,7 +1828,7 @@
         ]
     },
     {
-        "event_id": "bch_bord_trackrogue5",
+        "event_id": "bch_bord_trackrogue3",
         "types": [
             "border"
         ],
@@ -1840,6 +1840,10 @@
             "patrol_cats": [
                 3,
                 6
+            ],
+            "normal adult": [
+                1,
+                6
             ]
         },
         "involved_cats": {
@@ -1848,7 +1852,7 @@
         "chance_of_success": 30,
         "patrol_art": "backgrounds/gen_pawprints",
         "intro_strings": [
-            "While on patrol, r_c0 notices some suspicious pawprints in the wet sand on the beach."
+            "While on patrol, r_c0 notices some suspicious pawprints in the wet sand on the beach. The patrol gathers to investigate."
         ],
         "decline_strings": [
             "{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/decide/decides} not to investigate."
@@ -1858,6 +1862,21 @@
                 "frequency": 4,
                 "strings": [
                     "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [
@@ -1882,14 +1901,32 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c0 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat."
+                    "The cats soon realize that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, it's not a threat."
                 ],
+                "exp_gained": 10
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "s_c0 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} pretty sure this is {PRONOUN/s_c0/poss} mentor's scent. And {PRONOUN/s_c0/poss} mentor has been hinting {PRONOUN/s_c0/subject}'ll have an assessment soon."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"],
+                        "status": [
+                            "apprentice"
+                        ],
+                        "has_mentor": {
+                            "current": true
+                        }
+                    }
+                },
                 "exp_gained": 10
             },
             {
                 "frequency": 4,
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. s_c0 sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize they've been caught and trapped by c_n, and they're escorted to the border with the lesson firmly learned."
+                    "The pawprints lead to a trespassing rogue. s_c0 sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize {PRONOUN/n_c0/subject}{VERB/n_c0/'ve/'s} been caught and trapped by c_n, and {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} escorted to the border with the lesson firmly learned."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1901,8 +1938,21 @@
                                 "CLEVER,1"
                             ]
                         }
+                    },
+                    "n_c0": {
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
                     }
                 },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
@@ -1929,7 +1979,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. With a furious hiss, s_c0 throws {PRONOUN/s_c0/self} at the rogue and, together with r_c0, drives them off c_n territory."
+                    "The pawprints lead to a trespassing rogue. With a furious hiss, s_c0 throws {PRONOUN/s_c0/self} at the rogue and, together with the whole patrol, drives them off c_n territory."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1941,8 +1991,24 @@
                                 "FIGHTER,1"
                             ]
                         }
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": ["-s_c0"]
+                    },
+                    "n_c0": {
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
                     }
                 },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
@@ -1969,7 +2035,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Boldly, s_c0 follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by s_c0's confidence and the number of cats, the rogue gives in and leaves without a fight."
+                    "Boldly, s_c0 follows the pawprints to a trespassing rogue and confronts {PRONOUN/n_c0/object}. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by s_c0's confidence and the number of cats, the rogue gives in and leaves without a fight."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1996,8 +2062,24 @@
                                 "righteous"
                             ]
                         }
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": ["-s_c0"]
+                    },
+                    "n_c0": {
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
                     }
                 },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
@@ -2026,7 +2108,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It turns out they were r_c0's own pawprints... r_c0 huffs with embarrassment and can't meet the eyes of the rest of the patrol."
+                    "It turns out they were r_c0's own pawprints... r_c0 huffs with embarrassment and can't meet the eyes of the rest of the patrol.",
+                    "It turns out they were r_c1's own pawprints... r_c1 huffs with embarrassment and can't meet the eyes of the rest of the patrol. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/don't/doesn't} want to look dumb in front of other cats."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -2060,12 +2143,29 @@
                             "any"
                         ],
                         "stat": {
+                            "trait": [
+                                "arrogant"
+                            ],
                             "skill": [
-                                "CLEVER,1"
-                            ]
+                                "-CLEVER,1"
+                            ],
+                            "must_have_both": false
                         }
+                    },
+                    "n_c0": {
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
                     }
                 },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -2086,120 +2186,6 @@
                         }
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "event_id": "bch_bord_trackrogue6",
-        "types": [
-            "border"
-        ],
-        "frequency": 3,
-        "location": [
-            "beach"
-        ],
-        "tags": [],
-        "required_cat_types": {
-            "patrol_cats": [
-                3,
-                6
-            ],
-            "apprentice": [
-                1,
-                6
-            ]
-        },
-        "involved_cats": {
-            "r_c1": {
-                "status": [
-                    "apprentice"
-                ],
-                "has_mentor": {
-                    "current": true
-                }
-            }
-        },
-        "chance_of_success": 30,
-        "patrol_art": "backgrounds/gen_pawprints",
-        "intro_strings": [
-            "While on patrol, r_c1 notices some suspicious pawprints in the wet sand on the beach."
-        ],
-        "decline_strings": [
-            "{PRONOUN/r_c1/subject/CAP} {VERB/r_c1/decide/decides} not to investigate."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory."
-                ],
-                "exp_gained": 10,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from and cat_to worked together to drive off a rogue."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "r_c1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} pretty sure this is {PRONOUN/r_c1/poss} mentor's scent. And {PRONOUN/r_c1/poss} mentor has been hinting {PRONOUN/r_c1/subject}'ll have an assessment soon."
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 10
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "It turns out they were r_c1's own pawprints... r_c1 huffs with embarrassment and can't meet the eyes of the rest of the patrol. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/don't/doesn't} want to look dumb in front of other cats."
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c1"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from watched cat_to make a mistake on patrol."
-                        }
-                    }
-                ]
             },
             {
                 "frequency": 4,
@@ -2208,6 +2194,10 @@
                 ],
                 "involved_cats": {
                     "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "age": ["adolescent"],
                         "stat": {
                             "trait": [
                                 "ambitious",
@@ -2227,10 +2217,7 @@
                                 "playful",
                                 "righteous"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 0,
