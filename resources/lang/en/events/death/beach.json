@@ -765,7 +765,7 @@
     {
         "event_id": "bch_death_jellyfishsting",
         "location": [
-            "beach:camp1"
+            "beach"
         ],
         "season": [
             "-leaf-bare",
@@ -790,11 +790,12 @@
     {
         "event_id": "bch_death_mentormurder",
         "location": [
-            "beach:camp1"
+            "beach"
         ],
         "season": [
             "-leaf-bare"
         ],
+        "sub_type": ["murder"],
         "frequency": 1,
         "event_text": "m_c heads to the shoreline with r_c, a bounce in {PRONOUN/m_c/poss} step. r_c leaves the border with bloody paws, and m_c never bounces again.",
         "m_c": {
