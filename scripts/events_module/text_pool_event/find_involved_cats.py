@@ -27,9 +27,9 @@ def find_cats(
     :param outside_cats: A list of cats outside the Clan eligible to appear in the event.
     :param event: The PatrolEvent or TextPoolEvent that needs involved cats
     :param other_clan: The OtherClan object involved in the event
-    :return: (involved_cats, number_create_cats). Involved_cats is an updated version of the input
+    :return: (involved_cats, will_create_how_many). Involved_cats is an updated version of the input
         (of the same name) with valid cats. Also returns the number of new cats that will need to be
-        created.  If an involved_cats is empty AND number_create_cats is 0, then necessary valid cats
+        created.  If an involved_cats is empty AND will_create_how_many is 0, then necessary valid cats
         were not found.
     """
 
@@ -38,7 +38,7 @@ def find_cats(
     temp_involved_cats = involved_cats.copy()
     interactable_cats = interactable_cats.copy()
 
-    number_create_cats = 0
+    will_create_how_many = 0
 
     can_give_condition = hasattr(event, "condition")
     can_give_accessory = hasattr(event, "gain_accessory")
@@ -111,7 +111,7 @@ def find_cats(
         if not possible_cats:
             # uh oh, we're out of options!
             if can_create_new_cat:
-                number_create_cats += 1
+                will_create_how_many += 1
                 continue
             else:
                 return empty
@@ -132,7 +132,7 @@ def find_cats(
         )
         if not possible_cats:
             if can_create_new_cat:
-                number_create_cats += 1
+                will_create_how_many += 1
                 continue
             else:
                 return empty
@@ -149,7 +149,7 @@ def find_cats(
 
         if not new_involved_cat:
             if can_create_new_cat:
-                number_create_cats += 1
+                will_create_how_many += 1
                 continue
             else:
                 return empty
@@ -159,7 +159,7 @@ def find_cats(
         if temp_involved_cats.get(abbr) in interactable_cats:
             interactable_cats.remove(temp_involved_cats[abbr])
 
-    return temp_involved_cats, number_create_cats
+    return temp_involved_cats, will_create_how_many
 
 
 def get_potential_conditions(abbr, can_give_condition, event):

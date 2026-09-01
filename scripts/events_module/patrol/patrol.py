@@ -605,14 +605,14 @@ class Patrol:
         ]
         temp_involved_cats = self.involved_cats.copy()
 
-        temp_involved_cats, number_create_cats = find_cats(
+        temp_involved_cats, will_create_how_many = find_cats(
             interactable_cats=temp_involved_cats["patrol_cats"],
             involved_cats=temp_involved_cats,
             outside_cats=outside_cats,
             event=outcome,
             other_clan=self.other_clan,
         )
-        if not (temp_involved_cats or number_create_cats):
+        if not (temp_involved_cats or will_create_how_many):
             return False
 
         # if we're here, then we must have found all our cats!
