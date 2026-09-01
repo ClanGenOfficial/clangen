@@ -180,9 +180,9 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 3,
                 "strings": [
-                    "The rogues posture and jeer, eventually provoking a battle. The Clan cats are strong, however, and the rogues seem to be weakened by hunger. The patrol easily drives the intruders away."
+                    "The rogues circle the patrol as they posture and jeer, eventually provoking a battle. The Clan cats are strong, however, and the rogues seem to be weakened by hunger. The patrol easily drives the intruders away."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -211,9 +211,9 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 3,
                 "strings": [
-                    "The rogues posture and jeer, eventually provoking a battle. The Clan cats are strong, however, and after a short fight, the rogues are forced to retreat."
+                    "The rogues circle the patrol as they posture and jeer, eventually provoking a battle. The Clan cats are strong, however, and after a short fight, the rogues are forced to retreat."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -242,9 +242,9 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 3,
                 "strings": [
-                    "s_c0 takes the lead, confronting the gang with confidence. Eventually, the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c0 informs the rogues of a prey-rich forest outside of c_n territory."
+                    "s_c0 takes the lead, confronting the gang with confidence before a fight can break out. Eventually, the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c0 informs the rogues of a prey-rich forest outside of c_n territory."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1077,13 +1077,30 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 3,
                 "required_cat_types": {
                     "normal adult": [1, 1]
                 },
                 "strings": [
                     "p_l soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat."
                 ],
+                "exp_gained": 10
+            },
+            {
+                "frequency": 3,
+                "required_cat_types": {
+                    "apprentice": [1, 1]
+                },
+                "strings": [
+                    "p_l soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} pretty sure this is {PRONOUN/p_l/poss} mentor's scent. And {PRONOUN/p_l/poss} mentor has been hinting {PRONOUN/p_l/subject}'ll have an assessment soon."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "has_mentor": {
+                            "current": true
+                        }
+                    }
+                },
                 "exp_gained": 10
             },
             {
@@ -1301,23 +1318,6 @@
                         }
                     }
                 ]
-            },
-            {
-                "frequency": 1,
-                "required_cat_types": {
-                    "apprentice": [1, 1]
-                },
-                "strings": [
-                    "p_l soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} pretty sure this is {PRONOUN/p_l/poss} mentor's scent. And {PRONOUN/p_l/poss} mentor has been hinting {PRONOUN/p_l/subject}'ll have an assessment soon."
-                ],
-                "involved_cats": {
-                    "p_l": {
-                        "has_mentor": {
-                            "current": true
-                        }
-                    }
-                },
-                "exp_gained": 10
             }
         ],
         "fail_outcomes": [
@@ -1402,7 +1402,7 @@
                 "exp_gained": 0
             },
             {
-                "frequency": 3,
+                "frequency": 2,
                 "strings": [
                     "Following the trail with {PRONOUN/p_l/poss} nose to the ground, p_l doesn't see the blow that kills {PRONOUN/p_l/object}."
                 ],
@@ -1564,14 +1564,14 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 3,
                 "strings": [
                     "r_c0 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat."
                 ],
                 "exp_gained": 10
             },
             {
-                "frequency": 1,
+                "frequency": 3,
                 "strings": [
                     "r_c0 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} pretty sure this is {PRONOUN/r_c0/poss} mentor's scent. And {PRONOUN/r_c0/poss} mentor has been hinting {PRONOUN/r_c0/subject}'ll have an assessment soon."
                 ],
@@ -1850,6 +1850,55 @@
                 ]
             },
             {
+                "frequency": 4,
+                "strings": [
+                    "Boldly, s_c0 follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c0/subject} {VERB/s_c0/demand/demands} the rogue leave c_n territory. The rogue is not impressed by the adolescent but reluctantly leaves c_n territory upon seeing {PRONOUN/n_c0/self} outnumbered."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "age": ["adolescent"],
+                        "stat": {
+                            "trait": [
+                                "ambitious",
+                                "bloodthirsty",
+                                "cold",
+                                "fierce",
+                                "shameless",
+                                "strict",
+                                "troublesome",
+                                "vengeful",
+                                "adventurous",
+                                "bold",
+                                "charismatic",
+                                "childish",
+                                "confident",
+                                "daring",
+                                "playful",
+                                "righteous"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 0
+            },
+            {
                 "frequency": 3,
                 "strings": [
                     "Following the trail with {PRONOUN/r_c0/poss} nose to the ground, r_c0 doesn't see the blow coming. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/haul/hauls} {PRONOUN/r_c0/self} to {PRONOUN/r_c0/poss} feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol."
@@ -1902,55 +1951,6 @@
                         "death_history": "m_c died of an injury inflicted by an invading rogue."
                     }
                 ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "Boldly, s_c0 follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c0/subject} {VERB/s_c0/demand/demands} the rogue leave c_n territory. The rogue is not impressed by the adolescent but reluctantly leaves c_n territory upon seeing {PRONOUN/n_c0/self} outnumbered."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "age": ["adolescent"],
-                        "stat": {
-                            "trait": [
-                                "ambitious",
-                                "bloodthirsty",
-                                "cold",
-                                "fierce",
-                                "shameless",
-                                "strict",
-                                "troublesome",
-                                "vengeful",
-                                "adventurous",
-                                "bold",
-                                "charismatic",
-                                "childish",
-                                "confident",
-                                "daring",
-                                "playful",
-                                "righteous"
-                            ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
-                    },
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "status": ["rogue"],
-                        "age": [
-                            "young adult",
-                            "adult",
-                            "senior adult"
-                        ]
-                    }
-                },
-                "meet": [
-                    {
-                        "cats": ["n_c0"]
-                    }
-                ],
-                "exp_gained": 0
             }
         ]
     },
@@ -2028,14 +2028,14 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 3,
                 "strings": [
                     "The cats soon realize that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, it's not a threat."
                 ],
                 "exp_gained": 10
             },
             {
-                "frequency": 1,
+                "frequency": 3,
                 "strings": [
                     "s_c0 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} pretty sure this is {PRONOUN/s_c0/poss} mentor's scent. And {PRONOUN/s_c0/poss} mentor has been hinting {PRONOUN/s_c0/subject}'ll have an assessment soon."
                 ],
@@ -2451,7 +2451,7 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 3,
                 "strings": [
                     "The patrol drives away the red fox, seeks out her den, and kills her young cubs. It's brutal, but these fluffy baby foxes would one day have grown to be kit-killers and thieves."
                 ],
@@ -2727,7 +2727,7 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 3,
                 "strings": [
                     "The patrol drives away the gray fox, seeks out her den, and kills her young cubs. It's brutal, but these fluffy baby foxes would one day have grown to be kit-killers and thieves. Better to deal with them now than when they're the height and nearly double the weight of a cat, though a gray fox will always be easier than a big red one."
                 ],
@@ -2910,7 +2910,7 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 3,
                 "strings": [
                     "With so many cats working together in tight coordination, they're able to keep the gray vixen they find pinned and distracted as they wear her down. The fox eventually flees for her den, and the patrol follows to take care of the cubs she's raising."
                 ],
@@ -3180,7 +3180,7 @@
                 ]
             },
             {
-                "frequency": 2,
+                "frequency": 3,
                 "strings": [
                     "The mother red fox's snapping jaws leave s_c0 dripping blood on the sand, forcing the patrol to back off.",
                     "s_c0 is caught momentarily by the fox, and the patrol decides to retreat before more are hurt."
@@ -3248,7 +3248,7 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 3,
                 "strings": [
                     "s_c0 is determined to win, but {PRONOUN/s_c0/poss} confidence is misplaced. {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c0 and knocking {PRONOUN/s_c0/object} rump over paws as she flees from the patrol."
                 ],
