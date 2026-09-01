@@ -6703,13 +6703,13 @@
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
         "intro_strings": [
-            "The sun's out, and p_l has been assigned a moderately tolerable hunting patrol — {PRONOUN/p_l/poss} family!",
+            "The sun's out, and p_l has been assigned a moderately tolerable hunting patrol: {PRONOUN/p_l/poss} family!",
             "The hunting patrol heads out early, when the sun is just peeking over the horizon.",
             "The siblings head out to one of the further hunting grounds of the beach, where a long series of shallow rock pools promises good hunting.",
             "Sometimes, it's just nice for the siblings to hang out together. The weather is perfect for a hunt!"
         ],
         "decline_strings": [
-            "Cancel that — a border patrol needs backup.",
+            "Cancel that, a border patrol needs backup.",
             "They encounter a dawn patrol on their way back to camp and join up with them instead.",
             "They decide to bask for a bit instead of making the long walk."
         ],
@@ -7535,7 +7535,7 @@
                 6
             ],
             "normal adult": [
-                1,
+                2,
                 6
             ]
         },
@@ -7681,7 +7681,7 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_angrycat_Wr",
                 "strings": [
-                    "s_c0 spots a lone egg in an unattended kelp nest, but as {PRONOUN/s_c0/subject} {VERB/s_c0/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it. s_c0 reacts lightning-fast, dodging its stabbing beak, then leaps onto its back and sinks {PRONOUN/s_c0/poss} teeth into the back of its neck. It writhes and struggles, then lies still. That piece of fresh-kill is so big, s_c0 and p_l have to carry it together!"
+                    "s_c0 spots a lone egg in an unattended kelp nest, but as {PRONOUN/s_c0/subject} {VERB/s_c0/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it. s_c0 reacts lightning-fast, dodging its stabbing beak, then leaps onto its back and sinks {PRONOUN/s_c0/poss} teeth into the back of its neck. It writhes and struggles, then lies still. That piece of fresh-kill is so big, the patrol has to work together to get it home!"
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -7756,20 +7756,30 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c0/subject} {VERB/r_c0/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, flapping its wings and thrusting its beak forward. r_c0 barely manages to scramble backward quickly enough to avoid being bitten."
+                    "s_c0 spots a lone egg in an unattended kelp nest, but as {PRONOUN/s_c0/subject} {VERB/s_c0/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, flapping its wings and thrusting its beak forward. s_c0 barely manages to scramble backward quickly enough to avoid being bitten."
                 ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
                 "exp_gained": 0
             },
             {
                 "frequency": 2,
                 "strings": [
-                    "r_c0 spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c0/subject} {VERB/r_c0/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, flapping its wings and thrusting its beak forward. r_c0 isn't quick enough to avoid the bite, and the patrol has to help {PRONOUN/r_c0/object} back to camp."
+                    "s_c0 spots a lone egg in an unattended kelp nest, but as {PRONOUN/s_c0/subject} {VERB/s_c0/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, flapping its wings and thrusting its beak forward. s_c0 isn't quick enough to avoid the bite, and the patrol has to help {PRONOUN/s_c0/object} back to camp."
                 ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
                 "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "condition": [
                             "beak_bite"
@@ -7783,13 +7793,18 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/mtn_train_stuck_Wr",
                 "strings": [
-                    "r_c0 spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c0/subject} {VERB/r_c0/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. r_c0 scrambles back—right over the edge of the cliff. With a howl, {PRONOUN/r_c0/subject} {VERB/r_c0/plummet/plummets}. The patrol rushes down to find r_c0 lying on the low tide sandbank, barely able to limp back to camp."
+                    "s_c0 spots a lone egg in an unattended kelp nest, but as {PRONOUN/s_c0/subject} {VERB/s_c0/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. s_c0 scrambles back—right over the edge of the cliff. With a howl, {PRONOUN/s_c0/subject} {VERB/s_c0/plummet/plummets}. The patrol rushes down to find s_c0 lying on the low tide sandbank, barely able to limp back to camp."
                 ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
                 "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "condition": [
                             "blunt_force_injury"
@@ -7803,13 +7818,18 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_fallenwater_Wr",
                 "strings": [
-                    "r_c0 spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c0/subject} {VERB/r_c0/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. r_c0 scrambles back—right over the edge of the cliff. With a howl, {PRONOUN/r_c0/subject} {VERB/r_c0/plummet/plummets}. The patrol rushes down to find r_c0 clinging onto the rocks and coughing water."
+                    "s_c0 spots a lone egg in an unattended kelp nest, but as {PRONOUN/s_c0/subject} {VERB/s_c0/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. r_c0 scrambles back—right over the edge of the cliff. With a howl, {PRONOUN/s_c0/subject} {VERB/s_c0/plummet/plummets}. The patrol rushes down to find s_c0 clinging onto the rocks and coughing water."
                 ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
                 "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "condition": [
                             "water in their lungs"
@@ -7822,13 +7842,18 @@
                 "frequency": 1,
                 "outcome_art": "backgrounds/bch_stormwaves",
                 "strings": [
-                    "r_c0 spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c0/subject} {VERB/r_c0/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. r_c0 scrambles back—right over the edge of the cliff. With a howl, {PRONOUN/r_c0/subject} {VERB/r_c0/plummet/plummets}. The patrol rushes to climb down, and finds r_c0 sprawled on a rock. Motionless."
+                    "s_c0 spots a lone egg in an unattended kelp nest, but as {PRONOUN/s_c0/subject} {VERB/s_c0/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. s_c0 scrambles back—right over the edge of the cliff. With a howl, {PRONOUN/s_c0/subject} {VERB/s_c0/plummet/plummets}. The patrol rushes to climb down, and finds s_c0 sprawled on a rock. Motionless."
                 ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
                 "exp_gained": 0,
                 "death": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "history": "m_c fell onto a rock and died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} caught trying to raid a gannet's nest."
                     }
