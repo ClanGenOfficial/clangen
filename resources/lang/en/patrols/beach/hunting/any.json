@@ -2663,7 +2663,7 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 3,
                 "strings": [
                     "The cats' eyes light up with possibility, watching the eagle swimming to shore awkwardly. p_l leads the patrol in yowling threats and insults from the shoreline, making a massive racket. Bewildered, the eagle gives up its catch and takes to the air. The massive fish washes ashore into the paws of the patrol."
                 ],
@@ -2826,19 +2826,20 @@
                 ]
             },
             {
-                "frequency": 3,
+                "frequency": 2,
                 "strings": [
-                    "The patrol decides to fight the eagle in the water for possession of the prey, but the bird drops the prey, and a furious haphazard swimming fight ensues. The eagle's talons, wings, and beak flail in an uncoordinated, dangerous tangle that brings r_c0 below the water. There's no way to be sure whether the talon wounds or the drowning killed {PRONOUN/r_c0/object} in the end."
+                    "The patrol decides to fight the eagle in the water for possession of the prey, but the bird drops the prey, and a furious haphazard swimming fight ensues. The eagle's talons, wings, and beak flail in an uncoordinated, dangerous tangle that brings s_c0 below the water. There's no way to be sure whether the talon wounds or the drowning killed {PRONOUN/s_c0/object} in the end."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol_cats",
-                            "-r_c0"
+                            "patrol_cats"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -2856,7 +2857,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "history": "m_c was killed by an eagle, scrapping over food."
                     }
@@ -2865,10 +2866,12 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The patrol decides to fight the eagle in the water for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty bite out of r_c0 before the cats retreat."
+                    "The patrol decides to fight the eagle in the water for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty bite out of s_c0 before the cats retreat."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -2898,7 +2901,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "condition": [
                             "beak_bite"
