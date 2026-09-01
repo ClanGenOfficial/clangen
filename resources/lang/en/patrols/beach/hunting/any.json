@@ -4055,7 +4055,7 @@
         ]
     },
     {
-        "event_id": "bch_hunt_redfox_steal1",
+        "event_id": "bch_hunt_fox_steal1",
         "types": [
             "hunting"
         ],
@@ -4412,231 +4412,7 @@
                         "adjust": "increase_small"
                     }
                 ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "The fox's trail vanishes just as quickly as it appeared, almost as though the creature had figured out that it was being tracked. Grumbling and arguing, the patrol heads back home disappointed."
-                ],
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "like"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_to and cat_from lost the trail while tracking a fox and argued on the way home."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ]
             },
-            {
-                "frequency": 4,
-                "strings": [
-                    "The patrol tracks down a red fox and finds it with fresh-kill dangling from its jaws. s_c0 bursts from cover without warning, trying to intimidate the fox. At least {PRONOUN/s_c0/subject} {VERB/s_c0/scare/scares} the fox off — but it takes its catch with it. The other cats aren't particularly pleased with s_c0."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "ambitious",
-                                "arrogant",
-                                "bloodthirsty",
-                                "bold",
-                                "confident",
-                                "competitive",
-                                "daring",
-                                "fierce",
-                                "troublesome",
-                                "vengeful"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_to's hasty attack scared a fox off — and it took its prey with it. cat_from wasn't happy with cat_to."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump seagull. With careful signals, the cats set up an ambush, but they aren't careful enough. The snarling fox takes a bite out of r_c0 before it flees with its dinner."
-                ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": -3,
-                        "log": {
-                            "cats_from": "cat_from and cat_to failed to drive off a fox together."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ],
-                "condition": [
-                    {
-                        "cats": [
-                            "r_c0"
-                        ],
-                        "condition": [
-                            "small_bite_injury"
-                        ],
-                        "scar_history": "m_c carries a scar from a fight with a red fox.",
-                        "death_history": "m_c died from a red fox bite."
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "The patrol tracks down a red fox and finds it with fresh-kill dangling from its jaws. s_c0 bursts from cover without warning, trying to intimidate the fox, and the overconfident attack ends in disaster when the fox sinks its fangs into s_c0. The rest of the patrol rescues their annoying Clanmate while the fox runs off with what could've been their dinner."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "ambitious",
-                                "arrogant",
-                                "bloodthirsty",
-                                "bold",
-                                "confident",
-                                "competitive",
-                                "daring",
-                                "fierce",
-                                "troublesome",
-                                "vengeful"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_to's hasty attack spoiled cat_from's patrol's chance to steal a fox's prey. cat_from wasn't happy with cat_to."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ],
-                "condition": [
-                    {
-                        "cats": [
-                            "s_c0"
-                        ],
-                        "condition": [
-                            "small_bite_injury"
-                        ],
-                        "scar_history": "m_c carries a scar from a fight with a red fox.",
-                        "death_history": "m_c died from a red fox bite."
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "bch_hunt_foxgray_steal1",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 2,
-        "location": [
-            "beach"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                2,
-                6
-            ]
-        },
-        "chance_of_success": 40,
-        "patrol_art": "hunt_general_intro",
-        "intro_strings": [
-            "The patrol catches the scent of a fox, but is it red or gray? And is it worth a fight if they encounter it?"
-        ],
-        "decline_strings": [
-            "The patrol decides not to quarrel with the fox and to find prey elsewhere."
-        ],
-        "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
@@ -4669,7 +4445,7 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 3,
                 "strings": [
                     "The scent trail leads to where some kind of fox has cached a fish in a poorly concealed hole. The cats take it as their due and leave the fox to wander on."
                 ],
@@ -4842,6 +4618,172 @@
                     {
                         "type": "freshkill",
                         "adjust": "increase_tiny"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol tracks down a red fox and finds it with fresh-kill dangling from its jaws. s_c0 bursts from cover without warning, trying to intimidate the fox. At least {PRONOUN/s_c0/subject} {VERB/s_c0/scare/scares} the fox off — but it takes its catch with it. The other cats aren't particularly pleased with s_c0."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "ambitious",
+                                "arrogant",
+                                "bloodthirsty",
+                                "bold",
+                                "confident",
+                                "competitive",
+                                "daring",
+                                "fierce",
+                                "troublesome",
+                                "vengeful"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to's hasty attack scared a fox off — and it took its prey with it. cat_from wasn't happy with cat_to."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump seagull. With careful signals, the cats set up an ambush, but they aren't careful enough. The snarling fox takes a bite out of s_c0 before it flees with its dinner."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "cat_from and cat_to failed to drive off a fox together."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "condition": [
+                            "small_bite_injury"
+                        ],
+                        "scar_history": "m_c carries a scar from a fight with a red fox.",
+                        "death_history": "m_c died from a red fox bite."
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "The patrol tracks down a red fox and finds it with fresh-kill dangling from its jaws. s_c0 bursts from cover without warning, trying to intimidate the fox, and the overconfident attack ends in disaster when the fox sinks its fangs into s_c0. The rest of the patrol rescues their annoying Clanmate while the fox runs off with what could've been their dinner."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "ambitious",
+                                "arrogant",
+                                "bloodthirsty",
+                                "bold",
+                                "confident",
+                                "competitive",
+                                "daring",
+                                "fierce",
+                                "troublesome",
+                                "vengeful"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to's hasty attack spoiled cat_from's patrol's chance to steal a fox's prey. cat_from wasn't happy with cat_to."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "condition": [
+                            "small_bite_injury"
+                        ],
+                        "scar_history": "m_c carries a scar from a fight with a red fox.",
+                        "death_history": "m_c died from a red fox bite."
                     }
                 ]
             },
