@@ -113,7 +113,7 @@ class DebugMenu(UIWindow):
                 continue
 
             if cmd.bypass_conjoined_strings:
-                args = raw_command.strip().split(' ')[1:]
+                args = raw_command.strip().split(" ")[1:]
 
             while len(args) > 0 and len(cmd.sub_commands) > 0:
                 command_found = False
