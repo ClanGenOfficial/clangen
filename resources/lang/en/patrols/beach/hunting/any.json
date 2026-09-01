@@ -6028,7 +6028,7 @@
         ]
     },
     {
-        "event_id": "bch_hunt_random_siblings1warrior1applocked1",
+        "event_id": "bch_hunt_random_littlesiblingbonding1",
         "types": [
             "hunting"
         ],
@@ -6043,21 +6043,13 @@
             ],
             "apprentice": [
                 1,
-                6
-            ],
-            "all apprentices": [
-                1,
                 1
-            ],
-            "normal adult": [
-                1,
-                6
             ]
         },
         "relationship_constraint": [
             {
                 "cats_from": [
-                    "p_l"
+                    "patrol_cats"
                 ],
                 "cats_to": [
                     "patrol_cats"
@@ -6087,9 +6079,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 collects two b_tp_dl_p, and watches p_l take down a b_mp_a_s in an astonishing pounce. {PRONOUN/r_c1/subject/CAP}{VERB/r_c1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments r_c1's b_tp_dl_p, making r_c1 grimace at what's got to be fake praise."
+                    "r_c1 collects two b_tp_dl_p, and watches s_c0 take down a b_mp_a_s in an astonishing pounce. {PRONOUN/r_c1/subject/CAP}{VERB/r_c1/'re/'s} about to trot up to s_c0 to express admiration over the kill when s_c0 turns around and compliments r_c1's b_tp_dl_p, making r_c1 grimace at what's got to be fake praise."
                 ],
                 "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"],
+                        "status": ["-apprentice"]
+                    },
                     "r_c1": {
                         "status": [
                             "apprentice"
@@ -6100,7 +6096,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c1"
@@ -6116,7 +6112,7 @@
                     },
                     {
                         "cats_from": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "cats_to": [
                             "r_c1"
@@ -6223,7 +6219,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "p_l"
+                            "patrol_cats"
                         ],
                         "cats_to": [
                             "r_c1"
@@ -6635,226 +6631,6 @@
                     }
                 },
                 "exp_gained": 0,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "bch_hunt_random_siblings2to5warrior1applocked1",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 4,
-        "location": [
-            "beach"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                3,
-                6
-            ],
-            "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                1,
-                1
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
-        },
-        "relationship_constraint": [
-            {
-                "cats_from": [
-                    "p_l"
-                ],
-                "cats_to": [
-                    "patrol_cats"
-                ],
-                "mutual": false,
-                "constraints": [
-                    "siblings"
-                ]
-            }
-        ],
-        "involved_cats": {
-            "r_c1": {
-                "status": [
-                    "apprentice"
-                ]
-            }
-        },
-        "chance_of_success": 50,
-        "patrol_art": "hunt_general_intro",
-        "intro_strings": [
-            "r_c1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/r_c1/subject} {VERB/r_c1/do/does}. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn?"
-        ],
-        "decline_strings": [
-            "Actually, {PRONOUN/r_c1/subject}'d really rather be back in {PRONOUN/r_c1/poss} nest."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "r_c1 collects two b_tp_dl_p, and watches p_l take down a b_mp_a_s in an astonishing pounce and the rest of {PRONOUN/r_c1/poss} older siblings bring down two b_tp_a_p. {PRONOUN/r_c1/subject/CAP}{VERB/r_c1/'re/'s} about to trot up to p_l to express admiration over the kill when p_l turns around and compliments r_c1's b_tp_dl_p, making r_c1 grimace at what's got to be fake praise."
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 30,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c1"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from saw {PRONOUN/cat_from/poss} older sibling cat_to make an amazing catch."
-                        }
-                    },
-                    {
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "cats_to": [
-                            "r_c1"
-                        ],
-                        "values": [
-                            "comfort"
-                        ],
-                        "mutual": false,
-                        "amount": -3,
-                        "log": {
-                            "cats_from": "cat_from felt that cat_to was patronizing {PRONOUN/cat_from/object} while hunting together."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "Watching s_c0's displays of athleticism makes r_c1 feel small — surely {PRONOUN/r_c1/subject}'ll never be able to do that?"
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "s_c0": {
-                        "stat": {
-                            "skill": [
-                                "CLIMBER,1",
-                                "HUNTER,1",
-                                "RUNNER,1",
-                                "SWIMMER,1"
-                            ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
-                    }
-                },
-                "exp_gained": 30,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was impressed by cat_to's athleticism while hunting together."
-                        }
-                    },
-                    {
-                        "cats_from": [
-                            "s_c0"
-                        ],
-                        "cats_to": [
-                            "r_c1"
-                        ],
-                        "values": [
-                            "comfort"
-                        ],
-                        "mutual": false,
-                        "amount": -3,
-                        "log": {
-                            "cats_from": "cat_from felt intimidated by cat_to's skill on a hunting patrol together."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "r_c1 yawns {PRONOUN/r_c1/poss} way through the not overly successful hunting patrol."
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "r_c1"
-                        ],
-                        "values": [
-                            "respect"
-                        ],
-                        "mutual": false,
-                        "amount": -3,
-                        "log": {
-                            "cats_from": "cat_from took {PRONOUN/cat_from/poss} little sibling cat_to hunting, but {PRONOUN/cat_to/subject} didn't take it very seriously."
-                        }
-                    }
-                ],
                 "supply": [
                     {
                         "type": "freshkill",
