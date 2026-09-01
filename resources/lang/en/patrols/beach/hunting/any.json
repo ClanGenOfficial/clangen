@@ -6665,7 +6665,7 @@
         ]
     },
     {
-        "event_id": "bch_hunt_random_siblings2warriorslocked1",
+        "event_id": "bch_hunt_random_siblingswarriorhangout1",
         "types": [
             "hunting"
         ],
@@ -6676,7 +6676,7 @@
         "required_cat_types": {
             "patrol_cats": [
                 2,
-                2
+                6
             ],
             "all apprentices": [
                 -1,
@@ -6697,13 +6697,10 @@
                 ]
             }
         ],
-        "involved_cats": {
-            "r_c0": {}
-        },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
         "intro_strings": [
-            "Sometimes, it's just nice to hang out with {PRONOUN/r_c0/poss} sibling. The weather is perfect for a great hunt together!"
+            "Sometimes, it's just nice for the siblings to hang out together. The weather is perfect for a hunt!"
         ],
         "decline_strings": [
             "Actually, p_l would rather try a land hunt. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wave/waves} {PRONOUN/p_l/poss} siblings off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/disappear/disappears} into the inland undergrowth."
@@ -6744,16 +6741,22 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "A b_mp_a_s and two b_tp_dl_p is nothing to sniff at, as a hunting success, but stars above, being alone with r_c0 makes p_l feel like a kitten again. And not in the cute way either; in the chewing-on-tails, whiny, petty, immature way. Ugh."
+                    "A b_mp_a_s and two b_tp_dl_p is nothing to sniff at, as a hunting success, but stars above, being alone with r_c0 makes s_c0 feel like a kitten again. And not in the cute way either; in the chewing-on-tails, whiny, petty, immature way. Ugh."
                 ],
+                "involved_cats": {
+                    "r_c0": {},
+                    "s_c0": {
+                        "prior_abbreviation": ["-r_c0"]
+                    }
+                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol_cats"
+                            "r_c0"
                         ],
                         "cats_from": [
-                            "patrol_cats"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -6775,16 +6778,22 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The hunting patrol is perfectly successful and it matters not a whit to either of the warriors, because p_l makes a joke that {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is funny but that's always gotten on r_c0's nerves and suddenly they're both acting like apprentices again, snippy, immature, and irritable."
+                    "The hunting patrol is perfectly successful and it matters not a whit to them, because s_c0 makes a joke that {PRONOUN/s_c0/subject} {VERB/s_c0/think/thinks} is funny but that's always gotten on r_c0's nerves and suddenly they're both acting like apprentices again, snippy, immature, and irritable."
                 ],
+                "involved_cats": {
+                    "r_c0": {},
+                    "s_c0": {
+                        "prior_abbreviation": ["-r_c0"]
+                    }
+                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol_cats"
+                            "s_c0"
                         ],
                         "cats_from": [
-                            "patrol_cats"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -6806,7 +6815,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 nets them two healthy b_tp_a_p to take back to camp, but it only irritates {PRONOUN/s_c0/poss} sibling. r_c0 never even got the chance to even try for a pounce — {VERB/r_c0/are/is} {PRONOUN/r_c0/subject} only there to carry around s_c0's prey?"
+                    "s_c0 nets two healthy b_tp_a_p to take back to camp, but it only irritates {PRONOUN/s_c0/poss} sibling. s_c1 never even got the chance to even try for a pounce — {VERB/s_c1/are/is} {PRONOUN/r_c0/subject} only there to carry around s_c0's prey?"
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -6821,6 +6830,9 @@
                         "prior_abbreviation": [
                             "p_l"
                         ]
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": ["-s_c0"]
                     }
                 },
                 "exp_gained": 20,
@@ -6830,7 +6842,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -6852,8 +6864,11 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "There's just something nice about hanging out with another warrior who'll always be there for {PRONOUN/r_c0/object}, regardless of their similarities and differences. And they also bring back a good-sized b_mp_a_s with some b_tp_dl_p on the side for the fresh-kill pile."
+                    "There's just something nice about hanging out with family who'll always be there for {PRONOUN/r_c0/object}, regardless of their similarities and differences. And they also bring back a good-sized b_mp_a_s with some b_tp_dl_p on the side for the fresh-kill pile."
                 ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -6861,7 +6876,7 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "patrol_cats"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -6884,7 +6899,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 is proud of s_c0, watching {PRONOUN/s_c0/object} dart among the waves, foam bubbling along {PRONOUN/s_c0/poss} pelt."
+                    "s_c1 is proud of s_c0, watching {PRONOUN/s_c0/object} dart among the waves, foam bubbling along {PRONOUN/s_c0/poss} pelt."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -6894,8 +6909,11 @@
                             ]
                         },
                         "prior_abbreviation": [
-                            "p_l"
+                            "any"
                         ]
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": ["-s_c0"]
                     }
                 },
                 "exp_gained": 20,
@@ -6905,7 +6923,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -7486,298 +7504,6 @@
                         "condition": [
                             "diarrhea"
                         ]
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "bch_hunt_random_siblings3to6warriorslocked1",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 4,
-        "location": [
-            "beach"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                3,
-                6
-            ],
-            "all apprentices": [
-                -1,
-                -1
-            ]
-        },
-        "relationship_constraint": [
-            {
-                "cats_from": [
-                    "p_l"
-                ],
-                "cats_to": [
-                    "patrol_cats"
-                ],
-                "mutual": false,
-                "constraints": [
-                    "siblings"
-                ]
-            }
-        ],
-        "involved_cats": {
-            "r_c0": {}
-        },
-        "chance_of_success": 50,
-        "patrol_art": "hunt_general_intro",
-        "intro_strings": [
-            "Sometimes, r_c0 enjoys just hanging out with {PRONOUN/r_c0/poss} siblings. The weather is perfect for a great hunt together!"
-        ],
-        "decline_strings": [
-            "Actually, p_l would rather try fishing for prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wave/waves} {PRONOUN/p_l/poss} siblings off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "A scruffy b_mp_a_s, a bundle of b_tp_dl_p, and a patrol spent retreading all their favorite in-jokes... It's a good day."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from had fun hunting with {PRONOUN/cat_from/poss} sibling cat_to."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "There's just something nice about hanging out with other warriors who'll always be there for {PRONOUN/r_c0/object}, regardless of their similarities and differences. And they also bring back a good-sized b_mp_a_s with some b_tp_dl_p on the side for the fresh-kill pile."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "trust"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from was reminded of how important {PRONOUN/cat_from/poss} relationship with cat_to is while hunting together."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "The siblings are proud of s_c0, watching {PRONOUN/s_c0/object} dart among the waves, foam bubbling along {PRONOUN/s_c0/poss} pelt."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "skill": [
-                                "CLIMBER,1",
-                                "HUNTER,1"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was reminded of how talented {PRONOUN/cat_from/poss} sibling cat_to is while hunting together."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "A b_mp_a_s, three b_tp_dl_p, and a couple b_tp_a_p are nothing to sniff at, as a hunting success, but stars above, being alone with {PRONOUN/p_l/poss} siblings makes p_l feel like a kitten again. And not in the cute way either; in the chewing-on-tails, whiny, petty, immature way. Ugh."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from was unpleasantly reminded of kithood squabbles while hunting with cat_to."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "The hunting patrol is perfectly successful and it matters not a whit to any of the warriors, because p_l makes a joke that {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is funny but that's always gotten on r_c0's nerves and suddenly everyone's acting like apprentices again, snippy, immature, and irritable."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from was unpleasantly reminded of kithood squabbles while hunting with cat_to."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 nets them four healthy b_tp_a_p to take back to camp, but it only irritates {PRONOUN/s_c0/poss} siblings. r_c0 never even got the chance to even try for a pounce — {VERB/r_c0/are/is} {PRONOUN/r_c0/subject} only there to carry around s_c0's prey?"
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "skill": [
-                                "CLIMBER,1",
-                                "HUNTER,1",
-                                "RUNNER,1",
-                                "SWIMMER,1"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from felt like cat_to only brought {PRONOUN/cat_from/object} along on a hunting patrol to carry {PRONOUN/cat_to/poss} prey."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "It isn't a very successful hunt — they'll have to head out again for more soon."
-                ],
-                "exp_gained": 0,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "They don't manage anything like the number of catches they were all expecting to get — a bit disappointing, even if they're not entirely empty-pawed."
-                ],
-                "exp_gained": 0,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
                     }
                 ]
             }
