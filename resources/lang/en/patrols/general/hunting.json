@@ -10688,5 +10688,195 @@
                 ]
             }
         ]
-    }
+    },
+    {
+    "event_id": "farmhouse_hunting",
+    "types": ["hunting"],
+    "frequency": 3,
+    "location": [],
+    "season": [],
+    "tags": [],
+    "poi": {},
+    "required_cat_types": {
+        "patrol_cats": [3, 6]
+    },
+    "involved_cats": {
+            "p_l": {
+                "status": [],
+                "past_status": [],
+                "age": [],
+                "standing": {
+                    "group": [],
+                    "currently": [],
+                    "past": []
+                  },
+                "stat": {
+                    "skill": [],
+                    "trait": [],
+                    "must_have_both": false
+                },
+                "health": {
+                    "working": true,
+                    "condition": [],
+                    "must_be_congenital": false,
+                    "must_be_acquired": false
+                },
+                "backstory": []
+            }
+    },
+    "relationship_constraint": [
+            {
+                "cats_from": [],
+                "cats_to": [],
+                "mutual": false,
+                "constraints": []
+            }
+        ],
+    "patrol_temperament": [],
+    "other_clan_temperament": [],
+    "chance_of_success": 60,
+    "patrol_art": "fst_twolegplace.png",
+    "intro_strings": ["The patrol decides to hunt at an abandoned farmhouse at the edge of the border. Rumor has it, the mice are so plentiful they practically walk into your claws."],
+    "decline_strings": ["Upon seeing the old barn, they're worried about how rickety it looks and decide to hunt elsewhere,"],
+    "success_outcomes": [
+        {
+                "frequency": 3,
+                "strings": [
+                    "Not only are they plentiful but the mice are dumb as well. The cats dont return home until the cats can't hold a single mouse more."
+                ],
+                "exp_gained": 30,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+        {
+                "frequency": 3,
+                "strings": [
+                    "The cats work together to scare the mice towards each other to not only practice teamwork but to also make the already easy hunt even more fun."
+                ],
+                "exp_gained": 30,
+            "relationship_changes": [
+            {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to's feel like they can rely on each other a little more to do their part."
+                        }
+                    }
+            ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+        {
+                "frequency": 3,
+                "strings": [
+                    "The mice are hard to rat out in all the hay but the patrol returns with plenty of mice to go around."
+                ],
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            }
+    ],
+    "fail_outcomes": [
+        {
+                "frequency": 3,
+                "strings": [
+                    "Whoever spread the rumor either lied or it was an old rumor as the barn reeks of loners and rouges. The decide to hunt elsewhere regretting listening to that old rumor."
+                ],
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ]
+            },
+        {
+                "frequency": 3,
+                "strings": [
+                    "Guess they should have expected others to hear about the rumor as well, the barn reeks of loners and rouges. The cats barely even have time to hunt before more start showing up."
+                ],
+                "exp_gained": 5,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ],
+            "meet": [
+        {
+            "cats": ["n_c0"]
+        }
+    ]
+        },
+        {
+            "frequency": 2,
+            "strings": [
+                "No way that rickety old barn is <i>that</i> plentiful, right? Something like that would be overrun with cats already. The cats decide to hunt elsewhere for the day."
+            ],
+            "exp_gained": 0
+        },
+        {
+                "frequency": 1,
+                "strings": [
+                    "The cats don't even reach the barn before they're intercepted by a rather territorial looking wild hog. Hogs are not to be trifled with and the patrol returns home empty handed."
+                ],
+                "exp_gained": 0
+            },
+        {
+                "frequency": 1,
+                "strings": [
+                    "The cats don't even reach the barn before they're intercepted by a rather territorial looking wild hog. The hog doesnt look that tough, the patrol decides and attempt to take it down but no cat expected how tough it actually was."
+                ],
+                "exp_gained": 0,
+            "death": [
+                    {
+                        "cats": [
+                            "some_patrol"
+                        ],
+                        "history": "This cat was killed while fighting a wild hog."
+                    }
+                ],
+            "condition": [
+                    {
+                        "cats": [
+                            "patrol_cats"
+                        ],
+                        "condition": [
+                            "broken bone",
+                            "broken jaw",
+                            "broken back",
+                            "head damage",
+                            "mangled leg",
+                            "mangled tail"
+                        ],
+                        "scar_history": "m_c carries a scar from fighting a wild hog.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} wounds after battling a wild hog."
+                    }
+                ]
+
+            }
+    ]
+}
 ]
