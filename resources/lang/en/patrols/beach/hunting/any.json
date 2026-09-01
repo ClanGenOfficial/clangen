@@ -6974,7 +6974,7 @@
         ]
     },
     {
-        "event_id": "bch_hunt_random_siblings2warriorslocked3",
+        "event_id": "bch_hunt_random_siblingshuntingparty1",
         "types": [
             "hunting"
         ],
@@ -6985,9 +6985,9 @@
         "required_cat_types": {
             "patrol_cats": [
                 2,
-                2
+                6
             ],
-            "all apprentices": [
+            "apprentice": [
                 -1,
                 -1
             ]
@@ -6995,7 +6995,7 @@
         "relationship_constraint": [
             {
                 "cats_from": [
-                    "p_l"
+                    "patrol_cats"
                 ],
                 "cats_to": [
                     "patrol_cats"
@@ -7012,7 +7012,7 @@
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
         "intro_strings": [
-            "The sun's out, and r_c0 has been assigned a moderately tolerable hunting partner — {PRONOUN/r_c0/poss} sibling!"
+            "The sun's out, and p_l has been assigned a moderately tolerable hunting patrol — {PRONOUN/p_l/poss} family!"
         ],
         "decline_strings": [
             "Cancel that — a border patrol needs backup."
@@ -7051,9 +7051,9 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 3,
                 "strings": [
-                    "It's been a while since they've been on a patrol alone together, and after they catch a couple b_tp_a_p for the fresh-kill pile r_c0 spends a bit just chasing p_l around the seashore, batting at each other in a moment of silliness."
+                    "It's been a while since they've been on a patrol alone together, and after they catch a couple b_tp_a_p for the fresh-kill pile the siblings spend a bit of time just chasing each other around the seashore, batting at one another in a moment of silliness."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -7085,7 +7085,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 jokes that {PRONOUN/r_c0/subject} can't possibly be related to s_c0 — clearly s_c0 was born from reef sharks, not cats, with the way {PRONOUN/s_c0/subject} {VERB/s_c0/glide/glides} through the water."
+                    "s_c1 jokes that {PRONOUN/s_c1/subject} can't possibly be related to s_c0 — clearly s_c0 was born from reef sharks, not cats, with the way {PRONOUN/s_c0/subject} {VERB/s_c0/glide/glides} through the water."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -7095,8 +7095,11 @@
                             ]
                         },
                         "prior_abbreviation": [
-                            "p_l"
+                            "any"
                         ]
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": ["-s_c0"]
                     }
                 },
                 "exp_gained": 20,
@@ -7123,7 +7126,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -7160,8 +7163,13 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "r_c0 sees a fish {PRONOUN/r_c0/subject}'d like for the fresh-kill pile, but while perched on a rock setting up a good pounce, a rogue wave washes {PRONOUN/r_c0/object} into the ocean. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/bob/bobs} to the surface and splutter {PRONOUN/r_c0/poss} way to shore, but {PRONOUN/r_c0/poss} breath comes short and wheezing after the dunking. Fleas and ticks!"
+                    "s_c0 sees a fish {PRONOUN/s_c0/subject}'d like for the fresh-kill pile, but while perched on a rock setting up a good pounce, a rogue wave washes {PRONOUN/s_c0/object} into the ocean. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/bob/bobs} to the surface and splutter {PRONOUN/s_c0/poss} way to shore, but {PRONOUN/s_c0/poss} breath comes short and wheezing after the dunking. Fleas and ticks!"
                 ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
                 "exp_gained": 0,
                 "supply": [
                     {
@@ -7172,7 +7180,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "condition": [
                             "water in their lungs"
@@ -7504,216 +7512,6 @@
                         "condition": [
                             "diarrhea"
                         ]
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "bch_hunt_random_siblings3to6warriorslocked3",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 4,
-        "location": [
-            "beach"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                3,
-                6
-            ],
-            "all apprentices": [
-                -1,
-                -1
-            ]
-        },
-        "relationship_constraint": [
-            {
-                "cats_from": [
-                    "p_l"
-                ],
-                "cats_to": [
-                    "patrol_cats"
-                ],
-                "mutual": false,
-                "constraints": [
-                    "siblings"
-                ]
-            }
-        ],
-        "involved_cats": {
-            "r_c0": {}
-        },
-        "chance_of_success": 50,
-        "patrol_art": "hunt_general_intro",
-        "intro_strings": [
-            "The sun's out, and r_c0 has been assigned a moderately tolerable hunting patrol — {PRONOUN/r_c0/poss} siblings!"
-        ],
-        "decline_strings": [
-            "Cancel that — a border patrol needs backup."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "Watching r_c0 execute a fantastic leap to bring down a b_mp_a_s, p_l smiles. Does r_c0 remember the time {PRONOUN/r_c0/subject} tried to do that as a kitten, and stood on {PRONOUN/r_c0/poss} own tail? The siblings laugh about it together as they move on to the next hunting ground."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_to and cat_from reminisced on old funny memories while hunting together."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "It's been a while since they've been on a patrol alone together, and after they catch a couple b_tp_a_p and a b_mp_a_s for the fresh-kill pile, r_c0 spends a bit just chasing {PRONOUN/r_c0/poss} siblings around the beach, batting at each other in a moment of silliness."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to got playful on a hunting patrol together."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "r_c0 jokes that {PRONOUN/r_c0/subject} can't possibly be related to s_c0 — clearly s_c0 was born from reef sharks, not cats, with the way {PRONOUN/s_c0/subject} {VERB/s_c0/glide/glides} through the water."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "skill": [
-                                "SWIMMER,1"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_to and cat_from enjoyed a successful hunting patrol along the coastline together."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "cats_from": [
-                            "r_c0"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was impressed by cat_to's agility in the water while hunting together."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "Sometimes, the prey just doesn't run, and today is one of those times."
-                ],
-                "exp_gained": 0,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ]
-            },
-            {
-                "frequency": 2,
-                "strings": [
-                    "r_c0 sees a fish {PRONOUN/r_c0/subject}'d like for the fresh-kill pile, but while perched on a rock setting up a good pounce, a rogue wave washes {PRONOUN/r_c0/object} into the ocean. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/bob/bobs} to the surface and splutter {PRONOUN/r_c0/poss} way to shore, but {PRONOUN/r_c0/poss} breath comes short and wheezing after the dunking. Fleas and ticks!"
-                ],
-                "exp_gained": 0,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ],
-                "condition": [
-                    {
-                        "cats": [
-                            "r_c0"
-                        ],
-                        "condition": [
-                            "water in their lungs"
-                        ],
-                        "death_history": "m_c died of water in {PRONOUN/m_c/poss} lungs after a rogue wave struck {PRONOUN/m_c/object} during a hunt."
                     }
                 ]
             }
