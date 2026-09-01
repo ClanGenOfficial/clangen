@@ -348,7 +348,8 @@ class TestOutcomeExecution(unittest.TestCase):
             )
 
             self.patrol_class._add_patrol_cats([war1])
-            self.patrol_class._get_valid_patrol([patrol])
+            self.patrol_class.patrol_event = self.patrol_class._get_valid_patrol([patrol])
+            self.patrol_class._create_needed_cats()
             self.patrol_class._check_outcome_constraints(
                 patrol.success_outcomes[0], "success"
             )
@@ -377,7 +378,8 @@ class TestOutcomeExecution(unittest.TestCase):
                 fail_outcomes=[{"strings": ["test"]}],
             )
             self.patrol_class._add_patrol_cats([war1])
-            self.patrol_class._get_valid_patrol([patrol])
+            self.patrol_class.patrol_event = self.patrol_class._get_valid_patrol([patrol])
+            self.patrol_class._create_needed_cats()
             self.patrol_class._check_outcome_constraints(
                 patrol.success_outcomes[0], "success"
             )
