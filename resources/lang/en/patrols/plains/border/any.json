@@ -996,7 +996,7 @@
                         ],
                         "amount": -30,
                         "log": {
-                            "cats_from": "cat_to's scent was found on r_c's cold body."
+                            "cats_from": "cat_to's scent was found on r_c0's cold body."
                         }
                     }
                 ],
@@ -1755,7 +1755,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It turns out they were r_c's own pawprints... r_c0 huffs with embarrassment, suddenly grateful that their patrol is so small. Fewer eyes watching that embarrassing moment."
+                    "It turns out they were r_c0's own pawprints... r_c0 huffs with embarrassment, suddenly grateful that their patrol is so small. Fewer eyes watching that embarrassing moment."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -1790,7 +1790,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "It turns out they were r_c's own pawprints... r_c0 huffs with embarrassment and can't meet the eyes of the rest of the patrol."
+                    "It turns out they were r_c0's own pawprints... r_c0 huffs with embarrassment and can't meet the eyes of the rest of the patrol."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [

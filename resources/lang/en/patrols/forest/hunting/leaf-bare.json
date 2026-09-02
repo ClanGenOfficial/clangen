@@ -621,7 +621,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from's patrol failed to keep warm during a snowstorm and they ended up carrying r_c's body home."
+                            "cats_from": "cat_from's patrol failed to keep warm during a snowstorm and they ended up carrying r_c0's body home."
                         }
                     }
                 ],
@@ -1454,7 +1454,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The cats sneak into the hunting grounds, ears rotating as different spots catch their interest. r_c's suggestion proves to be a fruitful hunting ground, one that c_n hasn't used for a while and whose creatures (as predicted, nearly all mice) have lost their edge of wariness. It's a good hunt."
+                    "The cats sneak into the hunting grounds, ears rotating as different spots catch their interest. r_c0's suggestion proves to be a fruitful hunting ground, one that c_n hasn't used for a while and whose creatures (as predicted, nearly all mice) have lost their edge of wariness. It's a good hunt."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -1531,7 +1531,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames {PRONOUN/r_c0/object} for it."
+                    "Ah. r_c0's suggested hunting grounds don't work out, not that anyone blames {PRONOUN/r_c0/object} for it."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -2691,7 +2691,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "This is bad. When {PRONOUN/p_l/subject} {VERB/p_l/find/finds} r_c0, there's barely any warmth left in {PRONOUN/r_c0/poss} pelt, and p_l can't wake {PRONOUN/r_c0/object}. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} left with an impossible decision — leave r_c0 there in the snow, or risk everyone else. p_l chooses r_c0, and the warmth of {PRONOUN/r_c0/poss} Clanmates curling around {PRONOUN/r_c0/object} saves r_c's life, though none of the patrol can escape the consequences of the cold."
+                    "This is bad. When {PRONOUN/p_l/subject} {VERB/p_l/find/finds} r_c0, there's barely any warmth left in {PRONOUN/r_c0/poss} pelt, and p_l can't wake {PRONOUN/r_c0/object}. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} left with an impossible decision — leave r_c0 there in the snow, or risk everyone else. p_l chooses r_c0, and the warmth of {PRONOUN/r_c0/poss} Clanmates curling around {PRONOUN/r_c0/object} saves r_c0's life, though none of the patrol can escape the consequences of the cold."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -3064,7 +3064,7 @@
         "chance_of_success": 40,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
         "intro_strings": [
-            "p_l leads the patrol towards the abandoned Twoleg nest, listening to r_c's plan. Rats were seen hiding inside to protect themselves from the snow and frost. Perhaps it would be a perfect hunting spot?"
+            "p_l leads the patrol towards the abandoned Twoleg nest, listening to r_c0's plan. Rats were seen hiding inside to protect themselves from the snow and frost. Perhaps it would be a perfect hunting spot?"
         ],
         "decline_strings": [
             "The other cats disagree with such a risk and resume their normal hunting patrol."
@@ -4105,7 +4105,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Any prey is worth pursuing in leaf-bare, and with the lost mouse, the patrol <i>really</i> doesn't want to go home empty-pawed. They follow r_c's mystery scent, ripping open a half-rotten log at the end of it. Inside, the brumating lizard won't wake for anything, not even a predator, and they're able to bring their slightly odd prize home without trouble."
+                    "Any prey is worth pursuing in leaf-bare, and with the lost mouse, the patrol <i>really</i> doesn't want to go home empty-pawed. They follow r_c0's mystery scent, ripping open a half-rotten log at the end of it. Inside, the brumating lizard won't wake for anything, not even a predator, and they're able to bring their slightly odd prize home without trouble."
                 ],
                 "exp_gained": 15,
                 "relationship_changes": [
@@ -5345,7 +5345,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c's anxiety doesn't help anyone's stress levels. It's hard to catch prey in leaf-bare, harder still to do so distracted — so the patrol doesn't bring much home, further heightening their worries."
+                    "r_c0's anxiety doesn't help anyone's stress levels. It's hard to catch prey in leaf-bare, harder still to do so distracted — so the patrol doesn't bring much home, further heightening their worries."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [

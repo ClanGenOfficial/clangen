@@ -625,7 +625,7 @@
                         ],
                         "condition": [
                             "snake bite",
-                            "poisoned"
+                            "venom sickness"
                         ],
                         "scar_history": "m_c was scarred by a rattlesnake.",
                         "death_history": "m_c succumbed to a rattlesnake's venom."

@@ -1,4 +1,3 @@
-import os
 import unittest
 
 from scripts.cat.factories.typed_dicts import StatusDict
@@ -14,8 +13,6 @@ from scripts.cat.factories.test_cat_factory import TestCatFactory
 from scripts.cat_relations.enums import rel_type_tiers
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Relationship, Cat
 from scripts.cat.skills import SkillPath, Skill

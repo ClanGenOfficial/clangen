@@ -1933,7 +1933,7 @@
                             "big_bite_injury",
                             "scrapes"
                         ],
-                        "scar_history": "Courting coyotes scarred r_c's pelt.",
+                        "scar_history": "Courting coyotes scarred r_c0's pelt.",
                         "death_history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."
                     },
                     {
@@ -1943,7 +1943,7 @@
                         "condition": [
                             "scrapes"
                         ],
-                        "scar_history": "Courting coyotes scarred r_c's pelt.",
+                        "scar_history": "Courting coyotes scarred r_c0's pelt.",
                         "death_history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."
                     }
                 ]
@@ -1996,7 +1996,7 @@
                         "condition": [
                             "bite-wound"
                         ],
-                        "scar_history": "Courting coyotes scarred r_c's pelt.",
+                        "scar_history": "Courting coyotes scarred r_c0's pelt.",
                         "death_history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."
                     },
                     {
@@ -2006,7 +2006,7 @@
                         "condition": [
                             "blood loss"
                         ],
-                        "scar_history": "Courting coyotes scarred r_c's pelt.",
+                        "scar_history": "Courting coyotes scarred r_c0's pelt.",
                         "death_history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."
                     }
                 ]

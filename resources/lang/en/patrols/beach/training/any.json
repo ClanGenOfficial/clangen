@@ -266,7 +266,7 @@
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/bch_train_stuck_Wr",
         "intro_strings": [
-            "As {PRONOUN/r_c0/subject} {VERB/r_c0/lag/lags} behind on patrol, the dune r_c's crossing shifts beneath {PRONOUN/r_c0/poss} paws. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly for safe footing — just as the sand caves in beneath {PRONOUN/r_c0/object} and the world goes dark."
+            "As {PRONOUN/r_c0/subject} {VERB/r_c0/lag/lags} behind on patrol, the dune r_c0's crossing shifts beneath {PRONOUN/r_c0/poss} paws. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly for safe footing — just as the sand caves in beneath {PRONOUN/r_c0/object} and the world goes dark."
         ],
         "decline_strings": [
             "Thankfully, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} on the edge of the obstruction and {VERB/r_c0/wriggle/wriggles} {PRONOUN/r_c0/poss} way clear."
@@ -648,7 +648,7 @@
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/bch_train_stuck_Wr",
         "intro_strings": [
-            "As r_c0 trails behind p_l, the dune {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} crossing shifts beneath r_c's paws. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly for safe footing — just as the sand caves in beneath {PRONOUN/r_c0/object} and the world goes dark."
+            "As r_c0 trails behind p_l, the dune {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} crossing shifts beneath r_c0's paws. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly for safe footing — just as the sand caves in beneath {PRONOUN/r_c0/object} and the world goes dark."
         ],
         "decline_strings": [
             "Thankfully, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} on the edge of the obstruction and {VERB/r_c0/wriggle/wriggles} {PRONOUN/r_c0/poss} way clear."
@@ -3861,7 +3861,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l flashes r_c0 a playful look and leaps smoothly into the water. When p_l emerges from the water, {PRONOUN/p_l/poss} slicked fur clinging to {PRONOUN/p_l/poss} muscles, r_c0 can't help but admire p_l for {PRONOUN/p_l/poss} strength. With the way r_c's heart is fluttering, it may not just be p_l's strength {PRONOUN/r_c0/subject} {VERB/r_c0/admire/admires}. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/brush/brushes} it aside and {VERB/r_c0/plunge/plunges} in after {PRONOUN/p_l/object}."
+                    "p_l flashes r_c0 a playful look and leaps smoothly into the water. When p_l emerges from the water, {PRONOUN/p_l/poss} slicked fur clinging to {PRONOUN/p_l/poss} muscles, r_c0 can't help but admire p_l for {PRONOUN/p_l/poss} strength. With the way r_c0's heart is fluttering, it may not just be p_l's strength {PRONOUN/r_c0/subject} {VERB/r_c0/admire/admires}. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/brush/brushes} it aside and {VERB/r_c0/plunge/plunges} in after {PRONOUN/p_l/object}."
                 ],
                 "exp_gained": 5,
                 "relationship_changes": [
@@ -3886,7 +3886,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "Silence meets {PRONOUN/p_l/poss} question, and just as p_l is about to turn and ask again, r_c0 shoves {PRONOUN/p_l/object} into the water. Spluttering from the cold saltwater, p_l finds it quite difficult to scowl as though {PRONOUN/p_l/subject} {VERB/p_l/mean/means} it, captivated by the sound of r_c's joyous laughter and the sunlight catching on {PRONOUN/r_c0/poss} pelt in just the right way."
+                    "Silence meets {PRONOUN/p_l/poss} question, and just as p_l is about to turn and ask again, r_c0 shoves {PRONOUN/p_l/object} into the water. Spluttering from the cold saltwater, p_l finds it quite difficult to scowl as though {PRONOUN/p_l/subject} {VERB/p_l/mean/means} it, captivated by the sound of r_c0's joyous laughter and the sunlight catching on {PRONOUN/r_c0/poss} pelt in just the right way."
                 ],
                 "exp_gained": 5,
                 "relationship_changes": [

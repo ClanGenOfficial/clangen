@@ -829,7 +829,7 @@
         "chance_of_success": 20,
         "patrol_art": "train_general_intro",
         "intro_strings": [
-            "As {PRONOUN/r_c0/subject} {VERB/r_c0/lag/lags} behind on patrol, the ground trembles beneath r_c's paws. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly for safe footing — just as the earth caves in beneath {PRONOUN/r_c0/object} and the world goes dark."
+            "As {PRONOUN/r_c0/subject} {VERB/r_c0/lag/lags} behind on patrol, the ground trembles beneath r_c0's paws. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly for safe footing — just as the earth caves in beneath {PRONOUN/r_c0/object} and the world goes dark."
         ],
         "decline_strings": [
             "Thankfully, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} on the edge of the obstruction and {VERB/r_c0/wriggle/wriggles} {PRONOUN/r_c0/poss} way clear."
@@ -922,7 +922,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Without letting {PRONOUN/s_c0/self} panic, s_c0 looks around for anything that could help. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/snap/snaps} a branch off a nearby scrub and {VERB/s_c0/clench/clenches} it between {PRONOUN/s_c0/poss} teeth, offering it to r_c0. Between r_c's scrambling and s_c0's determination, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} pulled free of the quagmire unharmed."
+                    "Without letting {PRONOUN/s_c0/self} panic, s_c0 looks around for anything that could help. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/snap/snaps} a branch off a nearby scrub and {VERB/s_c0/clench/clenches} it between {PRONOUN/s_c0/poss} teeth, offering it to r_c0. Between r_c0's scrambling and s_c0's determination, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} pulled free of the quagmire unharmed."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1272,7 +1272,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Without letting {PRONOUN/s_c0/self} panic, s_c0 looks around for anything that could help. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/snap/snaps} a branch off a nearby scrub and {VERB/s_c0/clench/clenches} it between {PRONOUN/s_c0/poss} teeth, offering it to r_c0. Between r_c's scrambling and s_c0's determination, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} pulled free of the quagmire unharmed, r_c0 a little breathless at the display."
+                    "Without letting {PRONOUN/s_c0/self} panic, s_c0 looks around for anything that could help. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/snap/snaps} a branch off a nearby scrub and {VERB/s_c0/clench/clenches} it between {PRONOUN/s_c0/poss} teeth, offering it to r_c0. Between r_c0's scrambling and s_c0's determination, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} pulled free of the quagmire unharmed, r_c0 a little breathless at the display."
                 ],
                 "involved_cats": {
                     "s_c0": {

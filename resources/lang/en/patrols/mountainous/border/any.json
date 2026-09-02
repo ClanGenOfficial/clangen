@@ -766,7 +766,7 @@
             "On their way to mark the far corners of their mountain, r_c0 starts telling a story of {PRONOUN/r_c0/poss} ancestors to keep every cat entertained."
         ],
         "decline_strings": [
-            "A shadow flies over them, and r_c's storytelling is forgotten as the patrol makes sure it wasn't an eagle."
+            "A shadow flies over them, and r_c0's storytelling is forgotten as the patrol makes sure it wasn't an eagle."
         ],
         "success_outcomes": [
             {

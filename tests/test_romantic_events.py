@@ -1,4 +1,3 @@
-import os
 import unittest
 from random import Random
 
@@ -11,9 +10,6 @@ from scripts.clan import Clan
 from scripts.game_structure import game
 from scripts.game_structure.game import Switch
 from scripts.game_structure.game.switches import switch_set_value
-
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Relationship
 from scripts.events_module.relationship import romantic_events
@@ -40,7 +36,7 @@ class MovingOn(unittest.TestCase):
         Check if a cat will move on too soon from dead mate
         """
         self.cat2.die()
-        romantic_events._handle_moving_on(self.cat1)
+        romantic_events._handle_moving_on(self.cat1, disable_random=True)
         self.assertIn(
             self.cat2.ID, self.cat1.mate, msg="cat2 should still be a mate of cat1"
         )
@@ -50,7 +46,7 @@ class MovingOn(unittest.TestCase):
         Check if the cat will move on too soon from missing mate
         """
         self.cat2.status.leave_group(CatSocial.ROGUE)
-        romantic_events._handle_moving_on(self.cat1)
+        romantic_events._handle_moving_on(self.cat1, disable_random=True)
 
         self.assertIn(
             self.cat2.ID, self.cat1.mate, msg="cat2 should still be a mate of cat1"
@@ -62,7 +58,7 @@ class MovingOn(unittest.TestCase):
         """
         self.cat2.die()
         get_ill(cat=self.cat1, illness_name="grief stricken")
-        romantic_events._handle_moving_on(self.cat1)
+        romantic_events._handle_moving_on(self.cat1, disable_random=True)
 
         self.assertIn(
             self.cat2.ID, self.cat1.mate, msg="cat2 should still be a mate of cat1"
@@ -74,7 +70,7 @@ class MovingOn(unittest.TestCase):
         """
         self.cat2.die()
         self.cat2.status.change_current_moons_as(4)
-        romantic_events._handle_moving_on(self.cat1)
+        romantic_events._handle_moving_on(self.cat1, disable_random=True)
 
         self.assertNotIn(
             self.cat2.ID, self.cat1.mate, msg="cat2 should no longer be a mate of cat1"
@@ -86,7 +82,7 @@ class MovingOn(unittest.TestCase):
         """
         self.cat2.status.leave_group(CatSocial.ROGUE)
         self.cat2.status.change_current_moons_as(4)
-        romantic_events._handle_moving_on(self.cat1)
+        romantic_events._handle_moving_on(self.cat1, disable_random=True)
 
         self.assertNotIn(
             self.cat2.ID, self.cat1.mate, msg="cat2 should no longer be a mate of cat1"
@@ -125,7 +121,7 @@ class BreakingUp(unittest.TestCase):
         """
         Test that cats will break up when their relationship is below the threshold
         """
-        romantic_events._attempt_breakup(self.cat1, self.cat2)
+        romantic_events._attempt_breakup(self.cat1, self.cat2, disable_random=True)
         self.assertNotIn(
             self.cat2.ID, self.cat1.mate, msg="cat2 should no longer be a mate of cat1"
         )
@@ -240,7 +236,9 @@ class MutualLove(unittest.TestCase):
             cat_from=self.cat2, cat_to=self.cat1, romance=20, like=30, comfort=20
         )
 
-        romantic_events._attempt_mutual_interest_mates(self.cat1, self.cat2)
+        romantic_events._attempt_mutual_interest_mates(
+            self.cat1, self.cat2, disable_random=True
+        )
 
         self.assertIn(self.cat2.ID, self.cat1.mate, msg="Cats should have mated")
 
@@ -255,7 +253,9 @@ class MutualLove(unittest.TestCase):
             cat_from=self.cat2, cat_to=self.cat1, romance=0, like=50, comfort=20
         )
 
-        romantic_events._attempt_mutual_interest_mates(self.cat1, self.cat2)
+        romantic_events._attempt_mutual_interest_mates(
+            self.cat1, self.cat2, disable_random=True
+        )
 
         self.assertIn(self.cat2.ID, self.cat1.mate, msg="Cats should have mated")
 

@@ -608,7 +608,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from's patrol failed to keep warm during a snowstorm and they ended up carrying r_c's body home."
+                            "cats_from": "cat_from's patrol failed to keep warm during a snowstorm and they ended up carrying r_c0's body home."
                         }
                     }
                 ],
@@ -2055,7 +2055,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames {PRONOUN/r_c0/object} for it."
+                    "Ah. r_c0's suggested hunting grounds don't work out, not that anyone blames {PRONOUN/r_c0/object} for it."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [

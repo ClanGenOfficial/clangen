@@ -779,7 +779,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 cautiously approaches the Twoleg kits, intrigued by their colorful pelts. To r_c's surprise, one of the tiny Twolegs offers {PRONOUN/r_c0/object} a strange, shiny object. It doesn't smell exactly like prey, but r_c0 decides to take it back to the camp for further investigation."
+                    "r_c0 cautiously approaches the Twoleg kits, intrigued by their colorful pelts. To r_c0's surprise, one of the tiny Twolegs offers {PRONOUN/r_c0/object} a strange, shiny object. It doesn't smell exactly like prey, but r_c0 decides to take it back to the camp for further investigation."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -1266,7 +1266,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "While they are bickering, r_c0 trips, and p_l snickers, earning r_c's ire."
+                    "While they are bickering, r_c0 trips, and p_l snickers, earning r_c0's ire."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -1865,7 +1865,7 @@
                         "amount": 8,
                         "mutual": true,
                         "log": {
-                            "cats_from": "cat_from and cat_to had lots of fun splashing each other despite p_l and r_c's bad moods."
+                            "cats_from": "cat_from and cat_to had lots of fun splashing each other despite p_l and r_c0's bad moods."
                         }
                     },
                     {
@@ -2186,7 +2186,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "poisoned"
+                            "venom sickness"
                         ],
                         "scar_history": "m_c was scarred by a snake bite.",
                         "death_history": "m_c died from the bite of a venomous snake."

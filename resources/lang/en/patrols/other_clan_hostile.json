@@ -2408,7 +2408,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l saved r_c's life when {PRONOUN/r_c0/subject} {VERB/r_c0/were/was} attacked by a rogue. r_c0 couldn't help but feel grateful."
+                            "cats_from": "p_l saved r_c0's life when {PRONOUN/r_c0/subject} {VERB/r_c0/were/was} attacked by a rogue. r_c0 couldn't help but feel grateful."
                         }
                     }
                 ],
@@ -2468,7 +2468,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "s_c0 deliberately poked at r_c's insecurities. Even though {PRONOUN/s_c0/subject} apologized, r_c0 avoids {PRONOUN/s_c0/object} later."
+                            "cats_from": "s_c0 deliberately poked at r_c0's insecurities. Even though {PRONOUN/s_c0/subject} apologized, r_c0 avoids {PRONOUN/s_c0/object} later."
                         }
                     },
                     {
@@ -2485,7 +2485,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "s_c0 deliberately poked at r_c's insecurities, but immediately regretted it when r_c's feelings were clearly hurt. s_c0 reconsiders {PRONOUN/s_c0/poss} if {PRONOUN/s_c0/poss} criticisms are truly warranted."
+                            "cats_from": "s_c0 deliberately poked at r_c0's insecurities, but immediately regretted it when r_c0's feelings were clearly hurt. s_c0 reconsiders {PRONOUN/s_c0/poss} if {PRONOUN/s_c0/poss} criticisms are truly warranted."
                         }
                     }
                 ]
@@ -2730,7 +2730,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_ambush_WrWr",
                 "strings": [
-                    "s_c0, increasingly irritated by r_c's presence, succumbs to unsettling whispers urging violence. In a moment of fury, s_c0 snaps, succumbing to the dark whispers and ending r_c's existence."
+                    "s_c0, increasingly irritated by r_c0's presence, succumbs to unsettling whispers urging violence. In a moment of fury, s_c0 snaps, succumbing to the dark whispers and ending r_c0's existence."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -7827,7 +7827,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l has felt the glares r_c0 has sent {PRONOUN/p_l/poss} way all morning, and given them back just as vehemently when r_c's own back is turned. But when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} the shadow of a o_c_n warrior falling on r_c0, {PRONOUN/p_l/subject} {VERB/p_l/react/reacts} without thought, leaping forward, claws ripping into the enemy's back and flipping them off r_c0 with a ferocious snarl."
+                    "p_l has felt the glares r_c0 has sent {PRONOUN/p_l/poss} way all morning, and given them back just as vehemently when r_c0's own back is turned. But when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} the shadow of a o_c_n warrior falling on r_c0, {PRONOUN/p_l/subject} {VERB/p_l/react/reacts} without thought, leaping forward, claws ripping into the enemy's back and flipping them off r_c0 with a ferocious snarl."
                 ],
                 "involved_cats": {
                     "r_c0": {}

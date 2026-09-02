@@ -1384,7 +1384,7 @@
         "chance_of_success": 50,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
         "intro_strings": [
-            "p_l leads the patrol towards the abandoned Twoleg nest, listening to r_c's plan. Rats were seen hiding inside to protect themselves from the chill of leaf-fall's winds. Perhaps it would be a perfect hunting spot?"
+            "p_l leads the patrol towards the abandoned Twoleg nest, listening to r_c0's plan. Rats were seen hiding inside to protect themselves from the chill of leaf-fall's winds. Perhaps it would be a perfect hunting spot?"
         ],
         "decline_strings": [
             "The other cats disagree with such a risk and resume their normal hunting patrol."
@@ -2698,7 +2698,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The cats sneak into the hunting grounds, ears rotating as different spots catch their interest. r_c's suggestion proves to be a fruitful hunting ground, one that c_n hasn't used for a while and whose creatures (as predicted, nearly all mice) have lost their edge of wariness. It's a good hunt."
+                    "The cats sneak into the hunting grounds, ears rotating as different spots catch their interest. r_c0's suggestion proves to be a fruitful hunting ground, one that c_n hasn't used for a while and whose creatures (as predicted, nearly all mice) have lost their edge of wariness. It's a good hunt."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -2775,7 +2775,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames {PRONOUN/r_c0/object} for it."
+                    "Ah. r_c0's suggested hunting grounds don't work out, not that anyone blames {PRONOUN/r_c0/object} for it."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
