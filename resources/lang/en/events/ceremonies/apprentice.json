@@ -1112,7 +1112,7 @@
               }
             },
     "strings": [
-        "<i>Immediately</i> upon being made an apprentice, m_c turns to {PRONOUN/m_c/poss} Clanmates, explaining <i>exactly</i> how {PRONOUN/m_c/subject} {VERB/m_c/had/has} planned {PRONOUN/m_c/poss} apprenticehood to play out."
+        "<i>Immediately</i> upon being made an apprentice, m_c turns to {PRONOUN/m_c/poss} Clanmates, explaining <i>exactly</i> how {PRONOUN/m_c/subject} plan for {PRONOUN/m_c/poss} apprenticehood to play out."
     ]
     },
     {
@@ -1218,7 +1218,7 @@
               }
             },
     "strings": [
-        "m_c doesn't seem to care much about the ability to leave camp or chance to fight trespassers. Instead, {PRONOUN/m_c/subject} ends {PRONOUN/m_c/poss} apprentice ceremony by asking {PRONOUN/m_c/poss} Clanmates about chores {PRONOUN/m_c/subject} can help with."
+        "m_c doesn't seem to care much about the ability to leave camp or chance to fight trespassers, nor do {PRONOUn/m_c/subject} seem intimidated by {PRONOUn/m_c/poss} lack of a mentor. Instead, {PRONOUN/m_c/subject} ends {PRONOUN/m_c/poss} apprentice ceremony by asking {PRONOUN/m_c/poss} Clanmates about chores {PRONOUN/m_c/subject} can help with."
     ]
     },
     {
@@ -1236,8 +1236,7 @@
               }
             },
     "strings": [
-        "m_c seems to go missing right before {PRONOUN/m_c/poss} apprentice ceremony, and is eventually found still in the nursery, having completely forgot about the event.",
-        "Instead of celebrating becoming an apprentice, m_c is caught playing in the nursery."
+        "m_c seems to go missing right before {PRONOUN/m_c/poss} apprentice ceremony, and is eventually found still in the nursery, having completely forgot about the event. m_c's clanmates worry that {PRONOUN/m_c/poss} distraction will cause problems as {PRONOUN/m_c/subject} take on the territory without a mentor"
     ]
     },
     {
