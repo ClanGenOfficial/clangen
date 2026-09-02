@@ -33,11 +33,10 @@
                 },
                 "outcome_art": "cat_sprites/gen_med_sunny_Mc",
                 "involved_cats": {
-                    "p_l": {},
                     "r_c0": {}
                 },
                 "strings": [
-                    "p_l and r_c0 enjoy the sunlight and discuss the most recent half-moon meeting and whether will affect c_n."
+                    "p_l and r_c0 enjoy the sunlight and discuss the most recent half-moon meeting and whether it will affect c_n."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -91,7 +90,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from and cat_to chatted about the herb stores and their plans to gather them while sunning themselves."
+                            "cats_from": "While sunning themselves, cat_from and cat_to chatted about the herb stores and their plans to gather them."
                         }
                     }
                 ],
@@ -353,7 +352,7 @@
                 "outcome_art": "cat_sprites/gen_med_sunny_Mc",
                 "strings": [
                     "The patrol doesn't get much done lazing away in the sun.",
-                    "The patrol falls asleep and fail to gather any herbs.",
+                    "The patrol falls asleep and fails to gather any herbs.",
                     "The patrol spends their time daydreaming instead of gathering herbs."
                 ],
                 "exp_gained": 0,
@@ -405,7 +404,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 wasn't able to relax and kept the rest of the patrol from relaxing with all {PRONOUN/s_c0/poss} {VERB/r_c0/movement/movements}. The patrol returns to camp grumpy and with no herbs."
+                    "s_c0 wasn't able to relax and kept the rest of the patrol from relaxing with all {PRONOUN/s_c0/poss} {VERB/s_c0/movement/movements}. The patrol returns to camp grumpy and with no herbs."
                 ],
                 "involved_cats": {
                     "s_c0": {
