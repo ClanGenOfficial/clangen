@@ -82,8 +82,6 @@ class DebugMenu(UIWindow):
         """
         args: list[str] = shlex.split(raw_command)
 
-        print(args)
-
         # command name, arguments
         return args[0], args[1:]
 
