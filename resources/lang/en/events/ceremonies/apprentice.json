@@ -1218,7 +1218,7 @@
               }
             },
     "strings": [
-        "m_c doesn't seem to care much about the ability to leave camp or chance to fight trespassers. Instead, {PRONOUN/m_c/subject} ends {PRONOUN/m_c/poss} apprentice ceremony with asking {PRONOUN/m_c/poss} Clanmates about chores {PRONOUN/m_c/subject} can help with."
+        "m_c doesn't seem to care much about the ability to leave camp or chance to fight trespassers. Instead, {PRONOUN/m_c/subject} ends {PRONOUN/m_c/poss} apprentice ceremony by asking {PRONOUN/m_c/poss} Clanmates about chores {PRONOUN/m_c/subject} can help with."
     ]
     },
     {
