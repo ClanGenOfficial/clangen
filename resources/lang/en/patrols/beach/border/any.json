@@ -219,7 +219,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "patrol_cats"
                         ],
                         "cats_from": [
                             "clan"
