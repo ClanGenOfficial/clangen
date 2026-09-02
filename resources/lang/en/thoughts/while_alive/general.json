@@ -1425,7 +1425,7 @@
             "Feels the weight of {PRONOUN/m_c/poss} memories wrapped around {PRONOUN/m_c/object} like the softest moss",
             "Advises r_c about {PRONOUN/r_c/poss} woes",
             "Is tired of being the go-to cat for advice",
-            "Gave a cat some advice they needed to hear but not what they wanted to hear"
+            "Tells a Clanmate what they needed to hear but not what they wanted to hear"
         ],
         "involved_cats": {
             "m_c": {
