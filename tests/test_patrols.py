@@ -194,7 +194,8 @@ class TestInvolvedCats(unittest.TestCase):
         )
 
         self.patrol_class._add_patrol_cats([war1])
-        self.patrol_class._get_valid_patrol([patrol])
+        self.patrol_class.patrol_event = self.patrol_class._get_valid_patrol([patrol])
+        self.patrol_class._create_needed_cats()
 
         self.assertEqual(
             outsider1,
