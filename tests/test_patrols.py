@@ -23,6 +23,15 @@ from scripts.game_structure.game import Switch
 from scripts.game_structure.game.switches import switch_set_value
 
 
+def set_up_patrol_class_w_event(patrol_class: Patrol, patrol_cats:list[Cat], patrol_events:list[PatrolEvent]):
+    """
+    Sets up the patrol_class with the patrol cats, and patrol event. 
+    """
+    patrol_class._add_patrol_cats(patrol_cats)
+    patrol_class._set_valid_patrol(patrol_events)
+    patrol_class._create_needed_cats()
+
+
 class TestPatrolCats(unittest.TestCase):
     def setUp(self):
         game.clan = Clan("test")
@@ -347,9 +356,9 @@ class TestOutcomeExecution(unittest.TestCase):
                 fail_outcomes=[{"strings": ["test"]}],
             )
 
-            self.patrol_class._add_patrol_cats([war1])
-            self.patrol_class.patrol_event = self.patrol_class._get_valid_patrol([patrol])
-            self.patrol_class._create_needed_cats()
+
+            set_up_patrol_class_w_event(self.patrol_class, [war1], [patrol])
+
             self.patrol_class._check_outcome_constraints(
                 patrol.success_outcomes[0], "success"
             )
@@ -377,9 +386,10 @@ class TestOutcomeExecution(unittest.TestCase):
                 success_outcomes=[{"strings": [""], "join": [JoinDict(cats=["n_c0"])]}],
                 fail_outcomes=[{"strings": ["test"]}],
             )
-            self.patrol_class._add_patrol_cats([war1])
-            self.patrol_class.patrol_event = self.patrol_class._get_valid_patrol([patrol])
-            self.patrol_class._create_needed_cats()
+
+
+            set_up_patrol_class_w_event(self.patrol_class, [war1], [patrol])
+
             self.patrol_class._check_outcome_constraints(
                 patrol.success_outcomes[0], "success"
             )
@@ -416,8 +426,8 @@ class TestOutcomeExecution(unittest.TestCase):
             fail_outcomes=[{"strings": ["test"]}],
         )
 
-        self.patrol_class._add_patrol_cats([war1, app1])
-        self.patrol_class._get_valid_patrol([patrol])
+        set_up_patrol_class_w_event(self.patrol_class, [war1, app1], [patrol])
+
         self.patrol_class._check_outcome_constraints(
             patrol.success_outcomes[0], "success"
         )
@@ -458,8 +468,8 @@ class TestOutcomeExecution(unittest.TestCase):
             fail_outcomes=[{"strings": ["test"]}],
         )
 
-        self.patrol_class._add_patrol_cats([war1, app1])
-        self.patrol_class._get_valid_patrol([patrol])
+        set_up_patrol_class_w_event(self.patrol_class, [war1, app1], [patrol])
+
         self.patrol_class._check_outcome_constraints(
             patrol.success_outcomes[0], "success"
         )
@@ -495,8 +505,8 @@ class TestOutcomeExecution(unittest.TestCase):
             fail_outcomes=[{"strings": ["test"]}],
         )
 
-        self.patrol_class._add_patrol_cats([war1, app1])
-        self.patrol_class._get_valid_patrol([patrol])
+        set_up_patrol_class_w_event(self.patrol_class, [war1, app1], [patrol])
+
         self.patrol_class._check_outcome_constraints(
             patrol.success_outcomes[0], "success"
         )

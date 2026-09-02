@@ -120,7 +120,7 @@ class Patrol:
             self.other_clan = None
 
         # Find valid patrol
-        self.patrol_event = self._get_possible_patrol(patrol_type)
+        self._set_possible_patrol(patrol_type)
         self._create_needed_cats()
 
         # Return text adjusted patrol intro
@@ -251,7 +251,7 @@ class Patrol:
 
         print("Patrol Leader:", str(self.involved_cats["p_l"].name))
 
-    def _get_possible_patrol(
+    def _set_possible_patrol(
         self,
         patrol_type: str,
     ) -> PatrolEvent:
@@ -403,13 +403,13 @@ class Patrol:
 
         # first we see if we can get a romantic patrol
         if romantic_patrols and not self.debug_patrol_id:
-            chosen_patrol = self._get_valid_patrol(
+            chosen_patrol = self._set_valid_patrol(
                 romantic_patrols.copy(), find_romance=True
             )
 
         # if no romantic patrol possible, we get a normal one!
         if not chosen_patrol:
-            chosen_patrol = self._get_valid_patrol(
+            chosen_patrol = self._set_valid_patrol(
                 normal_patrols.copy(), find_romance=False
             )
             if not chosen_patrol:
@@ -427,11 +427,16 @@ class Patrol:
         """
         Patrol.used_patrols["romance" if find_romance else "normal"].clear()
 
-        return self._get_valid_patrol(possible_patrols, find_romance)
+        return self._set_valid_patrol(possible_patrols, find_romance)
 
-    def _get_valid_patrol(
+    def _set_valid_patrol(
         self, possible_patrols: List[PatrolEvent], find_romance: bool = False
     ) -> Optional[PatrolEvent]:
+        """
+        Finds a valid patrol
+        If one if found, sets the patrol event and involved cats, 
+            and returns the patrol event. 
+        """
         chosen_patrol = None
         patrols_to_test = [
             p
@@ -457,7 +462,7 @@ class Patrol:
                 if not Patrol.used_patrols["romance" if find_romance else "normal"]:
                     # No patrols found even after resetting used patrols.
                     # This should only be possible when filtering for romance patrols.
-                    return None
+                    return None, None
 
                 # if we couldn't find a patrol, then we need to clear the used_patrols and try again
                 chosen_patrol = self._clear_used_and_retry(
@@ -466,6 +471,7 @@ class Patrol:
             else:
                 # otherwise, let's set our involved cats and move on with this patrol!
                 self.involved_cats = involved_cats
+                self.patrol_event = chosen_patrol
 
         if find_romance:
             if not self._decide_if_romantic(chosen_patrol):
