@@ -62,7 +62,7 @@ class ListCardsCommand(Command):
         else:
             card_scope = constants.CRUEL_CARDS_ALL
 
-        limit_possible = (len(args) >= 2)
+        limit_possible = len(args) >= 2
         get_cards_list(card_scope, limit_possible)
 
 
