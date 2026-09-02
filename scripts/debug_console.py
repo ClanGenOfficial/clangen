@@ -1,9 +1,11 @@
 """
 Stores the DebugMenu class and the DebugMode class
 """
+
 import pygame
 import pygame_gui
 import html
+import shlex
 
 from pygame_gui.elements import UIWindow, UITextBox, UITextEntryLine, UIButton
 from scripts.ui.scale import ui_scale
@@ -78,24 +80,9 @@ class DebugMenu(UIWindow):
         Parses a command string and returns a tuple with the command name and
         a list of parsed arguments.
         """
-        args: list[str] = []
+        args: list[str] = shlex.split(raw_command)
 
-        current_arg = ""
-        in_group = False
-        for char in raw_command.strip():
-            if char == '"':
-                in_group = not in_group
-                continue
-
-            if char == " " and not in_group:
-                args.append(current_arg.strip())
-                current_arg = ""
-                continue
-
-            current_arg += char
-
-        # flush arg buffer in case there are no arguments
-        args.append(current_arg)
+        print(args)
 
         # command name, arguments
         return args[0], args[1:]
@@ -115,18 +102,15 @@ class DebugMenu(UIWindow):
             if cmd.bypass_conjoined_strings:
                 args = raw_command.strip().split(" ")[1:]
 
-            while len(args) > 0 and len(cmd.sub_commands) > 0:
-                command_found = False
+            index = 0
+            for possible_cmd in args:
                 for sub_command in cmd.sub_commands:
-                    if args[0] not in sub_command.valid_names:
-                        break
+                    if possible_cmd not in sub_command.valid_names:
+                        continue
 
-                    command_found = True
-                    args = args[1:]
+                    index += 1
                     cmd = sub_command
-
-                if not command_found:
-                    break
+            args = args[index:]
 
             try:
                 cmd.callback(args)

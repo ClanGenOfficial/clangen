@@ -14,7 +14,7 @@ from scripts.game_structure import constants, game
 
 
 def get_cards_list(card_scope: dict | None, limit_possible: bool = False):
-    if not card_scope:
+    if card_scope is None:
         card_scope = constants.CRUEL_CARDS_ALL
 
     i = 0
@@ -49,9 +49,8 @@ class ListCardsCommand(Command):
     aliases = ["l"]
 
     def callback(self, args: List[str]):
-        card_scope = None
-        if args[0] == "all":
-            card_scope = constants.CRUEL_CARDS_ALL
+        if len(args) <= 0:
+            card_scope = None
         elif args[0] == "behavior":
             card_scope = constants.CRUEL_CARDS_BEHAVIOR
         elif args[0] == "danger":
@@ -60,7 +59,10 @@ class ListCardsCommand(Command):
             card_scope = constants.CRUEL_CARDS_ENVIRONMENT
         elif args[0] == "origin":
             card_scope = constants.CRUEL_CARDS_ORIGIN
-        limit_possible = len(args) >= 2
+        else:
+            card_scope = constants.CRUEL_CARDS_ALL
+
+        limit_possible = (len(args) >= 2)
         get_cards_list(card_scope, limit_possible)
 
 
