@@ -1480,7 +1480,7 @@
         "Misses when r_c needed {PRONOUN/m_c/object}",
         "Can't believe how quickly r_c grew up",
         "Wonders if {PRONOUN/m_c/subject} did a good job raising r_c",
-        "Reminded r_c that {PRONOUN/r_c/subject}[VERB/r_c/'re/s} still {PRONOUN/m_c/poss} baby no matter how old {PRONOUN/r_c/subject} {VERB/r_c/are/is}",
+        "Reminded r_c that {PRONOUN/r_c/subject}{VERB/r_c/'re/s} still {PRONOUN/m_c/poss} kit no matter how old {PRONOUN/r_c/subject} {VERB/r_c/are/is}",
         "Is reminding r_c that {PRONOUN/m_c/object} {VERB/m_c/love/loves} {PRONOUN/r_c/object}"
     ],
     "involved_cats": {
