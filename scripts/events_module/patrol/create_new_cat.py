@@ -9,6 +9,7 @@ from scripts.cat.names import Name
 from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath, Skill
 from scripts.cat.factories.typed_dicts import StatusDict
+from scripts.cat.status import Status
 from scripts.cat_relations.cat_handle_funcs import create_relationships_new_cat
 from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.cat_relations.relationship import Relationship
@@ -38,21 +39,40 @@ def updated_create_new_cat(
     :return: list of created cats
     """
     option_dict = option_dict.copy()
+
     # STATUS
     status = StatusDict()
+
+    # check if we need to match age to an assigned mate
+    if option_dict.get("can_create_new_cat", {}).get("assign_mate"):
+        possible_ages = []
+        for m in option_dict["can_create_new_cat"].get("assign_mate", []):
+            if m in involved_cats:
+                possible_ages.append(involved_cats[m].age)
+        # this takes priority over any age specified in option_dict
+        # since we need to ensure cats are appropriate ages
+        status["age"] = choice(possible_ages)
+
+    if option_dict.get("age") and not status.get("age"):
+        status["age"] = CatAge(choice(option_dict["age"]))
+
     if option_dict.get("status"):
         # check for "clancat" first since it's not really a rank
         if "clancat" in option_dict["status"]:
-            status["social"] = CatSocial.CLANCAT
-            possible_ranks = [r for r in option_dict["status"] if r != "clancat"]
-            possible_ranks.extend(
-                [
-                    r
-                    for r in [*CatRank]
-                    if r.is_any_clancat_rank()
-                    and r not in (CatRank.LEADER, CatRank.DEPUTY)
-                ]
-            )
+            if status.get("age"):
+                # ensure rank matches any already assigned age
+                possible_ranks = [Status.get_rank_from_age(status["age"])]
+            else:
+                status["social"] = CatSocial.CLANCAT
+                possible_ranks = [r for r in option_dict["status"] if r != "clancat"]
+                possible_ranks.extend(
+                    [
+                        r
+                        for r in [*CatRank]
+                        if r.is_any_clancat_rank()
+                        and r not in (CatRank.LEADER, CatRank.DEPUTY)
+                    ]
+                )
         else:
             possible_ranks = option_dict["status"]
 
@@ -65,16 +85,6 @@ def updated_create_new_cat(
             status["group_ID"] = _get_id_for_group(
                 [CatGroup.OTHER_CLAN], involved_cats, other_clan
             )
-    if option_dict.get("age"):
-        status["age"] = CatAge(choice(option_dict["age"]))
-
-    # check if we need to match age to an assigned mate
-    if option_dict.get("can_create_new_cat", {}).get("assign_mate"):
-        possible_ages = []
-        for m in option_dict["can_create_new_cat"].get("assign_mate", []):
-            if m in involved_cats:
-                possible_ages.append(involved_cats[m].age)
-        status["age"] = choice(possible_ages)
 
     if option_dict.get("group"):
         status["group_ID"] = _get_id_for_group(

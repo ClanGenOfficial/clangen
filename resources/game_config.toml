@@ -583,7 +583,6 @@ dev_tools = false
   # by default the first string will be used (index 0)
   debug_ensure_thought_index = 0
 
-
 [patrol_generation]
   # modifies success rate based on game mode. higher = more difficult.
   difficulty_modifier = 2.5
@@ -613,8 +612,6 @@ dev_tools = false
     # specify an outcome to use via its index in the outcome list. by default this is 0 (the first outcome)
     # this will not work if no patrol_id and outcome_type is set
     outcome_index = 0
-
-
 
 [event_generation]
   # forces event with this id to occur
