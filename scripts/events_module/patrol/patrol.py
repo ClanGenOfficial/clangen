@@ -120,7 +120,7 @@ class Patrol:
             self.other_clan = None
 
         # Find valid patrol
-        self._load_patrols_and_set_possible_patrol(patrol_type)
+        self._load_patrols_and_set_patrol(patrol_type)
         self._create_needed_cats()
 
         # Return text adjusted patrol intro
@@ -372,6 +372,7 @@ class Patrol:
         possible_patrols: List[PatrolEvent],
         patrol_type: str,
     ) -> PatrolEvent:
+        
         # GET POSSIBLE PATROLS
         # run the first set of really basic constraint filtering, just to get our base of valid patrols
         possible_patrols = [
@@ -462,7 +463,7 @@ class Patrol:
                 if not Patrol.used_patrols["romance" if find_romance else "normal"]:
                     # No patrols found even after resetting used patrols.
                     # This should only be possible when filtering for romance patrols.
-                    return None, None
+                    return None
 
                 # if we couldn't find a patrol, then we need to clear the used_patrols and try again
                 chosen_patrol = self._clear_used_and_retry(
