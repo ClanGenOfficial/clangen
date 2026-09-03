@@ -372,7 +372,6 @@ class Patrol:
         possible_patrols: List[PatrolEvent],
         patrol_type: str,
     ) -> PatrolEvent:
-        
         # GET POSSIBLE PATROLS
         # run the first set of really basic constraint filtering, just to get our base of valid patrols
         possible_patrols = [
@@ -435,8 +434,8 @@ class Patrol:
     ) -> Optional[PatrolEvent]:
         """
         Finds a valid patrol
-        If one if found, sets the patrol event and involved cats, 
-            and returns the patrol event. 
+        If one if found, sets the patrol event and involved cats,
+            and returns the patrol event.
         """
         chosen_patrol = None
         patrols_to_test = [
