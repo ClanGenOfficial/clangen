@@ -132,7 +132,7 @@
       "settings.force_enable.deputy": true,
       "ranks.allow_manual_deputy": false,
       "clan_creation.ranks_needed.deputy": false,
-      "ranks.only_leader_kits_deputy": true
+      "ranks.deputy_eligibility.only_leader_kits_deputy": true
     }
   }
 }
