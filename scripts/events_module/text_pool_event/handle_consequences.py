@@ -27,7 +27,9 @@ from scripts.cat.microservices.conditions import (
 from scripts.config import get_config
 from scripts.events_module.consequences import unpack_rel_block, check_stolen_vitality
 from scripts.events_module.future.prep_and_trigger import prep_future_event
+from scripts.events_module.patrol.create_new_cat import updated_create_new_cat
 from scripts.events_module.parameter_dicts import SupplyDict
+from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.relationship import relation_events
 from scripts.events_module.text_adjust import (
     event_text_adjust,
@@ -46,11 +48,15 @@ def execute_outcome(
     event: TextPoolEvent,
     event_involved_cats: dict[str, Union[Cat, list[Cat]]],
     other_clan: OtherClan = None,
-):
+) -> tuple[str, str]:
     """
     Executes the outcome, applying any specified consequences.
+    If new cats are created, event_involved_cats *will* be modified to add the newly created cats.
     :returns: Outcome text, results text, list of created rel logs (might be empty)
     """
+
+    # Must start with cat creation.
+    create_needed_cats(event, event_involved_cats, other_clan)
 
     rel_results = {}
     chosen_string = choice(event.strings)
@@ -109,6 +115,31 @@ def execute_outcome(
 
     # return all the bullshit
     return processed_text, "\n".join(final_results), rel_results
+
+
+def create_needed_cats(
+    event: TextPoolEvent | PatrolEvent,
+    event_involved_cats: dict[str, Union[Cat, list[Cat]]],
+    other_clan: OtherClan = None,
+):
+    """
+    Creates needed cats for the event, who are not already in event_involved_cats.
+    Modifies event_involved_cats with the new cats.
+    """
+    for abbr, constraints in event.involved_cats.items():
+        # Only create cats who haven't already been assigned in event_involved_cats.
+        if abbr in event_involved_cats:
+            continue
+
+        event_involved_cats[abbr] = updated_create_new_cat(
+            option_dict=constraints,
+            involved_cats=event_involved_cats,
+            other_clan=other_clan,
+        )
+
+        if len(event_involved_cats[abbr]) == 1:
+            # if this is a list of a single cat, then we take them out of the list
+            event_involved_cats[abbr] = event_involved_cats[abbr][0]
 
 
 def _handle_accessories(

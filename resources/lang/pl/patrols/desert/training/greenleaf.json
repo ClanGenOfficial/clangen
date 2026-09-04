@@ -34,13 +34,17 @@
             "r_c0": {}
         },
         "chance_of_success": 60,
-        "patrol_art": "cat_sprites\/gen_hunt_heat_WrWr",
-        "intro_text": "Greenleaf, bah, r_c0 scoffs. There's nothing green about the leaves right now, so why does c_n call the dry season that?!",
-        "decline_text": "The patrol is too busy finding shelter from the sun to consider r_c's question.",
+        "patrol_art": "cat_sprites/gen_hunt_heat_WrWr",
+        "intro_strings": [
+            "Greenleaf, bah, r_c0 scoffs. There's nothing green about the leaves right now, so why does c_n call the dry season that?!"
+        ],
+        "decline_strings": [
+            "The patrol is too busy finding shelter from the sun to consider r_c's question."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_bord_story_WrWrWr",
+                "outcome_art": "cat_sprites/gen_bord_story_WrWrWr",
                 "strings": [
                     "It's ancient, p_l explains. Older than c_n... Maybe older than this land. No one is sure what cursed the desert to be so dry, but in other places, the sun brings light and warmth that is a relief and not a punishment. There, the dry season when the sun reaches its peak power is also the season of green leaves."
                 ],
@@ -67,9 +71,9 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_bord_story_WrWrWr",
+                "outcome_art": "cat_sprites/gen_bord_story_WrWrWr",
                 "strings": [
-                    "There are Clans beyond the desert, p_l explains. In high places and low, wet and, well, {PRONOUN\/p_l\/subject} {VERB\/p_l\/suppose\/supposes} c_n are the cats from where it is dry. Greenleaf being the name of the dry season is older than the experience of there <i>being<\/i> a dry season. In those distant places, greenleaf is the season of plenty, not the harsh thing it is here."
+                    "There are Clans beyond the desert, p_l explains. In high places and low, wet and, well, {PRONOUN/p_l/subject} {VERB/p_l/suppose/supposes} c_n are the cats from where it is dry. Greenleaf being the name of the dry season is older than the experience of there <i>being</i> a dry season. In those distant places, greenleaf is the season of plenty, not the harsh thing it is here."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -103,12 +107,12 @@
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "dehydrated"
                         ],
-                        "death_history": "m_c got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN\/m_c\/poss} life from {PRONOUN\/m_c\/object}."
+                        "death_history": "m_c got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN/m_c/poss} life from {PRONOUN/m_c/object}."
                     }
                 ]
             }
