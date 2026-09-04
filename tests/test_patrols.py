@@ -369,7 +369,8 @@ class TestInvolvedCats(unittest.TestCase):
                 self.patrol_class.involved_cats["s_c1"],
                 msg=f"s_c0: {self.patrol_class.involved_cats['s_c0']} and s_c1: {self.patrol_class.involved_cats['s_c1']} match when they shouldn't.",
             )
-            
+
+
 class TestOutcomeExecution(unittest.TestCase):
     def setUp(self):
         # load in the spritesheets
