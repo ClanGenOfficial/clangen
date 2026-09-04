@@ -358,6 +358,9 @@ dev_tools = false
       trust = 10
 
 [pregnancy]
+  # decides which roles can have kits
+  can_have_kits = ["leader", "deputy", "medicine cat", "warrior", "mediator", "elder"]
+
   # cooldown for cats getting pregnant that applies after giving birth
   birth_cooldown = 6
 
@@ -430,6 +433,7 @@ dev_tools = false
       romance = 20
       comfort = 30
       trust = 25
+
       
 [cat_generation]
   # base 1/chance that a cat will generate with a permanent condition. gets modified further in code
