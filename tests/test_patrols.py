@@ -319,6 +319,108 @@ class TestInvolvedCats(unittest.TestCase):
             msg=f"p_l and outcome s_c can't match.",
         )
 
+    def test_sc_overall_patrol(self):
+        war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+        war2 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+
+        with self.subTest(
+            "Test if a single s_c0 cat can be found for the patrol overall."
+        ):
+            patrol = PatrolEvent(
+                event_id="test",
+                types=["hunting"],
+                intro_strings=["test"],
+                decline_strings=["test"],
+                involved_cats={
+                    "s_c0": InvolvedCatDict(prior_abbreviation=["any"]),
+                },
+                success_outcomes=[{"strings": ["test"]}],
+                fail_outcomes=[{"strings": ["test"]}],
+            )
+
+            set_up_patrol_class_w_event(self.patrol_class, [war1], [patrol])
+
+            self.assertEqual(
+                self.patrol_class.involved_cats["p_l"],
+                self.patrol_class.involved_cats["p_l"],
+                msg=f"p_l: {self.patrol_class.involved_cats['p_l']} and s_c0: {self.patrol_class.involved_cats['s_c0']} don't match when they should.",
+            )
+
+        with self.subTest(
+            "Test if two different s_c cats can be found for the patrol overall."
+        ):
+            patrol = PatrolEvent(
+                event_id="test",
+                types=["hunting"],
+                intro_strings=["test"],
+                decline_strings=["test"],
+                involved_cats={
+                    "s_c0": InvolvedCatDict(prior_abbreviation=["any"]),
+                    "s_c1": InvolvedCatDict(prior_abbreviation=["-s_c0"]),
+                },
+                success_outcomes=[{"strings": ["test"]}],
+                fail_outcomes=[{"strings": ["test"]}],
+            )
+
+            set_up_patrol_class_w_event(self.patrol_class, [war1, war2], [patrol])
+
+            self.assertNotEqual(
+                self.patrol_class.involved_cats["s_c0"],
+                self.patrol_class.involved_cats["s_c1"],
+                msg=f"s_c0: {self.patrol_class.involved_cats['s_c0']} and s_c1: {self.patrol_class.involved_cats['s_c1']} match when they shouldn't.",
+            )
+
+    def test_sc_overall_patrol(self):
+        war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+        war2 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+
+        with self.subTest(
+            "Test if a single s_c0 cat can be found for the patrol overall."
+        ):
+            patrol = PatrolEvent(
+                event_id="test",
+                types=["hunting"],
+                intro_strings=["test"],
+                decline_strings=["test"],
+                involved_cats={
+                    "s_c0": InvolvedCatDict(prior_abbreviation=["any"]),
+                },
+                success_outcomes=[{"strings": ["test"]}],
+                fail_outcomes=[{"strings": ["test"]}],
+            )
+
+            set_up_patrol_class_w_event(self.patrol_class, [war1], [patrol])
+
+            self.assertEqual(
+                self.patrol_class.involved_cats["p_l"],
+                self.patrol_class.involved_cats["p_l"],
+                msg=f"p_l: {self.patrol_class.involved_cats['p_l']} and s_c0: {self.patrol_class.involved_cats['s_c0']} don't match when they should.",
+            )
+
+        with self.subTest(
+            "Test if two different s_c cats can be found for the patrol overall."
+        ):
+            patrol = PatrolEvent(
+                event_id="test",
+                types=["hunting"],
+                intro_strings=["test"],
+                decline_strings=["test"],
+                involved_cats={
+                    "s_c0": InvolvedCatDict(prior_abbreviation=["any"]),
+                    "s_c1": InvolvedCatDict(prior_abbreviation=["-s_c0"]),
+                },
+                success_outcomes=[{"strings": ["test"]}],
+                fail_outcomes=[{"strings": ["test"]}],
+            )
+
+            set_up_patrol_class_w_event(self.patrol_class, [war1, war2], [patrol])
+
+            self.assertNotEqual(
+                self.patrol_class.involved_cats["s_c0"],
+                self.patrol_class.involved_cats["s_c1"],
+                msg=f"s_c0: {self.patrol_class.involved_cats['s_c0']} and s_c1: {self.patrol_class.involved_cats['s_c1']} match when they shouldn't.",
+            )
+
 
 class TestOutcomeExecution(unittest.TestCase):
     def setUp(self):

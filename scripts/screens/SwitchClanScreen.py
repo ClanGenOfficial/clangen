@@ -231,6 +231,7 @@ class SwitchClanScreen(Screens):
                 self.clan_buttons.append([])
                 self.clan_name.append([])
                 self.delete_buttons.append([])
+                self.clan_display_names.append([])
 
         self.next_page_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((456, 540), (34, 34))),
