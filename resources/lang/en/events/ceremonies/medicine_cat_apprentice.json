@@ -334,5 +334,12 @@
         "strings": [
             "m_c has always longed for adventure and {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} like being a medicine cat apprentice will be the greatest adventure of them all. r_c0 eagerly accepts such an eager and willing apprentice."
         ]
+    },
+    {
+    "event_id": "med_app_nevermentor_default",
+    "tags": ["never_mentor"],
+    "strings": [
+        "<i>Sure,</i> the unpredictability of hunting and fighting is appealing to most kits. However, m_c has decided to take a different, slightly more predictable path as a medicine cat apprentice."
+    ]
     }
 ]

@@ -88,5 +88,12 @@
                 ]
             }
         ]
+    },
+    {
+    "event_id": "mediator_app_nevermentor_default",
+    "tags": ["never_mentor"],
+    "strings": [
+        "The trial and error of being a warrior apprentice holds no appeal to m_c, nor does the concept of becoming a healer. Instead, {PRONOUN/m_c/subject} {VERB/m_c/have/has} decided to take on the role of a mediator apprentice, hoping to help the Clan through words and influence rather than claw or fang."
+    ]
     }
 ]

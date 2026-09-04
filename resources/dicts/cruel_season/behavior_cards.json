@@ -125,5 +125,11 @@
       "outsiders.max_reputation": 29,
       "outsiders.starting_reputation": 15
     }
+  },
+  "on_their_own": {
+    "card_art": "behavior/on_their_own.png",
+    "modifiers": {
+      "roles.app_never_mentor": true
+    }
   }
 }
