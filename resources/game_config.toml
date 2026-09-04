@@ -677,6 +677,8 @@ dev_tools = false
   illness_chance = 250
   classic_illness_chance = 500
 
+  duration_modifier = 1
+
   # how much each medicine cat reduces the chance of infection, higher number is better
   med_infection_reduction = 10
   # the seasons in which illnesses can spread. Fleas will always be able to spread in all seasons.
