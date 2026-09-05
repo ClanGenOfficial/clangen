@@ -94,6 +94,9 @@ class PatrolEvent:
         self.other_clan = self._get_other_clan()
         self.herbs_given = self._get_herbs_given()
 
+    def __eq__(self, other):
+        return other == self.event_id
+
     def _get_new_cat(self) -> bool:
         """Returns boolean if there are any outcomes that results in
         a new cat joining (not just meeting)"""

@@ -10,6 +10,7 @@ from scripts.debug_commands.help import HelpCommand
 from scripts.debug_commands.settings import ToggleCommand, SetCommand, GetCommand
 from scripts.debug_commands.clan import ClanCommand
 from scripts.debug_commands.biome import BiomeCommand
+from scripts.debug_commands.reload_pelt import ReloadPeltCommand
 from scripts.debug_commands.spawn import SpawnCommand
 
 commandList: List[Command] = [
@@ -23,6 +24,7 @@ commandList: List[Command] = [
     ClanCommand(),
     PregnanciesCommand(),
     RelationshipsCommand(),
+    ReloadPeltCommand(),
     SpawnCommand(),
 ]
 
