@@ -4274,6 +4274,10 @@
                 ]
             },
             "r_c": {
+                "status": [
+                    "-kitten",
+                    "-newborn"
+                ],
                 "group": [
                     "-afterlife"
                 ]
@@ -6198,7 +6202,16 @@
             "Thinks {PRONOUN/m_c/subject} caught a scent of r_c",
             "Is suddenly reminded of r_c",
             "Notices a Clanmate with the same mannerism as r_c",
-            "Guesses one particularly bright star is r_c"
+            "Guesses one particularly bright star is r_c",
+            "Smiled at something that reminded {PRONOUN/m_c/object} of r_c",
+            "Left a flower at r_c's grave today",
+            "Left a prey gift at r_c's grave today",
+            "Had a dream about r_c last night",
+            "Spent some time reminiscing about r_c with a Clanmate",
+            "Is listening to an old story about r_c",
+            "Wishes {PRONOUN/m_c/subject} remembered more about r_c",
+            "Swears {PRONOUN/m_c/subject} felt r_c's presence nearby just now",
+            "Took some time to remember r_c today"
         ],
         "involved_cats": {
             "r_c": {
@@ -7602,7 +7615,13 @@
             "Is especially annoyed with {PRONOUN/m_c/poss} allergies today",
             "Is questioning why StarClan won't cure {PRONOUN/m_c/poss} allergies",
             "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/are/is} sick or if {PRONOUN/m_c/poss} allergies are especially bad today",
-            "Is struggling to smell something"
+            "Is struggling to smell something",
+            "Has been breathing through {PRONOUN/m_c/poss} mouth all day",
+            "Is scaring away half the forest with {PRONOUN/m_c/poss} sneezes",
+            "Can hardly breathe today",
+            "Hacked up something gross",
+            "Just can't get {PRONOUN/m_c/poss} eyes to stop leaking",
+            "Just can't get {PRONOUN/m_c/poss} nose to stop leaking"
         ],
         "involved_cats": {
             "m_c": {
@@ -7633,7 +7652,9 @@
             "Is assuring r_c that {PRONOUN/m_c/subject} {VERB/m_c/aren/isn}'t sick, it's just allergies",
             "Is unsure if {PRONOUN/m_c/subject} should apologize when r_c complains about {PRONOUN/m_c/poss} allergies",
             "Is rolling {PRONOUN/m_c/poss} eyes when r_c insists {PRONOUN/m_c/subject} should talk to the medicine cat",
-            "Playfully swats r_c when {PRONOUN/r_c/subject} {VERB/r_c/say/says} {PRONOUN/m_c/subject} {VERB/m_c/sound/sounds} like an elder"
+            "Playfully swats r_c when {PRONOUN/r_c/subject} {VERB/r_c/say/says} {PRONOUN/m_c/subject} {VERB/m_c/sound/sounds} like an elder",
+            "Is scaring r_c with how raspy {PRONOUN/m_c/poss} voice is",
+            "Is worrying r_c with how raspy {PRONOUN/m_c/poss} breathing is"
         ],
         "involved_cats": {
             "m_c": {
@@ -8219,7 +8240,16 @@
             "Can't remember what happened today",
             "Is hiding from sunlight",
             "Can't get the pain in {PRONOUN/m_c/poss} head to stop",
-            "Can't sleep with the pounding in {PRONOUN/m_c/poss} head"
+            "Can't sleep with the pounding in {PRONOUN/m_c/poss} head",
+            "Hisses at a particularly harsh noise",
+            "Doesn't feel as smart as before {PRONOUN/m_c/poss} accident",
+            "Is staring absently",
+            "Is trying not to think too hard",
+            "Is trying not to think at all",
+            "Wants to kill a particularly noisy clanmates",
+            "Is feeling unbalanced",
+            "Has a splitting headache",
+            "Hisses at any noises that make {PRONOUN/m_c/poss} head hurt more"
         ],
         "involved_cats": {
             "m_c": {
@@ -8299,7 +8329,10 @@
             "Is itching {PRONOUN/m_c/poss} bee sting relentlessly",
             "Never wants to see another bee again",
             "Is still in pain from being stung",
-            "Licks {PRONOUN/m_c/poss} sting"
+            "Licks {PRONOUN/m_c/poss} sting",
+            "Scowls at a beehive",
+            "Scowls at a bee",
+            "Can't stop itching at the bee sting"
         ],
         "involved_cats": {
             "m_c": {
@@ -8320,7 +8353,9 @@
             "Is so dizzy {PRONOUN/m_c/subject} {VERB/m_c/have/has} to lay down",
             "Can't stop the throbbing pain in {PRONOUN/m_c/poss} head",
             "Is in so much pain {PRONOUN/m_c/subject} can't do anything else but curl up in {PRONOUN/m_c/poss} nest",
-            "Can't sleep from the pain"
+            "Can't sleep from the pain",
+            "Hisses at a particularly harsh noise",
+            "Is feeling unbalanced"
         ],
         "involved_cats": {
             "m_c": {
@@ -8338,7 +8373,9 @@
             "Just wants to lay down for a bit to deal with the pain",
             "Wonders if {PRONOUN/m_c/subject} didn't have enough water today",
             "Feels the pain creeping around {PRONOUN/m_c/poss} skull",
-            "Stuffs moss over {PRONOUN/m_c/poss} eyes for a bit of darkness"
+            "Stuffs moss over {PRONOUN/m_c/poss} eyes for a bit of darkness",
+            "Hisses at a particularly harsh noise",
+            "Is feeling unbalanced"
         ],
         "involved_cats": {
             "m_c": {
@@ -8364,7 +8401,27 @@
             "Considers naming a kit after kin",
             "Craves lizards",
             "Craves water voles",
-            "Struggles to slow down and take it easy"
+            "Struggles to slow down and take it easy",
+            "Is out of breath",
+            "Can't lay down comfortably",
+            "Is staring lovingly at {PRONOUN/m_c/poss} flank",
+            "Felt {PRONOUN/m_c/poss} kits move!",
+            "Is spending extra time tending to {PRONOUN/m_c/poss} nest",
+            "Is stressing over whether {PRONOUN/m_c/subject}'ll be a good parent...",
+            "Is purring hard, hoping {PRONOUN/m_c/poss} kits will feel how much {PRONOUN/m_c/object} {VERB/m_c/love/loves} them",
+            "Is stressed over finding the right bedding",
+            "Would kill for a toad covered in herbs right about now",
+            "Has been extra snippy lately",
+            "Snapped at a cat trying to touch {PRONOUN/m_c/poss} stomach without asking",
+            "Was woken up by {PRONOUN/m_c/poss} kits moving around so much",
+            "Took extra prey from the fresh kill pile",
+            "Feels sore all over",
+            "Is too heavy to stand up on {PRONOUN/m_c/poss} own",
+            "Is saying different kit names aloud to try them out",
+            "Is insisting on a naming a kit after a current craving",
+            "Is feeling overwhelmed",
+            "Wonders if any of {PRONOUN/m_c/poss} kits will look like {PRONOUN/m_c/object}",
+            "Is daydreaming of the lives {PRONOUN/m_c/poss} kits will lead"
         ],
         "involved_cats": {
             "m_c": {
@@ -8411,7 +8468,8 @@
             "Didn't notice a nearby noise",
             "Is feeling confused",
             "Is feeling stiff",
-            "Wonders why there's a gap in {PRONOUN/m_c/poss} memory"
+            "Wonders why there's a gap in {PRONOUN/m_c/poss} memory",
+            "Is retiring to {PRONOUN/m_c/poss} nest early for the day feeling a seizure oncoming"
         ],
         "involved_cats": {
             "m_c": {
@@ -8879,7 +8937,8 @@
             "Makes sure to drink water before a training session",
             "Wonders what {PRONOUN/m_c/subject} {VERB/m_c/look/looks} like during a seizure",
             "Feels like the sun is too bright today",
-            "Feels dizzier than usual today"
+            "Feels dizzier than usual today",
+            "Is retiring to {PRONOUN/m_c/poss} nest early for the day feeling a seizure oncoming"
         ],
         "involved_cats": {
             "m_c": {
