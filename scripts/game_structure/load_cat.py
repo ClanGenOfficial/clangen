@@ -71,12 +71,16 @@ def json_load():
         with open(clan_cats_json_path, "r", encoding="utf-8") as read_file:
             cat_data = ujson.loads(read_file.read())
     except PermissionError as e:
-        switch_set_value(Switch.error_message, f"Can\t open {clan_cats_json_path}!")
-        switch_set_value(Switch.traceback, e)
+        switch_set_value(
+            Switch.error_message,
+            f"{clan_cats_json_path} can't be accessed. See traceback below of more details.",
+        )
         raise
     except ujson.JSONDecodeError as e:
-        switch_set_value(Switch.error_message, f"{clan_cats_json_path} is malformed!")
-        switch_set_value(Switch.traceback, e)
+        switch_set_value(
+            Switch.error_message,
+            f"{clan_cats_json_path} is malformed. See traceback below of more details.",
+        )
         raise
 
     old_tortie_patches = convert["old_tortie_patches"]
@@ -90,13 +94,19 @@ def json_load():
 
         except KeyError as e:
             if "ID" in cat_dict:
-                key = f" ID #{cat_dict['ID']} "
+                key = f"ID #{cat_dict['ID']}"
             else:
-                key = f" at index {i} "
+                key = f"at index {i}"
             switch_set_value(
-                Switch.error_message, f"Cat{key}in clan_cats.json is missing {e}!"
+                Switch.error_message,
+                f"Cat {key} in {clan_cats_json_path} is missing {e}.",
             )
-            switch_set_value(Switch.traceback, e)
+            raise
+        except TypeError as e:
+            switch_set_value(
+                Switch.error_message,
+                f"{e} in {clan_cats_json_path}",
+            )
             raise
 
     # replace cat ids with cat objects and add other needed variables
@@ -131,7 +141,6 @@ def json_load():
                 Switch.error_message,
                 f"There was an error loading relationships for cat #{cat}.",
             )
-            switch_set_value(Switch.traceback, e)
             raise
         if constants.CONFIG["save_load"]["load_integrity_checks"]:
             save_check()
@@ -140,11 +149,14 @@ def json_load():
     inheritance_db.load_inheritances(Cat, get_faded_ids)
 
 
-def csv_load(all_cats):
+def csv_load(_all_cats):
     if switch_get_value(Switch.clan_list)[0].strip() == "":
         return
     else:
-        switch_set_value(Switch.error_message, "Can't find clan_cats.json")
+        switch_set_value(
+            Switch.error_message,
+            f"Can't find clan_cats.json for {switch_get_value(Switch.clan_list)[0]}",
+        )
         if os.path.exists(
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "cats.csv"
         ):
