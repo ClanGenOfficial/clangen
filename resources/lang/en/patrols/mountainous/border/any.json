@@ -1679,7 +1679,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "This wolf might be trying to hunt c_n, but s_c0 is nobody's prey. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/follow/follows} the fresh scent trail to its conclusion, throwing {PRONOUN/s_c0/self} at the unprepared wolf, claws raking through its gray pelt and leaving bloody tracks in {PRONOUN/s_c0/object} wake, convincing proof that the lone wolf should go elsewhere for an easy meal."
+                    "This wolf might be trying to hunt c_n, but s_c0 is nobody's prey. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/follow/follows} the fresh scent trail to its conclusion, throwing {PRONOUN/s_c0/self} at the unprepared wolf, claws raking through its gray pelt and leaving bloody tracks in {PRONOUN/s_c0/poss} wake, convincing proof that the lone wolf should go elsewhere for an easy meal."
                 ],
                 "involved_cats": {
                     "s_c0": {
