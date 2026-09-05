@@ -8,7 +8,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c returned to camp with a kitten tottering behind {PRONOUN\/m_c\/object} and explains that {PRONOUN\/m_c\/subject} found {PRONOUN\/n_c:0\/object} wandering lost in the forest, no parent in sight.",
+        "event_text": "m_c returned to camp with a kitten tottering behind {PRONOUN/m_c/object} and explains that {PRONOUN/m_c/subject} found {PRONOUN/n_c:0/object} wandering lost in the forest, no parent in sight.",
         "m_c": {
             "age": [
                 "young adult",
@@ -28,20 +28,13 @@
         ],
         "relationships": [
             {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "n_c:0"
-                ],
+                "cats_from": ["m_c"],
+                "cats_to": ["n_c:0"],
                 "mutual": true,
-                "values": [
-                    "comfort",
-                    "like"
-                ],
+                "values": ["comfort", "like"],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c found n_c:0 wandering the forest as a kitten and brought {PRONOUN\/n_c:0\/object} into the Clan."
+                    "cats_from": "m_c found n_c:0 wandering the forest as a kitten and brought {PRONOUN/n_c:0/object} into the Clan."
                 }
             }
         ],
@@ -61,7 +54,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "m_c found an abandoned kitten wandering around the forest and takes {PRONOUN\/n_c:0\/object} back to camp. Though c_n isn't happy about it, m_c persuades them to let n_c:0 stay in the Clan.",
+        "event_text": "m_c found an abandoned kitten wandering around the forest and takes {PRONOUN/n_c:0/object} back to camp. Though c_n isn't happy about it, m_c persuades them to let n_c:0 stay in the Clan.",
         "m_c": {
             "age": [
                 "young adult",
@@ -72,12 +65,7 @@
             "status": [
                 "any"
             ],
-            "trait": [
-                "compassionate",
-                "loving",
-                "responsible",
-                "thoughtful"
-            ]
+            "trait": ["compassionate", "loving", "responsible", "thoughtful"]
         },
         "new_cat": [
             [
@@ -87,20 +75,13 @@
         ],
         "relationships": [
             {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "n_c:0"
-                ],
+                "cats_from": ["m_c"],
+                "cats_to": ["n_c:0"],
                 "mutual": true,
-                "values": [
-                    "comfort",
-                    "like"
-                ],
+                "values": ["comfort", "like"],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c found n_c:0 wandering the forest as a kitten and brought {PRONOUN\/n_c:0\/object} into the Clan."
+                    "cats_from": "m_c found n_c:0 wandering the forest as a kitten and brought {PRONOUN/n_c:0/object} into the Clan."
                 }
             }
         ],
@@ -121,7 +102,7 @@
             "greenleaf"
         ],
         "frequency": 2,
-        "event_text": "m_c hears a swallow's call and discovers a loner perfectly mimicking birdsong. The strange cat chirps that {PRONOUN\/m_c\/subject} ruined {PRONOUN\/n_c:0\/poss} hunt and stalks off.",
+        "event_text": "m_c hears a swallow's call and discovers a loner perfectly mimicking birdsong. The strange cat chirps that {PRONOUN/m_c/subject} ruined {PRONOUN/n_c:0/poss} hunt and stalks off.",
         "m_c": {
             "age": [],
             "status": [
@@ -151,7 +132,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cats_from": "m_c interrupted n_c:0 while {PRONOUN\/n_c:0\/subject} {VERB\/n_c:0\/was\/were} vocalizing to attract prey."
+                    "cats_from": "m_c interrupted n_c:0 while {PRONOUN/n_c:0/subject} {VERB/n_c:0/was/were} vocalizing to attract prey."
                 }
             }
         ],

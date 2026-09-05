@@ -678,7 +678,7 @@
         },
         "tags": [],
         "frequency": 4,
-        "event_text": "r_c waited until all the medicine cats were asleep and dreaming by the edge of {POI/name/moon_pool}. Then, {PRONOUN/r_c/subject} held m_c's head under the water until {PRONOUN/m_c/subject} stopped struggling.",
+        "event_text": "r_c waited until all the medicine cats were asleep and dreaming by the edge of POI. Then, {PRONOUN/r_c/subject} held m_c's head under the water until {PRONOUN/m_c/subject} stopped struggling.",
         "m_c": {
             "age": [
                 "any"
@@ -745,7 +745,7 @@
         },
         "tags": [],
         "frequency": 4,
-        "event_text": "The ghostly murmurs of {POI/name/moon_cave} cannot drown out m_c's cries for help when r_c gets {PRONOUN/r_c/poss} claws on {PRONOUN/m_c/object} at last.",
+        "event_text": "The ghostly murmurs of POI cannot drown out m_c's cries for help when r_c gets {PRONOUN/r_c/poss} claws on {PRONOUN/m_c/object} at last.",
         "m_c": {
             "age": [
                 "any"
@@ -1344,7 +1344,7 @@
             "name": ["terrain_horseplace"]
         },
         "frequency": 2,
-        "event_text": "m_c is caught under a horse's hooves while hunting in {POI/name/terrain_horseplace}. {PRONOUN/m_c/poss/CAP} Clanmates can't get to {PRONOUN/m_c/object} in time.",
+        "event_text": "m_c is caught under a horse's hooves while hunting in POI. {PRONOUN/m_c/poss/CAP} Clanmates can't get to {PRONOUN/m_c/object} in time.",
         "m_c": {
             "dies": true,
             "status": ["leader", "deputy", "warrior", "apprentice"]
@@ -1366,7 +1366,7 @@
             "tags": ["trees"]
         },
         "frequency": 2,
-        "event_text": "m_c is hunting near {POI/tag/trees} when a branch falls on {PRONOUN/m_c/object}, killing {PRONOUN/m_c/object}.",
+        "event_text": "m_c is hunting near POI when a branch falls on {PRONOUN/m_c/object}, killing {PRONOUN/m_c/object}.",
         "new_accessory": [],
         "m_c": {
             "status": ["leader", "deputy", "warrior", "apprentice"],
@@ -1563,7 +1563,7 @@
             "tags": ["fall_risk"]
         },
         "frequency": 4,
-        "event_text": "m_c went missing and was found dead at the bottom of {POI/tag/fall_risk}.",
+        "event_text": "m_c went missing and was found dead at the bottom of POI.",
         "m_c": {
             "dies": true
         },
@@ -1589,7 +1589,7 @@
             "tags": ["tainted"]
         },
         "frequency": 4,
-        "event_text": "m_c went missing and was found dead near {POI/tag/tainted}, a strange odor rising from {PRONOUN/m_c/poss} body.",
+        "event_text": "m_c went missing and was found dead near POI, a strange odor rising from {PRONOUN/m_c/poss} body.",
         "m_c": {
             "dies": true
         },
@@ -1615,7 +1615,7 @@
             "tags": ["unstable"]
         },
         "frequency": 4,
-        "event_text": "m_c was killed when part of {POI/tag/unstable} collapsed.",
+        "event_text": "m_c was killed when part of POI collapsed.",
         "m_c": {
             "dies": true,
             "status": ["-kitten", "-elder"]
@@ -8417,7 +8417,7 @@
         "sub_type": [],
         "tags": [],
         "frequency": 1,
-        "event_text": "m_c attacked a duck, intending to bring it back for the fresh-kill pile, but was knocked below the surface of {POI/name/terrain_lake} and drowned.",
+        "event_text": "m_c attacked a duck, intending to bring it back for the fresh-kill pile, but was knocked below the surface of POI and drowned.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -8706,7 +8706,7 @@
             "name": ["terrain_sunningrocks"]
         },
         "frequency": 4,
-        "event_text": "In the wake of a battle with o_c_n at {POI/name/terrain_sunningrocks}, r_c drags back m_c's body and claims that {PRONOUN/m_c/subject} {VERB/m_c/were/was} killed by the o_c_n deputy, and r_c killed the deputy in revenge.",
+        "event_text": "In the wake of a battle with o_c_n at POI, r_c drags back m_c's body and claims that {PRONOUN/m_c/subject} {VERB/m_c/were/was} killed by the o_c_n deputy, and r_c killed the deputy in revenge.",
         "m_c": {
             "status": ["deputy"]
         },
@@ -9224,7 +9224,7 @@
         },
         "tags": [],
         "frequency": 1,
-        "event_text": "At a busy Gathering, m_c is scratched by a piece of sharp metal jutting from {POI/name/gather_monster}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/succumb/succumbs} to infection only a few days later.",
+        "event_text": "At a busy Gathering, m_c is scratched by a piece of sharp metal jutting from POI. {PRONOUN/m_c/subject/CAP} {VERB/m_c/succumb/succumbs} to infection only a few days later.",
         "m_c": {
             "dies": true,
             "age": ["-kitten"]
@@ -10093,7 +10093,7 @@
         "name": ["gather_fourtrees"]
     },
     "frequency": 1,
-    "event_text": "When r_c takes m_c to {POI/name/gather_fourtrees}, m_c declares {PRONOUN/m_c/poss} intention to be the first cat to climb all four trees. r_c can't stop {PRONOUN/m_c/object} in time. m_c only makes it halfway up the first when {PRONOUN/m_c/subject} {VERB/m_c/fall/falls}, never to get back up.",
+    "event_text": "When r_c takes m_c to POI, m_c declares {PRONOUN/m_c/poss} intention to be the first cat to climb all four trees. r_c can't stop {PRONOUN/m_c/object} in time. m_c only makes it halfway up the first when {PRONOUN/m_c/subject} {VERB/m_c/fall/falls}, never to get back up.",
     "m_c": {
         "dies": true,
         "age": ["adolescent"],

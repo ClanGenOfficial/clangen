@@ -436,7 +436,7 @@
     },
     {
         "interaction_type": "drive",
-        "event_text": "A c_n patrol confronts m_c and tells {PRONOUN\/m_c\/object} that {PRONOUN\/m_c\/subject} {VERB\/m_c\/are\/is} not welcome anywhere near c_n's territory. m_c agrees \u2014 and is scented trespassing <i>again<\/i> within the quarter-moon.",
+        "event_text": "A c_n patrol confronts m_c and tells {PRONOUN\/m_c\/object} that {PRONOUN\/m_c\/subject} {VERB\/m_c\/are\/is} not welcome anywhere near c_n's territory. m_c agrees — and is scented trespassing <i>again<\/i> within the quarter-moon.",
         "reputation": [
             "any"
         ],

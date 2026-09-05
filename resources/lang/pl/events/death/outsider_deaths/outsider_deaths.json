@@ -15,11 +15,11 @@
         "Rumors reach the Clan that m_c has died in exile."
     ],
     "lost": [
-        "Will {PRONOUN\/m_c\/subject} reach StarClan, even so far away? m_c isn't sure, but as {PRONOUN\/m_c\/subject} {VERB\/m_c\/drift\/drifts} away, {PRONOUN\/m_c\/subject} {VERB\/m_c\/hope\/hopes} to see familiar starry fur on the other side."
+        "Will {PRONOUN/m_c/subject} reach StarClan, even so far away? m_c isn't sure, but as {PRONOUN/m_c/subject} {VERB/m_c/drift/drifts} away, {PRONOUN/m_c/subject} {VERB/m_c/hope/hopes} to see familiar starry fur on the other side."
     ],
     "other_clan": [
         "A patrol crosses paths with o_c_n warriors, who tell of the passing of m_c.",
-        "m_c was a respected part of o_c_n, and {PRONOUN\/m_c\/poss} death is a shock to all the surrounding Clans."
+        "m_c was a respected part of o_c_n, and {PRONOUN/m_c/poss} death is a shock to all the surrounding Clans."
     ],
     "other_clan_exiled": [
         "Rumors reach the Clan that m_c, an exile from o_c_n, has died recently."

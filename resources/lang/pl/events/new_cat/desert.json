@@ -16,31 +16,20 @@
                 "senior adult",
                 "senior"
             ],
-            "status": [
-                "any"
-            ]
+            "status": ["any"]
         },
         "new_cat": [
-            [
-                "loner"
-            ]
+            ["loner"]
         ],
         "relationships": [
             {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "n_c:0"
-                ],
+                "cats_from": ["m_c"],
+                "cats_to": ["n_c:0"],
                 "mutual": true,
-                "values": [
-                    "comfort",
-                    "like"
-                ],
+                "values": ["comfort", "like"],
                 "amount": 5,
                 "log": {
-                    "cats_from": "cat_from offered cat_to the protection of the Clan when {PRONOUN\/cat_from\/subject} found {PRONOUN\/cat_to\/object} wandering the desert."
+                    "cats_from": "cat_from offered cat_to the protection of the Clan when {PRONOUN/cat_from/subject} found {PRONOUN/cat_to/object} wandering the desert."
                 }
             }
         ],
@@ -68,17 +57,10 @@
                 "senior adult",
                 "senior"
             ],
-            "status": [
-                "leader",
-                "deputy",
-                "medicine cat",
-                "warrior"
-            ]
+            "status": ["leader", "deputy", "medicine cat", "warrior"]
         },
         "new_cat": [
-            [
-                "loner"
-            ]
+            ["loner"]
         ],
         "outsider": {
             "current_rep": [
@@ -104,22 +86,14 @@
                 "senior adult",
                 "senior"
             ],
-            "status": [
-                "leader",
-                "deputy",
-                "medicine cat",
-                "warrior"
-            ]
+            "status": ["leader", "deputy", "medicine cat", "warrior"]
         },
         "new_cat": [
-            [
-                "loner"
-            ]
+            ["loner"]
         ],
         "outsider": {
             "current_rep": [
-                "neutral",
-                "welcoming"
+                "neutral", "welcoming"
             ],
             "changed": 1
         }
@@ -141,20 +115,10 @@
                 "senior adult",
                 "senior"
             ],
-            "status": [
-                "leader",
-                "deputy",
-                "medicine cat",
-                "warrior"
-            ]
+            "status": ["leader", "deputy", "medicine cat", "warrior"]
         },
         "new_cat": [
-            [
-                "age:has_kits",
-                "meeting",
-                "loner",
-                "can_birth"
-            ],
+            ["age:has_kits", "meeting", "loner", "can_birth"],
             [
                 "new_name",
                 "parent:0",
@@ -164,8 +128,7 @@
         ],
         "outsider": {
             "current_rep": [
-                "neutral",
-                "welcoming"
+                "neutral", "welcoming"
             ],
             "changed": 1
         }

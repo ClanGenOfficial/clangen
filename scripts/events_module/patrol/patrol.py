@@ -10,9 +10,10 @@ from typing import List, Tuple, Optional, Union, Literal, TypedDict
 import pygame
 
 from scripts.cat.cats import Cat
-from scripts.cat_relations.enums import RelType
 from scripts.cat.enums import CatAge, CatRank, CatCompatibility
+from scripts.cat_relations.enums import RelType
 from scripts.clan import get_temper_alignment
+from scripts.clan_resources.point_of_interest import get_poi_from_constraints
 from scripts.config import get_config
 from scripts.events_module.consequences import gather_cat_objects
 from scripts.events_module.event_filters import (
@@ -26,6 +27,9 @@ from scripts.events_module.patrol.generate_patrol_list import (
     will_allow_outsider_patrols,
 )
 from scripts.events_module.patrol.patrol_event import PatrolEvent
+from scripts.events_module.text_adjust import (
+    event_text_adjust,
+)
 from scripts.events_module.text_pool_event import handle_consequences
 from scripts.events_module.text_pool_event.check_general_constraints import (
     passes_general_constraints,
@@ -33,13 +37,9 @@ from scripts.events_module.text_pool_event.check_general_constraints import (
 from scripts.events_module.text_pool_event.event_retrieval import get_valid_event
 from scripts.events_module.text_pool_event.find_involved_cats import find_cats
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
-from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure import game
-from scripts.events_module.text_adjust import (
-    event_text_adjust,
-)
+from scripts.game_structure.game.settings import game_setting_get
 from scripts.special_dates import SpecialDate, is_today
-
 
 logger = logging.getLogger(__name__)
 
@@ -94,6 +94,7 @@ class Patrol:
         self.outcome_cats: TypedDict(
             "outcome_cats", {"success": dict[str, Cat], "failure": dict[str, Cat]}
         ) = {"success": {}, "failure": {}}
+        self.chosen_poi = None
 
     def begin_patrol(self, patrol_cats: List[Cat], patrol_type: str) -> str:
         """
@@ -123,6 +124,13 @@ class Patrol:
         self.patrol_event = self._get_possible_patrol(patrol_type)
         self._create_needed_cats()
 
+        if self.patrol_event.poi:
+            self.chosen_poi = get_poi_from_constraints(
+                self.patrol_event.poi.get("name"),
+                self.patrol_event.poi.get("tags"),
+                self.patrol_event.poi.get("category"),
+            )
+
         # Return text adjusted patrol intro
         return event_text_adjust(
             Cat,
@@ -130,6 +138,7 @@ class Patrol:
             involved_cat_dict=self.involved_cats,
             clan=game.clan,
             other_clan=self.other_clan,
+            chosen_poi=self.chosen_poi,
         )
 
     def proceed_patrol(
@@ -149,6 +158,7 @@ class Patrol:
                         involved_cat_dict=self.involved_cats,
                         clan=game.clan,
                         other_clan=self.other_clan,
+                        chosen_poi=self.chosen_poi,
                     ),
                     "",
                     [],
@@ -641,6 +651,7 @@ class Patrol:
             chosen_outcome,
             self.outcome_cats["success" if success else "failure"],
             self.other_clan,
+            self.chosen_poi,
         ) + (self.get_patrol_art(chosen_outcome),)
 
     def calculate_success(

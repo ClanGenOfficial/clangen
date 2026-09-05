@@ -8,7 +8,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c was practicing {PRONOUN\/m_c\/poss} tree climbing skills when {PRONOUN\/m_c\/subject} slipped from a branch. {PRONOUN\/m_c\/subject\/CAP}'{VERB\/m_c\/re\/s} brought home badly injured.",
+        "event_text": "m_c was practicing {PRONOUN/m_c/poss} tree climbing skills when {PRONOUN/m_c/subject} slipped from a branch. {PRONOUN/m_c/subject/CAP}'{VERB/m_c/re/s} brought home badly injured.",
         "m_c": {
             "status": [
                 "apprentice"
@@ -30,7 +30,7 @@
                     "m_c"
                 ],
                 "scar": "m_c was scarred after falling from a tree.",
-                "death": "m_c died from {PRONOUN\/m_c\/poss} wounds after falling from a tree."
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tree."
             }
         ]
     },
@@ -43,7 +43,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "m_c was hunting on a night patrol and was nearly carried off by an owl. {PRONOUN\/m_c\/subject\/CAP}'{VERB\/m_c\/re\/s} left badly scratched.",
+        "event_text": "m_c was hunting on a night patrol and was nearly carried off by an owl. {PRONOUN/m_c/subject/CAP}'{VERB/m_c/re/s} left badly scratched.",
         "m_c": {
             "status": [
                 "apprentice"
@@ -66,8 +66,8 @@
                 "cats": [
                     "m_c"
                 ],
-                "scar": "m_c was scarred after an owl tried to carry {PRONOUN\/m_c\/object} off.",
-                "death": "m_c died from {PRONOUN\/m_c\/poss} wounds after an owl tried to carry {PRONOUN\/m_c\/object} off."
+                "scar": "m_c was scarred after an owl tried to carry {PRONOUN/m_c/object} off.",
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after an owl tried to carry {PRONOUN/m_c/object} off."
             }
         ]
     },
@@ -125,7 +125,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c died from {PRONOUN\/m_c\/poss} wounds after falling from a tall tree and breaking {PRONOUN\/m_c\/poss} back."
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall tree and breaking {PRONOUN/m_c/poss} back."
             }
         ],
         "relationships": [
@@ -143,7 +143,7 @@
                 "amount": -10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from was badly injured when cat_to dared {PRONOUN\/cat_from\/object} to climb a tree and {PRONOUN\/cat_from\/subject} fell."
+                    "cats_from": "cat_from was badly injured when cat_to dared {PRONOUN/cat_from/object} to climb a tree and {PRONOUN/cat_from/subject} fell."
                 }
             },
             {
@@ -159,7 +159,7 @@
                 "amount": 10,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from was impressed by cat_to's bravery when cat_from dared {PRONOUN\/cat_to\/object} to climb a tree, even though things ended in the medicine den."
+                    "cats_from": "cat_from was impressed by cat_to's bravery when cat_from dared {PRONOUN/cat_to/object} to climb a tree, even though things ended in the medicine den."
                 }
             }
         ]
@@ -198,8 +198,7 @@
                     "small cut"
                 ],
                 "scars": [
-                    "QUILLSIDE",
-                    "SCRATCHSIDE"
+                    "QUILLSIDE", "SCRATCHSIDE"
                 ]
             }
         ]
@@ -232,10 +231,7 @@
                     "mangled tail"
                 ],
                 "scars": [
-                    "HALFTAIL",
-                    "MANTAIL",
-                    "NOTAIL",
-                    "TAILSCAR"
+                    "HALFTAIL", "MANTAIL", "NOTAIL", "TAILSCAR"
                 ]
             }
         ],
@@ -245,7 +241,7 @@
                     "m_c"
                 ],
                 "scar": "m_c was scarred by a falling bough.",
-                "death": "m_c died from {PRONOUN\/m_c\/poss} wounds after a bough fell on {PRONOUN\/m_c\/object}."
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after a bough fell on {PRONOUN/m_c/object}."
             }
         ]
     },
@@ -285,7 +281,7 @@
                     "m_c"
                 ],
                 "scar": "m_c's pelt was burned by a forest fire.",
-                "death": "m_c died from {PRONOUN\/m_c\/poss} burns after a forest fire."
+                "death": "m_c died from {PRONOUN/m_c/poss} burns after a forest fire."
             }
         ]
     },
@@ -350,7 +346,7 @@
                     "m_c"
                 ],
                 "scar": "m_c's pelt was burned by a forest fire.",
-                "death": "m_c died from {PRONOUN\/m_c\/poss} burns after a forest fire."
+                "death": "m_c died from {PRONOUN/m_c/poss} burns after a forest fire."
             }
         ],
         "relationships": [
@@ -476,7 +472,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c ran into a branch while following a scent trail. {PRONOUN\/m_c\/subject\/CAP} returned home with an aching head.",
+        "event_text": "m_c ran into a branch while following a scent trail. {PRONOUN/m_c/subject/CAP} returned home with an aching head.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -539,8 +535,7 @@
                     "small cut"
                 ],
                 "scars": [
-                    "QUILLSIDE",
-                    "SCRATCHSIDE"
+                    "QUILLSIDE", "SCRATCHSIDE"
                 ]
             }
         ]
@@ -566,26 +561,17 @@
         },
         "injury": [
             {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "minor_injury"
-                ]
+                "cats": ["m_c"],
+                "injuries": ["minor_injury"]
             }
         ]
     },
     {
         "event_id": "fst_mushroom_injury",
-        "location": [
-            "forest:camp1"
-        ],
-        "season": [
-            "newleaf",
-            "greenleaf"
-        ],
+        "location": ["forest:camp1"],
+        "season": ["newleaf", "greenleaf"],
         "frequency": 1,
-        "event_text": "m_c finds a curious azure mushroom. Surely one bite wouldn't hurt... {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/fall\/falls} ill later that evening.",
+        "event_text": "m_c finds a curious azure mushroom. Surely one bite wouldn't hurt... {PRONOUN/m_c/subject/CAP} {VERB/m_c/fall/falls} ill later that evening.",
         "m_c": {
             "age": [
                 "any"
@@ -617,12 +603,8 @@
         ],
         "injury": [
             {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "poisoned"
-                ],
+                "cats": ["m_c"],
+                "injuries": ["poisoned"],
                 "scars": []
             }
         ]
@@ -636,7 +618,7 @@
             "-leaf-bare"
         ],
         "frequency": 2,
-        "event_text": "During a storm, the lake bursts its banks. Thanks to m_c, everyone makes it out of camp in time, though {PRONOUN\/m_c\/subject} {VERB\/m_c\/are\/is} left coughing up water.",
+        "event_text": "During a storm, the lake bursts its banks. Thanks to m_c, everyone makes it out of camp in time, though {PRONOUN/m_c/subject} {VERB/m_c/are/is} left coughing up water.",
         "m_c": {
             "age": [
                 "-kitten",
@@ -665,7 +647,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c died from water-inhalation after helping {PRONOUN\/m_c\/poss} Clanmates escape when the camp was flooded."
+                "death": "m_c died from water-inhalation after helping {PRONOUN/m_c/poss} Clanmates escape when the camp was flooded."
             }
         ]
     },
@@ -678,7 +660,7 @@
             "-leaf-bare"
         ],
         "frequency": 4,
-        "event_text": "m_c toddles into the lake but can't swim for long. Though r_c rescues {PRONOUN\/m_c\/object}, m_c is still left coughing up water.",
+        "event_text": "m_c toddles into the lake but can't swim for long. Though r_c rescues {PRONOUN/m_c/object}, m_c is still left coughing up water.",
         "m_c": {
             "age": [
                 "kitten"
@@ -709,17 +691,10 @@
         ],
         "relationships": [
             {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
                 "mutual": false,
-                "values": [
-                    "like",
-                    "trust"
-                ],
+                "values": ["like", "trust"],
                 "amount": 20,
                 "log": {
                     "cats_from": "cat_to saved cat_from from drowning in the lake."
@@ -737,7 +712,7 @@
             "leaf-bare"
         ],
         "frequency": 3,
-        "event_text": "m_c toddles into the chilly lake but can't swim for long. Though r_c rescues {PRONOUN\/m_c\/object}, m_c is still left coughing up water and shivering. r_c's pelt is also soaked through.",
+        "event_text": "m_c toddles into the chilly lake but can't swim for long. Though r_c rescues {PRONOUN/m_c/object}, m_c is still left coughing up water and shivering. r_c's pelt is also soaked through.",
         "m_c": {
             "age": [
                 "kitten"
@@ -779,17 +754,10 @@
         ],
         "relationships": [
             {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
                 "mutual": false,
-                "values": [
-                    "like",
-                    "trust"
-                ],
+                "values": ["like", "trust"],
                 "amount": 20,
                 "log": {
                     "cats_from": "cat_to saved cat_from from drowning in the lake."
@@ -807,7 +775,7 @@
             "greenleaf"
         ],
         "frequency": 1,
-        "event_text": "m_c is bitten by a pike while swimming in the lake. {PRONOUN\/m_c\/subject\/CAP} barely {VERB\/m_c\/make\/makes} it back to shore, blood blossoming in the water.",
+        "event_text": "m_c is bitten by a pike while swimming in the lake. {PRONOUN/m_c/subject/CAP} barely {VERB/m_c/make/makes} it back to shore, blood blossoming in the water.",
         "m_c": {
             "age": [
                 "-kitten"
@@ -844,7 +812,7 @@
             "greenleaf"
         ],
         "frequency": 3,
-        "event_text": "m_c sneaks out of camp and plays with pretty violet flowers. {PRONOUN\/m_c\/subject\/CAP} barely {VERB\/m_c\/make\/makes} it back to camp, sweating and whining about {PRONOUN\/m_c\/poss} hurting belly.",
+        "event_text": "m_c sneaks out of camp and plays with pretty violet flowers. {PRONOUN/m_c/subject/CAP} barely {VERB/m_c/make/makes} it back to camp, sweating and whining about {PRONOUN/m_c/poss} hurting belly.",
         "m_c": {
             "age": [
                 "kitten"
@@ -875,45 +843,28 @@
     },
     {
         "event_id": "fst_injury_sprain_camp1",
-        "location": [
-            "forest:camp1"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
+        "location": ["forest:camp1"],
+        "season": ["leaf-bare"],
         "frequency": 2,
         "event_text": "m_c stumbles and trips over a root in camp, creating a perfectly m_c-shaped imprint in the snow.",
         "m_c": {
-            "age": [
-                "-newborn"
-            ]
+            "age": ["-newborn"]
         },
         "injury": [
             {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "bruises",
-                    "sprain"
-                ]
+                "cats": ["m_c"],
+                "injuries": ["bruises", "sprain"]
             }
         ],
         "relationships": [
             {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "some_clan"
-                ],
+                "cats_from": ["m_c"],
+                "cats_to": ["some_clan"],
                 "mutual": false,
-                "values": [
-                    "like"
-                ],
+                "values": ["like"],
                 "amount": -5,
                 "log": {
-                    "cats_from": "cat_from was hurt that cat_to laughed when {PRONOUN\/cat_from\/subject} tripped over a root in camp.",
+                    "cats_from": "cat_from was hurt that cat_to laughed when {PRONOUN/cat_from/subject} tripped over a root in camp.",
                     "cats_to": "cat_to thought it was funny that cat_from tripped over a snowy root in camp."
                 }
             }
@@ -928,7 +879,7 @@
             "leaf-bare"
         ],
         "frequency": 1,
-        "event_text": "m_c misjudges how deep the snow is and jumps in. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/land\/lands} wrong, breaking {PRONOUN\/m_c\/poss} leg.",
+        "event_text": "m_c misjudges how deep the snow is and jumps in. {PRONOUN/m_c/subject/CAP} {VERB/m_c/land/lands} wrong, breaking {PRONOUN/m_c/poss} leg.",
         "m_c": {
             "age": [
                 "-newborn",
@@ -938,22 +889,16 @@
         },
         "injury": [
             {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "broken bone"
-                ],
+                "cats": ["m_c"],
+                "injuries": ["broken bone"],
                 "scars": []
             }
         ],
         "history": [
             {
-                "cats": [
-                    "m_c"
-                ],
-                "scar": "m_c was scarred after breaking {PRONOUN\/m_c\/poss} leg.",
-                "death": "m_c died from complications caused by {PRONOUN\/m_c\/poss} broken leg."
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after breaking {PRONOUN/m_c/poss} leg.",
+                "death": "m_c died from complications caused by {PRONOUN/m_c/poss} broken leg."
             }
         ]
     },
@@ -975,20 +920,14 @@
         },
         "injury": [
             {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "head damage"
-                ],
+                "cats": ["m_c"],
+                "injuries": ["head damage"],
                 "scars": []
             }
         ],
         "history": [
             {
-                "cats": [
-                    "m_c"
-                ],
+                "cats": ["m_c"],
                 "scar": "",
                 "death": "m_c died from complications caused by falling into the gully."
             }
