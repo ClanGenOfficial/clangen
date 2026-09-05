@@ -730,7 +730,12 @@ dev_tools = false
 
 [ranks]
   # permit player to change cat ranks
-  allow_manual = true
+  allow_manual_all = true
+  allow_manual_deputy = true
+
+  [ranks.deputy_eligibility]
+    # force only the leader's kits to be selected as deputy
+    only_leader_kits_deputy = false
 
 [graduation]
   # base possible experience gain for apprentices

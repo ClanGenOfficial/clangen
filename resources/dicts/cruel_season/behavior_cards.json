@@ -8,7 +8,7 @@
   "fated_paths": {
     "card_art": "behavior/resolute.png",
     "modifiers": {
-      "ranks.allow_manual": false,
+      "ranks.allow_manual_all": false,
       "mates.allow_manual": false,
       "settings.force_enable.deputy": true
     }
@@ -31,7 +31,7 @@
     }
   },
   "kit_season": {
-    "card_art": "behavior/survival_of_fittest.png",
+    "card_art": "behavior/underpopulated.png",
     "modifiers": {
       "pregnancy.birth_cooldown": 2,
       "pregnancy.primary_chance_mated": 20,
@@ -39,7 +39,7 @@
     }
   },
   "mouths_to_feed": {
-    "card_art": "behavior/survival_of_fittest.png",
+    "card_art": "behavior/underpopulated.png",
     "modifiers": {
       "pregnancy.one_kit_possibility.young adult": 0,
       "pregnancy.one_kit_possibility.adult": 4,
@@ -124,6 +124,15 @@
     "modifiers": {
       "outsiders.max_reputation": 29,
       "outsiders.starting_reputation": 15
+    }
+  },
+  "pride_and_joy": {
+    "card_art": "behavior/pride_and_joy.png",
+    "modifiers": {
+      "settings.force_enable.deputy": true,
+      "ranks.allow_manual_deputy": false,
+      "clan_creation.ranks_needed.deputy": false,
+      "ranks.deputy_eligibility.only_leader_kits_deputy": true
     }
   }
 }

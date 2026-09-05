@@ -19,6 +19,7 @@
         "condition_retire_normal": "Seeing m_c struggling the last few moons, lead_name approaches {PRONOUN\/m_c\/object} and promises that no one would think less of {PRONOUN\/m_c\/object} for retiring early, and that {PRONOUN\/m_c\/subject} would still be a valuable member of the Clan as an elder. m_c agrees; later that day, {PRONOUN\/m_c\/poss} elder ceremony is held.",
         "ceremony_closer": "Visit lead_name's profile to see {PRONOUN\/lead_name\/poss} full leader ceremony.",
         "ceremony_deputy_none": "There are no cats fit to become deputy.",
+        "ceremony_deputy_none_kin": "lead_name refuses to appoint a new deputy. Only {PRONOUN/lead_name/poss} lineage is fit to lead.",
         "adoption_kittens_single": {
             "one": "%{names} found a %{insert} and decides to adopt it.",
             "many": "%{names} found a %{insert} and decides to adopt them."
