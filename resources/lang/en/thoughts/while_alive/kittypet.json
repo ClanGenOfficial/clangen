@@ -115,7 +115,20 @@
             "Is being praised for catching a mouse that got in the house",
             "Is waking {PRONOUN/m_c/poss} housefolk up",
             "Is meowing to be let in a closed room",
-            "Is meowing to be let out of a closed room"
+            "Is meowing to be let out of a closed room",
+            "Is taunting the neighbor's dog",
+            "Is cozying up to the housedog",
+            "Is play fighting with the housedog",
+            "Is grooming the housedog",
+            "Is faking an injury for treats",
+            "Is faking an injury for attention",
+            "Is on the counter despite {PRONOUN/m_c/poss} housefolk's wishes",
+            "Is puffing {PRONOUN/m_c/poss} fur up at {PRONOUN/m_c/poss} reflection in a mirror",
+            "Is making dirt in {PRONOUN/m_c/poss} housefolk's houseplant",
+            "Is clawing up the curtains",
+            "Is lounging the day away without a care in the world",
+            "Misplaced {PRONOUN/m_c/poss} favorite toy"
+
         ]
     },
     {
@@ -195,6 +208,17 @@
                 ]
             }
         }
+    },
+    {
+        "event_id": "kittypet_greenleaf_leaf_bare",
+        "season": [
+            "greenleaf",
+            "leaf-bare"
+        ],
+        "strings": [
+            "Is thankful for the air conditioning",
+            "Hopes the weather isn't too hard on the cats without housefolk"
+        ]
     },
     {
         "event_id": "kittypet_shameless_thoughts",
