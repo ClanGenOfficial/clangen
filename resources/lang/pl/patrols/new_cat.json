@@ -14,8 +14,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_newcat_Ln",
-        "intro_text": "The patrol finds a loner who is interested in joining the Clan.",
-        "decline_text": "The patrol decides not to confront the loner.",
+        "intro_strings": [
+            "The patrol finds a loner who is interested in joining the Clan."
+        ],
+        "decline_strings": [
+            "The patrol decides not to confront the loner."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -158,14 +162,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
-                ]
+                }
             }
         ],
         "antag_success_outcomes": [
@@ -235,8 +232,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_newcat_Ln",
-        "intro_text": "The patrol finds a pair of cats interested in joining the Clan.",
-        "decline_text": "The patrol decides to leave the cats alone.",
+        "intro_strings": [
+            "The patrol finds a pair of cats interested in joining the Clan."
+        ],
+        "decline_strings": [
+            "The patrol decides to leave the cats alone."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1249,14 +1250,6 @@
                             "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend."
                         }
                     }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c1",
-                            "n_c0"
-                        ]
-                    }
                 ]
             },
             {
@@ -1291,15 +1284,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c1",
-                            "n_c0"
-                        ]
-                    }
-                ]
+                }
             }
         ],
         "antag_success_outcomes": [
@@ -1411,8 +1396,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_newcat_Ln",
-        "intro_text": "p_l finds a loner who is interested in joining the Clan.",
-        "decline_text": "p_l decides not to confront the loner.",
+        "intro_strings": [
+            "p_l finds a loner who is interested in joining the Clan."
+        ],
+        "decline_strings": [
+            "p_l decides not to confront the loner."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1555,14 +1544,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
-                ]
+                }
             }
         ],
         "antag_success_outcomes": [
@@ -1632,8 +1614,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "bord_general_intro",
-        "intro_text": "The patrol finds a kittypet who is interested in joining the Clan.",
-        "decline_text": "The patrol decides not to confront the kittypet.",
+        "intro_strings": [
+            "The patrol finds a kittypet who is interested in joining the Clan."
+        ],
+        "decline_strings": [
+            "The patrol decides not to confront the kittypet."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1775,14 +1761,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
-                ]
+                }
             }
         ],
         "antag_success_outcomes": [
@@ -1833,8 +1812,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "bord_general_intro",
-        "intro_text": "p_l finds a kittypet who is interested in joining the Clan.",
-        "decline_text": "p_l decides not to confront the kittypet.",
+        "intro_strings": [
+            "p_l finds a kittypet who is interested in joining the Clan."
+        ],
+        "decline_strings": [
+            "p_l decides not to confront the kittypet."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1976,14 +1959,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
-                ]
+                }
             }
         ],
         "antag_success_outcomes": [
@@ -2037,8 +2013,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_newcatthunderpath_LnWr",
-        "intro_text": "r_c0 finds a wounded cat near the Thunderpath.",
-        "decline_text": "They leave the wounded cat alone.",
+        "intro_strings": [
+            "r_c0 finds a wounded cat near the Thunderpath."
+        ],
+        "decline_strings": [
+            "They leave the wounded cat alone."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2202,8 +2182,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_newcatthunderpath_LnWr",
-        "intro_text": "p_l finds a wounded cat near the Thunderpath.",
-        "decline_text": "p_l leaves the wounded cat alone.",
+        "intro_strings": [
+            "p_l finds a wounded cat near the Thunderpath."
+        ],
+        "decline_strings": [
+            "p_l leaves the wounded cat alone."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2357,8 +2341,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "bord_general_intro",
-        "intro_text": "In the middle of remarking the border, p_l finds a distinct scent trail has crossed it.",
-        "decline_text": "p_l makes a note of it, but it'll have to wait till {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} done with this and back at camp.",
+        "intro_strings": [
+            "In the middle of remarking the border, p_l finds a distinct scent trail has crossed it."
+        ],
+        "decline_strings": [
+            "p_l makes a note of it, but it'll have to wait till {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} done with this and back at camp."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2422,7 +2410,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c0/poss} Twoleg's name. s_c0 steps up and tells the patrol they'll be taking this kittypet back to camp for healing — in Tigger's name. {PRONOUN/s_c0/subject/CAP}'ll tell the story later."
+                    "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c0/poss} Twoleg's name. s_c0 steps up and tells the patrol they'll be taking this kittypet back to camp for healing \u2014 in Tigger's name. {PRONOUN/s_c0/subject/CAP}'ll tell the story later."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -2580,14 +2568,6 @@
                             "newborn"
                         ]
                     }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c2",
-                            "n_c0"
-                        ]
-                    }
                 ]
             }
         ],
@@ -2715,8 +2695,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "bord_general_intro",
-        "intro_text": "Padding along the border, p_l checks once... twice... three times... and crosses over c_n's markers, venturing beyond into unclaimed land.",
-        "decline_text": "p_l thinks better of {PRONOUN/p_l/poss} risky adventure and retreats back to known territory.",
+        "intro_strings": [
+            "Padding along the border, p_l checks once... twice... three times... and crosses over c_n's markers, venturing beyond into unclaimed land."
+        ],
+        "decline_strings": [
+            "p_l thinks better of {PRONOUN/p_l/poss} risky adventure and retreats back to known territory."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2758,13 +2742,6 @@
                             "cats_from": "n_c0 met {PRONOUN/n_c0/poss} Clancat friend, cat_to, over the border.",
                             "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner friend, n_c0, over the border."
                         }
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
                     }
                 ]
             },
@@ -2826,13 +2803,6 @@
                             "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner mate, n_c0, over the border."
                         }
                     }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
                 ]
             },
             {
@@ -2892,13 +2862,6 @@
                             "cats_from": "n_c0 met {PRONOUN/n_c0/poss} Clancat mate, cat_to, over the border.",
                             "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner mate, n_c0, over the border."
                         }
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
                     }
                 ]
             },
@@ -3050,13 +3013,6 @@
                             "p_l"
                         ]
                     }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
                 ]
             },
             {
@@ -3111,13 +3067,6 @@
                         "log": {
                             "cats_from": "cat_from and cat_to fell in love over the course of many stolen moments at the border."
                         }
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
                     }
                 ]
             }
@@ -3291,8 +3240,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_newkit_Kt",
-        "intro_text": "r_c0 finds an abandoned kit whose parents are nowhere to be found.",
-        "decline_text": "They decide to leave the kit alone.",
+        "intro_strings": [
+            "r_c0 finds an abandoned kit whose parents are nowhere to be found."
+        ],
+        "decline_strings": [
+            "They decide to leave the kit alone."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3401,8 +3354,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_newkit_Kt",
-        "intro_text": "p_l finds an abandoned kit whose parents are nowhere to be found.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to leave the kit alone.",
+        "intro_strings": [
+            "p_l finds an abandoned kit whose parents are nowhere to be found."
+        ],
+        "decline_strings": [
+            "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to leave the kit alone."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3514,8 +3471,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_newmed1_Ln",
-        "intro_text": "r_c0 finds a loner offering healing skills in exchange for shelter.",
-        "decline_text": "The patrol declines their offer.",
+        "intro_strings": [
+            "r_c0 finds a loner offering healing skills in exchange for shelter."
+        ],
+        "decline_strings": [
+            "The patrol declines their offer."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3660,14 +3621,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
-                ]
+                }
             }
         ],
         "antag_success_outcomes": [
@@ -3737,8 +3691,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_newmed2_Ln",
-        "intro_text": "p_l finds a loner offering healing skills in exchange for shelter.",
-        "decline_text": "p_l declines their offer.",
+        "intro_strings": [
+            "p_l finds a loner offering healing skills in exchange for shelter."
+        ],
+        "decline_strings": [
+            "p_l declines their offer."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3883,14 +3841,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
-                ]
+                }
             }
         ],
         "antag_success_outcomes": [
@@ -3960,8 +3911,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_dogchase_Ln",
-        "intro_text": "The patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!",
-        "decline_text": "The patrol decides not to interfere. Surely the cat can handle itself, the dog isn't even that big.",
+        "intro_strings": [
+            "The patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!"
+        ],
+        "decline_strings": [
+            "The patrol decides not to interfere. Surely the cat can handle itself, the dog isn't even that big."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -4081,14 +4036,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
-                ]
+                }
             },
             {
                 "frequency": 3,
@@ -4118,13 +4066,6 @@
                         ],
                         "scar_history": "m_c was scarred when a loner attacked {PRONOUN/m_c/object}.",
                         "death_history": "m_c died of injuries inflicted by a loner."
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
                     }
                 ]
             }
@@ -4215,8 +4156,12 @@
         },
         "chance_of_success": 45,
         "patrol_art": "cat_sprites/gen_med_rescue_Mc",
-        "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
-        "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
+        "intro_strings": [
+            "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
+        ],
+        "decline_strings": [
+            "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -4420,8 +4365,12 @@
         },
         "chance_of_success": 45,
         "patrol_art": "cat_sprites/gen_med_rescue_Mc",
-        "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
-        "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
+        "intro_strings": [
+            "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
+        ],
+        "decline_strings": [
+            "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -4646,8 +4595,12 @@
         },
         "chance_of_success": 45,
         "patrol_art": "cat_sprites/gen_med_rescue_Mc",
-        "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
-        "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
+        "intro_strings": [
+            "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
+        ],
+        "decline_strings": [
+            "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -4855,8 +4808,12 @@
         },
         "chance_of_success": 45,
         "patrol_art": "cat_sprites/gen_med_rescue_Mc",
-        "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
-        "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
+        "intro_strings": [
+            "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
+        ],
+        "decline_strings": [
+            "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5070,8 +5027,12 @@
         },
         "chance_of_success": 45,
         "patrol_art": "med_general_intro",
-        "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
-        "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
+        "intro_strings": [
+            "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
+        ],
+        "decline_strings": [
+            "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5285,8 +5246,12 @@
         },
         "chance_of_success": 45,
         "patrol_art": "med_general_intro",
-        "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
-        "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
+        "intro_strings": [
+            "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
+        ],
+        "decline_strings": [
+            "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5497,8 +5462,12 @@
         },
         "chance_of_success": 10,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
-        "intro_text": "p_l hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach.",
-        "decline_text": "p_l decides not to investigate.",
+        "intro_strings": [
+            "p_l hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach."
+        ],
+        "decline_strings": [
+            "p_l decides not to investigate."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5654,15 +5623,6 @@
                         "log": {
                             "cats_from": "cat_from and the other rogues ambushed cat_to in an abandoned Twoleg nest and cat_to got away."
                         }
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c2",
-                            "n_c1",
-                            "n_c0"
-                        ]
                     }
                 ]
             },
@@ -5822,8 +5782,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
-        "intro_text": "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach.",
-        "decline_text": "The patrol decides not to investigate.",
+        "intro_strings": [
+            "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach."
+        ],
+        "decline_strings": [
+            "The patrol decides not to investigate."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5993,14 +5957,6 @@
                         "history": "This cat died while wandering.",
                         "no_results": false
                     }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c1",
-                            "n_c0"
-                        ]
-                    }
                 ]
             },
             {
@@ -6081,18 +6037,9 @@
                 "death": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "history": "m_c died in an ambush set by rogues."
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c2",
-                            "n_c1",
-                            "n_c0"
-                        ]
                     }
                 ]
             }
@@ -6208,8 +6155,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush.",
-        "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
+        "intro_strings": [
+            "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush."
+        ],
+        "decline_strings": [
+            "It's probably nothing. The patrol leaves the noise alone and continues on their way."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -6452,13 +6403,6 @@
                         "scar_history": "m_c gained a scar after tussling with a rogue.",
                         "death_history": "m_c died from injuries sustained in a fight with a rogue."
                     }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
                 ]
             }
         ],
@@ -6569,8 +6513,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
-        "intro_text": "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
-        "decline_text": "The patrol decides not to investigate.",
+        "intro_strings": [
+            "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the plains."
+        ],
+        "decline_strings": [
+            "The patrol decides not to investigate."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -6736,14 +6684,6 @@
                         "history": "This cat died while wandering.",
                         "no_results": false
                     }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c1",
-                            "n_c0"
-                        ]
-                    }
                 ]
             },
             {
@@ -6899,8 +6839,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
-        "intro_text": "p_l hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
-        "decline_text": "p_l decides not to investigate.",
+        "intro_strings": [
+            "p_l hears some odd noises coming from an abandoned Twoleg nest out on the plains."
+        ],
+        "decline_strings": [
+            "p_l decides not to investigate."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -7056,15 +7000,6 @@
                         "log": {
                             "cats_from": "cat_from and the other rogues ambushed cat_to in an abandoned Twoleg nest and cat_to got away."
                         }
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c2",
-                            "n_c1",
-                            "n_c0"
-                        ]
                     }
                 ]
             },
@@ -7236,8 +7171,12 @@
         ],
         "chance_of_success": 40,
         "patrol_art": "backgrounds/fst_twolegplace",
-        "intro_text": "The patrol approaches a Twoleg nest in the woods while hunting.",
-        "decline_text": "The patrol decides to hunt elsewhere.",
+        "intro_strings": [
+            "The patrol approaches a Twoleg nest in the woods while hunting."
+        ],
+        "decline_strings": [
+            "The patrol decides to hunt elsewhere."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -7551,8 +7490,12 @@
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/gen_bord_dogchase_Wr",
-        "intro_text": "Having been chased by a small, yappy dog along the border, p_l is about to land a hefty blow to the irritating creature's face, when a panicked voice calls out from nearby.",
-        "decline_text": "Frankly, p_l has better things to do than talk to weird dog-defenders. {PRONOUN/p_l/subject/CAP} {VERB/p_l/head/heads} home early, without a second glance at whoever called out.",
+        "intro_strings": [
+            "Having been chased by a small, yappy dog along the border, p_l is about to land a hefty blow to the irritating creature's face, when a panicked voice calls out from nearby."
+        ],
+        "decline_strings": [
+            "Frankly, p_l has better things to do than talk to weird dog-defenders. {PRONOUN/p_l/subject/CAP} {VERB/p_l/head/heads} home early, without a second glance at whoever called out."
+        ],
         "success_outcomes": [
             {
                 "frequency": 3,
@@ -7586,13 +7529,6 @@
                         "log": {
                             "cats_from": "cat_from tamed the dog that was chasing cat_to."
                         }
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
                     }
                 ]
             },
@@ -7641,13 +7577,6 @@
                         "log": {
                             "cats_to": "cat_to was unsettled by n_c0 being friends with the dog that was chasing {PRONOUN/cat_to/object}."
                         }
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
                     }
                 ]
             },
@@ -7754,20 +7683,13 @@
                         "scar_history": "m_c was scarred after a dog nipped {PRONOUN/m_c/poss} ear.",
                         "death_history": "m_c died of an injury inflicted by a dog."
                     }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
                 ]
             },
             {
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_battle_WrLn",
                 "strings": [
-                    "p_l spins around just in time to see an impressively vicious kittypet lunging at {PRONOUN/p_l/object}. Once {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} recovered from {PRONOUN/p_l/poss} momentary shock, p_l easily overpowers the kittypet, who's snarling something about the dog being {PRONOUN/n_c0/poss} 'friend'. The odd pair quickly run off, leaving behind a slightly dazed — and very confused — p_l."
+                    "p_l spins around just in time to see an impressively vicious kittypet lunging at {PRONOUN/p_l/object}. Once {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} recovered from {PRONOUN/p_l/poss} momentary shock, p_l easily overpowers the kittypet, who's snarling something about the dog being {PRONOUN/n_c0/poss} 'friend'. The odd pair quickly run off, leaving behind a slightly dazed \u2014 and very confused \u2014 p_l."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -7831,13 +7753,6 @@
                         ],
                         "scar_history": "m_c was scarred after a kittypet took them by surprise, though {PRONOUN/p_l/subject} {VERB/p_l/tell/tells} everyone it was a bloodthirsty rogue.",
                         "death_history": "m_c died from injuries given by a particularly vicious kittypet."
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
                     }
                 ]
             }
@@ -7988,8 +7903,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_foundscent_WrRg",
-        "intro_text": "p_l freezes as {PRONOUN/p_l/subject} {VERB/p_l/catch/catches} the scent of multiple unfamiliar cats, along with rustling in the undergrowth. Turning {PRONOUN/p_l/poss} attention towards the noise, p_l's fur begins to bristle with unease.",
-        "decline_text": "The chance of these scents being an ambush or worse just isn't worth investigating by {PRONOUN/p_l/self}. Instead, p_l decides to retreat while {PRONOUN/p_l/subject} still can.",
+        "intro_strings": [
+            "p_l freezes as {PRONOUN/p_l/subject} {VERB/p_l/catch/catches} the scent of multiple unfamiliar cats, along with rustling in the undergrowth. Turning {PRONOUN/p_l/poss} attention towards the noise, p_l's fur begins to bristle with unease."
+        ],
+        "decline_strings": [
+            "The chance of these scents being an ambush or worse just isn't worth investigating by {PRONOUN/p_l/self}. Instead, p_l decides to retreat while {PRONOUN/p_l/subject} still can."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -8350,14 +8269,18 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/running_WrWr",
-        "intro_text": "p_l and r_c0 head to the outer border, near some Twoleg nests. {PRONOUN/p_l/subject/CAP} {VERB/p_l/signal/signals} silently for r_c0 to stop when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} some commotion. Together, they peep from the bushes and see two kittypets locked in argument.",
-        "decline_text": "Squabbling kittypets is no business of c_n's. p_l carries on with the patrol.",
+        "intro_strings": [
+            "p_l and r_c0 head to the outer border, near some Twoleg nests. {PRONOUN/p_l/subject/CAP} {VERB/p_l/signal/signals} silently for r_c0 to stop when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} some commotion. Together, they peep from the bushes and see two kittypets locked in argument."
+        ],
+        "decline_strings": [
+            "Squabbling kittypets is no business of c_n's. p_l carries on with the patrol."
+        ],
         "success_outcomes": [
             {
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_train_talking_WrLn",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells n_c0 {PRONOUN/n_c0/subject} should take no for an answer. n_c1 shoots p_l a grateful look."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u2014 n_c0 \u2014 is in love with the other \u2014 n_c1 \u2014 who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells n_c0 {PRONOUN/n_c0/subject} should take no for an answer. n_c1 shoots p_l a grateful look."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -8439,21 +8362,13 @@
                             "cats_from": "cat_from was grateful for cat_to helping {PRONOUN/cat_from/object} with {PRONOUN/cat_from/poss} relationship conflict."
                         }
                     }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c1",
-                            "n_c0"
-                        ]
-                    }
                 ]
             },
             {
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_newcathostile_Ln",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells the kittypets to keep their drama away from c_n's border."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u2014 n_c0 \u2014 is in love with the other \u2014 n_c1 \u2014 who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells the kittypets to keep their drama away from c_n's border."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -8517,21 +8432,13 @@
                             "cats_from": "cat_from rejected {PRONOUN/cat_from/poss} friend, cat_to, <b>only</b> seeing cat_to as a friend."
                         }
                     }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c1",
-                            "n_c0"
-                        ]
-                    }
                 ]
             },
             {
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_speakingcat_Wr",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. s_c0 steps forward to help them see each other's side and come to a resolution. n_c0 apologizes for badgering n_c1, and n_c1 admits {PRONOUN/n_c1/subject} {VERB/n_c1/do/does} feel some fondness for {PRONOUN/n_c0/object}, but {PRONOUN/n_c1/subject} {VERB/n_c1/are/is}n't ready for that kind of commitment."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u2014 n_c0 \u2014 is in love with the other \u2014 n_c1 \u2014 who is having none of it. s_c0 steps forward to help them see each other's side and come to a resolution. n_c0 apologizes for badgering n_c1, and n_c1 admits {PRONOUN/n_c1/subject} {VERB/n_c1/do/does} feel some fondness for {PRONOUN/n_c0/object}, but {PRONOUN/n_c1/subject} {VERB/n_c1/are/is}n't ready for that kind of commitment."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -8628,21 +8535,13 @@
                             "cats_from": "cat_from was grateful for cat_to helping {PRONOUN/cat_from/object} resolve {PRONOUN/cat_from/poss} relationship conflict."
                         }
                     }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c1",
-                            "n_c0"
-                        ]
-                    }
                 ]
             },
             {
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_speakingcat_Wr",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. s_c0 steps forward to help them see each other's side and come to a resolution. n_c0 apologizes for badgering n_c1, and n_c1 admits {PRONOUN/n_c1/subject} {VERB/n_c1/do/does} feel some fondness for {PRONOUN/n_c0/object}, but {PRONOUN/n_c1/subject} {VERB/n_c1/are/is}n't ready for that kind of commitment."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u2014 n_c0 \u2014 is in love with the other \u2014 n_c1 \u2014 who is having none of it. s_c0 steps forward to help them see each other's side and come to a resolution. n_c0 apologizes for badgering n_c1, and n_c1 admits {PRONOUN/n_c1/subject} {VERB/n_c1/do/does} feel some fondness for {PRONOUN/n_c0/object}, but {PRONOUN/n_c1/subject} {VERB/n_c1/are/is}n't ready for that kind of commitment."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -8736,14 +8635,6 @@
                             "cats_from": "cat_from was grateful for cat_to helping {PRONOUN/cat_from/object} resolve {PRONOUN/cat_from/poss} relationship conflict."
                         }
                     }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c1",
-                            "n_c0"
-                        ]
-                    }
                 ]
             }
         ],
@@ -8752,7 +8643,7 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_happycat_Ln",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. p_l steps in and tells n_c0 {PRONOUN/n_c0/subject} should take no for an answer. n_c1 shoots p_l a grateful and flirty look, and p_l hastily backs off. n_c0 catches that glance, jealousy in {PRONOUN/n_c0/poss} eyes."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u2014 n_c0 \u2014 is in love with the other \u2014 n_c1 \u2014 who is having none of it. p_l steps in and tells n_c0 {PRONOUN/n_c0/subject} should take no for an answer. n_c1 shoots p_l a grateful and flirty look, and p_l hastily backs off. n_c0 catches that glance, jealousy in {PRONOUN/n_c0/poss} eyes."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -8865,21 +8756,13 @@
                             "cats_from": "cat_from was jealous that n_c1 seemed more interested in cat_to than {PRONOUN/cat_from/object}."
                         }
                     }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c1",
-                            "n_c0"
-                        ]
-                    }
                 ]
             },
             {
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_bord_twocathostile_LnLn",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. p_l steps in and lectures n_c0, but it just seems to annoy both kittypets. Maybe they just like to argue."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u2014 n_c0 \u2014 is in love with the other \u2014 n_c1 \u2014 who is having none of it. p_l steps in and lectures n_c0, but it just seems to annoy both kittypets. Maybe they just like to argue."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -8959,14 +8842,6 @@
                         "log": {
                             "cats_from": "cat_from was annoyed when cat_to tried to intervene in {PRONOUN/cat_from/poss} argument with {PRONOUN/cat_from/poss} friend."
                         }
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c1",
-                            "n_c0"
-                        ]
                     }
                 ]
             },
@@ -9064,14 +8939,6 @@
                             "cats_from": "cat_to and cat_from are friends and were in the middle of an argument before being interrupted."
                         }
                     }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c1",
-                            "n_c0"
-                        ]
-                    }
                 ]
             }
         ],
@@ -9080,7 +8947,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_twocathostile_WrWr",
                 "strings": [
-                    "p_l rolls {PRONOUN/p_l/poss} eyes and interrupts the kittypets' argument to tell them both to scram — and to go tell all their kittypet friends to keep their personal lives on the other side of the border."
+                    "p_l rolls {PRONOUN/p_l/poss} eyes and interrupts the kittypets' argument to tell them both to scram \u2014 and to go tell all their kittypet friends to keep their personal lives on the other side of the border."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -9244,7 +9111,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_newcathostile_Ln",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. p_l interrupts to tell n_c1 that an ugly mangepelt like {PRONOUN/n_c1/self} should be pleased that any cat at all has shown an interest."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u2014 n_c0 \u2014 is in love with the other \u2014 n_c1 \u2014 who is having none of it. p_l interrupts to tell n_c1 that an ugly mangepelt like {PRONOUN/n_c1/self} should be pleased that any cat at all has shown an interest."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -9330,7 +9197,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_twocathostile_LnLn",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. p_l interrupts to tell n_c0 that {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} flattering a prideful and vain-hearted mouse-brain. Neither kittypet seems to appreciate this."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u2014 n_c0 \u2014 is in love with the other \u2014 n_c1 \u2014 who is having none of it. p_l interrupts to tell n_c0 that {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} flattering a prideful and vain-hearted mouse-brain. Neither kittypet seems to appreciate this."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -9500,7 +9367,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_happycat_Ln",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. p_l interrupts to tell n_c1 that {PRONOUN/n_c1/subject}{VERB/n_c1/'re/'s} one of the ugliest badger-faced fleapelts p_l's ever had the displeasure of looking on. Inexplicably, n_c1 bats {PRONOUN/n_c1/poss} eyelashes at p_l and giggles. n_c0 looks on jealously."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u2014 n_c0 \u2014 is in love with the other \u2014 n_c1 \u2014 who is having none of it. p_l interrupts to tell n_c1 that {PRONOUN/n_c1/subject}{VERB/n_c1/'re/'s} one of the ugliest badger-faced fleapelts p_l's ever had the displeasure of looking on. Inexplicably, n_c1 bats {PRONOUN/n_c1/poss} eyelashes at p_l and giggles. n_c0 looks on jealously."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -9614,8 +9481,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is checking the border lines, they hear the traipse of pawsteps through the territory.",
-        "decline_text": "They decide to leave it alone. It's probably just another Clanmate out in the territory.",
+        "intro_strings": [
+            "As the patrol is checking the border lines, they hear the traipse of pawsteps through the territory."
+        ],
+        "decline_strings": [
+            "They decide to leave it alone. It's probably just another Clanmate out in the territory."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -9777,14 +9648,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
-                ]
+                }
             },
             {
                 "frequency": 4,
@@ -9813,14 +9677,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
-                ]
+                }
             },
             {
                 "frequency": 3,
@@ -9850,13 +9707,6 @@
                         ],
                         "scar_history": "m_c gained a scar from a fight with an angry kittypet.",
                         "death_history": "m_c died from injuries inflicted by a kittypet."
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
                     }
                 ]
             }
@@ -9901,8 +9751,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": "The patrol is checking along the border lines when they hear a startling sound: a hiss of pain. They quickly follow the sound to the source. It's a loner, one who appears to be injured.",
-        "decline_text": "It's probably nothing. The loner will be fine: the patrol leaves them behind and continues on their way.",
+        "intro_strings": [
+            "The patrol is checking along the border lines when they hear a startling sound: a hiss of pain. They quickly follow the sound to the source. It's a loner, one who appears to be injured."
+        ],
+        "decline_strings": [
+            "It's probably nothing. The loner will be fine: the patrol leaves them behind and continues on their way."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -10172,8 +10026,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": "p_l is checking along the border lines when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a startling sound: a hiss of pain. {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/follow/follows} the sound to the source. It's a loner, one who appears to be injured.",
-        "decline_text": "It's probably nothing. p_l leaves the noise alone and continues on {PRONOUN/p_l/poss} way.",
+        "intro_strings": [
+            "p_l is checking along the border lines when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a startling sound: a hiss of pain. {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/follow/follows} the sound to the source. It's a loner, one who appears to be injured."
+        ],
+        "decline_strings": [
+            "It's probably nothing. p_l leaves the noise alone and continues on {PRONOUN/p_l/poss} way."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -10453,8 +10311,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "It's a cold day in c_n's territory, and p_l is the only cat stepping out. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} by {PRONOUN/p_l/self} when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a cat screaming for help.",
-        "decline_text": "Nope, not today, there's no way p_l is running after ghost cats, no thank you.",
+        "intro_strings": [
+            "It's a cold day in c_n's territory, and p_l is the only cat stepping out. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} by {PRONOUN/p_l/self} when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a cat screaming for help."
+        ],
+        "decline_strings": [
+            "Nope, not today, there's no way p_l is running after ghost cats, no thank you."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -10705,8 +10567,12 @@
         },
         "chance_of_success": 85,
         "patrol_art": "cat_sprites/gen_bord_rescue_Wr",
-        "intro_text": "The patrol hears desperate screams coming from a nearby lake.",
-        "decline_text": "It's not the scream of any cat p_l recognizes, so {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to continue the patrol without checking it out. Surely whoever it is will be fine. Surely.",
+        "intro_strings": [
+            "The patrol hears desperate screams coming from a nearby lake."
+        ],
+        "decline_strings": [
+            "It's not the scream of any cat p_l recognizes, so {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to continue the patrol without checking it out. Surely whoever it is will be fine. Surely."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -10959,8 +10825,12 @@
         },
         "chance_of_success": 20,
         "patrol_art": "bord_general_intro",
-        "intro_text": "p_l hears desperate mewling coming from the ocean. ",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} that {PRONOUN/p_l/poss} imagination is just playing tricks on {PRONOUN/p_l/object} and continue the patrol.",
+        "intro_strings": [
+            "p_l hears desperate mewling coming from the ocean. "
+        ],
+        "decline_strings": [
+            "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} that {PRONOUN/p_l/poss} imagination is just playing tricks on {PRONOUN/p_l/object} and continue the patrol."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -11212,8 +11082,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": "The patrol hears a cat begging for their housefolk to come back, just barely understandable over the sound of a monster speeding away.",
-        "decline_text": "p_l decides it's none of {PRONOUN/p_l/poss} business, and resumes {PRONOUN/p_l/poss} patrol.",
+        "intro_strings": [
+            "The patrol hears a cat begging for their housefolk to come back, just barely understandable over the sound of a monster speeding away."
+        ],
+        "decline_strings": [
+            "p_l decides it's none of {PRONOUN/p_l/poss} business, and resumes {PRONOUN/p_l/poss} patrol."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -11296,22 +11170,6 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "death": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ],
-                        "body": true,
-                        "history": "m_c was struck and killed by a monster.",
-                        "no_results": false
-                    }
-                ],
-                "involved_cats": {
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "status": ["kittypet"]
-                    }
                 }
             }
         ],
@@ -11359,8 +11217,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "train_general_intro",
-        "intro_text": "p_l is out doing some solo training when {PRONOUN/p_l/subject} suddenly {VERB/p_l/spot/spots} another cat around {PRONOUN/p_l/poss} age.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/elect/elects} to ignore the stranger and focus on {PRONOUN/p_l/poss} training.",
+        "intro_strings": [
+            "p_l is out doing some solo training when {PRONOUN/p_l/subject} suddenly {VERB/p_l/spot/spots} another cat around {PRONOUN/p_l/poss} age."
+        ],
+        "decline_strings": [
+            "{PRONOUN/p_l/subject/CAP} {VERB/p_l/elect/elects} to ignore the stranger and focus on {PRONOUN/p_l/poss} training."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -11400,13 +11262,6 @@
                         "log": {
                             "cats_from": "cat_to and cat_from trained and talked for hours about how each other's lives are."
                         }
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
                     }
                 ]
             },
@@ -11448,13 +11303,6 @@
                         "log": {
                             "cats_from": "cat_to and cat_from talked for hours about how each other's lives are."
                         }
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
                     }
                 ]
             },
@@ -11509,13 +11357,6 @@
                             "cats_from": "cat_to and cat_from talked for hours and quickly became friends."
                         }
                     }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
                 ]
             },
             {
@@ -11569,13 +11410,6 @@
                             "cats_from": "cat_to and cat_from talked for hours about kittypet life and quickly became friends."
                         }
                     }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
                 ]
             }
         ],
@@ -11596,14 +11430,7 @@
                         ]
                     }
                 },
-                "exp_gained": 0,
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
-                ]
+                "exp_gained": 0
             },
             {
                 "frequency": 4,
@@ -11621,14 +11448,7 @@
                         ]
                     }
                 },
-                "exp_gained": 0,
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
-                ]
+                "exp_gained": 0
             },
             {
                 "frequency": 4,
@@ -11659,13 +11479,6 @@
                         ],
                         "scar_history": "m_c was scarred after being attacked by a startled loner.",
                         "death_history": "m_c died from injuries {PRONOUN/p_l/subject} sustained after being attacked by a startled loner."
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
                     }
                 ]
             },
@@ -11698,13 +11511,6 @@
                         ],
                         "scar_history": "m_c was scarred after being attacked by a startled kittypet.",
                         "death_history": "m_c died from injuries {PRONOUN/p_l/subject} sustained after being attacked by a startled kittypet."
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
                     }
                 ]
             },
@@ -11755,13 +11561,6 @@
                             "p_l"
                         ]
                     }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
                 ]
             },
             {
@@ -11809,13 +11608,6 @@
                     {
                         "cats": [
                             "p_l"
-                        ]
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
                         ]
                     }
                 ]
@@ -12251,8 +12043,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_foundscent_WrRg",
-        "intro_text": "p_l and r_c0 become separated on the way to the border. Out of the mist, a voice calls to r_c0 by {PRONOUN/r_c0/poss} name, only with the -star suffix.",
-        "decline_text": "r_c0 doubles back to find p_l, ignoring the voice.",
+        "intro_strings": [
+            "p_l and r_c0 become separated on the way to the border. Out of the mist, a voice calls to r_c0 by {PRONOUN/r_c0/poss} name, only with the -star suffix."
+        ],
+        "decline_strings": [
+            "r_c0 doubles back to find p_l, ignoring the voice."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -12788,8 +12584,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": "p_l's patrol pads along the shore towards the border. A recent storm has washed away some of the markers near the waterline and they need to be refreshed. There in the surf, however, they find a great wooden thing—a piece of a floating nest. Its jagged edges loom over the cats. A pitiful, low sound emanates from within, but the faint scent of Twoleg lingers in the air. p_l hesitates.",
-        "decline_text": "p_l decides to turn back to camp and report the encounter, rather than risk investigating something potentially dangerous.",
+        "intro_strings": [
+            "p_l's patrol pads along the shore towards the border. A recent storm has washed away some of the markers near the waterline and they need to be refreshed. There in the surf, however, they find a great wooden thing\u2014a piece of a floating nest. Its jagged edges loom over the cats. A pitiful, low sound emanates from within, but the faint scent of Twoleg lingers in the air. p_l hesitates."
+        ],
+        "decline_strings": [
+            "p_l decides to turn back to camp and report the encounter, rather than risk investigating something potentially dangerous."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -12860,14 +12660,7 @@
                         ]
                     }
                 },
-                "exp_gained": 0,
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
-                ]
+                "exp_gained": 0
             }
         ],
         "antag_success_outcomes": [

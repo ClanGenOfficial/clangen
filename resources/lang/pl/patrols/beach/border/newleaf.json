@@ -19,8 +19,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As p_l crosses a beach, shivering with the cold, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a creaking, rushing sound; like a wave, but out of sync with the ocean.",
-        "decline_text": "p_l decides to head back early.",
+        "intro_strings": [
+            "As p_l crosses a beach, shivering with the cold, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a creaking, rushing sound, like a wave \u2014 but out of sync with the ocean."
+        ],
+        "decline_strings": [
+            "p_l decides to head back early."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -38,7 +42,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 scrambles back the way {PRONOUN/s_c0/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris and a large dead sheep. s_c0 pounces on the opportunity to scavenge."
+                    "s_c0 scrambles back the way {PRONOUN/s_c0/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris \u2014 and a large dead sheep. s_c0 pounces on the opportunity to scavenge."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -98,7 +102,7 @@
                 "death": [
                     {
                         "cats": [
-                            "p_l"
+                            "r_c0"
                         ],
                         "history": "m_c was swept out to sea by a flood."
                     }
@@ -126,8 +130,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "animals/gen_eagledive",
-        "intro_text": "As the patrol heads out toward the rock-choked border, they notice a dark shadow flapping above them. A skua! The cats watch as the huge bird crashes into a storm petrel mid-air, sending gray feathers flying. The petrel slams into the ground while the skua screams and circles overhead, tracking its prey.",
-        "decline_text": "Watching the skua land beside its prize with a triumphant shriek, the patrol decides that tangling with a bird like that isn't worth the trouble.",
+        "intro_strings": [
+            "As the patrol heads out toward the rock-choked border, they notice a dark shadow flapping above them. A skua! The cats watch as the huge bird crashes into a storm petrel mid-air, sending gray feathers flying. The petrel slams into the ground while the skua screams and circles overhead, tracking its prey."
+        ],
+        "decline_strings": [
+            "Watching the skua land beside its prize with a triumphant shriek, the patrol decides that tangling with a bird like that isn't worth the trouble."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -367,7 +375,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_anxiouslookup_Wr",
                 "strings": [
-                    "The skua isn't only after the petrel — it seems to have claimed the whole stretch of shoreline, patrolling its territory with a furious fervor. Every attempt to approach the border is met with diving wings and a peck to the back of the head, sending the cats scattering. Eventually, the patrol has no choice but to give up, and a section of the border goes unmarked."
+                    "The skua isn't only after the petrel \u2014 it seems to have claimed the whole stretch of shoreline, patrolling its territory with a furious fervor. Every attempt to approach the border is met with diving wings and a peck to the back of the head, sending the cats scattering. Eventually, the patrol has no choice but to give up, and a section of the border goes unmarked."
                 ],
                 "exp_gained": 0,
                 "condition": [

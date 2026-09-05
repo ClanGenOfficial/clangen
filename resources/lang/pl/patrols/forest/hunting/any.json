@@ -19,8 +19,12 @@
         },
         "chance_of_success": 10,
         "patrol_art": "animals/animals/animals/fst_porcupinedanger1",
-        "intro_text": "r_c0 encounters a porcupine, bristling with quills.",
-        "decline_text": "The patrol steers clear of the porcupine.",
+        "intro_strings": [
+            "r_c0 encounters a porcupine, bristling with quills."
+        ],
+        "decline_strings": [
+            "The patrol steers clear of the porcupine."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -245,8 +249,12 @@
         },
         "chance_of_success": 10,
         "patrol_art": "animals/animals/animals/fst_porcupinedanger1",
-        "intro_text": "p_l encounters a porcupine, bristling with quills.",
-        "decline_text": "The patrol steers clear of the porcupine. They don't have enough cats to confront this creature safely.",
+        "intro_strings": [
+            "p_l encounters a porcupine, bristling with quills."
+        ],
+        "decline_strings": [
+            "The patrol steers clear of the porcupine. They don't have enough cats to confront this creature safely."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -430,8 +438,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "While hunting, p_l comes across a rabbit burrow.",
-        "decline_text": "p_l decides to ignore the burrow.",
+        "intro_strings": [
+            "While hunting, p_l comes across a rabbit burrow."
+        ],
+        "decline_strings": [
+            "p_l decides to ignore the burrow."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -474,8 +486,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/fst_twolegplace",
-        "intro_text": "The patrol approaches a Twoleg nest in the woods while hunting.",
-        "decline_text": "The patrol decides to hunt elsewhere.",
+        "intro_strings": [
+            "The patrol approaches a Twoleg nest in the woods while hunting."
+        ],
+        "decline_strings": [
+            "The patrol decides to hunt elsewhere."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -592,8 +608,12 @@
         },
         "chance_of_success": 10,
         "patrol_art": "backgrounds/fst_twolegplace",
-        "intro_text": "The patrol approaches a Twoleg nest in the woods while hunting.",
-        "decline_text": "The patrol decides to hunt elsewhere.",
+        "intro_strings": [
+            "The patrol approaches a Twoleg nest in the woods while hunting."
+        ],
+        "decline_strings": [
+            "The patrol decides to hunt elsewhere."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -729,8 +749,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "animals/fst_squirrelchase",
-        "intro_text": "The patrol notices a commotion and finds two squirrels chasing each other across the forest floor.",
-        "decline_text": "The patrol decides there's probably easier prey to find elsewhere.",
+        "intro_strings": [
+            "The patrol notices a commotion and finds two squirrels chasing each other across the forest floor."
+        ],
+        "decline_strings": [
+            "The patrol decides there's probably easier prey to find elsewhere."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -845,7 +869,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The squirrels are far too excited and quick — they slip right out from between the patrol's claws."
+                    "The squirrels are far too excited and quick \u2014 they slip right out from between the patrol's claws."
                 ],
                 "exp_gained": 0,
                 "supply": [
@@ -947,8 +971,12 @@
         },
         "chance_of_success": 10,
         "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
-        "intro_text": "The patrol hears distant howling and wonders whether to investigate the noise.",
-        "decline_text": "The patrol decides not to investigate the source of the noise. Whatever is making it will not be friendly to them.",
+        "intro_strings": [
+            "The patrol hears distant howling and wonders whether to investigate the noise."
+        ],
+        "decline_strings": [
+            "The patrol decides not to investigate the source of the noise. Whatever is making it will not be friendly to them."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1217,8 +1245,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
-        "intro_text": "The patrol hears distant howling and wonders whether to investigate the noise.",
-        "decline_text": "The patrol decides not to investigate the source of the noise. Whatever is making it will not be friendly to them.",
+        "intro_strings": [
+            "The patrol hears distant howling and wonders whether to investigate the noise."
+        ],
+        "decline_strings": [
+            "The patrol decides not to investigate the source of the noise. Whatever is making it will not be friendly to them."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1443,8 +1475,12 @@
         },
         "chance_of_success": 10,
         "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
-        "intro_text": "p_l hears distant howling and wonders whether to investigate the noise.",
-        "decline_text": "p_l decides not to investigate the source of the noise. Whatever is making it will not be friendly to {PRONOUN/p_l/object} and {PRONOUN/p_l/subject} {VERB/p_l/are/is} only one cat.",
+        "intro_strings": [
+            "p_l hears distant howling and wonders whether to investigate the noise."
+        ],
+        "decline_strings": [
+            "p_l decides not to investigate the source of the noise. Whatever is making it will not be friendly to {PRONOUN/p_l/object} and {PRONOUN/p_l/subject} {VERB/p_l/are/is} only one cat."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1587,8 +1623,12 @@
         },
         "chance_of_success": 10,
         "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
-        "intro_text": "The patrol hears distant howling and wonders whether to investigate the noise.",
-        "decline_text": "The patrol decides not to investigate the source of the noise. Whatever is making it will not be friendly to them.",
+        "intro_strings": [
+            "The patrol hears distant howling and wonders whether to investigate the noise."
+        ],
+        "decline_strings": [
+            "The patrol decides not to investigate the source of the noise. Whatever is making it will not be friendly to them."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1813,8 +1853,12 @@
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
-        "intro_text": "The patrol hears distant howling and wonders whether to investigate the noise.",
-        "decline_text": "The patrol decides not to investigate the source of the noise. Whatever is making it will not be friendly to them.",
+        "intro_strings": [
+            "The patrol hears distant howling and wonders whether to investigate the noise."
+        ],
+        "decline_strings": [
+            "The patrol decides not to investigate the source of the noise. Whatever is making it will not be friendly to them."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2017,8 +2061,12 @@
         },
         "chance_of_success": 10,
         "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
-        "intro_text": "p_l hears distant howling and wonders whether to investigate the noise.",
-        "decline_text": "p_l decides not to investigate the source of the noise. Whatever is making it will not be friendly to {PRONOUN/p_l/object} and {PRONOUN/p_l/subject} {VERB/p_l/are/is} only one cat.",
+        "intro_strings": [
+            "p_l hears distant howling and wonders whether to investigate the noise."
+        ],
+        "decline_strings": [
+            "p_l decides not to investigate the source of the noise. Whatever is making it will not be friendly to {PRONOUN/p_l/object} and {PRONOUN/p_l/subject} {VERB/p_l/are/is} only one cat."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2157,8 +2205,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
-        "intro_text": "The patrol looks around for something to disguise their scent while hunting.",
-        "decline_text": "On second thought, maybe not.",
+        "intro_strings": [
+            "The patrol looks around for something to disguise their scent while hunting."
+        ],
+        "decline_strings": [
+            "On second thought, maybe not."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2189,7 +2241,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 leads them to some deer droppings in the forest — it's not clean, but it's extremely effective, and the patrol hunts well."
+                    "s_c0 leads them to some deer droppings in the forest \u2014 it's not clean, but it's extremely effective, and the patrol hunts well."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -2323,8 +2375,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
-        "intro_text": "p_l looks around for something to disguise their scent while hunting.",
-        "decline_text": "On second thought, maybe not.",
+        "intro_strings": [
+            "p_l looks around for something to disguise their scent while hunting."
+        ],
+        "decline_strings": [
+            "On second thought, maybe not."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2342,7 +2398,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 finds some deer droppings in the forest — it's not clean, but it's extremely effective, and the hunt goes well."
+                    "s_c0 finds some deer droppings in the forest \u2014 it's not clean, but it's extremely effective, and the hunt goes well."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -2478,8 +2534,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/fst_canopy",
-        "intro_text": "p_l heads out into the forest alone, wanting to sink {PRONOUN/p_l/poss} teeth into some prey and have some time to {PRONOUN/p_l/self}.",
-        "decline_text": "p_l turns back to camp, deciding that a group hunt would be more effective.",
+        "intro_strings": [
+            "p_l heads out into the forest alone, wanting to sink {PRONOUN/p_l/poss} teeth into some prey and have some time to {PRONOUN/p_l/self}."
+        ],
+        "decline_strings": [
+            "p_l turns back to camp, deciding that a group hunt would be more effective."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2620,8 +2680,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/fst_canopy",
-        "intro_text": "p_l heads out into the forest alone, wanting to sink {PRONOUN/p_l/poss} teeth into some prey and have some time to {PRONOUN/p_l/self}.",
-        "decline_text": "p_l turns back to camp, deciding that a group hunt would be more effective.",
+        "intro_strings": [
+            "p_l heads out into the forest alone, wanting to sink {PRONOUN/p_l/poss} teeth into some prey and have some time to {PRONOUN/p_l/self}."
+        ],
+        "decline_strings": [
+            "p_l turns back to camp, deciding that a group hunt would be more effective."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2762,8 +2826,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/fst_canopy",
-        "intro_text": "p_l heads out into the forest alone, wanting to sink {PRONOUN/p_l/poss} teeth into some prey and have some time to {PRONOUN/p_l/self}.",
-        "decline_text": "p_l turns back to camp, deciding that a group hunt would be more effective.",
+        "intro_strings": [
+            "p_l heads out into the forest alone, wanting to sink {PRONOUN/p_l/poss} teeth into some prey and have some time to {PRONOUN/p_l/self}."
+        ],
+        "decline_strings": [
+            "p_l turns back to camp, deciding that a group hunt would be more effective."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2900,8 +2968,12 @@
         },
         "chance_of_success": 20,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush.",
-        "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
+        "intro_strings": [
+            "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush."
+        ],
+        "decline_strings": [
+            "It's probably nothing. The patrol leaves the noise alone and continues on their way."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3072,8 +3144,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/fst_twolegplace",
-        "intro_text": "p_l decides to hunt out near the Twoleg dens.",
-        "decline_text": "On second thought, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to reline {PRONOUN/p_l/poss} nest today instead.",
+        "intro_strings": [
+            "p_l decides to hunt out near the Twoleg dens."
+        ],
+        "decline_strings": [
+            "On second thought, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to reline {PRONOUN/p_l/poss} nest today instead."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3324,8 +3400,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/fst_twolegplace",
-        "intro_text": "p_l decides to hunt out near the Twoleg dens.",
-        "decline_text": "On second thought, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to reline {PRONOUN/p_l/poss} nest today instead.",
+        "intro_strings": [
+            "p_l decides to hunt out near the Twoleg dens."
+        ],
+        "decline_strings": [
+            "On second thought, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to reline {PRONOUN/p_l/poss} nest today instead."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3487,8 +3567,12 @@
         ],
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_hunt_twolegdencatdare_WrWr",
-        "intro_text": "{PRONOUN/r_c0/poss/CAP} eyes daring p_l to say no, r_c0 suggests hunting by the Twoleg dens.",
-        "decline_text": "On second thought, they decide to reline their nests today instead.",
+        "intro_strings": [
+            "{PRONOUN/r_c0/poss/CAP} eyes daring p_l to say no, r_c0 suggests hunting by the Twoleg dens."
+        ],
+        "decline_strings": [
+            "On second thought, they decide to reline their nests today instead."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3563,7 +3647,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 shows r_c0 all around the outskirts of the Twoleg dens, showing off how much {PRONOUN/s_c0/subject} {VERB/s_c0/know/knows} about the weird animals' behavior — and enjoying getting to feel clever."
+                    "s_c0 shows r_c0 all around the outskirts of the Twoleg dens, showing off how much {PRONOUN/s_c0/subject} {VERB/s_c0/know/knows} about the weird animals' behavior \u2014 and enjoying getting to feel clever."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -3782,8 +3866,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/fst_hunt_gonetwolegtrap_Wr",
-        "intro_text": "The smell of food lures p_l into what looks like a tunnel between some bushes.",
-        "decline_text": "Turning {PRONOUN/p_l/poss} nose up at the temptation, {PRONOUN/p_l/subject} {VERB/p_l/continue/continues} on {PRONOUN/p_l/poss} way.",
+        "intro_strings": [
+            "The smell of food lures p_l into what looks like a tunnel between some bushes."
+        ],
+        "decline_strings": [
+            "Turning {PRONOUN/p_l/poss} nose up at the temptation, {PRONOUN/p_l/subject} {VERB/p_l/continue/continues} on {PRONOUN/p_l/poss} way."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3934,8 +4022,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/fst_hunt_gonetwolegtrap_Wr",
-        "intro_text": "The smell of food lures r_c0 into what looks like a tunnel between some bushes.",
-        "decline_text": "Turning their noses up at the temptation, the patrol continues on their way.",
+        "intro_strings": [
+            "The smell of food lures r_c0 into what looks like a tunnel between some bushes."
+        ],
+        "decline_strings": [
+            "Turning their noses up at the temptation, the patrol continues on their way."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -4099,8 +4191,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_funrun_Wr",
-        "intro_text": "As p_l tears through the forest, stretching {PRONOUN/p_l/poss} legs on a run, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} movement out of the corner of {PRONOUN/p_l/poss} eye.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/keep/keeps} going, not wanting to slow down.",
+        "intro_strings": [
+            "As p_l tears through the forest, stretching {PRONOUN/p_l/poss} legs on a run, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} movement out of the corner of {PRONOUN/p_l/poss} eye."
+        ],
+        "decline_strings": [
+            "{PRONOUN/p_l/subject/CAP} {VERB/p_l/keep/keeps} going, not wanting to slow down."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -4179,8 +4275,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_funrun_Ap",
-        "intro_text": "As p_l tears through the forest, stretching {PRONOUN/p_l/poss} legs on a run, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} movement out of the corner of {PRONOUN/p_l/poss} eye.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/keep/keeps} going, not wanting to slow down.",
+        "intro_strings": [
+            "As p_l tears through the forest, stretching {PRONOUN/p_l/poss} legs on a run, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} movement out of the corner of {PRONOUN/p_l/poss} eye."
+        ],
+        "decline_strings": [
+            "{PRONOUN/p_l/subject/CAP} {VERB/p_l/keep/keeps} going, not wanting to slow down."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -4198,7 +4298,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "Laughing, {PRONOUN/p_l/subject} {VERB/p_l/bounce/bounces} gleefully off a tree trunk. It redirects {PRONOUN/p_l/poss} momentum far better than {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting, and it's difficult to say who's more surprised — the mouse, or the apprentice slamming into it! Not a very clean catch, but one {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} proud of anyway."
+                    "Laughing, {PRONOUN/p_l/subject} {VERB/p_l/bounce/bounces} gleefully off a tree trunk. It redirects {PRONOUN/p_l/poss} momentum far better than {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting, and it's difficult to say who's more surprised \u2014 the mouse, or the apprentice slamming into it! Not a very clean catch, but one {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} proud of anyway."
                 ],
                 "exp_gained": 10,
                 "supply": [
@@ -4266,8 +4366,12 @@
         ],
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_funrun_WrWr",
-        "intro_text": "As r_c0 tears through the forest with p_l, stretching {PRONOUN/r_c0/poss} legs on a run, {PRONOUN/r_c0/subject} {VERB/r_c0/spot/spots} movement out of the corner of {PRONOUN/r_c0/poss} eye.",
-        "decline_text": "They keep going, not wanting to slow down.",
+        "intro_strings": [
+            "As r_c0 tears through the forest with p_l, stretching {PRONOUN/r_c0/poss} legs on a run, {PRONOUN/r_c0/subject} {VERB/r_c0/spot/spots} movement out of the corner of {PRONOUN/r_c0/poss} eye."
+        ],
+        "decline_strings": [
+            "They keep going, not wanting to slow down."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -4469,8 +4573,12 @@
         ],
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_funrun_ApAp",
-        "intro_text": "As r_c1 tears through the forest with p_l, stretching {PRONOUN/r_c1/poss} legs on a run, {PRONOUN/r_c1/subject} {VERB/r_c1/spot/spots} movement out of the corner of {PRONOUN/r_c1/poss} eye.",
-        "decline_text": "They keep going, not wanting to slow down.",
+        "intro_strings": [
+            "As r_c1 tears through the forest with p_l, stretching {PRONOUN/r_c1/poss} legs on a run, {PRONOUN/r_c1/subject} {VERB/r_c1/spot/spots} movement out of the corner of {PRONOUN/r_c1/poss} eye."
+        ],
+        "decline_strings": [
+            "They keep going, not wanting to slow down."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -4508,7 +4616,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "Laughing, r_c1 bounces gleefully off a tree trunk. It redirects {PRONOUN/r_c1/poss} momentum far better than {PRONOUN/r_c1/subject} {VERB/r_c1/were/was} expecting, and it's difficult to say who's more surprised — the mouse, or the apprentice slamming into it! Not a very clean catch, but the look on p_l's face, so shocked and impressed, makes {PRONOUN/r_c1/object} blush."
+                    "Laughing, r_c1 bounces gleefully off a tree trunk. It redirects {PRONOUN/r_c1/poss} momentum far better than {PRONOUN/r_c1/subject} {VERB/r_c1/were/was} expecting, and it's difficult to say who's more surprised \u2014 the mouse, or the apprentice slamming into it! Not a very clean catch, but the look on p_l's face, so shocked and impressed, makes {PRONOUN/r_c1/object} blush."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [
@@ -4593,8 +4701,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_lizard_Wr",
-        "intro_text": "Something skitters across the leaf litter, catching the patrol's eyes. A little lizard!",
-        "decline_text": "Startled by the lizard, the patrol watches it scurry away.",
+        "intro_strings": [
+            "Something skitters across the leaf litter, catching the patrol's eyes. A little lizard!"
+        ],
+        "decline_strings": [
+            "Startled by the lizard, the patrol watches it scurry away."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -4818,8 +4930,12 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_lizard_Wr",
-        "intro_text": "Something skitters across the leaf litter, catching the patrol's eyes. A little lizard!",
-        "decline_text": "Startled by the lizard, the patrol watches it scurry away.",
+        "intro_strings": [
+            "Something skitters across the leaf litter, catching the patrol's eyes. A little lizard!"
+        ],
+        "decline_strings": [
+            "Startled by the lizard, the patrol watches it scurry away."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -4942,8 +5058,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "animals/fst_vole",
-        "intro_text": "The patrol comes across a vole nibbling at a seed.",
-        "decline_text": "The patrol decides to look for other prey.",
+        "intro_strings": [
+            "The patrol comes across a vole nibbling at a seed."
+        ],
+        "decline_strings": [
+            "The patrol decides to look for other prey."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5052,8 +5172,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
-        "intro_text": "The patrol catches scent of a mouse nearby.",
-        "decline_text": "The patrol ignores the mouse.",
+        "intro_strings": [
+            "The patrol catches scent of a mouse nearby."
+        ],
+        "decline_strings": [
+            "The patrol ignores the mouse."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5123,8 +5247,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
-        "intro_text": "The patrol comes across a mouse.",
-        "decline_text": "The patrol ignores the mouse.",
+        "intro_strings": [
+            "The patrol comes across a mouse."
+        ],
+        "decline_strings": [
+            "The patrol ignores the mouse."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5218,8 +5346,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_rat_Wr",
-        "intro_text": "The patrol comes across a large rat.",
-        "decline_text": "The patrol ignores the rat.",
+        "intro_strings": [
+            "The patrol comes across a large rat."
+        ],
+        "decline_strings": [
+            "The patrol ignores the rat."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5355,8 +5487,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "gen_hunt_bird",
-        "intro_text": "The patrol comes across a bird that's occupied scratching at the ground for insects.",
-        "decline_text": "The patrol ignores the bird.",
+        "intro_strings": [
+            "The patrol comes across a bird that's occupied scratching at the ground for insects."
+        ],
+        "decline_strings": [
+            "The patrol ignores the bird."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5418,8 +5554,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
-        "intro_text": "The patrol comes across a squirrel. It's engrossed in nibbling at a morsel beneath a tree.",
-        "decline_text": "The patrol ignores the squirrel.",
+        "intro_strings": [
+            "The patrol comes across a squirrel. It's engrossed in nibbling at a morsel beneath a tree."
+        ],
+        "decline_strings": [
+            "The patrol ignores the squirrel."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5485,8 +5625,12 @@
         },
         "chance_of_success": 25,
         "patrol_art": "cat_sprites/gen_anxiouslookup_Wr",
-        "intro_text": "The patrol hears a lot of barking and commotion.",
-        "decline_text": "p_l makes the decision to go to another part of the territory to hunt. {PRONOUN/p_l/subject/CAP} {VERB/p_l/want/wants} no part of this ruckus.",
+        "intro_strings": [
+            "The patrol hears a lot of barking and commotion."
+        ],
+        "decline_strings": [
+            "p_l makes the decision to go to another part of the territory to hunt. {PRONOUN/p_l/subject/CAP} {VERB/p_l/want/wants} no part of this ruckus."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5618,8 +5762,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/fst_hunt_gonetwolegtrap_Wr",
-        "intro_text": "As they wander, searching for prey, p_l finds something far more dangerous, and calls the rest of the patrol over for a lesson.",
-        "decline_text": "No one wants to get anywhere near the dangerous traps, not even to learn about them.",
+        "intro_strings": [
+            "As they wander, searching for prey, p_l finds something far more dangerous, and calls the rest of the patrol over for a lesson."
+        ],
+        "decline_strings": [
+            "No one wants to get anywhere near the dangerous traps, not even to learn about them."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5731,8 +5879,12 @@
         "chance_of_success": 40,
         "patrol_art": "animals/fst_redfoxscavenge_EXPLICIT",
         "patrol_art_clean": "hunt_general_intro",
-        "intro_text": "The patrol catches the scent of a fox, but is it red or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
-        "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "intro_strings": [
+            "The patrol catches the scent of a fox, but is it red or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it."
+        ],
+        "decline_strings": [
+            "The patrol decides not to quarrel with the fox and to find prey elsewhere."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -6309,8 +6461,12 @@
         "chance_of_success": 70,
         "patrol_art": "animals/fst_foxgrayscavenge_EXPLICIT",
         "patrol_art_clean": "hunt_general_intro",
-        "intro_text": "The patrol catches the scent of a fox, but is it red or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
-        "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "intro_strings": [
+            "The patrol catches the scent of a fox, but is it red or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size."
+        ],
+        "decline_strings": [
+            "The patrol decides not to quarrel with the fox and to find prey elsewhere."
+        ],
         "success_outcomes": [
             {
                 "frequency": 1,
@@ -6865,13 +7021,13 @@
                 2
             ],
             "apprentice": [
+                1,
+                6
+            ],
+            "all apprentices": [
                 2,
                 2
             ]
-        },
-        "involved_cats": {
-            "p_l": {},
-            "r_c0": {}
         },
         "relationship_constraint": [
             {
@@ -6889,22 +7045,38 @@
         ],
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_appsiblings_ApAp",
-        "intro_text": "The two siblings head out together, declaring a friendly competition to stock the fresh-kill pile. They're going to prove themselves!",
-        "decline_text": "Their mentors hold them back with a gentle word — the warriors have other plans for the apprentices today.",
+        "intro_strings": [
+            "The two siblings head out together, declaring a friendly competition to stock the fresh-kill pile. They're going to prove themselves!"
+        ],
+        "decline_strings": [
+            "Their mentors hold them back with a gentle word \u2014 the warriors have other plans for the apprentices today."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 misses a f_tp_s, and p_l startles a pair of f_tp_p. They don't let it get them down, instead capturing a plump rabbit with a beautiful team ambush! But when they bring it back to camp, r_c0 tries to take sole credit for the prey, and instead of familial talent, it's familial discord that's displayed, as the apprentices get into a massive argument in the middle of camp."
+                    "r_c1 misses a f_tp_s, and r_c2 startles a pair of f_tp_p. They don't let it get them down, instead capturing a plump rabbit with a beautiful team ambush! But when they bring it back to camp, r_c1 tries to take sole credit for the prey, and instead of familial talent, it's familial discord that's displayed, as the apprentices get into a massive argument in the middle of camp."
                 ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "r_c2": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -6927,9 +7099,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 catches a great f_mp_s, and two f_tp_p! But {PRONOUN/s_c0/poss} sibling comes up empty-pawed. s_c0 offers to let {PRONOUN/s_c1/object} claim the smaller prey as {PRONOUN/s_c1/poss} own, but the insulting suggestion just causes a massive argument."
+                    "s_c0 catches a great f_mp_s, and two f_tp_p! But {PRONOUN/s_c0/poss} sibling comes up empty-pawed. s_c0 offers to let {PRONOUN/p_l/object} claim the smaller prey as {PRONOUN/p_l/poss} own, but the insulting suggestion just causes a massive argument."
                 ],
                 "involved_cats": {
+                    "r_c0": {},
                     "s_c0": {
                         "stat": {
                             "skill": [
@@ -6937,11 +7110,8 @@
                             ]
                         },
                         "prior_abbreviation": [
-                            "any"
+                            "p_l"
                         ]
-                    },
-                    "s_c1": {
-                        "prior_abbreviation": ["-s_c0"]
                     }
                 },
                 "exp_gained": 20,
@@ -6951,7 +7121,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "s_c1"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -6974,7 +7144,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It turns out s_c0 has really been listening to {PRONOUN/s_c0/poss} mentor's tips for hunting — and {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} willing to pass it on!"
+                    "It turns out s_c0 has really been listening to {PRONOUN/s_c0/poss} mentor's tips for hunting \u2014 and {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} willing to pass it on!"
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -6985,13 +7155,7 @@
                             "skill": [
                                 "HUNTER,0"
                             ]
-                        },
-                        "has_mentor": {
-                            "current": true
                         }
-                    },
-                    "s_c1": {
-                        "prior_abbreviation": ["-s_c0"]
                     }
                 },
                 "exp_gained": 20,
@@ -7032,10 +7196,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -7058,24 +7222,28 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "s_c0 takes a hard fall while chasing a f_tp_s along the forest floor, and the afternoon's hunt is called off as {PRONOUN/s_c0/poss} sibling helps {PRONOUN/s_c0/object} back to camp, chatting reassuringly about how hard {PRONOUN/s_c1/poss} hunting lessons are."
+                    "r_c1 takes a hard fall while chasing a f_tp_s along the forest floor, and the afternoon's hunt is called off as {PRONOUN/r_c1/poss} sibling helps {PRONOUN/r_c1/object} back to camp, chatting reassuringly about how hard {PRONOUN/r_c2/poss} hunting lessons are."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": ["any"]
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
                     },
-                    "s_c1": {
-                        "prior_abbreviation": ["-s_c0"]
+                    "r_c2": {
+                        "status": [
+                            "apprentice"
+                        ]
                     }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "s_c1"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -7098,7 +7266,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "s_c0"
+                            "r_c1"
                         ],
                         "condition": [
                             "minor_injury"
@@ -7182,13 +7350,19 @@
                 "status": [
                     "apprentice"
                 ],
-                "has_mentor": {"current": true}
+                "has_mentor": {
+                    "current": true
+                }
             }
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "The clouds are out, making the world murky. And just like the clouds, r_c1 and {PRONOUN/r_c1/poss} littermate are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
-        "decline_text": "Their mentors hold them back with a gentle word — the warriors have other plans for the apprentices today.",
+        "intro_strings": [
+            "The clouds are out, making the world murky. And just like the clouds, r_c1 and {PRONOUN/r_c1/poss} littermate are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!"
+        ],
+        "decline_strings": [
+            "Their mentors hold them back with a gentle word \u2014 the warriors have other plans for the apprentices today."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -7372,8 +7546,12 @@
         ],
         "chance_of_success": 40,
         "patrol_art": "gen_app_siblings",
-        "intro_text": "The siblings head out together, declaring a friendly competition to stock the fresh-kill pile. They're going to prove themselves!",
-        "decline_text": "Their mentors hold them back with a gentle word — the warriors have other plans for the apprentices today.",
+        "intro_strings": [
+            "The siblings head out together, declaring a friendly competition to stock the fresh-kill pile. They're going to prove themselves!"
+        ],
+        "decline_strings": [
+            "Their mentors hold them back with a gentle word \u2014 the warriors have other plans for the apprentices today."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -7628,13 +7806,19 @@
                 "status": [
                     "apprentice"
                 ],
-                "has_mentor": {"current": true}
+                "has_mentor": {
+                    "current": true
+                }
             }
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "The clouds are out, making the world murky. And just like the clouds, r_c1 and {PRONOUN/r_c1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
-        "decline_text": "Their mentors hold them back with a gentle word — the warriors have other plans for the apprentices today.",
+        "intro_strings": [
+            "The clouds are out, making the world murky. And just like the clouds, r_c1 and {PRONOUN/r_c1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!"
+        ],
+        "decline_strings": [
+            "Their mentors hold them back with a gentle word \u2014 the warriors have other plans for the apprentices today."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -7829,8 +8013,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "r_c1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/r_c1/subject} {VERB/r_c1/do/does}. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn?",
-        "decline_text": "Actually, {PRONOUN/r_c1/subject}'d really rather be back in {PRONOUN/r_c1/poss} nest.",
+        "intro_strings": [
+            "r_c1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/r_c1/subject} {VERB/r_c1/do/does}. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn?"
+        ],
+        "decline_strings": [
+            "Actually, {PRONOUN/r_c1/subject}'d really rather be back in {PRONOUN/r_c1/poss} nest."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -7889,7 +8077,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Watching s_c0's displays of athleticism makes r_c1 feel small — surely {PRONOUN/r_c1/subject}'ll never be able to do that?"
+                    "Watching s_c0's displays of athleticism makes r_c1 feel small \u2014 surely {PRONOUN/r_c1/subject}'ll never be able to do that?"
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -8045,13 +8233,17 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "As they wander through the forest, p_l awkwardly asks r_c1 how {PRONOUN/r_c1/subject} {VERB/r_c1/think/thinks} {PRONOUN/r_c1/poss} training is going.",
-        "decline_text": "r_c1 carefully talks around the subject, telling p_l nothing of importance.",
+        "intro_strings": [
+            "As they wander through the forest, p_l awkwardly asks r_c1 how {PRONOUN/r_c1/subject} {VERB/r_c1/think/thinks} {PRONOUN/r_c1/poss} training is going."
+        ],
+        "decline_strings": [
+            "r_c1 carefully talks around the subject, telling p_l nothing of importance."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "Giving in and accepting that {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} just going to look stupid in front of {PRONOUN/r_c1/poss} cool older sibling, r_c1 tells p_l about the trouble {PRONOUN/r_c1/subject}{VERB/r_c1/'ve/'s} been having with {PRONOUN/r_c1/poss} pounce. It's such a simple thing — {PRONOUN/r_c1/subject} should have it by now! But p_l is actually super helpful and reassuring about it — it's nice."
+                    "Giving in and accepting that {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} just going to look stupid in front of {PRONOUN/r_c1/poss} cool older sibling, r_c1 tells p_l about the trouble {PRONOUN/r_c1/subject}{VERB/r_c1/'ve/'s} been having with {PRONOUN/r_c1/poss} pounce. It's such a simple thing \u2014 {PRONOUN/r_c1/subject} should have it by now! But p_l is actually super helpful and reassuring about it \u2014 it's nice."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -8090,7 +8282,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "If r_c1 ever wanted help — s_c0 knows they're not littermates, but they're still siblings, and s_c0 is totally here for {PRONOUN/r_c1/object} if r_c1 ever wants extra training. It's still an awkward offer. But it's nice."
+                    "If r_c1 ever wanted help \u2014 s_c0 knows they're not littermates, but they're still siblings, and s_c0 is totally here for {PRONOUN/r_c1/object} if r_c1 ever wants extra training. It's still an awkward offer. But it's nice."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -8232,8 +8424,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "r_c1 bounds out of camp, determined to show off to p_l!",
-        "decline_text": "And both are immediately recalled — the camp needs new nesting materials, not more prey.",
+        "intro_strings": [
+            "r_c1 bounds out of camp, determined to show off to p_l!"
+        ],
+        "decline_strings": [
+            "And both are immediately recalled \u2014 the camp needs new nesting materials, not more prey."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -8434,8 +8630,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "r_c1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/r_c1/subject} {VERB/r_c1/do/does}. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn?",
-        "decline_text": "Actually, {PRONOUN/r_c1/subject}'d really rather be back in {PRONOUN/r_c1/poss} nest.",
+        "intro_strings": [
+            "r_c1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/r_c1/subject} {VERB/r_c1/do/does}. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn?"
+        ],
+        "decline_strings": [
+            "Actually, {PRONOUN/r_c1/subject}'d really rather be back in {PRONOUN/r_c1/poss} nest."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -8494,7 +8694,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Watching s_c0's displays of athleticism makes r_c1 feel small — surely {PRONOUN/r_c1/subject}'ll never be able to do that?"
+                    "Watching s_c0's displays of athleticism makes r_c1 feel small \u2014 surely {PRONOUN/r_c1/subject}'ll never be able to do that?"
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -8650,8 +8850,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "r_c1 bounds out of camp, determined to show off to {PRONOUN/r_c1/poss} older siblings!",
-        "decline_text": "And everyone is immediately recalled — the camp needs new nesting materials, not more prey.",
+        "intro_strings": [
+            "r_c1 bounds out of camp, determined to show off to {PRONOUN/r_c1/poss} older siblings!"
+        ],
+        "decline_strings": [
+            "And everyone is immediately recalled \u2014 the camp needs new nesting materials, not more prey."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -8841,8 +9045,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "Sometimes, it's just nice to hang out with {PRONOUN/r_c0/poss} sibling. The weather is perfect for a great hunt together!",
-        "decline_text": "Actually, p_l would rather try fishing for prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wave/waves} {PRONOUN/p_l/poss} sibling off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank.",
+        "intro_strings": [
+            "Sometimes, it's just nice to hang out with {PRONOUN/r_c0/poss} sibling. The weather is perfect for a great hunt together!"
+        ],
+        "decline_strings": [
+            "Actually, p_l would rather try fishing for prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wave/waves} {PRONOUN/p_l/poss} sibling off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -8941,7 +9149,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 nets them two healthy f_mp_p to take back to camp, but it only irritates {PRONOUN/s_c0/poss} sibling. r_c0 never even got the chance to even try for a pounce — {VERB/r_c0/are/is} {PRONOUN/r_c0/subject} only there to carry around s_c0's prey?"
+                    "s_c0 nets them two healthy f_mp_p to take back to camp, but it only irritates {PRONOUN/s_c0/poss} sibling. r_c0 never even got the chance to even try for a pounce \u2014 {VERB/r_c0/are/is} {PRONOUN/r_c0/subject} only there to carry around s_c0's prey?"
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -9066,7 +9274,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It isn't a very successful hunt — they'll have to head out again for more soon."
+                    "It isn't a very successful hunt \u2014 they'll have to head out again for more soon."
                 ],
                 "exp_gained": 0,
                 "supply": [
@@ -9079,7 +9287,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "They don't manage anything like the number of catches they were both expecting to get — a bit disappointing, even if they're not entirely empty-pawed."
+                    "They don't manage anything like the number of catches they were both expecting to get \u2014 a bit disappointing, even if they're not entirely empty-pawed."
                 ],
                 "exp_gained": 0,
                 "supply": [
@@ -9129,8 +9337,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "The sun's out, and r_c0 has been assigned a moderately tolerable hunting partner — {PRONOUN/r_c0/poss} sibling!",
-        "decline_text": "Cancel that — a border patrol needs backup.",
+        "intro_strings": [
+            "The sun's out, and r_c0 has been assigned a moderately tolerable hunting partner \u2014 {PRONOUN/r_c0/poss} sibling!"
+        ],
+        "decline_strings": [
+            "Cancel that \u2014 a border patrol needs backup."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -9199,7 +9411,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 jokes that {PRONOUN/r_c0/subject} can't possibly be related to s_c0 — clearly s_c0 was born from squirrels, not cats, with the way {PRONOUN/s_c0/subject} {VERB/s_c0/leap/leaps} from branch to branch in the canopy."
+                    "r_c0 jokes that {PRONOUN/r_c0/subject} can't possibly be related to s_c0 \u2014 clearly s_c0 was born from squirrels, not cats, with the way {PRONOUN/s_c0/subject} {VERB/s_c0/leap/leaps} from branch to branch in the canopy."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -9274,7 +9486,7 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "r_c0 sees a squirrel {PRONOUN/r_c0/subject}'d like for the fresh-kill pile, but the chase goes badly — {PRONOUN/r_c0/subject} {VERB/r_c0/throw/throws} out a front paw to stop {PRONOUN/r_c0/poss} fall, claws digging into bark, and it works, but it wrenches {PRONOUN/r_c0/poss} foreleg out of socket. Fleas and ticks!"
+                    "r_c0 sees a squirrel {PRONOUN/r_c0/subject}'d like for the fresh-kill pile, but the chase goes badly \u2014 {PRONOUN/r_c0/subject} {VERB/r_c0/throw/throws} out a front paw to stop {PRONOUN/r_c0/poss} fall, claws digging into bark, and it works, but it wrenches {PRONOUN/r_c0/poss} foreleg out of socket. Fleas and ticks!"
                 ],
                 "exp_gained": 0,
                 "supply": [
@@ -9331,8 +9543,12 @@
         ],
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "The hunting patrol heads out early, before the sun has cleared the treeline.",
-        "decline_text": "They encounter a dawn patrol on their way back to camp and join up with them instead.",
+        "intro_strings": [
+            "The hunting patrol heads out early, before the sun has cleared the treeline."
+        ],
+        "decline_strings": [
+            "They encounter a dawn patrol on their way back to camp and join up with them instead."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -9498,13 +9714,17 @@
         ],
         "chance_of_success": 50,
         "patrol_art": "backgrounds/fst_canopy",
-        "intro_text": "The siblings head out to one of the further hunting grounds of the forest, in the shade of the oldest trees.",
-        "decline_text": "They decide to bask for a bit instead of making the long walk.",
+        "intro_strings": [
+            "The siblings head out to one of the further hunting grounds of the forest, in the shade of the oldest trees."
+        ],
+        "decline_strings": [
+            "They decide to bask for a bit instead of making the long walk."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "Together, they collect a f_tp_s, a couple f_tp_p, an old f_mp_s and two f_mp_p. It should be a great patrol, returning with so much prey — but r_c0 is acting obnoxious and {PRONOUN/r_c0/poss} sibling has little time or patience for it."
+                    "Together, they collect a f_tp_s, a couple f_tp_p, an old f_mp_s and two f_mp_p. It should be a great patrol, returning with so much prey \u2014 but r_c0 is acting obnoxious and {PRONOUN/r_c0/poss} sibling has little time or patience for it."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -9539,7 +9759,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c0 makes a dumb comment that accidentally cuts deep. {PRONOUN/r_c0/poss/CAP} sibling works with {PRONOUN/r_c0/object} long enough to bring back a great haul of prey — but no longer."
+                    "r_c0 makes a dumb comment that accidentally cuts deep. {PRONOUN/r_c0/poss/CAP} sibling works with {PRONOUN/r_c0/object} long enough to bring back a great haul of prey \u2014 but no longer."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -9652,8 +9872,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "Sometimes, r_c0 enjoys just hanging out with {PRONOUN/r_c0/poss} siblings. The weather is perfect for a great hunt together!",
-        "decline_text": "Actually, p_l would rather try fishing for prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wave/waves} {PRONOUN/p_l/poss} siblings off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank.",
+        "intro_strings": [
+            "Sometimes, r_c0 enjoys just hanging out with {PRONOUN/r_c0/poss} siblings. The weather is perfect for a great hunt together!"
+        ],
+        "decline_strings": [
+            "Actually, p_l would rather try fishing for prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wave/waves} {PRONOUN/p_l/poss} siblings off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -9829,7 +10053,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 nets them four healthy f_mp_p to take back to camp, but it only irritates {PRONOUN/s_c0/poss} siblings. r_c0 never even got the chance to even try for a pounce — {VERB/r_c0/are/is} {PRONOUN/r_c0/subject} only there to carry around s_c0's prey?"
+                    "s_c0 nets them four healthy f_mp_p to take back to camp, but it only irritates {PRONOUN/s_c0/poss} siblings. r_c0 never even got the chance to even try for a pounce \u2014 {VERB/r_c0/are/is} {PRONOUN/r_c0/subject} only there to carry around s_c0's prey?"
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -9877,7 +10101,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It isn't a very successful hunt — they'll have to head out again for more soon."
+                    "It isn't a very successful hunt \u2014 they'll have to head out again for more soon."
                 ],
                 "exp_gained": 0,
                 "supply": [
@@ -9890,7 +10114,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "They don't manage anything like the number of catches they were all expecting to get — a bit disappointing, even if they're not entirely empty-pawed."
+                    "They don't manage anything like the number of catches they were all expecting to get \u2014 a bit disappointing, even if they're not entirely empty-pawed."
                 ],
                 "exp_gained": 0,
                 "supply": [
@@ -9940,8 +10164,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "The sun's out, and r_c0 has been assigned a moderately tolerable hunting patrol — {PRONOUN/r_c0/poss} siblings!",
-        "decline_text": "Cancel that — a border patrol needs backup.",
+        "intro_strings": [
+            "The sun's out, and r_c0 has been assigned a moderately tolerable hunting patrol \u2014 {PRONOUN/r_c0/poss} siblings!"
+        ],
+        "decline_strings": [
+            "Cancel that \u2014 a border patrol needs backup."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -10010,7 +10238,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 jokes that {PRONOUN/r_c0/subject} can't possibly be related to s_c0 — clearly s_c0 was born from squirrels, not cats, with the way {PRONOUN/s_c0/subject} {VERB/s_c0/leap/leaps} from branch to branch in the canopy."
+                    "r_c0 jokes that {PRONOUN/r_c0/subject} can't possibly be related to s_c0 \u2014 clearly s_c0 was born from squirrels, not cats, with the way {PRONOUN/s_c0/subject} {VERB/s_c0/leap/leaps} from branch to branch in the canopy."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -10085,7 +10313,7 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "r_c0 sees a squirrel {PRONOUN/r_c0/subject}'d like for the fresh-kill pile, but the chase goes badly — {PRONOUN/r_c0/subject} {VERB/r_c0/throw/throws} out a front paw to stop {PRONOUN/r_c0/poss} fall, claws digging into bark, and it works, but it wrenches {PRONOUN/r_c0/poss} foreleg out of socket. Fleas and ticks!"
+                    "r_c0 sees a squirrel {PRONOUN/r_c0/subject}'d like for the fresh-kill pile, but the chase goes badly \u2014 {PRONOUN/r_c0/subject} {VERB/r_c0/throw/throws} out a front paw to stop {PRONOUN/r_c0/poss} fall, claws digging into bark, and it works, but it wrenches {PRONOUN/r_c0/poss} foreleg out of socket. Fleas and ticks!"
                 ],
                 "exp_gained": 0,
                 "supply": [
@@ -10142,13 +10370,17 @@
         ],
         "chance_of_success": 50,
         "patrol_art": "backgrounds/fst_canopy",
-        "intro_text": "The siblings head out to one of the further hunting grounds of the forest, in the shade of the oldest trees.",
-        "decline_text": "They decide to bask for a bit instead of making the long walk.",
+        "intro_strings": [
+            "The siblings head out to one of the further hunting grounds of the forest, in the shade of the oldest trees."
+        ],
+        "decline_strings": [
+            "They decide to bask for a bit instead of making the long walk."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "Together, they collect a f_tp_s, a couple f_tp_p, an old f_mp_s and two f_mp_p. It should be a great patrol, returning with so much prey — but r_c0 is acting obnoxious and {PRONOUN/r_c0/poss} siblings have little time or patience for it."
+                    "Together, they collect a f_tp_s, a couple f_tp_p, an old f_mp_s and two f_mp_p. It should be a great patrol, returning with so much prey \u2014 but r_c0 is acting obnoxious and {PRONOUN/r_c0/poss} siblings have little time or patience for it."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -10183,7 +10415,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c0 makes a dumb comment that accidentally cuts deep. {PRONOUN/r_c0/poss/CAP} siblings work with {PRONOUN/r_c0/object} long enough to bring back a great haul of prey — but no longer."
+                    "r_c0 makes a dumb comment that accidentally cuts deep. {PRONOUN/r_c0/poss/CAP} siblings work with {PRONOUN/r_c0/object} long enough to bring back a great haul of prey \u2014 but no longer."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -10195,7 +10427,7 @@
                             "r_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -10290,13 +10522,17 @@
         },
         "chance_of_success": 50,
         "patrol_art": "halloween/hal_flatwoods",
-        "intro_text": "Padding through the forest at night on a dare, the apprentices gasp as light streaks across the sky. A StarClan cat has fallen!",
-        "decline_text": "Before the apprentices can pursue the fallen StarClan cat, the worst of all possibilities happens — a warrior discovers them, sending them back to camp with a loud scolding.",
+        "intro_strings": [
+            "Padding through the forest at night on a dare, the apprentices gasp as light streaks across the sky. A StarClan cat has fallen!"
+        ],
+        "decline_strings": [
+            "Before the apprentices can pursue the fallen StarClan cat, the worst of all possibilities happens \u2014 a warrior discovers them, sending them back to camp with a loud scolding."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "Scrambling up the hill, r_c1 shoves r_c2 up a slightly too big step, both of them panting eagerly as they run. The mist swirls around them, stinking strangely as they search for the StarClan cat, until r_c2 bumps into a huge, tall pillar — one that blinks down with slow, glowing red eyes."
+                    "Scrambling up the hill, r_c1 shoves r_c2 up a slightly too big step, both of them panting eagerly as they run. The mist swirls around them, stinking strangely as they search for the StarClan cat, until r_c2 bumps into a huge, tall pillar \u2014 one that blinks down with slow, glowing red eyes."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -10317,7 +10553,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c2 gets stuck on a big stone step as the apprentices try to scramble uphill — and by the time they climb up, only the dissipating, strangely scented mist says that anything magical passed through here at all."
+                    "r_c2 gets stuck on a big stone step as the apprentices try to scramble uphill \u2014 and by the time they climb up, only the dissipating, strangely scented mist says that anything magical passed through here at all."
                 ],
                 "involved_cats": {
                     "r_c2": {
@@ -10350,13 +10586,17 @@
         },
         "chance_of_success": 40,
         "patrol_art": "halloween/hal_doverdemon",
-        "intro_text": "As p_l is out alone, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} something out of the corner of {PRONOUN/p_l/poss} eye: spindly, long, and partially hidden by the undergrowth of the forest.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/hurry/hurries} back to camp, a little freaked out.",
+        "intro_strings": [
+            "As p_l is out alone, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} something out of the corner of {PRONOUN/p_l/poss} eye: spindly, long, and partially hidden by the undergrowth of the forest."
+        ],
+        "decline_strings": [
+            "{PRONOUN/p_l/subject/CAP} {VERB/p_l/hurry/hurries} back to camp, a little freaked out."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "It leaps up onto a fallen log — whatever it is, with its bulbous head; long, spindly limbs; and pale, hairless skin like a skink. p_l hisses, and its echo skitters off into the woods."
+                    "It leaps up onto a fallen log \u2014 whatever it is, with its bulbous head; long, spindly limbs; and pale, hairless skin like a skink. p_l hisses, and its echo skitters off into the woods."
                 ],
                 "exp_gained": 20
             }
@@ -10404,8 +10644,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "p_l finds a patch of herbs that {PRONOUN/p_l/subject} {VERB/p_l/believe/believes} c_n might need for their stores. {PRONOUN/p_l/subject/CAP} freely {VERB/p_l/admit/admits} to {PRONOUN/p_l/poss} patrol {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't a medicine cat, and {VERB/p_l/ask/asks} {PRONOUN/p_l/poss} companions' advice. What do they know about this herb's properties?",
-        "decline_text": "They decide to focus on hunting and leave the herb collecting to the medicine cats.",
+        "intro_strings": [
+            "p_l finds a patch of herbs that {PRONOUN/p_l/subject} {VERB/p_l/believe/believes} c_n might need for their stores. {PRONOUN/p_l/subject/CAP} freely {VERB/p_l/admit/admits} to {PRONOUN/p_l/poss} patrol {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't a medicine cat, and {VERB/p_l/ask/asks} {PRONOUN/p_l/poss} companions' advice. What do they know about this herb's properties?"
+        ],
+        "decline_strings": [
+            "They decide to focus on hunting and leave the herb collecting to the medicine cats."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

@@ -16,8 +16,12 @@
         },
         "chance_of_success": 20,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!",
-        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
+        "intro_strings": [
+            "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!"
+        ],
+        "decline_strings": [
+            "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -269,7 +273,7 @@
                 "death": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "history": "m_c was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
                     }
@@ -316,8 +320,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!",
-        "decline_text": "p_l turns tail and races away! The rogues have {PRONOUN/p_l/object} far outnumbered, and warning the Clan is more important than dying needlessly.",
+        "intro_strings": [
+            "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!"
+        ],
+        "decline_strings": [
+            "p_l turns tail and races away! The rogues have {PRONOUN/p_l/object} far outnumbered, and warning the Clan is more important than dying needlessly."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -402,8 +410,12 @@
         },
         "chance_of_success": 20,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues strides confidently out from behind a tumble of rocks, yowling as they confront the Clan cats!",
-        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
+        "intro_strings": [
+            "As the patrol is marking the border lines, a gang of rogues strides confidently out from behind a tumble of rocks, yowling as they confront the Clan cats!"
+        ],
+        "decline_strings": [
+            "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -547,7 +559,7 @@
                 "death": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "history": "m_c was killed when rogues attacked {PRONOUN/m_c/poss} patrol."
                     }
@@ -634,8 +646,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!",
-        "decline_text": "p_l turns tail and races away! The rogues have {PRONOUN/p_l/object} far outnumbered, warning the Clan is more important than dying needlessly.",
+        "intro_strings": [
+            "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!"
+        ],
+        "decline_strings": [
+            "p_l turns tail and races away! The rogues have {PRONOUN/p_l/object} far outnumbered, warning the Clan is more important than dying needlessly."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -746,8 +762,12 @@
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": "On their way to mark the far corners of their mountain, r_c0 starts telling a story of {PRONOUN/r_c0/poss} ancestors to keep every cat entertained.",
-        "decline_text": "A shadow flies over them, and r_c's storytelling is forgotten as the patrol makes sure it wasn't an eagle.",
+        "intro_strings": [
+            "On their way to mark the far corners of their mountain, r_c0 starts telling a story of {PRONOUN/r_c0/poss} ancestors to keep every cat entertained."
+        ],
+        "decline_strings": [
+            "A shadow flies over them, and r_c0's storytelling is forgotten as the patrol makes sure it wasn't an eagle."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -931,8 +951,12 @@
         },
         "chance_of_success": 20,
         "patrol_art": "backgrounds/mnt_waterfall",
-        "intro_text": "The patrol reaches a river that must be crossed to ensure the borders are thoroughly checked.",
-        "decline_text": "p_l makes the decision to lead the patrol home instead; it's too risky today.",
+        "intro_strings": [
+            "The patrol reaches a river that must be crossed to ensure the borders are thoroughly checked."
+        ],
+        "decline_strings": [
+            "p_l makes the decision to lead the patrol home instead; it's too risky today."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1121,7 +1145,7 @@
                 "death": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "history": "m_c died trying to cross a dangerous river."
                     }
@@ -1186,7 +1210,7 @@
                 "death": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "history": "m_c died trying to cross a dangerous river."
                     }
@@ -1214,7 +1238,7 @@
                 "lost": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ]
                     }
                 ]
@@ -1281,8 +1305,12 @@
         },
         "chance_of_success": 25,
         "patrol_art": "halloween/hal_mothman",
-        "intro_text": "As p_l pads through the shadowy trees, the sun already hidden by the mountain slopes, {PRONOUN/p_l/subject} {VERB/p_l/freeze/freezes}. Up ahead, a Twoleg peers down from above, its black wings a huge backdrop to hypnotic, glowing red eyes...",
-        "decline_text": "This is no creature for mortal eyes. p_l screws {PRONOUN/p_l/poss} eyelids shut, muttering prayer after prayer after prayer to StarClan itself — and when {PRONOUN/p_l/subject} {VERB/p_l/open/opens} them again, the moth-Twoleg is gone.",
+        "intro_strings": [
+            "As p_l pads through the shadowy trees, the sun already hidden by the mountain slopes, {PRONOUN/p_l/subject} {VERB/p_l/freeze/freezes}. Up ahead, a Twoleg peers down from above, its black wings a huge backdrop to hypnotic, glowing red eyes..."
+        ],
+        "decline_strings": [
+            "This is no creature for mortal eyes. p_l screws {PRONOUN/p_l/poss} eyelids shut, muttering prayer after prayer after prayer to StarClan itself — and when {PRONOUN/p_l/subject} {VERB/p_l/open/opens} them again, the moth-Twoleg is gone."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1412,8 +1440,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "halloween/hal_jerseydevil",
-        "intro_text": "As p_l ducks through the overhanging branches of an evergreen, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} two deer, lying intertwined. Are they sleeping? Curious, p_l creeps closer.",
-        "decline_text": "Two deer are incomprehensibly huge targets for cats. p_l moves on.",
+        "intro_strings": [
+            "As p_l ducks through the overhanging branches of an evergreen, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} two deer, lying intertwined. Are they sleeping? Curious, p_l creeps closer."
+        ],
+        "decline_strings": [
+            "Two deer are incomprehensibly huge targets for cats. p_l moves on."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1475,8 +1507,12 @@
         },
         "chance_of_success": 20,
         "patrol_art": "bord_general_intro",
-        "intro_text": "p_l sniffs the border carefully. It could be dog scent, but more likely, without any Twoleg intrusions, this scent is wolf instead. That wouldn't be good news for c_n.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} puzzle out the scent, but p_l isn't willing to risk any danger trying to isolate it further.",
+        "intro_strings": [
+            "p_l sniffs the border carefully. It could be dog scent, but more likely, without any Twoleg intrusions, this scent is wolf instead. That wouldn't be good news for c_n."
+        ],
+        "decline_strings": [
+            "{PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} puzzle out the scent, but p_l isn't willing to risk any danger trying to isolate it further."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

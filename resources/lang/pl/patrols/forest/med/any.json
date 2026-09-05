@@ -46,8 +46,12 @@
         },
         "chance_of_success": 65,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l looks at the calm, cloudless sky, and decides it's a good opportunity to show r_c1 where some of the most commonly needed herbs are located in their territory.",
-        "decline_text": "As {PRONOUN/p_l/subject} {VERB/p_l/look/looks} at r_c1's absent-minded gaze, {PRONOUN/p_l/subject} {VERB/p_l/hesitate/hesitates} and {VERB/p_l/change/changes} {PRONOUN/p_l/poss} mind. Maybe another day would be best, when r_c1 is more focused.",
+        "intro_strings": [
+            "p_l looks at the calm, cloudless sky, and decides it's a good opportunity to show r_c1 where some of the most commonly needed herbs are located in their territory."
+        ],
+        "decline_strings": [
+            "As {PRONOUN/p_l/subject} {VERB/p_l/look/looks} at r_c1's absent-minded gaze, {PRONOUN/p_l/subject} {VERB/p_l/hesitate/hesitates} and {VERB/p_l/change/changes} {PRONOUN/p_l/poss} mind. Maybe another day would be best, when r_c1 is more focused."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -191,8 +195,12 @@
         },
         "chance_of_success": 65,
         "patrol_art": "cat_sprites/fst_med_herblocation2",
-        "intro_text": "p_l has been sent out into the forest to try to find specific herbs alone.",
-        "decline_text": "Nervous and scared of everything that even slightly moves, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to go back to camp and try again another day. {PRONOUN/p_l/poss/CAP} mentor won't be very pleased, but {PRONOUN/p_l/subject} {VERB/p_l/rationalize/rationalizes} that it's better to go with confidence than nerves.",
+        "intro_strings": [
+            "p_l has been sent out into the forest to try to find specific herbs alone."
+        ],
+        "decline_strings": [
+            "Nervous and scared of everything that even slightly moves, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to go back to camp and try again another day. {PRONOUN/p_l/poss/CAP} mentor won't be very pleased, but {PRONOUN/p_l/subject} {VERB/p_l/rationalize/rationalizes} that it's better to go with confidence than nerves."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -210,7 +218,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l goes to a known herb patch — but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} give up, hunting around in the area until {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a smaller overlooked bush that still has leaves on it."
+                    "p_l goes to a known herb patch \u2014 but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} give up, hunting around in the area until {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a smaller overlooked bush that still has leaves on it."
                 ],
                 "exp_gained": 10,
                 "supply": [
@@ -225,7 +233,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l goes to a known herb patch — but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/give/gives} up and {VERB/p_l/return/returns} to camp, {PRONOUN/p_l/poss} tail dragging miserably along the ground."
+                    "p_l goes to a known herb patch \u2014 but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/give/gives} up and {VERB/p_l/return/returns} to camp, {PRONOUN/p_l/poss} tail dragging miserably along the ground."
                 ],
                 "exp_gained": 0
             }
@@ -276,8 +284,12 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_med_stumble_McWr",
-        "intro_text": "r_c0 trips over a tree root while helping p_l to collect herbs.",
-        "decline_text": "{PRONOUN/r_c0/subject/CAP} quickly {VERB/r_c0/pick/picks} {PRONOUN/r_c0/self} up and {VERB/r_c0/continue/continues} on.",
+        "intro_strings": [
+            "r_c0 trips over a tree root while helping p_l to collect herbs."
+        ],
+        "decline_strings": [
+            "{PRONOUN/r_c0/subject/CAP} quickly {VERB/r_c0/pick/picks} {PRONOUN/r_c0/self} up and {VERB/r_c0/continue/continues} on."
+        ],
         "success_outcomes": [
             {
                 "frequency": 1,
@@ -652,8 +664,12 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_med_stumble_McMc",
-        "intro_text": "r_c0 trips over a tree root while out collecting herbs with p_l.",
-        "decline_text": "{PRONOUN/r_c0/subject/CAP} quickly {VERB/r_c0/pick/picks} {PRONOUN/r_c0/self} up and {VERB/r_c0/continue/continues} on.",
+        "intro_strings": [
+            "r_c0 trips over a tree root while out collecting herbs with p_l."
+        ],
+        "decline_strings": [
+            "{PRONOUN/r_c0/subject/CAP} quickly {VERB/r_c0/pick/picks} {PRONOUN/r_c0/self} up and {VERB/r_c0/continue/continues} on."
+        ],
         "success_outcomes": [
             {
                 "frequency": 1,
@@ -1032,8 +1048,12 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_med_stumble_WrMc",
-        "intro_text": "p_l trips over a tree root while out collecting herbs with r_c0.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/pick/picks} {PRONOUN/p_l/self} up and {VERB/p_l/continue/continues} on.",
+        "intro_strings": [
+            "p_l trips over a tree root while out collecting herbs with r_c0."
+        ],
+        "decline_strings": [
+            "{PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/pick/picks} {PRONOUN/p_l/self} up and {VERB/p_l/continue/continues} on."
+        ],
         "success_outcomes": [
             {
                 "frequency": 1,

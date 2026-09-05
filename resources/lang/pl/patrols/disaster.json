@@ -24,8 +24,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_flashflood_Wr",
-        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
-        "decline_text": "The patrol decides to head back early.",
+        "intro_strings": [
+            "There are dark clouds on the horizon, and p_l wonders if they should continue."
+        ],
+        "decline_strings": [
+            "The patrol decides to head back early."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -220,8 +224,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_flashflood_Wr",
-        "intro_text": "There are dark clouds on the horizon and p_l wonders if {PRONOUN/p_l/subject} should continue.",
-        "decline_text": "The patrol decides to head back early.",
+        "intro_strings": [
+            "There are dark clouds on the horizon and p_l wonders if {PRONOUN/p_l/subject} should continue."
+        ],
+        "decline_strings": [
+            "The patrol decides to head back early."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -316,8 +324,12 @@
         },
         "chance_of_success": 70,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
-        "intro_text": "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
-        "decline_text": "The patrol decides not to investigate.",
+        "intro_strings": [
+            "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the plains."
+        ],
+        "decline_strings": [
+            "The patrol decides not to investigate."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -332,14 +344,7 @@
                         ]
                     }
                 },
-                "exp_gained": 30,
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
-                ]
+                "exp_gained": 30
             },
             {
                 "frequency": 4,
@@ -421,14 +426,6 @@
                         "history": "This cat died while wandering.",
                         "no_results": false
                     }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c1",
-                            "n_c0"
-                        ]
-                    }
                 ]
             },
             {
@@ -491,8 +488,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
-        "intro_text": "p_l hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
-        "decline_text": "The patrol decides not to investigate.",
+        "intro_strings": [
+            "p_l hears some odd noises coming from an abandoned Twoleg nest out on the plains."
+        ],
+        "decline_strings": [
+            "The patrol decides not to investigate."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -507,14 +508,7 @@
                         ]
                     }
                 },
-                "exp_gained": 30,
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
-                ]
+                "exp_gained": 30
             },
             {
                 "frequency": 1,
@@ -529,14 +523,7 @@
                         ]
                     }
                 },
-                "exp_gained": 30,
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
-                ]
+                "exp_gained": 30
             },
             {
                 "frequency": 4,
@@ -593,15 +580,6 @@
                         "log": {
                             "cats_from": "cat_from tried to ambush and kill cat_to, but cat_to escaped."
                         }
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c2",
-                            "n_c1",
-                            "n_c0"
-                        ]
                     }
                 ]
             },
@@ -668,8 +646,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
-        "intro_text": "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach.",
-        "decline_text": "The patrol decides not to investigate.",
+        "intro_strings": [
+            "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach."
+        ],
+        "decline_strings": [
+            "The patrol decides not to investigate."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -684,14 +666,7 @@
                         ]
                     }
                 },
-                "exp_gained": 30,
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
-                ]
+                "exp_gained": 30
             },
             {
                 "frequency": 1,
@@ -706,14 +681,7 @@
                         ]
                     }
                 },
-                "exp_gained": 30,
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
-                ]
+                "exp_gained": 30
             },
             {
                 "frequency": 4,
@@ -830,8 +798,12 @@
         },
         "chance_of_success": 10,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
-        "intro_text": "p_l hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach.",
-        "decline_text": "The patrol decides not to investigate.",
+        "intro_strings": [
+            "p_l hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach."
+        ],
+        "decline_strings": [
+            "The patrol decides not to investigate."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -846,14 +818,7 @@
                         ]
                     }
                 },
-                "exp_gained": 30,
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
-                ]
+                "exp_gained": 30
             },
             {
                 "frequency": 1,
@@ -868,14 +833,7 @@
                         ]
                     }
                 },
-                "exp_gained": 30,
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
-                ]
+                "exp_gained": 30
             },
             {
                 "frequency": 4,
@@ -932,15 +890,6 @@
                         "log": {
                             "cats_from": "cat_from tried to ambush and kill cat_to, but cat_to escaped."
                         }
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c2",
-                            "n_c1",
-                            "n_c0"
-                        ]
                     }
                 ]
             },
@@ -1009,8 +958,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues burst from the bushes! An ambush!",
-        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
+        "intro_strings": [
+            "As the patrol is marking the border lines, a gang of rogues burst from the bushes! An ambush!"
+        ],
+        "decline_strings": [
+            "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1056,15 +1009,6 @@
                         "log": {
                             "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
                         }
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c2",
-                            "n_c1",
-                            "n_c0"
-                        ]
                     }
                 ]
             },
@@ -1131,14 +1075,6 @@
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c1",
-                            "n_c0"
-                        ]
                     }
                 ]
             },
@@ -1224,14 +1160,6 @@
                         "history": "This cat died while wandering.",
                         "no_results": false
                     }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c1",
-                            "n_c0"
-                        ]
-                    }
                 ]
             }
         ],
@@ -1268,15 +1196,6 @@
                             "patrol_cats"
                         ],
                         "history": "m_c was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c2",
-                            "n_c1",
-                            "n_c0"
-                        ]
                     }
                 ]
             },
@@ -1338,15 +1257,6 @@
                         "scar_history": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
                         "death_history": "m_c died of wounds sustained in a rogue ambush."
                     }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c2",
-                            "n_c1",
-                            "n_c0"
-                        ]
-                    }
                 ]
             }
         ]
@@ -1371,8 +1281,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!",
-        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
+        "intro_strings": [
+            "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!"
+        ],
+        "decline_strings": [
+            "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1418,15 +1332,6 @@
                         "log": {
                             "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
                         }
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c2",
-                            "n_c1",
-                            "n_c0"
-                        ]
                     }
                 ]
             },
@@ -1510,14 +1415,6 @@
                         "history": "This cat died while wandering.",
                         "no_results": false
                     }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c1",
-                            "n_c0"
-                        ]
-                    }
                 ]
             },
             {
@@ -1601,14 +1498,6 @@
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c1",
-                            "n_c0"
-                        ]
                     }
                 ]
             }
@@ -1703,15 +1592,6 @@
                         ],
                         "scar_history": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
                         "death_history": "m_c died of wounds sustained in a rogue ambush."
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c2",
-                            "n_c1",
-                            "n_c0"
-                        ]
                     }
                 ]
             }

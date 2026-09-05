@@ -13,8 +13,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_bord_dog_Wr",
-        "intro_text": "p_l heads out to mark c_n's borders.",
-        "decline_text": "p_l decides to not mark their borders.",
+        "intro_strings": [
+            "p_l heads out to mark c_n's borders."
+        ],
+        "decline_strings": [
+            "p_l decides to not mark their borders."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -139,8 +143,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
-        "intro_text": "p_l heads out to patrol c_n's borders and scents something mysterious.",
-        "decline_text": "p_l decides to not investigate the scent.",
+        "intro_strings": [
+            "p_l heads out to patrol c_n's borders and scents something mysterious."
+        ],
+        "decline_strings": [
+            "p_l decides to not investigate the scent."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -229,8 +237,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_bord_trackrogue_Wr",
-        "intro_text": "p_l heads out to patrol c_n's borders and spots some mysterious tracks.",
-        "decline_text": "p_l decides to not investigate the tracks.",
+        "intro_strings": [
+            "p_l heads out to patrol c_n's borders and spots some mysterious tracks."
+        ],
+        "decline_strings": [
+            "p_l decides to not investigate the tracks."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -325,8 +337,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_bord_scenthostile_Wr",
-        "intro_text": "p_l heads out to patrol c_n's borders and notices that some of their markings had been disturbed.",
-        "decline_text": "p_l decides to not investigate the markings.",
+        "intro_strings": [
+            "p_l heads out to patrol c_n's borders and notices that some of their markings had been disturbed."
+        ],
+        "decline_strings": [
+            "p_l decides to not investigate the markings."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -384,8 +400,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "halloween/hal_kittybat_Ln",
-        "intro_text": "On border patrol, the patrol finds a kittypet's scent. Following the (extremely) obvious sounds of distress, p_l leads the patrol down to a kittypet, haplessly wedged between a couple of rocks. Wailing pathetically, they cry that their wing is stuck!",
-        "decline_text": "It's beyond c_n's border, it's not c_n's problem.",
+        "intro_strings": [
+            "On border patrol, the patrol finds a kittypet's scent. Following the (extremely) obvious sounds of distress, p_l leads the patrol down to a kittypet, haplessly wedged between a couple of rocks. Wailing pathetically, they cry that their wing is stuck!"
+        ],
+        "decline_strings": [
+            "It's beyond c_n's border, it's not c_n's problem."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -400,7 +420,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "Frankly, extra limbs or not (bat wings, at that — this'll make a great story back at camp), the patrol needs to get this plump crying ball of fur back to their Twolegs. The world will eat this kittypet alive if they don't help them."
+                    "Frankly, extra limbs or not (bat wings, at that \u2014 this'll make a great story back at camp), the patrol needs to get this plump crying ball of fur back to their Twolegs. The world will eat this kittypet alive if they don't help them."
                 ],
                 "exp_gained": 15,
                 "reputation_changes": {
@@ -506,8 +526,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "halloween/hal_pumpkineyes_Wr",
-        "intro_text": "The patrol is heading out to check the borders, when p_l says {PRONOUN/p_l/subject} {VERB/p_l/see/sees} strange glowing eyes in the distance.",
-        "decline_text": "r_c0 sighs and tells p_l that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just seeing things. There's nothing out there... right?",
+        "intro_strings": [
+            "The patrol is heading out to check the borders, when p_l says {PRONOUN/p_l/subject} {VERB/p_l/see/sees} strange glowing eyes in the distance."
+        ],
+        "decline_strings": [
+            "r_c0 sighs and tells p_l that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just seeing things. There's nothing out there... right?"
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -559,7 +583,10 @@
                 ],
                 "involved_cats": {
                     "r_c0": {
-                        "past_status": ["kittypet", "loner"]
+                        "past_status": [
+                            "kittypet",
+                            "loner"
+                        ]
                     }
                 },
                 "exp_gained": 15,
@@ -732,8 +759,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": "The patrol stumbles upon a strange scene near a Twolegplace: Twoleg kits traveling from den to den in colorful pelts.",
-        "decline_text": "The patrol decides it's best not to interfere with this peculiar ritual.",
+        "intro_strings": [
+            "The patrol stumbles upon a strange scene near a Twolegplace: Twoleg kits traveling from den to den in colorful pelts."
+        ],
+        "decline_strings": [
+            "The patrol decides it's best not to interfere with this peculiar ritual."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -845,8 +876,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "halloween/hal_scarecrow",
-        "intro_text": "On the outskirts of the territory, the patrol comes across a tall, motionless Twoleg rooted in the middle of a field.",
-        "decline_text": "The patrol doesn't want to risk going near this strange Twoleg and quickly heads back to camp to report the odd sighting.",
+        "intro_strings": [
+            "On the outskirts of the territory, the patrol comes across a tall, motionless Twoleg rooted in the middle of a field."
+        ],
+        "decline_strings": [
+            "The patrol doesn't want to risk going near this strange Twoleg and quickly heads back to camp to report the odd sighting."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1022,8 +1057,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_train_argue_WrWr",
-        "intro_text": "p_l and r_c0 have been bickering non-stop the entire time they've been patrolling.",
-        "decline_text": "Unable to work together, the two return to camp.",
+        "intro_strings": [
+            "p_l and r_c0 have been bickering non-stop the entire time they've been patrolling."
+        ],
+        "decline_strings": [
+            "Unable to work together, the two return to camp."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1421,8 +1460,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_running_ApAp",
-        "intro_text": "After a night-long greenleaf thunderstorm, p_l takes a patrol out to check the o_c_n border. Along the way, r_c1 and r_c2 hop through puddles, splashing each other.",
-        "decline_text": "If r_c1 and r_c2 aren't going to take this seriously, p_l will turn this patrol around and go straight back to camp.",
+        "intro_strings": [
+            "After a night-long greenleaf thunderstorm, p_l takes a patrol out to check the o_c_n border. Along the way, r_c1 and r_c2 hop through puddles, splashing each other."
+        ],
+        "decline_strings": [
+            "If r_c1 and r_c2 aren't going to take this seriously, p_l will turn this patrol around and go straight back to camp."
+        ],
         "success_outcomes": [
             {
                 "frequency": 2,
@@ -1949,8 +1992,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/fst_twolegplace",
-        "intro_text": "While patrolling near POI, the patrol stumbles across an odd stack of Twoleg wood. The trunk's been cut into long pieces and it's confusingly smooth.",
-        "decline_text": "They don't have time for this. The patrol leaves the stack behind and continues on their way.",
+        "intro_strings": [
+            "While patrolling near {POI/tag/Twolegs:present}, the patrol stumbles across an odd stack of Twoleg wood. The trunk's been cut into long pieces and it's confusingly smooth."
+        ],
+        "decline_strings": [
+            "They don't have time for this. The patrol leaves the stack behind and continues on their way."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2023,7 +2070,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/mtn_hunt_followsstreamtocoldbog_WrWr",
                 "strings": [
-                    "p_l suggests dumping the wood pieces in the nearby pond—the water will surely ruin the wood and prevent the Twolegs from building more nests. The patrol is there until sunhigh dragging the pieces to the pond."
+                    "p_l suggests dumping the wood pieces in the nearby pond\u2014the water will surely ruin the wood and prevent the Twolegs from building more nests. The patrol is there until sunhigh dragging the pieces to the pond."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [

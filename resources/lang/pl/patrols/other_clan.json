@@ -16,8 +16,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": "While walking along the border, the patrol notices a o_c_n patrol renewing their scent marks up ahead.",
-        "decline_text": "The patrol decides to avoid the other Clan cats.",
+        "intro_strings": [
+            "While walking along the border, the patrol notices a o_c_n patrol renewing their scent marks up ahead."
+        ],
+        "decline_strings": [
+            "The patrol decides to avoid the other Clan cats."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -88,7 +92,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -135,7 +139,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -176,7 +180,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -220,7 +224,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -277,7 +281,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -322,7 +326,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -356,7 +360,7 @@
                             "r_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -389,7 +393,7 @@
                             "r_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -422,8 +426,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_bord_otherclanrabbit_Wr",
-        "intro_text": "r_c0 spies a fat rabbit on the other side of the o_c_n border. A tempting opportunity to be sure, but it may not be wise to hunt on a different Clan's territory.",
-        "decline_text": "The patrol decides that one rabbit isn't worth making an enemy.",
+        "intro_strings": [
+            "r_c0 spies a fat rabbit on the other side of the o_c_n border. A tempting opportunity to be sure, but it may not be wise to hunt on a different Clan's territory."
+        ],
+        "decline_strings": [
+            "The patrol decides that one rabbit isn't worth making an enemy."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -768,8 +776,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_med_borderherb_Mc",
-        "intro_text": "p_l pads along, mouth open slightly as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} for any traces of herbs. {PRONOUN/p_l/subject/CAP} {VERB/p_l/scent/scents} some raspberries nearby, but it seems that they're just over the border.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} that trespassing isn't worth it in this case.",
+        "intro_strings": [
+            "p_l pads along, mouth open slightly as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} for any traces of herbs. {PRONOUN/p_l/subject/CAP} {VERB/p_l/scent/scents} some raspberries nearby, but it seems that they're just over the border."
+        ],
+        "decline_strings": [
+            "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} that trespassing isn't worth it in this case."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -869,8 +881,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is checking the border lines, they notice that a o_c_n scent has strayed into their territory.",
-        "decline_text": "p_l decides that it isn't important. Maybe an apprentice simply lost their way.",
+        "intro_strings": [
+            "As the patrol is checking the border lines, they notice that a o_c_n scent has strayed into their territory."
+        ],
+        "decline_strings": [
+            "p_l decides that it isn't important. Maybe an apprentice simply lost their way."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -925,7 +941,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -966,7 +982,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -1023,7 +1039,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -1168,8 +1184,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As p_l is checking the border lines, they notice that a o_c_n scent has strayed into their territory.",
-        "decline_text": "p_l decides that it isn't important. Maybe an apprentice simply lost their way.",
+        "intro_strings": [
+            "As p_l is checking the border lines, they notice that a o_c_n scent has strayed into their territory."
+        ],
+        "decline_strings": [
+            "p_l decides that it isn't important. Maybe an apprentice simply lost their way."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1371,8 +1391,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_crouching_Wr",
-        "intro_text": "p_l heads out onto the beach alone to check on the border.",
-        "decline_text": "p_l reconsiders and turns back to camp, deciding that {PRONOUN/p_l/poss} other duties have to come first.",
+        "intro_strings": [
+            "p_l heads out onto the beach alone to check on the border."
+        ],
+        "decline_strings": [
+            "p_l reconsiders and turns back to camp, deciding that {PRONOUN/p_l/poss} other duties have to come first."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2127,8 +2151,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_crouching_Wr",
-        "intro_text": "p_l heads out into the desert alone, wanting to make a quick check on the border.",
-        "decline_text": "p_l turns back to camp, deciding that {PRONOUN/p_l/poss} other duties have to come first.",
+        "intro_strings": [
+            "p_l heads out into the desert alone, wanting to make a quick check on the border."
+        ],
+        "decline_strings": [
+            "p_l turns back to camp, deciding that {PRONOUN/p_l/poss} other duties have to come first."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2883,8 +2911,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_crouching_Wr",
-        "intro_text": "p_l heads out into the forest alone, wanting to make a quick check on the border.",
-        "decline_text": "p_l turns back to camp, deciding that {PRONOUN/p_l/poss} other duties have to come first.",
+        "intro_strings": [
+            "p_l heads out into the forest alone, wanting to make a quick check on the border."
+        ],
+        "decline_strings": [
+            "p_l turns back to camp, deciding that {PRONOUN/p_l/poss} other duties have to come first."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3639,13 +3671,17 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_crouching_Wr",
-        "intro_text": "p_l heads out into the mountains alone, wanting to make a quick check on the border.",
-        "decline_text": "p_l turns back to camp, deciding that {PRONOUN/p_l/poss} other duties have to come first.",
+        "intro_strings": [
+            "p_l heads out into the mountains alone, wanting to make a quick check on the border."
+        ],
+        "decline_strings": [
+            "p_l turns back to camp, deciding that {PRONOUN/p_l/poss} other duties have to come first."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "There's a particular spot where the ground is prone to slipping along the border with o_c_n, dirt falling away from under the trails — not dangerous, but wiping the border markings off the map. p_l re-marks it and heads home, a simple but necessary mission completed."
+                    "There's a particular spot where the ground is prone to slipping along the border with o_c_n, dirt falling away from under the trails \u2014 not dangerous, but wiping the border markings off the map. p_l re-marks it and heads home, a simple but necessary mission completed."
                 ],
                 "exp_gained": 20,
                 "reputation_changes": {
@@ -4395,8 +4431,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_crouching_Wr",
-        "intro_text": "p_l heads out into the grasslands alone, wanting to make a quick check on the border.",
-        "decline_text": "p_l turns back to camp, deciding that {PRONOUN/p_l/poss} other duties have to come first.",
+        "intro_strings": [
+            "p_l heads out into the grasslands alone, wanting to make a quick check on the border."
+        ],
+        "decline_strings": [
+            "p_l turns back to camp, deciding that {PRONOUN/p_l/poss} other duties have to come first."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5130,8 +5170,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": "p_l heads out into the wetlands alone, wanting to make a quick check on the border.",
-        "decline_text": "p_l turns back to camp, deciding that {PRONOUN/p_l/poss} other duties have to come first.",
+        "intro_strings": [
+            "p_l heads out into the wetlands alone, wanting to make a quick check on the border."
+        ],
+        "decline_strings": [
+            "p_l turns back to camp, deciding that {PRONOUN/p_l/poss} other duties have to come first."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5628,8 +5672,12 @@
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/gen_train_talking_ApWr",
-        "intro_text": "p_l can't help but think that r_c1 has been distracted on this patrol, trailing behind and admiring any aimless distraction nearby. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} that r_c1 could do with a <i>special</i> mission to get {PRONOUN/r_c1/object} back on track.",
-        "decline_text": "After a bit of thought, p_l decides that getting an apprentice to sneak across the border probably isn't the best idea... however irritating {PRONOUN/r_c1/subject} {VERB/r_c1/were/was} being.",
+        "intro_strings": [
+            "p_l can't help but think that r_c1 has been distracted on this patrol, trailing behind and admiring any aimless distraction nearby. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} that r_c1 could do with a <i>special</i> mission to get {PRONOUN/r_c1/object} back on track."
+        ],
+        "decline_strings": [
+            "After a bit of thought, p_l decides that getting an apprentice to sneak across the border probably isn't the best idea... however irritating {PRONOUN/r_c1/subject} {VERB/r_c1/were/was} being."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5708,7 +5756,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_argue_ApWr",
                 "strings": [
-                    "Sick of r_c1's useless ambling, s_c0 orders {PRONOUN/r_c1/object} to steal from o_c_n's territory. r_c1 hesitates — surely stealing prey from other Clans is wrong? Looking anxiously across the border, r_c1 shakes {PRONOUN/r_c1/poss} head. {PRONOUN/r_c1/subject/CAP} won't do it. s_c0 stalks off to continue the patrol, fuming but slightly impressed."
+                    "Sick of r_c1's useless ambling, s_c0 orders {PRONOUN/r_c1/object} to steal from o_c_n's territory. r_c1 hesitates \u2014 surely stealing prey from other Clans is wrong? Looking anxiously across the border, r_c1 shakes {PRONOUN/r_c1/poss} head. {PRONOUN/r_c1/subject/CAP} won't do it. s_c0 stalks off to continue the patrol, fuming but slightly impressed."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -5983,8 +6031,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_otherclan_OwOa",
-        "intro_text": "The patrol reaches o_c_n's border just as a o_c_n patrol approaches from the other side. The cats of both Clans shift uneasily, waiting for someone to break the silence. r_c1 perks up when {PRONOUN/r_c1/subject} {VERB/r_c1/spot/spots} another apprentice in the o_c_n patrol.",
-        "decline_text": "p_l quickly marks the border and then steers {PRONOUN/p_l/poss} patrol away from the o_c_n patrol. Best not to risk a confrontation.",
+        "intro_strings": [
+            "The patrol reaches o_c_n's border just as a o_c_n patrol approaches from the other side. The cats of both Clans shift uneasily, waiting for someone to break the silence. r_c1 perks up when {PRONOUN/r_c1/subject} {VERB/r_c1/spot/spots} another apprentice in the o_c_n patrol."
+        ],
+        "decline_strings": [
+            "p_l quickly marks the border and then steers {PRONOUN/p_l/poss} patrol away from the o_c_n patrol. Best not to risk a confrontation."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -6009,7 +6061,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -6119,7 +6171,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "multi",
+                            "some_patrol",
                             "p_l"
                         ],
                         "mutual": false,
@@ -6256,7 +6308,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "values": [
                             "like"
@@ -6340,7 +6392,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "cats_to": [
                             "s_c0"
@@ -6394,7 +6446,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "cats_to": [
                             "r_c1"
@@ -6435,7 +6487,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "values": [
                             "like"
@@ -6554,7 +6606,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "minor_injury"
@@ -6597,7 +6649,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -6612,7 +6664,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "battle_injury"
@@ -6642,8 +6694,12 @@
         },
         "chance_of_success": 55,
         "patrol_art": "bord_general_intro",
-        "intro_text": "p_l sees two kits from o_c_n playing close to the border.",
-        "decline_text": "It's not {PRONOUN/p_l/poss} problem that those kits are alone and vulnerable. o_c_n should keep a closer eye on their kits.",
+        "intro_strings": [
+            "p_l sees two kits from o_c_n playing close to the border."
+        ],
+        "decline_strings": [
+            "It's not {PRONOUN/p_l/poss} problem that those kits are alone and vulnerable. o_c_n should keep a closer eye on their kits."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -6727,7 +6783,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l decides to bring r_c0 with {PRONOUN/p_l/object} to o_c_n and orders the others back to camp. As they approach o_c_n, they are immediately greeted by the leader, who recognizes p_l — knowing {PRONOUN/p_l/object} to be a kind and caring cat — and thanks both of them sincerely."
+                    "p_l decides to bring r_c0 with {PRONOUN/p_l/object} to o_c_n and orders the others back to camp. As they approach o_c_n, they are immediately greeted by the leader, who recognizes p_l \u2014 knowing {PRONOUN/p_l/object} to be a kind and caring cat \u2014 and thanks both of them sincerely."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -6882,7 +6938,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -6957,8 +7013,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": "The patrol spots a badger making a den on o_c_n territory.",
-        "decline_text": "It's not c_n's problem, but {PRONOUN/p_l/subject} {VERB/p_l/make/makes} a mental note to report the badger sighting back at camp.",
+        "intro_strings": [
+            "The patrol spots a badger making a den on o_c_n territory."
+        ],
+        "decline_strings": [
+            "It's not c_n's problem, but {PRONOUN/p_l/subject} {VERB/p_l/make/makes} a mental note to report the badger sighting back at camp."
+        ],
         "success_outcomes": [
             {
                 "frequency": 1,
@@ -7156,8 +7216,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_bord_otherclan_OwOw",
-        "intro_text": "The border patrol, busy remarking, comes across a o_c_n patrol doing the same, and the apprentices from both sides perk up at the chance for a break in the monotony. Chuckling, p_l offers the chance for a small tale <i>if</i> they can all sit still for it!",
-        "decline_text": "The apprentices can't sit still, but it's no great loss, the patrol just continue on with their work.",
+        "intro_strings": [
+            "The border patrol, busy remarking, comes across a o_c_n patrol doing the same, and the apprentices from both sides perk up at the chance for a break in the monotony. Chuckling, p_l offers the chance for a small tale <i>if</i> they can all sit still for it!"
+        ],
+        "decline_strings": [
+            "The apprentices can't sit still, but it's no great loss, the patrol just continue on with their work."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -7214,7 +7278,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Once, there was a cat called Scrap. Possessed of few talents and no courage, she — So she was a typical c_n cat then, the o_c_n apprentice laughs. p_l glares, breaking into a hiss that startles the impudent adolescent away from the border."
+                    "Once, there was a cat called Scrap. Possessed of few talents and no courage, she \u2014 So she was a typical c_n cat then, the o_c_n apprentice laughs. p_l glares, breaking into a hiss that startles the impudent adolescent away from the border."
                 ],
                 "exp_gained": 0,
                 "reputation_changes": {
