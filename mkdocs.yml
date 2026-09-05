@@ -53,6 +53,7 @@ nav:
         - dev/writing/points-of-interest.md
         - dev/writing/localization.md
         - dev/writing/advanced-documentation.md
+        - dev/writing/tools.md
     - Art:
         - Cat Sprites:
             - dev/art/cat-sprites/cat-sprites.md
