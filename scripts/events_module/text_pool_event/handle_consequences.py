@@ -29,6 +29,7 @@ from scripts.events_module.consequences import unpack_rel_block, check_stolen_vi
 from scripts.events_module.future.prep_and_trigger import prep_future_event
 from scripts.events_module.patrol.create_new_cat import updated_create_new_cat
 from scripts.events_module.parameter_dicts import SupplyDict
+from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.relationship import relation_events
 from scripts.events_module.text_adjust import (
     event_text_adjust,
@@ -117,7 +118,7 @@ def execute_outcome(
 
 
 def create_needed_cats(
-    event: TextPoolEvent,
+    event: TextPoolEvent | PatrolEvent,
     event_involved_cats: dict[str, Union[Cat, list[Cat]]],
     other_clan: OtherClan = None,
 ):
