@@ -49,7 +49,7 @@ def execute_outcome(
     event_involved_cats: dict[str, Union[Cat, list[Cat]]],
     other_clan: OtherClan = None,
     chosen_poi: str = None,
-) -> tuple[str, str]:
+) -> tuple[str, str, dict]:
     """
     Executes the outcome, applying any specified consequences.
     If new cats are created, event_involved_cats *will* be modified to add the newly created cats.

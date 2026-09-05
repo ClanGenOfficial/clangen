@@ -37,8 +37,6 @@ from scripts.events_module.text_pool_event.check_general_constraints import (
 from scripts.events_module.text_pool_event.event_retrieval import get_valid_event
 from scripts.events_module.text_pool_event.find_involved_cats import find_cats
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
-from scripts.game_structure.game.settings import game_setting_get
-from scripts.game_structure import constants
 from scripts.game_structure import game
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.special_dates import SpecialDate, is_today
