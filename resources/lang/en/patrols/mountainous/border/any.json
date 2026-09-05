@@ -1621,7 +1621,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 bolts back to camp, easily keeping ahead of the beast. {PRONOUN/s_c0/subject} {VERB/s_c0/burst/bursts} into camp, yowling a warning with plenty of time for c_n to prepare to drive the wolf away."
+                    "s_c0 bolts back to camp, easily keeping ahead of the beast. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/burst/bursts} into camp, yowling a warning with plenty of time for c_n to prepare to drive the wolf away."
                 ],
                 "involved_cats": {
                     "s_c0": {
