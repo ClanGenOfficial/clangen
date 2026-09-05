@@ -1,8 +1,9 @@
 {
-    "clan_ranks": ["all_kittens", "all_apprentices", "all_elders", "young_old"],
+    "clan_ranks": ["all_kittens", "all_apprentices", "all_elders"],
+    "singe_leader_life": ["forsaken", "stolen_vitality"],
     "starting_numbers": ["one_cat", "young_old"],
-    "leader_life": ["forsaken", "stolen_vitality"],
     "seasons": ["always_newleaf", "always_greenleaf", "always_leaf-fall", "always_leaf-bare"],
     "litters": ["underpopulated", "mouths_to_feed"],
+    "leader_life_count": ["weak_stars", "forsaken"],
     "starting_herbs": ["barren_stocks", "meagre_stocks"]
 }
