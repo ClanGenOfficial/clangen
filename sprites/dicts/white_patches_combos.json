@@ -272,6 +272,32 @@
             "midSTRIPE_MID",
             "midTAIL_OVER"
         ],
+        "SOMBER": [
+            "littleBEARD_SMALL",
+            "littleCHEST_BROKEN",
+            "littleLEFTEAR_MID",
+            "littleLEG_BACK_LEFT_MID",
+            "littleLEG_BACK_RIGHT_MID",
+            "littleLEG_FRONT_LEFT_MID",
+            "littleLEG_FRONT_RIGHT_MID",
+            "littleRIGHTEAR_MID",
+            "littleTAIL_UNDER",
+            "littleUNDEREYE_MIN_L",
+            "littleUNDEREYE_MIN_R"
+        ],
+        "CLIFF": [
+            "littleBEARD_SMALL",
+            "littleBELLY_MID",
+            "littleBLAZE_MID",
+            "littleLEG_BACK_LEFT_MID",
+            "littleLEG_BACK_RIGHT_MID",
+            "littleLEG_FRONT_LEFT_MID",
+            "littleLEG_FRONT_RIGHT_MID",
+            "littleLITTLE",
+            "littleUNDEREYE_MIN_L",
+            "littleUNDEREYE_MIN_R",
+            "midBIB_HIGH"
+        ],
         "FUZZSPOT": [
             "littleLEG_FRONT_RIGHT_UNDER",
             "littleTAIL_MID",
