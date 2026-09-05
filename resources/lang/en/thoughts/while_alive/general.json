@@ -163,6 +163,16 @@
         ]
     },
     {
+        "event_id": "gen_greenleaf_leafbare",
+        "season": [
+            "greenleaf",
+            "leaf-bare"
+        ],
+        "strings": [
+            "Can't wait for more favorable seasons"
+        ]
+    },
+    {
         "event_id": "gen_greenleaf",
         "season": [
             "greenleaf"
