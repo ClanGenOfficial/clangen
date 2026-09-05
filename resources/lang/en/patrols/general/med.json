@@ -1,42 +1,42 @@
 [
     {
-        "event_id": "gen_med_sunny1",
+        "event_id": "gen_med_sunny_group",
         "types": [
             "herb_gathering"
         ],
-        "frequency": 1,
+        "season": ["greenleaf", "newleaf"],
+        "frequency": 3,
         "required_cat_types": {
-            "patrol_cats": [
-                2,
-                6
-            ],
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                1,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
+            "patrol_cats": [2, 6],
+            "healer cats": [1, 6]
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_talking_McMc",
         "intro_strings": [
-            "The patrol finds a nice spot to sun themselves."
+            "The patrol finds a nice spot to sun themselves.",
+            "Before the patrol gathers any herbs, they settle down to enjoy the sunshine.",
+            "p_l decides that before anything else, the patrol should take advantage of the sunlight and warm their pelts."
         ],
         "decline_strings": [
-            "They decide to stay focused."
+            "The patrol decides to stay focused.",
+            "The patrol remains stalwart against urge to relax in the sun.",
+            "The patrol doesn't have time to sun themselves."
         ],
         "success_outcomes": [
             {
                 "frequency": 4,
+                "required_cat_types": {
+                    "patrol_cats": [2, 6],
+                    "apprentice": [-1, -1],
+                    "healer cats": [2, 6],
+                    "normal adult": [-1, -1]
+                },
                 "outcome_art": "cat_sprites/gen_med_sunny_Mc",
+                "involved_cats": {
+                    "r_c0": {}
+                },
                 "strings": [
-                    "The sunlight feels great and the cats have a successful discussion, talking about what came up at the last half-moon meetings and whether it'll affect c_n."
+                    "p_l and r_c0 enjoy the sunlight and discuss the most recent half-moon meeting and whether it will affect c_n."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -61,15 +61,18 @@
                 "supply": [
                     {
                         "type": "random_herbs",
-                        "adjust": "increase_medium"
+                        "adjust": "increase_small"
                     }
                 ]
             },
             {
                 "frequency": 4,
+                "required_cat_types": {
+                    "healer cats": [2, 6]
+                },
                 "outcome_art": "cat_sprites/gen_med_sunny_Mc",
                 "strings": [
-                    "The sunlight feels great and the cats have a lovely discussion, talking about what herbs need to be gathered and the best locations to gather them."
+                    "The sunlight feels great and the cats have a lovely discussion about what herbs need to be gathered and the best locations to gather them."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -87,7 +90,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from and cat_to chatted about the herb stores and herb-gathering spots while sunning themselves."
+                            "cats_from": "While sunning themselves, cat_from and cat_to chatted about the herb stores and their plans to gather them."
                         }
                     }
                 ],
@@ -99,7 +102,7 @@
                 ]
             },
             {
-                "frequency": 2,
+                "frequency": 3,
                 "strings": [
                     "The sunlight energizes the cats for their herb-gathering."
                 ],
@@ -213,7 +216,8 @@
                                 "SENSE,1",
                                 "HEALER,1"
                             ]
-                        }
+                        },
+                        "status": ["medicine cat", "medicine cat apprentice"]
                     }
                 },
                 "exp_gained": 20,
@@ -243,7 +247,7 @@
                 ]
             },
             {
-                "frequency": 2,
+                "frequency": 4,
                 "strings": [
                     "The sunlight refreshes the cats for their herb-gathering. s_c0 is extra bright, and {PRONOUN/s_c0/poss} jokes make the whole patrol pass by in a good mood."
                 ],
@@ -347,7 +351,9 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_med_sunny_Mc",
                 "strings": [
-                    "The patrol doesn't get much done because of that."
+                    "The patrol doesn't get much done lazing away in the sun.",
+                    "The patrol falls asleep and fails to gather any herbs.",
+                    "The patrol spends their time daydreaming instead of gathering herbs."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -356,7 +362,7 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "patrol_cats"
+                            "some_clan"
                         ],
                         "mutual": false,
                         "values": [
@@ -364,13 +370,13 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from and cat_to lost a bit of respect for each other's work ethic when they spent a whole patrol basking instead of gathering herbs."
+                            "cats_from": "cat_from lost a bit of respect for cat_to's work ethic when {PRONOUN/cat_from/subject} heard that cat_to spent a whole patrol basking in the sun instead of gathering herbs."
                         }
                     }
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 2,
                 "outcome_art": "cat_sprites/gen_med_argue_McMc",
                 "strings": [
                     "The patrol gets into an argument and returns home with tails lashing, shooting annoyed looks at each other."
@@ -398,10 +404,9 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 wasn't able to relax and kept the rest of the patrol from relaxing with all {PRONOUN/s_c0/poss} {VERB/r_c0/movement/movements}. The patrol returns to camp grumpy and with no herbs."
+                    "s_c0 wasn't able to relax and kept the rest of the patrol from relaxing with all {PRONOUN/s_c0/poss} {VERB/s_c0/movement/movements}. The patrol returns to camp grumpy and with no herbs."
                 ],
                 "involved_cats": {
-                    "r_c0": {},
                     "s_c0": {
                         "prior_abbreviation": [
                             "any"
@@ -480,7 +485,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from was peeved that cat_to took the best basking spot and ignored all conversation during a patrol."
+                            "cats_from": "cat_from was annoyed that cat_to took the best basking spot and ignored all conversation during a patrol."
                         }
                     }
                 ]
@@ -488,7 +493,7 @@
         ]
     },
     {
-        "event_id": "gen_med_sunny2",
+        "event_id": "gen_med_sunny_solo",
         "types": [
             "herb_gathering"
         ],
@@ -506,35 +511,29 @@
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_sunny_Mc",
         "intro_strings": [
-            "p_l finds a nice spot to sun {PRONOUN/p_l/self}."
+            "p_l finds a nice spot to sun {PRONOUN/p_l/self}.",
+            "Before p_l gathers any herbs, {PRONOUN/p_l/subject} decide to settle down and enjoy the sunlight.",
+            "While on patrol, p_l takes advantage of the sunlight and warms {PRONOUN/p_l/poss} pelt."
         ],
         "decline_strings": [
-            "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to stay focused."
+            "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to stay focused.",
+            "p_l resists the urge to bask in the sun.",
+            "p_l decides there's no time to sun."
         ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "The sunlight feels great and p_l has a successful patrol."
+                    "The sunlight feels great and p_l has a successful patrol.",
+                    "The sunlight energizes p_l for the rest of {PRONOUN/p_l/poss} herb-gathering.",
+                    "p_l has a nice rest and soon is successful in gathering some herbs.",
+                     "Despite falling asleep, p_l still wakes up with some time to gather herbs."
                 ],
                 "exp_gained": 20,
                 "supply": [
                     {
                         "type": "random_herbs",
-                        "adjust": "increase_small"
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "The sunlight energizes p_l for the rest of {PRONOUN/p_l/poss} herb-gathering."
-                ],
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "random_herbs",
-                        "adjust": "increase_small"
+                        "adjust": "increase_medium"
                     }
                 ]
             },
@@ -552,7 +551,7 @@
                             "high_stable"
                         ],
                         "cats_to": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -569,32 +568,6 @@
                     {
                         "type": "random_herbs",
                         "adjust": "increase_huge"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l has a nice rest and soon is successful in gathering some herbs."
-                ],
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "random_herbs",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "Despite falling asleep, p_l still wakes up with some time to gather herbs."
-                ],
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "random_herbs",
-                        "adjust": "increase_medium"
                     }
                 ]
             },
@@ -617,14 +590,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "{PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} get much done because of that."
-                ],
-                "exp_gained": 0
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "Due to p_l falling asleep, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} wake up in time to gather herbs."
+                    "{PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} get much done because of that.",
+                    "p_l falls asleep and doesn't wake up in time to gather herbs."
                 ],
                 "exp_gained": 0
             },
@@ -12377,7 +12344,9 @@
                 ],
                 "involved_cats": {
                     "r_c1": {
-                        "has_mentor": {"current": true}
+                        "has_mentor": {
+                            "current": true
+                        }
                     }
                 },
                 "exp_gained": 0,
