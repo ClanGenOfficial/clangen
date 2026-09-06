@@ -691,8 +691,8 @@ class TestOutcomeExecution(unittest.TestCase):
         )
         total_herb_count = game.clan.herb_supply.total
 
-        self.patrol_class._add_patrol_cats([war1])
-        self.patrol_class._get_valid_patrol([])
+        set_up_patrol_class_w_event(self.patrol_class, [war1], [patrol])
+
         self.patrol_class._check_outcome_constraints(
             patrol.success_outcomes[0], "success"
         )
