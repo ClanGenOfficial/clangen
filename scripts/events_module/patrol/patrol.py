@@ -612,6 +612,13 @@ class Patrol:
 
         chosen_outcome, success = self.calculate_success(success_outcome, fail_outcome)
 
+        if not self.chosen_poi and chosen_outcome.poi:
+            self.chosen_poi = get_poi_from_constraints(
+                chosen_outcome.poi.get("name"),
+                chosen_outcome.poi.get("tags"),
+                chosen_outcome.poi.get("category"),
+            )
+
         print(f"PATROL ID: {self.patrol_event.event_id} | SUCCESS: {success}")
         print(f"Success Outcome: {success_outcome} | Failure Outcome: {fail_outcome}")
         print(
