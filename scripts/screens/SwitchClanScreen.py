@@ -172,8 +172,13 @@ class SwitchClanScreen(Screens):
             try:
                 with open(get_clan_json(clan)) as f:
                     clan_button_name = ujson.load(f).get("displayname", clan)
-            except (FileNotFoundError, ujson.JSONDecodeError):
-                clan_button_name = clan
+            except:
+                logger.error(
+                    "Failed to read display name of clan with ID %s",
+                    clan,
+                    exc_info=True,
+                )
+                continue
             self.clan_display_names[-1].append(clan_button_name)
             self.clan_buttons[-1].append(
                 UISurfaceImageButton(
