@@ -11,7 +11,6 @@ import scripts.game_structure.screen_settings
 from scripts.clan import Clan
 from scripts.game_structure import game
 from scripts.housekeeping.datadir import get_save_dir
-from ..game_structure.game.save_load.save_load import get_clan_json
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.windows.delete_check import CheckDeletionWindow
@@ -20,7 +19,7 @@ from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset, ui_scale_
 from .Screens import Screens
 from .enums import GameScreen
 from .screens_core.screens_core import rebuild_top_menu_buttons, rebuild_core
-from ..game_structure.game.save_load import read_clans
+from ..game_structure.game.save_load import read_clans, get_clan_json
 from ..game_structure.game.settings import game_setting_get
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_button import get_button_dict, ButtonStyles
