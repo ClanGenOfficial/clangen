@@ -10388,7 +10388,7 @@
             "category": "terrain"
         },
         "frequency": 4,
-        "event_text": "m_c left camp for a solo hunt near POI. When {PRONOUN/m_c/subject} didn't return, a group was sent to search for {PRONOUN/m_c/object}. The group found m_c's bloodied carcass: predator turned prey.",
+        "event_text": "m_c left camp for a solo hunt near POI. A search party later found m_c's bloodied carcass: predator turned prey.",
         "m_c": {
             "status": ["apprentice", "warrior", "deputy", "leader"],
             "dies": true
