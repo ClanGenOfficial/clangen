@@ -11,6 +11,7 @@ import scripts.game_structure.screen_settings
 from scripts.clan import Clan
 from scripts.game_structure import game
 from scripts.housekeeping.datadir import get_save_dir
+from ..game_structure.game.save_load.save_load import get_clan_json
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.windows.delete_check import CheckDeletionWindow
@@ -170,7 +171,7 @@ class SwitchClanScreen(Screens):
         for clan in self.clan_list[1:]:
             self.clan_name[-1].append(clan)
             try:
-                with open(f"{get_save_dir()}/{clan}clan.json") as f:
+                with open(get_clan_json(clan)) as f:
                     clan_button_name = ujson.load(f).get("displayname", clan)
             except (FileNotFoundError, ujson.JSONDecodeError):
                 clan_button_name = clan
