@@ -124,6 +124,7 @@ def get_valid_event(
         # CHECK CAT CONSTRAINTS
         if cat_constraints_active:
             temp_involved_cats, will_create_how_many = find_cats(
+                primary_cat=primary_cat,
                 interactable_cats=interactable_cats,
                 involved_cats=temp_involved_cats,
                 outside_cats=outside_cats,

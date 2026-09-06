@@ -613,6 +613,7 @@ class Patrol:
         temp_involved_cats = self.involved_cats.copy()
 
         temp_involved_cats, will_create_how_many = find_cats(
+            primary_cat=temp_involved_cats["p_l"],
             interactable_cats=temp_involved_cats["patrol_cats"],
             involved_cats=temp_involved_cats,
             outside_cats=outside_cats,
