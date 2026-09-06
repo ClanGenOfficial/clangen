@@ -10339,7 +10339,7 @@
             "category": "terrain"
         },
         "frequency": 2,
-        "event_text": "When m_c and r_c were alone by POI, r_c attacked, attempting to shove {PRONOUN/m_c/object} over the edge. m_c caught {PRONOUN/m_c/self} on the ledge, but r_c pried {PRONOUN/m_c/poss} claws loose, sending {PRONOUN/m_c/object} yowling to {PRONOUN/m_c/poss} death.",
+        "event_text": "When m_c and r_c were alone by POI, r_c attempted to shove {PRONOUN/m_c/object} over the edge. m_c caught {PRONOUN/m_c/self} on the ledge, but r_c pried {PRONOUN/m_c/poss} claws loose, sending {PRONOUN/m_c/object} yowling to {PRONOUN/m_c/poss} death.",
         "m_c": {
             "age": ["any"],
             "dies": true
