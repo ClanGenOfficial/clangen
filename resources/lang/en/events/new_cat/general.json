@@ -3984,7 +3984,7 @@
                 "values": ["like", "comfort"],
                 "amount": 8,
                 "log": {
-                    "cats_from": "cat_from was grateful cat_to found them in the darkness."
+                    "cats_from": "cat_from was grateful cat_to found {PRONOUN/cat_from/object} in the darkness."
                 }
             }
         ],
@@ -4017,7 +4017,7 @@
                 "values": ["like", "comfort"],
                 "amount": 8,
                 "log": {
-                    "cats_from": "cat_from was grateful cat_to introduced them to c_n."
+                    "cats_from": "cat_from was grateful cat_to introduced {PRONOUN/cat_from/object} to c_n."
                 }
             }
         ],
