@@ -117,6 +117,13 @@ class TestPatrolCats(unittest.TestCase):
             self.assertGreater(len(self.patrol_class.involved_cats["some_patrol"]), 1)
             self.assertLess(len(self.patrol_class.involved_cats["some_patrol"]), 6)
 
+        with self.subTest("Check full patrol, no duplicates"):
+            patrol_cats = [war1, war2, war3, war4, war5, war6]
+            self.patrol_class._add_patrol_cats(patrol_cats)
+            some_cats = self.patrol_class.involved_cats["some_patrol"]
+
+            self.assertCountEqual(set(some_cats), some_cats)
+
 
 class TestInvolvedCats(unittest.TestCase):
     @classmethod
