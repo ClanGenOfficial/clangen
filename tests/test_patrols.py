@@ -6,6 +6,7 @@ from scripts.cat.factories.test_cat_factory import TestCatFactory
 from scripts.cat.factories.typed_dicts import StatusDict
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan import Clan, OtherClan
+from scripts.config import get_config
 from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
     JoinDict,
@@ -652,12 +653,23 @@ class TestOutcomeExecution(unittest.TestCase):
             msg=f"{freshkill_count} + 2 should equal {game.clan.freshkill_pile.total_amount}",
         )
         # check single herb change
+        increase_amount = get_config(
+            f"clan_resources.herbs.increase_amounts.increase_tiny"
+        )
         self.assertTrue(
-            honey_count + 2 == game.clan.herb_supply.get_single_herb_total("honey"),
-            msg=f"{honey_count} + 1 should equal {game.clan.herb_supply.get_single_herb_total('honey')}",
+            honey_count + increase_amount
+            == game.clan.herb_supply.get_single_herb_total("honey"),
+            msg=f"old total ({honey_count}) + increase_amount ({increase_amount}) should equal {game.clan.herb_supply.get_single_herb_total('honey')}",
+        )
+        increase_amount = get_config(
+            f"clan_resources.herbs.increase_amounts.increase_huge"
+        )
+        total_without_honey = (
+            game.clan.herb_supply.total
+            - game.clan.herb_supply.get_single_herb_total("honey")
         )
         # check random herb change
         self.assertTrue(
-            total_herb_count + 10 == game.clan.herb_supply.total,
-            msg=f"{total_herb_count} + 9 should equal {game.clan.herb_supply.total}",
+            total_herb_count + increase_amount == total_without_honey,
+            msg=f"old_total ({total_herb_count}) + increase_amount ({increase_amount}) should equal {total_without_honey}",
         )
