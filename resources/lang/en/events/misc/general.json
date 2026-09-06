@@ -17431,5 +17431,184 @@
                 }
             }
         ]
+    },
+    {
+        "event_id": "gen_misc_poi_anyterrain",
+        "location": ["any"],
+        "season": ["any"],
+        "poi": {
+            "category": "terrain"
+        },
+        "frequency": 4,
+        "event_text": "m_c and r_c played hide and seek by POI.",
+        "m_c": {
+            "status": ["kitten", "apprentice"]
+        },
+        "r_c": {
+            "status": ["kitten", "apprentice"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": true,
+                "values": ["like"],
+                "amount": 5,
+                "log": {
+                    "cats_from": "cat_from and cat_to played hide and seek together."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_poi_cave_rescue",
+        "location": ["any"],
+        "season": ["any"],
+        "poi": {
+            "tags": ["cave"],
+            "category": "terrain"
+        },
+        "frequency": 4,
+        "event_text": "m_c followed a strange sound into POI and found a loner, disoriented in the darkness. m_c guided {PRONOUN/n_c:0/object} out of POI and back to the light where {PRONOUN/n_c:0/subject} went on {PRONOUN/n_c:0/poss} way.",
+        "m_c": {
+            "status": ["-kitten", "-newborn", "-elder"],
+            "dies": false
+        },
+        "new_cat": [
+            [
+                "loner",
+                "meeting"
+            ]
+        ],
+        "relationships": [
+            {
+                "cats_from": ["n_c:0"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["like", "comfort"],
+                "amount": 8,
+                "log": {
+                    "cats_from": "cat_from was grateful cat_to found them in the darkness."
+                }
+            }
+        ],
+        "outsider": {
+            "changed": 2
+        }
+    },
+    {
+        "event_id": "gen_misc_poi_cave_app2app",
+        "location": ["any"],
+        "season": ["any"],
+        "poi": {
+            "tags": ["cave"],
+            "category": "terrain"
+        },
+        "frequency": 3,
+        "event_text": "m_c and r_c entertained themselves by sitting at the entrance of POI, yowling into its maw, and giggling as their calls echoed back to them.",
+        "m_c": {
+            "status": ["apprentice"]
+        },
+        "r_c": {
+            "status": ["apprentice"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": true,
+                "values": ["like"],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from and cat_to had fun making their voices echo in the mouth of a cave."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_poi_prey1",
+        "location": ["any"],
+        "season": ["any"],
+        "poi": {
+            "tags": ["prey"],
+            "category": "terrain"
+        },
+        "frequency": 4,
+        "event_text": "m_c hoped to catch r_c's favorite prey near POI but came back empty-pawed.",
+        "m_c": {
+            "status": ["apprentice", "warrior", "deputy", "leader"],
+            "relationship_status": ["likes", "praises", "relates_to", "fancies"]
+        },
+        "r_c": {},
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": 3,
+                "log": {
+                    "cats_from": "cat_from thought it was nice that cat_to tried to find {PRONOUN/cat_from/poss} favorite prey."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_poi_prey2",
+        "location": ["any"],
+        "season": ["any"],
+        "poi": {
+            "tags": ["prey"],
+            "category": "terrain"
+        },
+        "frequency": 4,
+        "event_text": "m_c told r_c {PRONOUN/m_c/subject} {VERB/m_c/were/was} concerned about the lack of prey near POI.",
+        "m_c": {
+            "status": ["apprentice", "warrior"]
+        },
+        "r_c": {
+            "status": ["deputy", "leader"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["trust"],
+                "amount": 3,
+                "log": {
+                    "cats_from": "cat_from appreciated cat_to's thoughts about prey movement in the terrain."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_poi_prey3",
+        "location": ["any"],
+        "season": ["any"],
+        "poi": {
+            "tags": ["prey"],
+            "category": "terrain"
+        },
+        "frequency": 4,
+        "event_text": "m_c encouraged r_c to send more hunting patrols to POI; there has been a surplus of prey in the area.",
+        "m_c": {
+            "status": ["apprentice", "warrior"]
+        },
+        "r_c": {
+            "status": ["deputy", "leader"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["trust"],
+                "amount": 3,
+                "log": {
+                    "cats_from": "cat_from appreciated cat_to's thoughts about prey movement in the terrain."
+                }
+            }
+        ]
     }
 ]

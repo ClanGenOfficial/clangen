@@ -10113,5 +10113,291 @@
                 "death": "m_c died after falling out of one of the Fourtrees."
             }
         ]
+    },
+    {
+        "event_id": "gen_death_poi_cave",
+        "location": ["any"],
+        "season": ["any"],
+        "poi": {
+            "tags": ["cave"],
+            "category": "terrain"
+        },
+        "frequency": 3,
+        "event_text": "While m_c was inside POI, a piece of rubble detached from the ceiling and crushed {PRONOUN/m_c/object}.",
+        "m_c": {
+            "age": ["-newborn", "-kitten"],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": ["m_c"],
+                "death": "m_c was crushed by falling rubble."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_poi_cave_med",
+        "location": ["any"],
+        "season": ["any"],
+        "poi": {
+            "tags": ["cave"],
+            "category": "moonplace"
+        },
+        "frequency": 2,
+        "event_text": "While m_c was inside POI, a piece of rubble detached from the ceiling and crushed {PRONOUN/m_c/object}.",
+        "m_c": {
+            "age": ["-newborn", "-kitten"],
+            "status": ["medicine cat", "medicine cat apprentice"],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": ["m_c"],
+                "death": "m_c was crushed by falling rubble."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_poi_cave_disappear",
+        "location": ["any"],
+        "season": ["any"],
+        "tags": ["no_body"],
+        "poi": {
+            "tags": ["cave"],
+            "category": "terrain"
+        },
+        "frequency": 2,
+        "event_text": "m_c followed a strange sound into POI and did not return.",
+        "m_c": {
+            "age": ["-newborn", "-kitten"],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": ["m_c"],
+                "death": "m_c disappeared into a cave and never returned."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_poi_cave_murder",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [
+            "murder"
+        ],
+        "poi": {
+            "tags": ["cave"],
+            "category": "terrain"
+        },
+        "frequency": 3,
+        "event_text": "m_c was lured into a cave by r_c and killed.",
+        "m_c": {
+            "age": ["any"],
+            "dies": true
+        },
+        "r_c": {
+            "age": ["-newborn", "-kitten"]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was murdered by r_c."
+            }
+        ],
+        "future_event": [
+            {
+                "event_type": "misc",
+                "pool": {
+                    "sub_type": [
+                        "murder_reveal"
+                    ]
+                },
+                "moon_delay": [
+                    1,
+                    12
+                ],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": {
+                        "age": [
+                            "any"
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_poi_covered_blizzard",
+        "location": ["any"],
+        "season": ["leaf-bare"],
+        "poi": {
+            "tags": ["covered"],
+            "category": "terrain"
+        },
+        "frequency": 3,
+        "event_text": "m_c thought {PRONOUN/m_c/subject} would be safe from a blizzard in the shelter of {POI/tag/covered}. {PRONOUN/m_c/subject/CAP} thought wrong.",
+        "m_c": {
+            "status": ["-newborn", "-kitten", "-elder"],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": ["m_c"],
+                "death": "m_c froze to death during a blizzard."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_poi_covered_murder",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [
+            "murder"
+        ],
+        "tags": ["no_body"],
+        "poi": {
+            "tags": ["covered"],
+            "category": "terrain"
+        },
+        "frequency": 3,
+        "event_text": "r_c killed m_c and hid {PRONOUN/m_c/poss} body.",
+        "m_c": {
+            "age": ["-newborn", "-kitten"],
+            "dies": true
+        },
+        "r_c": {
+            "age": ["any"]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was murdered by r_c."
+            }
+        ],
+        "future_event": [
+            {
+                "event_type": "misc",
+                "pool": {
+                    "sub_type": [
+                        "murder_reveal"
+                    ]
+                },
+                "moon_delay": [
+                    1,
+                    12
+                ],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": {
+                        "age": [
+                            "any"
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_poi_fallrisk",
+        "location": ["any"],
+        "season": ["any"],
+        "poi": {
+            "tags": ["fall_risk"],
+            "category": "terrain"
+        },
+        "frequency": 3,
+        "event_text": "m_c lost {PRONOUN/m_c/poss} footing and slipped, plummeting to {PRONOUN/m_c/poss} death.",
+        "m_c": {
+            "age": ["-newborn", "-kitten"],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": ["m_c"],
+                "death": "m_c slipped and fell to their death near POI."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_poi_fallrisk_murder_mufasa",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [
+            "murder"
+        ],
+        "tags": ["all_lives"],
+        "poi": {
+            "tags": ["fall_risk"],
+            "category": "terrain"
+        },
+        "frequency": 2,
+        "event_text": "When m_c and r_c were alone by POI, r_c attacked, attempting to shove {PRONOUN/m_c/object} over the edge. m_c caught {PRONOUN/m_c/self} on the ledge, but r_c pried {PRONOUN/m_c/poss} claws loose, sending {PRONOUN/m_c/object} yowling to {PRONOUN/m_c/poss} death.",
+        "m_c": {
+            "age": ["any"],
+            "dies": true
+        },
+        "r_c": {
+            "age": ["any"]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was thrown off the edge of a ledge by r_c."
+            }
+        ],
+        "future_event": [
+            {
+                "event_type": "misc",
+                "pool": {
+                    "sub_type": [
+                        "murder_reveal"
+                    ]
+                },
+                "moon_delay": [
+                    1,
+                    12
+                ],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": {
+                        "age": [
+                            "any"
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_poi_prey1",
+        "location": ["any"],
+        "season": ["any"],
+        "poi": {
+            "tags": ["prey"],
+            "category": "terrain"
+        },
+        "frequency": 4,
+        "event_text": "m_c left camp for a solo hunt near POI. When {PRONOUN/m_c/subject} didn't return, a group was sent to search for {PRONOUN/m_c/object}. The group found m_c's bloodied carcass: predator turned prey.",
+        "m_c": {
+            "status": ["apprentice", "warrior", "deputy", "leader"],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": ["m_c"],
+                "death": "m_c was killed by a predator on a solo hunt."
+            }
+            ]
     }
 ]

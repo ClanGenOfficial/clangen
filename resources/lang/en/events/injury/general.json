@@ -9701,6 +9701,175 @@
                 }
             }
         ]
+    },
+    {
+        "event_id": "gen_injury_poi_cave_head",
+        "location": ["any"],
+        "season": ["any"],
+        "poi": {
+            "tags": ["cave"],
+            "category": "terrain"
+        },
+        "frequency": 3,
+        "event_text": "m_c was struck in the face by a piece of falling rubble in POI.",
+        "m_c": {
+            "age": ["-newborn", "-kitten"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["head damage", "broken jaw"],
+                "scars": ["THREE", "BEAKCHEEK", "BRIDGE", "FACE", "SNOUT", "CHEEK"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after being struck in the face by a falling piece of rubble.",
+                "death": "m_c was killed by complications of {PRONOUN/m_c/poss} injuries after being struck in the face by falling rubble."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_poi_cave_tail",
+        "location": ["any"],
+        "season": ["any"],
+        "poi": {
+            "tags": ["cave"],
+            "category": "terrain"
+        },
+        "frequency": 3,
+        "event_text": "m_c's tail was crushed by a piece of falling rubble in POI.",
+        "m_c": {
+            "age": ["-newborn", "-kitten"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["mangled tail"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after {PRONOUN/m_c/poss} tail was crushed by a falling piece of rubble.",
+                "death": "m_c was killed by complications of {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/poss} tail was struck by falling rubble."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_poi_covered_predator",
+        "location": ["any"],
+        "season": ["any"],
+        "poi": {
+            "tags": ["covered"],
+            "category": "terrain"
+        },
+        "frequency": 3,
+        "event_text": [
+            "m_c was chased by a preadator and injured before {PRONOUN/m_c/subject} could take cover by POI."
+        ],
+        "m_c": {
+            "age": ["-newborn", "-kitten"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["battle_injury"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after being attacked by a predator.",
+                "death": "m_c was killed by complications of {PRONOUN/m_c/poss} injuries after attacked by a predator."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_poi_fallrisk_rescue",
+        "location": ["any"],
+        "season": ["any"],
+        "poi": {
+            "tags": ["fall_risk"],
+            "category": "terrain"
+        },
+        "frequency": 3,
+        "event_text": "m_c lost {PRONOUN/m_c/poss} footing and slipped near POI. Before {PRONOUN/m_c/subject} fell, r_c grabbed {PRONOUN/m_c/poss} pelt and yanked {PRONOUN/m_c/object} to safety.",
+        "m_c": {
+            "status": ["-newborn", "-kitten", "-elder"]
+        },
+        "r_c": {
+            "status": ["-newborn", "-kitten", "-elder"]
+        },
+        "new_cat": [
+            []
+        ],
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["torn pelt"]
+            }
+            ],
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": false,
+                "values": ["trust", "comfort"],
+                "amount": 15,
+                "log": {
+                    "cats_from": "cat_from couldn't thank r_c enough for saving {PRONOUN/m_c/poss} life after {PRONOUN/m_c/subject} nearly fell to {PRONOUN/m_c/poss} death."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_poi_prey1",
+        "location": ["any"],
+        "season": ["any"],
+        "poi": {
+            "tags": ["prey"],
+            "category": "terrain"
+        },
+        "frequency": 4,
+        "event_text": "m_c sprained {PRONOUN/m_c/poss} paw hunting near POI.",
+        "m_c": {
+            "status": ["apprentice", "warrior", "deputy", "leader"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["sprain"]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_poi_preyflying1",
+        "location": ["any"],
+        "season": ["any"],
+        "poi": {
+            "tags": ["prey:flying"],
+            "category": "terrain"
+        },
+        "frequency": 4,
+        "event_text": "m_c swas harried by a furious flock of birds while hunting near POI.",
+        "m_c": {
+            "status": ["apprentice", "warrior", "deputy", "leader"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["beak_bite"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred by an angry flock of birds",
+                "death": "m_c was killed by complications of {PRONOUN/m_c/poss} wounds after angering a flock of birds."
+            }
+        ]
     }
 ]
 

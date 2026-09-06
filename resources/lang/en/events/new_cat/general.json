@@ -3955,5 +3955,157 @@
                 }
             }
         ]
+    },
+    {
+        "event_id": "gen_newcat_poi_cave1",
+        "location": ["any"],
+        "season": ["any"],
+        "poi": {
+            "tags": ["cave"],
+            "category": "terrain"
+        },
+        "frequency": 3,
+        "event_text": "m_c followed a strange sound into POI and found a loner, disoriented in the darkness. m_c guided {PRONOUN/n_c:0/object} out of POI and back to the light. n_c:0 decided to join c_n.",
+        "m_c": {
+            "status": ["-kitten", "-newborn", "-elder"],
+            "dies": false
+        },
+        "new_cat": [
+            [
+                "loner",
+                "exists"
+            ]
+        ],
+        "relationships": [
+            {
+                "cats_from": ["n_c:0"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["like", "comfort"],
+                "amount": 8,
+                "log": {
+                    "cats_from": "cat_from was grateful cat_to found them in the darkness."
+                }
+            }
+        ],
+        "outsider": {
+            "changed": 2
+        }
+    },
+    {
+        "event_id": "gen_newcat_poi_covered1",
+        "location": ["any"],
+        "season": ["any"],
+        "poi": {
+            "tags": ["covered"],
+            "category": "terrain"
+        },
+        "frequency": 3,
+        "event_text": "m_c found a strange cat sheltering by POI during a downpour and invites them to wait out the rain with c_n. After staying the night, the stranger decides to stay for good. n_c:0 joins the Clan.",
+        "m_c": {
+            "status": ["-kitten", "-newborn", "-elder"],
+            "dies": false
+        },
+        "new_cat": [
+            []
+        ],
+        "relationships": [
+            {
+                "cats_from": ["n_c:0"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["like", "comfort"],
+                "amount": 8,
+                "log": {
+                    "cats_from": "cat_from was grateful cat_to introduced them to c_n."
+                }
+            }
+        ],
+        "outsider": {
+            "changed": 2
+        }
+    },
+    {
+        "event_id": "gen_newcat_poi_fallrisk1",
+        "location": ["any"],
+        "season": ["any"],
+        "poi": {
+            "tags": ["fall_risk"],
+            "category": "terrain"
+        },
+        "frequency": 2,
+        "event_text": "m_c discovered an outsider stuck at the bottom of POI. {PRONOUN/m_c/subject/CAP} brought {PRONOUN/m_c/poss} clanmates to help rescue {PRONOUN/n_c:0/object} and took {PRONOUN/n_c:0object} back to camp for healing. Grateful, n_c:0 joins the Clan.",
+        "m_c": {
+            "status": ["-kitten", "-newborn", "-elder"],
+            "dies": false
+        },
+        "new_cat": [
+            [
+                "exists"
+            ]
+        ],
+        "injury": [
+            {
+                "cats": ["n_c:0"],
+                "injuries": ["broken bone"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["n_c:0"],
+                "scar": "n_c:0 was scarred after breaking a bone.",
+                "death": "n_c:0 died from complications of a broken bone."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["n_c:0"],
+                "cats_to": ["m_c", "some_clan"],
+                "mutual": false,
+                "values": ["like", "trust"],
+                "amount": 8,
+                "log": {
+                    "cats_from": "cat_from was grateful cat_to rescued {PRONOUN/m_c/object} after {PRONOUN/m_c/poss} fall."
+                }
+            }
+        ],
+        "outsider": {
+            "changed": 2
+        }
+    },
+    {
+        "event_id": "gen_newcat_poi_prey_encounterpoach",
+        "location": ["any"],
+        "season": ["any"],
+        "poi": {
+            "tags": ["prey"],
+            "category": "terrain"
+        },
+        "frequency": 4,
+        "event_text": "m_c caught a strange cat poaching prey by POI!",
+        "m_c": {
+            "status": ["-newborn", "-kitten", "-elder"]
+        },
+        "new_cat": [
+            [
+                "exists",
+                "meeting"
+            ]
+        ],
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["n_c:0"],
+                "mutual": false,
+                "values": ["like", "respect"],
+                "amount": -4,
+                "log": {
+                    "cats_from": "cat_from caught cat_to poaching prey in c_n territory."
+                }
+            }
+        ],
+        "outsider": {
+            "changed": -2
+        }
     }
 ]
