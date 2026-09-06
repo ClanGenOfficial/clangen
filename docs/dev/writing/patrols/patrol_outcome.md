@@ -156,6 +156,12 @@ Used to dictate some odds-and-ends about event constraints: [General Tags](../re
 
 ***
 
+#### poi: Dict
+> Used to specify which POI (Point Of Interest) a Clan must have access to in order for this event to trigger. [POI Constraint Tagging](../points-of-interest.md/#using-points-of-interest)
+
+
+***
+
 #### frequency: int
 >Controls how common a patrol is. This works on a 1-4 scale. 
 
