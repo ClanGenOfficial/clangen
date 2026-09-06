@@ -19,7 +19,6 @@ from scripts.events_module.consequences import gather_cat_objects
 from scripts.events_module.event_filters import (
     check_relationship_value,
     get_personality_compatibility,
-    event_for_poi,
 )
 from scripts.events_module.patrol.enums import PatrolChoice
 from scripts.events_module.patrol.generate_patrol_list import (
@@ -143,7 +142,7 @@ class Patrol:
 
     def proceed_patrol(
         self, path: PatrolChoice = PatrolChoice.PROCEED
-    ) -> Tuple[str, str, list, pygame.Surface | None]:
+    ) -> Tuple[str, str, dict, pygame.Surface | None]:
         """Proceed the patrol to the next step."""
 
         if path == PatrolChoice.DECLINE:
@@ -161,11 +160,11 @@ class Patrol:
                         chosen_poi=self.chosen_poi,
                     ),
                     "",
-                    [],
+                    {},
                     None,
                 )
             else:
-                return "Error - no event chosen", "", [], None
+                return "Error - no event chosen", "", {}, None
 
         return self.determine_outcome(antagonize=(path == PatrolChoice.ANTAGONIZE))
 
@@ -264,7 +263,7 @@ class Patrol:
     def _load_patrols_and_set_patrol(
         self,
         patrol_type: str,
-    ) -> PatrolEvent:
+    ):
         # ---------------------------------------------------------------------------- #
         #                                LOAD RESOURCES                                #
         # ---------------------------------------------------------------------------- #
@@ -386,17 +385,19 @@ class Patrol:
         patrol_type: str,
     ) -> PatrolEvent:
         # GET POSSIBLE PATROLS
-        # run the first set of really basic constraint filtering, just to get our base of valid patrols
+        # filter for type initially
         possible_patrols = [
             p
             for p in possible_patrols
-            if self._patrol_pass_basic_constraints(
+            if self._check_patrol_type(
                 p, patrol_type, is_debug_patrol=p.event_id == self.debug_patrol_id
             )
         ]
-        # make sure the hunting patrols are balanced
+        # make sure the hunting and herb patrols are balanced
         if patrol_type == "hunting" and not self.debug_patrol_id:
-            possible_patrols = self.balance_hunting(possible_patrols)
+            possible_patrols = self._balance_hunting(possible_patrols)
+        if patrol_type == "herb_gathering" and not self.debug_patrol_id:
+            possible_patrols = self._balance_herbs(possible_patrols)
 
         # separate into the two lists
         normal_patrols: list[PatrolEvent] = []
@@ -465,7 +466,6 @@ class Patrol:
                 possible_events=patrols_to_test,
                 other_clan=self.other_clan,
                 ensured_id=self.debug_patrol_id,
-                general_constraints_active=False,
             )
             if not chosen_patrol:
                 if not Patrol.used_patrols["romance" if find_romance else "normal"]:
@@ -491,46 +491,15 @@ class Patrol:
 
         return chosen_patrol
 
-    def _patrol_pass_basic_constraints(
-        self, patrol: PatrolEvent, patrol_type: str, is_debug_patrol: bool
+    @staticmethod
+    def _check_patrol_type(
+        patrol: PatrolEvent, patrol_type: str, is_debug_patrol: bool
     ) -> bool:
         # CHECK PATROL TYPE
         if patrol_type not in patrol.types:
             if is_debug_patrol:
                 print("DEBUG: requested patrol does not meet constraints (patrol type)")
             return False
-
-        # CHECK GENERAL
-        if not passes_general_constraints(
-            patrol,
-            self.involved_cats["p_l"],
-            self.involved_cats,
-            self.other_clan,
-            is_debug_patrol,
-        ):
-            return False
-
-        # CHECK POI
-        if not event_for_poi(patrol.poi):
-            if is_debug_patrol:
-                print("DEBUG: requested patrol does not meet constraints (PoI)")
-            return False
-
-        # CHECK NEEDED HERBS
-        if patrol_type == "herb_gathering":
-            # skip this if it's a debug patrol
-            if is_debug_patrol:
-                return True
-
-            target_herbs = game.clan.herb_supply.sorted_by_need
-
-            # if any herb can happen, then we return True
-            if "random_herbs" in patrol.herbs_given:
-                return True
-
-            # if the patrol is not able to give herbs we need, we return False
-            if not set(patrol.herbs_given).intersection(set(target_herbs)):
-                return False
 
         return True
 
@@ -635,7 +604,7 @@ class Patrol:
 
     def determine_outcome(
         self, antagonize=False
-    ) -> Tuple[str, str, list, pygame.Surface | None]:
+    ) -> Tuple[str, str, dict, pygame.Surface | None]:
         if self.patrol_event is None:
             raise Exception("No patrol event supplied")
 
@@ -720,7 +689,9 @@ class Patrol:
 
         return success_outcome if success else fail_outcome, success
 
-    def balance_hunting(self, possible_patrols: list[PatrolEvent]) -> list[PatrolEvent]:
+    def _balance_hunting(
+        self, possible_patrols: list[PatrolEvent]
+    ) -> list[PatrolEvent]:
         """
         Check which prey amount we want to allow this clan to get and filter the possible_patrols accordingly to ensure
         they only have patrols where that amount is possible.
@@ -781,6 +752,25 @@ class Patrol:
             return possible_patrols
 
         return filtered_patrols
+
+    @staticmethod
+    def _balance_herbs(possible_patrols: list[PatrolEvent]) -> list[PatrolEvent]:
+        """
+        Finds and returns patrols that add herbs the medicine cats are currently looking for
+        """
+        target_herbs = game.clan.herb_supply.sorted_by_need
+
+        allowed_patrols = []
+        for patrol in possible_patrols:
+            # if any herb can happen, then we return True
+            if "random_herbs" in patrol.herbs_given:
+                allowed_patrols.append(patrol)
+
+            # if the patrol is not able to give herbs we need, we return False
+            if set(patrol.herbs_given).intersection(set(target_herbs)):
+                allowed_patrols.append(patrol)
+
+        return allowed_patrols
 
     def get_patrol_art(self, outcome: TextPoolEvent = None) -> Optional[pygame.Surface]:
         """Return's patrol art surface"""
