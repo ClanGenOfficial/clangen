@@ -7,7 +7,7 @@ Patterns (ie, "Pelts") are built by recoloring and layering various assets. Thes
 
 ## Color Palettes 
 
-Each cat-color has a palette of colors, stored in sprites/dicts/pelt_color_palettes.json.  This is a dictionary of hex-codes matched to color names. Color names are arbitrary, and only referred to in the later Pelt Recipes. Each cat-color should have the same list of color names. 
+Each cat-color has a palette of colors, stored in sprites/dicts/pelt_color_palettes.json.  This is a dictionary of color hexcodes matched to cat-color names. Cat-color names are arbitrary, and only referred to in the later Pelt Recipes. Each cat-color should have the same list of color names, with the exeption of colors only used in cat-color specific exceptions. 
 
 ```
 {
@@ -107,6 +107,8 @@ OR
 }
 ```
 
+First, you have to define a name for the layer. In this case, the layer's name is "1". These names are arbitrary strings, so they can be named however you like. 
+
  Each layer must have, at minimum, a `group_name` to specify which pelt-part will be used. (See further down for all the pelt-parts and names).  
 
  You can also have a `color`.  This is a color-name, as defined in the color palettes. The pelt-part will be recolored to this color. 
@@ -162,7 +164,7 @@ This is most useful for Torties, recipe below:
 
 ## Pelt Exceptions
 
-**Exceptions** are for are specific cat-colors and poses, but are optional.  This allows certain cat-colors and poses to have special rules for building the pelt. You can override the layer_order, or modify the defined layers. Note that "layers" doesn't fully replace the global "layer" definitions, only modify them. 
+**Exceptions** are for are specific cat-colors and poses, but are optional.  This allows certain cat-colors and poses to have special rules for building the pelt. You can override the layer_order, or modify the defined layers. Note that "layers" doesn't fully replace the global "layer" definitions, only modifies then. Layers with the same name will have their dictionaries merged. 
 
 In order for the exception to apply, the cat must match at least one color condition, AND one pose condition, if both are provided. Otherwise, it must match at least one of the provided colors or poses. 
 
