@@ -652,6 +652,7 @@ class TestOutcomeExecution(unittest.TestCase):
             freshkill_count + 2 == game.clan.freshkill_pile.total_amount,
             msg=f"{freshkill_count} + 2 should equal {game.clan.freshkill_pile.total_amount}",
         )
+
         # check single herb change
         increase_amount = get_config(
             f"clan_resources.herbs.increase_amounts.increase_tiny"
@@ -661,6 +662,8 @@ class TestOutcomeExecution(unittest.TestCase):
             == game.clan.herb_supply.get_single_herb_total("honey"),
             msg=f"old total ({honey_count}) + increase_amount ({increase_amount}) should equal {game.clan.herb_supply.get_single_herb_total('honey')}",
         )
+
+        # check random herb change
         increase_amount = get_config(
             f"clan_resources.herbs.increase_amounts.increase_huge"
         )
@@ -668,7 +671,6 @@ class TestOutcomeExecution(unittest.TestCase):
             game.clan.herb_supply.total
             - game.clan.herb_supply.get_single_herb_total("honey")
         )
-        # check random herb change
         self.assertTrue(
             total_herb_count + increase_amount == total_without_honey,
             msg=f"old_total ({total_herb_count}) + increase_amount ({increase_amount}) should equal {total_without_honey}",
