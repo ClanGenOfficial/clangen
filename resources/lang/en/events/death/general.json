@@ -10191,7 +10191,7 @@
             "category": "terrain"
         },
         "frequency": 3,
-        "event_text": "m_c was lured into a cave by r_c and killed.",
+        "event_text": "m_c was lured into POI by r_c and killed.",
         "m_c": {
             "age": ["any"],
             "dies": true
@@ -10265,7 +10265,7 @@
             "category": "terrain"
         },
         "frequency": 3,
-        "event_text": "r_c killed m_c and hid {PRONOUN/m_c/poss} body.",
+        "event_text": "r_c killed m_c and hid {PRONOUN/m_c/poss} body in POI.",
         "m_c": {
             "age": ["-newborn", "-kitten"],
             "dies": true
@@ -10314,7 +10314,7 @@
             "category": "terrain"
         },
         "frequency": 3,
-        "event_text": "m_c lost {PRONOUN/m_c/poss} footing and slipped, plummeting to {PRONOUN/m_c/poss} death.",
+        "event_text": "m_c lost {PRONOUN/m_c/poss} footing and slipped near POI, plummeting to {PRONOUN/m_c/poss} death.",
         "m_c": {
             "age": ["-newborn", "-kitten"],
             "dies": true
@@ -10322,7 +10322,7 @@
         "history": [
             {
                 "cats": ["m_c"],
-                "death": "m_c slipped and fell to their death near POI."
+                "death": "m_c slipped and fell to their death."
             }
         ]
     },
