@@ -610,7 +610,7 @@ class TestOutcomeExecution(unittest.TestCase):
             msg=f"Clan and outsider reputation should be increased.",
         )
 
-    def test_supply_change(self):
+    def test_basic_supply_change(self):
         war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
 
         patrol = PatrolEvent(
@@ -625,7 +625,6 @@ class TestOutcomeExecution(unittest.TestCase):
                     "supply": [
                         SupplyDict(type="freshkill", adjust="increase_tiny"),
                         SupplyDict(type="honey", adjust="increase_tiny"),
-                        SupplyDict(type="random_herbs", adjust="increase_huge"),
                     ],
                 }
             ],
@@ -633,7 +632,6 @@ class TestOutcomeExecution(unittest.TestCase):
         )
         freshkill_count = game.clan.freshkill_pile.total_amount
         honey_count = game.clan.herb_supply.get_single_herb_total("honey")
-        total_herb_count = game.clan.herb_supply.total
 
         self.patrol_class._add_patrol_cats([war1])
         self.patrol_class._get_valid_patrol([])
@@ -663,15 +661,44 @@ class TestOutcomeExecution(unittest.TestCase):
             msg=f"old total ({honey_count}) + increase_amount ({increase_amount}) should equal {game.clan.herb_supply.get_single_herb_total('honey')}",
         )
 
+    def test_random_herb_supply_change(self):
+        war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+
+        patrol = PatrolEvent(
+            event_id="test",
+            types=["hunting"],
+            intro_strings=["test"],
+            decline_strings=["test"],
+            involved_cats={"p_l": InvolvedCatDict()},
+            success_outcomes=[
+                {
+                    "strings": [""],
+                    "supply": [
+                        SupplyDict(type="random_herbs", adjust="increase_huge"),
+                    ],
+                }
+            ],
+            fail_outcomes=[{"strings": ["test"]}],
+        )
+        total_herb_count = game.clan.herb_supply.total
+
+        self.patrol_class._add_patrol_cats([war1])
+        self.patrol_class._get_valid_patrol([])
+        self.patrol_class._check_outcome_constraints(
+            patrol.success_outcomes[0], "success"
+        )
+        handle_consequences.disable_random = True
+        handle_consequences.execute_outcome(
+            patrol.success_outcomes[0],
+            self.patrol_class.involved_cats,
+            other_clan=OtherClan(),
+        )
+
         # check random herb change
         increase_amount = get_config(
             f"clan_resources.herbs.increase_amounts.increase_huge"
         )
-        total_without_honey = (
-            game.clan.herb_supply.total
-            - game.clan.herb_supply.get_single_herb_total("honey")
-        )
         self.assertTrue(
-            total_herb_count + increase_amount == total_without_honey,
-            msg=f"old_total ({total_herb_count}) + increase_amount ({increase_amount}) should equal {total_without_honey}",
+            total_herb_count + increase_amount == game.clan.herb_supply.total,
+            msg=f"old_total ({total_herb_count}) + increase_amount ({increase_amount}) should equal {game.clan.herb_supply.total}",
         )
