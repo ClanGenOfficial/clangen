@@ -4034,7 +4034,7 @@
             "category": "terrain"
         },
         "frequency": 2,
-        "event_text": "m_c discovered an outsider stuck at the bottom of POI. {PRONOUN/m_c/subject/CAP} brought {PRONOUN/m_c/poss} clanmates to help rescue {PRONOUN/n_c:0/object} and took {PRONOUN/n_c:0object} back to camp for healing. Grateful, n_c:0 joins the Clan.",
+        "event_text": "m_c discovered an outsider stuck at the bottom of POI. {PRONOUN/m_c/subject/CAP} brought {PRONOUN/m_c/poss} clanmates to help rescue {PRONOUN/n_c:0/object} and took {PRONOUN/n_c:0/object} back to camp for healing. Grateful, n_c:0 joins the Clan.",
         "m_c": {
             "status": ["-kitten", "-newborn", "-elder"],
             "dies": false

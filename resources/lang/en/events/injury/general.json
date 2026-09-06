@@ -9766,9 +9766,7 @@
             "category": "terrain"
         },
         "frequency": 3,
-        "event_text": [
-            "m_c was chased by a preadator and injured before {PRONOUN/m_c/subject} could take cover by POI."
-        ],
+        "event_text": "m_c was chased by a preadator and injured before {PRONOUN/m_c/subject} could take cover by POI.",
         "m_c": {
             "age": ["-newborn", "-kitten"]
         },

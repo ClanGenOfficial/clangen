@@ -10240,7 +10240,7 @@
             "category": "terrain"
         },
         "frequency": 3,
-        "event_text": "m_c thought {PRONOUN/m_c/subject} would be safe from a blizzard in the shelter of {POI/tag/covered}. {PRONOUN/m_c/subject/CAP} thought wrong.",
+        "event_text": "m_c thought {PRONOUN/m_c/subject} would be safe from a blizzard in the shelter of POI. {PRONOUN/m_c/subject/CAP} thought wrong.",
         "m_c": {
             "status": ["-newborn", "-kitten", "-elder"],
             "dies": true
