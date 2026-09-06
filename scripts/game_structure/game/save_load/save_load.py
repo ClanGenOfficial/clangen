@@ -121,3 +121,23 @@ def read_clans():
         print("No clans found")
         return None
     return clan_list
+
+
+def get_clan_json(clan: str):
+    """
+    Get the path of the clan.json of a clan.
+    Does not support TXT or CSV clans.
+    Raises FileNotFoundError if the clan.json does not exist.
+    :param clan: The name (ID) of the clan
+    :return: The path to the clan.json
+    """
+
+    save_dir = Path(get_save_dir())
+    if save_dir.exists():
+        old_path = save_dir / f"{clan}clan.json"
+        if old_path.exists():
+            return old_path
+        new_path = save_dir / clan / "clan.json"
+        if new_path.exists():
+            return new_path
+    raise FileNotFoundError
