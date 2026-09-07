@@ -21,6 +21,8 @@ def handle_focus():
     """
     Checks the current focus setting and handles all immediate affects.
     """
+    if not game.clan.deputy or not game.clan.deputy.status.alive_in_player_clan:
+        return
     if get_clan_setting("business_as_usual"):
         return
     elif get_clan_setting("rest_and_recover"):
@@ -58,6 +60,21 @@ def _hunting() -> str:
     """
     Gathers additional prey
     """
+    deputy_buff = 0
+    buffs = get_config("focus.hunting.buff")
+    for skill, tier in game.clan.deputy.skills.get_all().items():
+        skill = skill.name
+        if skill not in buffs.keys():
+            continue
+        if buffs[skill]["tier"] > tier:
+            continue
+
+        if "biome" in buffs[skill]:
+            if game.clan.biome.casefold() in buffs[skill]["biome"]:
+                deputy_buff = buffs[skill]["prey_increase"]
+        else:
+            deputy_buff = buffs[skill]["prey_increase"]
+
     # handle warrior
     healthy_warriors = find_alive_cats_with_rank(
         Cat,
@@ -65,23 +82,26 @@ def _hunting() -> str:
         working=True,
     )
 
-    warrior_amount = len(healthy_warriors) * get_config(
-        f"focus.hunting.{CatRank.WARRIOR}"
-    )
+    prey_amount = 0
+    season = game.clan.current_season.casefold()
+    warrior_prey = get_config(f"focus.hunting.warrior.{season}.prey_amounts")
+    warrior_weights = get_config(f"focus.hunting.warrior.{season}.prey_weights")
+    for _c in healthy_warriors:
+        prey_amount += choices(warrior_prey, warrior_weights)[0] + deputy_buff
 
     # handle apprentices
     healthy_apprentices = find_alive_cats_with_rank(
         Cat, ranks=[CatRank.APPRENTICE], working=True
     )
 
-    app_amount = len(healthy_apprentices) * get_config(
-        f"focus.hunting.{CatRank.APPRENTICE}"
-    )
+    app_prey = get_config(f"focus.hunting.apprentice.{season}.prey_amounts")
+    app_weights = get_config(f"focus.hunting.apprentice.{season}.prey_weights")
+    for _c in healthy_apprentices:
+        prey_amount += choices(app_prey, app_weights)[0] + deputy_buff
 
     # finish
-    total_amount = warrior_amount + app_amount
-    game.clan.freshkill_pile.add_freshkill(total_amount)
-    focus_text = i18n.t("focus.focus_prey", count=total_amount)
+    game.clan.freshkill_pile.add_freshkill(prey_amount)
+    focus_text = i18n.t("focus.focus_prey", count=prey_amount)
     game.freshkill_event_list.append(focus_text)
 
     return focus_text
