@@ -173,7 +173,7 @@ class SwitchClanScreen(Screens):
                 with open(get_clan_json(clan)) as f:
                     clan_button_name = ujson.load(f).get("displayname", clan)
             except:
-                logger.error(
+                logger.warning(
                     "Failed to read display name of clan with ID %s",
                     clan,
                     exc_info=True,
