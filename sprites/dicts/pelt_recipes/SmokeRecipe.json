@@ -59,6 +59,15 @@
                     "color": "newborn_base"
                 }
             }
+        },
+        {
+            "colors": "RUST",
+            "layers": {
+                "2": {
+                    "group_name": "SMOKETOPGRAD",
+                    "color": "smoke_base_gradient_top"
+                }
+            }
         }
     ]
 }

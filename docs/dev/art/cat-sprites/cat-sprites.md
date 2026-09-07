@@ -97,12 +97,12 @@ Oftentimes the gradient on the pattern is in reality more dramatic than what you
 Kittens usually have very simplistic pattern shapes designs compared to others. This is to keep the ‘simple is cute’ look, but also so that their small size doesn’t make the patterns look too cluttered.
 
 ## Colors
-**As of writing this, there are a total of 19 different pelt colors;**
+**As of writing this, there are a total of 20 different pelt colors;**
 WHITE, PALEGREY, SILVER, GREY, DARKGREY, GHOST, BLACK,
 CREAM, PALEGINGER, GOLDEN, GINGER, DARKGINGER, SIENNA,
-LIGHTBROWN, LILAC, BROWN, GOLDEN-BROWN, DARKBROWN and CHOCOLATE.
+LIGHTBROWN, LILAC, BROWN, GOLDEN-BROWN, DARKBROWN, CHOCOLATE, and RUST.
 
-Every pelt type should be colored in all of those 19 colors. If any new colors are added in future, those colors are added to the existing pelts also.
+Every pelt type should be colored in all of those 20 colors. If any new colors are added in future, those colors are added to the existing pelts also.
 
 While the colors can be quite straightforward with how they’re colored, there are some general rules as well as individual color quirks to a few of them that should be followed.
 

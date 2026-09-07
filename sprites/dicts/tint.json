@@ -19,7 +19,8 @@
     "BROWN": "brown",
     "GOLDEN-BROWN": "brown",
     "DARKBROWN": "darkbrown",
-    "CHOCOLATE": "darkbrown"
+    "CHOCOLATE": "darkbrown",
+    "RUST": "darkbrown"
   },
   "possible_tints": {
     "basic": ["pink", "gray", "red", "orange", "warmdilute"],
