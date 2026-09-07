@@ -77,6 +77,10 @@
             "one": "brown",
             "many": "dark brown"
         },
+        "RUST": {
+            "one": "brown",
+            "many": "rusted brown"
+        },
         "SingleColour": "single color",
         "SingleColour_long": "%{color}",
         "TwoColour": "two color",

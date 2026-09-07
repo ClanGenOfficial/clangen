@@ -255,6 +255,11 @@
     "Owl", "Otter", "Log", "Hickory", "Branch", "Robin", "Umber", "Chanterelle", "Dust", "Auburn", "Burnet", "Spider", "Bark", "Sable",
     "Hawk", "Chestnut", "Fir", "Starling", "Peat"
     ],
+    "RUST":[
+    "Brown", "Brown", "Dark", "Dark", "Shade", "Russet", "Rowan", "Mud", "Murk", "Oak", "Twig", "Shadow", "Tawny",
+    "Owl", "Otter", "Log", "Hickory", "Branch", "Robin", "Umber", "Chanterelle", "Dusk", "Auburn", "Burnet", "Spider", "Bark", "Sable",
+    "Hawk", "Chestnut", "Fir", "Starling", "Peat", "Fox", "Bat"
+    ],
     "BLACK": [
     "Black", "Black", "Black", "Shade", "Shaded", "Crow", "Raven", "Ebony", "Dark", "Grackle", "Bat", "Flint", "Storm", "Skunk",
     "Night", "Shadow", "Scorch", "Midnight", "Pepper", "Pitch", "Bat", "Burnt", "Coal", "Ink", "Inky", "Murk", "Rat", "Magpie",
@@ -321,6 +326,9 @@
     ],
     "CHOCOLATE": [
 	"root", "bark", "owl", "wood", "bat", "branch", "burr"
+    ],
+    "RUST":[
+    "burn", "blaze", "flame", "flare", "ember", "fox", "vixen", "bat"
     ],
     "BLACK": [
 	"shadow", "shade", "dusk", "coal", "ink", "bat", "cinder", "ghost", "night", "raven", "crow", "burn", "badger", "raccoon"
