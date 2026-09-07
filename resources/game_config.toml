@@ -773,66 +773,9 @@ dev_tools = false
 
   classic_disallows = ["herb_gathering", "hunting", "hoarding_resources", "raid_other_clans","hoarding"]
 
-  [focus.buff]
-
-
-    [focus.buff.threaten_outsiders]
-      [focus.buff.threaten_outsiders.FIGHTER]
-        tier = 1
-        # multiplies reputation change
-        reputation_modifier = 1.5
-      [focus.buff.threaten_outsiders.SPEAKER]
-        tier = 1
-        # multiplies reputation change
-        reputation_modifier = 1.5
-    [focus.buff.seek_outsiders]
-      [focus.buff.seek_outsiders.SPEAKER]
-        tier = 1
-        # multiplies reputation change
-        reputation_modifier = 1.5
-      [focus.buff.seek_outsiders.SENSE]
-        tier = 1
-        # multiplies reputation change
-        reputation_modifier = 1.5
-    [focus.buff.rest_and_recover]
-      [focus.buff.rest_and_recover.HEALER]
-        tier = 1
-        # multiplies preventation
-        outbreak_preventation_modifier = 2
-      [focus.buff.rest_and_recover.INSIGHTFUL]
-        tier = 1
-        # multiplies prevention
-        hurt_prevention_modifier = 2
-    [focus.buff.sabotage_other_clans]
-      [focus.buff.sabotage_other_clans.STEALTH]
-        tier = 1
-        # multiplies relation change
-        relation_modifier = 1.5
-      [focus.buff.sabotage_other_clans.MEDIATOR]
-        tier = 1
-        # multiplies relation change
-        relation_modifier = 1.5
-    [focus.buff.aid_other_clans]
-      [focus.buff.aid_other_clans.INSIGHTFUL]
-        tier = 1
-        # multiplies relation change
-        relation_modifier = 1.5
-      [focus.buff.aid_other_clans.MEDIATOR]
-        tier = 1
-        # multiplies relation change
-        relation_modifier = 1.5
-    [focus.buff.raid_other_clans]
-      [focus.buff.raid_other_clans.FIGHTER]
-        tier = 1
-        # multiplies injury chance (increasing the number, thus making injury less likely)
-        injury_chance_modifier = 2
-      [focus.buff.raid_other_clans.STEALTH]
-        tier = 1
-        # increases each instance of supply gathered
-        supply_amount_buff = 1
-
   [focus.hunting]
     # Defines how much a working warrior(leader/deputy) or apprentice gathers additionally
+    # these are also borrowed by the hoarding focus
     [focus.hunting.warrior]
       [focus.hunting.warrior.newleaf]
         prey_amounts = [1, 2, 3]
@@ -881,6 +824,7 @@ dev_tools = false
   [focus.herb_gathering]
     # maximum herbs that can be gathered by each assistant
     assistant_gather_max = 2.5
+
     [focus.herb_gathering.buff]
       [focus.herb_gathering.buff.SENSE]
         tier = 1
@@ -891,15 +835,63 @@ dev_tools = false
         # increases how much each assistant can gather
         gather_max_increase = 1
 
-  [focus.outsiders]
+  [focus.threaten_outsiders]
+    # Defines how much the reputation changes.
+    reputation = -5
+
+    [focus.threaten_outsiders.buff]
+      [focus.threaten_outsiders.buff.FIGHTER]
+        tier = 1
+        # multiplies reputation change
+        reputation_modifier = 1.5
+      [focus.threaten_outsiders.buff.SPEAKER]
+        tier = 1
+        # multiplies reputation change
+        reputation_modifier = 1.5
+
+  [focus.seek_outsiders]
     # Defines how much increase or decrease the reputation is.
     reputation = 5
 
-  [focus."other_clans"]
+    [focus.seek_outsiders.buff]
+      [focus.seek_outsiders.buff.SPEAKER]
+        tier = 1
+        # multiplies reputation change
+        reputation_modifier = 1.5
+      [focus.seek_outsiders.buff.SENSE]
+        tier = 1
+        # multiplies reputation change
+        reputation_modifier = 1.5
+
+  [focus.sabotage_other_clans]
     # Defines how much increase or decrease the relation with other clans is.
     relation = 2
 
-  [focus."raid_other_clans"]
+    [focus.sabotage_other_clans.buff]
+      [focus.sabotage_other_clans.buff.STEALTH]
+        tier = 1
+        # multiplies relation change
+        relation_modifier = 1.5
+      [focus.sabotage_other_clans.buff.MEDIATOR]
+        tier = 1
+        # multiplies relation change
+        relation_modifier = 1.5
+
+  [focus.aid_other_clans]
+    # Defines how much increase or decrease the relation with other clans is.
+    relation = 2
+
+    [focus.aid_other_clans.buff]
+      [focus.aid_other_clans.buff.INSIGHTFUL]
+        tier = 1
+        # multiplies relation change
+        relation_modifier = 1.5
+      [focus.aid_other_clans.buff.MEDIATOR]
+        tier = 1
+        # multiplies relation change
+        relation_modifier = 1.5
+
+  [focus.raid_other_clans]
     # how much prey each working warrior(leader/deputy) will gather
     prey_amounts = [0, 1, 2]
     prey_weights = [3, 4, 1]
@@ -919,7 +911,7 @@ dev_tools = false
 
     # list of injuries which can occur and to which distribution
     # INFO: current sum of injuries is 100 - for easier understanding it should stay the same
-    [focus."raid_other_clans".injuries]
+    [focus.raid_other_clans.injuries]
       claw-wound = 15
       "cat bite" = 15
       "torn pelt" = 15
@@ -930,6 +922,16 @@ dev_tools = false
       sore = 6
       "small cut" = 4
       "cracked pads" = 3
+
+    [focus.raid_other_clans.buff]
+      [focus.raid_other_clans.buff.FIGHTER]
+        tier = 1
+        # multiplies injury chance (increasing the number, thus making injury less likely)
+        injury_chance_modifier = 2
+      [focus.raid_other_clans.buff.STEALTH]
+        tier = 1
+        # increases each instance of supply gathered
+        supply_amount_buff = 1
 
   [focus.hoarding]
     # how much prey each working warrior(leader/deputy) will gather
@@ -964,6 +966,19 @@ dev_tools = false
       "running nose" = 5
       whitecough = 1
 
+    [focus.hoarding.buff]
+      [focus.hoarding.buff.CAMP]
+        tier = 1
+        # increases how many herbs each assistant can gather
+        gather_max_increase = 1
+        # increases prey that will be gathered
+        prey_increase = 1
+
+      [focus.hoarding.buff.CLEVER]
+        tier = 1
+        # multiplies condition chance (increasing the number, thus making condition less likely)
+        condition_chance_modifier = 2
+
   [focus.rest_and_recover]
     # roughly 1/chance injuries will be prevented
     injury_prevent = 4
@@ -977,6 +992,16 @@ dev_tools = false
 
     # how many moons earlier are cats healed
     moons_earlier_healed = 1
+
+    [focus.buff.rest_and_recover]
+      [focus.buff.rest_and_recover.HEALER]
+        tier = 1
+        # multiplies preventation
+        outbreak_preventation_modifier = 2
+      [focus.buff.rest_and_recover.INSIGHTFUL]
+        tier = 1
+        # multiplies prevention
+        hurt_prevention_modifier = 2
 
 [save_load]
   # whether or not to perform integrity checks and attempt to fix issues with saves

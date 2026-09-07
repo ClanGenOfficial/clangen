@@ -158,8 +158,20 @@ def _threaten_outsiders() -> str:
     """
     Lowers relations with outsiders
     """
-    amount = get_config("focus.outsiders.reputation")
-    change_clan_reputation(-amount)
+    amount = get_config("focus.threaten_outsiders.reputation")
+
+    buffs = get_config("focus.threaten_outsiders.buff")
+
+    for skill, tier in game.clan.deputy.skills.get_all().items():
+        skill = skill.name
+        if skill not in buffs.keys():
+            continue
+        if buffs[skill]["tier"] > tier:
+            continue
+
+        amount = round(amount * buffs[skill]["reputation_modifier"])
+
+    change_clan_reputation(amount)
     return i18n.t("focus.threaten_outsiders")
 
 
@@ -167,7 +179,19 @@ def _seek_outsiders() -> str:
     """
     Increases relations with outsiders
     """
-    amount = get_config("focus.outsiders.reputation")
+    amount = get_config("focus.seek_outsiders.reputation")
+
+    buffs = get_config("focus.seek_outsiders.buff")
+
+    for skill, tier in game.clan.deputy.skills.get_all().items():
+        skill = skill.name
+        if skill not in buffs.keys():
+            continue
+        if buffs[skill]["tier"] > tier:
+            continue
+
+        amount = round(amount * buffs[skill]["reputation_modifier"])
+
     change_clan_reputation(amount)
     return i18n.t("focus.seek_outsiders")
 
@@ -176,7 +200,19 @@ def _sabotage_clans() -> str:
     """
     Lowers relationships with target clans
     """
-    amount = get_config("focus.other_clans.relation")
+    amount = get_config("focus.sabotage_other_clans.relation")
+
+    buffs = get_config("focus.sabotage_other_clans.buff")
+
+    for skill, tier in game.clan.deputy.skills.get_all().items():
+        skill = skill.name
+        if skill not in buffs.keys():
+            continue
+        if buffs[skill]["tier"] > tier:
+            continue
+
+        amount = round(amount * buffs[skill]["relation_modifier"])
+
     for name in game.clan.clans_in_focus:
         clan = [clan for clan in game.clan.all_other_clans if clan.name == name][0]
         change_clan_relations(clan, -amount)
@@ -189,7 +225,19 @@ def _aid_clans() -> str:
     """
     Increases relations with target clans
     """
-    amount = get_config("focus.other_clans.relation")
+    amount = get_config("focus.aid_other_clans.relation")
+
+    buffs = get_config("focus.aid_other_clans.buff")
+
+    for skill, tier in game.clan.deputy.skills.get_all().items():
+        skill = skill.name
+        if skill not in buffs.keys():
+            continue
+        if buffs[skill]["tier"] > tier:
+            continue
+
+        amount = round(amount * buffs[skill]["relation_modifier"])
+
     for name in game.clan.clans_in_focus:
         clan = [clan for clan in game.clan.all_other_clans if clan.name == name][0]
         change_clan_relations(clan, amount)
@@ -202,6 +250,22 @@ def _raid_clans() -> str:
     """
     info_dict = get_config("focus.raid_other_clans")
 
+    buffs = get_config("focus.raid_other_clans.buff")
+
+    injury_modifier = 0
+    supply_amount_buff = 0
+    for skill, tier in game.clan.deputy.skills.get_all().items():
+        skill = skill.name
+        if skill not in buffs.keys():
+            continue
+        if buffs[skill]["tier"] > tier:
+            continue
+
+        if "injury_chance_modifier" in buffs[skill]:
+            injury_modifier = buffs[skill]["injury_chance_modifier"]
+        if "supply_amount_buff" in buffs[skill]:
+            supply_amount_buff = buffs[skill]["supply_amount_buff"]
+
     injured_cats = []
 
     healthy_warriors = find_alive_cats_with_rank(
@@ -213,21 +277,23 @@ def _raid_clans() -> str:
     prey_recovered = 0
     for _c in healthy_warriors:
         if disable_random:
-            prey_recovered += 1
+            prey_recovered += 1 + supply_amount_buff
         else:
-            prey_recovered += choices(
-                info_dict["prey_amounts"], info_dict["prey_weights"]
-            )[0]
+            prey_recovered += (
+                choices(info_dict["prey_amounts"], info_dict["prey_weights"])[0]
+                + supply_amount_buff
+            )
 
     # HANDLE HERBS
     herb_amount_to_gain = 0
     for _c in healthy_warriors:
         if disable_random:
-            herb_amount_to_gain += 1
+            herb_amount_to_gain += 1 + supply_amount_buff
         else:
-            herb_amount_to_gain += choices(
-                info_dict["herb_amounts"], info_dict["herb_weights"]
-            )[0]
+            herb_amount_to_gain += (
+                choices(info_dict["herb_amounts"], info_dict["herb_weights"])[0]
+                + supply_amount_buff
+            )
 
     gathered_herbs = {}
     while herb_amount_to_gain:
@@ -252,8 +318,12 @@ def _raid_clans() -> str:
         herbs_recovered = []
 
     # HANDLE INJURIES
-    injury_chance = info_dict["injury_chance"] - (
-        len(game.clan.clans_in_focus * info_dict["chance_increase_per_clan"])
+    injury_chance = (
+        round(
+            info_dict["injury_chance"]
+            - (len(game.clan.clans_in_focus * info_dict["chance_increase_per_clan"]))
+        )
+        * injury_modifier
     )
 
     for cat in healthy_warriors:
@@ -304,13 +374,51 @@ def _hoarding():
     info_dict = get_config("focus.hoarding")
     involved_cats = {"injured": [], "sick": []}
 
+    buffs = get_config("focus.hoarding.buff")
+    condition_modifier = 0
+    gather_max_increase = 0
+    prey_increase = 0
+    for skill, tier in game.clan.deputy.skills.get_all().items():
+        skill = skill.name
+        if skill not in buffs.keys():
+            continue
+        if buffs[skill]["tier"] > tier:
+            continue
+
+        if "condition_chance_modifier" in buffs[skill]:
+            condition_modifier = buffs[skill]["condition_chance_modifier"]
+        if "gather_max_increase" in buffs[skill]:
+            gather_max_increase = buffs[skill]["gather_max_increase"]
+        if "prey_increase" in buffs[skill]:
+            prey_increase = buffs[skill]["prey_increase"]
+
+    prey_recovered = 0
     healthy_warriors = find_alive_cats_with_rank(
         Cat,
         ranks=[CatRank.WARRIOR, CatRank.DEPUTY, CatRank.LEADER],
         working=True,
     )
-    prey_recovered = len(healthy_warriors) * info_dict["prey_warrior"]
+    season = game.clan.current_season.casefold()
+    warrior_prey = get_config(f"focus.hunting.warrior.{season}.prey_amounts")
+    warrior_weights = get_config(f"focus.hunting.warrior.{season}.prey_weights")
+    for _c in healthy_warriors:
+        if disable_random:
+            prey_recovered += warrior_prey[1] + prey_increase
+        else:
+            prey_recovered += choices(warrior_prey, warrior_weights)[0] + prey_increase
 
+    # handle apprentices
+    healthy_apprentices = find_alive_cats_with_rank(
+        Cat, ranks=[CatRank.APPRENTICE], working=True
+    )
+
+    app_prey = get_config(f"focus.hunting.apprentice.{season}.prey_amounts")
+    app_weights = get_config(f"focus.hunting.apprentice.{season}.prey_weights")
+    for _c in healthy_apprentices:
+        if disable_random:
+            prey_recovered += app_prey[1] + prey_increase
+        else:
+            prey_recovered += choices(app_prey, app_weights)[0] + prey_increase
     healthy_meds = list(
         filter(
             lambda c: c.status.rank == CatRank.MEDICINE_CAT
@@ -320,9 +428,11 @@ def _hoarding():
         )
     )
 
-    injury_chance_warrior = info_dict["injury_chance_warrior"]
-    injury_chance_medicine_cat = info_dict["injury_chance_medicine_cat"]
-    illness_chance = info_dict["illness_chance"]
+    injury_chance_warrior = info_dict["injury_chance_warrior"] * condition_modifier
+    injury_chance_medicine_cat = (
+        info_dict["injury_chance_medicine_cat"] * condition_modifier
+    )
+    illness_chance = info_dict["illness_chance"] * condition_modifier
 
     for cat in healthy_warriors + healthy_meds:
         if cat in healthy_warriors:
@@ -347,7 +457,9 @@ def _hoarding():
 
     text = []
     if healthy_meds:
-        herb_focus_text = game.clan.herb_supply.handle_focus(healthy_meds)
+        herb_focus_text = game.clan.herb_supply.handle_focus(
+            healthy_meds, healthy_warriors, max_buff=gather_max_increase
+        )
         text.append(herb_focus_text)
     if prey_recovered:
         prey_text = i18n.t("focus.focus_prey", count=prey_recovered)
