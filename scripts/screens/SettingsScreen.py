@@ -811,7 +811,7 @@ class SettingsScreen(Screens):
             languages = get_languages()
             lang_codes = list(languages.keys())
 
-            for (i, code) in enumerate(lang_codes):
+            for i, code in enumerate(lang_codes):
                 print(i, code)
                 native_name = languages[code]
                 if i == 0:
