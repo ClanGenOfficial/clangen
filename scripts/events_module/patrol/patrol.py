@@ -4,7 +4,7 @@ import logging
 import random
 import statistics
 from os.path import exists as path_exists
-from random import choice, randint, choices
+from random import choice, randint, choices, sample
 from typing import List, Tuple, Optional, Union, Literal, TypedDict
 
 import pygame
@@ -121,7 +121,7 @@ class Patrol:
             self.other_clan = None
 
         # Find valid patrol
-        self.patrol_event = self._get_possible_patrol(patrol_type)
+        self._load_patrols_and_set_patrol(patrol_type)
         self._create_needed_cats()
 
         if self.patrol_event.poi:
@@ -254,14 +254,14 @@ class Patrol:
         self.involved_cats["patrol_cats"] = patrol_cats
         # some_patrol will be a random assortment of the patrol cats, but not 1 nor all
         if len(patrol_cats) >= 3:
-            self.involved_cats["some_patrol"] = choices(
+            self.involved_cats["some_patrol"] = sample(
                 patrol_cats,
                 k=randint(min(2, len(patrol_cats)), min(5, len(patrol_cats) - 1)),
             )
 
         print("Patrol Leader:", str(self.involved_cats["p_l"].name))
 
-    def _get_possible_patrol(
+    def _load_patrols_and_set_patrol(
         self,
         patrol_type: str,
     ) -> PatrolEvent:
@@ -317,9 +317,9 @@ class Patrol:
             )
         # FILTER PATROLS when no debug set
         else:
-            chosen_patrol = self._filter_patrols(patrol_list, patrol_type)
+            chosen_patrol = self._filter_and_set_patrol(patrol_list, patrol_type)
 
-        return chosen_patrol
+        self.patrol_event = chosen_patrol
 
     def _decide_if_romantic(self, romantic_event: Optional[PatrolEvent]) -> bool:
         """
@@ -380,7 +380,7 @@ class Patrol:
         print("final romance chance:", chance_of_romance_patrol)
         return not int(random.random() * chance_of_romance_patrol)
 
-    def _filter_patrols(
+    def _filter_and_set_patrol(
         self,
         possible_patrols: List[PatrolEvent],
         patrol_type: str,
@@ -416,13 +416,13 @@ class Patrol:
 
         # first we see if we can get a romantic patrol
         if romantic_patrols:
-            chosen_patrol = self._get_valid_patrol(
+            chosen_patrol = self._set_valid_patrol(
                 romantic_patrols.copy(), find_romance=True
             )
 
         # if no romantic patrol possible, we get a normal one!
         if not chosen_patrol:
-            chosen_patrol = self._get_valid_patrol(
+            chosen_patrol = self._set_valid_patrol(
                 normal_patrols.copy(), find_romance=False
             )
             if not chosen_patrol:
@@ -440,11 +440,16 @@ class Patrol:
         """
         Patrol.used_patrols["romance" if find_romance else "normal"].clear()
 
-        return self._get_valid_patrol(possible_patrols, find_romance)
+        return self._set_valid_patrol(possible_patrols, find_romance)
 
-    def _get_valid_patrol(
+    def _set_valid_patrol(
         self, possible_patrols: List[PatrolEvent], find_romance: bool = False
     ) -> Optional[PatrolEvent]:
+        """
+        Finds a valid patrol
+        If one if found, sets the patrol event and involved cats,
+            and returns the patrol event.
+        """
         chosen_patrol = None
         patrols_to_test = [
             p
@@ -475,6 +480,7 @@ class Patrol:
             else:
                 # otherwise, let's set our involved cats and move on with this patrol!
                 self.involved_cats = involved_cats
+                self.patrol_event = chosen_patrol
 
         if find_romance:
             if not self._decide_if_romantic(chosen_patrol):
