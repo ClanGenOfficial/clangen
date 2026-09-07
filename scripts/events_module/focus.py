@@ -14,6 +14,8 @@ from scripts.events_module.text_adjust import adjust_list_text
 from scripts.game_structure import game
 from scripts.game_structure.constants import HERBS
 
+disable_random: bool = False
+
 
 def handle_focus():
     """
@@ -163,16 +165,22 @@ def _raid_clans() -> str:
 
     prey_recovered = 0
     for _c in healthy_warriors:
-        prey_recovered += choices(info_dict["prey_amounts"], info_dict["prey_weights"])[
-            0
-        ]
+        if disable_random:
+            prey_recovered += 1
+        else:
+            prey_recovered += choices(
+                info_dict["prey_amounts"], info_dict["prey_weights"]
+            )[0]
 
     # HANDLE HERBS
     herb_amount_to_gain = 0
     for _c in healthy_warriors:
-        herb_amount_to_gain += choices(
-            info_dict["herb_amounts"], info_dict["herb_weights"]
-        )[0]
+        if disable_random:
+            herb_amount_to_gain += 1
+        else:
+            herb_amount_to_gain += choices(
+                info_dict["herb_amounts"], info_dict["herb_weights"]
+            )[0]
 
     gathered_herbs = {}
     while herb_amount_to_gain:
@@ -202,7 +210,7 @@ def _raid_clans() -> str:
     )
 
     for cat in healthy_warriors:
-        if not int(random() * max(2, injury_chance)):
+        if not int(random() * max(2, injury_chance)) or disable_random:
             injury_dict = info_dict["injuries"]
             chosen_injury = choices(
                 list(injury_dict.keys()), list(injury_dict.values())
@@ -265,15 +273,9 @@ def _hoarding():
         )
     )
 
-    injury_chance_warrior = info_dict["injury_chance_warrior"] - (
-        len(game.clan.clans_in_focus * info_dict["chance_increase_per_clan"])
-    )
-    injury_chance_medicine_cat = info_dict["injury_chance_medicine_cat"] - (
-        len(game.clan.clans_in_focus * info_dict["chance_increase_per_clan"])
-    )
-    illness_chance = info_dict["illness_chance"] - (
-        len(game.clan.clans_in_focus * info_dict["chance_increase_per_clan"])
-    )
+    injury_chance_warrior = info_dict["injury_chance_warrior"]
+    injury_chance_medicine_cat = info_dict["injury_chance_medicine_cat"]
+    illness_chance = info_dict["illness_chance"]
 
     for cat in healthy_warriors + healthy_meds:
         if cat in healthy_warriors:
@@ -281,14 +283,14 @@ def _hoarding():
         else:
             injury_chance = injury_chance_medicine_cat
 
-        if not int(random() * injury_chance):
+        if not int(random() * injury_chance) or disable_random:
             injury_dict = info_dict["injuries"]
             chosen_injury = choices(
                 list(injury_dict.keys()), list(injury_dict.values())
             )[0]
             get_injured(cat, chosen_injury)
             involved_cats["injured"].append(cat.ID)
-        elif not int(random() * illness_chance):
+        elif not int(random() * illness_chance) or disable_random:
             illness_dict = info_dict["illnesses"]
             chosen_illness = choices(
                 list(illness_dict.keys()), list(illness_dict.values())

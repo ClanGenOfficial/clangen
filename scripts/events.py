@@ -43,7 +43,7 @@ from scripts.events_module.ceremony.perform_ceremony import (
 )
 
 from scripts.events_module.generate_events import GenerateEvents, generate_events
-from scripts.events_module.handle_focus import handle_focus
+from scripts.events_module.focus import handle_focus
 from scripts.events_module.outsider import outsider_events
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.events_module.relationship import relation_events
