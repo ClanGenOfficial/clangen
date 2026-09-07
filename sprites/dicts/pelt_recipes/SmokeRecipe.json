@@ -61,7 +61,7 @@
             }
         },
         {
-            "colours": "RUST",
+            "colors": "RUST",
             "layers": {
                 "2": {
                     "group_name": "SMOKETOPGRAD",
