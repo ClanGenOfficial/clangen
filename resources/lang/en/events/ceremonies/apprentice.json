@@ -92,7 +92,8 @@
             }
         },
         "strings": [
-            "Watching with pride as m_c is named and given to r_c0 to apprentice under, r_c1 {VERB/r_c1/know/knows} that {PRONOUN/r_c0/subject} {VERB/r_c0/were/was} a good choice.",            "(old_name) loudly complains as r_c1 pulls {PRONOUN/m_c/object} over to quickly groom {PRONOUN/m_c/poss} pelt. {PRONOUN/m_c/subject/CAP} {VERB/m_c/manage/manages} to wriggle away and scurry off to the front of the crowd for {PRONOUN/m_c/poss} ceremony, where {PRONOUN/m_c/subject} {VERB/m_c/are/is} renamed to m_c and apprenticed to r_c0. ",
+            "Watching with pride as m_c is named and given to r_c0 to apprentice under, r_c1 {VERB/r_c1/know/knows} that {PRONOUN/r_c0/subject} {VERB/r_c0/were/was} a good choice.",            
+            "(old_name) loudly complains as r_c1 pulls {PRONOUN/m_c/object} over to quickly groom {PRONOUN/m_c/poss} pelt. {PRONOUN/m_c/subject/CAP} {VERB/m_c/manage/manages} to wriggle away and scurry off to the front of the crowd for {PRONOUN/m_c/poss} ceremony, where {PRONOUN/m_c/subject} {VERB/m_c/are/is} renamed to m_c and apprenticed to r_c0. ",
             "Even though {PRONOUN/m_c/subject} {VERB/m_c/are/is} excited to finally be made an apprentice, it takes a bit of coaxing by r_c1 for (old_name) to step forward for {PRONOUN/m_c/poss} ceremony. r_c1 watches in pride as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} named m_c and touches noses with r_c0."
 
         ],
@@ -112,6 +113,36 @@
             {
                 "cats_to": [
                     "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_living_parent_mentor_unmentioned0",
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "group": [
+                    "player_clan"
+                ]
+            }
+        },
+        "strings": [        
+            "(old_name) loudly complains as r_c0 pulls {PRONOUN/m_c/object} over to quickly groom {PRONOUN/m_c/poss} pelt. {PRONOUN/m_c/subject/CAP} {VERB/m_c/manage/manages} to wriggle away and scurry off to the front of the crowd for {PRONOUN/m_c/poss} ceremony, where {PRONOUN/m_c/subject} {VERB/m_c/are/is} renamed to m_c.",
+            "Even though {PRONOUN/m_c/subject} {VERB/m_c/are/is} excited to finally be made an apprentice, it takes a bit of coaxing by r_c0 for (old_name) to step forward for {PRONOUN/m_c/poss} ceremony. r_c0 watches in pride as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} named m_c."
+
+        ],
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "r_c0"
                 ],
                 "cats_from": [
                     "m_c"
@@ -171,6 +202,39 @@
         ]
     },
     {
+        "event_id": "app_dead_parent_mentor_unmentioned0",
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "-orphaned_backstories"
+                ]
+            },
+            "r_c0": {
+                "group": [
+                    "afterlife"
+                ]
+            }
+        },
+        "strings": [
+            "m_c hopes that r_c0 is watching from StarClan with pride as {PRONOUN/m_c/subject} {VERB/m_c/are/is} apprenticed.",
+            "m_c smiles up at the stars as {PRONOUN/m_c/subject} {VERB/m_c/sit/sits} recieves {PRONOUN/m_c/poss} apprentice name. The stars seem to shine brighter in response: m_c knows it's a sign that r_c0 is still watching over {PRONOUN/m_c/object}."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "r_c0"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
         "event_id": "app_dead_parent1",
         "involved_cats": {
             "m_c": {
@@ -217,6 +281,39 @@
         ]
     },
     {
+        "event_id": "app_dead_parent_mentor_unmentioned1",
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "clanborn"
+                ]
+            },
+            "r_c0": {
+                "group": [
+                    "afterlife"
+                ]
+            }
+        },
+        "strings": [
+            "m_c wishes that {PRONOUN/m_c/subject} could be happier about being made an apprentice, but all {PRONOUN/m_c/subject} can think about is how much {PRONOUN/m_c/subject} {VERB/m_c/wish/wishes} that r_c0 was still there to chant {PRONOUN/m_c/poss} name with the rest of the Clan.",
+            "m_c tries to keep up a brave face as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} apprenticed, but {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} stealing glances at the crowd, as if trying to find r_c0 despite knowing {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} no longer with {PRONOUN/m_c/object}."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "r_c0"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
         "event_id": "app_dead_both_parents0",
         "involved_cats": {
             "m_c": {
@@ -237,7 +334,7 @@
             }
         },
         "strings": [
-            "As m_c touches noses with {PRONOUN/m_c/poss} new mentor r_c0, {PRONOUN/m_c/subject} {VERB/m_c/make/makes} a silent promise to r_c1 to make {PRONOUN/r_c1/object} proud and to take care of the Clan in {PRONOUN/r_c1/poss} absence."
+            "As m_c touches noses with {PRONOUN/m_c/poss} new mentor r_c0, {PRONOUN/m_c/subject} {VERB/m_c/make/makes} a silent promise to r_c1 and r_c2 to make them proud and to take care of the Clan in their absence."
         ],
         "relationship_constraint": [
             {
@@ -252,6 +349,78 @@
                     "app/mentor"
                 ]
             },
+            {
+                "cats_to": [
+                    "r_c2",
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_dead_both_parents_mentor_unmentioned0",
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "-orphaned_backstories"
+                ]
+            },
+            "r_c0": {
+                "group": [
+                    "afterlife"
+                ]
+            },
+            "r_c1": {
+                "group": [
+                    "afterlife"
+                ]
+            }
+        },
+        "strings": [
+            "As the clan chant's m_c's new name, {PRONOUN/m_c/subject} {VERB/m_c/make/makes} a silent promise to r_c0 and r_c1 to make them proud and to take care of the Clan in their absence."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "r_c0",
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_living_both_parents0",
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {
+                "group": [
+                    "player_clan"
+                ]
+            },
+            "r_c2": {
+                "group": [
+                    "player_clan"
+                ]
+            }
+        },
+        "strings": [
+            "(old_name) runs up to the front of the crowd, eager to get {PRONOUN/m_c/poss} new name. When {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} called m_c for the first time, r_c1 and r_c2's voices can be heard the loudest as the Clan welcomes the new apprentice."
+        ],
+        "relationship_constraint": [
             {
                 "cats_to": [
                     "r_c2",
