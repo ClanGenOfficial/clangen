@@ -87,7 +87,10 @@ def _hunting() -> str:
     warrior_prey = get_config(f"focus.hunting.warrior.{season}.prey_amounts")
     warrior_weights = get_config(f"focus.hunting.warrior.{season}.prey_weights")
     for _c in healthy_warriors:
-        prey_amount += choices(warrior_prey, warrior_weights)[0] + deputy_buff
+        if disable_random:
+            prey_amount += warrior_prey[1] + deputy_buff
+        else:
+            prey_amount += choices(warrior_prey, warrior_weights)[0] + deputy_buff
 
     # handle apprentices
     healthy_apprentices = find_alive_cats_with_rank(
@@ -97,7 +100,10 @@ def _hunting() -> str:
     app_prey = get_config(f"focus.hunting.apprentice.{season}.prey_amounts")
     app_weights = get_config(f"focus.hunting.apprentice.{season}.prey_weights")
     for _c in healthy_apprentices:
-        prey_amount += choices(app_prey, app_weights)[0] + deputy_buff
+        if disable_random:
+            prey_amount += app_prey[1] + deputy_buff
+        else:
+            prey_amount += choices(app_prey, app_weights)[0] + deputy_buff
 
     # finish
     game.clan.freshkill_pile.add_freshkill(prey_amount)
@@ -124,7 +130,28 @@ def _herb_gathering() -> str:
         working=True,
     )
 
-    return game.clan.herb_supply.handle_focus(healthy_meds, healthy_warriors)
+    # no warriors? then who can even help gather...
+    if not healthy_warriors:
+        return i18n.t("focus.focus_herbs", count=0)
+
+    buffs = get_config("focus.herb_gathering.buff")
+    quantity_increase = 0
+    gather_max_increase = 0
+    for skill, tier in game.clan.deputy.skills.get_all().items():
+        skill = skill.name
+        if skill not in buffs.keys():
+            continue
+        if buffs[skill]["tier"] > tier:
+            continue
+
+        if "quantity_increase" in buffs[skill]:
+            quantity_increase = buffs[skill]["quantity_increase"]
+        if "gather_max_increase" in buffs[skill]:
+            gather_max_increase = buffs[skill]["gather_max_increase"]
+
+    return game.clan.herb_supply.handle_focus(
+        healthy_meds, healthy_warriors, gather_max_increase, quantity_increase
+    )
 
 
 def _threaten_outsiders() -> str:

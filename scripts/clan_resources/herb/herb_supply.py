@@ -393,27 +393,39 @@ class HerbSupply:
             if self.collected[herb] < 0:
                 self.collected[herb] = 0
 
-    def handle_focus(self, med_cats: list, assistants: list = None):
+    def handle_focus(
+        self,
+        med_cats: list,
+        assistants: list = None,
+        max_buff: int = 0,
+        quantity_buff: int = 0,
+    ):
         """
         Handles sending med cats to gather extra herbs in accordance to Clan focus
         :param med_cats: a list of medicine cat objects,
         :param assistants: a list of any non-meddies who are assisting the search for herbs
+        :param max_buff: Buff to the maximum that can be gathered per assistant
+        :param quantity_buff: Buff to the multiplier for quantity
         """
 
         # get herbs found
         herb_list = []
+        quantity_allowed = round(
+            len(assistants)
+            * (get_config("focus.herb_gathering.assistant_gather_max") + max_buff)
+        )
         for med in med_cats:
-            if assistants:
-                list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
-                    med,
-                    general_amount_bonus=True,
-                    specific_quantity_bonus=2,
-                )
-            else:
-                list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
-                    med
-                )
+            if not quantity_allowed:
+                break
+            list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
+                med,
+                general_amount_bonus=True,
+                specific_quantity_bonus=2 + quantity_buff,
+                specific_quantity_allowed=quantity_allowed,
+            )
             herb_list.extend(found_herbs)
+            for h in found_herbs:
+                quantity_allowed -= found_herbs[h]
 
         # remove dupes
         herb_list = list(set(herb_list))
