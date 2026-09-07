@@ -798,7 +798,7 @@ dev_tools = false
     # injury chance of each warrior(leader/deputy) or medicine cat to get injured
     injury_chance = 18
 
-    # the more clan which are raided the more likely it is to get injured
+    # the more clans that are raided the more likely it is to get injured
     chance_increase_per_clan = 3
 
     # amount of decrease; Clan relation is between 0 and 30, so the number should be small
@@ -821,9 +821,6 @@ dev_tools = false
   [focus.hoarding]
     # how much prey each working warrior(leader/deputy) will gather
     prey_warrior = 1
-
-    # how much herb each working medicine cat will gather
-    herb_medicine = 2
 
     # injury chance of each warrior(leader/deputy) or medicine cat to get injured
     injury_chance_warrior = 25
