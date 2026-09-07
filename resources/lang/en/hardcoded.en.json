@@ -35,30 +35,6 @@
             "one": "The Clan managed to catch %{count} piece of prey this moon.",
             "many": "The Clan managed to catch %{count} pieces of prey this moon."
         },
-        "focus_prey": {
-            "zero": "Despite the focus of the Clan, no additional prey could be gathered.",
-            "one": "With the heightened focus of the Clan, %{count} additional piece of prey was gathered.",
-            "many": "With the heightened focus of the Clan, %{count} additional pieces of prey were gathered."
-        },
-        "focus_herbs": {
-            "zero": "Despite the focus of the Clan, no additional herbs could be gathered.",
-            "one": "With the focus of the Clan, %{herbs} was gathered.",
-            "many": "With the focus of the Clan, %{herbs} were gathered."
-        },
-        "focus_raid_prey": {
-            "one": "With the focus of the Clan, %{count} piece of prey was... acquired.",
-            "many": "With the focus of the Clan, %{count} pieces of prey were... acquired."
-        },
-        "focus_injury_hoarding": {
-            "zero": "Luckily, nobody in the Clan got %{condition} due to hoarding.",
-            "one": "A cat got %{condition} due to hoarding herbs and prey.",
-            "many": "Multiple cats got %{condition} due to hoarding herbs and prey."
-        },
-        "focus_injury_raiding": {
-            "zero": "Luckily, nobody in the Clan got %{condition} during raids.",
-            "one": "A cat got %{condition} while raiding other Clans for more prey.",
-            "many": "Multiple cats got %{condition} while raiding other Clans for more prey."
-        },
         "event_lost1": "After a long journey, m_c has finally returned home to c_n.",
         "event_lost2": "m_c was found at the border, tired but happy to be home.",
         "event_lost3": "m_c strides into camp, much to the everyone's surprise. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} home!",

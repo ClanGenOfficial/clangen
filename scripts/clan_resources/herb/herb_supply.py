@@ -4,7 +4,8 @@ from typing import Optional
 import i18n
 
 from scripts.cat.skills import SkillPath
-from scripts.clan_resources.herb.herb import Herb, HERBS
+from scripts.clan_resources.herb.herb import Herb
+from scripts.game_structure.constants import HERBS
 from scripts.clan_resources.herb.herb_effects import HerbEffect
 from scripts.clan_resources.supply import Supply
 from scripts.config import get_config
@@ -422,9 +423,7 @@ class HerbSupply:
         herb_list = adjust_list_text(herb_strs)
 
         # finish
-        focus_text = i18n.t(
-            "hardcoded.focus_herbs", herbs=herb_list, count=len(herb_list)
-        )
+        focus_text = i18n.t("focus.focus_herbs", herbs=herb_list, count=len(herb_list))
 
         if herb_list:
             game.herb_events_list.append(

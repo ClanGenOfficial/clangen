@@ -4,7 +4,6 @@ from pygame import Cursor, image, SYSTEM_CURSOR_ARROW
 import ujson
 
 # these scripts don't import any clangen scripts into themselves, so it's okay for them to be imported here
-from scripts.clan_resources.herb.herb import HERBS
 from scripts.clan_resources.supply import Supply
 
 from scripts.screens.enums import GameScreen
@@ -148,7 +147,12 @@ EVENT_ALLOWED_CONDITIONS = [
     "constant nightmares",
 ]
 
+HERBS: dict = {}
+with open("resources/dicts/herb_info.json", "r", encoding="utf-8") as read_file:
+    HERBS.update(ujson.loads(read_file.read()))
+
 SUPPLY_TYPES = ["fresh_kill", "all_herb", "any_herb"]
+
 SUPPLY_TYPES.extend(HERBS)
 
 SUPPLY_TRIGGERS = ["always", *Supply]

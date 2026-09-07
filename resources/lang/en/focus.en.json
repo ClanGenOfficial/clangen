@@ -1,0 +1,41 @@
+{
+    "en": {
+        "default": "This shouldn't appear; report as a bug (focus feature).",
+        "rest_and_recover": "The Clan takes it easy this moon, hoping to recover their strength.",
+        "threaten_outsiders": "The Clan makes their distaste of non-Clan cats clear, diminishing their relationship with outsiders.",
+        "seek_outsiders": "The Clan attempts to establish ties to the outsiders on their borders, improving their relationship with outsiders.",
+        "sabotage_clans": "The Clan does what they can to facilitate the downfall of %{clan}; damaging diplomatic ties.",
+        "aid_clans": "The Clan does what they can to aid %{clan}; improving diplomatic ties.",
+        "focus_prey": {
+            "zero": "Despite the focus of the Clan, no additional prey could be gathered.",
+            "one": "With the heightened focus of the Clan, %{count} additional piece of prey was gathered.",
+            "many": "With the heightened focus of the Clan, %{count} additional pieces of prey were gathered."
+        },
+        "focus_herbs": {
+            "zero": "Despite the focus of the Clan, no additional herbs could be gathered.",
+            "one": "With the focus of the Clan, %{herbs} was gathered.",
+            "many": "With the focus of the Clan, %{herbs} were gathered."
+        },
+        "raid_prey": {
+            "one": "%{count} piece of prey was acquired.",
+            "many": "%{count} pieces of prey were acquired."
+        },
+        "raid_herb": "The warriors snatched %{herbs}.",
+        "raid_relations": "Relations with %{clan} were deeply impacted by the raids.",
+        "raid_injury": {
+            "zero": "Luckily, nobody in the Clan got injured during raids.",
+            "one": "A cat got injured while raiding other Clans.",
+            "many": "Multiple cats got injured while raiding other Clans."
+        },
+        "hoarding_injury": {
+            "zero": "Luckily, nobody in the Clan got injured due to hoarding.",
+            "one": "A cat got injured due to hoarding herbs and prey.",
+            "many": "Multiple cats got injured due to hoarding herbs and prey."
+        },
+        "hoarding_illness": {
+            "zero": "Luckily, nobody in the Clan got sick due to hoarding.",
+            "one": "A cat got sick due to hoarding herbs and prey.",
+            "many": "Multiple cats got sick due to hoarding herbs and prey."
+        }
+    }
+}
