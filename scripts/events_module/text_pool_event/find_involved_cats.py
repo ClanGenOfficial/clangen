@@ -14,7 +14,6 @@ from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 
 
 def find_cats(
-    primary_cat: Cat,
     interactable_cats: list,
     involved_cats: dict,
     outside_cats: list,
@@ -109,9 +108,10 @@ def find_cats(
         else:
             possible_cats = interactable_cats
 
-            # primary cat is already "in use" so we should remove them if they're present in this list
-            if primary_cat in possible_cats:
-                possible_cats.remove(primary_cat)
+            for cat in involved_cats.values():
+                # if a cat is a list then we don't want to try and remove it
+                if not isinstance(cat, list) and cat in interactable_cats:
+                    possible_cats.remove(cat)
 
         if not possible_cats:
             # uh oh, we're out of options!
