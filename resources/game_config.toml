@@ -773,6 +773,87 @@ dev_tools = false
 
   classic_disallows = ["herb_gathering", "hunting", "hoarding_resources", "raid_other_clans","hoarding"]
 
+  [focus.buff]
+    [focus.buff.hunting]
+      [focus.buff.hunting.HUNTER]
+        tier = 1
+        prey_increase = 2
+      [focus.buff.hunting.SWIMMER]
+        tier = 1
+        biome = ["plains", "desert"]
+        prey_increase = 2
+      [focus.buff.hunting.CLIMBER]
+        tier = 1
+        biome = ["forest", "moutainous"]
+        prey_increase = 2
+      [focus.buff.hunting.RUNNER]
+        tier = 1
+        biome = ["beach", "wetlands"]
+        prey_increase = 2
+    [focus.buff.herb_gathering]
+      [focus.buff.herb_gathering.SENSE]
+        tier = 1
+        # overall
+        range_increase = 2
+      [focus.buff.herb_gathering.CLEVER]
+        tier = 1
+        # per assistant
+        quantity_increase = 2
+    [focus.buff.threaten_outsiders]
+      [focus.buff.threaten_outsiders.FIGHTER]
+        tier = 1
+        # multiplies reputation change
+        reputation_modifier = 1.5
+      [focus.buff.threaten_outsiders.SPEAKER]
+        tier = 1
+        # multiplies reputation change
+        reputation_modifier = 1.5
+    [focus.buff.seek_outsiders]
+      [focus.buff.seek_outsiders.SPEAKER]
+        tier = 1
+        # multiplies reputation change
+        reputation_modifier = 1.5
+      [focus.buff.seek_outsiders.SENSE]
+        tier = 1
+        # multiplies reputation change
+        reputation_modifier = 1.5
+    [focus.buff.rest_and_recover]
+      [focus.buff.rest_and_recover.HEALER]
+        tier = 1
+        # multiplies preventation
+        outbreak_preventation_modifier = 2
+      [focus.buff.rest_and_recover.INSIGHTFUL]
+        tier = 1
+        # multiplies prevention
+        hurt_prevention_modifier = 2
+    [focus.buff.sabotage_other_clans]
+      [focus.buff.sabotage_other_clans.STEALTH]
+        tier = 1
+        # multiplies relation change
+        relation_modifier = 1.5
+      [focus.buff.sabotage_other_clans.MEDIATOR]
+        tier = 1
+        # multiplies relation change
+        relation_modifier = 1.5
+    [focus.buff.aid_other_clans]
+      [focus.buff.aid_other_clans.INSIGHTFUL]
+        tier = 1
+        # multiplies relation change
+        relation_modifier = 1.5
+      [focus.buff.aid_other_clans.MEDIATOR]
+        tier = 1
+        # multiplies relation change
+        relation_modifier = 1.5
+    [focus.buff.raid_other_clans]
+      [focus.buff.raid_other_clans.FIGHTER]
+        tier = 1
+        # multiplies injury chance (increasing the number, thus making injury less likely)
+        injury_chance_modifier = 2
+      [focus.buff.raid_other_clans.STEALTH]
+        tier = 1
+        # increases each instance of supply gathered
+        supply_amount_buff = 1
+
   [focus.hunting]
     # Defines how much a working warrior(leader/deputy) or apprentice gathers additionally
     warrior = 2
