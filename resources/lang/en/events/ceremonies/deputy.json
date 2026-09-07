@@ -1,0 +1,132 @@
+[
+    {
+        "event_id": "deputy_default0",
+        "tags": ["clan:leader", "clan:warrior"],
+        "involved_cats": {
+            "m_c": {
+                "has_apprentice": {
+                    "former": true
+                }
+            }
+        },
+        "strings": [
+            "m_c has been chosen as the new deputy. The Clan yowls {PRONOUN/m_c/poss} name in approval.",
+            "m_c has been chosen as the new deputy. Some of the older Clan members question the wisdom of this choice.",
+            "m_c has been chosen as the new deputy. {PRONOUN/m_c/subject/CAP} {VERB/m_c/hold/holds} {PRONOUN/m_c/poss} head up high and {VERB/m_c/promise/promises} to do {PRONOUN/m_c/poss} best for the Clan.",
+            "m_c has been chosen as the new deputy. {PRONOUN/m_c/subject/CAP} {VERB/m_c/pray/prays} to StarClan that {PRONOUN/m_c/subject} {VERB/m_c/are/is} the right choice for the Clan.",
+            "m_c has been chosen as the new deputy. Although {PRONOUN/m_c/subject} {VERB/m_c/are/is} nervous, {PRONOUN/m_c/subject} {VERB/m_c/put/puts} on a brave face and {VERB/m_c/look/looks} forward to serving the Clan."
+        ]
+    },
+    {
+        "event_id": "deputy_past_deputy0",
+        "involved_cats": {
+            "m_c": {
+                "has_apprentice": {
+                    "former": true
+                }
+            },
+            "r_c0": {
+                "status": ["leader"]
+            },
+            "past_deputy": {}
+        },
+        "strings": [
+            "r_c0 chooses m_c to take over as deputy. \"{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/know/knows} past_deputy would approve.",
+            "r_c0 chooses m_c to take over as deputy. \"{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/hope/hopes} past_deputy would approve.",
+            "r_c0 chooses m_c to take over as deputy. \"{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/don't/doesn't} know if past_deputy would approve, but life must go on."
+        ]
+    },
+    {
+        "event_id": "deputy_trusted0",
+        "involved_cats": {
+            "m_c": {
+                "has_apprentice": {
+                    "former": true
+                }
+            },
+            "r_c0": {
+                "status": ["leader"]
+            }
+        },
+        "strings": [
+            "r_c0 has been thinking deeply all day about who {PRONOUN/r_c0/subject} would trust and respect enough to stand at {PRONOUN/r_c0/poss} side. At sunhigh, {PRONOUN/r_c0/subject} {VERB/r_c0/make/makes} the announcement that m_c will be the Clan's new deputy."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": ["r_c0"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "constraints": [
+                    "respects",
+                    "trusts"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "deputy_nefarious0",
+        "tags": ["clan:leader"],
+        "involved_cats": {
+            "m_c": {
+                "has_apprentice": {
+                    "former": true
+                },
+                "stat": {
+                    "trait": [
+                        "bloodthirsty",
+                        "ambitious",
+                        "cunning"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "m_c has been chosen as the new deputy. {PRONOUN/m_c/subject/CAP} {VERB/m_c/look/looks} at the Clan leader with an odd glint in {PRONOUN/m_c/poss} eyes."
+        ]
+    },
+    {
+        "event_id": "deputy_clan_chosen0",
+        "tags": ["-clan:leader"],
+        "involved_cats": {
+            "m_c": {
+                "has_apprentice": {
+                    "former": true
+                }
+            }
+        },
+        "strings": [
+            "Without a leader or deputy, the Clan has been directionless. They all turn to m_c with hope for the future."
+        ]
+    },
+    {
+        "event_id": "deputy_clan_unsure0",
+        "involved_cats": {
+            "m_c": {
+                "has_apprentice": {
+                    "former": false
+                }
+            }
+        },
+        "strings": [
+            "No cat is truly fit to be deputy, but the position can't remain vacant. m_c is appointed as the new deputy."
+        ]
+    },
+    {
+        "event_id": "deputy_clan_chosen1",
+        "tags": ["-clan:leader"],
+        "involved_cats": {
+            "m_c": {
+                "has_apprentice": {
+                    "former": true
+                }
+            },
+            "r_c0": {
+                "group": ["player_clan"],
+                "past_status": ["deputy"]
+            }
+        },
+        "strings": [
+            "The Clan is without a leader, but a new deputy must still be named. m_c is chosen as the new deputy. r_c0 nods {PRONOUN/dep_name/poss} approval."
+        ]
+    }
+]

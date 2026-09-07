@@ -6,17 +6,17 @@ from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
 from scripts.models.common.season import Season
-from scripts.models.shortevent.location import Location
+from scripts.models.common.location import Location
 from scripts.models.thought.relationship_constraint_dict import (
     ThoughtRelationshipConstraint,
 )
 from scripts.thoughts.text_pool_event.involved_cats import InvolvedCats
-from scripts.models.thought.tag import Tag
+from scripts.models.common.tag import Tag
 
 
 class ThoughtSchemaItem(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    id: str = Field(
+    event_id: str = Field(
         ...,
         description="Separates the thoughts into their blocks. Generally, the ID includes the condition, personality, age, and status of the main_cat, as well as the condition, personality, age, and status of any other cat mentioned.",
     )

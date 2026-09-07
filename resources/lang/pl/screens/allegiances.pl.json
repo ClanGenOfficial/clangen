@@ -1,0 +1,9 @@
+{
+    "pl": {
+        "heading": "<b>%{clan_name} Allegiances<\/b>",
+        "caring_for": {
+            "one": "<i>(caring for %{kitten})<\/i>",
+            "many": "<i>(caring for %{kitten_list} and %{last_kitten})<\/i>"
+        }
+    }
+}

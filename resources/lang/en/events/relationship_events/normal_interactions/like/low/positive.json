@@ -1,6 +1,6 @@
 [
     {
-        "id": "like_inc_low1",
+        "event_id": "like_inc_low1",
         "strings": [
             "m_c thinks r_c was nice to {PRONOUN/m_c/object} today.",
             "m_c thought r_c was polite today.",
@@ -13,7 +13,7 @@
         ]
     },
     {
-        "id": "like_inc_low2",
+        "event_id": "like_inc_low2",
         "strings": [
             "m_c is talking with r_c.",
             "m_c and r_c roll up moss balls together.",
@@ -44,7 +44,7 @@
         ]
     },
     {
-        "id": "like_incfromneg_low1",
+        "event_id": "like_incfromneg_low1",
         "strings": [
             "m_c is surprised by r_c being thoughtful.",
             "m_c and r_c agree about something trivial.",
@@ -75,7 +75,7 @@
         ]
     },
     {
-        "id": "like_incfromneg_low2",
+        "event_id": "like_incfromneg_low2",
         "strings": [
             "m_c apologized to r_c for being rude the other day.",
             "m_c and r_c actually get along better today.",

@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_romance_high_neg1",
+        "event_id": "gen_romance_high_neg1",
         "strings": [
 			"It seems distance did not make the heart grow fonder: m_c had been avoiding r_c."
         ],

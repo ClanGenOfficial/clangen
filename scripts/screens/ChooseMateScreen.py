@@ -7,10 +7,12 @@ import pygame_gui.elements
 from scripts.cat.cats import Cat
 from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.game_structure import image_cache
+from ..cat_relations.relationship import create_one_relationship
 from ..config import get_config
 from ..ui.elements.sprite_button import UISpriteButton
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton
+from ..ui.elements.checkbox import UICheckbox
 from ..ui.theme import get_text_box_theme
 from ..events_module.text_adjust import shorten_text_to_fit
 from ..events_module.event_filters import get_personality_compatibility
@@ -511,15 +513,9 @@ class ChooseMateScreen(Screens):
         if "kits_selected_pair" in self.checkboxes:
             self.checkboxes["kits_selected_pair"].kill()
 
-        if self.kits_selected_pair:
-            theme = "@checked_checkbox"
-        else:
-            theme = "@unchecked_checkbox"
-
-        self.checkboxes["kits_selected_pair"] = UIImageButton(
-            ui_scale(pygame.Rect((553, 62), (34, 34))),
-            "",
-            object_id=theme,
+        self.checkboxes["kits_selected_pair"] = UICheckbox(
+            position=(553, 62),
+            check=self.kits_selected_pair,
             container=self.offspring_container,
         )
 
@@ -637,37 +633,22 @@ class ChooseMateScreen(Screens):
         if "single_only" in self.checkboxes:
             self.checkboxes["single_only"].kill()
 
-        if self.single_only:
-            theme = "@checked_checkbox"
-        else:
-            theme = "@unchecked_checkbox"
-
-        self.checkboxes["single_only"] = UIImageButton(
-            ui_scale(pygame.Rect((553, 42), (34, 34))),
-            "",
-            object_id=theme,
+        self.checkboxes["single_only"] = UICheckbox(
+            position=(553, 42),
+            check=self.single_only,
             container=self.potential_container,
         )
 
         if "have_kits_only" in self.checkboxes:
             self.checkboxes["have_kits_only"].kill()
 
-        if self.have_kits_only:
-            theme = "@checked_checkbox"
-        else:
-            theme = "@unchecked_checkbox"
-
-        self.checkboxes["have_kits_only"] = UIImageButton(
-            ui_scale(pygame.Rect((553, 127), (34, 34))),
-            "",
-            object_id=theme,
+        self.checkboxes["have_kits_only"] = UICheckbox(
+            position=(553, 127),
+            check=self.have_kits_only,
             container=self.potential_container,
         )
 
         self.all_potential_mates = self.get_list_chunks(self.get_valid_mates(), 24)
-
-        # Update checkboxes
-        # TODO
 
         self.update_potential_mates_container_page()
 
@@ -1114,7 +1095,7 @@ class ChooseMateScreen(Screens):
             if self.selected_cat.ID in self.the_cat.relationships:
                 relation = self.the_cat.relationships[self.selected_cat.ID]
             else:
-                relation = self.the_cat.create_one_relationship(self.selected_cat)
+                relation = create_one_relationship(self.the_cat, self.selected_cat)
             romantic_love = relation.romance
 
         if 10 <= romantic_love <= 30:
@@ -1146,7 +1127,7 @@ class ChooseMateScreen(Screens):
             if self.the_cat.ID in self.selected_cat.relationships:
                 relation = self.selected_cat.relationships[self.the_cat.ID]
             else:
-                relation = self.selected_cat.create_one_relationship(self.the_cat)
+                relation = create_one_relationship(self.selected_cat, self.the_cat)
             romantic_love = relation.romance
 
         if 10 <= romantic_love <= 30:

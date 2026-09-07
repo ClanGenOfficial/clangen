@@ -1,0 +1,47 @@
+from __future__ import annotations
+
+from enum import Enum
+
+
+class Temperament(Enum):
+    """
+    Temperaments a Clan or patrol can hold. A "-" prefix excludes it.
+    """
+
+    cunning = "cunning"
+    not_cunning = "-cunning"
+    proud = "proud"
+    not_proud = "-proud"
+    bloodthirsty = "bloodthirsty"
+    not_bloodthirsty = "-bloodthirsty"
+    amiable = "amiable"
+    not_amiable = "-amiable"
+    stoic = "stoic"
+    not_stoic = "-stoic"
+    wary = "wary"
+    not_wary = "-wary"
+    gracious = "gracious"
+    not_gracious = "-gracious"
+    mellow = "mellow"
+    not_mellow = "-mellow"
+    logical = "logical"
+    not_logical = "-logical"
+    chaotic = "chaotic"
+    not_chaotic = "-chaotic"
+    mercurial = "mercurial"
+    not_mercurial = "-mercurial"
+    calculating = "calculating"
+    not_calculating = "-calculating"
+    eager = "eager"
+    not_eager = "-eager"
+    observant = "observant"
+    not_observant = "-observant"
+    adaptable = "adaptable"
+    not_adaptable = "-adaptable"
+    decisive = "decisive"
+    not_decisive = "-decisive"
+    methodical = "methodical"
+    not_methodical = "-methodical"
+    steadfast = "steadfast"
+    not_steadfast = "-steadfast"
+    any = "any"

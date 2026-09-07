@@ -24,3 +24,7 @@ def add_output_line_to_log(line: str):
         line (str)
     """
     _debugClass.push_line(line)
+
+
+def clear_log():
+    _debugClass.clear()

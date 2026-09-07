@@ -1,6 +1,6 @@
 [
     {
-        "id": "lost_elder_thoughts",
+        "event_id": "lost_elder_thoughts",
         "strings": [
             "Wishes {PRONOUN/m_c/subject} had some help getting around",
             "Is saddened by the fact that {PRONOUN/m_c/subject} can't tell stories to anyone",

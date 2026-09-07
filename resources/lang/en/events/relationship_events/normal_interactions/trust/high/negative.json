@@ -1,6 +1,6 @@
 [
     {
-        "id": "trust_de_high1",
+        "event_id": "trust_de_high1",
         "strings": [
             "m_c goes to tell a secret to r_c only for r_c to tell someone else's secret to {PRONOUN/m_c/object}.",
             "r_c doesn't believe m_c when {PRONOUN/m_c/subject} {VERB/m_c/explain/explains} that a rumor about {PRONOUN/m_c/object} is false.",
@@ -15,7 +15,7 @@
         ]
     },
     {
-        "id": "trust_de_high2",
+        "event_id": "trust_de_high2",
         "strings": [
             "m_c tries to scare r_c.",
             "m_c accuses r_c of being in cahoots with a cat from another Clan.",
@@ -62,7 +62,7 @@
         ]
     },
     {
-        "id": "trust_for_medcat_de_high1",
+        "event_id": "trust_for_medcat_de_high1",
         "strings": [
             "m_c can never seem to explain {PRONOUN/r_c/poss} health in a way that makes r_c listen...",
             "m_c feels like r_c is downplaying the severity of m_c's health concerns.",
@@ -81,7 +81,7 @@
         }
     },
     {
-        "id": "trust_for_medcat_de_high2",
+        "event_id": "trust_for_medcat_de_high2",
         "strings": [
             "m_c is dissatisfied that r_c can't seem to get rid of {PRONOUN/m_c/poss} chronic pain.",
             "m_c is upset that r_c seems to ignore {PRONOUN/r_c/object} more than the other cats.",
@@ -101,7 +101,7 @@
         }
     },
     {
-        "id": "trust_for_medcat_de_high3",
+        "event_id": "trust_for_medcat_de_high3",
         "strings": [
             "m_c accuses r_c of treating cats incorrectly on purpose!",
             "m_c saw r_c bringing deathberries into the medicine den.",
@@ -125,7 +125,7 @@
         }
     },
     {
-        "id": "trust_for_medcat_de_high4",
+        "event_id": "trust_for_medcat_de_high4",
         "strings": [
             "m_c is shocked when r_c casually admits forgetting a basic treatment.",
             "m_c growls frustratingly at r_c when {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} pay attention to m_c's health concerns... again.",
@@ -148,7 +148,7 @@
         }
     },
     {
-        "id": "trust_for_leader_de_high1",
+        "event_id": "trust_for_leader_de_high1",
         "strings": [
             "m_c cowers away from r_c after r_c barks an order at {PRONOUN/m_c/object}.",
             "After hearing r_c's most recent demands, m_c is concerned about the future of the Clan.",

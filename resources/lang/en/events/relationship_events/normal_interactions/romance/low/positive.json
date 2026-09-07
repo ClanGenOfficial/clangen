@@ -1,6 +1,6 @@
 [
     {
-        "id": "rom_inc_low1",
+        "event_id": "rom_inc_low1",
         "strings": [
             "m_c is developing a crush on r_c.",
             "m_c might be reading a little too far into r_c's kindness.",
@@ -24,7 +24,7 @@
         ]
     },
     {
-        "id": "rom_inc_low2",
+        "event_id": "rom_inc_low2",
         "strings": [
             "m_c is admiring r_c from afar...",
             "m_c stayed up all night thinking of ways to impress r_c.",
@@ -36,7 +36,7 @@
         ]
     },
     {
-        "id": "rom_inc_low3",
+        "event_id": "rom_inc_low3",
         "strings": [
             "m_c is prancing around in front of r_c."
         ],
@@ -57,7 +57,7 @@
         ]
     },
     {
-        "id": "rom_inc_low4",
+        "event_id": "rom_inc_low4",
         "strings": [
             "m_c can't help but admire r_c's pelt.",
             "m_c can't help but smile seeing r_c smile."
@@ -78,7 +78,7 @@
         ]
     },
     {
-        "id": "rom_inc_low5",
+        "event_id": "rom_inc_low5",
         "strings": [
             "m_c thinks r_c is really charming.",
             "m_c can't help but smile when around r_c."

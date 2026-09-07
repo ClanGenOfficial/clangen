@@ -1,6 +1,6 @@
 [
     {
-        "id": "rom_dec_medium1",
+        "event_id": "rom_dec_medium1",
         "strings": [
             "m_c feels like r_c hasn't been paying much attention to {PRONOUN/m_c/object} lately.",
             "m_c is upset that r_c tried to give {PRONOUN/m_c/object} {PRONOUN/m_c/poss} least favorite prey. Surely {PRONOUN/r_c/subject} {VERB/r_c/know/knows} what {PRONOUN/m_c/subject} {VERB/m_c/like/likes}!",
@@ -38,7 +38,7 @@
         ]
     },
     {
-        "id": "rom_dec_medium2",
+        "event_id": "rom_dec_medium2",
         "strings": [
             "m_c told r_c to stop padding after {PRONOUN/m_c/object} like a lost kit.",
             "m_c worries that r_c isn't being honest with their relationship.",
@@ -78,7 +78,7 @@
         ]
     },
     {
-        "id": "rom_dec_medium3",
+        "event_id": "rom_dec_medium3",
         "strings": [
             "m_c is starting to have doubts about {PRONOUN/m_c/poss} feelings for r_c.",
             "m_c heard a rumor that r_c likes someone else.",
@@ -104,7 +104,7 @@
         ]
     },
     {
-        "id": "rom_dec_medium4",
+        "event_id": "rom_dec_medium4",
         "strings": [
             "m_c had a disagreement with r_c over kits.",
             "m_c and r_c had a disagreement on how to raise kits.",

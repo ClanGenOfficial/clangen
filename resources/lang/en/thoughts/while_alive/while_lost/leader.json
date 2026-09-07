@@ -1,6 +1,6 @@
 [
     {
-        "id": "lost_leader_thoughts",
+        "event_id": "lost_leader_thoughts",
         "strings": [
             "Feels lost without the support of {PRONOUN/m_c/poss} Clan behind {PRONOUN/m_c/object}",
             "Wonders if {PRONOUN/m_c/poss} deputy has already become leader",

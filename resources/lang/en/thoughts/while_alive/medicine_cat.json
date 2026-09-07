@@ -1,6 +1,6 @@
 [
     {
-        "id": "med_cat_gen",
+        "event_id": "med_cat_gen",
         "strings": [
             "Is looking for herbs",
             "Is organizing the herb stores",
@@ -27,7 +27,7 @@
         ]
     },
     {
-        "id": "med_cat_alive_young",
+        "event_id": "med_cat_alive_young",
         "strings": [
             "Is thinking about taking on a new apprentice"
         ],
@@ -41,7 +41,7 @@
         }
     },
     {
-        "id": "adventurous_medicine_cat",
+        "event_id": "adventurous_medicine_cat",
         "strings": [
             "Heads out of Clan territory to look for new herbs",
             "Purposefully plants herbs in hard-to-reach areas",
@@ -61,7 +61,7 @@
         }
     },
     {
-        "id": "adventurous_medicine_cat_to_lead",
+        "event_id": "adventurous_medicine_cat_to_lead",
         "strings": [
             "Helps the leader with {PRONOUN/r_c/poss} duties",
             "Begs the leader to give {PRONOUN/m_c/object} the bounciest kit as {PRONOUN/m_c/poss} apprentice"
@@ -82,7 +82,7 @@
         }
     },
     {
-        "id": "adventurous_medicine_cat_kit",
+        "event_id": "adventurous_medicine_cat_kit",
         "strings": [
             "Is showing the kits herbs by taking them on adventures in the territory",
             "Offers to help the queens with badger rides for the kits"
@@ -103,7 +103,7 @@
         }
     },
     {
-        "id": "adventurous_medicine_cat_to_deputy",
+        "event_id": "adventurous_medicine_cat_to_deputy",
         "strings": [
             "Asks the deputy to go on patrol"
         ],
@@ -123,7 +123,7 @@
         }
     },
     {
-        "id": "ambitious_medicine_cat",
+        "event_id": "ambitious_medicine_cat",
         "strings": [
             "Insists on taking on more tasks",
             "Spends all day gathering herbs",
@@ -141,7 +141,7 @@
         }
     },
     {
-        "id": "bloodthirsty_medicine_cat",
+        "event_id": "bloodthirsty_medicine_cat",
         "strings": [
             "Is gathering deathberries",
             "Has been disappearing a lot lately",
@@ -172,7 +172,7 @@
         }
     },
     {
-        "id": "bloodthirsty_medicine_cat_to_lead",
+        "event_id": "bloodthirsty_medicine_cat_to_lead",
         "strings": [
             "Talks to the leader about war"
         ],
@@ -192,7 +192,7 @@
         }
     },
     {
-        "id": "bold_medicine_cat",
+        "event_id": "bold_medicine_cat",
         "strings": [
             "Decides to try a new herb as treatment for an injury"
         ],
@@ -207,7 +207,7 @@
         }
     },
     {
-        "id": "calm_medicine_cat",
+        "event_id": "calm_medicine_cat",
         "strings": [
             "Stays composed when treating a severe injury"
         ],
@@ -222,7 +222,7 @@
         }
     },
     {
-        "id": "calm_medicine_cat_apprentice",
+        "event_id": "calm_medicine_cat_apprentice",
         "strings": [
             "Calms down an apprentice who is panicking over {PRONOUN/r_c/poss} minor injury"
         ],
@@ -242,7 +242,7 @@
         }
     },
     {
-        "id": "careful_medicine_cat",
+        "event_id": "careful_medicine_cat",
         "strings": [
             "Counts and recounts the poppy seeds",
             "Makes sure none of the herbs get mixed up"
@@ -258,7 +258,7 @@
         }
     },
     {
-        "id": "charismatic_medicine_cat",
+        "event_id": "charismatic_medicine_cat",
         "strings": [
             "Is doing {PRONOUN/m_c/poss} daily checkup on the elders",
             "Is thinking of just the right way to ask another Clan's medicine cat for herbs"
@@ -274,7 +274,7 @@
         }
     },
     {
-        "id": "childish_medicine_cat",
+        "event_id": "childish_medicine_cat",
         "strings": [
             "Bounces excitedly at the half-moon meeting",
             "Plays with some wind-swept catmint"
@@ -290,7 +290,7 @@
         }
     },
     {
-        "id": "cold_medicine_cat",
+        "event_id": "cold_medicine_cat",
         "strings": [
             "Grumbles when a warrior asks for herbs for a simple bellyache",
             "Has better things to do than pull splinters out of paws"
@@ -306,7 +306,7 @@
         }
     },
     {
-        "id": "compassionate_medicine_cat",
+        "event_id": "compassionate_medicine_cat",
         "strings": [
             "Works long into the night taking care of the Clan",
             "Helps a warrior regain their strength",
@@ -323,7 +323,7 @@
         }
     },
     {
-        "id": "compassionate_medicine_cat_to_apprentice",
+        "event_id": "compassionate_medicine_cat_to_apprentice",
         "strings": [
             "Listens to the apprentices complain about their training"
         ],
@@ -345,7 +345,7 @@
         }
     },
     {
-        "id": "confident_medicine_cat",
+        "event_id": "confident_medicine_cat",
         "strings": [
             "Is proud of {PRONOUN/m_c/poss} ability to care for {PRONOUN/m_c/poss} Clanmates",
             "Does not doubt {PRONOUN/m_c/self} while treating a cat"
@@ -361,7 +361,7 @@
         }
     },
     {
-        "id": "daring_medicine_cat",
+        "event_id": "daring_medicine_cat",
         "strings": [
             "Steals catmint from a Twoleg garden"
         ],
@@ -376,7 +376,7 @@
         }
     },
     {
-        "id": "faithful_medicine_cat",
+        "event_id": "faithful_medicine_cat",
         "strings": [
             "Has been hearing the voices of StarClan cats..."
         ],
@@ -391,7 +391,7 @@
         }
     },
     {
-        "id": "fierce_medicine_cat",
+        "event_id": "fierce_medicine_cat",
         "strings": [
             "Insists on joining battle training once a moon"
         ],
@@ -406,7 +406,7 @@
         }
     },
     {
-        "id": "insecure_medicine_cat",
+        "event_id": "insecure_medicine_cat",
         "strings": [
             "Thinks that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} deserve {PRONOUN/m_c/poss} full name"
         ],
@@ -421,7 +421,7 @@
         }
     },
     {
-        "id": "lonesome_medicine_cat",
+        "event_id": "lonesome_medicine_cat",
         "strings": [
             "Wishes {PRONOUN/m_c/poss} Clanmates could understand {PRONOUN/m_c/poss} struggles",
             "Wishes there were more medicine cats in the Clan",
@@ -442,7 +442,7 @@
         }
     },
     {
-        "id": "lonesome_medicine_cat_to_lead",
+        "event_id": "lonesome_medicine_cat_to_lead",
         "strings": [
             "Wants to talk to the leader about having a new apprentice"
         ],
@@ -462,7 +462,7 @@
         }
     },
     {
-        "id": "loving_medicine_cat_to_newborn",
+        "event_id": "loving_medicine_cat_to_newborn",
         "strings": [
             "Watches over some newborn kits"
         ],
@@ -482,7 +482,7 @@
         }
     },
     {
-        "id": "loyal_medicine_cat",
+        "event_id": "loyal_medicine_cat",
         "strings": [
             "Refuses to share gossip at the half-moon meeting",
             "Refuses to give another Clan's medicine cat some herbs"
@@ -498,7 +498,7 @@
         }
     },
     {
-        "id": "nervous_medicine_cat",
+        "event_id": "nervous_medicine_cat",
         "strings": [
             "Recounts the amount of catmint in {PRONOUN/m_c/poss} stores"
         ],
@@ -513,7 +513,7 @@
         }
     },
     {
-        "id": "playful_medicine_cat",
+        "event_id": "playful_medicine_cat",
         "strings": [
             "Keeps {PRONOUN/m_c/poss} patients distracted with silly games while {PRONOUN/m_c/subject} {VERB/m_c/treat/treats} them"
         ],
@@ -528,7 +528,7 @@
         }
     },
     {
-        "id": "playful_medicine_cat_to_kits",
+        "event_id": "playful_medicine_cat_to_kits",
         "strings": [
             "Excitedly teaches the kits about basic herbs",
             "Indulges the kits as they play hide and seek around the medicine cat den"
@@ -549,7 +549,7 @@
         }
     },
     {
-        "id": "responsible_medicine_cat",
+        "event_id": "responsible_medicine_cat",
         "strings": [
             "Ensures that all of {PRONOUN/m_c/poss} duties are taken care of",
             "Ignores the rumbling in {PRONOUN/m_c/poss} stomach in favor of treating cats"
@@ -565,7 +565,7 @@
         }
     },
     {
-        "id": "righteous_medicine_cat",
+        "event_id": "righteous_medicine_cat",
         "strings": [
             "Gives herbs to an injured loner"
         ],
@@ -580,7 +580,7 @@
         }
     },
     {
-        "id": "shameless_medicine_cat",
+        "event_id": "shameless_medicine_cat",
         "strings": [
             "Refuses to groom {PRONOUN/m_c/self}"
         ],
@@ -595,7 +595,7 @@
         }
     },
     {
-        "id": "stealth_medicine_cat",
+        "event_id": "stealth_medicine_cat",
         "strings": [
             "Seems to be hiding something in the medicine {PRONOUN/m_c/subject} {VERB/m_c/give/gives} to the leader"
         ],
@@ -610,7 +610,7 @@
         }
     },
     {
-        "id": "strange_medicine_cat",
+        "event_id": "strange_medicine_cat",
         "strings": [
             "Insists everyone eat chamomile leaves at moonhigh",
             "Sleeps in the middle of the clearing",
@@ -628,7 +628,7 @@
         }
     },
     {
-        "id": "strange_medicine_cat_to_kit",
+        "event_id": "strange_medicine_cat_to_kit",
         "strings": [
             "Hisses at the kits randomly"
         ],
@@ -649,7 +649,7 @@
         }
     },
     {
-        "id": "strict_medicine_cat",
+        "event_id": "strict_medicine_cat",
         "strings": [
             "Forbids anyone from disturbing {PRONOUN/m_c/object} when working"
         ],
@@ -664,7 +664,7 @@
         }
     },
     {
-        "id": "thoughtful_medicine_cat",
+        "event_id": "thoughtful_medicine_cat",
         "strings": [
             "Realizes what an omen might mean"
         ],
@@ -679,7 +679,7 @@
         }
     },
     {
-        "id": "troublesome_medicine_cat",
+        "event_id": "troublesome_medicine_cat",
         "strings": [
             "Mixes up herbs"
         ],
@@ -694,7 +694,7 @@
         }
     },
     {
-        "id": "vengeful_medicine_cat",
+        "event_id": "vengeful_medicine_cat",
         "strings": [
             "Refuses to treat a cat that once bullied {PRONOUN/m_c/object}"
         ],
@@ -709,7 +709,7 @@
         }
     },
     {
-        "id": "wise_medicine_cat",
+        "event_id": "wise_medicine_cat",
         "strings": [
             "Tells an ancient tale about StarClan"
         ],
@@ -724,7 +724,7 @@
         }
     },
     {
-        "id": "med_cat_dead_SC_gen",
+        "event_id": "med_cat_dead_SC_gen",
         "strings": [
             "Wishes {PRONOUN/m_c/subject} could visit r_c in StarClan",
             "Was given a prophecy by r_c",
@@ -752,7 +752,7 @@
         }
     },
     {
-        "id": "med_cat_dead_DF_gen",
+        "event_id": "med_cat_dead_DF_gen",
         "strings": [
             "Is visited by r_c",
             "Senses r_c is nearby",
@@ -770,7 +770,7 @@
         }
     },
     {
-        "id": "former_kittypet_medcat",
+        "event_id": "former_kittypet_medcat",
         "strings": [
             "Uses knowledge from {PRONOUN/m_c/poss} time with Twolegs to improve a healing method",
             "Wonders what {PRONOUN/m_c/poss} old vet would do for greencough",
@@ -802,7 +802,7 @@
         }
     },
     {
-        "id": "med_cat_to_mild_injury_gen",
+        "event_id": "med_cat_to_mild_injury_gen",
         "strings": [
             "Is looking after r_c's minor injury",
             "Checks in on r_c's injury, just to be careful"
@@ -824,7 +824,7 @@
         }
     },
     {
-        "id": "med_cat_to_mid_injury_gen",
+        "event_id": "med_cat_to_mid_injury_gen",
         "strings": [
             "Is observing r_c's injury closely",
             "Is making sure r_c is healing correctly",
@@ -850,7 +850,7 @@
         }
     },
     {
-        "id": "med_cat_to_major_injury_gen",
+        "event_id": "med_cat_to_major_injury_gen",
         "strings": [
             "Is working constantly to heal r_c's injury",
             "Prays to StarClan to heal r_c",
@@ -877,7 +877,7 @@
         }
     },
     {
-        "id": "med_cat_to_mild_illness_gen",
+        "event_id": "med_cat_to_mild_illness_gen",
         "strings": [
             "Keeps a watchful eye on r_c's illness",
             "Is hopeful that r_c will recover soon",
@@ -896,7 +896,7 @@
         }
     },
     {
-        "id": "med_cat_to_major_illness_gen",
+        "event_id": "med_cat_to_major_illness_gen",
         "strings": [
             "Is worried about r_c's worsening condition",
             "Is prepping for r_c's treatment",
@@ -920,7 +920,7 @@
         }
     },
     {
-        "id": "med_cat_to_coughs_gen",
+        "event_id": "med_cat_to_coughs_gen",
         "strings": [
             "Begs StarClan to cure r_c",
             "Is keeping r_c away from other cats",
@@ -940,7 +940,7 @@
         }
     },
     {
-        "id": "med_cat_to_pregnant_gen",
+        "event_id": "med_cat_to_pregnant_gen",
         "strings": [
             "Is lightly feeling r_c's belly for how many kits {PRONOUN/r_c/subject} might have",
             "Is preparing for r_c's upcoming kitting",
@@ -959,7 +959,7 @@
         }
     },
     {
-        "id": "med_cat_to_newborn",
+        "event_id": "med_cat_to_newborn",
         "strings": [
             "Checks over r_c",
             "Checks on the new litter",
@@ -979,7 +979,7 @@
         }
     },
     {
-        "id": "med_cat_to_new_parent",
+        "event_id": "med_cat_to_new_parent",
         "strings": [
             "Checks in on r_c",
             "Brings r_c raspberry to help {PRONOUN/r_c/poss} recovery",

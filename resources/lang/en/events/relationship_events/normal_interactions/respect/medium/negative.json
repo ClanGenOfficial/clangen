@@ -1,6 +1,6 @@
 [
     {
-        "id": "respect_de_med1",
+        "event_id": "respect_de_med1",
         "strings": [
             "m_c saw r_c take the last piece of prey from the fresh-kill pile.",
             "m_c is frustrated that r_c won't take {PRONOUN/r_c/poss} actions more seriously.",
@@ -29,7 +29,7 @@
         ]
     },
     {
-        "id": "respect_de_medium2",
+        "event_id": "respect_de_medium2",
         "strings": [
             "m_c tried to bring r_c's behavior up to {PRONOUN/r_c/object}, but it turned into a fight that someone else had to break up.",
             "m_c confronted r_c about {PRONOUN/r_c/poss} bad attitude but that only makes r_c act out more.",
@@ -73,7 +73,7 @@
         ]
     },
     {
-        "id": "respect_adult_de_med1",
+        "event_id": "respect_adult_de_med1",
         "strings": [
             "m_c saw r_c miss an easy catch today.",
             "m_c is disappointed in r_c's subpar work lately.",
@@ -110,7 +110,7 @@
         }
     },
     {
-        "id": "respect_adult_de_med2",
+        "event_id": "respect_adult_de_med2",
         "strings": [
             "m_c has noticed r_c isn't doing a lot of work lately.",
             "m_c is disappointed in r_c's lack of initiative."
@@ -134,7 +134,7 @@
         }
     },
     {
-        "id": "respect_gathering_de_med",
+        "event_id": "respect_gathering_de_med",
         "strings": [
             "m_c is jealous that r_c got to go to the last Gathering.",
             "r_c was complimented by another Clan during the recent Gathering, but m_c wasn't."
@@ -161,7 +161,7 @@
         }
     },
     {
-        "id": "respect_patrol_de_med",
+        "event_id": "respect_patrol_de_med",
         "strings": [
             "m_c is jealous that r_c was praised by the leader.",
             "m_c is jealous that r_c got to fight in a border skirmish when {PRONOUN/m_c/subject} didn't.",
@@ -192,7 +192,7 @@
         }
     },
     {
-        "id": "respect_existingjealousy_de_med",
+        "event_id": "respect_existingjealousy_de_med",
         "strings": [
             "r_c is visibly upset to be on a patrol with m_c.",
             "m_c and r_c try to upstage one another during battle training.",
@@ -250,7 +250,7 @@
         ]
     },
     {
-        "id": "respect_kit_de_med1",
+        "event_id": "respect_kit_de_med1",
         "strings": [
             "m_c is jealous that r_c is getting more attention than {PRONOUN/m_c/object}.",
             "r_c gets all the praise that m_c wishes {PRONOUN/m_c/subject} got.",
@@ -273,7 +273,7 @@
         }
     },
     {
-        "id": "respect_kit_de_med2",
+        "event_id": "respect_kit_de_med2",
         "strings": [
             "m_c hisses at r_c for getting a bigger piece of prey.",
             "m_c tells r_c {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} deserve all the attention from the older cats.",
@@ -309,7 +309,7 @@
         ]
     },
     {
-        "id": "respect_apptokit_de_med3",
+        "event_id": "respect_apptokit_de_med3",
         "strings": [
             "m_c looks at r_c and remembers how easy it was to be a kitten.",
             "m_c doesn't get why r_c gets away with so much more than m_c did as a kitten.",

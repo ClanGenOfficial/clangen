@@ -1,6 +1,6 @@
 [
     {
-        "id": "warrior_dark_forest_thoughts",
+        "event_id": "warrior_dark_forest_thoughts",
         "strings": [
             "Misses patrolling with {PRONOUN/m_c/poss} Clanmates",
             "Feels the days start to blur",

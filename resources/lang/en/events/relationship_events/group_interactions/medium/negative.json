@@ -1,7 +1,7 @@
 [
 
     {
-        "id": "group_multi_negative_argument",
+        "event_id": "group_multi_negative_argument",
         "strings": [
             "m_c started a huge argument between multi_cat."
         ],
@@ -31,7 +31,7 @@
         ]
     },
     {
-        "id": "group_3_negative_romanticrivalsmid",
+        "event_id": "group_3_negative_romanticrivalsmid",
         "strings": [
             "m_c can't stand to see r_c1 and r_c2 together.",
             "m_c fantasizes about r_c1 ending {PRONOUN/r_c1/poss} relationship with r_c2.",
@@ -77,7 +77,7 @@
         ]
     },
     {
-        "id": "muddypaws_multicat_warrior",
+        "event_id": "muddypaws_multicat_warrior",
         "strings": [
             "m_c tracked a trail of muddy pawprints into the warrior's den, straight through the nests of multi_cat.",
             "m_c returned to the warrior's den dripping mud everywhere and managed to ruin multi_cat's nests.",
@@ -102,7 +102,7 @@
         ]
     },
     {
-        "id": "muddypaws_multicat_elder",
+        "event_id": "muddypaws_multicat_elder",
         "strings": [
             "m_c tracked a trail of muddy pawprints into the elder's den, straight through the nests of multi_cat.",
             "m_c returned to the elder's den dripping mud everywhere and managed to ruin multi_cat's nests.",
@@ -127,7 +127,7 @@
         ]
     },
     {
-        "id": "muddypaws_multicat_app",
+        "event_id": "muddypaws_multicat_app",
         "strings": [
             "m_c tracked a trail of muddy pawprints into the apprentice's den, straight through the nests of multi_cat.",
             "m_c returned to the apprentice's den dripping mud everywhere and managed to ruin multi_cat's nests.",
@@ -152,7 +152,7 @@
         ]
     },
     {
-        "id": "chattygathering_multicat",
+        "event_id": "chattygathering_multicat",
         "strings": [
             "m_c spends the Gathering whispering to multi_cat, making it nearly impossible for anyone nearby to hear the leaders speak.",
             "m_c won't keep {PRONOUN/m_c/poss} mouth shut during the Gathering. multi_cat can barely hear the leader's announcements!",
@@ -177,7 +177,7 @@
         ]
     },
     {
-        "id": "group_multicat_morning_stretches",
+        "event_id": "group_multicat_morning_stretches",
         "strings": [
             "m_c, wanting to help keep {PRONOUN/m_c/poss} Clanmates in shape and ready for anything, wakes multi_cat up early for morning stretches.",
             "Early in the morning, m_c rallies multi_cat to do stretches in hopes of keeping {PRONOUN/m_c/poss} Clanmates prepared for anything.",
@@ -223,7 +223,7 @@
         ]
     },
     {
-        "id": "group_multi_cat_campcleanup",
+        "event_id": "group_multi_cat_campcleanup",
         "strings": [
             "m_c, noticing the state of disarray the camp is in, gathers multi_cat to help {PRONOUN/m_c/object} clean up.",
             "m_c recruits multi_cat to tidy up camp upon noticing how unorganized it has become.",
@@ -272,7 +272,7 @@
         ]
     },
     {
-        "id": "group_multicat_negative_seniordisrespected_apprentices",
+        "event_id": "group_multicat_negative_seniordisrespected_apprentices",
         "strings": [
             "m_c attempts to impart {PRONOUN/m_c/poss} knowledge onto multi_cat, but none of the apprentices pays attention.",
             "m_c tries teaching multi_cat one of {PRONOUN/m_c/poss} skills but gives up because no apprentice listens.",
@@ -314,7 +314,7 @@
         ]
     },
     {
-        "id": "group_multicat_negative_warriordisrespected_apprentices",
+        "event_id": "group_multicat_negative_warriordisrespected_apprentices",
         "strings": [
             "m_c wants this training exercise to be a success, but multi_cat refuse to listen, and m_c gives up.",
             "It is impossible to make multi_cat understand the importance of stretching properly, so m_c calls the exercise off.",
@@ -352,7 +352,7 @@
         ]
     },
     {
-        "id": "group_multi_cat_negative_groupargument_twohates",
+        "event_id": "group_multi_cat_negative_groupargument_twohates",
         "strings": [
             "What begins as a petty argument between m_c and r_c1 turns into a spat involving multi_cat as well.",
             "The argument between m_c and r_c1 spills into multi_cat's day, leading to all the cats hissing at each other.",
@@ -392,7 +392,7 @@
         ]
     },
     {
-        "id": "group_multi_cat_negative_kitkerfuffle",
+        "event_id": "group_multi_cat_negative_kitkerfuffle",
         "strings": [
             "The debate over who gets to be the leader in a game explodes into a hurtful argument between m_c, multi_cat.",
             "m_c hurls insults at multi_cat for <i>thinking</i> they deserve a chance to play as the leader.",
@@ -439,7 +439,7 @@
         ]
     },
     {
-        "id": "group_multi_cat_negative_kitkerfuffle",
+        "event_id": "group_multi_cat_negative_kitkerfuffle",
         "strings": [
             "m_c demands that r_c1 give up playing the leader in a game, which sparks an argument that drags multi_cat in as well.",
             "m_c screams in r_c1 face that {PRONOUN/r_c1/subject} {VERB/r_c1/suck/sucks}, sparking an argument that snowballs and drags in both multi_cat."
@@ -482,7 +482,7 @@
         ]
     },
     {
-        "id": "group_multicat_neg_kitsitting",
+        "event_id": "group_multicat_neg_kitsitting",
         "strings": [
             "m_c didn't think it would be too hard to watch the kits, but multi_cat prove that thought very, very wrong.",
             "It hasn't been that long since m_c began kitsitting multi_cat, but chaos is already underway.",
@@ -529,7 +529,7 @@
         ]
     },
     {
-        "id": "group_multicat_neg_deputyvswarriors",
+        "event_id": "group_multicat_neg_deputyvswarriors",
         "strings": [
             "multi_cat come to m_c with a complaint regarding patrols, but get blown off by m_c.",
             "m_c refuses to understand multi_cat's points about patrol organization.",
@@ -574,7 +574,7 @@
         ]
     },
     {
-        "id": "group_multicat_neg_polymatesmid",
+        "event_id": "group_multicat_neg_polymatesmid",
         "strings": [
             "m_c wandered away from multi_cat mid-conversation without saying anything.",
             "m_c tripped over multi_cat getting out of the nest this morning.",
@@ -615,7 +615,7 @@
         ]
     },
     {
-        "id": "group_multicat_pryingquestions",
+        "event_id": "group_multicat_pryingquestions",
         "strings": [
             "multi_cat's questions about m_c's birth parents make {PRONOUN/m_c/object} uncomfortable.",
             "multi_cat don't mean to pry, but their questions about m_c's birth parents only remind m_c that {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't know the answers.",
@@ -641,7 +641,7 @@
         ]
     },
     {
-        "id": "group_3_neg_parentsarguekit",
+        "event_id": "group_3_neg_parentsarguekit",
         "strings": [
             "m_c and r_c1 argue over whose fault r_c2's recent bad behavior is.",
             "r_c2 hides in {PRONOUN/r_c2/poss} nest in the nursery while m_c and r_c1 argue.",
@@ -685,7 +685,7 @@
         ]
     },
     {
-        "id": "group_3_neg_mamabear",
+        "event_id": "group_3_neg_mamabear",
         "strings": [
             "r_c1 snarls at m_c for speaking too sharply to r_c1's kit, r_c2.",
             "m_c rebukes r_c2, but r_c1 overhears and tells m_c to be gentler with {PRONOUN/r_c1/poss} kit.",
@@ -735,7 +735,7 @@
         ]
     },
     {
-        "id": "group_3_neg_badrolemodel",
+        "event_id": "group_3_neg_badrolemodel",
         "strings": [
             "r_c1 doesn't like m_c visiting the nursery because {PRONOUN/r_c1/subject} {VERB/r_c1/think/thinks} m_c sets a bad example for r_c2.",
             "r_c2 has learned some very bad words recently, and r_c1 suspects that m_c is the one who taught them to {PRONOUN/r_c2/object}.",
@@ -793,7 +793,7 @@
         ]
     },
     {
-        "id": "group_3_neg_appinterferingwithromance",
+        "event_id": "group_3_neg_appinterferingwithromance",
         "strings": [
             "m_c is sad that r_c1 doesn't spend as much time with {PRONOUN/m_c/object} since r_c1 started training r_c2.",
             "m_c feels like r_c1 is neglecting their relationship because {PRONOUN/r_c1/subject}{VERB/r_c1/'re'/s} too busy training r_c2.",

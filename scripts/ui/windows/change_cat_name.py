@@ -6,6 +6,7 @@ from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.ui.elements.image_button import UIImageButton
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
+from scripts.ui.elements.checkbox import UICheckbox
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
@@ -24,7 +25,7 @@ class ChangeCatNameWindow(GameWindow):
         )
         self.the_cat = cat
 
-        self.specsuffic_hidden = self.the_cat.name.specsuffix_hidden
+        self.specsuffix_hidden = self.the_cat.name.specsuffix_hidden
 
         self.heading = pygame_gui.elements.UITextBox(
             "windows.change_name_title",
@@ -85,20 +86,10 @@ class ChangeCatNameWindow(GameWindow):
             sound_id="dice_roll",
         )
 
-        self.toggle_spec_block_on = UIImageButton(
-            ui_scale(pygame.Rect((202 + x_pos, 80 + y_pos), (34, 34))),
-            "",
-            object_id="@unchecked_checkbox",
+        self.toggle_specsuffix = UICheckbox(
+            position=(202 + x_pos, 80 + y_pos),
             tool_tip_text="windows.remove_spec_block",
-            manager=MANAGER,
-            container=self,
-        )
-
-        self.toggle_spec_block_off = UIImageButton(
-            ui_scale(pygame.Rect((202 + x_pos, 80 + y_pos), (34, 34))),
-            "",
-            object_id="@checked_checkbox",
-            tool_tip_text="windows.add_spec_block",
+            check=self.specsuffix_hidden,
             manager=MANAGER,
             container=self,
         )
@@ -113,41 +104,29 @@ class ChangeCatNameWindow(GameWindow):
                 container=self,
             )
             if not self.the_cat.name.specsuffix_hidden:
-                self.toggle_spec_block_on.show()
-                self.toggle_spec_block_on.enable()
-                self.toggle_spec_block_off.hide()
-                self.toggle_spec_block_off.disable()
                 self.random_suffix.disable()
                 self.suffix_entry_box.disable()
             else:
-                self.toggle_spec_block_on.hide()
-                self.toggle_spec_block_on.disable()
-                self.toggle_spec_block_off.show()
-                self.toggle_spec_block_off.enable()
                 self.random_suffix.enable()
                 self.suffix_entry_box.enable()
                 self.suffix_entry_box.set_text(self.the_cat.name.suffix)
 
         else:
-            self.toggle_spec_block_on.disable()
-            self.toggle_spec_block_on.hide()
-            self.toggle_spec_block_off.disable()
-            self.toggle_spec_block_off.hide()
             self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(
                 ui_scale(pygame.Rect((159 + x_pos, 50 + y_pos), (120, 30))),
                 initial_text=self.the_cat.name.suffix,
                 manager=MANAGER,
                 container=self,
             )
+            self.toggle_specsuffix.hide()
         self.set_blocking(True)
 
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.done_button:
                 old_name = str(self.the_cat.name)
-
-                self.the_cat.specsuffix_hidden = self.specsuffic_hidden
-                self.the_cat.name.specsuffix_hidden = self.specsuffic_hidden
+                self.the_cat.specsuffix_hidden = self.specsuffix_hidden
+                self.the_cat.name.specsuffix_hidden = self.specsuffix_hidden
 
                 # Note: Prefixes are not allowed be all spaces or empty, but they can have spaces in them.
                 if sub(r"[^A-Za-z0-9 ]+", "", self.prefix_entry_box.get_text()) != "":
@@ -192,26 +171,26 @@ class ChangeCatNameWindow(GameWindow):
                 self.suffix_entry_box.set_text(
                     Name(use_prefix, None, cat=self.the_cat).suffix
                 )
-            elif event.ui_element == self.toggle_spec_block_on:
-                self.specsuffic_hidden = True
-                self.suffix_entry_box.enable()
-                self.random_suffix.enable()
-                self.toggle_spec_block_on.disable()
-                self.toggle_spec_block_on.hide()
-                self.toggle_spec_block_off.enable()
-                self.toggle_spec_block_off.show()
-                self.suffix_entry_box.set_text(self.the_cat.name.suffix)
-            elif event.ui_element == self.toggle_spec_block_off:
-                self.specsuffic_hidden = False
-                self.random_suffix.disable()
-                self.toggle_spec_block_off.disable()
-                self.toggle_spec_block_off.hide()
-                self.toggle_spec_block_on.enable()
-                self.toggle_spec_block_on.show()
-                self.suffix_entry_box.set_text("")
-                self.suffix_entry_box.rebuild()
-                self.suffix_entry_box.disable()
-            elif event.ui_element == self.back_button:
-                game.all_screens[GameScreen.PROFILE].exit_screen()
-                game.all_screens[GameScreen.PROFILE].screen_switches()
+            elif event.ui_element == self.toggle_specsuffix:
+                if self.toggle_specsuffix.checked:
+                    self.the_cat.specsuffix_hidden = False
+                    self.specsuffix_hidden = False
+                    self.toggle_specsuffix.uncheck()
+                    self.suffix_entry_box.disable()
+                    self.random_suffix.disable()
+                    self.suffix_entry_box.set_text("")
+                    self.suffix_entry_box.rebuild()
+                else:
+                    self.the_cat.specsuffix_hidden = True
+                    self.specsuffix_hidden = True
+                    self.toggle_specsuffix.check()
+                    self.random_suffix.enable()
+                    self.suffix_entry_box.enable()
+                    self.suffix_entry_box.set_text(self.the_cat.name.suffix)
+
         return super().process_event(event)
+
+    def kill(self):
+        game.all_screens[GameScreen.PROFILE].exit_screen()
+        game.all_screens[GameScreen.PROFILE].screen_switches()
+        super().kill()

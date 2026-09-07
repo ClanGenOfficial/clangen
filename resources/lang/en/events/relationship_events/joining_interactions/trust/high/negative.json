@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_trust_high_neg1",
+        "event_id": "gen_trust_high_neg1",
         "strings": [
             "Usavory rumors spread about m_c's origins. {PRONOUN/m_c/subject/CAP} {VERB/m_c/discover/discovers} r_c was behind them."
         ],

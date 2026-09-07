@@ -5,6 +5,7 @@ TODO: Docs
 
 
 """
+
 from scripts.cat.enums import CatRank
 
 # pylint: enable=line-too-long

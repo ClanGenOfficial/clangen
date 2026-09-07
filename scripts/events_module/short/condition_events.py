@@ -8,7 +8,6 @@ import logging
 
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAge, CatRank
-from scripts.cat.history import History
 from scripts.clan_package.settings import get_clan_setting
 from scripts.clan_resources.freshkill import (
     FRESHKILL_ACTIVE,
@@ -19,8 +18,13 @@ from scripts.conditions import (
     medicine_cats_can_cover_clan,
     get_amount_cat_for_one_medic,
 )
+from scripts.cat.microservices.conditions import (
+    get_ill,
+    get_injured,
+    get_permanent_condition,
+)
 from scripts.config import get_config
-from scripts.event_class import Single_Event
+from scripts.events_module.event_information import EventInformation
 from scripts.events_module.consequences import check_stolen_vitality
 from scripts.events_module.short.scar_events import Scar_Events
 from scripts.events_module.short.short_event_generation import create_short_event
@@ -193,11 +197,11 @@ class Condition_Events:
                     nutrition_info[cat.ID].max_score / 100 * (MAL_PERCENTAGE + 1)
                 )
                 nutrition_info[cat.ID].current_score = round(mal_score, 2)
-                cat.get_ill("malnourished")
+                get_ill(cat, "malnourished")
 
             types = ["birth_death"]
             game.cur_events_list.append(
-                Single_Event(event, types, cat_dict={"m_c": cat})
+                EventInformation(event, types, cat_dict={"m_c": cat})
             )
             return
 
@@ -221,7 +225,7 @@ class Condition_Events:
         ):
             if cat_nutrition.percentage < MAL_PERCENTAGE:
                 if "malnourished" not in cat.illnesses:
-                    cat.get_ill("malnourished")
+                    get_ill(cat, "malnourished")
                 illness = "starving"
                 heal = True
             else:
@@ -244,13 +248,13 @@ class Condition_Events:
             cat.illnesses.pop(illness)
         elif not heal and illness:
             event = random.choice(Condition_Events.ILLNESS_GOT_STRINGS[illness])
-            cat.get_ill(illness)
+            get_ill(cat, illness)
 
         if event:
             event_text = event_text_adjust(Cat, event, main_cat=cat)
             types = ["health"]
             game.cur_events_list.append(
-                Single_Event(event_text, types, cat_dict={"m_c": cat})
+                EventInformation(event_text, types, cat_dict={"m_c": cat})
             )
 
     @staticmethod
@@ -327,7 +331,7 @@ class Condition_Events:
                     event_string.replace("conditions.illnesses.", "")
 
                 # make em sick
-                cat.get_ill(chosen_illness)
+                get_ill(cat, chosen_illness)
 
                 event_string = event_text_adjust(Cat, text=event_string, main_cat=cat)
 
@@ -337,7 +341,7 @@ class Condition_Events:
             if cat.dead:
                 types.append("birth_death")
             game.cur_events_list.append(
-                Single_Event(event_string, types, cat_dict=cat_dict)
+                EventInformation(event_string, types, cat_dict=cat_dict)
             )
 
         # just double-checking that trigger is only returned True if the cat is dead
@@ -544,9 +548,9 @@ class Condition_Events:
             perm_condition = condition
 
         if perm_condition is not None:
-            got_condition = cat.get_permanent_condition(perm_condition, born_with)
+            got_condition = get_permanent_condition(cat, perm_condition, born_with)
 
-        if got_condition is True:
+        if got_condition:
             return perm_condition
 
     # ---------------------------------------------------------------------------- #
@@ -895,7 +899,7 @@ class Condition_Events:
             if cat.dead:
                 types.append("birth_death")
             game.cur_events_list.append(
-                Single_Event(event_string, types, cat_dict=cat_dict)
+                EventInformation(event_string, types, cat_dict=cat_dict)
             )
 
         return triggered
@@ -1036,7 +1040,7 @@ class Condition_Events:
         if len(event_list) > 0:
             event_string = " ".join(event_list)
             game.cur_events_list.append(
-                Single_Event(event_string, event_types, cat_dict=cat_dict)
+                EventInformation(event_string, event_types, cat_dict=cat_dict)
             )
         return
 
@@ -1110,9 +1114,9 @@ class Condition_Events:
                     cat.retire_cat()
                     # Don't add this to the condition event list: instead make it its own event, a ceremony.
                     game.cur_events_list.append(
-                        Single_Event(
+                        EventInformation(
                             event_text_adjust(Cat, event, main_cat=cat),
-                            "ceremony",
+                            ["ceremony"],
                             retire_involved,
                             cat_dict=cat_dict,
                         )
@@ -1243,10 +1247,12 @@ class Condition_Events:
                 switch_append_list_value(Switch.skip_conditions, new_condition_name)
                 # here we give the new condition
                 if new_condition_name in Condition_Events.INJURIES:
-                    cat.get_injured(new_condition_name, event_triggered=event_triggered)
+                    get_injured(
+                        cat, new_condition_name, event_triggered=event_triggered
+                    )
                     break
                 elif new_condition_name in Condition_Events.ILLNESSES:
-                    cat.get_ill(new_condition_name, event_triggered=event_triggered)
+                    get_ill(cat, new_condition_name, event_triggered=event_triggered)
                     if dictionary == cat.illnesses or removed_condition:
                         break
                     keys = dictionary[condition].keys()
@@ -1262,8 +1268,8 @@ class Condition_Events:
                             dictionary[condition].update({"complication": complication})
                     break
                 elif new_condition_name in Condition_Events.PERMANENT:
-                    cat.get_permanent_condition(
-                        new_condition_name, event_triggered=event_triggered
+                    get_permanent_condition(
+                        cat, new_condition_name, event_triggered=event_triggered
                     )
                     break
 

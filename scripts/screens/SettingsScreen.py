@@ -225,10 +225,7 @@ class SettingsScreen(Screens):
                     ):
                         # has to be done manually since we haven't saved the new mode yet.
                         self.toggled_theme = (
-                            "dark"
-                            if "@checked_checkbox"
-                            in self.checkboxes["dark mode"].get_object_ids()
-                            else "light"
+                            "dark" if self.checkboxes["dark mode"].checked else "light"
                         )
                         self.set_bg("default", "mainmenu_bg")
                         self.open_general_settings()

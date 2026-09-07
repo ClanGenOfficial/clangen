@@ -1,12 +1,12 @@
 [
     {
-        "id": "general_exiled",
+        "event_id": "general_on_exiled",
         "strings": [
             "Is shocked that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been exiled"
         ]
     },
     {
-        "id": "general_exiled_revenge",
+        "event_id": "general_exiled_revenge",
         "strings": [
             "Swears {PRONOUN/m_c/poss} revenge for being exiled"
         ],

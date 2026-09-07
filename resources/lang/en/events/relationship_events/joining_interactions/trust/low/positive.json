@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_trust_low_pos1",
+        "event_id": "gen_trust_low_pos1",
         "strings": [
 			"r_c saw m_c arrive in the Clan and offered to show {PRONOUN/m_c/object} around."
         ]

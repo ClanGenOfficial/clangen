@@ -1,6 +1,6 @@
 [
     {
-        "id": "platonic_de_high1",
+        "event_id": "platonic_de_high1",
         "strings": [
             "m_c doesn't like how r_c has been talking about {PRONOUN/m_c/poss} mentor.",
             "m_c wishes {PRONOUN/m_c/subject} had r_c's mentor instead.",
@@ -26,7 +26,7 @@
         }
     },
     {
-        "id": "platonic_de_high2",
+        "event_id": "platonic_de_high2",
         "strings": [
             "m_c mocks r_c for becoming a medicine cat apprentice instead of a warrior apprentice.",
             "m_c mocks r_c for smelling like gross herbs.",
@@ -65,7 +65,7 @@
         ]
     },
     {
-        "id": "platonic_de_high3",
+        "event_id": "platonic_de_high3",
         "strings": [
             "m_c keeps leaving all of the boring apprentice tasks for r_c to do by {PRONOUN/r_c/self}.",
             "m_c tells r_c's mentor that {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been sneaking out of camp without permission.",
@@ -104,7 +104,7 @@
         ]
     },
     {
-        "id": "platonic_de_high_grumpymedcat1",
+        "event_id": "platonic_de_high_grumpymedcat1",
         "strings": [
             "m_c snarls at r_c for coming too close to the herbs.",
             "m_c shoos r_c away, not having time for curious little kits.",
@@ -148,7 +148,7 @@
         ]
     },
     {
-        "id": "platonic_de_high4",
+        "event_id": "platonic_de_high4",
         "strings": [
             "m_c feels betrayed by something r_c said.",
             "m_c won't tell the Clan what's made {PRONOUN/m_c/object} so upset with r_c.",
@@ -164,7 +164,7 @@
         ]
     },
     {
-        "id": "platonic_de_high5",
+        "event_id": "platonic_de_high5",
         "strings": [
             "r_c says something hateful to m_c.",
             "In the middle of a squabble, r_c says something to m_c that makes the whole Clan gasp.",
@@ -195,7 +195,7 @@
         ]
     },
     {
-        "id": "dislike_inc_high1",
+        "event_id": "dislike_inc_high1",
         "strings": [
             "m_c thinks r_c is annoying.",
             "m_c can't stand being around r_c.",
@@ -213,7 +213,7 @@
         ]
     },
     {
-        "id": "dislike_inc_high2",
+        "event_id": "dislike_inc_high2",
         "strings": [
             "m_c had a fight with r_c.",
             "m_c had a heated argument with r_c and said some very hurtful things.",
@@ -245,7 +245,7 @@
         ]
     },
     {
-        "id": "dislike_inc_high3",
+        "event_id": "dislike_inc_high3",
         "strings": [
             "m_c shudders at the sound of r_c's voice.",
             "m_c will do anything to avoid being anywhere near r_c.",
@@ -276,7 +276,7 @@
         ]
     },
     {
-        "id": "dislike_inc_high4",
+        "event_id": "dislike_inc_high4",
         "strings": [
             "m_c accuses r_c of being a bad leader.",
             "m_c accuses r_c of not taking care of the Clan.",
@@ -312,7 +312,7 @@
         ]
     },
     {
-        "id": "dislike_inc_high5",
+        "event_id": "dislike_inc_high5",
         "strings": [
             "m_c accuses r_c of being a bad deputy.",
             "m_c scoffs at r_c's instructions.",
@@ -357,7 +357,7 @@
         ]
     },
     {
-        "id": "dislike_inc_high_highrank1",
+        "event_id": "dislike_inc_high_highrank1",
         "strings": [
             "m_c calls r_c a threat to the safety of the Clan.",
             "m_c and r_c are arguing about something important and risking the Clan's safety.",
@@ -391,7 +391,7 @@
         ]
     },
     {
-        "id": "dislike_inc_high_highrank2",
+        "event_id": "dislike_inc_high_highrank2",
         "strings": [
             "m_c is scolding r_c.",
             "m_c is bossing r_c around.",
@@ -432,7 +432,7 @@
         ]
     },
     {
-        "id": "dislike_inc_high_highrank3",
+        "event_id": "dislike_inc_high_highrank3",
         "strings": [
             "m_c threatens r_c with exile.",
             "m_c makes r_c do a tiring chore for the rest of the moon as punishment for something minor.",
@@ -465,7 +465,7 @@
         ]
     },
     {
-        "id": "dislike_inc_high7",
+        "event_id": "dislike_inc_high7",
         "strings": [
             "m_c thinks {PRONOUN/m_c/subject} should be deputy instead of r_c.",
             "m_c is tired from r_c putting {PRONOUN/m_c/object} on so many patrols.",

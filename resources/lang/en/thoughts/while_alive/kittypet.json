@@ -1,6 +1,6 @@
 [
     {
-        "id": "general_kittypet_thoughts",
+        "event_id": "general_kittypet_thoughts",
         "strings": [
             "Engages in loaf mode",
             "Cuddles with {PRONOUN/m_c/poss} housefolk",
@@ -76,7 +76,7 @@
         ]
     },
     {
-        "id": "kittypet_kitten_and_adolescent_thoughts",
+        "event_id": "kittypet_kitten_and_adolescent_thoughts",
         "strings": [
             "Is currently trying to figure out how to catch a bird",
             "Plays with a crinkly ball",
@@ -98,7 +98,7 @@
         }
     },
     {
-        "id": "kittypet_adolescent_thoughts",
+        "event_id": "kittypet_adolescent_thoughts",
         "strings": [
             "Is hogging the bed from {PRONOUN/m_c/poss} siblings",
             "Thinks {PRONOUN/m_c/poss} new collar is uncomfortable",
@@ -113,7 +113,7 @@
         }
     },
     {
-        "id": "kittypet_adult_thoughts",
+        "event_id": "kittypet_adult_thoughts",
         "strings": [
             "Is meowing for food",
             "Was wandering in the backyard when a strange noise scared {PRONOUN/m_c/object} back inside",
@@ -132,7 +132,7 @@
         }
     },
     {
-        "id": "kittypet_senior_thoughts",
+        "event_id": "kittypet_senior_thoughts",
         "strings": [
             "Is enjoying the sun on {PRONOUN/m_c/poss} back",
             "Is glad that {PRONOUN/m_c/poss} housefolk have taken care of {PRONOUN/m_c/object} for so long",
@@ -154,7 +154,7 @@
         }
     },
     {
-        "id": "kittypet_shameless_thoughts",
+        "event_id": "kittypet_shameless_thoughts",
         "strings": [
             "Stole food the second {PRONOUN/m_c/poss} housefolk turned their head",
             "Is sleeping in the dog's bed",

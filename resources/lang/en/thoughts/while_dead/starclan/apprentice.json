@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_dead_war_app",
+        "event_id": "gen_dead_war_app",
         "strings": [
             "Is sad {PRONOUN/m_c/subject} never got {PRONOUN/m_c/poss} warrior name",
             "Patrols StarClan's territory",
@@ -13,7 +13,7 @@
         ]
     },
     {
-        "id": "dead_app_to_dead_other",
+        "event_id": "sc_dead_app_to_dead_other",
         "strings": [
             "Laughs with r_c",
             "Stalks through StarClan's forests with r_c",

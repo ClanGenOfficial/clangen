@@ -1,6 +1,6 @@
 [
     {
-        "id": "unknown_residence_general_thoughts",
+        "event_id": "unknown_residence_general_thoughts",
         "strings": [
             "Is chasing ghost rabbits",
             "Is thinking about {PRONOUN/m_c/poss} life",
@@ -61,7 +61,7 @@
         ]
     },
     {
-        "id": "unknown_residence_lost_clancat_",
+        "event_id": "unknown_residence_lost_clancat_",
         "strings": [
             "Sobs knowing {PRONOUN/m_c/subject} may never join {PRONOUN/m_c/poss} Clanmates in StarClan",
             "Still wanders around looking for c_n",
@@ -95,7 +95,7 @@
         }
     },
     {
-        "id": "dead_outsider_parent_to_alive_child",
+        "event_id": "dead_outsider_parent_to_alive_child",
         "strings": [
             "Regrets not joining a Clan if it meant being able to raise r_c",
             "Still doesn't trust Clan cats, but is happy r_c is safe",

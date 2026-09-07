@@ -31,7 +31,6 @@ class TestNewCatCreation(unittest.TestCase):
 
         game.clan = Clan(save_id="test")
         game.clan.biome = "Forest"
-        game.clan.override_biome = False
         game.clan.camp_bg = "camp1"
         game.clan.starting_season = "Newleaf"
         game.clan.game_mode = "classic"
@@ -54,16 +53,55 @@ class TestNewCatCreation(unittest.TestCase):
                 test_cat = cat_list[0]
 
                 self.assertEqual(
-                    test_cat.status.rank,
                     rank,
+                    test_cat.status.rank,
                     msg=f"{rank} was not assigned correctly as the current rank.",
                 )
                 if rank != CatRank.NEWBORN:
                     self.assertEqual(
-                        list(test_cat.status.all_ranks.keys())[0],
                         rank_list[i - 1],
+                        list(test_cat.status.all_ranks.keys())[0],
                         msg=f"{rank_list[i - 1]} was not assigned correctly as a past rank.",
                     )
+
+        with self.subTest("Testing clancat rank assignments"):
+            option_dict = InvolvedCatDict(
+                can_create_new_cat={},
+                status=["clancat"],
+            )
+
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={}, other_clan=self.other_clan
+            )
+            test_cat = cat_list[0]
+
+            self.assertIn(
+                test_cat.status.rank,
+                [r for r in [*CatRank] if r.is_any_clancat_rank()],
+                msg=f"Cat was not assigned correctly as a clancat rank.",
+            )
+
+            option_dict = InvolvedCatDict(
+                can_create_new_cat={},
+                status=["loner"],
+                past_status=["clancat"],
+            )
+
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={}, other_clan=self.other_clan
+            )
+            test_cat = cat_list[0]
+
+            self.assertIn(
+                list(test_cat.status.all_ranks.keys())[-2],
+                [r for r in [*CatRank] if r.is_any_clancat_rank()],
+                msg=f"Cat was not assigned correctly as a clancat rank.",
+            )
+            self.assertEqual(
+                test_cat.status.group,
+                CatGroup.OTHER_CLAN,
+                msg=f"Cat was not assigned correctly as an other clan cat.",
+            )
 
         # test that group IDs are being given correctly
         group_list = [
@@ -210,7 +248,7 @@ class TestNewCatCreation(unittest.TestCase):
             # test male works
             option_dict = InvolvedCatDict(
                 can_create_new_cat={},
-                gender="male",
+                gender=["male"],
             )
 
             cat_list = updated_create_new_cat(
@@ -226,7 +264,7 @@ class TestNewCatCreation(unittest.TestCase):
             # test female works
             option_dict = InvolvedCatDict(
                 can_create_new_cat={},
-                gender="female",
+                gender=["female"],
             )
 
             cat_list = updated_create_new_cat(
@@ -243,7 +281,7 @@ class TestNewCatCreation(unittest.TestCase):
             set_clan_setting("same sex birth", False)
             option_dict = InvolvedCatDict(
                 can_create_new_cat={},
-                gender="can_birth",
+                gender=["can_birth"],
             )
 
             cat_list = updated_create_new_cat(
@@ -258,8 +296,12 @@ class TestNewCatCreation(unittest.TestCase):
             )
 
     def test_mate_assignment(self):
-        mate1 = TestCatFactory.create_cat(status_dict=StatusDict(rank=CatRank.LONER))
-        mate2 = TestCatFactory.create_cat(status_dict=StatusDict(rank=CatRank.LONER))
+        mate1 = TestCatFactory.create_cat(
+            status_dict=StatusDict(rank=CatRank.LONER), moons=50
+        )
+        mate2 = TestCatFactory.create_cat(
+            status_dict=StatusDict(rank=CatRank.LONER), moons=50
+        )
 
         with self.subTest("Testing mate assignments"):
             # test that a single mate can be assigned
@@ -308,6 +350,43 @@ class TestNewCatCreation(unittest.TestCase):
                     0,
                     msg="Mate was added, but wasn't given a relationship!",
                 )
+
+        with self.subTest(
+            "Test that newly created mate is appropriate age (blank constraints)"
+        ):
+            option_dict = InvolvedCatDict(
+                can_create_new_cat=CanCreateNewCatDict(assign_mate=["m_c"]),
+            )
+
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={"m_c": mate1}, other_clan=self.other_clan
+            )
+            test_cat = cat_list[0]
+
+            self.assertEqual(
+                mate1.age,
+                test_cat.age,
+                msg=f"Mate was generated without a matching age.",
+            )
+
+        with self.subTest(
+            "Test that newly created mate is appropriate age (clancat constraints)"
+        ):
+            option_dict = InvolvedCatDict(
+                can_create_new_cat=CanCreateNewCatDict(assign_mate=["m_c"]),
+                status=["clancat"],
+            )
+
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={"m_c": mate1}, other_clan=self.other_clan
+            )
+            test_cat = cat_list[0]
+
+            self.assertEqual(
+                mate1.age,
+                test_cat.age,
+                msg=f"Mate was generated without a matching age.",
+            )
 
     def test_stat_assignment(self):
         # test that a trait can be chosen
@@ -665,18 +744,12 @@ class TestNewCatCreation(unittest.TestCase):
                 msg=f"Warrior was not given a suffix.",
             )
 
-
-# this works when run locally but for some reason github actions will always crash it
-# this is no fault of the test because it does work!
-# but when run through actions it thinks that a function in Relationships doesn't exist.
-# so if you want to double-check litter creation, then uncomment this test and run it locally.
-"""
     def test_litter_creation(self):
         with self.subTest("Testing litter creation"):
-            parent = Cat(
+            parent = TestCatFactory.create_cat(
                 status_dict=StatusDict(rank=CatRank.LONER), disable_random=True
             )
-            adoptive = Cat(
+            adoptive = TestCatFactory.create_cat(
                 status_dict=StatusDict(rank=CatRank.LONER), disable_random=True
             )
 
@@ -754,4 +827,3 @@ class TestNewCatCreation(unittest.TestCase):
                     0,
                     msg="Created a litter, but the kit doesn't have a relationship toward the adoptive parent!",
                 )
-"""

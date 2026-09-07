@@ -1,9 +1,11 @@
-from typing import Optional
+from typing import Optional, TYPE_CHECKING
 
 
 from scripts.game_structure import constants
 from scripts.cat_relations.enums import RelTier, RelType
 
+if TYPE_CHECKING:
+    from scripts.cat.cats import Cat
 
 # ---------------------------------------------------------------------------- #
 #                           START Relationship class                           #
@@ -378,3 +380,18 @@ class Relationship:
                 return neutral_end + 1
         else:
             return value
+
+
+def create_one_relationship(cat: "Cat", other_cat: "Cat"):
+    """Create a new relationship between current cat and other cat. Returns: Relationship"""
+    if other_cat.ID in cat.relationships:
+        return cat.relationships[other_cat.ID]
+
+    if other_cat.ID == cat.ID:
+        print(
+            f"Attempted to create a relationship with self: {cat.name}. Please report as a bug!"
+        )
+        return None
+
+    cat.relationships[other_cat.ID] = Relationship(cat, other_cat)
+    return cat.relationships[other_cat.ID]

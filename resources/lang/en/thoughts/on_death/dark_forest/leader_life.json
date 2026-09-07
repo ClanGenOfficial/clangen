@@ -1,6 +1,6 @@
 [
     {
-        "id": "leader_life_dark_forest_thoughts",
+        "event_id": "leader_life_dark_forest_thoughts",
         "strings": [
             "Was startled to find {PRONOUN/m_c/self} in the Dark Forest for a moment... did {PRONOUN/m_c/subject} just lose a life?",
             "Has been somber ever since {PRONOUN/m_c/subject} lost a life...",

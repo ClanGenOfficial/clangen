@@ -1,0 +1,467 @@
+[
+    {
+        "event_id": "group_3_neutral_talk",
+        "strings": [
+            "m_c confesses to r_c1 that {PRONOUN\/m_c\/subject} {VERB\/m_c\/have\/has} feelings for r_c2.",
+            "While m_c and r_c1 are talking, m_c gets the feeling that {PRONOUN\/m_c\/subject} can trust r_c1, and confesses that {PRONOUN\/m_c\/subject} {VERB\/m_c\/like\/likes} r_c2."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c1"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "listens_to"
+                ]
+            },
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c2"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "fancies",
+                    "-mates"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c1"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort",
+                    "trust"
+                ],
+                "amount": 5
+            },
+            {
+                "cats_from": [
+                    "r_c1"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "group_multicat_neutral_talk1",
+        "strings": [
+            "m_c, multi_cat had a nice talk while eating.",
+            "m_c, multi_cat took a sunbath and had a little small talk."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "multi_cat": {}
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c",
+                    "multi_cat"
+                ],
+                "cats_to": [
+                    "m_c",
+                    "multi_cat"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort",
+                    "like"
+                ],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "group_multicat_pos_chillstretches",
+        "strings": [
+            "Late into the evening, m_c invites multi_cat to stretch with {PRONOUN\/m_c\/object} and enjoy each other's company.",
+            "m_c convinces multi_cat to wind down and stretch with {PRONOUN\/m_c\/object}.",
+            "m_c's eagerness to do early morning stretches rubs off on multi_cat.",
+            "m_c appreciates multi_cat joining {PRONOUN\/m_c\/object} to stretch late into the night so {PRONOUN\/m_c\/subject} wouldn't be alone.",
+            "m_c, multi_cat hang out while stretching.",
+            "m_c, multi_cat blow off steam by stretching with and venting to each other.",
+            "The moonlight encourages m_c, multi_cat to slow down and stretch."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-kitten"
+                ]
+            },
+            "multi_cat": {
+                "status": [
+                    "-kitten"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "multi_cat",
+                    "m_c"
+                ],
+                "cats_to": [
+                    "m_c",
+                    "multi_cat"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "comfort"
+                ],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "group_multicat_pos_polymateslow",
+        "strings": [
+            "m_c, multi_cat shared prey and stories of each other's days.",
+            "m_c, multi_cat were reluctant to leave their shared nest and start the day.",
+            "multi_cat were left in fits of giggles at m_c's joke."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "multi_cat": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "mates"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": true,
+                "values": [
+                    "romance"
+                ],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "group_multicat_friendlydebate",
+        "strings": [
+            "m_c, multi_cat had a friendly debate over their favorite colors.",
+            "m_c, multi_cat had a friendly debate over their favorite season.",
+            "m_c, multi_cat had a friendly debate over their favorite fresh-kill."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "multi_cat": {}
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "multi_cat",
+                    "m_c"
+                ],
+                "cats_to": [
+                    "m_c",
+                    "multi_cat"
+                ],
+                "mutual": true,
+                "values": [
+                    "like",
+                    "comfort"
+                ],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "group_multicat_discusstrust",
+        "strings": [
+            "m_c, multi_cat discuss whether they think c_n is headed in a good direction.",
+            "m_c, multi_cat discuss whether c_n is doing better or worse than it was last season.",
+            "m_c, multi_cat discuss the latest news from the Gathering."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-kitten"
+                ]
+            },
+            "multi_cat": {
+                "status": [
+                    "-kitten"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "multi_cat",
+                    "m_c"
+                ],
+                "cats_to": [
+                    "multi_cat",
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "trust"
+                ],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "group_multicat_newnests",
+        "strings": [
+            "multi_cat notice that m_c refreshed the nests in the warriors' den.",
+            "multi_cat appreciate the soft, fresh moss that m_c added to their nests earlier that day."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice"
+                ]
+            },
+            "multi_cat": {
+                "status": [
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "multi_cat"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "respect"
+                ],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "group_multicat_pos_gossipingdislike",
+        "strings": [
+            "multi_cat agree they dislike m_c."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "multi_cat": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "multi_cat"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "dislikes"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "multi_cat"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "comfort"
+                ],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "group_multicat_neg_gossipingavoids",
+        "strings": [
+            "multi_cat discuss how they feel uncomfortable around m_c."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "multi_cat": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "multi_cat"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "avoids"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "multi_cat"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "comfort"
+                ],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "group_multicat_warriorsreminisceapp",
+        "strings": [
+            "m_c, multi_cat reminisce about being apprentices.",
+            "m_c, multi_cat trade stories of apprenticehood hijinks over a meal.",
+            "multi_cat purr with laughter as m_c describes a foolish apprenticehood adventure."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ],
+                "past_status": [
+                    "apprentice"
+                ]
+            },
+            "multi_cat": {
+                "status": [
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ],
+                "past_status": [
+                    "apprentice"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "multi_cat",
+                    "m_c"
+                ],
+                "cats_to": [
+                    "multi_cat",
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "comfort"
+                ],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "group_multicat_warriorsreminiscekit",
+        "strings": [
+            "m_c, multi_cat reminisce about being kits.",
+            "m_c, multi_cat trade stories of nursery hijinks over a meal.",
+            "multi_cat purr with laughter as m_c describes a foolish kithood adventure."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "warrior",
+                    "deputy",
+                    "leader",
+                    "mediator",
+                    "medicine cat"
+                ],
+                "past_status": [
+                    "kitten"
+                ]
+            },
+            "multi_cat": {
+                "status": [
+                    "warrior",
+                    "deputy",
+                    "leader",
+                    "mediator",
+                    "medicine cat"
+                ],
+                "past_status": [
+                    "kitten"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "multi_cat",
+                    "m_c"
+                ],
+                "cats_to": [
+                    "multi_cat",
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "comfort"
+                ],
+                "amount": 5
+            }
+        ]
+    }
+]
