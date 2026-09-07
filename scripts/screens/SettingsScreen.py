@@ -812,7 +812,6 @@ class SettingsScreen(Screens):
             lang_codes = list(languages.keys())
 
             for i, code in enumerate(lang_codes):
-                print(i, code)
                 native_name = languages[code]
                 if i == 0:
                     self.checkboxes[code] = UIImageButton(
