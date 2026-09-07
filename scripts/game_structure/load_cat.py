@@ -49,7 +49,7 @@ def load_cats():
     try:
         json_load()
     except FileNotFoundError:
-        csv_load(Cat.all_cats)
+        csv_load()
     except Exception:
         Cat.all_cats.clear()
         Cat.all_cats_list.clear()
@@ -149,7 +149,7 @@ def json_load():
     inheritance_db.load_inheritances(Cat, get_faded_ids)
 
 
-def csv_load(_all_cats):
+def csv_load():
     if switch_get_value(Switch.clan_list)[0].strip() == "":
         return
     else:
