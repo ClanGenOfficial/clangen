@@ -5695,7 +5695,8 @@
             "r_c2": {
                 "status": [
                     "apprentice"
-                ]
+                ],
+                "has_mentor": {"current": true}
             }
         },
         "chance_of_success": 70,
@@ -5774,11 +5775,6 @@
                 "strings": [
                     "That's super weird, r_c1 tells {PRONOUN/r_c2/object}. Does r_c2's mentor know that {PRONOUN/r_c2/subject}{VERB/r_c2/'re/'s} so weird?"
                 ],
-                "involved_cats": {
-                    "r_c2": {
-                        "has_mentor": {"current": true}
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
