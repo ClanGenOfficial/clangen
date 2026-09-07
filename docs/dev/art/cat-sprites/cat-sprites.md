@@ -102,7 +102,7 @@ WHITE, PALEGREY, SILVER, GREY, DARKGREY, GHOST, BLACK,
 CREAM, PALEGINGER, GOLDEN, GINGER, DARKGINGER, SIENNA,
 LIGHTBROWN, LILAC, BROWN, GOLDEN-BROWN, DARKBROWN, CHOCOLATE, and RUST.
 
-Every pelt type should be colored in all of those 19 colors. If any new colors are added in future, those colors are added to the existing pelts also.
+Every pelt type should be colored in all of those 20 colors. If any new colors are added in future, those colors are added to the existing pelts also.
 
 While the colors can be quite straightforward with how they’re colored, there are some general rules as well as individual color quirks to a few of them that should be followed.
 
