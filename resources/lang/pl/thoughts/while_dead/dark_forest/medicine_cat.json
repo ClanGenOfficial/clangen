@@ -1,0 +1,38 @@
+[
+    {
+        "event_id": "dark_forest_medcat_to_living_other_medcat",
+        "strings": [
+            "Is indicating the closest bush of deathberries to r_c",
+            "Is deliberately whispering contradicting herbs to r_c so {PRONOUN\/r_c\/subject} will make a mistake",
+            "Wants to switch the places herbs are stored in so r_c will accidentally poison a Clanmate"
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "medicine cat",
+                    "medicine cat apprentice"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "dark_forest_medcat_to_living_medcat_apprentice",
+        "strings": [
+            "Hopes r_c will follow the path {PRONOUN\/m_c\/subject} took",
+            "Is trying to teach r_c poisonous herbs in {PRONOUN\/r_c\/poss} dreams"
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "medicine cat apprentice"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    }
+]

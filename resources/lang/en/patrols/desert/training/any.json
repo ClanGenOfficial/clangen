@@ -31,8 +31,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "train_general_intro",
-        "intro_text": "The patrol wants to hold a training session for r_c1. They decide to focus on how best to use gusts of sand or dust to blind prey to your attacks.",
-        "decline_text": "They decide to focus on the patrolling the territory instead, training can wait for another day.",
+        "intro_strings": [
+            "The patrol wants to hold a training session for r_c1. They decide to focus on how best to use gusts of sand or dust to blind prey to your attacks."
+        ],
+        "decline_strings": [
+            "They decide to focus on the patrolling the territory instead, training can wait for another day."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -244,8 +248,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "train_general_intro",
-        "intro_text": "p_l wanders past an old badger sett overlooking a dried-up riverbed, only to freeze. There's new scent here, acrid and sour.",
-        "decline_text": "Surely it must be nothing... Uneasily, p_l continues on.",
+        "intro_strings": [
+            "p_l wanders past an old badger sett overlooking a dried-up riverbed, only to freeze. There's new scent here, acrid and sour."
+        ],
+        "decline_strings": [
+            "Surely it must be nothing... Uneasily, p_l continues on."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -461,8 +469,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "train_general_intro",
-        "intro_text": "p_l wanders past an old badger sett overlooking a dried-up riverbed, only to freeze. There's new scent here, acrid and sour.",
-        "decline_text": "Surely it must be nothing... Uneasily, the patrol continues on.",
+        "intro_strings": [
+            "p_l wanders past an old badger sett overlooking a dried-up riverbed, only to freeze. There's new scent here, acrid and sour."
+        ],
+        "decline_strings": [
+            "Surely it must be nothing... Uneasily, the patrol continues on."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -693,8 +705,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "train_general_intro",
-        "intro_text": "Up at the front of the patrol, p_l hears a quiet swish and startled yowling. Turning back, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} r_c0 being swallowed by a collapsing sand dune.",
-        "decline_text": "p_l runs back to camp to fetch help.",
+        "intro_strings": [
+            "Up at the front of the patrol, p_l hears a quiet swish and startled yowling. Turning back, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} r_c0 being swallowed by a collapsing sand dune."
+        ],
+        "decline_strings": [
+            "p_l runs back to camp to fetch help."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -966,8 +982,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "train_general_intro",
-        "intro_text": "Out in the desert training alone, p_l hears a quiet swoosh, and the world disappears as they fall into a collapsing sand dune.",
-        "decline_text": "Thankfully, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s}on the edge of the obstruction and {VERB/p_l/wriggle/wriggles} {PRONOUN/p_l/poss} way clear.",
+        "intro_strings": [
+            "Out in the desert training alone, p_l hears a quiet swoosh, and the world disappears as they fall into a collapsing sand dune."
+        ],
+        "decline_strings": [
+            "Thankfully, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s}on the edge of the obstruction and {VERB/p_l/wriggle/wriggles} {PRONOUN/p_l/poss} way clear."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1030,8 +1050,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "train_general_intro",
-        "intro_text": "p_l heads out into the desert alone, but maybe an apprentice shouldn't try to do a solo patrol.",
-        "decline_text": "p_l turns back to camp, deciding that this is a bad idea.",
+        "intro_strings": [
+            "p_l heads out into the desert alone, but maybe an apprentice shouldn't try to do a solo patrol."
+        ],
+        "decline_strings": [
+            "p_l turns back to camp, deciding that this is a bad idea."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1127,8 +1151,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "train_general_intro",
-        "intro_text": "p_l heads out into the desert alone, wanting to explore and have some time to {PRONOUN/p_l/self}.",
-        "decline_text": "p_l turns back to camp, deciding that {PRONOUN/p_l/poss} duties have to come first.",
+        "intro_strings": [
+            "p_l heads out into the desert alone, wanting to explore and have some time to {PRONOUN/p_l/self}."
+        ],
+        "decline_strings": [
+            "p_l turns back to camp, deciding that {PRONOUN/p_l/poss} duties have to come first."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1302,8 +1330,12 @@
         ],
         "chance_of_success": 70,
         "patrol_art": "train_general_intro",
-        "intro_text": "r_c1 runs along in the heat of the desert day, cajoling p_l, who's really not keen on this sudden adventure at an unreasonably hot hour.",
-        "decline_text": "The apprentices are called back to camp to kitsit.",
+        "intro_strings": [
+            "r_c1 runs along in the heat of the desert day, cajoling p_l, who's really not keen on this sudden adventure at an unreasonably hot hour."
+        ],
+        "decline_strings": [
+            "The apprentices are called back to camp to kitsit."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1563,8 +1595,12 @@
         ],
         "chance_of_success": 70,
         "patrol_art": "train_general_intro",
-        "intro_text": "Fluffed up against the cold, r_c1 and p_l walk to an outlook overlooking the sandy scrubland.",
-        "decline_text": "Oh no! They both forgot that they were on elder nest change duty this evening!",
+        "intro_strings": [
+            "Fluffed up against the cold, r_c1 and p_l walk to an outlook overlooking the sandy scrubland."
+        ],
+        "decline_strings": [
+            "Oh no! They both forgot that they were on elder nest change duty this evening!"
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1805,8 +1841,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "train_general_intro",
-        "intro_text": "As p_l pads through the dunes near camp, looking for a good place for a sand bath before {PRONOUN/p_l/subject} {VERB/p_l/begin/begins} {PRONOUN/p_l/poss} training, {PRONOUN/p_l/subject} round a corner and find r_c0 doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c0/object}. While Clanmates will do better training together, r_c0 just rubs {PRONOUN/p_l/object} the wrong way.",
-        "decline_text": "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c0.",
+        "intro_strings": [
+            "As p_l pads through the dunes near camp, looking for a good place for a sand bath before {PRONOUN/p_l/subject} {VERB/p_l/begin/begins} {PRONOUN/p_l/poss} training, {PRONOUN/p_l/subject} round a corner and find r_c0 doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c0/object}. While Clanmates will do better training together, r_c0 just rubs {PRONOUN/p_l/object} the wrong way."
+        ],
+        "decline_strings": [
+            "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c0."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1928,8 +1968,12 @@
         ],
         "chance_of_success": 50,
         "patrol_art": "train_general_intro",
-        "intro_text": "p_l approaches r_c0, asking if {PRONOUN/r_c0/subject} wouldn't mind showing p_l their hunting techniques and perhaps doing some training with {PRONOUN/p_l/object}?",
-        "decline_text": "r_c0 declines gently, explaining that {PRONOUN/r_c0/subject} {VERB/r_c0/have/has} too much work to do.",
+        "intro_strings": [
+            "p_l approaches r_c0, asking if {PRONOUN/r_c0/subject} wouldn't mind showing p_l their hunting techniques and perhaps doing some training with {PRONOUN/p_l/object}?"
+        ],
+        "decline_strings": [
+            "r_c0 declines gently, explaining that {PRONOUN/r_c0/subject} {VERB/r_c0/have/has} too much work to do."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2158,8 +2202,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": "r_c0 scowls, having to wait {PRONOUN/r_c0/poss} turn at the back of the line for the rest of the patrol to finish drinking from the drying pool. {PRONOUN/r_c0/poss/CAP} expression is noted by p_l, who starts talking about the history of the water wars, when a long time ago, the Clans of the desert were hit with a particularly bad drought in greenleaf.",
-        "decline_text": "The queue doesn't take as long as p_l or r_c0 were expecting, and the patrol is soon off to other things.",
+        "intro_strings": [
+            "r_c0 scowls, having to wait {PRONOUN/r_c0/poss} turn at the back of the line for the rest of the patrol to finish drinking from the drying pool. {PRONOUN/r_c0/poss/CAP} expression is noted by p_l, who starts talking about the history of the water wars, when a long time ago, the Clans of the desert were hit with a particularly bad drought in greenleaf."
+        ],
+        "decline_strings": [
+            "The queue doesn't take as long as p_l or r_c0 were expecting, and the patrol is soon off to other things."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2319,8 +2367,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": "p_l notices r_c1 staring at a runnerbird thoughtfully, the tip of {PRONOUN/r_c1/poss} tail lashing. p_l ducks under the meager shade of a shrub to begin a story.",
-        "decline_text": "r_c1 doesn't want a story, {PRONOUN/r_c1/subject} {VERB/r_c1/want/wants} a hunt.",
+        "intro_strings": [
+            "p_l notices r_c1 staring at a runnerbird thoughtfully, the tip of {PRONOUN/r_c1/poss} tail lashing. p_l ducks under the meager shade of a shrub to begin a story."
+        ],
+        "decline_strings": [
+            "r_c1 doesn't want a story, {PRONOUN/r_c1/subject} {VERB/r_c1/want/wants} a hunt."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2467,8 +2519,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": "The patrol stretches, fluffing out their pelts against the coming night as the stars begin to wake in the sky. p_l hums thoughtfully. There's an old tale of hairless monsters that nevertheless stalk the freezing darkness, unnatural reptiles that lack the sun-worship that defines their kind.",
-        "decline_text": "A cold wind whistles through the rocks, uncomfortable and cutting, and p_l shakes {PRONOUN/p_l/poss} head. This is no time for storytelling, {PRONOUN/p_l/subject}'ll wait until everyone is tucked into a snug den instead.",
+        "intro_strings": [
+            "The patrol stretches, fluffing out their pelts against the coming night as the stars begin to wake in the sky. p_l hums thoughtfully. There's an old tale of hairless monsters that nevertheless stalk the freezing darkness, unnatural reptiles that lack the sun-worship that defines their kind."
+        ],
+        "decline_strings": [
+            "A cold wind whistles through the rocks, uncomfortable and cutting, and p_l shakes {PRONOUN/p_l/poss} head. This is no time for storytelling, {PRONOUN/p_l/subject}'ll wait until everyone is tucked into a snug den instead."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2622,8 +2678,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": "Today is a day for learning the best times to ambush lizards — early in the morning, while they're sitting on the basking rocks caught up in their daily ritual.",
-        "decline_text": "r_c1 is also interested in this basking ritual, instead of in hunting lessons.",
+        "intro_strings": [
+            "Today is a day for learning the best times to ambush lizards — early in the morning, while they're sitting on the basking rocks caught up in their daily ritual."
+        ],
+        "decline_strings": [
+            "r_c1 is also interested in this basking ritual, instead of in hunting lessons."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2764,8 +2824,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": "As the patrol pads forward in the dusty landscape, they spot a ball wobbling along, pushed by a gleaming scarab. A little Khepri!",
-        "decline_text": "Weird, but not dangerous. The patrol moves on.",
+        "intro_strings": [
+            "As the patrol pads forward in the dusty landscape, they spot a ball wobbling along, pushed by a gleaming scarab. A little Khepri!"
+        ],
+        "decline_strings": [
+            "Weird, but not dangerous. The patrol moves on."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2935,8 +2999,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": "Come here a second, p_l knows a really cool feature tucked into this canyon. {PRONOUN/p_l/subject/CAP} lead the patrol down, stopping in front of the lower half of an eroding rock face. Look — bones.",
-        "decline_text": "Weird, but not dangerous. The patrol moves on.",
+        "intro_strings": [
+            "Come here a second, p_l knows a really cool feature tucked into this canyon. {PRONOUN/p_l/subject/CAP} lead the patrol down, stopping in front of the lower half of an eroding rock face. Look — bones."
+        ],
+        "decline_strings": [
+            "Weird, but not dangerous. The patrol moves on."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3049,8 +3117,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "train_general_intro",
-        "intro_text": "p_l crouches low behind some grass, searching for the ideal prey to fall to {PRONOUN/p_l/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock.",
-        "decline_text": "A beetle is beneath {PRONOUN/p_l/poss} attention.",
+        "intro_strings": [
+            "p_l crouches low behind some grass, searching for the ideal prey to fall to {PRONOUN/p_l/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock."
+        ],
+        "decline_strings": [
+            "A beetle is beneath {PRONOUN/p_l/poss} attention."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

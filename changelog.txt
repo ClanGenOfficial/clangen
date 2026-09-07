@@ -1,3 +1,11 @@
+<strong>v0.13.4</strong>
+- Fixed the unmute button being broken by error-ed saves
+
+- Modified some medicine cat patrol outcomes to lessen their detrimental effects on relationships between medicine cats (hopefully helping your medicine cats stop hating each other)
+- Small adjustments to coyote patrols to give more sensical relationship effects
+- Added more ally-clan events to help balance out the "broken allyship" events
+
+
 <strong>v0.13.3</strong>
 - Fixes various typos
 - Small UI adjustment in the Leader's Den to prevent text overlaps

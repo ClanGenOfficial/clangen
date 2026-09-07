@@ -486,8 +486,8 @@
         "-some_clan",
         "patrol",
         "-patrol",
-        "multi",
-        "-multi",
+        "some_patrol",
+        "-some_patrol",
         "high_lawful",
         "-high_lawful",
         "low_lawful",
@@ -669,6 +669,7 @@
         "quilled by a porcupine",
         "broken back",
         "poisoned",
+        "venom sickness",
         "bee sting",
         "headache",
         "severe headache",
@@ -1043,36 +1044,6 @@
       "type": "string"
     },
     "PointsOfInterestGroup": {
-      "anyOf": [
-        {
-          "$ref": "#/$defs/PointsOfInterestGroupByName"
-        },
-        {
-          "$ref": "#/$defs/PointsOfInterestGroupByTags"
-        },
-        {
-          "$ref": "#/$defs/PointsOfInterestGroupByCategory"
-        }
-      ],
-      "description": "Specifies Points of Interest constraints. Must use names OR tags OR category (not multiple at once).",
-      "title": "PointsOfInterestGroup"
-    },
-    "PointsOfInterestGroupByCategory": {
-      "additionalProperties": false,
-      "properties": {
-        "category": {
-          "$ref": "#/$defs/PointsOfInterestCategoryEnum",
-          "description": "The category this POI belongs to.",
-          "title": "Category"
-        }
-      },
-      "required": [
-        "category"
-      ],
-      "title": "PointsOfInterestGroupByCategory",
-      "type": "object"
-    },
-    "PointsOfInterestGroupByName": {
       "additionalProperties": false,
       "properties": {
         "name": {
@@ -1082,17 +1053,7 @@
           },
           "title": "Name",
           "type": "array"
-        }
-      },
-      "required": [
-        "name"
-      ],
-      "title": "PointsOfInterestGroupByName",
-      "type": "object"
-    },
-    "PointsOfInterestGroupByTags": {
-      "additionalProperties": false,
-      "properties": {
+        },
         "tags": {
           "description": "Points of Interest with these tags will be allowed.",
           "items": {
@@ -1100,12 +1061,14 @@
           },
           "title": "Tags",
           "type": "array"
+        },
+        "category": {
+          "$ref": "#/$defs/PointsOfInterestCategoryEnum",
+          "description": "The category this POI belongs to.",
+          "title": "Category"
         }
       },
-      "required": [
-        "tags"
-      ],
-      "title": "PointsOfInterestGroupByTags",
+      "title": "PointsOfInterestGroup",
       "type": "object"
     },
     "PointsOfInterestTag": {
@@ -1837,6 +1800,7 @@
         "mid_lives",
         "low_lives",
         "clan:apps",
+        "clan:warrior-like",
         "lost",
         "kit_manipulated",
         "romance",

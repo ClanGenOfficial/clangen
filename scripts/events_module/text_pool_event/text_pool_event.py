@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 from typing import Union, Optional
 
 from scripts.cat.constants import ILLNESSES, PERMANENT, INJURIES
-from scripts.cat.enums import CatRank, CatAge, CatGroup, CatStanding
+from scripts.cat.enums import CatRank, CatAge, CatGroup
 from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath
 from scripts.events_module.parameter_dicts import (
@@ -17,6 +17,8 @@ from scripts.events_module.parameter_dicts import (
     LostDict,
     JoinDict,
     FutureEventDict,
+    MeetDict,
+    AccessoryDict,
 )
 from scripts.game_structure import constants
 
@@ -59,7 +61,12 @@ class TextPoolEvent:
     condition: list[ConditionDict] = field(default_factory=list[dict])
     lost: list[LostDict] = field(default_factory=list[dict])
     join: list[JoinDict] = field(default_factory=list[dict])
+    gain_accessory: list[AccessoryDict] = field(default_factory=list[dict])
+    meet: list[MeetDict] = field(default_factory=list[dict])
     future_event: list[FutureEventDict] = field(default_factory=list[dict])
+
+    # only for use in transition events
+    new_gender: list[str] = field(default_factory=list)
 
     def __post_init__(self):
         self.weight = 1

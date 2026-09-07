@@ -23,8 +23,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "p_l stalks low to the ground, paws soft and light so as not to make a sound. {PRONOUN/p_l/poss/CAP} jaws hang open to taste at the air, and a tingle of satisfaction shoots through {PRONOUN/p_l/object} as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} a nearby ground squirrel, fat in preparation for leaf-bare.",
-        "decline_text": "p_l watches it for a moment, then turns away and leaves. There's still time before leaf-bare, and if {PRONOUN/p_l/subject} {VERB/p_l/wait/waits} just a bit {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} sure to catch something even bigger.",
+        "intro_strings": [
+            "p_l stalks low to the ground, paws soft and light so as not to make a sound. {PRONOUN/p_l/poss/CAP} jaws hang open to taste at the air, and a tingle of satisfaction shoots through {PRONOUN/p_l/object} as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} a nearby ground squirrel, fat in preparation for leaf-bare."
+        ],
+        "decline_strings": [
+            "p_l watches it for a moment, then turns away and leaves. There's still time before leaf-bare, and if {PRONOUN/p_l/subject} {VERB/p_l/wait/waits} just a bit {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} sure to catch something even bigger."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -143,8 +147,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "p_l has snuck out of camp alone, hoping {PRONOUN/p_l/subject}'ll find a nice fat ground squirrel. Running through everything {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been taught in {PRONOUN/p_l/poss} head, {PRONOUN/p_l/subject} carefully {VERB/p_l/scent/scents} the air and {VERB/p_l/strain/strains} {PRONOUN/p_l/poss} ears, hoping for any hint of the burrowing critters in the stony outcrop they like to nest in.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} focusing so hard, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} notice a Clanmate is standing silently behind {PRONOUN/p_l/object}, waiting for {PRONOUN/p_l/object} to notice that {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been caught red-pawed. Oops!",
+        "intro_strings": [
+            "p_l has snuck out of camp alone, hoping {PRONOUN/p_l/subject}'ll find a nice fat ground squirrel. Running through everything {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been taught in {PRONOUN/p_l/poss} head, {PRONOUN/p_l/subject} carefully {VERB/p_l/scent/scents} the air and {VERB/p_l/strain/strains} {PRONOUN/p_l/poss} ears, hoping for any hint of the burrowing critters in the stony outcrop they like to nest in."
+        ],
+        "decline_strings": [
+            "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} focusing so hard, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} notice a Clanmate is standing silently behind {PRONOUN/p_l/object}, waiting for {PRONOUN/p_l/object} to notice that {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been caught red-pawed. Oops!"
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -260,8 +268,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "p_l and r_c1 sit on the beach, near a network of ground squirrel burrows hidden in the stones. This is one of a few such networks, rotated around by mentors to teach apprentices their hunting skills. r_c1 scents the air as instructed and points out a burrow; sure enough, there's a squirrel's head poking out the entrance!",
-        "decline_text": "p_l praises {PRONOUN/r_c1/object} and smiles but reminds r_c1 that they aren't there to hunt, just to observe and discuss. There'll be plenty of time another day!",
+        "intro_strings": [
+            "p_l and r_c1 sit on the beach, near a network of ground squirrel burrows hidden in the stones. This is one of a few such networks, rotated around by mentors to teach apprentices their hunting skills. r_c1 scents the air as instructed and points out a burrow; sure enough, there's a squirrel's head poking out the entrance!"
+        ],
+        "decline_strings": [
+            "p_l praises {PRONOUN/r_c1/object} and smiles but reminds r_c1 that they aren't there to hunt, just to observe and discuss. There'll be plenty of time another day!"
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -434,8 +446,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "As the patrol walks through the sandy beaches of their territory, a low sound kicks up just at the edges of their hearing. p_l comes to an abrupt stop and scrambles backwards, hissing at the others to stop as well, once {PRONOUN/p_l/subject} {VERB/p_l/realize/realizes} what's making it — there's a rattlesnake, staring down a ground squirrel!",
-        "decline_text": "The patrol wastes no time in turning tail and going home, not wanting to risk being on the receiving end of a rattlesnake even if there's a squirrel to be caught.",
+        "intro_strings": [
+            "As the patrol walks through the sandy beaches of their territory, a low sound kicks up just at the edges of their hearing. p_l comes to an abrupt stop and scrambles backwards, hissing at the others to stop as well, once {PRONOUN/p_l/subject} {VERB/p_l/realize/realizes} what's making it — there's a rattlesnake, staring down a ground squirrel!"
+        ],
+        "decline_strings": [
+            "The patrol wastes no time in turning tail and going home, not wanting to risk being on the receiving end of a rattlesnake even if there's a squirrel to be caught."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -609,7 +625,7 @@
                         ],
                         "condition": [
                             "snake bite",
-                            "poisoned"
+                            "venom sickness"
                         ],
                         "scar_history": "m_c was scarred by a rattlesnake.",
                         "death_history": "m_c succumbed to a rattlesnake bite."
@@ -638,8 +654,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "p_l's patrol strolls leisurely along the coastline, enjoying the chill of the leaf-fall wind. One cat raises their tail, signaling for the others to be still; they've scented ground squirrels nearby.",
-        "decline_text": "p_l quietly shakes {PRONOUN/p_l/poss} head and leads the patrol elsewhere. Better not to disturb the squirrels, who are loud and territorial.",
+        "intro_strings": [
+            "p_l's patrol strolls leisurely along the coastline, enjoying the chill of the leaf-fall wind. One cat raises their tail, signaling for the others to be still; they've scented ground squirrels nearby."
+        ],
+        "decline_strings": [
+            "p_l quietly shakes {PRONOUN/p_l/poss} head and leads the patrol elsewhere. Better not to disturb the squirrels, who are loud and territorial."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -770,7 +790,7 @@
                             "r_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -819,8 +839,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "A sudden gust of wind and rain hits the patrol. They were wrong about the weather and are now soaking wet.",
-        "decline_text": "The patrol decides to make a run back to camp. They can go hunting another time.",
+        "intro_strings": [
+            "A sudden gust of wind and rain hits the patrol. They were wrong about the weather and are now soaking wet."
+        ],
+        "decline_strings": [
+            "The patrol decides to make a run back to camp. They can go hunting another time."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

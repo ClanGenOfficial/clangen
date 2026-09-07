@@ -1,12 +1,11 @@
-import os
 import unittest
 from random import Random
 
 from scripts.cat.factories.test_cat_factory import TestCatFactory
 from scripts.events_module.short.short_event import ShortEvent
+from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
+from scripts.events_module.transition.generate_transition_event import _handle_event
 
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.pelts import Pelt
 
@@ -131,21 +130,23 @@ class TestHandleAccessories(unittest.TestCase):
 
 class TestHandleTransition(unittest.TestCase):
     def setUp(self):
-        self.chosen_event = ShortEvent(
+        self.chosen_event = TextPoolEvent(
             event_id="test",
-            sub_type=["transition"],
+            strings=["test"],
+            involved_cats={"m_c": {"gender": ["female"]}},
             new_gender=["trans male", "nonbinary"],
         )
-        self.chosen_event.main_cat = cat_factory.create_cat(
-            gender="female", disable_random=True
-        )
+        self.main_cat = cat_factory.create_cat(gender="female", disable_random=True)
 
     def test_cat_transitions(self):
-        self.chosen_event.execute_event()
-
-        self.assertTrue(
-            self.chosen_event.main_cat.genderalign != self.chosen_event.main_cat.gender
+        _handle_event(
+            self.chosen_event,
+            involved_cats={"m_c": self.main_cat},
+            main_cat=self.main_cat,
+            other_clan=None,
         )
+
+        self.assertTrue(self.main_cat.genderalign != self.main_cat.gender)
 
 
 class TestHandleDeath(unittest.TestCase):

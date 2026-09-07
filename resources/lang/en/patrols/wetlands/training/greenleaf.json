@@ -40,8 +40,12 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_heat_WrWr",
-        "intro_text": "This heat is just oppressive. The patrol gives up on battle training. The humidity blankets the wetlands, thick, suffocating, sapping their strength as surely as a viper's bite.",
-        "decline_text": "Time to go back home and wait it out.",
+        "intro_strings": [
+            "This heat is just oppressive. The patrol gives up on battle training. The humidity blankets the wetlands, thick, suffocating, sapping their strength as surely as a viper's bite."
+        ],
+        "decline_strings": [
+            "Time to go back home and wait it out."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -148,7 +152,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "dehydrated"

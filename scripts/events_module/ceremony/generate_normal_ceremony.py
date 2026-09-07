@@ -55,5 +55,5 @@ def create_ceremony(
     )
 
     game.cur_events_list.append(
-        EventInformation(processed_string, "ceremony", [c.ID for c in button_cats])
+        EventInformation(processed_string, ["ceremony"], [c.ID for c in button_cats])
     )

@@ -31,8 +31,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_train_treeclimb_WrAp",
-        "intro_text": "The patrol wants to hold a training session for r_c1. They decide to focus on tree climbing!",
-        "decline_text": "They decide to focus on patrolling the territory instead. Training can wait for another day.",
+        "intro_strings": [
+            "The patrol wants to hold a training session for r_c1. They decide to focus on tree climbing!"
+        ],
+        "decline_strings": [
+            "They decide to focus on patrolling the territory instead. Training can wait for another day."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -329,8 +333,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "backgrounds/fst_sett",
-        "intro_text": "p_l wanders past an old badger sett in the roots of a hazelnut tree, only to freeze. There's new scent here, acrid and sour.",
-        "decline_text": "Surely it must be nothing... Uneasily, p_l continues on.",
+        "intro_strings": [
+            "p_l wanders past an old badger sett in the roots of a hazelnut tree, only to freeze. There's new scent here, acrid and sour."
+        ],
+        "decline_strings": [
+            "Surely it must be nothing... Uneasily, p_l continues on."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -586,8 +594,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "backgrounds/fst_sett",
-        "intro_text": "p_l wanders past an old badger sett in the roots of a hazelnut tree, only to freeze. There's new scent here, acrid and sour.",
-        "decline_text": "Surely it must be nothing... Uneasily, the patrol continues on.",
+        "intro_strings": [
+            "p_l wanders past an old badger sett in the roots of a hazelnut tree, only to freeze. There's new scent here, acrid and sour."
+        ],
+        "decline_strings": [
+            "Surely it must be nothing... Uneasily, the patrol continues on."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -860,8 +872,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/fst_train_branchfall_Wr",
-        "intro_text": "As {PRONOUN/r_c0/subject} {VERB/r_c0/lag/lags} behind on patrol, there's a mighty crash above r_c0. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly — just as the world is blotted out by a tangle of heavy falling branches.",
-        "decline_text": "Thankfully, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} on the edge of the obstruction, and {PRONOUN/r_c0/subject} {VERB/r_c0/wriggle/wriggles} {PRONOUN/r_c0/poss} way clear.",
+        "intro_strings": [
+            "As {PRONOUN/r_c0/subject} {VERB/r_c0/lag/lags} behind on patrol, there's a mighty crash above r_c0. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly — just as the world is blotted out by a tangle of heavy falling branches."
+        ],
+        "decline_strings": [
+            "Thankfully, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} on the edge of the obstruction, and {PRONOUN/r_c0/subject} {VERB/r_c0/wriggle/wriggles} {PRONOUN/r_c0/poss} way clear."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1255,8 +1271,12 @@
         ],
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/fst_train_branchfall_Wr",
-        "intro_text": "As r_c0 trails behind p_l, there's a mighty crash above {PRONOUN/r_c0/object}. {PRONOUN/r_c0/subject/CAP} look around wildly — just as the world is blotted out by a tangle of heavy falling branches.",
-        "decline_text": "Thankfully, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} on the edge of the obstruction and {PRONOUN/r_c0/subject} {VERB/r_c0/wriggle/wriggles} {PRONOUN/r_c0/poss} way clear.",
+        "intro_strings": [
+            "As r_c0 trails behind p_l, there's a mighty crash above {PRONOUN/r_c0/object}. {PRONOUN/r_c0/subject/CAP} look around wildly — just as the world is blotted out by a tangle of heavy falling branches."
+        ],
+        "decline_strings": [
+            "Thankfully, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} on the edge of the obstruction and {PRONOUN/r_c0/subject} {VERB/r_c0/wriggle/wriggles} {PRONOUN/r_c0/poss} way clear."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1545,8 +1565,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/fst_train_branchfall_Wr",
-        "intro_text": "p_l is training alone out in the forest when suddenly, a mighty crash sounds from above. {PRONOUN/p_l/subject/CAP} {VERB/p_l/look/looks} around wildly — just as the world is blotted out by a tangle of heavy falling branches.",
-        "decline_text": "Thankfully, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} on the edge of the obstruction and {VERB/p_l/wriggle/wriggles} {PRONOUN/p_l/poss} way clear.",
+        "intro_strings": [
+            "p_l is training alone out in the forest when suddenly, a mighty crash sounds from above. {PRONOUN/p_l/subject/CAP} {VERB/p_l/look/looks} around wildly — just as the world is blotted out by a tangle of heavy falling branches."
+        ],
+        "decline_strings": [
+            "Thankfully, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} on the edge of the obstruction and {VERB/p_l/wriggle/wriggles} {PRONOUN/p_l/poss} way clear."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1645,8 +1669,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_train_solo_Ap",
-        "intro_text": "p_l heads out into the forest alone, but maybe an apprentice shouldn't try to do a solo patrol.",
-        "decline_text": "p_l turns back to camp, deciding that this is a bad idea.",
+        "intro_strings": [
+            "p_l heads out into the forest alone, but maybe an apprentice shouldn't try to do a solo patrol."
+        ],
+        "decline_strings": [
+            "p_l turns back to camp, deciding that this is a bad idea."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1759,8 +1787,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_train_solo_Wr",
-        "intro_text": "p_l heads out into the forest alone, wanting to explore and have some time to {PRONOUN/p_l/self}.",
-        "decline_text": "p_l turns back to camp, deciding that {PRONOUN/p_l/poss} duties have to come first.",
+        "intro_strings": [
+            "p_l heads out into the forest alone, wanting to explore and have some time to {PRONOUN/p_l/self}."
+        ],
+        "decline_strings": [
+            "p_l turns back to camp, deciding that {PRONOUN/p_l/poss} duties have to come first."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1969,8 +2001,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "fst_train_porcupine",
-        "intro_text": "p_l takes them both out to see a big porcupine a patrol spotted in one of the many glades of c_n's forest.",
-        "decline_text": "When they get there, they can't find it, and the lesson fails.",
+        "intro_strings": [
+            "p_l takes them both out to see a big porcupine a patrol spotted in one of the many glades of c_n's forest."
+        ],
+        "decline_strings": [
+            "When they get there, they can't find it, and the lesson fails."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2283,8 +2319,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "fst_train_porcupine",
-        "intro_text": "p_l takes them out to see a big porcupine a patrol spotted in one of the many glades of c_n's forest.",
-        "decline_text": "When they get there, they can't find it, and the lesson fails.",
+        "intro_strings": [
+            "p_l takes them out to see a big porcupine a patrol spotted in one of the many glades of c_n's forest."
+        ],
+        "decline_strings": [
+            "When they get there, they can't find it, and the lesson fails."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2704,8 +2744,12 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_train_willow_Ap",
-        "intro_text": "Off in the woods, r_c1 waits for p_l underneath the low-hanging branches of a willow. The tip of {PRONOUN/r_c1/poss} tail twitches in excitement.",
-        "decline_text": "Oh no! They both forgot that they were on elder nest change duty today!",
+        "intro_strings": [
+            "Off in the woods, r_c1 waits for p_l underneath the low-hanging branches of a willow. The tip of {PRONOUN/r_c1/poss} tail twitches in excitement."
+        ],
+        "decline_strings": [
+            "Oh no! They both forgot that they were on elder nest change duty today!"
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2945,8 +2989,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_chatting_WrWr",
-        "intro_text": "p_l approaches r_c0, asking if {PRONOUN/r_c0/subject} wouldn't mind showing p_l {PRONOUN/r_c0/poss} hunting techniques and perhaps doing some training with {PRONOUN/p_l/object}?",
-        "decline_text": "r_c0 declines gently, explaining that {PRONOUN/r_c0/subject} {VERB/r_c0/have/has} too much work to do.",
+        "intro_strings": [
+            "p_l approaches r_c0, asking if {PRONOUN/r_c0/subject} wouldn't mind showing p_l {PRONOUN/r_c0/poss} hunting techniques and perhaps doing some training with {PRONOUN/p_l/object}?"
+        ],
+        "decline_strings": [
+            "r_c0 declines gently, explaining that {PRONOUN/r_c0/subject} {VERB/r_c0/have/has} too much work to do."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3197,8 +3245,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "train_general_intro",
-        "intro_text": "As p_l pads through the woods near camp, looking for a good tree to sharpen {PRONOUN/p_l/poss} claws on before {PRONOUN/p_l/subject} {VERB/p_l/begin/begins} {PRONOUN/p_l/poss} training, {PRONOUN/p_l/subject} round a corner and find r_c0 doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c0/object}. While Clanmates will do better training together, r_c0 just rubs {PRONOUN/p_l/object} the wrong way.",
-        "decline_text": "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c0.",
+        "intro_strings": [
+            "As p_l pads through the woods near camp, looking for a good tree to sharpen {PRONOUN/p_l/poss} claws on before {PRONOUN/p_l/subject} {VERB/p_l/begin/begins} {PRONOUN/p_l/poss} training, {PRONOUN/p_l/subject} round a corner and find r_c0 doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c0/object}. While Clanmates will do better training together, r_c0 just rubs {PRONOUN/p_l/object} the wrong way."
+        ],
+        "decline_strings": [
+            "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c0."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3319,8 +3371,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "r_c1 watches the shrew scurry below {PRONOUN/r_c1/object}, lining up a flawless pounce from the tree branches. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/purr/purrs} with amusement towards {PRONOUN/r_c1/poss} hapless prey.",
-        "decline_text": "This is too easy — r_c1 declines to chase it, wanting harder prey.",
+        "intro_strings": [
+            "r_c1 watches the shrew scurry below {PRONOUN/r_c1/object}, lining up a flawless pounce from the tree branches. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/purr/purrs} with amusement towards {PRONOUN/r_c1/poss} hapless prey."
+        ],
+        "decline_strings": [
+            "This is too easy — r_c1 declines to chase it, wanting harder prey."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3423,8 +3479,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "train_general_intro",
-        "intro_text": "p_l crouches low behind some grass, searching for the ideal prey to fall to {PRONOUN/p_l/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock.",
-        "decline_text": "A beetle is beneath {PRONOUN/p_l/poss} attention.",
+        "intro_strings": [
+            "p_l crouches low behind some grass, searching for the ideal prey to fall to {PRONOUN/p_l/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock."
+        ],
+        "decline_strings": [
+            "A beetle is beneath {PRONOUN/p_l/poss} attention."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3534,8 +3594,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "halloween/hal_flatwoods",
-        "intro_text": "Padding through the forest at night on a dare, the apprentices gasp as light streaks across the sky. A StarClan cat has fallen!",
-        "decline_text": "Before the apprentices can pursue the fallen StarClan cat, the worst of all possibilities happens — a warrior discovers them, sending them back to camp with a loud scolding.",
+        "intro_strings": [
+            "Padding through the forest at night on a dare, the apprentices gasp as light streaks across the sky. A StarClan cat has fallen!"
+        ],
+        "decline_strings": [
+            "Before the apprentices can pursue the fallen StarClan cat, the worst of all possibilities happens — a warrior discovers them, sending them back to camp with a loud scolding."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3594,8 +3658,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "halloween/hal_doverdemon",
-        "intro_text": "As p_l is out alone, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} something out of the corner of {PRONOUN/p_l/poss} eye; spindly, long, and partially hidden by the undergrowth of the forest.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/hurry/hurries} back to camp, a little freaked out.",
+        "intro_strings": [
+            "As p_l is out alone, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} something out of the corner of {PRONOUN/p_l/poss} eye; spindly, long, and partially hidden by the undergrowth of the forest."
+        ],
+        "decline_strings": [
+            "{PRONOUN/p_l/subject/CAP} {VERB/p_l/hurry/hurries} back to camp, a little freaked out."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3650,8 +3718,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "animals/gen_crow",
-        "intro_text": "p_l gathers {PRONOUN/p_l/poss} strength, butt wiggling with excitement, legs tense, and throws {PRONOUN/p_l/self} upward, twisting in the air in a massive pounce that surely would bring down the mightiest prey! <i>OoOooo,</i> a voice says mockingly.",
-        "decline_text": "What was that?! StarClan?! p_l is going home, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} like this!",
+        "intro_strings": [
+            "p_l gathers {PRONOUN/p_l/poss} strength, butt wiggling with excitement, legs tense, and throws {PRONOUN/p_l/self} upward, twisting in the air in a massive pounce that surely would bring down the mightiest prey! <i>OoOooo,</i> a voice says mockingly."
+        ],
+        "decline_strings": [
+            "What was that?! StarClan?! p_l is going home, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} like this!"
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

@@ -35,8 +35,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": "r_c0 bats an insect aside as the patrol ambles along. p_l hums — does r_c0 know there's an insect who can blot out the sun?",
-        "decline_text": "The cats decide training is more important than a story today.",
+        "intro_strings": [
+            "r_c0 bats an insect aside as the patrol ambles along. p_l hums — does r_c0 know there's an insect who can blot out the sun?"
+        ],
+        "decline_strings": [
+            "The cats decide training is more important than a story today."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

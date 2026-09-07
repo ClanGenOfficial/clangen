@@ -1,4 +1,3 @@
-import os
 import unittest
 from random import Random
 
@@ -14,8 +13,6 @@ from scripts.events_module.relationship import generate_group_event
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
 
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Relationship
 

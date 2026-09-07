@@ -50,6 +50,9 @@ from scripts.events_module.pregnancy import pregnancy_events
 from scripts.events_module.short.condition_events import Condition_Events
 from scripts.events_module.short.short_event_generation import create_short_event
 from scripts.events_module.thoughts.generate_thoughts import get_new_thought
+from scripts.events_module.transition.generate_transition_event import (
+    attempt_coming_out,
+)
 from scripts.game_structure import constants
 from scripts.game_structure.game.switches import (
     Switch,
@@ -305,6 +308,9 @@ def one_moon():
 
     # Clear the list of cats that died this moon.
     game.just_died.clear()
+
+    # Check for mentorless apprentices
+    check_missing_mentors()
 
     # Promote leader and deputy, if needed.
     check_leader()
@@ -1051,7 +1057,7 @@ def one_moon_cat(cat):
         if cat.dead:
             return
 
-    coming_out(cat)
+    attempt_coming_out(cat)
     pregnancy_events.handle_having_kits(cat)
     # Stop the timeskip if the cat died in childbirth
     if cat.dead:
@@ -1830,30 +1836,6 @@ def handle_outbreaks(cat):
             break
 
 
-def coming_out(cat):
-    """turnin' the kitties trans..."""
-
-    if cat.moons < 3 or cat.gender != cat.genderalign:
-        return
-
-    transing_chance = constants.CONFIG["transition_related"]
-    chance = transing_chance["base_trans_chance"]
-    if cat.age in [CatAge.ADOLESCENT, CatAge.KITTEN]:
-        chance += transing_chance["adolescent_modifier"]
-    elif cat.age in [CatAge.ADULT, CatAge.SENIOR_ADULT, CatAge.SENIOR]:
-        chance += transing_chance["older_modifier"]
-
-    if not int(random.random() * chance):
-        sub_type = ["transition"]
-        create_short_event(
-            event_type="misc",
-            main_cat=cat,
-            sub_type=sub_type,
-        )
-
-    return
-
-
 def check_leader():
     """Checks if leader is missing."""
     # check for leader
@@ -1869,6 +1851,35 @@ def check_leader():
                 event_text_adjust(
                     Cat, i18n.t("defaults.warn_no_leader"), clan=game.clan
                 )
+            ),
+        )
+
+
+def check_missing_mentors():
+    """
+    Checks to see if any apprentices have missing mentors, reminds players of this.
+    """
+
+    # Only do the check if mentors aren't being assigned randomly.
+    if get_clan_setting("assign_mentors"):
+        return
+
+    mentorless = []
+    for app in find_alive_cats_with_rank(
+        Cat,
+        [CatRank.MEDICINE_APPRENTICE, CatRank.APPRENTICE, CatRank.MEDIATOR_APPRENTICE],
+    ):
+        if not app.mentor:
+            mentorless.append(app.ID)
+
+    if mentorless:
+        game.cur_events_list.insert(
+            0,
+            EventInformation(
+                event_text_adjust(
+                    Cat, i18n.t("defaults.warn_missing_mentor", count=len(mentorless))
+                ),
+                cats_involved=mentorless,
             ),
         )
 

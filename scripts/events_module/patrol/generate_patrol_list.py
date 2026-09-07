@@ -21,7 +21,7 @@ def get_patrol_list(
     path = "patrols/"
 
     # OVERRIDE
-    if get_config("patrol_generation.debug_override_patrol_stat_requirements"):
+    if get_config("patrol_generation.debug_ensure.override_patrol_stat_requirements"):
         return _generate_all_patrols(path)
 
     possible_patrols = []

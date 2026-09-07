@@ -9,7 +9,7 @@
         
         
         "10": {
-            "group_name": "BENGALPATTERNLIGHT",
+            "group_name": "EXOTICPATTERNLIGHT",
             "color": "exotic_light_pattern"
         },
 
@@ -56,5 +56,49 @@
             "color": "exotic_base"
         }
     },
-    "exceptions": []
+    "exceptions": [
+        {
+            "poses": ["newborn0", "newborn1", "newborn2"],
+            "layers":
+            {
+                "11": {
+                    "group_name": "EXOTICMUZZLE",
+                    "color": "newborn_exotic_muzzle"
+                },
+                "10": {
+                    "group_name": "EXOTICPATTERNLIGHT",
+                    "color": "newborn_exotic_light_pattern"
+                },
+                "8": {
+                    "group_name": "BASICPATTERNGRAD",
+                    "color": "newborn_exotic_pattern_gradient_top"
+                },
+                "7": {
+                    "group_name": "BENGALPATTERN",
+                    "color": "newborn_exotic_pattern"
+                },
+                "5": {
+                    "group_name": "BASICPATTERNGRAD",
+                    "color": "newborn_exotic_pattern_fill_gradient_top"
+                },
+                "4": {
+                    "group_name": "BENGALPATTERNFILL",
+                    "color": "newborn_exotic_pattern_fill",
+                    "opacity": 95
+                },
+                "3": {
+                    "group_name": "EXOTICTOPGRAD",
+                    "color": "newborn_exotic_base_gradient_top"
+                },
+                "2": {
+                    "group_name": "EXOTICBOTTOMGRAD",
+                    "color": "newborn_exotic_base_gradient_bottom"
+                },
+                "1": {
+                    "group_name": "BASEMASK",
+                    "color": "newborn_exotic_base"
+                }
+            }
+        }
+    ]
 }
