@@ -128,5 +128,124 @@
         "strings": [
             "The Clan is without a leader, but a new deputy must still be named. m_c is chosen as the new deputy. r_c0 nods {PRONOUN/dep_name/poss} approval."
         ]
+    },
+    {
+        "event_id": "deputy_arrogant",
+        "tags": ["clan:leader"],
+        "involved_cats": {
+            "m_c": {
+                "has_apprentice": {
+                    "former": true
+                },
+                "stat": {
+                    "trait": [
+                        "arrogant",
+                        "ambitious",
+                        "confident",
+                        "bold"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "A new deputy is needed in c_n. m_c bounds up to the leaders side, gloating that {PRONOUN/m_c/subject} always knew {PRONOUN/m_c/subject} would be made deputy."
+        ]
+    },
+    {
+        "event_id": "deputy_lonesome",
+        "tags": ["clan:leader"],
+        "involved_cats": {
+            "m_c": {
+                "has_apprentice": {
+                    "former": true
+                },
+                "stat": {
+                    "trait": [
+                        "lonesome",
+                        "strange",
+                        "gloomy",
+                        "insecure"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "m_c is named deputy. {PRONOUN/m_c/subject/CAP} {VERB/m_c/leave/leaves} camp soon after, seemingly for no reason."
+        ]
+    },
+    {
+        "event_id": "deputy_calm",
+        "tags": ["clan:leader"],
+        "involved_cats": {
+            "m_c": {
+                "has_apprentice": {
+                    "former": true
+                },
+                "stat": {
+                    "trait": [
+                        "calm",
+                        "careful",
+                        "grumpy",
+                        "responsible"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "As c_n cheers for m_cs new position, {PRONOUN/m_c/subject} strides forward, unbothered by the clatter. Being made deputy isnt that big of a deal, surely?"
+        ]
+    },
+    {
+        "event_id": "deputy_childish",
+        "tags": ["clan:leader"],
+        "involved_cats": {
+            "m_c": {
+                "has_apprentice": {
+                    "former": true
+                },
+                "stat": {
+                    "trait": [
+                        "childish",
+                        "charismatic",
+                        "bold",
+                        "shameless"
+                    ]
+                }
+            },
+                "r_c": {
+                    "age": [ "senior adult",
+                "senior"],
+                    "status": [ "leader"]
+                }
+            },
+        "strings": [
+            "m_c yowls with excitement when {PRONOUN/m_c/subject} {VERB/m_c/are/is} named c_ns deputy. {PRONOUN/m_c/subject} scampers over to r_c, and the leader can only hope that m_c will balance out r_cs old bones."
+        ]
+    },
+    {
+        "event_id": "deputy_cold",
+        "tags": ["clan:leader"],
+        "involved_cats": {
+            "m_c": {
+                "has_apprentice": {
+                    "former": true
+                },
+                "r_c": {
+                    "age": [ "senior adult"],
+                    "status": [ "leader"]
+                },
+                "stat": {
+                    "trait": [
+                        "cold",
+                        "arrogant",
+                        "competitive",
+                        "cunning"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "The cats of c_n come to congratulate m_c, but {PRONOUN/m_c/subject} snaps, stating that being named deputy is nothing special."
+        ]
     }
 ]
