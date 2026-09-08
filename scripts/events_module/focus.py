@@ -103,7 +103,6 @@ def _hunting() -> str:
             ),
         )
 
-    game.clan.freshkill_pile.add_freshkill(prey_amount)
     focus_text = i18n.t("focus.focus_prey", count=prey_amount)
     game.freshkill_event_list.append(focus_text)
 
@@ -366,7 +365,7 @@ def _hoarding():
     info_dict = get_config("focus.hoarding")
 
     buffs = get_config("focus.hoarding.buff")
-    condition_modifier = 0
+    condition_modifier = 1
     gather_max_increase = 0
     prey_increase = 0
     for skill, tier in game.clan.deputy.skills.get_all().items():
@@ -472,14 +471,15 @@ def _give_conditions(
     return involved_cats
 
 
-def _cats_gather_prey(prey_increase):
+def _cats_gather_prey(prey_increase: int = 0):
     prey_recovered = 0
+    season = game.clan.current_season.casefold()
+
     healthy_warriors = find_alive_cats_with_rank(
         Cat,
         ranks=[CatRank.WARRIOR, CatRank.DEPUTY, CatRank.LEADER],
         working=True,
     )
-    season = game.clan.current_season.casefold()
     warrior_prey = get_config(f"focus.hunting.warrior.{season}.prey_amounts")
     warrior_weights = get_config(f"focus.hunting.warrior.{season}.prey_weights")
     for _c in healthy_warriors:
@@ -487,6 +487,7 @@ def _cats_gather_prey(prey_increase):
             prey_recovered += warrior_prey[1] + prey_increase
         else:
             prey_recovered += choices(warrior_prey, warrior_weights)[0] + prey_increase
+
     # handle apprentices
     healthy_apprentices = find_alive_cats_with_rank(
         Cat, ranks=[CatRank.APPRENTICE], working=True
@@ -527,6 +528,8 @@ def _meds_gather_herbs(
     for med in med_cats:
         if not quantity_allowed:
             break
+        # each med can also hold some herbs
+        quantity_allowed += get_config("focus.herb_gathering.med_gather_max")
         list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
             med,
             general_amount_bonus=True,

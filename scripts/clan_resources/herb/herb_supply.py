@@ -438,7 +438,7 @@ class HerbSupply:
             choices(population=[1, 2, 3], weights=weight, k=1)[0] + amount_modifier
         )
         if self.disable_random:
-            amount_of_herbs = 2
+            amount_of_herbs = 3
 
         if general_amount_bonus:
             amount_of_herbs *= constants.CONFIG["clan_resources"]["herbs"][

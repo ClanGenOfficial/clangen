@@ -94,7 +94,12 @@ class TestFocus(unittest.TestCase):
         self.change_setting("hunting")
 
         beginning_supply = game.clan.freshkill_pile.total_amount
-        amount_should_gather = 2 * get_config(f"focus.hunting.{CatRank.WARRIOR}")
+
+        season = game.clan.current_season.casefold()
+        warrior_prey = get_config(f"focus.hunting.warrior.{season}.prey_amounts")
+
+        # there's 2 cats who will hunt, so 2 * prey gathered is what we expect
+        amount_should_gather = 2 * warrior_prey[1]
 
         focus.handle_focus()
 
@@ -102,17 +107,29 @@ class TestFocus(unittest.TestCase):
             amount_should_gather + beginning_supply,
             game.clan.freshkill_pile.total_amount,
         )
+        self.assertTrue(
+            all(
+                [
+                    self.leader.is_injured(),
+                    self.deputy.is_injured(),
+                ]
+            )
+        )
 
     def test_herb_gathering(self):
         self.change_setting("herb_gathering")
 
         game.clan.herb_supply.disable_random = True
         beginning_supply = game.clan.herb_supply.total
+        amount_to_gather = (
+            get_config("focus.herb_gathering.assistant_gather_max") * 2
+        ) + get_config("focus.herb_gathering.med_gather_max")
 
         focus.handle_focus()
 
-        # 12 is the amount that should be gathered in total by a single med cat with 2 helpers
-        self.assertEqual(beginning_supply + 12, game.clan.herb_supply.total)
+        self.assertEqual(
+            beginning_supply + amount_to_gather, game.clan.herb_supply.total
+        )
 
         game.clan.herb_supply.disable_random = False
 
@@ -120,17 +137,17 @@ class TestFocus(unittest.TestCase):
         self.change_setting("threaten_outsiders")
 
         starting_relation = game.clan.reputation
-        amount = get_config("focus.outsiders.reputation")
+        amount = get_config("focus.threaten_outsiders.reputation")
 
         focus.handle_focus()
 
-        self.assertEqual(starting_relation - amount, game.clan.reputation)
+        self.assertEqual(starting_relation + amount, game.clan.reputation)
 
     def test_seek_outsiders(self):
         self.change_setting("seek_outsiders")
 
         starting_relation = game.clan.reputation
-        amount = get_config("focus.outsiders.reputation")
+        amount = get_config("focus.seek_outsiders.reputation")
 
         focus.handle_focus()
 
@@ -141,7 +158,7 @@ class TestFocus(unittest.TestCase):
 
         game.clan.clans_in_focus = [game.clan.all_other_clans[0].name]
         starting_relation = game.clan.all_other_clans[0].relations
-        amount = get_config("focus.other_clans.relation")
+        amount = get_config("focus.sabotage_other_clans.relation")
         focus.handle_focus()
 
         self.assertEqual(
@@ -153,7 +170,7 @@ class TestFocus(unittest.TestCase):
 
         game.clan.clans_in_focus = [game.clan.all_other_clans[0].name]
         starting_relation = game.clan.all_other_clans[0].relations
-        amount = get_config("focus.other_clans.relation")
+        amount = get_config("focus.aid_other_clans.relation")
         focus.handle_focus()
 
         self.assertEqual(
@@ -196,9 +213,16 @@ class TestFocus(unittest.TestCase):
         self.change_setting("hoarding")
         game.clan.herb_supply.disable_random = True
         beginning_herbs = game.clan.herb_supply.total
-        amount_herbs = 6
+        amount_herbs = (
+            get_config("focus.herb_gathering.assistant_gather_max") * 2
+        ) + get_config("focus.herb_gathering.med_gather_max")
+
         beginning_prey = game.clan.freshkill_pile.total_amount
-        amount_prey = get_config("focus.hoarding.prey_warrior") * 2
+        season = game.clan.current_season.casefold()
+        warrior_prey = get_config(f"focus.hunting.warrior.{season}.prey_amounts")
+
+        # there's 2 cats who will hunt, so 2 * prey gathered is what we expect
+        amount_prey = 2 * warrior_prey[1]
 
         focus.handle_focus()
 
@@ -217,7 +241,8 @@ class TestFocus(unittest.TestCase):
                 [
                     self.leader.is_injured(),
                     self.deputy.is_injured(),
-                    self.medicine_cat.is_injured(),
+                    self.leader.is_ill(),
+                    self.deputy.is_ill(),
                 ]
             )
         )

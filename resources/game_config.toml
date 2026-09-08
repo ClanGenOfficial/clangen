@@ -831,6 +831,8 @@ dev_tools = false
         injury_modifier = 2
 
   [focus.herb_gathering]
+    # max herbs that can be gathered by a single med cat
+    med_gather_max = 5
     # maximum herbs that can be gathered by each assistant
     assistant_gather_max = 2.5
 
@@ -943,9 +945,6 @@ dev_tools = false
         supply_amount_buff = 1
 
   [focus.hoarding]
-    # how much prey each working warrior(leader/deputy) will gather
-    prey_warrior = 1
-
     # injury chance of each warrior(leader/deputy to get injured
     injury_chance_warrior = 25
 
@@ -1001,12 +1000,12 @@ dev_tools = false
     # how many moons earlier are cats healed
     moons_earlier_healed = 1
 
-    [focus.buff.rest_and_recover]
-      [focus.buff.rest_and_recover.HEALER]
+    [focus.rest_and_recover.buff]
+      [focus.rest_and_recover.buff.HEALER]
         tier = 1
         # multiplies preventation
         outbreak_preventation_modifier = 2
-      [focus.buff.rest_and_recover.INSIGHTFUL]
+      [focus.rest_and_recover.buff.INSIGHTFUL]
         tier = 1
         # multiplies prevention
         hurt_prevention_modifier = 2
