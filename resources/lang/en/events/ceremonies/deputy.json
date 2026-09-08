@@ -145,10 +145,13 @@
                         "bold"
                     ]
                 }
+            },
+            "r_c": {
+                "status": ["leader"]
             }
         },
         "strings": [
-            "A new deputy is needed in c_n. m_c bounds up to the leader's side, gloating that {PRONOUN/m_c/subject} always knew {PRONOUN/m_c/subject} would be made deputy."
+            "When m_c is appointed deputy, {PRONOUN/m_c/subject} {VERB/m_c/take/takes} {PRONOUN/m_c/poss} place at r_c0's side, gloating that {PRONOUN/m_c/subject} always knew this day would come."
         ]
     },
     {
@@ -170,7 +173,7 @@
             }
         },
         "strings": [
-            "m_c is named deputy. {PRONOUN/m_c/subject/CAP} {VERB/m_c/leave/leaves} camp soon after, seemingly for no reason."
+            "m_c is appointed deputy. {PRONOUN/m_c/subject/CAP} {VERB/m_c/leave/leaves} camp soon after to patrol rather than partake in any celebrations."
         ]
     },
     {
@@ -219,7 +222,7 @@
                 }
             },
         "strings": [
-            "m_c yowls with excitement when {PRONOUN/m_c/subject} {VERB/m_c/are/is} named c_n's deputy. {PRONOUN/m_c/subject/CAP} scampers over to r_c0, and the leader can only hope that m_c will balance out r_c0's old bones."
+            "m_c yowls with excitement when {PRONOUN/m_c/subject} {VERB/m_c/are/is} named c_n's deputy. {PRONOUN/m_c/subject/CAP} scampers over to the leader, and r_c0 can only hope that m_c's exuberant youth will balance out r_c0's aging bones."
         ]
     },
     {
