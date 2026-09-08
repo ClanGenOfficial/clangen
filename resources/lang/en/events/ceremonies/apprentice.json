@@ -125,9 +125,14 @@
         ]
     },
     {
-        "event_id": "app_living_parent_mentor_unmentioned0",
+        "event_id": "app_living_parent_no_mentor0",
+        "tags": ["clan:warrior-like(min:1)"],
         "involved_cats": {
-            "m_c": {},
+            "m_c": {
+                "has_mentor": {
+                    "current": false
+                }
+            },
             "r_c0": {
                 "group": [
                     "player_clan"
@@ -202,12 +207,16 @@
         ]
     },
     {
-        "event_id": "app_dead_parent_mentor_unmentioned0",
+        "event_id": "app_dead_parent_no_mentor0",
+        "tags": ["clan:warrior-like(min:1)"],
         "involved_cats": {
             "m_c": {
                 "backstory": [
                     "-orphaned_backstories"
-                ]
+                ],
+                "has_mentor": {
+                    "current": false
+                }
             },
             "r_c0": {
                 "group": [
@@ -281,12 +290,16 @@
         ]
     },
     {
-        "event_id": "app_dead_parent_mentor_unmentioned1",
+        "event_id": "app_dead_parent_no_mentor1",
+        "tags": ["clan:warrior-like(min:1)"],
         "involved_cats": {
             "m_c": {
                 "backstory": [
                     "clanborn"
-                ]
+                ],
+                "has_mentor": {
+                    "current": false
+                }
             },
             "r_c0": {
                 "group": [
@@ -365,12 +378,16 @@
         ]
     },
     {
-        "event_id": "app_dead_both_parents_mentor_unmentioned0",
+        "event_id": "app_dead_both_parents_no_mentor0",
+        "tags": ["clan:warrior-like(min:1)"],
         "involved_cats": {
             "m_c": {
                 "backstory": [
                     "-orphaned_backstories"
-                ]
+                ],
+                "has_mentor": {
+                    "current": false
+                }
             },
             "r_c0": {
                 "group": [
@@ -1256,6 +1273,297 @@
                 "mutual": false,
                 "constraints": [
                     "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_mentor_dislikes0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c is overjoyed to finally be an apprentice. But why, oh why, did lead_name assign r_c0 as {PRONOUN/m_c/poss} mentor? {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/are/is} the worst!"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor",
+                    "dislikes"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_no_mentor_dislikes0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "has_mentor": {
+                    "current": false
+                }
+            },
+            "r_c0": {
+                "status": [
+                    "warrior", 
+                    "leader", 
+                    "deputy"
+                ]
+            }
+        },
+        "strings": [
+            "As m_c recieves {PRONOUN/m_c/poss} apprentice name, {PRONOUN/m_c/subject} {VERB/m_c/send/sends} a small prayer to StarClan that r_c0 won't be {PRONOUN/m_c/poss} mentor."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "dislikes"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_no_mentor_likes0",
+        "tags": [
+            "clan:leader",
+            "clan:warrior-like(min:1)"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "has_mentor": {
+                    "current": false
+                }
+            },
+            "r_c0": {
+                "status": [
+                    "warrior", 
+                    "leader", 
+                    "deputy"
+                ]
+            }
+        },
+        "strings": [
+            "As (old_name) prepares for {PRONOUN/m_c/poss} apprentice ceremony, {PRONOUN/m_c/subject} {VERB/m_c/wonder/wonders} who {PRONOUN/m_c/poss} mentor will be. Oh! Maybe it will be r_c0, that would be cool! At the next clan meeting, {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c and welcomed as a new apprentice.",
+            "m_c is finally made an apprentice. {PRONOUN/m_c/subject/CAP} {VERB/m_c/hope/hopes} that r_c0 will be {PRONOUN/m_c/poss} mentor."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "likes",
+                    "-child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_no_mentor_mentor_hoping0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "has_mentor": {
+                    "current": false
+                }
+            },
+            "r_c0": {
+                "has_apprentice": {
+                    "current": false,
+                    "former": false
+                },
+                "age": ["-young adult", "-adolescent"],
+                "status": [
+                    "warrior"
+                ],
+                "group": [
+                    "player_clan"
+                ]
+            }
+        },
+        "strings": [
+            "r_c0 hopes {PRONOUN/r_c0/subject}'ll get to mentor the clan's newest apprentice, m_c. {PRONOUN/r_c0/subject/CAP}{VERB/r_c0/'ve/'s} been praying for an apprentice for moons now!",
+            "The clan cheers for their newest apprentice, m_c. r_c0 sit up extra straight; {PRONOUN/r_c0/subject} {VERB/r_c0/know/knows} m_c would be perfect for {PRONOUN/r_c0/poss} first apprentice."
+        ]
+    },
+     {
+        "event_id": "app_no_mentor_mentor_hoping1",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "has_mentor": {
+                    "current": false
+                }
+            },
+            "r_c0": {
+                "has_apprentice": {
+                    "current": false,
+                    "former": false
+                },
+                "age": ["-young adult", "-adolescent"],
+                "status": [
+                    "warrior"
+                ],
+                "group": [
+                    "player_clan"
+                ],
+                "stat": {
+                    "trait": [
+                        "ambitious",
+                        "competitive",
+                        "bossy",
+                        "confident",
+                        "flamboyant",
+                        "charismatic",
+                        "cunning"
+                    ]
+                },
+                "past_status": ["-deputy"]
+            }
+        },
+        "strings": [
+            "At m_c's apprentice ceremony, r_c0 watches lead_name with ambition. If r_c0 has any change of being deputy, {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} an apprentice, and m_c would be perfect."
+        ]
+    },
+    {
+        "event_id": "app_mentor_likes0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c's heart swells with joy when {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} apprenticed to r_c0. {PRONOUN/m_c/subject/CAP} can't wait to learn from the coolest cat in the whole clan."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor",
+                    "likes"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_mentor_sibling0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {}
+        },
+        "strings": [
+            "(old_name) is old enough to begin training, and is apprenticed to r_c0, {PRONOUN/m_c/poss} older sibling. (clan_leader) that m_c's kin will guide them into a fine warrior.",
+            "m_c is apprenticed to {PRONOUN/m_c/poss} older sibling, r_c0. lead_name {PRONOUN/lead_name/know/knows} that there will be extra challenges involved with mentoring kin, but r_c0 is willing to take it on. "
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor",
+                    "siblings"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_mentor_sibling_parentHappy0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {},
+            "r_c1": {
+                "group": [
+                    "player_clan"
+                ]
+            }
+        },
+        "strings": [
+            "r_c1 is delighted that m_c is apprenticed to r_c0. It will be great to see {PRONOUN/r_c1/poss} kits working so closely.",
+            "When m_c is apprenticed to r_c0, r_c1 mewls in delight. {PRONOUN/r_c1/poss} kits, training together! How wonderful!"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            },
+            {
+                "cats_from": [
+                    "r_c1"
+                ],
+                "cats_to": [
+                    "m_c",
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "parent/child"
+                ]
+            },
+            {
+                 "cats_from": [
+                    "r_c1"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "likes"
                 ]
             }
         ]
