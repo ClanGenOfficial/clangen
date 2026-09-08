@@ -130,7 +130,7 @@
         ]
     },
     {
-        "event_id": "deputy_arrogant",
+        "event_id": "deputy_gloating",
         "tags": ["clan:leader"],
         "involved_cats": {
             "m_c": {
