@@ -130,7 +130,7 @@
         ]
     },
     {
-        "event_id": "deputy_arrogant",
+        "event_id": "deputy_gloating",
         "tags": ["clan:leader"],
         "involved_cats": {
             "m_c": {
@@ -148,11 +148,11 @@
             }
         },
         "strings": [
-            "A new deputy is needed in c_n. m_c bounds up to the leaders side, gloating that {PRONOUN/m_c/subject} always knew {PRONOUN/m_c/subject} would be made deputy."
+            "A new deputy is needed in c_n. m_c bounds up to the leader's side, gloating that {PRONOUN/m_c/subject} always knew {PRONOUN/m_c/subject} would be made deputy."
         ]
     },
     {
-        "event_id": "deputy_lonesome",
+        "event_id": "deputy_leaves_camp",
         "tags": ["clan:leader"],
         "involved_cats": {
             "m_c": {
@@ -174,7 +174,7 @@
         ]
     },
     {
-        "event_id": "deputy_calm",
+        "event_id": "deputy_unbothered",
         "tags": ["clan:leader"],
         "involved_cats": {
             "m_c": {
@@ -192,11 +192,11 @@
             }
         },
         "strings": [
-            "As c_n cheers for m_cs new position, {PRONOUN/m_c/subject} strides forward, unbothered by the clatter. Being made deputy isnt that big of a deal, surely?"
+            "As c_n cheers for m_c's new position, {PRONOUN/m_c/subject} strides forward, unbothered by the clatter. Being made deputy isnt that big of a deal, surely?"
         ]
     },
     {
-        "event_id": "deputy_childish",
+        "event_id": "deputy_old_leader",
         "tags": ["clan:leader"],
         "involved_cats": {
             "m_c": {
@@ -219,11 +219,11 @@
                 }
             },
         "strings": [
-            "m_c yowls with excitement when {PRONOUN/m_c/subject} {VERB/m_c/are/is} named c_ns deputy. {PRONOUN/m_c/subject/CAP} scampers over to r_c, and the leader can only hope that m_c will balance out r_cs old bones."
+            "m_c yowls with excitement when {PRONOUN/m_c/subject} {VERB/m_c/are/is} named c_n's deputy. {PRONOUN/m_c/subject/CAP} scampers over to r_c0, and the leader can only hope that m_c will balance out r_c0's old bones."
         ]
     },
     {
-        "event_id": "deputy_cold",
+        "event_id": "deputy_snaps",
         "tags": ["clan:leader"],
         "involved_cats": {
             "m_c": {
