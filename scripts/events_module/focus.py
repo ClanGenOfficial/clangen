@@ -121,7 +121,7 @@ def _herb_gathering() -> str:
         if "gather_max_increase" in buffs[skill]:
             gather_max_increase = buffs[skill]["gather_max_increase"]
 
-    return game.clan.herb_supply.handle_focus(
+    return _meds_gather_herbs(
         healthy_meds, healthy_warriors, gather_max_increase, quantity_increase
     )
 
@@ -404,7 +404,7 @@ def _hoarding():
 
     text = []
     if healthy_meds:
-        herb_focus_text = game.clan.herb_supply.handle_focus(
+        herb_focus_text = _meds_gather_herbs(
             healthy_meds, used_cats, max_buff=gather_max_increase
         )
         text.append(herb_focus_text)
@@ -466,3 +466,54 @@ def _cats_gather_prey(prey_increase):
     game.clan.freshkill_pile.add_freshkill(prey_recovered)
 
     return healthy_warriors + healthy_apprentices, prey_recovered
+
+
+def _meds_gather_herbs(
+    med_cats: list,
+    assistants: list = None,
+    max_buff: int = 0,
+    quantity_buff: int = 0,
+):
+    """
+    Handles sending med cats to gather extra herbs in accordance to Clan focus
+    :param med_cats: a list of medicine cat objects,
+    :param assistants: a list of any non-meddies who are assisting the search for herbs
+    :param max_buff: Buff to the maximum that can be gathered per assistant
+    :param quantity_buff: Buff to the multiplier for quantity
+    """
+
+    # get herbs found
+    herb_list = []
+    quantity_allowed = round(
+        len(assistants)
+        * (get_config("focus.herb_gathering.assistant_gather_max") + max_buff)
+    )
+    for med in med_cats:
+        if not quantity_allowed:
+            break
+        list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
+            med,
+            general_amount_bonus=True,
+            specific_quantity_bonus=2 + quantity_buff,
+            specific_quantity_allowed=quantity_allowed,
+        )
+        herb_list.extend(found_herbs)
+        for h in found_herbs:
+            quantity_allowed -= found_herbs[h]
+
+    # remove dupes
+    herb_list = list(set(herb_list))
+    # get display strings for herbs
+    herb_strs = []
+    for herb in herb_list:
+        herb_strs.append(game.clan.herb_supply.herb[herb].plural_display)
+
+    herb_list = adjust_list_text(herb_strs)
+
+    # finish
+    focus_text = i18n.t("focus.focus_herbs", herbs=herb_list, count=len(herb_list))
+
+    if herb_list:
+        game.herb_events_list.append(i18n.t("screens.med_den.focus", herbs=herb_list))
+
+    return focus_text
