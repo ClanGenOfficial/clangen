@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 from typing import Union, Optional
 
 from scripts.cat.constants import ILLNESSES, PERMANENT, INJURIES
-from scripts.cat.enums import CatRank, CatAge, CatGroup, CatStanding
+from scripts.cat.enums import CatRank, CatAge, CatGroup
 from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath
 from scripts.events_module.parameter_dicts import (

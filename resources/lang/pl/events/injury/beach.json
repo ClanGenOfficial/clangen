@@ -109,7 +109,7 @@
             "leaf-bare"
         ],
         "frequency": 4,
-        "event_text": "m_c was dashing around the apprentice rock, when {PRONOUN\/m_c\/subject} slipped and fell into the high tide waters of the cave. {PRONOUN\/m_c\/subject\/CAP}{VERB\/m_c\/'re\/'s} alright, though a bit bruised and embarrassed.",
+        "event_text": "m_c was dashing around the apprentice rock, when {PRONOUN/m_c/subject} slipped and fell into the high tide waters of the cave. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} alright, though a bit bruised and embarrassed.",
         "m_c": {
             "status": [
                 "apprentice"
@@ -145,7 +145,7 @@
             "leaf-fall"
         ],
         "frequency": 4,
-        "event_text": "m_c was messing around in the tide pools of the camp clearing, when {PRONOUN\/m_c\/poss} paw slipped and {PRONOUN\/m_c\/subject} fell in face-first. {PRONOUN\/m_c\/poss\/CAP} pride is wounded, but otherwise {PRONOUN\/m_c\/subject}{VERB\/m_c\/'re\/'s} only bruised.",
+        "event_text": "m_c was messing around in the tide pools of the camp clearing, when {PRONOUN/m_c/poss} paw slipped and {PRONOUN/m_c/subject} fell in face-first. {PRONOUN/m_c/poss/CAP} pride is wounded, but otherwise {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} only bruised.",
         "m_c": {
             "age": [
                 "adolescent"
@@ -183,7 +183,7 @@
             "leaf-bare"
         ],
         "frequency": 3,
-        "event_text": "m_c unwisely decided to go out swimming alone after r_c dared {PRONOUN\/m_c\/object} to. {PRONOUN\/m_c\/subject\/CAP} made it back, but ended up drenched and shivering violently in the cold air.",
+        "event_text": "m_c unwisely decided to go out swimming alone after r_c dared {PRONOUN/m_c/object} to. {PRONOUN/m_c/subject/CAP} made it back, but ended up drenched and shivering violently in the cold air.",
         "m_c": {
             "status": [
                 "apprentice"
@@ -251,13 +251,13 @@
             "any"
         ],
         "frequency": 3,
-        "event_text": "m_c rarely pays attention when r_c talks about proper ocean safety, and it shows when m_c gets thirsty on patrol and drinks salt water. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/come\/comes} back to camp severely dehydrated.",
+        "event_text": "m_c rarely pays attention when r_c talks about proper ocean safety, and it shows when m_c gets thirsty on patrol and drinks salt water. {PRONOUN/m_c/subject/CAP} {VERB/m_c/come/comes} back to camp severely dehydrated.",
         "m_c": {
             "status": [
                 "apprentice"
             ],
             "relationship_status": [
-                "app\/mentor"
+                "app/mentor"
             ],
             "trait": [
                 "troublesome",
@@ -317,7 +317,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "m_c was grabbed by a seagull, but luckily r_c saves {PRONOUN\/m_c\/object}! The kit is still left injured from the ordeal.",
+        "event_text": "m_c was grabbed by a seagull, but luckily r_c saves {PRONOUN/m_c/object}! The kit is still left injured from the ordeal.",
         "m_c": {
             "status": [
                 "kitten"
@@ -344,8 +344,7 @@
                     "claw-wound"
                 ],
                 "scars": [
-                    "BACK",
-                    "TWO"
+                    "BACK", "TWO"
                 ]
             }
         ],
@@ -354,8 +353,8 @@
                 "cats": [
                     "m_c"
                 ],
-                "scar": "m_c was scarred as a kit, when a seagull tried to carry {PRONOUN\/m_c\/object} off.",
-                "death": "m_c died from {PRONOUN\/m_c\/poss} wounds after a seagull tried to carry {PRONOUN\/m_c\/object} off."
+                "scar": "m_c was scarred as a kit, when a seagull tried to carry {PRONOUN/m_c/object} off.",
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after a seagull tried to carry {PRONOUN/m_c/object} off."
             }
         ],
         "relationships": [
@@ -372,7 +371,7 @@
                 ],
                 "amount": 30,
                 "log": {
-                    "cats_from": "cat_to saved cat_from's life when a seagull tried to carry {PRONOUN\/cat_from\/object} off."
+                    "cats_from": "cat_to saved cat_from's life when a seagull tried to carry {PRONOUN/cat_from/object} off."
                 }
             }
         ]
@@ -386,7 +385,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "m_c was grabbed by a pelican, but luckily r_c saves {PRONOUN\/m_c\/object}! The kit is still left injured from the ordeal.",
+        "event_text": "m_c was grabbed by a pelican, but luckily r_c saves {PRONOUN/m_c/object}! The kit is still left injured from the ordeal.",
         "m_c": {
             "status": [
                 "kitten"
@@ -413,8 +412,7 @@
                     "claw-wound"
                 ],
                 "scars": [
-                    "BACK",
-                    "TWO"
+                    "BACK", "TWO"
                 ]
             }
         ],
@@ -423,8 +421,8 @@
                 "cats": [
                     "m_c"
                 ],
-                "scar": "m_c was scarred as a kit when a pelican tried to carry {PRONOUN\/m_c\/object} off.",
-                "death": "m_c died from {PRONOUN\/m_c\/poss} wounds after a pelican tried to carry {PRONOUN\/m_c\/object} off."
+                "scar": "m_c was scarred as a kit when a pelican tried to carry {PRONOUN/m_c/object} off.",
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after a pelican tried to carry {PRONOUN/m_c/object} off."
             }
         ],
         "relationships": [
@@ -441,7 +439,7 @@
                 ],
                 "amount": 30,
                 "log": {
-                    "cats_from": "cat_to saved cat_from's life when a pelican tried to carry {PRONOUN\/cat_from\/object} off."
+                    "cats_from": "cat_to saved cat_from's life when a pelican tried to carry {PRONOUN/cat_from/object} off."
                 }
             }
         ]
@@ -513,7 +511,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "cat_from dared cat_to to swim out of camp and was impressed when {PRONOUN\/cat_to\/subject} actually tried."
+                    "cats_from": "cat_from dared cat_to to swim out of camp and was impressed when {PRONOUN/cat_to/subject} actually tried."
                 }
             },
             {
@@ -524,8 +522,7 @@
                     "r_c"
                 ],
                 "values": [
-                    "trust",
-                    "comfort"
+                    "trust", "comfort"
                 ],
                 "amount": -15,
                 "log": {
@@ -601,7 +598,7 @@
                 ],
                 "amount": 15,
                 "log": {
-                    "cats_from": "cat_from dared cat_to to swim out of camp and was impressed when {PRONOUN\/cat_to\/subject} actually tried."
+                    "cats_from": "cat_from dared cat_to to swim out of camp and was impressed when {PRONOUN/cat_to/subject} actually tried."
                 }
             },
             {
@@ -612,8 +609,7 @@
                     "r_c"
                 ],
                 "values": [
-                    "trust",
-                    "comfort"
+                    "trust", "comfort"
                 ],
                 "amount": -15,
                 "log": {
@@ -633,7 +629,7 @@
             "leaf-fall"
         ],
         "frequency": 4,
-        "event_text": "m_c is hopping around in the tide pools when {PRONOUN\/m_c\/subject} {VERB\/m_c\/trip\/trips} and {VERB\/m_c\/fall\/falls} onto the rocks. Thankfully, {PRONOUN\/m_c\/subject}{VERB\/m_c\/'re\/'s} only a bit bruised.",
+        "event_text": "m_c is hopping around in the tide pools when {PRONOUN/m_c/subject} {VERB/m_c/trip/trips} and {VERB/m_c/fall/falls} onto the rocks. Thankfully, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} only a bit bruised.",
         "m_c": {
             "status": [
                 "kitten"
@@ -663,7 +659,7 @@
             "leaf-bare"
         ],
         "frequency": 4,
-        "event_text": "m_c is playing around on the iced-over tide pools, slipping and sliding every which way, when {PRONOUN\/m_c\/subject} {VERB\/m_c\/slip\/slips} a little too much and {VERB\/m_c\/take\/takes} a tumble.",
+        "event_text": "m_c is playing around on the iced-over tide pools, slipping and sliding every which way, when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} a little too much and {VERB/m_c/take/takes} a tumble.",
         "m_c": {
             "status": [
                 "kitten"
@@ -698,7 +694,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c is jumping around on the rocks when {PRONOUN\/m_c\/subject} {VERB\/m_c\/slip\/slips} and {VERB\/m_c\/fall\/falls}. The soft sand of the cave floor softens {PRONOUN\/m_c\/poss} landing, but {PRONOUN\/m_c\/subject}{VERB\/m_c\/'re\/'s} still bruised.",
+        "event_text": "m_c is jumping around on the rocks when {PRONOUN/m_c/subject} {VERB/m_c/slip/slips} and {VERB/m_c/fall/falls}. The soft sand of the cave floor softens {PRONOUN/m_c/poss} landing, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} still bruised.",
         "m_c": {
             "status": [
                 "kitten"
@@ -733,7 +729,7 @@
             "leaf-fall"
         ],
         "frequency": 3,
-        "event_text": "m_c found a hole in the rocks and, curious as all kits are, stuck {PRONOUN\/m_c\/poss} paw inside. The whole camp comes running when {PRONOUN\/m_c\/subject} {VERB\/m_c\/screech\/screeches} in pain. It seems a snake was living in that hole.",
+        "event_text": "m_c found a hole in the rocks and, curious as all kits are, stuck {PRONOUN/m_c/poss} paw inside. The whole camp comes running when {PRONOUN/m_c/subject} {VERB/m_c/screech/screeches} in pain. It seems a snake was living in that hole.",
         "m_c": {
             "status": [
                 "kitten"
@@ -761,8 +757,8 @@
                 "cats": [
                     "m_c"
                 ],
-                "scar": "m_c was scarred as a kit when a snake bit {PRONOUN\/m_c\/object}.",
-                "death": "m_c died from {PRONOUN\/m_c\/poss} wounds after a snake bit {PRONOUN\/m_c\/object}."
+                "scar": "m_c was scarred as a kit when a snake bit {PRONOUN/m_c/object}.",
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after a snake bit {PRONOUN/m_c/object}."
             }
         ]
     },
@@ -804,7 +800,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "m_c was dragged out into the ocean by the tide, and inhaled a lot of water before managing to get out. {PRONOUN\/m_c\/subject\/CAP}{VERB\/m_c\/'ve\/'s} been hacking and sputtering ever since.",
+        "event_text": "m_c was dragged out into the ocean by the tide, and inhaled a lot of water before managing to get out. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} been hacking and sputtering ever since.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -845,7 +841,7 @@
             "war"
         ],
         "frequency": 3,
-        "event_text": "A o_c_n warrior was nearly swept away by a wave during a shoreside battle. m_c dove in to pull {PRONOUN\/m_c\/poss} enemy back to the beach, despite {PRONOUN\/m_c\/poss} own injuries.",
+        "event_text": "A o_c_n warrior was nearly swept away by a wave during a shoreside battle. m_c dove in to pull {PRONOUN/m_c/poss} enemy back to the beach, despite {PRONOUN/m_c/poss} own injuries.",
         "m_c": {
             "status": [
                 "warrior",
@@ -887,23 +883,15 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c died from {PRONOUN\/m_c\/poss} injuries after saving a drowning enemy warrior.",
+                "death": "m_c died from {PRONOUN/m_c/poss} injuries after saving a drowning enemy warrior.",
                 "scar": "m_c got a scar from a battle with a warring Clan"
             }
         ],
         "relationships": [
             {
-                "cats_from": [
-                    "clan",
-                    "high_aggress",
-                    "low_lawful"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "trust"
-                ],
+                "cats_from": ["clan", "high_aggress", "low_lawful"],
+                "cats_to": ["m_c"],
+                "values": ["trust"],
                 "amount": -10,
                 "mutual": false,
                 "log": {
@@ -921,7 +909,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "While trying to climb the broken ship in camp, m_c's paw slipped and {PRONOUN\/m_c\/subject} fell to the ground with a nasty thump.",
+        "event_text": "While trying to climb the broken ship in camp, m_c's paw slipped and {PRONOUN/m_c/subject} fell to the ground with a nasty thump.",
         "m_c": {
             "age": [
                 "kitten",
@@ -974,21 +962,17 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c died from {PRONOUN\/m_c\/poss} wounds after failing to climb the broken ship.",
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after failing to climb the broken ship.",
                 "scar": "m_c was scarred after failing to climb the broken ship."
             }
         ]
     },
     {
         "event_id": "bch_injury_gull_prey",
-        "location": [
-            "beach"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["beach"],
+        "season": ["any"],
         "frequency": 3,
-        "event_text": "A flock of seagulls descended upon the fresh-kill pile. m_c tried to chase them off but was pecked for {PRONOUN\/m_c\/poss} troubles.",
+        "event_text": "A flock of seagulls descended upon the fresh-kill pile. m_c tried to chase them off but was pecked for {PRONOUN/m_c/poss} troubles.",
         "m_c": {
             "status": []
         },
@@ -1007,18 +991,14 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c died from {PRONOUN\/m_c\/poss} injuries from defending the fresh-kill from seagulls.",
+                "death": "m_c died from {PRONOUN/m_c/poss} injuries from defending the fresh-kill from seagulls.",
                 "scar": "m_c was scarred after defending the fresh-kill from seagulls."
             }
         ],
         "supplies": [
             {
                 "type": "freshkill",
-                "trigger": [
-                    "adequate",
-                    "full",
-                    "excess"
-                ],
+                "trigger": ["adequate", "full", "excess"],
                 "adjust": "reduce_quarter"
             }
         ],
@@ -1028,12 +1008,8 @@
                     "clan",
                     "high_social"
                 ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "trust"
-                ],
+                "cats_to": ["m_c"],
+                "values": ["trust"],
                 "amount": 10,
                 "mutual": false,
                 "log": {
@@ -1044,19 +1020,12 @@
     },
     {
         "event_id": "bch_injury_crab_prey",
-        "location": [
-            "beach"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["beach"],
+        "season": ["any"],
         "frequency": 3,
         "event_text": "m_c chased away a giant coconut crab helping itself to the fresh-kill. The crab punched back with a force that sends m_c straight to the medicine den.",
         "m_c": {
-            "status": [
-                "-kitten",
-                "-newborn"
-            ],
+            "status": ["-kitten", "-newborn"],
             "trait": [
                 "ambitious",
                 "bold",
@@ -1069,12 +1038,8 @@
         },
         "injury": [
             {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "blunt_force_injury"
-                ]
+                "cats": ["m_c"],
+                "injuries": ["blunt_force_injury"]
             }
         ],
         "history": [
@@ -1082,26 +1047,19 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c died from {PRONOUN\/m_c\/poss} wounds defending prey from a coconut crab.",
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds defending prey from a coconut crab.",
                 "scar": "m_c was scarred after chasing away a Coconut crab."
             }
         ]
     },
     {
         "event_id": "bch_injury_crab_prey_duo",
-        "location": [
-            "beach"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["beach"],
+        "season": ["any"],
         "frequency": 2,
         "event_text": "m_c and r_c tried to chase away a giant coconut crab helping itself to the fresh-kill. They drove it away, but r_c had to escort m_c to the medicine den right after.",
         "m_c": {
-            "status": [
-                "-kitten",
-                "-newborn"
-            ],
+            "status": ["-kitten", "-newborn"],
             "trait": [
                 "-shy",
                 "-nervous",
@@ -1109,19 +1067,12 @@
             ]
         },
         "r_c": {
-            "status": [
-                "-kitten",
-                "-newborn"
-            ]
+            "status": ["-kitten", "-newborn"]
         },
         "injury": [
             {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "blunt_force_injury"
-                ]
+                "cats": ["m_c"],
+                "injuries": ["blunt_force_injury"]
             }
         ],
         "history": [
@@ -1129,37 +1080,26 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c died from {PRONOUN\/m_c\/poss} wounds defending prey from a coconut crab.",
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds defending prey from a coconut crab.",
                 "scar": "m_c was scarred attempting to chase away a coconut crab."
             }
         ],
         "supplies": [
             {
                 "type": "freshkill",
-                "trigger": [
-                    "adequate",
-                    "full",
-                    "excess"
-                ],
+                "trigger": ["adequate", "full", "excess"],
                 "adjust": "reduce_eighth"
             }
         ]
     },
     {
         "event_id": "bch_injury_pelican_prey",
-        "location": [
-            "beach:camp1_camp2_camp3"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["beach:camp1_camp2_camp3"],
+        "season": ["any"],
         "frequency": 3,
         "event_text": "The abundant fresh-kill attracted a pelican to the camp. m_c chased away the bird but was hurt in the process.",
         "m_c": {
-            "status": [
-                "-kitten",
-                "-newborn"
-            ],
+            "status": ["-kitten", "-newborn"],
             "trait": [
                 "-shy",
                 "-nervous",
@@ -1168,12 +1108,8 @@
         },
         "injury": [
             {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "beak_bite"
-                ]
+                "cats": ["m_c"],
+                "injuries": ["beak_bite"]
             }
         ],
         "history": [
@@ -1181,17 +1117,14 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c died from {PRONOUN\/m_c\/poss} wounds defending prey from a pelican.",
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds defending prey from a pelican.",
                 "scar": "m_c was scarred after a pelican tried to steal to prey."
             }
         ],
         "supplies": [
             {
                 "type": "freshkill",
-                "trigger": [
-                    "excess",
-                    "full"
-                ],
+                "trigger": ["excess", "full"],
                 "adjust": "reduce_eighth"
             }
         ]
@@ -1205,7 +1138,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c steps on something in the sand that causes {PRONOUN\/m_c\/object} to yelp. Seems like {PRONOUN\/m_c\/subject} stepped on a sea urchin.",
+        "event_text": "m_c steps on something in the sand that causes {PRONOUN/m_c/object} to yelp. Seems like {PRONOUN/m_c/subject} stepped on a sea urchin.",
         "injury": [
             {
                 "cats": [
@@ -1226,7 +1159,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "m_c steps on something in the sand that causes {PRONOUN\/m_c\/object} to yelp. As {PRONOUN\/m_c\/poss} paw starts to go numb {PRONOUN\/m_c\/subject} {VERB\/m_c\/realize\/realizes} {PRONOUN\/m_c\/subject} must have stepped on a venomous sea urchin, and {PRONOUN\/m_c\/subject} {VERB\/m_c\/rush\/rushes} to the medicine den.",
+        "event_text": "m_c steps on something in the sand that causes {PRONOUN/m_c/object} to yelp. As {PRONOUN/m_c/poss} paw starts to go numb {PRONOUN/m_c/subject} {VERB/m_c/realize/realizes} {PRONOUN/m_c/subject} must have stepped on a venomous sea urchin, and {PRONOUN/m_c/subject} {VERB/m_c/rush/rushes} to the medicine den.",
         "injury": [
             {
                 "cats": [

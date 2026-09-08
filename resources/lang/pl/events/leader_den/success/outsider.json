@@ -1211,7 +1211,7 @@
     },
     {
         "interaction_type": "search",
-        "event_text": "c_n turns the world upside down searching for their lost Clanmate. They cannot rest until m_c is safely home \u2014 and they don't. When they come upon {PRONOUN\/m_c\/object} at last, c_n is overjoyed to bring {PRONOUN\/m_c\/object} back to camp where {PRONOUN\/m_c\/subject} {VERB\/m_c\/belong\/belongs}.",
+        "event_text": "c_n turns the world upside down searching for their lost Clanmate. They cannot rest until m_c is safely home — and they don't. When they come upon {PRONOUN\/m_c\/object} at last, c_n is overjoyed to bring {PRONOUN\/m_c\/object} back to camp where {PRONOUN\/m_c\/subject} {VERB\/m_c\/belong\/belongs}.",
         "reputation": [
             "any"
         ],

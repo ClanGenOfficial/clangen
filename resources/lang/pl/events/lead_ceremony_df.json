@@ -1,6 +1,6 @@
 {
     "virtues": {
-        "comment": "THIS DICT DOES NOTHING \u2014 it's purely here for quick reference of some possible virtues, you are not constrained to using these nor should you use these lists",
+        "comment": "THIS DICT DOES NOTHING — it's purely here for quick reference of some possible virtues, you are not constrained to using these nor should you use these lists",
         "queen_virtues": [
             "affection",
             "compassion",
@@ -779,7 +779,7 @@
             ],
             "life_giving": [
                 {
-                    "text": "r_c steps forward with unusual warmth and affection shining in {PRONOUN\/r_c\/poss} eyes. {PRONOUN\/r_c\/subject\/CAP} {VERB\/r_c\/rest\/rests} {PRONOUN\/r_c\/poss} muzzle on m_c's head, giving {PRONOUN\/m_c\/object} a life for [virtue]. As {PRONOUN\/r_c\/subject} {VERB\/r_c\/withdraw\/withdraws}, {PRONOUN\/r_c\/subject} {VERB\/r_c\/whisper\/whispers} that m_c must put {PRONOUN\/m_c\/poss} loved ones above all else \u2014 at all costs.",
+                    "text": "r_c steps forward with unusual warmth and affection shining in {PRONOUN\/r_c\/poss} eyes. {PRONOUN\/r_c\/subject\/CAP} {VERB\/r_c\/rest\/rests} {PRONOUN\/r_c\/poss} muzzle on m_c's head, giving {PRONOUN\/m_c\/object} a life for [virtue]. As {PRONOUN\/r_c\/subject} {VERB\/r_c\/withdraw\/withdraws}, {PRONOUN\/r_c\/subject} {VERB\/r_c\/whisper\/whispers} that m_c must put {PRONOUN\/m_c\/poss} loved ones above all else — at all costs.",
                     "virtue": [
                         "ambition",
                         "bravery",
@@ -926,7 +926,7 @@
             ],
             "life_giving": [
                 {
-                    "text": "r_c's eyes glitter with bleak conviction as {PRONOUN\/r_c\/subject} {VERB\/r_c\/approach\/approaches} m_c. Offering a life for [virtue], r_c murmurs that m_c must follow {PRONOUN\/m_c\/poss} beliefs \u2014 no matter what path those beliefs may lead {PRONOUN\/m_c\/object} down.",
+                    "text": "r_c's eyes glitter with bleak conviction as {PRONOUN\/r_c\/subject} {VERB\/r_c\/approach\/approaches} m_c. Offering a life for [virtue], r_c murmurs that m_c must follow {PRONOUN\/m_c\/poss} beliefs — no matter what path those beliefs may lead {PRONOUN\/m_c\/object} down.",
                     "virtue": [
                         "ambition",
                         "bravery",
@@ -1692,7 +1692,7 @@
             ],
             "life_giving": [
                 {
-                    "text": "r_c stalks up to m_c, {PRONOUN\/r_c\/poss} cold, foul breath misting over {PRONOUN\/m_c\/poss} face. {PRONOUN\/r_c\/subject\/CAP} {VERB\/r_c\/recite\/recites} a list of names of the living \u2014 the kin of those that wronged r_c moons ago. With the burden of vengeance now weighing on m_c, r_c offers a life for [virtue].",
+                    "text": "r_c stalks up to m_c, {PRONOUN\/r_c\/poss} cold, foul breath misting over {PRONOUN\/m_c\/poss} face. {PRONOUN\/r_c\/subject\/CAP} {VERB\/r_c\/recite\/recites} a list of names of the living — the kin of those that wronged r_c moons ago. With the burden of vengeance now weighing on m_c, r_c offers a life for [virtue].",
                     "virtue": [
                         "ambition",
                         "bravery",
