@@ -774,6 +774,16 @@ dev_tools = false
   classic_disallows = ["herb_gathering", "hunting", "hoarding_resources", "raid_other_clans","hoarding"]
 
   [focus.hunting]
+    # injury chance of each warrior(leader/deputy) or medicine cat to get injured
+    injury_chance = 18
+
+    [focus.hunting.injuries]
+      "cracked pads" = 25
+      sore = 25
+      bruises = 25
+      sprain = 10
+      "small cut" = 15
+
     # Defines how much a working warrior(leader/deputy) or apprentice gathers additionally
     # these are also borrowed by the hoarding focus
     [focus.hunting.warrior]
@@ -811,15 +821,15 @@ dev_tools = false
       [focus.hunting.buff.SWIMMER]
         tier = 1
         biome = ["plains", "desert"]
-        prey_increase = 2
+        injury_modifier = 2
       [focus.hunting.buff.CLIMBER]
         tier = 1
         biome = ["forest", "mountainous"]
-        prey_increase = 2
+        injury_modifier = 2
       [focus.hunting.buff.RUNNER]
         tier = 1
         biome = ["beach", "wetlands"]
-        prey_increase = 2
+        injury_modifier = 2
 
   [focus.herb_gathering]
     # maximum herbs that can be gathered by each assistant
@@ -937,11 +947,10 @@ dev_tools = false
     # how much prey each working warrior(leader/deputy) will gather
     prey_warrior = 1
 
-    # injury chance of each warrior(leader/deputy) or medicine cat to get injured
+    # injury chance of each warrior(leader/deputy to get injured
     injury_chance_warrior = 25
-    injury_chance_medicine_cat = 35
 
-    # illness chance of each warrior(leader/deputy) and medicine cat to get sick
+    # illness chance of each warrior(leader/deputy) to get sick
     illness_chance = 35
 
     # INFO: for simpler distribution, a cat can get EITHER injured OR sick, not both

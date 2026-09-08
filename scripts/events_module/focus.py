@@ -60,7 +60,8 @@ def _hunting() -> str:
     """
     Gathers additional prey
     """
-    deputy_buff = 0
+    prey_increase = 0
+    injury_modifier = 0
     buffs = get_config("focus.hunting.buff")
     for skill, tier in game.clan.deputy.skills.get_all().items():
         skill = skill.name
@@ -69,15 +70,39 @@ def _hunting() -> str:
         if buffs[skill]["tier"] > tier:
             continue
 
-        if "biome" in buffs[skill]:
-            if game.clan.biome.casefold() in buffs[skill]["biome"]:
-                deputy_buff = buffs[skill]["prey_increase"]
-        else:
-            deputy_buff = buffs[skill]["prey_increase"]
+        if (
+            "biome" in buffs[skill]
+            and not game.clan.biome.casefold() in buffs[skill]["biome"]
+        ):
+            continue
 
-    used_cats, prey_amount = _cats_gather_prey(deputy_buff)
+        if "injury_modifier" in buffs[skill]:
+            injury_modifier = buffs[skill]["injury_modifier"]
+        elif "prey_increase" in buffs[skill]:
+            prey_increase = buffs[skill]["prey_increase"]
+
+    used_cats, prey_amount = _cats_gather_prey(prey_increase)
+
+    # HANDLE INJURIES
+    injury_chance = round(get_config("focus.hunting.injury_chance")) * injury_modifier
+    injury_dict = get_config("focus.hunting.injuries")
+
+    involved_cats = _give_conditions(
+        used_cats, injury_chance=injury_chance, injury_dict=injury_dict
+    )
 
     # finish
+    if involved_cats:
+        injured_cats = involved_cats["injured"]
+        game.cur_events_list.insert(
+            0,
+            EventInformation(
+                i18n.t("focus.prey_injury", count=len(injured_cats)),
+                ["health"],
+                injured_cats,
+            ),
+        )
+
     game.clan.freshkill_pile.add_freshkill(prey_amount)
     focus_text = i18n.t("focus.focus_prey", count=prey_amount)
     game.freshkill_event_list.append(focus_text)
@@ -238,16 +263,14 @@ def _raid_clans() -> str:
         if "supply_amount_buff" in buffs[skill]:
             supply_amount_buff = buffs[skill]["supply_amount_buff"]
 
-    injured_cats = []
-
-    healthy_warriors = find_alive_cats_with_rank(
+    used_cats = find_alive_cats_with_rank(
         Cat,
         ranks=[CatRank.WARRIOR, CatRank.DEPUTY, CatRank.LEADER],
         working=True,
     )
 
     prey_recovered = 0
-    for _c in healthy_warriors:
+    for _c in used_cats:
         if disable_random:
             prey_recovered += 1 + supply_amount_buff
         else:
@@ -258,7 +281,7 @@ def _raid_clans() -> str:
 
     # HANDLE HERBS
     herb_amount_to_gain = 0
-    for _c in healthy_warriors:
+    for _c in used_cats:
         if disable_random:
             herb_amount_to_gain += 1 + supply_amount_buff
         else:
@@ -297,15 +320,11 @@ def _raid_clans() -> str:
         )
         * injury_modifier
     )
+    injury_dict = info_dict["injuries"]
 
-    for cat in healthy_warriors:
-        if not int(random() * max(2, injury_chance)) or disable_random:
-            injury_dict = info_dict["injuries"]
-            chosen_injury = choices(
-                list(injury_dict.keys()), list(injury_dict.values())
-            )[0]
-            get_injured(cat, chosen_injury)
-            injured_cats.append(cat.ID)
+    involved_cats = _give_conditions(
+        used_cats, injury_chance=injury_chance, injury_dict=injury_dict
+    )
 
     for name in game.clan.clans_in_focus:
         clan = [clan for clan in game.clan.all_other_clans if clan.name == name][0]
@@ -326,7 +345,8 @@ def _raid_clans() -> str:
         i18n.t("focus.raid_relations", clan=adjust_list_text(game.clan.clans_in_focus))
     )
 
-    if injured_cats:
+    if involved_cats:
+        injured_cats = involved_cats["injured"]
         game.cur_events_list.insert(
             0,
             EventInformation(
@@ -344,7 +364,6 @@ def _hoarding():
     Gathers additional prey and herbs while also applying conditions to cats.
     """
     info_dict = get_config("focus.hoarding")
-    involved_cats = {"injured": [], "sick": []}
 
     buffs = get_config("focus.hoarding.buff")
     condition_modifier = 0
@@ -375,32 +394,18 @@ def _hoarding():
         )
     )
 
-    injury_chance_warrior = info_dict["injury_chance_warrior"] * condition_modifier
-    injury_chance_medicine_cat = (
-        info_dict["injury_chance_medicine_cat"] * condition_modifier
-    )
+    injury_chance = info_dict["injury_chance_warrior"] * condition_modifier
     illness_chance = info_dict["illness_chance"] * condition_modifier
+    injury_dict = info_dict["injuries"]
+    illness_dict = info_dict["illnesses"]
 
-    for cat in used_cats + healthy_meds:
-        if cat in used_cats:
-            injury_chance = injury_chance_warrior
-        else:
-            injury_chance = injury_chance_medicine_cat
-
-        if not int(random() * injury_chance) or disable_random:
-            injury_dict = info_dict["injuries"]
-            chosen_injury = choices(
-                list(injury_dict.keys()), list(injury_dict.values())
-            )[0]
-            get_injured(cat, chosen_injury)
-            involved_cats["injured"].append(cat.ID)
-        elif not int(random() * illness_chance) or disable_random:
-            illness_dict = info_dict["illnesses"]
-            chosen_illness = choices(
-                list(illness_dict.keys()), list(illness_dict.values())
-            )[0]
-            get_ill(cat, chosen_illness)
-            involved_cats["sick"].append(cat.ID)
+    involved_cats = _give_conditions(
+        used_cats,
+        illness_chance=illness_chance,
+        illness_dict=illness_dict,
+        injury_chance=injury_chance,
+        injury_dict=injury_dict,
+    )
 
     text = []
     if healthy_meds:
@@ -434,6 +439,37 @@ def _hoarding():
         )
 
     return " ".join(text)
+
+
+def _give_conditions(
+    used_cats: list,
+    illness_chance: int = 0,
+    illness_dict: dict = None,
+    injury_chance: int = 0,
+    injury_dict: dict = None,
+) -> dict:
+    involved_cats = {
+        "sick": [],
+        "injured": [],
+    }
+
+    for cat in used_cats:
+        if injury_chance:
+            if not int(random() * injury_chance) or disable_random:
+                chosen_injury = choices(
+                    list(injury_dict.keys()), list(injury_dict.values())
+                )[0]
+                get_injured(cat, chosen_injury)
+                involved_cats["injured"].append(cat.ID)
+        if illness_chance:
+            if not int(random() * illness_chance) or disable_random:
+                chosen_illness = choices(
+                    list(illness_dict.keys()), list(illness_dict.values())
+                )[0]
+                get_ill(cat, chosen_illness)
+                involved_cats["sick"].append(cat.ID)
+
+    return involved_cats
 
 
 def _cats_gather_prey(prey_increase):
