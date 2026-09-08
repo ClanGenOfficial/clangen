@@ -60,7 +60,7 @@
             }
         },
         {
-            "colors": "SNOWLYNX",
+            "colors": "SABLE",
             "layer_order": ["1", "2", "2.5", "3", "4", ["4.5", "5", "6"]],
             "layers": {
                 "6":{
