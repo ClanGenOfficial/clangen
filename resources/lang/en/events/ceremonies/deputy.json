@@ -237,11 +237,7 @@
                     "competitive",
                     "cunning"
                 ]
-            },
-                "r_c": {
-                    "age": [ "senior adult"],
-                    "status": [ "leader"]
-                }
+            }
             },
         "strings": [
             "The cats of c_n come to congratulate m_c, but {PRONOUN/m_c/subject} snaps, stating that being named deputy is nothing special."
