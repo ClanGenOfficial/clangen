@@ -210,7 +210,6 @@ class TestInvolvedCats(unittest.TestCase):
             intro_strings=["test"],
             decline_strings=["test"],
             involved_cats={
-                "p_l": InvolvedCatDict(),
                 "r_c0": InvolvedCatDict(),
             },
             success_outcomes=[

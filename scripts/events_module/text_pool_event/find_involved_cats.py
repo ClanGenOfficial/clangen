@@ -109,8 +109,8 @@ def find_cats(
             possible_cats = interactable_cats
 
             for cat in involved_cats.values():
-                # if a cat is a list then we don't want to try and remove it
-                if not isinstance(cat, list) and cat in interactable_cats:
+                # this will only remove non-list values
+                if cat in interactable_cats:
                     possible_cats.remove(cat)
 
         if not possible_cats:
