@@ -1408,8 +1408,8 @@
             }
         },
         "strings": [
-            "r_c0 hopes {PRONOUN/r_c0/subject}'ll get to mentor the clan's newest apprentice, m_c. {PRONOUN/r_c0/subject/CAP}{VERB/r_c0/'ve/'s} been praying for an apprentice for moons now!",
-            "The clan cheers for their newest apprentice, m_c. r_c0 sits up extra straight; {PRONOUN/r_c0/subject} {VERB/r_c0/know/knows} m_c would be perfect for {PRONOUN/r_c0/poss} first apprentice."
+            "r_c0 hopes {PRONOUN/r_c0/subject}'ll get to mentor the Clan's newest apprentice, m_c. {PRONOUN/r_c0/subject/CAP}{VERB/r_c0/'ve/'s} been praying for an apprentice for moons now!",
+            "The Clan cheers for their newest apprentice, m_c. r_c0 sits up extra straight; {PRONOUN/r_c0/subject} {VERB/r_c0/know/knows} m_c would be perfect for {PRONOUN/r_c0/poss} first apprentice."
         ]
     },
      {
