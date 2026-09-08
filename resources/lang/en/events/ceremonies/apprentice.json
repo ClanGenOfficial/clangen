@@ -401,7 +401,7 @@
             }
         },
         "strings": [
-            "As the clan chant's m_c's new name, {PRONOUN/m_c/subject} {VERB/m_c/make/makes} a silent promise to r_c0 and r_c1 to make them proud and to take care of the Clan in their absence."
+            "As the Clan chant's m_c's new name, {PRONOUN/m_c/subject} {VERB/m_c/make/makes} a silent promise to r_c0 and r_c1 to make them proud and to take care of the Clan in their absence."
         ],
         "relationship_constraint": [
             {
@@ -1409,7 +1409,7 @@
         },
         "strings": [
             "r_c0 hopes {PRONOUN/r_c0/subject}'ll get to mentor the clan's newest apprentice, m_c. {PRONOUN/r_c0/subject/CAP}{VERB/r_c0/'ve/'s} been praying for an apprentice for moons now!",
-            "The clan cheers for their newest apprentice, m_c. r_c0 sit up extra straight; {PRONOUN/r_c0/subject} {VERB/r_c0/know/knows} m_c would be perfect for {PRONOUN/r_c0/poss} first apprentice."
+            "The clan cheers for their newest apprentice, m_c. r_c0 sits up extra straight; {PRONOUN/r_c0/subject} {VERB/r_c0/know/knows} m_c would be perfect for {PRONOUN/r_c0/poss} first apprentice."
         ]
     },
      {
@@ -1492,7 +1492,7 @@
         },
         "strings": [
             "(old_name) is old enough to begin training, and is apprenticed to r_c0, {PRONOUN/m_c/poss} older sibling. (clan_leader) that m_c's kin will guide them into a fine warrior.",
-            "m_c is apprenticed to {PRONOUN/m_c/poss} older sibling, r_c0. lead_name {VERB/lead_name/know/knows} that there will be extra challenges involved with mentoring kin, but r_c0 is willing to take it on. "
+            "m_c is apprenticed to {PRONOUN/m_c/poss} older sibling, r_c0. lead_name knows that there will be extra challenges involved with mentoring kin, but r_c0 is willing to take it on. "
         ],
         "relationship_constraint": [
             {
