@@ -1526,7 +1526,7 @@
         },
         "strings": [
             "r_c1 is delighted that m_c is apprenticed to r_c0. It will be great to see {PRONOUN/r_c1/poss} kits working so closely.",
-            "When m_c is apprenticed to r_c0, r_c1 mewls in delight. {PRONOUN/r_c1/poss} kits, training together! How wonderful!"
+            "When m_c is apprenticed to r_c0, r_c1 mewls in delight. {PRONOUN/r_c1/poss/CAP} kits, training together! How wonderful!"
         ],
         "relationship_constraint": [
             {
