@@ -219,7 +219,7 @@
                 }
             },
         "strings": [
-            "m_c yowls with excitement when {PRONOUN/m_c/subject} {VERB/m_c/are/is} named c_ns deputy. {PRONOUN/m_c/subject} scampers over to r_c, and the leader can only hope that m_c will balance out r_cs old bones."
+            "m_c yowls with excitement when {PRONOUN/m_c/subject} {VERB/m_c/are/is} named c_ns deputy. {PRONOUN/m_c/subject/CAP} scampers over to r_c, and the leader can only hope that m_c will balance out r_cs old bones."
         ]
     },
     {
@@ -230,22 +230,22 @@
                 "has_apprentice": {
                     "former": true
                 },
+            "stat": {
+                "trait": [
+                    "cold",
+                    "arrogant",
+                    "competitive",
+                    "cunning"
+                ]
+            },
                 "r_c": {
                     "age": [ "senior adult"],
                     "status": [ "leader"]
-                },
-                "stat": {
-                    "trait": [
-                        "cold",
-                        "arrogant",
-                        "competitive",
-                        "cunning"
-                    ]
                 }
-            }
-        },
+            },
         "strings": [
             "The cats of c_n come to congratulate m_c, but {PRONOUN/m_c/subject} snaps, stating that being named deputy is nothing special."
         ]
     }
+}
 ]
