@@ -11,6 +11,27 @@
         },
         "involved_clans": "<br><b>Involved Clans:</b> %{clans}",
         "what_to_focus": "What should your warriors focus on?",
-        "selected_info": "<b>Selected information:</b>\n%{info}"
+        "buffed_setting": "%{name} ++",
+        "info_with_buff": "%{info} <b>%{buff}</b>",
+        "hunting_buff_hunter": "The deputy's skill in hunting will help the warriors gather more prey.",
+        "hunting_buff_climber": "The deputy's skill in climbing will help the warriors navigate the terrain to avoid injury.",
+        "hunting_buff_swimmer": "The deputy's skill in swimming will help the warriors navigate the terrain to avoid injury.",
+        "hunting_buff_runner": "The deputy's skill in running will help the warriors navigate the terrain to avoid injury.",
+        "herb_gathering_buff_sense": "The deputy's sharp senses will help the warriors find more herbs.",
+        "herb_gathering_buff_clever": "The deputy's clever mind will help the warrior's carry herbs more efficiently.",
+        "threaten_outsiders_buff_fighter": "The deputy's skill in fighting will better intimidate the outsiders.",
+        "threaten_outsiders_buff_speaker": "The deputy's skill in speaking will help the warriors better ward off outsiders.",
+        "seek_outsiders_buff_speaker": "The deputy's skill in speaking will help the warriors convince outsiders of their sincerity.",
+        "seek_outsiders_buff_sense": "The deputy's sharp senses will help the warriors find outsiders to speak with.",
+        "sabotage_other_clans_buff_stealth": "The deputy's skill in sneaking will help the warriors better sabotage their enemies.",
+        "sabotage_other_clans_buff_mediator": "The deputy's skill in mediating will help the warriors undermine their enemies.",
+        "aid_other_clans_buff_insightful": "The deputy's insight will help the warriors find ways to aid their allies.",
+        "aid_other_clans_buff_mediator": "The deputy's skill in mediating will help the warriors support their allies.",
+        "raid_other_clans_buff_fighter": "The deputy's skill in fighting will reduce the injuries gained while raiding.",
+        "raid_other_clans_buff_stealth": "The deputy's skill in sneaking will help the warriors steal more supplies.",
+        "hoarding_buff_camp": "The deputy's skill in campkeeping will help the warriors store more supplies.",
+        "hoarding_buff_clever": "The deputy's cleverness will help the warriors avoid injury and sickness.",
+        "rest_and_recover_buff_healer": "The deputy's skill in healing will help prevent outbreaks of pests and illness.",
+        "rest_and_recover_buff_insightful": "The deputy's insight will help warriors avoid injury."
     }
 }
