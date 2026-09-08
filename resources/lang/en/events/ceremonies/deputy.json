@@ -195,7 +195,7 @@
             }
         },
         "strings": [
-            "As c_n cheers for m_c's new position, {PRONOUN/m_c/subject} strides forward, unbothered by the clatter. Being made deputy isn't that big of a deal, surely?"
+            "As c_n cheers for m_c's new position, {PRONOUN/m_c/subject} strides forward, unbothered by the clatter. Surely becoming deputy isn't <i>that</i> big of a deal."
         ]
     },
     {
