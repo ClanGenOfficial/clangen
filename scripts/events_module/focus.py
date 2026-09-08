@@ -75,35 +75,7 @@ def _hunting() -> str:
         else:
             deputy_buff = buffs[skill]["prey_increase"]
 
-    # handle warrior
-    healthy_warriors = find_alive_cats_with_rank(
-        Cat,
-        ranks=[CatRank.WARRIOR, CatRank.DEPUTY, CatRank.LEADER],
-        working=True,
-    )
-
-    prey_amount = 0
-    season = game.clan.current_season.casefold()
-    warrior_prey = get_config(f"focus.hunting.warrior.{season}.prey_amounts")
-    warrior_weights = get_config(f"focus.hunting.warrior.{season}.prey_weights")
-    for _c in healthy_warriors:
-        if disable_random:
-            prey_amount += warrior_prey[1] + deputy_buff
-        else:
-            prey_amount += choices(warrior_prey, warrior_weights)[0] + deputy_buff
-
-    # handle apprentices
-    healthy_apprentices = find_alive_cats_with_rank(
-        Cat, ranks=[CatRank.APPRENTICE], working=True
-    )
-
-    app_prey = get_config(f"focus.hunting.apprentice.{season}.prey_amounts")
-    app_weights = get_config(f"focus.hunting.apprentice.{season}.prey_weights")
-    for _c in healthy_apprentices:
-        if disable_random:
-            prey_amount += app_prey[1] + deputy_buff
-        else:
-            prey_amount += choices(app_prey, app_weights)[0] + deputy_buff
+    used_cats, prey_amount = _cats_gather_prey(deputy_buff)
 
     # finish
     game.clan.freshkill_pile.add_freshkill(prey_amount)
@@ -392,33 +364,8 @@ def _hoarding():
         if "prey_increase" in buffs[skill]:
             prey_increase = buffs[skill]["prey_increase"]
 
-    prey_recovered = 0
-    healthy_warriors = find_alive_cats_with_rank(
-        Cat,
-        ranks=[CatRank.WARRIOR, CatRank.DEPUTY, CatRank.LEADER],
-        working=True,
-    )
-    season = game.clan.current_season.casefold()
-    warrior_prey = get_config(f"focus.hunting.warrior.{season}.prey_amounts")
-    warrior_weights = get_config(f"focus.hunting.warrior.{season}.prey_weights")
-    for _c in healthy_warriors:
-        if disable_random:
-            prey_recovered += warrior_prey[1] + prey_increase
-        else:
-            prey_recovered += choices(warrior_prey, warrior_weights)[0] + prey_increase
+    used_cats, prey_recovered = _cats_gather_prey(prey_increase)
 
-    # handle apprentices
-    healthy_apprentices = find_alive_cats_with_rank(
-        Cat, ranks=[CatRank.APPRENTICE], working=True
-    )
-
-    app_prey = get_config(f"focus.hunting.apprentice.{season}.prey_amounts")
-    app_weights = get_config(f"focus.hunting.apprentice.{season}.prey_weights")
-    for _c in healthy_apprentices:
-        if disable_random:
-            prey_recovered += app_prey[1] + prey_increase
-        else:
-            prey_recovered += choices(app_prey, app_weights)[0] + prey_increase
     healthy_meds = list(
         filter(
             lambda c: c.status.rank == CatRank.MEDICINE_CAT
@@ -434,8 +381,8 @@ def _hoarding():
     )
     illness_chance = info_dict["illness_chance"] * condition_modifier
 
-    for cat in healthy_warriors + healthy_meds:
-        if cat in healthy_warriors:
+    for cat in used_cats + healthy_meds:
+        if cat in used_cats:
             injury_chance = injury_chance_warrior
         else:
             injury_chance = injury_chance_medicine_cat
@@ -458,12 +405,11 @@ def _hoarding():
     text = []
     if healthy_meds:
         herb_focus_text = game.clan.herb_supply.handle_focus(
-            healthy_meds, healthy_warriors, max_buff=gather_max_increase
+            healthy_meds, used_cats, max_buff=gather_max_increase
         )
         text.append(herb_focus_text)
     if prey_recovered:
         prey_text = i18n.t("focus.focus_prey", count=prey_recovered)
-        game.clan.freshkill_pile.add_freshkill(prey_recovered)
 
         game.freshkill_event_list.append(prey_text)
         text.append(prey_text)
@@ -488,3 +434,35 @@ def _hoarding():
         )
 
     return " ".join(text)
+
+
+def _cats_gather_prey(prey_increase):
+    prey_recovered = 0
+    healthy_warriors = find_alive_cats_with_rank(
+        Cat,
+        ranks=[CatRank.WARRIOR, CatRank.DEPUTY, CatRank.LEADER],
+        working=True,
+    )
+    season = game.clan.current_season.casefold()
+    warrior_prey = get_config(f"focus.hunting.warrior.{season}.prey_amounts")
+    warrior_weights = get_config(f"focus.hunting.warrior.{season}.prey_weights")
+    for _c in healthy_warriors:
+        if disable_random:
+            prey_recovered += warrior_prey[1] + prey_increase
+        else:
+            prey_recovered += choices(warrior_prey, warrior_weights)[0] + prey_increase
+    # handle apprentices
+    healthy_apprentices = find_alive_cats_with_rank(
+        Cat, ranks=[CatRank.APPRENTICE], working=True
+    )
+    app_prey = get_config(f"focus.hunting.apprentice.{season}.prey_amounts")
+    app_weights = get_config(f"focus.hunting.apprentice.{season}.prey_weights")
+    for _c in healthy_apprentices:
+        if disable_random:
+            prey_recovered += app_prey[1] + prey_increase
+        else:
+            prey_recovered += choices(app_prey, app_weights)[0] + prey_increase
+
+    game.clan.freshkill_pile.add_freshkill(prey_recovered)
+
+    return healthy_warriors + healthy_apprentices, prey_recovered
