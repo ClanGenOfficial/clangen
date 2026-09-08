@@ -1450,7 +1450,7 @@
             }
         },
         "strings": [
-            "At m_c's apprentice ceremony, r_c0 watches lead_name with ambition. If r_c0 has any change of being deputy, {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} an apprentice, and m_c would be perfect."
+            "At m_c's apprentice ceremony, r_c0 watches lead_name with ambition. If r_c0 has any chance of becoming deputy, {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} an apprentice, and m_c would be perfect."
         ]
     },
     {
