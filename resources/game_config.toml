@@ -766,7 +766,6 @@ dev_tools = false
   difficulty_modifier = 0
 
 [focus]
-  # NOTE: 'raid other clans' should be more dangerous than 'hoarding'!!!
   duration = 3
   requires_mediator = ["sabotage_other_clans", "aid_other_clans"]
   requires_medicine_cat = ["herb_gathering"]
@@ -775,7 +774,7 @@ dev_tools = false
 
   [focus.hunting]
     # injury chance of each warrior(leader/deputy) or medicine cat to get injured
-    injury_chance = 18
+    injury_chance = 15
 
     [focus.hunting.injuries]
       "cracked pads" = 25

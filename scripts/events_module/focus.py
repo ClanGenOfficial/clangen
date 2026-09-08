@@ -61,7 +61,7 @@ def _hunting() -> str:
     Gathers additional prey
     """
     prey_increase = 0
-    injury_modifier = 0
+    injury_modifier = 1
     buffs = get_config("focus.hunting.buff")
     for skill, tier in game.clan.deputy.skills.get_all().items():
         skill = skill.name
@@ -72,7 +72,7 @@ def _hunting() -> str:
 
         if (
             "biome" in buffs[skill]
-            and not game.clan.biome.casefold() in buffs[skill]["biome"]
+            and game.clan.biome.casefold() not in buffs[skill]["biome"]
         ):
             continue
 
@@ -92,8 +92,8 @@ def _hunting() -> str:
     )
 
     # finish
-    if involved_cats:
-        injured_cats = involved_cats["injured"]
+    injured_cats = involved_cats["injured"]
+    if injured_cats:
         game.cur_events_list.insert(
             0,
             EventInformation(
@@ -249,7 +249,7 @@ def _raid_clans() -> str:
 
     buffs = get_config("focus.raid_other_clans.buff")
 
-    injury_modifier = 0
+    injury_modifier = 1
     supply_amount_buff = 0
     for skill, tier in game.clan.deputy.skills.get_all().items():
         skill = skill.name

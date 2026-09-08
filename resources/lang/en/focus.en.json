@@ -12,9 +12,8 @@
             "many": "With the heightened focus of the Clan, %{count} additional pieces of prey were gathered."
         },
         "prey_injury": {
-            "zero": "Luckily, nobody in the Clan was injured while on extra hunting patrols.",
-            "one": "A cat got injured while on an extra hunting patrol.",
-            "many": "Multiple cats got injured while pushing themselves to hunt extra prey."
+            "one": "A cat was hurt while on an extra hunting patrol.",
+            "many": "Multiple cats were hurt while pushing themselves to hunt extra prey."
         },
         "focus_herbs": {
             "zero": "Despite the focus of the Clan, no additional herbs could be gathered.",
@@ -28,14 +27,14 @@
         "raid_herb": "The warriors snatched %{herbs}.",
         "raid_relations": "Relations with %{clan} were deeply impacted by the raids.",
         "raid_injury": {
-            "zero": "Luckily, nobody in the Clan got injured during raids.",
-            "one": "A cat got injured while raiding other Clans.",
-            "many": "Multiple cats got injured while raiding other Clans."
+            "zero": "Luckily, nobody in the Clan was injured during raids.",
+            "one": "A cat was injured while raiding other Clans.",
+            "many": "Multiple cats were injured while raiding other Clans."
         },
         "hoarding_injury": {
-            "zero": "Luckily, nobody in the Clan got injured due to hoarding.",
-            "one": "A cat got injured due to hoarding herbs and prey.",
-            "many": "Multiple cats got injured due to hoarding herbs and prey."
+            "zero": "Luckily, nobody in the Clan was injured due to hoarding.",
+            "one": "A cat was injured due to hoarding herbs and prey.",
+            "many": "Multiple cats were injured due to hoarding herbs and prey."
         },
         "hoarding_illness": {
             "zero": "Luckily, nobody in the Clan got sick due to hoarding.",
