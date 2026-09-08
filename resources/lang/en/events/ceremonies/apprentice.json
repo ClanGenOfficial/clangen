@@ -1491,7 +1491,7 @@
             "r_c0": {}
         },
         "strings": [
-            "(old_name) is old enough to begin training, and is apprenticed to r_c0, {PRONOUN/m_c/poss} older sibling. (clan_leader) that m_c's kin will guide them into a fine warrior.",
+            "(old_name) is old enough to begin training, and is apprenticed to r_c0, {PRONOUN/m_c/poss} older sibling. lead_name knows m_c's kin will guide them into a fine warrior.",
             "m_c is apprenticed to {PRONOUN/m_c/poss} older sibling, r_c0. lead_name knows that there will be extra challenges involved with mentoring kin, but r_c0 is willing to take it on. "
         ],
         "relationship_constraint": [
