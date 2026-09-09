@@ -8469,7 +8469,7 @@
             "Is feeling confused",
             "Is feeling stiff",
             "Wonders why there's a gap in {PRONOUN/m_c/poss} memory",
-            "Is retiring to {PRONOUN/m_c/poss} nest early for the day feeling a seizure oncoming"
+            "Is retiring to {PRONOUN/m_c/poss} nest early, feeling a seizure oncoming"
         ],
         "involved_cats": {
             "m_c": {
@@ -8938,7 +8938,7 @@
             "Wonders what {PRONOUN/m_c/subject} {VERB/m_c/look/looks} like during a seizure",
             "Feels like the sun is too bright today",
             "Feels dizzier than usual today",
-            "Is retiring to {PRONOUN/m_c/poss} nest early for the day feeling a seizure oncoming"
+            "Is retiring to {PRONOUN/m_c/poss} nest early, feeling a seizure oncoming"
         ],
         "involved_cats": {
             "m_c": {
