@@ -78,7 +78,7 @@
             }
         },
         {
-            "colors": "SHELL",
+            "colors": "BLOSSOM",
             "layer_order": ["1", "2", "3", "4", "5", ["5", "7", "8", "9"], "10"],
             "layers": {
                 "10":

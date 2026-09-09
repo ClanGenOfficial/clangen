@@ -100,7 +100,7 @@ Kittens usually have very simplistic pattern shapes designs compared to others. 
 **As of writing this, there are a total of 21 different pelt colors;**
 WHITE, PALEGREY, SILVER, GREY, DARKGREY, GHOST, BLACK,
 CREAM, PALEGINGER, GOLDEN, GINGER, DARKGINGER, SIENNA,
-LIGHTBROWN, LILAC, BROWN, GOLDEN-BROWN, DARKBROWN, CHOCOLATE, RUST, and SHELL.
+LIGHTBROWN, LILAC, BROWN, GOLDEN-BROWN, DARKBROWN, CHOCOLATE, RUST, and BLOSSOM.
 
 Every pelt type should be colored in all of those 21 colors. If any new colors are added in future, those colors are added to the existing pelts also.
 

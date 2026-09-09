@@ -195,7 +195,7 @@
     "Night", "Shadow", "Scorch", "Midnight", "Bleak", "Storm", "Violet", "Pepper", "Bat", "Faded", "Silver", "Ghost", "Bat", "Dusk", 
     "Flint", "Starling", "Badger", "Raccoon", "Skulk", "Magpie"
     ],
-    "SHELL": [
+    "BLOSSOM": [
     "Pale", "Sand", "Sun", "Sunny", "Light", "Lion", "Bright", "Phlox", "Vervain", "Veil", "Silk",
     "Honey", "Daisy", "Warm", "Cosmos", "Orchid", "Snapdragon", "Foxglove", "Verbena", "Straw",
     "Orange", "Ochre", "Peach", "Auburn", "Birch", "Cougar", "Gorse", "Dandelion", "Spindle", "Ivory",
@@ -297,7 +297,7 @@
     "GHOST": [
 	"shadow", "shade", "dusk", "coal", "ink", "bat", "cinder", "ghost", "night", "raven", "crow", "burn", "badger", "raccoon"
     ],
-    "SHELL": [
+    "BLOSSOM": [
     "sun", "beam", "shine", "shell", "honey", "cougar", "owl", "moth", "sable", "dust", "flower"
       ],
     "PALEGINGER": [

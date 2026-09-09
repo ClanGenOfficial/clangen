@@ -886,7 +886,7 @@
         "newborn_exotic_light_pattern": "#402022",
         "newborn_exotic_muzzle": "#3A1C1D"
 },
-        "SHELL": {
+        "BLOSSOM": {
         "base": "#F9F7F2",
         "base_gradient_bottom": "#FBF9F8",
         "base_gradient_top": "#F3E2CC",
@@ -897,7 +897,7 @@
         "pattern_fill": "#F2D7B9",
         "masked_light_pattern": "#F9F7F2",
 
-        "singlecolour_shell_base_gradient_top": "#E4C7B4",
+        "singlecolour_blossom_base_gradient_top": "#E4C7B4",
 
         "newborn_base": "#F0EDE9",
         "newborn_base_gradient_bottom": "#F0EDE9",

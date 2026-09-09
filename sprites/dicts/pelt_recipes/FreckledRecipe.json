@@ -110,7 +110,7 @@
             }
         },
         {
-            "colors": "SHELL",
+            "colors": "BLOSSOM",
             "layer_order": ["1", "2","1.5", "3", "4", "5", ["5.5", "6", ["7", "8", "+blend_mode:mask"]]],
             "layers": {
                 "8": {
@@ -137,7 +137,7 @@
                 },
                 "3": {
                     "group_name": "EXOTICTOPGRAD",
-                    "color": "singlecolour_shell_base_gradient_top"
+                    "color": "singlecolour_blossom_base_gradient_top"
                 },
                 "2": {
                     "group_name": "EXOTICBOTTOMGRAD",
