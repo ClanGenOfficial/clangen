@@ -13,7 +13,6 @@ from scripts.conditions import (
     PermanentCondition,
 )
 from scripts.config import get_config
-from scripts.event_class import Single_Event
 from scripts.events_module.event_information import EventInformation
 from scripts.game_structure import game
 
