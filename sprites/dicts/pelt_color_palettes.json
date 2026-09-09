@@ -448,9 +448,9 @@
 },
     "SUNSHINE": {
         "base": "#b27831",
-        "base_gradient_bottom": "#fcf0fb",
+        "base_gradient_bottom": "#fcf0f7",
         "base_gradient_top": "#ca7111",
-        "pattern": "#4e280b",
+        "pattern": "#45240a",
         "pattern_gradient_top": "#2d1504",
         "pattern_fill": "#834a21",
         "masked_light_pattern": "#fffaf5",
