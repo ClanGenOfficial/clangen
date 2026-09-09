@@ -940,7 +940,7 @@
     "HONEY": {
         "base": "#F2E9C7",
         "base_gradient_bottom": "#FBF9F8",
-        "base_gradient_top": "#F3E2CC",
+        "base_gradient_top": "#F0E4B9",
         "base_gradient_legs_tail": "#EBD4BF",
         "pattern": "#F2D7B9",
         "pattern_gradient_top": "#B68067",
@@ -950,7 +950,7 @@
 
         "singlecolour_blossom_base_gradient_top": "#E4C7B4",
 
-        "newborn_base": "#F0EDE9",
+        "newborn_base": "#F2E9C7",
         "newborn_base_gradient_bottom": "#F0EDE9",
         "newborn_base_gradient_top": "#E3DDCF",
         "newborn_pattern": "#E3D4C9",
