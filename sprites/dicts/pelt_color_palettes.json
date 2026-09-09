@@ -448,12 +448,12 @@
 },
     "SUNSHINE": {
         "base": "#e69136",
-        "base_gradient_bottom": "#fff2fe",
-        "base_gradient_top": "#955910",
-        "pattern": "#281b0e",
-        "pattern_gradient_top": "#201803",
-        "pattern_fill": "#704605",
-        "masked_light_pattern": "#fff4db",
+        "base_gradient_bottom": "#ffe9fc",
+        "base_gradient_top": "#c0701a",
+        "pattern": "#4e2d0b",
+        "pattern_gradient_top": "#2d1904",
+        "pattern_fill": "#7f4f1b",
+        "masked_light_pattern": "#ffe4c8",
 
         "newborn_base": "#E5BD92",
         "newborn_base_gradient_bottom": "#F9D69E",
