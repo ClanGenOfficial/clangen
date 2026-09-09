@@ -147,7 +147,9 @@
             "Hears a mouse in the house but can't find it anywhere",
             "Is on a walk with {PRONOUN/m_c/poss} housefolk",
             "Is watching the tv",
-            "Is watching cat tv"
+            "Is watching cat tv",
+            "Is running from the vacuum",
+            "Is getting in {PRONOUN/m_c/poss} housefolk's way while theyre trying to clean"
 
         ]
     },
