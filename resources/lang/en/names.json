@@ -195,6 +195,12 @@
     "Night", "Shadow", "Scorch", "Midnight", "Bleak", "Storm", "Violet", "Pepper", "Bat", "Faded", "Silver", "Ghost", "Bat", "Dusk", 
     "Flint", "Starling", "Badger", "Raccoon", "Skulk", "Magpie"
     ],
+    "BLOSSOM": [
+    "Pale", "Sand", "Sun", "Sunny", "Light", "Lion", "Bright", "Phlox", "Vervain", "Veil", "Silk",
+    "Honey", "Daisy", "Warm", "Cosmos", "Orchid", "Snapdragon", "Foxglove", "Verbena", "Straw",
+    "Orange", "Ochre", "Peach", "Auburn", "Birch", "Cougar", "Gorse", "Dandelion", "Spindle", "Ivory",
+    "Fawn", "Fallow", "Morel", "Mouse", "Velvet", "Dust", "Tawny", "Sable"
+    ],
     "PALEGINGER": [
     "Pale", "Ginger", "Sand", "Sandy", "Yellow", "Sun", "Sunny", "Light", "Lion", "Bright", "Phlox", "Vervain",
     "Honey", "Daisy", "Warm", "Robin", "Cosmos", "Orchid", "Snapdragon", "Foxglove", "Verbena", "Straw",
@@ -291,6 +297,9 @@
     "GHOST": [
 	"shadow", "shade", "dusk", "coal", "ink", "bat", "cinder", "ghost", "night", "raven", "crow", "burn", "badger", "raccoon"
     ],
+    "BLOSSOM": [
+    "sun", "beam", "shine", "shell", "honey", "cougar", "owl", "moth", "sable", "dust", "flower"
+      ],
     "PALEGINGER": [
 	"sun", "beam", "shine", "spark", "shell", "honey", "flash", "lion", "cougar"
     ],

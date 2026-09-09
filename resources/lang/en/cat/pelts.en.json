@@ -29,6 +29,10 @@
             "one": "black",
             "many": "black"
         },
+        "BLOSSOM": {
+            "one": "cream",
+            "many": "cream"
+        },
         "CREAM": {
             "one": "cream",
             "many": "cream"
