@@ -2,13 +2,22 @@
     {
         "event_id": "general_on_exiled",
         "strings": [
-            "Is shocked that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been exiled"
+            "Is shocked that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been exiled",
+            "Is unsure what to do with {PRONOUN/m_c/self} now that {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been exiled",
+            "Prays that StarClan sees things {PRONOUN/m_c/poss} way and accepts {PRONOUN/m_c/object} in still, despite {PRONOUN/m_c/poss} exile",
+            "Wonders what {PRONOUN/m_c/subject} could have done to prevent {PRONOUN/m_c/poss} exile",
+            "Wonders if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} now destined for the Dark Forest...",
+            "Is devistated by {PRONOUN/m_c/poss} sudden exile",
+            "Never expected c_n would exile {PRONOUN/m_c/object}",
+            "Wonders if what {PRONOUN/m_c/subject} did was worth getting exiled for"
         ]
     },
     {
         "event_id": "general_exiled_revenge",
         "strings": [
-            "Swears {PRONOUN/m_c/poss} revenge for being exiled"
+            "Swears {PRONOUN/m_c/poss} revenge for being exiled",
+            "Promises to get back at each and every cat responsible for {PRONOUN/m_c/poss} exile",
+            "Vows to make each and every c_n cat pay for exiling {PRONOUN/m_c/object}"
         ],
         "involved_cats": {
             "m_c": {
