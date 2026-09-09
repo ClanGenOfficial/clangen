@@ -61,7 +61,6 @@
         "strings": [
             "Feels lost after giving {PRONOUN/m_c/poss} life to the Clan only to be exiled",
             "Finds {PRONOUN/m_c/self} doubting the Code {PRONOUN/m_c/subject} lived by only to be exiled",
-            "Wonders what more {PRONOUN/m_c/subject} could have done for the Clan to prevent this",
             "Doesn't understand what {PRONOUN/m_c/subject} did to deserve exile",
             "Is trying to figure out what part of the Code {PRONOUN/m_c/subject} broke to be exiled"
         ],
