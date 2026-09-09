@@ -4,10 +4,10 @@
         "strings": [
             "Is shocked that {PRONOUN/m_c/subject} {VERB/m_c/have/has} been exiled",
             "Is unsure what to do with {PRONOUN/m_c/self} now that {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been exiled",
-            "Prays that StarClan sees things {PRONOUN/m_c/poss} way and accepts {PRONOUN/m_c/object} in still, despite {PRONOUN/m_c/poss} exile",
+            "Prays that StarClan sees it {PRONOUN/m_c/poss} way and accepts {PRONOUN/m_c/object} in, despite {PRONOUN/m_c/poss} exile",
             "Wonders what {PRONOUN/m_c/subject} could have done to prevent {PRONOUN/m_c/poss} exile",
             "Wonders if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} now destined for the Dark Forest...",
-            "Is devistated by {PRONOUN/m_c/poss} sudden exile",
+            "Is devastated by {PRONOUN/m_c/poss} sudden exile",
             "Never expected c_n would exile {PRONOUN/m_c/object}",
             "Wonders if what {PRONOUN/m_c/subject} did was worth getting exiled for"
         ]
@@ -17,7 +17,8 @@
         "strings": [
             "Swears {PRONOUN/m_c/poss} revenge for being exiled",
             "Promises to get back at each and every cat responsible for {PRONOUN/m_c/poss} exile",
-            "Vows to make each and every c_n cat pay for exiling {PRONOUN/m_c/object}"
+            "Vows to make each and every c_n cat pay for exiling {PRONOUN/m_c/object}",
+            "Declares all of c_n to be {PRONOUN/m_c/poss} enemy"
         ],
         "involved_cats": {
             "m_c": {
@@ -25,6 +26,58 @@
                     "trait": [
                         "vengeful",
                         "bloodthirsty"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "general_angry",
+        "strings": [
+            "Swears {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} need a Clan",
+            "Promises to make a Clan better then c_n could ever dream to be",
+            "Is just waiting for {PRONOUN/m_c/poss} ex-Clanmates to come begging {PRONOUN/m_c/object} to come back"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "arrogant",
+                        "childish",
+                        "cold",
+                        "fierce",
+                        "grumpy",
+                        "insecure",
+                        "rebellious",
+                        "shameless",
+                        "strict"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "general_hurt",
+        "strings": [
+            "Feels lost after giving {PRONOUN/m_c/poss} life to the Clan only to be exiled",
+            "Finds {PRONOUN/m_c/self} doubting the Code {PRONOUN/m_c/subject} lived by only to be exiled",
+            "Wonders what more {PRONOUN/m_c/subject} could have done for the Clan to prevent this",
+            "Doesn't understand what {PRONOUN/m_c/subject} did to deserve exile",
+            "Is trying to figure out what part of the Code {PRONOUN/m_c/subject} broke to be exiled"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "ambitious",
+                        "careful",
+                        "compassionate",
+                        "faithful",
+                        "loyal",
+                        "responsible",
+                        "sincere",
+                        "strict",
+                        "thoughtful"
                     ]
                 }
             }
