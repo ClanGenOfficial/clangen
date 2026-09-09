@@ -453,7 +453,7 @@
         "pattern": "#2b1d03",
         "pattern_gradient_top": "#1b1202",
         "pattern_fill": "#704605",
-        "masked_light_pattern": "#FCF3D9",
+        "masked_light_pattern": "#fff4db",
 
         "newborn_base": "#E5BD92",
         "newborn_base_gradient_bottom": "#F9D69E",
