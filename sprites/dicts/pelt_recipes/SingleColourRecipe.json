@@ -78,13 +78,13 @@
             }
         },
         {
-            "colors": "SABLE",
+            "colors": "SHELL",
             "layer_order": ["1", "2", "3", "4"],
             "layers":
             {
                 "4": {
                     "group_name": "SIMPLETOPGRAD",
-                    "color": "singlecolour_sable_base_gradient_top"
+                    "color": "singlecolour_shell_base_gradient_top"
                 },
                 "3": {
                     "group_name": "LEGBOTTOMGRAD",
