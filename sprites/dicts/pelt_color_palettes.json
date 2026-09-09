@@ -447,11 +447,11 @@
         "newborn_exotic_muzzle": "#F2D6B3"
 },
     "SUNSHINE": {
-        "base": "#c27f37",
+        "base": "#cc7e2c",
         "base_gradient_bottom": "#fcf0f7",
-        "base_gradient_top": "#c47d31",
+        "base_gradient_top": "#bf782d",
         "pattern": "#361c0c",
-        "pattern_gradient_top": "#261105",
+        "pattern_gradient_top": "#271003",
         "pattern_fill": "#834a21",
         "masked_light_pattern": "#fffaf5",
 
