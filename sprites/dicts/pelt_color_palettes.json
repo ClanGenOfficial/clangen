@@ -447,13 +447,13 @@
         "newborn_exotic_muzzle": "#F2D6B3"
 },
     "SUNSHINE": {
-        "base": "#e69136",
-        "base_gradient_bottom": "#ffe9fc",
-        "base_gradient_top": "#c0701a",
-        "pattern": "#4e2d0b",
-        "pattern_gradient_top": "#2d1904",
-        "pattern_fill": "#7f4f1b",
-        "masked_light_pattern": "#ffe4c8",
+        "base": "#b27831",
+        "base_gradient_bottom": "#fcf0fb",
+        "base_gradient_top": "#ca7111",
+        "pattern": "#4e280b",
+        "pattern_gradient_top": "#2d1504",
+        "pattern_fill": "#834a21",
+        "masked_light_pattern": "#fffaf5",
 
         "newborn_base": "#E5BD92",
         "newborn_base_gradient_bottom": "#F9D69E",
