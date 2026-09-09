@@ -32644,7 +32644,7 @@
         "chance_of_success": 60,
         "patrol_art": "train_general_intro",
         "intro_strings": [
-            "p_l leads the patrol to a shallow pool by {POI/tag/water:flowing}, gently warmed by the newleaf sun. p_l peers into the water, searching for soft gelatinous clumps of frogspawn clinging to the reeds. "
+            "p_l leads the patrol to a shallow pool by POI, gently warmed by the newleaf sun. p_l peers into the water, searching for soft gelatinous clumps of frogspawn clinging to the reeds. "
         ],
         "decline_strings": [
             "It seems there is no frogspawn here today. The patrol returns to camp."

@@ -314,6 +314,9 @@
     },
     {
         "event_id": "warrior_both_parents0",
+        "tags": [
+            "clan:leader"
+        ],
         "involved_cats": {
             "m_c": {},
              "r_c0": {
@@ -372,6 +375,9 @@
     },
     {
         "event_id": "warrior_dead_both_parents0",
+        "tags": [
+            "clan:leader"
+        ],
         "involved_cats": {
             "m_c": {
                 "backstory": [
@@ -847,6 +853,9 @@
     },
     {
         "event_id": "warrior_compassionate0",
+        "tags": [
+            "clan:leader"
+        ],
         "involved_cats": {
             "m_c": {
                 "stat": {

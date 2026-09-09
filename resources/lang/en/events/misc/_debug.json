@@ -11,7 +11,7 @@
             "name": ["gather_fourtrees"]
         },
         "frequency": 0,
-        "event_text": "DEBUG: visited POI  - {POI/name/gather_fourtrees}"
+        "event_text": "DEBUG: visited POI  - POI"
     },
     {
         "event_id": "debug_misc_poi_tag_trees",
@@ -25,7 +25,7 @@
             "tags": ["trees"]
         },
         "frequency": 0,
-        "event_text": "DEBUG: visited 'trees' POI - {POI/tag/trees}"
+        "event_text": "DEBUG: visited 'trees' POI - POI"
     },
     {
         "event_id": "debug_misc_poi_tag_prey",
@@ -67,7 +67,7 @@
             "category": "moonplace"
         },
         "frequency": 0,
-        "event_text": "visited moonplace - {POI/category/moonplace}"
+        "event_text": "visited moonplace - POI"
     },
     {
         "event_id": "debug_misc_poi_gathering",
@@ -81,7 +81,7 @@
             "category": "gathering"
         },
         "frequency": 0,
-        "event_text": "visited gathering place - {POI/category/gathering}"
+        "event_text": "visited gathering place - POI"
     },
     {
         "event_id": "debug_misc_poi_terrain",
@@ -95,6 +95,6 @@
             "category": "terrain"
         },
         "frequency": 0,
-        "event_text": "visited some random terrain - {POI/category/terrain}"
+        "event_text": "visited some random terrain - POI"
     }
 ]
