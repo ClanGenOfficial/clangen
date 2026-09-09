@@ -961,18 +961,21 @@
         "smoke_base_gradient_legs_tail": "#EBD4BF",
         "smoke_pattern": "#F2D7B9",
         "smoke_pattern_gradient_top": "#B68067",
+
         "freckled_pattern_gradient_top": "#E5BCA4",
+
         "exotic_base": "#F9F7F2",
         "exotic_base_gradient_bottom": "#FBF9F8",
         "exotic_base_gradient_top": "#F3E2CC",
         "exotic_base_gradient_legs_tail": "#EBD4BF",
-        "exotic_pattern": "#F2D7B9",
+        "exotic_pattern": "#D1BD92",
         "exotic_pattern_gradient_top": "#B68067",
         "exotic_pattern_gradient_bottom": "#E2B59E",
         "exotic_pattern_fill": "#F2D7B9",
         "exotic_pattern_fill_gradient_top": "#E5BCA4",
         "exotic_light_pattern": "#FBF9F8",
         "exotic_muzzle": "#ECD5C0",
+
         "newborn_exotic_base": "#FAFAFA",
         "newborn_exotic_gradient_bottom": "#EEEEED",
         "newborn_exotic_gradient_top": "#DCDBDF",
