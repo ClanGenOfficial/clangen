@@ -896,7 +896,9 @@
         "pattern_gradient_bottom": "#E2B59E",
         "pattern_fill": "#F2D7B9",
         "masked_light_pattern": "#F9F7F2",
-            
+
+        "singlecolour_blossom_base_gradient_top": "#E4C7B4",
+
         "newborn_base": "#F0EDE9",
         "newborn_base_gradient_bottom": "#F0EDE9",
         "newborn_base_gradient_top": "#E3DDCF",
@@ -945,8 +947,6 @@
         "pattern_gradient_bottom": "#EDD9AD",
         "pattern_fill": "#EDD9AD",
         "masked_light_pattern": "#F9F7F2",
-
-        "singlecolour_blossom_base_gradient_top": "#E4C7B4",
 
         "newborn_base": "#F2E9C7",
         "newborn_base_gradient_bottom": "#F0EDE9",
