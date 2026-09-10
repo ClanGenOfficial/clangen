@@ -940,9 +940,9 @@
     "HONEY": {
         "base": "#F0E1BD",
         "base_gradient_bottom": "#F5EFDA",
-        "base_gradient_top": "#E3C174",
+        "base_gradient_top": "#CCAC6C",
         "base_gradient_legs_tail": "#DBBC70",
-        "pattern": "#BA9C54",
+        "pattern": "#CCAC6C",
         "pattern_gradient_top": "#A68B47",
         "pattern_gradient_bottom": "#E3C174",
         "pattern_fill": "#DBC697",
