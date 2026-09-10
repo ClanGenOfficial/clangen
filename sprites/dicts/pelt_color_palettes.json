@@ -938,7 +938,7 @@
         "newborn_exotic_muzzle": "#EEF9FC"
 },
     "HONEY": {
-        "base": "#EDD9AD",
+        "base": "#F0E1BD",
         "base_gradient_bottom": "#F5EFDA",
         "base_gradient_top": "#E3C174",
         "base_gradient_legs_tail": "#DBBC70",
