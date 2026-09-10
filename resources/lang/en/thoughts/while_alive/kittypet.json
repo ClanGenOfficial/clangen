@@ -86,7 +86,7 @@
             "Smells an odd scent on {PRONOUN/m_c/poss} housefolk and is very curious",
             "Smells another cat on {PRONOUN/m_c/poss} housefolk",
             "Smells a cat {PRONOUN/m_c/subject} {VERB/m_c/hate/hates} on {PRONOUN/m_c/poss} housefolk and is not happy",
-            "Tried playing with a valuable trinket and got in trouble",
+            "Is in trouble for playing with a valuable trinket",
             "Is playing with {PRONOUN/m_c/poss} housefolk's charger",
             "Is stepping on {PRONOUN/m_c/poss} housefolk's keyboard",
             "Is meowing for treats",
