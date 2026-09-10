@@ -12,6 +12,7 @@ from scripts.cat.enums import CatRank
 
 from scripts.cat.skills import SkillPath
 from scripts.game_structure import game
+from scripts.config import get_config
 
 
 def amount_clanmembers_covered(all_cats, amount_per_med) -> int:
@@ -130,11 +131,13 @@ class Illness:
         TODO: DOCS
         """
         amount_per_med = get_amount_cat_for_one_medic(game.clan)
+        duration_max = self.medicine_duration * get_config(
+            "condition_related.duration_modifier"
+        )
         if medicine_cats_can_cover_clan(
             game.cat_class.all_cats.values(), amount_per_med
         ):
-            if value > self.medicine_duration:
-                value = self.medicine_duration
+            value = min(value, duration_max)
 
         self._current_duration = value
 
@@ -217,11 +220,13 @@ class Injury:
     @current_duration.setter
     def current_duration(self, value):
         amount_per_med = get_amount_cat_for_one_medic(game.clan)
+        duration_max = self.medicine_duration * get_config(
+            "condition_related.duration_modifier"
+        )
         if medicine_cats_can_cover_clan(
             game.cat_class.all_cats.values(), amount_per_med
         ):
-            if value > self.medicine_duration:
-                value = self.medicine_duration
+            value = min(value, duration_max)
 
         self._current_duration = value
 
