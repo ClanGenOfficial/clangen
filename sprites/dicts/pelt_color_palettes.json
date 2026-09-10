@@ -955,10 +955,10 @@
         "newborn_pattern_gradient_top": "#957A7C",
         "newborn_pattern_fill": "#CFCED0",
         
-        "smoke_base": "#EBDCB9",
-        "smoke_base_gradient_top": "#D4B9A7",
-        "smoke_base_gradient_bottom": "#EBE0CA",
-        "smoke_base_gradient_legs_tail": "#EBD4BF",
+        "smoke_base": "#EDDDBB",
+        "smoke_base_gradient_top": "#EDD4A4",
+        "smoke_base_gradient_bottom": "#FAF1DE",
+        "smoke_base_gradient_legs_tail": "#E0CDA2",
         "smoke_pattern": "#F2D7B9",
         "smoke_pattern_gradient_top": "#B68067",
 
