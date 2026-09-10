@@ -205,5 +205,38 @@
         "HALF",
         "HEARTBEAT",
         "GRUMPYFACE"
+    ],
+    "SATURN": [
+        "SHILOH",
+        "SIDEMASK",
+        "SAFI",
+        "ROBIN"
+    ],
+    "TWO_TURTLE": [
+        "TURTLECRAWL",
+        "TWO",
+        "UNDERTAIL_T",
+        "STREAMSTRIKE"
+    ],
+    "POWDER_HEART": [
+        "TAILTIP_T",
+        "UNDERTAIL_T",
+        "POWDERSNOW",
+        "MINIMALTHREE",
+        "HEARTBEAT"
+    ],
+    "BLAZING_HEART": [
+        "EMBER",
+        "BELOVED",
+        "HEARTBEAT",
+        "MINIMALTHREE",
+        "EYEDOT"
+    ],
+    "RISING_FIRE": [
+        "BOTHEARS_T",
+        "BELOVED",
+        "BRIE",
+        "EMBER",
+        "FRECKLED"
     ]
 }
