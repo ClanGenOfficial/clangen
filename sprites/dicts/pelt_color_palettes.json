@@ -945,8 +945,8 @@
         "pattern": "#CCA44B",
         "pattern_gradient_top": "#B58C2F",
         "pattern_gradient_bottom": "#EDD9AD",
-        "pattern_fill": "#EDD9AD",
-        "masked_light_pattern": "#F9F7F2",
+        "pattern_fill": "#DBC697",
+        "masked_light_pattern": "#EDE3CA",
 
         "newborn_base": "#F2E9C7",
         "newborn_base_gradient_bottom": "#F0EDE9",
