@@ -5560,725 +5560,6 @@
         ]
     },
     {
-        "event_id": "bch_bord_newcat_abandontwoleg1",
-        "types": [
-            "border"
-        ],
-        "frequency": 2,
-        "location": [
-            "beach"
-        ],
-        "tags": [],
-        "required_cat_types": {
-            "patrol_cats": [
-                1,
-                1
-            ]
-        },
-        "chance_of_success": 10,
-        "patrol_art": "backgrounds/gen_abandontwolegdis",
-        "intro_strings": [
-            "p_l hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach."
-        ],
-        "decline_strings": [
-            "p_l decides not to investigate."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. p_l greets {PRONOUN/n_c0/object}, and as the loner's home isn't on c_n territory, it's a polite interaction without any hostility. The older cat looks like {PRONOUN/n_c0/subject} could use a meal, so p_l invites {PRONOUN/n_c0/object} to c_n's camp. The loner agrees."
-                ],
-                "involved_cats": {
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "age": [
-                            "senior"
-                        ],
-                        "status": [
-                            "loner"
-                        ]
-                    }
-                },
-                "exp_gained": 30,
-                "reputation_changes": {
-                    "outsider": 1
-                },
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c0"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "values": [
-                            "like",
-                            "trust",
-                            "comfort"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_to invited cat_from to c_n."
-                        }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ],
-                        "new_status": [
-                            "elder"
-                        ]
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. When {PRONOUN/n_c0/subject} {VERB/n_c0/see/sees} p_l, {PRONOUN/n_c0/subject} {VERB/n_c0/invite/invites} {PRONOUN/p_l/object} to sing along. Instead, p_l offers the strange, battered-looking cat an introduction to c_n. It's got to be far less lonely than {PRONOUN/n_c0/poss} current life."
-                ],
-                "involved_cats": {
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "age": [
-                            "senior"
-                        ],
-                        "status": [
-                            "loner"
-                        ]
-                    }
-                },
-                "exp_gained": 30,
-                "reputation_changes": {
-                    "outsider": 1
-                },
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c0"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "values": [
-                            "like",
-                            "trust",
-                            "comfort"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_to invited cat_from to c_n."
-                        }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ],
-                        "new_status": [
-                            "elder"
-                        ]
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 walks into an ambush set by a group of rogues. It's only by the grace of StarClan that s_c0 has the fighting skill and confidence to escape, running for {PRONOUN/s_c0/poss} life to get back to camp. "
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "skill": [
-                                "FIGHTER,3"
-                            ]
-                        }
-                    },
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "status": [
-                            "rogue"
-                        ]
-                    },
-                    "n_c1": {
-                        "can_create_new_cat": {},
-                        "status": [
-                            "rogue"
-                        ]
-                    },
-                    "n_c2": {
-                        "can_create_new_cat": {},
-                        "status": [
-                            "rogue"
-                        ]
-                    }
-                },
-                "exp_gained": 30,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c0",
-                            "n_c1",
-                            "n_c2"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -50,
-                        "log": {
-                            "cats_from": "cat_from and the other rogues ambushed cat_to in an abandoned Twoleg nest and cat_to got away."
-                        }
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c2",
-                            "n_c1",
-                            "n_c0"
-                        ]
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 has a bad feeling about this. At first it seems like {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} being too cautious, but then {PRONOUN/s_c0/subject} {VERB/s_c0/pick/picks} up on the scent of strange cats lingering around the Twoleg nest. Forewarned, s_c0 retreats to safety."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "careful",
-                                "insecure",
-                                "nervous"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 30
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "tags": [
-                    "some_lives"
-                ],
-                "frequency": 4,
-                "strings": [
-                    "p_l decides that a quick peek can't hurt. As {PRONOUN/p_l/subject} {VERB/p_l/venture/ventures} into the nest, ears pricked with curiosity, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} notice the lithe forms of rogues moving to block the entrance until it's too late. p_l never makes it back to camp."
-                ],
-                "exp_gained": 0,
-                "reputation_changes": {
-                    "outsider": -1
-                },
-                "death": [
-                    {
-                        "cats": [
-                            "r_c0"
-                        ],
-                        "history": "m_c died in an ambush set by rogues."
-                    }
-                ]
-            }
-        ],
-        "antag_success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l can sense it's a trap and waits just outside, setting {PRONOUN/p_l/poss} own trap. {PRONOUN/p_l/subject/CAP} {VERB/p_l/fill/fills} {PRONOUN/p_l/poss} lungs deeply and {VERB/p_l/let/lets} out a yowl that sends the rogues running as if LionClan were after them."
-                ],
-                "involved_cats": {
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "status": [
-                            "rogue"
-                        ]
-                    },
-                    "n_c1": {
-                        "can_create_new_cat": {},
-                        "status": [
-                            "rogue"
-                        ]
-                    }
-                },
-                "exp_gained": 30,
-                "reputation_changes": {
-                    "outsider": -2
-                },
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c0",
-                            "n_c1",
-                            "n_c2"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -50,
-                        "log": {
-                            "cats_from": "cat_from and the other rogues were about to ambush cat_to but were scared off by cat_to's yowling."
-                        }
-                    }
-                ]
-            }
-        ],
-        "antag_fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l can sense it's a trap and tries to get the upper paw, only to find rogues waiting for {PRONOUN/p_l/object} there too. p_l escapes with {PRONOUN/p_l/poss} life, but fear in {PRONOUN/p_l/poss} heart."
-                ],
-                "involved_cats": {
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "status": [
-                            "rogue"
-                        ]
-                    },
-                    "n_c1": {
-                        "can_create_new_cat": {},
-                        "status": [
-                            "rogue"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "reputation_changes": {
-                    "outsider": -1
-                },
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c0",
-                            "n_c1",
-                            "n_c2"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -50,
-                        "log": {
-                            "cats_from": "rom_cat and the other rogues were about to ambush cat_to in an abandoned Twoleg nest but cat_to got away."
-                        }
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "bch_bord_newcat_abandontwoleg2",
-        "types": [
-            "border"
-        ],
-        "frequency": 2,
-        "location": [
-            "beach"
-        ],
-        "tags": [],
-        "required_cat_types": {
-            "patrol_cats": [
-                3,
-                6
-            ]
-        },
-        "chance_of_success": 40,
-        "patrol_art": "backgrounds/gen_abandontwolegdis",
-        "intro_strings": [
-            "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach."
-        ],
-        "decline_strings": [
-            "The patrol decides not to investigate."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. The patrol greets {PRONOUN/n_c0/object}, and as the loner's home isn't on c_n territory, it's a polite interaction without any hostility. The older cat looks like {PRONOUN/n_c0/subject} could use a meal, so p_l invites {PRONOUN/n_c0/object} to c_n's camp. The loner agrees."
-                ],
-                "involved_cats": {
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "age": [
-                            "senior"
-                        ],
-                        "status": [
-                            "loner"
-                        ]
-                    }
-                },
-                "exp_gained": 30,
-                "reputation_changes": {
-                    "outsider": 1
-                },
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c0"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "values": [
-                            "like",
-                            "trust",
-                            "comfort"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_to was part of the patrol that invited cat_from to c_n."
-                        }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ],
-                        "new_status": [
-                            "elder"
-                        ]
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. When {PRONOUN/n_c0/subject} {VERB/n_c0/see/sees} r_c0, {PRONOUN/n_c0/subject} {VERB/n_c0/invite/invites} them to sing along. Instead, r_c0 offers the strange, battered-looking cat an introduction to c_n. It's got to be far less lonely than {PRONOUN/n_c0/poss} current life."
-                ],
-                "involved_cats": {
-                    "r_c0": {},
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "age": [
-                            "senior"
-                        ],
-                        "status": [
-                            "loner"
-                        ]
-                    }
-                },
-                "exp_gained": 30,
-                "reputation_changes": {
-                    "outsider": 1
-                },
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c0"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "values": [
-                            "like",
-                            "trust",
-                            "comfort"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_to was part of the patrol that invited cat_from to c_n."
-                        }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ],
-                        "new_status": [
-                            "elder"
-                        ]
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "The patrol walks into an ambush set by a group of rogues. It's only by the grace of StarClan that s_c0 is there, fighting with the courage of LionClan, the strength of TigerClan, and the agility of LeopardClan. Shaken but no more than bruised, the patrol manages to retreat to safety."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "skill": [
-                                "FIGHTER,3"
-                            ]
-                        }
-                    },
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "status": [
-                            "rogue"
-                        ]
-                    },
-                    "n_c1": {
-                        "can_create_new_cat": {},
-                        "status": [
-                            "rogue"
-                        ]
-                    },
-                    "n_c2": {
-                        "can_create_new_cat": {},
-                        "status": [
-                            "rogue"
-                        ]
-                    }
-                },
-                "exp_gained": 30,
-                "reputation_changes": {
-                    "outsider": 1
-                },
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c0",
-                            "n_c1",
-                            "n_c2"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -50,
-                        "log": {
-                            "cats_from": "cat_from and the other rogues ambushed cat_to's patrol in an abandoned Twoleg nest and cat_to's patrol got away."
-                        }
-                    }
-                ],
-                "death": [
-                    {
-                        "cats": [
-                            "n_c2"
-                        ],
-                        "history": "This cat died while wandering.",
-                        "no_results": false
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c1",
-                            "n_c0"
-                        ]
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c0/subject} {VERB/s_c0/explain/explains} {PRONOUN/s_c0/poss} concerns about the unknown situation. At first it seems like {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} being too cautious, but then p_l picks up on the scent of strange cats lingering around the Twoleg nest. Forewarned, the patrol retreats to safety."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "careful",
-                                "insecure",
-                                "nervous"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 30,
-                "reputation_changes": {
-                    "outsider": 1
-                }
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "The patrol walks into an ambush. Before p_l can so much as yowl a warning, a group of rogues creep from the shadows to surround the Clan cats on all sides. Few of the cats manage to escape. Any that were left behind are found the next morning, cold and covered in battle wounds."
-                ],
-                "involved_cats": {
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "status": [
-                            "rogue"
-                        ]
-                    },
-                    "n_c1": {
-                        "can_create_new_cat": {},
-                        "status": [
-                            "rogue"
-                        ]
-                    },
-                    "n_c2": {
-                        "can_create_new_cat": {},
-                        "status": [
-                            "rogue"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "reputation_changes": {
-                    "outsider": -1
-                },
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c0",
-                            "n_c1",
-                            "n_c2"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -50,
-                        "log": {
-                            "cats_from": "cat_from and the other rogues ambushed cat_to's patrol in an abandoned Twoleg nest and killed some of cat_to's Clanmates."
-                        }
-                    }
-                ],
-                "death": [
-                    {
-                        "cats": [
-                            "some_patrol"
-                        ],
-                        "history": "m_c died in an ambush set by rogues."
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c2",
-                            "n_c1",
-                            "n_c0"
-                        ]
-                    }
-                ]
-            }
-        ],
-        "antag_success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "r_c0 can sense it's a trap and waits just outside, setting {PRONOUN/r_c0/poss} own trap. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/manage/manages} to set up such a yowl that it sends the rogues running as if LionClan were after them."
-                ],
-                "involved_cats": {
-                    "r_c0": {},
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "status": [
-                            "rogue"
-                        ]
-                    },
-                    "n_c1": {
-                        "can_create_new_cat": {},
-                        "status": [
-                            "rogue"
-                        ]
-                    }
-                },
-                "exp_gained": 30,
-                "reputation_changes": {
-                    "outsider": -2
-                },
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c0",
-                            "n_c1"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -50,
-                        "log": {
-                            "cats_from": "cat_from and the other rogues were about to ambush cat_to but were scared off by cat_to's yowling."
-                        }
-                    }
-                ]
-            }
-        ],
-        "antag_fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "r_c0 can sense it's a trap and tries to get the upper paw, only to find rogues waiting for {PRONOUN/r_c0/object} there too. r_c0 escapes with {PRONOUN/r_c0/poss} life, but fear in {PRONOUN/r_c0/poss} heart."
-                ],
-                "involved_cats": {
-                    "r_c0": {},
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "status": [
-                            "rogue"
-                        ]
-                    },
-                    "n_c1": {
-                        "can_create_new_cat": {},
-                        "status": [
-                            "rogue"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "reputation_changes": {
-                    "outsider": -1
-                },
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c0",
-                            "n_c1"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -50,
-                        "log": {
-                            "cats_from": "cat_from and the other rogues were about to ambush cat_to's patrol in an abandoned Twoleg nest but cat_to got away."
-                        }
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "event_id": "fst_bord_noise2",
         "types": [
             "border"
@@ -6642,17 +5923,14 @@
         ]
     },
     {
-        "event_id": "pln_bord_abandontwoleg1",
+        "event_id": "gen_bord_abandontwoleg1",
         "types": [
             "border"
         ],
         "frequency": 2,
-        "location": [
-            "plains"
-        ],
-        "tags": [
-            "disaster"
-        ],
+        "poi": {
+            "name": ["terrain_abandonednest", "terrain_horseplace", "terrain_carrionplace"]
+        },
         "required_cat_types": {
             "patrol_cats": [
                 2,
@@ -6662,7 +5940,9 @@
         "chance_of_success": 40,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
         "intro_strings": [
-            "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the plains."
+            "The patrol hears some odd noises coming from POI.",
+            "As the patrol checks the border, they notice some odd noises coming from POI.",
+            "The patrol is passing by POI when they hear some odd noises coming from its direction."
         ],
         "decline_strings": [
             "The patrol decides not to investigate."
@@ -6670,23 +5950,24 @@
         "success_outcomes": [
             {
                 "frequency": 4,
+                "exp_gained": 30,
+                "outcome_art": "cat_sprites/gen_bord_singingloner_Ln",
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. The patrol greets {PRONOUN/n_c0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility. The older cat looks like {PRONOUN/n_c0/subject} could use a meal, so p_l invites {PRONOUN/n_c0/object} to c_n's camp. The loner agrees."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. The patrol greets {PRONOUN/n_c0/object}, and, as the loner seems harmless, it's a polite interaction without any hostility.",
+                    "The patrol enters cautiously, just to discover that the noise is a loner singing at the top of {PRONOUN/n_c0/poss} lungs. The loner is happy to speak to the patrol about {PRONOUN/n_c0/poss} music, though has no interest in joining the Clan.",
+                    "It seems the noise was a singing loner! The patrol is a bit baffled and end up having a short, but pleasant conversation with the loner before parting ways with the strange cat."
                 ],
                 "involved_cats": {
                     "n_c0": {
                         "can_create_new_cat": {},
-                        "age": [
-                            "senior"
-                        ],
                         "status": [
                             "loner"
-                        ]
+                        ],
+                        "age": ["adult", "senior adult", "senior"],
+                        "stat": {
+                            "trait": ["strange"]
+                        }
                     }
-                },
-                "exp_gained": 30,
-                "reputation_changes": {
-                    "outsider": 1
                 },
                 "relationship_changes": [
                     {
@@ -6697,79 +5978,132 @@
                             "patrol_cats"
                         ],
                         "values": [
-                            "like",
-                            "trust",
-                            "comfort"
+                            "trust"
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_to was part of the patrol that invited cat_from to c_n."
+                            "cats_from": "n_c0 had a pleasant conversation with cat_to."
                         }
                     }
                 ],
-                "join": [
+                "meet": [
                     {
                         "cats": [
                             "n_c0"
-                        ],
-                        "new_status": [
-                            "elder"
-                        ]
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. When {PRONOUN/n_c0/subject} {VERB/n_c0/see/sees} the patrol, {PRONOUN/n_c0/subject} {VERB/n_c0/invite/invites} them to sing too. Instead, p_l offers the somewhat battered-looking and strange cat an introduction to c_n. It's got to be far less lonely than {PRONOUN/n_c0/poss} current life."
-                ],
-                "involved_cats": {
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "age": [
-                            "senior"
-                        ],
-                        "status": [
-                            "loner"
-                        ]
-                    }
-                },
-                "exp_gained": 30,
-                "reputation_changes": {
-                    "outsider": 1
-                },
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c0"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "values": [
-                            "like",
-                            "trust",
-                            "comfort"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_to was part of the patrol that invited cat_from to c_n."
-                        }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ],
-                        "new_status": [
-                            "elder"
                         ]
                     }
                 ]
             },
             {
                 "frequency": 4,
+                "outcome_art": "cat_sprites/gen_bord_singingloner_Ln",
+                "strings": [
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. The patrol greets {PRONOUN/n_c0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility. The older cat looks like {PRONOUN/n_c0/subject} could use a meal, so p_l invites {PRONOUN/n_c0/object} to c_n's camp. The loner agrees.",
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. When {PRONOUN/n_c0/subject} {VERB/n_c0/see/sees} the patrol, {PRONOUN/n_c0/subject} {VERB/n_c0/invite/invites} them to sing too. Instead, p_l offers the somewhat battered-looking and strange cat an introduction to c_n. It's got to be far less lonely than {PRONOUN/n_c0/poss} current life.",
+                    "The patrol discovers an old loner singing at the top of {PRONOUN/n_c0/poss} lungs. A short conversation later and the strange cat has agreed to join c_n."
+
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "senior adult",
+                            "senior"
+                        ],
+                        "status": [
+                            "loner"
+                        ],
+                        "stat": {
+                            "trait": ["strange"]
+                        }
+                    }
+                },
+                "exp_gained": 30,
+                "reputation_changes": {
+                    "outsider": 1
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_to was part of the patrol that invited cat_from to c_n."
+                        }
+                    }
+                ],
+                "join": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_bord_singingloner_Ln",
+                "exp_gained": 30,
+                "strings": [
+                    "The patrol finds an odd loner singing quite a loud and yowling song. s_c0 joins in without missing a beat and the two serenade the whole patrol. The loner quite happily agrees to join c_n afterwards, ecstatic to have found a musical friend."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"],
+                        "stat": {
+                            "trait": ["strange"]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adult", "senior adult", "senior"],
+                        "stat": {
+                            "trait": ["strange"]
+                        }
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "n_c0 was excited that s_c0 was so willing to sing with {PRONOUN/n_c0/object}."
+                        }
+                    }
+                ],
+                "join": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_battle_RgWr",
                 "strings": [
                     "The patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c0 is there, fighting with the courage of LionClan, the strength of TigerClan, and the dexterity of LeopardClan. Shaken but no more than bruised, the patrol manages to retreat to safety."
                 ],
@@ -6788,19 +6122,22 @@
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
                     },
                     "n_c1": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
                     },
                     "n_c2": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
                     }
                 },
                 "exp_gained": 30,
@@ -6829,7 +6166,7 @@
                         "cats": [
                             "n_c2"
                         ],
-                        "history": "This cat died while wandering.",
+                        "history": "This cat died in a battle with c_n after ambushing a patrol.",
                         "no_results": false
                     }
                 ],
@@ -6837,13 +6174,15 @@
                     {
                         "cats": [
                             "n_c1",
-                            "n_c0"
+                            "n_c0",
+                            "n_c2"
                         ]
                     }
                 ]
             },
             {
                 "frequency": 4,
+                "outcome_art": "cat_sprites/gen_anxiouslookup_Wr",
                 "strings": [
                     "s_c0 signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c0/subject} {VERB/s_c0/voice/voices} {PRONOUN/s_c0/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} being too cautious, but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety."
                 ],
@@ -6862,11 +6201,869 @@
                     }
                 },
                 "exp_gained": 30
+            },
+            {
+                "frequency": 3,
+                "exp_gained": 30,
+                "strings": [
+                    "The noise looks to be a bunch of Twolegs unloading odd contraptions from a monster's belly. The patrol decides to leave the area, better safe than sorry!"
+                ]
+            },
+            {
+                "frequency": 3,
+                "exp_gained": 30,
+                "strings": [
+                    "The noise looks to be a bunch of Twolegs unloading odd contraptions from a monster's belly. s_c0 recognizes them as traps used to catch cats and warns the patrol! p_l decides that they should leave and make sure the Clan knows to steer clear of this place for a little while."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"],
+                        "past_status": ["kittypet"]
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was grateful for cat_to's knowledge about Twoleg contraptions."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to's kittypet knowledge helped identify a threat to the Clan."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "exp_gained": 30,
+                "strings": [
+                    "The patrol discovers a group of kittypets who seem to be holding a \"Clan Meeting\". They watch, fascinated, as the kittypets give themselves \"warrior names\" and assign \"patrols\". Soon enough one of the Clan cats is noticed and, while most of the kittypets scatter, a couple are brave enough to sheepishly ask if, perhaps, they could join c_n?"
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "kittypet"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "kittypet"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "kittypet"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult"]
+                    },
+                    "n_c3": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "kittypet"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult"]
+                    },
+                    "n_c4": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "kittypet"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult"]
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was grateful that cat_to allowed {PRONOUN/cat_from/object} to join c_n."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats", "high_social", "low_lawful"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3", "n_c4"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was amused by cat_to play-acting as though {PRONOUN/cat_to/subject} were a Clan cat."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats", "high_lawful"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3", "n_c4"
+                        ],
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from didn't think it very appropriate that cat_to was pretending to be a warrior."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1","n_c2", "n_c3", "n_c4"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1","n_c2", "n_c3", "n_c4"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from used to pretend to be Clan cats with cat_to."
+                        }
+                    }
+                ],
+                "join": [
+                    {
+                        "cats": ["n_c0", "n_c1"],
+                        "new_status": ["apprentice", "warrior"]
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c2", "n_c3", "n_c4"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "exp_gained": 30,
+                "strings": [
+                    "As the patrol gets closer, they recognize the noise as a bunch of cats hollering, alternating between encouragement and personal jabs. When the cats finally come into view, the patrol realizes that this seems to be a gathering of loners! The loners are holding some sort of rodent catching competition in the prey-wealthy area. Well, this won't do, p_l interrupts and insists the loners stop catching c_n's prey. The loners hastily apologize and leave without much argument."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c3": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1", "n_c2", "n_c3", "low_lawful"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from didn't appreciate cat_to interrupting {PRONOUN/cat_from/poss} rodent-hunting competition."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats", "high_social", "low_lawful"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was amused by cat_to holding a rodent-catching competition with other loners."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats", "high_lawful"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3"
+                        ],
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from didn't appreciate that cat_to was stealing c_n prey under the guise of \"competition\"."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1","n_c2", "n_c3"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1","n_c2", "n_c3"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from held a rodent-catching competition with cat_to."
+                        }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2", "n_c3"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "exp_gained": 30,
+                "strings": [
+                    "The patrol recognizes the noise as a bunch of cats hollering and yowling. It sounds like a fight! They rush forward and find a group of rogues all circled around a pair of cats locked in battle. The audience throws jeers and insults until, finally, one of the cats goes still in the dirt. The patrol charges in and scatter the rogues, who quickly escape, leaving the unfortunate loser behind. p_l decides to bring the cat back to camp, perhaps {PRONOUN/n_c0/subject} can still be saved."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c3": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c4": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats", "low_lawful", "high_aggress"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3", "n_c4"
+                        ],
+                        "values": [
+                            "comfort",
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was intrigued by the idea that rogues like cat_to hold fighting competitions."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats", "high_lawful", "low_aggress"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3", "n_c4"
+                        ],
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "cat_from found it abhorrent that rogues like cat_to would hold such a brutal fighting competition."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "n_c1"
+                        ],
+                        "values": [
+                            "like",
+                            "comfort",
+                            "respect"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from held a grudge against cat_to for beating {PRONOUN/cat_from/object} in a fight."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c2", "n_c3", "n_c4"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from lost all respect for cat_to after witnessing {PRONOUN/cat_to/object} lose a fight."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c1"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from lost all respect for cat_to after beating {PRONOUN/cat_to/object} in a fight."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "mangled leg"
+                        ],
+                        "scar_history": "m_c was scarred after fighting for the entertainment of other rogues.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} wounds after fighting for the entertainment of other rogues."
+                    },
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "cat bite"
+                        ],
+                        "scar_history": "m_c was scarred after fighting for the entertainment of other rogues.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} wounds after fighting for the entertainment of other rogues."
+                    },
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "claw-wound"
+                        ],
+                        "scar_history": "m_c was scarred after fighting for the entertainment of other rogues.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} wounds after fighting for the entertainment of other rogues."
+                    }
+                ],
+                "join": [
+                    {
+                        "cats": ["n_c0"],
+                        "new_status": ["apprentice", "warrior", "elder"]
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c1", "n_c2", "n_c3", "n_c4"]
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
             {
                 "frequency": 4,
+                "outcome_art": "cat_sprites/gen_bord_singingloner_Ln",
+                "strings": [
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. The patrol greets {PRONOUN/n_c0/object}, but the loner spits and hisses at the interruption to {PRONOUN/n_c0/poss} song. The patrol makes a hasty exit."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adult", "senior adult", "senior"],
+                        "stat": {
+                            "trait": ["strange"]
+                        }
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_to rudely interrupted n_c0's song.",
+                            "cats_to": "n_c0 spat at cat_to for very little reason."
+                        }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_battle_RgWr",
+                "strings": [
+                    "The patrol walks into an ambush by a group of rogues. Luckily they manage to fight the rogues off, though not without injury."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
+                    }
+                },
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "outsider": -1
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -50,
+                        "log": {
+                            "cats_from": "cat_from and the other rogues ambushed cat_to's patrol in an abandoned Twoleg nest."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "some_patrol"
+                        ],
+                        "condition": [
+                            "battle_injury"
+                        ],
+                        "scar_history": "m_c was scarred when rogues attacked {PRONOUN/m_c/object}.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} wounds after a rogues ambushed {PRONOUN/m_c/poss} patrol."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c1",
+                            "n_c0",
+                            "n_c2"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "outcome_art": "cat_sprites/gen_battle_RgWr",
+                "strings": [
+                    "The patrol walks into an ambush by a group of rogues. Some of them manage to escape, but not all."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
+                    }
+                },
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "outsider": -1
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -50,
+                        "log": {
+                            "cats_from": "cat_from and the other rogues ambushed cat_to's patrol in an abandoned Twoleg nest."
+                        }
+                    }
+                ],
+                "death": [
+                    {
+                        "cats": [
+                            "some_patrol"
+                        ],
+                        "history": "m_c died from being ambushed by rogues."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c1",
+                            "n_c0",
+                            "n_c2"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "exp_gained": 30,
+                "strings": [
+                    "As the patrol gets closer, they recognize the noise as a bunch of cats hollering, alternating between encouragement and personal jabs. When the cats finally come into view, the patrol realizes that this seems to be a gathering of loners! The loners are holding some sort of rodent catching competition in the prey-wealthy area. Well, this won't do, p_l interrupts and insists the loners stop catching c_n's prey. The loners disagree and a fight ensues, leaving some cats injured."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c3": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1", "n_c2", "n_c3", "low_lawful"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from didn't appreciate cat_to interrupting {PRONOUN/cat_from/poss} rodent-hunting competition."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats", "high_lawful"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3"
+                        ],
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from didn't appreciate that cat_to was stealing c_n prey under the guise of \"competition\"."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1"
+                        ],
+                        "cats_to": [
+                            "n_c2", "n_c3"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from held a rodent-catching competition with cat_to."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from and cat_to came to blows over prey."
+                        }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2", "n_c3"]
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "some_patrol"
+                        ],
+                        "condition": [
+                            "battle_injury"
+                        ],
+                        "scar_history": "m_c was scarred when loners attacked {PRONOUN/m_c/object}.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} wounds after a loners attacked {PRONOUN/m_c/object}."
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "exp_gained": 30,
+                "strings": [
+                    "The patrol recognizes the noise as a bunch of cats hollering and yowling. It sounds like a fight! They rush forward and find a group of rogues all circled around a pair of cats locked in battle. The patrol charges, interrupting the duel and starting a much larger fight. By the end, the rogues have scattered to the wind, but not without leaving quite a few claw-marks behind."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c3": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c4": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats", "low_lawful", "high_aggress"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3", "n_c4"
+                        ],
+                        "values": [
+                            "comfort",
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was intrigued by the idea that rogues like cat_to hold fighting competitions."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats", "high_lawful", "low_aggress"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3", "n_c4"
+                        ],
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "cat_from found it abhorrent that rogues like cat_to would hold such a brutal fighting competition."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "some_patrol"
+                        ],
+                        "condition": [
+                            "battle_injury"
+                        ],
+                        "scar_history": "m_c was scarred after interrupting a rogue fighting competition.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} wounds after interrupting a rogue fighting competition."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2", "n_c3", "n_c4"]
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "outcome_art": "cat_sprites/gen_battle_RgWr",
+                "tags": [
+                    "disaster"
+                ],
                 "strings": [
                     "The patrol walks into an ambush by a group of rogues. Everyone is slaughtered."
                 ],
@@ -6882,9 +7079,53 @@
                         "history": "m_c died from being ambushed by rogues."
                     }
                 ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "As the cats get closer to POI, they notice a Twoleg monster crouched not too far away. They continue forward, though cautiously, until a loud SNAP pierce the air. The patrol jumps and turns to see r_c0 had been investigating some odd Twoleg contraption only to then be trapped inside it! They're forced to scatter when Twolegs appear and can only watch as r_c0 is loaded into the belly of the monster."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 30,
+                "lost": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ]
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_bord_singingloner_Ln",
+                "exp_gained": 30,
+                "strings": [
+                    "The patrol runs in, ready for a fight, only to discover that it's just an odd loner singing to {PRONOUN/n_c0/self}. Nevertheless, they confront the loner and insist {PRONOUN/n_c0/subject} leave. The loner goes dashing out, quite terrified."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adult", "senior adult", "senior"],
+                        "stat": {
+                            "trait": ["strange"]
+                        }
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
+            },
             {
                 "frequency": 4,
                 "strings": [
@@ -6896,13 +7137,15 @@
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
                     },
                     "n_c1": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
                     }
                 },
                 "exp_gained": 30,
@@ -6933,6 +7176,45 @@
         "antag_fail_outcomes": [
             {
                 "frequency": 4,
+                "outcome_art": "cat_sprites/gen_bord_singingloner_Ln",
+                "exp_gained": 30,
+                "strings": [
+                    "The patrol runs in, ready for a fight, only to discover that it's just an odd loner singing to {PRONOUN/n_c0/self}. The loner, though, takes the patrol's sudden appearance as a threat and hurls {PRONOUN/n_c0/self} at p_l. A short scuffle later, and the loner runs, p_l left bleeding and frustrated."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adult", "senior adult", "senior"],
+                        "stat": {
+                            "trait": ["strange"]
+                        }
+                    }
+                },
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "battle_injury"
+                        ],
+                        "scar_history": "m_c was scarred when {PRONOUN/m_c/subject} startled a loner into attacking.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/subject} startled a loner into attacking."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
                 "strings": [
                     "r_c0 can sense it's a trap and tries to get the upper paw, only to find rogues waiting for {PRONOUN/r_c0/object} there too. r_c0 escapes with {PRONOUN/r_c0/poss} life, but fear in {PRONOUN/r_c0/poss} heart."
                 ],
@@ -6942,13 +7224,15 @@
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
                     },
                     "n_c1": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
                     }
                 },
                 "exp_gained": 0,
@@ -6978,15 +7262,14 @@
         ]
     },
     {
-        "event_id": "pln_bord_abandontwoleg2",
+        "event_id": "gen_bord_abandontwoleg2",
         "types": [
             "border"
         ],
         "frequency": 2,
-        "location": [
-            "plains"
-        ],
-        "tags": [],
+        "poi": {
+            "name": ["terrain_abandonednest", "terrain_horseplace", "terrain_carrionplace"]
+        },
         "required_cat_types": {
             "patrol_cats": [
                 1,
@@ -6996,7 +7279,9 @@
         "chance_of_success": 30,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
         "intro_strings": [
-            "p_l hears some odd noises coming from an abandoned Twoleg nest out on the plains."
+            "p_l hears some odd noises coming from POI out on the plains.",
+            "As p_l checks the border, {PRONOUN/p_l/subject} notice some odd noises coming from POI.",
+            "p_l is passing by POI when {PRONOUN/p_l/subject} hear some odd noises coming from its direction."
         ],
         "decline_strings": [
             "p_l decides not to investigate."
@@ -7004,23 +7289,24 @@
         "success_outcomes": [
             {
                 "frequency": 4,
+                "outcome_art": "cat_sprites/gen_bord_singingloner_Ln",
+                "exp_gained": 30,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. p_l greets {PRONOUN/n_c0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility. The older cat looks like {PRONOUN/n_c0/subject} could use a meal, so p_l invites {PRONOUN/n_c0/object} to c_n's camp. The loner agrees."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. p_l greets {PRONOUN/n_c0/object}, and, as the loner seems harmless, it's a polite interaction without any hostility.",
+                    "p_l enters cautiously, just to discover that the noise is a loner singing at the top of {PRONOUN/n_c0/poss} lungs. The loner is happy to speak to p_l about {PRONOUN/n_c0/poss} music, though has no interest in joining the Clan.",
+                    "It seems the noise was a singing loner! p_l is a bit baffled and ends up having a short, but pleasant conversation with the loner before parting ways with the strange cat."
                 ],
                 "involved_cats": {
                     "n_c0": {
                         "can_create_new_cat": {},
-                        "age": [
-                            "senior"
-                        ],
                         "status": [
                             "loner"
-                        ]
+                        ],
+                        "age": ["adult", "senior adult", "senior"],
+                        "stat": {
+                            "trait": ["strange"]
+                        }
                     }
-                },
-                "exp_gained": 30,
-                "reputation_changes": {
-                    "outsider": 1
                 },
                 "relationship_changes": [
                     {
@@ -7030,88 +7316,137 @@
                         "cats_to": [
                             "patrol_cats"
                         ],
+                        "mutual": true,
                         "values": [
-                            "like",
-                            "trust",
-                            "comfort"
+                            "trust"
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_to invited cat_from to c_n."
+                            "cats_from": "n_c0 had a pleasant conversation with cat_to."
                         }
                     }
                 ],
-                "join": [
+                "meet": [
                     {
                         "cats": [
                             "n_c0"
-                        ],
-                        "new_status": [
-                            "elder"
-                        ]
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. When {PRONOUN/n_c0/subject} {VERB/n_c0/see/sees} p_l, {PRONOUN/n_c0/subject} {VERB/n_c0/invite/invites} {PRONOUN/p_l/object} to sing too. Instead, p_l offers the somewhat battered-looking and strange cat an introduction to c_n. It's got to be far less lonely than {PRONOUN/n_c0/poss} current life."
-                ],
-                "involved_cats": {
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "age": [
-                            "senior"
-                        ],
-                        "status": [
-                            "loner"
-                        ]
-                    }
-                },
-                "exp_gained": 30,
-                "reputation_changes": {
-                    "outsider": 1
-                },
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c0"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "values": [
-                            "like",
-                            "trust",
-                            "comfort"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_to invited cat_from to c_n."
-                        }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ],
-                        "new_status": [
-                            "elder"
                         ]
                     }
                 ]
             },
             {
                 "frequency": 4,
+                "outcome_art": "cat_sprites/gen_bord_singingloner_Ln",
                 "strings": [
-                    "s_c0 walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c0 has the fighting skill and confidence to escape, running for {PRONOUN/s_c0/poss} life."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. p_l greets {PRONOUN/n_c0/object}, and, as the loner seems harmless, it's a polite interaction without any hostility. The older cat looks like {PRONOUN/n_c0/subject} could use a meal, so p_l invites {PRONOUN/n_c0/object} to c_n's camp. The loner agrees.",
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. When {PRONOUN/n_c0/subject} {VERB/n_c0/see/sees} p_l, {PRONOUN/n_c0/subject} {VERB/n_c0/invite/invites} {PRONOUN/p_l/object} to sing too. Instead, p_l offers the somewhat battered-looking and strange cat an introduction to c_n. It's got to be far less lonely than {PRONOUN/n_c0/poss} current life.",
+                    "p_l discovers an old loner singing at the top of {PRONOUN/n_c0/poss} lungs. A short conversation later and the strange cat has agreed to join c_n."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "senior adult",
+                            "senior"
                         ],
+                        "status": [
+                            "loner"
+                        ],
+                        "stat": {
+                            "trait": ["strange"]
+                        }
+                    }
+                },
+                "exp_gained": 30,
+                "reputation_changes": {
+                    "outsider": 1
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_to invited cat_from to c_n."
+                        }
+                    }
+                ],
+                "join": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_bord_singingloner_Ln",
+                "exp_gained": 30,
+                "strings": [
+                    "p_l finds an odd loner singing quite a loud and yowling song. p_l joins in without missing a beat and the two sing a lovely duet. The loner quite happily agrees to join c_n afterwards, ecstatic to have found a musical friend."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": ["strange"]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adult", "senior adult", "senior"],
+                        "stat": {
+                            "trait": ["strange"]
+                        }
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "n_c0 was excited that p_l was so willing to sing with {PRONOUN/n_c0/object}."
+                        }
+                    }
+                ],
+                "join": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_battle_RgWr",
+                "strings": [
+                    "p_l walks into an ambush by a group of rogues. It's only by the grace of StarClan that p_l has the fighting skill and confidence to escape, running for {PRONOUN/p_l/poss} life."
+                ],
+                "involved_cats": {
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "FIGHTER,3"
@@ -7122,19 +7457,22 @@
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
                     },
                     "n_c1": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
                     },
                     "n_c2": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
                     }
                 },
                 "exp_gained": 30,
@@ -7170,14 +7508,12 @@
             },
             {
                 "frequency": 4,
+                "outcome_art": "cat_sprites/gen_anxiouslookup_Wr",
                 "strings": [
-                    "s_c0 has a bad feeling about this. And maybe {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} being too cautious, but then {PRONOUN/s_c0/subject} {VERB/s_c0/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c0 retreats to safety."
+                    "p_l has a bad feeling about this. And maybe {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} being too cautious, but then {PRONOUN/p_l/subject} {VERB/p_l/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, p_l retreats to safety."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "careful",
@@ -7188,14 +7524,724 @@
                     }
                 },
                 "exp_gained": 30
+            },
+            {
+                "frequency": 3,
+                "exp_gained": 30,
+                "strings": [
+                    "The noise looks to be a bunch of Twolegs unloading odd contraptions from a monster's belly. p_l decides to leave the area, better safe than sorry!"
+                ]
+            },
+            {
+                "frequency": 3,
+                "exp_gained": 30,
+                "strings": [
+                    "The noise looks to be a bunch of Twolegs unloading odd contraptions from a monster's belly. p_l recognizes them as traps used to catch cats and warns the patrol! p_l decides that {PRONOUN/p_l/subject} should leave and make sure the Clan knows to steer clear of this place for a little while."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "past_status": ["kittypet"]
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to's kittypet knowledge helped identify a threat to the Clan."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "exp_gained": 30,
+                "strings": [
+                    "p_l discovers a group of kittypets who seem to be holding a \"Clan Meeting\". {PRONOUN/p_l/subject/CAP} watch, fascinated, as the kittypets give themselves \"warrior names\" and assign \"patrols\". Soon enough p_l is noticed and, while most of the kittypets scatter, a couple are brave enough to sheepishly ask if, perhaps, they could join c_n?"
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "kittypet"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "kittypet"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "kittypet"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult"]
+                    },
+                    "n_c3": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "kittypet"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult"]
+                    },
+                    "n_c4": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "kittypet"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult"]
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was grateful that cat_to allowed {PRONOUN/cat_from/object} to join c_n."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l", "high_social", "low_lawful"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3", "n_c4"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was amused by cat_to play-acting as though {PRONOUN/cat_to/subject} were a Clan cat."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l", "high_lawful"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3", "n_c4"
+                        ],
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from didn't think it very appropriate that cat_to was pretending to be a warrior."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1"
+                        ],
+                        "cats_to": [
+                            "n_c2", "n_c3", "n_c4"
+                        ],
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from used to pretend to be Clan cats with cat_to."
+                        }
+                    }
+                ],
+                "join": [
+                    {
+                        "cats": ["n_c0", "n_c1"],
+                        "new_status": ["apprentice", "warrior"]
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c2", "n_c3", "n_c4"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "exp_gained": 30,
+                "strings": [
+                    "As the p_l gets closer, {PRONOUN/p_l/subject} recognize the noise as a bunch of cats hollering, alternating between encouragement and personal jabs. When the cats finally come into view, p_l realizes that this seems to be a gathering of loners! The loners are holding some sort of rodent catching competition in the prey-wealthy area. Well, this won't do, p_l interrupts and insists the loners stop catching c_n's prey. The loners hastily apologize and leave without much argument."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c3": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1", "n_c2", "n_c3", "low_lawful"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from didn't appreciate cat_to interrupting {PRONOUN/cat_from/poss} rodent-hunting competition."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats", "high_social", "low_lawful"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was amused by cat_to holding a rodent-catching competition with other loners."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats", "high_lawful"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3"
+                        ],
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from didn't appreciate that cat_to was stealing c_n prey under the guise of \"competition\"."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1"
+                        ],
+                        "cats_to": [
+                            "n_c2", "n_c3"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from held a rodent-catching competition with cat_to."
+                        }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2", "n_c3"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "exp_gained": 30,
+                "strings": [
+                    "p_l recognizes the noise as a bunch of cats hollering and yowling. It sounds like a fight! {PRONOUN/p_l/subject/CAP} rush forward and find a group of rogues all circled around a pair of cats locked in battle. The audience throws jeers and insults until, finally, one of the cats goes still in the dirt. Once the other rogues leave, p_l sneaks forward to check if the cat still lives. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to bring the cat back to camp, perhaps {PRONOUN/n_c0/subject} can still be saved."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c3": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c4": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats", "low_lawful", "high_aggress"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3", "n_c4"
+                        ],
+                        "values": [
+                            "comfort",
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was intrigued by the idea that rogues like cat_to hold fighting competitions."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats", "high_lawful", "low_aggress"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3", "n_c4"
+                        ],
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "cat_from found it abhorrent that rogues like cat_to would hold such a brutal fighting competition."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "n_c1"
+                        ],
+                        "values": [
+                            "like",
+                            "comfort",
+                            "respect"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from held a grudge against cat_to for beating {PRONOUN/cat_from/object} in a fight."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c2", "n_c3", "n_c4"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from lost all respect for cat_to after witnessing {PRONOUN/cat_to/object} lose a fight."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c1"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from lost all respect for cat_to after beating {PRONOUN/cat_to/object} in a fight."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "mangled leg"
+                        ],
+                        "scar_history": "m_c was scarred after fighting for the entertainment of other rogues.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} wounds after fighting for the entertainment of other rogues."
+                    },
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "cat bite"
+                        ],
+                        "scar_history": "m_c was scarred after fighting for the entertainment of other rogues.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} wounds after fighting for the entertainment of other rogues."
+                    },
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "claw-wound"
+                        ],
+                        "scar_history": "m_c was scarred after fighting for the entertainment of other rogues.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} wounds after fighting for the entertainment of other rogues."
+                    }
+                ],
+                "join": [
+                    {
+                        "cats": ["n_c0"],
+                        "new_status": ["apprentice", "warrior", "elder"]
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c1", "n_c2", "n_c3", "n_c4"]
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
             {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_bord_singingloner_Ln",
+                "strings": [
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. p_l greets {PRONOUN/n_c0/object}, but the loner spits and hisses at the interruption to {PRONOUN/n_c0/poss} song. p_l makes a hasty exit."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adult", "senior adult", "senior"],
+                        "stat": {
+                            "trait": ["strange"]
+                        }
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_to rudely interrupted n_c0's song.",
+                            "cats_to": "n_c0 spat at cat_to for very little reason."
+                        }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "outcome_art": "cat_sprites/gen_battle_RgWr",
+                "strings": [
+                    "p_l walks into an ambush by a group of rogues. Luckily {PRONOUN/p_l/subject} manage to fight the rogues off, though not without injury."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
+                    }
+                },
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "outsider": -1
+                },
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "battle_injury"
+                        ],
+                        "scar_history": "m_c was scarred when rogues attacked {PRONOUN/m_c/object}.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} wounds after a rogues ambushed {PRONOUN/m_c/poss} patrol."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c1",
+                            "n_c0",
+                            "n_c2"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "exp_gained": 30,
+                "strings": [
+                    "As p_l gets closer, {PRONOUN/p_l/subject} recognize the noise as a bunch of cats hollering, alternating between encouragement and personal jabs. When the cats finally come into view, p_l realizes that this seems to be a gathering of loners! The loners are holding some sort of rodent catching competition in the prey-wealthy area. Well, this won't do, p_l interrupts and insists the loners stop catching c_n's prey. The loners disagree and a fight ensues, leaving some cats injured."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c3": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1", "n_c2", "n_c3", "low_lawful"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from didn't appreciate cat_to interrupting {PRONOUN/cat_from/poss} rodent-hunting competition."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats", "high_lawful"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3"
+                        ],
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from didn't appreciate that cat_to was stealing c_n prey under the guise of \"competition\"."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1"
+                        ],
+                        "cats_to": [
+                            "n_c2", "n_c3"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from held a rodent-catching competition with cat_to."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from and cat_to came to blows over prey."
+                        }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2", "n_c3"]
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "some_patrol"
+                        ],
+                        "condition": [
+                            "battle_injury"
+                        ],
+                        "scar_history": "m_c was scarred when loners attacked {PRONOUN/m_c/object}.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} wounds after a loners attacked {PRONOUN/m_c/object}."
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "tags": ["some_lives"],
+                "exp_gained": 30,
+                "strings": [
+                    "p_l recognizes the noise as a bunch of cats hollering and yowling. It sounds like a fight! {PRONOUN/p_l/subject/CAP} rush forward and find a group of rogues all circled around a pair of cats locked in battle. p_l charges, interrupting the duel and starting a much larger, and quite unwise, fight. By the end, the rogues have scattered to the wind, but not without leaving p_l dead on the ground."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c3": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c4": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    }
+                },
+                "death": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "death_history": "m_c died after interrupting a rogue fighting competition."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2", "n_c3", "n_c4"]
+                    }
+                ]
+            },
+            {
                 "tags": [
                     "some_lives"
                 ],
-                "frequency": 4,
+                "frequency": 2,
+                "outcome_art": "cat_sprites/gen_battle_RgWr",
                 "strings": [
                     "p_l decides that a quick peek can't hurt. As {PRONOUN/p_l/subject} {VERB/p_l/venture/ventures} into the nest, ears pricked with curiosity, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} notice the lithe forms of rogues moving to block the entrance until it's too late. p_l never makes it back to camp."
                 ],
@@ -7206,7 +8252,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "history": "This cat died from being ambushed by rogues while on a solo patrol."
                     }
@@ -7214,6 +8260,33 @@
             }
         ],
         "antag_success_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_bord_singingloner_Ln",
+                "exp_gained": 30,
+                "strings": [
+                    "p_l runs in, ready for a fight, only to discover that it's just an odd loner singing to {PRONOUN/n_c0/self}. Nevertheless, {PRONOUN/p_l/subject} confront the loner and insist {PRONOUN/n_c0/subject} leave. The loner goes dashing out, quite terrified."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adult", "senior adult", "senior"],
+                        "stat": {
+                            "trait": ["strange"]
+                        }
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
+            },
             {
                 "frequency": 4,
                 "strings": [
@@ -7224,13 +8297,15 @@
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
                     },
                     "n_c1": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
                     }
                 },
                 "exp_gained": 30,
@@ -7261,6 +8336,45 @@
         "antag_fail_outcomes": [
             {
                 "frequency": 4,
+                "outcome_art": "cat_sprites/gen_bord_singingloner_Ln",
+                "exp_gained": 30,
+                "strings": [
+                    "p_l runs in, ready for a fight, only to discover that it's just an odd loner singing to {PRONOUN/n_c0/self}. The loner, though, takes the p_l's sudden appearance as a threat and hurls {PRONOUN/n_c0/self} at p_l. A short scuffle later, and the loner runs, p_l left bleeding and frustrated."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adult", "senior adult", "senior"],
+                        "stat": {
+                            "trait": ["strange"]
+                        }
+                    }
+                },
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "battle_injury"
+                        ],
+                        "scar_history": "m_c was scarred when {PRONOUN/m_c/subject} startled a loner into attacking.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/subject} startled a loner into attacking."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
                 "strings": [
                     "p_l can sense it's a trap and tries to get the upper paw, only to find rogues waiting for {PRONOUN/p_l/object} there too. p_l escapes with {PRONOUN/p_l/poss} life, but fear in {PRONOUN/p_l/poss} heart."
                 ],
@@ -7269,13 +8383,15 @@
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
                     },
                     "n_c1": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
                     }
                 },
                 "exp_gained": 0,
