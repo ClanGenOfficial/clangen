@@ -6184,7 +6184,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_anxiouslookup_Wr",
                 "strings": [
-                    "s_c0 signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c0/subject} {VERB/s_c0/voice/voices} {PRONOUN/s_c0/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} being too cautious, but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety."
+                    "s_c0 signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c0/subject} {VERB/s_c0/explain/explains} {PRONOUN/s_c0/poss} concerns about the unknown situation. At first it seems like {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} being too cautious, but then p_l picks up on the scent of strange cats lingering around the Twoleg nest. Forewarned, the patrol retreats to safety."
                 ],
                 "involved_cats": {
                     "s_c0": {
