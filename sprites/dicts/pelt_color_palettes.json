@@ -939,9 +939,9 @@
 },
     "HONEY": {
         "base": "#E8CFA0",
-        "base_gradient_bottom": "#F5EFDA",
+        "base_gradient_bottom": "#F7F3E1",
         "base_gradient_top": "#CCAC6C",
-        "base_gradient_legs_tail": "#DBBC70",
+        "base_gradient_legs_tail": "#D1B975",
         "pattern": "#BA9A59",
         "pattern_gradient_top": "#A68B47",
         "pattern_gradient_bottom": "#F5EFDA",
