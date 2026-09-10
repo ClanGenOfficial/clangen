@@ -21,6 +21,7 @@ from html import escape
 import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID
+from pygame_gui.elements import UILabel
 from requests.exceptions import RequestException, Timeout
 
 from scripts.cat.cats import Cat
@@ -182,7 +183,7 @@ class StartScreen(Screens):
         if game.event_editing:
             game.event_editing = False
 
-        bg = pygame.image.load("resources/images/menu.png").convert()
+        bg = pygame.image.load("resources/images/menu_logoless.png").convert()
         if game_setting_get("dark mode"):
             bg.fill(
                 constants.CONFIG["theme"]["fullscreen_background"]["dark"][
@@ -197,6 +198,21 @@ class StartScreen(Screens):
         self.set_bg("mainmenu_bg")
 
         self.show_mute_buttons()
+
+        # Create Title
+        self.elements["title"] = UILabel(
+            ui_scale(pygame.Rect((60, 170), (300, 105))),
+            "general.title",
+            object_id="#text_title",
+            manager=MANAGER,
+        )
+
+        self.elements["subtitle"] = UILabel(
+            ui_scale(pygame.Rect((70, 250), (400, 50))),
+            "general.subtitle",
+            object_id="#text_subtitle",
+            manager=MANAGER,
+        )
 
         # Create buttons
         self.elements["continue"] = UISurfaceImageButton(
