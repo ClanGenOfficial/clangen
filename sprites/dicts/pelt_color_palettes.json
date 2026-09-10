@@ -942,9 +942,9 @@
         "base_gradient_bottom": "#F7F3E1",
         "base_gradient_top": "#CCA252",
         "base_gradient_legs_tail": "#DBC481",
-        "pattern": "#B09453",
-        "pattern_gradient_top": "#A68B47",
-        "pattern_gradient_bottom": "#F5EFDA",
+        "pattern": "#BA9D59",
+        "pattern_gradient_top": "#A88942",
+        "pattern_gradient_bottom": "#E6CA8A",
         "pattern_fill": "#DBC697",
         "masked_light_pattern": "#EDE3CA",
 
