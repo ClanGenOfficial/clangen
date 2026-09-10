@@ -10691,7 +10691,7 @@
         ]
     },
     {
-    "event_id": "farmhouse_hunting",
+    "event_id": "gen_hunt_farmhouse",
     "types": ["hunting"],
     "frequency": 4,
     "required_cat_types": {
@@ -10718,7 +10718,7 @@
         {
             "frequency": 3,
             "strings": [
-                "The cats work together to scare the mice towards each other, not only to practice teamwork but to also make the already easy hunt even more fun."
+                "The cats work together to scare the mice towards each other, not only to practice teamwork but to also make the already-easy hunt even more fun."
             ],
             "exp_gained": 30,
             "relationship_changes": [
@@ -10729,12 +10729,12 @@
                     "cats_from": [
                         "patrol_cats"
                     ],
-                    "mutual": true,
+                    "mutual": false,
                     "values": [
                         "trust",
                         "respect"
                     ],
-                    "amount": 10,
+                    "amount": 5,
                     "log": {
                         "cats_from": "cat_from and cat_to feel like they can rely on each other a little more to do their part."
                     }
@@ -10765,7 +10765,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "Whoever spread the rumor either lied or it was already well known, the barn reeks of loners and rouges. They decide to hunt elsewhere, regretting listening to that old rumor."
+                    "Whoever spread the rumor either lied or it was already well-known; the barn reeks of loners and rouges. They decide to hunt elsewhere, regretting listening to that old rumor."
                 ],
                 "exp_gained": 20,
                 "supply": [
@@ -10778,7 +10778,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "Guess they should've expected others to hear about the rumor as well, the barn reeks of loners and rouges. The cats barely even have time to hunt before even more of them start showing up."
+                    "The patrol should have expected others to hear about the rumor. The barn reeks of loners and rogues, and the Clan cats have little time to hunt before a stranger interrupts."
                 ],
                 "exp_gained": 5,
                 "supply": [
@@ -10803,14 +10803,14 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The cats don't even reach the barn before they're intercepted by a rather territorial looking wild hog. Hogs are not to be trifled with, but they find no way past it. The patrol returns home empty handed."
+                    "The cats don't even reach the barn before they're intercepted by a territorial wild hog. Hogs are not to be trifled with, and they find no way past it. The patrol returns home empty-pawed."
                 ],
                 "exp_gained": 0
             },
             {
                 "frequency": 1,
                 "strings": [
-                    "The cats don't even reach the barn before they're intercepted by a rather territorial looking wild hog. The hog doesn't look that tough, the patrol decided and attempted to take it down, but no cat expected how tough such an animal actually was."
+                    "The cats don't even reach the barn before they're intercepted by a territorial wild hog. The patrol doesn't think the hog looks that tough, so they attempt to take it down. The mistake is costly."
                 ],
                 "exp_gained": 0,
                 "death": [
