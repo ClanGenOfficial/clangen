@@ -948,9 +948,9 @@
         "pattern_fill": "#DBC697",
         "masked_light_pattern": "#EDE3CA",
 
-        "newborn_base": "#F2E9C7",
-        "newborn_base_gradient_bottom": "#F0EDE9",
-        "newborn_base_gradient_top": "#E3DDCF",
+        "newborn_base": "#EBD5A4",
+        "newborn_base_gradient_bottom": "#F2E1BD",
+        "newborn_base_gradient_top": "#EBC97F",
         "newborn_pattern": "#E3D4C9",
         "newborn_pattern_gradient_top": "#957A7C",
         "newborn_pattern_fill": "#CFCED0",
