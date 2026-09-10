@@ -67,7 +67,7 @@
     "terrain_horseplace": {
         "category": "terrain",
         "biome": ["plains"],
-        "tags": ["Twolegs:present", "prey:ground", "prey:flying"]
+        "tags": ["Twolegs:present", "prey:ground", "prey:flying", "covered"]
     },
     "terrain_deepforest": {
         "category": "terrain",
@@ -113,6 +113,10 @@
         "category": "terrain",
         "biome": ["beach"],
         "tags": ["Twolegs:present", "tainted", "prey:water", "water:ocean"]
+    },
+    "terrain_abandonednest": {
+        "category": "terrain",
+        "biome": ["any"],
+        "tags": ["Twolegs:abandoned", "prey:ground", "covered", "unstable"]
     }
-
 }
