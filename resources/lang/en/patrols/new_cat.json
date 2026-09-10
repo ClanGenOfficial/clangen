@@ -6650,7 +6650,7 @@
                     "The noise looks to be a bunch of Twolegs unloading odd contraptions from a monster's belly. The patrol decides to leave the area, better safe than sorry!",
                     "It must have been the wind, the patrol finds nothing in POI but dust.",
                     "The patrol finds some Twoleg footprints and evidence of a monster's passing, but nothing else of note.",
-                    "It looks like perhaps a scuffle between some cats took place here, and the scents of strangers fill the air. Whoever was here, however, has already left."
+                    "It looks like, perhaps, a scuffle between some cats took place here, the scent of strangers fills the air. Whoever was here, however, has already left."
                 ],
                 "exp_gained": 0
             },
@@ -7959,7 +7959,7 @@
                 "strings": [
                     "It must have been the wind, the patrol finds nothing in POI but dust.",
                     "p_l finds some Twoleg footprints and evidence of a monster's passing, but nothing else of note.",
-                    "It looks like perhaps a scuffle between some cats took place here, and the scents of strangers fill the air. Whoever was here, however, has already left.",
+                    "It looks like, perhaps, a scuffle between some cats took place here, the scent of strangers fills the air. Whoever was here, however, has already left.",
                     "The noise looks to be a bunch of Twolegs unloading odd contraptions from a monster's belly. p_l decides to leave the area, better safe than sorry!"
                 ],
                 "exp_gained": 0
