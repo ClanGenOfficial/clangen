@@ -945,7 +945,7 @@
         "pattern": "#BA9D59",
         "pattern_gradient_top": "#9C7E3A",
         "pattern_gradient_bottom": "#F7F3E1",
-        "pattern_fill": "#DBC697",
+        "pattern_fill": "#C9AC61",
         "masked_light_pattern": "#EDE3CA",
 
         "newborn_base": "#EBD5A4",
@@ -953,7 +953,7 @@
         "newborn_base_gradient_top": "#EBC97F",
         "newborn_pattern": "#D6B267",
         "newborn_pattern_gradient_top": "#B59450",
-        "newborn_pattern_fill": "#B5995E",
+        "newborn_pattern_fill": "#C9AC61",
         
         "smoke_base": "#F5E2B5",
         "smoke_base_gradient_top": "#EDD4A4",
