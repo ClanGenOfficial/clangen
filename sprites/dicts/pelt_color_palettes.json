@@ -976,9 +976,9 @@
         "exotic_light_pattern": "#F7F1DC",
         "exotic_muzzle": "#F7F1DC",
 
-        "newborn_exotic_base": "#402022",
-        "newborn_exotic_base_gradient_bottom": "#402022",
-        "newborn_exotic_base_gradient_top": "#5E2C1F",
+        "newborn_exotic_base": "#F2DBA7",
+        "newborn_exotic_base_gradient_bottom": "#F2ECD0",
+        "newborn_exotic_base_gradient_top": "#E8D097",
         "newborn_exotic_pattern": "#24150b",
         "newborn_exotic_pattern_gradient_top": "#331604",
         "newborn_exotic_pattern_fill": "#33131E",
