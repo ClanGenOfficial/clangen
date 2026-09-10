@@ -10705,7 +10705,7 @@
         {
             "frequency": 3,
             "strings": [
-                "Not only are the mice plentiful, but they're dumb as well. The patrol doesn't return home until they can't hold a single mouse more."
+                "Not only are the mice plentiful, but they're somehow even more mouse-brained then usual. The patrol doesn't return home until they can't hold a single mouse more."
             ],
             "exp_gained": 30,
             "supply": [
@@ -10736,7 +10736,7 @@
                     ],
                     "amount": 5,
                     "log": {
-                        "cats_from": "cat_from and cat_to feel like they can rely on each other a little more to do their part."
+                        "cats_from": "cat_from and cat_to felt like they could rely on each other a little more to do their part after ratting out mice together."
                     }
                 }
             ],
