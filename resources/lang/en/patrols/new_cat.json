@@ -6203,14 +6203,7 @@
                 "exp_gained": 30
             },
             {
-                "frequency": 3,
-                "exp_gained": 30,
-                "strings": [
-                    "The noise looks to be a bunch of Twolegs unloading odd contraptions from a monster's belly. The patrol decides to leave the area, better safe than sorry!"
-                ]
-            },
-            {
-                "frequency": 3,
+                "frequency": 4,
                 "exp_gained": 30,
                 "strings": [
                     "The noise looks to be a bunch of Twolegs unloading odd contraptions from a monster's belly. s_c0 recognizes them as traps used to catch cats and warns the patrol! p_l decides that they should leave and make sure the Clan knows to steer clear of this place for a little while."
@@ -6255,7 +6248,7 @@
                 ]
             },
             {
-                "frequency": 3,
+                "frequency": 4,
                 "exp_gained": 30,
                 "strings": [
                     "The patrol discovers a group of kittypets who seem to be holding a \"Clan Meeting\". They watch, fascinated, as the kittypets give themselves \"warrior names\" and assign \"patrols\". Soon enough one of the Clan cats is noticed and, while most of the kittypets scatter, a couple are brave enough to sheepishly ask if, perhaps, they could join c_n?"
@@ -6653,9 +6646,20 @@
         "fail_outcomes": [
             {
                 "frequency": 4,
+                "strings": [
+                    "The noise looks to be a bunch of Twolegs unloading odd contraptions from a monster's belly. The patrol decides to leave the area, better safe than sorry!",
+                    "It must have been the wind, the patrol finds nothing in POI but dust.",
+                    "The patrol finds some Twoleg footprints and evidence of a monster's passing, but nothing else of note.",
+                    "It looks like perhaps a scuffle between some cats took place here, and the scents of strangers fill the air. Whoever was here, however, has already left."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_singingloner_Ln",
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. The patrol greets {PRONOUN/n_c0/object}, but the loner spits and hisses at the interruption to {PRONOUN/n_c0/poss} song. The patrol makes a hasty exit."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. The patrol greets {PRONOUN/n_c0/object}, but the loner spits and hisses at the interruption to {PRONOUN/n_c0/poss} song. The patrol makes a hasty exit.",
+                    "It's just an odd loner caterwauling into the wind. When the cat notices the patrol, {PRONOUN/n_c0/subject} start yowling even louder about {PRONOUN/n_c0/poss} singing being interrupted. The patrol quickly leaves that racket behind."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -6669,7 +6673,7 @@
                         }
                     }
                 },
-                "exp_gained": 30,
+                "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_from": [
@@ -6698,7 +6702,7 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 3,
                 "outcome_art": "cat_sprites/gen_battle_RgWr",
                 "strings": [
                     "The patrol walks into an ambush by a group of rogues. Luckily they manage to fight the rogues off, though not without injury."
@@ -6773,7 +6777,7 @@
                 ]
             },
             {
-                "frequency": 3,
+                "frequency": 2,
                 "outcome_art": "cat_sprites/gen_battle_RgWr",
                 "strings": [
                     "The patrol walks into an ambush by a group of rogues. Some of them manage to escape, but not all."
@@ -7526,14 +7530,7 @@
                 "exp_gained": 30
             },
             {
-                "frequency": 3,
-                "exp_gained": 30,
-                "strings": [
-                    "The noise looks to be a bunch of Twolegs unloading odd contraptions from a monster's belly. p_l decides to leave the area, better safe than sorry!"
-                ]
-            },
-            {
-                "frequency": 3,
+                "frequency": 4,
                 "exp_gained": 30,
                 "strings": [
                     "The noise looks to be a bunch of Twolegs unloading odd contraptions from a monster's belly. p_l recognizes them as traps used to catch cats and warns the patrol! p_l decides that {PRONOUN/p_l/subject} should leave and make sure the Clan knows to steer clear of this place for a little while."
@@ -7562,7 +7559,7 @@
                 ]
             },
             {
-                "frequency": 3,
+                "frequency": 4,
                 "exp_gained": 30,
                 "strings": [
                     "p_l discovers a group of kittypets who seem to be holding a \"Clan Meeting\". {PRONOUN/p_l/subject/CAP} watch, fascinated, as the kittypets give themselves \"warrior names\" and assign \"patrols\". Soon enough p_l is noticed and, while most of the kittypets scatter, a couple are brave enough to sheepishly ask if, perhaps, they could join c_n?"
@@ -7959,9 +7956,20 @@
         "fail_outcomes": [
             {
                 "frequency": 4,
+                "strings": [
+                    "It must have been the wind, the patrol finds nothing in POI but dust.",
+                    "p_l finds some Twoleg footprints and evidence of a monster's passing, but nothing else of note.",
+                    "It looks like perhaps a scuffle between some cats took place here, and the scents of strangers fill the air. Whoever was here, however, has already left.",
+                    "The noise looks to be a bunch of Twolegs unloading odd contraptions from a monster's belly. p_l decides to leave the area, better safe than sorry!"
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_singingloner_Ln",
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. p_l greets {PRONOUN/n_c0/object}, but the loner spits and hisses at the interruption to {PRONOUN/n_c0/poss} song. p_l makes a hasty exit."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. p_l greets {PRONOUN/n_c0/object}, but the loner spits and hisses at the interruption to {PRONOUN/n_c0/poss} song. p_l makes a hasty exit.",
+                    "It's just an odd loner caterwauling into the wind. When the cat notices p_l, {PRONOUN/n_c0/subject} start yowling even louder about {PRONOUN/n_c0/poss} singing being interrupted. p_l quickly leaves that racket behind."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -7975,7 +7983,7 @@
                         }
                     }
                 },
-                "exp_gained": 30,
+                "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_from": [
