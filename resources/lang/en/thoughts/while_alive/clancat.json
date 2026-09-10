@@ -8317,7 +8317,8 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "poisoned"
+                        "poisoned",
+                        "venom sickness"
                     ]
                 }
             }

@@ -913,7 +913,8 @@
                         "an infected wound",
                         "redcough",
                         "kittencough",
-                        "poisoned"
+                        "poisoned",
+                        "venom sickness"
                     ]
                 }
             }
