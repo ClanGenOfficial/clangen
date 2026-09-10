@@ -94,12 +94,16 @@
         },
         {
             "colors": "HONEY",
-            "layer_order": ["1", "2", "4"],
+            "layer_order": ["1", "2", "3", "4"],
             "layers":
             {
                 "4": {
                     "group_name": "SIMPLETOPGRAD",
                     "color": "singlecolour_honey_base_gradient_top"
+                },
+                "3": {
+                    "group_name": "LEGBOTTOMGRAD",
+                    "color": "base_gradient_legs_tail"
                 }
             }
         }
