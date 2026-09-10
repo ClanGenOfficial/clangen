@@ -5949,6 +5949,13 @@
         ],
         "success_outcomes": [
             {
+                "frequency": 2,
+                "exp_gained": 30,
+                "strings": [
+                    "As they creep inside, they realise that the noise is the nest itself. It's creaking and moaning in an ominous manner and p_l orders the patrol back just before a section collapses! Luckily no one was caught in the debris."
+                ]
+            },
+            {
                 "frequency": 4,
                 "exp_gained": 30,
                 "outcome_art": "cat_sprites/gen_bord_singingloner_Ln",
@@ -6641,6 +6648,176 @@
                         "cats": ["n_c1", "n_c2", "n_c3", "n_c4"]
                     }
                 ]
+            },
+            {
+                "frequency": 1,
+                "exp_gained": 30,
+                "strings": [
+                    "The noise turns out to be yowls of despair. A small family of loners seem to be burying the dead body of a young cat here. The patrol allows them to finish their ceremony before escorting them off the territory."
+                ],
+                "patrol_temperament": ["gracious", "amiable", "mellow", "adaptable","stoic", "observant"],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["senior adult", "senior"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {
+                            "assign_mate": ["n_c0"]
+                        },
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["senior adult", "senior"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {
+                            "assign_blood_parent": ["n_c0", "n_c1"]
+                        },
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["young adult"]
+                    },
+                    "n_c3": {
+                        "can_create_new_cat": {
+                            "assign_blood_parent": ["n_c0", "n_c1"]
+                        },
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["kitten"]
+                    }
+                },
+                "relationship_constraint": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "n_c1"
+                        ],
+                        "mutual": true,
+                        "constraints": [
+                            "mates"
+                        ]
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1"
+                        ],
+                        "cats_to": [
+                            "n_c2", "n_c3"
+                        ],
+                        "mutual": false,
+                        "constraints": [
+                            "parent/child"
+                        ]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1", "n_c2"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "comfort",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was thankful that cat_to allowed {PRONOUN/cat_from/object} to finish burying n_c3"
+                        }
+                    }
+                ],
+                "death": [
+                    {
+                        "cats": [
+                            "n_c3"
+                        ],
+                        "history": "m_c died while wandering."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2", "n_c3"]
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "exp_gained": 30,
+                "strings": [
+                    "The noise turns out to be a celebration! Well, a celebration for the dead. A group of loners have buried an old friend here and seem to be partying into the night to celebrate {PRONOUN/n_c3/object}. They invite the patrol to join them and the patrol gives in, finding themselves regaled with stories of a life well lived."
+                ],
+                "patrol_temperament": ["gracious", "amiable", "mellow", "adaptable","chaotic", "eager"],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["senior adult", "senior"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["senior adult", "senior"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["senior adult", "senior"]
+                    },
+                    "n_c3": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["senior"]
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1", "n_c2"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "comfort",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was glad to have cat_to join {PRONOUN/cat_from/object} for a celebration of n_c3's life."
+                        }
+                    }
+                ],
+                "death": [
+                    {
+                        "cats": [
+                            "n_c3"
+                        ],
+                        "history": "m_c died while wandering."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2", "n_c3"]
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -6844,6 +7021,30 @@
                             "n_c0",
                             "n_c2"
                         ]
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "exp_gained": 0,
+                "strings": [
+                    "As they creep inside, they realise that the noise is the nest itself. It's creaking and moaning in an ominous manner and before anyone can act, a section collapses! s_c0 is caught beneath the debris. {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} alive, but only barely."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "condition": [
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "condition": [
+                            "broken back"
+                        ],
+                        "scar_history": "m_c was scarred {PRONOUN/m_c/subject} {VERB/m_c/were/was} caught beneath falling debris in the abandoned Twoleg nest.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/subject} {VERB/m_c/were/was} caught beneath falling debris in the abandoned Twoleg nest.."
                     }
                 ]
             },
