@@ -27,5 +27,13 @@
     "modifiers": {
       "cruel_season.event.stolen_vitality": true
     }
+  },
+  "tooth_and_claw": {
+    "card_art": "danger/forsaken.png",
+    "modifiers": {
+      "condition_related.war_injury_modifier": 500,
+      "death_related.war_death_modifier": 450,
+      "death_related.war_death_modifier_leader": 50
+    }
   }
 }
