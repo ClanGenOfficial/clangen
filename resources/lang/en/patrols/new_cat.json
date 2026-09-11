@@ -6011,7 +6011,6 @@
                     "It's just an odd loner singing to {PRONOUN/n_c0/self}. The patrol greets {PRONOUN/n_c0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility. The older cat looks like {PRONOUN/n_c0/subject} could use a meal, so p_l invites {PRONOUN/n_c0/object} to c_n's camp. The loner agrees.",
                     "It's just an odd loner singing to {PRONOUN/n_c0/self}. When {PRONOUN/n_c0/subject} {VERB/n_c0/see/sees} the patrol, {PRONOUN/n_c0/subject} {VERB/n_c0/invite/invites} them to sing too. Instead, p_l offers the somewhat battered-looking and strange cat an introduction to c_n. It's got to be far less lonely than {PRONOUN/n_c0/poss} current life.",
                     "The patrol discovers an old loner singing at the top of {PRONOUN/n_c0/poss} lungs. A short conversation later and the strange cat has agreed to join c_n."
-
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -6115,7 +6114,8 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_battle_RgWr",
                 "strings": [
-                    "The patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c0 is there, fighting with the courage of LionClan, the strength of TigerClan, and the dexterity of LeopardClan. Shaken but no more than bruised, the patrol manages to retreat to safety."
+                    "The patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c0 is there, fighting with the courage of LionClan, the strength of TigerClan, and the dexterity of LeopardClan. Shaken but no more than bruised, the patrol manages to retreat to safety.",
+                    "The noise was rogues, luring the patrol in! s_c0's skill in battle is the only thing that saves the patrol. s_c0 whirls and slashes in a storm of claws and the rogues go running back to where they came from."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -6381,6 +6381,130 @@
                 "frequency": 4,
                 "exp_gained": 30,
                 "strings": [
+                    "The patrol discovers a group of kittypets who seem to be holding a \"Clan Meeting\". They watch, fascinated, as the kittypets give themselves \"warrior names\" and assign \"patrols\". s_c0 chuckles, recognizing the game, and one of the kittypets notices them. Most of the kittypets scatter, but a couple approach and, with s_c0's encouragement, ask to join c_n and become real warriors."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"],
+                        "past_status": ["kittypet"]
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "kittypet"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "kittypet"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "kittypet"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult"]
+                    },
+                    "n_c3": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "kittypet"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult"]
+                    },
+                    "n_c4": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "kittypet"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult"]
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was grateful that cat_to allowed {PRONOUN/cat_from/object} to join c_n."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats", "high_social", "low_lawful"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3", "n_c4"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was amused by cat_to play-acting as though {PRONOUN/cat_to/subject} were a Clan cat."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats", "high_lawful"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3", "n_c4"
+                        ],
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from didn't think it very appropriate that cat_to was pretending to be a warrior."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1","n_c2", "n_c3", "n_c4"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1","n_c2", "n_c3", "n_c4"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from used to pretend to be Clan cats with cat_to."
+                        }
+                    }
+                ],
+                "join": [
+                    {
+                        "cats": ["n_c0", "n_c1"],
+                        "new_status": ["apprentice", "warrior"]
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c2", "n_c3", "n_c4"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "exp_gained": 30,
+                "strings": [
                     "As the patrol gets closer, they recognize the noise as a bunch of cats hollering, alternating between encouragement and personal jabs. When the cats finally come into view, the patrol realizes that this seems to be a gathering of loners! The loners are holding some sort of rodent catching competition in the prey-wealthy area. Well, this won't do, p_l interrupts and insists the loners stop catching c_n's prey. The loners hastily apologize and leave without much argument."
                 ],
                 "involved_cats": {
@@ -6481,6 +6605,125 @@
                 "meet": [
                     {
                         "cats": ["n_c0", "n_c1", "n_c2", "n_c3"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "exp_gained": 30,
+                "strings": [
+                    "As the patrol gets closer, they recognize the noise as a bunch of cats hollering, alternating between encouragement and personal jabs. When they finally come into view, the patrol realizes that this is a group of loners holding some sort of rodent catching competition. s_c0 leaps forward and declares {PRONOUN/s_c0/self} a contestant, much to the surprise of the loners. The evening is spent pouncing on mice and rats, rather than patrolling the border."
+                ],
+                "involved_cats": {
+                    "s_co": {
+                        "prior_abbreviation": ["any"],
+                        "stat": {
+                            "trait": ["competitive", "arrogant"]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c3": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1", "n_c2", "n_c3", "low_lawful"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from didn't appreciate cat_to interrupting {PRONOUN/cat_from/poss} rodent-hunting competition."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats", "high_social", "low_lawful"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was amused by cat_to holding a rodent-catching competition with other loners."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats", "high_lawful"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3"
+                        ],
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from didn't appreciate that cat_to was stealing c_n prey under the guise of \"competition\"."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1","n_c2", "n_c3"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1","n_c2", "n_c3"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from held a rodent-catching competition with cat_to."
+                        }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2", "n_c3"]
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
                     }
                 ]
             },
@@ -6649,6 +6892,294 @@
                 "meet": [
                     {
                         "cats": ["n_c1", "n_c2", "n_c3", "n_c4"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "exp_gained": 30,
+                "strings": [
+                    "It sounds like a fight! The patrol rushes forward and finds a group of rogues all circled around a pair of cats locked in battle. s_c0 informs the patrol of what's happening: a fight to the death for the entertainment of the audience, a common rogue pastime. The patrol rushes in before the fight can finish, scattering the rogues. The losing cat is left behind and offered shelter in c_n by s_c0."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"],
+                        "past_status": ["rogue"]
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c3": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    },
+                    "n_c4": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats", "low_lawful", "high_aggress"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3", "n_c4"
+                        ],
+                        "values": [
+                            "comfort",
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was intrigued by the idea that rogues like cat_to hold fighting competitions."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats", "high_lawful", "low_aggress"
+                        ],
+                        "cats_to": [
+                            "n_c0", "n_c1", "n_c2", "n_c3", "n_c4"
+                        ],
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "cat_from found it abhorrent that rogues like cat_to would hold such a brutal fighting competition."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "cat bite"
+                        ],
+                        "scar_history": "m_c was scarred after fighting for the entertainment of other rogues.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} wounds after fighting for the entertainment of other rogues."
+                    },
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "claw-wound"
+                        ],
+                        "scar_history": "m_c was scarred after fighting for the entertainment of other rogues.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} wounds after fighting for the entertainment of other rogues."
+                    }
+                ],
+                "join": [
+                    {
+                        "cats": ["n_c0"],
+                        "new_status": ["apprentice", "warrior", "elder"]
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c1", "n_c2", "n_c3", "n_c4"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "exp_gained": 30,
+                "strings": [
+                    "It seems a family of wanderers came upon POI and thought to make it their new home. The patrol takes the time to speak with them, explaining that this land is already taken. The family agrees to leave, but one of their children, intrigued by the Clan's way of life, asks if {PRONOUN/n_c2/subject} could stay and become a warrior.",
+                    "It seems a family of wanderers came upon POI and thought to make it their new home. The patrol insists that the cats leave, for this territory is already taken. One of the younger wanderers draws {PRONOUN/n_c2/self} up and asks if {PRONOUN/n_c2/subject} could join c_n, it seems n_c2 is tired of the wandering life.",
+                    "It looks to be a family of wanderers setting up a temporary camp. A couple of them approach the patrol and introduce {PRONOUN/n_c1/self} as n_c1 and the other cat as {PRONOUN/n_c1/poss} kit, n_c2. It seems they travelled here intentionally, for n_c2 had wished to join one of the mysterious Clans."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["senior adult", "senior"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {
+                            "assign_mate": ["n_c0"]
+                        },
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["senior adult", "senior"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {
+                            "assign_blood_parent": ["n_c0", "n_c1"]
+                        },
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["young adult"]
+                    },
+                    "n_c3": {
+                        "can_create_new_cat": {
+                            "become_litter": true,
+                            "assign_blood_parent": ["n_c0", "n_c1"]
+                        },
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["kitten"]
+                    }
+                },
+                "relationship_constraint": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "n_c1"
+                        ],
+                        "mutual": true,
+                        "constraints": [
+                            "mates"
+                        ]
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1"
+                        ],
+                        "cats_to": [
+                            "n_c2", "n_c3"
+                        ],
+                        "mutual": false,
+                        "constraints": [
+                            "parent/child"
+                        ]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1", "n_c3", "low_social", "high_lawful"
+                        ],
+                        "cats_to": [
+                            "n_c2"
+                        ],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from was disappointed that n_c2 would want to leave {PRONOUN/n_c2/poss} family behind."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1", "n_c3", "high_social", "low_lawful"
+                        ],
+                        "cats_to": [
+                            "n_c2"
+                        ],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 20,
+                        "log": {
+                            "cats_from": "cat_from respected n_c2's decision to join the Clan and hoped {PRONOUN/n_c2/subject} would enjoy {PRONOUN/n_c2/poss} new way of life."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c2"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was thankful that cat_to allowed {PRONOUN/cat_from/object} to join the Clan."
+                        }
+                    }
+                ],
+                "join": [
+                    {
+                        "cats": ["n_c2"],
+                        "new_status": ["warrior"]
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0", "n_c1", "n_c3"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "season": ["leaf-fall"],
+                "exp_gained": 30,
+                "strings": [
+                    "The noise is a celebration! A band of rowdy rogues are in POI, yowling at the orange-tinged moon. They bristle a bit upon noticing the patrol, but it seems they aren't in the mood to fight. They explain that they're crowing at the moon to welcome in the leaves turning. A strange custom, but p_l leaves them be after securing a promise to leave once the rogues have finished... crowing."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["young adult", "adult", "senior adult"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ],
+                        "age": ["adolescent", "young adult", "adult", "senior adult"]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0", "n_c1", "n_c2"
+                        ]
                     }
                 ]
             },
