@@ -1347,6 +1347,82 @@
       "title": "PermCondition",
       "type": "string"
     },
+    "PointsOfInterestCategoryEnum": {
+      "enum": [
+        "gathering",
+        "moonplace",
+        "terrain"
+      ],
+      "title": "PointsOfInterestCategoryEnum",
+      "type": "string"
+    },
+    "PointsOfInterestGroup": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "description": "Points of Interest with these specific IDs will be allowed.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Name",
+          "type": "array"
+        },
+        "tags": {
+          "description": "Points of Interest with these tags will be allowed.",
+          "items": {
+            "$ref": "#/$defs/PointsOfInterestTag"
+          },
+          "title": "Tags",
+          "type": "array"
+        },
+        "category": {
+          "$ref": "#/$defs/PointsOfInterestCategoryEnum",
+          "description": "The category this POI belongs to.",
+          "title": "Category"
+        }
+      },
+      "title": "PointsOfInterestGroup",
+      "type": "object"
+    },
+    "PointsOfInterestTag": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "#/$defs/PointsOfInterestTagEnum"
+        }
+      ],
+      "title": "PointsOfInterestTag"
+    },
+    "PointsOfInterestTagEnum": {
+      "enum": [
+        "cave",
+        "covered",
+        "fall_risk",
+        "hole",
+        "prey",
+        "prey:flying",
+        "prey:water",
+        "prey:ground",
+        "prey:eggs",
+        "prey:fish",
+        "rocks",
+        "tainted",
+        "trees",
+        "Twolegs",
+        "Twolegs:abandoned",
+        "Twolegs:present",
+        "unstable",
+        "water",
+        "water:still",
+        "water:flowing",
+        "water:ocean",
+        "nests"
+      ],
+      "title": "PointsOfInterestTagEnum",
+      "type": "string"
+    },
     "RelationshipChange": {
       "additionalProperties": false,
       "properties": {
@@ -2018,6 +2094,11 @@
           },
           "title": "Tags",
           "type": "array"
+        },
+        "poi": {
+          "$ref": "#/$defs/PointsOfInterestGroup",
+          "description": "The relevant points of interest. Points of Interest never affect outcome.",
+          "title": "Poi"
         },
         "strings": {
           "description": "List of the text that will be displayed in-game as events.",

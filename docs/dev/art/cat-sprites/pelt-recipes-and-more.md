@@ -6,7 +6,7 @@ Patterns (ie, "Pelts") are built by recoloring and layering various assets. Thes
 
 ## Cat-Color Palettes 
 
-Each cat-color has a palette of colors, stored in sprites/dicts/pelt_color_palettes.json. (For clarity, these color palettes with be referred are referred to as cat-colors.) This is a dictionary of color hexcodes matched to cat-color names. The names of specfic hex-code colors are arbitrary, and only referred to in the Pelt Recipes. Each cat-color should have the same list of color names, with the exeption of colors only used in cat-color specific Pelt Recipe exceptions. 
+Each cat-color has a palette of colors, stored in `sprites/dicts/pelt_color_palettes.json`. (For clarity, these color palettes with be referred are referred to as cat-colors.) This is a dictionary of color hexcodes matched to cat-color names. The names of specific hex-code colors are arbitrary, and only referred to in the Pelt Recipes. Each cat-color should have the same list of color names, with the exception of colors only used in cat-color specific Pelt Recipe exceptions. 
 
 ```json
 {
@@ -64,11 +64,11 @@ The real meat and potatoes! Pelt recipes tell ClanGen how to put together patter
 | `group_name`       |  The name of the pelt part mask. `group_name` or `pelt_name` is required.                                        |
 | `blend_mode`       |  The blendmode for the layer. Options: "mask", "mulitply", or "normal". Default: "normal".                       |
 | `color`            |  Re-colors the pelt part mask to this color. You must use a color defined in the pelt color palettes. Optional.  |
-| `spritesheet`      |  The name of the spritesheet for look for `group_name` in. Default: "pelt_parts_masks"                           |
+| `spritesheet`      |  The name of the spritesheet to look for `group_name` in. Default: "pelt_parts_masks"                           |
 | | |
 | | |
 | `pelt_name`        | Name of a pelt recipe. `group_name` or `pelt_name` is required.                                                  |
-| `palette`          | Name of the cat-color palette to use fo `pelt_name`.                                                             |
+| `palette`          | Name of the cat-color palette to use for `pelt_name`.                                                             |
 
 
 Let's take a look at a simple example - The SingleColourRecipe: 
@@ -105,9 +105,9 @@ Let's take a look at a simple example - The SingleColourRecipe:
 "layer_order": ["1", ["2", "3"]]"
 ```
 
-In this case, layers "2" and "3" will be constructed together, then laid onto "1". You can have as many compound-layer-within-compound-layers as you want. This may not seem useful - but it is! Most importably when combined with blendmodes. If you add a layer with the "mask" blendmode at the end of the compound layer, and you can mask the layers within without effecting those outside. 
+In this case, layers "2" and "3" will be constructed together, then laid onto "1". You can have as many compound-layer-within-compound-layers as you want. This may not seem useful - but it is! Most importantly when combined with blendmodes. If you add a layer with the "mask" blendmode at the end of the compound layer you can mask the layers within without effecting those outside. 
 
-You may specify a compound layer blendmode and/or opacity by adding a special entry to the end of the compound order list. This blendmode will be applied when the compund layer is added to the layer stack. This must start with "+". See below:
+You may specify a compound layer blendmode and/or opacity by adding a special entry to the end of the compound order list. This blendmode will be applied when the compound layer is added to the layer stack. This must start with "+". See below:
 
 ```json
 "layer_order": ["1", ["2", "3", "+blend_mode:mask,opacity:50"]],
@@ -121,7 +121,7 @@ OR
 "layer_order": ["1", ["2", "3", "+blend_mode:mask"]]"
 ```
 
-### **Thirdly, you define `layers`.**
+**Thirdly, you define `layers`.**
 
 ```json
 "1" : {
@@ -139,7 +139,7 @@ First, you have to define a name for the layer. In this case, the layer's name i
 
  You can also have a `color`.  This is a color-name, as defined in the color palettes. The pelt-part will be recolored to this color. 
 
- `blend_mode` refers to the mode in which the flat is applied. Right now there are three blend modes implemented. First, "mask", which is ptgame's `pygame.BLEND_MULT_RGBA` blend mode. This is most commonly used when the layer is a mask. Ie, when it serves to restrict the visible pixels of the layer below to only the ones in the current layer.  Secondly, "multiply",  which is the normal "multiply" blend mode you can find in any art program. Finally, "normal", which is normal. 
+ `blend_mode` refers to the mode in which the flat is applied. Right now there are three blend modes implemented. First, "mask", which is pygame's `pygame.BLEND_MULT_RGBA` blend mode. This is most commonly used when the layer is a mask, i.e. when it serves to restrict the visible pixels of the layer below to only the ones in the current layer.  Secondly, "multiply",  which is the normal "multiply" blend mode you can find in any art program. Finally, "normal", which is normal. 
 
 `opacity` is optional, but allows you to define an opacity of a layer. 
 
@@ -194,7 +194,7 @@ This is most useful for Torties, recipe below:
 
  | Exception Property Name | Description |
 | ------------------------- | ----------- |
-| `colors`      |  List of colors for the excpetion to apply to. `colors` or `poses` are required.  |
+| `colors`      |  List of colors for the exception to apply to. `colors` or `poses` are required.  |
 | `layer_order` |  Layer order for the exception.                                                   |
 | `layers`      |  Dictionary of layers names and layer definitions for the exception. Exception layers with the same name as base recipe layers will have their dictionaries merged.  |
 
