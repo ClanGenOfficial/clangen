@@ -33,6 +33,53 @@
             }
         ]
     },
+        {
+        "event_id": "app_no_mentors_available0",
+        "tags": ["-clan:warrior-like(min:1)"],
+        "involved_cats": {
+            "m_c": {
+                "has_mentor": {
+                    "current": false
+                }
+            }
+        },
+        "strings": [
+            "Newly-made apprentice m_c wishes {PRONOUN/m_c/subject} had someone to mentor {PRONOUN/m_c/object}.",
+            "m_c isn't confident in {PRONOUN/m_c/poss} ability to train {PRONOUN/m_c/self}, but will try anyway.",
+            "m_c is frustrated that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have a mentor.",
+            "m_c isn't sure what to do without the guidance of a mentor.",
+            "m_c wonders if {PRONOUN/m_c/subject} can get by without the guidance of a mentor."
+        ]
+    },
+    {
+        "event_id": "app_no_leader0",
+        "tags": [
+            "-clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {}
+        },
+        "strings": [
+            "The Clan gathers around and urges (old_name) to go to the front of the crowd. Not having a leader isn't an excuse to force a cat to stay in the nursery when they're six moons old. (old_name) is renamed m_c, and the Clan votes to make r_c0 {PRONOUN/m_c/poss} mentor.",
+            "The Clan cheers for the new apprentice, m_c. They allow {PRONOUN/m_c/object} to choose {PRONOUN/m_c/poss} own mentor: m_c chooses r_c0.",
+            "With m_c's apprentice ceremony completed, there's still the problem of figuring out who will mentor {PRONOUN/m_c/object}. r_c0 steps forward first, so m_c touches noses with {PRONOUN/r_c0/object}."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
     {
         "event_id": "app_living_parent0",
         "involved_cats": {
