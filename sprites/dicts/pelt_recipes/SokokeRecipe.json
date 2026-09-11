@@ -83,6 +83,123 @@
                     "color": "newborn_base"
                 }
             }
+        },
+        {
+            "colors": "BLOSSOM",
+            "layer_order": ["1", "2", "3", "4", "4.5", ["4.6", "4.7", "5"], "6", ["8", "9", "10"]],
+            "layers": {
+                "10": {
+                    "group_name": "SOKOKEPATTERN",
+                    "blend_mode": "mask"
+                },
+                "9": {
+                    "group_name": "BACKTAILPATTERNGRAD",
+                    "color": "pattern_gradient_top"
+                },
+                "8": {
+                    "group_name": "LEGBOTTOMGRAD",
+                    "color": "pattern_gradient_bottom"
+                },
+                "6": {
+                    "group_name": "SOKOKEPATTERN",
+                    "color": "pattern"
+                },
+                "5": {
+                    "group_name": "SOKOKEPATTERNFILL",
+                    "blend_mode": "mask"
+                },
+                "4.7": {
+                    "group_name": "SOKOKEPATTERNFILLGRAD",
+                    "color": "pattern_gradient_top"
+                },
+                "4.6": {
+                    "group_name": "SOKOKEPATTERNFILL",
+                    "color": "pattern_gradient_top",
+                    "opacity": 60
+                },
+                "4.5": {
+                    "group_name": "SOKOKEPATTERNFILL",
+                    "color": "pattern_fill"
+                },
+                "4": {
+                    "group_name": "SIMPLETOPGRAD",
+                    "color": "base_gradient_top"
+                },
+                "3": {
+                    "group_name": "LEGBOTTOMGRAD",
+                    "color": "base_gradient_legs_tail"
+                },
+                "2": {
+                    "group_name": "SIMPLEBOTTOMGRAD",
+                    "color": "base_gradient_bottom"
+                },
+                "1": {
+                    "group_name": "BASEMASK",
+                    "color": "base"
+                }
+            }
+        },
+        {
+            "colors": "BLOSSOM",
+            "layer_order": ["1", "2", "3", "4", "4.5", ["4.6", "4.7", "4.8"], "6", ["8", "9", "10"]],
+            "layers": {
+                "10": {
+                    "group_name": "SOKOKEPATTERN",
+                    "blend_mode": "mask"
+                },
+                "9": {
+                    "group_name": "BACKTAILPATTERNGRAD",
+                    "color": "pattern_gradient_top",
+                    "blend_mode": "normal"
+                },
+                "8": {
+                    "group_name": "LEGBOTTOMGRAD",
+                    "color": "pattern_gradient_bottom",
+                    "opacity": 100,
+                    "blend_mode": "normal"
+                },
+                "6": {
+                    "group_name": "SOKOKEPATTERN",
+                    "color": "pattern",
+                    "blend_mode": "normal"
+                },
+                "4.8": {
+                    "group_name": "SOKOKEPATTERNFILL",
+                    "blend_mode": "mask"
+                },
+                "4.7": {
+                    "group_name": "SOKOKEPATTERNFILLGRAD",
+                    "color": "pattern_gradient_top",
+                    "opacity": 100
+                },
+                "4.6": {
+                    "group_name": "SOKOKEPATTERNFILL",
+                    "color": "pattern_gradient_bottom",
+                    "opacity": 60
+                },
+                "4.5": {
+                    "group_name": "SOKOKEPATTERNFILL",
+                    "color": "pattern",
+                    "opacity": 100
+                },
+                "4": {
+                    "group_name": "SIMPLETOPGRAD",
+                    "color": "base_gradient_top",
+                    "opacity": 100
+                },
+                "3": {
+                    "group_name": "LEGBOTTOMGRAD",
+                    "color": "base_gradient_legs_tail"
+                },
+                "2": {
+                    "group_name": "SIMPLEBOTTOMGRAD",
+                    "color": "base_gradient_bottom"
+                },
+                "1": {
+                    "group_name": "BASEMASK",
+                    "color": "base"
+                }
+            }
         }
     ]
 }

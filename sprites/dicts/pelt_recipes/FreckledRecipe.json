@@ -108,6 +108,50 @@
                     "color": "newborn_exotic_base"
                 }
             }
-        }
+        },
+        {
+            "colors": "BLOSSOM",
+            "layer_order": ["1", "2","1.5", "3", "4", "5", ["5.5", "6", ["7", "8", "+blend_mode:mask"]]],
+            "layers": {
+                "8": {
+                    "group_name": "FRECKLEDPATTERNBACK"
+                },
+                "7": {
+                    "group_name": "FRECKLEDPATTERNBODY"
+                },
+                "6": {
+                    "group_name": "FRECKLEDPATTERNGRAD",
+                    "color": "freckled_pattern_gradient_top"
+                },
+                "5.5": {
+                    "group_name": "LEGBOTTOMGRAD",
+                    "color": "exotic_pattern_gradient_bottom"
+                },
+                "5": {
+                    "group_name": "FRECKLEDPATTERNBACK",
+                    "color": "freckled_pattern_gradient_top"
+                },
+                "4": {
+                    "group_name": "FRECKLEDPATTERNBODY",
+                    "color": "exotic_pattern"
+                },
+                "3": {
+                    "group_name": "EXOTICTOPGRAD",
+                    "color": "singlecolour_blossom_base_gradient_top"
+                },
+                "2": {
+                    "group_name": "EXOTICBOTTOMGRAD",
+                    "color": "exotic_base_gradient_bottom"
+                },
+                "1.5": {
+                        "group_name": "LEGBOTTOMGRAD",
+                        "color": "exotic_base_gradient_legs_tail"
+                    },
+                "1": {
+                        "group_name": "BASEMASK",
+                        "color": "exotic_base"
+                    }
+                }
+            }
     ]
 }

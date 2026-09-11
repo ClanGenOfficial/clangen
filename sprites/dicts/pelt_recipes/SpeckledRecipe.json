@@ -58,6 +58,51 @@
                     "color": "newborn_base"
                 }
             }
-        }
+        },
+        {
+            "colors": "BLOSSOM",
+            "layer_order": ["1", "2", "3", "4", "5", ["5", "7", "8", "9"]],
+            "layers": {
+                "9":
+                {
+                    "group_name": "SPECKLEDPATTERN",
+                    "blend_mode": "mask"
+                },
+                "8":
+                {
+                    "group_name": "BACKTAILPATTERNGRAD",
+                    "color": "pattern_gradient_top"
+                },
+                "7":
+                {
+                    "group_name": "LEGBOTTOMGRAD",
+                    "color": "pattern_gradient_bottom"
+                },
+                "5":
+                {
+                    "group_name": "SPECKLEDPATTERN",
+                    "color": "pattern"
+                },
+                "4":
+                {
+                    "group_name": "SIMPLETOPGRAD",
+                    "color": "base_gradient_top"
+                },
+                "3": {
+                    "group_name": "LEGBOTTOMGRAD",
+                    "color": "base_gradient_legs_tail"
+                },
+                "2":
+                {
+                    "group_name": "SIMPLEBOTTOMGRAD",
+                    "color": "base_gradient_bottom"
+                },
+                "1":
+                {
+                    "group_name": "BASEMASK",
+                    "color": "base"
+                }
+            }
+    }
     ]
 }

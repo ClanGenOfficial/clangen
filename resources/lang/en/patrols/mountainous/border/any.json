@@ -1569,7 +1569,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The potential wolf scent makes p_l nervous enough to dance in place — and that's what saves {PRONOUN/p_l/object}, being already moving when the trap is sprung. The dogish beast isn't built to pounce. p_l races away, streaking home through a rock maze that leave the frustrated wolf howling in {PRONOUN/p_l/poss} wake."
+                    "The potential wolf scent makes p_l nervous enough to dance in place — and that's what saves {PRONOUN/p_l/object}, being already moving when the trap is sprung. The doglike beast isn't built to pounce. p_l races away, streaking home through a rock maze that leaves the frustrated wolf howling in {PRONOUN/p_l/poss} wake."
                 ],
                 "exp_gained": 40,
                 "relationship_changes": [
@@ -1621,7 +1621,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 bolts back to camp, easily keeping ahead of the beast, {PRONOUN/s_c0/subject} burst into camp, yowling a warning with plenty of time for c_n to prepare to drive the wolf away."
+                    "s_c0 bolts back to camp, easily keeping ahead of the beast. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/burst/bursts} into camp, yowling a warning with plenty of time for c_n to prepare to drive the wolf away."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1679,7 +1679,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "This wolf might be trying to hunt c_n, but s_c0 is nobody's prey. {PRONOUN/s_c0/subject/CAP} follow the fresh scent trail to its conclusion, throwing {PRONOUN/s_c0/self} at the unprepared wolf, claws raking through its gray pelt and leaving bloody tracks in their wake, convincing proof that the lone wolf should go elsewhere for an easy meal."
+                    "This wolf might be trying to hunt c_n, but s_c0 is nobody's prey. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/follow/follows} the fresh scent trail to its conclusion, throwing {PRONOUN/s_c0/self} at the unprepared wolf, claws raking through its gray pelt and leaving bloody tracks in {PRONOUN/s_c0/poss} wake, convincing proof that the lone wolf should go elsewhere for an easy meal."
                 ],
                 "involved_cats": {
                     "s_c0": {

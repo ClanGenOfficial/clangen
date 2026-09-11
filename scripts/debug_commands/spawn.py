@@ -12,7 +12,8 @@ from scripts.game_structure import game
 class SpawnPeltsCommand(Command):
     name = "pelts"
     description = "Spawn a cat of each colour for a given pelt."
-    alias = ["pelt"]
+    usage = "<pelt_name: str>"
+    alias = ["pelt", "p"]
 
     def callback(self, args: List[str]):
         possible_pelts_str = ", ".join(
@@ -49,7 +50,8 @@ class SpawnPeltsCommand(Command):
 class SpawnColoursCommand(Command):
     name = "colours"
     description = "Spawn a cat of each pelt for a given colour."
-    aliases = ["color", "colors", "colour"]
+    usage = "<colour: str>"
+    aliases = ["color", "colors", "colour", "c"]
 
     def callback(self, args: List[str]):
         possible_colours_str = ", ".join(Sprites.PELT_COLOR_PALETTES.keys())
@@ -87,6 +89,7 @@ class SpawnColoursCommand(Command):
 class SpawnCommand(Command):
     name = "spawn"
     description = "Spawn specific sets of cats to test things"
+    aliases = ["sp"]
 
     sub_commands = [
         SpawnPeltsCommand(),
