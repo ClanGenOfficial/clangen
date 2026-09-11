@@ -12208,7 +12208,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "A storm descends, sudden and violent, putting an end to any other thoughts but survival. The cats retreat into a sea cave and cuddle together, sharing what little warmth they have. Each cat takes a turn on the most exposed side of the huddle, selflessly risking themselves."
+                    "A storm descends, sudden and violent, putting an end to any other thoughts but survival. The cats retreat into shelter and cuddle together, sharing what little warmth they have. Each cat takes a turn on the most exposed side of the huddle, selflessly risking themselves."
                 ],
                 "exp_gained": 0,
                 "relationship_constraint": [
@@ -12249,7 +12249,7 @@
                 "frequency": 4,
                 "exp_gained": 0,
                 "strings": [
-                    "A storm descends, sudden and violent, putting an end to any other thoughts but survival. s_c0 keeps everyone's spirits up as the patrol hides in the lee of a cliff where the wind can't get them, until everyone is talking, shaky and unhappy, but keeping each other's spirits up."
+                    "A storm descends, sudden and violent, putting an end to any other thoughts but survival. s_c0 keeps everyone's spirits up as the patrol hides where the wind can't get them, until everyone is talking, shaky and unhappy, but keeping each other's spirits up."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -12431,6 +12431,44 @@
                         ],
                         "scar_history": "m_c caught a chill while hunting in leaf-bare.",
                         "death_history": "m_c got too cold after a snowstorm descended on {PRONOUN/m_c/poss} hunting patrol and never recovered."
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "strings": [
+                    "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats huddle together, desperately trying to conserve warmth, no one notices that s_c0 has stopped responding. At some point in the storm, {PRONOUN/s_c0/poss} life slips away, and {PRONOUN/s_c0/poss} distraught Clanmates are left to carry {PRONOUN/s_c0/poss} body home."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from's patrol failed to keep warm during a snowstorm and they ended up carrying r_c0's body home."
+                        }
+                    }
+                ],
+                "death": [
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "history": "m_c froze to death while hunting in a storm."
                     }
                 ]
             }
