@@ -85,6 +85,25 @@
                         "log": {
                             "cats_from": "cat_from and cat_to drove off rogues together."
                         }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2",
+                            "n_c3"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -30,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
                     }
                 ],
                 "meet": [
@@ -96,7 +115,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 immediately leaps to protect {PRONOUN/s_c0/poss} Clanmates. {PRONOUN/s_c0/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run."
+                    "s_c0 immediately leaps to protect {PRONOUN/s_c0/poss} Clanmates. {PRONOUN/s_c0/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
+                    "s_c0 revels in the battle, leaping into the fray with {PRONOUN/s_c0/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -106,7 +126,13 @@
                         "stat": {
                             "skill": [
                                 "FIGHTER,3"
-                            ]
+                            ],
+                            "trait": [
+                                "bloodthirsty",
+                                "fierce",
+                                "vengeful"
+                            ],
+                            "must_have_both": false
                         }
                     }
                 },
@@ -127,49 +153,43 @@
                         "log": {
                             "cats_from": "cat_from was impressed when cat_to drove rogues off the territory."
                         }
-                    }
-                ],
-                "meet": [
+                    },
                     {
-                        "cats": ["n_c0", "n_c1", "n_c2", "n_c3"]
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 revels in the battle, leaping into the fray with {PRONOUN/s_c0/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2",
+                            "n_c3"
                         ],
-                        "stat": {
-                            "trait": [
-                                "bloodthirsty",
-                                "fierce",
-                                "vengeful"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 30,
-                "relationship_changes": [
-                    {
                         "cats_to": [
                             "patrol_cats"
                         ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
+                    },
+                    {
                         "cats_from": [
-                            "patrol_cats"
+                            "n_c0",
+                            "n_c1",
+                            "n_c2",
+                            "n_c3"
+                        ],
+                        "cats_to": [
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
-                            "trust"
+                            "comfort"
                         ],
-                        "amount": 5,
+                        "amount": -20,
                         "log": {
-                            "cats_from": "cat_from was impressed when cat_to drove rogues off the territory."
+                            "cats_from": "cat_from was terrified by s_c0's fighting prowess."
                         }
                     }
                 ],
@@ -202,6 +222,25 @@
                         "log": {
                             "cats_from": "cat_from heard about cat_to's victory in battle against a gang of rogues."
                         }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2",
+                            "n_c3"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -30,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
                     }
                 ],
                 "meet": [
@@ -232,6 +271,25 @@
                         "amount": 15,
                         "log": {
                             "cats_from": "cat_from heard about cat_to's victory in battle against a gang of dangerous rogues."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2",
+                            "n_c3"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
                         }
                     }
                 ],
@@ -282,6 +340,26 @@
                         "log": {
                             "cats_from": "cat_from was impressed when cat_to convinced rogues to leave the territory."
                         }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2",
+                            "n_c3"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was surprised at how readily s_c0 helped {PRONOUN/cat_from/object} by providing information on prey-rich territory."
+                        }
                     }
                 ],
                 "meet": [
@@ -314,6 +392,25 @@
                         "amount": -5,
                         "log": {
                             "cats_from": "cat_to failed to drive away rogues while on patrol with cat_from."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2",
+                            "n_c3"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -40,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
                         }
                     }
                 ],
@@ -359,6 +456,25 @@
                         "log": {
                             "cats_from": "cat_to failed to drive away rogues while on patrol with cat_from."
                         }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2",
+                            "n_c3"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -30,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
                     }
                 ],
                 "meet": [
@@ -387,6 +503,26 @@
                     "The patrol descends into battle without a second thought, eventually driving the rogues away."
                 ],
                 "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
+                    }
+                ],
                 "meet": [
                     {
                         "cats": ["n_c0", "n_c1", "n_c2", "n_c3"]
@@ -401,6 +537,26 @@
                     "The patrol descends into battle without a second thought, but the rogues are stronger than expected, and eventually the patrol is forced to retreat, wounded as they are."
                 ],
                 "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -30,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
+                    }
+                ],
                 "meet": [
                     {
                         "cats": ["n_c0", "n_c1", "n_c2", "n_c3"]
@@ -498,6 +654,24 @@
                         "log": {
                             "cats_from": "cat_from was impressed to hear cat_to escaped a rogue ambush."
                         }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -30,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
                     }
                 ],
                 "meet": [
@@ -537,6 +711,24 @@
                         "amount": 15,
                         "log": {
                             "cats_from": "cat_from was amazed to hear cat_to took on a gang of rogues single-pawed."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was startled by cat_to's ferocity in battle."
                         }
                     }
                 ],
@@ -581,6 +773,24 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from honored cat_to's heroic death in battle against a rogue ambush."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -30,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
                         }
                     }
                 ],
@@ -1073,6 +1283,22 @@
                         "log": {
                             "cats_from": "cat_from heard that cat_to drove a rogue off the territory."
                         }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was scared by an ambush set by cat_to."
+                        }
                     }
                 ]
             },
@@ -1152,6 +1378,22 @@
                         "log": {
                             "cats_from": "cat_from heard that cat_to drove a rogue off the territory."
                         }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from drove cat_to off of the territory."
+                        }
                     }
                 ]
             },
@@ -1203,6 +1445,22 @@
                         "amount": 8,
                         "log": {
                             "cats_from": "cat_from heard that cat_to drove a rogue off the territory."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was frightened by an trap set by cat_to."
                         }
                     }
                 ]
@@ -1271,6 +1529,22 @@
                         "log": {
                             "cats_from": "cat_from heard that cat_to scared a rogue off the territory."
                         }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was intimidated by cat_to's confidence in confronting {PRONOUN/cat_from/object}."
+                        }
                     }
                 ]
             },
@@ -1315,6 +1589,22 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from was impressed to hear cat_to drove a rogue off the territory."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was frightened by cat_to's ambush."
                         }
                     }
                 ]
@@ -1364,6 +1654,22 @@
                         "log": {
                             "cats_from": "cat_from heard that cat_to failed to chase a rogue off the territory."
                         }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from and cat_to tussled when they encountered one another along the border."
+                        }
                     }
                 ]
             },
@@ -1399,6 +1705,40 @@
                         }
                     }
                 },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from found cat_to's feeble attempt at intimidating {PRONOUN/cat_from/object} off the territory to be rather pathetic."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was frustrated that cat_to didn't take {PRONOUN/cat_from/poss} threats seriously."
+                        }
+                    }
+                ],
                 "exp_gained": 0
             },
             {
@@ -1454,6 +1794,22 @@
                         "log": {
                             "cats_from": "cat_from heard that cat_to failed to notice a rogue."
                         }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from and cat_to fought at the border."
+                        }
                     }
                 ],
                 "condition": [
@@ -1478,6 +1834,24 @@
                     "Following the trail with {PRONOUN/p_l/poss} nose to the ground, p_l doesn't see the blow coming. {PRONOUN/p_l/subject/CAP} {VERB/p_l/haul/hauls} {PRONOUN/p_l/self} to {PRONOUN/p_l/poss} feet, squealing with pain, and {VERB/p_l/run/runs} for home."
                 ],
                 "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from and cat_to fought at the border."
+                        }
+                    }
+                ],
                 "condition": [
                     {
                         "cats": [
