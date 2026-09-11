@@ -1161,11 +1161,7 @@
             "clan:leader"
         ],
         "involved_cats": {
-            "m_c": {
-                "has_mentor": {
-                    "current": false
-                }
-            },
+            "m_c": {},
             "r_c0": {
                 "status": [
                     "warrior", 
@@ -1268,11 +1264,7 @@
             "clan:leader"
         ],
         "involved_cats": {
-            "m_c": {
-                "has_mentor": {
-                    "current": false
-                }
-            },
+            "m_c": {},
             "r_c0": {
                 "has_apprentice": {
                     "current": false,
