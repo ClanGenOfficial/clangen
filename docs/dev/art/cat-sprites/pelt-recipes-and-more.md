@@ -5,9 +5,9 @@ _(by keyraven)_
 
 Patterns (ie, "Pelts") are built by recoloring and layering various assets. These assets are masks, and are therefore all white and transparent.  Below is an example of a mask - this one showing a tabby pattern. (The normally white mask is black for visibility.) 
 
-## Color Palettes 
+## Cat-Color Palettes 
 
-Each cat-color has a palette of colors, stored in sprites/dicts/pelt_color_palettes.json.  This is a dictionary of color hexcodes matched to cat-color names. Cat-color names are arbitrary, and only referred to in the later Pelt Recipes. Each cat-color should have the same list of color names, with the exeption of colors only used in cat-color specific exceptions. 
+Each cat-color has a palette of colors, stored in sprites/dicts/pelt_color_palettes.json. (For clarity, these color palettes with be referred are referred to as cat-colors.) This is a dictionary of color hexcodes matched to cat-color names. The names of specfic hex-code colors are arbitrary, and only referred to in the Pelt Recipes. Each cat-color should have the same list of color names, with the exeption of colors only used in cat-color specific Pelt Recipe exceptions. 
 
 ```
 {
@@ -44,7 +44,33 @@ Each cat-color has a palette of colors, stored in sprites/dicts/pelt_color_palet
 
 ## Pelt Recipes
 
-The real meat and potatoes! Pelt recipes tell ClanGen how to put together patterns using the various pelt-part masks and color palettes. These are JSONs, all stored in sprites/dicts/pelt_recipes. A file should contain one recipe which describes how to build one pelt. 
+The real meat and potatoes! Pelt recipes tell ClanGen how to put together patterns using the various pelt-part masks and color palettes. These are JSONs, all stored in `sprites/dicts/pelt_recipes`. A file should contain one recipe which describes how to build one pelt. 
+
+</br>
+
+ **For Pelt Recipes:**
+
+| Pelt Recipe Property Name | Description |
+| ------------------------- | ----------- |
+| `name`        |  Required. Name of the pelt pecipe                                                       |
+| `layer_order` |  Required. List defining the layer order, from the bottom to the top, using the layer names defined in `layers`. Supports compound layers.  |
+| `layers`      |  Dictionary of layers names and layer definitions (See below table for more info).       |
+| `exceptions`  | List of special pelt recipe exceptions for poses and/or color (See below for more info). |
+
+ **For Layer Defintions:**
+
+| Layer Defintion Property Name | Description |
+| -------------      | -----------              |
+| The dictionary key |  Name of the layer, for use in `layer_order`. Can be an arbitrary string.                                        |
+| `group_name`       |  The name of the pelt part mask. `group_name` or `pelt_name` is required.                                        |
+| `blend_mode`       |  The blendmode for the layer. Options: "mask", "mulitply", or "normal". Default: "normal".                       |
+| `color`            |  Re-colors the pelt part mask to this color. You must use a color defined in the pelt color palettes. Optional.  |
+| `spritesheet`      |  The name of the spritesheet for look for `group_name` in. Default: "pelt_parts_masks"                           |
+| | |
+| | |
+| `pelt_name`        | Name of a pelt recipe. `group_name` or `pelt_name` is required.                                                  |
+| `palette`          | Name of the cat-color palette to use fo `pelt_name`.                                                             |
+
 
 Let's take a look at a simple example - The SingleColourRecipe: 
 
@@ -71,6 +97,7 @@ Let's take a look at a simple example - The SingleColourRecipe:
 }
 ```
 
+
 **First, we define `name`.** These must be unique for each recipe.  Use the convention {PatternName}Recipe. 
 
 **Secondly, we define `layer_order`.**  This is the order the layers will be built. The first entry is the bottom layer, and it builds up from there.  You can also have compound layers.  They will be constructed first, then layered.  Like below: 
@@ -79,9 +106,9 @@ Let's take a look at a simple example - The SingleColourRecipe:
 "layer_order": ["1", ["2", "3"]]"
 ```
 
-In this case, layers "2" and "3" will be constructed together, then laid onto "1". You can have as many compound-layer-within-compound-layers as you want. This may not seem useful - but it is! Most importably when combined with layer blendmodes. If you add a layer with the "mask" blendmode at the end of the compound layer, and you can mask the layers within without effecting those outside. 
+In this case, layers "2" and "3" will be constructed together, then laid onto "1". You can have as many compound-layer-within-compound-layers as you want. This may not seem useful - but it is! Most importably when combined with blendmodes. If you add a layer with the "mask" blendmode at the end of the compound layer, and you can mask the layers within without effecting those outside. 
 
-You may specify a compound layer blendmode and/or opacity by adding a special entry to the end of the compound order list.  This must start with "+". See below:
+You may specify a compound layer blendmode and/or opacity by adding a special entry to the end of the compound order list. This blendmode will be applied when the compund layer is added to the layer stack. This must start with "+". See below:
 
 ```
 "layer_order": ["1", ["2", "3", "+blend_mode:mask,opacity:50"]]"
@@ -107,7 +134,7 @@ OR
 }
 ```
 
-First, you have to define a name for the layer. In this case, the layer's name is "1". These names are arbitrary strings, so they can be named however you like. 
+First, you have to define a name for the layer. In this case, the layer's name is `"1"`. These names are arbitrary strings, so they can be named however you like. 
 
  Each layer must have, at minimum, a `group_name` to specify which pelt-part will be used. (See further down for all the pelt-parts and names).  
 
@@ -162,35 +189,19 @@ This is most useful for Torties, recipe below:
 }
 ```
 
- ### IN SUMMARY
 
- **For Pelt Recipes:**
-
-| Pelt Recipe Property Name | Description |
-| ------------------------- | ----------- |
-| `name`        |  Required. Name of the pelt pecipe                                                       |
-| `layer_order` |  Required. List defining the layer order, from the bottom to the top, using the layer names defined in `layers`. Supports compound layers.  |
-| `layers`      |  Dictionary of layers names and layer definitions (See below table for more info).       |
-| `exceptions`  | List of special pelt recipe exceptions for poses and/or color (See below for more info). |
-
- **For Layer Defintions:**
-
-| Layer Defintion Property Name | Description |
-| ------------- | -----------              |
-| The dictionary key |  Name of the layer, for use in `layer_order`. Can be an arbitrary string.                                        |
-| `group_name`       |  The name of the pelt part mask. `group_name` or `pelt_name` is required.                                        |
-| `blend_mode`       |  The blendmode for the layer. Options: "mask", "mulitply", or "normal". Default: "normal".                       |
-| `color`            |  Re-colors the pelt part mask to this color. You must use a color defined in the pelt color palettes. Optional.  |
-| `spritesheet`      |  The name of the spritesheet for look for `group_name` in. Default: "pelt_parts_masks"                           |
-| | |
-| `pelt_name`        | Name of a pelt recipe. `group_name` or `pelt_name` is required.                                                  |
-| `palette`          | Name of the cat-color palette to use fo `pelt_name`.                                                             |
 
 ## Pelt Exceptions
 
-**Exceptions** are for are specific cat-colors and poses, but are optional.  This allows certain cat-colors and poses to have special rules for building the pelt. You can override the layer_order, or modify the defined layers. Note that "layers" doesn't fully replace the global "layer" definitions, only modifies then. Layers with the same name will have their dictionaries merged. 
+ | Exception Property Name | Description |
+| ------------------------- | ----------- |
+| `colors`      |  List of colors for the excpetion to apply to. `colors` or `poses` are required.  |
+| `layer_order` |  Layer order for the exception.                                                   |
+| `layers`      |  Dictionary of layers names and layer definitions for the exception. Exception layers with the same name as base recipe layers will have their dictionaries merged.  |
 
-In order for the exception to apply, the cat must match at least one color condition, AND one pose condition, if both are provided. Otherwise, it must match at least one of the provided colors or poses. 
+**Exceptions** are for are specific cat-colors and poses, but are optional.  This allows certain cat-colors and poses to have special rules for building the pelt. You can override the layer_order, or modify the defined layers. Note that `"layers"` doesn't fully replace the global `"layers"` definitions, only modifies them. Layers with the same name will have their dictionaries merged. 
+
+In order for the exception to apply, the cat must match at least one cat-color condition, AND one pose condition, if both are provided. Otherwise, if only poses OR cat-colors are provides, it must match at least one. 
 
 The below example modifies a layer for newborn cats (of any color), removes a layer for WHITE cats (of any pose), and adds a layer for newborn cats who are GRAY or PALEGRAY. 
 
@@ -228,14 +239,6 @@ Only one exception is applied at a time.  If a cat matches more than one excepti
     ]
 ```
 
- ### IN SUMMARY
-
- | Exception Property Name | Description |
-| ------------------------- | ----------- |
-| `colors`      |  List of colors for the excpetion to apply to. `colors` or `poses` are required.  |
-| `layer_order` |  Layer order for the exception.                                                   |
-| `layers`      |  Dictionary of layers names and layer definitions for the exception. Exception layers with the same name as base recipe layers will have their dictionaries merged.  |
-
 ## Pelts to Recipe Dictionary
 
 `sprites/dicts/pelt_to_recipe.json` links pelt recipes with the pelt names used for cats. A recipe can be assigned to muliple cat pelt-names. 
@@ -264,4 +267,4 @@ Only one exception is applied at a time.  If a cat matches more than one excepti
 }
 ```
 
-You might notice that "Single" isn't a pelt. What's up with that? Before this rework, Torties would generate a tortie_base or tortie_pattern of "single" for the basic, SingleColour coat. This line allows old torties to still work without save-file conversion. It will not be used for any newly generated torties. 
+You might notice that "Single" isn't a pelt. What's up with that? Before this rework, Torties would generate tortie_base or tortie_pattern of "single" for the basic, SingleColour coat. This line allows old torties to still work without save-file conversion. It will not be used for any newly generated torties.  
