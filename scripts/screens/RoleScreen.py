@@ -60,15 +60,15 @@ class RoleScreen(Screens):
             #                               Ye have been warned
             #
             #
-            elif not get_config("ranks.allow_manual_all") or (
-                not get_config("ranks.allow_manual_deputy")
+            elif not get_config("ranks.can_manually_change.all") or (
+                not get_config("ranks.can_manually_change.deputy")
                 and self.the_cat == game.clan.deputy
             ):
                 CruelLockedAction()
                 pass
 
             elif event.ui_element == self.promote_leader:
-                if not get_config("ranks.allow_manual_deputy"):
+                if not get_config("ranks.can_manually_change.deputy"):
                     CruelLockedAction()
                     pass
                 else:
@@ -79,7 +79,7 @@ class RoleScreen(Screens):
                         Cat.sort_cats()
                     self.update_selected_cat()
             elif event.ui_element == self.promote_deputy:
-                if not get_config("ranks.allow_manual_deputy"):
+                if not get_config("ranks.can_manually_change.deputy"):
                     CruelLockedAction()
                     pass
                 else:

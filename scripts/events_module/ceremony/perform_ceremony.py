@@ -133,6 +133,9 @@ def check_for_ceremony(main_cat: Cat):
             elif main_cat.status.rank == CatRank.MEDIATOR_APPRENTICE:
                 trigger_ceremony(main_cat, CatRank.MEDIATOR)
 
+def get_leaders_kits():
+    leaders_kits = game.clan.leader.get_children()
+    return leaders_kits
 
 def check_and_promote_deputy():
     """
@@ -165,8 +168,7 @@ def check_and_promote_deputy():
         get_config("ranks.deputy_eligibility.only_leader_kits_deputy")
         and game.clan.leader is not None
     ):
-        leaders_kits = [c for c in inheritance_db.get_children(game.clan.leader.ID)]
-        possible_deputies = [c for c in possible_deputies if c.ID in leaders_kits]
+        possible_deputies = [c for c in possible_deputies if c.ID in get_leaders_kits()]
 
     if possible_deputies:
         # from here we must have appropriate deputy choices
@@ -186,22 +188,13 @@ def check_and_promote_deputy():
             and game.clan.leader is not None
         ):
             # If none of the leader's kits meet all the requirements for deputy, choose one randomly, with special text.
-            leaders_kits = [c for c in inheritance_db.get_children(game.clan.leader.ID)]
-            all_warriors = [c for c in all_warriors if c.ID in leaders_kits]
+            all_warriors = [c for c in all_warriors if c.ID in get_leaders_kits()]
         if all_warriors:
             main_cat = random.choice(all_warriors)
         else:
             # If there are no warriors at all, no one is named deputy.
-            no_deputy_ceremony = "hardcoded.ceremony_deputy_none"
-
-            if (
-                get_config("ranks.deputy_eligibility.only_leader_kits_deputy")
-                and game.clan.leader is not None
-            ):
-                no_deputy_ceremony = "hardcoded.ceremony_deputy_none_kin"
-
             game.cur_events_list.append(
-                EventInformation(i18n.t(no_deputy_ceremony), "ceremony")
+                EventInformation(i18n.t("hardcoded.ceremony_deputy_none"), "ceremony")
             )
             return
 

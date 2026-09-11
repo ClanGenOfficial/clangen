@@ -8,7 +8,7 @@
   "fated_paths": {
     "card_art": "behavior/resolute.png",
     "modifiers": {
-      "ranks.allow_manual_all": false,
+      "ranks.can_manually_change.all": false,
       "mates.allow_manual": false,
       "settings.force_enable.deputy": true
     }
@@ -130,7 +130,7 @@
     "card_art": "behavior/pride_and_joy.png",
     "modifiers": {
       "settings.force_enable.deputy": true,
-      "ranks.allow_manual_deputy": false,
+      "ranks.can_manually_change.deputy": false,
       "clan_creation.ranks_needed.deputy": false,
       "ranks.deputy_eligibility.only_leader_kits_deputy": true
     }
