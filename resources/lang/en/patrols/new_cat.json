@@ -5950,6 +5950,9 @@
         "success_outcomes": [
             {
                 "frequency": 2,
+                "poi": {
+                    "name": ["terrain_abandonednest"]
+                },
                 "exp_gained": 30,
                 "strings": [
                     "As they creep inside, they realise that the noise is the nest itself. It's creaking and moaning in an ominous manner and p_l orders the patrol back just before a section collapses! Luckily no one was caught in the debris."
@@ -7026,6 +7029,9 @@
             },
             {
                 "frequency": 1,
+                "poi": {
+                    "name": ["terrain_abandonednest"]
+                },
                 "exp_gained": 0,
                 "strings": [
                     "As they creep inside, they realise that the noise is the nest itself. It's creaking and moaning in an ominous manner and before anyone can act, a section collapses! s_c0 is caught beneath the debris. {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} alive, but only barely."
