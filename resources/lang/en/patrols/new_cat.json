@@ -5923,7 +5923,7 @@
         ]
     },
     {
-        "event_id": "gen_bord_abandontwoleg1",
+        "event_id": "gen_bord_oddnoises_group",
         "types": [
             "border"
         ],
@@ -8108,7 +8108,7 @@
         ]
     },
     {
-        "event_id": "gen_bord_abandontwoleg2",
+        "event_id": "gen_bord_oddnoises_solo",
         "types": [
             "border"
         ],
