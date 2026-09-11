@@ -42,7 +42,6 @@
             }
         ]
     },
-
     {
         "event_id": "group_3_negative_romanticrivalshigh_jealousofmate",
         "strings": [
@@ -248,7 +247,8 @@
                 "amount": -10
             }
         ]
-    },    {
+    },
+    {
         "event_id": "group_5_neg_medicinecatdebates",
         "strings": [
             "m_c, multi_cat discuss medicine amongst themselves, and it soon sours into a nasty argument.",
@@ -277,7 +277,7 @@
                 "cats_to": ["multi_cat", "m_c"],
                 "mutual": false,
                 "values": ["like", "comfort", "respect"],
-                "amount": -10
+                "amount": -5
             }
         ]
     },
