@@ -4,6 +4,8 @@
 
 Patterns (ie, "Pelts") are built by recoloring and layering various assets. These assets are masks, and are therefore all white and transparent.  Below is an example of a mask - this one showing a tabby pattern. (The normally white mask is black for visibility.) 
 
+![image](img/mask-example.png)
+
 ## Cat-Color Palettes 
 
 Each cat-color has a palette of colors, stored in `sprites/dicts/pelt_color_palettes.json`. (For clarity, these color palettes with be referred are referred to as cat-colors.) This is a dictionary of color hexcodes matched to cat-color names. The names of specific hex-code colors are arbitrary, and only referred to in the Pelt Recipes. Each cat-color should have the same list of color names, with the exception of colors only used in cat-color specific Pelt Recipe exceptions. 
