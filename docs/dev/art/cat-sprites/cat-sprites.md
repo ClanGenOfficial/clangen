@@ -25,26 +25,26 @@ One set of poses is 3 columns and 7 rows, with 21 sprite poses in total. Each of
 
 This is how the linearts -spritesheet looks like, as an example.
 
-![image](https://github.com/ClanGenOfficial/clangen/assets/54122046/e20c47b7-0786-4620-bcc0-a5ea4e216364)
+![image](img/lineart-spritesheet.png)
 
 Some spritesheets (like white patches, scar, and accessory) have multiple pose sheets, look somewhat like this: (Only part of the sheet is shown - these can get big!)
 
-![image](../../../../docs-resources/assets/dev/art/cat-sprites/multi-sheet-example.png))
+![image](img/multi-sheet-example.png)
 
 Some spritesheets are made to be masks rather than be drawn normally. At the time of writing this, the spritesheets that work as masks are the tortie patch, missing limb scar spritesheets, and pelt parts. We'll go over their uses individually.
 
 ## Lineart
-![lineart](https://github.com/ClanGenOfficial/clangen/assets/115410010/941684e8-7ca7-4575-8fea-86860555c6a8)
+![lineart](img/lineart-small.png)
 
 The lines should be kept at 1 px wide whenever possible. This means most of the free-hand strokes need to be cleaned up.
 
 Like this:
 
-![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/305b048b-4ee6-4c9b-973e-5195bd97d3f9)
+![image](img/good-line.png)
 
 Not like this:
 
-![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/8812e512-59b7-43fe-b85f-9c62894ea9ff)
+![image](img/bad-line.png)
 
 !!! note
     Exceptions should only be made in places like corners where erasing a pixel would change the shape in an odd way or make things unclear (often the ears).
@@ -53,15 +53,15 @@ Any lineart that goes inside the cat outline should be at **50% opacity** (the e
 
 Examples;
 
-![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/596a96f8-98db-43c5-a99b-faa0f8ef7773)
+![image](img/app-example.png)
 
 _This apprentice doesn’t have any helper lines, because you can see from a glance that it is holding one front paw up and other legs down, and tail up. The raised paw can be interpreted from either side of the cat, but it doesn’t confuse the eye most times and thinking about perspective, the pose looks flat either way._
 
-![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/842e9870-0b7a-4653-b5a3-282ce85dd23c)
+![image](img/long-example.png)
 
 _This sprite uses helper lines because without them, the pose would look odd and confusing at first glance, and you couldn’t tell front legs from back legs. The helper lines also help show the depth of the sprite._
 
-![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/38f1d978-0351-413a-91db-439845a29173)
+![image](img/long-example-no-inner.png)
 
 _Example of how said sprite would look without helper lines._
 
@@ -69,8 +69,8 @@ _Example of how said sprite would look without helper lines._
 The cat sprite proportions are not realistic, even the adults and elders have big and wide heads compared to real life cats. Kittens even moreso. They also have wide stubby legs and big eyes, and short bodies. This stylization makes it easier to give the cats more expressiveness and personality even at very small sizes.
 No mouth visible unless it’s important for a specific pose, and a single pixel for a nose.
 
-![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/2a74f1c8-9765-4dd0-acaa-b424c7d9b452)
-![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/47819e6f-086b-4e99-9e8d-f069fc75d8a1)
+![image](img/real-cat.png)
+![image](img/short-example.png)
 
 _I’m sure you can see the difference ^^_
 
@@ -79,8 +79,8 @@ _I’m sure you can see the difference ^^_
 
 ## Coloring & Pelts
 
-![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/2df3f1da-daab-4017-aaaa-6750980c5f6b)
-![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/f90b52c4-98a8-41e9-9f35-691d9dfb6372)
+![image](img/golden-tabby-long.png)
+![image](img/gray-dot-tabby-app.png)
 
 Cat pelts are specific patterns on the cats that come in multiple colors.
 I’ll be referring to the stripes and spots and other markings on those as “patterns” and the colors underneath the markings as “base color”.
@@ -100,19 +100,20 @@ Kittens usually have very simplistic pattern shapes designs compared to others. 
 **As of writing this, there are a total of 19 different pelt colors;**
 WHITE, PALEGREY, SILVER, GREY, DARKGREY, GHOST, BLACK,
 CREAM, PALEGINGER, GOLDEN, GINGER, DARKGINGER, SIENNA,
-LIGHTBROWN, LILAC, BROWN, GOLDEN-BROWN, DARKBROWN and CHOCOLATE.
+LIGHTBROWN, LILAC, BROWN, GOLDEN-BROWN, DARKBROWN, CHOCOLATE, 
+RUST and BLOSSOM.
 
 While the colors can be quite straightforward with how they’re colored, there are some general rules as well as individual color quirks to a few of them that should be followed.  
 
 ### General:
 
-![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/053756cb-1ceb-48df-ad5d-bcf30c6b52bc)
+![image](img/singlecolor-example.png)
 
 Most pelts have a little gradient of lighter color on their chest, running all the way from the face to their front legs and bellies (on certain sprites).
 You’ll want to keep this gradient a subtle and smooth transition onto the other color. As a tip, it’s also usually better to use a different hue color for the lighter area than the base color for more interesting look, such as using pale **yellow** on an **orange** or **brown** pelt.
 
 !!! caution
-    ![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/5343a533-df3f-468a-958f-f5c9ec196743)
+    ![image](img/singlecolor-example-bad.png)
 
     Here’s what you want to avoid - the gradient transition isn’t subtle or smooth enough, so it ends up looking more like a simple brushstroke than a gradient as intended. The lighter color is also the same hue as the base orange, so while it doesn’t look bad, it’s less vibrant than using a different hue would be.
 
@@ -123,8 +124,8 @@ You’ll want to keep this gradient a subtle and smooth transition onto the othe
 
 
 ## White Patches
-![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/03fbba4a-2c05-46f4-91e6-3495573385a8)
-![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/5e6d0633-8ec4-4895-90f1-42adaf8acd62)
+![image](img/kitten-white-patch.png)
+![image](img/short-white-patch.png)
 
 White patches are the patches of white that are combined with the base pelt colors. Please keep them separate from those pelt colors. The game has a function for generating tints for these patches that alter the hue and shade of them slightly, in 5 colors:
 “none” (pure white), “offwhite”, “cream”, “darkcream”, “gray”, and “pink”.
@@ -134,8 +135,8 @@ You don’t need to worry about them. The white patches you design should just b
 
 Having semi-transparent parts in your white patches design is totally ok. However, to follow the style & to not look jarring, when you are using transparency for a gradient effect, please make these transparent parts into solid “waves” of white using the same pixel brush (with varying levels of opacity) instead of using other types of brushes to create gradients. This lets the spritework look more clean and deliberate.
 
-![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/5aaa9f0f-caed-45ee-93e5-ea7612eb84cb)
-![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/d7e19c6e-4d9b-4f09-92ae-9200c8aeb6bb)
+![image](img/white-patch-bad.png)
+![image](img/white-patch-good.png)
 
 ### Shapes:
 When you draw out the shape of the patches, try to give them more depth by following the imagined shape of the cat! In this example, the patches on the first image **look very flat**, because they ignore the curve of the cat’s back and neck towards the camera and how that alters shapes. The second image shows the patches looking more natural because they **curve slightly according to how the cat’s 3D depth would be imagined.**
@@ -162,11 +163,11 @@ Accessories (Accs) range from collars to leaves scattered through fur. We want t
 ## Linework
 Any linework that goes outside the cat sprite silhouette should be black, any linework that is inside the cat sprite silhouette should be colored.  
 
-![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/6f0c9c86-0b52-4fec-9e1b-672e82d9a9ef)
-![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/59cbe337-c4ce-45d7-9277-f4b5f63caa03)
-![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/604284c6-2155-45be-9811-92f37d4a2c94)
+![image](img/acc-reed.png)
+![image](img/accs-blue-flowers.png)
+![image](img/accs-leaves.png)
 
 !!! tip
     You can use black lines vs. colored lines to imply depth!  This acc, for example, allows the black lineart of the cat's head to cover one side of the acc, implying that the acc is behind it's head.  If colored lineart had been used instead, it would have appeared that the acc was in front of the cat's head.
 
-    ![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/b53eeb06-1bfe-40df-8b08-46be799e871c)
+![image](img/accs-leaves-app.png)

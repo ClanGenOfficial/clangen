@@ -8,6 +8,9 @@ If you would like to add new collars, head to [Palette Maps](palette-maps.md) fo
 Spritesheets can be found in the `sprites` folder and their matching `DATA` can be found in `sprites/dicts`.  The `DATA` is how we control the creation of individual sprites off of the spritesheet. The `sprites` and `pelts` scripts pull all of their information from the `DATA` file.
 
 ## Adding to the Spritesheet
+
+NOTE - THIS IS CURRENTLY OUT OF DATE. See Docs on Pelt Recipes. 
+
 New sprite sets can be added to the spritesheets by simply adding the new set to the end of a row or beginning a new row. 
 
 ![image](../img/spritesheet_editing_example1.png)
