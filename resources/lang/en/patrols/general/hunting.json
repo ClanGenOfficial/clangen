@@ -14573,6 +14573,7 @@
         "success_outcomes": [
             {
                 "frequency": 4,
+                "exp_gained": 25,
                 "strings": [
                     "p_l knows <i>exactly</i> what that sound is. Get away! Now! lead_name will have to be informed of this venomous threat on their hunting path. The patrol catches a few bits of prey on the way back to the camp."
                 ],
