@@ -729,8 +729,14 @@ dev_tools = false
     member = ["newborn", "kitten", "adolescent", "young adult", "adult", "senior adult", "senior"]
 
 [ranks]
+# force only the leader's kits to be selected as deputy
+    only_leader_kits_deputy = false
+
+  [ranks.can_manually_change]
   # permit player to change cat ranks
-  allow_manual = true
+    all = true
+    deputy = true
+
 
 [graduation]
   # base possible experience gain for apprentices
