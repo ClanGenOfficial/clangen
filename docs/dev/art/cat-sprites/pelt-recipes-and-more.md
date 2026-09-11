@@ -1,5 +1,4 @@
 # Pelt Recipes and More
-_(by keyraven)_
 
 ## Overview
 
@@ -9,7 +8,7 @@ Patterns (ie, "Pelts") are built by recoloring and layering various assets. Thes
 
 Each cat-color has a palette of colors, stored in sprites/dicts/pelt_color_palettes.json. (For clarity, these color palettes with be referred are referred to as cat-colors.) This is a dictionary of color hexcodes matched to cat-color names. The names of specfic hex-code colors are arbitrary, and only referred to in the Pelt Recipes. Each cat-color should have the same list of color names, with the exeption of colors only used in cat-color specific Pelt Recipe exceptions. 
 
-```
+```json
 {
     "WHITE": {
         "base": "#EEF9FC",
@@ -74,7 +73,7 @@ The real meat and potatoes! Pelt recipes tell ClanGen how to put together patter
 
 Let's take a look at a simple example - The SingleColourRecipe: 
 
-```
+```json
 {
     "name": "SingleColourRecipe",
     "layer_order": ["1", "2", "3"],
@@ -110,21 +109,21 @@ In this case, layers "2" and "3" will be constructed together, then laid onto "1
 
 You may specify a compound layer blendmode and/or opacity by adding a special entry to the end of the compound order list. This blendmode will be applied when the compund layer is added to the layer stack. This must start with "+". See below:
 
-```
-"layer_order": ["1", ["2", "3", "+blend_mode:mask,opacity:50"]]"
+```json
+"layer_order": ["1", ["2", "3", "+blend_mode:mask,opacity:50"]],
 
 OR
 
-"layer_order": ["1", ["2", "3", "+opacity:50"]]"
+"layer_order": ["1", ["2", "3", "+opacity:50"]],
 
-OR 
+OR
 
 "layer_order": ["1", ["2", "3", "+blend_mode:mask"]]"
 ```
 
 ### **Thirdly, you define `layers`.**
 
-```
+```json
 "1" : {
     "group_name": "BASEMASK", #Required
     "color": "base", # Optional. 
@@ -148,7 +147,7 @@ First, you have to define a name for the layer. In this case, the layer's name i
 
 You can also use layers to refer to other pelt recipes.  This will build the layer using that pelt's recipe, and some defined color palette. 
 
-```
+```json
 "1" : {
     "pelt_name": "Classic"
     "palette": "GRAY"
@@ -157,7 +156,7 @@ You can also use layers to refer to other pelt recipes.  This will build the lay
 
 And finally, for `"group_name"`, `"color"`, `"pelt_name"` or `"palette"`, you can refer to values stored in a cat's Pelt.  When doing this, use the name of the value surrounded by curly brackets {}. For example:
 
-```
+```json
 "1": {
     "pelt_name": "{tortie_base}",
     "palette": "{colour}"
@@ -166,7 +165,7 @@ And finally, for `"group_name"`, `"color"`, `"pelt_name"` or `"palette"`, you ca
 
 This is most useful for Torties, recipe below: 
 
-```
+```json
 {
     "name": "TortieRecipe",
     "layer_order": ["1", ["2", "3"]],
@@ -207,7 +206,7 @@ The below example modifies a layer for newborn cats (of any color), removes a la
 
 Only one exception is applied at a time.  If a cat matches more than one exception, the exception with the most constraints is chosen. 
 
-```
+```json
 "exceptions": [
         {
             "poses": ["newborn0", "newborn1", "newborn2"],
@@ -243,7 +242,7 @@ Only one exception is applied at a time.  If a cat matches more than one excepti
 
 `sprites/dicts/pelt_to_recipe.json` links pelt recipes with the pelt names used for cats. A recipe can be assigned to muliple cat pelt-names. 
 
-```
+```json
 {
     "Tortie": "TortieRecipe",
     "Calico": "TortieRecipe",

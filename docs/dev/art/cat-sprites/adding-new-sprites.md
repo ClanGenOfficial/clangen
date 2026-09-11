@@ -9,7 +9,9 @@ Spritesheets can be found in the `sprites` folder and their matching `DATA` can 
 
 ## Adding to the Spritesheet
 
-NOTE - THIS IS CURRENTLY OUT OF DATE. See Docs on Pelt Recipes. 
+!!! warning
+    For adding cat-colors, and modifing sprites, read the Pelt Recipes documentation. 
+    
 
 New sprite sets can be added to the spritesheets by simply adding the new set to the end of a row or beginning a new row. 
 
