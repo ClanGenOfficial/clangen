@@ -670,7 +670,10 @@ class Patrol:
         for abbr, constraints in success_outcome.involved_cats.items():
             # if this is present, then we know a cat must fulfill it
             if stat_block := constraints.get("stat"):
-                cat = self.outcome_cats["success"][abbr]
+                cat = self.outcome_cats["success"].get(abbr)
+                if not cat:
+                    # likely an n_c cat that hasn't been made yet
+                    continue
                 if "skill" in stat_block:
                     success_chance += get_config(
                         "patrol_generation.skill_cat_modifier"
