@@ -1382,6 +1382,11 @@
           "title": "Tags",
           "type": "array"
         },
+        "poi": {
+          "$ref": "#/$defs/PointsOfInterestGroup",
+          "description": "The relevant points of interest. Points of Interest never affect outcome.",
+          "title": "Poi"
+        },
         "strings": {
           "description": "List of the text that will be displayed in-game as events.",
           "items": {
