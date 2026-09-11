@@ -34,53 +34,6 @@
         ]
     },
     {
-        "event_id": "app_no_mentors_available0",
-        "tags": ["-clan:warrior-like(min:1)"],
-        "involved_cats": {
-            "m_c": {
-                "has_mentor": {
-                    "current": false
-                }
-            }
-        },
-        "strings": [
-            "Newly-made apprentice m_c wishes {PRONOUN/m_c/subject} had someone to mentor {PRONOUN/m_c/object}.",
-            "m_c isn't confident in {PRONOUN/m_c/poss} ability to train {PRONOUN/m_c/self}, but will try anyway.",
-            "m_c is frustrated that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have a mentor.",
-            "m_c isn't sure what to do without the guidance of a mentor.",
-            "m_c wonders if {PRONOUN/m_c/subject} can get by without the guidance of a mentor."
-        ]
-    },
-    {
-        "event_id": "app_no_leader0",
-        "tags": [
-            "-clan:leader"
-        ],
-        "involved_cats": {
-            "m_c": {},
-            "r_c0": {}
-        },
-        "strings": [
-            "The Clan gathers around and urges (old_name) to go to the front of the crowd. Not having a leader isn't an excuse to force a cat to stay in the nursery when they're six moons old. (old_name) is renamed m_c, and the Clan votes to make r_c0 {PRONOUN/m_c/poss} mentor.",
-            "The Clan cheers for the new apprentice, m_c. They allow {PRONOUN/m_c/object} to choose {PRONOUN/m_c/poss} own mentor: m_c chooses r_c0.",
-            "With m_c's apprentice ceremony completed, there's still the problem of figuring out who will mentor {PRONOUN/m_c/object}. r_c0 steps forward first, so m_c touches noses with {PRONOUN/r_c0/object}."
-        ],
-        "relationship_constraint": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c0"
-                ],
-                "mutual": false,
-                "constraints": [
-                    "app/mentor"
-                ]
-            }
-        ]
-    },
-    {
         "event_id": "app_living_parent0",
         "involved_cats": {
             "m_c": {},
@@ -113,41 +66,6 @@
             {
                 "cats_to": [
                     "r_c1"
-                ],
-                "cats_from": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "constraints": [
-                    "child/parent"
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "app_living_parent_no_mentor0",
-        "tags": ["clan:warrior-like(min:1)"],
-        "involved_cats": {
-            "m_c": {
-                "has_mentor": {
-                    "current": false
-                }
-            },
-            "r_c0": {
-                "group": [
-                    "player_clan"
-                ]
-            }
-        },
-        "strings": [        
-            "(old_name) loudly complains as r_c0 pulls {PRONOUN/m_c/object} over to quickly groom {PRONOUN/m_c/poss} pelt. {PRONOUN/m_c/subject/CAP} {VERB/m_c/manage/manages} to wriggle away and scurry off to the front of the crowd for {PRONOUN/m_c/poss} ceremony, where {PRONOUN/m_c/subject} {VERB/m_c/are/is} renamed to m_c.",
-            "Even though {PRONOUN/m_c/subject} {VERB/m_c/are/is} excited to finally be made an apprentice, it takes a bit of coaxing by r_c0 for (old_name) to step forward for {PRONOUN/m_c/poss} ceremony. r_c0 watches in pride as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} named m_c."
-
-        ],
-        "relationship_constraint": [
-            {
-                "cats_to": [
-                    "r_c0"
                 ],
                 "cats_from": [
                     "m_c"
@@ -207,43 +125,6 @@
         ]
     },
     {
-        "event_id": "app_dead_parent_no_mentor0",
-        "tags": ["clan:warrior-like(min:1)"],
-        "involved_cats": {
-            "m_c": {
-                "backstory": [
-                    "-orphaned_backstories"
-                ],
-                "has_mentor": {
-                    "current": false
-                }
-            },
-            "r_c0": {
-                "group": [
-                    "afterlife"
-                ]
-            }
-        },
-        "strings": [
-            "m_c hopes that r_c0 is watching from StarClan with pride as {PRONOUN/m_c/subject} {VERB/m_c/are/is} apprenticed.",
-            "m_c smiles up at the stars as {PRONOUN/m_c/subject} {VERB/m_c/sit/sits} recieves {PRONOUN/m_c/poss} apprentice name. The stars seem to shine brighter in response: m_c knows it's a sign that r_c0 is still watching over {PRONOUN/m_c/object}."
-        ],
-        "relationship_constraint": [
-            {
-                "cats_to": [
-                    "r_c0"
-                ],
-                "cats_from": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "constraints": [
-                    "child/parent"
-                ]
-            }
-        ]
-    },
-    {
         "event_id": "app_dead_parent1",
         "involved_cats": {
             "m_c": {
@@ -278,43 +159,6 @@
             {
                 "cats_to": [
                     "r_c1"
-                ],
-                "cats_from": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "constraints": [
-                    "child/parent"
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "app_dead_parent_no_mentor1",
-        "tags": ["clan:warrior-like(min:1)"],
-        "involved_cats": {
-            "m_c": {
-                "backstory": [
-                    "clanborn"
-                ],
-                "has_mentor": {
-                    "current": false
-                }
-            },
-            "r_c0": {
-                "group": [
-                    "afterlife"
-                ]
-            }
-        },
-        "strings": [
-            "m_c wishes that {PRONOUN/m_c/subject} could be happier about being made an apprentice, but all {PRONOUN/m_c/subject} can think about is how much {PRONOUN/m_c/subject} {VERB/m_c/wish/wishes} that r_c0 was still there to chant {PRONOUN/m_c/poss} name with the rest of the Clan.",
-            "m_c tries to keep up a brave face as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} apprenticed, but {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} stealing glances at the crowd, as if trying to find r_c0 despite knowing {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} no longer with {PRONOUN/m_c/object}."
-        ],
-        "relationship_constraint": [
-            {
-                "cats_to": [
-                    "r_c0"
                 ],
                 "cats_from": [
                     "m_c"
@@ -377,48 +221,7 @@
             }
         ]
     },
-    {
-        "event_id": "app_dead_both_parents_no_mentor0",
-        "tags": ["clan:warrior-like(min:1)"],
-        "involved_cats": {
-            "m_c": {
-                "backstory": [
-                    "-orphaned_backstories"
-                ],
-                "has_mentor": {
-                    "current": false
-                }
-            },
-            "r_c0": {
-                "group": [
-                    "afterlife"
-                ]
-            },
-            "r_c1": {
-                "group": [
-                    "afterlife"
-                ]
-            }
-        },
-        "strings": [
-            "As the Clan chant's m_c's new name, {PRONOUN/m_c/subject} {VERB/m_c/make/makes} a silent promise to r_c0 and r_c1 to make them proud and to take care of the Clan in their absence."
-        ],
-        "relationship_constraint": [
-            {
-                "cats_to": [
-                    "r_c0",
-                    "r_c1"
-                ],
-                "cats_from": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "constraints": [
-                    "child/parent"
-                ]
-            }
-        ]
-    },
+    
     {
         "event_id": "app_living_both_parents0",
         "involved_cats": {
