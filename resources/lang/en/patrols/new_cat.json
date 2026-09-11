@@ -7382,6 +7382,110 @@
                         }
                     }
                 ]
+            },
+            {
+                "frequency": 3,
+                "exp_gained": 30,
+                "strings": [
+                    "It seems a family of wanderers came upon POI and thought to make it their new home. p_l makes it abundantly clear that this will not be an option before attacking the family. The patrol spares only the kittens, and brings them back to join a new family."
+                ],
+                "patrol_temperament": ["calculating", "bloodthirsty"],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["senior adult", "senior"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {
+                            "assign_mate": ["n_c0"]
+                        },
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["senior adult", "senior"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {
+                            "assign_blood_parent": ["n_c0", "n_c1"]
+                        },
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["young adult"]
+                    },
+                    "n_c3": {
+                        "can_create_new_cat": {
+                            "become_litter": true,
+                            "assign_blood_parent": ["n_c0", "n_c1"]
+                        },
+                        "status": [
+                            "loner"
+                        ],
+                        "age": ["kitten"],
+                        "backstory": ["stolenkit4"]
+                    }
+                },
+                "relationship_constraint": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "n_c1"
+                        ],
+                        "mutual": true,
+                        "constraints": [
+                            "mates"
+                        ]
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0", "n_c1"
+                        ],
+                        "cats_to": [
+                            "n_c2", "n_c3"
+                        ],
+                        "mutual": false,
+                        "constraints": [
+                            "parent/child"
+                        ]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c3"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "comfort",
+                            "trust",
+                            "like"
+                        ],
+                        "amount": -50,
+                        "log": {
+                            "cats_from": "cat_from watched cat_to slaughter {PRONOUN/cat_from/poss} family."
+                        }
+                    }
+                ],
+                "join": [
+                    {
+                        "cats": ["n_c3"]
+                    }
+                ],
+                "death": [
+                    {
+                        "cats": [
+                            "n_c0", "n_c1", "n_c2"
+                        ],
+                        "history": "m_c was killed by a c_n patrol."
+                    }
+                ]
             }
         ],
         "antag_fail_outcomes": [
