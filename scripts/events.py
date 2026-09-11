@@ -548,7 +548,11 @@ def handle_lead_den_event():
                                 )
                                 invited_cat.specsuffix_hidden = False
                         # if cat is an apprentice, make sure they get a mentor!
-                        if invited_cat.status.rank == CatRank.APPRENTICE:
+                        if (
+                            invited_cat.status.rank
+                            and not get_config("roles.app_never_mentor")
+                            == CatRank.APPRENTICE
+                        ):
                             invited_cat.update_mentor()
                         # if the cat chose to become a mediator but the settings don't allow it, make them a warrior instead
                         if (
@@ -1860,8 +1864,9 @@ def check_missing_mentors():
     Checks to see if any apprentices have missing mentors, reminds players of this.
     """
 
-    # Only do the check if mentors aren't being assigned randomly.
-    if get_clan_setting("assign_mentors"):
+    # Only do the check if mentors aren't being assigned randomly
+
+    if get_clan_setting("assign_mentors") or get_config("roles.app_never_mentor"):
         return
 
     mentorless = []

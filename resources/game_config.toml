@@ -534,6 +534,9 @@ dev_tools = false
   # base 1/chance that a cat will be chosen as a med cat apprentice
   base_medicine_app_chance = 41
 
+  # true means that apprentices will not receive mentors
+  app_never_mentor = false
+
 [roles."medicine cat apprentice"]
   # maximum number of medicine cat apprentices to full medicine cats (e.g. 4 adult medcats can have 2 apps total)
   max_medcats_to_apps = 2
