@@ -6615,7 +6615,7 @@
                     "As the patrol gets closer, they recognize the noise as a bunch of cats hollering, alternating between encouragement and personal jabs. When they finally come into view, the patrol realizes that this is a group of loners holding some sort of rodent catching competition. s_c0 leaps forward and declares {PRONOUN/s_c0/self} a contestant, much to the surprise of the loners. The evening is spent pouncing on mice and rats, rather than patrolling the border."
                 ],
                 "involved_cats": {
-                    "s_co": {
+                    "s_c0": {
                         "prior_abbreviation": ["any"],
                         "stat": {
                             "trait": ["competitive", "arrogant"]
