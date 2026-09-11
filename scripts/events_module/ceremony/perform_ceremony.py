@@ -133,9 +133,11 @@ def check_for_ceremony(main_cat: Cat):
             elif main_cat.status.rank == CatRank.MEDIATOR_APPRENTICE:
                 trigger_ceremony(main_cat, CatRank.MEDIATOR)
 
+
 def get_leaders_kits():
     leaders_kits = game.clan.leader.get_children()
     return leaders_kits
+
 
 def check_and_promote_deputy():
     """
