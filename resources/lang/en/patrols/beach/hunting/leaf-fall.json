@@ -216,7 +216,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l and {PRONOUN/p_l/poss} patrol decide to leave the beach behind and find some trees under which to shelter. It turns out to be a stroke of luck, as many of the prey have also decided to seek shelter from the pouring rain. They catch many small prey, and they end up going back to camp soaked anyway but successful."
+                    "p_l and {PRONOUN/p_l/poss} patrol decide to leave the beach behind and find some trees under which to shelter. It turns out to be a stroke of luck, as many of the prey have also decided to seek shelter from the pouring rain. They catch many small prey, and they end up going back to camp soaked, but successful."
                 ],
                 "exp_gained": 15,
                 "relationship_changes": [
@@ -245,12 +245,14 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 4,
                 "strings": [
-                    "p_l knows of a spot where they can shelter in between some bushes and wait out the rain. r_c0 notices a small nest full of baby birds who have fallen from a tree because of the wind. The cats are wet but happy; now they can return to camp with their heads held high and rest happily and hopefully warm in their nests later that day, knowing they have fed their Clan."
+                    "p_l knows of a spot where they can shelter in between some bushes and wait out the rain. s_c0 notices a small nest full of baby birds who have fallen from a tree because of the wind. The cats are wet but happy; now they can return to camp with their heads held high and rest happily and hopefully warm in their nests later that day, knowing they have fed their Clan."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
                 "exp_gained": 15,
                 "relationship_changes": [
