@@ -207,13 +207,80 @@
         "success_outcomes": [
             {
                 "frequency": 4,
+                "exp_gained": 10,
                 "strings": [
-                    "The patrol sneaks closer. It seems the Twolegs are eating, though the open beach shore means the cats don't have any chance of stealing a bite."
+                    "p_l decides the patrol will avoid this strange sight, deeming it best to leave Twolegs to Twoleg-things. The patrol hunts nearby instead and gathers a decent enough haul."
                 ],
-                "exp_gained": 10
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
+                ]
             },
             {
                 "frequency": 4,
+                "exp_gained": 10,
+                "strings": [
+                    "s_c0 distracts the Twolegs by lounging nearby and slowly luring them off the pelt and away from the food scent. The rest of the patrol dashes in, snatching whatever they can fit in their mouths as the Twolegs cry in dismay. It's too late, though, and the cats get away with their prize."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,1"
+                            ]
+                        }
+                    }
+                },
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "exp_gained": 10,
+                "strings": [
+                    "s_c0 sneaks up to the pelt, the Twolegs entirely unaware. That is, until s_c0 snatches something and pelts away to their angry cries. The patrol investigates the stolen food afterwards and deems it good enough to take back to camp."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "STEALTH,1"
+                            ]
+                        }
+                    }
+                },
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 0,
+                "strings": [
+                    "The patrol can't seem to interpret the purpose of the Gathering. Twolegs are just mystifying.",
+                    "The patrol sneaks closer. It seems the Twolegs are eating, though the open beach shore means the cats don't have any chance of stealing a bite."
+                ]
+            },
+            {
+                "frequency": 4,
+                "exp_gained": 10,
                 "strings": [
                     "s_c0 is more interested in the strangely-colored pelt than the food-scent, which the Twolegs will undoubtedly be possessive of. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/wonder/wonders} how the odd creatures make such things, and why on earth they'd bring them to a beach to sit on pointlessly."
                 ],
@@ -228,31 +295,23 @@
                             ]
                         }
                     }
-                },
-                "exp_gained": 10
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "The patrol can't seem to interpret the purpose of the Gathering. Twolegs are just mystifying."
-                ],
-                "exp_gained": 0
+                }
             },
             {
                 "frequency": 3,
+                "exp_gained": 0,
                 "strings": [
-                    "As the patrol gets close, a Twoleg kit runs at them, screaming unintelligibly. While running away, r_c0 sprains a leg."
+                    "As the patrol gets close, a Twoleg kit runs at them, screaming unintelligibly. While running away, s_c0 sprains a leg."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
-                "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "condition": [
                             "sprain"
