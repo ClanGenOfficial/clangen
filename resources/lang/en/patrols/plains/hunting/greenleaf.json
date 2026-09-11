@@ -56,10 +56,6 @@
                 "supply": [
                     {
                         "type": "freshkill",
-                        "adjust": "increase_small"
-                    },
-                    {
-                        "type": "freshkill",
                         "adjust": "increase_medium"
                     }
                 ]
@@ -89,10 +85,6 @@
                     }
                 ],
                 "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_small"
-                    },
                     {
                         "type": "freshkill",
                         "adjust": "increase_medium"
