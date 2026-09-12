@@ -631,8 +631,9 @@ dev_tools = false
   debug_ensure_ceremony_id = ""
 
 [death_related]
-  # the maximum lives a leader can have
+  # the amount of lives a leader can have
   max_leader_lives = 9
+  min_leader_lives = 9
 
   # base 1/chance that leader will die
   leader_death_chance = 50
