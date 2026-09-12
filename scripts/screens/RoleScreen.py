@@ -305,30 +305,35 @@ class RoleScreen(Screens):
 
         main_dir = "resources/images/"
         paths = {
-            CatRank.LEADER: "leader_icon.png",
-            CatRank.DEPUTY: "deputy_icon.png",
-            CatRank.MEDICINE_CAT: "medic_icon.png",
-            CatRank.MEDICINE_APPRENTICE: "medic_app_icon.png",
-            CatRank.MEDIATOR: "mediator_icon.png",
-            CatRank.MEDIATOR_APPRENTICE: "mediator_app_icon.png",
-            CatRank.WARRIOR: "warrior_icon.png",
-            CatRank.APPRENTICE: "warrior_app_icon.png",
-            CatRank.KITTEN: "kit_icon.png",
-            CatRank.NEWBORN: "kit_icon.png",
-            CatRank.ELDER: "elder_icon.png",
+            CatRank.LEADER: "icon_leader.png",
+            CatRank.DEPUTY: "icon_deputy.png",
+            CatRank.MEDICINE_CAT: "icon_medic.png",
+            CatRank.MEDICINE_APPRENTICE: "icon_medic_app.png",
+            CatRank.MEDIATOR: "icon_mediator.png",
+            CatRank.MEDIATOR_APPRENTICE: "icon_mediator_app.png",
+            CatRank.WARRIOR: "icon_warrior.png",
+            CatRank.APPRENTICE: "icon_warrior_app.png",
+            CatRank.KITTEN: "icon_kit.png",
+            CatRank.NEWBORN: "icon_kit.png",
+            CatRank.ELDER: "icon_elder.png",
         }
 
         if self.the_cat.status.rank in paths:
             icon_path = os.path.join(main_dir, paths[self.the_cat.status.rank])
-        else:
-            icon_path = os.path.join(main_dir, "buttonrank.png")
 
-        self.selected_cat_elements["role_icon"] = pygame_gui.elements.UIImage(
+            self.selected_cat_elements["role_icon"] = pygame_gui.elements.UIImage(
+                ui_scale(pygame.Rect((82, 231), (78, 78))),
+                pygame.transform.scale(
+                    image_cache.load_image(icon_path),
+                    ui_scale_dimensions((78, 78)),
+                ),
+                starting_height=2,
+            )
+
+        self.selected_cat_elements["role_icon_frame"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((82, 231), (78, 78))),
-            pygame.transform.scale(
-                image_cache.load_image(icon_path),
-                ui_scale_dimensions((78, 78)),
-            ),
+            get_box(BoxStyles.DARK_ROUNDED_BOX, (78, 78)),
+            starting_height=1,
         )
 
         (

@@ -240,14 +240,14 @@ class RelationshipScreen(Screens):
 
         # SEARCH BAR
         self.elements["search_bar"] = UISearchBar(
-            (500, 80),
+            (504, 80),
         )
         interactable_elements.append(self.elements["search_bar"].text_entry)
 
         # BACKDROP
         self.elements["backdrop"] = UIModifiedImage(
-            ui_scale(pygame.Rect((0, 0), (680, 515))),
-            get_box(BoxStyles.DARK_ROUNDED_BOX, (700, 515)),
+            ui_scale(pygame.Rect((0, 0), (684, 520))),
+            get_box(BoxStyles.DARK_ROUNDED_BOX, (684, 520)),
             anchors={"top_target": self.elements["search_bar"], "centerx": "centerx"},
             manager=MANAGER,
         )
@@ -468,14 +468,14 @@ class RelationshipScreen(Screens):
                 continue
 
             self.relation_elements[f"rel{i}_backdrop"] = UIModifiedImage(
-                ui_scale(pygame.Rect((6 + INTERVAL, 0), (120, BOX_HEIGHT))),
+                ui_scale(pygame.Rect((6 + INTERVAL, 2), (120, BOX_HEIGHT))),
                 get_box(BoxStyles.INNER_BOX, (120, BOX_HEIGHT)),
                 container=container,
                 anchors={"left_target": prev_element} if prev_element else None,
                 manager=MANAGER,
             )
             self.relation_elements[f"rel{i}_nameplate"] = UIModifiedImage(
-                ui_scale(pygame.Rect((0 + INTERVAL, 0), (130, 30))),
+                ui_scale(pygame.Rect((0 + INTERVAL, 2), (130, 30))),
                 get_box(BoxStyles.NAMEPLATE, (130, 30)),
                 container=container,
                 anchors={"left_target": prev_element} if prev_element else None,
@@ -532,7 +532,7 @@ class RelationshipScreen(Screens):
 
             self.relation_elements[f"rel{i}_name_text"] = pygame_gui.elements.UITextBox(
                 shorten_text_to_fit(str(relationship.cat_to.name), 100, 13),
-                ui_scale(pygame.Rect((0 + INTERVAL, -3), (130, -1))),
+                ui_scale(pygame.Rect((0 + INTERVAL, -1), (130, -1))),
                 object_id="#text_box_30_horizcenter",
                 container=container,
                 anchors={"left_target": prev_element} if prev_element else None,
