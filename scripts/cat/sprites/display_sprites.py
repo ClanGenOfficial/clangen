@@ -200,14 +200,12 @@ def _draw_sprite(
         )
 
     # draw eyes & scars1
-    sprite_name = (
-        f"{sprites.EYE_DATA['spritesheet'][0]}{cat.pelt.eye_colour}{cat_sprite}"
-    )
+    sprite_name = f"{sprites.EYE_DATA['spritesheet']}{cat.pelt.eye_colour}{cat_sprite}"
     eyes = sprites.sprites[sprite_name].copy()
     new_sprite.blit(eyes, (0, 0))
     if cat.pelt.eye_colour2 != None:
         heterochromia_name = (
-            f"{sprites.EYE_DATA['spritesheet'][0]}{cat.pelt.eye_colour2}{cat_sprite}"
+            f"{sprites.EYE_DATA['spritesheet']}{cat.pelt.eye_colour2}{cat_sprite}"
         )
         eyes2 = sprites.sprites[heterochromia_name].copy()
         eyes2.blit(

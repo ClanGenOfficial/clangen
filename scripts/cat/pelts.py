@@ -137,17 +137,35 @@ class Pelt:
     # EYES
     all_eye_colours: list = []
     yellow_eyes: list = []
+    red_eyes: list = []
     green_eyes: list = []
     blue_eyes: list = []
-    for sprite_list in sprites.EYE_DATA["sprite_list"]:
-        all_eye_colours.extend(sprite_list.keys())
-        for colour in sprite_list:
-            if sprite_list[colour] == "yellow":
-                yellow_eyes.append(colour)
-            elif sprite_list[colour] == "green":
-                green_eyes.append(colour)
-            elif sprite_list[colour] == "blue":
-                blue_eyes.append(colour)
+    if sprites.EYE_DATA["palette_map"]:
+        for colour_type in sprites.EYE_DATA["colour_data"]:
+            for colour, colour_list in colour_type.items():
+                for c in colour_list:
+                    if colour == "GREEN":
+                        green_eyes.append(f"{colour}_{c}")
+                    elif colour == "YELLOW":
+                        yellow_eyes.append(f"{colour}_{c}")
+                    elif colour == "BLUE":
+                        blue_eyes.append(f"{colour}_{c}")
+                    elif colour == "RED":
+                        red_eyes.append(f"{colour}_{c}")
+                    all_eye_colours.append(f"{colour}_{c}")
+
+    else:
+        for sprite_list in sprites.EYE_DATA["sprite_list"]:
+            all_eye_colours.extend(sprite_list.keys())
+            for colour in sprite_list:
+                if sprite_list[colour] == "yellow":
+                    yellow_eyes.append(colour)
+                elif sprite_list[colour] == "green":
+                    green_eyes.append(colour)
+                elif sprite_list[colour] == "blue":
+                    blue_eyes.append(colour)
+                elif sprite_list[colour] == "red":
+                    red_eyes.append(colour)
 
     # SKIN
     skin_sprites: list = []
@@ -231,7 +249,7 @@ class Pelt:
         length: str = "short",
         colour: str = "WHITE",
         white_patches: str = None,
-        eye_color: str = "BLUE",
+        eye_color: str = "BLUE_blue",
         eye_colour2: str = None,
         tortie_base: str = None,
         tortie_colour: str = None,
@@ -586,7 +604,7 @@ class Pelt:
             num = 1
 
         if not random.randint(0, num):
-            colour_wheel = [Pelt.yellow_eyes, Pelt.blue_eyes, Pelt.green_eyes]
+            colour_wheel = [Pelt.yellow_eyes, Pelt.blue_eyes, Pelt.green_eyes, Pelt.red_eyes]
             for colour in colour_wheel[:]:
                 if self.eye_colour in colour:
                     colour_wheel.remove(
