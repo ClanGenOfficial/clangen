@@ -320,24 +320,19 @@ class RoleScreen(Screens):
 
         if self.the_cat.status.rank in paths:
             icon_path = os.path.join(main_dir, paths[self.the_cat.status.rank])
-        else:
-            icon_path = os.path.join(main_dir, "buttonrank.png")
 
-        self.selected_cat_elements["role_icon"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((82, 231), (78, 78))),
-            pygame.transform.scale(
-                image_cache.load_image(icon_path),
-                ui_scale_dimensions((78, 78)),
-            ),
-            starting_height=2,
-        )
+            self.selected_cat_elements["role_icon"] = pygame_gui.elements.UIImage(
+                ui_scale(pygame.Rect((82, 231), (78, 78))),
+                pygame.transform.scale(
+                    image_cache.load_image(icon_path),
+                    ui_scale_dimensions((78, 78)),
+                ),
+                starting_height=2,
+            )
 
         self.selected_cat_elements["role_icon_frame"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((82, 231), (78, 78))),
-            pygame.transform.scale(
-                image_cache.load_image("resources/images/buttonrank.png"),
-                ui_scale_dimensions((78, 78)),
-            ),
+            get_box(BoxStyles.DARK_ROUNDED_BOX, (78, 78)),
             starting_height=1,
         )
 
