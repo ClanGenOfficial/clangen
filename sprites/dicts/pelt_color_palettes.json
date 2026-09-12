@@ -964,13 +964,13 @@
         "smoke_pattern": "#CCA581",
         "smoke_pattern_gradient_top": "#BA906A",
 
-        "freckled_pattern_gradient_top": "#B39579",
+        "freckled_pattern_gradient_top": "#E0B487",
 
         "exotic_base": "#F2DBA7",
         "exotic_base_gradient_bottom": "#FFFCF0",
         "exotic_base_gradient_top": "#EBBC8D",
         "exotic_base_gradient_legs_tail": "#EBD4BF",
-        "exotic_pattern": "#B8A176",
+        "exotic_pattern": "#B89E74",
         "exotic_pattern_gradient_top": "#C99567",
         "exotic_pattern_fill": "#E3CDAA",
         "exotic_pattern_fill_gradient_top": "#EBBC8D",
