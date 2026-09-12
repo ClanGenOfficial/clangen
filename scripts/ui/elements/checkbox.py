@@ -53,7 +53,7 @@ class UICheckbox(UIImageButton):
 
         # Creates the checkmark image that gets layered on top of the checkbox when checked
         self.checkmark = UIModifiedImage(
-            ui_scale(relative_rect),
+            relative_rect,
             pygame.transform.scale(
                 image_cache.load_image(f"resources/images/buttons/checkmark.png"),
                 ui_scale_dimensions((34, 34)),

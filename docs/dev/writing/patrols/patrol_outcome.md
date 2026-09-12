@@ -64,6 +64,8 @@ Outcomes utilize the `TextPoolEvent` format.
             "constraints": []
         }
     ],
+    "patrol_temperament": [],
+    "other_clan_temperament": [],
     "exp_gained": 0,
     "reputation_changes": {
         "other_clan": 0,
@@ -120,6 +122,11 @@ Outcomes utilize the `TextPoolEvent` format.
             "new_status": []
         }
     ],
+    "meet": [
+        {
+            "cats": []
+        }
+    ],
     "future_event": [
         {
             "event_type": "",
@@ -146,6 +153,16 @@ You can tag with a mix of "newleaf", "greenleaf", "leaf-fall", "leaf-bare", or r
 
 ### tags: list[str]
 Used to dictate some odds-and-ends about event constraints: [General Tags](../reference/tag-lists.md#general-tags).
+
+***
+
+#### poi: Dict
+> Used to specify which POI (Point Of Interest) a Clan must have access to in order for this event to trigger. [POI Constraint Tagging](../points-of-interest.md/#using-points-of-interest)
+
+!!! tip
+    If the top level of the patrol already has a POI constraint, then that POI will be used for all the outcomes as well. You cannot specify a second, different POI to use for an outcome.  
+
+    If you're looking to utilize the top level POI in the outcome, then no extra constraints are necessary on the outcome level. You can simply refer to the POI in the text and it will use the same POI as the top level.
 
 ***
 
@@ -274,6 +291,22 @@ Constrains the event to only occur if the specified relationships exist. Multipl
 
 !!! caution "For example"
     To work off of our earlier example: we would list `trusts` in our `constraints`
+
+***
+
+### patrol_temperament: list[str]
+List of allowed patrol temperaments. The patrol's temperament is calculated from the personalities of the cats on it, weighted by rank. [Possible Tempers](../reference/tag-lists.md/#clan-temperaments). You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
+
+!!! tip
+    Constraining temperament on an outcome rather than on the patrol keeps the patrol available for everyone. A wary patrol and a mellow one can walk into the same border skirmish and come away with different stories.
+
+***
+
+### other_clan_temperament: list[str]
+List of allowed temperaments for the other Clan involved in the patrol. [Possible Tempers](../reference/tag-lists.md/#clan-temperaments). You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
+
+!!! caution
+    An outcome using this will never be chosen if no other Clan is involved in the patrol, so make sure every outcome list has at least one option without it.
 
 ***
 
@@ -432,6 +465,20 @@ Join block:
 
 **new_status**
 > A list of possible ranks for the cat to take within the Clan. If left blank, the cat will take on a rank appropriate for their age.
+> 
+***
+
+## meet: list[dict]
+> Indicate which cats will meet the player Clan. You can add multiple meet blocks.
+
+meet block:
+```json
+        {
+            "cats": []
+        }
+```
+**cats**
+> List of cats who will meet the Clan.
 
 ***
 

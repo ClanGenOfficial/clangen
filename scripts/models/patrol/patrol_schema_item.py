@@ -10,6 +10,7 @@ from scripts.models.common.min_max_status import MinMaxStatusDictKey
 from scripts.models.common.points_of_interest import PointsOfInterestGroup
 from scripts.models.common.season import Season
 from scripts.models.common.tag import Tag
+from scripts.models.common.temperament import Temperament
 from scripts.models.patrol.involved_cats import InvolvedCatsPatrolEvent
 from scripts.models.patrol.outcome import Outcome
 from scripts.models.patrol.patrol_type import PatrolType
@@ -70,10 +71,18 @@ class PatrolSchemaItem(BaseModel):
         MISSING,
         description="Dictates what relationships cats can have towards each other.",
     )
-    intro_text: str = Field(
+    patrol_temperament: Union[List[Temperament], MISSING] = Field(
+        MISSING,
+        description="Constrains the event to only occur if the patrol has one of these temperaments.",
+    )
+    other_clan_temperament: Union[List[Temperament], MISSING] = Field(
+        MISSING,
+        description="Constrains the event to only occur if the involved other Clan has one of these temperaments.",
+    )
+    intro_strings: list[str] = Field(
         ..., description="The text that displays when the patrol first starts."
     )
-    decline_text: str = Field(
+    decline_strings: list[str] = Field(
         ...,
         description="The text that displays if the patrol is declined (do not proceed)",
     )

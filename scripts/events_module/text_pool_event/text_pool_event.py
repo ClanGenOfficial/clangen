@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 from typing import Union, Optional
 
 from scripts.cat.constants import ILLNESSES, PERMANENT, INJURIES
-from scripts.cat.enums import CatRank, CatAge, CatGroup, CatStanding
+from scripts.cat.enums import CatRank, CatAge, CatGroup
 from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath
 from scripts.events_module.parameter_dicts import (
@@ -17,6 +17,8 @@ from scripts.events_module.parameter_dicts import (
     LostDict,
     JoinDict,
     FutureEventDict,
+    MeetDict,
+    AccessoryDict,
 )
 from scripts.game_structure import constants
 
@@ -32,19 +34,22 @@ class TextPoolEvent:
     outcome_art_clean: Optional[str] = None
 
     # weighting
-    frequency: Optional[int] = None
+    frequency: int = 4
     weight: int = 1  # will be increased via code in post init
 
     # constraints
     location: list[str] = field(default_factory=list)
     season: list[str] = field(default_factory=list)
     tags: list[str] = field(default_factory=list)
+    poi: Optional[dict[str, list]] = field(default_factory=dict)
     required_reputation: RequiredReputationDict = field(default_factory=dict)
     required_cat_types: dict[str, list[int]] = field(default_factory=dict)
     involved_cats: dict[str, Union[InvolvedCatDict, dict]] = field(default_factory=dict)
     relationship_constraint: list[RelationshipConstraintDict] = field(
         default_factory=list[RelationshipConstraintDict]
     )
+    patrol_temperament: list[str] = field(default_factory=list)
+    other_clan_temperament: list[str] = field(default_factory=list)
 
     # consequences
     relationship_changes: list[RelationshipChangeDict] = field(
@@ -57,7 +62,12 @@ class TextPoolEvent:
     condition: list[ConditionDict] = field(default_factory=list[dict])
     lost: list[LostDict] = field(default_factory=list[dict])
     join: list[JoinDict] = field(default_factory=list[dict])
+    gain_accessory: list[AccessoryDict] = field(default_factory=list[dict])
+    meet: list[MeetDict] = field(default_factory=list[dict])
     future_event: list[FutureEventDict] = field(default_factory=list[dict])
+
+    # only for use in transition events
+    new_gender: list[str] = field(default_factory=list)
 
     def __post_init__(self):
         self.weight = 1
@@ -67,6 +77,16 @@ class TextPoolEvent:
             self.weight += 4 * (len(constants.SEASONS) - len(self.season))
         if self.tags:
             self.weight += len(self.tags) * 2
+
+        # add 8, 6, 4 or 2 if there are between 1-4 specific named locations
+        # todo: check for balancing
+        if self.poi.get("name") and not 1 > len(self.poi["name"]) > 5:
+            self.weight += 8 - 2 * len(self.poi["name"])
+        elif self.poi.get("tags"):
+            # add 4-1 depending on how many specific points of interest are included
+            # but only if specific ones are not already requested
+            self.weight += min(4, len(self.poi.get("tags", [])))
+
         self.weight += self.involved_cat_weight(self.involved_cats)
 
         if self.relationship_constraint:
@@ -74,6 +94,8 @@ class TextPoolEvent:
 
         if self.required_cat_types:
             self.weight += len(self.required_cat_types.keys()) * 5
+
+        self.weight = max(1, self.weight)
 
     @staticmethod
     def involved_cat_weight(involved_cats: dict) -> int:
@@ -140,11 +162,11 @@ class TextPoolEvent:
 
             if constraints.get("backstory"):
                 if "-" in constraints["backstory"][0]:
+                    weight += len(constraints["backstory"])
+                else:
                     # i'm not gonna try and count up all the backstory possibilities, so we'll just do 40
                     weight += max(40 - len(constraints["backstory"]), 1)
                     # I do not expect someone to actually tag 50 backstories, but just in case
-                else:
-                    weight += len(constraints["backstory"])
 
             if constraints.get("has_mentor"):
                 weight += 10

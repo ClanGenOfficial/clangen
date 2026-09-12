@@ -1,4 +1,3 @@
-import os
 import unittest
 from unittest.mock import patch
 
@@ -8,10 +7,8 @@ from scripts.clan_package.settings import (
     load_clan_settings,
     set_clan_setting,
 )
+from scripts.cat.microservices.conditions import get_injured
 from scripts.game_structure import game
-
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan import Clan
@@ -107,7 +104,7 @@ class CanHaveKits(unittest.TestCase):
         test_clan = Clan(save_id="clan")
         test_clan.pregnancy_data = {}
         cat = cat_factory.create_cat(gender="female", moons=50)
-        cat.get_injured("broken bone")
+        get_injured(cat, "broken bone")
 
         self.assertFalse(pregnancy_events.handle_having_kits(cat))
 

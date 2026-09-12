@@ -27,19 +27,31 @@ class CanCreateNewCatDict(TypedDict, total=False):
     assign_mate: list[str]
 
 
+class MentorApprenticeDict(TypedDict, total=False):
+    current: bool
+    former: bool
+
+
+class NameCheckDict(TypedDict):
+    has_suffix: bool
+
+
 class InvolvedCatDict(TypedDict, total=False):
     prior_abbreviation: list[str]
     can_create_new_cat: CanCreateNewCatDict
     status: list[str]
     past_status: list[str]
     age: list[str]
-    gender: Literal["male", "female", "can_birth"]
+    gender: list[Literal["male", "female", "can_birth"]]
     group: list[str]
     standing: StandingDict
     stat: StatDict
+    current_exp: list[str]
     health: HealthDict
     backstory: list[str]
-    has_mentor: bool
+    has_mentor: MentorApprenticeDict
+    has_apprentice: MentorApprenticeDict
+    name: NameCheckDict
 
 
 class RelationshipConstraintDict(TypedDict):
@@ -97,6 +109,10 @@ class JoinDict(TypedDict):
     new_status: NotRequired[list[str]]
 
 
+class MeetDict(TypedDict):
+    cats: list[str]
+
+
 class SupplyDict(TypedDict):
     type: str
     trigger: NotRequired[Literal["always", "excess", "full", "adequate", "low"]]
@@ -107,6 +123,11 @@ class SupplyDict(TypedDict):
         "increase_large",
         "increase_huge",
     ]
+
+
+class AccessoryDict(TypedDict):
+    cats: list
+    accessory: list
 
 
 class FutureEventDict(TypedDict):

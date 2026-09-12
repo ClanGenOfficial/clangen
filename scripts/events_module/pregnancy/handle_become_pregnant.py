@@ -5,7 +5,8 @@ import i18n
 
 from scripts.cat.cats import Cat
 from scripts.clan_package.settings import get_clan_setting
-from scripts.event_class import Single_Event
+from scripts.cat.microservices.conditions import get_injured
+from scripts.events_module.event_information import EventInformation
 from scripts.events_module.pregnancy.build_strings import (
     get_pregnancy_strings,
 )
@@ -66,22 +67,16 @@ def _handle_pregnancy_notice(pregnant_cat, second_parent):
     mate = []
     afab_mate = []
     amab_mate = []
-    # afab/amab only matters if same sex setting is off
-    if get_clan_setting("same sex birth"):
-        mate = [
-            Cat.fetch_cat(mate_id)
-            for mate_id in pregnant_cat.mate
-            if Cat.fetch_cat(mate_id)
-        ]
-    else:
-        for mate_id in pregnant_cat.mate:
-            mate_cat = Cat.fetch_cat(mate_id)
-            mate.append(mate_cat)
+    for mate_id in pregnant_cat.mate:
+        mate_cat = Cat.fetch_cat(mate_id)
+        if not mate_cat:
+            continue
+        mate.append(mate_cat)
 
-            if mate_cat.gender == "female":
-                afab_mate.append(mate_cat)
-            else:
-                amab_mate.append(mate_cat)
+        if mate_cat.gender == "female":
+            afab_mate.append(mate_cat)
+        else:
+            amab_mate.append(mate_cat)
 
     # if both cats are faithful to each other and aren't cheaters,
     # the pregnancy will be announced as normal
@@ -96,21 +91,7 @@ def _handle_pregnancy_notice(pregnant_cat, second_parent):
         text, involved_cats = _create_pregnancy_announcement(
             pregnant_cat, "announcement_surprise"
         )
-    # if the pregnant cat is in a same-sex relationship (and we aren't allowing samesex pregnancy)
-    # and they get knocked-up by another cat, let there be some drama for that!
-    elif get_clan_setting("same sex birth") and (
-        allow_affair is True
-        and second_parent
-        and second_parent.ID not in pregnant_cat.mate
-        and afab_mate
-    ):
-        random_cat = afab_mate[0] if afab_mate else None
-        text, involved_cats = _create_pregnancy_announcement(
-            pregnant_cat,
-            "announcement_affair_samesex",
-            random_cat=random_cat,
-        )
-    # and lastly, if the pregnant cat got knocked up by another cat who ISN'T their mate,
+    # if the pregnant cat got knocked up by another cat who ISN'T their mate,
     # let the player guess whether it's an affair or not, sometimes the events will tell you,
     # sometimes they won't...
     elif (
@@ -121,19 +102,30 @@ def _handle_pregnancy_notice(pregnant_cat, second_parent):
     ):
         announcement_key = choice(["announcement_affair", "announcement"])
         _set_affair_visibility(pregnant_cat, announcement_key == "announcement_affair")
-        if get_clan_setting("same sex birth"):
-            random_cat = mate[0]
-        else:
-            random_cat = amab_mate[0] if amab_mate else None
+        random_cat = amab_mate[0]
         text, involved_cats = _create_pregnancy_announcement(
             pregnant_cat, announcement_key, random_cat=random_cat
+        )
+    # and lastly, if the pregnant cat only has female mates and they get knocked-up
+    # by another cat, let there be some drama for that!
+    elif (
+        allow_affair is True
+        and second_parent
+        and second_parent.ID not in pregnant_cat.mate
+        and afab_mate
+    ):
+        random_cat = afab_mate[0]
+        text, involved_cats = _create_pregnancy_announcement(
+            pregnant_cat,
+            "announcement_affair_samesex",
+            random_cat=random_cat,
         )
     # if all else fails, just a regular announcement happens
     else:
         text, involved_cats = _create_pregnancy_announcement(
             pregnant_cat, "announcement", random_cat=second_parent
         )
-    game.cur_events_list.append(Single_Event(text, "birth_death", involved_cats))
+    game.cur_events_list.append(EventInformation(text, ["birth_death"], involved_cats))
 
 
 def _create_pregnancy_data(pregnant_cat: Cat, second_parent: Optional[Cat]):
@@ -157,7 +149,9 @@ def _retrieve_secret_kittens(cat):
     for kit in kits:
         cats_involved.append(kit.ID)
     game.cur_events_list.append(
-        Single_Event(print_event, "birth_death", cats_involved, cat_dict={"m_c": cat})
+        EventInformation(
+            print_event, ["birth_death"], cats_involved, cat_dict={"m_c": cat}
+        )
     )
 
 
@@ -171,7 +165,7 @@ def _create_pregnancy_announcement(
     text = choice(get_pregnancy_strings()[announcement_key])
     event_text = text
     severity = choices(["minor", "major"], [3, 1], k=1)[0]
-    pregnant_cat.get_injured("pregnant", severity=severity)
+    get_injured(pregnant_cat, "pregnant", severity=severity)
     text += choice(get_pregnancy_strings()[f"{severity}_severity"])
     text = event_text_adjust(
         Cat,

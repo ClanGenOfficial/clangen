@@ -486,8 +486,8 @@
         "-some_clan",
         "patrol",
         "-patrol",
-        "multi",
-        "-multi",
+        "some_patrol",
+        "-some_patrol",
         "high_lawful",
         "-high_lawful",
         "low_lawful",
@@ -517,7 +517,9 @@
         "deputy",
         "-deputy",
         "leader",
-        "-leader"
+        "-leader",
+        "past_deputy",
+        "-past_deputy"
       ],
       "title": "GatherCatEnum",
       "type": "string"
@@ -667,6 +669,7 @@
         "quilled by a porcupine",
         "broken back",
         "poisoned",
+        "venom sickness",
         "bee sting",
         "headache",
         "severe headache",
@@ -978,6 +981,14 @@
           "description": "How the reputation of the Clan changes as a result of this event",
           "title": "Changed",
           "type": "integer"
+        },
+        "temperament": {
+          "description": "The temperament the Clan must have in order for this event to be possible.",
+          "items": {
+            "$ref": "#/$defs/Temperament"
+          },
+          "title": "Temperament",
+          "type": "array"
         }
       },
       "title": "OtherClan",
@@ -1033,36 +1044,6 @@
       "type": "string"
     },
     "PointsOfInterestGroup": {
-      "anyOf": [
-        {
-          "$ref": "#/$defs/PointsOfInterestGroupByName"
-        },
-        {
-          "$ref": "#/$defs/PointsOfInterestGroupByTags"
-        },
-        {
-          "$ref": "#/$defs/PointsOfInterestGroupByCategory"
-        }
-      ],
-      "description": "Specifies Points of Interest constraints. Must use names OR tags OR category (not multiple at once).",
-      "title": "PointsOfInterestGroup"
-    },
-    "PointsOfInterestGroupByCategory": {
-      "additionalProperties": false,
-      "properties": {
-        "category": {
-          "$ref": "#/$defs/PointsOfInterestCategoryEnum",
-          "description": "The category this POI belongs to.",
-          "title": "Category"
-        }
-      },
-      "required": [
-        "category"
-      ],
-      "title": "PointsOfInterestGroupByCategory",
-      "type": "object"
-    },
-    "PointsOfInterestGroupByName": {
       "additionalProperties": false,
       "properties": {
         "name": {
@@ -1072,17 +1053,7 @@
           },
           "title": "Name",
           "type": "array"
-        }
-      },
-      "required": [
-        "name"
-      ],
-      "title": "PointsOfInterestGroupByName",
-      "type": "object"
-    },
-    "PointsOfInterestGroupByTags": {
-      "additionalProperties": false,
-      "properties": {
+        },
         "tags": {
           "description": "Points of Interest with these tags will be allowed.",
           "items": {
@@ -1090,12 +1061,14 @@
           },
           "title": "Tags",
           "type": "array"
+        },
+        "category": {
+          "$ref": "#/$defs/PointsOfInterestCategoryEnum",
+          "description": "The category this POI belongs to.",
+          "title": "Category"
         }
       },
-      "required": [
-        "tags"
-      ],
-      "title": "PointsOfInterestGroupByTags",
+      "title": "PointsOfInterestGroup",
       "type": "object"
     },
     "PointsOfInterestTag": {
@@ -1394,6 +1367,10 @@
         "-mentor/app",
         "app/mentor",
         "-app/mentor",
+        "past_mentor/app",
+        "-past_mentor/app",
+        "past_app/mentor",
+        "-past_app/mentor",
         "uninterested",
         "fancies",
         "adores",
@@ -1823,12 +1800,57 @@
         "mid_lives",
         "low_lives",
         "clan:apps",
+        "clan:warrior-like",
         "lost",
         "kit_manipulated",
         "romance",
         "adoption"
       ],
       "title": "TagEnum",
+      "type": "string"
+    },
+    "Temperament": {
+      "description": "Temperaments a Clan or patrol can hold. A \"-\" prefix excludes it.",
+      "enum": [
+        "cunning",
+        "-cunning",
+        "proud",
+        "-proud",
+        "bloodthirsty",
+        "-bloodthirsty",
+        "amiable",
+        "-amiable",
+        "stoic",
+        "-stoic",
+        "wary",
+        "-wary",
+        "gracious",
+        "-gracious",
+        "mellow",
+        "-mellow",
+        "logical",
+        "-logical",
+        "chaotic",
+        "-chaotic",
+        "mercurial",
+        "-mercurial",
+        "calculating",
+        "-calculating",
+        "eager",
+        "-eager",
+        "observant",
+        "-observant",
+        "adaptable",
+        "-adaptable",
+        "decisive",
+        "-decisive",
+        "methodical",
+        "-methodical",
+        "steadfast",
+        "-steadfast",
+        "any"
+      ],
+      "title": "Temperament",
       "type": "string"
     },
     "Trait": {

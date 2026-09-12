@@ -32,7 +32,7 @@
         }
     },
     {
-        "event_id": "dead_kit_to_dead_other_kit",
+        "event_id": "dead_kit_to_dead_other_kit_sc",
         "strings": [
             "Is happy to have r_c to play with",
             "Is playing hide and seek with r_c"

@@ -7,7 +7,9 @@ import i18n
 
 from scripts.cat.cats import Cat
 from scripts.cat.constants import PERMANENT, ILLNESSES, INJURIES
-from scripts.cat.enums import CatRank, CatThought
+from scripts.cat.enums import CatRank, CatThought, CatStanding, CatGroup
+from scripts.cat.microservices.add_to_clan import add_to_clan, add_dependents_to_clan
+from scripts.cat.pelts import Pelt
 from scripts.cat.skills import SkillPath
 from scripts.clan import OtherClan
 from scripts.clan_package.cotc import change_clan_reputation, change_clan_relations
@@ -17,13 +19,25 @@ from scripts.clan_resources.freshkill import (
     HUNTER_BONUS,
     HUNTER_EXP_BONUS,
 )
+from scripts.cat.microservices.conditions import (
+    get_ill,
+    get_injured,
+    get_permanent_condition,
+)
 from scripts.config import get_config
 from scripts.events_module.consequences import unpack_rel_block, check_stolen_vitality
 from scripts.events_module.future.prep_and_trigger import prep_future_event
+from scripts.events_module.patrol.create_new_cat import updated_create_new_cat
 from scripts.events_module.parameter_dicts import SupplyDict
+from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.relationship import relation_events
-from scripts.events_module.text_adjust import event_text_adjust, adjust_list_text
+from scripts.events_module.text_adjust import (
+    event_text_adjust,
+    adjust_list_text,
+    accessory_text_adjust,
+)
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
+from scripts.events_module.thoughts.generate_thoughts import get_new_thought
 from scripts.game_structure import game, constants
 
 disable_random: bool = False
@@ -33,12 +47,17 @@ logger = logging.getLogger(__name__)
 def execute_outcome(
     event: TextPoolEvent,
     event_involved_cats: dict[str, Union[Cat, list[Cat]]],
-    other_clan: OtherClan,
-):
+    other_clan: OtherClan = None,
+    chosen_poi: str = None,
+) -> tuple[str, str, dict]:
     """
     Executes the outcome, applying any specified consequences.
+    If new cats are created, event_involved_cats *will* be modified to add the newly created cats.
     :returns: Outcome text, results text, list of created rel logs (might be empty)
     """
+
+    # Must start with cat creation.
+    create_needed_cats(event, event_involved_cats, other_clan)
 
     rel_results = {}
     chosen_string = choice(event.strings)
@@ -49,16 +68,23 @@ def execute_outcome(
         involved_cat_dict=event_involved_cats,
         clan=game.clan,
         other_clan=other_clan,
+        chosen_poi=chosen_poi,
     )
 
     results = [
         _handle_joining(event, event_involved_cats),
-        _handle_death(event, event_involved_cats, other_clan),
+        _handle_death(event, event_involved_cats, other_clan, chosen_poi),
+        _handle_meeting(event, event_involved_cats),
         _handle_lost(event, event_involved_cats),
         _handle_conditions(event, event_involved_cats, other_clan),
         _handle_reputation_changes(event, other_clan),
         _handle_supply_changes(event, event_involved_cats),
     ]
+
+    acc_results, processed_text = _handle_accessories(
+        event, event_involved_cats, processed_text
+    )
+    results.append(acc_results)
 
     _handle_exp(event, event_involved_cats)
     _handle_mentor_app(event_involved_cats)
@@ -75,6 +101,7 @@ def execute_outcome(
                     involved_cat_dict=event_involved_cats,
                     clan=game.clan,
                     other_clan=other_clan,
+                    chosen_poi=chosen_poi,
                 )
 
     # apply rel effects (append result text)
@@ -91,6 +118,93 @@ def execute_outcome(
 
     # return all the bullshit
     return processed_text, "\n".join(final_results), rel_results
+
+
+def create_needed_cats(
+    event: TextPoolEvent | PatrolEvent,
+    event_involved_cats: dict[str, Union[Cat, list[Cat]]],
+    other_clan: OtherClan = None,
+):
+    """
+    Creates needed cats for the event, who are not already in event_involved_cats.
+    Modifies event_involved_cats with the new cats.
+    """
+    for abbr, constraints in event.involved_cats.items():
+        # Only create cats who haven't already been assigned in event_involved_cats.
+        if abbr in event_involved_cats:
+            continue
+
+        event_involved_cats[abbr] = updated_create_new_cat(
+            option_dict=constraints,
+            involved_cats=event_involved_cats,
+            other_clan=other_clan,
+        )
+
+        if len(event_involved_cats[abbr]) == 1:
+            # if this is a list of a single cat, then we take them out of the list
+            event_involved_cats[abbr] = event_involved_cats[abbr][0]
+
+
+def _handle_accessories(
+    event: TextPoolEvent,
+    event_involved_cats: dict[str, Union[Cat, list[Cat]]],
+    processed_text: str,
+) -> tuple[str, str]:
+    """
+    Handles giving accessories and text processing regarding accessories
+    """
+    if not event.gain_accessory:
+        return "", processed_text
+
+    cats_gaining_acc = []
+
+    gained_accessories: dict[str, str] = {}
+
+    for i, block in enumerate(event.gain_accessory):
+        cat_list = []
+        for abbr, cat in event_involved_cats.items():
+            if abbr in block["cats"]:
+                if isinstance(event_involved_cats[abbr], list):
+                    cat_list.extend(event_involved_cats[abbr])
+                else:
+                    cat_list.append(event_involved_cats[abbr])
+
+        acc_list = []
+        possible_accs = block["accessory"]
+        if "WILD" in possible_accs:
+            acc_list.extend(Pelt.wild_accessories)
+        if "PLANT" in possible_accs:
+            acc_list.extend(Pelt.plant_accessories)
+        if "COLLAR" in possible_accs:
+            acc_list.extend(Pelt.collar_accessories)
+
+        for acc in possible_accs:
+            if acc not in ("WILD", "PLANT", "COLLAR"):
+                acc_list.append(acc)
+
+        new_acc = choice(acc_list)
+        gained_accessories[f"acc{i}"] = new_acc
+        for c in cat_list:
+            if c.pelt.accessory:
+                c.pelt.accessory = (
+                    *c.pelt.accessory,
+                    new_acc,
+                )
+                cats_gaining_acc.append(c)
+            else:
+                c.pelt.accessory = (new_acc,)
+                cats_gaining_acc.append(c)
+
+    cat_names = []
+    for c in cats_gaining_acc:
+        cat_names.append(_profile_link(c))
+
+    processed_text = accessory_text_adjust(processed_text, gained_accessories)
+
+    return (
+        i18n.t("screens.patrol.accessory_gained", cats=adjust_list_text(cat_names)),
+        processed_text,
+    )
 
 
 def _handle_joining(
@@ -115,7 +229,8 @@ def _handle_joining(
                     cat_list.append(event_involved_cats[abbr])
 
         for cat in cat_list:
-            cat.add_to_clan()
+            add_to_clan(cat)
+            add_dependents_to_clan(cat)
             if block.get("change_name"):
                 cat.change_name()
 
@@ -130,19 +245,50 @@ def _handle_joining(
                     cat.skills.secondary.interest_only = True
 
         joined.extend(cat_list)
-        for c in joined:
-            cat_names.append(_profile_link(c))
-            c.get_new_thought(CatThought.ON_JOIN)
 
-        relation_events.trigger_joining_relationship_events(joined)
+    for c in joined:
+        cat_names.append(_profile_link(c))
+        c.assign_thought(CatThought.ON_JOIN)
+
+    relation_events.trigger_joining_relationship_events(joined)
 
     return i18n.t("screens.patrol.new_outsider", cats=adjust_list_text(cat_names))
+
+
+def _handle_meeting(
+    event: TextPoolEvent, event_involved_cats: dict[str, Union[Cat, list[Cat]]]
+) -> str:
+    """
+    Handles cats meeting the Clan
+    """
+    if not event.meet:
+        return ""
+
+    met: list[Cat] = []
+    for block in event.meet:
+        # gather up the kitties
+        for abbr, cat in event_involved_cats.items():
+            if abbr in block["cats"]:
+                if isinstance(event_involved_cats[abbr], list):
+                    met.extend(event_involved_cats[abbr])
+                else:
+                    met.append(event_involved_cats[abbr])
+
+    for c in met:
+        c.status.change_standing(CatStanding.KNOWN, CatGroup.PLAYER_CLAN_ID)
+        get_new_thought(c, CatThought.ON_MEETING)
+
+    return i18n.t(
+        "screens.patrol.met_outsider",
+        cats=adjust_list_text([_profile_link(c) for c in met]),
+    )
 
 
 def _handle_death(
     event: TextPoolEvent,
     event_involved_cats: dict[str, Union[Cat, list[Cat]]],
     other_clan: OtherClan,
+    chosen_poi: str = None,
 ) -> str:
     """
     Handles cats dying on patrol
@@ -180,6 +326,7 @@ def _handle_death(
                             Cat,
                             i18n.t("cat.history.n_leader_death_all"),
                             main_cat=c,
+                            chosen_poi=chosen_poi,
                         )
                     )
                 elif "some_lives" in death_tags:
@@ -192,6 +339,7 @@ def _handle_death(
                             Cat,
                             i18n.t("cat.history.n_leader_lost_lives", count=lives_lost),
                             main_cat=c,
+                            chosen_poi=chosen_poi,
                         )
                     )
                 else:
@@ -202,6 +350,7 @@ def _handle_death(
                             Cat,
                             i18n.t("cat.history.n_leader_lost_lives", count=1),
                             main_cat=c,
+                            chosen_poi=chosen_poi,
                         )
                     )
                 if extra_result := check_stolen_vitality(c, lives_lost):
@@ -251,7 +400,10 @@ def __handle_death_history(cat: Cat, death_text: str, other_clan: OtherClan) -> 
         print("WARNING: Death occurred, but some death history is missing.")
         death_text = i18n.t("defaults.patrol_regular_death")
 
-    final_death_history = death_text.replace("o_c_n", other_clan.name)
+    if other_clan:
+        final_death_history = death_text.replace("o_c_n", other_clan.name)
+    else:
+        final_death_history = death_text
 
     cat.history.add_death(death_text=final_death_history)
 
@@ -351,11 +503,11 @@ def _handle_conditions(
             chosen_condition = choice(list(conditions_for_cat))
 
             if chosen_condition in INJURIES:
-                c.get_injured(chosen_condition, lethal=lethal, potential_scars=scars)
+                get_injured(c, chosen_condition, lethal=lethal, potential_scars=scars)
             elif chosen_condition in ILLNESSES:
-                c.get_ill(chosen_condition, lethal=lethal)
+                get_ill(c, chosen_condition, lethal=lethal)
             else:
-                c.get_permanent_condition(chosen_condition)
+                get_permanent_condition(c, chosen_condition)
 
             no_results = block.get("no_results", False)
 
@@ -413,13 +565,13 @@ def _handle_condition_history(
     if scar_string:
         scar_string = (
             scar_string
-            if "o_c_n" not in scar_string
+            if "o_c_n" not in scar_string or not other_clan
             else scar_string.replace("o_c_n", other_clan.name)
         )
     if death_string:
         death_string = (
             death_string
-            if "o_c_n" not in death_string
+            if "o_c_n" not in death_string or not other_clan
             else death_string.replace("o_c_n", other_clan.name)
         )
 
@@ -451,7 +603,7 @@ def _handle_reputation_changes(event: TextPoolEvent, other_clan: OtherClan) -> s
         else:
             results.append(i18n.t("screens.patrol.outsider_rep_worsened"))
 
-    if other_clan_change:
+    if other_clan_change and other_clan:
         change_clan_relations(other_clan, other_clan_change)
         if other_clan_change > 0:
             results.append(
@@ -515,7 +667,7 @@ def _handle_prey(
     hunter_bonus = 0
     highest_hunter_tier = 0
 
-    for cat in event_involved_cats["patrol_cats"]:
+    for cat in event_involved_cats.get("patrol_cats", []):
         if cat.skills.primary.path == SkillPath.HUNTER and cat.skills.primary.tier > 0:
             level = cat.experience_level
             tier = cat.skills.primary.tier
@@ -539,7 +691,7 @@ def _handle_prey(
 
     for prey in prey_info:
         amount_gained = (
-            prey_types.get(prey["adjust"]) * len(event_involved_cats["patrol_cats"])
+            prey_types.get(prey["adjust"]) * len(event_involved_cats.get("patrol_cats"))
             + hunter_bonus
         )
 
@@ -634,7 +786,7 @@ def _get_herb_increase_amount(
     random_variance = get_config("clan_resources.herbs.gathering_variance")
 
     total_increase = 0
-    for c in event_involved_cats["patrol_cats"]:
+    for c in event_involved_cats.get("patrol_cats", []):
         # now we find how much this specific cat found
         amount_gathered = amount_per_cat
         if not disable_random:
@@ -667,7 +819,9 @@ def _handle_exp(
         mode_modifier = 3
 
     base_exp = 0
-    if "masterful" in (x.experience_level for x in event_involved_cats["patrol_cats"]):
+    if "masterful" in (
+        x.experience_level for x in event_involved_cats.get("patrol_cats")
+    ):
         max_boost = 10
     else:
         max_boost = 0
@@ -676,7 +830,7 @@ def _handle_exp(
     gained_exp = patrol_exp + base_exp + max_boost
     gained_exp = max(
         gained_exp
-        * (1 - 0.1 * len(event_involved_cats["patrol_cats"]))
+        * (1 - 0.1 * len(event_involved_cats.get("patrol_cats")))
         / mode_modifier,
         1,
     )
@@ -686,11 +840,11 @@ def _handle_exp(
         app_exp = 0
     else:
         app_exp = max(
-            randint(1, 7) * (1 - 0.1 * len(event_involved_cats["patrol_cats"])), 1
+            randint(1, 7) * (1 - 0.1 * len(event_involved_cats.get("patrol_cats"))), 1
         )
 
     if gained_exp or app_exp:
-        for cat in event_involved_cats["patrol_cats"]:
+        for cat in event_involved_cats.get("patrol_cats"):
             if cat.status.rank.is_any_apprentice_rank():
                 cat.add_experience(app_exp)
             else:
@@ -700,7 +854,7 @@ def _handle_exp(
 def _handle_mentor_app(event_involved_cats: dict[str, Union[Cat, list[Cat]]]):
     """Handles mentors influencing apprentices"""
 
-    for cat in event_involved_cats["patrol_cats"]:
+    for cat in event_involved_cats.get("patrol_cats", []):
         mentor = Cat.fetch_cat(cat.mentor)
         if mentor in event_involved_cats["patrol_cats"]:
             affect_personality = cat.personality.mentor_influence(mentor.personality)

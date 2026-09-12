@@ -29,6 +29,32 @@ jobs:
           SDL_VIDEODRIVER: "dummy"
           SDL_AUDIODRIVER: "disk"
         run: uv run python -m unittest tests/test_relation_events.py tests/test_group_interaction.py tests/test_conditions.py tests/test_utility.py tests/test_cat.py tests/test_save.py tests/test_event_filters.py tests/test_new_cat_creation.py tests/test_patrols.py tests/test_lang.py tests/test_events.py
+  bulk_timeskip:
+    name: Bulk Timeskip Simulation (flaky; may fail for unrelated reasons)
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - python-version: '3.12'
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9
+        with:
+          enable-cache: true
+          prune-cache: true
+      - name: Setup Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: 'x64'
+      - name: install dependencies
+        run: uv sync
+      - name: Run bulk timeskip simulation (flaky; may fail for unrelated reasons)
+        env:
+          SDL_VIDEODRIVER: "dummy"
+          SDL_AUDIODRIVER: "disk"
+        run: uv run python -m unittest tests/bulk_timeskip.py
   json_test:
     runs-on: ubuntu-latest
     steps:

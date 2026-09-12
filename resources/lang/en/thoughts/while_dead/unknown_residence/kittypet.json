@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "general_kittypet_dead_thoughts",
+        "event_id": "general_kittypet_ur_thoughts",
         "strings": [
             "Visits {PRONOUN/m_c/poss} housefolk to make sure they're okay",
             "Hangs around {PRONOUN/m_c/poss} old home, hesitant to leave it",

@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "gen_dead_newborn",
+        "event_id": "gen_dead_newborn_sc",
         "strings": [
             "Mewls pitifully for milk",
             "Snoozes peacefully",
@@ -20,7 +20,7 @@
         }
     },
     {
-        "event_id": "gen_dead_newborn_to_alive_parent",
+        "event_id": "gen_dead_newborn_to_alive_parent_sc",
         "strings": [
             "Thinks {PRONOUN/m_c/subject} heard r_c's voice",
             "Is mewling for r_c",

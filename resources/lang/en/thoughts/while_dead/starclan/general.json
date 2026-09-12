@@ -494,7 +494,7 @@
         }
     },
     {
-        "event_id": "dead_app_to_dead_other",
+        "event_id": "sc_dead_app_to_dead_other_gen",
         "strings": [
             "Is asking r_c questions about {PRONOUN/r_c/poss} life",
             "Is listening to r_c's stories",
@@ -692,7 +692,7 @@
         ]
     },
     {
-        "event_id": "gen_dead_mediator",
+        "event_id": "gen_dead_any_mediator_rank_sc",
         "strings": [
             "Is trying to mediate StarClan cats' squabbles",
             "Wishes {PRONOUN/m_c/subject} could help resolve the Clan's issues",

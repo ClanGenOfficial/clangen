@@ -47,7 +47,9 @@ class Pelt:
     white_colours: list = []
     brown_colours: list = []
 
-    all_pelt_colours.extend(sprites.GENERATION_GROUP_DATA["pelts"]["colors"].keys())
+    all_pelt_colours.extend(
+        list(sprites.GENERATION_GROUP_DATA["pelts"]["colors"].keys())
+    )
     for colour in sprites.GENERATION_GROUP_DATA["pelts"]["colors"]:
         group = sprites.GENERATION_GROUP_DATA["pelts"]["colors"][colour]
 
@@ -72,7 +74,9 @@ class Pelt:
     ]
 
     # PELT PATTERNS
-    pelt_patterns: list = sprites.GENERATION_GROUP_DATA["pelts"]["pattern_types"].keys()
+    pelt_patterns: list = list(
+        sprites.GENERATION_GROUP_DATA["pelts"]["pattern_types"].keys()
+    )
 
     # pattern categories
     pelt_categories: dict = {}
@@ -239,9 +243,9 @@ class Pelt:
         paralyzed: bool = False,
         opacity: int = 100,
         scars: list = None,
-        tint: str = "none",
+        tint: str | None = None,
         skin: str = "BLACK",
-        white_patches_tint: str = "none",
+        white_patches_tint: str | None = None,
         newborn_sprite: str = None,
         kitten_sprite: str = None,
         adol_sprite: str = None,
@@ -967,8 +971,10 @@ class Pelt:
                     # people are fans of the print message, so I'm putting it back
                     print("Wildcard tortie!")
 
-                    # Allow any pattern:
-                    self.tortie_pattern = choice(Pelt.pelt_patterns)
+                    # Allow any pattern, minus tories:
+                    self.tortie_pattern = choice(
+                        self.exotic + self.tabbies + self.spotted + self.plain
+                    )
 
                     # Allow any colors that aren't the base color.
                     possible_colors = Pelt.all_pelt_colours.copy()
