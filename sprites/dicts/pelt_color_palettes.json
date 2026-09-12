@@ -948,13 +948,13 @@
         "pattern_fill": "#CCA578",
         "masked_light_pattern": "#EDE3CA",
 
-        "singlecolour_honey_base_gradient_top": "#C7906B",
+        "singlecolour_honey_base_gradient_top": "#C79775",
 
         "newborn_base": "#EBD5A4",
         "newborn_base_gradient_bottom": "#F5EAD0",
         "newborn_base_gradient_top": "#EBC97F",
-        "newborn_pattern": "#D6B267",
-        "newborn_pattern_gradient_top": "#B59450",
+        "newborn_pattern": "#D4A583",
+        "newborn_pattern_gradient_top": "#CF9B76",
         "newborn_pattern_fill": "#CCA252",
         
         "smoke_base": "#F5E2B5",
