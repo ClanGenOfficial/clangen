@@ -105,7 +105,7 @@
     "Sokoke": ["stripe", "feather", "fern", "tiger", "leaf", "stripe", "swirl", "shard", "whirl", "bee", "bumble", "streak", "scratch", "needle"],
     "Agouti": ["back", "pelt", "fur", "dapple", "flake", "fleck", "freckle", "streak", "scratch", "stripe", "needle"],
     "Singlestripe": ["stripe", "back", "shade", "stem", "patch", "streak", "stripe", "back", "shadow", "arch", "ridge"],
-    "Rreckled": ["fleck", "speckle", "speckle", "speck", "dapple", "spot", "spots", "freckle", "freckle", "flake", "swarm"],
+    "Freckled": ["fleck", "speckle", "speckle", "speck", "dapple", "spot", "spots", "freckle", "freckle", "flake", "swarm"],
     "Masked": ["stripe", "dapple", "mask", "mask", "shade", "tiger", "thorn", "thistle", "bee", "bumble", "branch", "streak", "scratch", 
 	    "badger", "raccoon", "needle"]
   },
@@ -196,20 +196,26 @@
     "Flint", "Starling", "Badger", "Raccoon", "Skulk", "Magpie"
     ],
     "BLOSSOM": [
-    "Pale", "Sand", "Sun", "Sunny", "Light", "Lion", "Bright", "Phlox", "Vervain", "Veil", "Silk",
-    "Honey", "Daisy", "Warm", "Cosmos", "Orchid", "Snapdragon", "Foxglove", "Verbena", "Straw",
-    "Orange", "Ochre", "Peach", "Auburn", "Birch", "Cougar", "Gorse", "Dandelion", "Spindle", "Ivory",
-    "Fawn", "Fallow", "Morel", "Mouse", "Velvet", "Dust", "Tawny", "Sable"
+    "Blossom","Pale", "Sand", "Sun", "Sunny", "Light", "Lion", "Bright", "Phlox", "Vervain", "Veil", "Silk", "Honey", "Daisy", "Warm",
+    "Cosmos", "Orchid", "Snapdragon", "Foxglove", "Verbena", "Straw", "Orange", "Ochre", "Peach", "Auburn", "Birch", "Cougar", "Gorse",
+    "Dandelion", "Spindle", "Ivory", "Fawn", "Fallow", "Morel", "Mouse", "Velvet", "Dust", "Tawny", "Sable", "Swan", "Dove", "Cotton",
+    "Hawthorn", "Laurel", "Wisp", "Silk", "Web", "Goose", "Moth", "Moon", "Down", "Daisy", "Gardenia", "Hemlock", "Magnolia", "Birch",
+    "Snow", "Snowy", "Owl", "Mink", "Petal", "Bloom"
     ],
     "PALEGINGER": [
     "Pale", "Ginger", "Sand", "Sandy", "Yellow", "Sun", "Sunny", "Light", "Lion", "Bright", "Phlox", "Vervain",
     "Honey", "Daisy", "Warm", "Robin", "Cosmos", "Orchid", "Snapdragon", "Foxglove", "Verbena", "Straw",
-    "Orange", "Ochre", "Peach", "Auburn", "Pumpkin", "Birch", "Cougar", "Apricot", "Furze", "Gorse", "Dandelion"
+    "Orange", "Ochre", "Peach", "Auburn", "Pumpkin", "Birch", "Cougar", "Apricot", "Furze", "Gorse", "Dandelion", "Wheat"
     ],
     "GOLDEN": [
     "Gold", "Gold", "Golden", "Yellow", "Sun", "Sunny", "Light", "Lightning", "Thunder", "Day", "Fig",
-    "Honey", "Tawny", "Lion", "Dandelion", "Marigold", "Warm", "Amber", "Canary", "Daffodil", "Bright",
-    "Buttercup", "Straw", "Glint", "Auburn", "Blazing", "Furze", "Gorse", "Oriole", "Cougar"
+    "Honey", "Tawny", "Lion", "Dandelion", "Marigold", "Warm", "Amber", "Canary", "Daffodil", "Bright", "Tansy",
+    "Buttercup", "Straw", "Glint", "Auburn", "Blazing", "Furze", "Gorse", "Oriole", "Cougar", "Wheat", "Shine", "Bee"
+    ],
+    "HONEY": ["Honey", "Honey", "Sweet", "Gold", "Golden", "Yellow", "Sun", "Sunny", "Light", "Lightning", "Thunder", "Day", "Fig",
+    "Tawny", "Lion", "Dandelion", "Marigold", "Warm", "Amber", "Canary", "Daffodil", "Bright", "Daisy", "Nectar", "Tansy", "Flower",
+    "Buttercup", "Straw", "Glint", "Auburn", "Blazing", "Furze", "Gorse", "Oriole", "Cougar", "Wheat", "Shine", "Bee", "Bay", "Bumble"
+    "Rye"
     ],
     "GINGER": [
     "Ginger", "Ginger", "Red", "Fire", "Rust", "Flame", "Ember", "Sun", "Sunny", "Light", "Primrose",
@@ -229,7 +235,7 @@
     "CREAM": [
     "Sand", "Sandy", "Yellow", "Pale", "Cream", "Cream", "Light", "Milk", "Fawn", "Morel", "Jasmine", "Veil", "Cougar", "Dandelion",
     "Bone", "Daisy", "Branch", "Warm", "Robin", "Spindle", "Ivory", "Pale", "Bright", "Peach", "Egg", "Lion", "Birch", "Fallow", "Sun", 
-    "Sunny"
+    "Sunny", "Wheat", "Tansy"
     ],
     "LIGHTBROWN": [
     "Brown", "Pale", "Light", "Mouse", "Dust", "Dusty", "Sand", "Sandy", "Bright", "Mud", "Scrub", "Velvet", "Elm", "Nut", "Fallow",
@@ -298,13 +304,17 @@
 	"shadow", "shade", "dusk", "coal", "ink", "bat", "cinder", "ghost", "night", "raven", "crow", "burn", "badger", "raccoon"
     ],
     "BLOSSOM": [
-    "sun", "beam", "shine", "shell", "honey", "cougar", "owl", "moth", "sable", "dust", "flower"
+    "sun", "beam", "shine", "shell", "honey", "cougar", "owl", "moth", "sable", "dust", "flower", "blossom", "spring", "petal",
+    "rose", "bee", "moth", "owl", "cloud", "moon", "web", "dove", "egg", "shell", "smoke", "goose", "bloom"
       ],
     "PALEGINGER": [
 	"sun", "beam", "shine", "spark", "shell", "honey", "flash", "lion", "cougar"
     ],
     "GOLDEN": [
-	"sun", "beam", "shine", "spark", "blaze", "honey", "flash", "bee", "lion", "cougar"
+	"sun", "beam", "shine", "spark", "blaze", "honey", "flash", "bee", "lion", "cougar", "bright", "gorse"
+    ],
+    "HONEY": ["sun", "beam", "shine", "spark", "blaze", "honey", "honey", "flash", "bee", "lion", "cougar", "bright", "bee", "root", "bumble",
+    "flower", "gorse"
     ],
     "GINGER": [
 	"burn", "sun", "beam", "shine", "spark", "blaze", "flame", "flare", "ember", "fox", "vixen"
