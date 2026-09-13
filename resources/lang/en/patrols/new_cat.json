@@ -5938,7 +5938,7 @@
             ]
         },
         "chance_of_success": 40,
-        "patrol_art": "backgrounds/gen_abandontwolegdis",
+        "patrol_art": "POI",
         "intro_strings": [
             "The patrol hears some odd noises coming from POI.",
             "As the patrol checks the border, they notice some odd noises coming from POI.",
@@ -8123,7 +8123,7 @@
             ]
         },
         "chance_of_success": 30,
-        "patrol_art": "backgrounds/gen_abandontwolegdis",
+        "patrol_art": "POI",
         "intro_strings": [
             "p_l hears some odd noises coming from POI out on the plains.",
             "As p_l checks the border, {PRONOUN/p_l/subject} notice some odd noises coming from POI.",
