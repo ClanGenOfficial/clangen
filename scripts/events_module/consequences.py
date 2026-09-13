@@ -381,7 +381,13 @@ def create_new_cat_block(
                         pelt=chosen_cat.pelt.name,
                         biome=game.clan.biome,
                     )
-                    chosen_cat.name.give_suffix(pelt=chosen_cat.pelt)
+                    chosen_cat.name.give_suffix(
+                        eyes=chosen_cat.pelt.eye_colour,
+                        colour=chosen_cat.pelt.colour,
+                        pelt=chosen_cat.pelt.name,
+                        biome=game.clan.biome,
+                        tortie_pattern=cat.pelt.tortie_pattern,
+                    )
 
             new_cats = [chosen_cat]
 

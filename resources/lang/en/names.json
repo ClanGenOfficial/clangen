@@ -201,6 +201,11 @@
     "Orange", "Ochre", "Peach", "Auburn", "Birch", "Cougar", "Gorse", "Dandelion", "Spindle", "Ivory",
     "Fawn", "Fallow", "Morel", "Mouse", "Velvet", "Dust", "Tawny", "Sable"
     ],
+	"DAWN": [
+	"Apricot", "Aspen", "Barley", "Beam", "Bloom", "Blossom", "Bright", "Cougar", "Coyote", "Dawn", "Dazzle", "Dew", 
+	"Dream", "Drift", "Drizzle", "Egg", "Fallow", "Flicker", "Garlic", "Hare", "Haze", "Hazy", "Ivory", "Light", 
+	"Mist", "Misty", "Morning", "Moth", "Mouse", "Pale", "Pearl", "Rabbit", "Sand", "Shell", "Shimmer", "Sky"
+	],
     "PALEGINGER": [
     "Pale", "Ginger", "Sand", "Sandy", "Yellow", "Sun", "Sunny", "Light", "Lion", "Bright", "Phlox", "Vervain",
     "Honey", "Daisy", "Warm", "Robin", "Cosmos", "Orchid", "Snapdragon", "Foxglove", "Verbena", "Straw",
@@ -300,6 +305,9 @@
     "BLOSSOM": [
     "sun", "beam", "shine", "shell", "honey", "cougar", "owl", "moth", "sable", "dust", "flower"
       ],
+	"DAWN": [
+	"beam", "dawn", "dazzle", "dew", "dream", "drizzle", "egg", "flicker", "glow", "hare", "haze", "moth", "mouse", "shell", "shimmer"
+	],
     "PALEGINGER": [
 	"sun", "beam", "shine", "spark", "shell", "honey", "flash", "lion", "cougar"
     ],
@@ -657,7 +665,7 @@
     "Ping Pong", "Pinkie Pie", "Pinkie", "Pipkin", "Pippin", "Pisces", "Pistol Star", "Pizza Place", "Plato", "Playstation", "Plentiful Leaves", 
     "Plot Twist", "Pluto", "Pokey", "Poki", "Pokotho", "Polaris", "Polaroid", "Polka", "Polyatomic", "Polyatomic Ion", "Pompompurin", "Ponyboy", "Pork Belly",
     "Porsche", "Pot Roast", "Pouncival", "President Blanket", "Primm Slim", "Pringle", "Private Eye", "Procyon", "Proton", "Pumbaa", "Purdy", "Purri", "Pusheen", 
-    "Quantum Mechanics", "Quarter Pounder", "Quartermaster", "Quasar", "Qubo", "Queso Ruby", "Quicky", "Rafiki", "Ramattra", "Rambley", "Rapunzel", 
+    "Quantum Mechanics", "Quarter Pounder", "Quartermaster", "Quasar", "Qubo", "Queso Ruby", "Rafiki", "Ramattra", "Rambley", "Rapunzel",
     "Ratau", "Ratoo", "Razzle", "Reeses Puff", "Ribosome", "Rick Astley", "Rigel", "Righteous Bread Pudding", "Ringo Starr", "Riolu", "Rizz", "Rizzo", "Rolo", 
     "Roomba", "Rorschach", "Rubber Duck", "Ruffnut", "Rum Tum Tugger", "Rumpleteazer", "Ryland", "Sage Marro", "Sagittarius", "Sagwa", "Salem", "Sampo", "Samus", "Sans",
     "Sarabi", "Sarek", "Saturn", "Scooby", "Scrooge", "Scrungle", "Sebek", "Sega", "Sekhmet", "Selkie", "Selkirk", "Seraph", "Seven Of Nine", "Shamash", "Shamwow", "Shenzi",
