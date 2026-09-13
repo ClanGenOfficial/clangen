@@ -6661,9 +6661,9 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -5,
+                        "amount": 5,
                         "log": {
-                            "cats_from": "cat_from didn't appreciate cat_to interrupting {PRONOUN/cat_from/poss} rodent-hunting competition."
+                            "cats_from": "cat_from was enthused to see how excited s_c0 was about {PRONOUN/cat_from/poss} competition."
                         }
                     },
                     {
@@ -8523,7 +8523,7 @@
                 "frequency": 4,
                 "exp_gained": 30,
                 "strings": [
-                    "As the p_l gets closer, {PRONOUN/p_l/subject} recognize the noise as a bunch of cats hollering, alternating between encouragement and personal jabs. When the cats finally come into view, p_l realizes that this seems to be a gathering of loners! The loners are holding some sort of rodent catching competition in the prey-wealthy area. Well, this won't do, p_l interrupts and insists the loners stop catching c_n's prey. The loners hastily apologize and leave without much argument."
+                    "As the p_l gets closer, {PRONOUN/p_l/subject} recognize the noise as a bunch of cats hollering, alternating between encouragement and personal jabs. p_l finds a gathering of loners! The loners are holding some sort of rodent-catching competition in the prey-wealthy area. Well, this won't do, p_l interrupts and insists the loners stop catching c_n's prey. The loners hastily apologize and leave without much argument."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -8598,7 +8598,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from didn't appreciate that cat_to was stealing c_n prey under the guise of \"competition\"."
+                            "cats_from": "cat_from didn't appreciate that cat_to was stealing c_n prey under the guise of \"competition.\""
                         }
                     },
                     {
@@ -8630,7 +8630,7 @@
                 "frequency": 4,
                 "exp_gained": 30,
                 "strings": [
-                    "p_l recognizes the noise as a bunch of cats hollering and yowling. It sounds like a fight! {PRONOUN/p_l/subject/CAP} rush forward and find a group of rogues all circled around a pair of cats locked in battle. The audience throws jeers and insults until, finally, one of the cats goes still in the dirt. Once the other rogues leave, p_l sneaks forward to check if the cat still lives. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to bring the cat back to camp, perhaps {PRONOUN/n_c0/subject} can still be saved."
+                    "p_l recognizes the noise as a bunch of cats caterwauling. It sounds like a fight! {PRONOUN/p_l/subject/CAP} {VERB/p_l/rush/rushes} forward and {VERB/p_l/find/finds} a group of rogues all circled around a pair of cats locked in battle. The audience jeers and hollers until, finally, one of the cats goes still in the dirt. Once the other rogues leave, p_l sneaks forward to check if the cat still lives. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to bring the cat back to camp, perhaps {PRONOUN/n_c0/subject} can still be saved."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -8912,7 +8912,7 @@
                 "frequency": 3,
                 "exp_gained": 30,
                 "strings": [
-                    "As p_l gets closer, {PRONOUN/p_l/subject} recognize the noise as a bunch of cats hollering, alternating between encouragement and personal jabs. When the cats finally come into view, p_l realizes that this seems to be a gathering of loners! The loners are holding some sort of rodent catching competition in the prey-wealthy area. Well, this won't do, p_l interrupts and insists the loners stop catching c_n's prey. The loners disagree and a fight ensues, leaving some cats injured."
+                    "As p_l gets closer, {PRONOUN/p_l/subject} recognize the noise as a bunch of cats hollering, alternating between encouragement and personal jabs. p_l finds a gathering of loners! The loners are holding some sort of rodent-catching competition in the prey-wealthy area. Well, this won't do, p_l interrupts and insists the loners stop catching c_n's prey. The loners disagree and a fight ensues, leaving p_l injured."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -8972,7 +8972,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from didn't appreciate that cat_to was stealing c_n prey under the guise of \"competition\"."
+                            "cats_from": "cat_from didn't appreciate that cat_to was stealing c_n prey under the guise of \"competition.\""
                         }
                     },
                     {
@@ -9033,7 +9033,7 @@
                 "tags": ["some_lives"],
                 "exp_gained": 30,
                 "strings": [
-                    "p_l recognizes the noise as a bunch of cats hollering and yowling. It sounds like a fight! {PRONOUN/p_l/subject/CAP} rush forward and find a group of rogues all circled around a pair of cats locked in battle. p_l charges, interrupting the duel and starting a much larger, and quite unwise, fight. By the end, the rogues have scattered to the wind, but not without leaving p_l dead on the ground."
+                    "p_l recognizes the noise as a bunch of cats caterwauling. It sounds like a fight! {PRONOUN/p_l/subject/CAP} {VERB/p_l/rush/rushes} forward and {VERB/p_l/find/finds} a group of rogues all circled around a pair of cats locked in battle. p_l charges, interrupting the duel and starting a much larger, and quite unwise, fight. By the end, the rogues have scattered to the wind, but not without leaving p_l dead on the ground."
                 ],
                 "involved_cats": {
                     "n_c0": {
