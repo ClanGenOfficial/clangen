@@ -8,6 +8,7 @@
             "DARKGREY": "black",
             "GHOST": "black",
             "BLACK": "black",
+            "SABLE": "black",
             "BLOSSOM": "ginger",
             "DAWN": "ginger",
             "CREAM": "ginger",
@@ -20,6 +21,7 @@
             "LILAC": "brown",
             "BROWN": "brown",
             "GOLDEN-BROWN": "brown",
+            "MALLOW": "brown",
             "DARKBROWN": "brown",
             "CHOCOLATE": "brown",
             "RUST": "brown"
