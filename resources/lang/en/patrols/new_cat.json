@@ -7015,7 +7015,7 @@
                 "exp_gained": 30,
                 "strings": [
                     "It seems a family of wanderers came upon POI and thought to make it their new home. The patrol takes the time to speak with them, explaining that this land is already taken. The family agrees to leave, but one of their children, intrigued by the Clan's way of life, asks if {PRONOUN/n_c2/subject} could stay and become a warrior.",
-                    "It seems a family of wanderers came upon POI and thought to make it their new home. The patrol insists that the cats leave, for this territory is already taken. One of the younger wanderers draws {PRONOUN/n_c2/self} up and asks if {PRONOUN/n_c2/subject} could join c_n, it seems n_c2 is tired of the wandering life.",
+                    "It seems a family of wanderers came upon POI and thought to make it their new home. The patrol insists that the cats leave, for this territory is already taken. One of the younger wanderers draws {PRONOUN/n_c2/self} up and asks if {PRONOUN/n_c2/subject} could join c_n, tired of the wandering life.",
                     "It looks to be a family of wanderers setting up a temporary camp. A couple of them approach the patrol and introduce {PRONOUN/n_c1/self} as n_c1 and the other cat as {PRONOUN/n_c1/poss} kit, n_c2. It seems they travelled here intentionally, for n_c2 had wished to join one of the mysterious Clans."
                 ],
                 "involved_cats": {
