@@ -769,7 +769,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "As the patrol is sniffing around the burrow entrance, they hear a rustle from the grass. It's difficult to say who's more surprised, the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c0 is battered in the process but everyone gets home in one piece... including the badger."
+                    "As the patrol is sniffing around the burrow entrance, they hear a rustle from the grass. It's difficult to say who's more surprised: the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c0 is battered in the process but everyone gets home in one piece... including the badger."
                 ],
                 "involved_cats": {
                     "r_c0": {}
