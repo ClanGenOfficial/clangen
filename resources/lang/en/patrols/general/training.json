@@ -31618,7 +31618,7 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 3,
                 "location": ["beach"],
                 "strings": [
                     "r_c0 listens carefully as p_l explains where to find the best prey in the rich waters of the pools.",
@@ -31646,7 +31646,7 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 3,
                 "location": ["beach"],
                 "strings": [
                     "They decide to focus on how best to navigate the rocky tide pools. By the end of the patrol, s_c0 is easily fishing fresh-kill out of the pools without an ounce of hesitation in {PRONOUN/s_c0/poss} movements."
@@ -31706,7 +31706,7 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 3,
                 "location": [
                     "desert", "plains"
                 ],
@@ -31735,7 +31735,7 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 3,
                 "location": [
                     "desert", "plains"
                 ],
@@ -31781,7 +31781,7 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 3,
                 "location": [
                     "desert", "plains"
                 ],
@@ -31925,267 +31925,6 @@
                         "mutual": false,
                         "log": {
                             "cats_from": "While practicing tree-climbing, cat_from discovered cat_to is a quick study."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "location": [
-                    "mountainous", "beach"
-                ],
-                "strings": [
-                    "They focus on how best to leap up a rocky cliff. r_c0 listens carefully as p_l explains how to find paw holds and take advantage of the cliff's craggy surface."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "r_c0"
-                        ],
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "amount": 10,
-                        "mutual": false,
-                        "log": {
-                            "cats_from": "cat_from learned about rock-climbing from cat_to."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "location": [
-                    "mountainous", "beach"
-                ],
-                "strings": [
-                    "They focus on how best to leap up a rocky cliff. r_c0 picks up the instruction quickly and is soon able to make {PRONOUN/r_c0/poss} way up the cliff."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "s_c0"
-                        ],
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "amount": 10,
-                        "mutual": false,
-                        "log": {
-                            "cats_from": "cat_from learned about rock-climbing from cat_to."
-                        }
-                    },
-                    {
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "amount": 8,
-                        "mutual": false,
-                        "log": {
-                            "cats_from": "While practicing rock-climbing, cat_from discovered cat_to is a quick study."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "location": [
-                    "mountainous", "beach"
-                ],
-                "strings": [
-                    "They focus on how best to leap up a rocky cliff. By the end of the patrol r_c0 is hopping nimbly from crack to crag, easily scaling the cliff walls."
-                ],
-                "involved_cats": {
-                    "r_c0": {
-                        "stat": {
-                            "skill": [
-                                "CLIMBER,1"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "r_c0"
-                        ],
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "amount": 10,
-                        "mutual": false,
-                        "log": {
-                            "cats_from": "cat_from learned about rock-climbing from cat_to."
-                        }
-                    },
-                    {
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "cats_to": [
-                            "r_c0"
-                        ],
-                        "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "amount": 8,
-                        "mutual": false,
-                        "log": {
-                            "cats_from": "While practicing rock-climbing, cat_from discovered cat_to is a quick study."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "location": [
-                    "plains"
-                ],
-                "strings": [
-                    "They focus on how to hide within tall grass. r_c0 listens carefully as p_l explains how to move through the grass unseen and undetected."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "r_c0"
-                        ],
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "amount": 10,
-                        "mutual": false,
-                        "log": {
-                            "cats_from": "cat_from learned about hiding in tall grass from cat_to."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "location": [
-                    "plains"
-                ],
-                "strings": [
-                    "They focus on how to hide within tall grass. r_c0 picks up the instruction quickly, and the patrol is soon playing a small game of hide and seek within the grass to test the apprentice's abilities."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "r_c0"
-                        ],
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "amount": 10,
-                        "mutual": false,
-                        "log": {
-                            "cats_from": "cat_from learned about hiding in the tall grass from cat_to."
-                        }
-                    },
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 8,
-                        "mutual": false,
-                        "log": {
-                            "cats_from": "cat_from and cat_to played a game of hide-and-seek to test their hiding skills."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "location": [
-                    "plains"
-                ],
-                "strings": [
-                    "They focus on how to hide within tall grass. By the end of the patrol, r_c0 is able to hide stealthily within the grass, {PRONOUN/r_c0/poss} movements barely noticeable."
-                ],
-                "involved_cats": {
-                    "r_c0": {
-                        "stat": {
-                            "trait": [
-                                "calm",
-                                "careful"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "r_c0"
-                        ],
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "amount": 10,
-                        "mutual": false,
-                        "log": {
-                            "cats_from": "cat_from learned about hiding in the tall grass from cat_to."
-                        }
-                    },
-                    {
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "cats_to": [
-                            "r_c0"
-                        ],
-                        "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "amount": 8,
-                        "mutual": false,
-                        "log": {
-                            "cats_from": "While practicing hiding in the tall grass, cat_from discovered cat_to is a quick study."
                         }
                     }
                 ]
@@ -32356,7 +32095,268 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 3,
+                "location": [
+                    "mountainous", "beach"
+                ],
+                "strings": [
+                    "They focus on how best to leap up a rocky cliff. r_c0 listens carefully as p_l explains how to find paw holds and take advantage of the cliff's craggy surface."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned about rock-climbing from cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": [
+                    "mountainous", "beach"
+                ],
+                "strings": [
+                    "They focus on how best to leap up a rocky cliff. r_c0 picks up the instruction quickly and is soon able to make {PRONOUN/r_c0/poss} way up the cliff."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "s_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned about rock-climbing from cat_to."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 8,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "While practicing rock-climbing, cat_from discovered cat_to is a quick study."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": [
+                    "mountainous", "beach"
+                ],
+                "strings": [
+                    "They focus on how best to leap up a rocky cliff. By the end of the patrol r_c0 is hopping nimbly from crack to crag, easily scaling the cliff walls."
+                ],
+                "involved_cats": {
+                    "r_c0": {
+                        "stat": {
+                            "skill": [
+                                "CLIMBER,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned about rock-climbing from cat_to."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 8,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "While practicing rock-climbing, cat_from discovered cat_to is a quick study."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": [
+                    "plains"
+                ],
+                "strings": [
+                    "They focus on how to hide within tall grass. r_c0 listens carefully as p_l explains how to move through the grass unseen and undetected."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned about hiding in tall grass from cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": [
+                    "plains"
+                ],
+                "strings": [
+                    "They focus on how to hide within tall grass. r_c0 picks up the instruction quickly, and the patrol is soon playing a small game of hide and seek within the grass to test the apprentice's abilities."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned about hiding in the tall grass from cat_to."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 8,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from and cat_to played a game of hide-and-seek to test their hiding skills."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": [
+                    "plains"
+                ],
+                "strings": [
+                    "They focus on how to hide within tall grass. By the end of the patrol, r_c0 is able to hide stealthily within the grass, {PRONOUN/r_c0/poss} movements barely noticeable."
+                ],
+                "involved_cats": {
+                    "r_c0": {
+                        "stat": {
+                            "trait": [
+                                "calm",
+                                "careful"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned about hiding in the tall grass from cat_to."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 8,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "While practicing hiding in the tall grass, cat_from discovered cat_to is a quick study."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
                 "poi": {
                     "category": "terrain"
                 },
