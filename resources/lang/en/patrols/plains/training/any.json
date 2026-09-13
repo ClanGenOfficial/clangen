@@ -2898,7 +2898,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/pln_bord_tunnel_Wr",
                 "strings": [
-                    "s_c0 brings r_c1 over, pointing out all the aspects that makes this sett safe to practice in, the compacted earth, the strong walls, the dry but not too dry soil. If r_c1 can master these signs on the safe sett, unknown tunnels out on the plains will be far safer for {PRONOUN/r_c1/object} to approach."
+                    "s_c0 brings r_c1 over, pointing out all the aspects that makes this sett safe to practice in, the compacted earth, the strong walls, the dry, but not too dry soil. If r_c1 can master these signs on the safe sett, unknown tunnels out on the plains will be far safer for {PRONOUN/r_c1/object} to approach."
                 ],
                 "involved_cats": {
                     "r_c1": {
