@@ -829,7 +829,7 @@
         "chance_of_success": 20,
         "patrol_art": "train_general_intro",
         "intro_strings": [
-            "As {PRONOUN/r_c0/subject} {VERB/r_c0/lag/lags} behind on patrol, the ground trembles beneath r_c's paws. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly for safe footing just as the earth caves in beneath {PRONOUN/r_c0/object} and the world goes dark."
+            "As {PRONOUN/r_c0/subject} {VERB/r_c0/lag/lags} behind on patrol, the ground trembles beneath r_c0's paws. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly for safe footing just as the earth caves in beneath {PRONOUN/r_c0/object} and the world goes dark."
         ],
         "decline_strings": [
             "Thankfully, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} on the edge of the obstruction and {VERB/r_c0/wriggle/wriggles} {PRONOUN/r_c0/poss} way clear."
