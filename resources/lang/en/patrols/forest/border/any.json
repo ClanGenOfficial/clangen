@@ -1540,7 +1540,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "condition": [
                             "battle_injury"
