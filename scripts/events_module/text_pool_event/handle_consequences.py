@@ -27,7 +27,9 @@ from scripts.cat.microservices.conditions import (
 from scripts.config import get_config
 from scripts.events_module.consequences import unpack_rel_block, check_stolen_vitality
 from scripts.events_module.future.prep_and_trigger import prep_future_event
+from scripts.events_module.patrol.create_new_cat import updated_create_new_cat
 from scripts.events_module.parameter_dicts import SupplyDict
+from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.relationship import relation_events
 from scripts.events_module.text_adjust import (
     event_text_adjust,
@@ -46,11 +48,16 @@ def execute_outcome(
     event: TextPoolEvent,
     event_involved_cats: dict[str, Union[Cat, list[Cat]]],
     other_clan: OtherClan = None,
-):
+    chosen_poi: str = None,
+) -> tuple[str, str, dict]:
     """
     Executes the outcome, applying any specified consequences.
+    If new cats are created, event_involved_cats *will* be modified to add the newly created cats.
     :returns: Outcome text, results text, list of created rel logs (might be empty)
     """
+
+    # Must start with cat creation.
+    create_needed_cats(event, event_involved_cats, other_clan)
 
     rel_results = {}
     chosen_string = choice(event.strings)
@@ -61,12 +68,13 @@ def execute_outcome(
         involved_cat_dict=event_involved_cats,
         clan=game.clan,
         other_clan=other_clan,
+        chosen_poi=chosen_poi,
     )
 
     results = [
         _handle_joining(event, event_involved_cats),
+        _handle_death(event, event_involved_cats, other_clan, chosen_poi),
         _handle_meeting(event, event_involved_cats),
-        _handle_death(event, event_involved_cats, other_clan),
         _handle_lost(event, event_involved_cats),
         _handle_conditions(event, event_involved_cats, other_clan),
         _handle_reputation_changes(event, other_clan),
@@ -93,6 +101,7 @@ def execute_outcome(
                     involved_cat_dict=event_involved_cats,
                     clan=game.clan,
                     other_clan=other_clan,
+                    chosen_poi=chosen_poi,
                 )
 
     # apply rel effects (append result text)
@@ -109,6 +118,31 @@ def execute_outcome(
 
     # return all the bullshit
     return processed_text, "\n".join(final_results), rel_results
+
+
+def create_needed_cats(
+    event: TextPoolEvent | PatrolEvent,
+    event_involved_cats: dict[str, Union[Cat, list[Cat]]],
+    other_clan: OtherClan = None,
+):
+    """
+    Creates needed cats for the event, who are not already in event_involved_cats.
+    Modifies event_involved_cats with the new cats.
+    """
+    for abbr, constraints in event.involved_cats.items():
+        # Only create cats who haven't already been assigned in event_involved_cats.
+        if abbr in event_involved_cats:
+            continue
+
+        event_involved_cats[abbr] = updated_create_new_cat(
+            option_dict=constraints,
+            involved_cats=event_involved_cats,
+            other_clan=other_clan,
+        )
+
+        if len(event_involved_cats[abbr]) == 1:
+            # if this is a list of a single cat, then we take them out of the list
+            event_involved_cats[abbr] = event_involved_cats[abbr][0]
 
 
 def _handle_accessories(
@@ -254,6 +288,7 @@ def _handle_death(
     event: TextPoolEvent,
     event_involved_cats: dict[str, Union[Cat, list[Cat]]],
     other_clan: OtherClan,
+    chosen_poi: str = None,
 ) -> str:
     """
     Handles cats dying on patrol
@@ -291,6 +326,7 @@ def _handle_death(
                             Cat,
                             i18n.t("cat.history.n_leader_death_all"),
                             main_cat=c,
+                            chosen_poi=chosen_poi,
                         )
                     )
                 elif "some_lives" in death_tags:
@@ -303,6 +339,7 @@ def _handle_death(
                             Cat,
                             i18n.t("cat.history.n_leader_lost_lives", count=lives_lost),
                             main_cat=c,
+                            chosen_poi=chosen_poi,
                         )
                     )
                 else:
@@ -313,6 +350,7 @@ def _handle_death(
                             Cat,
                             i18n.t("cat.history.n_leader_lost_lives", count=1),
                             main_cat=c,
+                            chosen_poi=chosen_poi,
                         )
                     )
                 if extra_result := check_stolen_vitality(c, lives_lost):

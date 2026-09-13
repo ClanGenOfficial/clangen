@@ -152,7 +152,7 @@
     {
         "event_id": "group_3_negative_romanticrivalshigh_jealousofrival",
         "strings": [
-            "m_c knows r_c1 better than anyone \u2014 and can tell {PRONOUN\/r_c1\/subject}{VERB\/r_c1\/'re\/'s} interested in r_c2.",
+            "m_c knows r_c1 better than anyone — and can tell {PRONOUN\/r_c1\/subject}{VERB\/r_c1\/'re\/'s} interested in r_c2.",
             "m_c keeps a mental count of how often r_c1 brings up r_c2's name.",
             "m_c knows r_c1 is {PRONOUN\/m_c\/poss} mate and not r_c2's, but {PRONOUN\/m_c\/subject} still {VERB\/m_c\/feel\/feels} jealous seeing them together.",
             "m_c wonders if r_c1 is flirting with r_c2 because {PRONOUN\/r_c1\/subject}{VERB\/r_c1\/'re\/'s} bored of m_c.",
@@ -238,7 +238,7 @@
         "strings": [
             "The way r_c1 talks about r_c2, anyone would think r_c1 would prefer to be {PRONOUN\/r_c2\/poss} mate instead of m_c's.",
             "r_c1 seems to spend more time with r_c2 than {PRONOUN\/r_c1\/poss} mate, m_c.",
-            "r_c1's interest in r_c2 is no secret \u2014 even m_c has noticed by now.",
+            "r_c1's interest in r_c2 is no secret — even m_c has noticed by now.",
             "m_c can't sleep while curled up with r_c1 at night, wondering if r_c1 will leave {PRONOUN\/m_c\/object} for r_c2.",
             "m_c craves more of r_c1's attention, but these days it's all going to r_c2.",
             "m_c wonders if r_c1 has fallen more deeply in love with r_c2 than {PRONOUN\/r_c1\/subject} ever did with m_c.",

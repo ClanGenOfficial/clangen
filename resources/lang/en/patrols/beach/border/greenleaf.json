@@ -19,8 +19,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As p_l crosses a beach, shivering with the cold, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a creaking, rushing sound, like a wave — but out of sync with the ocean.",
-        "decline_text": "p_l decides to head back early.",
+        "intro_strings": [
+            "As p_l crosses a beach, shivering with the cold, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a creaking, rushing sound, like a wave — but out of sync with the ocean."
+        ],
+        "decline_strings": [
+            "p_l decides to head back early."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -130,8 +134,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "bord_general_intro",
-        "intro_text": "p_l's patrol pads along the shore towards the border. A recent storm washed away some of the markers near the waterline and they need to be refreshed. There in the surf, however, they find a great wooden thing—a piece of a floating nest. Towering over the cats, its jagged edges jut out at broken angles. Beneath the salt, Twoleg scent lingers in the air.",
-        "decline_text": "p_l decides to turn back to camp and report the encounter, rather than risk investigating something potentially dangerous.",
+        "intro_strings": [
+            "p_l's patrol pads along the shore towards the border. A recent storm washed away some of the markers near the waterline and they need to be refreshed. There in the surf, however, they find a great wooden thing—a piece of a floating nest. Towering over the cats, its jagged edges jut out at broken angles. Beneath the salt, Twoleg scent lingers in the air."
+        ],
+        "decline_strings": [
+            "p_l decides to turn back to camp and report the encounter, rather than risk investigating something potentially dangerous."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

@@ -35,8 +35,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/fst_med_herblocation2",
-        "intro_text": "The ocean quiets to a dull murmur behind p_l as {PRONOUN/p_l/subject} {VERB/p_l/trek/treks} up the hill to the heathlands under the blazing sun. Vibrant, violet heather in full bloom surrounds {PRONOUN/p_l/object}, scattered with evergreen crowberry shrubs. But p_l only has eyes for one plant today.",
-        "decline_text": "A warrior catches up with p_l, explaining that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} needed in camp. {PRONOUN/p_l/subject/CAP} {VERB/p_l/turn/turns} around.",
+        "intro_strings": [
+            "The ocean quiets to a dull murmur behind p_l as {PRONOUN/p_l/subject} {VERB/p_l/trek/treks} up the hill to the heathlands under the blazing sun. Vibrant, violet heather in full bloom surrounds {PRONOUN/p_l/object}, scattered with evergreen crowberry shrubs. But p_l only has eyes for one plant today."
+        ],
+        "decline_strings": [
+            "A warrior catches up with p_l, explaining that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} needed in camp. {PRONOUN/p_l/subject/CAP} {VERB/p_l/turn/turns} around."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -147,8 +151,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_med_mentorandapp_McAp",
-        "intro_text": "The ocean quiets to a dull murmur behind p_l as {PRONOUN/p_l/subject} {VERB/p_l/trek/treks} up the hill to the heathlands. r_c1 pants behind {PRONOUN/p_l/object} under the blazing sun. Vibrant, violet heather in full bloom surrounds them, scattered with evergreen crowberry shrubs. But p_l only has eyes for one plant today and won't let r_c1 get distracted by the rare orchids or wolf's bane.",
-        "decline_text": "A warrior catches up with p_l, explaining that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} needed in camp. They turn around.",
+        "intro_strings": [
+            "The ocean quiets to a dull murmur behind p_l as {PRONOUN/p_l/subject} {VERB/p_l/trek/treks} up the hill to the heathlands. r_c1 pants behind {PRONOUN/p_l/object} under the blazing sun. Vibrant, violet heather in full bloom surrounds them, scattered with evergreen crowberry shrubs. But p_l only has eyes for one plant today and won't let r_c1 get distracted by the rare orchids or wolf's bane."
+        ],
+        "decline_strings": [
+            "A warrior catches up with p_l, explaining that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} needed in camp. They turn around."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

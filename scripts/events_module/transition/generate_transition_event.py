@@ -65,7 +65,10 @@ def _generate_transition_event(main_cat: Cat):
 
 
 def _handle_event(
-    chosen_event: TextPoolEvent, involved_cats: dict, main_cat: Cat, other_clan
+    chosen_event: TextPoolEvent,
+    involved_cats: dict,
+    main_cat: Cat,
+    other_clan,
 ):
     """
     Changes the cat's genderalign and handles any other changes made by the event. Needs to be its own function for testing purposes.

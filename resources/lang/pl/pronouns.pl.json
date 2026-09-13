@@ -1,31 +1,59 @@
 {
     "pl": {
         "0": {
-            "subject": "they",
-            "object": "them",
-            "poss": "their",
-            "inposs": "theirs",
-            "self": "themself",
+            "nominative": "on",
+            "genitive": "jego",
+            "genitive_short": "go",
+            "dative": "mu",
+            "accusative": "go",
+            "instrumental": "nim",
+            "locative": "nim",
             "conju": 1,
             "gender": 0
         },
         "1": {
-            "subject": "he",
-            "object": "him",
-            "poss": "his",
-            "inposs": "his",
-            "self": "himself",
+            "nominative": "ona",
+            "genitive": "jej",
+            "genitive_short": "jej",
+            "dative": "jej",
+            "accusative": "ją",
+            "instrumental": "nią",
+            "locative": "niej",
             "conju": 2,
             "gender": 1
         },
         "2": {
-            "subject": "she",
-            "object": "her",
-            "poss": "her",
-            "inposs": "hers",
-            "self": "herself",
-            "conju": 2,
+            "nominative": "ono",
+            "genitive": "jeno",
+            "genitive_short": "no",
+            "dative": "nu",
+            "accusative": "je",
+            "instrumental": "niem",
+            "locative": "niem",
+            "conju": 3,
             "gender": 2
+        },
+        "3": {
+            "nominative": "oni",
+            "genitive": "ich",
+            "genitive_short": "ich",
+            "dative": "im",
+            "accusative": "ich",
+            "instrumental": "nimi",
+            "locative": "nich",
+            "conju": 4,
+            "gender": 3
+        },
+        "4": {
+            "nominative": "one",
+            "genitive": "ich",
+            "genitive_short": "ich",
+            "dative": "im",
+            "accusative": "je",
+            "instrumental": "nimi",
+            "locative": "nich",
+            "conju": 5,
+            "gender": 4
         }
     }
 }

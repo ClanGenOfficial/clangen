@@ -27,13 +27,17 @@
         },
         "chance_of_success": 60,
         "patrol_art": "train_general_intro",
-        "intro_text": "The cats head out into the forested slopes, hiding from the heat of greenleaf. p_l leads them towards a massive messy eagle nest.",
-        "decline_text": "When they get there, p_l can't find the hummingbird {PRONOUN\/p_l\/subject} {VERB\/p_l\/were\/was} expecting. Disappointing.",
+        "intro_strings": [
+            "The cats head out into the forested slopes, hiding from the heat of greenleaf. p_l leads them towards a massive messy eagle nest."
+        ],
+        "decline_strings": [
+            "When they get there, p_l can't find the hummingbird {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting. Disappointing."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 screws up {PRONOUN\/r_c1\/poss} face in confusion \u2014 weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, {PRONOUN\/p_l\/subject} {VERB\/p_l\/explain\/explains}."
+                    "r_c1 screws up {PRONOUN/r_c1/poss} face in confusion \u2014 weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -281,7 +285,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from lost respect for cat_to when {PRONOUN\/cat_to\/subject} refused to go near an eagle nest."
+                            "cats_from": "cat_from lost respect for cat_to when {PRONOUN/cat_to/subject} refused to go near an eagle nest."
                         }
                     }
                 ]
@@ -313,7 +317,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from lost respect for cat_to when {PRONOUN\/cat_to\/subject} wouldn't take a training session seriously."
+                            "cats_from": "cat_from lost respect for cat_to when {PRONOUN/cat_to/subject} wouldn't take a training session seriously."
                         }
                     }
                 ]
@@ -348,13 +352,17 @@
         },
         "chance_of_success": 40,
         "patrol_art": "train_general_intro",
-        "intro_text": "The cats head out into the forested slopes, hiding from the heat of greenleaf. p_l leads them towards a massive messy eagle nest.",
-        "decline_text": "When they get there, p_l can't find the hummingbird {PRONOUN\/p_l\/subject} {VERB\/p_l\/were\/was} expecting. Disappointing.",
+        "intro_strings": [
+            "The cats head out into the forested slopes, hiding from the heat of greenleaf. p_l leads them towards a massive messy eagle nest."
+        ],
+        "decline_strings": [
+            "When they get there, p_l can't find the hummingbird {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting. Disappointing."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 screws up {PRONOUN\/r_c1\/poss} face in confusion \u2014 weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, {PRONOUN\/p_l\/subject} {VERB\/p_l\/explain\/explains}, astonishing r_c2."
+                    "r_c1 screws up {PRONOUN/r_c1/poss} face in confusion \u2014 weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, astonishing r_c2."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -581,7 +589,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 cannot believe that going near an eagle nest could ever possibly be safe and flatly refuses to go. r_c2 tries to comfort {PRONOUN\/r_c1\/object}, but the patrol is called off."
+                    "r_c1 cannot believe that going near an eagle nest could ever possibly be safe and flatly refuses to go. r_c2 tries to comfort {PRONOUN/r_c1/object}, but the patrol is called off."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -610,7 +618,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from lost respect for cat_to when {PRONOUN\/cat_to\/subject} refused to go near an eagle nest."
+                            "cats_from": "cat_from lost respect for cat_to when {PRONOUN/cat_to/subject} refused to go near an eagle nest."
                         }
                     },
                     {
@@ -626,7 +634,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "r_c2 tried to comfort r_c1 when {PRONOUN\/r_c1\/subject} thought it was unsafe to go near an eagle nest."
+                            "cats_from": "r_c2 tried to comfort r_c1 when {PRONOUN/r_c1/subject} thought it was unsafe to go near an eagle nest."
                         }
                     }
                 ]
@@ -664,7 +672,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from lost respect for cat_to when {PRONOUN\/cat_to\/subject} wouldn't take a training session seriously."
+                            "cats_from": "cat_from lost respect for cat_to when {PRONOUN/cat_to/subject} wouldn't take a training session seriously."
                         }
                     }
                 ]
@@ -699,13 +707,17 @@
         },
         "chance_of_success": 60,
         "patrol_art": "train_general_intro",
-        "intro_text": "With p_l in the lead, the cats round a corner in the mountain path and come across a flat mountain meadow, transformed by greenleaf into a carpet of sunny bright flowers.",
-        "decline_text": "When they get there, p_l can't find the hummingbirds {PRONOUN\/p_l\/subject} {VERB\/p_l\/were\/was} expecting. Disappointing.",
+        "intro_strings": [
+            "With p_l in the lead, the cats round a corner in the mountain path and come across a flat mountain meadow, transformed by greenleaf into a carpet of sunny bright flowers."
+        ],
+        "decline_strings": [
+            "When they get there, p_l can't find the hummingbirds {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting. Disappointing."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 sticks {PRONOUN\/r_c1\/poss} nose down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under {PRONOUN\/r_c1\/poss} chin, prompting {PRONOUN\/r_c1\/poss} head up. {PRONOUN\/r_c1\/subject\/CAP} {VERB\/r_c1\/gasp\/gasps}. Above {PRONOUN\/r_c1\/object}, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun."
+                    "r_c1 sticks {PRONOUN/r_c1/poss} nose down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under {PRONOUN/r_c1/poss} chin, prompting {PRONOUN/r_c1/poss} head up. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/gasp/gasps}. Above {PRONOUN/r_c1/object}, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -805,7 +817,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 leaps into the meadows, bouncing around as hummingbirds flit away before {PRONOUN\/r_c1\/object}. s_c0 watches {PRONOUN\/r_c1\/object} indulgently, and when {PRONOUN\/r_c1\/subject} {VERB\/r_c1\/slow\/slows} down s_c0 explains about how c_n uses hunting the agile birds as the ultimate test \u2014 it's considered the mark of a truly fantastic hunter to catch one without using claws and pluck a single shining feather."
+                    "r_c1 leaps into the meadows, bouncing around as hummingbirds flit away before {PRONOUN/r_c1/object}. s_c0 watches {PRONOUN/r_c1/object} indulgently, and when {PRONOUN/r_c1/subject} {VERB/r_c1/slow/slows} down s_c0 explains about how c_n uses hunting the agile birds as the ultimate test \u2014 it's considered the mark of a truly fantastic hunter to catch one without using claws and pluck a single shining feather."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -929,7 +941,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 won't stop {PRONOUN\/r_c1\/poss} hunting attempts for long enough for p_l to teach, and eventually everyone goes home frustrated."
+                    "r_c1 won't stop {PRONOUN/r_c1/poss} hunting attempts for long enough for p_l to teach, and eventually everyone goes home frustrated."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -989,13 +1001,17 @@
         },
         "chance_of_success": 40,
         "patrol_art": "train_general_intro",
-        "intro_text": "With p_l in the lead, the cats round a corner in the mountain path and come across a flat mountain meadow, transformed by greenleaf into a carpet of sunny bright flowers.",
-        "decline_text": "When they get there, p_l can't find the hummingbirds {PRONOUN\/p_l\/subject} {VERB\/p_l\/were\/was} expecting. Disappointing.",
+        "intro_strings": [
+            "With p_l in the lead, the cats round a corner in the mountain path and come across a flat mountain meadow, transformed by greenleaf into a carpet of sunny bright flowers."
+        ],
+        "decline_strings": [
+            "When they get there, p_l can't find the hummingbirds {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting. Disappointing."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "The apprentices stick their noses down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under r_c1's chin, prompting {PRONOUN\/r_c1\/poss} head up. {PRONOUN\/r_c1\/subject\/CAP} {VERB\/r_c1\/gasp\/gasps}. Above {PRONOUN\/r_c1\/object}, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun."
+                    "The apprentices stick their noses down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under r_c1's chin, prompting {PRONOUN/r_c1/poss} head up. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/gasp/gasps}. Above {PRONOUN/r_c1/object}, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1210,7 +1226,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 won't stop {PRONOUN\/r_c1\/poss} hunting attempts for long enough for p_l to teach, and eventually everyone goes home frustrated."
+                    "r_c1 won't stop {PRONOUN/r_c1/poss} hunting attempts for long enough for p_l to teach, and eventually everyone goes home frustrated."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1274,27 +1290,31 @@
         },
         "chance_of_success": 60,
         "patrol_art": "train_general_intro",
-        "intro_text": "p_l crouches low behind some grass, searching for the ideal prey to fall to {PRONOUN\/p_l\/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock.",
-        "decline_text": "A beetle is beneath {PRONOUN\/p_l\/poss} attention.",
+        "intro_strings": [
+            "p_l crouches low behind some grass, searching for the ideal prey to fall to {PRONOUN/p_l/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock."
+        ],
+        "decline_strings": [
+            "A beetle is beneath {PRONOUN/p_l/poss} attention."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "Ha! p_l pounces, the pathetic bug crunching underneath {PRONOUN\/p_l\/poss} mighty blow, splattering and \u2014 ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN\/p_l\/poss} paws, between {PRONOUN\/p_l\/poss} toes, EWWWWW!"
+                    "Ha! p_l pounces, the pathetic bug crunching underneath {PRONOUN/p_l/poss} mighty blow, splattering and \u2014 ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN/p_l/poss} paws, between {PRONOUN/p_l/poss} toes, EWWWWW!"
                 ],
                 "exp_gained": 20
             },
             {
                 "frequency": 1,
                 "strings": [
-                    "Ha! p_l leaps, tail lashing furiously as the beetle buzzes under {PRONOUN\/p_l\/poss} forepaws, claws sheathed. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/bat\/bats} the bug off the rock and onto the ground, pouncing after it, jumping and twisting as {PRONOUN\/p_l\/poss} colorful prey flits around {PRONOUN\/p_l\/poss} head in confused, concussed beetle-behavior, unused to being an apprentice's new favorite toy."
+                    "Ha! p_l leaps, tail lashing furiously as the beetle buzzes under {PRONOUN/p_l/poss} forepaws, claws sheathed. {PRONOUN/p_l/subject/CAP} {VERB/p_l/bat/bats} the bug off the rock and onto the ground, pouncing after it, jumping and twisting as {PRONOUN/p_l/poss} colorful prey flits around {PRONOUN/p_l/poss} head in confused, concussed beetle-behavior, unused to being an apprentice's new favorite toy."
                 ],
                 "exp_gained": 20
             },
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN\/p_l\/poss} back, watching the insect scurry from one paw to the other, so completely entranced by its color and tiny, perfect legs that {PRONOUN\/p_l\/subject} {VERB\/p_l\/don't\/doesn't} notice {PRONOUN\/p_l\/poss} own skill catching and keeping the bug."
+                    "s_c0 pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/p_l/poss} back, watching the insect scurry from one paw to the other, so completely entranced by its color and tiny, perfect legs that {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} notice {PRONOUN/p_l/poss} own skill catching and keeping the bug."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1315,14 +1335,14 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "While p_l is wiggling {PRONOUN\/p_l\/poss} butt into the perfect pouncing position, the beetle flies off. Awwwww."
+                    "While p_l is wiggling {PRONOUN/p_l/poss} butt into the perfect pouncing position, the beetle flies off. Awwwww."
                 ],
                 "exp_gained": 0
             },
             {
                 "frequency": 3,
                 "strings": [
-                    "Slimy, yet satisfying! Curiosity completed, p_l wanders off \u2014 but has to report to the medicine cat den later, when {PRONOUN\/p_l\/poss} stomach reminds {PRONOUN\/p_l\/object} why cats don't eat random bugs."
+                    "Slimy, yet satisfying! Curiosity completed, p_l wanders off \u2014 but has to report to the medicine cat den later, when {PRONOUN/p_l/poss} stomach reminds {PRONOUN/p_l/object} why cats don't eat random bugs."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -1393,9 +1413,13 @@
             }
         },
         "chance_of_success": 60,
-        "patrol_art": "cat_sprites\/gen_bord_story_WrWrWr",
-        "intro_text": "As the cats practice hunting in the dim light of the golden setting sun, p_l is reminded of the tale of How The Sunset Came To Be.",
-        "decline_text": "The light is too weird to focus on both training <i>and<\/i> a story. It'll have to wait for another day.",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
+        "intro_strings": [
+            "As the cats practice hunting in the dim light of the golden setting sun, p_l is reminded of the tale of How The Sunset Came To Be."
+        ],
+        "decline_strings": [
+            "The light is too weird to focus on both training <i>and</i> a story. It'll have to wait for another day."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1471,7 +1495,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 is sympathetic to the poor she-cat in the story. To have been killed by an evil leader, her last act was the gift of the sunset... s_c0 doesn't know what {PRONOUN\/s_c0\/subject} would do if {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/were\/was} in the same situation."
+                    "s_c0 is sympathetic to the poor she-cat in the story. To have been killed by an evil leader, her last act was the gift of the sunset... s_c0 doesn't know what {PRONOUN/s_c0/subject} would do if {PRONOUN/s_c0/subject} {VERB/s_c0/were/was} in the same situation."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1526,7 +1550,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from was touched by cat_to's sympathy for a character in {PRONOUN\/cat_from\/poss} story."
+                            "cats_from": "cat_from was touched by cat_to's sympathy for a character in {PRONOUN/cat_from/poss} story."
                         }
                     }
                 ]
@@ -1534,7 +1558,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 scoffs. Couldn't the she-cat have killed her evil leader, rather than being killed? {PRONOUN\/s_c0\/subject\/CAP} might respect {PRONOUN\/s_c0\/poss} leader, but if lead_name ever was so cruel, then s_c0 would have no issue rebelling."
+                    "s_c0 scoffs. Couldn't the she-cat have killed her evil leader, rather than being killed? {PRONOUN/s_c0/subject/CAP} might respect {PRONOUN/s_c0/poss} leader, but if lead_name ever was so cruel, then s_c0 would have no issue rebelling."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1590,7 +1614,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "cat_from gained a lot of respect for cat_to after hearing {PRONOUN\/cat_to\/subject} wouldn't hesitate to rebel against an unjust leader."
+                            "cats_from": "cat_from gained a lot of respect for cat_to after hearing {PRONOUN/cat_to/subject} wouldn't hesitate to rebel against an unjust leader."
                         }
                     }
                 ]
@@ -1598,7 +1622,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Despite s_c0's protests about wasting time on a nursery tale, {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/find\/finds} {PRONOUN\/s_c0\/self} enjoying listening to p_l telling the story. Perhaps it isn't so bad to listen to a fable once in a while."
+                    "Despite s_c0's protests about wasting time on a nursery tale, {PRONOUN/s_c0/subject} {VERB/s_c0/find/finds} {PRONOUN/s_c0/self} enjoying listening to p_l telling the story. Perhaps it isn't so bad to listen to a fable once in a while."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1649,7 +1673,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "Even though cat_from initially protested the idea of hearing a story on patrol, {PRONOUN\/cat_from\/subject} enjoyed how cat_to told it."
+                            "cats_from": "Even though cat_from initially protested the idea of hearing a story on patrol, {PRONOUN/cat_from/subject} enjoyed how cat_to told it."
                         }
                     },
                     {
@@ -1665,7 +1689,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "cat_from appreciated that cat_to lightened up and was willing to listen to {PRONOUN\/cat_from\/poss} story on patrol."
+                            "cats_from": "cat_from appreciated that cat_to lightened up and was willing to listen to {PRONOUN/cat_from/poss} story on patrol."
                         }
                     }
                 ]
@@ -1673,7 +1697,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 promises that if c_n ever has a terrible leader while <i>{PRONOUN\/s_c0\/subject}{VERB\/s_c0\/'re\/'s}<\/i> alive, {PRONOUN\/s_c0\/subject}'ll make sure to save the Clan. Yes, that she-cat gave them the sunset with her death \u2014 but her Clan's evil leader lived on."
+                    "s_c0 promises that if c_n ever has a terrible leader while <i>{PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s}</i> alive, {PRONOUN/s_c0/subject}'ll make sure to save the Clan. Yes, that she-cat gave them the sunset with her death \u2014 but her Clan's evil leader lived on."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1728,7 +1752,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "cat_from gained a lot of respect for cat_to after hearing {PRONOUN\/cat_to\/subject} wouldn't hesitate to rebel against an unjust leader."
+                            "cats_from": "cat_from gained a lot of respect for cat_to after hearing {PRONOUN/cat_to/subject} wouldn't hesitate to rebel against an unjust leader."
                         }
                     }
                 ]
@@ -1736,7 +1760,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 wonders, if that was how they got sunset... then how did they get sunrise...? Perhaps {PRONOUN\/s_c0\/subject}'ll ask p_l later back at camp."
+                    "s_c0 wonders, if that was how they got sunset... then how did they get sunrise...? Perhaps {PRONOUN/s_c0/subject}'ll ask p_l later back at camp."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1788,7 +1812,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from was flattered that cat_to took such an interest in {PRONOUN\/cat_from\/poss} stories."
+                            "cats_from": "cat_from was flattered that cat_to took such an interest in {PRONOUN/cat_from/poss} stories."
                         }
                     }
                 ]
@@ -1798,7 +1822,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As p_l starts the story, r_c0 continues practicing {PRONOUN\/r_c0\/poss} moves and then pounces straight into a tree trunk. Whoops. Nothing quite like a visit to the medicine cat den to disrupt the flow of a story."
+                    "As p_l starts the story, r_c0 continues practicing {PRONOUN/r_c0/poss} moves and then pounces straight into a tree trunk. Whoops. Nothing quite like a visit to the medicine cat den to disrupt the flow of a story."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -1854,7 +1878,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from was disappointed that cat_to ruined {PRONOUN\/cat_from\/poss} story by yawning and walking off in the middle of it."
+                            "cats_from": "cat_from was disappointed that cat_to ruined {PRONOUN/cat_from/poss} story by yawning and walking off in the middle of it."
                         }
                     }
                 ]
@@ -1862,7 +1886,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 says that {PRONOUN\/s_c0\/subject}{VERB\/s_c0\/'re\/'s} not interested in nursery tales and would rather sink {PRONOUN\/s_c0\/poss} teeth into some good prey. p_l twitches {PRONOUN\/p_l\/poss} whiskers skeptically but lets {PRONOUN\/s_c0\/object} go without comment."
+                    "s_c0 says that {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} not interested in nursery tales and would rather sink {PRONOUN/s_c0/poss} teeth into some good prey. p_l twitches {PRONOUN/p_l/poss} whiskers skeptically but lets {PRONOUN/s_c0/object} go without comment."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1899,7 +1923,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from was disappointed that cat_to didn't want to hear {PRONOUN\/cat_from\/poss} story."
+                            "cats_from": "cat_from was disappointed that cat_to didn't want to hear {PRONOUN/cat_from/poss} story."
                         }
                     }
                 ]
@@ -1907,7 +1931,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 cringes, unable to bear hearing such a sad tale. p_l wraps a tail around {PRONOUN\/s_c0\/object} and smoothly turns the conversation to happier things."
+                    "s_c0 cringes, unable to bear hearing such a sad tale. p_l wraps a tail around {PRONOUN/s_c0/object} and smoothly turns the conversation to happier things."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1949,7 +1973,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 finds this particular tale depressing and pads away to train by {PRONOUN\/s_c0\/self}."
+                    "s_c0 finds this particular tale depressing and pads away to train by {PRONOUN/s_c0/self}."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1981,7 +2005,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from was disappointed that cat_to left while {PRONOUN\/cat_from\/subject} {VERB\/cat_from\/were\/was} telling a story."
+                            "cats_from": "cat_from was disappointed that cat_to left while {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} telling a story."
                         }
                     }
                 ]
@@ -1989,7 +2013,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Right as p_l gets to the good part, s_c0 interrupts, excitedly describing the ending {PRONOUN\/s_c0\/self}. p_l feels quite put out."
+                    "Right as p_l gets to the good part, s_c0 interrupts, excitedly describing the ending {PRONOUN/s_c0/self}. p_l feels quite put out."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -2023,7 +2047,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from was annoyed that cat_to interrupted to finish {PRONOUN\/cat_from\/poss} story for {PRONOUN\/cat_from\/object}."
+                            "cats_from": "cat_from was annoyed that cat_to interrupted to finish {PRONOUN/cat_from/poss} story for {PRONOUN/cat_from/object}."
                         }
                     },
                     {
@@ -2039,7 +2063,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from loved cat_to's story so much that {PRONOUN\/cat_from\/subject} couldn't help filling in the ending."
+                            "cats_from": "cat_from loved cat_to's story so much that {PRONOUN/cat_from/subject} couldn't help filling in the ending."
                         }
                     }
                 ]

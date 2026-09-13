@@ -12,6 +12,7 @@ from scripts.clan_resources.point_of_interest import (
     get_poi_names_set,
     get_poi_tags_set,
     get_poi_categories_set,
+    get_poi_from_constraints,
 )
 from scripts.cat_relations.relationship import Relationship, create_one_relationship
 from scripts.config import get_config
@@ -274,19 +275,11 @@ def event_for_poi(pois: dict[str, list]) -> bool:
     if not get_poi_names_set():
         return False  # we know they're requesting something
 
-    has_matching_name, has_matching_tags, has_matching_categories = False, False, False
-    if "name" in pois:
-        has_matching_name = not set(pois.get("name", [])).isdisjoint(
-            get_poi_names_set()
+    return bool(
+        get_poi_from_constraints(
+            pois.get("name"), pois.get("tags"), pois.get("category")
         )
-
-    if "tags" in pois:
-        has_matching_tags = not set(pois.get("tags", [])).isdisjoint(get_poi_tags_set())
-
-    if "category" in pois:
-        has_matching_categories = pois["category"] in get_poi_categories_set()
-
-    return has_matching_name or has_matching_tags or has_matching_categories
+    )
 
 
 def event_for_reputation(required_rep: list) -> bool:

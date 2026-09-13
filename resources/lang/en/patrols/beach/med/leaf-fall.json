@@ -35,8 +35,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_med_catlookingup_Mc",
-        "intro_text": "Dark clouds gather on the seaward horizon. p_l walks through the sand, weaving from dune to dune, eager to be back before the storm hits. But not without ragwort.",
-        "decline_text": "Actually, ragwort can wait, because the storm won't. p_l heads directly back to camp.",
+        "intro_strings": [
+            "Dark clouds gather on the seaward horizon. p_l walks through the sand, weaving from dune to dune, eager to be back before the storm hits. But not without ragwort."
+        ],
+        "decline_strings": [
+            "Actually, ragwort can wait, because the storm won't. p_l heads directly back to camp."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -108,8 +112,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_med_talking_ApMc",
-        "intro_text": "Dark clouds gather on the seaward horizon. p_l walks through the sand, weaving from dune to dune, eager to be back before the storm hits. r_c1 tails {PRONOUN/p_l/object} attentively, and p_l quizzes {PRONOUN/r_c1/object} on the identification and notable properties of ragwort.",
-        "decline_text": "Actually, ragwort can wait, because the storm won't. p_l leads r_c1 back to camp.",
+        "intro_strings": [
+            "Dark clouds gather on the seaward horizon. p_l walks through the sand, weaving from dune to dune, eager to be back before the storm hits. r_c1 tails {PRONOUN/p_l/object} attentively, and p_l quizzes {PRONOUN/r_c1/object} on the identification and notable properties of ragwort."
+        ],
+        "decline_strings": [
+            "Actually, ragwort can wait, because the storm won't. p_l leads r_c1 back to camp."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -211,8 +219,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_bord_flashflood_Wr",
-        "intro_text": "Dark clouds gather on the seaward horizon. p_l walks through the sand, weaving from dune to dune, eager to be back before the storm hits. But not without ragwort. {PRONOUN/p_l/poss/CAP} warrior companion pads along behind, warily glancing at the sky and p_l in turns.",
-        "decline_text": "Actually, ragwort can wait, because the storm won't. p_l and r_c0 turn back to camp.",
+        "intro_strings": [
+            "Dark clouds gather on the seaward horizon. p_l walks through the sand, weaving from dune to dune, eager to be back before the storm hits. But not without ragwort. {PRONOUN/p_l/poss/CAP} warrior companion pads along behind, warily glancing at the sky and p_l in turns."
+        ],
+        "decline_strings": [
+            "Actually, ragwort can wait, because the storm won't. p_l and r_c0 turn back to camp."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

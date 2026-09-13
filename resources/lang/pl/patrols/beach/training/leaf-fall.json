@@ -18,9 +18,13 @@
             ]
         },
         "chance_of_success": 30,
-        "patrol_art": "cat_sprites\/bch_train_lore1_Wr",
-        "intro_text": "p_l takes the patrol down to the beach to train, but the patrol pauses when they encounter something odd.",
-        "decline_text": "It's best to go back to camp and ignore the oddities on the beach.",
+        "patrol_art": "cat_sprites/bch_train_lore1_Wr",
+        "intro_strings": [
+            "p_l takes the patrol down to the beach to train, but the patrol pauses when they encounter something odd."
+        ],
+        "decline_strings": [
+            "It's best to go back to camp and ignore the oddities on the beach."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -83,7 +87,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 laughs! The ginger cat statues are Twoleg objects; {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/spin\/spins} a tale almost unbelievable, but {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/swear\/swears} it's true! The ginger cat statues used to live on something called a \"boat.\""
+                    "s_c0 laughs! The ginger cat statues are Twoleg objects; {PRONOUN/s_c0/subject} {VERB/s_c0/spin/spins} a tale almost unbelievable, but {PRONOUN/s_c0/subject} {VERB/s_c0/swear/swears} it's true! The ginger cat statues used to live on something called a \"boat.\""
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -163,9 +167,9 @@
         "fail_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_running_Wr",
+                "outcome_art": "cat_sprites/gen_running_Wr",
                 "strings": [
-                    "There is no way r_c0 is staying around here. {PRONOUN\/r_c0\/subject\/CAP} {VERB\/r_c0\/tear\/tears} off back to camp at the sight of a broken ginger cat statue."
+                    "There is no way r_c0 is staying around here. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/tear/tears} off back to camp at the sight of a broken ginger cat statue."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -186,7 +190,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from wasn't impressed that cat_to got so freaked out by a ginger cat statue {PRONOUN\/cat_to\/subject} ran back to camp and spoiled a training patrol."
+                            "cats_from": "cat_from wasn't impressed that cat_to got so freaked out by a ginger cat statue {PRONOUN/cat_to/subject} ran back to camp and spoiled a training patrol."
                         }
                     }
                 ]
@@ -250,22 +254,26 @@
             ]
         },
         "chance_of_success": 30,
-        "patrol_art": "cat_sprites\/gen_train_solo_Wr",
-        "intro_text": "p_l decides to go down to the beach by {PRONOUN\/p_l\/self}. There seems to be something strange here...",
-        "decline_text": "It's best to go back to camp and ignore the oddities on the beach.",
+        "patrol_art": "cat_sprites/gen_train_solo_Wr",
+        "intro_strings": [
+            "p_l decides to go down to the beach by {PRONOUN/p_l/self}. There seems to be something strange here..."
+        ],
+        "decline_strings": [
+            "It's best to go back to camp and ignore the oddities on the beach."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_running_Wr",
+                "outcome_art": "cat_sprites/gen_running_Wr",
                 "strings": [
-                    "p_l is shocked to find green and black lizards scattered around the beach. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/freeze\/freezes}, trying not to get bit. When nothing moves, {PRONOUN\/p_l\/subject} {VERB\/p_l\/head\/heads} back to camp unscathed."
+                    "p_l is shocked to find green and black lizards scattered around the beach. {PRONOUN/p_l/subject/CAP} {VERB/p_l/freeze/freezes}, trying not to get bit. When nothing moves, {PRONOUN/p_l/subject} {VERB/p_l/head/heads} back to camp unscathed."
                 ],
                 "exp_gained": 5
             },
             {
                 "frequency": 1,
                 "strings": [
-                    "Green and black lizards are everywhere! p_l freezes up, only to notice that they're not moving and some of them stick straight up. They're not real! {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/take\/takes} a fake lizard home to show the others."
+                    "Green and black lizards are everywhere! p_l freezes up, only to notice that they're not moving and some of them stick straight up. They're not real! {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} a fake lizard home to show the others."
                 ],
                 "exp_gained": 5
             },
@@ -315,7 +323,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 remembers seeing these green and black lizards being shown to {PRONOUN\/s_c0\/object} by a kittypet before, who called them \"lego dragons.\" s_c0 wonders if Legodragon would be a proper name for a warrior."
+                    "s_c0 remembers seeing these green and black lizards being shown to {PRONOUN/s_c0/object} by a kittypet before, who called them \"lego dragons.\" s_c0 wonders if Legodragon would be a proper name for a warrior."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -356,9 +364,9 @@
         "fail_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_running_Wr",
+                "outcome_art": "cat_sprites/gen_running_Wr",
                 "strings": [
-                    "It's a beach full of lizards! p_l tears back to camp before {PRONOUN\/p_l\/subject} can get bitten."
+                    "It's a beach full of lizards! p_l tears back to camp before {PRONOUN/p_l/subject} can get bitten."
                 ],
                 "exp_gained": 0
             }
@@ -405,15 +413,19 @@
             }
         },
         "chance_of_success": 60,
-        "patrol_art": "cat_sprites\/bch_train_session1_ApWr",
-        "intro_text": "The large patrol practices holding another cat's head above the water, using the calm (but <i>very<\/i> chilly) waters of a rockpool. r_c1 shivers, despite being huddled with p_l. Why couldn't {PRONOUN\/r_c1\/subject} practice this on a hot sunny day?",
-        "decline_text": "Taking a break turns into ending the patrol early.",
+        "patrol_art": "cat_sprites/bch_train_session1_ApWr",
+        "intro_strings": [
+            "The large patrol practices holding another cat's head above the water, using the calm (but <i>very</i> chilly) waters of a rockpool. r_c1 shivers, despite being huddled with p_l. Why couldn't {PRONOUN/r_c1/subject} practice this on a hot sunny day?"
+        ],
+        "decline_strings": [
+            "Taking a break turns into ending the patrol early."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_train_soggykittyhappy_Ap",
+                "outcome_art": "cat_sprites/gen_train_soggykittyhappy_Ap",
                 "strings": [
-                    "s_c0 sits on the windward side of r_c1, trying to give {PRONOUN\/r_c1\/object} a little more shelter. It's understandable, {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/sympathize\/sympathizes}, but r_c1 can't rely on cats in distress only showing up when the sea is inviting. The sympathy (and a little physical warmth) puts cheer back into r_c1, and {PRONOUN\/r_c1\/subject} {VERB\/r_c1\/take\/takes} {PRONOUN\/r_c1\/poss} next turn at lifeguarding practice with enthusiasm."
+                    "s_c0 sits on the windward side of r_c1, trying to give {PRONOUN/r_c1/object} a little more shelter. It's understandable, {PRONOUN/s_c0/subject} {VERB/s_c0/sympathize/sympathizes}, but r_c1 can't rely on cats in distress only showing up when the sea is inviting. The sympathy (and a little physical warmth) puts cheer back into r_c1, and {PRONOUN/r_c1/subject} {VERB/r_c1/take/takes} {PRONOUN/r_c1/poss} next turn at lifeguarding practice with enthusiasm."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -472,9 +484,9 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_train_soggykittyhappy_Ap",
+                "outcome_art": "cat_sprites/gen_train_soggykittyhappy_Ap",
                 "strings": [
-                    "s_c0 nods. Lifeguarding isn't easy, even in practice. But {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/offer\/offers} up the story of a kitten saved by a c_n warrior who had the strength and will to keep the little ball of fur above the waves under nearly impossible circumstances. It makes r_c1 sit up straight, proud to be carrying on that tradition."
+                    "s_c0 nods. Lifeguarding isn't easy, even in practice. But {PRONOUN/s_c0/subject} {VERB/s_c0/offer/offers} up the story of a kitten saved by a c_n warrior who had the strength and will to keep the little ball of fur above the waves under nearly impossible circumstances. It makes r_c1 sit up straight, proud to be carrying on that tradition."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -533,9 +545,9 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_bord_story_WrWrWr",
+                "outcome_art": "cat_sprites/gen_bord_story_WrWrWr",
                 "strings": [
-                    "Doesn't r_c1 want to be an ocean dancer, one of the many cats in c_n's ancestry who managed to master the waves, streaking in and out to save lives that have been lost to the ocean's jaws, s_c0 asks? And well, when {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/put\/puts} it like <i>that<\/i>... r_c1's motivation returns."
+                    "Doesn't r_c1 want to be an ocean dancer, one of the many cats in c_n's ancestry who managed to master the waves, streaking in and out to save lives that have been lost to the ocean's jaws, s_c0 asks? And well, when {PRONOUN/s_c0/subject} {VERB/s_c0/put/puts} it like <i>that</i>... r_c1's motivation returns."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -596,9 +608,9 @@
         "fail_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_train_sunny_WrWr",
+                "outcome_art": "cat_sprites/gen_train_sunny_WrWr",
                 "strings": [
-                    "Learning the art of water rescue is important, of course, but safety comes first. r_c1 has {PRONOUN\/r_c1\/poss} pelt licked dry and warm again, and the patrol is called off early."
+                    "Learning the art of water rescue is important, of course, but safety comes first. r_c1 has {PRONOUN/r_c1/poss} pelt licked dry and warm again, and the patrol is called off early."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -623,16 +635,16 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "cat_from appreciated that cat_to was willing to cut a training session short to warm {PRONOUN\/cat_from\/object} up."
+                            "cats_from": "cat_from appreciated that cat_to was willing to cut a training session short to warm {PRONOUN/cat_from/object} up."
                         }
                     }
                 ]
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_train_soggykittymad_Ap",
+                "outcome_art": "cat_sprites/gen_train_soggykittymad_Ap",
                 "strings": [
-                    "r_c1 is right \u2014 this is far, far too cold of a pool to train in, and {PRONOUN\/r_c1\/subject}{VERB\/r_c1\/'re\/'s} shivering too badly to continue. Time to go home. p_l apologizes for bringing the patrol out here."
+                    "r_c1 is right \u2014 this is far, far too cold of a pool to train in, and {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} shivering too badly to continue. Time to go home. p_l apologizes for bringing the patrol out here."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -669,8 +681,8 @@
                         "condition": [
                             "shivering"
                         ],
-                        "scar_history": "m_c was scarred from the bite of the cold rockpool {PRONOUN\/m_c\/subject} swam in as an apprentice.",
-                        "death_history": "Falling into a cold rockpool gave m_c problems that eventually resulted in {PRONOUN\/m_c\/poss} death."
+                        "scar_history": "m_c was scarred from the bite of the cold rockpool {PRONOUN/m_c/subject} swam in as an apprentice.",
+                        "death_history": "Falling into a cold rockpool gave m_c problems that eventually resulted in {PRONOUN/m_c/poss} death."
                     }
                 ]
             }

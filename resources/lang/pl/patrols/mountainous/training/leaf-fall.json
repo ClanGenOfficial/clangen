@@ -33,14 +33,18 @@
             }
         },
         "chance_of_success": 60,
-        "patrol_art": "backgrounds\/mtn_valleystream",
-        "intro_text": "p_l brings r_c1 down the mountain, to where a little stream turns into a tiny cold bog.",
-        "decline_text": "Thinking better of it, the cats try to hunt instead.",
+        "patrol_art": "backgrounds/mtn_valleystream",
+        "intro_strings": [
+            "p_l brings r_c1 down the mountain, to where a little stream turns into a tiny cold bog."
+        ],
+        "decline_strings": [
+            "Thinking better of it, the cats try to hunt instead."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 startles, hearing a cat cry out! {PRONOUN\/r_c1\/subject\/CAP} {VERB\/r_c1\/race\/races} over the ridge, looking for the caller, as behind {PRONOUN\/r_c1\/object} p_l nearly falls over laughing. It's a bird, {PRONOUN\/p_l\/subject} {VERB\/p_l\/explain\/explains}. The spotted towhee has fooled many a young cat, r_c1 doesn't need to feel bad, it's just something to learn from."
+                    "r_c1 startles, hearing a cat cry out! {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/race/races} over the ridge, looking for the caller, as behind {PRONOUN/r_c1/object} p_l nearly falls over laughing. It's a bird, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}. The spotted towhee has fooled many a young cat, r_c1 doesn't need to feel bad, it's just something to learn from."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -90,7 +94,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "As they approach the bog, r_c1 hears the yowl of a cat. An intruder! {PRONOUN\/r_c1\/subject\/CAP} {VERB\/r_c1\/go\/goes} haring off, as p_l sighs and settles down to wait. When {PRONOUN\/r_c1\/subject} eventually {VERB\/r_c1\/return\/returns}, p_l teaches {PRONOUN\/r_c1\/object} about towhee birds, who can call like a cat."
+                    "As they approach the bog, r_c1 hears the yowl of a cat. An intruder! {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/go/goes} haring off, as p_l sighs and settles down to wait. When {PRONOUN/r_c1/subject} eventually {VERB/r_c1/return/returns}, p_l teaches {PRONOUN/r_c1/object} about towhee birds, who can call like a cat."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -264,7 +268,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 refuses to believe that the cat cry {PRONOUN\/r_c1\/subject} {VERB\/r_c1\/hear\/hears} from the bog comes from a little towhee bird and argues with p_l all the way back to camp."
+                    "r_c1 refuses to believe that the cat cry {PRONOUN/r_c1/subject} {VERB/r_c1/hear/hears} from the bog comes from a little towhee bird and argues with p_l all the way back to camp."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -322,14 +326,18 @@
             ]
         },
         "chance_of_success": 40,
-        "patrol_art": "backgrounds\/mtn_valleystream",
-        "intro_text": "p_l brings them down the mountain, to where a little stream turns into a tiny cold bog.",
-        "decline_text": "Thinking better of it, the cats try to hunt instead.",
+        "patrol_art": "backgrounds/mtn_valleystream",
+        "intro_strings": [
+            "p_l brings them down the mountain, to where a little stream turns into a tiny cold bog."
+        ],
+        "decline_strings": [
+            "Thinking better of it, the cats try to hunt instead."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 startles, hearing a cat cry out! r_c2 races over the ridge, looking for the caller, as behind them p_l nearly falls over laughing. It's a bird, {PRONOUN\/p_l\/subject} {VERB\/p_l\/explain\/explains}. The spotted towhee has fooled many a young cat. They don't need to feel bad, it's just something to learn from."
+                    "r_c1 startles, hearing a cat cry out! r_c2 races over the ridge, looking for the caller, as behind them p_l nearly falls over laughing. It's a bird, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}. The spotted towhee has fooled many a young cat. They don't need to feel bad, it's just something to learn from."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -384,7 +392,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "As they approach the bog, r_c1 hears the yowl of a cat. An intruder! {PRONOUN\/r_c1\/subject\/CAP} {VERB\/r_c1\/go\/goes} haring off with r_c2, shrieking with fury, as p_l sighs and settles down to wait. When they eventually return, p_l teaches them about towhee birds, who can call like a cat."
+                    "As they approach the bog, r_c1 hears the yowl of a cat. An intruder! {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/go/goes} haring off with r_c2, shrieking with fury, as p_l sighs and settles down to wait. When they eventually return, p_l teaches them about towhee birds, who can call like a cat."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -553,7 +561,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 refuses to believe that the cat cry {PRONOUN\/r_c1\/subject} {VERB\/r_c1\/hear\/hears} from the bog comes from a little towhee bird and argues with p_l and r_c2 all the way back to camp."
+                    "r_c1 refuses to believe that the cat cry {PRONOUN/r_c1/subject} {VERB/r_c1/hear/hears} from the bog comes from a little towhee bird and argues with p_l and r_c2 all the way back to camp."
                 ],
                 "involved_cats": {
                     "r_c1": {

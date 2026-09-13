@@ -27,8 +27,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "backgrounds/pln_shortswim",
-        "intro_text": "p_l looks at the small watering hole {PRONOUN/p_l/subject} {VERB/p_l/pass/passes} by on the way to mark the border and {VERB/p_l/debate/debates} if {PRONOUN/p_l/subject} should stop for a quick swim to cool off.",
-        "decline_text": "p_l decides to continue with the patrol instead.",
+        "intro_strings": [
+            "p_l looks at the small watering hole {PRONOUN/p_l/subject} {VERB/p_l/pass/passes} by on the way to mark the border and {VERB/p_l/debate/debates} if {PRONOUN/p_l/subject} should stop for a quick swim to cool off."
+        ],
+        "decline_strings": [
+            "p_l decides to continue with the patrol instead."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -104,8 +108,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_meadow_WrWr",
-        "intro_text": "Here on the plains, the reaches of c_n's territory is vast, particularly in the direction p_l and {PRONOUN/p_l/poss} patrol are heading, where there is endless grass but no permanent water sources. The greenleaf sun beats down strongly.",
-        "decline_text": "The patrol is interrupted by a hunting patrol that needs help carrying prey back to camp — border marking will wait til later.",
+        "intro_strings": [
+            "Here on the plains, the reaches of c_n's territory is vast, particularly in the direction p_l and {PRONOUN/p_l/poss} patrol are heading, where there is endless grass but no permanent water sources. The greenleaf sun beats down strongly."
+        ],
+        "decline_strings": [
+            "The patrol is interrupted by a hunting patrol that needs help carrying prey back to camp — border marking will wait til later."
+        ],
         "success_outcomes": [
             {
                 "frequency": 1,
@@ -452,7 +460,7 @@
                     },
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "heat stroke"
@@ -554,7 +562,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "dehydrated"
@@ -584,8 +592,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_bord_dogscent_Wr",
-        "intro_text": "Padding along the border, the cats find fresh coyote scat, steaming in the greenleaf heat. There's a yip in the distance.",
-        "decline_text": "The patrol decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.",
+        "intro_strings": [
+            "Padding along the border, the cats find fresh coyote scat, steaming in the greenleaf heat. There's a yip in the distance."
+        ],
+        "decline_strings": [
+            "The patrol decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -979,7 +991,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -989,7 +1001,7 @@
                     },
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "scrapes"
@@ -1056,7 +1068,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "minor_injury",
@@ -1240,8 +1252,12 @@
         },
         "chance_of_success": 10,
         "patrol_art": "cat_sprites/gen_bord_dogscent_Wr",
-        "intro_text": "Approaching the border, the patrol stops in their tracks. A coyote has marked over c_n's border markings — so recently that it stinks from several fox-lengths away, so recently that the canine might be still here, hiding in the tall greenleaf grass.",
-        "decline_text": "The patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp.",
+        "intro_strings": [
+            "Approaching the border, the patrol stops in their tracks. A coyote has marked over c_n's border markings — so recently that it stinks from several fox-lengths away, so recently that the canine might be still here, hiding in the tall greenleaf grass."
+        ],
+        "decline_strings": [
+            "The patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1472,7 +1488,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "scrapes"
@@ -1970,7 +1986,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -1980,7 +1996,7 @@
                     },
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "scrapes"
@@ -2046,7 +2062,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "minor_injury",
@@ -2244,8 +2260,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_hunt_funrun_ApAp",
-        "intro_text": "First r_c1 takes the lead, then r_c2, then r_c3 and r_c4 battle for it, all of them charging through the grass. The sun shines down merrily above them as they run, energetic and determined. They don't need to be warriors to do a good job patrolling the border!",
-        "decline_text": "Eventually the apprentices get tired. Whatever, they're not supposed to be out here without a warrior anyway.",
+        "intro_strings": [
+            "First r_c1 takes the lead, then r_c2, then r_c3 and r_c4 battle for it, all of them charging through the grass. The sun shines down merrily above them as they run, energetic and determined. They don't need to be warriors to do a good job patrolling the border!"
+        ],
+        "decline_strings": [
+            "Eventually the apprentices get tired. Whatever, they're not supposed to be out here without a warrior anyway."
+        ],
         "success_outcomes": [
             {
                 "frequency": 3,
@@ -2993,7 +3013,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "hot_injury"

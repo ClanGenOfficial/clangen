@@ -32,8 +32,12 @@
         },
         "chance_of_success": 65,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l decides it's a good opportunity to show r_c1 where the most commonly needed herbs are in the territory, both above and underground away from the hot sun.",
-        "decline_text": "As {PRONOUN/p_l/subject} {VERB/p_l/see/sees} r_c1's absent minded gaze, {PRONOUN/p_l/subject} {VERB/p_l/change/changes} {PRONOUN/p_l/poss} mind. Maybe another day, when r_c1 is more focused and less liable to get a heatstroke when they go to show {PRONOUN/r_c1/object} the herbs aboveground",
+        "intro_strings": [
+            "p_l decides it's a good opportunity to show r_c1 where the most commonly needed herbs are in the territory, both above and underground away from the hot sun."
+        ],
+        "decline_strings": [
+            "As {PRONOUN/p_l/subject} {VERB/p_l/see/sees} r_c1's absent minded gaze, {PRONOUN/p_l/subject} {VERB/p_l/change/changes} {PRONOUN/p_l/poss} mind. Maybe another day, when r_c1 is more focused and less liable to get a heatstroke when they go to show {PRONOUN/r_c1/object} the herbs aboveground"
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -176,8 +180,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l has been sent out into the desert to try to find some specific herbs alone.",
-        "decline_text": "Nervous and with the hot sun pounding on {PRONOUN/p_l/poss} back, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to go back to camp and try again another day, {PRONOUN/p_l/poss} tail dragging behind {PRONOUN/p_l/object}.",
+        "intro_strings": [
+            "p_l has been sent out into the desert to try to find some specific herbs alone."
+        ],
+        "decline_strings": [
+            "Nervous and with the hot sun pounding on {PRONOUN/p_l/poss} back, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to go back to camp and try again another day, {PRONOUN/p_l/poss} tail dragging behind {PRONOUN/p_l/object}."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -240,8 +248,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l, fueled by desperation and unable to leave the Clan because of the heat of greenleaf withering c_n, ingests a piece of sacred cacti hoping to trigger a vision.",
-        "decline_text": "At that exact moment a cat walks into the medicine cat den looking for p_l. {PRONOUN/p_l/subject/CAP} {VERB/p_l/put/puts} the piece of cacti back, having to wait for a better time.",
+        "intro_strings": [
+            "p_l, fueled by desperation and unable to leave the Clan because of the heat of greenleaf withering c_n, ingests a piece of sacred cacti hoping to trigger a vision."
+        ],
+        "decline_strings": [
+            "At that exact moment a cat walks into the medicine cat den looking for p_l. {PRONOUN/p_l/subject/CAP} {VERB/p_l/put/puts} the piece of cacti back, having to wait for a better time."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -399,8 +411,12 @@
         },
         "chance_of_success": 15,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l and r_c1 head out for lungwort, and p_l starts a lesson on the value of this rare herb for treating yellowcough.",
-        "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave. Sighing, the expedition is delayed for another time.",
+        "intro_strings": [
+            "p_l and r_c1 head out for lungwort, and p_l starts a lesson on the value of this rare herb for treating yellowcough."
+        ],
+        "decline_strings": [
+            "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave. Sighing, the expedition is delayed for another time."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -632,8 +648,12 @@
         },
         "chance_of_success": 15,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l is on a mission to find lungwort. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n stock up.",
-        "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave camp.",
+        "intro_strings": [
+            "p_l is on a mission to find lungwort. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n stock up."
+        ],
+        "decline_strings": [
+            "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave camp."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -780,8 +800,12 @@
         },
         "chance_of_success": 15,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l is on a mission to find lungwort. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n replenish their stocks of it. {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} along a warrior escort to help.",
-        "decline_text": "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave.",
+        "intro_strings": [
+            "p_l is on a mission to find lungwort. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n replenish their stocks of it. {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} along a warrior escort to help."
+        ],
+        "decline_strings": [
+            "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1096,8 +1120,12 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l goes out with a warrior escort, both for safety and for carrying capacity should {PRONOUN/p_l/subject} find anything.",
-        "decline_text": "{PRONOUN/p_l/poss/CAP} escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
+        "intro_strings": [
+            "p_l goes out with a warrior escort, both for safety and for carrying capacity should {PRONOUN/p_l/subject} find anything."
+        ],
+        "decline_strings": [
+            "{PRONOUN/p_l/poss/CAP} escort is called away on a different mission, and p_l decides to reorganize the herb store instead."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1287,8 +1315,12 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l heads out, leading a patrol of medicine cats to gather herbs together.",
-        "decline_text": "...And they're called back almost immediately, as one of the elders starts hacking up something.",
+        "intro_strings": [
+            "p_l heads out, leading a patrol of medicine cats to gather herbs together."
+        ],
+        "decline_strings": [
+            "...And they're called back almost immediately, as one of the elders starts hacking up something."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1463,8 +1495,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l and r_c0 take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
-        "decline_text": "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh.",
+        "intro_strings": [
+            "p_l and r_c0 take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!"
+        ],
+        "decline_strings": [
+            "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

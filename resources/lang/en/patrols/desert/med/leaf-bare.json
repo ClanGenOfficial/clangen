@@ -26,8 +26,12 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l and r_c0 take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
-        "decline_text": "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh.",
+        "intro_strings": [
+            "p_l and r_c0 take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!"
+        ],
+        "decline_strings": [
+            "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

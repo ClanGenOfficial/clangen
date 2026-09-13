@@ -29,6 +29,10 @@
             "one": "black",
             "many": "black"
         },
+        "BLOSSOM": {
+            "one": "cream",
+            "many": "cream"
+        },
         "CREAM": {
             "one": "cream",
             "many": "cream"
@@ -76,6 +80,10 @@
         "CHOCOLATE": {
             "one": "brown",
             "many": "dark brown"
+        },
+        "RUST": {
+            "one": "brown",
+            "many": "rusted brown"
         },
         "SingleColour": "single color",
         "SingleColour_long": "%{color}",

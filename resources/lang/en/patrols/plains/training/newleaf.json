@@ -34,8 +34,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_meadow_WrWr",
-        "intro_text": "As the training patrol pads out, p_l gives in to the impulse to dig {PRONOUN/p_l/poss} claws into the soil, feeling the sprouting grass tearing under {PRONOUN/p_l/poss} pads. There's something special about this time of year.",
-        "decline_text": "Still, that's no excuse to goof off. Time to focus on {PRONOUN/p_l/poss} work.",
+        "intro_strings": [
+            "As the training patrol pads out, p_l gives in to the impulse to dig {PRONOUN/p_l/poss} claws into the soil, feeling the sprouting grass tearing under {PRONOUN/p_l/poss} pads. There's something special about this time of year."
+        ],
+        "decline_strings": [
+            "Still, that's no excuse to goof off. Time to focus on {PRONOUN/p_l/poss} work."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

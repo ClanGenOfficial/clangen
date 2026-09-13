@@ -2660,7 +2660,7 @@
     },
     {
         "interaction_type": "appease",
-        "event_text": "During the Gathering, o_c_n's leader goes on and on about c_n wronging them. {PRONOUN\/m_c\/poss\/CAP} temper slips through {PRONOUN\/m_c\/poss} claws, and m_c snaps at o_c_n's leader to just shut their trap \u2014 every cat knows they're talking a load of fox-dung. Far from shutting their trap, o_c_n's leader only yowls louder.",
+        "event_text": "During the Gathering, o_c_n's leader goes on and on about c_n wronging them. {PRONOUN\/m_c\/poss\/CAP} temper slips through {PRONOUN\/m_c\/poss} claws, and m_c snaps at o_c_n's leader to just shut their trap — every cat knows they're talking a load of fox-dung. Far from shutting their trap, o_c_n's leader only yowls louder.",
         "rel_change": -3,
         "m_c": {
             "trait": [

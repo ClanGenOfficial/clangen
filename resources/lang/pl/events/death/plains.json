@@ -11,7 +11,7 @@
             "all_lives"
         ],
         "frequency": 1,
-        "event_text": "r_c dares m_c to leap across the Silverpath in front of a Thundersnake near camp and is horrified when {PRONOUN\/m_c\/subject} {VERB\/m_c\/stumble\/stumbles} and {VERB\/m_c\/are\/is} struck.",
+        "event_text": "r_c dares m_c to leap across the Silverpath in front of a Thundersnake near camp and is horrified when {PRONOUN/m_c/subject} {VERB/m_c/stumble/stumbles} and {VERB/m_c/are/is} struck.",
         "m_c": {
             "age": [
                 "-newborn",
@@ -64,7 +64,7 @@
         ],
         "tags": [],
         "frequency": 2,
-        "event_text": "Driven to desperation by the greenleaf heat, m_c drinks from a foul-tasting puddle of water. The Clan finds {PRONOUN\/m_c\/object} dead in {PRONOUN\/m_c\/poss} nest hours later.",
+        "event_text": "Driven to desperation by the greenleaf heat, m_c drinks from a foul-tasting puddle of water. The Clan finds {PRONOUN/m_c/object} dead in {PRONOUN/m_c/poss} nest hours later.",
         "m_c": {
             "age": [
                 "-kitten"
@@ -89,7 +89,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "m_c wanders to the nearby Silverpath. Before anyone can guide {PRONOUN\/m_c\/object} home, {PRONOUN\/m_c\/subject} {VERB\/m_c\/are\/is} struck and killed by a Thundersnake.",
+        "event_text": "m_c wanders to the nearby Silverpath. Before anyone can guide {PRONOUN/m_c/object} home, {PRONOUN/m_c/subject} {VERB/m_c/are/is} struck and killed by a Thundersnake.",
         "m_c": {
             "status": [
                 "kitten",

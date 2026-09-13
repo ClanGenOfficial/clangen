@@ -16,12 +16,16 @@
         },
         "chance_of_success": 20,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!",
-        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
+        "intro_strings": [
+            "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!"
+        ],
+        "decline_strings": [
+            "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_bord_roguerunaway_RgRg",
+                "outcome_art": "cat_sprites/gen_bord_roguerunaway_RgRg",
                 "strings": [
                     "The patrol descends into battle without a second thought, easily driving the rogues away as they use their knowledge of the rocky terrain to their advantage."
                 ],
@@ -29,9 +33,9 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_bord_roguerunaway_RgRg",
+                "outcome_art": "cat_sprites/gen_bord_roguerunaway_RgRg",
                 "strings": [
-                    "s_c0 immediately leaps to protect {PRONOUN\/s_c0\/poss} Clanmates. {PRONOUN\/s_c0\/poss\/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run."
+                    "s_c0 immediately leaps to protect {PRONOUN/s_c0/poss} Clanmates. {PRONOUN/s_c0/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -49,9 +53,9 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_bord_roguerunaway_RgRg",
+                "outcome_art": "cat_sprites/gen_bord_roguerunaway_RgRg",
                 "strings": [
-                    "s_c0 revels in the battle, leaping into the fray with {PRONOUN\/s_c0\/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol."
+                    "s_c0 revels in the battle, leaping into the fray with {PRONOUN/s_c0/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -71,7 +75,7 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_bord_roguerunaway_RgRg",
+                "outcome_art": "cat_sprites/gen_bord_roguerunaway_RgRg",
                 "strings": [
                     "The rogues posture and jeer, eventually provoking a battle. The Clan cats are strong, however, and the rogues seem to be weakened by hunger. The patrol easily drives the intruders away."
                 ],
@@ -98,7 +102,7 @@
             },
             {
                 "frequency": 2,
-                "outcome_art": "cat_sprites\/gen_bord_roguerunaway_RgRg",
+                "outcome_art": "cat_sprites/gen_bord_roguerunaway_RgRg",
                 "strings": [
                     "The rogues posture and jeer, eventually provoking a battle. The Clan cats are strong, however, and experienced at using the rocky terrain to their advantage, the rogues are forced to retreat."
                 ],
@@ -125,7 +129,7 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_bord_otherclan_OwOw",
+                "outcome_art": "cat_sprites/gen_bord_otherclan_OwOw",
                 "strings": [
                     "s_c0 takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c0 informs the rogues of a prey-rich meadow outside of c_n territory."
                 ],
@@ -164,7 +168,7 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_bord_otherclan_OwOw",
+                "outcome_art": "cat_sprites/gen_bord_otherclan_OwOw",
                 "strings": [
                     "s_c0 takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c0 informs the rogues of a prey-rich meadow outside of c_n territory."
                 ],
@@ -205,9 +209,9 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_bord_roguerunaway_RgRg",
+                "outcome_art": "cat_sprites/gen_bord_roguerunaway_RgRg",
                 "strings": [
-                    "s_c0 eagerly springs into action! {PRONOUN\/s_c0\/poss\/CAP} <i>special training<\/i> speaks for itself in the way s_c0 flawlessly performs battle move after battle move. With the rest of the patrol for backup, the rogues quickly turn tail and flee from such a terrifying cat!"
+                    "s_c0 eagerly springs into action! {PRONOUN/s_c0/poss/CAP} <i>special training</i> speaks for itself in the way s_c0 flawlessly performs battle move after battle move. With the rest of the patrol for backup, the rogues quickly turn tail and flee from such a terrifying cat!"
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -261,7 +265,7 @@
         "fail_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_bord_otherclan_RgRg",
+                "outcome_art": "cat_sprites/gen_bord_otherclan_RgRg",
                 "strings": [
                     "The rogues are terrifyingly coordinated and are quick to use the patrol's shock and confusion against them. The patrol cats are picked off one by one, only a couple managing to escape the slaughter on the rocky slopes."
                 ],
@@ -269,9 +273,9 @@
                 "death": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
-                        "history": "m_c was killed when rogues ambushed {PRONOUN\/m_c\/poss} patrol."
+                        "history": "m_c was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
                     }
                 ]
             },
@@ -292,8 +296,8 @@
                         "condition": [
                             "battle_injury"
                         ],
-                        "scar_history": "m_c was badly scarred when rogues ambushed {PRONOUN\/m_c\/poss} patrol.",
-                        "death_history": "m_c died of {PRONOUN\/m_c\/poss} injuries after {PRONOUN\/m_c\/poss} patrol was ambushed by rogues."
+                        "scar_history": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+                        "death_history": "m_c died of {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/poss} patrol was ambushed by rogues."
                     }
                 ]
             }
@@ -316,20 +320,24 @@
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!",
-        "decline_text": "p_l turns tail and races away! The rogues have {PRONOUN\/p_l\/object} far outnumbered, and warning the Clan is more important than dying needlessly.",
+        "intro_strings": [
+            "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!"
+        ],
+        "decline_strings": [
+            "p_l turns tail and races away! The rogues have {PRONOUN/p_l/object} far outnumbered, and warning the Clan is more important than dying needlessly."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "Stunned for a moment, p_l is nearly caught in the teeth of the first rogue, but {PRONOUN\/p_l\/subject} {VERB\/p_l\/use\/uses} {PRONOUN\/p_l\/poss} superior knowledge of the rocky terrain to dodge and weave through the onslaught of attacks, eventually escaping the fray and pelting towards camp with yowls of warning bursting from {PRONOUN\/p_l\/poss} lungs."
+                    "Stunned for a moment, p_l is nearly caught in the teeth of the first rogue, but {PRONOUN/p_l/subject} {VERB/p_l/use/uses} {PRONOUN/p_l/poss} superior knowledge of the rocky terrain to dodge and weave through the onslaught of attacks, eventually escaping the fray and pelting towards camp with yowls of warning bursting from {PRONOUN/p_l/poss} lungs."
                 ],
                 "exp_gained": 30
             },
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 snarls at the rogues, outnumbered but not cowed. {PRONOUN\/s_c0\/subject\/CAP} {VERB\/s_c0\/throw\/throws} {PRONOUN\/s_c0\/self} at the intruders with such ferocity that the rogues are taken aback. Alarmed by the Clan cat's lack of fear and self-preservation, the rogues freeze. s_c0 sees {PRONOUN\/s_c0\/poss} opportunity to run and takes it, racing back to the camp to gather more warriors and return."
+                    "s_c0 snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/throw/throws} {PRONOUN/s_c0/self} at the intruders with such ferocity that the rogues are taken aback. Alarmed by the Clan cat's lack of fear and self-preservation, the rogues freeze. s_c0 sees {PRONOUN/s_c0/poss} opportunity to run and takes it, racing back to the camp to gather more warriors and return."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -350,7 +358,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 snarls at the rogues, outnumbered but not cowed. {PRONOUN\/s_c0\/subject\/CAP} {VERB\/s_c0\/throw\/throws} {PRONOUN\/s_c0\/self} at the intruders with such ferocity that the rogues are taken aback. Their shock only lasts a moment before they descend upon the warrior once more. Eventually, s_c0 has no choice but to escape before {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/are\/is} killed."
+                    "s_c0 snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/throw/throws} {PRONOUN/s_c0/self} at the intruders with such ferocity that the rogues are taken aback. Their shock only lasts a moment before they descend upon the warrior once more. Eventually, s_c0 has no choice but to escape before {PRONOUN/s_c0/subject} {VERB/s_c0/are/is} killed."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -371,7 +379,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The rogues greatly outnumber p_l and have no trouble killing the lone cat. {PRONOUN\/p_l\/poss\/CAP} body is discovered the next day, cold and covered in wounds."
+                    "The rogues greatly outnumber p_l and have no trouble killing the lone cat. {PRONOUN/p_l/poss/CAP} body is discovered the next day, cold and covered in wounds."
                 ],
                 "exp_gained": 0,
                 "death": [
@@ -379,7 +387,7 @@
                         "cats": [
                             "p_l"
                         ],
-                        "history": "m_c was killed when rogues ambushed {PRONOUN\/m_c\/object} while on a solo patrol."
+                        "history": "m_c was killed when rogues ambushed {PRONOUN/m_c/object} while on a solo patrol."
                     }
                 ]
             }
@@ -402,8 +410,12 @@
         },
         "chance_of_success": 20,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues strides confidently out from behind a tumble of rocks, yowling as they confront the Clan cats!",
-        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
+        "intro_strings": [
+            "As the patrol is marking the border lines, a gang of rogues strides confidently out from behind a tumble of rocks, yowling as they confront the Clan cats!"
+        ],
+        "decline_strings": [
+            "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -539,7 +551,7 @@
         "fail_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_bord_otherclan_RgRg",
+                "outcome_art": "cat_sprites/gen_bord_otherclan_RgRg",
                 "strings": [
                     "The rogues are terrifyingly coordinated and use the patrol's momentary surprise to their advantage. The patrol cats are picked off one by one, and only a couple manage to escape the slaughter."
                 ],
@@ -547,15 +559,15 @@
                 "death": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
-                        "history": "m_c was killed when rogues attacked {PRONOUN\/m_c\/poss} patrol."
+                        "history": "m_c was killed when rogues attacked {PRONOUN/m_c/poss} patrol."
                     }
                 ]
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_bord_otherclan_RgRg",
+                "outcome_art": "cat_sprites/gen_bord_otherclan_RgRg",
                 "strings": [
                     "The rogues posture and jeer, eventually provoking a battle. They prove to be strong fighters, and the patrol is forced to retreat, r_c0 badly injured."
                 ],
@@ -590,8 +602,8 @@
                         "condition": [
                             "battle_injury"
                         ],
-                        "scar_history": "m_c was badly scarred when rogues attacked {PRONOUN\/m_c\/poss} patrol.",
-                        "death_history": "m_c died of {PRONOUN\/m_c\/poss} injuries after {PRONOUN\/m_c\/poss} patrol was attacked by rogues."
+                        "scar_history": "m_c was badly scarred when rogues attacked {PRONOUN/m_c/poss} patrol.",
+                        "death_history": "m_c died of {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/poss} patrol was attacked by rogues."
                     }
                 ]
             }
@@ -599,7 +611,7 @@
         "antag_success_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_bord_roguerunaway_RgRg",
+                "outcome_art": "cat_sprites/gen_bord_roguerunaway_RgRg",
                 "strings": [
                     "The patrol descends into battle without a second thought, eventually driving the rogues away."
                 ],
@@ -609,7 +621,7 @@
         "antag_fail_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_bord_otherclan_RgRg",
+                "outcome_art": "cat_sprites/gen_bord_otherclan_RgRg",
                 "strings": [
                     "The patrol descends into battle without a second thought, but the rogues are stronger than expected, and eventually the patrol is forced to retreat."
                 ],
@@ -634,22 +646,26 @@
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!",
-        "decline_text": "p_l turns tail and races away! The rogues have {PRONOUN\/p_l\/object} far outnumbered, warning the Clan is more important than dying needlessly.",
+        "intro_strings": [
+            "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!"
+        ],
+        "decline_strings": [
+            "p_l turns tail and races away! The rogues have {PRONOUN/p_l/object} far outnumbered, warning the Clan is more important than dying needlessly."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_hunt_funrun_Wr",
+                "outcome_art": "cat_sprites/gen_hunt_funrun_Wr",
                 "strings": [
-                    "Stunned for a moment, p_l is nearly caught in the teeth of the first rogue, but {PRONOUN\/p_l\/subject} {VERB\/p_l\/use\/uses} {PRONOUN\/p_l\/poss} superior knowledge of the rocky terrain to dodge and weave through the onslaught of attacks, eventually escaping the fray and pelting towards camp with yowls of warning bursting from {PRONOUN\/p_l\/poss} lungs."
+                    "Stunned for a moment, p_l is nearly caught in the teeth of the first rogue, but {PRONOUN/p_l/subject} {VERB/p_l/use/uses} {PRONOUN/p_l/poss} superior knowledge of the rocky terrain to dodge and weave through the onslaught of attacks, eventually escaping the fray and pelting towards camp with yowls of warning bursting from {PRONOUN/p_l/poss} lungs."
                 ],
                 "exp_gained": 30
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_hunt_funrun_Wr",
+                "outcome_art": "cat_sprites/gen_hunt_funrun_Wr",
                 "strings": [
-                    "s_c0 snarls at the rogues, outnumbered but not cowed. {PRONOUN\/s_c0\/subject\/CAP} {VERB\/s_c0\/throw\/throws} {PRONOUN\/s_c0\/self} at the intruders with such ferocity and fury that the rogues are taken aback. Alarmed by the lack of fear and self-preservation from the Clan cat, the rogues freeze. s_c0 sees {PRONOUN\/s_c0\/poss} opportunity to run and takes it, racing back to the camp to gather more warriors and return."
+                    "s_c0 snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/throw/throws} {PRONOUN/s_c0/self} at the intruders with such ferocity and fury that the rogues are taken aback. Alarmed by the lack of fear and self-preservation from the Clan cat, the rogues freeze. s_c0 sees {PRONOUN/s_c0/poss} opportunity to run and takes it, racing back to the camp to gather more warriors and return."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -668,7 +684,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "s_c0 unsheathes {PRONOUN\/s_c0\/poss} claws, excited for a chance to try out some <i>real<\/i> tactics without criticism. s_c0 returns late to camp with a bloodied pelt but not a scratch on {PRONOUN\/s_c0\/object}, simply stating {PRONOUN\/s_c0\/subject} solved a rogue problem."
+                    "s_c0 unsheathes {PRONOUN/s_c0/poss} claws, excited for a chance to try out some <i>real</i> tactics without criticism. s_c0 returns late to camp with a bloodied pelt but not a scratch on {PRONOUN/s_c0/object}, simply stating {PRONOUN/s_c0/subject} solved a rogue problem."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -688,9 +704,9 @@
         "fail_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_bord_otherclan_RgRg",
+                "outcome_art": "cat_sprites/gen_bord_otherclan_RgRg",
                 "strings": [
-                    "s_c0 snarls at the rogues, outnumbered but not cowed. {PRONOUN\/s_c0\/subject\/CAP} {VERB\/s_c0\/throw\/throws} {PRONOUN\/s_c0\/self} at the intruders with such ferocity and fury that the rogues are taken aback. For a moment the rogues are stunned by the reaction, but the shock doesn't last long before they descend upon the warrior once more. Eventually, s_c0 has no choice but to escape before {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/are\/is} killed."
+                    "s_c0 snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/throw/throws} {PRONOUN/s_c0/self} at the intruders with such ferocity and fury that the rogues are taken aback. For a moment the rogues are stunned by the reaction, but the shock doesn't last long before they descend upon the warrior once more. Eventually, s_c0 has no choice but to escape before {PRONOUN/s_c0/subject} {VERB/s_c0/are/is} killed."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -710,9 +726,9 @@
             },
             {
                 "frequency": 3,
-                "outcome_art": "cat_sprites\/gen_bord_otherclan_RgRg",
+                "outcome_art": "cat_sprites/gen_bord_otherclan_RgRg",
                 "strings": [
-                    "The rogues greatly outnumber p_l and have no trouble killing the lone cat. {PRONOUN\/p_l\/poss\/CAP} body is discovered the next day, cold and covered in wounds."
+                    "The rogues greatly outnumber p_l and have no trouble killing the lone cat. {PRONOUN/p_l/poss/CAP} body is discovered the next day, cold and covered in wounds."
                 ],
                 "exp_gained": 0,
                 "death": [
@@ -720,7 +736,7 @@
                         "cats": [
                             "p_l"
                         ],
-                        "history": "m_c was killed when rogues ambushed {PRONOUN\/m_c\/object} while on a solo patrol."
+                        "history": "m_c was killed when rogues ambushed {PRONOUN/m_c/object} while on a solo patrol."
                     }
                 ]
             }
@@ -745,9 +761,13 @@
             "r_c0": {}
         },
         "chance_of_success": 20,
-        "patrol_art": "cat_sprites\/gen_bord_story_WrWrWr",
-        "intro_text": "On their way to mark the far corners of their mountain, r_c0 starts telling a story of {PRONOUN\/r_c0\/poss} ancestors to keep every cat entertained.",
-        "decline_text": "A shadow flies over them, and r_c's storytelling is forgotten as the patrol makes sure it wasn't an eagle.",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
+        "intro_strings": [
+            "On their way to mark the far corners of their mountain, r_c0 starts telling a story of {PRONOUN/r_c0/poss} ancestors to keep every cat entertained."
+        ],
+        "decline_strings": [
+            "A shadow flies over them, and r_c's storytelling is forgotten as the patrol makes sure it wasn't an eagle."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -845,7 +865,7 @@
         "fail_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_hunt_heat_WrWr",
+                "outcome_art": "cat_sprites/gen_hunt_heat_WrWr",
                 "strings": [
                     "The rocky terrain is too rough to keep up a story, and eventually r_c0 peters out, breathless and panting."
                 ],
@@ -872,7 +892,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 takes r_c0 aside and reminds {PRONOUN\/r_c0\/object} coldly to focus on {PRONOUN\/r_c0\/poss} duties."
+                    "s_c0 takes r_c0 aside and reminds {PRONOUN/r_c0/object} coldly to focus on {PRONOUN/r_c0/poss} duties."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -930,9 +950,13 @@
             ]
         },
         "chance_of_success": 20,
-        "patrol_art": "backgrounds\/mnt_waterfall",
-        "intro_text": "The patrol reaches a river that must be crossed to ensure the borders are thoroughly checked.",
-        "decline_text": "p_l makes the decision to lead the patrol home instead; it's too risky today.",
+        "patrol_art": "backgrounds/mnt_waterfall",
+        "intro_strings": [
+            "The patrol reaches a river that must be crossed to ensure the borders are thoroughly checked."
+        ],
+        "decline_strings": [
+            "p_l makes the decision to lead the patrol home instead; it's too risky today."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -951,7 +975,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As the patrol attempts to cross, a particularly nasty current rushes towards them. Acting fast, s_c0 navigates the current like a fish, assisting {PRONOUN\/s_c0\/poss} Clanmates to safety. The patrol hastily finishes securing the border and returns to camp a little shaken, but okay, thanks to s_c0."
+                    "As the patrol attempts to cross, a particularly nasty current rushes towards them. Acting fast, s_c0 navigates the current like a fish, assisting {PRONOUN/s_c0/poss} Clanmates to safety. The patrol hastily finishes securing the border and returns to camp a little shaken, but okay, thanks to s_c0."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -989,7 +1013,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "While attempting to cross, the patrol is overcome by a strong rush of water. Without thinking of {PRONOUN\/s_c0\/poss} own safety, s_c0 focuses on {PRONOUN\/s_c0\/poss} struggling Clanmates. s_c0 valiantly rescues the entire patrol and collapses from exhaustion on the riverbed. In awe of s_c0's selflessness the patrol helps {PRONOUN\/s_c0\/object} back to camp, and thanks to {PRONOUN\/s_c0\/object} each one of them is alive."
+                    "While attempting to cross, the patrol is overcome by a strong rush of water. Without thinking of {PRONOUN/s_c0/poss} own safety, s_c0 focuses on {PRONOUN/s_c0/poss} struggling Clanmates. s_c0 valiantly rescues the entire patrol and collapses from exhaustion on the riverbed. In awe of s_c0's selflessness the patrol helps {PRONOUN/s_c0/object} back to camp, and thanks to {PRONOUN/s_c0/object} each one of them is alive."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1038,7 +1062,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As the patrol sets out to cross, s_c0 stops them. {PRONOUN\/s_c0\/subject\/CAP} {VERB\/s_c0\/see\/sees} what the other cats miss: a dark current ready to pull under any cat that dares to cross. The patrol members cast uneasy glances at each other and unanimously decide to head home without crossing."
+                    "As the patrol sets out to cross, s_c0 stops them. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/see/sees} what the other cats miss: a dark current ready to pull under any cat that dares to cross. The patrol members cast uneasy glances at each other and unanimously decide to head home without crossing."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1060,7 +1084,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As the patrol sets out to cross, a chill runs down s_c0's spine and whispers fill {PRONOUN\/s_c0\/poss} mind. s_c0 yells out a warning to the patrol to stop, and the cats jump back, startled. Suddenly, a large branch sweeps down the river right where the patrol was crossing. s_c0 shakily whispers thanks to StarClan for their warning."
+                    "As the patrol sets out to cross, a chill runs down s_c0's spine and whispers fill {PRONOUN/s_c0/poss} mind. s_c0 yells out a warning to the patrol to stop, and the cats jump back, startled. Suddenly, a large branch sweeps down the river right where the patrol was crossing. s_c0 shakily whispers thanks to StarClan for their warning."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1121,7 +1145,7 @@
                 "death": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "history": "m_c died trying to cross a dangerous river."
                     }
@@ -1167,7 +1191,7 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "The patrol begins to cross with s_c0 trailing nervously behind. Just as the patrol is almost clear, s_c0 notices a swell in the river rushing towards the patrol. {PRONOUN\/s_c0\/subject\/CAP} almost {VERB\/s_c0\/let\/lets} out a warning yowl, but {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/hesitate\/hesitates}, unsure if it's really rushing water. Unfortunately, this costs the patrol the few seconds they had to react, and the water crashes them against the river stones."
+                    "The patrol begins to cross with s_c0 trailing nervously behind. Just as the patrol is almost clear, s_c0 notices a swell in the river rushing towards the patrol. {PRONOUN/s_c0/subject/CAP} almost {VERB/s_c0/let/lets} out a warning yowl, but {PRONOUN/s_c0/subject} {VERB/s_c0/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately, this costs the patrol the few seconds they had to react, and the water crashes them against the river stones."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1186,7 +1210,7 @@
                 "death": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "history": "m_c died trying to cross a dangerous river."
                     }
@@ -1195,7 +1219,7 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "The patrol begins to cross with s_c0 trailing nervously behind. Just as the patrol is almost clear, s_c0 notices a swell in the river rushing towards the patrol. {PRONOUN\/s_c0\/subject\/CAP} almost {VERB\/s_c0\/let\/lets} out a warning yowl, but {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/hesitate\/hesitates}, unsure if it's really rushing water. Unfortunately, this costs the patrol the few seconds they had to react, and the water rushes them downstream."
+                    "The patrol begins to cross with s_c0 trailing nervously behind. Just as the patrol is almost clear, s_c0 notices a swell in the river rushing towards the patrol. {PRONOUN/s_c0/subject/CAP} almost {VERB/s_c0/let/lets} out a warning yowl, but {PRONOUN/s_c0/subject} {VERB/s_c0/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately, this costs the patrol the few seconds they had to react, and the water rushes them downstream."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1214,7 +1238,7 @@
                 "lost": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ]
                     }
                 ]
@@ -1222,7 +1246,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol begins to cross with s_c0 trailing nervously behind. Just as the patrol is almost clear, s_c0 notices a swell in the river rushing towards the patrol. {PRONOUN\/s_c0\/subject\/CAP} almost {VERB\/s_c0\/let\/lets} out a warning yowl, but {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/hesitate\/hesitates}, unsure if it's really rushing water. Unfortunately, this costs the patrol the few seconds they had to react, and the water crashes them against the river stones."
+                    "The patrol begins to cross with s_c0 trailing nervously behind. Just as the patrol is almost clear, s_c0 notices a swell in the river rushing towards the patrol. {PRONOUN/s_c0/subject/CAP} almost {VERB/s_c0/let/lets} out a warning yowl, but {PRONOUN/s_c0/subject} {VERB/s_c0/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately, this costs the patrol the few seconds they had to react, and the water crashes them against the river stones."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1280,23 +1304,27 @@
             ]
         },
         "chance_of_success": 25,
-        "patrol_art": "halloween\/hal_mothman",
-        "intro_text": "As p_l pads through the shadowy trees, the sun already hidden by the mountain slopes, {PRONOUN\/p_l\/subject} {VERB\/p_l\/freeze\/freezes}. Up ahead, a Twoleg peers down from above, its black wings a huge backdrop to hypnotic, glowing red eyes...",
-        "decline_text": "This is no creature for mortal eyes. p_l screws {PRONOUN\/p_l\/poss} eyelids shut, muttering prayer after prayer after prayer to StarClan itself \u2014 and when {PRONOUN\/p_l\/subject} {VERB\/p_l\/open\/opens} them again, the moth-Twoleg is gone.",
+        "patrol_art": "halloween/hal_mothman",
+        "intro_strings": [
+            "As p_l pads through the shadowy trees, the sun already hidden by the mountain slopes, {PRONOUN/p_l/subject} {VERB/p_l/freeze/freezes}. Up ahead, a Twoleg peers down from above, its black wings a huge backdrop to hypnotic, glowing red eyes..."
+        ],
+        "decline_strings": [
+            "This is no creature for mortal eyes. p_l screws {PRONOUN/p_l/poss} eyelids shut, muttering prayer after prayer after prayer to StarClan itself \u2014 and when {PRONOUN/p_l/subject} {VERB/p_l/open/opens} them again, the moth-Twoleg is gone."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "halloween\/hal_mothmanoutcome",
+                "outcome_art": "halloween/hal_mothmanoutcome",
                 "strings": [
-                    "p_l turns tail and runs, feeling air ruffle {PRONOUN\/p_l\/poss} fur as <i>something<\/i> passes overhead while {PRONOUN\/p_l\/subject} {VERB\/p_l\/pelt\/pelts} for home, without even the breath to waste on wailing."
+                    "p_l turns tail and runs, feeling air ruffle {PRONOUN/p_l/poss} fur as <i>something</i> passes overhead while {PRONOUN/p_l/subject} {VERB/p_l/pelt/pelts} for home, without even the breath to waste on wailing."
                 ],
                 "exp_gained": 35
             },
             {
                 "frequency": 3,
-                "outcome_art": "halloween\/hal_mothmanoutcome",
+                "outcome_art": "halloween/hal_mothmanoutcome",
                 "strings": [
-                    "p_l returns home from {PRONOUN\/p_l\/poss} uneventful patrol."
+                    "p_l returns home from {PRONOUN/p_l/poss} uneventful patrol."
                 ],
                 "exp_gained": 35,
                 "condition": [
@@ -1312,9 +1340,9 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "halloween\/hal_mothmanoutcome",
+                "outcome_art": "halloween/hal_mothmanoutcome",
                 "strings": [
-                    "Caution has always been in {PRONOUN\/s_c0\/poss} blood, and this, this has to be why. Frozen to the ground so completely that the frost grows over {PRONOUN\/s_c0\/poss} fur as {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/wait\/waits}, s_c0 refuses to twitch so much as a whisker until the moth-Twoleg leaves."
+                    "Caution has always been in {PRONOUN/s_c0/poss} blood, and this, this has to be why. Frozen to the ground so completely that the frost grows over {PRONOUN/s_c0/poss} fur as {PRONOUN/s_c0/subject} {VERB/s_c0/wait/waits}, s_c0 refuses to twitch so much as a whisker until the moth-Twoleg leaves."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1342,7 +1370,7 @@
         "fail_outcomes": [
             {
                 "frequency": 3,
-                "outcome_art": "halloween\/hal_mothmanoutcome",
+                "outcome_art": "halloween/hal_mothmanoutcome",
                 "strings": [
                     "All p_l remembers from then is the eyes... the glowing red eyes..."
                 ],
@@ -1360,7 +1388,7 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "halloween\/hal_mothmanoutcome",
+                "outcome_art": "halloween/hal_mothmanoutcome",
                 "strings": [
                     "p_l never returns home."
                 ],
@@ -1376,9 +1404,9 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "halloween\/hal_mothmanoutcome",
+                "outcome_art": "halloween/hal_mothmanoutcome",
                 "strings": [
-                    "The vast moth-Twoleg flies off, and p_l tries to shake off the encounter \u2014 but the mountain itself seems to be against {PRONOUN\/p_l\/object} tonight, collapsing beneath {PRONOUN\/p_l\/poss} feet."
+                    "The vast moth-Twoleg flies off, and p_l tries to shake off the encounter \u2014 but the mountain itself seems to be against {PRONOUN/p_l/object} tonight, collapsing beneath {PRONOUN/p_l/poss} feet."
                 ],
                 "exp_gained": 0,
                 "death": [
@@ -1411,9 +1439,13 @@
             ]
         },
         "chance_of_success": 30,
-        "patrol_art": "halloween\/hal_jerseydevil",
-        "intro_text": "As p_l ducks through the overhanging branches of an evergreen, {PRONOUN\/p_l\/subject} {VERB\/p_l\/spot\/spots} two deer, lying intertwined. Are they sleeping? Curious, p_l creeps closer.",
-        "decline_text": "Two deer are incomprehensibly huge targets for cats. p_l moves on.",
+        "patrol_art": "halloween/hal_jerseydevil",
+        "intro_strings": [
+            "As p_l ducks through the overhanging branches of an evergreen, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} two deer, lying intertwined. Are they sleeping? Curious, p_l creeps closer."
+        ],
+        "decline_strings": [
+            "Two deer are incomprehensibly huge targets for cats. p_l moves on."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1438,7 +1470,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The bigger deer raises its head, blood dripping from its lips, head lifting higher and higher and higher. p_l shrieks and runs, branches tearing through {PRONOUN\/p_l\/poss} pelt as, horrifyingly, something crashes after {PRONOUN\/p_l\/object}, chasing {PRONOUN\/p_l\/object} for a pawful of frantic heartbeats."
+                    "The bigger deer raises its head, blood dripping from its lips, head lifting higher and higher and higher. p_l shrieks and runs, branches tearing through {PRONOUN/p_l/poss} pelt as, horrifyingly, something crashes after {PRONOUN/p_l/object}, chasing {PRONOUN/p_l/object} for a pawful of frantic heartbeats."
                 ],
                 "exp_gained": 0,
                 "condition": [
@@ -1451,7 +1483,7 @@
                             "scrapes",
                             "shock"
                         ],
-                        "scar_history": "m_c was scarred during {PRONOUN\/m_c\/poss} frantic escape from a Jersey Devil.",
+                        "scar_history": "m_c was scarred during {PRONOUN/m_c/poss} frantic escape from a Jersey Devil.",
                         "death_history": "m_c died from the shock of meeting a Jersey Devil."
                     }
                 ]
@@ -1475,13 +1507,17 @@
         },
         "chance_of_success": 20,
         "patrol_art": "bord_general_intro",
-        "intro_text": "p_l sniffs the border carefully. It could be dog scent, but more likely, without any Twoleg intrusions, this scent is wolf instead. That wouldn't be good news for c_n.",
-        "decline_text": "{PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/don't\/doesn't} puzzle out the scent, but p_l isn't willing to risk any danger trying to isolate it further.",
+        "intro_strings": [
+            "p_l sniffs the border carefully. It could be dog scent, but more likely, without any Twoleg intrusions, this scent is wolf instead. That wouldn't be good news for c_n."
+        ],
+        "decline_strings": [
+            "{PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} puzzle out the scent, but p_l isn't willing to risk any danger trying to isolate it further."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "c_n's borders are long and vertical, covering steep rocky slopes. An intrusion of wolves would be disastrous, it'd be so easy for them to hide, and the beasts eat cat meat like a delicacy. p_l immediately ends {PRONOUN\/p_l\/poss} border patrol to bring this news to camp."
+                    "c_n's borders are long and vertical, covering steep rocky slopes. An intrusion of wolves would be disastrous, it'd be so easy for them to hide, and the beasts eat cat meat like a delicacy. p_l immediately ends {PRONOUN/p_l/poss} border patrol to bring this news to camp."
                 ],
                 "exp_gained": 40,
                 "relationship_changes": [
@@ -1507,7 +1543,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "p_l turns away from the border, {PRONOUN\/p_l\/poss} heart pounding. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/have\/has} to tell {PRONOUN\/p_l\/poss} clanmates before someone ends up in a wolf's belly."
+                    "p_l turns away from the border, {PRONOUN/p_l/poss} heart pounding. {PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} to tell {PRONOUN/p_l/poss} clanmates before someone ends up in a wolf's belly."
                 ],
                 "exp_gained": 40,
                 "relationship_changes": [
@@ -1533,7 +1569,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The potential wolf scent makes p_l nervous enough to dance in place \u2014 and that's what saves {PRONOUN\/p_l\/object}, being already moving when the trap is sprung. The dogish beast isn't built to pounce. p_l races away, streaking home through a rock maze that leave the frustrated wolf howling in {PRONOUN\/p_l\/poss} wake."
+                    "The potential wolf scent makes p_l nervous enough to dance in place \u2014 and that's what saves {PRONOUN/p_l/object}, being already moving when the trap is sprung. The dogish beast isn't built to pounce. p_l races away, streaking home through a rock maze that leave the frustrated wolf howling in {PRONOUN/p_l/poss} wake."
                 ],
                 "exp_gained": 40,
                 "relationship_changes": [
@@ -1585,7 +1621,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 bolts back to camp, easily keeping ahead of the beast, {PRONOUN\/s_c0\/subject} burst into camp, yowling a warning with plenty of time for c_n to prepare to drive the wolf away."
+                    "s_c0 bolts back to camp, easily keeping ahead of the beast, {PRONOUN/s_c0/subject} burst into camp, yowling a warning with plenty of time for c_n to prepare to drive the wolf away."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1643,7 +1679,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "This wolf might be trying to hunt c_n, but s_c0 is nobody's prey. {PRONOUN\/s_c0\/subject\/CAP} follow the fresh scent trail to its conclusion, throwing {PRONOUN\/s_c0\/self} at the unprepared wolf, claws raking through its gray pelt and leaving bloody tracks in their wake, convincing proof that the lone wolf should go elsewhere for an easy meal."
+                    "This wolf might be trying to hunt c_n, but s_c0 is nobody's prey. {PRONOUN/s_c0/subject/CAP} follow the fresh scent trail to its conclusion, throwing {PRONOUN/s_c0/self} at the unprepared wolf, claws raking through its gray pelt and leaving bloody tracks in their wake, convincing proof that the lone wolf should go elsewhere for an easy meal."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1681,7 +1717,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "{PRONOUN\/s_c0\/subject\/CAP} {VERB\/s_c0\/don't\/doesn't} feel like {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/have\/has} anything like the skill or power, but s_c0 would give {PRONOUN\/s_c0\/poss} life for c_n, charging in to courageously lead the wolf away from c_n territory. Each booming yip heralds {PRONOUN\/s_c0\/poss} doom, each rancid breath the last thing {PRONOUN\/s_c0\/subject}'ll ever smell, but somehow, eventually, limbs and lungs burning, {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/leap\/leaps} to refuge."
+                    "{PRONOUN/s_c0/subject/CAP} {VERB/s_c0/don't/doesn't} feel like {PRONOUN/s_c0/subject} {VERB/s_c0/have/has} anything like the skill or power, but s_c0 would give {PRONOUN/s_c0/poss} life for c_n, charging in to courageously lead the wolf away from c_n territory. Each booming yip heralds {PRONOUN/s_c0/poss} doom, each rancid breath the last thing {PRONOUN/s_c0/subject}'ll ever smell, but somehow, eventually, limbs and lungs burning, {PRONOUN/s_c0/subject} {VERB/s_c0/leap/leaps} to refuge."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1729,7 +1765,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "p_l would give {PRONOUN\/p_l\/poss} life to protect c_n, and as {PRONOUN\/p_l\/subject} {VERB\/p_l\/lead\/leads} the huge wolf away from the Clan, in {PRONOUN\/p_l\/poss} heart, {PRONOUN\/p_l\/subject} {VERB\/p_l\/accept\/accepts} that's what {PRONOUN\/p_l\/subject}{VERB\/p_l\/'re\/'s} doing. As darkness closes in around {PRONOUN\/p_l\/object} and the wolf's jaws descend again, p_l tries to sink {PRONOUN\/p_l\/poss} claws into its face, and hopes desperately that {PRONOUN\/p_l\/subject} led it far enough."
+                    "p_l would give {PRONOUN/p_l/poss} life to protect c_n, and as {PRONOUN/p_l/subject} {VERB/p_l/lead/leads} the huge wolf away from the Clan, in {PRONOUN/p_l/poss} heart, {PRONOUN/p_l/subject} {VERB/p_l/accept/accepts} that's what {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} doing. As darkness closes in around {PRONOUN/p_l/object} and the wolf's jaws descend again, p_l tries to sink {PRONOUN/p_l/poss} claws into its face, and hopes desperately that {PRONOUN/p_l/subject} led it far enough."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -1747,7 +1783,7 @@
                         ],
                         "amount": 20,
                         "log": {
-                            "cats_from": "cat_to valiantly sacrificed {PRONOUN\/cat_to\/poss} life to lead a wolf away from camp."
+                            "cats_from": "cat_to valiantly sacrificed {PRONOUN/cat_to/poss} life to lead a wolf away from camp."
                         }
                     }
                 ],
@@ -1763,7 +1799,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "p_l would give their life to protect c_n, and as {PRONOUN\/p_l\/subject} {VERB\/p_l\/charge\/charges} past the huge wolf to lead it far, far from c_n, {PRONOUN\/p_l\/subject} {VERB\/p_l\/accept\/accepts} it. Fear gives {PRONOUN\/p_l\/object} speed, but it only takes one successful hit. Miraculously {PRONOUN\/p_l\/subject} {VERB\/p_l\/fly\/flies} out of the dog's jaws while it shakes {PRONOUN\/p_l\/object}, landing in a refuge. p_l is injured, desperate, and terrified \u2014 but {PRONOUN\/p_l\/subject}{VERB\/p_l\/'re\/'s} alive."
+                    "p_l would give their life to protect c_n, and as {PRONOUN/p_l/subject} {VERB/p_l/charge/charges} past the huge wolf to lead it far, far from c_n, {PRONOUN/p_l/subject} {VERB/p_l/accept/accepts} it. Fear gives {PRONOUN/p_l/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/p_l/subject} {VERB/p_l/fly/flies} out of the dog's jaws while it shakes {PRONOUN/p_l/object}, landing in a refuge. p_l is injured, desperate, and terrified \u2014 but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alive."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -1781,7 +1817,7 @@
                         ],
                         "amount": 20,
                         "log": {
-                            "cats_from": "cat_to valiantly risked {PRONOUN\/cat_to\/poss} life to lead a wolf away from camp."
+                            "cats_from": "cat_to valiantly risked {PRONOUN/cat_to/poss} life to lead a wolf away from camp."
                         }
                     }
                 ],
@@ -1801,7 +1837,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 knows wolves are dangerous, but {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/are\/is} stronger and better than a simple beast. However, s_c0 underestimates the dog's power. In the struggle, the wolf manages to overpower {PRONOUN\/s_c0\/object} and delivers a vicious bite, leaving {PRONOUN\/s_c0\/object} with a deep wound on {PRONOUN\/s_c0\/poss} leg. {PRONOUN\/s_c0\/subject\/CAP} narrowly escapes with {PRONOUN\/s_c0\/poss} life."
+                    "s_c0 knows wolves are dangerous, but {PRONOUN/s_c0/subject} {VERB/s_c0/are/is} stronger and better than a simple beast. However, s_c0 underestimates the dog's power. In the struggle, the wolf manages to overpower {PRONOUN/s_c0/object} and delivers a vicious bite, leaving {PRONOUN/s_c0/object} with a deep wound on {PRONOUN/s_c0/poss} leg. {PRONOUN/s_c0/subject/CAP} narrowly escapes with {PRONOUN/s_c0/poss} life."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1834,7 +1870,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from heard that cat_to foolishly believed {PRONOUN\/cat_to\/self} a match for a wolf."
+                            "cats_from": "cat_from heard that cat_to foolishly believed {PRONOUN/cat_to/self} a match for a wolf."
                         }
                     }
                 ],
@@ -1846,15 +1882,15 @@
                         "condition": [
                             "mangled leg"
                         ],
-                        "scar_history": "m_c bears a mangled leg after thinking {PRONOUN\/m_c\/subject} could take on a wolf by {PRONOUN\/m_c\/self}",
-                        "death_history": "m_c died from {PRONOUN\/m_c\/poss} injuries after trying to take on a wolf alone."
+                        "scar_history": "m_c bears a mangled leg after thinking {PRONOUN/m_c/subject} could take on a wolf by {PRONOUN/m_c/self}",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} injuries after trying to take on a wolf alone."
                     }
                 ]
             },
             {
                 "frequency": 3,
                 "strings": [
-                    "s_c0 knows a large wolf is dangerous, but knows {PRONOUN\/s_c0\/self} to be stronger and better than a simple beast. However, s_c0 underestimates the dog's power. In the struggle, the dog manages to overpower {PRONOUN\/s_c0\/object} and delivers a vicious bite, pulling s_c0 down to the ground."
+                    "s_c0 knows a large wolf is dangerous, but knows {PRONOUN/s_c0/self} to be stronger and better than a simple beast. However, s_c0 underestimates the dog's power. In the struggle, the dog manages to overpower {PRONOUN/s_c0/object} and delivers a vicious bite, pulling s_c0 down to the ground."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1882,7 +1918,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "Frozen in the face of the large threat, s_c0 is unable to move as the jaws descend upon {PRONOUN\/s_c0\/object}."
+                    "Frozen in the face of the large threat, s_c0 is unable to move as the jaws descend upon {PRONOUN/s_c0/object}."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1910,7 +1946,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l turns to flee and it's only by the grace of StarClan that {PRONOUN\/p_l\/poss} eyes are drawn to a small cave, a rocky refuge as the wolves bark their fury outside. Not all of p_l makes it inside."
+                    "p_l turns to flee and it's only by the grace of StarClan that {PRONOUN/p_l/poss} eyes are drawn to a small cave, a rocky refuge as the wolves bark their fury outside. Not all of p_l makes it inside."
                 ],
                 "exp_gained": 40,
                 "condition": [
@@ -1925,7 +1961,7 @@
                             "HALFTAIL",
                             "NOTAIL"
                         ],
-                        "scar_history": "m_c lost {PRONOUN\/m_c\/poss} tail to a wolf.",
+                        "scar_history": "m_c lost {PRONOUN/m_c/poss} tail to a wolf.",
                         "death_history": "m_c died of an injury inflicted by a wolf."
                     }
                 ]
@@ -1933,7 +1969,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Maybe s_c0 should have been paying more attention. {PRONOUN\/s_c0\/subject\/CAP} {VERB\/s_c0\/see\/sees} darkness around {PRONOUN\/s_c0\/object}, and {VERB\/s_c0\/realize\/realizes} the terrible mistake of {PRONOUN\/s_c0\/poss} distraction."
+                    "Maybe s_c0 should have been paying more attention. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/see/sees} darkness around {PRONOUN/s_c0/object}, and {VERB/s_c0/realize/realizes} the terrible mistake of {PRONOUN/s_c0/poss} distraction."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1957,7 +1993,7 @@
                         "cats": [
                             "s_c0"
                         ],
-                        "history": "m_c died due to not paying attention to {PRONOUN\/m_c\/poss} surroundings."
+                        "history": "m_c died due to not paying attention to {PRONOUN/m_c/poss} surroundings."
                     }
                 ]
             }

@@ -156,6 +156,16 @@ Used to dictate some odds-and-ends about event constraints: [General Tags](../re
 
 ***
 
+#### poi: Dict
+> Used to specify which POI (Point Of Interest) a Clan must have access to in order for this event to trigger. [POI Constraint Tagging](../points-of-interest.md/#using-points-of-interest)
+
+!!! tip
+    If the top level of the patrol already has a POI constraint, then that POI will be used for all the outcomes as well. You cannot specify a second, different POI to use for an outcome.  
+
+    If you're looking to utilize the top level POI in the outcome, then no extra constraints are necessary on the outcome level. You can simply refer to the POI in the text and it will use the same POI as the top level.
+
+***
+
 #### frequency: int
 >Controls how common a patrol is. This works on a 1-4 scale. 
 

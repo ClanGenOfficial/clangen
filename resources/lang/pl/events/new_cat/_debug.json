@@ -17,21 +17,15 @@
         ],
         "injury": [
             {
-                "cats": [
-                    "n_c:0"
-                ],
-                "injuries": [
-                    "blunt_force_injury"
-                ]
+                "cats": ["n_c:0"],
+                "injuries": ["blunt_force_injury"]
             }
         ],
         "history": [
             {
-                "cats": [
-                    "n_c:0"
-                ],
-                "scar": "m_c was scarred after {PRONOUN\/m_c\/subject} {VERB\/m_c\/were\/was} dropped by an eagle.",
-                "death": "m_c died after {PRONOUN\/m_c\/subject} {VERB\/m_c\/were\/was} dropped by an eagle."
+                "cats": ["n_c:0"],
+                "scar": "m_c was scarred after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
+                "death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle."
             }
         ]
     },
@@ -57,23 +51,15 @@
         ],
         "injury": [
             {
-                "cats": [
-                    "n_c:0",
-                    "n_c:1"
-                ],
-                "injuries": [
-                    "blunt_force_injury"
-                ]
+                "cats": ["n_c:0", "n_c:1"],
+                "injuries": ["blunt_force_injury"]
             }
         ],
         "history": [
             {
-                "cats": [
-                    "n_c:0",
-                    "n_c:1"
-                ],
-                "scar": "m_c was scarred after {PRONOUN\/m_c\/subject} {VERB\/m_c\/were\/was} dropped by an eagle.",
-                "death": "m_c died after {PRONOUN\/m_c\/subject} {VERB\/m_c\/were\/was} dropped by an eagle."
+                "cats": ["n_c:0", "n_c:1"],
+                "scar": "m_c was scarred after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
+                "death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle."
             }
         ]
     },
@@ -99,21 +85,15 @@
         ],
         "injury": [
             {
-                "cats": [
-                    "n_c:1"
-                ],
-                "injuries": [
-                    "blunt_force_injury"
-                ]
+                "cats": ["n_c:1"],
+                "injuries": ["blunt_force_injury"]
             }
         ],
         "history": [
             {
-                "cats": [
-                    "n_c:1"
-                ],
-                "scar": "m_c was scarred after {PRONOUN\/m_c\/subject} {VERB\/m_c\/were\/was} dropped by an eagle.",
-                "death": "m_c died after {PRONOUN\/m_c\/subject} {VERB\/m_c\/were\/was} dropped by an eagle."
+                "cats": ["n_c:1"],
+                "scar": "m_c was scarred after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
+                "death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle."
             }
         ]
     },
@@ -139,21 +119,15 @@
         ],
         "injury": [
             {
-                "cats": [
-                    "n_c:1"
-                ],
-                "injuries": [
-                    "blunt_force_injury"
-                ]
+                "cats": ["n_c:1"],
+                "injuries": ["blunt_force_injury"]
             }
         ],
         "history": [
             {
-                "cats": [
-                    "n_c:1"
-                ],
-                "scar": "m_c was scarred after {PRONOUN\/m_c\/subject} {VERB\/m_c\/were\/was} dropped by an eagle.",
-                "death": "m_c died after {PRONOUN\/m_c\/subject} {VERB\/m_c\/were\/was} dropped by an eagle."
+                "cats": ["n_c:1"],
+                "scar": "m_c was scarred after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
+                "death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle."
             }
         ]
     },

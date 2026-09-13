@@ -21,21 +21,25 @@
             ]
         },
         "chance_of_success": 40,
-        "patrol_art": "hal\/tryingcandy_WrWr",
-        "intro_text": "The patrol is on edge after scenting Twolegs in the area. p_l takes the lead, keeping watch for any Twolegs that may be on the hunt for cats. Their scent is everywhere, even as the cats carefully remark the area. What's that smell? It's almost like pumpkin, but strange...",
-        "decline_text": "p_l knows better than to mess with anything that smells like Twolegs. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/skirt\/skirts} around the area and {VERB\/p_l\/continue\/continues} the patrol.",
+        "patrol_art": "hal/tryingcandy_WrWr",
+        "intro_strings": [
+            "The patrol is on edge after scenting Twolegs in the area. p_l takes the lead, keeping watch for any Twolegs that may be on the hunt for cats. Their scent is everywhere, even as the cats carefully remark the area. What's that smell? It's almost like pumpkin, but strange..."
+        ],
+        "decline_strings": [
+            "p_l knows better than to mess with anything that smells like Twolegs. {PRONOUN/p_l/subject/CAP} {VERB/p_l/skirt/skirts} around the area and {VERB/p_l/continue/continues} the patrol."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l follows the scent and nearly treads on the sticky thing in the grass. Definitely a weird Twoleg thing. {PRONOUN\/p_l\/subject\/CAP} carefully {VERB\/p_l\/walk\/walks} around it, unwilling to get the sticky stuff in {PRONOUN\/p_l\/poss} fur."
+                    "p_l follows the scent and nearly treads on the sticky thing in the grass. Definitely a weird Twoleg thing. {PRONOUN/p_l/subject/CAP} carefully {VERB/p_l/walk/walks} around it, unwilling to get the sticky stuff in {PRONOUN/p_l/poss} fur."
                 ],
                 "exp_gained": 5
             },
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l finds the sticky thing in the grass and examines it. s_c0 suddenly appears beside {PRONOUN\/p_l\/object} and, before p_l can tell {PRONOUN\/s_c0\/object} to be careful, s_c0 bends down and takes a lick. s_c0 wrinkles {PRONOUN\/s_c0\/poss} nose and gags, trying to spit the disgusting taste out of {PRONOUN\/s_c0\/poss} mouth."
+                    "p_l finds the sticky thing in the grass and examines it. s_c0 suddenly appears beside {PRONOUN/p_l/object} and, before p_l can tell {PRONOUN/s_c0/object} to be careful, s_c0 bends down and takes a lick. s_c0 wrinkles {PRONOUN/s_c0/poss} nose and gags, trying to spit the disgusting taste out of {PRONOUN/s_c0/poss} mouth."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -112,7 +116,7 @@
                         "mutual": false,
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from watched cat_to freeze up on a patrol {PRONOUN\/cat_to\/subject} {VERB\/cat_to\/were\/was} leading."
+                            "cats_from": "cat_from watched cat_to freeze up on a patrol {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} leading."
                         }
                     }
                 ]

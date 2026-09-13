@@ -19,8 +19,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
-        "intro_text": "The patrol hears some odd noises coming from an abandoned Twoleg nest out in the swamp.",
-        "decline_text": "The patrol decides not to investigate.",
+        "intro_strings": [
+            "The patrol hears some odd noises coming from an abandoned Twoleg nest out in the swamp."
+        ],
+        "decline_strings": [
+            "The patrol decides not to investigate."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -352,8 +356,12 @@
         },
         "chance_of_success": 10,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
-        "intro_text": "p_l hears some odd noises coming from an abandoned Twoleg nest out in the swamp.",
-        "decline_text": "p_l decides not to investigate.",
+        "intro_strings": [
+            "p_l hears some odd noises coming from an abandoned Twoleg nest out in the swamp."
+        ],
+        "decline_strings": [
+            "p_l decides not to investigate."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -643,8 +651,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "bord_general_intro",
-        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
-        "decline_text": "The patrol decides to head back early.",
+        "intro_strings": [
+            "There are dark clouds on the horizon, and p_l wonders if they should continue."
+        ],
+        "decline_strings": [
+            "The patrol decides to head back early."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -762,7 +774,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -805,7 +817,7 @@
                 "death": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "history": "This cat was drowned by floodwaters."
                     }
@@ -867,8 +879,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "bord_general_intro",
-        "intro_text": "There are dark clouds on the horizon, and p_l wonders if {PRONOUN/p_l/subject} should continue.",
-        "decline_text": "p_l decides to head back early.",
+        "intro_strings": [
+            "There are dark clouds on the horizon, and p_l wonders if {PRONOUN/p_l/subject} should continue."
+        ],
+        "decline_strings": [
+            "p_l decides to head back early."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -963,8 +979,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As a shivering p_l crosses a muddy bog, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a creaking, rushing sound, like a wave — but the swamp shouldn't have any waves.",
-        "decline_text": "p_l decides to head back early.",
+        "intro_strings": [
+            "As a shivering p_l crosses a muddy bog, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a creaking, rushing sound, like a wave — but the swamp shouldn't have any waves."
+        ],
+        "decline_strings": [
+            "p_l decides to head back early."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1085,8 +1105,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": "While on patrol, p_l notices some suspicious pawprints in the swamp mud.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} not to investigate.",
+        "intro_strings": [
+            "While on patrol, p_l notices some suspicious pawprints in the swamp mud."
+        ],
+        "decline_strings": [
+            "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} not to investigate."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1442,7 +1466,7 @@
                         ],
                         "amount": -30,
                         "log": {
-                            "cats_from": "cat_to's scent was found on r_c's cold body."
+                            "cats_from": "cat_to's scent was found on r_c0's cold body."
                         }
                     }
                 ],
@@ -1537,13 +1561,19 @@
         },
         "involved_cats": {
             "p_l": {
-                "has_mentor": {"current": true}
+                "has_mentor": {
+                    "current": true
+                }
             }
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": "While on patrol, p_l notices some suspicious pawprints in the swamp mud.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} not to investigate.",
+        "intro_strings": [
+            "While on patrol, p_l notices some suspicious pawprints in the swamp mud."
+        ],
+        "decline_strings": [
+            "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} not to investigate."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1759,8 +1789,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": "While on patrol, r_c0 notices some suspicious pawprints in the swamp mud.",
-        "decline_text": "They decide not to investigate.",
+        "intro_strings": [
+            "While on patrol, r_c0 notices some suspicious pawprints in the swamp mud."
+        ],
+        "decline_strings": [
+            "They decide not to investigate."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2188,7 +2222,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It turns out they were r_c's own pawprints... r_c0 huffs with embarrassment, suddenly grateful that their patrol is so small. Fewer eyes watching that embarrassing moment."
+                    "It turns out they were r_c0's own pawprints... r_c0 huffs with embarrassment, suddenly grateful that their patrol is so small. Fewer eyes watching that embarrassing moment."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -2223,7 +2257,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "It turns out they were r_c's own pawprints... r_c0 huffs with embarrassment and can't meet the eyes of the rest of the patrol."
+                    "It turns out they were r_c0's own pawprints... r_c0 huffs with embarrassment and can't meet the eyes of the rest of the patrol."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -2394,13 +2428,19 @@
                 "status": [
                     "apprentice"
                 ],
-                "has_mentor": {"current": true}
+                "has_mentor": {
+                    "current": true
+                }
             }
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": "While on patrol, r_c1 notices some suspicious pawprints in the swamp mud.",
-        "decline_text": "{PRONOUN/r_c1/subject/CAP} {VERB/r_c1/decide/decides} not to investigate.",
+        "intro_strings": [
+            "While on patrol, r_c1 notices some suspicious pawprints in the swamp mud."
+        ],
+        "decline_strings": [
+            "{PRONOUN/r_c1/subject/CAP} {VERB/r_c1/decide/decides} not to investigate."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2844,8 +2884,12 @@
         },
         "chance_of_success": 10,
         "patrol_art": "bord_general_intro",
-        "intro_text": "On their way to mark the far corners of their swamps, r_c0 starts telling a story of their ancestors to keep every cat entertained.",
-        "decline_text": "The patrol seems uninterested, so r_c0 drops the idea. ",
+        "intro_strings": [
+            "On their way to mark the far corners of their swamps, r_c0 starts telling a story of their ancestors to keep every cat entertained."
+        ],
+        "decline_strings": [
+            "The patrol seems uninterested, so r_c0 drops the idea. "
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3038,8 +3082,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "The patrol catches the scent of a fox, but is it red or gray?",
-        "decline_text": "The patrol decides not to pursue the fox.",
+        "intro_strings": [
+            "The patrol catches the scent of a fox, but is it red or gray?"
+        ],
+        "decline_strings": [
+            "The patrol decides not to pursue the fox."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3574,8 +3622,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "The patrol catches the scent of a fox, but is it red or gray?",
-        "decline_text": "The patrol decides not to pursue the fox.",
+        "intro_strings": [
+            "The patrol catches the scent of a fox, but is it red or gray?"
+        ],
+        "decline_strings": [
+            "The patrol decides not to pursue the fox."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

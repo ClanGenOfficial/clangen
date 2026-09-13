@@ -23,9 +23,13 @@
             ]
         },
         "chance_of_success": 40,
-        "patrol_art": "cat_sprites\/gen_bord_flashflood_Wr",
-        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
-        "decline_text": "The patrol decides to head back early.",
+        "patrol_art": "cat_sprites/gen_bord_flashflood_Wr",
+        "intro_strings": [
+            "There are dark clouds on the horizon, and p_l wonders if they should continue."
+        ],
+        "decline_strings": [
+            "The patrol decides to head back early."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -219,9 +223,13 @@
             ]
         },
         "chance_of_success": 40,
-        "patrol_art": "cat_sprites\/gen_bord_flashflood_Wr",
-        "intro_text": "There are dark clouds on the horizon and p_l wonders if {PRONOUN\/p_l\/subject} should continue.",
-        "decline_text": "The patrol decides to head back early.",
+        "patrol_art": "cat_sprites/gen_bord_flashflood_Wr",
+        "intro_strings": [
+            "There are dark clouds on the horizon and p_l wonders if {PRONOUN/p_l/subject} should continue."
+        ],
+        "decline_strings": [
+            "The patrol decides to head back early."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -240,7 +248,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 makes a careful judgment and keeps going, but {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/make\/makes} sure to stay on the high ground as the rain pours down around {PRONOUN\/s_c0\/object}."
+                    "s_c0 makes a careful judgment and keeps going, but {PRONOUN/s_c0/subject} {VERB/s_c0/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c0/object}."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -315,14 +323,18 @@
             ]
         },
         "chance_of_success": 70,
-        "patrol_art": "backgrounds\/gen_abandontwolegdis",
-        "intro_text": "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
-        "decline_text": "The patrol decides not to investigate.",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
+        "intro_strings": [
+            "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the plains."
+        ],
+        "decline_strings": [
+            "The patrol decides not to investigate."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN\/n_c0\/self}. The patrol greets {PRONOUN\/n_c0\/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. The patrol greets {PRONOUN/n_c0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -419,7 +431,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 signals for the patrol to stop. Carefully and quietly,{PRONOUN\/s_c0\/subject} {VERB\/s_c0\/explain\/explains} {PRONOUN\/s_c0\/poss} concerns about the unknown situation. And maybe {PRONOUN\/s_c0\/subject}{VERB\/s_c0\/'re\/'s} being too cautious, but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety."
+                    "s_c0 signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c0/subject} {VERB/s_c0/explain/explains} {PRONOUN/s_c0/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} being too cautious, but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -475,14 +487,18 @@
             ]
         },
         "chance_of_success": 30,
-        "patrol_art": "backgrounds\/gen_abandontwolegdis",
-        "intro_text": "p_l hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
-        "decline_text": "The patrol decides not to investigate.",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
+        "intro_strings": [
+            "p_l hears some odd noises coming from an abandoned Twoleg nest out on the plains."
+        ],
+        "decline_strings": [
+            "The patrol decides not to investigate."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN\/n_c0\/self}. p_l greets {PRONOUN\/n_c0\/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. p_l greets {PRONOUN/n_c0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -497,7 +513,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN\/n_c0\/self}. When {PRONOUN\/n_c0\/subject} {VERB\/n_c0\/see\/sees} p_l, {PRONOUN\/n_c0\/subject} {VERB\/n_c0\/invite\/invites} {PRONOUN\/p_l\/object} to sing too. {PRONOUN\/p_l\/subject\/CAP} politely {VERB\/p_l\/decline\/declines} and continues on {PRONOUN\/p_l\/poss} solo patrol."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. When {PRONOUN/n_c0/subject} {VERB/n_c0/see/sees} p_l, {PRONOUN/n_c0/subject} {VERB/n_c0/invite/invites} {PRONOUN/p_l/object} to sing too. {PRONOUN/p_l/subject/CAP} politely {VERB/p_l/decline/declines} and continues on {PRONOUN/p_l/poss} solo patrol."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -512,7 +528,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c0 has the reaction time to escape, running for {PRONOUN\/s_c0\/poss} life."
+                    "s_c0 walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c0 has the reaction time to escape, running for {PRONOUN/s_c0/poss} life."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -570,7 +586,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 has a bad feeling about this. And maybe {PRONOUN\/s_c0\/subject}{VERB\/s_c0\/'re\/'s} being too cautious, but then {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/pick\/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c0 retreats to safety."
+                    "s_c0 has a bad feeling about this. And maybe {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} being too cautious, but then {PRONOUN/s_c0/subject} {VERB/s_c0/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c0 retreats to safety."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -629,14 +645,18 @@
             ]
         },
         "chance_of_success": 40,
-        "patrol_art": "backgrounds\/gen_abandontwolegdis",
-        "intro_text": "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach.",
-        "decline_text": "The patrol decides not to investigate.",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
+        "intro_strings": [
+            "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach."
+        ],
+        "decline_strings": [
+            "The patrol decides not to investigate."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN\/n_c0\/self}. The patrol greets {PRONOUN\/n_c0\/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. The patrol greets {PRONOUN/n_c0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -651,7 +671,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN\/n_c0\/self}. When {PRONOUN\/n_c0\/subject} {VERB\/n_c0\/see\/sees} the patrol, {PRONOUN\/n_c0\/subject} {VERB\/n_c0\/invite\/invites} them to sing, too. The patrol politely declines but compliments the loner's songs."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. When {PRONOUN/n_c0/subject} {VERB/n_c0/see/sees} the patrol, {PRONOUN/n_c0/subject} {VERB/n_c0/invite/invites} them to sing, too. The patrol politely declines but compliments the loner's songs."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -721,7 +741,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 signals for the patrol to stop. Carefully and quietly,{PRONOUN\/s_c0\/subject} {VERB\/s_c0\/explain\/explains} {PRONOUN\/s_c0\/poss} concerns about the unknown situation. And maybe {PRONOUN\/s_c0\/subject}{VERB\/s_c0\/'re\/'s} being too cautious, but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety."
+                    "s_c0 signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c0/subject} {VERB/s_c0/explain/explains} {PRONOUN/s_c0/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} being too cautious, but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -777,14 +797,18 @@
             ]
         },
         "chance_of_success": 10,
-        "patrol_art": "backgrounds\/gen_abandontwolegdis",
-        "intro_text": "p_l hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach.",
-        "decline_text": "The patrol decides not to investigate.",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
+        "intro_strings": [
+            "p_l hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach."
+        ],
+        "decline_strings": [
+            "The patrol decides not to investigate."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN\/n_c0\/self}. p_l greets {PRONOUN\/n_c0\/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. p_l greets {PRONOUN/n_c0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -799,7 +823,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN\/n_c0\/self}. When {PRONOUN\/n_c0\/subject} {VERB\/n_c0\/see\/sees} p_l, {PRONOUN\/n_c0\/subject} {VERB\/n_c0\/invite\/invites} {PRONOUN\/p_l\/object} to sing too. {PRONOUN\/p_l\/subject\/CAP} politely {VERB\/p_l\/decline\/declines} but {VERB\/p_l\/compliment\/compliments} the loner's songs."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. When {PRONOUN/n_c0/subject} {VERB/n_c0/see/sees} p_l, {PRONOUN/n_c0/subject} {VERB/n_c0/invite/invites} {PRONOUN/p_l/object} to sing too. {PRONOUN/p_l/subject/CAP} politely {VERB/p_l/decline/declines} but {VERB/p_l/compliment/compliments} the loner's songs."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -814,7 +838,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c0 has the reaction time to escape, running for {PRONOUN\/s_c0\/poss} life."
+                    "s_c0 walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c0 has the reaction time to escape, running for {PRONOUN/s_c0/poss} life."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -872,7 +896,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 has a bad feeling about this. And maybe {PRONOUN\/s_c0\/subject}{VERB\/s_c0\/'re\/'s} being too cautious, but then {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/pick\/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c0 retreats to safety."
+                    "s_c0 has a bad feeling about this. And maybe {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} being too cautious, but then {PRONOUN/s_c0/subject} {VERB/s_c0/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c0 retreats to safety."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -934,8 +958,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues burst from the bushes! An ambush!",
-        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
+        "intro_strings": [
+            "As the patrol is marking the border lines, a gang of rogues burst from the bushes! An ambush!"
+        ],
+        "decline_strings": [
+            "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -987,7 +1015,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 immediately leaps to protect {PRONOUN\/s_c0\/poss} Clanmates. {PRONOUN\/s_c0\/poss\/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run."
+                    "s_c0 immediately leaps to protect {PRONOUN/s_c0/poss} Clanmates. {PRONOUN/s_c0/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1053,7 +1081,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 revels in the battle, leaping into the fray with {PRONOUN\/s_c0\/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol."
+                    "s_c0 revels in the battle, leaping into the fray with {PRONOUN/s_c0/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1167,7 +1195,7 @@
                         "cats": [
                             "patrol_cats"
                         ],
-                        "history": "m_c was killed when rogues ambushed {PRONOUN\/m_c\/poss} patrol."
+                        "history": "m_c was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
                     }
                 ]
             },
@@ -1226,7 +1254,7 @@
                         "condition": [
                             "battle_injury"
                         ],
-                        "scar_history": "m_c was badly scarred when rogues ambushed {PRONOUN\/m_c\/poss} patrol.",
+                        "scar_history": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
                         "death_history": "m_c died of wounds sustained in a rogue ambush."
                     }
                 ]
@@ -1253,8 +1281,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!",
-        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
+        "intro_strings": [
+            "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!"
+        ],
+        "decline_strings": [
+            "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1306,7 +1338,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 immediately leaps to protect {PRONOUN\/s_c0\/poss} Clanmates. {PRONOUN\/s_c0\/poss\/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run."
+                    "s_c0 immediately leaps to protect {PRONOUN/s_c0/poss} Clanmates. {PRONOUN/s_c0/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1388,7 +1420,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 revels in the battle, leaping into the fray with {PRONOUN\/s_c0\/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol."
+                    "s_c0 revels in the battle, leaping into the fray with {PRONOUN/s_c0/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1482,7 +1514,7 @@
                         "cats": [
                             "patrol_cats"
                         ],
-                        "history": "m_c was killed when rogues ambushed {PRONOUN\/m_c\/poss} patrol."
+                        "history": "m_c was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
                     }
                 ]
             },
@@ -1558,7 +1590,7 @@
                         "condition": [
                             "battle_injury"
                         ],
-                        "scar_history": "m_c was badly scarred when rogues ambushed {PRONOUN\/m_c\/poss} patrol.",
+                        "scar_history": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
                         "death_history": "m_c died of wounds sustained in a rogue ambush."
                     }
                 ]

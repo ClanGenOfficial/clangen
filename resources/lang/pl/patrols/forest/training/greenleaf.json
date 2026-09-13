@@ -43,9 +43,13 @@
             "r_c0": {}
         },
         "chance_of_success": 60,
-        "patrol_art": "cat_sprites\/gen_flowerdate_WrWr",
-        "intro_text": "p_l thinks r_c0 is, well, really, just \u2014 uh, just swell, and {PRONOUN\/p_l\/subject} {VERB\/p_l\/think\/thinks} r_c0 might like {PRONOUN\/p_l\/object} too. {PRONOUN\/p_l\/subject\/CAP}{VERB\/p_l\/'ve\/'s} been building up {PRONOUN\/p_l\/poss} confidence, and {PRONOUN\/p_l\/subject}{VERB\/p_l\/'re\/'s} going to ask r_c0 to spend some time together, just the two of them, this afternoon!",
-        "decline_text": "Unfortunately, r_c0 is sent on an afternoon border patrol before p_l can say anything.",
+        "patrol_art": "cat_sprites/gen_flowerdate_WrWr",
+        "intro_strings": [
+            "p_l thinks r_c0 is, well, really, just \u2014 uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c0 might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c0 to spend some time together, just the two of them, this afternoon!"
+        ],
+        "decline_strings": [
+            "Unfortunately, r_c0 is sent on an afternoon border patrol before p_l can say anything."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -104,7 +108,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 has always had a skilled tongue, but it's rarely ever felt this important to choose {PRONOUN\/s_c0\/poss} words carefully. It's all worth it to hear r_c's 'yes.' Their stroll together is awkward with the new tension of acknowledged romance, but neither cat would change it for the world."
+                    "s_c0 has always had a skilled tongue, but it's rarely ever felt this important to choose {PRONOUN/s_c0/poss} words carefully. It's all worth it to hear r_c's 'yes.' Their stroll together is awkward with the new tension of acknowledged romance, but neither cat would change it for the world."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -137,7 +141,7 @@
                         ],
                         "amount": 13,
                         "log": {
-                            "cats_from": "s_c0's social adeptness made {PRONOUN\/s_c0\/poss} romantic greenleaf stroll with r_c0 all the better."
+                            "cats_from": "s_c0's social adeptness made {PRONOUN/s_c0/poss} romantic greenleaf stroll with r_c0 all the better."
                         }
                     }
                 ]
@@ -147,7 +151,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l awkwardly stutters {PRONOUN\/p_l\/poss} way through asking r_c0 out \u2014 and {PRONOUN\/r_c0\/subject} {VERB\/r_c0\/say\/says} no. It's gentle, but it's a no. Tail tucked, p_l slinks off to be alone."
+                    "p_l awkwardly stutters {PRONOUN/p_l/poss} way through asking r_c0 out \u2014 and {PRONOUN/r_c0/subject} {VERB/r_c0/say/says} no. It's gentle, but it's a no. Tail tucked, p_l slinks off to be alone."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -164,7 +168,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "p_l felt embarrassed when r_c0 rejected {PRONOUN\/p_l\/poss} offer of a romantic stroll."
+                            "cats_from": "p_l felt embarrassed when r_c0 rejected {PRONOUN/p_l/poss} offer of a romantic stroll."
                         }
                     },
                     {
@@ -180,7 +184,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "r_c0 felt awkward when p_l asked {PRONOUN\/r_c0\/object} out on a romantic stroll, and r_c0 rejected the offer."
+                            "cats_from": "r_c0 felt awkward when p_l asked {PRONOUN/r_c0/object} out on a romantic stroll, and r_c0 rejected the offer."
                         }
                     }
                 ]
@@ -223,14 +227,18 @@
             }
         },
         "chance_of_success": 60,
-        "patrol_art": "backgrounds\/gen_GL_gatheringoakleaves2",
-        "intro_text": "As the afternoon turns to evening and the patrol finally reaches the shade of one of the older trees in the territory, p_l asks the apprentices to gather 'round. High above the thrushes sing, and p_l prepares to tell the story of a unique bird of c_n's territory \u2014 one fondly recalled from kithood.",
-        "decline_text": "p_l gets too distracted by the lovely birdsong to continue.",
+        "patrol_art": "backgrounds/gen_GL_gatheringoakleaves2",
+        "intro_strings": [
+            "As the afternoon turns to evening and the patrol finally reaches the shade of one of the older trees in the territory, p_l asks the apprentices to gather 'round. High above the thrushes sing, and p_l prepares to tell the story of a unique bird of c_n's territory \u2014 one fondly recalled from kithood."
+        ],
+        "decline_strings": [
+            "p_l gets too distracted by the lovely birdsong to continue."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "Varied thrushes are sexually dimorphic, <i>unlike<\/i> most thrushes but <i>like<\/i> their cousins, the bluebirds and the robin. The males are dark gray and burnt orange, while the females and immatures are brown and dull orange. Above, they sing quiet but lovely <i>beez<\/i> and <i>peez<\/i> in the treetops of conifers."
+                    "Varied thrushes are sexually dimorphic, <i>unlike</i> most thrushes but <i>like</i> their cousins, the bluebirds and the robin. The males are dark gray and burnt orange, while the females and immatures are brown and dull orange. Above, they sing quiet but lovely <i>beez</i> and <i>peez</i> in the treetops of conifers."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -311,7 +319,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Wood thrushes are recognized by their soft <i>ee-oh-lay<\/i>s ending in a metallic trill, describes p_l, so beautiful that it almost tugs at one's heartstrings. Though rare, one might find these black speckled ginger-and-white birds foraging on the forest floor\u2014providing an opportunity to catch one, or just a moment to observe nature."
+                    "Wood thrushes are recognized by their soft <i>ee-oh-lay</i>s ending in a metallic trill, describes p_l, so beautiful that it almost tugs at one's heartstrings. Though rare, one might find these black speckled ginger-and-white birds foraging on the forest floor\u2014providing an opportunity to catch one, or just a moment to observe nature."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -339,9 +347,9 @@
         "fail_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_catlookingup_Ap",
+                "outcome_art": "cat_sprites/gen_catlookingup_Ap",
                 "strings": [
-                    "When r_c0 asks why they would even need to learn about birds that are too high up to catch, p_l scoffs. Can't {PRONOUN\/r_c0\/subject} let {PRONOUN\/p_l\/object} reminisce?"
+                    "When r_c0 asks why they would even need to learn about birds that are too high up to catch, p_l scoffs. Can't {PRONOUN/r_c0/subject} let {PRONOUN/p_l/object} reminisce?"
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -370,7 +378,7 @@
                 "frequency": 4,
                 "outcome_art": "gen_train_patrolapprenticesessionfail",
                 "strings": [
-                    "When p_l mentions that {PRONOUN\/p_l\/subject} will be teaching the patrol about thrushes, s_c0 butts in. {PRONOUN\/s_c0\/subject\/CAP}{VERB\/s_c0\/'ve\/'s} caught <i>so<\/i> many cinnamon-and-white thrushes before! When p_l informs the rest of the patrol that {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/have\/has} been catching ground-nesting veeries, not the types of thrushes that nest higher up, s_c0 feels too embarrassed to stay and learn with the group."
+                    "When p_l mentions that {PRONOUN/p_l/subject} will be teaching the patrol about thrushes, s_c0 butts in. {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'ve/'s} caught <i>so</i> many cinnamon-and-white thrushes before! When p_l informs the rest of the patrol that {PRONOUN/s_c0/subject} {VERB/s_c0/have/has} been catching ground-nesting veeries, not the types of thrushes that nest higher up, s_c0 feels too embarrassed to stay and learn with the group."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -405,7 +413,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from lost respect for cat_to when {PRONOUN\/cat_to\/subject} acted like {PRONOUN\/cat_to\/subject} knew everything about thrushes."
+                            "cats_from": "cat_from lost respect for cat_to when {PRONOUN/cat_to/subject} acted like {PRONOUN/cat_to/subject} knew everything about thrushes."
                         }
                     }
                 ]

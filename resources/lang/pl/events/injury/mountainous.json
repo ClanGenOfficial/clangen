@@ -9,7 +9,7 @@
             "leaf-bare"
         ],
         "frequency": 1,
-        "event_text": "m_c thought {PRONOUN\/m_c\/subject} {VERB\/m_c\/were\/was} walking on a snowdrift until it gave way and {PRONOUN\/m_c\/subject} fell down the mountain, breaking {PRONOUN\/m_c\/poss} leg.",
+        "event_text": "m_c thought {PRONOUN/m_c/subject} {VERB/m_c/were/was} walking on a snowdrift until it gave way and {PRONOUN/m_c/subject} fell down the mountain, breaking {PRONOUN/m_c/poss} leg.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -34,8 +34,8 @@
                 "cats": [
                     "m_c"
                 ],
-                "scar": "m_c was scarred when {PRONOUN\/m_c\/subject} fell through a snowdrift and down the mountain.",
-                "death": "m_c died from {PRONOUN\/m_c\/poss} wounds after falling down the mountain."
+                "scar": "m_c was scarred when {PRONOUN/m_c/subject} fell through a snowdrift and down the mountain.",
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after falling down the mountain."
             }
         ]
     },
@@ -74,7 +74,7 @@
                     "m_c"
                 ],
                 "scar": "m_c was scarred by falling rocks.",
-                "death": "m_c died from {PRONOUN\/m_c\/poss} wounds after rocks fell on {PRONOUN\/m_c\/object}."
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after rocks fell on {PRONOUN/m_c/object}."
             }
         ]
     },
@@ -87,7 +87,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "m_c couldn't help but try to show off by scaling the tallest cliff {PRONOUN\/m_c\/subject} could find. {PRONOUN\/m_c\/poss\/CAP} plan backfired when {PRONOUN\/m_c\/subject} slipped and plummeted to the ground.",
+        "event_text": "m_c couldn't help but try to show off by scaling the tallest cliff {PRONOUN/m_c/subject} could find. {PRONOUN/m_c/poss/CAP} plan backfired when {PRONOUN/m_c/subject} slipped and plummeted to the ground.",
         "m_c": {
             "status": [
                 "apprentice"
@@ -119,7 +119,7 @@
                     "m_c"
                 ],
                 "scar": "m_c was scarred after falling from a tall cliff.",
-                "death": "m_c died from {PRONOUN\/m_c\/poss} wounds after falling from a tall cliff."
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall cliff."
             }
         ]
     },
@@ -132,7 +132,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "m_c was exploring {PRONOUN\/m_c\/poss} territory when the ruins {PRONOUN\/m_c\/subject} {VERB\/m_c\/were\/was} walking under collapsed and broke {PRONOUN\/m_c\/poss} back.",
+        "event_text": "m_c was exploring {PRONOUN/m_c/poss} territory when the ruins {PRONOUN/m_c/subject} {VERB/m_c/were/was} walking under collapsed and broke {PRONOUN/m_c/poss} back.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -157,8 +157,8 @@
                 "cats": [
                     "m_c"
                 ],
-                "scar": "m_c was scarred when the ruins collapsed onto {PRONOUN\/m_c\/object}.",
-                "death": "m_c died from {PRONOUN\/m_c\/poss} wounds after the ruins collapsed onto {PRONOUN\/m_c\/object}."
+                "scar": "m_c was scarred when the ruins collapsed onto {PRONOUN/m_c/object}.",
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after the ruins collapsed onto {PRONOUN/m_c/object}."
             }
         ]
     }

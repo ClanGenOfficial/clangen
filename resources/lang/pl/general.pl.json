@@ -1,231 +1,230 @@
 {
     "pl": {
         "moons_age": {
-            "one": "1 moon",
-            "many": "%{count} moons"
+            "one": "1 księżyc",
+            "many": "%{count} księżyców"
         },
         "moons_age_in_death": {
-            "one": "dead for 1 moon",
-            "many": "dead for %{count} moons"
+            "one": "martwy przez 1 księżyc",
+            "many": "martwy przez %{count} księżyców"
         },
-        "moon_date": "moon %{moon}",
-        "guide": "guiding ghost",
-        "living_group": "%{group} %{rank}",
-        "past_no_group": "past %{rank}",
-        "past_group": "past %{group} %{rank}",
+        "moon_date": "księżyc %{moon}",
+        "guide": "przewodnik",
+        "living_group": "%{rank} %{group}",
+        "past_no_group": "poprzedni %{rank}",
+        "past_group": "poprzedni %{rank} %{group}",
         "lives": {
-            "one": "1 life",
-            "many": "%{count} lives"
+            "one": "1 żywot",
+            "many": "%{count} żywotów"
         },
         "leader": {
-            "one": "leader",
-            "many": "leaders"
+            "one": "przywódca",
+            "many": "przywódcy"
         },
         "deputy": {
-            "one": "deputy",
-            "many": "deputies"
+            "one": "zastępca",
+            "many": "zastępcy"
         },
         "warrior": {
-            "one": "warrior",
-            "many": "warriors"
+            "one": "wojownik",
+            "many": "wojownicy"
         },
         "medicine cat": {
-            "one": "medicine cat",
-            "many": "medicine cats"
+            "one": "medyk",
+            "many": "medycy"
         },
         "mediator": {
             "one": "mediator",
-            "many": "mediators"
+            "many": "mediatorzy"
         },
         "apprentice": {
-            "one": "apprentice",
-            "many": "apprentices"
+            "one": "uczeń",
+            "many": "uczniowie"
         },
         "medicine cat apprentice": {
-            "one": "medicine cat apprentice",
-            "many": "medicine cat apprentices"
+            "one": "uczeń medyka",
+            "many": "uczniowie medyka"
         },
         "mediator apprentice": {
-            "one": "mediator apprentice",
-            "many": "mediator apprentices"
+            "one": "uczeń mediatora",
+            "many": "uczniowie mediatora"
         },
         "queen": {
-            "one": "queen",
-            "many": "queens"
+            "one": "karmicielka",
+            "many": "karmicielki"
         },
-        "queen\/pregnant": {
-            "one": "queen\/pregnant cat",
-            "many": "queens\/pregnant cats"
+        "queen/pregnant": {
+            "one": "karmicielka/ciężarny kot",
+            "many": "karmicielki/ciężarne koty"
         },
         "newborn": {
-            "one": "newborn",
-            "many": "newborns"
+            "one": "noworodek",
+            "many": "noworodki"
         },
         "kitten": {
-            "one": "kitten",
-            "many": "kittens"
+            "one": "kociak",
+            "many": "kociaki"
         },
-        "kitten_profile": "young",
-        "adolescent": "adolescent",
-        "young adult": "young adult",
-        "adult": "adult",
-        "senior adult": "senior adult",
+        "kitten_profile": "kociak",
+        "adolescent": "młodzież",
+        "young adult": "młody dorosły",
+        "adult": "dorosły",
+        "senior adult": "starszy dorosły",
         "senior": "senior",
         "kit": {
-            "one": "kit",
-            "many": "kits"
+            "one": "kociak",
+            "many": "kociaki"
         },
         "elder": {
-            "one": "elder",
-            "many": "elders"
+            "one": "starszy",
+            "many": "starszyzna"
         },
         "loner": {
-            "one": "loner",
-            "many": "loners"
+            "one": "samotnik",
+            "many": "samotnicy"
         },
         "rogue": {
-            "one": "rogue",
-            "many": "rogues"
+            "one": "włóczęga",
+            "many": "włóczędzy"
         },
         "kittypet": {
-            "one": "kittypet",
-            "many": "kittypets"
+            "one": "kot domowy",
+            "many": "koty domowe"
         },
         "former Clancat": {
-            "one": "former Clancat",
-            "many": "former Clancats"
+            "one": "dawny członek Klanu",
+            "many": "dawni członkowie Klanu"
         },
         "clancat": {
-            "one": "Clancat",
-            "many": "Clancats"
+            "one": "członek Klanu",
+            "many": "członkowie Klanu"
         },
         "exiled": {
-            "one": "exiled from",
-            "many": "exiled from"
+            "one": "wygnany",
+            "many": "wygnani"
         },
-        "lost": "lost",
+        "lost": "zagubiony",
         "mate": {
-            "one": "mate",
-            "many": "mates"
+            "one": "partner",
+            "many": "partnerzy"
         },
-        "are_mates": "mates",
-        "ex_mate": "ex-mate",
-        "she-cat": "she-cat",
-        "tom": "tom",
-        "cat": "cat",
-        "female": "female",
-        "male": "male",
-        "trans female": "trans female",
-        "trans male": "trans male",
-        "nonbinary": "nonbinary",
-        "is": "is",
-        "are": "are",
-        "can_work": "This cat can work",
-        "cant_work": "This cat isn't able to work",
-        "cant_work_condition": "Can't work with this condition",
-        "exp_label": "exp: %{exp}",
-        "newleaf": "newleaf",
-        "Newleaf": "Newleaf",
-        "greenleaf": "greenleaf",
-        "Greenleaf": "Greenleaf",
-        "leaf-fall": "leaf-fall",
-        "Leaf-fall": "Leaf-fall",
-        "leaf-bare": "leaf-bare",
-        "Leaf-bare": "Leaf-bare",
+        "are_mates": "partnerzy",
+        "ex_mate": "dawny partner",
+        "she-cat": "kotka",
+        "tom": "kocur",
+        "cat": "kot",
+        "female": "samiczka",
+        "male": "samiec",
+        "trans female": "samiczka (trans)",
+        "trans male": "samiec (trans)",
+        "nonbinary": "niebinarne",
+        "is": "jest",
+        "are": "są",
+        "can_work": "Jest w stanie pracować",
+        "cant_work": "Nie jest w stanie pracować",
+        "cant_work_condition": "Nie jest w stanie pracować",
+        "exp_label": "doświadczenie: %{exp}",
+        "newleaf": "nowych liści",
+        "Newleaf": "Nowych liści",
+        "greenleaf": "zielonych liści",
+        "Greenleaf": "Zielonych liści",
+        "leaf-fall": "opadających liści",
+        "Leaf-fall": "Opadających liści",
+        "leaf-bare": "nagich drzew",
+        "Leaf-bare": "Nagich drzew",
         "relation_BLOOD": "",
-        "relation_ADOPTIVE": "adoptive",
-        "relation_HALF_BLOOD": "half sibling",
-        "relation_NOT_BLOOD": "not blood related",
-        "relation_RELATED": "blood related",
-        "related_label": "related: %{relation}",
-        "related_text": "related",
-        "niece": "niece",
-        "nephew": "nephew",
-        "siblings_child": "sibling's child",
-        "aunt": "aunt",
-        "uncle": "uncle",
-        "parents_sibling": "parent's sibling",
-        "grandmother": "grandparent",
-        "grandfather": "grandparent",
-        "grandparent": "grandparent",
-        "granddaughter": "grandchild",
-        "grandson": "grandchild",
-        "grandchild": "grandchild",
-        "mother": "parent",
-        "father": "parent",
-        "parent": "parent",
-        "daughter": "child",
-        "son": "child",
-        "child": "child",
-        "sister": "sibling",
-        "brother": "sibling",
-        "sibling": "sibling",
-        "sibling_littermate": "%{relation} (littermate)",
-        "cousin_male": "cousin",
-        "cousin_female": "cousin",
-        "cousin_nb": "cousin",
-        "clan": "%{name}Clan",
-        "starclan": "StarClan",
-        "dark_forest": "Dark Forest",
-        "the_dark_forest": "The Dark Forest",
-        "unknown_residence": "Unknown Residence",
-        "your_clan": "Your Clan",
-        "cotc": "Cats Outside the Clan",
-        "empty": "empty",
-        "none": "none",
-        "name_search": "name search",
-        "has_a_mate": "has a mate",
-        "cats_mate": "%{name}'s mate",
-        "mate_none": "mate: none",
-        "mate_living": "(living)",
-        "mate_dead": "(dead)",
-        "mate_away": "(away)",
+        "relation_ADOPTIVE": "przybrany",
+        "relation_HALF_BLOOD": "przyrodnie rodzeństwo",
+        "relation_NOT_BLOOD": "nie spokrewnieni",
+        "relation_RELATED": "spokrewnieni",
+        "related_label": "%{relation}",
+        "related_text": "spokrewnieni",
+        "niece": "dziecko rodzeństwa",
+        "nephew": "dziecko rodzeństwa",
+        "siblings_child": "dziecko rodzeństwa",
+        "aunt": "ciotka",
+        "uncle": "wuj",
+        "parents_sibling": "rodzeństwo rodzica",
+        "grandmother": "babcia",
+        "grandfather": "dziadek",
+        "grandparent": "dziabko",
+        "granddaughter": "wnuczka",
+        "grandson": "wnuk",
+        "grandchild": "wnuczę",
+        "mother": "matka",
+        "father": "ojciec",
+        "parent": "rodzic",
+        "daughter": "córka",
+        "son": "syn",
+        "child": "dziecko",
+        "sister": "siostra",
+        "brother": "brat",
+        "sibling": "rodzeństwo",
+        "sibling_littermate": "%{relation} (jednego miotu)",
+        "cousin_male": "kuzyn",
+        "cousin_female": "kuzynka",
+        "cousin_nb": "kuzynostwo",
+        "starclan": "Klan Gwiazdy",
+        "dark_forest": "Mroczna Puszcza",
+        "the_dark_forest": "Mroczna Puszcza",
+        "unknown_residence": "Nieznany Pobyt",
+        "your_clan": "Twój Klan",
+        "cotc": "Koty poza Klanem",
+        "empty": "pusty",
+        "none": "żadne",
+        "name_search": "szukaj po imieniu",
+        "has_a_mate": "ma partnera",
+        "cats_mate": "partner %{name}",
+        "mate_none": "partner: brak",
+        "mate_living": "(żywy)",
+        "mate_dead": "(martwy)",
+        "mate_away": "(zaginiony)",
         "mate_label": {
-            "one": "mate: %{mates}",
-            "many": "mates: %{mates}"
+            "one": "partner: %{mates}",
+            "many": "partnerzy: %{mates}"
         },
         "mate_extra": {
-            "one": "1 other",
-            "many": "%{count} others"
+            "one": "1 inny",
+            "many": "%{count} inni"
         },
         "mentor": {
             "one": "mentor",
-            "many": "mentors"
+            "many": "mentorzy"
         },
         "mentor_label": "mentor: %{mentor}",
         "apprentice_label": {
             "zero": "",
-            "one": "apprentice: %{apprentices}",
-            "many": "apprentices: %{apprentices}"
+            "one": "uczeń: %{apprentices}",
+            "many": "uczniowie: %{apprentices}"
         },
-        "former_apprentice_history": "%{name} previously mentored %{apprentices}.",
+        "former_apprentice_history": "%{name} poprzednio mentorował %{apprentices}.",
         "former_apprentice_label": {
-            "one": "1 former apprentice",
-            "many": "%{count} former apprentices"
+            "one": "1 dawny uczeń",
+            "many": "%{count} dawnych uczniów"
         },
         "apprentice_extra": {
             "zero": "",
-            "one": "1 other",
-            "many": "%{count} others"
+            "one": "1 inny",
+            "many": "%{count} inni"
         },
-        "dead_label": "%{name} (dead)",
-        "mark_favorite": "Mark as favorite",
-        "remove_favorite": "Remove favorite",
-        "has_permanent_condition": "has a permanent condition",
-        "born_with": "born with this condition",
+        "dead_label": "%{name} (martwy)",
+        "mark_favorite": "Dodaj do ulubionych",
+        "remove_favorite": "Usuń z ulubionych",
+        "has_permanent_condition": "ma niepełnosprawność lub chorobę trwałą",
+        "born_with": "wrodzone",
         "had_perm_condition_for": {
-            "one": "has had this condtion for %{count} moon",
-            "many": "has had this condition for %{count} moons"
+            "one": "%{count} księżyc",
+            "many": "%{count} księżyców"
         },
-        "had_injury_for": "has been hurt for %{moons}",
-        "pregnant_for": "has been pregnant for %{moons}",
-        "recovering_from_birth_for": "has been recovering for %{moons}",
-        "sick": "sick",
-        "injured": "injured",
-        "grieving": "grieving",
-        "fleas": "flea-ridden",
-        "is_infected": "is infected",
-        "is_festering": "is festering",
-        "got_condition": "%{cat} got: %{conditions}."
+        "had_injury_for": "przez %{moons}",
+        "pregnant_for": "w ciąży %{moons}",
+        "recovering_from_birth_for": "odzyskuje siły po ciąży %{moons}",
+        "sick": "chory",
+        "injured": "ranny",
+        "grieving": "w żałobie",
+        "fleas": "zapchlony",
+        "is_infected": "infekcja",
+        "is_festering": "jątrzenie",
+        "got_condition": "%{cat} ma: %{conditions}."
     }
 }

@@ -44,8 +44,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_flowerdate_WrWr",
-        "intro_text": "p_l thinks r_c0 is, well, really, just — uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c0 might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c0 to spend some time together, just the two of them, this afternoon!",
-        "decline_text": "Unfortunately, r_c0 is sent on an afternoon border patrol before p_l can say anything.",
+        "intro_strings": [
+            "p_l thinks r_c0 is, well, really, just — uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c0 might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c0 to spend some time together, just the two of them, this afternoon!"
+        ],
+        "decline_strings": [
+            "Unfortunately, r_c0 is sent on an afternoon border patrol before p_l can say anything."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -104,7 +108,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 has always had a skilled tongue, but it's rarely ever felt this important to choose {PRONOUN/s_c0/poss} words carefully. It's all worth it to hear r_c's 'yes.' Their stroll together is awkward with the new tension of acknowledged romance, but neither cat would change it for the world."
+                    "s_c0 has always had a skilled tongue, but it's rarely ever felt this important to choose {PRONOUN/s_c0/poss} words carefully. It's all worth it to hear r_c0's 'yes.' Their stroll together is awkward with the new tension of acknowledged romance, but neither cat would change it for the world."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -225,8 +229,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_vision_McWr",
-        "intro_text": "Snow swirls around c_n's camp, piling up in unusually deep snowdrifts. p_l gathers some apprentices to {PRONOUN/p_l/object} for a story.",
-        "decline_text": "Trying to get apprentices to do anything is like — well, herding cats.",
+        "intro_strings": [
+            "Snow swirls around c_n's camp, piling up in unusually deep snowdrifts. p_l gathers some apprentices to {PRONOUN/p_l/object} for a story."
+        ],
+        "decline_strings": [
+            "Trying to get apprentices to do anything is like — well, herding cats."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -415,8 +423,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_curiosity_McAp",
-        "intro_text": "The wind blows across the lake, almost sounding like the moans of a hungry cat. p_l has a gleam in {PRONOUN/p_l/poss} eye that tells r_c1 {PRONOUN/p_l/subject} {VERB/p_l/have/has} a story to tell...",
-        "decline_text": "r_c1 is too hungry and cold to stop for a story now! {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/pad/pads} away in search of food.",
+        "intro_strings": [
+            "The wind blows across the lake, almost sounding like the moans of a hungry cat. p_l has a gleam in {PRONOUN/p_l/poss} eye that tells r_c1 {PRONOUN/p_l/subject} {VERB/p_l/have/has} a story to tell..."
+        ],
+        "decline_strings": [
+            "r_c1 is too hungry and cold to stop for a story now! {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/pad/pads} away in search of food."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

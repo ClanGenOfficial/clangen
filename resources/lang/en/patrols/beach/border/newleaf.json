@@ -19,8 +19,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As p_l crosses a beach, shivering with the cold, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a creaking, rushing sound; like a wave, but out of sync with the ocean.",
-        "decline_text": "p_l decides to head back early.",
+        "intro_strings": [
+            "As p_l crosses a beach, shivering with the cold, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a creaking, rushing sound; like a wave, but out of sync with the ocean."
+        ],
+        "decline_strings": [
+            "p_l decides to head back early."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -126,8 +130,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "animals/gen_eagledive",
-        "intro_text": "As the patrol heads out toward the rock-choked border, they notice a dark shadow flapping above them. A skua! The cats watch as the huge bird crashes into a storm petrel mid-air, sending gray feathers flying. The petrel slams into the ground while the skua screams and circles overhead, tracking its prey.",
-        "decline_text": "Watching the skua land beside its prize with a triumphant shriek, the patrol decides that tangling with a bird like that isn't worth the trouble.",
+        "intro_strings": [
+            "As the patrol heads out toward the rock-choked border, they notice a dark shadow flapping above them. A skua! The cats watch as the huge bird crashes into a storm petrel mid-air, sending gray feathers flying. The petrel slams into the ground while the skua screams and circles overhead, tracking its prey."
+        ],
+        "decline_strings": [
+            "Watching the skua land beside its prize with a triumphant shriek, the patrol decides that tangling with a bird like that isn't worth the trouble."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

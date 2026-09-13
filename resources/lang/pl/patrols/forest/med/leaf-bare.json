@@ -22,9 +22,13 @@
             ]
         },
         "chance_of_success": 20,
-        "patrol_art": "cat_sprites\/gen_hunt_LB_snowstorm_Wr",
-        "intro_text": "In the snowy forest, p_l's patrol struggles to track down any herbs that have survived leaf-bare's frost.",
-        "decline_text": "p_l calls off the patrol before any cat can suffer the effects of the cold.",
+        "patrol_art": "cat_sprites/gen_hunt_LB_snowstorm_Wr",
+        "intro_strings": [
+            "In the snowy forest, p_l's patrol struggles to track down any herbs that have survived leaf-bare's frost."
+        ],
+        "decline_strings": [
+            "p_l calls off the patrol before any cat can suffer the effects of the cold."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -133,7 +137,7 @@
                 "frequency": 2,
                 "outcome_art": "med_general_intro",
                 "strings": [
-                    "s_c0 is certain {PRONOUN\/s_c0\/subject} caught a whiff of catmint. {PRONOUN\/s_c0\/subject\/CAP} {VERB\/s_c0\/convince\/convinces} the patrol to keep looking even as it grows dark. s_c0 is triumphant in the end, but these few scraggly catmint leaves cost the patrol frozen paws."
+                    "s_c0 is certain {PRONOUN/s_c0/subject} caught a whiff of catmint. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/convince/convinces} the patrol to keep looking even as it grows dark. s_c0 is triumphant in the end, but these few scraggly catmint leaves cost the patrol frozen paws."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -191,7 +195,7 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_med_cobwebssuccess_Mc",
+                "outcome_art": "cat_sprites/gen_med_cobwebssuccess_Mc",
                 "strings": [
                     "s_c0 reasons that some herbs are less affected by the cold and the patrol should take this chance to stock up on them. The cats return laden with cobwebs and burdock root."
                 ],
@@ -243,7 +247,7 @@
         "fail_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_med_comfort_McMc",
+                "outcome_art": "cat_sprites/gen_med_comfort_McMc",
                 "strings": [
                     "The patrol is unable to find much under the recent snowfall. They comfort each other as they walk home."
                 ],
@@ -270,7 +274,7 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_med_comfort_McMc",
+                "outcome_art": "cat_sprites/gen_med_comfort_McMc",
                 "strings": [
                     "The frost has set in too deep, and no life remains on the forest floor. The patrol commiserates about the difficulty of herb-gathering in leaf-bare as they head home."
                 ],
@@ -297,7 +301,7 @@
             },
             {
                 "frequency": 2,
-                "outcome_art": "cat_sprites\/gen_med_pissed_Mc",
+                "outcome_art": "cat_sprites/gen_med_pissed_Mc",
                 "strings": [
                     "No herbs are turned up by the patrol's search. The cats try not to let their short tempers get the best of them as they head home."
                 ],
@@ -323,7 +327,7 @@
             },
             {
                 "frequency": 2,
-                "outcome_art": "cat_sprites\/gen_med_speakingcat_Mc",
+                "outcome_art": "cat_sprites/gen_med_speakingcat_Mc",
                 "strings": [
                     "p_l and r_c0 get snippy with each other as the day wears on. s_c0 reminds them that neither cat is responsible for leaf-bare's scarcity, and their tempers cool. Still, no herbs turn up."
                 ],

@@ -11,10 +11,10 @@
             "TICKEDSTRIPEFADE",
             "TICKEDDOTS",
             "TICKEDTOPGRAD",
-            "SINGLESTRIPEOVER"
+            "SINGLESTRIPEPATTERN"
         ],
         [
-            "SINGLESTRIPEUNDER",
+            "SINGLESTRIPEPATTERNFADE",
             "SOKOKEPATTERNGRAD",
             "SOKOKEPATTERN",
             "SOKOKEPATTERNFILL",
@@ -35,7 +35,7 @@
             "EXOTICBOTTOMGRAD",
             "EXOTICTOPGRAD",
             "BENGALPATTERN",
-            "BENGALPATTERNLIGHT"
+            "EXOTICPATTERNLIGHT"
         ],
         [
             "EXOTICMUZZLE",
@@ -46,7 +46,12 @@
             "FRECKLEDPATTERNGRAD",
             "BENGALPATTERNFILL",
             "MASKEDCHIN",
-            "SOKOKEPATTERNFILLGRAD"
+            "SOKOKEPATTERNFILLGRAD",
+            "LEGBOTTOMGRAD"
+        ],
+        [
+            "BACKTAILPATTERNGRAD",
+            "LEGPATTERNGRAD"
         ]
 
     ]

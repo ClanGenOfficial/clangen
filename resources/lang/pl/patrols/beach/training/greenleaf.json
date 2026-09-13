@@ -32,13 +32,17 @@
             }
         },
         "chance_of_success": 60,
-        "patrol_art": "cat_sprites\/gen_bord_story_WrWrWr",
-        "intro_text": "p_l leads the patrol out to a promontory of rock, pointing out the Twoleg monsters crowding the sandy shoreline below as they twinkle in the sunlight.",
-        "decline_text": "Clearly there'll be no using this part of their territory today then. The patrol goes to report this back to camp.",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
+        "intro_strings": [
+            "p_l leads the patrol out to a promontory of rock, pointing out the Twoleg monsters crowding the sandy shoreline below as they twinkle in the sunlight."
+        ],
+        "decline_strings": [
+            "Clearly there'll be no using this part of their territory today then. The patrol goes to report this back to camp."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "animals\/bch_twolegbeach",
+                "outcome_art": "animals/bch_twolegbeach",
                 "strings": [
                     "This is the history p_l is here to teach \u2014 every greenleaf, the Twolegs come to this beach, a great migration in their monsters. They swim in this bay, and occasionally the bays to either side, but no more than that, a constrained invasion. Leave them to their rituals. c_n will return to this beach when the seasons change."
                 ],
@@ -86,7 +90,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from was disappointed that cat_from and the patrol were too nervous at the sight of monsters to listen to {PRONOUN\/cat_from\/object}."
+                            "cats_from": "cat_from was disappointed that cat_from and the patrol were too nervous at the sight of monsters to listen to {PRONOUN/cat_from/object}."
                         }
                     }
                 ]
@@ -133,15 +137,19 @@
             }
         ],
         "chance_of_success": 60,
-        "patrol_art": "cat_sprites\/gen_hunt_heat_WrWr",
-        "intro_text": "This is just oppressive. The sand burns the patrol's paws as they dart from one refuge of dune-bush to another, the distant training grounds they were supposed to go to looking more and more out of reach.",
-        "decline_text": "Time to go back home and wait it out.",
+        "patrol_art": "cat_sprites/gen_hunt_heat_WrWr",
+        "intro_strings": [
+            "This is just oppressive. The sand burns the patrol's paws as they dart from one refuge of dune-bush to another, the distant training grounds they were supposed to go to looking more and more out of reach."
+        ],
+        "decline_strings": [
+            "Time to go back home and wait it out."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_train_soggykittyhappy_Wr",
+                "outcome_art": "cat_sprites/gen_train_soggykittyhappy_Wr",
                 "strings": [
-                    "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c0 swipes water towards p_l and {PRONOUN\/p_l\/subject} {VERB\/p_l\/laugh\/laughs}, welcoming it and returning the favor. There's nothing like swimming in greenleaf, and the patrol devolves into a waterfight."
+                    "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c0 swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favor. There's nothing like swimming in greenleaf, and the patrol devolves into a waterfight."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -169,9 +177,9 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_talkingmates_WrWr",
+                "outcome_art": "cat_sprites/gen_talkingmates_WrWr",
                 "strings": [
-                    "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c0 swipes water towards p_l and {PRONOUN\/p_l\/subject} {VERB\/p_l\/purr\/purrs}, welcoming it and returning the favor, batting back in mock splash-fight as the rest of the patrol fades away, just the two of them in their own little world."
+                    "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c0 swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/purr/purrs}, welcoming it and returning the favor, batting back in mock splash-fight as the rest of the patrol fades away, just the two of them in their own little world."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -209,12 +217,12 @@
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "dehydrated"
                         ],
-                        "death_history": "m_c got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN\/m_c\/poss} life from {PRONOUN\/m_c\/object}."
+                        "death_history": "m_c got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN/m_c/poss} life from {PRONOUN/m_c/object}."
                     }
                 ]
             }
@@ -256,7 +264,7 @@
                 ],
                 "mutual": false,
                 "constraints": [
-                    "mentor\/app"
+                    "mentor/app"
                 ]
             }
         ],
@@ -268,13 +276,17 @@
             }
         },
         "chance_of_success": 65,
-        "patrol_art": "backgrounds\/bch_pawprints",
-        "intro_text": "While wading through the damp mud behind {PRONOUN\/r_c1\/poss} mentor, r_c1 wonders where the ocean went. p_l explains that the tide flows out far here, twice a day, leaving behind this landscape of soft, algae-rich silt stretching to the far horizon. Seabirds, probing the mud for cockles and clams, startle into flight at the cats' approach.",
-        "decline_text": "A sudden downpour leaves p_l and r_c1 drenched. They cancel training and return to camp to shelter.",
+        "patrol_art": "backgrounds/bch_pawprints",
+        "intro_strings": [
+            "While wading through the damp mud behind {PRONOUN/r_c1/poss} mentor, r_c1 wonders where the ocean went. p_l explains that the tide flows out far here, twice a day, leaving behind this landscape of soft, algae-rich silt stretching to the far horizon. Seabirds, probing the mud for cockles and clams, startle into flight at the cats' approach."
+        ],
+        "decline_strings": [
+            "A sudden downpour leaves p_l and r_c1 drenched. They cancel training and return to camp to shelter."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "backgrounds\/bch_pawprints",
+                "outcome_art": "backgrounds/bch_pawprints",
                 "strings": [
                     "c_n never goes out onto the mudflats in fog. It's far too easy to lose your way, wander toward the ocean, and be swept away when the tide returns. But under the greenleaf sun, it's safe to frolic and train here. p_l instructs r_c1 to keep an ear out for the approaching waves and an eye on the sun's movement."
                 ],
@@ -308,9 +320,9 @@
             },
             {
                 "frequency": 3,
-                "outcome_art": "cat_sprites\/bch_train_lore1_Wr",
+                "outcome_art": "cat_sprites/bch_train_lore1_Wr",
                 "strings": [
-                    "If r_c1 wants to catch the birds, {PRONOUN\/r_c1\/subject} mustn't stick out so much. Following p_l's lead, they both roll in the mud, let themselves dry in the sun, and crouch in wait. A seabird wades closer, but r_c1 pounces too early, {PRONOUN\/r_c1\/poss} paws swishing through the air as the bird flaps away in a flurry of feathers. It's a process, p_l purrs - r_c1 got the principle."
+                    "If r_c1 wants to catch the birds, {PRONOUN/r_c1/subject} mustn't stick out so much. Following p_l's lead, they both roll in the mud, let themselves dry in the sun, and crouch in wait. A seabird wades closer, but r_c1 pounces too early, {PRONOUN/r_c1/poss} paws swishing through the air as the bird flaps away in a flurry of feathers. It's a process, p_l purrs - r_c1 got the principle."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -342,7 +354,7 @@
             },
             {
                 "frequency": 2,
-                "outcome_art": "backgrounds\/bch_pawprints",
+                "outcome_art": "backgrounds/bch_pawprints",
                 "strings": [
                     "r_c1 watches the sea slowly return, rivulets turning into puddles and lapping waves as the water reclaims the land. With it, p_l explains, are traveling countless tiny mud snails \u2014 as small as a single kitten-claw, they cling to the underside of the water's surface. They move with the tide itself and are the fastest sealife in the mudflats."
                 ],
@@ -375,7 +387,7 @@
             },
             {
                 "frequency": 2,
-                "outcome_art": "backgrounds\/bch_pawprints",
+                "outcome_art": "backgrounds/bch_pawprints",
                 "strings": [
                     "r_c1 inquires about the little spirally piles of sand on the ground. p_l describes how sand worms live everywhere here, feeding on the algae and depositing leftover sand at the end of their tunnels. The worms are food for the birds, and the birds are food for c_n. If r_c1 can catch them! They'll work on pouncing techniques next."
                 ],
@@ -410,7 +422,7 @@
         "fail_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_running_WrAp",
+                "outcome_art": "cat_sprites/gen_running_WrAp",
                 "strings": [
                     "The water slowly returns, and in the distance, damp fur flashes at the surface. p_l decides they really should return to camp, quickly. As r_c1 runs for shore, honking calls fill the air behind them. Out of breath and back on dry land, p_l explains: seals. Big teeth. Faster than they look."
                 ],
@@ -436,16 +448,16 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from was scared by seals appearing in the mudflats and wished cat_to had warned {PRONOUN\/cat_from\/object}."
+                            "cats_from": "cat_from was scared by seals appearing in the mudflats and wished cat_to had warned {PRONOUN/cat_from/object}."
                         }
                     }
                 ]
             },
             {
                 "frequency": 4,
-                "outcome_art": "backgrounds\/bch_pawprints",
+                "outcome_art": "backgrounds/bch_pawprints",
                 "strings": [
-                    "p_l reminds r_c1 not to get distracted. {PRONOUN\/r_c1\/subject\/CAP} suddenly {VERB\/r_c1\/realize\/realizes} there is water staining {PRONOUN\/r_c1\/poss} paws. The sea can return faster than {PRONOUN\/r_c1\/subject} think{VERB\/r_c1\/\/s}, p_l chides, and getting caught out by the rising water is dangerous. Cats have been lost that way. Staring at the ground, r_c1 quickly trudges after {PRONOUN\/r_c1\/poss} mentor."
+                    "p_l reminds r_c1 not to get distracted. {PRONOUN/r_c1/subject/CAP} suddenly {VERB/r_c1/realize/realizes} there is water staining {PRONOUN/r_c1/poss} paws. The sea can return faster than {PRONOUN/r_c1/subject} think{VERB/r_c1//s}, p_l chides, and getting caught out by the rising water is dangerous. Cats have been lost that way. Staring at the ground, r_c1 quickly trudges after {PRONOUN/r_c1/poss} mentor."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -470,7 +482,7 @@
                         ],
                         "amount": -6,
                         "log": {
-                            "cats_from": "cat_to got distracted while training on the mudflats. cat_from was disappointed {PRONOUN\/cat_from\/subject} had to remind {PRONOUN\/cat_to\/object} to stay vigilant."
+                            "cats_from": "cat_to got distracted while training on the mudflats. cat_from was disappointed {PRONOUN/cat_from/subject} had to remind {PRONOUN/cat_to/object} to stay vigilant."
                         }
                     }
                 ]

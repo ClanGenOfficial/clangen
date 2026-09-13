@@ -1,96 +1,63 @@
 [
     {
         "event_id": "wtlnd_death_any_quicksand",
-        "location": [
-            "wetlands"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["wetlands"],
+        "season": ["any"],
         "tags": [],
         "frequency": 2,
         "event_text": "m_c got stuck in quicksand and wasn't found in time.",
         "m_c": {
-            "status": [
-                "apprentice",
-                "warrior",
-                "deputy",
-                "leader"
-            ],
+            "status": ["apprentice", "warrior", "deputy", "leader"],
             "dies": true
         },
         "history": [
             {
-                "cats": [
-                    "m_c"
-                ],
+                "cats": ["m_c"],
                 "death": "m_c died after getting trapped in quicksand."
             }
         ]
     },
     {
         "event_id": "wtlnd_death_app_cottonmouth",
-        "location": [
-            "wetlands"
-        ],
-        "season": [
-            "greenleaf",
-            "newleaf",
-            "leaf-fall"
-        ],
+        "location": ["wetlands"],
+        "season": ["greenleaf", "newleaf", "leaf-fall"],
         "tags": [],
         "frequency": 4,
         "event_text": "m_c was killed by a snake with a strikingly white mouth.",
         "m_c": {
-            "status": [
-                "apprentice"
-            ],
+            "status": ["apprentice"],
             "dies": true
         },
         "history": [
             {
-                "cats": [
-                    "m_c"
-                ],
+                "cats": ["m_c"],
                 "death": "m_c was killed by a cottonmouth snake."
             }
         ]
     },
     {
         "event_id": "wtlnd_death_crocodile",
-        "location": [
-            "wetlands"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["wetlands"],
+        "season": ["any"],
         "frequency": 2,
-        "event_text": "m_c was out fishing, close to the waters edge. Close enough for a deathjaw to snatch {PRONOUN\/m_c\/object}.",
+        "event_text": "m_c was out fishing, close to the waters edge. Close enough for a deathjaw to snatch {PRONOUN/m_c/object}.",
         "m_c": {
-            "status": [
-                "-kitten"
-            ],
+            "status": ["-kitten"],
             "dies": true
         },
         "history": [
             {
-                "cats": [
-                    "m_c"
-                ],
+                "cats": ["m_c"],
                 "death": "m_c was snatched by a deathjaw."
             }
         ]
     },
     {
         "event_id": "wtld_death_crocodild2",
-        "location": [
-            "wetlands"
-        ],
-        "season": [
-            "-leaf-bare"
-        ],
+        "location": ["wetlands"],
+        "season": ["-leaf-bare"],
         "frequency": 2,
-        "event_text": "m_c pushed r_c out of reach of a deathjaw's maw, {PRONOUN\/m_c\/subject} would not be as lucky.",
+        "event_text": "m_c pushed r_c out of reach of a deathjaw's maw, {PRONOUN/m_c/subject} would not be as lucky.",
         "m_c": {
             "trait": [
                 "-nervous"
@@ -101,32 +68,22 @@
             "dies": true
         },
         "r_c": {
-            "status": [
-                "any"
-            ]
+            "status": ["any"]
         },
         "history": [
             {
-                "cats": [
-                    "m_c"
-                ],
+                "cats": ["m_c"],
                 "death": "m_c was snatched by a deathjaw while saving a Clanmate."
             }
         ]
     },
     {
         "event_id": "wtld_death_bog",
-        "location": [
-            "any"
-        ],
-        "season": [
-            "greenleaf"
-        ],
-        "tags": [
-            "no_body"
-        ],
+        "location": ["any"],
+        "season": ["greenleaf"],
+        "tags": ["no_body"],
         "frequency": 3,
-        "event_text": "m_c adventured too far and found {PRONOUN\/m_c\/self} stuck in a bog. m_c could only struggle in the muck until exhaustion claimed {PRONOUN\/m_c\/object}.",
+        "event_text": "m_c adventured too far and found {PRONOUN/m_c/self} stuck in a bog. m_c could only struggle in the muck until exhaustion claimed {PRONOUN/m_c/object}.",
         "m_c": {
             "status": [
                 "-kitten"
@@ -134,23 +91,17 @@
         },
         "history": [
             {
-                "cats": [
-                    "m_c"
-                ],
+                "cats": ["m_c"],
                 "death": "m_c drowned in a bog."
             }
         ]
     },
     {
         "event_id": "wtld_death_weeds",
-        "location": [
-            "wetlands"
-        ],
-        "season": [
-            "-leaf-bare"
-        ],
+        "location": ["wetlands"],
+        "season": ["-leaf-bare"],
         "frequency": 3,
-        "event_text": "m_c drowned after {PRONOUN\/m_c\/subject} found {PRONOUN\/m_c\/self} ensared in weeds.",
+        "event_text": "m_c drowned after {PRONOUN/m_c/subject} found {PRONOUN/m_c/self} ensared in weeds.",
         "m_c": {
             "trait": [
                 "-careful",
@@ -160,37 +111,25 @@
         },
         "history": [
             {
-                "cats": [
-                    "m_c"
-                ],
+                "cats": ["m_c"],
                 "death": "m_c drowned after being trapped in weeds."
             }
         ]
     },
     {
         "event_id": "wtld_death_poisonous frog",
-        "location": [
-            "wetlands"
-        ],
-        "season": [
-            "-leaf-bare"
-        ],
-        "tags": [
-            "no_body"
-        ],
+        "location": ["wetlands"],
+        "season": ["-leaf-bare"],
+        "tags": ["no_body"],
         "frequency": 2,
-        "event_text": "m_c curiously licked a colorful frog. However, {PRONOUN\/m_c\/subject} collapsed shortly after.",
+        "event_text": "m_c curiously licked a colorful frog. However, {PRONOUN/m_c/subject} collapsed shortly after.",
         "m_c": {
-            "status": [
-                "kitten"
-            ],
+            "status": ["kitten"],
             "dies": true
         },
         "history": [
             {
-                "cats": [
-                    "m_c"
-                ],
+                "cats": ["m_c"],
                 "death": "m_c died after licking a poisonious frog."
             }
         ]
@@ -200,9 +139,7 @@
         "location": [
             "wetlands"
         ],
-        "season": [
-            "any"
-        ],
+        "season": ["any"],
         "frequency": 3,
         "event_text": "m_c was dragged off by an otter that had snuck into camp.",
         "m_c": {
@@ -214,9 +151,7 @@
         },
         "history": [
             {
-                "cats": [
-                    "m_c"
-                ],
+                "cats": ["m_c"],
                 "death": "m_c was eaten by an otter."
             }
         ]

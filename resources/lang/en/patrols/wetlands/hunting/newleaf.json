@@ -19,8 +19,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "While out on a solo hunt, p_l notices that the water level within c_n's territory is higher than usual. {PRONOUN/p_l/subject/CAP} {VERB/p_l/know/knows} it's dangerous to continue on alone, but p_l can practically <i>taste</i> the prey already.",
-        "decline_text": "p_l considers it for a bit, but eventually decides that it's just too risky to go any further. Perhaps {PRONOUN/p_l/subject}'ll try again later with an actual patrol.",
+        "intro_strings": [
+            "While out on a solo hunt, p_l notices that the water level within c_n's territory is higher than usual. {PRONOUN/p_l/subject/CAP} {VERB/p_l/know/knows} it's dangerous to continue on alone, but p_l can practically <i>taste</i> the prey already."
+        ],
+        "decline_strings": [
+            "p_l considers it for a bit, but eventually decides that it's just too risky to go any further. Perhaps {PRONOUN/p_l/subject}'ll try again later with an actual patrol."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
