@@ -209,7 +209,8 @@
     {
         "event_id": "calm_medicine_cat",
         "strings": [
-            "Stays composed when treating a severe injury"
+            "Stays composed when treating a severe injury",
+            "Refuses to rush a procedure"
         ],
         "involved_cats": {
             "m_c": {
@@ -245,7 +246,8 @@
         "event_id": "careful_medicine_cat",
         "strings": [
             "Counts and recounts the poppy seeds",
-            "Makes sure none of the herbs get mixed up"
+            "Makes sure none of the herbs get mixed up",
+            "Refuses to rush a procedure"
         ],
         "involved_cats": {
             "m_c": {
