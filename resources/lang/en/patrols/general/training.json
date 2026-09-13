@@ -32395,32 +32395,6 @@
         ],
         "fail_outcomes": [
             {
-                "frequency": 1,
-                "outcome_art": "cat_sprites/gen_embarrassed_WrWr",
-                "strings": [
-                    "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties."
-                ],
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": -3,
-                        "log": {
-                            "cats_from": "cat_from and cat_to felt awkward after a training patrol didn't go anywhere productive."
-                        }
-                    }
-                ]
-            },
-            {
                 "frequency": 4,
                 "strings": [
                     "They focus on fighting techniques. p_l shows r_c0 the maneuver over and over again, but r_c0 just can't get the hang of it, and p_l starts to lose {PRONOUN/p_l/poss} patience."
@@ -33230,6 +33204,32 @@
                         "condition": ["blunt_force_injury"],
                         "scar_history": "m_c was scared after falling from a great height.",
                         "death_history": "m_c died from {PRONOUN/m_c/poss} injuries after falling from a great height."
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "outcome_art": "cat_sprites/gen_embarrassed_WrWr",
+                "strings": [
+                    "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "cat_from and cat_to felt awkward after a training patrol didn't go anywhere productive."
+                        }
                     }
                 ]
             }
