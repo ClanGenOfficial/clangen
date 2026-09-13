@@ -201,6 +201,11 @@
     "Orange", "Ochre", "Peach", "Auburn", "Birch", "Cougar", "Gorse", "Dandelion", "Spindle", "Ivory",
     "Fawn", "Fallow", "Morel", "Mouse", "Velvet", "Dust", "Tawny", "Sable"
     ],
+	"DAWN": [
+	"Apricot", "Aspen", "Barley", "Beam", "Bloom", "Blossom", "Bright", "Cougar", "Coyote", "Dawn", "Dazzle", "Dew", 
+	"Dream", "Drift", "Drizzle", "Egg", "Fallow", "Flicker", "Garlic", "Hare", "Haze", "Hazy", "Ivory", "Light", 
+	"Mist", "Misty", "Morning", "Moth", "Mouse", "Pale", "Pearl", "Rabbit", "Sand", "Shell", "Shimmer", "Sky"
+	],
     "PALEGINGER": [
     "Pale", "Ginger", "Sand", "Sandy", "Yellow", "Sun", "Sunny", "Light", "Lion", "Bright", "Phlox", "Vervain",
     "Honey", "Daisy", "Warm", "Robin", "Cosmos", "Orchid", "Snapdragon", "Foxglove", "Verbena", "Straw",
@@ -300,6 +305,9 @@
     "BLOSSOM": [
     "sun", "beam", "shine", "shell", "honey", "cougar", "owl", "moth", "sable", "dust", "flower"
       ],
+	"DAWN": [
+	"beam", "dawn", "dazzle", "dew", "dream", "drizzle", "egg", "flicker", "glow", "hare", "haze", "moth", "mouse", "shell", "shimmer"
+	],
     "PALEGINGER": [
 	"sun", "beam", "shine", "spark", "shell", "honey", "flash", "lion", "cougar"
     ],
