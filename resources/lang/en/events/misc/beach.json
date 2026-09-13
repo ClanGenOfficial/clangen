@@ -114,9 +114,7 @@
         "supplies": [
             {
                 "type": "all_herb",
-                "trigger": [
-                    "excess"
-                ],
+                "trigger": ["excess"],
                 "adjust": "reduce_half"
             }
         ]
@@ -148,6 +146,166 @@
         }
     },
     {
+        "event_id": "bch_freshkill_reduce_all_wave",
+        "location": [
+            "beach:camp1_camp2_camp4"
+        ],
+        "season": ["any"],
+        "frequency": 1,
+        "event_text": "A huge wave surged into camp, stirring up sand and washing away the fresh-kill as it receded. In its wake, the Clan was left with a dampened mood and soaked paws.",
+        "supplies": [
+            {
+                "type": "freshkill",
+                "trigger": ["adequate"],
+                "adjust": "reduce_full"
+            }
+        ]
+    },
+    {
+        "event_id": "bch_freshkill_reduce_half_wave",
+        "location": [
+            "beach:camp1_camp2_camp4"
+        ],
+        "season": ["any"],
+        "frequency": 2,
+        "event_text": "A wave splashed into camp, soaking an unlucky few and washing away the fresh-kill that c_n wasn't quick enough to save.",
+           "supplies": [
+            {
+                "type": "freshkill",
+                "trigger": ["adequate","full","excess"],
+                "adjust": "reduce_half"
+            }
+        ]
+    },
+    {
+        "event_id": "bch_freshkill_storm",
+        "location": [
+            "beach:camp1_camp3_camp4"
+        ],
+        "season": ["any"],
+        "frequency": 2,
+        "event_text": "After a particularly rough storm, c_n discovered the fresh-kill pile didn't make it through undamaged.",
+           "supplies": [
+            {
+                "type": "freshkill",
+                "trigger": ["full","excess"],
+                "adjust": "reduce_half"
+            }
+        ]
+    },
+    {
+        "event_id": "bch_crab_freshkill_steal",
+        "location": [
+            "beach"
+        ],
+        "season": ["any"],
+        "frequency": 3,
+        "event_text": "A cast of crabs invaded the fresh-kill pile. c_n fended them off, but the pile is left damaged.",
+        "supplies": [
+            {
+            "type": "freshkill",
+            "trigger": ["adequate"],
+            "adjust": "reduce_quarter"
+            }
+        ]
+    },
+    {
+        "event_id": "bch_coconutcrab_freshkill_steal",
+        "location": ["beach"],
+        "season": ["any"],
+        "frequency": 3,
+        "event_text": "m_c discovered a giant coconut crab in camp helping itself to the fresh-kill. m_c chased it off before it could deal further damage.",
+        "m_c": {
+            "skill": [
+                "-FIGHTER,3"
+            ],
+            "status": [
+                "-kitten"
+            ]
+        },
+        "supplies": [
+            {
+            "type": "freshkill",
+            "trigger": ["always"],
+            "adjust": "reduce_eighth"
+          }
+        ]
+    },
+    {
+    "event_id": "bch_pelican_freshkill",
+    "location": ["beach:camp1_camp3_camp4"],
+    "season": ["any"],
+    "frequency": 3,
+    "event_text": "The fresh-kill pile attracted a pelican to the camp. m_c managed to chase the bird away before it could swallow c_n's prey.",
+    "m_c": {
+        "status": [
+            "-kitten"
+        ]
+    },
+    "relationships": [
+        {
+          "cats_from": [
+                    "some_clan",
+                    "high_social",
+                    "high_stable"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "trust",
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from was grateful to cat_to for defending the fresh-kill from a hungry pelican."
+            }
+        }
+    ]
+    },
+    {
+    "event_id": "bch_pelican_freshkill_duo",
+    "location": ["beach:camp1_camp3_camp4"],
+    "season": ["any"],
+    "frequency": 2,
+    "event_text": "A pelican landed in camp, keen on raiding the fresh-kill pile. m_c and r_c had other ideas, and they chased the bird off together. No bird will steal from c_n on their watch!",
+    "m_c": {
+        "status": ["apprentice"],
+        "trait": [
+            "-lonesome",
+            "-shy"
+        ]
+    },
+    "r_c": {
+        "status": ["apprentice"],
+        "trait": [
+            "-lonesome",
+            "-shy"
+        ]
+    },
+    "relationships": [
+         {
+          "cats_from": [
+                    "some_clan",
+                    "high_social",
+                    "high_stable"
+                ],
+                "cats_to": [
+                    "m_c", 
+                    "r_c"
+                ],
+                "values": [
+                    "trust",
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from was grateful to cat_to for defending the fresh-kill from a hungry pelican."
+            }
+         }
+        ]
+    },
+     {
         "event_id": "bch_misc_ghostship",
         "location": [
             "beach:camp3"

@@ -12,7 +12,7 @@ from scripts.models.shortevent.event_subtype import EventSubtype
 from scripts.models.shortevent.gender import NewGenderEnum
 from scripts.models.shortevent.history_text import HistoryText
 from scripts.models.shortevent.injury_item import InjuryItem
-from scripts.models.shortevent.location import Location
+from scripts.models.common.location import Location
 from scripts.models.shortevent.mc import MC
 from scripts.models.shortevent.other_clan import OtherClan
 from scripts.models.shortevent.outsider import Outsider

@@ -1,0 +1,295 @@
+[
+    {
+        "event_id": "mediator_gen",
+        "strings": [
+            "Is feeling a sense of pride after mediating a difficult argument",
+            "Wishes {PRONOUN\/m_c\/poss} Clanmates would just talk to each other",
+            "Is upset over a recent negotiation with a rival Clan",
+            "Negotiates an herb trade with another Clan",
+            "Is negotiating with a kittypet to make use of the herbs in their Twoleg garden",
+            "Is dismayed at how quickly {PRONOUN\/m_c\/poss} Clanmates get into arguments",
+            "Feels exhausted after mediating so many arguments",
+            "Feels pride for {PRONOUN\/m_c\/poss} work",
+            "Is mediating a couple's relationship",
+            "Is mediating a long time friendship between two Clanmates",
+            "Is feeling frustrated after a failed negotiation",
+            "Is feeling exhausted from resolving petty arguments",
+            "Wants to solve a dispute with another Clan",
+            "Wonders if mediating is meant to be so draining",
+            "Wonders if being a warrior would have been more fun",
+            "Is proud of how well {PRONOUN\/m_c\/subject} {VERB\/m_c\/are\/is} doing as a mediator",
+            "Accidentally made an argument worse",
+            "Is proud of getting through a difficult mediation session",
+            "Feels exhausted from {PRONOUN\/m_c\/poss} Clanmates' bickering",
+            "Is listening to both sides of an argument",
+            "Is feeling a bit underappreciated for {PRONOUN\/m_c\/poss} mediation",
+            "Is wondering if {PRONOUN\/m_c\/subject} made the right decision in becoming a mediator",
+            "Is relieved {PRONOUN\/m_c\/subject} broke up an argument before it started",
+            "Is hoping the Clan can stay peaceful",
+            "Is contemplating teaching the Clan communication skills",
+            "Is mediating a small disagreement between two Clanmates",
+            "Wonders if c_n considers {PRONOUN\/m_c\/object} to be a good mediator"
+        ]
+    },
+    {
+        "event_id": "mediator_to_alive_mediator",
+        "strings": [
+            "Is discussing conflict resolution strategies with r_c",
+            "Thinks r_c may have worsened a c_n argument",
+            "Thinks r_c did a great job resolving a conflict"
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "mediator",
+                    "mediator apprentice"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "mediator_to_alive_kits",
+        "strings": [
+            "Had to fix an argument between the kits... again"
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "kitten"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "mediator_to_alive_leader",
+        "strings": [
+            "Is upset with the leader over a border dispute gone wrong",
+            "Mediated a meeting between senior warriors and the leader over recent Clan decisions",
+            "Thinks r_c should be more prudent regarding Clan relations"
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "leader"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "mediator_to_alive_elder",
+        "strings": [
+            "Had to fix an argument between the elders... again"
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "elder"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "bloodthirsty_mediator",
+        "strings": [
+            "Is wondering if {PRONOUN\/m_c\/subject} should sabotage a relationship that is going a bit too well",
+            "Wishes to break up a sickeningly lovey-dovey couple",
+            "Chuckles to {PRONOUN\/m_c\/self} after sabotaging another relationship"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "bloodthirsty"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "cold_mediator",
+        "strings": [
+            "Is judging two Clanmates for their foolish argument",
+            "Wishes to break up a sickeningly lovey-dovey couple",
+            "Is sitting back and watching an argument take place"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "cold"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "compassionate_mediator",
+        "strings": [
+            "Feels bad for a parent who can't seem to get along with their child",
+            "Wonders why everyone can't just get along"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "compassionate"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "fierce_mediator",
+        "strings": [
+            "Is greatly annoyed by a Clanmate's inability to accept they were in the wrong",
+            "Is fighting the urge to shake some sense into a Clanmate"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "fierce"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "insecure_mediator",
+        "strings": [
+            "Finds mediating emotionally draining",
+            "Is worried {PRONOUN\/m_c\/subject} may have made things worse"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "insecure"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "loving_mediator",
+        "strings": [
+            "Wonders why everyone can't just get along",
+            "Sees all sides of the argument",
+            "Considers {PRONOUN\/m_c\/self} an expert on matters of the heart"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "loving"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "nervous_mediator",
+        "strings": [
+            "Finds mediating emotionally draining",
+            "Is feeling worried with all the high tension lately"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "nervous"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "righteous_mediator",
+        "strings": [
+            "Is greatly annoyed by a Clanmate's inability to accept they were in the wrong"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "righteous"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "troublesome_mediator",
+        "strings": [
+            "Is looking for a pair to sabotage, out of boredom",
+            "Solves problems by starting them"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "troublesome"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "vengeful_mediator",
+        "strings": [
+            "Is wondering if {PRONOUN\/m_c\/subject} should sabotage a relationship that is going a bit too well",
+            "Wishes to break up a sickeningly lovey-dovey couple",
+            "Is sitting back and watching an argument take place"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "vengeful"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "mediator_to_dead_mediator",
+        "strings": [
+            "Wishes {PRONOUN\/m_c\/subject} could ask r_c for advice",
+            "Wonders how r_c would have handled c_n's most recent conflict"
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "mediator"
+                ],
+                "group": [
+                    "starclan"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "mediator_to_newborn",
+        "strings": [
+            "Readies {PRONOUN\/m_c\/self} for the emotions a new birth might provoke"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "mediator"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "newborn"
+                ]
+            }
+        }
+    }
+]

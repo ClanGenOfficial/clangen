@@ -1,0 +1,20 @@
+{
+    "name": "TortieRecipe",
+    "layer_order": ["1", ["2", "3"]],
+    "layers": {
+        "3": {
+            "group_name": "{tortie_marking}",
+            "blend_mode": "mask",
+            "spritesheet": "patches_tortie"
+        },
+        "2": {
+            "pelt_name": "{tortie_pattern}",
+            "palette": "{tortie_colour}"
+        },
+        "1": {
+            "pelt_name": "{tortie_base}",
+            "palette": "{colour}"
+        }
+    },
+    "exceptions": []
+}

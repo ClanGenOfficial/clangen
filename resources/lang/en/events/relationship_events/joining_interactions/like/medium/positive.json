@@ -1,12 +1,12 @@
 [
     {
-        "id": "gen_like_med_inc1",
+        "event_id": "gen_like_med_inc1",
         "strings": [
 			"r_c asked m_c if {PRONOUN/m_c/subject} could use some help getting to know the other Clan members."
         ]
     },
     {
-        "id": "medicine_like_med_inc1",
+        "event_id": "medicine_like_med_inc1",
         "strings": [
             "r_c offered herb lessons to m_c in case {PRONOUN/m_c/subject} {VERB/m_c/weren't/wasn't} familiar with the more dangerous plants in the territory.",
             "r_c introduced {PRONOUN/r_c/self} as c_n's medicine cat and asked m_c to let {PRONOUN/r_c/object} know if m_c ever feels ill."

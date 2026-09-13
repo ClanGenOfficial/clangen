@@ -1,6 +1,6 @@
 [
     {
-        "id": "respect_de_low1",
+        "event_id": "respect_de_low1",
         "strings": [
             "m_c notices r_c failed to complete a simple task.",
             "r_c keeps asking m_c silly questions.",
@@ -25,7 +25,7 @@
         ]
     },
     {
-        "id": "respect_de_low2",
+        "event_id": "respect_de_low2",
         "strings": [
             "m_c complains about something r_c did.",
             "r_c snickered when m_c tripped.",

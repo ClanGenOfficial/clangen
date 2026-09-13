@@ -1,6 +1,6 @@
 [
     {
-        "id": "respect_inc_low1",
+        "event_id": "respect_inc_low1",
         "strings": [
             "m_c saw r_c being considerate.",
             "m_c noticed r_c is doing {PRONOUN/r_c/poss} best today.",
@@ -15,7 +15,7 @@
         ]
     },
     {
-        "id": "respect_inc_low2",
+        "event_id": "respect_inc_low2",
         "strings": [
             "m_c is impressed by r_c helping others today.",
             "m_c sees r_c help a Clanmate get unstuck from some brambles.",
@@ -38,7 +38,7 @@
         }
     },
     {
-        "id": "respect_inc_low3",
+        "event_id": "respect_inc_low3",
         "strings": [
             "m_c mews congratulations to r_c for a job well done.",
             "m_c and r_c spend the morning telling interesting stories.",
@@ -67,7 +67,7 @@
         ]
     },
     {
-        "id": "respect_inc_low4",
+        "event_id": "respect_inc_low4",
         "strings": [
             "m_c wants to be just like r_c someday.",
             "m_c really looks up to r_c!",
@@ -100,7 +100,7 @@
         }
     },
     {
-        "id": "respect_incfromneg_low1",
+        "event_id": "respect_incfromneg_low1",
         "strings": [
             "m_c thinks r_c is very helpful!",
             "m_c notices r_c doing something generous.",

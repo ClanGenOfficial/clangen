@@ -1,0 +1,50 @@
+[
+    {
+        "event_id": "general_death_starclan_thoughts",
+        "strings": [
+            "Is surprised to find {PRONOUN\/m_c\/self} walking the stars of Silverpelt",
+            "Is begging StarClan to send {PRONOUN\/m_c\/object} back",
+            "Is watching {PRONOUN\/m_c\/poss} own vigil",
+            "Wants to comfort a Clanmate who is grieving over {PRONOUN\/m_c\/object}",
+            "Is overwhelmed after meeting so many starry cats",
+            "Regrets leaving {PRONOUN\/m_c\/poss} Clan without {PRONOUN\/m_c\/object}",
+            "Is surprised at the cats who stayed at {PRONOUN\/m_c\/poss} vigil the longest",
+            "Feels guilty for the grief {PRONOUN\/m_c\/poss} death brought",
+            "Can't stand the sight of {PRONOUN\/m_c\/poss} own dead body",
+            "Tried pressing against {PRONOUN\/m_c\/poss} grieving Clanmates",
+            "Is shocked hearing what {PRONOUN\/m_c\/poss} Clanmates think of {PRONOUN\/m_c\/object} at {PRONOUN\/m_c\/poss} vigil",
+            "Was brought to tears watching {PRONOUN\/m_c\/poss} Clanmates grieve for {PRONOUN\/m_c\/object}"
+        ]
+    },
+    {
+        "event_id": "parent_death_to_newborn",
+        "strings": [
+            "Clings to the warmth of {PRONOUN\/m_c\/poss} litter",
+            "Doesn't want to leave {PRONOUN\/m_c\/poss} litter behind",
+            "Is happy {PRONOUN\/m_c\/poss} litter gets to grow up even if it is without {PRONOUN\/m_c\/object}",
+            "Sobs knowing {PRONOUN\/m_c\/poss} kits won't grow up knowing {PRONOUN\/m_c\/object}",
+            "Feels at peace knowing {PRONOUN\/m_c\/poss} Clanmates will care for {PRONOUN\/m_c\/poss} kits"
+        ],
+        "involved_cats": {
+            "r_c": {
+                "age": [
+                    "newborn"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "parent\/child"
+                ]
+            }
+        ]
+    }
+]

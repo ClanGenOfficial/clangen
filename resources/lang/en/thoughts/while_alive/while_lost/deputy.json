@@ -1,6 +1,6 @@
 [
     {
-        "id": "lost_deputy_thoughts",
+        "event_id": "lost_deputy_thoughts",
         "strings": [
             "Wonders if {PRONOUN/m_c/subject} {VERB/m_c/are/is} still the deputy",
             "Wonders how the patrols are currently organized without {PRONOUN/m_c/object}",

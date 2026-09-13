@@ -17,3 +17,4 @@ jobs:
         uses: takanome-dev/assign-issue-action@v3.1.0
         with:
           github_token: '${{ secrets.GITHUB_TOKEN }}'
+          days_until_unassign: 30

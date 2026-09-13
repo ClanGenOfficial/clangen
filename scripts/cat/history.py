@@ -8,6 +8,7 @@ from scripts.cat.enums import CatGroup
 from scripts.cat.skills import SkillPath
 from scripts.game_structure import game
 from scripts.events_module.text_adjust import adjust_list_text
+from scripts.game_structure.localization import load_lang_resource
 
 
 class History:
@@ -209,60 +210,6 @@ class History:
             self.mentor_influence["trait"] = None
             return
 
-        # working under the impression that these blurbs will be preceded by "more likely to"
-        facet_influence_text = {
-            "lawfulness_raise": [
-                "follow rules",
-                "follow the status quo",
-                "heed {PRONOUN/m_c/poss} inner compass",
-                "have strong inner morals",
-            ],
-            "lawfulness_lower": [
-                "bend the rules",
-                "break away from the status quo",
-                "break rules that don't suit {PRONOUN/m_c/object}",
-                "make {PRONOUN/m_c/poss} own rules",
-            ],
-            "sociability_raise": [
-                "be friendly towards others",
-                "step out of {PRONOUN/m_c/poss} comfort zone",
-                "interact with others",
-                "put others at ease",
-            ],
-            "sociability_lower": [
-                "be cold towards others",
-                "refrain from socializing",
-                "bicker with others",
-            ],
-            "aggression_raise": [
-                "be ready for a fight",
-                "start a fight",
-                "defend {PRONOUN/m_c/poss} beliefs",
-                "use teeth and claws over words",
-                "resort to violence",
-            ],
-            "aggression_lower": [
-                "be slow to anger",
-                "avoid a fight",
-                "use words over teeth and claws",
-                "try to avoid violence",
-            ],
-            "stability_raise": [
-                "stay collected",
-                "think things through",
-                "be resilient",
-                "have a positive outlook",
-                "be consistent",
-                "adapt easily",
-            ],
-            "stability_lower": [
-                "behave erratically",
-                "make impulsive decisions",
-                "have trouble adapting",
-                "dwell on things",
-            ],
-        }
-
         for _ment in self.mentor_influence["trait"]:
             self.mentor_influence["trait"][_ment]["strings"] = []
             for _fac in self.mentor_influence["trait"][_ment]:
@@ -270,11 +217,11 @@ class History:
                 if _fac in self.cat.personality.facet_types:
                     if self.mentor_influence["trait"][_ment][_fac] > 0:
                         self.mentor_influence["trait"][_ment]["strings"].append(
-                            random.choice(facet_influence_text[_fac + "_raise"])
+                            random.choice(MENTOR_FACET_INFLUENCE_TEXT[_fac + "_raise"])
                         )
                     elif self.mentor_influence["trait"][_ment][_fac] < 0:
                         self.mentor_influence["trait"][_ment]["strings"].append(
-                            random.choice(facet_influence_text[_fac + "_lower"])
+                            random.choice(MENTOR_FACET_INFLUENCE_TEXT[_fac + "_lower"])
                         )
 
     def add_mentor_skill_influence_strings(self):
@@ -658,3 +605,16 @@ class History:
             return self.scar_events
         elif death:
             return self.died_by
+
+
+MENTOR_FACET_INFLUENCE_TEXT = None
+
+
+def load_mentor_facet_influence_strings():
+    global MENTOR_FACET_INFLUENCE_TEXT
+    MENTOR_FACET_INFLUENCE_TEXT = load_lang_resource(
+        "cat/mentor_facet_influence_strings.json"
+    )
+
+
+load_mentor_facet_influence_strings()
