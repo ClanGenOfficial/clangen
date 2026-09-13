@@ -32225,7 +32225,7 @@
                     "tags": ["water:flowing"]
                 },
                 "strings": [
-                    "They focus on how to hide in deep water at POI. r_c0 picks up the instruction quickly, and the patrol plays a small game of leapfrog within shallow pools to test {PRONOUN/r_c0/poss} abilities."
+                    "They focus on how to hide in deep water at POI. r_c0 picks up the instruction quickly, and the patrol plays a small game of leapfrog within the shallower waters to test {PRONOUN/r_c0/poss} abilities."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
