@@ -1460,7 +1460,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from was frightened by an trap set by cat_to."
+                            "cats_from": "cat_from was frightened by a trap set by cat_to."
                         }
                     }
                 ]
