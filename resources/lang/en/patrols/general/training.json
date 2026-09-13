@@ -31092,7 +31092,12 @@
                     "They focus on fighting techniques. The cats have a wonderful training session. Everyone agrees that r_c0 using a side pounce to hook r_c1's feet out from under {PRONOUN/r_c1/object} was definitely a highlight, though r_c1 maintains it'd be a bit different if {PRONOUN/r_c1/subject} {VERB/r_c1/weren't/wasn't} standing waiting to be pounced on as a static target."
                 ],
                 "involved_cats": {
-                    "r_c1": {}
+                    "r_c1": {
+                        "status": ["warrior", "deputy"],
+                        "stat": {
+                            "trait": ["arrogant", "competitive", "troublesome", "vengeful", "righteous"]
+                        }
+                    }
                 },
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -31836,6 +31841,7 @@
                 "poi": {
                     "tags": ["trees"]
                 },
+                "outcome_art": "fst_train_treeclimb_WrAp",
                 "strings": [
                     "They focus on tree climbing at POI. r_c0 listens carefully as the proper techniques of tree climbing are explained.",
                     "They focus on tree climbing at POI. r_c0 picks up the instruction quickly and follows the directions of the other patrol members as {PRONOUN/r_c0/subject} {VERB/r_c0/climb/climbs} up the tree."
@@ -31866,6 +31872,7 @@
                 "poi": {
                     "tags": ["trees"]
                 },
+                "outcome_art": "fst_train_treeclimb_WrAp",
                 "strings": [
                     "They focus on tree climbing at POI. By the end of the patrol, r_c0 is leaping from branch to branch, as nimble as a squirrel."
                 ],
@@ -32317,6 +32324,73 @@
                         }
                     }
                 ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["cave"],
+                    "category": "terrain"
+                },
+                "strings": [
+                    "They focus on how to navigate in POI. p_l guides r_c0 on how to follow {PRONOUN/r_c0/poss} whiskers through the cramped quarters and r_c0 ends the patrol feeling accomplished in what {PRONOUN/r_c0/subject} learned."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned about cave navigation from cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "category": "terrain"
+                },
+                "strings": [
+                    "They focus on territory landmarks, taking r_c0 out to see POI and explore the area. p_l explains the history of the area and r_c0 finds it all quite fascinating."
+                ],
+                "involved_cats": {
+                    "r_c0": {
+                        "stat": {
+                            "skill": ["LORE,0"],
+                            "trait": ["thoughtful", "wise", "responsible"]
+                        }
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from enjoyed learning about the history of the territory from cat_to."
+                        }
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -32636,6 +32710,7 @@
             },
             {
                 "frequency": 4,
+                "outcome_art": ["gen_hunt_fail_Wr"],
                 "strings": [
                     "Everything seems to be going well — then s_c0 trips over {PRONOUN/s_c0/poss} paws and introduces {PRONOUN/s_c0/poss} muzzle to the ground at high speed. Maybe they all need to go back to basics."
                 ],
@@ -32696,6 +32771,7 @@
             },
             {
                 "frequency": 4,
+                "outcome_art": "gen_train_argue_WrWr",
                 "strings": [
                     "s_c0 immediately takes over and bosses the other cats around. It's not well received, so p_l brings a surly-looking s_c0 back in line and ends the training session early."
                 ],
@@ -32752,6 +32828,7 @@
             },
             {
                 "frequency": 4,
+                "outcome_art":"gen_train_argue_WrWr",
                 "strings": [
                     "s_c0 keeps distracting the patrol by goofing off, and p_l bites off a hiss of annoyance. {PRONOUN/p_l/subject/CAP} {VERB/p_l/weren't/wasn't} expecting a warrior to be the one acting like an apprentice during this exercise."
                 ],
@@ -32812,6 +32889,7 @@
                 "poi": {
                     "tags": ["trees"]
                 },
+                "outcome_art": "fst_train_treeclimb_WrAp",
                 "strings": [
                     "They focus on tree climbing at POI. r_c0 manages to get into the tree, but climbing back down proves to be a problem."
                 ],
@@ -32864,6 +32942,73 @@
                     "They focus on how to hide in deep water at POI. r_c0 tries to hide within the water, but {PRONOUN/r_c0/subject} can't quite make {PRONOUN/r_c0/self} still and quiet enough to avoid detection."
                 ],
                 "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["cave"],
+                    "category": "terrain"
+                },
+                "strings": [
+                    "They focus on how to navigate in POI. p_l guides r_c0 on how to follow {PRONOUN/r_c0/poss} whiskers through the cramped quarters, but r_c0 just can't seem to understand how this is supposed to work. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/bump/bumps} into the walls more often than {PRONOUN/r_c0/subject} would like to admit."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from didn't think p_l did a good job teaching {PRONOUN/cat_from/object} how to navigate a cave."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "category": "terrain"
+                },
+                "strings": [
+                    "They focus on territory landmarks, taking r_c0 out to see POI and explore the area. p_l explains the history of the are, but r_c0 can't find it in {PRONOUN/r_c0/self} to be interested."
+                ],
+                "involved_cats": {
+                    "r_c0": {
+                        "stat": {
+                            "skill": ["-LORE,0"],
+                            "trait": ["-thoughtful", "-wise", "-responsible"]
+                        }
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from enjoyed learning about the history of the territory from cat_to."
+                        }
+                    }
+                ]
             },
             {
                 "frequency": 3,
@@ -32965,6 +33110,7 @@
                 "poi": {
                     "tags": ["trees"]
                 },
+                "outcome_art": "gen_pawsdiggingbark_Ap",
                 "strings": [
                     "They focus on tree climbing at POI. r_c0 begins making {PRONOUN/r_c0/poss} way up into the tree, but a branch cracks and breaks beneath {PRONOUN/r_c0/poss} weight! The apprentice is sent crashing back to earth, hurting {PRONOUN/r_c0/poss} paw in the process."
                 ],
@@ -32985,6 +33131,7 @@
                 "location": [
                     "mountainous", "beach"
                 ],
+                "outcome_art": "gen_pawsdiggingrocks_Ap",
                 "strings": [
                     "They focus on how best to leap up a rocky cliff. r_c0 begins making {PRONOUN/r_c0/poss} way up the cliff, but a loose paw hold gives way as soon as {PRONOUN/r_c0/subject} {VERB/r_c0/step/steps} on it! The apprentice tumbles back down the cliff, hurting {PRONOUN/r_c0/poss} leg in the process."
                 ],
@@ -33045,6 +33192,44 @@
                         ],
                         "scar_history": "m_c got scarred training in the plains as an apprentice.",
                         "death_history": "m_c died from a bite-wound {PRONOUN/m_c/subject} got while training in the tall grass."
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["fall_risk"],
+                    "category": "terrain"
+                },
+                "strings": [
+                    "They focus on territory landmarks, taking r_c0 out to see POI and explore the area. p_l only looks away from r_c0 for a moment, but a moment was long enough. r_c0 has fallen down POI and is rushed back to camp."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from blamed cat_to for r_c0 being injured while exploring the territory."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": ["r_c0"],
+                        "condition": ["blunt_force_injury"],
+                        "scar_history": "m_c was scared after falling from a great height.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} injuries after falling from a great height."
                     }
                 ]
             }
