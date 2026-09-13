@@ -32282,7 +32282,7 @@
                                 "cunning",
                                 "nervous"
                             ],
-                            "stat": ["SWIMMER,0"],
+                            "skill": ["SWIMMER,0"],
                             "must_have_both": false
                         }
                     }
@@ -32684,7 +32684,7 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": ["gen_hunt_fail_Wr"],
+                "outcome_art": "gen_hunt_fail_Wr",
                 "strings": [
                     "Everything seems to be going well — then s_c0 trips over {PRONOUN/s_c0/poss} paws and introduces {PRONOUN/s_c0/poss} muzzle to the ground at high speed. Maybe they all need to go back to basics."
                 ],
