@@ -517,7 +517,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "While p_l is carefully sniffing at the burrow entrance, there's a rustle in the grass behind {PRONOUN/p_l/object}. It's difficult to say who's more surprised p_l or the badger. It charges for the sett and p_l leaps out of the way, but its claws catch {PRONOUN/p_l/poss} pelt, and a bloodied p_l limps back into camp to report the whole sorry adventure."
+                    "While p_l is carefully sniffing at the burrow entrance, there's a rustle in the grass behind {PRONOUN/p_l/object}. It's difficult to say who's more surprised: p_l or the badger. It charges for the sett and p_l leaps out of the way, but its claws catch {PRONOUN/p_l/poss} pelt, and a bloodied p_l limps back into camp to report the whole sorry adventure."
                 ],
                 "exp_gained": 0,
                 "condition": [
