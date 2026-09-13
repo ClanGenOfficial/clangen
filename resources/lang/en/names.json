@@ -256,6 +256,11 @@
     "Twig", "Owl", "Otter", "Log", "Vole", "Branch", "Hazel", "Robin", "Umber", "Tree", "Root", "Shadow", "Ochre", "Auburn", "Burnet",
     "Thrasher", "Thrush", "Bark", "Maple", "Tawny", "Moth", "Nut", "Cypress", "Fir", "Wolf", "Peat"
     ],
+    "MALLOW": [
+    "Antler", "Bear", "Bittern", "Bluff", "Brown", "Burdock", "Buzzard", "Cougar", "Crag", "Cricket", "Dark", "Deer", "Dust", "Falcon", "Fallow", "Fawn", "Ferret",
+    "Grouse", "Moth", "Mud", "Python", "Quail", "Quill", "Root", "Sable", "Shade", "Shrew", "Squirrel", "Stag", "Wood", "Wren",
+    "Char", "Charred"
+    ],
     "DARKBROWN": [
     "Brown", "Brown", "Dark", "Dark", "Shade", "Night", "Russet", "Rowan", "Mud", "Oak", "Twig", "Loach", "Shadow", "Tawny", "Moth",
     "Owl", "Otter", "Log", "Hickory", "Branch", "Robin", "Umber", "Chanterelle", "Dust", "Mud", "Auburn", "Burnet", "Root", "Bark", "Sable",
@@ -276,6 +281,12 @@
     "Night", "Shadow", "Scorch", "Midnight", "Pepper", "Pitch", "Bat", "Burnt", "Coal", "Ink", "Inky", "Murk", "Rat", "Magpie",
     "Char", "Charred", "Mulberry", "Evening", "Dark", "Ghost", "Mud", "Spider", "Shale", "Panther", "Starling", "Soot", "Wolf", "Badger", 
     "Raccoon", "Skulk"
+    ],
+    "SABLE": [
+    "Antler", "Beaver", "Beetle", "Black", "Bramble", "Burrow", "Cedar", "Chestnut", "Condor", "Copse", "Cricket", "Crow", "Dark", "Shaded", "Shade", "Raven", "Ebony", "Grackle", "Bat", "Flint", "Storm", "Skunk",
+    "Night", "Shadow", "Scorch", "Midnight", "Pepper", "Pitch", "Bat", "Burnt", "Coal", "Ink", "Inky", "Murk", "Rat", "Magpie",
+    "Char", "Charred", "Mulberry", "Evening", "Dark", "Ghost", "Mud", "Spider", "Shale", "Panther", "Starling", "Soot", "Wolf", "Badger", 
+    "Raccoon", "Skulk", "Kestrel", "Moth", "Roach", "Sable"
     ]
   },
 	
@@ -304,7 +315,7 @@
     ],
     "BLOSSOM": [
     "sun", "beam", "shine", "shell", "honey", "cougar", "owl", "moth", "sable", "dust", "flower"
-      ],
+    ],
 	"DAWN": [
 	"beam", "dawn", "dazzle", "dew", "dream", "drizzle", "egg", "flicker", "glow", "hare", "haze", "moth", "mouse", "shell", "shimmer"
 	],
@@ -338,6 +349,9 @@
     "GOLDEN-BROWN": [
 	"root", "owl", "twig", "wood", "moth", "bark", "branch", "burr"
     ],
+    "MALLOW": [
+	"root","twig", "wood", "moth", "bark", "branch", "burr", "back"
+    ],
     "DARKBROWN": [
 	"root", "bark", "shade", "owl", "oak", "wood", "moth", "branch", "burr"
     ],
@@ -349,6 +363,9 @@
     ],
     "BLACK": [
 	"shadow", "shade", "dusk", "coal", "ink", "bat", "cinder", "ghost", "night", "raven", "crow", "burn", "badger", "raccoon"
+    ],
+    "SABLE": [
+	"shadow", "shade", "coal", "ink", "bat", "cinder", "ghost", "night", "raven", "crow", "burn"
     ]
   },
 
@@ -665,7 +682,7 @@
     "Ping Pong", "Pinkie Pie", "Pinkie", "Pipkin", "Pippin", "Pisces", "Pistol Star", "Pizza Place", "Plato", "Playstation", "Plentiful Leaves", 
     "Plot Twist", "Pluto", "Pokey", "Poki", "Pokotho", "Polaris", "Polaroid", "Polka", "Polyatomic", "Polyatomic Ion", "Pompompurin", "Ponyboy", "Pork Belly",
     "Porsche", "Pot Roast", "Pouncival", "President Blanket", "Primm Slim", "Pringle", "Private Eye", "Procyon", "Proton", "Pumbaa", "Purdy", "Purri", "Pusheen", 
-    "Quantum Mechanics", "Quarter Pounder", "Quartermaster", "Quasar", "Qubo", "Queso Ruby", "Rafiki", "Ramattra", "Rambley", "Rapunzel",
+    "Quantum Mechanics", "Quarter Pounder", "Quartermaster", "Quasar", "Qubo", "Queso Ruby", "Quicky", "Rafiki", "Ramattra", "Rambley", "Rapunzel", 
     "Ratau", "Ratoo", "Razzle", "Reeses Puff", "Ribosome", "Rick Astley", "Rigel", "Righteous Bread Pudding", "Ringo Starr", "Riolu", "Rizz", "Rizzo", "Rolo", 
     "Roomba", "Rorschach", "Rubber Duck", "Ruffnut", "Rum Tum Tugger", "Rumpleteazer", "Ryland", "Sage Marro", "Sagittarius", "Sagwa", "Salem", "Sampo", "Samus", "Sans",
     "Sarabi", "Sarek", "Saturn", "Scooby", "Scrooge", "Scrungle", "Sebek", "Sega", "Sekhmet", "Selkie", "Selkirk", "Seraph", "Seven Of Nine", "Shamash", "Shamwow", "Shenzi",
