@@ -33170,7 +33170,7 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 3,
                 "poi": {
                     "tags": ["fall_risk"],
                     "category": "terrain"
