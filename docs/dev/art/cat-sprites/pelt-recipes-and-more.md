@@ -47,7 +47,7 @@ Each cat-color has a palette of colors, stored in `sprites/dicts/pelt_color_pale
 
 The real meat and potatoes! Pelt recipes tell ClanGen how to put together patterns using the various pelt-part masks and color palettes. These are JSONs, all stored in `sprites/dicts/pelt_recipes`. A file should contain one recipe which describes how to build one pelt. 
 
-</br>
+<br>
 
  **For Pelt Recipes:**
 
@@ -67,8 +67,11 @@ The real meat and potatoes! Pelt recipes tell ClanGen how to put together patter
 | `blend_mode`       |  The blendmode for the layer. Options: "mask", "mulitply", or "normal". Default: "normal".                       |
 | `color`            |  Re-colors the pelt part mask to this color. You must use a color defined in the pelt color palettes. Optional.  |
 | `spritesheet`      |  The name of the spritesheet to look for `group_name` in. Default: "pelt_parts_masks"                           |
-| | |
-| | |
+
+Alternatively, layers can can reference another pelt recipe. 
+
+| Layer Defintion Property Name | Description |
+| -------------      | -----------              |
 | `pelt_name`        | Name of a pelt recipe. `group_name` or `pelt_name` is required.                                                  |
 | `palette`          | Name of the cat-color palette to use for `pelt_name`.                                                             |
 
