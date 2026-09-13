@@ -98,8 +98,13 @@ class SpawnTintsCommand(Command):
             return
 
         pelt = args[0]
+        possible_pelts_str = ", ".join(
+            set(Sprites.PELT_TO_RECIPE.keys()) - {"Tortie", "Calico"}
+        )
         if pelt not in Sprites.PELT_TO_RECIPE:
-            add_output_line_to_log(f"Pelt {pelt} does not seem to exist!")
+            add_output_line_to_log(
+                f"Pelt {pelt} does not seem to exist! Possible pelts are {possible_pelts_str}."
+            )
             return
 
         if pelt in ("Tortie", "Calico"):
@@ -107,8 +112,11 @@ class SpawnTintsCommand(Command):
             return
 
         colour = args[1]
+        possible_colours_str = ", ".join(Sprites.PELT_COLOR_PALETTES.keys())
         if colour not in Sprites.PELT_COLOR_PALETTES:
-            add_output_line_to_log(f"Colour {colour} does not seem to exist!")
+            add_output_line_to_log(
+                f"Colour {colour} does not seem to exist! Possible colours are {possible_colours_str}."
+            )
             return
 
         base_tints = sprites.cat_tints["possible_tints"]["basic"]
