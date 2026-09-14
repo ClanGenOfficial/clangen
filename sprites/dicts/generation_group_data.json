@@ -13,6 +13,7 @@
             "CREAM": "ginger",
             "PALEGINGER": "ginger",
             "GOLDEN": "ginger",
+            "HONEY": "ginger",
             "GINGER": "ginger",
             "DARKGINGER": "ginger",
             "SIENNA": "ginger",
@@ -20,6 +21,7 @@
             "LILAC": "brown",
             "BROWN": "brown",
             "GOLDEN-BROWN": "brown",
+            "MALLOW": "brown",
             "DARKBROWN": "brown",
             "CHOCOLATE": "brown",
             "RUST": "brown"
