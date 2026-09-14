@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "bch_train_stuck1",
+        "event_id": "bch_train_stuck_group1",
         "types": [
             "training"
         ],
