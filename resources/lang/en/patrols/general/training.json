@@ -8769,629 +8769,6 @@
         ]
     },
     {
-        "event_id": "gen_train_teamwork3",
-        "types": [
-            "training"
-        ],
-        "frequency": 3,
-        "required_cat_types": {
-            "patrol_cats": [
-                3,
-                6
-            ],
-            "apprentice": [
-                1,
-                5
-            ],
-            "normal adult": [
-                1,
-                5
-            ]
-        },
-        "involved_cats": {
-            "r_c1": {
-                "status": [
-                    "apprentice"
-                ]
-            }
-        },
-        "chance_of_success": 40,
-        "patrol_art": "cat_sprites/gen_train_trainingapp_ApWrWr",
-        "intro_strings": [
-            "p_l suggests this might be a good chance for the cats to practice teamwork, particularly with r_c1."
-        ],
-        "decline_strings": [
-            "They decide to focus on working on a different skill instead."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "outcome_art": "cat_sprites/gen_train_trainingsuccess_Ap",
-                "strings": [
-                    "Everyone has a nice practice session and their coordination with their Clanmates grows stronger. r_c1 really gets into it and p_l praises {PRONOUN/r_c1/object} for {PRONOUN/r_c1/poss} focus and enthusiasm."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from and cat_to enjoyed working on their skills together on a training patrol."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "r_c1"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "comfort",
-                            "respect"
-                        ],
-                        "amount": 15,
-                        "log": {
-                            "cats_from": "p_l praised r_c1 for {PRONOUN/r_c1/poss} focus and enthusiasm on a training patrol."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c1"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_to praised cat_from's teamwork."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "outcome_art": "cat_sprites/gen_train_trainingsuccess_Ap",
-                "strings": [
-                    "p_l leads the group in a mock-battle exercise, deliberately giving r_c1 a starring role that has {PRONOUN/r_c1/object} vibrating with excitement and pride."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from and cat_to enjoyed practicing their fighting skills together on a training patrol."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "r_c1"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "comfort",
-                            "respect"
-                        ],
-                        "amount": 15,
-                        "log": {
-                            "cats_from": "p_l gave r_c1 an important role in a mock-battle while training."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "outcome_art": "cat_sprites/gen_train_trainingsuccess_Ap",
-                "strings": [
-                    "Sometimes, the best thing of all is to just help an apprentice get the chance to feel equal to the warriors {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} trying to become. p_l treats r_c1 exactly like everyone else. r_c1's confidence grows and {PRONOUN/r_c1/poss} eyes light up as the cats work together."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from and cat_to enjoyed working on their skills together on a training patrol."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "r_c1"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "comfort",
-                            "respect"
-                        ],
-                        "amount": 15,
-                        "log": {
-                            "cats_from": "p_l treated r_c1 the same as a warrior during a training exercise."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "outcome_art": "cat_sprites/gen_train_trainingsuccess_Ap",
-                "strings": [
-                    "It's good the see the progress r_c1 is making with {PRONOUN/r_c1/poss} training, and p_l makes sure to tell {PRONOUN/r_c1/object} so as the patrol work on their ambushing strategies."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from and cat_to enjoyed practicing their ambushing strategies together on a training patrol."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "r_c1"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "comfort",
-                            "respect"
-                        ],
-                        "amount": 15,
-                        "log": {
-                            "cats_from": "p_l praised r_c1 for {PRONOUN/r_c1/poss} progress on a training patrol."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a Clanmate's fall, and working on treading exactly in each other's pawsteps."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "stat": {
-                            "skill": [
-                                "TEACHER,2"
-                            ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
-                    }
-                },
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from and cat_to worked on their skills together on a training patrol."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from appreciated that cat_to took the lead on a training patrol and coordinated exercises for the others."
-                        }
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 1,
-                "outcome_art": "cat_sprites/gen_embarrassed_WrWr",
-                "strings": [
-                    "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties."
-                ],
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": -3,
-                        "log": {
-                            "cats_from": "cat_from and cat_to felt awkward after a training patrol didn't go anywhere productive."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "outcome_art": "cat_sprites/gen_embarrassed_WrWr",
-                "strings": [
-                    "Well, p_l decides. At least {PRONOUN/p_l/subject} now {VERB/p_l/know/knows} how much c_n needs to work on their cooperation...? Great StarClan, that was a terrible performance."
-                ],
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": -3,
-                        "log": {
-                            "cats_from": "cat_from was unimpressed by cat_to's performance on a training patrol."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "outcome_art": "cat_sprites/gen_train_trainingfail_Ap",
-                "strings": [
-                    "r_c1 does a terrible job, but p_l isn't willing to call {PRONOUN/r_c1/object} out on it. It's the wrong move for a patrol leader to make, and no cat learns anything from the experience."
-                ],
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c1"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -8,
-                        "log": {
-                            "cats_from": "cat_from watched cat_to perform poorly on a training patrol."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "cat_from thought cat_to did a poor job of leading a training patrol."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "outcome_art": "cat_sprites/gen_train_trainingfail_Ap",
-                "strings": [
-                    "r_c1 screws up the teamwork exercise, making a decision that betrays {PRONOUN/r_c1/poss} lack of experience, and while p_l smooths everything over between everyone, the exercise is concluded early."
-                ],
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c1"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -8,
-                        "log": {
-                            "cats_from": "cat_from watched cat_to perform poorly on a training patrol."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c1"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "like"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from was grateful that cat_to smoothed things over when cat_from made a beginner's mistake on a training patrol."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "outcome_art": "cat_sprites/gen_train_trainingfail_Ap",
-                "strings": [
-                    "r_c1 doesn't enjoy being singled out for attention and doesn't engage with the learning opportunity. Nothing goes drastically wrong, but p_l doubts anyone learned anything from this afternoon."
-                ],
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "r_c1"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort"
-                        ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "cat_from was embarrassed to be singled out for attention in front of cat_to on a training patrol."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "cat_from thought cat_to did a poor job of leading a training patrol."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "Everything seems to be going well — then s_c0 trips over {PRONOUN/s_c0/poss} paws and introduces {PRONOUN/s_c0/poss} muzzle to the ground at high speed. Maybe they all need to go back to basics."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": ["any"]
-                    }
-                },
-                "exp_gained": 0,
-                "condition": [
-                    {
-                        "cats": [
-                            "s_c0"
-                        ],
-                        "condition": [
-                            "bruises",
-                            "scrapes"
-                        ]
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "outcome_art": "cat_sprites/gen_train_trainingfail_Ap",
-                "strings": [
-                    "r_c1, trying to show off, is too busy checking to see if p_l is watching to check where {PRONOUN/r_c1/poss} own paws are. r_c1 falls over with a comical thump and cloud of dust."
-                ],
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "r_c1"
-                        ],
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from wanted to impress cat_to during training."
-                        }
-                    }
-                ],
-                "condition": [
-                    {
-                        "cats": [
-                            "r_c1"
-                        ],
-                        "condition": [
-                            "bruises",
-                            "scrapes"
-                        ]
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 immediately takes over and bosses the other cats around. It's not well received, so p_l brings a surly-looking s_c0 back in line and ends the training session early."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "stat": {
-                            "trait": [
-                                "arrogant",
-                                "ambitious"
-                            ]
-                        },
-                        "prior_abbreviation": [
-                            "-p_l"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from was irritated when cat_to tried to boss {PRONOUN/cat_from/object} around on a training patrol."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "s_c0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -15,
-                        "log": {
-                            "cats_from": "cat_from decided {PRONOUN/cat_from/subject}'d do a better job leading a training patrol than cat_to and tried to take over.",
-                            "cats_to": "cat_from was angered when cat_to seized control of the patrol that cat_from was meant to be leading."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 keeps distracting the patrol by goofing off, and p_l bites off a hiss of annoyance. {PRONOUN/p_l/subject/CAP} {VERB/p_l/weren't/wasn't} expecting a warrior to be the one acting like an apprentice during this exercise."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "stat": {
-                            "trait": [
-                                "childish"
-                            ]
-                        },
-                        "prior_abbreviation": [
-                            "-p_l"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "cat_from was irritated by cat_to's childish antics during a training patrol."
-                        }
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "event_id": "gen_train_teamwork4",
         "types": [
             "training"
@@ -12884,618 +12261,6 @@
         ]
     },
     {
-        "event_id": "gen_train_huntingskill3",
-        "types": [
-            "training"
-        ],
-        "frequency": 3,
-        "required_cat_types": {
-            "patrol_cats": [
-                3,
-                6
-            ],
-            "apprentice": [
-                1,
-                1
-            ],
-            "normal adult": [
-                2,
-                5
-            ]
-        },
-        "involved_cats": {
-            "r_c1": {
-                "status": [
-                    "apprentice"
-                ]
-            }
-        },
-        "chance_of_success": 20,
-        "patrol_art": "gen_train_huntingskill_WrWr",
-        "intro_strings": [
-            "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with r_c1 present."
-        ],
-        "decline_strings": [
-            "They decide to focus on working on a different skill instead."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "Everyone has a nice practice session, picking up a good selection of new tricks to try out on their next hunting patrol. r_c1 really gets into it, and p_l praises {PRONOUN/r_c1/object} for {PRONOUN/r_c1/poss} focus and enthusiasm."
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 30,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to enjoyed practicing new hunting tricks together."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "r_c1"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 15,
-                        "log": {
-                            "cats_from": "cat_from noticed cat_to's hard work during a hunting training session."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c1"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_to praised cat_from's hunting."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "The setting sun makes the light strange, elongating shadows and tinging the world yellow as the cats prowl around, each taking their turn as prey and hunter."
-                ],
-                "exp_gained": 30,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to took turns playing prey and hunter to help each other practice hunting."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 takes charge and coordinates exercises for the training patrol. Soon cats are practicing stalking each other, sharing tips about different terrain types, and discussing prey varieties."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "stat": {
-                            "skill": [
-                                "TEACHER,1",
-                                "HUNTER,1"
-                            ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
-                    }
-                },
-                "exp_gained": 30,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to practiced their hunting together."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from appreciated cat_to taking charge during a training patrol."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "r_c1 doesn't appreciate being singled out — but {PRONOUN/r_c1/poss} scowl vanishes when p_l tells the patrol to learn from {PRONOUN/r_c1/poss} example and asks r_c1 to demonstrate {PRONOUN/r_c1/poss} stalk."
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to had a productive training session together, working on their hunting technique."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c1"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 15,
-                        "log": {
-                            "cats_from": "cat_from was thrilled to be singled out by cat_to for {PRONOUN/cat_from/poss} exceptional stalking technique."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "r_c1 revels in the spotlight, taking full advantage of the opportunity to be the center of attention and show off {PRONOUN/r_c1/poss} talents!"
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to worked on their hunting technique together."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "r_c1"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from enjoyed showing off {PRONOUN/cat_from/poss} hunting technique in front of cat_to."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats",
-                            "high_social",
-                            "high_stable"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 15,
-                        "log": {
-                            "cats_from": "cat_from was amused by how cat_to showed off {PRONOUN/cat_to/poss} hunting technique."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats",
-                            "low_social",
-                            "low_stable"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "cat_from was annoyed by how cat_to showed off {PRONOUN/cat_to/poss} hunting technique."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "r_c1 has really been trying hard to absorb {PRONOUN/r_c1/poss} mentor's advice. Today, it's obvious that {PRONOUN/r_c1/poss} persistence is paying off; {PRONOUN/r_c1/poss} coordination is smooth, {PRONOUN/r_c1/poss} pounces fluid and powerful — excellent work, p_l praises!"
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to practiced their hunting technique together."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c1"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_to praised cat_from's hunting technique."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "r_c1"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from noticed how cat_to's hard work in hunting training has paid off."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "As one of the undisputed best hunters in c_n, possibly in generations, s_c0 is definitely the cat to come to for hunting advice. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/don't/doesn't} mind sharing some of {PRONOUN/s_c0/poss} more useful little tricks that could be used to top up the fresh-kill pile."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "stat": {
-                            "skill": [
-                                "HUNTER,3"
-                            ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
-                    }
-                },
-                "exp_gained": 40,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to enjoyed working on their hunting technique together."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 15,
-                        "log": {
-                            "cats_from": "cat_from was grateful for the chance to learn from one of the best when cat_to shared {PRONOUN/cat_to/poss} hunting tips during a training patrol."
-                        }
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 1,
-                "strings": [
-                    "Unfortunately, no one steps up to teach. It makes everything feel awkward and like a waste of time, and the cats give up and return to camp a little irritated."
-                ],
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to felt frustrated after an unproductive training patrol."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "The cats practice their hunting dutifully, but no one has anything new to show each other."
-                ],
-                "exp_gained": 0
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "r_c1, trying to show off, is too busy checking to see if p_l is watching to check where {PRONOUN/r_c1/poss} own paws are. r_c1 falls over with a comical thump and cloud of dust."
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "r_c1"
-                        ],
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from wanted to impress cat_to during training."
-                        }
-                    }
-                ],
-                "condition": [
-                    {
-                        "cats": [
-                            "r_c1"
-                        ],
-                        "condition": [
-                            "bruises",
-                            "scrapes"
-                        ]
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 immediately takes over and bosses the other cats around. It's not well received, so p_l brings a surly-looking s_c0 back in line and ends the training session early."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "stat": {
-                            "trait": [
-                                "arrogant",
-                                "ambitious"
-                            ]
-                        },
-                        "prior_abbreviation": [
-                            "-p_l"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from was irritated when cat_to tried to boss {PRONOUN/cat_from/object} around on a training patrol."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "s_c0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -15,
-                        "log": {
-                            "cats_from": "cat_from decided {PRONOUN/cat_from/subject}'d do a better job leading a training patrol than cat_to and tried to take over.",
-                            "cats_to": "cat_from was angered when cat_to seized control of the patrol that cat_from was meant to be leading."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 keeps distracting the patrol by goofing off, and p_l bites off a hiss of annoyance. {PRONOUN/p_l/subject/CAP} {VERB/p_l/weren't/wasn't} expecting a warrior to be the one acting like an apprentice during this exercise."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "stat": {
-                            "trait": [
-                                "childish"
-                            ]
-                        },
-                        "prior_abbreviation": [
-                            "-p_l"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "cat_from was irritated by cat_to's childish antics during a training patrol."
-                        }
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "event_id": "gen_train_huntingskill4",
         "types": [
             "training"
@@ -14972,443 +13737,6 @@
                         ],
                         "scar_history": "m_c was scarred from a wound inflicted by a Clanmate who insisted on training with claws unsheathed.",
                         "death_history": "m_c died from a wound inflicted by a Clanmate who insisted on training with claws unsheathed."
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "gen_train_fightingskill3",
-        "types": [
-            "training"
-        ],
-        "frequency": 3,
-        "required_cat_types": {
-            "patrol_cats": [
-                3,
-                6
-            ],
-            "apprentice": [
-                1,
-                1
-            ],
-            "normal adult": [
-                1,
-                5
-            ]
-        },
-        "involved_cats": {
-            "r_c1": {
-                "status": [
-                    "apprentice"
-                ]
-            }
-        },
-        "chance_of_success": 20,
-        "patrol_art": "gen_train_fightingskill_WrWr",
-        "intro_strings": [
-            "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with r_c1 here to learn from them."
-        ],
-        "decline_strings": [
-            "They decide to focus on working on a different skill instead."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "Everyone has a nice practice session, picking up a good selection of new tricks to try out in their next skirmish. r_c1 really gets into it, and p_l praises {PRONOUN/r_c1/object} for {PRONOUN/r_c1/poss} focus and enthusiasm."
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 30,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to enjoyed practicing new battle moves together."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "r_c1"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 15,
-                        "log": {
-                            "cats_from": "cat_from noticed cat_to's hard work during a battle training session."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c1"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_to praised cat_from's battle moves."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 takes charge and coordinates exercises for the training patrol. Soon cats are practicing trips, twists, and tumbles."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "stat": {
-                            "skill": [
-                                "TEACHER,1",
-                                "FIGHTER,1"
-                            ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
-                    }
-                },
-                "exp_gained": 30,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to had a productive training patrol together."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from appreciated cat_to taking charge to coordinate battle training for the patrol."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "The cats have a wonderful training session. Everyone agrees that r_c1 using a side pounce to hook r_c0's feet out from under {PRONOUN/r_c0/object} was definitely a highlight, though r_c0 maintains it'd be a bit different if {PRONOUN/r_c0/subject} {VERB/r_c0/weren't/wasn't} standing waiting to be pounced on as a static target."
-                ],
-                "involved_cats": {
-                    "r_c0": {},
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 30,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to enjoyed a productive training patrol together."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "r_c1"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from noticed cat_to's skill in a spar during a training session."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "r_c1"
-                        ],
-                        "cats_from": [
-                            "r_c0"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -15,
-                        "log": {
-                            "cats_from": "cat_from was a little annoyed to be beaten by cat_to in a spar in front of other warriors."
-                        }
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 1,
-                "strings": [
-                    "Unfortunately, no one steps up to teach. It makes everything feel awkward and like a waste of time, and the cats give up and return to camp a little irritated."
-                ],
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to felt frustrated after an unproductive training patrol."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "p_l shows r_c1 the maneuver over and over again, but r_c1 just can't get the hang of it, and p_l starts to lose {PRONOUN/p_l/poss} patience."
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c1"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "cat_from showed cat_to a fighting move, but cat_to just couldn't get the hang of it.",
-                            "cats_to": "cat_from did a poor job of explaining a fighting move to cat_to."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol_cats",
-                            "-r_c1"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -7,
-                        "log": {
-                            "cats_from": "cat_from saw cat_to's impatience with r_c1 when r_c1 wasn't picking up a battle move quickly enough."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "p_l and r_c0 enjoy chatting so much that r_c1 gets left behind, tail raised in outrage. They were supposed to be training, not gossiping!"
-                ],
-                "involved_cats": {
-                    "r_c0": {},
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "p_l",
-                            "r_c0"
-                        ],
-                        "cats_from": [
-                            "r_c1"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "cat_from was annoyed when p_l and r_c0 gossiped instead of training {PRONOUN/cat_from/object}."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from and cat_to enjoyed a chat during a training session."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 insists {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} ready for a more complicated maneuver, and despite {PRONOUN/p_l/poss} doubts, p_l agrees. Though s_c0 is talented, the move proves more challenging than expected. In {PRONOUN/s_c0/poss} pursuit of perfecting the move, s_c0 goes down hard."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "stat": {
-                            "skill": [
-                                "FIGHTER,0"
-                            ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c1"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from saw how cat_to wanted to challenge {PRONOUN/cat_to/self} during a training session."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "s_c0"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort"
-                        ],
-                        "amount": -8,
-                        "log": {
-                            "cats_from": "cat_from avoided cat_to after embarrassing {PRONOUN/cat_from/self} during training and failing to master a challenging move."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c0"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": -8,
-                        "log": {
-                            "cats_from": "cat_from thought cat_to was at fault for r_c1 getting injured during training by giving {PRONOUN/r_c1/object} a move that was too challenging for {PRONOUN/r_c1/poss} skill level."
-                        }
-                    }
-                ],
-                "condition": [
-                    {
-                        "cats": [
-                            "r_c1"
-                        ],
-                        "condition": [
-                            "minor_injury"
-                        ]
                     }
                 ]
             }
@@ -32657,6 +30985,2250 @@
                         "log": {
                             "cats_from": "cat_from was scared by cat_to when {PRONOUN/cat_to/subject} made {PRONOUN/cat_from/object} vomit up deathberries.",
                             "cats_to": "cat_to had to force cat_from to vomit up deathberries {PRONOUN/cat_from/subject} accidentally ate."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_train_session1",
+        "types": [
+            "training"
+        ],
+        "frequency": 4,
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ],
+            "apprentice": [
+                1,
+                5
+            ],
+            "normal adult": [
+                1,
+                5
+            ]
+        },
+        "involved_cats": {
+            "r_c0": {
+                "status": [
+                    "apprentice"
+                ]
+            }
+        },
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites/gen_train_trainingapp_ApWrWr",
+        "intro_strings": [
+            "The patrol decides to hold a training session for r_c0."
+        ],
+        "decline_strings": [
+            "They decide to focus on patrolling the territory instead. Training can wait for another day."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "They focus on fighting techniques. Everyone has a nice practice session, picking up a good selection of new tricks to try out in their next skirmish. r_c0 really gets into it, and p_l praises {PRONOUN/r_c0/object} for {PRONOUN/r_c0/poss} focus and enthusiasm."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to enjoyed practicing new battle moves together."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "cat_from noticed cat_to's hard work during a battle training session."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_to praised cat_from's battle moves."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "They focus on fighting techniques. The cats have a wonderful training session. Everyone agrees that r_c0 using a side pounce to hook r_c1's feet out from under {PRONOUN/r_c1/object} was definitely a highlight, though r_c1 maintains it'd be a bit different if {PRONOUN/r_c1/subject} {VERB/r_c1/weren't/wasn't} standing waiting to be pounced on as a static target."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": ["warrior", "deputy"],
+                        "stat": {
+                            "trait": ["arrogant", "competitive", "troublesome", "vengeful", "righteous"]
+                        }
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to enjoyed a productive training patrol together."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from noticed cat_to's skill in a spar during a training session."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "cat_from was a little annoyed to be beaten by cat_to in a spar in front of other warriors."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "They focus on hunting techniques. Everyone has a nice practice session, picking up a good selection of new tricks to try out on their next hunting patrol. r_c0 really gets into it, and p_l praises {PRONOUN/r_c0/object} for {PRONOUN/r_c0/poss} focus and enthusiasm."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to enjoyed practicing new hunting tricks together."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "cat_from noticed cat_to's hard work during a hunting training session."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_to praised cat_from's hunting."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "They focus on hunting techniques. The setting sun makes the light strange, elongating shadows and tinging the world yellow as the cats prowl around, each taking their turn as prey and hunter."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to took turns playing prey and hunter to help each other practice hunting."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "They focus on hunting techniques. r_c0 doesn't appreciate being singled out — but {PRONOUN/r_c0/poss} scowl vanishes when p_l tells the patrol to learn from {PRONOUN/r_c0/poss} example and asks r_c0 to demonstrate {PRONOUN/r_c0/poss} stalk."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had a productive training session together, working on their hunting technique."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "cat_from was thrilled to be singled out by cat_to for {PRONOUN/cat_from/poss} exceptional stalking technique."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "They focus on hunting techniques. r_c0 revels in the spotlight, taking full advantage of the opportunity to be the center of attention and show off {PRONOUN/r_c0/poss} talents!"
+                ],
+                "involved_cats": {
+                    "r_c0": {
+                        "stat": {
+                            "skill": ["HUNTER,0"]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to worked on their hunting technique together."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from enjoyed showing off {PRONOUN/cat_from/poss} hunting technique in front of cat_to."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats",
+                            "high_social",
+                            "high_stable"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "cat_from was amused by how cat_to showed off {PRONOUN/cat_to/poss} hunting technique."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats",
+                            "low_social",
+                            "low_stable"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was annoyed by how cat_to showed off {PRONOUN/cat_to/poss} hunting technique."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "They focus on hunting techniques. r_c0 has really been trying hard to absorb {PRONOUN/r_c0/poss} mentor's advice. Today, it's obvious that {PRONOUN/r_c0/poss} persistence is paying off; {PRONOUN/r_c0/poss} coordination is smooth, {PRONOUN/r_c0/poss} pounces fluid and powerful — excellent work, p_l praises!"
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to practiced their hunting technique together."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_to praised cat_from's hunting technique."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from noticed how cat_to's hard work in hunting training has paid off."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_train_trainingsuccess_Ap",
+                "strings": [
+                    "They focus on teamwork. Everyone has a nice practice session and their coordination with their Clanmates grows stronger. r_c0 really gets into it and p_l praises {PRONOUN/r_c0/object} for {PRONOUN/r_c0/poss} focus and enthusiasm."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to enjoyed working on their skills together on a training patrol."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "comfort",
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "p_l praised r_c0 for {PRONOUN/r_c0/poss} focus and enthusiasm on a training patrol."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_to praised cat_from's teamwork."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_train_trainingsuccess_Ap",
+                "strings": [
+                    "They focus on teamwork. p_l leads the group in a mock-battle exercise, deliberately giving r_c0 a starring role that has {PRONOUN/r_c0/object} vibrating with excitement and pride."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to enjoyed practicing their fighting skills together on a training patrol."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "comfort",
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "p_l gave r_c0 an important role in a mock-battle while training."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_train_trainingsuccess_Ap",
+                "strings": [
+                    "They focus on teamwork. Sometimes, the best thing of all is to just help an apprentice get the chance to feel equal to the warriors {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} trying to become. p_l treats r_c0 exactly like everyone else. r_c0's confidence grows and {PRONOUN/r_c0/poss} eyes light up as the cats work together."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to enjoyed working on their skills together on a training patrol."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "comfort",
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "p_l treated r_c0 the same as a warrior during a training exercise."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_train_trainingsuccess_Ap",
+                "strings": [
+                    "They focus on teamwork. It's good the see the progress r_c0 is making with {PRONOUN/r_c0/poss} training, and p_l makes sure to tell {PRONOUN/r_c0/object} so as the patrol work on their ambushing strategies."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to enjoyed practicing their ambushing strategies together on a training patrol."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "comfort",
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "p_l praised r_c0 for {PRONOUN/r_c0/poss} progress on a training patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": ["beach"],
+                "strings": [
+                    "r_c0 listens carefully as p_l explains where to find the best prey in the rich waters of the pools.",
+                    "They decide to focus on how best to navigate the rocky tide pools. r_c0 picks up the instruction quickly and is soon hopping from pool to pool, picking out the tasty morsels from them."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned about hunting in tide pools from cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": ["beach"],
+                "strings": [
+                    "They decide to focus on how best to navigate the rocky tide pools. By the end of the patrol, s_c0 is easily fishing fresh-kill out of the pools without an ounce of hesitation in {PRONOUN/s_c0/poss} movements."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "adventurous",
+                                "bold",
+                                "confident",
+                                "daring",
+                                "ambitious"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "s_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned about hunting in tide pools from cat_to."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 8,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "While practicing hunting in tide pools, cat_from discovered cat_to is a quick study."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": [
+                    "desert", "plains"
+                ],
+                "strings": [
+                    "They focus on how to use the wind to their advantage. r_c0 listens carefully as p_l explains how to spot a gust of wind approaching and take advantage of the noise."
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned how to use gusts of wind to hunt from cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": [
+                    "desert", "plains"
+                ],
+                "strings": [
+                    "They focus on how to use the wind to their advantage. r_c0 picks up the instruction quickly and the patrol soon plays a small game, freezing and only moving to tag each other during wind gusts, to test the apprentice's abilities."
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned how to use gusts of wind to hunt from cat_to."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 8,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from and cat_to played a game of tag to test their hunting skills."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": [
+                    "desert", "plains"
+                ],
+                "strings": [
+                    "They focus on how to use the wind to their advantage. By the end of the patrol r_c0 is able to move steadily with the wind, {PRONOUN/r_c0/poss} movements sure and confident."
+                ],
+                "involved_cats": {
+                    "r_c0": {
+                        "stat": {
+                            "trait": [
+                                "calm",
+                                "careful"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned how to use gusts of wind to hunt from cat_to."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 8,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "While practicing using gusts of wind to hunt, cat_from discovered cat_to is a quick study."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["trees"]
+                },
+                "outcome_art": "fst_train_treeclimb_WrAp",
+                "strings": [
+                    "They focus on tree climbing at POI. r_c0 listens carefully as the proper techniques of tree climbing are explained.",
+                    "They focus on tree climbing at POI. r_c0 picks up the instruction quickly and follows the directions of the other patrol members as {PRONOUN/r_c0/subject} {VERB/r_c0/climb/climbs} up the tree."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned about tree-climbing from cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["trees"]
+                },
+                "outcome_art": "fst_train_treeclimb_WrAp",
+                "strings": [
+                    "They focus on tree climbing at POI. By the end of the patrol, r_c0 is leaping from branch to branch, as nimble as a squirrel."
+                ],
+                "involved_cats": {
+                    "r_c0": {
+                        "stat": {
+                            "skill": [
+                                "CLIMBER,0"
+                            ],
+                            "trait": [
+                                "confident",
+                                "daring",
+                                "bold"
+                            ],
+                            "must_have_both": false
+                        }
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned about tree-climbing from cat_to."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 8,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "While practicing tree-climbing, cat_from discovered cat_to is a quick study."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["water:flowing"]
+                },
+                "strings": [
+                    "They focus on how to hide in deep water at POI. r_c0 listens carefully as the p_l explains how to move through the water unseen and undetected."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned about water-hunting from cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["water:flowing"]
+                },
+                "strings": [
+                    "They focus on how to hide in deep water at POI. r_c0 picks up the instruction quickly, and the patrol plays a small game of leapfrog within the shallower waters to test {PRONOUN/r_c0/poss} abilities."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned about water-hunting from cat_to."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 8,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from and cat_to played a game of leapfrog to test their swimming skills."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["water:flowing"]
+                },
+                "strings": [
+                    "They focus on how to hide in deep water at POI. By the end of the patrol, r_c0 is able to hide in the water, {PRONOUN/r_c0/poss} movements barely creating ripples."
+                ],
+                "involved_cats": {
+                    "r_c0": {
+                        "stat": {
+                            "trait": [
+                                "calm",
+                                "careful",
+                                "cunning",
+                                "nervous"
+                            ],
+                            "skill": ["SWIMMER,0"],
+                            "must_have_both": false
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned about hiding in the water from cat_to."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 8,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "While practicing hiding in the water, cat_from discovered cat_to is a quick study."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["cave"],
+                    "category": "terrain"
+                },
+                "strings": [
+                    "They focus on how to navigate in POI. p_l guides r_c0 on how to follow {PRONOUN/r_c0/poss} whiskers through the cramped quarters and r_c0 ends the patrol feeling accomplished in what {PRONOUN/r_c0/subject} learned."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned about cave navigation from cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": [
+                    "mountainous", "beach"
+                ],
+                "strings": [
+                    "They focus on how best to leap up a rocky cliff. r_c0 listens carefully as p_l explains how to find paw holds and take advantage of the cliff's craggy surface."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned about rock-climbing from cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": [
+                    "mountainous", "beach"
+                ],
+                "strings": [
+                    "They focus on how best to leap up a rocky cliff. r_c0 picks up the instruction quickly and is soon able to make {PRONOUN/r_c0/poss} way up the cliff."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "s_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned about rock-climbing from cat_to."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 8,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "While practicing rock-climbing, cat_from discovered cat_to is a quick study."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": [
+                    "mountainous", "beach"
+                ],
+                "strings": [
+                    "They focus on how best to leap up a rocky cliff. By the end of the patrol r_c0 is hopping nimbly from crack to crag, easily scaling the cliff walls."
+                ],
+                "involved_cats": {
+                    "r_c0": {
+                        "stat": {
+                            "skill": [
+                                "CLIMBER,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned about rock-climbing from cat_to."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 8,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "While practicing rock-climbing, cat_from discovered cat_to is a quick study."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": [
+                    "plains"
+                ],
+                "strings": [
+                    "They focus on how to hide within tall grass. r_c0 listens carefully as p_l explains how to move through the grass unseen and undetected."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned about hiding in tall grass from cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": [
+                    "plains"
+                ],
+                "strings": [
+                    "They focus on how to hide within tall grass. r_c0 picks up the instruction quickly, and the patrol is soon playing a small game of hide and seek within the grass to test the apprentice's abilities."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned about hiding in the tall grass from cat_to."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 8,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from and cat_to played a game of hide-and-seek to test their hiding skills."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": [
+                    "plains"
+                ],
+                "strings": [
+                    "They focus on how to hide within tall grass. By the end of the patrol, r_c0 is able to hide stealthily within the grass, {PRONOUN/r_c0/poss} movements barely noticeable."
+                ],
+                "involved_cats": {
+                    "r_c0": {
+                        "stat": {
+                            "trait": [
+                                "calm",
+                                "careful"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from learned about hiding in the tall grass from cat_to."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 8,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "While practicing hiding in the tall grass, cat_from discovered cat_to is a quick study."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "poi": {
+                    "category": "terrain"
+                },
+                "strings": [
+                    "They focus on territory landmarks, taking r_c0 out to see POI and explore the area. p_l explains the history of the area and r_c0 finds it all quite fascinating."
+                ],
+                "involved_cats": {
+                    "r_c0": {
+                        "stat": {
+                            "skill": ["LORE,0"],
+                            "trait": ["thoughtful", "wise", "responsible"]
+                        }
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from enjoyed learning about the history of the territory from cat_to."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "They focus on fighting techniques. p_l shows r_c0 the maneuver over and over again, but r_c0 just can't get the hang of it, and p_l starts to lose {PRONOUN/p_l/poss} patience."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from showed cat_to a fighting move, but cat_to just couldn't get the hang of it.",
+                            "cats_to": "cat_from did a poor job of explaining a fighting move to cat_to."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats",
+                            "-r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -7,
+                        "log": {
+                            "cats_from": "cat_from saw cat_to's impatience with r_c0 when r_c0 wasn't picking up a battle move quickly enough."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 struggles to take the lesson seriously, and eventually the training session ends early with no real progress made."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "troublesome",
+                                "playful",
+                                "childish"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -3,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from's afternoon was ruined by cat_to goofing off during hunting training."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l and r_c1 enjoy chatting so much that r_c0 gets left behind, tail raised in outrage. They were supposed to be training, not gossiping!"
+                ],
+                "involved_cats": {
+                    "r_c1": {}
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l",
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was annoyed when p_l and r_c0 gossiped instead of training {PRONOUN/cat_from/object}."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to enjoyed a chat during a training session."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_embarrassed_WrWr",
+                "strings": [
+                    "They focus on teamwork. At least {PRONOUN/p_l/subject} now {VERB/p_l/know/knows} how much c_n needs to work on their cooperation...? Great StarClan, that was a terrible performance."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "cat_from was unimpressed by cat_to's performance on a training patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_train_trainingfail_Ap",
+                "strings": [
+                    "r_c0 does a terrible job, but p_l isn't willing to call {PRONOUN/r_c0/object} out on it. It's the wrong move for a patrol leader to make, and no cat learns anything from the experience."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from watched cat_to perform poorly on a training patrol."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from thought cat_to did a poor job of leading a training patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_train_trainingfail_Ap",
+                "strings": [
+                    "They focus on teamwork, but r_c0 screws up the teamwork exercise, making a decision that betrays {PRONOUN/r_c0/poss} lack of experience, and while p_l smooths everything over between everyone, the exercise is concluded early."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from watched cat_to perform poorly on a training patrol."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was grateful that cat_to smoothed things over when cat_from made a beginner's mistake on a training patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_train_trainingfail_Ap",
+                "strings": [
+                    "r_c0 doesn't enjoy being singled out for attention and doesn't engage with the learning opportunity. Nothing goes drastically wrong, but p_l doubts anyone learned anything from this afternoon."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was embarrassed to be singled out for attention in front of cat_to on a training patrol."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from thought cat_to did a poor job of leading a training patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "gen_hunt_fail_Wr",
+                "strings": [
+                    "Everything seems to be going well — then s_c0 trips over {PRONOUN/s_c0/poss} paws and introduces {PRONOUN/s_c0/poss} muzzle to the ground at high speed. Maybe they all need to go back to basics."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "exp_gained": 0,
+                "condition": [
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "condition": [
+                            "bruises",
+                            "scrapes"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_train_trainingfail_Ap",
+                "strings": [
+                    "r_c0, trying to show off, is too busy checking to see if p_l is watching to check where {PRONOUN/r_c0/poss} own paws are. r_c0 falls over with a comical thump and cloud of dust."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from wanted to impress cat_to during training."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "bruises",
+                            "scrapes"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "gen_train_argue_WrWr",
+                "strings": [
+                    "s_c0 immediately takes over and bosses the other cats around. It's not well received, so p_l brings a surly-looking s_c0 back in line and ends the training session early."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "arrogant",
+                                "ambitious"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "-p_l"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from was irritated when cat_to tried to boss {PRONOUN/cat_from/object} around on a training patrol."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "s_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "cat_from decided {PRONOUN/cat_from/subject}'d do a better job leading a training patrol than cat_to and tried to take over.",
+                            "cats_to": "cat_from was angered when cat_to seized control of the patrol that cat_from was meant to be leading."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art":"gen_train_argue_WrWr",
+                "strings": [
+                    "s_c0 keeps distracting the patrol by goofing off, and p_l bites off a hiss of annoyance. {PRONOUN/p_l/subject/CAP} {VERB/p_l/weren't/wasn't} expecting a warrior to be the one acting like an apprentice during this exercise."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "childish"
+                            ]
+                        },
+                        "status": ["warrior"],
+                        "prior_abbreviation": [
+                            "-p_l"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was irritated by cat_to's childish antics during a training patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["beach"],
+                "strings": [
+                    "They decide to focus on what lives within the tidepools. r_c0 tries to remember the differences between the creatures within the pools but fails to retain any of the information."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "location": [
+                    "desert", "plains"
+                ],
+                "strings": [
+                    "They focus on how to use the wind to their advantage. r_c0 tries to learn to track the wind gusts, but {PRONOUN/r_c0/subject} can't quite manage to pick up the trick to it."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["trees"]
+                },
+                "outcome_art": "fst_train_treeclimb_WrAp",
+                "strings": [
+                    "They focus on tree climbing at POI. r_c0 manages to get into the tree, but climbing back down proves to be a problem."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -3,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from had to wait around on patrol when cat_to got stuck in a tree during climbing training."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": [
+                    "mountainous", "beach"
+                ],
+                "strings": [
+                    "They focus on how best to leap up a rocky cliff. r_c0 tries to see the paw holds that p_l pointed out to {PRONOUN/r_c0/object}, but the cliff still seems unscalable in {PRONOUN/r_c0/poss} eyes."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "location": [
+                    "plains"
+                ],
+                "strings": [
+                    "They focus on how to hide within tall grass. r_c0 tries to hide within the grass, but {PRONOUN/r_c0/subject} can't quite manage to make {PRONOUN/r_c0/self} still and quiet enough to avoid detection."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["water:flowing"]
+                },
+                "strings": [
+                    "They focus on how to hide in deep water at POI. r_c0 tries to hide within the water, but {PRONOUN/r_c0/subject} can't quite make {PRONOUN/r_c0/self} still and quiet enough to avoid detection."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["cave"],
+                    "category": "terrain"
+                },
+                "strings": [
+                    "They focus on how to navigate in POI. p_l guides r_c0 on how to follow {PRONOUN/r_c0/poss} whiskers through the cramped quarters, but r_c0 just can't seem to understand how this is supposed to work. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/bump/bumps} into the walls more often than {PRONOUN/r_c0/subject} would like to admit."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from didn't think p_l did a good job teaching {PRONOUN/cat_from/object} how to navigate a cave."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "category": "terrain"
+                },
+                "strings": [
+                    "They focus on territory landmarks, taking r_c0 out to see POI and explore the area. p_l explains the history of the are, but r_c0 can't find it in {PRONOUN/r_c0/self} to be interested."
+                ],
+                "involved_cats": {
+                    "r_c0": {
+                        "stat": {
+                            "skill": ["-LORE,0"],
+                            "trait": ["-thoughtful", "-wise", "-responsible"]
+                        }
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from enjoyed learning about the history of the territory from cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "They focus on fighting techniques. r_c0 insists {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} ready for a more complicated maneuver, and despite {PRONOUN/p_l/poss} doubts, p_l agrees. Though r_c0 is talented, the move proves more challenging than expected. In {PRONOUN/r_c0/poss} pursuit of perfecting the move, r_c0 goes down hard."
+                ],
+                "involved_cats": {
+                    "r_c0": {
+                        "stat": {
+                            "skill": [
+                                "FIGHTER,0"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from saw how cat_to wanted to challenge {PRONOUN/cat_to/self} during a training session."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from avoided cat_to after embarrassing {PRONOUN/cat_from/self} during training and failing to master a challenging move."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "some_patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from thought cat_to was at fault for r_c0 getting injured during training by giving {PRONOUN/r_c0/object} a move that was too challenging for {PRONOUN/r_c0/poss} skill level."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "minor_injury"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": ["beach"],
+                "strings": [
+                    "They decide to focus on what lives within the tidepools. r_c0 pokes around in the pools for potential food. Ouch! Oops, that was a sea urchin. r_c0 limps the whole way home."
+                ],
+                "exp_gained": 0,
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "minor_injury"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "poi": {
+                    "tags": ["trees"]
+                },
+                "outcome_art": "gen_pawsdiggingbark_Ap",
+                "strings": [
+                    "They focus on tree climbing at POI. r_c0 begins making {PRONOUN/r_c0/poss} way up into the tree, but a branch cracks and breaks beneath {PRONOUN/r_c0/poss} weight! The apprentice is sent crashing back to earth, hurting {PRONOUN/r_c0/poss} paw in the process."
+                ],
+                "exp_gained": 0,
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "minor_injury"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": [
+                    "mountainous", "beach"
+                ],
+                "outcome_art": "gen_pawsdiggingrocks_Ap",
+                "strings": [
+                    "They focus on how best to leap up a rocky cliff. r_c0 begins making {PRONOUN/r_c0/poss} way up the cliff, but a loose paw hold gives way as soon as {PRONOUN/r_c0/subject} {VERB/r_c0/step/steps} on it! The apprentice tumbles back down the cliff, hurting {PRONOUN/r_c0/poss} leg in the process."
+                ],
+                "exp_gained": 0,
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "sprain"
+                        ]
+                    },
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "bruises"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": [
+                    "plains"
+                ],
+                "strings": [
+                    "They focus on how to hide within tall grass. r_c0 makes {PRONOUN/r_c0/poss} way into the tall grass to try out the advice p_l has given {PRONOUN/r_c0/object}, but {PRONOUN/r_c0/subject} {VERB/r_c0/go/goes} crashing down into a hole, where whatever lives there gives {PRONOUN/r_c0/object} a sharp bite! It seems the grass was hiding more than just cats. r_c0 limps back to camp."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from doubted cat_to's teaching abilities when {PRONOUN/cat_to/subject} picked an unsafe area for a training exercise."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "bite-wound"
+                        ],
+                        "scar_history": "m_c got scarred training in the plains as an apprentice.",
+                        "death_history": "m_c died from a bite-wound {PRONOUN/m_c/subject} got while training in the tall grass."
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "poi": {
+                    "tags": ["fall_risk"],
+                    "category": "terrain"
+                },
+                "strings": [
+                    "They focus on territory landmarks, taking r_c0 out to see POI and explore the area. p_l only looks away from r_c0 for a moment, but a moment was long enough. r_c0 has fallen down POI and is rushed back to camp."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from blamed cat_to for r_c0 being injured while exploring the territory."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": ["r_c0"],
+                        "condition": ["blunt_force_injury"],
+                        "scar_history": "m_c was scared after falling from a great height.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} injuries after falling from a great height."
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "outcome_art": "cat_sprites/gen_embarrassed_WrWr",
+                "strings": [
+                    "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "cat_from and cat_to felt awkward after a training patrol didn't go anywhere productive."
                         }
                     }
                 ]
