@@ -1,116 +1,5 @@
 [
     {
-        "event_id": "bch_bord_nl_flashflood_tide2",
-        "types": [
-            "border"
-        ],
-        "frequency": 4,
-        "location": [
-            "beach"
-        ],
-        "season": [
-            "newleaf"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                1,
-                1
-            ]
-        },
-        "chance_of_success": 30,
-        "patrol_art": "bord_general_intro",
-        "intro_strings": [
-            "As p_l crosses a beach, shivering with the cold, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a creaking, rushing sound; like a wave, but out of sync with the ocean."
-        ],
-        "decline_strings": [
-            "p_l decides to head back early."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l leaps forward, dashing to the other side of the beach and up onto the rocks. {PRONOUN/p_l/subject/CAP} {VERB/p_l/make/makes} it in time to watch the beach get lost under a tide of water from inland."
-                ],
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 scrambles back the way {PRONOUN/s_c0/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris and a large dead sheep. s_c0 pounces on the opportunity to scavenge."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "skill": [
-                                "CLEVER,3"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c0/subject} {VERB/s_c0/turn/turns} and {VERB/s_c0/run/runs} for home. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/are/is} proven right when the beach disappears under a flood of water from inland. {PRONOUN/s_c0/poss/CAP} caution saved {PRONOUN/s_c0/poss} life."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "careful",
-                                "insecure",
-                                "nervous"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l is in the middle of the beach when the flood hits {PRONOUN/p_l/object}, freezing water rushing from inland, sweeping {PRONOUN/p_l/object} straight out to sea to die in the cold ocean."
-                ],
-                "exp_gained": 0,
-                "death": [
-                    {
-                        "cats": [
-                            "p_l"
-                        ],
-                        "history": "m_c was swept out to sea by a flood."
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "event_id": "bch_border_skua1",
         "types": [
             "border"
@@ -141,10 +30,12 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_scaryfoe_WrWr",
                 "strings": [
-                    "When the skua descends, r_c0 takes {PRONOUN/r_c0/poss} chance and launches {PRONOUN/r_c0/self} at the skua before it can fly away with its kill. The bird batters its wings, snaps its beak, and screams at the patrol. r_c0 holds firm and lashes {PRONOUN/r_c0/poss} claws across the bird's wings. The skua finally gives up and retreats. r_c0 may be bruised, but the petrel is {PRONOUN/r_c0/inposs}."
+                    "When the skua descends, s_c0 takes {PRONOUN/s_c0/poss} chance and launches {PRONOUN/s_c0/self} at the skua before it can fly away with its kill. The bird batters its wings, snaps its beak, and screams at the patrol. s_c0 holds firm and lashes {PRONOUN/s_c0/poss} claws across the bird's wings. The skua finally gives up and retreats. s_c0 may be bruised, but the petrel is {PRONOUN/s_c0/inposs}."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -153,7 +44,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -345,10 +236,12 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_argue_WrWr",
                 "strings": [
-                    "As the skua descends toward the petrel, r_c0 decides to try and rob the bird blind. Unfortunately for r_c0, the skua is unbothered, considering it's been harassing birds three times its size for its whole life. It manages to grab the kill and flies off without issue, leaving the patrol members annoyed with each other."
+                    "As the skua descends toward the petrel, s_c0 decides to try and rob the bird blind. Unfortunately for s_c0, the skua is unbothered, considering it's been harassing birds three times its size for its whole life. It manages to grab the kill and flies off without issue, leaving the patrol members annoyed with each other."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -357,7 +250,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -393,10 +286,12 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_embarrassed_WrWr",
                 "strings": [
-                    "r_c0 throws {PRONOUN/r_c0/self} over the petrel, intent on stopping the skua entirely. What r_c0 doesn't anticipate is a face full of ruffled feathers and a screeching skua to go with it, slamming itself into {PRONOUN/r_c0/poss} side. A few harsh pecks later, the large bird swoops back into the air with the petrel, leaving r_c0 injured and the rest of the patrol unimpressed."
+                    "s_c0 throws {PRONOUN/s_c0/self} over the petrel, intent on stopping the skua entirely. What s_c0 doesn't anticipate is a face full of ruffled feathers and a screeching skua to go with it, slamming itself into {PRONOUN/s_c0/poss} side. A few harsh pecks later, the large bird swoops back into the air with the petrel, leaving s_c0 injured and the rest of the patrol unimpressed."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -405,7 +300,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -421,7 +316,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "condition": [
                             "beak_bite"
