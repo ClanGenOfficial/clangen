@@ -2472,20 +2472,20 @@
             ]
         },
         "involved_cats": {
-            "p_l": {
+            "s_c0": {
+                "prior_abbreviation": ["any"],
                 "stat": {
                     "skill": [
                         "LORE,1",
                         "STORY,1"
-                    ],
-                    "trait": []
+                    ]
                 }
             }
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "intro_strings": [
-            "The heartbeat of the tides, in and out like breathing, might at first seem connected to the spirit of the land, p_l says. But that's wrong."
+            "The heartbeat of the tides, in and out like breathing, might at first seem connected to the spirit of the land, s_c0 says. But that's wrong, here's a story that explains what <i>really</i> happens."
         ],
         "decline_strings": [
             "No one seems interested in p_l's story."
@@ -2495,18 +2495,18 @@
                 "frequency": 4,
                 "outcome_art": "gen_hunt_vision",
                 "strings": [
-                    "Though they wash over the land, the tides are connected to the moon, p_l meows. At night this becomes obvious — the new moon and the full moon both produce spring tides of unusual strength. And every so often, if the moon is displeased, a spring tide gains twice the height and strength, producing a king tide."
+                    "Though they wash over the land, the tides are connected to the moon, s_c0 meows. At night this becomes obvious — the new moon and the full moon both produce spring tides of unusual strength. And every so often, if the moon is displeased, a spring tide gains twice the height and strength, producing a king tide."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_to": [
                             "patrol_cats",
-                            "-p_l"
+                            "-s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats",
-                            "-p_l"
+                            "-s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -2514,12 +2514,12 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "cat_from and cat_to listened to p_l's story together."
+                            "cats_from": "cat_from and cat_to listened to s_c0's story together."
                         }
                     },
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -2542,7 +2542,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_soggykittymad_Wr",
                 "strings": [
-                    "Learning about the tides is boring — shoving each other into the water, now <i>that's</i> training! p_l is not pleased."
+                    "Learning about the tides is boring — shoving each other into the water, now <i>that's</i> training! s_c0 is not pleased."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -2551,7 +2551,7 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
