@@ -32704,7 +32704,8 @@
                 "frequency": 4,
                 "location": [
                     "mountainous",
-                    "desert"
+                    "desert",
+                    "beach"
                 ],
                 "outcome_art": "cat_sprites/gen_happycat_Ap",
                 "strings": [
@@ -32872,6 +32873,298 @@
                         "history": "m_c fell a great height while on exploring the territory on {PRONOUN/m_c/poss} own and died."
                     }
                 ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_train_soloadult1",
+        "types": [
+            "training"
+        ],
+        "frequency": 4,
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ],
+            "normal adult": [
+                1,
+                1
+            ]
+        },
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites/gen_train_solo_Wr",
+        "intro_strings": [
+            "p_l heads out alone, wanting to explore and have some time to {PRONOUN/p_l/self}."
+        ],
+        "decline_strings": [
+            "p_l turns back to camp after getting some fresh air, deciding that {PRONOUN/p_l/poss} duties have to come first."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "location": [
+                    "beach",
+                    "desert"
+                ],
+                "strings": [
+                    "p_l heads off to map out a field of sand dunes {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} always found confusing. Hunting, fighting, driving off predators — it all requires knowledge of {PRONOUN/p_l/poss} home turf. It's always worth making sure {PRONOUN/p_l/poss} mental map is up to date. It feels like work though, and it isn't the peaceful break {PRONOUN/p_l/subject} hoped for."
+                ],
+                "exp_gained": 20
+            },
+            {
+                "frequency": 4,
+                "location": [
+                    "beach",
+                    "desert",
+                    "mountainous"
+                ],
+                "strings": [
+                    "p_l heads off to map out the paths through a rocky maze {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} always found confusing. Hunting, fighting, driving off predators — it all requires knowledge of {PRONOUN/p_l/poss} home turf, and it's always worth making sure {PRONOUN/p_l/poss} mental map is up to date. It feels a little like more work though and isn't exactly the peaceful break {PRONOUN/p_l/subject} hoped for."
+                ],
+                "exp_gained": 20
+            },
+            {
+                "frequency": 4,
+                "location": [
+                    "forest",
+                    "plains",
+                    "mountainous"
+                ],
+                "strings": [
+                    "p_l heads off to map out a thicket {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} always found confusing. Hunting, fighting, driving off predators — it all requires knowledge of {PRONOUN/p_l/poss} home turf. It's always worth making sure {PRONOUN/p_l/poss} mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break {PRONOUN/p_l/subject} hoped for."
+                ],
+                "exp_gained": 20
+            },
+            {
+                "frequency": 4,
+                "location": [
+                    "plains",
+                    "mountainous"
+                ],
+                "strings": [
+                    "p_l heads off to map out a field of boulders {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} always found confusing. Hunting, fighting, driving off predators — it all requires knowledge of {PRONOUN/p_l/poss} home turf. It's always worth making sure {PRONOUN/p_l/poss} mental map is up to date. It feels a little like more work though and isn't exactly the peaceful break {PRONOUN/p_l/subject} hoped for."
+                ],
+                "exp_gained": 20
+            },
+            {
+                "frequency": 4,
+                "location": [
+                    "plains",
+                    "beach"
+                ],
+                "outcome_art": "cat_sprites/gen_hunt_funrun_Wr",
+                "strings": [
+                    "p_l heads off to map out a thick field of tall grass {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} always found confusing. Hunting, fighting, driving off predators — it all requires knowledge of {PRONOUN/p_l/poss} home turf. It's always worth making sure {PRONOUN/p_l/poss} mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break {PRONOUN/p_l/subject} hoped for."
+                ],
+                "exp_gained": 20
+            },
+            {
+                "frequency": 4,
+                "location": [
+                    "wetlands"
+                ],
+                "strings": [
+                    "p_l heads off to map out the paths of solid ground through a boggy area {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} always found confusing. Hunting, fighting, driving off predators — it all requires knowledge of {PRONOUN/p_l/poss} home turf, and it's always worth making sure {PRONOUN/p_l/poss} mental map is up to date. It feels a little like more work though and isn't exactly the peaceful break {PRONOUN/p_l/subject} hoped for."
+                ],
+                "exp_gained": 20
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/p_l/poss} beloved home, {PRONOUN/p_l/poss} ears pricked up curiously whenever {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/p_l/subject} last passed this way."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "adventurous",
+                                "bold",
+                                "charismatic",
+                                "childish",
+                                "confident",
+                                "daring",
+                                "playful",
+                                "righteous"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["rocks"],
+                    "category": "terrain"
+                },
+                "strings": [
+                    "p_l decides to relax at POI, sunning {PRONOUN/p_l/self} on the rocks. {PRONOUN/p_l/subject/CAP} don't really get anything productive done, but that's alright."
+                ],
+                "exp_gained": 5
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["trees"],
+                    "category": "terrain"
+                },
+                "season": ["greenleaf"],
+                "strings": [
+                    "p_l decides to relax at POI in the shade. {PRONOUN/p_l/subject/CAP} don't really get anything productive done, but that's alright."
+                ],
+                "exp_gained": 5
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "p_l rounds a corner and stumbles across a tiny, sparkling waterfall!",
+                    "p_l squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow!",
+                    "p_l rounds a corner and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent. Purring, {PRONOUN/p_l/subject} {VERB/p_l/take/takes} the opportunity for a moment of peace, stretching out in the shade to relax.",
+                    "p_l rounds a corner and stumbles across a tiny, perfect pond! Purring, {PRONOUN/p_l/subject} {VERB/p_l/take/takes} the opportunity for a moment of peace, relaxing and enjoying the view."
+                ],
+                "exp_gained": 20
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "p_l rounds a corner and stumbles across a tiny, sparkling waterfall! Further investigation shows that it emerges from an equally tiny spring, and p_l purrs. This reliable source of fresh water could be important during times of drought.",
+                    "p_l squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Further investigation shows it's springfed, and p_l purrs. This reliable water source will be important during baking hot greenleaf.",
+                    "p_l rounds a corner and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent. Further investigation shows it will be sheltered from almost all wind directions, and p_l purrs. This reliable prey source will be important during leaf-bare.",
+                    "p_l rounds a corner and stumbles across a tiny, perfect pond! Further investigation shows that it emerges from an equally tiny spring, and p_l purrs. This reliable water source could be important during times of drought."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "CLEVER,1",
+                                "INSIGHTFUL,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "p_l rounds a corner and stumbles across a tiny, sparkling waterfall! Further investigation shows its origin is an equally tiny spring, and p_l purrs. This reliable source of fresh water could be important during times of drought, and its discovery helps to ease one of the many worries on the deputy's mind.",
+                    "p_l squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Further investigation shows it's springfed, and p_l purrs. This reliable water source will be important during baking hot greenleaf, and its discovery helps to ease one of the many worries on the deputy's mind.",
+                    "p_l rounds a corner and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent. Further investigation shows it will be sheltered from almost all wind directions, and p_l purrs. This reliable prey source will be important during leaf-bare, and its discovery helps to ease one of the many worries on the deputy's mind.",
+                    "p_l rounds a corner and stumbles across a tiny, perfect pond! Further investigation shows that it emerges from an equally tiny spring, and p_l purrs. This reliable water source could be important during times of drought, and its discovery helps to ease one of the many worries on the deputy's mind."
+                ],
+                "required_cat_types": {
+                    "deputy": [
+                        1,
+                        1
+                    ]
+                },
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "CLEVER,1",
+                                "INSIGHTFUL,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "p_l rounds a corner and stumbles across a tiny, sparkling waterfall! Further investigation shows its origin is an equally tiny spring, and p_l purrs. This reliable source of fresh water could be important during times of drought, and its discovery helps to ease one of the many worries on the leader's mind.",
+                    "p_l squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Further investigation shows it's springfed, and p_l purrs. This reliable water source will be important during baking hot greenleaf, and its discovery helps to ease one of the many worries on the leader's mind.",
+                    "p_l rounds a corner and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent. Further investigation shows it will be sheltered from almost all wind directions, and p_l purrs. This reliable prey source will be important during leaf-bare, and its discovery helps to ease one of the many worries on the leader's mind.",
+                    "p_l rounds a corner and stumbles across a tiny, perfect pond! Further investigation shows that it emerges from an equally tiny spring, and p_l purrs. This reliable water source could be important during times of drought, and its discovery helps to ease one of the many worries on the leader's mind."
+                ],
+                "required_cat_types": {
+                    "leader": [
+                        1,
+                        1
+                    ]
+                },
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "CLEVER,1",
+                                "INSIGHTFUL,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l finds {PRONOUN/p_l/self} bogged down by {PRONOUN/p_l/poss} own thoughts, perhaps alone time wasn't the right idea."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l gets lost in the territory. Somehow. {PRONOUN/p_l/poss/CAP} pelt is burning with shame by the time {PRONOUN/p_l/subject} finally {VERB/p_l/return/returns}, sneaking back to {PRONOUN/p_l/poss} den to avoid any embarrassing questions."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": ["insecure", "gloomy"]
+                        }
+                    }
+                },
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l shivers a little, thinking of the dangers of solo patrols... No, definitely not. {PRONOUN/p_l/subject/CAP} {VERB/p_l/turn/turns} around and {VERB/p_l/slink/slinks} straight back to camp."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": [
+                                "insecure",
+                                "lonesome",
+                                "nervous",
+                                "careful",
+                                "responsible"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l wavers in {PRONOUN/p_l/poss} decision. {PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} so much work to do and so many other things demanding {PRONOUN/p_l/poss} time... No, definitely not. {PRONOUN/p_l/subject/CAP} {VERB/p_l/turn/turns} around and {VERB/p_l/march/marches} straight back to camp."
+                ],
+                "required_cat_types": {
+                    "warrior": [
+                        -1,
+                        -1
+                    ]
+                },
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": [
+                                "insecure",
+                                "lonesome",
+                                "nervous",
+                                "careful",
+                                "responsible"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 0
             }
         ]
     }
