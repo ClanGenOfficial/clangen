@@ -85,7 +85,7 @@
         "strings": [
           "Is getting used to the idea of being around so many other cats",
           "Wonders if {PRONOUN/m_c/subject} will miss the quiet",
-          "Is glad {PRONOUN/m_c/subject} aren't alone anymore",
+          "Is glad {PRONOUN/m_c/subject} {VERB/m_c/aren't/isn't} alone anymore",
           "Knows there's safety in numbers"
         ],
       "involved_cats": {

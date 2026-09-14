@@ -35,8 +35,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_hunt_GL_randomrain_Wr",
-        "intro_text": "The coolness of the rain sliding along r_c's pelt is something to be savored, a rare treat as the gentle rain showers c_n. And the ground — it's so green, so alive! Why in StarClan's name does c_n not call this season greenleaf, when everything around them springs to life?!",
-        "decline_text": "Not every cat on the patrol is such a fan of the damp, and while r_c0 is given time to live in the moment, they all want to move on soon.",
+        "intro_strings": [
+            "The coolness of the rain sliding along r_c0's pelt is something to be savored, a rare treat as the gentle rain showers c_n. And the ground — it's so green, so alive! Why in StarClan's name does c_n not call this season greenleaf, when everything around them springs to life?!"
+        ],
+        "decline_strings": [
+            "Not every cat on the patrol is such a fan of the damp, and while r_c0 is given time to live in the moment, they all want to move on soon."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -121,7 +125,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "sore",
@@ -167,8 +171,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": "In the beginning of dreams, the land was flat and empty, p_l whispers.",
-        "decline_text": "Storytime is interrupted by a rain shower, not that anyone minds more water in c_n's territory.",
+        "intro_strings": [
+            "In the beginning of dreams, the land was flat and empty, p_l whispers."
+        ],
+        "decline_strings": [
+            "Storytime is interrupted by a rain shower, not that anyone minds more water in c_n's territory."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

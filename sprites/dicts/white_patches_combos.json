@@ -137,9 +137,10 @@
             "littleBEARD_SMALL"
         ],
         "PRINCESS": [
-            "littleBEARD_SMALL",
+            "littleCHIN",
+            "littleNECKBEARD",
             "littleBIB",
-            "littleTEARDROP",
+            "littleCHEST_STREAK",
             "littleBELLY_SMALL",
             "littleLEG_BACK_LEFT_MID",
             "littleLEG_BACK_RIGHT_MID",
@@ -270,6 +271,100 @@
             "midBIB_HIGH",
             "midSTRIPE_MID",
             "midTAIL_OVER"
+        ],
+        "SOMBER": [
+            "littleBEARD_SMALL",
+            "littleCHEST_BROKEN",
+            "littleLEFTEAR_MID",
+            "littleLEG_BACK_LEFT_MID",
+            "littleLEG_BACK_RIGHT_MID",
+            "littleLEG_FRONT_LEFT_MID",
+            "littleLEG_FRONT_RIGHT_MID",
+            "littleRIGHTEAR_MID",
+            "littleTAIL_UNDER",
+            "littleUNDEREYE_MIN_L",
+            "littleUNDEREYE_MIN_R"
+        ],
+        "CLIFF": [
+            "littleBEARD_SMALL",
+            "littleBELLY_MID",
+            "littleBLAZE_MID",
+            "littleLEG_BACK_LEFT_MID",
+            "littleLEG_BACK_RIGHT_MID",
+            "littleLEG_FRONT_LEFT_MID",
+            "littleLEG_FRONT_RIGHT_MID",
+            "littleLITTLE",
+            "littleUNDEREYE_MIN_L",
+            "littleUNDEREYE_MIN_R",
+            "midBIB_HIGH"
+        ],
+        "FUZZSPOT": [
+            "littleLEG_FRONT_RIGHT_UNDER",
+            "littleTAIL_MID",
+            "littleLEFTEAR_RING",
+            "littleEYESPOT_R",
+            "littleTAIL_MID_LOW",
+            "midFCTWO_REDUCED"
+        ],
+        "SOFT_EDGE": [
+            "littleDAMIEN_REDUCED",
+            "littleCHEST_BROKEN",
+            "littleBELLY_MIN",
+            "midFADESPOTS"
+        ],
+        "SUSPICOUS": [
+            "littleLEFTEAR",
+            "littleFOREHEAD_MIN",
+            "littleEYELINER_MAX_R",
+            "littleBELLY_SMALL",
+            "littleLEG_FRONT_RIGHT_MID_LOW",
+            "midTAIL_HIGH_LOW",
+            "midTAIL_HIGH",
+            "midMITAINE"
+        ],
+        "BIG_JASON": [
+            "littleBLAZE",
+            "littleBIB",
+            "littleBACKSPOT",
+            "littleESTRELLA",
+            "littleHONEY",
+            "littleLEFTEAR",
+            "littleLUNA",
+            "littleREVERSEHEART",
+            "littleRIGHTEAR",
+            "littleSCOURGE",
+            "littleSPARKLE",
+            "littleTEARDROP",
+            "littleTEARS_L",
+            "littleUNDEREYE_MAX_R",
+            "littleLITTLE",
+            "littleLEG_FRONT_RIGHT_SMALL",
+            "littleLEG_BACK_LEFT_MID",
+            "littleLEG_BACK_RIGHT_MID",
+            "littleBELLY_SMALL",
+            "littleEYESPOT_L",
+            "littleEYESPOT_R",
+            "littleMUZZLE",
+            "littleMUSTACHE",
+            "littleCHIN"
+        ],
+        "HOTTOPIC": [
+            "littleROSINA_REDUCED",
+            "littleSPARKLE",
+            "littleTAIL_MID_RING",
+            "littleTAIL_LOW_RING",
+            "littleTAIL_HIGH_RING",
+            "littleTAILTIP",
+            "littleTAIL_REVERSE_MIN",
+            "littleTAIL_SMALL_LOW",
+            "littleTAIL_UNDER",
+            "littleTEARS_L",
+            "littleLEFTEAR_MID",
+            "littleEYESPOT_R",
+            "littleEYELINER_MIN_L",
+            "midTWO_SPOT_SMALL",
+            "midLEG_FRONT_RIGHT_REVERSE",
+            "midLEG_FRONT_LEFT_REVERSE"
         ]
     },
     "high": {
@@ -400,6 +495,29 @@
             "midSHIRT",
             "midUNDERS",
             "midBIB_FULL"
+        ],
+        "WOOD_WINGS": [
+            "littleLEFTEAR_TIP",
+            "littleLEG_FRONT_RIGHT_MIN",
+            "midWOODPECKER",
+            "midWINGS_REDUCED"
+        ],
+        "INKSPILL": [
+            "littleRIGHTEAR",
+            "littleTAIL_MID",
+            "littleTWO_SPOT",
+            "littleUNDEREYE_MAX_R",
+            "littleUNDEREYE_MAX_L",
+            "littleFOREHEAD_MID",
+            "littleEYESPOT_R",
+            "littleLEFTEAR",
+            "littleMASK_REVERSE_PARTIAL",
+            "littleROSINA_REDUCED",
+            "littleSADDLE_SMALL",
+            "midMISS",
+            "midTAIL_OVER",
+            "midTWO_SPOT_MID",
+            "midSHIRT"
         ]
     },
     "mostly": {

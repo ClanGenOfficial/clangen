@@ -314,8 +314,21 @@
     },
     {
         "event_id": "warrior_both_parents0",
+        "tags": [
+            "clan:leader"
+        ],
         "involved_cats": {
             "m_c": {},
+             "r_c0": {
+                "group": [
+                    "player_clan"
+                ],
+                "status": [
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ]
+            },
             "r_c1": {
                 "group": [
                     "player_clan"
@@ -335,6 +348,18 @@
         "relationship_constraint": [
             {
                 "cats_to": [
+                    "r_c0"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "past_app/mentor"
+                ]
+            },
+            {
+                "cats_to": [
                     "r_c2",
                     "r_c1"
                 ],
@@ -350,6 +375,9 @@
     },
     {
         "event_id": "warrior_dead_both_parents0",
+        "tags": [
+            "clan:leader"
+        ],
         "involved_cats": {
             "m_c": {
                 "backstory": [
@@ -825,6 +853,9 @@
     },
     {
         "event_id": "warrior_compassionate0",
+        "tags": [
+            "clan:leader"
+        ],
         "involved_cats": {
             "m_c": {
                 "stat": {

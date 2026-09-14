@@ -27,8 +27,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "backgrounds/mtn_eagles",
-        "intro_text": "The cats head out into the crisp clear newleaf sun, and p_l leads them towards a massive messy eagle nest.",
-        "decline_text": "When they get there, they discover that this nest isn't being used this newleaf. Disappointing.",
+        "intro_strings": [
+            "The cats head out into the crisp clear newleaf sun, and p_l leads them towards a massive messy eagle nest."
+        ],
+        "decline_strings": [
+            "When they get there, they discover that this nest isn't being used this newleaf. Disappointing."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -349,8 +353,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/mtn_eagles",
-        "intro_text": "The cats head out into the crisp clear newleaf sun, and p_l leads them towards a massive messy eagle nest.",
-        "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
+        "intro_strings": [
+            "The cats head out into the crisp clear newleaf sun, and p_l leads them towards a massive messy eagle nest."
+        ],
+        "decline_strings": [
+            "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -718,8 +726,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_crouchingperplexed_WrWr",
-        "intro_text": "Look at this. p_l gestures with {PRONOUN/p_l/poss} tail, calling r_c1's attention to the other side of the vast valley. In the snow, something is erupting out of a massive burrow.",
-        "decline_text": "Best not to be anywhere near a bear fresh from hibernation, the cats decide.",
+        "intro_strings": [
+            "Look at this. p_l gestures with {PRONOUN/p_l/poss} tail, calling r_c1's attention to the other side of the vast valley. In the snow, something is erupting out of a massive burrow."
+        ],
+        "decline_strings": [
+            "Best not to be anywhere near a bear fresh from hibernation, the cats decide."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
