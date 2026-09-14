@@ -22,7 +22,10 @@
             "GOLDEN-BROWN": "brown",
             "DARKBROWN": "brown",
             "CHOCOLATE": "brown",
-            "RUST": "brown"
+            "RUST": "brown",
+            "BLUE": "white",
+            "COFFEE": "brown",
+            "TOAST": "brown"
         },
         "pattern_types": {
             "Tabby": "tabbies",
