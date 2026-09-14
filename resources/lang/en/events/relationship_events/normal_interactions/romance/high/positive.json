@@ -444,5 +444,101 @@
                 }
             }
         }
+    },
+    {
+        "id": "rom_inc_high_matetraitstrict",
+        "strings": [
+            "m_c kind of likes it when r_c bosses {PRONOUN/m_c/object} around.",
+            "m_c appreciates that r_c holds {PRONOUN/r_c/self} and others to such a high standard.",
+            "r_c's disciplined and fastidious nature is atttractive to m_c."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["strict"]
+                }
+            }
+        }
+    },
+    {
+        "id": "rom_inc_high_matetraitcompassionate",
+        "strings": [
+            "m_c is amazed by the depth of r_c's care for other cats.",
+            "m_c melts seeing the way r_c looks after {PRONOUN/r_c/poss} Clanmates.",
+            "m_c wonders how it would feel if r_c concentrated all {PRONOUN/r_c/poss} tenderness on {PRONOUN/m_c/object}."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["compassionate"]
+                }
+            }
+        }
+    },
+    {
+        "id": "rom_inc_high_matetraitthoughtful",
+        "strings": [
+            "m_c wants to get lost in thought with r_c.",
+            "m_c could listen to r_c's thoughts for hours.",
+            "m_c enjoys keeping r_c company while {PRONOUN/r_c/subject} {VERB/r_c/are/is} deep in thought."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["thoughtful"]
+                }
+            }
+        }
+    },
+    {
+        "id": "rom_inc_high_matetraitambitious",
+        "strings": [
+            "Hearing r_c's dreams for the future, m_c imagines standing by {PRONOUN/r_c/poss} side.",
+            "m_c is breathless when r_c describes {PRONOUN/r_c/poss} ambitions.",
+            "m_c feels motivated every day by r_c's plans and hopes for the future."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["ambitious"]
+                }
+            }
+        }
+    },
+    {
+        "id": "rom_inc_high_matetraitconfident",
+        "strings": [
+            "m_c relaxes around r_c, knowing {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} undaunted by most things.",
+            "m_c is flustered by r_c's easy confidence.",
+            "m_c has always found confidence attractive, and r_c embodies it."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["confident"]
+                }
+            }
+        }
+    },
+    {
+        "id": "rom_inc_high_matetraitadventurous",
+        "strings": [
+            "m_c wants to go on adventures with r_c.",
+            "m_c feels braver by r_c's side.",
+            "m_c seeks out new experiences to try to impress r_c."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["adventurous"]
+                }
+            }
+        }
     }
 ]
