@@ -246,7 +246,7 @@
         ]
     },
     {
-        "event_id": "bch_train_stuck1",
+        "event_id": "bch_train_stuck_group1",
         "types": [
             "training"
         ],
@@ -307,39 +307,14 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l comes running at {PRONOUN/r_c0/poss} yowls, and r_c0 is soon freed, shaken but unharmed. The cats settle down as they comfort each other."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "r_c0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "trust",
-                            "comfort"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_to rescued cat_from when sand caved in under {PRONOUN/cat_from/object}."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
+                    "p_l comes running at {PRONOUN/r_c0/poss} yowls, and r_c0 is soon freed, shaken but unharmed. The cats settle down as they comfort each other.",
                     "p_l digs through the sand, helping r_c0 clear it away enough for the other cat to scramble free."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol_cats"
                         ],
                         "cats_from": [
                             "r_c0"
@@ -364,7 +339,7 @@
                 "involved_cats": {
                     "s_c0": {
                         "prior_abbreviation": [
-                            "any"
+                            "-r_c0"
                         ],
                         "stat": {
                             "skill": [
@@ -402,7 +377,7 @@
                 "involved_cats": {
                     "s_c0": {
                         "prior_abbreviation": [
-                            "any"
+                            "-r_c0"
                         ],
                         "stat": {
                             "trait": [
@@ -434,6 +409,164 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_to kept cat_from calm when sand caved in under {PRONOUN/r_c0/object}."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "tags": ["romance"],
+                "strings": [
+                    "s_c0 comes running at {PRONOUN/r_c0/poss} yowls, and r_c0 is soon freed, shaken but unharmed. r_c0 has never noticed how strong s_c0 is before.",
+                    "s_c0 digs through the loose soil, helping r_c0 clear it away enough for the other cat to scramble free. r_c0 admires how smart s_c0 is."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["-r_c0"]
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_constraint": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "s_c0"
+                        ],
+                        "mutual": true,
+                        "constraints": [
+                            "can_romance"
+                        ]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "romance",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "s_c0 rescued r_c0 when sand caved in under {PRONOUN/r_c0/object}. r_c0 noticed {PRONOUN/s_c0/poss} strength."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "tags": ["romance"],
+                "strings": [
+                    "Without letting {PRONOUN/r_c0/object} panic, s_c0 carefully assesses the collapsed dune trapping {PRONOUN/s_c0/poss} Clanmate. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/find/finds} stable footing to dig {PRONOUN/r_c0/object} out from above, and r_c0 is recovered, scared but okay. r_c0 finds {PRONOUN/r_c0/self} seeing s_c0 in a different light."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "-r_c0"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_constraint": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "s_c0"
+                        ],
+                        "mutual": true,
+                        "constraints": [
+                            "can_romance"
+                        ]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "romance",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "s_c0 rescued r_c0 when sand caved in under {PRONOUN/r_c0/object}. r_c0 noticed {PRONOUN/s_c0/poss} cleverness."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "tags": ["romance"],
+                "strings": [
+                    "Creeping in as close as possible, s_c0 purrs to r_c0, keeping {PRONOUN/r_c0/object} calm as {PRONOUN/s_c0/subject} carefully {VERB/s_c0/dig/digs} down to {PRONOUN/r_c0/object}. r_c0 blinks up at {PRONOUN/s_c0/object}, holding on to {PRONOUN/s_c0/poss} presence in the scary situation."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "compassionate",
+                                "faithful",
+                                "loving",
+                                "responsible",
+                                "thoughtful",
+                                "wise"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "-r_c0"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_constraint": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "s_c0"
+                        ],
+                        "mutual": true,
+                        "constraints": [
+                            "can_romance"
+                        ]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "romance",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "s_c0 kept r_c0 calm when sand caved in under {PRONOUN/r_c0/object}. r_c0 was grateful for {PRONOUN/s_c0/poss} presence."
                         }
                     }
                 ]
@@ -474,7 +607,7 @@
                 "involved_cats": {
                     "s_c0": {
                         "prior_abbreviation": [
-                            "any"
+                            "-r_c0"
                         ],
                         "stat": {
                             "trait": [
@@ -502,7 +635,8 @@
                         "mutual": true,
                         "values": [
                             "like",
-                            "comfort"
+                            "comfort",
+                            "romance"
                         ],
                         "amount": -10,
                         "log": {
@@ -519,7 +653,8 @@
                         "mutual": true,
                         "values": [
                             "like",
-                            "respect"
+                            "respect",
+                            "romance"
                         ],
                         "amount": -10,
                         "log": {
@@ -530,22 +665,26 @@
             },
             {
                 "frequency": 3,
-                "strings": [
-                    "Hurt and wheezing, r_c0 hears the patrol panicking as {PRONOUN/r_c0/subject} {VERB/r_c0/drift/drifts} to StarClan."
-                ],
                 "required_cat_types": {
                     "normal adult": [
-                        3,
-                        6
+                        2,
+                        2
                     ]
                 },
+                "strings": [
+                    "p_l eventually manages to rescue r_c0, but {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} to be helped back to camp, battered and injured."
+                ],
                 "exp_gained": 0,
-                "death": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
                         ],
-                        "history": "m_c tragically died after being trapped on patrol."
+                        "condition": [
+                            "blunt_force_injury"
+                        ],
+                        "scar_history": "m_c was scarred when the sand caved in beneath {PRONOUN/m_c/object}.",
+                        "death_history": "m_c died of injuries sustained when the sand caved in beneath {PRONOUN/m_c/object}."
                     }
                 ]
             },
@@ -575,7 +714,34 @@
                 ]
             },
             {
-                "frequency": 3,
+                "frequency": 2,
+                "strings": [
+                    "Hurt and wheezing, r_c0 hears the patrol panicking as {PRONOUN/r_c0/subject} {VERB/r_c0/drift/drifts} to StarClan."
+                ],
+                "required_cat_types": {
+                    "normal adult": [
+                        3,
+                        6
+                    ]
+                },
+                "exp_gained": 0,
+                "death": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "history": "m_c tragically died after being trapped on patrol."
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "required_cat_types": {
+                    "normal adult": [
+                        2,
+                        2
+                    ]
+                },
                 "strings": [
                     "Hurt and wheezing, r_c0 hears p_l panicking as {PRONOUN/r_c0/subject} {VERB/r_c0/drift/drifts} to StarClan."
                 ],
@@ -588,335 +754,11 @@
                         "history": "m_c suffocated under the sand when the ground collapsed beneath {PRONOUN/m_c/object} on patrol."
                     }
                 ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "p_l eventually manages to rescue r_c0, but {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} to be helped back to camp, battered and injured."
-                ],
-                "exp_gained": 0,
-                "condition": [
-                    {
-                        "cats": [
-                            "r_c0"
-                        ],
-                        "condition": [
-                            "blunt_force_injury"
-                        ],
-                        "scar_history": "m_c was scarred when the sand caved in beneath {PRONOUN/m_c/object}.",
-                        "death_history": "m_c died of injuries sustained when the sand caved in beneath {PRONOUN/m_c/object}."
-                    }
-                ]
             }
         ]
     },
     {
-        "event_id": "bch_train_stuck2",
-        "types": [
-            "training"
-        ],
-        "frequency": 1,
-        "location": [
-            "beach"
-        ],
-        "tags": [
-            "romance"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                2,
-                2
-            ]
-        },
-        "involved_cats": {
-            "r_c0": {}
-        },
-        "relationship_constraint": [
-            {
-                "cats_to": [
-                    "patrol_cats"
-                ],
-                "cats_from": [
-                    "patrol_cats"
-                ],
-                "mutual": true,
-                "constraints": [
-                    "can_romance"
-                ]
-            }
-        ],
-        "chance_of_success": 50,
-        "patrol_art": "cat_sprites/bch_train_stuck_Wr",
-        "intro_strings": [
-            "As r_c0 trails behind p_l, the dune {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} crossing shifts beneath r_c0's paws. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly for safe footing — just as the sand caves in beneath {PRONOUN/r_c0/object} and the world goes dark."
-        ],
-        "decline_strings": [
-            "Thankfully, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} on the edge of the obstruction and {VERB/r_c0/wriggle/wriggles} {PRONOUN/r_c0/poss} way clear."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l comes running at {PRONOUN/r_c0/poss} yowls, and r_c0 is soon freed, shaken but unharmed. r_c0 has never noticed how strong p_l is before."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c0"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "romance",
-                            "trust"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "p_l rescued r_c0 when sand caved in under {PRONOUN/r_c0/object}. r_c0 noticed {PRONOUN/p_l/poss} strength."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "p_l digs through the loose soil, helping r_c0 clear it away enough for the other cat to scramble free. r_c0 admires how smart p_l is."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c0"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "romance",
-                            "trust"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "p_l rescued r_c0 when sand caved in under {PRONOUN/r_c0/object}. r_c0 noticed {PRONOUN/p_l/poss} cleverness."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "Without letting {PRONOUN/r_c0/object} panic, s_c0 carefully assesses the collapsed dune trapping {PRONOUN/s_c0/poss} Clanmate. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/find/finds} stable footing to dig {PRONOUN/r_c0/object} out from above, and r_c0 is recovered, scared but okay. r_c0 finds {PRONOUN/r_c0/self} seeing s_c0 in a different light."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "stat": {
-                            "skill": [
-                                "CLEVER,2"
-                            ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
-                    }
-                },
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c0"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "romance",
-                            "trust"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "p_l rescued r_c0 when sand caved in under {PRONOUN/r_c0/object}. r_c0 noticed {PRONOUN/p_l/poss} cleverness."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "Creeping in as close as possible, s_c0 purrs to r_c0, keeping {PRONOUN/r_c0/object} calm as {PRONOUN/s_c0/subject} carefully {VERB/s_c0/dig/digs} down to {PRONOUN/r_c0/object}. r_c0 blinks up at {PRONOUN/s_c0/object}, holding on to {PRONOUN/s_c0/poss} presence in the scary situation."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "stat": {
-                            "trait": [
-                                "compassionate",
-                                "faithful",
-                                "loving",
-                                "responsible",
-                                "thoughtful",
-                                "wise"
-                            ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
-                    }
-                },
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c0"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "romance",
-                            "trust"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "p_l kept r_c0 calm when sand caved in under {PRONOUN/r_c0/object}. r_c0 was grateful for {PRONOUN/p_l/poss} presence."
-                        }
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l works all day to free r_c0 and gets nothing else done."
-                ],
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "trust",
-                            "comfort"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_to rescued cat_from when sand caved in under {PRONOUN/cat_from/object}."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "As s_c0 rarely has patience for other cats, {PRONOUN/s_c0/subject} {VERB/s_c0/tell/tells} r_c0 harshly that {PRONOUN/s_c0/subject} {VERB/s_c0/don't/doesn't} have time for some mouse-brain who got stuck, making r_c0 resentful as {PRONOUN/s_c0/subject} {VERB/s_c0/dig/digs} {PRONOUN/r_c0/object} out of the sand."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "stat": {
-                            "trait": [
-                                "ambitious",
-                                "bloodthirsty",
-                                "cold",
-                                "fierce",
-                                "shameless",
-                                "strict",
-                                "troublesome",
-                                "vengeful"
-                            ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "cats_from": [
-                            "r_c0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "cat_from got stuck on patrol, and cat_to chewed {PRONOUN/cat_from/object} out for it."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "r_c0"
-                        ],
-                        "cats_from": [
-                            "s_c0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "cat_to got stuck on patrol, and cat_from had no patience for it."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "Hurt and wheezing, r_c0 hears p_l panicking as {PRONOUN/r_c0/subject} {VERB/r_c0/drift/drifts} to StarClan."
-                ],
-                "exp_gained": 0,
-                "death": [
-                    {
-                        "cats": [
-                            "r_c0"
-                        ],
-                        "history": "m_c tragically died after being trapped on patrol."
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "p_l eventually manages to rescue r_c0, but {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} to be helped back to camp, battered and injured."
-                ],
-                "exp_gained": 0,
-                "condition": [
-                    {
-                        "cats": [
-                            "r_c0"
-                        ],
-                        "condition": [
-                            "blunt_force_injury"
-                        ],
-                        "scar_history": "m_c was scarred when the sand caved in beneath {PRONOUN/m_c/object}.",
-                        "death_history": "m_c died of injuries sustained when the sand caved in beneath {PRONOUN/m_c/object}."
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "bch_train_stuck3",
+        "event_id": "bch_train_stuck_solo1",
         "types": [
             "training"
         ],
@@ -949,17 +791,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 tries to remain calm, clawing sand away from {PRONOUN/s_c0/poss} muzzle so {PRONOUN/s_c0/subject} can breathe. As the shock wears off, {PRONOUN/s_c0/subject} {VERB/s_c0/realize/realizes} the sand seems thinner on one side of {PRONOUN/s_c0/poss} body. With a surge of energy, {PRONOUN/s_c0/subject} {VERB/s_c0/burst/bursts} through the weak point, terrified and caked in damp sand. {PRONOUN/s_c0/subject/CAP} may have a new nightmare to take back with {PRONOUN/s_c0/object}, but at least {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} alive."
+                    "p_l tries to remain calm, clawing sand away from {PRONOUN/p_l/poss} muzzle so {PRONOUN/p_l/subject} can breathe. As the shock wears off, {PRONOUN/p_l/subject} {VERB/p_l/realize/realizes} the sand seems thinner on one side of {PRONOUN/p_l/poss} body. With a surge of energy, {PRONOUN/p_l/subject} {VERB/p_l/burst/bursts} through the weak point, terrified and caked in damp sand. {PRONOUN/p_l/subject/CAP} may have a new nightmare to take back with {PRONOUN/p_l/object}, but at least {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alive."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "CLEVER,1"
-                            ]
+                            ],
+                            "trait": ["calm", "wise", "thoughtful"],
+                            "must_have_both": false
                         }
                     }
                 },
@@ -977,34 +818,34 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "Hurt and wheezing, p_l does {PRONOUN/p_l/poss} best to hang on and wait for a patrol, but {PRONOUN/p_l/subject} {VERB/p_l/succumb/succumbs} to {PRONOUN/p_l/poss} injuries and {VERB/p_l/drift/drifts} to StarClan alone."
-                ],
-                "exp_gained": 0,
-                "death": [
-                    {
-                        "cats": [
-                            "r_c0"
-                        ],
-                        "history": "m_c tragically died after being trapped on patrol."
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
                     "p_l eventually manages to pull {PRONOUN/p_l/self} free, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} wheezing and injured. It's all {PRONOUN/p_l/subject} can do to find some beach grass to shelter in through the night out on the shore, until a patrol finds {PRONOUN/p_l/object} the next morning and helps {PRONOUN/p_l/object} to the medicine cat den."
                 ],
                 "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "condition": [
                             "blunt_force_injury"
                         ],
                         "scar_history": "m_c was scarred when the sand caved in beneath {PRONOUN/m_c/object}.",
                         "death_history": "m_c died of injuries sustained when the sand caved in beneath {PRONOUN/m_c/object}."
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "strings": [
+                    "Hurt and wheezing, p_l does {PRONOUN/p_l/poss} best to hang on and wait for a patrol, but {PRONOUN/p_l/subject} {VERB/p_l/succumb/succumbs} to {PRONOUN/p_l/poss} injuries and {VERB/p_l/drift/drifts} to StarClan alone."
+                ],
+                "exp_gained": 0,
+                "death": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "history": "m_c tragically died after being trapped on patrol."
                     }
                 ]
             }
