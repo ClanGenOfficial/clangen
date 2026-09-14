@@ -35,6 +35,15 @@
         "intensity",
         "strength"
     ],
+    "arrogant": [
+        "perspective",
+        "candor",
+        "dedication",
+        "commitment",
+        "enthusiasm",
+        "spirit",
+        "intensity"
+    ],
     "bloodthirsty": [
         "ferocity",
         "strength",
@@ -202,6 +211,14 @@
         "patience",
         "grace"
     ],
+    "competitive": [
+        "drive",
+        "intensity",
+        "ferocity",
+        "dedication",
+        "commitment",
+        "initiative"
+    ],
     "confident": [
         "confidence",
         "resilience",
@@ -217,6 +234,14 @@
         "determination",
         "strong will",
         "daring"
+    ],
+    "cunning": [
+        "cleverness",
+        "intrigue",
+        "wit",
+        "risk-taking",
+        "adaptability",
+        "patience"
     ],
     "daring": [
         "boldness",
@@ -271,6 +296,25 @@
         "ferocity",
         "dedication",
         "fortitude"
+    ],
+    "flamboyant": [
+        "spirit",
+        "devotion",
+        "wit",
+        "boldness",
+        "free spirit",
+        "passion"
+    ],
+    "gloomy": [
+        "perspective",
+        "insight",
+        "guardedness"
+    ],
+    "grumpy": [
+        "candor",
+        "dedication",
+        "fortitude",
+        "pragmatism"
     ],
     "insecure": [
         "loyalty",
@@ -362,6 +406,13 @@
         "prudence",
         "attention"
     ],
+    "oblivious": [
+        "enthusiasm",
+        "humor",
+        "kindness",
+        "openness",
+        "spirit"
+    ],
     "playful": [
         "enthusiasm",
         "spirit",
@@ -379,6 +430,12 @@
         "empathy",
         "zeal",
         "perseverance"
+    ],
+    "rebellious": [
+        "passion",
+        "zeal",
+        "perseverance",
+        "tenacity"
     ],
     "responsible": [
         "strength",
@@ -432,6 +489,14 @@
         "intensity",
         "adaptability",
         "foolhardiness"
+    ],
+    "sincere": [
+        "sincerity",
+        "kindness",
+        "candor",
+        "dignity",
+        "clear eyes",
+        "perspective"
     ],
     "strange": [
         "enthusiasm",

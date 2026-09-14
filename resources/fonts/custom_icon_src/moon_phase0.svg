@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="17"
+   height="17"
+   viewBox="0 0 17 17"
+   sodipodi:docname="moon_phase0.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   inkscape:export-filename="C:\Clangen\CG-OfficialClangen_PR_Fork\Inkpawwc\resources\fonts\custom_icon_src\moon_phase0.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     showgrid="true"
+     inkscape:zoom="45.254834"
+     inkscape:cx="6.3197668"
+     inkscape:cy="8.639961"
+     inkscape:window-width="1920"
+     inkscape:window-height="1008"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer5">
+    <inkscape:grid
+       id="grid1"
+       units="px"
+       originx="1"
+       originy="-0.69999999"
+       spacingx="1.667"
+       spacingy="1.667"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="1"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" />
+    <inkscape:page
+       x="0"
+       y="0"
+       width="17"
+       height="17"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="moon_phase0">
+    <path
+       id="rect2"
+       style="fill:#000000;stroke-width:1.20357;paint-order:fill markers stroke"
+       d="M 6.0020005,2.6340159 V 4.3019846 H 4.3340318 V 5.9680002 H 2.6680162 v 3.3339844 h 1.6660156 v 1.6679684 h 1.6679687 v 1.666016 H 9.3359853 V 10.969953 H 11.002 V 9.3019846 h 1.667969 V 5.9680002 H 11.002 V 4.3019846 H 9.3359853 V 2.6340159 Z" />
+  </g>
+</svg>

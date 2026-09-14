@@ -7,6 +7,7 @@ import pygame_gui
 from scripts.cat.cats import Cat
 from scripts.game_structure import game
 from ..ui.elements.image_button import UIImageButton
+from ..ui.elements.checkbox import UICheckbox
 from ..ui.elements.surface_image_button import UISurfaceImageButton
 from ..ui.theme import get_text_box_theme
 from ..events_module.text_adjust import shorten_text_to_fit
@@ -98,7 +99,7 @@ class SpriteInspectScreen(Screens):
                     self.scars_shown = True
 
                 self.make_cat_image()
-                self.update_checkboxes()
+                self.checkboxes["scars_shown"].toggle()
             elif event.ui_element == self.checkboxes["acc_shown"]:
                 if self.acc_shown:
                     self.acc_shown = False
@@ -106,23 +107,23 @@ class SpriteInspectScreen(Screens):
                     self.acc_shown = True
 
                 self.make_cat_image()
-                self.update_checkboxes()
-            elif event.ui_element == self.checkboxes["override_dead_lineart"]:
+                self.checkboxes["acc_shown"].toggle()
+            elif event.ui_element == self.checkboxes["show_as_living"]:
                 if self.override_dead_lineart:
                     self.override_dead_lineart = False
                 else:
                     self.override_dead_lineart = True
 
                 self.make_cat_image()
-                self.update_checkboxes()
-            elif event.ui_element == self.checkboxes["override_not_working"]:
+                self.checkboxes["show_as_living"].toggle()
+            elif event.ui_element == self.checkboxes["show_as_healthy"]:
                 if self.override_not_working:
                     self.override_not_working = False
                 else:
                     self.override_not_working = True
 
                 self.make_cat_image()
-                self.update_checkboxes()
+                self.checkboxes["show_as_healthy"].toggle()
             elif event.ui_element == self.cat_elements["favourite_button"]:
                 self.the_cat.favourite = not self.the_cat.favourite
                 self.cat_elements["favourite_button"].change_object_id(
@@ -319,43 +320,47 @@ class SpriteInspectScreen(Screens):
         self.checkboxes = {}
 
         # "Show Platform"
-        self.make_one_checkbox(
-            ui_scale_offset((100, 575)), "platform_shown", self.platform_shown
+        self.checkboxes["platform_shown"] = UICheckbox(
+            position=(100, 575),
+            manager=MANAGER,
+            check=self.platform_shown,
         )
 
         # "Show Scars"
-        self.make_one_checkbox(
-            ui_scale_offset((300, 575)),
-            "scars_shown",
-            self.scars_shown,
-            self.the_cat.pelt.scars,
+        self.checkboxes["scars_shown"] = UICheckbox(
+            position=(300, 575),
+            manager=MANAGER,
+            check=self.scars_shown,
         )
+        if not self.the_cat.pelt.scars:
+            self.checkboxes["scars_shown"].disable()
 
         # "Show accessories"
-        self.make_one_checkbox(
-            ui_scale_offset((500, 575)),
-            "acc_shown",
-            self.acc_shown,
-            self.the_cat.pelt.accessory,
+        self.checkboxes["acc_shown"] = UICheckbox(
+            position=(500, 575),
+            manager=MANAGER,
+            check=self.acc_shown,
         )
+        if not self.the_cat.pelt.accessory:
+            self.checkboxes["acc_shown"].disable()
 
         # "Show as living"
-        self.make_one_checkbox(
-            ui_scale_offset((200, 625)),
-            "override_dead_lineart",
-            self.override_dead_lineart,
-            self.the_cat.dead,
-            disabled_object_id="@checked_checkbox",
+        self.checkboxes["show_as_living"] = UICheckbox(
+            position=(200, 625),
+            manager=MANAGER,
+            check=self.override_dead_lineart,
         )
+        if not self.the_cat.dead:
+            self.checkboxes["show_as_living"].disable()
 
         # "Show as healthy"
-        self.make_one_checkbox(
-            ui_scale_offset((400, 625)),
-            "override_not_working",
-            self.override_not_working,
-            self.the_cat.not_working(),
-            disabled_object_id="@checked_checkbox",
+        self.checkboxes["show_as_healthy"] = UICheckbox(
+            position=(400, 625),
+            manager=MANAGER,
+            check=self.override_not_working,
         )
+        if not self.the_cat.not_working():
+            self.checkboxes["show_as_healthy"].disable()
 
     def make_one_checkbox(
         self,

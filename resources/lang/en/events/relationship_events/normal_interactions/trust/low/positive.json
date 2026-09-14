@@ -1,6 +1,6 @@
 [
     {
-        "id": "trust_inc_low1",
+        "event_id": "trust_inc_low1",
         "strings": [
             "m_c appreciates r_c telling {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} had a feather stuck to {PRONOUN/m_c/poss} face.",
             "r_c follows through on a small promise made with m_c.",
@@ -14,7 +14,7 @@
         ]
     },
     {
-        "id": "trust_inc_low2",
+        "event_id": "trust_inc_low2",
         "strings": [
             "m_c includes r_c in a conversation that r_c struggled to join.",
             "r_c helps m_c hide from a Clanmate.",
@@ -39,7 +39,7 @@
         ]
     },
     {
-        "id": "trust_inc_low3",
+        "event_id": "trust_inc_low3",
         "strings": [
             "m_c bestows wisdom onto r_c."
         ],
@@ -68,7 +68,7 @@
         ]
     },
     {
-        "id": "trust_inc_low4",
+        "event_id": "trust_inc_low4",
         "strings": [
             "r_c tells m_c to get {PRONOUN/m_c/poss} ailment treated as soon as possible.",
             "r_c is chiding m_c for being so reckless.",

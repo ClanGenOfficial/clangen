@@ -69,5 +69,12 @@
       "prey.start_amount": 0,
       "clan_resources.herbs.empty_starting_storage": true
     }
+  },
+  "meagre_stocks": {
+    "card_art": "origin/public_enemy.png",
+    "modifiers": {
+      "prey.start_amount": 30,
+      "clan_resources.herbs.half_starting_storage": true
+    }
   }
 }
