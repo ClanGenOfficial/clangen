@@ -33,6 +33,10 @@
             "one": "cream",
             "many": "cream"
         },
+        "DAWN": {
+            "one": "cream",
+            "many": "bimetallic"
+        },
         "CREAM": {
             "one": "cream",
             "many": "cream"
