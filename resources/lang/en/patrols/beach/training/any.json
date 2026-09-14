@@ -875,16 +875,12 @@
             ]
         },
         "involved_cats": {
-            "r_c1": {
-                "status": [
-                    "apprentice"
-                ]
-            }
+            "r_c0": {}
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/bch_train_octopus_WrAp",
         "intro_strings": [
-            "p_l takes r_c1 out to see a big octopus a patrol spotted in one of c_n's rockpools."
+            "p_l takes r_c0 out to see a big octopus a patrol spotted in one of c_n's rockpools."
         ],
         "decline_strings": [
             "When they get there, they can't find it, and the lesson fails."
@@ -893,15 +889,9 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 watches the massive creature the tides have washed in with wide eyes, tail twitching with excitement. p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water."
+                    "r_c0 watches the massive creature the tides have washed in with wide eyes, tail twitching with excitement. p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water.",
+                    "p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water. r_c0 flinches backwards as the creature suddenly lunges after a little fish. Once the fish has disappeared into the suddenly frightening beak, the octopus goes back to swaying like harmless kelp."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 15,
                 "relationship_changes": [
                     {
@@ -909,7 +899,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -923,56 +913,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c1"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_to taught cat_from about octopi."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water. r_c1 flinches backwards as the creature suddenly lunges after a little fish. Once the fish has disappeared into the suddenly frightening beak, the octopus goes back to swaying like harmless kelp."
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 15,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c1"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from learned about octopi from cat_to."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -991,35 +932,27 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 points out the dangers of the creature, explaining how some c_n stories tell of a Dark Forest cat who tried to escape into the ocean, only to be cursed by StarClan into becoming a monster with legs sprouting from each claw. As r_c1 watches the octopus contort itself, more liquid than animal, {PRONOUN/r_c1/subject} can see how it could be a sea cat."
+                    "p_l points out the dangers of the creature, explaining how some c_n stories tell of a Dark Forest cat who tried to escape into the ocean, only to be cursed by StarClan into becoming a monster with legs sprouting from each claw. As r_c0 watches the octopus contort itself, more liquid than animal, {PRONOUN/r_c0/subject} can see how it could be a sea cat."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SPEAKER,1",
                                 "LORE,1",
                                 "STORY,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 15,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1033,10 +966,10 @@
                     },
                     {
                         "cats_to": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -1052,33 +985,25 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 points out the dangers of the creature, showing r_c1 exactly how the octopus has no direction that it can't move its limbs, as the octopus sways around in the rockpool waiting for the tides to free it. It's dangerous, s_c0 teaches, and r_c1 wouldn't be able to predict how it can move in a fight. Something to be careful of."
+                    "p_l points out the dangers of the creature, showing r_c0 exactly how the octopus has no direction that it can't move its limbs, as the octopus sways around in the rockpool waiting for the tides to free it. It's dangerous, p_l teaches, and r_c0 wouldn't be able to predict how it can move in a fight. Something to be careful of."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "TEACHER,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 15,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1092,7 +1017,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1113,20 +1038,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey. p_l can't get {PRONOUN/r_c1/object} to take the training session seriously."
+                    "r_c0 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey. p_l can't get {PRONOUN/r_c0/object} to take the training session seriously."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1146,20 +1064,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 cannot believe that the octopus can fit into the tiny crevice that p_l points out and starts an argument about it. "
+                    "r_c0 cannot believe that the octopus can fit into the tiny crevice that p_l points out and starts an argument about it. "
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1171,7 +1082,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from and cat_to got into an argument while p_l tried to teach r_c1 about octopi."
+                            "cats_from": "cat_from and cat_to got into an argument while p_l tried to teach r_c0 about octopi."
                         }
                     }
                 ]
@@ -1213,68 +1124,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 and r_c2 watch the massive creature the tides have washed in with wide eyes, tails twitching with excitement. p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water."
+                    "r_c0 and r_c1 watch the massive creature the tides have washed in with wide eyes, tails twitching with excitement. p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water.",
+                    "p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water. r_c0 flinches backwards and r_c1's pelt puffs up as the creature suddenly lunges after a fish. Once the fish has disappeared into the suddenly frightening beak, the octopus goes back to swaying like harmless kelp."
                 ],
                 "involved_cats": {
+                    "r_c0": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
                     "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 12,
-                        "log": {
-                            "cats_from": "cat_to taught cat_from about octopi."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "values": [
-                            "comfort",
-                            "respect"
-                        ],
-                        "amount": 8,
-                        "log": {
-                            "cats_from": "cat_from taught cat_to about octopi."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water. r_c1 flinches backwards and r_c2's pelt puffs up as the creature suddenly lunges after a fish. Once the fish has disappeared into the suddenly frightening beak, the octopus goes back to swaying like harmless kelp."
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
                         "status": [
                             "apprentice"
                         ]
@@ -1319,15 +1178,15 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 points out the dangers of the creature, explaining how some c_n stories tell of a Dark Forest cat who tried to escape into the ocean, only to be cursed by StarClan into a monster with legs sprouting from each claw. r_c1 and r_c2 watch the octopus contort itself, more liquid than animal, and they can see how it could be a sea cat."
+                    "s_c0 points out the dangers of the creature, explaining how some c_n stories tell of a Dark Forest cat who tried to escape into the ocean, only to be cursed by StarClan into a monster with legs sprouting from each claw. r_c0 and r_c1 watch the octopus contort itself, more liquid than animal, and they can see how it could be a sea cat."
                 ],
                 "involved_cats": {
-                    "r_c1": {
+                    "r_c0": {
                         "status": [
                             "apprentice"
                         ]
                     },
-                    "r_c2": {
+                    "r_c1": {
                         "status": [
                             "apprentice"
                         ]
@@ -1342,14 +1201,15 @@
                         },
                         "prior_abbreviation": [
                             "any"
-                        ]
+                        ],
+                        "status": ["-apprentice"]
                     }
                 },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "apprentice"
@@ -1369,7 +1229,7 @@
                             "apprentice"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1383,10 +1243,10 @@
                     },
                     {
                         "cats_to": [
-                            "r_c2"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1403,15 +1263,15 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 points out the dangers of the creature, showing r_c1 exactly how the octopus has no direction that it can't move its limbs, as the octopus sways around in the rockpool waiting for the tides to free it. It's dangerous, s_c0 teaches, and r_c2 wouldn't be able to predict how it can move in a fight. Something to be careful of."
+                    "s_c0 points out the dangers of the creature, showing r_c0 exactly how the octopus has no direction that it can't move its limbs, as the octopus sways around in the rockpool waiting for the tides to free it. It's dangerous, s_c0 teaches, and r_c1 wouldn't be able to predict how it can move in a fight. Something to be careful of."
                 ],
                 "involved_cats": {
-                    "r_c1": {
+                    "r_c0": {
                         "status": [
                             "apprentice"
                         ]
                     },
-                    "r_c2": {
+                    "r_c1": {
                         "status": [
                             "apprentice"
                         ]
@@ -1424,14 +1284,15 @@
                         },
                         "prior_abbreviation": [
                             "any"
-                        ]
+                        ],
+                        "status": ["-apprentice"]
                     }
                 },
                 "exp_gained": 15,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "apprentice"
@@ -1451,7 +1312,7 @@
                             "apprentice"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1470,15 +1331,15 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey. p_l can't get {PRONOUN/r_c1/object} to take the training session seriously. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/distract/distracts} r_c2 as well, and eventually p_l has to give up on teaching."
+                    "r_c0 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey. p_l can't get {PRONOUN/r_c0/object} to take the training session seriously. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/distract/distracts} r_c1 as well, and eventually p_l has to give up on teaching."
                 ],
                 "involved_cats": {
-                    "r_c1": {
+                    "r_c0": {
                         "status": [
                             "apprentice"
                         ]
                     },
-                    "r_c2": {
+                    "r_c1": {
                         "status": [
                             "apprentice"
                         ]
@@ -1488,7 +1349,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "r_c0", "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1500,15 +1361,15 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "r_c1 didn't take p_l's lesson about octopi seriously."
+                            "cats_from": "r_c0 didn't take p_l's lesson about octopi seriously."
                         }
                     },
                     {
                         "cats_to": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -1525,15 +1386,15 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 cannot believe that the octopus can fit into the tiny crevice that p_l points out and starts an argument about it. r_c2 sides with p_l, and no one learns anything in the squabbling."
+                    "r_c0 cannot believe that the octopus can fit into the tiny crevice that p_l points out and starts an argument about it. r_c1 sides with p_l, and no one learns anything in the squabbling."
                 ],
                 "involved_cats": {
-                    "r_c1": {
+                    "r_c0": {
                         "status": [
                             "apprentice"
                         ]
                     },
-                    "r_c2": {
+                    "r_c1": {
                         "status": [
                             "apprentice"
                         ]
@@ -1546,7 +1407,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c1"
+                            "r_c0", "r_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -1555,15 +1416,15 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from and cat_to got into an argument when p_l tried to teach r_c1 about how dangerous octopi can be."
+                            "cats_from": "cat_from and cat_to got into an argument when p_l tried to teach cat_to about how dangerous octopi can be."
                         }
                     },
                     {
                         "cats_to": [
-                            "r_c2"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1572,7 +1433,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "r_c2 sided with p_l when r_c1 argued with {PRONOUN/p_l/object} about how dangerous octopi can be."
+                            "cats_from": "r_c1 sided with p_l when r_c0 argued with {PRONOUN/p_l/object} about how dangerous octopi can be."
                         }
                     }
                 ]
