@@ -1463,24 +1463,16 @@
             ]
         },
         "involved_cats": {
-            "r_c1": {
-                "status": [
-                    "apprentice"
-                ]
-            },
-            "r_c2": {
-                "status": [
-                    "apprentice"
-                ]
-            }
+            "p_l": {},
+            "r_c0": {}
         },
         "relationship_constraint": [
             {
                 "cats_to": [
-                    "patrol_cats"
+                    "p_l"
                 ],
                 "cats_from": [
-                    "patrol_cats"
+                    "r_c0"
                 ],
                 "mutual": true,
                 "constraints": [
@@ -1491,7 +1483,7 @@
         "chance_of_success": 60,
         "patrol_art": "backgrounds/bch_stormwaves",
         "intro_strings": [
-            "It's storming in c_n's territory today, and r_c1 waits for r_c2 up on one of the cliffs."
+            "It's storming in c_n's territory today, and p_l waits for r_c0 up on one of the cliffs."
         ],
         "decline_strings": [
             "The apprentices are called back to camp to deal with an elder's wet bedding."
@@ -1500,28 +1492,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c2 picks {PRONOUN/r_c2/poss} way up the cliff path, asking what r_c1 wanted to show {PRONOUN/r_c2/object}. r_c1 brings {PRONOUN/r_c2/object} to a point where the wind hits the land, and r_c2 gasps, watching the gigantic waves breaking against the cliff. It's thrilling, a little scary, and very cool."
+                    "r_c0 picks {PRONOUN/r_c0/poss} way up the cliff path, asking what p_l wanted to show {PRONOUN/r_c0/object}. p_l brings {PRONOUN/r_c0/object} to a point where the wind hits the land, and r_c0 gasps, watching the gigantic waves breaking against the cliff. It's thrilling, a little scary, and very cool."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1536,30 +1516,18 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 4,
                 "strings": [
-                    "When r_c2 arrives, r_c1 shows {PRONOUN/r_c2/object} the spot {PRONOUN/r_c1/subject}{VERB/r_c1/'ve/'s} found, where the apprentices can see the gigantic storm waves breaking against the land. Both of them gasp when a lightning bolt strikes the sea, throwing the world into black and white. The apprentices huddle against each other, warmed by the other's pelt."
+                    "When r_c0 arrives, p_l shows {PRONOUN/r_c0/object} the spot {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} found, where the apprentices can see the gigantic storm waves breaking against the land. Both of them gasp when a lightning bolt strikes the sea, throwing the world into black and white. The apprentices huddle against each other, warmed by the other's pelt."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1576,15 +1544,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c2 rounds the top of the cliff and sees s_c0, asking why s_c0 wanted to meet there. Stuttering but determined, s_c0 explains that {PRONOUN/s_c0/subject} wondered if, possibly, maybe, r_c2 would like to hang out... just the two of them? r_c2 looks away with a purr and mumbles a soft yes to the ground, suddenly unable to make eye contact. They watch the storm together, quietly thrilled."
+                    "r_c0 rounds the top of the cliff and sees p_l, asking why p_l wanted to meet there. Stuttering but determined, p_l explains that {PRONOUN/p_l/subject} wondered if, possibly, maybe, r_c0 would like to hang out... just the two of them? r_c0 looks away with a purr and mumbles a soft yes to the ground, suddenly unable to make eye contact. They watch the storm together, quietly thrilled."
                 ],
                 "involved_cats": {
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "adventurous",
@@ -1596,20 +1559,17 @@
                                 "playful",
                                 "righteous"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c1"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1618,7 +1578,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "r_c1 met with r_c2 to spend time together — just the two of them."
+                            "cats_from": "p_l met with r_c0 to spend time together — just the two of them."
                         }
                     }
                 ]
@@ -1628,28 +1588,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c2 rounds the top of the cliff, and seeing r_c1, asks why r_c1 wanted to meet there. r_c1 stutters out some nonsense about hunting and then runs off into the rain."
+                    "r_c0 rounds the top of the cliff, and seeing p_l, asks why p_l wanted to meet there. p_l stutters out some nonsense about hunting and then runs off into the rain."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1663,10 +1611,10 @@
                     },
                     {
                         "cats_to": [
-                            "r_c2"
+                            "r_c0"
                         ],
                         "cats_from": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -1682,28 +1630,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c2 refuses to come up the cliff while it's so stormy, and r_c1 gives up on {PRONOUN/r_c1/poss} idea, disappointed {PRONOUN/r_c1/subject} didn't get to spend time with r_c2."
+                    "r_c0 refuses to come up the cliff while it's so stormy, and p_l gives up on {PRONOUN/p_l/poss} idea, disappointed {PRONOUN/p_l/subject} didn't get to spend time with r_c0."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c2"
+                            "r_c0"
                         ],
                         "cats_from": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
