@@ -2771,7 +2771,7 @@
                     "apprentice": [1, 1]
                 },
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. p_l quickly hides {PRONOUN/p_l/self) and sets up an ambush that lets {PRONOUN/p_l/object} pretend to be a far bigger and more impressive fighter. It sends the rogue fleeing off c_n territory."
+                    "The pawprints lead to a trespassing rogue. p_l quickly hides {PRONOUN/p_l/self} and sets up an ambush that lets {PRONOUN/p_l/object} pretend to be a far bigger and more impressive fighter. It sends the rogue fleeing off c_n territory."
                 ],
                 "involved_cats": {
                     "n_c0": {
