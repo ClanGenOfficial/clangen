@@ -446,7 +446,7 @@
         }
     },
     {
-        "id": "rom_inc_high_matetraitstrict",
+        "event_id": "rom_inc_high_matetraitstrict",
         "strings": [
             "m_c kind of likes it when r_c bosses {PRONOUN/m_c/object} around.",
             "m_c appreciates that r_c holds {PRONOUN/r_c/self} and others to such a high standard.",
@@ -462,7 +462,7 @@
         }
     },
     {
-        "id": "rom_inc_high_matetraitcompassionate",
+        "event_id": "rom_inc_high_matetraitcompassionate",
         "strings": [
             "m_c is amazed by the depth of r_c's care for other cats.",
             "m_c melts seeing the way r_c looks after {PRONOUN/r_c/poss} Clanmates.",
@@ -478,7 +478,7 @@
         }
     },
     {
-        "id": "rom_inc_high_matetraitthoughtful",
+        "event_id": "rom_inc_high_matetraitthoughtful",
         "strings": [
             "m_c wants to get lost in thought with r_c.",
             "m_c could listen to r_c's thoughts for hours.",
@@ -494,7 +494,7 @@
         }
     },
     {
-        "id": "rom_inc_high_matetraitambitious",
+        "event_id": "rom_inc_high_matetraitambitious",
         "strings": [
             "Hearing r_c's dreams for the future, m_c imagines standing by {PRONOUN/r_c/poss} side.",
             "m_c is breathless when r_c describes {PRONOUN/r_c/poss} ambitions.",
@@ -510,7 +510,7 @@
         }
     },
     {
-        "id": "rom_inc_high_matetraitconfident",
+        "event_id": "rom_inc_high_matetraitconfident",
         "strings": [
             "m_c relaxes around r_c, knowing {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} undaunted by most things.",
             "m_c is flustered by r_c's easy confidence.",
@@ -526,7 +526,7 @@
         }
     },
     {
-        "id": "rom_inc_high_matetraitadventurous",
+        "event_id": "rom_inc_high_matetraitadventurous",
         "strings": [
             "m_c wants to go on adventures with r_c.",
             "m_c feels braver by r_c's side.",
