@@ -66,5 +66,9 @@
     "earthydilute": [44, 33, 11],
     "lilacdilute": [31, 25, 36],
     "none": null
+  },
+  "subtract_tint_colours":
+  {
+    "test": [7, 28, 38]
   }
 }
