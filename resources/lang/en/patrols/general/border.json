@@ -4941,7 +4941,7 @@
         ]
     },
     {
-        "event_id": "gen_bord_rogue_solo1",
+        "event_id": "gen_bord_rogueambush_solo1",
         "types": [
             "border"
         ],
@@ -5202,7 +5202,7 @@
         ]
     },
     {
-        "event_id": "gen_bord_rogue_group1",
+        "event_id": "gen_bord_rogueambush_group1",
         "types": [
             "border"
         ],
