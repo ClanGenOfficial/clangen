@@ -797,6 +797,8 @@ class Patrol:
             file_name = (
                 self.patrol_event.patrol_art if not outcome else outcome.outcome_art
             )
+            if file_name == "POI":
+                file_name = f"backgrounds/poi_{self.chosen_poi}"
 
         if not isinstance(file_name, str) or not path_exists(
             f"{root_dir}{file_name}.png"
