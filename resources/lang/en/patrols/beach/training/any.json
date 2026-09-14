@@ -1839,10 +1839,10 @@
         "relationship_constraint": [
             {
                 "cats_to": [
-                    "patrol_cats"
+                    "p_l"
                 ],
                 "cats_from": [
-                    "patrol_cats"
+                    "r_c0"
                 ],
                 "mutual": true,
                 "constraints": [
@@ -1886,9 +1886,10 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 4,
                 "strings": [
-                    "Stunned, the cats sit back and watch as the waves bring ripples of light. It's a breathless, magical scene, and r_c0 leans against p_l, their pelts keeping each other warm as they take in the magic of the sea."
+                    "Stunned, the cats sit back and watch as the waves bring ripples of light. It's a breathless, magical scene, and r_c0 leans against p_l, their pelts keeping each other warm as they take in the magic of the sea.",
+                    "As they watch, quiet and patient, more and more of the sea starts to come alive with tiny, glittering creatures dancing around in the water. With no words other than the occasional quiet gasp, p_l and r_c0 spend hours watching the magic of the sea swirl, dip, and undulate, their hearts full of wonder."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [
@@ -1905,52 +1906,6 @@
                             "like"
                         ],
                         "amount": 8,
-                        "log": {
-                            "cats_from": "cat_from and cat_to watched light ripple through the waves of the sea at night and cuddled to stay warm."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "As they watch, quiet and patient, more and more of the sea starts to come alive with tiny, glittering creatures dancing around in the water. With no words other than the occasional quiet gasp, p_l and s_c0 spend hours watching the magic of the sea swirl, dip, and undulate, their hearts full of wonder."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "stat": {
-                            "trait": [
-                                "calm",
-                                "careful",
-                                "insecure",
-                                "lonesome",
-                                "loyal",
-                                "nervous",
-                                "responsible",
-                                "thoughtful",
-                                "wise"
-                            ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
-                    }
-                },
-                "exp_gained": 10,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "s_c0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "like"
-                        ],
-                        "amount": 10,
                         "log": {
                             "cats_from": "cat_from and cat_to watched light ripple through the waves of the sea at night and cuddled to stay warm."
                         }
