@@ -540,7 +540,7 @@ def handle_lead_den_event():
                                     cat=invited_cat,
                                 )
                                 invited_cat.name.give_suffix(
-                                    eyes= invited_cat.pelt.eyes,
+                                    eyes=invited_cat.pelt.eyes,
                                     colour=invited_cat.pelt.colour,
                                     pelt=invited_cat.pelt.name,
                                     biome=game.clan.biome
