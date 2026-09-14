@@ -1678,16 +1678,8 @@
             ]
         },
         "involved_cats": {
-            "r_c1": {
-                "status": [
-                    "apprentice"
-                ]
-            },
-            "p_l": {
-                "status": [
-                    "apprentice"
-                ]
-            }
+            "p_l": {},
+            "r_c0": {}
         },
         "relationship_constraint": [
             {
@@ -1706,7 +1698,7 @@
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
         "intro_strings": [
-            "r_c1 and p_l wander on a sandy beach near camp."
+            "r_c0 and p_l wander on a sandy beach near camp."
         ],
         "decline_strings": [
             "The apprentices are called back to camp to help watch camp."
@@ -1715,13 +1707,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l drapes {PRONOUN/r_c1/object} with a bunch of seaweed and proclaims {PRONOUN/r_c1/subject} {VERB/r_c1/are/is} clothed like a Twoleg. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/chase/chases} after p_l, who's not as keen to get seaweed slime all over {PRONOUN/p_l/self}, and the two young cats play on the safe sands all afternoon."
+                    "p_l drapes r_c0 with a bunch of seaweed and proclaims {PRONOUN/r_c0/subject} {VERB/r_c0/are/is} clothed like a Twoleg. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/chase/chases} after p_l, who's not as keen to get seaweed slime all over {PRONOUN/p_l/self}, and the two young cats play on the safe sands all afternoon."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1741,13 +1733,13 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c1 finds a gigantic, flawless shell that washed up on the beach with last night's tide and calls p_l over. Both apprentices startle backwards when a hermit crab starts scurrying away from them. They chase it, shouting joyfully, eyes wide and silly. The hermit crab has to wait until they finally get bored to make its escape."
+                    "r_c0 finds a gigantic, flawless shell that washed up on the beach with last night's tide and calls p_l over. Both apprentices startle backwards when a hermit crab starts scurrying away from them. They chase it, shouting joyfully, eyes wide and silly. The hermit crab has to wait until they finally get bored to make its escape."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1767,13 +1759,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 finds a shell with a brilliant internal sheen. Picking it up, {PRONOUN/r_c1/subject} shyly {VERB/r_c1/present/presents} it to p_l, wondering if p_l might like it for {PRONOUN/p_l/poss} nest. Blushing to the tips of {PRONOUN/p_l/poss} ears, p_l accepts {PRONOUN/r_c1/poss} gift."
+                    "r_c0 finds a shell with a brilliant internal sheen. Picking it up, {PRONOUN/r_c0/subject} shyly {VERB/r_c0/present/presents} it to p_l, wondering if p_l might like it for {PRONOUN/p_l/poss} nest. Blushing to the tips of {PRONOUN/p_l/poss} ears, p_l accepts {PRONOUN/r_c0/poss} gift."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1785,7 +1777,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "r_c1 presented p_l with a pretty shiny shell, and p_l kept it in {PRONOUN/p_l/poss} nest."
+                            "cats_from": "r_c0 presented p_l with a pretty shiny shell, and p_l kept it in {PRONOUN/p_l/poss} nest."
                         }
                     }
                 ]
@@ -1795,13 +1787,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 tries to give p_l a shell, but {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't want it, and the crestfallen r_c1 slinks off."
+                    "r_c0 tries to give p_l a shell, but {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't want it, and the crestfallen r_c0 slinks off."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1812,7 +1804,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "r_c1 presented p_l with a pretty shell and was crushed when p_l rejected it."
+                            "cats_from": "r_c0 presented p_l with a pretty shell and was crushed when p_l rejected it."
                         }
                     }
                 ]
