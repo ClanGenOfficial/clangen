@@ -173,6 +173,16 @@
         ]
     },
     {
+        "event_id": "gen_greenleaf_leafbare",
+        "season": [
+            "greenleaf",
+            "leaf-bare"
+        ],
+        "strings": [
+            "Can't wait for fairer weather"
+        ]
+    },
+    {
         "event_id": "gen_greenleaf",
         "season": [
             "greenleaf"
