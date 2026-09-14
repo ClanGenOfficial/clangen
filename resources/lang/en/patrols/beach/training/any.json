@@ -2242,117 +2242,6 @@
         ]
     },
     {
-        "event_id": "bch_train_foxdawn_lorelocked1",
-        "types": [
-            "training"
-        ],
-        "frequency": 3,
-        "location": [
-            "beach"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                3,
-                6
-            ],
-            "apprentice": [
-                2,
-                5
-            ],
-            "normal adult": [
-                1,
-                4
-            ]
-        },
-        "involved_cats": {
-            "p_l": {
-                "stat": {
-                    "skill": [
-                        "LORE,1"
-                    ],
-                    "trait": []
-                }
-            },
-            "r_c1": {
-                "status": [
-                    "apprentice"
-                ]
-            }
-        },
-        "chance_of_success": 60,
-        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_strings": [
-            "p_l notices r_c1 fall awkwardly again and calls a halt to the lesson, saying they all need to catch their breath. Instead, p_l will tell the apprentices about the Fox Warrior — have they heard this piece of Clan history?"
-        ],
-        "decline_strings": [
-            "r_c1, surly and embarrassed, stalks off away from the training grounds before p_l can offer the comfort of {PRONOUN/p_l/poss} story."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "outcome_art": "gen_hunt_vision",
-                "strings": [
-                    "The Fox Warrior was not the biggest, or fastest, or strongest of his Clan. A fox took his eye, a dog weakened his leg, and frostbite almost took his life, yet he took them all without a flinch, never backing down. His only wish was to shield his Clan. Some say he still sneaks down from StarClan to defend c_n on occasion — a true warrior, never forgotten."
-                ],
-                "exp_gained": 30,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "like"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from enjoyed cat_to's story about the Fox Warrior."
-                        }
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "r_c1 can't sit still and listen to p_l's story, not when {PRONOUN/r_c1/poss} ego's smarting from {PRONOUN/r_c1/poss} failures. p_l doesn't push it, instead letting r_c1 go and run off {PRONOUN/r_c1/poss} energy — there'll be time enough for listening another day, and r_c1's persistence is as Fox Warrior-like as anyone could wish."
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c1"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 8,
-                        "log": {
-                            "cats_from": "p_l indulged r_c1 and let {PRONOUN/r_c1/object} run off during training."
-                        }
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "event_id": "bch_train_mauifishing_storylocked1",
         "types": [
             "training"
@@ -2490,19 +2379,19 @@
             ]
         },
         "involved_cats": {
-            "p_l": {
+            "s_c0": {
+                "prior_abbreviation": ["any"],
                 "stat": {
                     "skill": [
                         "STORY,1"
-                    ],
-                    "trait": []
+                    ]
                 }
             }
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "intro_strings": [
-            "The sun splashes orange, yellow, and gold across the sea where it meets the horizon. The seagulls call in the distance, rising on the last thermals of the day, as p_l begins the myth of How Maowi Slowed The Sun."
+            "The sun splashes orange, yellow, and gold across the sea where it meets the horizon. The seagulls call in the distance, rising on the last thermals of the day, as s_c0 begins the myth of How Maowi Slowed The Sun."
         ],
         "decline_strings": [
             "A story is nice, but the patrol has to get back to camp, the rest will wait for another time."
@@ -2517,7 +2406,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -2535,11 +2424,11 @@
                     {
                         "cats_to": [
                             "patrol_cats",
-                            "-p_l"
+                            "-s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats",
-                            "-p_l"
+                            "-s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -2547,7 +2436,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "cat_from and cat_to listened to p_l's story together."
+                            "cats_from": "cat_from and cat_to listened to s_c0's story together."
                         }
                     }
                 ]
@@ -2557,7 +2446,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l gets distracted by the glory of the sunset and loses the words {PRONOUN/p_l/subject} {VERB/p_l/were/was} forming. Ah well."
+                    "s_c0 gets distracted by the glory of the sunset and loses the words {PRONOUN/s_c0/subject} {VERB/s_c0/were/was} forming. Ah well."
                 ],
                 "exp_gained": 0
             }
