@@ -2771,7 +2771,7 @@
                     "apprentice": [1, 1]
                 },
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. p_l quickly hides {PRONOUN/p_l/self and sets up an ambush that lets {PRONOUN/p_l/object} pretend to be a far bigger and more impressive fighter. It sends the rogue fleeing off c_n territory."
+                    "The pawprints lead to a trespassing rogue. p_l quickly hides {PRONOUN/p_l/self) and sets up an ambush that lets {PRONOUN/p_l/object} pretend to be a far bigger and more impressive fighter. It sends the rogue fleeing off c_n territory."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -5207,9 +5207,6 @@
             "border"
         ],
         "frequency": 2,
-        "location": [
-            "beach"
-        ],
         "required_cat_types": {
             "patrol_cats": [
                 4,
@@ -5260,7 +5257,7 @@
             "As the patrol is marking the border lines, a gang of rogues burst out from cover! An ambush!",
             "As the patrol is marking the border lines, a gang of rogues stalk into view to confront the Clan cats!",
             "The patrol is interrupted when a gang of rogues burst out of cover, taking them by surprise!",
-            "As the patrol is marking the border lines, a gang of rogues strides confidently out from behind a tumble of rocks, yowling as they confront the Clan cats!"
+            "As the patrol is marking the border lines, a gang of rogues strides confidently into view, yowling as they confront the Clan cats!"
         ],
         "decline_strings": [
             "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
