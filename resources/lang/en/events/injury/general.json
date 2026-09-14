@@ -9800,9 +9800,6 @@
         "r_c": {
             "status": ["-newborn", "-kitten", "-elder"]
         },
-        "new_cat": [
-            []
-        ],
         "injury": [
             {
                 "cats": ["m_c"],

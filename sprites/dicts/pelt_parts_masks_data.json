@@ -46,7 +46,12 @@
             "FRECKLEDPATTERNGRAD",
             "BENGALPATTERNFILL",
             "MASKEDCHIN",
-            "SOKOKEPATTERNFILLGRAD"
+            "SOKOKEPATTERNFILLGRAD",
+            "LEGBOTTOMGRAD"
+        ],
+        [
+            "BACKTAILPATTERNGRAD",
+            "LEGPATTERNGRAD"
         ]
 
     ]
