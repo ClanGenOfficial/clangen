@@ -3364,7 +3364,7 @@
                 "involved_cats": {
                     "s_c0": {
                         "prior_abbreviation": [
-                            "any"
+                            "-r_c0"
                         ],
                         "stat": {
                             "trait": [
