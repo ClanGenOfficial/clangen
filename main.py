@@ -81,11 +81,7 @@ def load_data():
             game.load_events()
         except Exception as e:
             logging.exception("File failed to load")
-            if not switch_get_value(Switch.error_message):
-                switch_set_value(
-                    Switch.error_message, "There was an error loading the cats file!"
-                )
-                switch_set_value(Switch.traceback, e)
+            switch_set_value(Switch.traceback, e)
 
         scripts.screens.screens_core.screens_core.rebuild_core()
 
