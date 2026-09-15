@@ -127,7 +127,7 @@
     }
   },
   "prideful": {
-    "card_art": "behavior/underpopulated.png",
+    "card_art": "behavior/prideful.png",
     "modifiers": {
        "pregnancy.can_have_kits": ["leader", "loner", "rogue", "kittypet"]
     }
