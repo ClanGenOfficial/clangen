@@ -6062,6 +6062,7 @@
                 "poi": {
                     "tags": ["maze"]
                 },
+                "outcome_art": "POI",
                 "strings": [
                     "p_l confronts the rogue, but it seems the cat isn't very intimidated by p_l's lone figure. p_l ends up leading {PRONOUN/n_c0/object} on a merry chase through POI, losing the rogue to the twists and turns. Time to head back to camp and report the rogue's presence in the territory."
                 ],
@@ -6227,6 +6228,7 @@
                 "poi": {
                     "tags": ["maze"]
                 },
+                "outcome_art": "POI",
                 "strings": [
                     "p_l confronts the rogue, but it seems the cat isn't very intimidated by p_l's lone figure. The rogue chases p_l into POI and, unfortunately, p_l can't seem to lose {PRONOUN/p_l/poss} pursuer in the twists and turns."
                 ],
@@ -6521,7 +6523,7 @@
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_trackrogue_WrRg",
         "intro_strings": [
-            "While on patrol, r_c0 notices an unfamiliar scent. Something has left scent marks on the wrong side of the border. {PRONOUN/r_c0/subject/CAP} investigate with p_l."
+            "While on patrol, r_c0 notices an unfamiliar scent. Something has left scent marks on the wrong side of the border. The cats follow it to investigate."
         ],
         "decline_strings": [
             "{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/decide/decides} not to investigate."
@@ -6798,6 +6800,7 @@
                 "poi": {
                     "tags": ["maze"]
                 },
+                "outcome_art": "POI",
                 "required_cat_types": {
                     "patrol_cats": [
                         3,
@@ -6805,7 +6808,7 @@
                     ]
                 },
                 "strings": [
-                    "The patrol comes up with a plan to handle this invader. p_l grabs the rogue's attention, provoking {PRONOUN/n_c0/object} to take chase into POI. What the rogue doesn't know is that the rest of the patrol waits inside to ambush {PRONOUN/n_c0/object}. {PRONOUN/n_c0/subject/CAP} leave the territory rather quickly after that unpleasant surprise."
+                    "The patrol comes up with a plan to handle this invader. p_l grabs the rogue's attention, provoking {PRONOUN/n_c0/object} to take chase into POI. What the rogue doesn't know is that the rest of the patrol waits to ambush {PRONOUN/n_c0/object}. {PRONOUN/n_c0/subject/CAP} {VERB/n_c0/leave/leaves} the territory rather quickly after that unpleasant surprise."
                 ],
                 "exp_gained": 10,
                 "involved_cats": {
