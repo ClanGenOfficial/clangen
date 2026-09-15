@@ -131,5 +131,11 @@
     "modifiers": {
       "roles.app_never_mentor": true
     }
+  },
+  "burnout": {
+    "card_art": "behavior/burnout.png",
+    "modifiers": {
+      "medcats.medcat_base_capacity": 5
+    }
   }
 }

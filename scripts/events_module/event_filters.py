@@ -8,6 +8,7 @@ from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
 from scripts.cat.enums import CatRank, CatAge, CatCompatibility, CatGroup, CatStanding
+from scripts.clan_package.settings import get_clan_setting
 from scripts.clan_resources.point_of_interest import (
     get_poi_names_set,
     get_poi_tags_set,
@@ -146,6 +147,9 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
     for _poss in possible_modes:
         if _poss in tags and mode != _poss:
             return False
+
+    if "disaster" in tags and not get_clan_setting("disasters"):
+        return False
 
     # check romance
     if "romance" in tags and other_cat and other_cat not in get_possible_mates(cat):

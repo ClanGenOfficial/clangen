@@ -372,7 +372,7 @@ def create_new_cat_block(
                         colour=chosen_cat.pelt.colour,
                         pelt=chosen_cat.pelt.name,
                         biome=game.clan.biome,
-                        tortie_pattern=cat.pelt.tortie_pattern,
+                        tortie_pattern=chosen_cat.pelt.tortie_pattern,
                     )
                 else:  # completely new name
                     chosen_cat.name.give_prefix(
@@ -386,7 +386,7 @@ def create_new_cat_block(
                         colour=chosen_cat.pelt.colour,
                         pelt=chosen_cat.pelt.name,
                         biome=game.clan.biome,
-                        tortie_pattern=cat.pelt.tortie_pattern,
+                        tortie_pattern=chosen_cat.pelt.tortie_pattern,
                     )
 
             new_cats = [chosen_cat]
@@ -819,7 +819,7 @@ def gather_cat_objects(
             found_cat = involved_cats[abbr]
             if is_exclusionary:
                 if isinstance(found_cat, list):
-                    out_set -= found_cat
+                    out_set -= set(found_cat)
                 else:
                     out_set.discard(found_cat)
             else:
