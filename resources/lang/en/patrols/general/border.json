@@ -6053,9 +6053,9 @@
                 "exp_gained": 0
             },
             {
-                "frequency": 4,
+                "frequency": 3,
                 "poi": {
-                    "tags": "water:flowing"
+                    "tags": ["water:flowing"]
                 },
                 "strings": [
                     "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away. Some of the patrol manage to pull themselves back to solid ground before they're swept too far, but others are found later on the banks of POI, battered half to death."
@@ -6076,7 +6076,7 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 2,
                 "strings": [
                     "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away. p_l yowls out a warning, and most of the patrol is able to react fast and strike out strongly for passing pieces of driftwood, but s_c0 doesn't make it, sinking beneath the water."
                 ],
@@ -6096,7 +6096,7 @@
                 ]
             },
             {
-                "frequency": 3,
+                "frequency": 2,
                 "required_cat_types": {
                     "patrol_cats": [
                         3,

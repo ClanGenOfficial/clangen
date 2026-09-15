@@ -82,7 +82,7 @@
     "terrain_hugeboulder": {
         "category": "terrain",
         "biome": ["forest"],
-        "tags": ["rocks", "prey:ground", "covered", "high_ground"]
+        "tags": ["rocks", "prey:ground", "high_ground"]
     },
     "terrain_waterfall": {
         "category": "terrain",
