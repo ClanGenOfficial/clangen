@@ -8,7 +8,7 @@ lang_config: Optional[Dict] = None
 _lang_config_directory = os.path.join("resources", "lang", "{locale}", "config.json")
 _directory_changed: bool = False
 
-additional_lang_list: Optional[Dict] = None
+languages: Optional[Dict] = None
 
 
 def get_default_adj():
@@ -66,16 +66,16 @@ def get_lang_config() -> Dict:
     return lang_config
 
 
-def get_additional_lang_list() -> Dict:
-    global additional_lang_list, _directory_changed
-    if additional_lang_list is None:
+def get_languages() -> Dict:
+    global languages, _directory_changed
+    if languages is None:
         with open(
-            os.path.join("resources", "lang", "additional_lang_list.json"),
+            os.path.join("resources", "lang", "languages.json"),
             "r",
             encoding="utf-8",
         ) as lang_file:
-            additional_lang_list = ujson.loads(lang_file.read())
-    return additional_lang_list
+            languages = ujson.loads(lang_file.read())
+    return languages
 
 
 def set_lang_config_directory(directory: str):
