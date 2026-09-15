@@ -58,6 +58,8 @@ nav:
             - dev/art/cat-sprites/cat-sprites.md
             - dev/art/cat-sprites/adding-new-sprites.md
             - dev/art/cat-sprites/palette-maps.md
+            - dev/art/cat-sprites/pelt-recipes-and-more.md
+            - dev/art/cat-sprites/pelt-parts-visual-guide.md
         - dev/art/index.md
         - dev/art/cruel-season-cards.md
         - dev/art/patrol-sprites.md
@@ -83,8 +85,13 @@ nav:
   - Contributing to the Wiki:
       - contributing/index.md
       - contributing/documentation-resources.md
+  - Policy:
+      - policy/index.md
+      - policy/assets.md
+      - policy/names.md
   - Development Blog:
       - blog/index.md
+
 
 theme:
   name: material

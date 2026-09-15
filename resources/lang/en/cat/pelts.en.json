@@ -33,6 +33,10 @@
             "one": "cream",
             "many": "cream"
         },
+        "DAWN": {
+            "one": "cream",
+            "many": "bimetallic"
+        },
         "CREAM": {
             "one": "cream",
             "many": "cream"
@@ -76,6 +80,10 @@
         "DARKBROWN": {
             "one": "brown",
             "many": "dark brown"
+        },
+        "MALLOW": {
+            "one": "brown",
+            "many": "light brown"
         },
         "CHOCOLATE": {
             "one": "brown",
