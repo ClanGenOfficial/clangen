@@ -788,20 +788,21 @@ dev_tools = false
 
   [focus."raid_other_clans"]
     # how much prey each working warrior(leader/deputy) will gather
-    prey_warrior = 3
+    prey_amounts = [0, 1, 2]
+    prey_weights = [3, 4, 1]
 
-    # how much herb each working medicine cat will gather
-    herb_medicine = 4
+    # how much herb each working warrior will gather
+    herb_amounts = [0, 1, 2]
+    herb_weights = [8, 2, 1]
 
     # injury chance of each warrior(leader/deputy) or medicine cat to get injured
-    injury_chance_warrior = 18
-    "injury_chance_medicine cat" = 33
+    injury_chance = 18
 
-    # the more clan which are raided the more likely it is to get injured
+    # the more clans that are raided the more likely it is to get injured
     chance_increase_per_clan = 3
 
     # amount of decrease; Clan relation is between 0 and 30, so the number should be small
-    relation = 3
+    relation = -3
 
     # list of injuries which can occur and to which distribution
     # INFO: current sum of injuries is 100 - for easier understanding it should stay the same
@@ -821,12 +822,9 @@ dev_tools = false
     # how much prey each working warrior(leader/deputy) will gather
     prey_warrior = 1
 
-    # how much herb each working medicine cat will gather
-    herb_medicine = 2
-
     # injury chance of each warrior(leader/deputy) or medicine cat to get injured
     injury_chance_warrior = 25
-    "injury_chance_medicine cat" = 35
+    injury_chance_medicine_cat = 35
 
     # illness chance of each warrior(leader/deputy) and medicine cat to get sick
     illness_chance = 35
