@@ -47,7 +47,7 @@
             "selected_border": "#00000000",
             "normal_text_shadow": "#00000000"
         },
-        "misc": {"shadow_width": "0", "tool_tip_delay": "0", "text_horiz_alignment": "center"}
+        "misc": {"shadow_width": "0", "tool_tip_delay": "0", "text_horiz_alignment": "center", "auto_scale_images": "1"}
     },
     "#search_entry_box": {
         "font": {"name": "notosans", "size": "13"},
@@ -1256,6 +1256,7 @@
         }
     },
     "#patrol_again": {
+        "prototype": "@image_button",
         "images": {
             "normal_image": {
                 "path": "resources\/images\/buttons\/patrol_again.png"
@@ -1275,6 +1276,7 @@
         "images": {"normal_image": {"path": "resources\/images\/new_update.png"}}
     },
     "#exit_window_button": {
+        "prototype": "@image_button",
         "images": {
             "normal_image": {
                 "path": "resources\/images\/buttons\/exit_window_button.png"

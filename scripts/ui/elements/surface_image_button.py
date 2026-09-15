@@ -86,15 +86,15 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
                 ),
             }
 
-        self._normal_image = image_dict["normal"]
-        self._hovered_image = (
-            image_dict["hovered"] if "hovered" in image_dict else self.normal_image
+        self._normal_images = image_dict["normal"] if type(image_dict["normal"]) in [list, tuple] else [image_dict["normal"]]
+        self._hovered_images = (
+            image_dict.get("hovered", self._normal_images) if type(image_dict.get("hovered", self._normal_images)) in [list, tuple] else [image_dict["hovered"]]
         )
-        self._selected_image = (
-            image_dict["selected"] if "selected" in image_dict else self.normal_image
+        self._selected_images = (
+            image_dict.get("selected", self._normal_images) if type(image_dict.get("selected", self._normal_images)) in [list, tuple] else [image_dict["selected"]]
         )
-        self._disabled_image = (
-            image_dict["disabled"] if "disabled" in image_dict else self.normal_image
+        self._disabled_images = (
+            image_dict.get("disabled", self._normal_images) if type(image_dict.get("disabled", self._normal_images)) in [list, tuple] else [image_dict["disabled"]]
         )
         super().__init__(
             relative_rect,
@@ -277,33 +277,33 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
         return super().process_event(event)
 
     @property
-    def normal_image(self):
-        return self._normal_image
+    def normal_images(self):
+        return self._normal_images
 
-    @normal_image.setter
-    def normal_image(self, val):
+    @normal_images.setter
+    def normal_images(self, val):
         pass
 
     @property
-    def hovered_image(self):
-        return self._hovered_image
+    def hovered_images(self):
+        return self._hovered_images
 
-    @hovered_image.setter
-    def hovered_image(self, val):
+    @hovered_images.setter
+    def hovered_images(self, val):
         pass
 
     @property
-    def selected_image(self):
-        return self._selected_image
+    def selected_images(self):
+        return self._selected_images
 
-    @selected_image.setter
-    def selected_image(self, val):
+    @selected_images.setter
+    def selected_images(self, val):
         pass
 
     @property
-    def disabled_image(self):
-        return self._disabled_image
+    def disabled_images(self):
+        return self._disabled_images
 
-    @disabled_image.setter
-    def disabled_image(self, val):
+    @disabled_images.setter
+    def disabled_images(self, val):
         pass
