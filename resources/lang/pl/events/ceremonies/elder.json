@@ -1,0 +1,105 @@
+[
+    {
+        "event_id": "elder_default0",
+        "involved_cats": {
+            "m_c": {}
+        },
+        "strings": [
+            "m_c wished to join the elders. The Clan honors {PRONOUN\/m_c\/object} and all the service m_c has given to them.",
+            "m_c has been looking forward to {PRONOUN\/m_c\/poss} moons of rest as an elder. {PRONOUN\/m_c\/subject\/CAP} happily {VERB\/m_c\/retire\/retires}, quickly settling into the elders' den. ",
+            "Time has taken its toll and m_c has noticed {PRONOUN\/m_c\/self} slowing down. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/have\/has} worked tirelessly for many moons, but it is time for {PRONOUN\/m_c\/object} to retire. ",
+            "As m_c enters into the sunset of {PRONOUN\/m_c\/poss} life, {PRONOUN\/m_c\/subject} {VERB\/m_c\/join\/joins} the ranks of the elders without regret, looking forward to the rest {PRONOUN\/m_c\/subject} {VERB\/m_c\/have\/has} earned."
+        ]
+    },
+    {
+        "event_id": "elder_default1",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {}
+        },
+        "strings": [
+            "lead_name proudly calls a Clan meeting to honor m_c's service to the Clan. It is time {PRONOUN\/m_c\/subject} {VERB\/m_c\/retire\/retires} peacefully to the elders' den.",
+            "m_c wishes to join the elders. lead_name calls a meeting and the Clan honors {PRONOUN\/m_c\/object} and all the service m_c has given to them.",
+            "m_c's been resistant to retiring, but the aches and pains of old age have worn {PRONOUN\/m_c\/object} down. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/approach\/approaches} lead_name, and {VERB\/m_c\/are\/is} honored for {PRONOUN\/m_c\/poss} tireless service. ",
+            "m_c holds {PRONOUN\/m_c\/poss} head up high as lead_name calls upon StarClan to witness m_c's service to c_n. This is a retirement hard-earned."
+        ]
+    },
+    {
+        "event_id": "elder_gossip0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "flamboyant",
+                        "shameless",
+                        "rebellious",
+                        "charismatic"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "m_c grins through the celebration of {PRONOUN\/m_c\/poss} retirement, looking forward to being the gossipiest elder on this side of the rising sun."
+        ]
+    },
+    {
+        "event_id": "elder_worried_fighter0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "insecure",
+                        "responsible",
+                        "ambitious",
+                        "strict",
+                        "bloodthirsty",
+                        "vengeful"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "m_c stops {PRONOUN\/m_c\/poss} tail from twitching as {PRONOUN\/m_c\/poss} retirement is announced. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/know\/knows} c_n will be fine without {PRONOUN\/m_c\/object} on the front lines, {PRONOUN\/m_c\/subject} {VERB\/m_c\/know\/knows} this is the right time to relax {PRONOUN\/m_c\/poss} claws and let {PRONOUN\/m_c\/poss} responsibilities fall from {PRONOUN\/m_c\/poss} paws, but... it's hard, letting go."
+        ]
+    },
+    {
+        "event_id": "elder_secure_fighter0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "fierce",
+                        "sincere",
+                        "bloodthirsty",
+                        "loyal",
+                        "righteous",
+                        "vengeful"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "m_c sits with a puffed out pelt of pride, hearing c_n celebrate {PRONOUN\/m_c\/poss} achievements. Retiring means trusting younger, fresher cats to take up the fight to keep c_n safe, but {PRONOUN\/m_c\/subject} {VERB\/m_c\/think\/thinks} {PRONOUN\/m_c\/subject}{VERB\/m_c\/'ve\/'s} done the best {PRONOUN\/m_c\/subject} could've to pass on {PRONOUN\/m_c\/poss} lessons."
+        ]
+    },
+    {
+        "event_id": "elder_unsure0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "insecure",
+                        "nervous",
+                        "gloomy",
+                        "lonesome"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "m_c takes a deep breath, and tries to see the celebration of {PRONOUN\/m_c\/poss} retirement as a compliment, not an exile to the elders' den. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/know\/knows} it isn't meant that way."
+        ]
+    }
+]

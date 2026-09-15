@@ -8,7 +8,7 @@ import i18n
 
 from scripts.cat.enums import CatGroup
 from scripts.clan_package.settings import get_clan_setting
-from scripts.event_class import Single_Event
+from scripts.events_module.event_information import EventInformation
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 
@@ -75,11 +75,11 @@ def killing_outsiders(cat: "Cat"):
         cat.die(grief_allowed=False)
         if cat.status.is_other_clancat:
             game.cur_events_list.append(
-                Single_Event(
+                EventInformation(
                     text, ["birth_death", "other_clans"], cat_dict={"m_c": cat}
                 )
             )
         else:
             game.cur_events_list.append(
-                Single_Event(text, "birth_death", cat_dict={"m_c": cat})
+                EventInformation(text, ["birth_death"], cat_dict={"m_c": cat})
             )

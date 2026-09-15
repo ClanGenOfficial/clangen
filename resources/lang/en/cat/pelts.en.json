@@ -29,6 +29,14 @@
             "one": "black",
             "many": "black"
         },
+        "BLOSSOM": {
+            "one": "cream",
+            "many": "cream"
+        },
+        "DAWN": {
+            "one": "cream",
+            "many": "bimetallic"
+        },
         "CREAM": {
             "one": "cream",
             "many": "cream"
@@ -73,9 +81,17 @@
             "one": "brown",
             "many": "dark brown"
         },
+        "MALLOW": {
+            "one": "brown",
+            "many": "light brown"
+        },
         "CHOCOLATE": {
             "one": "brown",
             "many": "dark brown"
+        },
+        "RUST": {
+            "one": "brown",
+            "many": "rusted brown"
         },
         "SingleColour": "single color",
         "SingleColour_long": "%{color}",
