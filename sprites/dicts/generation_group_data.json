@@ -2,6 +2,7 @@
     "pelts": {
         "colors": {
             "WHITE": "white",
+            "CHINCHILLA": "white",
             "PALEGREY": "white",
             "SILVER": "white",
             "GREY": "black",
