@@ -941,8 +941,8 @@
         "base": "#E1E4EB",
         "base_gradient_bottom": "#F4FBF4",
         "base_gradient_top": "#BAC8D6",
-        "pattern": "#4B5254",
-        "pattern_gradient_top": "#35444D",
+        "pattern": "#37474D",
+        "pattern_gradient_top": "#283640",
         "pattern_fill": "#D5DEE3",
         "masked_light_pattern": "#F2FAFA",
 
