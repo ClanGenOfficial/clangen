@@ -1074,5 +1074,54 @@
         "newborn_exotic_pattern_fill_gradient_top": "#8B6566",
         "newborn_exotic_light_pattern": "#DDC2A3",
         "newborn_exotic_muzzle": "#BEB0A4"
+        },
+    "FAWN": {
+        "base": "#C89574",
+        "base_gradient_bottom": "#FFDAAB",
+        "base_gradient_top": "#B9886F",
+        "base_gradient_legs_tail": "#8C5E51",
+        "pattern": "#A57768",
+        "pattern_gradient_top": "#8B5D50",
+        "pattern_gradient_bottom": "#B9886F",
+        "pattern_fill": "#FFDAAB",
+        "masked_light_pattern": "#EBD4BF",
+
+        "newborn_base": "#D8B39C",
+        "newborn_base_gradient_bottom": "#FFE5C3",
+        "newborn_base_gradient_top": "#CDAA98",
+        "newborn_pattern": "#BF9E93",
+        "newborn_pattern_gradient_top": "#AC8B82",
+        "newborn_pattern_fill": "#FFF4E6",
+
+        "smoke_base": "#C89574",
+        "smoke_base_gradient_top": "#B9886F",
+        "smoke_base_gradient_bottom": "#FFDAAB",
+        "smoke_base_gradient_legs_tail": "#8C5E51",
+        "smoke_pattern": "#A57768",
+        "smoke_pattern_gradient_top": "#684544",
+
+        "freckled_pattern_gradient_top": "#8C5E51",
+
+        "exotic_base": "#C89574",
+        "exotic_base_gradient_bottom": "#FFDAAB",
+        "exotic_base_gradient_top": "#966967",
+        "exotic_base_gradient_legs_tail": "#8C5E51",
+        "exotic_pattern": "#8B5D50",
+        "exotic_pattern_gradient_top": "#684544",
+        "exotic_pattern_gradient_bottom": "#B2836A",
+        "exotic_pattern_fill": "#FFEFDC",
+        "exotic_pattern_fill_gradient_top": "#FFDAAB",
+        "exotic_light_pattern": "#FFEFDC",
+        "exotic_muzzle": "#C75E5B",
+
+        "newborn_exotic_base": "#D8B39C",
+        "newborn_exotic_base_gradient_bottom": "#FFE5C3",
+        "newborn_exotic_base_gradient_top": "#B49493",
+        "newborn_exotic_pattern": "#AC8B82",
+        "newborn_exotic_pattern_gradient_top": "#937A7A",
+        "newborn_exotic_pattern_fill": "#FFF4E6",
+        "newborn_exotic_pattern_fill_gradient_top": "#FFE5C3",
+        "newborn_exotic_light_pattern": "#FFF4E6",
+        "newborn_exotic_muzzle": "#D78C8A"
     }
 }

@@ -22,7 +22,8 @@
     "GOLDEN-BROWN": "brown",
     "DARKBROWN": "darkbrown",
     "CHOCOLATE": "darkbrown",
-    "RUST": "rust"
+    "RUST": "rust",
+    "FAWN": "fawn"
   },
   "possible_tints": {
     "basic": ["pink", "gray", "red", "orange", "warmdilute", "patina", "tawny"],
@@ -39,7 +40,8 @@
     "lilac": ["yellow", "purple", "black", "dilute", "cooldilute", "earthydilute", "gloaming", "quartz"],
     "brown": ["yellow", "purple", "black", "dilute", "cooldilute", "pinkdilute", "earthydilute", "night", "gloaming", "quartz"],
     "darkbrown": ["yellow", "purple", "black", "dilute", "cooldilute", "pinkdilute", "earthydilute", "gloaming", "quartz"],
-    "rust": ["yellow", "purple", "black", "dilute", "cooldilute", "pinkdilute", "earthydilute", "gloaming", "quartz", "night"]
+    "rust": ["yellow", "purple", "black", "dilute", "cooldilute", "pinkdilute", "earthydilute", "gloaming", "quartz", "night"],
+    "fawn": ["black", "yellow", "purple", "blue", "night", "gloaming", "dilute", "cooldilute", "quartz"]
   },
   "tint_colours":
   {
