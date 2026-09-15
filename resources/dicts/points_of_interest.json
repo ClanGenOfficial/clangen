@@ -27,7 +27,7 @@
     "moon_cave": {
         "category": "moonplace",
         "biome": ["any"],
-        "tags": ["cave", "rocks"]
+        "tags": ["cave", "rocks", "maze"]
     },
     "moon_mothermouth": {
         "category": "moonplace",
@@ -47,7 +47,7 @@
     "terrain_carrionplace": {
         "category": "terrain",
         "biome": ["forest"],
-        "tags": ["Twolegs:present", "tainted", "prey:ground", "unstable", "covered"]
+        "tags": ["Twolegs:present", "tainted", "prey:ground", "unstable", "covered", "maze"]
     },
     "terrain_sunningrocks": {
         "category": "terrain",
@@ -62,17 +62,17 @@
     "terrain_twolegplace": {
         "category": "terrain",
         "biome": ["any"],
-        "tags": ["Twolegs:present", "prey:ground", "tainted"]
+        "tags": ["Twolegs:present", "prey:ground", "tainted", "maze"]
     },
     "terrain_horseplace": {
         "category": "terrain",
         "biome": ["plains"],
-        "tags": ["Twolegs:present", "prey:ground", "prey:flying", "covered"]
+        "tags": ["Twolegs:present", "prey:ground", "prey:flying", "covered", "maze"]
     },
     "terrain_deepforest": {
         "category": "terrain",
         "biome": ["forest"],
-        "tags": ["trees", "prey:ground", "prey:flying"]
+        "tags": ["trees", "prey:ground", "prey:flying", "maze"]
     },
     "terrain_windswepttree": {
         "category": "terrain",
@@ -107,16 +107,16 @@
     "terrain_batcaves": {
         "category": "terrain",
         "biome": ["any"],
-        "tags": ["prey:flying", "tainted", "cave", "covered"]
+        "tags": ["prey:flying", "tainted", "cave", "covered", "maze"]
     },
     "terrain_carrionbeach": {
         "category": "terrain",
         "biome": ["beach"],
-        "tags": ["Twolegs:present", "tainted", "prey:water", "water:ocean"]
+        "tags": ["Twolegs:present", "tainted", "prey:water", "water:ocean", "maze"]
     },
     "terrain_abandonednest": {
         "category": "terrain",
         "biome": ["any"],
-        "tags": ["Twolegs:abandoned", "prey:ground", "covered", "unstable"]
+        "tags": ["Twolegs:abandoned", "prey:ground", "covered", "unstable", "maze"]
     }
 }
