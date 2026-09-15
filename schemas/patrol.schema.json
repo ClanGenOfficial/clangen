@@ -173,6 +173,8 @@
         "-stolenkit2",
         "stolenkit3",
         "-stolenkit3",
+        "stolenkit4",
+        "-stolenkit4",
         "healer_backstories",
         "-healer_backstories",
         "baby_clancat_backstories",
@@ -1381,6 +1383,11 @@
           },
           "title": "Tags",
           "type": "array"
+        },
+        "poi": {
+          "$ref": "#/$defs/PointsOfInterestGroup",
+          "description": "The relevant points of interest. Points of Interest never affect outcome.",
+          "title": "Poi"
         },
         "strings": {
           "description": "List of the text that will be displayed in-game as events.",
