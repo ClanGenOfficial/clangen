@@ -803,13 +803,13 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "p_l carefully approaches the burrow to figure out if there's anything new inside. It's so dark, and it all smells the same... {PRONOUN/p_l/subject/CAP} {VERB/p_l/try/tries} to creep just a little closer — but the ground drops away steeply beneath {PRONOUN/p_l/poss} paws and {PRONOUN/p_l/subject} {VERB/p_l/lose/loses} {PRONOUN/p_l/poss} footing, skidding right into the disturbed badger's lethal jaws."
+                    "p_l carefully approaches the burrow to figure out if there's anything new inside. It's so dark, and it all smells the same... {PRONOUN/p_l/subject/CAP} {VERB/p_l/try/tries} to creep just a little closer, but the ground drops away steeply beneath {PRONOUN/p_l/poss} paws and {PRONOUN/p_l/subject} {VERB/p_l/lose/loses} {PRONOUN/p_l/poss} footing, skidding right into the disturbed badger's lethal jaws."
                 ],
                 "exp_gained": 0,
                 "death": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "history": "m_c lost {PRONOUN/s_c0/poss} life to a badger."
                     }
@@ -827,7 +827,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -842,7 +842,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "condition": [
                             "battle_injury"
@@ -1540,7 +1540,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "condition": [
                             "battle_injury"
