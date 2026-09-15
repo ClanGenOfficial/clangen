@@ -257,5 +257,80 @@
                 "death": "n_c:0 died from water inhalation after getting caught in an ocean current."
             }
         ]
+    },
+    {
+        "event_id": "bch_new_cat_otters",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "event_text": "m_c finds a cat on the border named n_c:0, who says {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} chased from {PRONOUN/n_c:0/poss} home by round cats with webbed paws. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/ask/asks} to stay with c_n, m_c hesitantly agrees.",
+        "m_c": {
+            "age": [
+                "-newborn",
+                "-kitten"
+            ]
+        },
+        "new_cat": [
+            [
+               "backstory:loner1", "age:adult"
+            ]
+        ],
+        "outsider": {
+            "current_rep": ["any"],
+            "changed": 5
+        }
+    },
+    {
+        "event_id": "bch_new_cat_kitfound",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "event_text": "m_c leaves camp with r_c to play along the shore. The two return with n_c:0, m_c proudly stating {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} {PRONOUN/m_c/poss} newest best friend.",
+        "m_c": {
+            "age": [
+                "kitten",
+                "adolescent"
+            ],
+            "relationship_status": [
+                "child/parent",
+                "app/mentor"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "-newborn",
+                "-kitten",
+                "-adolescent"
+            ]
+        },
+        "new_cat": [
+            [
+                "loner", "status:kitten"
+            ]
+        ],
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["n_c:0"],
+                "mutual": true,
+                "values": ["like"],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c declared n_c:0 was {PRONOUN/m_c/poss} best friend to the whole Clan."
+                }
+              }
+        ],
+        "outsider": {
+            "current_rep": ["any"],
+            "changed": 5
+        }
     }
 ]
