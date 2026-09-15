@@ -4,5 +4,6 @@
     "leader_life": ["forsaken", "stolen_vitality"],
     "seasons": ["always_newleaf", "always_greenleaf", "always_leaf-fall", "always_leaf-bare"],
     "litters": ["underpopulated", "mouths_to_feed"],
-    "starting_herbs": ["barren_stocks", "meagre_stocks"]
+    "starting_herbs": ["barren_stocks", "meagre_stocks"],
+    "no_mates": ["heartless", "mate_breakup"]
 }
