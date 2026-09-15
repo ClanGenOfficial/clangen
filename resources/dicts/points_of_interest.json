@@ -92,7 +92,7 @@
     "terrain_gullcliffs": {
         "category": "terrain",
         "biome": ["beach"],
-        "tags": ["prey:flying", "prey:eggs", "nests", "fall_risk", "unstable", "water:ocean", "maze"]
+        "tags": ["prey:flying", "prey:eggs", "nests", "fall_risk", "unstable", "water:ocean"]
     },
     "terrain_eaglenest": {
         "category": "terrain",
