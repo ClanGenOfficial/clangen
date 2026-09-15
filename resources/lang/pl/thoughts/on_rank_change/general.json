@@ -1,0 +1,383 @@
+[
+    {
+        "event_id": "becoming_apprentice",
+        "strings": [
+            "Looks forward to {PRONOUN\/m_c\/poss} apprenticeship",
+            "Wants to see the whole territory",
+            "Asks to go out on {PRONOUN\/m_c\/poss} first patrol"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "mediator apprentice",
+                    "medicine cat apprentice"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "becoming_warrior_apprentice",
+        "strings": [
+            "Wants to go see the borders",
+            "Wants to learn to hunt right away",
+            "Wants to learn to fight right away",
+            "Rushes off to make a nest in the apprentices' den"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "becoming_medicine_apprentice",
+        "strings": [
+            "Wants to go see where all the herbs grow",
+            "Wants to pick catmint right away",
+            "Is ready to learn to heal everything",
+            "Rushes off to make a nest in the medicine cat den"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "medicine cat apprentice"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "becoming_mediator_apprentice",
+        "strings": [
+            "Can't wait to start helping {PRONOUN\/m_c\/poss} Clanmates",
+            "Wants to learn how to solve every argument"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "mediator apprentice"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "becoming_apprentice_to_mentor",
+        "strings": [
+            "Wants to learn everything r_c knows",
+            "Can't wait to start training with r_c",
+            "Asks r_c a dozen questions about training"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "constraints": [
+                    "app\/mentor"
+                ],
+                "mutual": false
+            }
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "medicine cat apprentice",
+                    "mediator apprentice"
+                ]
+            },
+            "r_c": {}
+        }
+    },
+    {
+        "event_id": "becoming_nervous_apprentice_to_parent",
+        "strings": [
+            "Runs back to the nursery for a last cuddle with r_c"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "constraints": [
+                    "child\/parent"
+                ],
+                "mutual": false
+            }
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "medicine cat apprentice",
+                    "mediator apprentice"
+                ],
+                "stat": {
+                    "trait": [
+                        "nervous",
+                        "insecure",
+                        "careful",
+                        "lonesome",
+                        "gloomy"
+                    ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "player_clan"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "becoming_keen_apprentice",
+        "strings": [
+            "Can't wait to learn <i>everything<\/i>",
+            "Wants {PRONOUN\/m_c\/poss} full name as soon as possible",
+            "Asks when {PRONOUN\/m_c\/poss} first assessment will be"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "medicine cat apprentice",
+                    "mediator apprentice"
+                ],
+                "stat": {
+                    "trait": [
+                        "arrogant",
+                        "confident",
+                        "competitive",
+                        "ambitious",
+                        "bold",
+                        "daring",
+                        "shameless",
+                        "flamboyant",
+                        "fierce",
+                        "adventurous"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "becoming_outsider_apprentice",
+        "strings": [
+            "Is so glad {PRONOUN\/m_c\/subject}{VERB\/m_c\/'re\/'s} part of c_n now",
+            "Can't wait to learn more about c_n as an apprentice",
+            "Is ready to train like a Clanborn apprentice"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "medicine cat apprentice",
+                    "mediator apprentice"
+                ],
+                "past_status": [
+                    "rogue",
+                    "kittypet",
+                    "loner"
+                ],
+                "backstory": [
+                    "-abandoned_backstories",
+                    "-orphaned2"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "becoming_adult_rank",
+        "strings": [
+            "Hopes {PRONOUN\/m_c\/subject} can serve the Clan well"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "leader",
+                    "deputy",
+                    "medicine cat",
+                    "mediator",
+                    "warrior"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "becoming_newwarrior_rank",
+        "strings": [
+            "Enjoys {PRONOUN\/m_c\/poss} Clanmates chanting {PRONOUN\/m_c\/poss} name",
+            "Looks ahead to a long night's vigil",
+            "Has {PRONOUN\/m_c\/poss} fur bushed out in pride",
+            "Thanks every cat who helped {PRONOUN\/m_c\/object} during {PRONOUN\/m_c\/poss} apprenticeship"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "past_status": [
+                    "apprentice",
+                    "-leader",
+                    "-deputy",
+                    "-medicine cat",
+                    "-mediator"
+                ],
+                "status": [
+                    "warrior"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "becoming_highrank_rank",
+        "strings": [
+            "Feels the weight of {PRONOUN\/m_c\/poss} Clanmates' expectations",
+            "Knows {PRONOUN\/m_c\/poss} work is only just beginning",
+            "Feels that {PRONOUN\/m_c\/subject} {VERB\/m_c\/have\/has} big pawsteps to fill",
+            "Is ready to carve {PRONOUN\/m_c\/poss} own path"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "leader",
+                    "deputy",
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "becoming_leader_rank",
+        "strings": [
+            "Is ready for the challenges that lie ahead"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "leader"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "becoming_leader_rank_withwarriors",
+        "tags": [
+            "clan:warrior"
+        ],
+        "strings": [
+            "Knows every cat in the Clan now relies on {PRONOUN\/m_c\/object}",
+            "Accepts the fealty of {PRONOUN\/m_c\/poss} Clanmates",
+            "Meets with the senior warriors to discuss {PRONOUN\/m_c\/poss} new leadership"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "leader"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "becoming_deputy_rank",
+        "strings": [
+            "Is learning how to organize patrols",
+            "Looks to r_c for advice on {PRONOUN\/m_c\/poss} new role",
+            "Appreciates r_c's faith in {PRONOUN\/m_c\/object}",
+            "Feels honored to be chosen as deputy",
+            "Feels {PRONOUN\/m_c\/subject} {VERB\/m_c\/have\/has} earned this honor"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "deputy"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "leader"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "becoming_deputy_rank_withwarriors",
+        "tags": [
+            "clan:warrior"
+        ],
+        "strings": [
+            "Hopes to earn the respect of the warriors"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "deputy"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "leader"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "becoming_medicinecat_rank",
+        "strings": [
+            "Feels the gaze of starry cats clinging to {PRONOUN\/m_c\/poss} fur",
+            "Hopes to prove {PRONOUN\/m_c\/poss} competency as a medicine cat"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "becoming_mediator_rank_withwarriors",
+        "tags": [
+            "clan:warrior"
+        ],
+        "strings": [
+            "Appreciates {PRONOUN\/m_c\/poss} Clanmates' trust in {PRONOUN\/m_c\/object} as a mediator",
+            "Meets with {PRONOUN\/m_c\/poss} Clanmates one-on-one to discuss {PRONOUN\/m_c\/poss} new role"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "mediator"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "becoming_demoted_rank",
+        "strings": [
+            "Is resigned to {PRONOUN\/m_c\/poss} new role",
+            "Understands why {PRONOUN\/m_c\/subject} {VERB\/m_c\/were\/was} demoted",
+            "Feels bitter about {PRONOUN\/m_c\/poss} demotion",
+            "Misses the power that came with {PRONOUN\/m_c\/poss} previous role",
+            "Readjusts to normal warrior duties"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "past_status": [
+                    "leader",
+                    "deputy",
+                    "medicine cat",
+                    "mediator"
+                ],
+                "status": [
+                    "warrior"
+                ]
+            }
+        }
+    }
+]

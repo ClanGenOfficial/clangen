@@ -1,0 +1,338 @@
+[
+    {
+        "event_id": "med_app_default0",
+        "involved_cats": {
+            "m_c": {}
+        },
+        "strings": [
+            "(old_name), like every young kit, had dreams of becoming a warrior from a young age. However, as {PRONOUN/m_c/subject} grew older, {PRONOUN/m_c/subject} knew that {PRONOUN/m_c/poss} destiny lay in the medicine cat den. {PRONOUN/m_c/subject/CAP} happily {VERB/m_c/take/takes} up {PRONOUN/m_c/poss} new place as a medicine cat apprentice, looking forward to healing {PRONOUN/m_c/poss} Clanmates for many moons to come."
+        ]
+    },
+    {
+        "event_id": "med_app_default1",
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c has decided that hunting and fighting is not the way {PRONOUN/m_c/subject} {VERB/m_c/want/wants} to provide for {PRONOUN/m_c/poss} Clan. Instead, {PRONOUN/m_c/subject} {VERB/m_c/have/has} chosen to serve {PRONOUN/m_c/poss} Clan by healing and communing with StarClan. r_c0 proudly becomes {PRONOUN/m_c/poss} mentor.",
+            "Interested in herbs even in {PRONOUN/m_c/poss} kithood, m_c is eager to be apprenticed to r_c0.",
+            "Interested in all the myths and stories told by the elders and queens, m_c decides to become a medicine cat apprentice, hoping to someday speak to those gone before. r_c0 loves {PRONOUN/m_c/poss} determination and eagerness to learn and agrees to take {PRONOUN/m_c/object} on as {PRONOUN/r_c0/poss} apprentice.",
+            "The thought alone of fighting and hurting another cat makes m_c shiver. {PRONOUN/m_c/subject/CAP} {VERB/m_c/decide/decides} to heal instead of fight, and r_c0 takes {PRONOUN/m_c/object} under {PRONOUN/r_c0/poss} wing.",
+            "r_c0 stands before the Clan and announces that {PRONOUN/r_c0/subject} won't be there forever and that it is time {PRONOUN/r_c0/subject} took on an apprentice. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/tell/tells} the Clan that {PRONOUN/r_c0/subject} {VERB/r_c0/have/has} specifically chosen (old_name), now m_c, to be {PRONOUN/r_c0/poss} new apprentice.",
+            "r_c0 has no doubt in {PRONOUN/r_c0/poss} mind of who {PRONOUN/r_c0/poss} new apprentice should be. (old_name) has always been looking for an excuse to be in {PRONOUN/r_c0/poss} den, asking endless questions about what each herb is and what it's used for. As r_c0 announces that the newly named m_c will be {PRONOUN/r_c0/poss} apprentice, {PRONOUN/r_c0/subject} {VERB/r_c0/see/sees} m_c's eyes shining in delight and excitement. r_c0 knows {PRONOUN/r_c0/subject} {VERB/r_c0/were/was} right in choosing {PRONOUN/m_c/object}."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "med_app_no_mentor0",
+        "tags": ["-clan:medicine cat(min:1)"],
+        "involved_cats": {
+            "m_c": {
+                "has_mentor": {
+                    "current": false
+                }
+            }
+        },
+        "strings": [
+            "Newly-made medicine cat apprentice m_c learns the way of healing through guidance from StarClan.",
+            "StarClan speaks: the new medicine cat apprentice shall be m_c. m_c is unsure if {PRONOUN/m_c/subject} {VERB/m_c/are/is} ready for the role without a mentor, but the stars promise to guide {PRONOUN/m_c/object}.",
+            "The Clan needs a new medicine cat and m_c is chosen for the role. m_c is stunned that {PRONOUN/m_c/subject} {VERB/m_c/were/was} chosen but {VERB/m_c/agree/agrees} anyway, knowing how badly the Clan needs a medicine cat.",
+            "m_c has decided that hunting and fighting is not the way {PRONOUN/m_c/subject} {VERB/m_c/want/wants} to provide for {PRONOUN/m_c/poss} Clan. Instead, {PRONOUN/m_c/subject} {VERB/m_c/have/has} chosen to serve {PRONOUN/m_c/poss} Clan by healing and communing with StarClan, who will train {PRONOUN/m_c/object} in the absence of a proper mentor.",
+            "Interested in herbs even in {PRONOUN/m_c/poss} kithood, m_c is eager to be made the new medicine cat apprentice and learn how to heal from those who came before {PRONOUN/m_c/object}.",
+            "The thought alone of fighting and hurting another cat makes m_c shiver. Knowing the Clan needs a medicine cat, {PRONOUN/m_c/subject} {VERB/m_c/seize/seizes} the chance to do good for the Clan without harming others. {PRONOUN/m_c/subject/CAP} {VERB/m_c/take/takes} on the role of medicine cat apprentice.",
+            "Knowing the Clan is in desperate need of a medicine cat and wanting to do something to stand out and seem more important, m_c announces mid-meeting that {PRONOUN/m_c/subject} {VERB/m_c/want/wants} to be the new medicine cat apprentice."
+        ]
+    },
+    {
+        "event_id": "med_app_dead_parent0",
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "-orphaned_backstories"
+                ]
+            },
+            "r_c1": {
+                "group": [
+                    "afterlife"
+                ]
+            }
+        },
+        "strings": [
+            "m_c decides to become a medicine cat apprentice in hopes that {PRONOUN/m_c/subject} will be able to see r_c1 in StarClan.",
+            "As the new medicine cat apprentice, m_c dreams of StarClan for the first time. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} greeted by many StarClan cats, one of whom {PRONOUN/m_c/subject} {VERB/m_c/recognize/recognizes} as r_c1, who is watching with pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "med_app_dead_both_parents0",
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "-orphaned_backstories"
+                ]
+            },
+            "r_c1": {
+                "group": [
+                    "afterlife"
+                ]
+            },
+            "r_c2": {
+                "group": [
+                    "afterlife"
+                ]
+            }
+        },
+        "strings": [
+            "m_c decides to become a medicine cat apprentice in hopes that {PRONOUN/m_c/subject} will be able to see r_c1 and r_c2 in StarClan.",
+            "As the new medicine cat apprentice, m_c dreams of StarClan for the first time. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} greeted by many StarClan cats, two of whom {PRONOUN/m_c/subject} {VERB/m_c/recognize/recognizes} as r_c1 and r_c2, who are watching with pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "r_c2",
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "med_app_stand_out0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "arrogant",
+                        "ambitious"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "Wanting to stand out among {PRONOUN/m_c/poss} Clanmates more, m_c decides to become a medicine cat and is apprenticed to r_c0."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "med_app_nefarious0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "bloodthirsty",
+                        "vengeful",
+                        "cunning"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "To gain access to both life-saving herbs and life-threatening poisons, m_c decides to become a medicine cat and is apprenticed to r_c0."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "med_app_unsure0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "nervous",
+                        "gloomy",
+                        "insecure"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "Worried {PRONOUN/m_c/subject} may not be a good hunter or fighter but still wanting to make {PRONOUN/m_c/poss} Clan proud somehow, m_c decides to become a medicine cat apprentice under r_c0."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "med_app_faithful0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "faithful"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "m_c has been looking and wondering about the mysteries of the stars ever since {PRONOUN/m_c/subject} first opened {PRONOUN/m_c/poss} eyes. r_c0 promises {PRONOUN/m_c/object} {PRONOUN/m_c/poss} own place amongst them as a full medicine cat one day."
+        ]
+    },
+    {
+        "event_id": "med_app_wise0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "wise"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "m_c sees no reason to sully {PRONOUN/m_c/poss} claws with blood, {PRONOUN/m_c/subject} {VERB/m_c/are/is} far more interested in the knowledge and wisdom that can be gained by a medicine cat apprentice. r_c0 promises to teach {PRONOUN/m_c/object} all {PRONOUN/r_c0/subject} {VERB/r_c0/know/knows} and they go into the medicine cat den together immediately after the ceremony."
+        ]
+    },
+    {
+        "event_id": "med_app_thoughtful0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "thoughtful"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "m_c has been wondering and pondering about the mysteries of life and the meaning of it all. r_c0 is eager to start teaching {PRONOUN/m_c/object}; {PRONOUN/m_c/subject} {VERB/m_c/sound/sounds} like a delight to work with!"
+        ]
+    },
+    {
+        "event_id": "med_app_loving0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "loving"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "m_c was never interested in fighting and decides instead to devote {PRONOUN/m_c/poss} life to healing and helping all kinds of cats in any way {PRONOUN/m_c/subject} can. r_c0 is almost awed when {PRONOUN/r_c0/subject} {VERB/r_c0/see/sees} the determination and love m_c feels for all the cats that {PRONOUN/m_c/subject} {VERB/m_c/meet/meets} and is extremely proud to become {PRONOUN/m_c/poss} mentor."
+        ]
+    },
+    {
+        "event_id": "med_app_self_assured0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "arrogant",
+                        "flamboyant",
+                        "rebellious",
+                        "cunning",
+                        "confident",
+                        "bold"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "After m_c touches noses with r_c0, {PRONOUN/m_c/subject} immediately {VERB/m_c/run/runs} towards the medicine cat den, boasting that {PRONOUN/m_c/subject} will be the best medicine cat any Clan has ever seen.",
+            "Right after {PRONOUN/m_c/poss} medicine cat apprentice ceremony, m_c declares that {PRONOUN/m_c/subject} won't hesitate to tell r_c0 if {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} being a mouse-brain. All the other cats immediately gasp and look to r_c0's reaction. They relax as {PRONOUN/r_c0/subject} only {VERB/r_c0/laugh/laughs} and says that m_c better prove that {PRONOUN/m_c/subject} {VERB/m_c/have/has} the skills to back that up."
+        ]
+    },
+    {
+        "event_id": "med_app_vengeful0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "vengeful"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "While m_c does not really like other cats, {PRONOUN/m_c/subject} {VERB/m_c/dislike/dislikes} fighting even more. {PRONOUN/m_c/subject/CAP} {VERB/m_c/prefer/prefers} a more cunning approach, and being a medicine cat gives {PRONOUN/m_c/object} the opportunity to do so. r_c0 takes {PRONOUN/m_c/object} on as apprentice, admiring {PRONOUN/m_c/poss} sharp tongue and the cunning gleam in {PRONOUN/m_c/poss} eyes."
+        ]
+    },
+    {
+        "event_id": "med_app_adventurous0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "adventurous"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "m_c has always longed for adventure and {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} like being a medicine cat apprentice will be the greatest adventure of them all. r_c0 eagerly accepts such an eager and willing apprentice."
+        ]
+    }
+]

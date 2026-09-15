@@ -11,6 +11,7 @@ from scripts.events_module.event_filters import (
     event_for_freshkill_supply,
     event_for_herb_supply,
     event_for_temperament,
+    event_for_poi,
 )
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
@@ -50,6 +51,12 @@ def passes_general_constraints(
     if not event_for_tags(event.tags, primary_cat):
         if is_debug_event:
             print("DEBUG: requested event does not meet constraints (tags)")
+        return False
+
+    # CHECK POI
+    if not event_for_poi(event.poi):
+        if is_debug_event:
+            print("DEBUG: requested event does not meet constraints (PoI)")
         return False
 
     # CHECK TEMPERAMENT

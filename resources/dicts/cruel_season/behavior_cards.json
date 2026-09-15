@@ -132,5 +132,11 @@
       "mates.breakup.inital_chance.threshold": 360,
       "mates.breakup.inital_chance.default_chance": 15
     }
+  },
+  "burnout": {
+    "card_art": "behavior/burnout.png",
+    "modifiers": {
+      "medcats.medcat_base_capacity": 5
+    }
   }
 }

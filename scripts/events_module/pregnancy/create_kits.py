@@ -15,7 +15,7 @@ from scripts.cat_relations.relationship import Relationship, create_one_relation
 from scripts.clan_package.settings import get_clan_setting
 from scripts.cat.microservices.conditions import add_congenital_condition
 from scripts.config import get_config
-from scripts.event_class import Single_Event
+from scripts.events_module.event_information import EventInformation
 from scripts.events_module.consequences import (
     create_new_cat,
     change_relationship_values,
@@ -80,7 +80,7 @@ def get_kits(
                 continue
 
             mate = Cat.fetch_cat(mate_id)
-            if not mate:
+            if not mate or not mate.status.alive_in_player_clan:
                 continue
 
             add_poly_mate = poly_parenting and mate.ID != other_cat.ID
@@ -101,7 +101,7 @@ def get_kits(
                 continue
 
             mate = Cat.fetch_cat(mate_id)
-            if not mate:
+            if not mate or not mate.status.alive_in_player_clan:
                 continue
 
             add_poly_mate = poly_parenting and mate.ID != cat.ID
@@ -473,7 +473,7 @@ def handle_adoption(cat: Cat, other_cat: Optional[Cat] = None):
     cat.birth_cooldown = get_config("pregnancy.birth_cooldown")
 
     game.cur_events_list.append(
-        Single_Event(print_event, "birth_death", cat_dict=cats_involved)
+        EventInformation(print_event, ["birth_death"], cat_dict=cats_involved)
     )
 
 

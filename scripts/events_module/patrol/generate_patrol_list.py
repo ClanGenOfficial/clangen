@@ -21,7 +21,7 @@ def get_patrol_list(
     path = "patrols/"
 
     # OVERRIDE
-    if get_config("patrol_generation.debug_override_patrol_stat_requirements"):
+    if get_config("patrol_generation.debug_ensure.override_patrol_stat_requirements"):
         return _generate_all_patrols(path)
 
     possible_patrols = []
@@ -110,7 +110,7 @@ def _load_file(path: str) -> list[PatrolEvent]:
         except FileNotFoundError:
             raise Exception(f"Patrol file {path} not found!")
 
-    return loaded_events[path]
+    return loaded_events[path].copy()
 
 
 def will_allow_outsider_patrols(small_clan: bool) -> Optional[str]:

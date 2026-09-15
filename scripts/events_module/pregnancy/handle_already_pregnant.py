@@ -11,7 +11,7 @@ from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.clan_package.settings import get_clan_setting
 from scripts.cat.microservices.conditions import get_injured
 from scripts.config import get_config
-from scripts.event_class import Single_Event
+from scripts.events_module.event_information import EventInformation
 from scripts.events_module.consequences import (
     check_stolen_vitality,
     change_relationship_values,
@@ -75,7 +75,7 @@ def handle_one_moon_pregnant(cat: Cat):
 
     text = event_text_adjust(Cat, text, main_cat=cat, clan=game.clan)
     game.cur_events_list.append(
-        Single_Event(text, "birth_death", cat_dict={"m_c": cat})
+        EventInformation(text, ["birth_death"], cat_dict={"m_c": cat})
     )
 
 
@@ -309,7 +309,7 @@ def handle_two_moon_pregnant(cat: Cat):
 
     # display event
     game.cur_events_list.append(
-        Single_Event(
+        EventInformation(
             print_event, ["health", "birth_death"], involved_cats, cat_dict=cat_dict
         )
     )
@@ -655,7 +655,7 @@ def _handle_affair_discovery_breakup(cheating_cat: Cat, mate_cat: Cat):
     if cheating_cat.ID not in mate_cat.mate:
         return
 
-    breakup_chance = get_config("mates.mates_breakup.affair_breakup_chance")
+    breakup_chance = get_config("mates.breakup.affair_breakup_chance")
     if random() <= breakup_chance:
         mate_cat.unset_mate(cheating_cat, user_initiated_breakup=True, fight=True)
         breakup_text = choice(get_breakup_strings()["affair_discovery_breakup"])
@@ -667,7 +667,7 @@ def _handle_affair_discovery_breakup(cheating_cat: Cat, mate_cat: Cat):
             clan=game.clan,
         )
         game.cur_events_list.append(
-            Single_Event(
+            EventInformation(
                 breakup_text,
                 ["relation", "misc"],
                 [mate_cat.ID, cheating_cat.ID],

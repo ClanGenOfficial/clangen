@@ -13,8 +13,7 @@ warningAccepted = False
 class UnderstandRisksCommand(Command):
     name = "understandrisks"
     description = "Accept the risks of using the eval command"
-
-    aliases = ["trust", "t"]
+    aliases = ["trust"]
 
     def callback(self, args: List[str]):
         global warningAccepted  # pylint: disable=global-statement
@@ -27,9 +26,8 @@ class UnderstandRisksCommand(Command):
 class EvalCommand(Command):
     name = "eval"
     description = "Evaluate a python expression"
-    usage = "<expression>"
-    aliases = ["e"]
-    bypassConjoinedStrings = True
+    usage = "<expression: str>"
+    bypass_conjoined_strings = True
 
     sub_commands = [UnderstandRisksCommand()]
 
@@ -40,12 +38,14 @@ class EvalCommand(Command):
         global warningAccepted  # pylint: disable=global-statement,global-variable-not-assigned
         if not warningAccepted:
             add_multiple_lines_to_log(
-                """WARNING: This command can be used to run code in your game. 
-                                         Only use this if you know what you're doing.
-                                         If you have been told to use this by anyone other than the official 
-                                         ClanGen Discord contributors, BLOCK THEM IMMEDIATELY.
-                                         If you are not sure what this means, DO NOT USE THIS COMMAND.
-                                         To disable this warning, use \"trust\" as an argument to this command."""
+                """
+                WARNING: This command can be used to run code in your game. 
+                Only use this if you know what you're doing.
+                If you have been told to use this by anyone other than the official 
+                ClanGen Discord contributors, BLOCK THEM IMMEDIATELY.
+                If you are not sure what this means, DO NOT USE THIS COMMAND.
+                To disable this warning, use \"trust\" as an argument to this command.
+                """
             )
             return
 
