@@ -24,14 +24,12 @@ NUM_OF_SKILLS = len(SkillPath)
 class PatrolEvent:
     event_id: str
 
-    intro_text: str
-    decline_text: str
-    success_outcomes: list[Union[dict, TextPoolEvent]]
-    fail_outcomes: list[Union[dict, TextPoolEvent]]
-    antag_success_outcomes: list[Union[dict, TextPoolEvent]] = field(
-        default_factory=list
-    )
-    antag_fail_outcomes: list[Union[dict, TextPoolEvent]] = field(default_factory=list)
+    intro_strings: list[str]
+    decline_strings: list[str]
+    success_outcomes: list[dict | TextPoolEvent]
+    fail_outcomes: list[dict | TextPoolEvent]
+    antag_success_outcomes: list[dict | TextPoolEvent] = field(default_factory=list)
+    antag_fail_outcomes: list[dict | TextPoolEvent] = field(default_factory=list)
 
     types: list[Literal["hunting", "herb_gathering", "border", "training"]] = "border"
     frequency: int = 4
@@ -42,7 +40,7 @@ class PatrolEvent:
     tags: list[str] = field(default_factory=list)
     poi: Optional[dict[str, list]] = field(default_factory=dict)
     required_cat_types: dict[str, list[int]] = field(default_factory=dict)
-    involved_cats: dict[str, Union[InvolvedCatDict, dict]] = field(default_factory=dict)
+    involved_cats: dict[str, InvolvedCatDict | dict] = field(default_factory=dict)
     relationship_constraint: list[RelationshipConstraintDict] = field(
         default_factory=list[RelationshipConstraintDict]
     )
@@ -95,6 +93,9 @@ class PatrolEvent:
         self.new_cat = self._get_new_cat()
         self.other_clan = self._get_other_clan()
         self.herbs_given = self._get_herbs_given()
+
+    def __eq__(self, other):
+        return other == self.event_id
 
     def _get_new_cat(self) -> bool:
         """Returns boolean if there are any outcomes that results in

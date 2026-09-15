@@ -35,8 +35,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_heat_WrWr",
-        "intro_text": "Greenleaf, bah, r_c0 scoffs. There's nothing green about the leaves right now, so why does c_n call the dry season that?!",
-        "decline_text": "The patrol is too busy finding shelter from the sun to consider r_c's question.",
+        "intro_strings": [
+            "Greenleaf, bah, r_c0 scoffs. There's nothing green about the leaves right now, so why does c_n call the dry season that?!"
+        ],
+        "decline_strings": [
+            "The patrol is too busy finding shelter from the sun to consider r_c0's question."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -97,13 +101,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "There's no time to answer r_c's question. The patrol has been out too long, in conditions too dry and places too exposed to the scorching sun. They prioritize finding shade, but they'll need to check themselves for heatstroke when they return to camp."
+                    "There's no time to answer r_c0's question. The patrol has been out too long, in conditions too dry and places too exposed to the scorching sun. They prioritize finding shade, but they'll need to check themselves for heatstroke when they return to camp."
                 ],
                 "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "dehydrated"

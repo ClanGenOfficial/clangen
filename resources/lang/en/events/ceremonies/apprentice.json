@@ -34,7 +34,8 @@
         ]
     },
     {
-        "event_id": "app_no_mentor0",
+        "event_id": "app_no_mentors_available0",
+        "tags": ["-clan:warrior-like(min:1)"],
         "involved_cats": {
             "m_c": {
                 "has_mentor": {

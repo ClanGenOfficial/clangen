@@ -1,4 +1,3 @@
-import os
 import unittest
 from unittest.mock import patch
 
@@ -10,9 +9,6 @@ from scripts.clan_package.settings import (
 )
 from scripts.cat.microservices.conditions import get_injured
 from scripts.game_structure import game
-
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan import Clan

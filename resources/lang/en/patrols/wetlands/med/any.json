@@ -46,8 +46,12 @@
         },
         "chance_of_success": 65,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l decides it's a good opportunity to show r_c1 where the most commonly needed herbs are in the territory, both on even and uneven ground.",
-        "decline_text": "As {PRONOUN/p_l/subject} {VERB/p_l/see/sees} r_c1's absent minded gaze, {PRONOUN/p_l/subject} {VERB/p_l/change/changes} {PRONOUN/p_l/poss} mind. Maybe another day when r_c1 is more focused and less liable to slip and fall off the mountain.",
+        "intro_strings": [
+            "p_l decides it's a good opportunity to show r_c1 where the most commonly needed herbs are in the territory, both on even and uneven ground."
+        ],
+        "decline_strings": [
+            "As {PRONOUN/p_l/subject} {VERB/p_l/see/sees} r_c1's absent minded gaze, {PRONOUN/p_l/subject} {VERB/p_l/change/changes} {PRONOUN/p_l/poss} mind. Maybe another day when r_c1 is more focused and less liable to slip and fall off the mountain."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -177,8 +181,12 @@
         },
         "chance_of_success": 65,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l has been sent out into the swamps to try to find herbs alone.",
-        "decline_text": "Nervous and with an eerie sound on the wind scaring them, they decide to go back to camp with their tail dragging behind them and try again another day.",
+        "intro_strings": [
+            "p_l has been sent out into the swamps to try to find herbs alone."
+        ],
+        "decline_strings": [
+            "Nervous and with an eerie sound on the wind scaring them, they decide to go back to camp with their tail dragging behind them and try again another day."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -229,8 +237,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l and r_c0 take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
-        "decline_text": "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh.",
+        "intro_strings": [
+            "p_l and r_c0 take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!"
+        ],
+        "decline_strings": [
+            "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

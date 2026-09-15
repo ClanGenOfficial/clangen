@@ -18,7 +18,6 @@ from scripts.events_module.event_information import EventInformation
 from scripts.game_structure import game, constants
 from scripts.game_structure.game import Switch
 from scripts.game_structure.game.switches import switch_set_value
-
 logger = logging.getLogger(__name__)
 disable_random = False
 
@@ -207,7 +206,7 @@ def _handle_leader_ceremony(main_cat):
     """
     Handles everything pertaining to a leader ceremony.
     """
-    game.clan.leader_lives = 9
+    game.clan.reset_leader_lives()
     trigger_ceremony(main_cat, CatRank.LEADER)
     main_cat.generate_lead_ceremony()
     game.clan.deputy = None

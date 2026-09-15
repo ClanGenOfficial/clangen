@@ -55,11 +55,11 @@ Keep in mind that a display name should either be a proper noun, or begin with "
 
 Points of Interest are distributed into three categories. Each Territory has randomly generated Points of Interest in each category.
 
-| Category  |                                                                                            Description                                                                                           |
-|:---------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| gathering | This is the Clan's Gathering place, where they interface with other Clans. One exists per territory.                                                                                             |
+| Category  |                                                                              Description                                                                               |
+|:---------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| gathering |                                  This is the Clan's Gathering place, where they interface with other Clans. One exists per territory.                                  |
 | moonplace | This is the Clan's moon place, where medicine cats meet once a moon. It typically features some connection to the moon, stars, or night sky. One exists per territory. |
-|  terrain  | This is a feature within the Clan's territory that is notable due to either its appearance or opportunities around it. Three can be discovered per territory.                                    |
+|  terrain  |     This is a feature within the Clan's territory that is notable due to either its appearance or opportunities around it. Three can be discovered per territory.      |
 
 ### Tags 
 Points of Interests can use many different tags that denote circumstances around them to help specify how it can be used and what events/patrols it would fit with.
@@ -93,33 +93,26 @@ Points of Interests can use many different tags that denote circumstances around
 
 Patrols and Short Events now have an additional constraint that can be utilized to include either a specific Point of Interest ID or tag. 
 
-You can add this to any short event or patrol to constrain by Point of Interest. However, remember to constrain either via names or by category or by a single tag, but not by multiple at once.
+You can add this to any short event or patrol to constrain by Point of Interest. You can constrain by multiple parameters (i.e. both tag and category constraints) if you wish.
 
 ~~~
 "poi": {
     "name": ["name"]
     "tags": ["tag"]
-    "category": "moonplace"
+    "category": "category"
     }
 ~~~
 
+!!! tip
+    While you *can* combine the `name` constraint with the other constraint parameters, you really don't need to. For example, if entering `["moon_meteor"]` as the name constraint then there's no need to also set category as `"moonplace"`.
+
 ## Using the Point Of Interest in a Sentence
 
-Using a system similar to pronoun tags, Points of Interest can be mentioned in Short Events or Patrols with {POI} followed by relevant information: either the Points of Interest's IDs or (for a pool of Points of Interest) category or tags.
-
-A Point of Interest can either contain multiple names separated by commas OR a single tag OR a single category. Multiple tags or categories cannot be used, nor should you mix tags, names, or categories.
-
-A few examples below:
-
-~~~
-{POI/name/moon_pool,moon_cave,gather_monster}
-{POI/tag/prey:fish}
-{POI/category/moonplace}
-~~~
+Using a system similar to pronoun tags, Points of Interest can be mentioned in Short Events or Patrols with `POI`.
 
 Using one in a sentence should appear like this in the event itself versus the displayed result:
 
->Fluffy visits {POI/name/moon_pool} to commune with other medicine cats.
+>Fluffy visits POI to commune with other medicine cats.
 
 >Fluffy visits the Moonpool to commune with other medicine cats.
 

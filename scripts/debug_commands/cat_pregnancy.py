@@ -10,12 +10,12 @@ from scripts.game_structure import game
 from scripts.events_module.pregnancy import pregnancy_events
 
 
-def get_cat_from_name_or_id(nameid: str) -> Cat:
+def get_cat_from_name_or_id(name_id: str) -> Cat:
     try:
         cat = [
             x
             for x in Cat.all_cats_list
-            if nameid.lower() == str(x.name).lower() or nameid == x.ID
+            if name_id.lower() == str(x.name).lower() or name_id == x.ID
         ]
         if len(cat) > 0:
             cat = cat[0]
@@ -31,7 +31,7 @@ class AddPregnancyCommand(Command):
     description = "Add a pregnancy"
     aliases = ["a"]
 
-    usage = "<cat name|id> <other parent name|id>"
+    usage = "<cat_name: str|id: int> <other_parent_name: str|id: int>"
 
     def callback(self, args: List[str]):
         if len(args) == 0:
@@ -59,7 +59,7 @@ class RemovePregnancyCommand(Command):
     description = "Remove a pregnancy"
     aliases = ["r"]
 
-    usage = "<cat name|id>"
+    usage = "<cat_name: str|id: int>"
 
     def callback(self, args: List[str]):
         if len(args) == 0:
@@ -81,7 +81,7 @@ class EditPregnancyCommand(Command):
     description = "Edit a pregnancy"
     aliases = ["e"]
 
-    usage = "<cat id> [moons] [amount] <severity (major|minor)> <other parent name|id>"
+    usage = "<cat_name: str|id: int> (<moons: int> <kits: int> <severity [major|minor]> <other_parent_name: str|id: int>)?"
 
     def callback(self, args: List[str]):
         if len(args) == 0:
@@ -101,9 +101,9 @@ class EditPregnancyCommand(Command):
         if not kits_amt or kits_amt in ("same" or "" or "s"):
             kits_amt = game.clan.pregnancy_data[current_cat.ID]["amount"]
 
-        severtity = args[3] if len(args) > 3 else None
-        if not severtity or severtity in ("same" or "" or "s"):
-            severtity = current_cat.injuries["pregnant"]["severity"]
+        severity = args[3] if len(args) > 3 else None
+        if not severity or severity in ("same" or "" or "s"):
+            severity = current_cat.injuries["pregnant"]["severity"]
 
         second_parent = args[4] if len(args) > 4 else None
         if not second_parent or second_parent in ("same" or "" or "s"):
@@ -120,7 +120,7 @@ class EditPregnancyCommand(Command):
         if "pregnant" in current_cat.injuries:
             game.clan.pregnancy_data[current_cat.ID]["moons"] = int(moons_amt)
             game.clan.pregnancy_data[current_cat.ID]["amount"] = int(kits_amt)
-            current_cat.injuries["pregnant"]["severity"] = severtity
+            current_cat.injuries["pregnant"]["severity"] = severity
             game.clan.pregnancy_data[current_cat.ID]["second_parent"] = second_parent
             add_output_line_to_log(
                 f"Successfully edited pregnancy of {current_cat.name} ({current_cat.ID}), new pregnancy data: "
@@ -128,7 +128,7 @@ class EditPregnancyCommand(Command):
             add_multiple_lines_to_log(
                 f"""Moons: {moons_amt}
                                         Amount of Kits: {kits_amt}
-                                        Severity: {severtity}
+                                        Severity: {severity}
                                         Second Parent: {second_parent_repr}"""
             )
         else:
@@ -140,7 +140,7 @@ class ViewPregnancyCommand(Command):
     description = "View the stats a pregnancy"
     aliases = ["v"]
 
-    usage = "<cat id>"
+    usage = "<cat_name: str|id: int>"
 
     def callback(self, args: List[str]):
         if len(args) == 0:

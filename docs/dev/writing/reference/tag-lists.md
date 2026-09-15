@@ -49,10 +49,13 @@ These tags are used for more general filtering purposes.
 > **Tags To Indicate Present Statuses** - Sometimes you may want to indicate in event text that other cats of a certain status as present in addition to m_c and r_c (perhaps m_c and r_c are watching kits play, or discussing the progress of apprentices, or complaining about tending to elders.) These tags can be used to ensure that there are cats of the mentioned status currently living within the Clan, this helps prevent situation where cats are watching nonexistent kits or other such impossibilities. Keep in mind that all of these tags check for the presence of *at least* 2 cats of the indicated status.
 > These can utilize [exclusionary tags](tag-lists.md#exclusionary-tags).
 
-| string        | use                                                                                                                                                            |
-|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| clan:{status} | event only occurs if the clan has at least 2 cats with the given status (do not include curly brackets in tag, tag should look something like: "clan:newborn") |
-| clan:apps     | event only occurs if the clan has living apps, this includes ALL types of apps (medicine, mediator, and warrior)                                               |
+| string                | use                                                                                                                                                            |
+|-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| clan:{status}         | event only occurs if the clan has at least 2 cats with the given status (do not include curly brackets in tag, tag should look something like: "clan:newborn") |
+| clan:apps             | event only occurs if the clan has at least one living apprentice, this includes ALL types of apps (medicine, mediator, and warrior)                            |
+| clan:warrior-like     | event only occurs if the clan has at least one warrior-like role (leader, warrior or deputy)                                                                   |
+
+You can override the default minimums by including `(min:#)` after the status or status group. For example, `"clan:warrior(min:5)"` would require at least 5 warriors. 
 
 
 > **Leader Specific Tags** - since leaders can have 9 lives, it's helpful to have tags that indicate how an event is influenced by those lives.

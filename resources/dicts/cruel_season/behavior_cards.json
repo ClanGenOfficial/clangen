@@ -139,5 +139,11 @@
       "death_related.max_leader_lives": 1,
       "death_related.min_leader_lives": 1
     }
+  },
+  "burnout": {
+    "card_art": "behavior/burnout.png",
+    "modifiers": {
+      "medcats.medcat_base_capacity": 5
+    }
   }
 }
