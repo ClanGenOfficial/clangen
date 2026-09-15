@@ -12,7 +12,7 @@
             ]
         },
         "chance_of_success": 50,
-        "patrol_art": "cat_sprites/gen_bord_dog_Wr",
+        "patrol_art": "bord_general_intro",
         "intro_strings": [
             "p_l heads out to mark c_n's borders."
         ],
@@ -22,7 +22,7 @@
         "success_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites/gen_otherclanmatesdate_WrOw",
+                "outcome_art": "cat_sprites/gen_happycat_Wr",
                 "strings": [
                     "p_l successfully marks c_n's borders."
                 ],
@@ -1991,7 +1991,7 @@
             ]
         },
         "chance_of_success": 40,
-        "patrol_art": "backgrounds/fst_twolegplace",
+        "patrol_art": "POI",
         "intro_strings": [
             "While patrolling near POI, the patrol stumbles across an odd stack of Twoleg wood. The trunk's been cut into long pieces and it's confusingly smooth."
         ],
@@ -2215,6 +2215,3626 @@
                         "log": {
                             "cats_from": "cat_from was annoyed with cat_to when {PRONOUN/cat_to/subject} didn't go along with {PRONOUN/cat_from/poss} idea."
                         }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_bord_trackrogue_solo1",
+        "types": [
+            "border"
+        ],
+        "frequency": 3,
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ]
+        },
+        "chance_of_success": 40,
+        "patrol_art": "backgrounds/gen_pawprints",
+        "intro_strings": [
+            "While on patrol, p_l notices some suspicious pawprints.",
+            "Pawprints stretch out before {PRONOUN/p_l/object}. p_l didn't think anyone else had come this way before {PRONOUN/p_l/object}, so whose pawprints are they?"
+        ],
+        "decline_strings": [
+            "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} not to investigate."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "required_cat_types": {
+                    "normal adult": [1, 1]
+                },
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. p_l quickly hides {PRONOUN/p_l/self} and sets up an ambush that sends the rogue fleeing off c_n territory."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to drove a rogue off the territory."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was scared by an ambush set by cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "required_cat_types": {
+                    "normal adult": [1, 1]
+                },
+                "strings": [
+                    "p_l soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat."
+                ],
+                "exp_gained": 10
+            },
+            {
+                "frequency": 3,
+                "required_cat_types": {
+                    "apprentice": [1, 1]
+                },
+                "strings": [
+                    "p_l soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} pretty sure this is {PRONOUN/p_l/poss} mentor's scent. And {PRONOUN/p_l/poss} mentor has been hinting {PRONOUN/p_l/subject}'ll have an assessment soon."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "has_mentor": {
+                            "current": true
+                        }
+                    }
+                },
+                "exp_gained": 10
+            },
+            {
+                "frequency": 4,
+                "required_cat_types": {
+                    "normal adult": [1, 1]
+                },
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. p_l throws {PRONOUN/p_l/self} at the rogue, hissing furiously, and drives {PRONOUN/n_c0/object} off c_n territory."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "FIGHTER,1"
+                            ]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to drove a rogue off the territory."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from drove cat_to off of the territory."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": [
+                    "beach"
+                ],
+                "required_cat_types": {
+                    "normal adult": [1, 1]
+                },
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. p_l sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize {PRONOUN/n_c0/subject}{VERB/n_c0/'ve/'s} been caught and trapped by c_n, and {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} escorted to the border with the lesson firmly learned."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "CLEVER,1"
+                            ]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to drove a rogue off the territory."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was frightened by a trap set by cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": [
+                    "forest"
+                ],
+                "required_cat_types": {
+                    "normal adult": [1, 1]
+                },
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. p_l climbs into the trees to set up a trap, rigging a branch to fall on the rogue's head; and it works, sending the startled intruder yowling as they flee c_n territory."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "CLEVER,1"
+                            ]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to drove a rogue off the territory."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was frightened by a trap set by cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": [
+                    "plains"
+                ],
+                "required_cat_types": {
+                    "normal adult": [1, 1]
+                },
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. s_c0 tries to set up a trap by using grass to cover an abandoned rabbit burrow. The intruder falls right in and cowers to realize {PRONOUN/n_c0/subject}{VERB/n_c0/'ve/'s} been caught and trapped by c_n, and {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} escorted to the border with the lesson firmly learned."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "CLEVER,1"
+                            ]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to drove a rogue off the territory."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was frightened by a trap set by cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": [
+                    "wetlands"
+                ],
+                "required_cat_types": {
+                    "normal adult": [1, 1]
+                },
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. p_l sets up a trap by using the marshy terrain to cut off the rogue's escape path. It makes the startled intruder cower to realize {PRONOUN/n_c0/subject}{VERB/n_c0/'ve/'s} been caught and trapped by c_n, and {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} escorted to the border with the lesson firmly learned."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "CLEVER,1"
+                            ]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to drove a rogue off the territory."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was frightened by a trap set by cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "required_cat_types": {
+                    "normal adult": [1, 1]
+                },
+                "strings": [
+                    "Boldly, p_l follows the pawprints to a trespassing rogue and confronts {PRONOUN/n_c0/object}. Fur puffed up and scowling, {PRONOUN/p_l/subject} {VERB/p_l/demand/demands} the rogue leave c_n territory. Intimidated by {PRONOUN/p_l/poss} confidence, the rogue gives in and leaves without a fight."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": [
+                                "ambitious",
+                                "bloodthirsty",
+                                "cold",
+                                "fierce",
+                                "shameless",
+                                "strict",
+                                "troublesome",
+                                "vengeful",
+                                "adventurous",
+                                "bold",
+                                "charismatic",
+                                "childish",
+                                "confident",
+                                "daring",
+                                "playful",
+                                "righteous"
+                            ]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to scared a rogue off the territory."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was intimidated by cat_to's confidence in confronting {PRONOUN/cat_from/object}."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "required_cat_types": {
+                    "apprentice": [1, 1]
+                },
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. p_l quickly hides {PRONOUN/p_l/self} and sets up an ambush that lets {PRONOUN/p_l/object} pretend to be a far bigger and more impressive fighter. It sends the rogue fleeing off c_n territory."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was impressed to hear cat_to drove a rogue off the territory."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was frightened by cat_to's ambush."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "It turns out they were p_l's own pawprints... p_l huffs with embarrassment, suddenly grateful {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alone.",
+                    "It turns out they were p_l's own pawprints... p_l huffs with embarrassment, suddenly grateful {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alone. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} want to look dumb in front of other cats."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "required_cat_types": {
+                    "normal adult": [1, 1]
+                },
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. p_l throws {PRONOUN/p_l/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and p_l isn't as good of a fighter as {PRONOUN/p_l/subject}'d like to think. The rogue escapes {PRONOUN/p_l/poss} grasp and runs off further into c_n territory."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "FIGHTER,1"
+                            ]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to failed to chase a rogue off the territory."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from and cat_to tussled when they encountered one another along the border."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "required_cat_types": {
+                    "apprentice": [1, 1]
+                },
+                "strings": [
+                    "Boldly, p_l follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/p_l/subject} {VERB/p_l/demand/demands} the rogue leave c_n territory. The rogue is not impressed by this adolescent and ignores {PRONOUN/p_l/object} completely."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": [
+                                "ambitious",
+                                "bloodthirsty",
+                                "cold",
+                                "fierce",
+                                "shameless",
+                                "strict",
+                                "troublesome",
+                                "vengeful",
+                                "adventurous",
+                                "bold",
+                                "charismatic",
+                                "childish",
+                                "confident",
+                                "daring",
+                                "playful",
+                                "righteous"
+                            ]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from found cat_to's feeble attempt at intimidating {PRONOUN/cat_from/object} off the territory to be rather pathetic."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was frustrated that cat_to didn't take {PRONOUN/cat_from/poss} threats seriously."
+                        }
+                    }
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "location": ["forest"],
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. p_l climbs into the trees to set up a trap, aiming to rig a branch to fall on the rogue's head, but {PRONOUN/p_l/subject} {VERB/p_l/aren't/isn't} as smart as {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} {PRONOUN/p_l/subject} {VERB/p_l/are/is}. The trap fails, and the rogue wanders on."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "-CLEVER,1"
+                            ],
+                            "trait": ["arrogant"],
+                            "must_have_both": true
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "location": ["plains"],
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. p_l tries to set up a trap by using grass to cover an abandoned rabbit burrow, but {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't as smart as {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} {PRONOUN/p_l/subject} {VERB/p_l/are/is}. The trap fails, and the rogue wanders on."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "-CLEVER,1"
+                            ],
+                            "trait": ["arrogant"],
+                            "must_have_both": true
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "location": ["wetlands"],
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. p_l tries to set up a trap by using the marshy terrain to cut off the rogue's escape path, but {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't as smart as {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} {PRONOUN/p_l/subject} {VERB/p_l/are/is}. The trap fails, and the rogue wanders on."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "-CLEVER,1"
+                            ],
+                            "trait": ["arrogant"],
+                            "must_have_both": true
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 2,
+                "strings": [
+                    "Following the trail with {PRONOUN/p_l/poss} nose to the ground, p_l doesn't see the blow that kills {PRONOUN/p_l/object}."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_to's scent was found at the sight of p_l's death."
+                        }
+                    }
+                ],
+                "death": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "history": "m_c was killed by an invading rogue."
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "required_cat_types": {
+                    "normal adult": [1, 1]
+                },
+                "strings": [
+                    "Following the trail with {PRONOUN/p_l/poss} nose to the ground, p_l doesn't see the blow coming. {PRONOUN/p_l/subject/CAP} {VERB/p_l/haul/hauls} {PRONOUN/p_l/self} to {PRONOUN/p_l/poss} feet, spitting with outrage, but the rogue that did it has already turned and run."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": [
+                                "vengeful",
+                                "bloodthirsty",
+                                "bold",
+                                "daring",
+                                "confident"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to failed to notice a rogue."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from and cat_to fought at the border."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "battle_injury"
+                        ],
+                        "scar_history": "m_c was scarred by an invading rogue.",
+                        "death_history": "m_c died of an injury inflicted by an invading rogue."
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "required_cat_types": {
+                    "apprentice": [1, 1]
+                },
+                "strings": [
+                    "Following the trail with {PRONOUN/p_l/poss} nose to the ground, p_l doesn't see the blow coming. {PRONOUN/p_l/subject/CAP} {VERB/p_l/haul/hauls} {PRONOUN/p_l/self} to {PRONOUN/p_l/poss} feet, squealing with pain, and {VERB/p_l/run/runs} for home."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from and cat_to fought at the border."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "battle_injury"
+                        ],
+                        "scar_history": "m_c was scarred by an invading rogue.",
+                        "death_history": "m_c died of an injury inflicted by an invading rogue."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_bord_trackrogue_group1",
+        "types": [
+            "border"
+        ],
+        "frequency": 3,
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                2
+            ]
+        },
+        "involved_cats": {
+            "r_c0": {}
+        },
+        "chance_of_success": 40,
+        "patrol_art": "backgrounds/gen_pawprints",
+        "intro_strings": [
+            "While on patrol with p_l, r_c0 notices some suspicious pawprints.",
+            "Pawprints stretch out before them. p_l and r_c0 can't think of any patrol that would have come this way before them, so whose pawprints are they?"
+        ],
+        "decline_strings": [
+            "{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/decide/decides} not to investigate."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. The two cats quickly hide themselves and set up an ambush, sending the rogue fleeing off c_n territory."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to drove off a rogue together."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was scared by an ambush set by cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "r_c0 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat."
+                ],
+                "exp_gained": 10
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "r_c0 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} pretty sure this is {PRONOUN/r_c0/poss} mentor's scent. And {PRONOUN/r_c0/poss} mentor has been hinting {PRONOUN/r_c0/subject}'ll have an assessment soon."
+                ],
+                "involved_cats": {
+                    "r_c0": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 10
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. s_c0 throws {PRONOUN/s_c0/self} at the rogue, hissing furiously, and together with s_c1 drives them off c_n territory."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "FIGHTER,1"
+                            ]
+                        }
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": ["-s_c0"]
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "s_c1"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to drove off a rogue side by side."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was chased away by cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": [
+                    "beach"
+                ],
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. s_c0 sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize {PRONOUN/n_c0/subject}{VERB/n_c0/'ve/'s} been caught and trapped by c_n, and {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} escorted to the border with the lesson firmly learned."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,1"
+                            ]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to set an ambush for a rogue together."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was startled by a trap set by cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": [
+                    "forest"
+                ],
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. s_c0 climbs into the trees with s_c1 to set up a trap, rigging a branch to fall on the rogue's head — and it works, sending the startled intruder yowling as they flee c_n territory."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,1", "CLIMBER,1"
+                            ]
+                        }
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": ["-s_c0"]
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "s_c1"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to set an ambush for a rogue together."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was startled by a trap set by cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": [
+                    "plains"
+                ],
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. s_c0 sets up a trap by using grass to cover an abandoned rabbit burrow. It makes the startled intruder cower to realize {PRONOUN/n_c0/subject}{VERB/n_c0/'ve/'s} been caught and trapped by c_n, and {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} escorted to the border with the lesson firmly learned."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,1", "CLIMBER,1"
+                            ]
+                        }
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": ["-s_c0"]
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "s_c1"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to set an ambush for a rogue together."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was startled by a trap set by cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "Boldly, s_c0 follows the pawprints to a trespassing rogue and confronts {PRONOUN/n_c0/object}. Fur puffed up and scowling, s_c0 and s_c1 demand the rogue leave c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "ambitious",
+                                "bloodthirsty",
+                                "cold",
+                                "fierce",
+                                "shameless",
+                                "strict",
+                                "troublesome",
+                                "vengeful",
+                                "adventurous",
+                                "bold",
+                                "charismatic",
+                                "childish",
+                                "confident",
+                                "daring",
+                                "playful",
+                                "righteous"
+                            ]
+                        }
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": ["s_c0"]
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "s_c1"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to saw a rogue off their territory together."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was intimidated when cat_to confronted {PRONOUN/cat_from/object} for trespassing."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "Boldly, s_c0 follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c0/subject} {VERB/s_c0/demand/demands} the rogue leave c_n territory. The rogue is not impressed by the adolescent but reluctantly leaves c_n territory. s_c1 is impressed that s_c0 got the rogue to leave."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "age": ["adolescent"],
+                        "stat": {
+                            "trait": [
+                                "ambitious",
+                                "bloodthirsty",
+                                "cold",
+                                "fierce",
+                                "shameless",
+                                "strict",
+                                "troublesome",
+                                "vengeful",
+                                "adventurous",
+                                "bold",
+                                "charismatic",
+                                "confident",
+                                "daring",
+                                "righteous"
+                            ]
+                        }
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": ["-s_c0"]
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "s_c1"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was very impressed with how cat_to saw off a rogue on patrol."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from wasn't very impressed by cat_to's attempt to intimidate {PRONOUN/cat_from/object} for trespassing."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "s_c0"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was frustrated that cat_to didn't find {PRONOUN/cat_from/object} intimidating."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "It turns out they were r_c0's own pawprints... r_c0 huffs with embarrassment, suddenly grateful that {PRONOUN/r_c0/poss} patrol is so small. Fewer eyes watching that embarrassing moment.",
+                    "It turns out they were r_c1's own pawprints... r_c1 huffs with embarrassment, suddenly grateful that {PRONOUN/r_c1/poss} patrol is so small. Fewer eyes watching that embarrassing moment. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/don't/doesn't} want to look dumb in front of other cats."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from watched cat_to make a mistake on patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": [
+                    "beach"
+                ],
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. s_c0 tries to set up a trap by using the tides to cut off the rogue's escape path, but {PRONOUN/s_c0/subject} {VERB/s_c0/are/is}n't as smart as {PRONOUN/s_c0/subject} {VERB/s_c0/think/thinks} {PRONOUN/s_c0/subject} {VERB/s_c0/are/is}. The trap fails, and the rogue wanders on."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "arrogant"
+                            ],
+                            "skill": [
+                                "-CLEVER,1"
+                            ],
+                            "must_have_both": true
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to tried and failed to be clever on patrol with cat_from."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": [
+                    "forest"
+                ],
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. s_c0 climbs into the trees to set up a trap, aiming to rig a branch to fall on the rogue's head, but {PRONOUN/s_c0/subject} {VERB/s_c0/aren't/isn't} as smart as {PRONOUN/s_c0/subject} {VERB/s_c0/think/thinks} {PRONOUN/s_c0/subject} {VERB/s_c0/are/is}. The trap fails, and the rogue wanders on."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "arrogant"
+                            ],
+                            "skill": [
+                                "-CLEVER,1"
+                            ],
+                            "must_have_both": true
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to tried and failed to be clever on patrol with cat_from."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": [
+                    "plains"
+                ],
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. p_l tries to set up a trap by using grass to cover an abandoned rabbit burrow, but {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't as smart as {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} {PRONOUN/p_l/subject} {VERB/p_l/are/is}. The trap fails, and the rogue wanders on."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "arrogant"
+                            ],
+                            "skill": [
+                                "-CLEVER,1"
+                            ],
+                            "must_have_both": true
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to tried and failed to be clever on patrol with cat_from."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "Boldly, s_c0 follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c0/subject} {VERB/s_c0/demand/demands} the rogue leave c_n territory. The rogue is not impressed by the adolescent but reluctantly leaves c_n territory upon seeing {PRONOUN/n_c0/self} outnumbered."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "age": ["adolescent"],
+                        "stat": {
+                            "trait": [
+                                "ambitious",
+                                "bloodthirsty",
+                                "cold",
+                                "fierce",
+                                "shameless",
+                                "strict",
+                                "troublesome",
+                                "vengeful",
+                                "adventurous",
+                                "bold",
+                                "charismatic",
+                                "childish",
+                                "confident",
+                                "daring",
+                                "playful",
+                                "righteous"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from wasn't very impressed by cat_to's attempt to intimidate {PRONOUN/cat_from/object} for trespassing."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "s_c0"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was frustrated that cat_to didn't find {PRONOUN/cat_from/object} intimidating."
+                        }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "Following the trail with {PRONOUN/r_c0/poss} nose to the ground, r_c0 doesn't see the blow coming. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/haul/hauls} {PRONOUN/r_c0/self} to {PRONOUN/r_c0/poss} feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to failed to drive off a rogue and lost confidence in each other."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from and cat_to fought at the border."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "battle_injury"
+                        ],
+                        "scar_history": "m_c was scarred by an invading rogue.",
+                        "death_history": "m_c died of an injury inflicted by an invading rogue."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_bord_trackrogue_group2",
+        "types": [
+            "border"
+        ],
+        "frequency": 3,
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
+        },
+        "involved_cats": {
+            "r_c0": {}
+        },
+        "chance_of_success": 30,
+        "patrol_art": "backgrounds/gen_pawprints",
+        "intro_strings": [
+            "While on patrol, r_c0 notices some suspicious pawprints. The patrol gathers to investigate.",
+            "Pawprints stretch out ahead of them and r_c0 takes notice, calling the patrol to take a look. The cats can't think of any patrol that would have come this way before them, so whose pawprints are they?"
+        ],
+        "decline_strings": [
+            "{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/decide/decides} not to investigate."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves and sets up an ambush, sending the rogue fleeing off c_n territory."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_to and cat_from drove off a rogue together."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was scared by an ambush set by cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "The cats soon realize that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, it's not a threat."
+                ],
+                "exp_gained": 10
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "s_c0 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} pretty sure this is {PRONOUN/s_c0/poss} mentor's scent. And {PRONOUN/s_c0/poss} mentor has been hinting {PRONOUN/s_c0/subject}'ll have an assessment soon."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"],
+                        "status": [
+                            "apprentice"
+                        ],
+                        "has_mentor": {
+                            "current": true
+                        }
+                    }
+                },
+                "exp_gained": 10
+            },
+            {
+                "frequency": 4,
+                "location": [
+                    "beach"
+                ],
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. s_c0 sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize {PRONOUN/n_c0/subject}{VERB/n_c0/'ve/'s} been caught and trapped by c_n, and {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} escorted to the border with the lesson firmly learned."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,1"
+                            ]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by s_c0's ability to set an ambush.",
+                            "cats_to": "cat_to was glad cat_from acknowledged {PRONOUN/s_c0/poss} abilities."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was startled by a trap set by cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": [
+                    "forest"
+                ],
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. s_c0 climbs into the trees with {PRONOUN/s_c0/poss} Clanmates to set up a trap, rigging a branch to fall on the rogue's head — and it works, sending the startled intruder yowling as {PRONOUN/n_c0/subject} flee c_n territory."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,1"
+                            ]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by s_c0's ability to set an ambush.",
+                            "cats_to": "cat_to was glad cat_from acknowledged {PRONOUN/s_c0/poss} abilities."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was startled by a trap set by cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": [
+                    "wetlands"
+                ],
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. s_c0 sets up a trap by using the marshy terrain to cut off the rogue's escape path. It makes the startled intruder cower to realize {PRONOUN/n_c0/subject}{VERB/n_c0/'ve/'s} been caught and trapped by c_n, and {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} escorted to the border with the lesson firmly learned."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,1"
+                            ]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by s_c0's ability to set an ambush.",
+                            "cats_to": "cat_to was glad cat_from acknowledged {PRONOUN/s_c0/poss} abilities."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was startled by a trap set by cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. With a furious hiss, s_c0 throws {PRONOUN/s_c0/self} at the rogue and, together with the whole patrol, drives them off c_n territory."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "FIGHTER,1"
+                            ]
+                        }
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": ["-s_c0"]
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by s_c0's skill in battle against rogues.",
+                            "cats_to": "cat_to was glad to drive away rogues with cat_from."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was chased away by cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "Boldly, s_c0 follows the pawprints to a trespassing rogue and confronts {PRONOUN/n_c0/object}. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by s_c0's confidence and the number of cats, the rogue gives in and leaves without a fight."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "ambitious",
+                                "bloodthirsty",
+                                "cold",
+                                "fierce",
+                                "shameless",
+                                "strict",
+                                "troublesome",
+                                "vengeful",
+                                "adventurous",
+                                "bold",
+                                "charismatic",
+                                "childish",
+                                "confident",
+                                "daring",
+                                "playful",
+                                "righteous"
+                            ]
+                        }
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": ["-s_c0"]
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by s_c0's confidence in fighting rogues.",
+                            "cats_to": "cat_to enjoyed driving away rogues with cat_from."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was intimidated when cat_to confronted {PRONOUN/cat_from/object} for trespassing."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "It turns out they were r_c0's own pawprints... r_c0 huffs with embarrassment and can't meet the eyes of the rest of the patrol.",
+                    "It turns out they were r_c1's own pawprints... r_c1 huffs with embarrassment and can't meet the eyes of the rest of the patrol. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/don't/doesn't} want to look dumb in front of other cats."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from watched cat_to make a mistake on patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["beach"],
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. s_c0 tries to set up a trap by using the tides to cut off the rogue's escape path, but {PRONOUN/s_c0/subject} {VERB/s_c0/are/is}n't as smart as {PRONOUN/s_c0/subject} {VERB/s_c0/think/thinks} {PRONOUN/s_c0/subject} {VERB/s_c0/are/is}. The trap fails, and the rogue wanders on."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "arrogant"
+                            ],
+                            "skill": [
+                                "-CLEVER,1"
+                            ],
+                            "must_have_both": true
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to tried and failed to be clever on patrol with cat_from."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["forest"],
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. s_c0 climbs into the trees to set up a trap, aiming to rig a branch to fall on the rogue's head, but {PRONOUN/s_c0/subject} {VERB/s_c0/are/is}n't as smart as {PRONOUN/s_c0/subject} {VERB/s_c0/think/thinks} {PRONOUN/s_c0/subject} {VERB/s_c0/are/is}. The trap fails, and the rogue wanders on."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "arrogant"
+                            ],
+                            "skill": [
+                                "-CLEVER,1"
+                            ],
+                            "must_have_both": true
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to tried and failed to be clever on patrol with cat_from."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["wetlands"],
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. s_c0 tries to set up a trap by using the marshy terrain to cut off the rogue's escape path, but {PRONOUN/s_c0/subject} {VERB/s_c0/are/is}n't as smart as {PRONOUN/s_c0/subject} {VERB/s_c0/think/thinks} {PRONOUN/s_c0/subject} {VERB/s_c0/are/is}. The trap fails, and the rogue wanders on."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "arrogant"
+                            ],
+                            "skill": [
+                                "-CLEVER,1"
+                            ],
+                            "must_have_both": true
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to tried and failed to be clever on patrol with cat_from."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "Boldly, s_c0 follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c0/subject} {VERB/s_c0/demand/demands} the rogue leave c_n territory. The rogue is not impressed by the adolescent, but with a full patrol backing {PRONOUN/s_c0/object} up, the rogue opts to leave c_n territory instead of fight."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "age": ["adolescent"],
+                        "stat": {
+                            "trait": [
+                                "ambitious",
+                                "bloodthirsty",
+                                "cold",
+                                "fierce",
+                                "shameless",
+                                "strict",
+                                "troublesome",
+                                "vengeful",
+                                "adventurous",
+                                "bold",
+                                "charismatic",
+                                "childish",
+                                "confident",
+                                "daring",
+                                "playful",
+                                "righteous"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was amused to see cat_to confront a rogue during a patrol."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from wasn't very impressed by cat_to's attempt to intimidate {PRONOUN/cat_from/object} for trespassing."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "s_c0"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was frustrated that cat_to didn't find {PRONOUN/cat_from/object} intimidating."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_bord_rogueambush_solo1",
+        "types": [
+            "border"
+        ],
+        "frequency": 2,
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ]
+        },
+        "involved_cats": {
+            "n_c0": {
+                "can_create_new_cat": {},
+                "status": ["rogue"],
+                "age": [
+                    "young adult",
+                    "adult",
+                    "senior adult"
+                ]
+            },
+            "n_c1": {
+                "can_create_new_cat": {},
+                "status": ["rogue"],
+                "age": [
+                    "young adult",
+                    "adult",
+                    "senior adult"
+                ]
+            },
+            "n_c2": {
+                "can_create_new_cat": {},
+                "status": ["rogue"],
+                "age": [
+                    "young adult",
+                    "adult",
+                    "senior adult"
+                ]
+            }
+        },
+        "chance_of_success": 10,
+        "patrol_art": "bord_general_intro",
+        "intro_strings": [
+            "As p_l is marking the border lines, a gang of rogues leap out of cover! An ambush!",
+            "p_l's border marking is interrupted when a gang of rogues leap out of cover, taking {PRONOUN/p_l/object} by surprise!"
+        ],
+        "decline_strings": [
+            "p_l turns tail and races away! The rogues have {PRONOUN/p_l/object} far outnumbered; warning the Clan is more important than playing the hero."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Stunned for a moment, p_l is nearly caught in the teeth of the first rogue, but {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} to dodge and weave through the onslaught of attacks. Eventually, p_l escapes the fray and pelts towards camp with yowls of warning bursting from {PRONOUN/p_l/poss} lungs."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was impressed to hear cat_to escaped a rogue ambush."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -30,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l snarls at the rogues, outnumbered but not cowed. {PRONOUN/p_l/subject/CAP} {VERB/p_l/throw/throws} {PRONOUN/p_l/self} at the intruders with such ferocity that the rogues are taken aback. Alarmed by the Clan cat's lack of fear and self-preservation, the rogues freeze. p_l sees {PRONOUN/p_l/poss} opportunity to run and takes it, racing back to the camp to gather more warriors and return."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "FIGHTER,3"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "cat_from was amazed to hear cat_to took on a gang of rogues single-pawed."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was startled by cat_to's ferocity in battle."
+                        }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2"]
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l snarls at the rogues, outnumbered but not cowed. {PRONOUN/p_l/subject/CAP} {VERB/p_l/throw/throws} {PRONOUN/p_l/self} at the intruders with such ferocity that the rogues are taken aback. The shock only lasts a moment before they descend on the warrior once more. Eventually, p_l has no choice but to escape before {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} killed."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": [
+                                "bloodthirsty",
+                                "fierce",
+                                "vengeful"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from honored cat_to's heroic death in battle against a rogue ambush."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -30,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2"]
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "The rogues greatly outnumber p_l and have no trouble killing the lone cat. {PRONOUN/p_l/poss/CAP} body is discovered the next day, covered in wounds and cold."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from honors cat_to's death in battle against a rogue ambush."
+                        }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2"]
+                    }
+                ],
+                "death": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "history": "m_c was killed when rogues ambushed {PRONOUN/m_c/object} while on a solo patrol."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_bord_rogueambush_group1",
+        "types": [
+            "border"
+        ],
+        "frequency": 2,
+        "required_cat_types": {
+            "patrol_cats": [
+                4,
+                6
+            ]
+        },
+        "involved_cats": {
+            "n_c0": {
+                "can_create_new_cat": {},
+                "status": ["rogue"],
+                "age": [
+                    "young adult",
+                    "adult",
+                    "senior adult"
+                ]
+            },
+            "n_c1": {
+                "can_create_new_cat": {},
+                "status": ["rogue"],
+                "age": [
+                    "young adult",
+                    "adult",
+                    "senior adult"
+                ]
+            },
+            "n_c2": {
+                "can_create_new_cat": {},
+                "status": ["rogue"],
+                "age": [
+                    "young adult",
+                    "adult",
+                    "senior adult"
+                ]
+            },
+            "n_c3": {
+                "can_create_new_cat": {},
+                "status": ["rogue"],
+                "age": [
+                    "young adult",
+                    "adult",
+                    "senior adult"
+                ]
+            }
+        },
+        "chance_of_success": 10,
+        "patrol_art": "bord_general_intro",
+        "intro_strings": [
+            "As the patrol is marking the border lines, a gang of rogues burst out from cover! An ambush!",
+            "As the patrol is marking the border lines, a gang of rogues stalk into view to confront the Clan cats!",
+            "The patrol is interrupted when a gang of rogues burst out of cover, taking them by surprise!",
+            "As the patrol is marking the border lines, a gang of rogues strides confidently into view, yowling as they confront the Clan cats!"
+        ],
+        "decline_strings": [
+            "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol descends into battle without a second thought, eventually driving the rogues away."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to drove off rogues together."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2",
+                            "n_c3"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -30,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2", "n_c3"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_bord_roguerunaway_RgRg",
+                "strings": [
+                    "s_c0 immediately leaps to protect {PRONOUN/s_c0/poss} Clanmates. {PRONOUN/s_c0/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
+                    "s_c0 revels in the battle, leaping into the fray with {PRONOUN/s_c0/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol.",
+                    "s_c0 eagerly springs into action! {PRONOUN/s_c0/poss/CAP} <i>special training</i> speaks for itself in the way s_c0 flawlessly performs battle move after battle move. With the rest of the patrol for backup, the rogues quickly turn tail and flee from such a terrifying cat!"
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "FIGHTER,3", "DARK,2"
+                            ],
+                            "trait": [
+                                "bloodthirsty",
+                                "fierce",
+                                "vengeful"
+                            ],
+                            "must_have_both": false
+                        }
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "some_patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from couldn't help feeling unsettled at how easily cat_to fought off a whole group of rogues."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed when cat_to drove rogues off the territory."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2",
+                            "n_c3"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2",
+                            "n_c3"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from was terrified by s_c0's fighting prowess."
+                        }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2", "n_c3"]
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "The rogues circle the patrol as they posture and jeer, eventually provoking a battle. The Clan cats are strong, however, and the rogues seem to be weakened by hunger. The patrol easily drives the intruders away."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "cat_from heard about cat_to's victory in battle against a gang of rogues."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2",
+                            "n_c3"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -30,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2", "n_c3"]
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "The rogues circle the patrol as they posture and jeer, eventually provoking a battle. The Clan cats are strong, however, and after a short fight, the rogues are forced to retreat."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "cat_from heard about cat_to's victory in battle against a gang of dangerous rogues."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2",
+                            "n_c3"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2", "n_c3"]
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "s_c0 takes the lead, confronting the gang with confidence before a fight can break out. Eventually, the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c0 informs the rogues of a prey-rich forest outside of c_n territory."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "SPEAKER,1"
+                            ],
+                            "trait": [
+                                "bold",
+                                "confident"
+                            ],
+                            "must_have_both": false
+                        }
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "some_clan",
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "cat_from was impressed when cat_to convinced rogues to leave the territory."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2",
+                            "n_c3"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was surprised at how readily s_c0 helped {PRONOUN/cat_from/object} by providing information on prey-rich territory."
+                        }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2", "n_c3"]
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and s_c0 is badly wounded, forcing the patrol to retreat.",
+                    "The rogues posture and jeer, eventually provoking a battle. They prove to be strong fighters, and s_c0 is badly injured, forcing the patrol to retreat."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to failed to drive away rogues while on patrol with cat_from."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2",
+                            "n_c3"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -30,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2", "n_c3"]
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "condition": [
+                            "battle_injury"
+                        ],
+                        "scar_history": "m_c was badly scarred when rogues attacked {PRONOUN/m_c/poss} patrol.",
+                        "death_history": "m_c died of injuries sustained in a rogue attack."
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "The rogues are terrifyingly coordinated and use the patrol's shock and confusion against them. The patrol cats are picked off one by one, and only a couple manage to escape the slaughter.",
+                    "The rogues use the patrol's momentary surprise to their advantage and pick off the patrol one by one. Only a couple manage to escape back to camp."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to failed to drive away rogues while on patrol with cat_from."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2",
+                            "n_c3"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -40,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2", "n_c3"]
+                    }
+                ],
+                "death": [
+                    {
+                        "cats": [
+                            "some_patrol"
+                        ],
+                        "history": "m_c was killed when rogues attacked {PRONOUN/m_c/poss} patrol."
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "tags": ["disaster"],
+                "strings": [
+                    "The rogues greatly outnumber the patrol and have no trouble defeating them. The fallen warriors' bodies are recovered the next day, covered in battle wounds and cold."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "rogue"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "death": [
+                    {
+                        "cats": [
+                            "patrol_cats"
+                        ],
+                        "history": "m_c was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c2",
+                            "n_c1",
+                            "n_c0"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol descends into battle without a second thought, eventually driving the rogues away."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2", "n_c3"]
+                    }
+                ]
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol descends into battle without a second thought, but the rogues are stronger than expected, and eventually the patrol is forced to retreat, wounded as they are."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -30,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
+                        }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2", "n_c3"]
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "some_patrol"
+                        ],
+                        "condition": [
+                            "battle_injury"
+                        ],
+                        "scar_history": "m_c was badly scarred when rogues attacked {PRONOUN/m_c/poss} patrol.",
+                        "death_history": "m_c died of injuries sustained in a rogue attack."
                     }
                 ]
             }

@@ -3364,7 +3364,7 @@
                 "involved_cats": {
                     "s_c0": {
                         "prior_abbreviation": [
-                            "any"
+                            "-r_c0"
                         ],
                         "stat": {
                             "trait": [
@@ -4563,21 +4563,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/see/sees} the young cat off with a furious swipe of {PRONOUN/p_l/poss} claws, and then {VERB/p_l/bring/brings} the prey back to c_n camp to report the incident to the deputy."
+                    "p_l comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/see/sees} the young cat off with a furious swipe of {PRONOUN/p_l/poss} claws, and then {VERB/p_l/bring/brings} the prey back to c_n camp to report the incident to the deputy."
                 ],
                 "required_cat_types": {
                     "warrior": [
                         1,
                         1
                     ]
-                },
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {}
-                    }
                 },
                 "exp_gained": 0,
                 "reputation_changes": {
@@ -5314,21 +5306,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/see/sees} the young cat off with a furious swipe of {PRONOUN/p_l/poss} claws, and then {VERB/p_l/bring/brings} the prey back to c_n camp to report the incident to the deputy."
+                    "p_l comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/see/sees} the young cat off with a furious swipe of {PRONOUN/p_l/poss} claws, and then {VERB/p_l/bring/brings} the prey back to c_n camp to report the incident to the deputy."
                 ],
                 "required_cat_types": {
                     "warrior": [
                         1,
                         1
                     ]
-                },
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {}
-                    }
                 },
                 "exp_gained": 0,
                 "reputation_changes": {
@@ -6065,21 +6049,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/see/sees} the young cat off with a furious swipe of {PRONOUN/p_l/poss} claws, and then {VERB/p_l/bring/brings} the prey back to c_n camp to report the incident to the deputy."
+                    "p_l comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/see/sees} the young cat off with a furious swipe of {PRONOUN/p_l/poss} claws, and then {VERB/p_l/bring/brings} the prey back to c_n camp to report the incident to the deputy."
                 ],
                 "required_cat_types": {
                     "warrior": [
                         1,
                         1
                     ]
-                },
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {}
-                    }
                 },
                 "exp_gained": 0,
                 "reputation_changes": {
@@ -6816,21 +6792,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/see/sees} the young cat off with a furious swipe of {PRONOUN/p_l/poss} claws, and then {VERB/p_l/bring/brings} the prey back to c_n camp to report the incident to the deputy."
+                    "p_l comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/see/sees} the young cat off with a furious swipe of {PRONOUN/p_l/poss} claws, and then {VERB/p_l/bring/brings} the prey back to c_n camp to report the incident to the deputy."
                 ],
                 "required_cat_types": {
                     "warrior": [
                         1,
                         1
                     ]
-                },
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {}
-                    }
                 },
                 "exp_gained": 0,
                 "reputation_changes": {
