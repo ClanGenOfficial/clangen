@@ -1,6 +1,6 @@
 [
     {
-        "id": "comfort_de_low1",
+        "event_id": "comfort_de_low1",
         "strings": [
             "m_c overheard a joke from r_c {PRONOUN/m_c/subject} didn't get.",
             "m_c tries to have a conversation with r_c but it ends up awkward when neither of them speak up.",
@@ -20,7 +20,7 @@
         ]
     },
     {
-        "id": "comfort_de_low2",
+        "event_id": "comfort_de_low2",
         "strings": [
             "m_c said something that rubbed r_c the wrong way.",
             "m_c was being condescending towards r_c all day long.",

@@ -9,7 +9,6 @@ from scripts.cat.enums import CatRank
 from scripts.cat.skills import SkillPath
 from scripts.clan_resources.freshkill import (
     FRESHKILL_EVENT_ACTIVE,
-    FRESHKILL_EVENT_TRIGGER_FACTOR,
 )
 from scripts.events_module.event_filters import (
     event_for_location,
@@ -17,6 +16,7 @@ from scripts.events_module.event_filters import (
     event_for_cat,
     event_for_reputation,
     event_for_clan_relations,
+    event_for_temperament,
     event_for_freshkill_supply,
     event_for_herb_supply,
     event_for_season,
@@ -24,6 +24,7 @@ from scripts.events_module.event_filters import (
     get_frequency,
     find_new_frequency,
     event_for_poi,
+    _get_cats_from_group,
 )
 from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure import constants, game
@@ -89,22 +90,14 @@ def create_short_event(
     camp_cats = [
         c
         for c in Cat.all_cats_list
-        if c.status.alive_in_player_clan
-        and (
-            (c.skills.primary and c.skills.primary.path == SkillPath.CAMP)
-            or (c.skills.secondary and c.skills.secondary.path == SkillPath.CAMP)
-        )
+        if c.status.alive_in_player_clan and SkillPath.CAMP in c.skills.get_all()
     ]
 
     avoidance_chance = 1
     # each camp cat will increase the chance that significant reduction events do not occur
     for c in camp_cats:
         # tiers are added in order to make the chance num, this means the higher tiers have greater influence
-        if c.skills.primary.path == SkillPath.CAMP:
-            # +1 bc primary paths should have a little bit larger influence
-            avoidance_chance += c.skills.primary.tier + 1
-        elif c.skills.secondary and c.skills.secondary.path == SkillPath.CAMP:
-            avoidance_chance += c.skills.secondary.tier
+        avoidance_chance += c.skills.get_all()[SkillPath.CAMP]
 
     # NOW find the possible events and filter
     if event_type == "birth_death":
@@ -475,6 +468,11 @@ def filter_events(
             ):
                 continue
 
+            if not event_for_temperament(
+                event.other_clan["temperament"], other_clan.temperament
+            ):
+                continue
+
             # during a war we want to encourage the clans to have positive events
             # when the overall war notice was positive
             if "war" in event.sub_type:
@@ -493,12 +491,7 @@ def filter_events(
                 c
                 for c in Cat.all_cats_list
                 if c.status.alive_in_player_clan
-                and (
-                    (c.skills.primary and c.skills.primary.path == SkillPath.CAMP)
-                    or (
-                        c.skills.secondary and c.skills.secondary.path == SkillPath.CAMP
-                    )
-                )
+                and SkillPath.CAMP in c.skills.get_all()
             ]
 
             discard = False
@@ -518,10 +511,7 @@ def filter_events(
                         continue
 
                     if not event_for_freshkill_supply(
-                        game.clan.freshkill_pile,
-                        trigger,
-                        FRESHKILL_EVENT_TRIGGER_FACTOR,
-                        clan_size,
+                        game.clan.freshkill_pile, trigger, clan_size
                     ):
                         discard = True
                         break
@@ -529,7 +519,7 @@ def filter_events(
                         discard = False
 
                 else:  # if supply type wasn't freshkill, then it must be an herb type
-                    if not event_for_herb_supply(trigger, supply_type, clan_size):
+                    if not event_for_herb_supply(trigger, supply_type):
                         discard = True
                         break
                     else:
@@ -543,11 +533,6 @@ def filter_events(
     if not final_events:
         return None, random_cat
 
-    cat_list = [
-        c
-        for c in Cat.all_cats.values()
-        if c.status.alive_in_player_clan and c != main_cat
-    ]
     chosen_cat = None
     chosen_event = None
 
@@ -587,6 +572,24 @@ def filter_events(
         # if this doesn't need a random cat, we stop here and run with it
         if not chosen_event.r_c:
             break
+
+        if chosen_event.r_c.get("group"):
+            cat_list = _get_cats_from_group(
+                [c for c in Cat.all_cats.values() if c != main_cat],
+                chosen_event.r_c["group"],
+                {},
+            )
+        else:
+            cat_list = [
+                c
+                for c in Cat.all_cats.values()
+                if c.status.alive_in_player_clan and c != main_cat
+            ]
+        if not cat_list:
+            final_events.remove(chosen_event)
+            failed_ids.append(chosen_event.event_id)
+            chosen_event = None
+            continue
 
         # if we're overriding requirements, don't bother looking for an appropriate cat
         if constants.CONFIG["event_generation"]["debug_override_requirements"]:

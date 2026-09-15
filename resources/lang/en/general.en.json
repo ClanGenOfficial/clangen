@@ -109,6 +109,7 @@
             "many": "mates"
         },
         "are_mates": "mates",
+        "ex_mate": "ex-mate",
         "she-cat": "she-cat",
         "tom": "tom",
         "cat": "cat",
@@ -224,6 +225,7 @@
         "grieving": "grieving",
         "fleas": "flea-ridden",
         "is_infected": "is infected",
-        "is_festering": "is festering"
+        "is_festering": "is festering",
+        "got_condition": "%{cat} got: %{conditions}."
     }
 }

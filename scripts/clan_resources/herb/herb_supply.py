@@ -170,6 +170,17 @@ class HerbSupply:
             # return before we can add any herbs
             return
 
+        if get_config("clan_resources.herbs.half_starting_storage"):
+            for herb in self.base_herb_list:
+                if randint(1, 4) == 1:
+                    self.add_herb(
+                        herb,
+                        num_collected=round(
+                            randint(self.adequate_qualifier, self.full_qualifier) / 2
+                        ),
+                    )
+            return
+
         for herb in self.base_herb_list:
             if randint(1, 4) == 1:
                 self.add_herb(
@@ -440,30 +451,12 @@ class HerbSupply:
         # meds with relevant skills will get a boost to the herbs they find
         # SENSE finds wider types of herbs (3 moss, 1 lungwort, 2 catmint)
         # CLEVER finds greater quantity of herbs (5 moss, 6 lungwort)
-        primary = med_cat.skills.primary.path
-        secondary = None
-        if med_cat.skills.secondary:
-            secondary = med_cat.skills.secondary.path
         amount_modifier = 1
         quantity_modifier = 1
 
-        if primary == SkillPath.SENSE:
-            amount_modifier = constants.CONFIG["clan_resources"]["herbs"][
-                "primary_sense"
-            ]
-        elif primary == SkillPath.CLEVER:
-            quantity_modifier = constants.CONFIG["clan_resources"]["herbs"][
-                "primary_clever"
-            ]
-
-        if secondary == SkillPath.SENSE:
-            amount_modifier = constants.CONFIG["clan_resources"]["herbs"][
-                "secondary_sense"
-            ]
-        elif secondary == SkillPath.CLEVER:
-            quantity_modifier = constants.CONFIG["clan_resources"]["herbs"][
-                "secondary_clever"
-            ]
+        med_skills = med_cat.skills.get_all()
+        amount_modifier += med_skills.get(SkillPath.SENSE, 0)
+        quantity_modifier += med_skills.get(SkillPath.CLEVER, 0)
 
         # list of the herbs, sorted by most need
         herb_list = self.sorted_by_need

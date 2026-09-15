@@ -1,4 +1,4 @@
-from random import choice
+from random import choice, randint
 from typing import Optional
 
 import i18n
@@ -6,8 +6,9 @@ import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID, UIContainer
 
-from scripts.cat.cats import Cat, create_example_cats
+from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank, CatAge
+from scripts.cat.factories.create_example_cat import create_example_cats
 from scripts.config import get_config
 from scripts.game_structure import constants
 from scripts.game_structure.game import Switch, switch_get_value
@@ -206,7 +207,7 @@ class ChooseCatsScreen(MakeClanScreenBase):
 
         # Error message, to appear if you can't choose that cat.
         self.elements["error_message"] = pygame_gui.elements.UITextBox(
-            "screens.make_clan.error_too_young",
+            "screens.make_clan.error_wrong_role",
             ui_scale(pygame.Rect((150, 353), (500, 55))),
             object_id=get_text_box_theme("#text_box_30_horizcenter_red"),
             visible=False,
@@ -339,15 +340,7 @@ class ChooseCatsScreen(MakeClanScreenBase):
         maximum_needed = self.get_config_during_creation(
             "clan_creation.maximum_membership"
         ) - len(self.clan_info.get_all_cats())
-        for i in range(
-            1,
-            choice(
-                range(
-                    minimum_needed + 1,
-                    maximum_needed,
-                )
-            ),
-        ):
+        for _ in range(randint(minimum_needed, maximum_needed)):
             self.clan_info.starting_members.append(
                 choice(
                     [
@@ -446,24 +439,8 @@ class ChooseCatsScreen(MakeClanScreenBase):
             self.elements["select_cat"].hide()
 
         # Show the error message if you try to choose a child for leader, deputy, or med cat.
-        elif (
-            self.selected_cat  # if we have a cat selected
-            and (
-                not self.clan_info.has_high_ranks_filled()
-                and (self.need_leader or self.need_deputy or self.need_med)
-            )  # and we don't have a leadership role
-            and self.selected_cat.age  # and cat age is in one of these
-            in (
-                CatAge.NEWBORN,
-                CatAge.KITTEN,
-                CatAge.ADOLESCENT,
-            )
-        ):
+        elif self.selected_cat and not self._age_valid_for_role():
             self.elements["select_cat"].hide()
-            self.elements["error_message"].set_text(
-                self.elements["error_message"].html_text,
-                text_kwargs={"m_c": self.selected_cat},
-            )
             self.elements["error_message"].show()
 
         # show selected cat and update the select button according to rank
@@ -523,6 +500,23 @@ class ChooseCatsScreen(MakeClanScreenBase):
                     starting_height=2,
                     manager=MANAGER,
                 )
+
+    def _age_valid_for_role(self) -> bool:
+        """
+        Checks if selected cat is valid for the currently required role
+        """
+        if self.need_leader and not self.clan_info.leader:
+            needed_rank = CatRank.LEADER
+        elif self.need_deputy and not self.clan_info.deputy:
+            needed_rank = CatRank.DEPUTY
+        elif self.need_med and not self.clan_info.medicine_cat:
+            needed_rank = CatRank.MEDICINE_CAT
+        else:
+            needed_rank = "member"
+
+        return self.selected_cat.age in self.get_config_during_creation(
+            f"clan_creation.valid_rank_to_age_assignment.{needed_rank}"
+        )
 
     def clan_name_header(self):
         """
@@ -781,9 +775,8 @@ class ChooseCatsScreen(MakeClanScreenBase):
                 minimum = 1
             else:
                 # otherwise we treat them as normal
-                minimum = (
-                    self.get_config_during_creation("clan_creation.minimum_membership")
-                    + 1
+                minimum = self.get_config_during_creation(
+                    "clan_creation.minimum_membership"
                 )
             for i in range(
                 minimum,

@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: "Automatically label PR based on changed files"
-      uses: actions/labeler@v6
+      uses: actions/labeler@v7
       with:
         sync-labels: true
     - name: "Label PRs under 50 changed lines as easy to review"
-      uses: actions/github-script@v7
+      uses: actions/github-script@v9
       with:
         script: |
           const label = "easy-review";

@@ -84,7 +84,7 @@
     "event_text": "During the Gathering, m_c keeps talking over o_c_n's leader.",
     "rel_change": -2,
     "m_c": {
-      "trait": ["troublesome", "fierce", "bloodthirsty", "cold", "bold", "daring",  "righteous", "strict", "ambitious", "confident", "adventurous", "loyal", "responsible", "shameless", "sneaky", "strange", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivious", "flamboyant", "rebellious"]
+      "trait": ["troublesome", "fierce", "bloodthirsty", "cold", "bold", "daring",  "righteous", "strict", "ambitious", "confident", "adventurous", "loyal", "responsible", "shameless", "strange", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivious", "flamboyant", "rebellious"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -124,7 +124,7 @@
     "event_text": "m_c spends {PRONOUN/m_c/poss} Gathering speech making small barbs at o_c_n's leader. Not enough to warrant confrontation, just enough that o_c_n's leader feels the prick.",
     "rel_change": -2,
     "m_c": {
-      "trait": ["arrogant", "calm", "wise", "thoughtful", "charismatic", "sneaky", "cunning", "cold", "troublesome", "rebellious" ]
+      "trait": ["arrogant", "calm", "wise", "thoughtful", "charismatic", "cunning", "cold", "troublesome", "rebellious" ]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -134,7 +134,7 @@
     "event_text": "While getting to {PRONOUN/m_c/poss} spot before beginning the Gathering, m_c steps on the tail of o_c_n's leader. m_c gives no apology for the perhaps-not-quite mistake.",
     "rel_change": -2,
     "m_c": {
-      "trait": ["troublesome", "lonesome", "childish", "playful", "charismatic", "bold", "daring", "nervous", "insecure", "compassionate", "thoughtful", "ambitious", "confident", "adventurous", "calm", "careful", "loyal", "shameless", "sneaky", "strange", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivious", "sincere", "flamboyant", "rebellious"]
+      "trait": ["troublesome", "lonesome", "childish", "playful", "charismatic", "bold", "daring", "nervous", "insecure", "compassionate", "thoughtful", "ambitious", "confident", "adventurous", "calm", "careful", "loyal", "shameless", "strange", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivious", "sincere", "flamboyant", "rebellious"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -394,7 +394,7 @@
     "rel_change": 7,
     "m_c": {
       "skill": ["SPEAKER,2", "INSIGHTFUL,2"],
-      "trait": ["bloodthirsty", "cunning", "sneaky"]
+      "trait": ["bloodthirsty", "cunning"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["proud", "logical", "stoic", "wary", "bloodthirsty"]
@@ -485,7 +485,7 @@
     "event_text": "m_c compliments o_c_n's newest warriors at the Gathering.",
     "rel_change": 1,
     "m_c": {
-      "trait": ["fierce", "childish", "playful", "charismatic", "bold", "daring", "nervous", "righteous", "insecure", "strict", "compassionate", "thoughtful", "ambitious", "confident", "adventurous", "calm", "careful", "faithful", "loving",  "responsible", "shameless", "sneaky", "strange", "vengeful", "wise", "cunning", "oblivious", "sincere", "flamboyant"]
+      "trait": ["fierce", "childish", "playful", "charismatic", "bold", "daring", "nervous", "righteous", "insecure", "strict", "compassionate", "thoughtful", "ambitious", "confident", "adventurous", "calm", "careful", "faithful", "loving",  "responsible", "shameless", "strange", "vengeful", "wise", "cunning", "oblivious", "sincere", "flamboyant"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -548,7 +548,7 @@
     "event_text": "m_c admits to o_c_n's leader at the Gathering that they're exactly the sort of leader {PRONOUN/m_c/subject} {VERB/m_c/hope/hopes} to be.",
     "rel_change": 3,
     "m_c": {
-      "trait": [ "charismatic", "insecure", "careful", "nervous", "wise", "calm", "thoughtful", "loyal", "sneaky", "loving", "compassionate", "faithful", "righteous" ]
+      "trait": [ "charismatic", "insecure", "careful", "nervous", "wise", "calm", "thoughtful", "loyal", "loving", "compassionate", "faithful", "righteous" ]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -582,7 +582,7 @@
     "event_text": "Another leader during the Gathering makes scathing comments towards o_c_n. m_c skillfully redirects their words into praise for o_c_n; o_c_n's leader sends an appreciative, though appraising, glance to m_c.",
     "rel_change": 4,
     "m_c": {
-      "trait": ["cunning", "sneaky"]
+      "trait": ["cunning"]
     },
     "player_clan_temper": [],
     "other_clan_temper": ["cunning"]
@@ -718,7 +718,7 @@
     "event_text": "At the Gathering, o_c_n's leader and m_c put their heads together to discuss the weaknesses of their enemies. o_c_n's leader is impressed by m_c's insight.",
     "rel_change": 4,
     "m_c": {
-      "trait": [ "cold", "sneaky", "cunning" ],
+      "trait": [ "cold", "cunning" ],
       "skill": [ "INSIGHTFUL,1"]
      },
     "player_clan_temper": ["any"],
@@ -919,7 +919,7 @@
     "event_text": "During the Gathering, m_c spits accusations at o_c_n's leader.",
     "rel_change": -2,
     "m_c": {
-      "trait": ["troublesome", "lonesome", "fierce", "bloodthirsty", "cold", "childish", "bold", "daring",  "righteous", "strict", "ambitious", "confident", "adventurous",  "loyal", "responsible", "shameless", "sneaky", "strange", "vengeful", "wise", "arrogant", "competitive", "grumpy", "sincere", "flamboyant", "rebellious"]
+      "trait": ["troublesome", "lonesome", "fierce", "bloodthirsty", "cold", "childish", "bold", "daring",  "righteous", "strict", "ambitious", "confident", "adventurous",  "loyal", "responsible", "shameless", "strange", "vengeful", "wise", "arrogant", "competitive", "grumpy", "sincere", "flamboyant", "rebellious"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -1801,7 +1801,7 @@
     "rel_change": -6,
     "m_c": {
       "skill": [ "SENSE,3" ],
-      "trait": ["sneaky", "cunning"]
+      "trait": ["cunning"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -2232,7 +2232,7 @@
     "rel_change": 3,
     "m_c": {
       "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
-      "trait": ["nervous", "insecure", "gloomy", "thoughtful", "careful", "sneaky", "cunning"]
+      "trait": ["nervous", "insecure", "gloomy", "thoughtful", "careful", "cunning"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["gracious", "amiable", "mellow"]
@@ -2243,7 +2243,7 @@
     "rel_change": 3,
     "m_c": {
       "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
-      "trait": ["fierce", "troublesome", "bloodthirsty", "cold", "charismatic", "playful", "bold", "daring", "righteous", "strict", "compassionate", "thoughtful", "ambitious", "confident", "adventurous", "calm", "careful", "faithful", "loving", "responsible", "loyal", "shameless", "sneaky", "strange", "vengeful", "wise", "arrogant", "competitive", "cunning", "oblivious", "sincere", "flamboyant", "rebellious"]
+      "trait": ["fierce", "troublesome", "bloodthirsty", "cold", "charismatic", "playful", "bold", "daring", "righteous", "strict", "compassionate", "thoughtful", "ambitious", "confident", "adventurous", "calm", "careful", "faithful", "loving", "responsible", "loyal", "shameless", "strange", "vengeful", "wise", "arrogant", "competitive", "cunning", "oblivious", "sincere", "flamboyant", "rebellious"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["gracious", "amiable", "mellow"]
@@ -2389,7 +2389,7 @@
     "event_text": "m_c is quick to assert {PRONOUN/m_c/self} at the Gathering, announcing that {PRONOUN/m_c/subject} received an omen: omen_list_smell_emotional/m_c. After a long debate, it's decided that the omen insists o_c_n and c_n cease hostilities.",
     "rel_change": 10,
     "m_c": {
-      "trait": ["cunning", "sneaky"]
+      "trait": ["cunning"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]

@@ -1,6 +1,6 @@
 [
     {
-        "id": "comfort_inc_low1",
+        "event_id": "comfort_inc_low1",
         "strings": [
             "m_c finds a bit of fluff that smells like r_c and adds it to {PRONOUN/m_c/poss} nest.",
             "m_c has a friendly chat with r_c that leaves them both feeling happy.",
@@ -21,7 +21,7 @@
         ]
     },
     {
-        "id": "comfort_inc_low2",
+        "event_id": "comfort_inc_low2",
         "strings": [
             "m_c quickly apologizes after bumping into r_c. They have a small laugh about it.",
             "m_c has been spending time with r_c lately.",
@@ -53,7 +53,7 @@
         ]
     },
     {
-        "id": "comfort_inc_low3",
+        "event_id": "comfort_inc_low3",
         "strings": [
             "m_c is asking r_c to check {PRONOUN/m_c/object} for ticks.",
             "m_c tells r_c stories about former Clanmates while being checked for ticks.",
@@ -71,7 +71,7 @@
             "r_c": {
                 "status": [
                     "apprentice",
-                    "medicine apprentice",
+                    "medicine cat apprentice",
                     "mediator apprentice"
                 ]
             }

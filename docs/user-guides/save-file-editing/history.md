@@ -1,6 +1,6 @@
 The history files of a cat log important events such as their apprenticeship influence, death message, murder, and more. While parts of this file is back-end, most of it is text shown in the history tab of a cat.
 
-Big thanks to Sel's Emberclan for their extensive examples of the history files.
+Big thanks to Vicki's Emberclan for their extensive examples of the history files.
 
 ## Beginning
 

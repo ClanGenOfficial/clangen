@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_death_no_body_required",
+        "event_id": "gen_death_no_body_required",
         "strings": [
             "Told a fond story at r_c's vigil",
             "Bargains with StarClan, begging them to send r_c back",

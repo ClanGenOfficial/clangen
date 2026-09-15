@@ -176,7 +176,6 @@
       "age": ["adolescent", "young adult", "adult", "senior adult"],
       "trait": [
         "cunning",
-        "sneaky",
         "nervous",
         "careful"
       ],
@@ -595,7 +594,7 @@
     "rep_change": 3,
     "m_c": {
       "status": ["rogue", "kittypet", "loner", "former Clancat" ],
-      "trait": [ "arrogant", "confident", "cunning", "sneaky", "careful" ],
+      "trait": [ "arrogant", "confident", "cunning", "careful" ],
       "new_thought": "Is impressed c_n managed to find {PRONOUN/m_c/object}",
       "kit_thought": "Takes in the new surroundings with wide eyes"
     },

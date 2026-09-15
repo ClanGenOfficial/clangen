@@ -1,4 +1,5 @@
 {
+
     "comment": "If you add new illnesses, make sure to add their key to illnesses.en.json otherwise they will not display",
     "seizure": {
         "severity": "severe",
@@ -558,7 +559,8 @@
                 "dandelion"
             ],
             "3": [
-                "burdock"
+                "burdock",
+                "yew_berries"
             ]
         }
     },

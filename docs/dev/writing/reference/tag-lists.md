@@ -35,20 +35,27 @@ Please have a look at the [full biome differences list](biomes.md) when thinking
 ## General Tags
 These tags are used for more general filtering purposes.
 
-| string    | use                                                                                                                      |
-|-----------|--------------------------------------------------------------------------------------------------------------------------|
-| classic   | event only occurs in classic mode                                                                                        |
-| no_body   | use for death events only, this indicates that the dead body is not retrievable and cannot be referenced in grief events |
-| clan_wide | if this is a murder reveal, use this tag to denote this event as informing the ENTIRE Clan of the murder.                |
-| romance   | marks event as being between two cats who are allowed romantic relations                                                 |
-| adoption  | marks event as being an adoption                                                                                         |
+| string        | use                                                                                                                      |
+|---------------|--------------------------------------------------------------------------------------------------------------------------|
+| classic       | event only occurs in classic mode                                                                                        |
+| no_body       | use for death events only, this indicates that the dead body is not retrievable and cannot be referenced in grief events |
+| clan_wide     | if this is a murder reveal, use this tag to denote this event as informing the ENTIRE Clan of the murder.                |
+| romance       | marks event as being between two cats who are allowed romantic relations                                                 |
+| adoption      | marks event as being an adoption                                                                                         |
+| "halloween"   | Used to mark events that should only occur around halloween                                                              |
+| "april_fools" | Used to mark events that should only occur on april fools                                                                |
+| "new_years"   | Used to mark events that should only occur on new years.                                                                 |
 
 > **Tags To Indicate Present Statuses** - Sometimes you may want to indicate in event text that other cats of a certain status as present in addition to m_c and r_c (perhaps m_c and r_c are watching kits play, or discussing the progress of apprentices, or complaining about tending to elders.) These tags can be used to ensure that there are cats of the mentioned status currently living within the Clan, this helps prevent situation where cats are watching nonexistent kits or other such impossibilities. Keep in mind that all of these tags check for the presence of *at least* 2 cats of the indicated status.
+> These can utilize [exclusionary tags](tag-lists.md#exclusionary-tags).
 
-| string        | use                                                                                                                                                            |
-|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| clan:{status} | event only occurs if the clan has at least 2 cats with the given status (do not include curly brackets in tag, tag should look something like: "clan:newborn") |
-| clan:apps     | event only occurs if the clan has living apps, this includes ALL types of apps (medicine, mediator, and warrior)                                               |
+| string                | use                                                                                                                                                            |
+|-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| clan:{status}         | event only occurs if the clan has at least 2 cats with the given status (do not include curly brackets in tag, tag should look something like: "clan:newborn") |
+| clan:apps             | event only occurs if the clan has at least one living apprentice, this includes ALL types of apps (medicine, mediator, and warrior)                            |
+| clan:warrior-like     | event only occurs if the clan has at least one warrior-like role (leader, warrior or deputy)                                                                   |
+
+You can override the default minimums by including `(min:#)` after the status or status group. For example, `"clan:warrior(min:5)"` would require at least 5 warriors. 
 
 
 > **Leader Specific Tags** - since leaders can have 9 lives, it's helpful to have tags that indicate how an event is influenced by those lives.
@@ -67,17 +74,11 @@ These tags are used for more general filtering purposes.
 
 > **Patrol Specific Tags**
 > 
-| tag                   | use                                                                                                                                                                                                                                                                                                                   |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| "romance"             | Marks the patrol as a romance patrol. Romance patrols are special, and are filtered to require patrol leader (p_l) and random cat (r_c) to to be potential mates or current mates. If any outcomes have effects on romantic-like, make sure this tag has been added, and the romantic-like is applied to p_l and r_c. |
-| "rom_two_apps"        | Does nothing on its own. When "romance" present, check for potential mate or current mate between app1 and app2, rather than p_l and r_c                                                                                                                                                                              |
-| "all_mentored"        | Checks if all apprentices (no matter if medicine cat or warrior) within a patrol has a mentor.                                                                                                                                                                                                                        |
-| "app{index}_mentored" | First checks if the app number (IE: app1, app2, app3, and so forth) is mentioned in patrol text, then checks if the specific apprentice assigned to the abbreviation has a mentor.                                                                                                                                    |
-| "disaster"            | These patrols are only possible when mass extinction is turned ON. Used to mark patrols where the entire patrol can die or become lost.                                                                                                                                                                               |
-| "new_cat"             | Used to mark when a new cat can join during this patrol. Marking these patrols allows for better balancing.                                                                                                                                                                                                           |
-| "halloween"           | Used to mark patrols that should only occur around halloween                                                                                                                                                                                                                                                          |
-| "april_fools"         | Used to mark patrols that should only occur on april fools                                                                                                                                                                                                                                                            |
-| "new_years"           | Used to mark patrols that should only occur on new years.                                                                                                                                                                                                                                                             |
+| tag           | use                                                                                                                                     |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| "romance"     | Marks the patrol or outcome as influencing romance between some cats.                                                                   |
+                                                                                                                                 |
+| "disaster"    | These patrols are only possible when mass extinction is turned ON. Used to mark patrols where the entire patrol can die or become lost. |                                                                                                                                                           |
 
 
 ## Conditions and Scars
@@ -308,6 +309,7 @@ You can utilize [#exclusionary tags](#exclusionary-tags).
     * `leader`
     * `elder`
     * `any`
+    * `guide`
 
     > You can utilize [#exclusionary tags](#exclusionary-tags).
 
@@ -350,33 +352,42 @@ You can utilize [#exclusionary tags](#exclusionary-tags). They function the same
 === "Skills"
 
     > !!! note
-        Remember, skills are formatted as `SKILL,#`.  For example, `TEACHER,1` is `quick to help` and `SPEAKER,4` is `eloquent speaker`.
+        Remember, skills are formatted as `SKILL,#`.  For example, `TEACHER,1` is `good teacher` and `SPEAKER,3` is `eloquent speaker`.
 
-    > | **SKILL,**       | **1**                            | **2**                     | **3**                    | **4**                          |
+    > !!! note
+        Tier 0 skills are "interest" skills for kits and adolescents.
+        They will show up differently depending on if the cat is an adolescent or a kit. <br /><br />
+        The first string under
+        0 is the name that appears for kits and the second is the one that shows up for adolescents.
+        For example, a kit with `TEACHER,0` will be `good at sharing`, while
+        an adolescent with `TEACHER,0` will be `quick to help`.
+
+    > | **SKILL,**       | **0**                            | **1**                     | **2**                    | **3**                          |
     |------------------|:----------------------------------:|:---------------------------:|:--------------------------:|:--------------------------------:|
-    | **TEACHER**     | `quick to help`                 | `good teacher`           | `great teacher`         | `excellent teacher`           |
-    | **HUNTER**      | `moss-ball hunter`              | `good hunter`            | `great hunter`          | `renowned hunter`             |
-    | **FIGHTER**     | `avid play-fighter`             | `good fighter`           | `formidable fighter`    | `unusually strong fighter`     |
-    | **RUNNER**      | `never sits still`              | `fast runner`            | `incredible runner`     | `fast as the wind`            |
-    | **CLIMBER**     | `constantly climbing`           | `good climber`           | `great climber`         | `impressive climber`          |
-    | **SWIMMER**     | `splashes in puddles`           | `good swimmer`           | `talented swimmer`      | `fish-like swimmer`           |
-    | **SPEAKER**     | `confident with words`          | `good speaker`           | `great speaker`         | `eloquent speaker`            |
-    | **MEDIATOR**    | `quick to make peace`           | `good mediator`          | `great mediator`        | `skilled mediator`             |
-    | **CLEVER**      | `quick witted`                  | `clever`                 | `very clever`           | `incredibly clever`            |
-    | **INSIGHTFUL**  | `careful listener`              | `helpful insight`        | `valuable insight`      | `trusted advisor`              |
-    | **SENSE**       | `oddly observant`               | `natural intuition`      | `keen eye`              | `unnatural senses`             |
-    | **KIT**         | `active imagination`            | `good kitsitter`         | `great kitsitter`       | `beloved kitsitter`           |
-    | **STORY**       | `lover of stories`              | `good storyteller`       | `great storyteller`     | `masterful storyteller`        |
-    | **LORE**        | `interested in Clan history`    | `learner of lore`        | `lore keeper`           | `lore master`                  |
-    | **CAMP**        | `picky nest builder`            | `steady paws`            | `den builder`           | `camp keeper`                  |
-    | **HEALER**      | `interested in herbs`           | `good healer`            | `great healer`          | `fantastic healer`             |
-    | **STAR**        | `curious about StarClan`        | `connection to StarClan` | `deep StarClan bond`    | `unshakable StarClan link`    |
-    | **DARK**        | `interested in the Dark Forest` | `Dark Forest affinity`   | `deep Dark Forest bond` | `unshakable Dark Forest link` |
-    | **OMEN**        | `interested in oddities`        | `omen seeker`            | `omen sense`            | `omen sight`                   |
-    | **DREAM**       | `restless sleeper`              | `strange dreamer`        | `dream walker`          | `dream shaper`                 |
-    | **CLAIRVOYANT** | `oddly insightful`              | `somewhat clairvoyant`   | `fairly clairvoyant`    | `incredibly clairvoyant`       |
-    | **PROPHET**     | `fascinated by prophecies`      | `prophecy seeker`        | `prophecy interpreter`  | `prophet`                      |
-    | **GHOST**       | `morbid curiosity`              | `ghost sense`            | `ghost sight`           | `ghost speaker`                |
+    | **TEACHER**     | `good at sharing`, `quick to help`                     | `good teacher`           | `great teacher`         | `excellent teacher`           |
+    | **HUNTER**      | `moss-ball hunter`, `fledgeling hunter`                | `good hunter`            | `great hunter`          | `renowned hunter`             |
+    | **FIGHTER**     | `avid play-fighter`, `adept tussler`                   | `strong fighter`         | `formidable fighter`    | `indomitable fighter`         |
+    | **RUNNER**      | `never sits still`, `swift-pawed`                      | `fast runner`            | `incredible runner`     | `fast as the wind`            |
+    | **CLIMBER**     | `constantly climbing`, `good balance`                  | `good climber`           | `great climber`         | `impressive climber`          |
+    | **SWIMMER**     | `splashes in puddles`, `enjoys swimming`               | `good swimmer`           | `talented swimmer`      | `fish-like swimmer`           |
+    | **STEALTH**     | `hide and seek champ`, `light-pawed`                   | `sneaky`                 | `very stealthy`         | `one with shadows`            |
+    | **SPEAKER**     | `chatty`, `well-spoken`                                | `good speaker`           | `great speaker`         | `eloquent speaker`            |
+    | **MEDIATOR**    | `quick to make peace`, `solves arguments`              | `good mediator`          | `great mediator`        | `skilled mediator`            |
+    | **CLEVER**      | `opinionated`, `quick witted`                          | `clever`                 | `very clever`           | `incredibly clever`           |
+    | **INSIGHTFUL**  | `careful listener`, `gives suggestions`                | `helpful insight`        | `valuable insight`      | `trusted advisor`             |
+    | **SENSE**       | `stares intently`, `notices little details`            | `perceptive`             | `sharp senses`          | `uncanny senses`              |
+    | **KIT**         | `good playmate`, `entertains kittens`                  | `good kitsitter`         | `great kitsitter`       | `beloved kitsitter`           |
+    | **STORY**       | `likes make-believe`, `lover of stories`               | `good storyteller`       | `great storyteller`     | `masterful storyteller`       |
+    | **LORE**        | `always asking questions`, `interested in history`     | `learner of lore`        | `lore keeper`           | `lore master`                 |
+    | **CAMP**        | `always tidies up`, `well-organized`                   | `nest weaver`            | `den builder`           | `camp keeper`                 |
+    | **HEALER**      | `picks flowers`, `interested in herbs`                 | `good healer`            | `great healer`          | `fantastic healer`            |
+    | **STAR**        | `likes stargazing`, `curious about StarClan`           | `connection to StarClan` | `deep StarClan bond`    | `unshakable StarClan link`    |
+    | **DARK**        | `watches the shadows`, `curious about the Dark Forest` | `Dark Forest affinity`   | `deep Dark Forest bond` | `unshakable Dark Forest link` |
+    | **OMEN**        | `notices oddities`, `looks for signs`                  | `omen seeker`            | `omen sense`            | `omen sight`                  |
+    | **DREAM**       | `vivid dreamer`, `sleep-talker`                        | `strange dreamer`        | `dream walker`          | `dream shaper`                |
+    | **CLAIRVOYANT** | `swayed by feelings`, `oddly insightful`               | `somewhat clairvoyant`   | `fairly clairvoyant`    | `incredibly clairvoyant`      |
+    | **PROPHET**     | `likes riddles`, `studies prophecies`                  | `prophecy seeker`        | `prophecy interpreter`  | `prophet`                     |
+    | **GHOST**       | `morbid curiosity`, `notices wisps`                    | `ghost sense`            | `ghost sight`           | `ghost speaker`               |
 
 === "Traits"
 
@@ -409,7 +420,6 @@ You can utilize [#exclusionary tags](#exclusionary-tags). They function the same
     * `loyal`
     * `responsible`
     * `shameless`
-    * `sneaky`
     * `strange`
     * `vengeful`
     * `wise`
@@ -514,15 +524,18 @@ You can utilize [#exclusionary tags](#exclusionary-tags). They function the same
 ## Interpersonal Relationships
 > These tags are used to indicate a type of Interpersonal relationship involved cats should have. These are meant for use as m_c's relationship with r_c's, or, in the case of patrols, p_l's relationship toward the other cat. 
 
-| string            |                                    | Patrol Use Specifics                   |
-|-------------------|------------------------------------|----------------------------------------|
-| `siblings`        | cat1 and cat2 are siblings         | all cats are siblings                  |
-| `littermates`     | cat1 and cat2 are littermates      | all cats are littermates               |
-| `mates`           | cat1 and cat2 are mates            | all cats are mates                     |
-| `parent/child`    | cat1 is the parent of cat2         | only for use in 2-cat patrols          |
-| `child/parent`    | cat1 is the child of cat2          | only for use in 2-cat patrols          |
-| `app/mentor`      | cat1 is the apprentice of cat2     | only for use in 2-cat patrols          |
-| `mentor/app`      | cat1 is the mentor of cat2         | only for use in 2-cat patrols          |
+| string            |                                       | Patrol Use Specifics                   |
+|-------------------|---------------------------------------|----------------------------------------|
+| `siblings`        | cat1 and cat2 are siblings            | all cats are siblings                  |
+| `littermates`     | cat1 and cat2 are littermates         | all cats are littermates               |
+| `mates`           | cat1 and cat2 are mates               | all cats are mates                     |
+| `parent/child`    | cat1 is the parent of cat2            | only for use in 2-cat patrols          |
+| `child/parent`    | cat1 is the child of cat2             | only for use in 2-cat patrols          |
+| `app/mentor`      | cat1 is the apprentice of cat2        | only for use in 2-cat patrols          |
+| `mentor/app`      | cat1 is the mentor of cat2            | only for use in 2-cat patrols          |
+| `past_app/mentor` | cat1 is the former apprentice of cat2 | only for use in 2-cat patrols          |
+| `past_mentor/app` | cat1 is the former mentor of cat2     | only for use in 2-cat patrols          |
+
 
 You can utilize [#exclusionary tags](#exclusionary-tags).
 
@@ -535,7 +548,11 @@ You can utilize [#exclusionary tags](#exclusionary-tags).
 ***
 
 ## Clan Temperaments
-> These tags are used to indicate what type of Clan can receive an event.
+> These tags are used to indicate what type of Clan can receive an event. Patrols also use them to indicate what sort of patrol can receive an event, which uses the personalities of the cats on the patrol rather than from a Clan.
+
+> Every temperament is a pairing of one tag from each table below, so a Clan or patrol always holds two of them at once. Tagging a single temperament constrains only that half of the pairing.
+
+> Use `"any"` if any temperament is allowed. Not every parameter that links here accepts [exclusionary tags](#exclusionary-tags), so check the parameter itself.
 
 |                 | low aggression | mid aggression | high aggression  |
 |-----------------|----------------|----------------|------------------|

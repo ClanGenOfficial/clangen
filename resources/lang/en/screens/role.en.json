@@ -1,9 +1,9 @@
 {
     "en": {
         "promote_leader": "promote to leader",
-        "blurb_leader": "%{name} is the <b>leader</b> of %{clan}Clan. The guardianship of all Clan cats has been entrusted to them by StarClan. The leader is the highest authority in the Clan. The leader holds Clan meetings, determines mentors for new apprentices, and names new warriors. To help them protect the Clan, StarClan has given them nine lives. They typically take the suffix \"star\".",
+        "blurb_leader": "%{name} is the <b>leader</b> of %{clan}. The guardianship of all Clan cats has been entrusted to them by StarClan. The leader is the highest authority in the Clan. The leader holds Clan meetings, determines mentors for new apprentices, and names new warriors. To help them protect the Clan, StarClan has given them nine lives. They typically take the suffix \"star\".",
         "promote_deputy": "promote to deputy",
-        "blurb_deputy": "%{name} is %{clan}Clan's <b>deputy</b>. The deputy is the second in command, just below the leader. They advise the leader and organize daily patrols, alongside normal warrior duties. Typically, a deputy is personally appointed by the current leader. As dictated by the Warrior Code, all deputies must train at least one apprentice before appointment.  The deputy succeeds the leader if they die or retire.",
+        "blurb_deputy": "%{name} is %{clan}'s <b>deputy</b>. The deputy is the second in command, just below the leader. They advise the leader and organize daily patrols, alongside normal warrior duties. Typically, a deputy is personally appointed by the current leader. As dictated by the Warrior Code, all deputies must train at least one apprentice before appointment.  The deputy succeeds the leader if they die or retire.",
         "switch_warrior": "switch to warrior",
         "blurb_warrior": "%{name} is a <b>warrior</b>. Warriors are adult cats who feed and protect their Clan. They are trained to hunt and fight in addition to the ways of the Warrior Code. Warriors are essential to the survival of a Clan, and usually make up the bulk of its members.",
         "retire": "retire",

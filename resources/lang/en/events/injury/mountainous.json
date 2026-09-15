@@ -122,5 +122,45 @@
                 "death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall cliff."
             }
         ]
+    },
+    {
+        "event_id": "mtn_injury_brokenback",
+        "location": [
+            "mountainous:camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 1,
+        "event_text": "m_c was exploring {PRONOUN/m_c/poss} territory when the ruins {PRONOUN/m_c/subject} {VERB/m_c/were/was} walking under collapsed and broke {PRONOUN/m_c/poss} back.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "broken back"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "scar": "m_c was scarred when the ruins collapsed onto {PRONOUN/m_c/object}.",
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after the ruins collapsed onto {PRONOUN/m_c/object}."
+            }
+        ]
     }
+    
 ]

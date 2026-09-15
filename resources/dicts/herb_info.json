@@ -752,5 +752,34 @@
                 "leaf-bare": 6
             }
         }
+    },
+    "yew_berries": {
+        "expiration": 6,
+        "rarity": {
+            "forest": {
+                "newleaf": 5,
+                "greenleaf": 3,
+                "leaf-fall": 2,
+                "leaf-bare": 4
+            },
+            "mountainous": {
+                "newleaf": 5,
+                "greenleaf": 3,
+                "leaf-fall": 2,
+                "leaf-bare": 4
+            },
+            "plains": {
+                "newleaf": 6,
+                "greenleaf": 3,
+                "leaf-fall": 2,
+                "leaf-bare": 4
+            },
+            "beach": {
+                "newleaf": 6,
+                "greenleaf": 4,
+                "leaf-fall": 3,
+                "leaf-bare": 5
+            }
+        }
     }
 }

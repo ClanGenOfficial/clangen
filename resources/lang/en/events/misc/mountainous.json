@@ -198,5 +198,27 @@
       "STAR,2"
     ]
   }
+},
+
+{
+    "event_id": "mtn_misc_medcatscared",
+    "location": [
+        "mountainous:camp4"
+    ],
+    "season": [
+        "any"
+    ],
+    "frequency": 2,
+    "event_text": "As m_c collects herbs, the fur on {PRONOUN/m_c/poss} neck rises. No one else is nearby, and {PRONOUN/m_c/subject} {VERB/m_c/return/returns} to camp shaken.",
+    "m_c": {
+        "age": [
+            "any"
+        ],
+        "status": [
+            "medicine cat",
+            "medicine cat apprentice"
+        ]
+    
+    }
 }
 ]

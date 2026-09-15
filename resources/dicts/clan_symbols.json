@@ -2140,6 +2140,11 @@
       "variants": 1,
       "tags0": ["descriptor"]
   },
+"Tornado": {
+    "variants": 2,
+    "tags0": ["element", "air"],
+    "tags1":  ["element", "air"]
+},
   "Tree": {
     "variants": 1,
     "tags0": ["plant", "tree"]

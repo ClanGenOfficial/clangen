@@ -5,7 +5,7 @@ import pygame
 import pygame_gui
 from pygame_gui.core import UIContainer
 
-from scripts.cat.cats import create_example_cats
+from scripts.cat.factories.create_example_cat import create_example_cats
 from scripts.config import get_config
 from scripts.game_structure import constants, image_cache
 from scripts.game_structure.game import switch_get_value, Switch, game_setting_get
@@ -25,6 +25,7 @@ from scripts.ui.scale import ui_scale, ui_scale_dimensions
 from scripts.ui.theme import get_text_box_theme
 from scripts.ui.windows.cruel_card_conflicts import CruelCardConflicts
 from scripts.ui.windows.cruel_card_limit import CruelCardLimit
+from scripts.ui.windows.deck_list_input import ViewCardsWindow
 
 
 class ChooseCardsScreen(MakeClanScreenBase):
@@ -33,6 +34,9 @@ class ChooseCardsScreen(MakeClanScreenBase):
 
         self.card_elements: dict[str, UICruelCardLarge] = {}
         self.card_chunks: deque[list[UICruelCardLarge]] = deque([])
+        # using this to track the pseudo index of the currently viewed chunk
+        # this is important for later UX concerns when a player picks a card and we reset the chunk deque
+        self.chunk_index: int = 0
 
         self.card_icon_elements: dict[str, UICruelCardIcon] = {}
 
@@ -46,10 +50,16 @@ class ChooseCardsScreen(MakeClanScreenBase):
 
             # CYCLE CARDS
             elif event.ui_element == self.elements["page_left"]:
-                self.card_chunks.rotate(-1)
+                self.card_chunks.rotate()
+                self.chunk_index -= 1
+                if self.chunk_index < 0:
+                    self.chunk_index = len(self.card_chunks)
                 self.update_cruel_cards()
             elif event.ui_element == self.elements["page_right"]:
-                self.card_chunks.rotate()
+                self.card_chunks.rotate(-1)
+                self.chunk_index += 1
+                if self.chunk_index > len(self.card_chunks):
+                    self.chunk_index = 0
                 self.update_cruel_cards()
 
             # CHOOSE CARDS
@@ -63,6 +73,10 @@ class ChooseCardsScreen(MakeClanScreenBase):
                 if random_card:
                     self.handle_card_chosen(random_card)
                     self.update_card_info(random_card)
+
+            # DECK LIST INPUT
+            elif event.ui_element == self.elements["decklist"]:
+                ViewCardsWindow(self.clan_info.cruel_cards)
 
             # UNDO CHOICES
             elif event.ui_element in self.card_icon_elements.values():
@@ -107,6 +121,13 @@ class ChooseCardsScreen(MakeClanScreenBase):
             self.reset_chosen_cards()
 
             switch_set_value(Switch.card_conflict_changes, {})
+
+        if switch_get_value(Switch.confirmed_deck_list):
+            chosen_cards = switch_get_value(Switch.confirmed_deck_list)
+            self.clan_info.cruel_cards.extend(chosen_cards)
+            self.update_cruel_cards(update_chunks=True)
+            self.reset_chosen_cards()
+            switch_set_value(Switch.confirmed_deck_list, [])
 
         super().on_use()
 
@@ -170,18 +191,30 @@ class ChooseCardsScreen(MakeClanScreenBase):
 
         # RANDOM CARD
         self.elements["random_card"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((88, -10), (34, 34))),
+            ui_scale(pygame.Rect((92, -10), (34, 34))),
             Icon.DICE,
-            get_button_dict(ButtonStyles.ICON, (34, 34)),
-            object_id="@buttonstyles_icon",
+            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (34, 34)),
+            object_id="@buttonstyles_icon_tab_right",
             manager=MANAGER,
             sound_id="dice_roll",
             anchors={
                 "top_target": self.elements["card_container"],
             },
             starting_height=-1,
+            tool_tip_text="screens.make_clan.random_card",
         )
-
+        self.elements["decklist"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((92, 10), (34, 34))),
+            Icon.NOTEPAD,
+            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (34, 34)),
+            object_id="@buttonstyles_icon_tab_right",
+            manager=MANAGER,
+            anchors={
+                "top_target": self.elements["random_card"],
+            },
+            starting_height=-1,
+            tool_tip_text="screens.make_clan.deck_list",
+        )
         # CARD INFO
         self.elements["info_box"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((20, -50), (300, 150))),
@@ -278,6 +311,13 @@ class ChooseCardsScreen(MakeClanScreenBase):
                     12,
                 )
             )
+
+        if update_chunks and self.chunk_index:
+            if self.chunk_index > len(self.card_chunks) - 1:
+                self.chunk_index = len(self.card_chunks) - 1
+            for i in range(self.chunk_index):
+                self.card_chunks.rotate(-1)
+
         chunk = self.card_chunks[0]
 
         cards = {k: v for k, v in constants.CRUEL_CARDS_ALL.items() if k in chunk}
@@ -400,5 +440,6 @@ class ChooseCardsScreen(MakeClanScreenBase):
         self.card_icon_elements.clear()
 
         self.card_chunks.clear()
+        self.chunk_index = 0
 
         super().exit_screen()

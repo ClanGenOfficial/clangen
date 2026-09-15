@@ -1,6 +1,6 @@
 # Introduction
 
-(currently up to date with 0.13.3)
+(currently up to date with 0.13.2)
 
 "Save file editing" is the modification of ClanGen's save files. This can range from something as simple as changing the appearance of a cat to inserting a future event.
 

@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_dead_mediator_app",
+        "event_id": "gen_dead_mediator_app",
         "strings": [
             "Wishes {PRONOUN/m_c/subject} could have gotten to serve c_n as a mediator",
             "Is using {PRONOUN/m_c/poss} mediator training to try and help other StarClan cats"

@@ -1,9 +1,11 @@
-from typing import Optional
+from typing import Optional, TYPE_CHECKING
 
 
 from scripts.game_structure import constants
 from scripts.cat_relations.enums import RelTier, RelType
 
+if TYPE_CHECKING:
+    from scripts.cat.cats import Cat
 
 # ---------------------------------------------------------------------------- #
 #                           START Relationship class                           #
@@ -79,7 +81,7 @@ class Relationship:
             self.cat_to.relationships[self.cat_from.ID] = relation
             self.opposite_relationship = relation
 
-    def relationship_qualifies(self, qualifying_values: dict) -> bool:
+    def relationship_qualifies(self, qualifying_values: dict[RelType, int]) -> bool:
         """
         Returns True if this relationship's rel_types are within the given value and the maximum possible values (-100 for negative values, 100 for positive values)
         :param qualifying_values: Dict of the needed values. Key should be the rel_type name and value should be the lowest required int (i.e. if you give a value of -40, the associated rel_type must be between -100 and -40. If you give a value of 40, the associated rel_type must be between 40 and 100.)
@@ -378,3 +380,18 @@ class Relationship:
                 return neutral_end + 1
         else:
             return value
+
+
+def create_one_relationship(cat: "Cat", other_cat: "Cat"):
+    """Create a new relationship between current cat and other cat. Returns: Relationship"""
+    if other_cat.ID in cat.relationships:
+        return cat.relationships[other_cat.ID]
+
+    if other_cat.ID == cat.ID:
+        print(
+            f"Attempted to create a relationship with self: {cat.name}. Please report as a bug!"
+        )
+        return None
+
+    cat.relationships[other_cat.ID] = Relationship(cat, other_cat)
+    return cat.relationships[other_cat.ID]

@@ -13,13 +13,13 @@ from scripts.models.relationship_group_event.relationship_change_dict import (
 from scripts.models.relationship_group_event.relationship_constraint_dict import (
     GroupEventRelationshipConstraint,
 )
-from scripts.models.shortevent.location import Location
-from scripts.models.thought.tag import Tag
+from scripts.models.common.location import Location
+from scripts.models.common.tag import Tag
 
 
 class RelationshipGroupEventSchemaItem(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    id: str = Field(
+    event_id: str = Field(
         ...,
         description="Separates the events into their blocks. Generally, the ID includes the condition, personality, age, and status of the main_cat, as well as the condition, personality, age, and status of any other cat mentioned.",
     )

@@ -56,7 +56,6 @@ class ChangeGenderScreen(Screens):
         self.removalboxes_text = {}
         self.boxes = {}
         self.box_labels = {}
-        self.conju = 2
         self.current_container = None
         self.saved_container = None
 
@@ -76,6 +75,7 @@ class ChangeGenderScreen(Screens):
                 if self.are_boxes_full():
                     gender_identity = self.get_new_identity()
                     self.the_cat.genderalign = gender_identity
+                    self.the_cat.assign_thought()
                     self.selected_cat_elements["identity_changed"].show()
                     self.selected_cat_elements["cat_gender"].kill()
                     self.selected_cat_elements[
@@ -96,12 +96,14 @@ class ChangeGenderScreen(Screens):
                 if event.ui_element.cat_id == "add":
                     if event.ui_element.cat_object not in self.the_cat.pronouns:
                         self.the_cat.pronouns.append(event.ui_element.cat_object)
+                        self.the_cat.assign_thought()
                 elif event.ui_element.cat_id == "remove":
                     if (
                         event.ui_element.cat_object in self.the_cat.pronouns
                         and len(self.the_cat.pronouns) > 1
                     ):
                         self.the_cat.pronouns.remove(event.ui_element.cat_object)
+                        self.the_cat.assign_thought()
                 elif event.ui_element.cat_id == "delete":
                     if event.ui_element.cat_object in pronouns.get_custom_pronouns():
                         game.clan.custom_pronouns[i18n.config.get("locale")].remove(
@@ -310,10 +312,7 @@ class ChangeGenderScreen(Screens):
         pronoun_frame = "resources/images/pronoun_frame.png"
         n = 0
         for pronounset in self.the_cat.pronouns:
-            displayname = (
-                f"{pronounset['subject']}/{pronounset['object']}/"
-                f"{pronounset['inposs']}/{pronounset['self']}"
-            )
+            displayname = self.pronoun_get_cases(pronounset)
             short_name = shorten_text_to_fit(displayname, 170, 13)
 
             # Create block for each pronounset
@@ -424,10 +423,7 @@ class ChangeGenderScreen(Screens):
             if x not in pronouns.get_default_pronouns().values()
         ]
         for pronounset in all_pronouns:
-            displayname = (
-                f"{pronounset['subject']}/{pronounset['object']}/"
-                f"{pronounset['inposs']}/{pronounset['self']}"
-            )
+            displayname = self.pronoun_get_cases(pronounset)
             short_name = shorten_text_to_fit(displayname, 140, 13)
 
             if pronounset in self.pronouns_dict:
@@ -477,17 +473,12 @@ class ChangeGenderScreen(Screens):
                 self.deletebuttons[dict_name_core].disable()
 
             # the "add" button
-            button_rect = ui_scale(pygame.Rect((0, 0), (56, 28)))
-            button_rect.topright = ui_scale_dimensions((-5, 0))
-            # TODO: update this to use UISurfaceImageButton
-            self.addbuttons[dict_name_core] = CatButton(
-                button_rect,
-                "",
-                cat_object=pronounset,
-                cat_id="add",
+            self.addbuttons[dict_name_core] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((-59, 0), (56, 28))),
+                "screens.change_gender.add_button",
+                get_button_dict(ButtonStyles.SQUOVAL, (56, 28)),
+                object_id="@buttonstyles_squoval",
                 container=self.elements[f"{n}"],
-                object_id="#add_button",
-                starting_height=2,
                 manager=MANAGER,
                 anchors={
                     "centery": "centery",
@@ -532,6 +523,14 @@ class ChangeGenderScreen(Screens):
                 self.removalboxes_text["container_general2"].rect[2],
                 ui_scale_value(min_scrollable_height),
             ),
+        )
+
+    def pronoun_get_cases(self, pronounset) -> str:
+        # Gets all pronoun cases in pronounset for display
+        return "/".join(
+            value
+            for pronoun, value in pronounset.items()
+            if pronoun not in ("conju", "gender", "ID")
         )
 
     def reset_buttons_and_boxes(self):

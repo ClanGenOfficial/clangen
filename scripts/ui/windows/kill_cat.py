@@ -90,12 +90,10 @@ class KillCat(GameWindow):
         )
 
     def process_event(self, event):
-        super().process_event(event)
-
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.done_button:
                 death_message = sub(
-                    r"[^A-Za-z0-9<->/.()*'&#!?,| _]+",
+                    r"[^A-Za-z0-9<>/.()*'&#!?,| _-]+",
                     "",
                     self.death_entry_box.get_text(),
                 )

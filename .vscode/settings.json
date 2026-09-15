@@ -33,13 +33,33 @@
         {
             "url": "./schemas/relationship_pair_event.schema.json",
             "fileMatch": [
-                "events/relationship_events/normal_interactions/**/*.json"
+                "events/relationship_events/normal_interactions/**/*.json",
+                "events/relationship_events/joining_interactions/**/*.json"
+            ]
+        },
+        {
+            "url": "./schemas/ceremony.schema.json",
+            "fileMatch": [
+                "events/ceremonies/*.json",
+                "!events/ceremonies/ceremony_traits.json"
+            ]
+        },
+        {
+            "url": "./schemas/transition.schema.json",
+            "fileMatch": [
+                "events/transition.json"
             ]
         },
         {
             "url": "./schemas/poi.schema.json",
             "fileMatch": [
                 "points_of_interest.json"
+            ]
+        },
+        {
+            "url": "./schemas/pelt_recipe.schema.json",
+            "fileMatch": [
+                "sprites/dicts/pelt_recipes/*.json"
             ]
         }
     ],
@@ -82,5 +102,7 @@
         "Twolegs",
         "ujson",
         "verdana"
-    ]
+    ],
+    "editor.defaultColorDecorators": "always",
+    "editor.colorDecoratorsLimit": 2000,
 }

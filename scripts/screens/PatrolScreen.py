@@ -6,8 +6,9 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.events_module.patrol.patrol import Patrol
+from scripts.events_module.patrol.patrol import Patrol, get_patrol_temperament
 from scripts.game_structure import game
+from ..events_module.patrol.enums import PatrolChoice
 from ..ui.elements.sprite_button import UISpriteButton
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton
@@ -278,11 +279,11 @@ class PatrolScreen(Screens):
     def handle_patrol_events_event(self, event):
         inp = None
         if event.ui_element == self.elements["proceed"]:
-            inp = "proceed"
+            inp = PatrolChoice.PROCEED
         elif event.ui_element == self.elements["not_proceed"]:
-            inp = "notproceed"
+            inp = PatrolChoice.DECLINE
         elif event.ui_element == self.elements["antagonize"]:
-            inp = "antagonize"
+            inp = PatrolChoice.ANTAGONIZE
 
         if inp:
             if (
@@ -504,7 +505,7 @@ class PatrolScreen(Screens):
                 self.elements["patrol_tab"].enable()
                 self.elements["skills"].disable()
 
-            if self.selected_cat != None:
+            if self.selected_cat is not None:
                 if (
                     "cycle_app_mentor_right_button" in self.elements
                     and "cycle_app_mentor_left_button" in self.elements
@@ -522,7 +523,7 @@ class PatrolScreen(Screens):
                     else:
                         self.elements["cycle_app_mentor_left_button"].enable()
 
-                    if self.selected_cat.mentor != None:
+                    if self.selected_cat.mentor is not None:
                         self.elements["cycle_app_mentor_left_button"].hide()
                         self.elements["cycle_app_mentor_right_button"].hide()
 
@@ -682,18 +683,22 @@ class PatrolScreen(Screens):
         self.elements["herb"].disable()
 
         # Able cat page buttons
-        self.elements["last_page"] = UIImageButton(
-            ui_scale(pygame.Rect((75, 462), (34, 34))),
-            "",
-            object_id="#patrol_last_page",
+        self.elements["last_page"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((75, -32), (34, 34))),
+            Icon.ARROW_LEFT,
+            get_button_dict(ButtonStyles.ICON_TAB_TOP, (34, 34)),
+            object_id="@buttonstyles_icon_tab_top",
             starting_height=2,
+            anchors={"bottom": "bottom", "bottom_target": self.elements["able_frame"]},
             manager=MANAGER,
         )
-        self.elements["next_page"] = UIImageButton(
-            ui_scale(pygame.Rect((241, 462), (34, 34))),
-            "",
-            object_id="#patrol_next_page",
+        self.elements["next_page"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((241, -32), (34, 34))),
+            Icon.ARROW_RIGHT,
+            get_button_dict(ButtonStyles.ICON_TAB_TOP, (34, 34)),
+            object_id="@buttonstyles_icon_tab_top",
             starting_height=2,
+            anchors={"bottom": "bottom", "bottom_target": self.elements["able_frame"]},
             manager=MANAGER,
         )
 
@@ -787,7 +792,7 @@ class PatrolScreen(Screens):
     def run_patrol_start(self):
         """Runs patrol start. To be run in a separate thread."""
         try:
-            self.display_text = self.patrol_obj.setup_patrol(
+            self.display_text = self.patrol_obj.begin_patrol(
                 self.current_patrol, self.patrol_type
             )
         except RuntimeError:
@@ -841,7 +846,6 @@ class PatrolScreen(Screens):
 
         # Prepare Intro Text
         # adjusting text for solo patrols
-        # intro_text = adjust_patrol_text(intro_text, self.patrol_obj)
         self.elements["patrol_text"] = pygame_gui.elements.UITextBox(
             self.display_text,
             ui_scale(pygame.Rect((385, 172), (335, 250))),
@@ -854,7 +858,7 @@ class PatrolScreen(Screens):
         skills = []
         traits = []
         for x in self.patrol_obj.patrol_cats:
-            if x != self.patrol_obj.patrol_leader:
+            if x != self.patrol_obj.involved_cats["p_l"]:
                 members.append(str(x.name))
         for x in self.patrol_obj.patrol_cats:
             if (t := i18n.t(f"cat.personality.{x.personality.trait}")) not in traits:
@@ -878,12 +882,13 @@ class PatrolScreen(Screens):
             object_id="#text_box_22_horizleft",
             manager=MANAGER,
             text_kwargs={
-                "leader": str(self.patrol_obj.patrol_leader.name),
-                "p_l": self.patrol_obj.patrol_leader,
+                "leader": str(self.patrol_obj.involved_cats["p_l"].name),
+                "p_l": self.patrol_obj.involved_cats["p_l"],
                 "members": self.get_list_text(members),
                 "patrol_cats": members,
                 "skills": self.get_list_text(skills),
                 "traits": self.get_list_text(traits),
+                "patrol_temperament": self.get_list_text(self.patrol_obj.temperament),
             },
         )
 
@@ -908,16 +913,18 @@ class PatrolScreen(Screens):
         self.elements["proceed"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((550, 433), (172, 30))),
             "screens.patrol.proceed",
-            get_button_dict(ButtonStyles.DROPDOWN, (172, 30)),
-            object_id="@buttonstyles_dropdown",
+            get_button_dict(ButtonStyles.PROFILE_MIDDLE, (172, 30)),
+            object_id="@buttonstyles_profile_middle",
             starting_height=2,
             manager=MANAGER,
         )
-        self.elements["not_proceed"] = UIImageButton(
-            ui_scale(pygame.Rect((550, 461), (172, 30))),
+        self.elements["not_proceed"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((550, 0), (172, 30))),
             "screens.patrol.dont_proceed",
-            object_id="#not_proceed_button",
+            get_button_dict(ButtonStyles.HEADER_MIRRORED, (172, 30)),
+            object_id="@buttonstyles_header_mirrored",
             starting_height=2,
+            anchors={"top": "top", "top_target": self.elements["proceed"]},
             manager=MANAGER,
         )
 
@@ -931,36 +938,19 @@ class PatrolScreen(Screens):
         if not self.patrol_obj.patrol_event.antag_success_outcomes:
             self.elements["antagonize"].hide()
 
-    def run_patrol_proceed(self, user_input):
+    def run_patrol_proceed(self, user_input: PatrolChoice):
         """Proceeds the patrol - to be run in the separate thread."""
-        if user_input in ["nopro", "notproceed"]:
-            (
-                self.display_text,
-                self.results_text,
-                self.rel_results,
-                self.outcome_art,
-            ) = self.patrol_obj.proceed_patrol("decline")
-        elif user_input in ["antag", "antagonize"]:
-            (
-                self.display_text,
-                self.results_text,
-                self.rel_results,
-                self.outcome_art,
-            ) = self.patrol_obj.proceed_patrol("antag")
-        else:
-            (
-                self.display_text,
-                self.results_text,
-                self.rel_results,
-                self.outcome_art,
-            ) = self.patrol_obj.proceed_patrol("proceed")
+        (
+            self.display_text,
+            self.results_text,
+            self.rel_results,
+            self.outcome_art,
+        ) = self.patrol_obj.proceed_patrol(user_input)
 
     def open_patrol_complete_screen(self):
-        """Deals with the next stage of the patrol, including antagonize, proceed, and do not proceed.
-        You must put the type of next step (user input) into the user_input parameter.
-        For antagonize: user_input = "antag" or "antagonize"
-        For Proceed: user_input = "pro" or "proceed"
-        For do not Proceed: user_input = "nopro" or "notproceed" """
+        """
+        Deals with the next stage of the patrol, including antagonize, proceed, and do not proceed.
+        """
         self.patrol_stage = "patrol_complete"
 
         self.elements["clan_return"] = UIImageButton(
@@ -1018,8 +1008,7 @@ class PatrolScreen(Screens):
         # ASSIGN TO ABLE CATS
         for the_cat in Cat.all_cats_list:
             if (
-                the_cat.in_camp
-                and the_cat.ID not in game.patrolled
+                the_cat.ID not in game.patrolled
                 and the_cat.status.rank.is_allowed_to_patrol()
                 and the_cat.status.alive_in_player_clan
                 and the_cat not in self.current_patrol
@@ -1154,6 +1143,9 @@ class PatrolScreen(Screens):
             text_kwargs={
                 "skills": ", ".join(patrol_skills),
                 "traits": ", ".join(patrol_traits),
+                "patrol_temperament": ", ".join(
+                    filter(None, get_patrol_temperament(self.current_patrol))
+                ),
             },
         )
 
@@ -1285,14 +1277,15 @@ class PatrolScreen(Screens):
                     object_id=get_text_box_theme("#text_box_22_horizcenter"),
                     text_kwargs={"count": 1},
                 )
-                self.elements["mate_button"] = UIImageButton(
+                self.elements["mate_button"] = UISurfaceImageButton(
                     ui_scale(pygame.Rect((148, -4), (104, 26))),
                     (
                         "screens.patrol.select"
                         if self.mate in self.able_cats
                         else "screens.patrol.unavailable"
                     ),
-                    object_id="#patrol_select_button",
+                    get_button_dict(ButtonStyles.HEADER_MIRRORED, (104, 26)),
+                    object_id="@buttonstyles_header_mirrored",
                     manager=MANAGER,
                     anchors={"top_target": self.elements["mate_frame"]},
                 )
@@ -1382,14 +1375,15 @@ class PatrolScreen(Screens):
                     )
 
                     # Button to switch to that cat
-                    self.elements["app_mentor_button"] = UIImageButton(
-                        ui_scale(pygame.Rect((548, -4), (104, 26))),
+                    self.elements["app_mentor_button"] = UISurfaceImageButton(
+                        ui_scale(pygame.Rect((549, -4), (104, 26))),
                         (
                             "screens.patrol.select"
                             if self.app_mentor in self.able_cats
                             else "screens.patrol.unavailable"
                         ),
-                        object_id="#patrol_select_button",
+                        get_button_dict(ButtonStyles.HEADER_MIRRORED, (104, 26)),
+                        object_id="@buttonstyles_header_mirrored",
                         manager=MANAGER,
                         anchors={"top_target": self.elements["app_mentor_frame"]},
                     )
@@ -1398,7 +1392,7 @@ class PatrolScreen(Screens):
                         self.elements["app_mentor_button"].disable()
 
                     # Buttons to cycle between apprentices
-                    if self.selected_cat.mentor == None:
+                    if self.selected_cat.mentor is None:
                         self.elements[
                             "cycle_app_mentor_left_button"
                         ] = UISurfaceImageButton(

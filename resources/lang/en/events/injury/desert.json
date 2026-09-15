@@ -1020,7 +1020,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "poisoned"
+                    "venom sickness"
                 ]
             }
         ],
@@ -3079,7 +3079,6 @@
                 "insecure",
                 "playful",
                 "rebellious",
-                "sneaky",
                 "troublesome"
             ]
         },
@@ -3251,7 +3250,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "poisoned"
+                    "venom sickness"
                 ]
             }
         ],
@@ -4340,7 +4339,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "poisoned"
+                    "venom sickness"
                 ]
             }
         ],
@@ -4386,7 +4385,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "poisoned"
+                    "venom sickness"
                 ]
             }
         ],

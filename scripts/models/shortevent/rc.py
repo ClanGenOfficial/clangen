@@ -8,6 +8,7 @@ from pydantic_core import MISSING
 from scripts.models.common.age import Age
 from scripts.models.common.all_trait import AllTrait
 from scripts.models.common.backstory import Backstory
+from scripts.models.common.group import Group
 from scripts.models.common.skill import Skill
 from scripts.models.common.status import Status
 from scripts.models.shortevent.rc_relationship_status import RcRelationshipStatus
@@ -26,6 +27,10 @@ class RC(BaseModel):
     )
     relationship_status: Union[List[RcRelationshipStatus], MISSING] = Field(
         MISSING, description="Dictates what relationships r_c must have towards m_c."
+    )
+    group: Union[List[Group], MISSING] = Field(
+        MISSING,
+        description='List of groups r_c can belong to. Defaults to "player_clan".',
     )
     skill: Union[List[Union[Skill, Literal["any"]]], MISSING] = Field(
         MISSING,

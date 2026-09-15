@@ -15,7 +15,11 @@
             "BLACK CICADA": "head"
         },
         {
-            "ROAD RUNNER FEATHER": "body"
+            "ROAD RUNNER FEATHER": "body",
+            "GOLDFINCH": "body",
+            "DAMSELFLY ORANGE": "body",
+            "DAMSELFLY BLUE": "body",
+            "DAMSELFLY RED": "body"
         }
     ]
 }

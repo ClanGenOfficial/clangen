@@ -1,0 +1,16 @@
+[
+    {
+        "event_id": "gen_like_high_inc1",
+        "strings": [
+			"r_c and m_c became fast friends."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": 10
+            }]
+    }
+]

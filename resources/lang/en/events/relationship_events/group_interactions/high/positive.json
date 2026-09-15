@@ -1,6 +1,6 @@
 [
     {
-        "id": "group_3_positive_meditate",
+        "event_id": "group_3_positive_meditate",
         "strings": [
             "m_c is convincing r_c1 that r_c2 isn't so bad once you get to know {PRONOUN/r_c2/object}.",
             "m_c chats with r_c1 about how r_c2 is a nice cat."
@@ -46,7 +46,7 @@
         ]
     },
     {
-        "id": "much_ado_about_nothing",
+        "event_id": "much_ado_about_nothing",
         "strings": [
             "multi_cat decide they're going to get m_c and r_c1 together. They talk about how much m_c loves r_c1 in front of r_c1, and, to their pleasure, find the two talking later."
         ],
@@ -93,7 +93,77 @@
         ]
     },
     {
-        "id": "group_multicat_pos_polymateshigh",
+        "event_id": "group_multicat_pos_gossipinghates",
+        "strings": [
+            "multi_cat discuss how they could drive m_c out of the Clan."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "multi_cat": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "constraints": [
+                    "hates"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "multi_cat"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust", "comfort"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "group_multicat_pos_gossipingfears",
+        "strings": [
+            "multi_cat discuss how they need to do something about m_c's presence in the Clan."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "multi_cat": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "constraints": [
+                    "fears"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "multi_cat"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust", "comfort"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "group_multicat_pos_polymateshigh",
         "strings": [
             "m_c gave multi_cat presents to show {PRONOUN/m_c/poss} affection.",
             "m_c declared {PRONOUN/m_c/poss} love for multi_cat in the middle of camp.",
@@ -130,6 +200,64 @@
                     "romance"
                 ],
                 "amount": 15
+            }
+        ]
+    },
+    {
+        "event_id": "group_multicat_pastoutsidersreminisce",
+        "strings": [
+            "m_c, multi_cat reminisce about life outside c_n.",
+            "m_c, multi_cat trade stories of their lives before they came to c_n.",
+            "m_c, multi_cat purr with laughter as they tell each other of scrapes they got into while living outside the Clan.",
+            "m_c, multi_cat agree they're glad they became part of c_n."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "past_status": ["loner", "rogue", "kittypet"],
+                "backstory": ["-abandoned_backstories", "-baby_loner_backstories", "-baby_kittypet_backstories", "-orphaned_backstories"]
+            },
+            "multi_cat": {
+                "past_status": ["loner", "rogue", "kittypet"],
+                "backstory": ["-abandoned_backstories", "-baby_loner_backstories", "-baby_kittypet_backstories", "-orphaned_backstories"]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat", "m_c"],
+                "cats_to": ["multi_cat", "m_c"],
+                "mutual": false,
+                "values": ["like", "comfort"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "group_pos_medicinecatbonding",
+        "strings": [
+            "m_c, multi_cat discussed their favorite herbs and places to gather them in the territory.",
+            "m_c, multi_cat bonded over the unique privilege of communing with their ancestors.",
+            "m_c, multi_cat worked together to treat an injured Clanmate.",
+            "m_c, multi_cat are grateful for each other's specialties in healing."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "medicine cat"
+                ]
+            },
+            "multi_cat": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c", "multi_cat"],
+                "cats_to": ["multi_cat", "m_c"],
+                "mutual": false,
+                "values": ["like", "comfort", "respect"],
+                "amount": 5
             }
         ]
     }

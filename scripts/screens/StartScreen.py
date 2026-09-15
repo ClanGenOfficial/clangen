@@ -41,6 +41,8 @@ from ..housekeeping.datadir import get_cache_dir
 from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
 from ..housekeeping.version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
+from scripts.ui.windows.dev_tool_windows.tortie_patch_tool import TortiePatchToolWindow
+from scripts.ui.windows.dev_tool_windows.white_patch_tool import WhitePatchToolWindow
 
 logger = logging.getLogger(__name__)
 has_checked_for_update = False
@@ -96,6 +98,10 @@ class StartScreen(Screens):
                 quit_game(savesettings=False, clearevents=False)
             elif element == self.elements.get("event_edit"):
                 self.change_screen(GameScreen.EVENT_EDIT)
+            elif element == self.elements.get("tortie_patch"):
+                TortiePatchToolWindow()
+            elif element == self.elements.get("white_patch"):
+                WhitePatchToolWindow()
             elif element == self.elements.get("bug_report"):
                 open_url("https://github.com/ClanGenOfficial/clangen/issues/new/choose")
             elif element == self.social_buttons["discord_button"]:
@@ -237,12 +243,34 @@ class StartScreen(Screens):
 
         if constants.CONFIG["dev_tools"]:
             self.elements["event_edit"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((70, 15), (200, 30))),
+                ui_scale(pygame.Rect((15, 310), (200, 30))),
                 "buttons.event_edit",
                 image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
                 object_id="@buttonstyles_mainmenu",
                 manager=MANAGER,
-                anchors={"top_target": self.elements["quit"]},
+                anchors={"left_target": self.elements["continue"]},
+            )
+            self.elements["tortie_patch"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((15, 15), (200, 30))),
+                "buttons.tortie_patch",
+                image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
+                object_id="@buttonstyles_mainmenu",
+                manager=MANAGER,
+                anchors={
+                    "top_target": self.elements["event_edit"],
+                    "left_target": self.elements["continue"],
+                },
+            )
+            self.elements["white_patch"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((15, 15), (200, 30))),
+                "buttons.white_patch",
+                image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
+                object_id="@buttonstyles_mainmenu",
+                manager=MANAGER,
+                anchors={
+                    "top_target": self.elements["tortie_patch"],
+                    "left_target": self.elements["continue"],
+                },
             )
 
         self.elements["bug_report"] = UISurfaceImageButton(
@@ -426,7 +454,7 @@ class StartScreen(Screens):
 
         self.reload_errors()
 
-        if game.clan is not None:
+        if game.clan is not None and not switch_get_value(Switch.error_message):
             key_copy = tuple(Cat.all_cats.keys())
             for x in key_copy:
                 if x not in game.clan.clan_cats:
