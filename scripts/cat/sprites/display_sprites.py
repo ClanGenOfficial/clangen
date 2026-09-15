@@ -125,21 +125,21 @@ def _draw_sprite(
         # then blit the surface onto the sprite with pygame.BLEND_RGB_MULT
         tint = pygame.Surface((sprites.size, sprites.size)).convert_alpha()
         tint.fill(tuple(sprites.cat_tints["tint_colours"][cat.pelt.tint]))
-        new_sprite.blit(tint, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+        new_sprite.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
     if (
         cat.pelt.tint is not None
         and cat.pelt.tint in sprites.cat_tints["dilute_tint_colours"]
     ):
         tint = pygame.Surface((sprites.size, sprites.size)).convert_alpha()
         tint.fill(tuple(sprites.cat_tints["dilute_tint_colours"][cat.pelt.tint]))
-        new_sprite.blit(tint, (0, 0), special_flags=pygame.BLEND_RGBA_ADD)
+        new_sprite.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_ADD)
 
     if (
         cat.pelt.tint is not None
-        and cat.pelt.tint in sprites.cat_tints["subtract_tint_colours"]
+        and cat.pelt.tint in sprites.cat_tints["remove_tone_tint_colours"]
     ):
         tint = pygame.Surface((sprites.size, sprites.size)).convert_alpha()
-        tint.fill(tuple(sprites.cat_tints["subtract_tint_colours"][cat.pelt.tint]))
+        tint.fill(tuple(sprites.cat_tints["remove_tone_tint_colours"][cat.pelt.tint]))
         new_sprite.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_SUB)
 
 
