@@ -87,7 +87,7 @@
                     "color": "singlecolour_blossom_base_gradient_top"
                 },
                 "3": {
-                    "group_name": "LEGBOTTOMGRAD",
+                    "group_name": "LEGTAILBOTTOMGRAD",
                     "color": "base_gradient_legs_tail"
                 }
             }

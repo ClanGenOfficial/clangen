@@ -47,11 +47,10 @@
             "BENGALPATTERNFILL",
             "MASKEDCHIN",
             "SOKOKEPATTERNFILLGRAD",
-            "LEGBOTTOMGRAD"
+            "LEGTAILBOTTOMGRAD"
         ],
         [
-            "BACKTAILPATTERNGRAD",
-            "LEGPATTERNGRAD"
+            "BACKTAILTOPGRAD"
         ]
 
     ]

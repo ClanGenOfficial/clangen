@@ -80,11 +80,11 @@
                     "blend_mode": "mask"
                 },
                 "9": {
-                    "group_name": "BACKTAILPATTERNGRAD",
+                    "group_name": "BACKTAILTOPGRAD",
                     "color": "pattern_gradient_top"
                 },
                 "8": {
-                    "group_name": "LEGBOTTOMGRAD",
+                    "group_name": "LEGTAILBOTTOMGRAD",
                     "color": "pattern_gradient_bottom"
                 },
                 "6": {
@@ -100,7 +100,7 @@
                     "color": "base_gradient_top"
                 },
                 "3": {
-                    "group_name": "LEGBOTTOMGRAD",
+                    "group_name": "LEGTAILBOTTOMGRAD",
                     "color": "base_gradient_legs_tail"
                 },
                 "2": {
