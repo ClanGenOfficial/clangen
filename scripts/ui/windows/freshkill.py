@@ -18,7 +18,6 @@ from scripts.ui.elements.checkbox import UICheckbox
 from scripts.ui.elements.modified_scrolling_container import (
     UIModifiedScrollingContainer,
 )
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.elements.image_button import UIImageButton
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
@@ -269,7 +268,7 @@ class FreshkillManagementWindow(GameWindow):
 
         scale_rect = ui_scale(pygame.Rect((0, 0), (530, -1)))
         scale_rect.bottomleft = ui_scale_offset((0, -110))
-        self.feed_view_elements["status_text"] = UITextBoxTweaked(
+        self.feed_view_elements["status_text"] = pygame_gui.elements.UITextBox(
             i18n.t(
                 "windows.freshkill_pile_tooltip",
                 current_prey_amount=current_prey_amount,
@@ -279,7 +278,6 @@ class FreshkillManagementWindow(GameWindow):
             ),
             scale_rect,
             object_id="#text_box_30_horizcenter",
-            line_spacing=1,
             manager=MANAGER,
             container=self,
             anchors={"bottom": "bottom", "centerx": "centerx"},
@@ -297,7 +295,7 @@ class FreshkillManagementWindow(GameWindow):
         log_text = game.freshkill_event_list.copy()
         if not log_text:
             log_text = [i18n.t("windows.log_empty")]
-        self.log = UITextBoxTweaked(
+        self.log = pygame_gui.elements.UITextBox(
             f"{f'<br>-------------------------------<br>'.join(log_text)}<br>",
             ui_scale(pygame.Rect((25, 25), (500, 320))),
             object_id="#text_box_26_horizleft_verttop_pad_14_0_10",
@@ -316,7 +314,7 @@ class FreshkillManagementWindow(GameWindow):
         self.open_view = "tactic"
 
         # TOP TEXT
-        self.tactic_view_elements["feeding_order_text"] = UITextBoxTweaked(
+        self.tactic_view_elements["feeding_order_text"] = pygame_gui.elements.UITextBox(
             relative_rect=ui_scale(pygame.Rect((25, 15), (225, -1))),
             html_text="windows.feeding_order",
             object_id="#text_box_30_horizcenter",
@@ -330,7 +328,7 @@ class FreshkillManagementWindow(GameWindow):
 
         scale_rect = ui_scale(pygame.Rect((0, 0), (225, -1)))
         scale_rect.topright = ui_scale_offset((-25, 15))
-        self.tactic_view_elements["priority_text"] = UITextBoxTweaked(
+        self.tactic_view_elements["priority_text"] = pygame_gui.elements.UITextBox(
             relative_rect=scale_rect,
             html_text="windows.priority",
             object_id="#text_box_30_horizcenter",

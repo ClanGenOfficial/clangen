@@ -8,7 +8,6 @@ from scripts.game_structure.game.switches import (
     switch_set_value,
 )
 from scripts.game_structure import game
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
@@ -23,19 +22,18 @@ class GameOverWindow(GameWindow):
         )
         self.clan_name = game.clan.name
         self.last_screen = last_screen
-        self.game_over_message = UITextBoxTweaked(
+        self.game_over_message = pygame_gui.elements.UITextBox(
             "windows.game_over_message",
             ui_scale(pygame.Rect((20, 20), (260, -1))),
-            line_spacing=1,
             object_id="",
             container=self,
             text_kwargs={"clan": self.clan_name},
         )
 
-        self.game_over_message = UITextBoxTweaked(
+        self.game_over_message = pygame_gui.elements.UITextBox(
             "windows.game_over_leave_message",
             ui_scale(pygame.Rect((20, 155), (260, -1))),
-            line_spacing=0.8,
+            #line_spacing=0.8,
             object_id="#text_box_22_horizcenter",
             container=self,
         )

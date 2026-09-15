@@ -44,24 +44,24 @@ class UIImageButton(pygame_gui.elements.UIButton):
         self.mask_info = [relative_rect[0:2], []]
 
         super().__init__(
-            relative_rect = relative_rect,
-            text = text,
-            manager = manager,
-            container= container,
-            tool_tip_text= tool_tip_text,
-            starting_height = starting_height,
-            parent_element = parent_element,
-            object_id = object_id,
-            anchors = anchors,
-            allow_double_clicks = allow_double_clicks,
-            generate_click_events_from = generate_click_events_from,
-            visible = visible,
-            command = command,
-            tool_tip_object_id = tool_tip_object_id,
-            text_kwargs = text_kwargs,
-            tool_tip_text_kwargs = tool_tip_text_kwargs,
-            max_dynamic_width = max_dynamic_width,
-            )
+            relative_rect=relative_rect,
+            text=text,
+            manager=manager,
+            container=container,
+            tool_tip_text=tool_tip_text,
+            starting_height=starting_height,
+            parent_element=parent_element,
+            object_id=object_id,
+            anchors=anchors,
+            allow_double_clicks=allow_double_clicks,
+            generate_click_events_from=generate_click_events_from,
+            visible=visible,
+            command=command,
+            tool_tip_object_id=tool_tip_object_id,
+            text_kwargs=text_kwargs,
+            tool_tip_text_kwargs=tool_tip_text_kwargs,
+            max_dynamic_width=max_dynamic_width,
+        )
 
         self._mask = None
         self.mask = mask
@@ -114,7 +114,7 @@ class UIImageButton(pygame_gui.elements.UIButton):
             )
             for x, y in self.mask.outline()
         ]
-    
+
     def _set_any_images_from_theme(self):
         changed = super()._set_any_images_from_theme()
 
@@ -125,5 +125,3 @@ class UIImageButton(pygame_gui.elements.UIButton):
 
     def return_sound_id(self):
         return self.sound_id
-
-    
