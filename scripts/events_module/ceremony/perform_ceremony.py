@@ -18,6 +18,7 @@ from scripts.events_module.event_information import EventInformation
 from scripts.game_structure import game, constants
 from scripts.game_structure.game import Switch
 from scripts.game_structure.game.switches import switch_set_value
+
 logger = logging.getLogger(__name__)
 disable_random = False
 
