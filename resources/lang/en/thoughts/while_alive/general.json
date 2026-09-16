@@ -452,8 +452,8 @@
             "Listens to the harmony of birdsong",
             "Is staying calm during a stressful situation",
             "Doesn't understand why everyone else freaks out so easily",
-            "Is lining {PRONOUN/m_c/poss} nest with lavender",
-            "Takes a deep breath and doesn't let a mean comment get to {PRONOUN/m_c/object}"
+            "Takes a deep breath and doesn't let a mean comment get to {PRONOUN/m_c/object}",
+            "Is lining {PRONOUN/m_c/poss} nest with lavender"
         ],
         "involved_cats": {
             "m_c": {
@@ -831,7 +831,8 @@
             "Goes out for a hunt during a thunderstorm",
             "Isn't afraid of anything",
             "Taunts a Twoleg kit",
-            "Is taking an unnecessarry risk just to get ahead of r_c",
+            "Is taking an unnecessary risk just to get ahead of r_c",
+            "Is taking an unnecessary risk for the thrill of it",
             "Is always on high alert",
             "Recently avoided a monster on the Thunderpath by the skin of {PRONOUN/m_c/poss} teeth!"
         ],
@@ -1453,7 +1454,7 @@
             "Doesn't notice when {PRONOUN/m_c/poss} actions bother others",
             "Asked r_c an invasive question earnestly",
             "Announces {PRONOUN/m_c/subject} {VERB/m_c/are/is} going to go make dirt",
-            "Claims to be able to speak dog",
+            "Claims to be able to speak to dogs",
             "Makes a poultice of mud and grass",
             "Is telling everyone about {PRONOUN/m_c/poss} weird dreams",
             "Stands uncomfortably close to other cats without a word"
