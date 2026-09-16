@@ -1136,7 +1136,7 @@
             "Reminds r_c that {PRONOUN/r_c/subject} can tell {PRONOUN/m_c/object} anything",
             "Promises to stand with r_c no matter what",
             "Judges a Clanmate's disloyalty",
-            "Loyally stands by r_c even if {PRONOUN/r_c/subject} {VERB/r_c/were/was} wrong",
+            "Stands by r_c even if {PRONOUN/r_c/subject} {VERB/r_c/were/was} wrong",
             "Refuses to turn {PRONOUN/m_c/poss} back on a Clanmate",
             "Is pushing r_c to be even better"
         ],
@@ -1201,9 +1201,9 @@
             "Is crunching leaves with {PRONOUN/m_c/poss} paws",
             "Is distracted by a shiny Twoleg trinket {PRONOUN/m_c/subject} found",
             "Grooms {PRONOUN/m_c/self} noisily",
-            "Asked r_c an invasive question earnestly",
-            "Announces {PRONOUN/m_c/subject} {VERB/m_c/are/is} going to go make dirt",
-            "Volunteered r_c for something without even asking {PRONOUN/r_c/object}",
+            "Asks r_c an invasive question earnestly",
+            "Announces {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to go make dirt",
+            "Volunteers r_c for something without even asking {PRONOUN/r_c/object}",
             "Yawns in the middle of r_c's story",
             "Is eating and chewing very loudly",
             "Stumbled into mud earlier and has yet to wash",
@@ -1245,9 +1245,9 @@
             "Is making up songs and encouraging others to join in",
             "Gets caught mid-prank and makes up an excuse",
             "Makes up a silly story to amuse r_c",
-            "Is turning {PRONOUN/m_c/poss} chores into games",
-            "Is telling an entirely fantastical story to explain something boring",
-            "Is bothering r_c with {PRONOUN/m_c/poss} games",
+            "Turns {PRONOUN/m_c/poss} chores into games",
+            "Tells a fantastical story to explain something boring",
+            "Bothers r_c with {PRONOUN/m_c/poss} games",
             "Is inviting r_c to play",
             "Is tossing moss balls around",
             "Can't remember the punchline to {PRONOUN/m_c/poss} own joke"
@@ -1327,9 +1327,9 @@
             "Silently judges r_c from afar",
             "Knows {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} right",
             "Holds {PRONOUN/m_c/self} to the highest standard",
-            "Is passionately arguing {PRONOUN/m_c/poss} beliefs",
-            "Is refusing to accept that breaking morals can be okay sometimes",
-            "Is considering beliefs other then {PRONOUN/m_c/poss} own before dismissing them",
+            "Passionately argues {PRONOUN/m_c/poss} beliefs",
+            "Believes it is never right to go against one's morals",
+            "Considers beliefs other then {PRONOUN/m_c/poss} own before dismissing them",
             "Is proud {PRONOUN/m_c/poss} beliefs proved to be right during an important situation",
             "Is sharing {PRONOUN/m_c/poss} beliefs with r_c",
             "Is butting heads with r_c over differing beliefs",
@@ -1368,8 +1368,8 @@
             "Retells r_c's story as if it happened to {PRONOUN/m_c/object}",
             "Grooms {PRONOUN/m_c/self} noisily",
             "Asked r_c an invasive question earnestly",
-            "Announces {PRONOUN/m_c/subject} {VERB/m_c/are/is} going to go make dirt",
-            "Volunteered r_c for something without even asking {PRONOUN/r_c/object}"
+            "Announces {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to go make dirt",
+            "Volunteers r_c for something without even asking {PRONOUN/r_c/object}"
         ],
         "involved_cats": {
             "m_c": {
@@ -1402,7 +1402,7 @@
             "Purrs to comfort r_c",
             "Is sympathizing with r_c",
             "Is empathizing with r_c",
-            "Is gently conveying a hard truth as gently as possible",
+            "Conveys a hard truth as gently as possible",
             "Tells r_c what they needed to hear but not what they wanted to hear"
         ],
         "involved_cats": {
@@ -1449,13 +1449,13 @@
             "Is thinking about a bug {PRONOUN/m_c/subject} dissected",
             "Bats at the empty air",
             "Is staring at nothing in particular",
-            "Doesn't understand why others fail to understand {PRONOUN/m_c/object}",
+            "Wonders why others fail to understand {PRONOUN/m_c/object}",
             "Doesn't notice when {PRONOUN/m_c/poss} actions bother others",
-            "Asked r_c an invasive question earnestly",
-            "Announces {PRONOUN/m_c/subject} {VERB/m_c/are/is} going to go make dirt",
+            "Asks r_c an invasive question earnestly",
+            "Announces {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to go make dirt",
             "Claims to be able to speak to dogs",
             "Makes a poultice of mud and grass",
-            "Is telling everyone about {PRONOUN/m_c/poss} weird dreams",
+            "Tells everyone about {PRONOUN/m_c/poss} weird dreams",
             "Stands uncomfortably close to other cats without a word"
         ],
         "involved_cats": {
@@ -1559,9 +1559,9 @@
             "Looks out for r_c",
             "Wonders how r_c is doing",
             "Compliments r_c on {PRONOUN/r_c/poss} grooming",
-            "Is pushing down {PRONOUN/m_c/poss} problems as to not worry anyone else",
-            "Gives up {PRONOUN/m_c/poss} favorite prey to r_c as it's {PRONOUN/r_c/poss} favorite too",
-            "Is trying to see a problem from r_c's perspective",
+            "Pushes down {PRONOUN/m_c/poss} problems so as to not worry anyone else",
+            "Gives up {PRONOUN/m_c/poss} favorite prey to r_c, as it's {PRONOUN/r_c/poss} favorite too",
+            "Tries to see a problem from r_c's perspective",
             "Is sympathizing with r_c",
             "Is empathizing with r_c",
             "Brings r_c {PRONOUN/r_c/poss} favorite flower",
@@ -1652,10 +1652,9 @@
         "strings": [
             "Won't let r_c get away with it",
             "Is laughing because a cat {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} like got hurt",
-            "Is taking an unnecessarry risk just to get ahead of r_c",
             "Is giving r_c the cold shoulder for no reason",
             "Glares at r_c for bothering {PRONOUN/m_c/object}",
-            "Is taking an unnecessarry risk just to get ahead of r_c"
+            "Takes an unnecessary risk just to get ahead of r_c"
         ],
         "involved_cats": {
             "m_c": {
