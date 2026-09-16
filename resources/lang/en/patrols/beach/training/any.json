@@ -869,7 +869,7 @@
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/bch_train_octopus_WrAp",
         "intro_strings": [
-            "p_l takes them out to see a big octopus a patrol spotted in one of c_n's rockpools."
+            "p_l takes the apprentices out to see a big octopus a patrol spotted in one of c_n's rockpools."
         ],
         "decline_strings": [
             "When they get there, they can't find it, and the lesson fails."

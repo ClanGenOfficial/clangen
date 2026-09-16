@@ -33436,7 +33436,7 @@
                 },
                 "outcome_art": "POI",
                 "strings": [
-                    "p_l stumbles across POI and, with no one there to caution {PRONOUN/p_l/object}, gets too close. Before {PRONOUN/p_l/subject} know it, {PRONOUN/p_l/poss} paws have slipped and p_l goes tumbling down."
+                    "p_l stumbles across POI and, with no one there to caution {PRONOUN/p_l/object}, gets too close. Before {PRONOUN/p_l/subject} {VERB/p_l/know/knows} it, {PRONOUN/p_l/poss} paws have slipped and p_l goes tumbling down."
                 ],
                 "exp_gained": 20,
                 "death": [
@@ -33571,7 +33571,7 @@
                     "category": "terrain"
                 },
                 "strings": [
-                    "p_l decides to relax at POI, sunning {PRONOUN/p_l/self} on the rocks. {PRONOUN/p_l/subject/CAP} don't really get anything productive done, but that's alright."
+                    "p_l decides to relax at POI, sunning {PRONOUN/p_l/self} on the rocks. {PRONOUN/p_l/subject/CAP} {VERB/p_l/do/does}n't really get anything productive done, but that's alright."
                 ],
                 "exp_gained": 5
             },
@@ -33583,7 +33583,7 @@
                 },
                 "season": ["greenleaf"],
                 "strings": [
-                    "p_l decides to relax at POI in the shade. {PRONOUN/p_l/subject/CAP} don't really get anything productive done, but that's alright."
+                    "p_l decides to relax at POI in the shade. {PRONOUN/p_l/subject/CAP} {VERB/p_l/do/does}n't really get anything productive done, but that's alright."
                 ],
                 "exp_gained": 5
             },
