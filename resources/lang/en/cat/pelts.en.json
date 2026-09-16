@@ -4,6 +4,10 @@
             "one": "pale",
             "many": "pale"
         },
+        "IVORY": {
+            "one": "pale",
+            "many": "pale ivory"
+        },
         "FULLWHITE": "white",
         "PALEGREY": {
             "one": "gray",
