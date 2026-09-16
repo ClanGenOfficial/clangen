@@ -1274,7 +1274,12 @@
             "Has simply decided not to do what {PRONOUN/m_c/subject} {VERB/m_c/were/was} told",
             "Thinks every cat should be in charge of themselves",
             "Is taking an unnecessary risk",
-            "Is taunting a dog stuck behind a Twoleg fence"
+            "Is taunting a dog stuck behind a Twoleg fence",
+            "Doesn't hesitate to suggest something everyone is thinking",
+            "Feigns humility for about three heartbeats",
+            "Lies through {PRONOUN/m_c/poss} teeth",
+            "Is standing up for what {PRONOUN/m_c/subject} {VERB/m_c/believe/believes} in",
+            "Is standing by {PRONOUN/m_c/poss} morals"
         ],
         "involved_cats": {
             "m_c": {
