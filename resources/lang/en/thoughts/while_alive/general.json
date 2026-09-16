@@ -169,7 +169,8 @@
             "greenleaf"
         ],
         "strings": [
-            "Purrs as a cool breeze hits {PRONOUN/m_c/object}"
+            "Purrs as a cool breeze hits {PRONOUN/m_c/object}",
+            "Is enjoying the warmth"
         ]
     },
     {
@@ -206,7 +207,8 @@
         "strings": [
             "Leaps into a pile of fallen leaves",
             "Is crushing leaves under {PRONOUN/m_c/poss} paws",
-            "Is glad it's not so hot out anymore"
+            "Is glad it's not so hot out anymore",
+            "Is not looking forward to leafbare"
         ]
     },
     {
@@ -219,7 +221,9 @@
             "Can't stand this cold",
             "Pounced on some movement under the snow like a fox",
             "Slipped on some ice hidden under the snow",
-            "Is careful not to stand under branches with snow on them"
+            "Is careful not to stand under branches with snow on them",
+            "Can't wait for newleaf",
+            "Hopes leafbare is over soon"
         ]
     },
     {
@@ -233,7 +237,13 @@
             "Stares longingly at the horizon",
             "Gets caught up in a vivid fantasy about faraway lands",
             "Imagines riding a log down a rushing river",
-            "Fantasizes about breathing underwater to explore the depths of a lake"
+            "Fantasizes about breathing underwater to explore the depths of a lake",
+            "Explored past the border when nobody was watching",
+            "Daydreams about an exciting adventure",
+            "Volunteers to explore unclaimed territory to help expand c_n's borders",
+            "Thinks rules can be broken if it means learning more",
+            "Is taking an unnecessary risk",
+            "Is always on high alert"
         ],
         "involved_cats": {
             "m_c": {
@@ -288,7 +298,13 @@
             "Wants to drive off a fox all by {PRONOUN/m_c/self}",
             "Imagines taking on a badger single-pawed",
             "Wants to get so much done today!",
-            "Is the first to volunteer for anything that lets {PRONOUN/m_c/object} show off {PRONOUN/m_c/poss} skills"
+            "Is the first to volunteer for anything that lets {PRONOUN/m_c/object} show off {PRONOUN/m_c/poss} skills",
+            "Doesn't listen when a cat {PRONOUN/m_c/subject} {VERB/m_c/deem/deems} beneath {PRONOUN/m_c/object}",
+            "Is taking an unnecessary risk just to get ahead of r_c",
+            "Doesn't hesitate to suggest something everyone is thinking",
+            "Is planning ways of how to get closer to {PRONOUN/m_c/poss} goal",
+            "Daydreams of establishing a whole new Clan",
+            "Is always on high alert"
         ],
         "involved_cats": {
             "m_c": {
@@ -311,7 +327,12 @@
             "Looks smug despite not doing anything impressive",
             "Grooms in an extra ostentatious way",
             "Needs no reassurance in {PRONOUN/m_c/poss} abilities",
-            "Is the first to volunteer for anything that lets {PRONOUN/m_c/object} show off {PRONOUN/m_c/poss} skills"
+            "Is the first to volunteer for anything that lets {PRONOUN/m_c/object} show off {PRONOUN/m_c/poss} skills",
+            "Is the first to say I told you so when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} right",
+            "Knows {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} right",
+            "Refuses to accept {PRONOUN/m_c/subject} {VERB/m_c/are/is} in the wrong",
+            "Is taking an unnecessary risk just to get ahead of r_c"
+
         ],
         "involved_cats": {
             "m_c": {
@@ -340,7 +361,9 @@
             "Shreds {PRONOUN/m_c/poss} bedding absentmindedly",
             "Admires {PRONOUN/m_c/poss} own claws",
             "Is thinking about a bug {PRONOUN/m_c/subject} dissected",
-            "Lured a Twoleg just to attack them"
+            "Lured a Twoleg just to attack them",
+            "Is taking an unnecessary risk",
+            "Seems a bit too interested in deathberries..."
         ],
         "involved_cats": {
             "m_c": {
@@ -359,7 +382,15 @@
             "Is not afraid of anything",
             "Is unfazed when something goes wrong",
             "Is the first to volunteer for anything that lets {PRONOUN/m_c/object} show off {PRONOUN/m_c/poss} skills",
-            "Is confident in {PRONOUN/m_c/poss} abilities"
+            "Is confident in {PRONOUN/m_c/poss} abilities",
+            "Doesn't hesitate to suggest something everyone is thinking",
+            "Is the first to act when others hesitate",
+            "Asked r_c an invasive question earnestly",
+            "Volunteered r_c for something without even asking {PRONOUN/r_c/object}",
+            "Asks r_c what {PRONOUN/r_c/poss} favorite thing about {PRONOUN/m_c/object} is",
+            "Is taking an unnecessary risk",
+            "Is removing a harmless snake from camp"
+
         ],
         "involved_cats": {
             "m_c": {
@@ -408,7 +439,10 @@
             "Has been reaching meditative states while sunbathing",
             "Knows everything will be okay in the end",
             "Spends the whole morning stretching",
-            "Listens to the harmony of birdsong"
+            "Listens to the harmony of birdsong",
+            "Is staying calm during a stressful situation",
+            "Is calmly removing a harmless snake from camp",
+            "Doesn't understand why everyone else freaks out so easily"
         ],
         "involved_cats": {
             "m_c": {
@@ -454,8 +488,12 @@
             "Is practicing an emergency evacuation just in case",
             "Is thoroughly checking {PRONOUN/m_c/poss} bedding for thorns",
             "Warns r_c of a hazard {PRONOUN/r_c/subject} nearly tripped over",
-            "Has everything under control"
-        ],
+            "Has everything under control",
+            "Refuses to take a risk no matter how big the reward",
+            "Is taking a very minor risk",
+            "Makes sure to mediate all risks before acting",
+            "Is always on high alert"
+            ],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -535,7 +573,14 @@
             "Gets in an argument over something utterly trivial",
             "Has felt bad all day about stepping on a bug",
             "Starts a beetle collection",
-            "Wants to shrink down super tiny and infiltrate an anthill"
+            "Wants to shrink down super tiny and infiltrate an anthill",
+            "Is daydreaming the day away",
+            "Is turning {PRONOUN/m_c/poss} chores into games",
+            "Is telling an entirely fantastical story to explain something boring",
+            "Is bothering r_c with {PRONOUN/m_c/poss} games",
+            "Is inviting r_c to play",
+            "Is whining while doing a boring task",
+            "Is pouting after being told to grow up"
         ],
         "involved_cats": {
             "m_c": {
@@ -552,7 +597,9 @@
         "strings": [
             "Is pretending to not see r_c sneaking up on {PRONOUN/m_c/object}",
             "Excitedly asks r_c if {PRONOUN/r_c/subject} {VERB/r_c/know/knows} any good games",
-            "Tells r_c jokes all day"
+            "Tells r_c jokes all day",
+            "Spends all day playing with r_c",
+            "Is hiding from the rest of the Clan with r_c"
         ],
         "involved_cats": {
             "m_c": {
@@ -585,7 +632,13 @@
             "Doesn't laugh at r_c's joke",
             "Scowls for no reason",
             "Is giving r_c the cold shoulder for no reason",
-            "Glares at r_c for bothering {PRONOUN/m_c/object}"
+            "Glares at r_c for bothering {PRONOUN/m_c/object}",
+            "Is ignoring any cat trying to talk to {PRONOUN/m_c/object}",
+            "Refuses to entertain any small talk",
+            "Wants to be left alone",
+            "Is extra irritable today",
+            "Finds everyone annoying",
+            "Demands that r_c get to the point or leave {PRONOUN/m_c/object} be"
         ],
         "involved_cats": {
             "m_c": {
@@ -606,7 +659,13 @@
             "Is sharing tongues with friends",
             "Ponders the burdens of others",
             "Is feeling really sad, but tries not to let it show",
-            "Helps solve a conflict by mediating both sides"
+            "Helps solve a conflict by mediating both sides",
+            "Is pushing down {PRONOUN/m_c/poss} problems as to not worry anyone else",
+            "Gives up {PRONOUN/m_c/poss} favorite prey to r_c as it's {PRONOUN/r_c/poss} favorite too",
+            "Is trying to see a problem from r_c's perspective",
+            "Is sympathizing with r_c",
+            "Is empathizing with r_c",
+            "Believes in {PRONOUN/m_c/poss} Clanmates"
         ],
         "involved_cats": {
             "m_c": {
@@ -649,7 +708,15 @@
             "Puffs out {PRONOUN/m_c/poss} chest, feeling secure with the space {PRONOUN/m_c/subject} {VERB/m_c/take/takes} up",
             "Is practicing doing things around camp as fast as possible, just in case",
             "Wants to wrestle just for fun",
-            "Is the first to volunteer for anything that lets {PRONOUN/m_c/object} show off {PRONOUN/m_c/poss} skills"
+            "Is the first to volunteer for anything that lets {PRONOUN/m_c/object} show off {PRONOUN/m_c/poss} skills",
+            "Is taking an unnecessarry risk just to get ahead of r_c",
+            "Is comparing {PRONOUN/m_c/self} to others",
+            "Is turning {PRONOUN/m_c/poss} chores into a competition",
+            "Is pouting after losing a competition {PRONOUN/m_c/subjection} suggested",
+            "Is taking a game way too seriously",
+            "Is taking a friendly competition way too seriously",
+            "Needs no reassurance in {PRONOUN/m_c/poss} abilities",
+            "Is always on high alert"
         ],
         "involved_cats": {
             "m_c": {
@@ -674,7 +741,13 @@
             "Knows {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} well-liked",
             "Needs no reassurance of {PRONOUN/m_c/poss} abilities",
             "Is unfazed when something goes wrong",
-            "Has everything under control"
+            "Has everything under control",
+            "Is confident in {PRONOUN/m_c/poss} abilities",
+            "Doesn't hesitate to suggest something everyone is thinking",
+            "Is the first to act when others hesitate",
+            "Volunteered r_c for something without even asking {PRONOUN/r_c/object}",
+            "Is taking an unnecessary risk",
+            "Believes in {PRONOUN/m_c/poss} Clanmates"
         ],
         "involved_cats": {
             "m_c": {
@@ -695,7 +768,13 @@
             "Concocts a plan for world domination... just for fun",
             "Blamed someone else for something {PRONOUN/m_c/subject} did",
             "Is a master of slight of paw magic tricks",
-            "Got away with something {PRONOUN/m_c/subject} really shouldn't have"
+            "Got away with something {PRONOUN/m_c/subject} really shouldn't have",
+            "Is taking an unnecessarry risk just to get ahead of r_c",
+            "Is thinking several steps ahead",
+            "Is planning ways of how to get closer to {PRONOUN/m_c/poss} goal",
+            "Has several plans in action behind the scenes",
+            "Convinced a Clanmate to side with {PRONOUN/m_c/object} on something",
+            "Is planning on ways to get {PRONOUN/m_c/poss} Clanmates to do what {PRONOUN/m_c/subject} {VERB/m_c/wish/wishes} indirectly"
         ],
         "involved_cats": {
             "m_c": {
@@ -723,7 +802,9 @@
             "Wonders what being hit by lightning would feel like",
             "Goes out for a hunt during a thunderstorm",
             "Isn't afraid of anything",
-            "Taunts a Twoleg kit"
+            "Taunts a Twoleg kit",
+            "Is taking an unnecessarry risk just to get ahead of r_c",
+            "Is always on high alert"
         ],
         "involved_cats": {
             "m_c": {
@@ -744,7 +825,12 @@
             "Listens to {PRONOUN/m_c/poss} heart",
             "Wonders what {PRONOUN/m_c/poss} ancestors would do in {PRONOUN/m_c/poss} paws",
             "Feels {PRONOUN/m_c/poss} paws are guided by {PRONOUN/m_c/poss} ancestors",
-            "Encourages {PRONOUN/m_c/poss} friends to trust in their beliefs"
+            "Encourages {PRONOUN/m_c/poss} friends to trust in their beliefs",
+            "Isn't stirred from {PRONOUN/m_c/poss} beliefs no matter what",
+            "Is convinced {PRONOUN/m_c/poss} ancestors guide {PRONOUN/m_c/poss} every decision",
+            "Is having a constructive talk about beliefs with r_c",
+            "Refuses to act against {PRONOUN/m_c/poss} faith",
+            "Believes in {PRONOUN/m_c/poss} Clanmates"
         ],
         "involved_cats": {
             "m_c": {
@@ -759,7 +845,8 @@
     {
         "event_id": "faithful_to_kit",
         "strings": [
-            "Urges r_c to follow {PRONOUN/r_c/poss} own beliefs"
+            "Urges r_c to follow {PRONOUN/r_c/poss} own beliefs",
+            "Helps r_c discover what {PRONOUN/r_c/poss} beliefs are"
         ],
         "involved_cats": {
             "m_c": {
@@ -794,7 +881,8 @@
             "Thinks that {PRONOUN/m_c/subject} could take on a dog solo",
             "Hopes to earn more battle scars to show off",
             "Wishes {PRONOUN/m_c/subject} had more scars",
-            "Knows {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a force to be reckoned with"
+            "Knows {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a force to be reckoned with",
+            "Is always on high alert"
         ],
         "involved_cats": {
             "m_c": {
@@ -822,7 +910,8 @@
             "Decorates {PRONOUN/m_c/self} with a new kind of flower petal, then changes {PRONOUN/m_c/poss} mind",
             "Has such a shiny pelt {PRONOUN/m_c/subject} {VERB/m_c/glisten/glistens} in the sun",
             "Reacts dramatically to something minor",
-            "Is the first to volunteer for anything that lets {PRONOUN/m_c/object} show off"
+            "Is the first to volunteer for anything that lets {PRONOUN/m_c/object} show off",
+            "Is telling an entirely fantastical story to explain something boring"
         ],
         "involved_cats": {
             "m_c": {
@@ -845,7 +934,12 @@
             "Broods",
             "Is really more of a puddle-half-empty kind of cat",
             "Sighs a lot",
-            "Thinks it'll probably rain"
+            "Thinks it'll probably rain",
+            "Wonders if prey get gloomy too",
+            "Doesn't see why any cat would enjoy {PRONOUN/m_c/poss} company",
+            "Feels like {PRONOUN/m_c/subject} ruined the mood simply by being around",
+            "Wonders if {PRONOUN/m_c/subject} really {VERB/m_c/belong/belongs} here",
+            "Doesn't laugh at r_c's joke"
         ],
         "involved_cats": {
             "m_c": {
@@ -872,7 +966,11 @@
             "Curses the bad weather",
             "Remembers every catch {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} missed",
             "Finds bird song annoying",
-            "Wishes {PRONOUN/m_c/subject} could just have a bit of peace"
+            "Wishes {PRONOUN/m_c/subject} could just have a bit of peace",
+            "Refuses to entertain any small talk",
+            "Wants to be left alone",
+            "Finds everyone annoying",
+            "Demands that r_c get to the point or leave {PRONOUN/m_c/object} be"
         ],
         "involved_cats": {
             "m_c": {
@@ -900,7 +998,11 @@
             "Knows {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} doing the best {PRONOUN/m_c/subject} can, but feels guilty anyway",
             "Apologizes for something that wasn't {PRONOUN/m_c/poss} fault",
             "Fakes it 'til {PRONOUN/m_c/subject} {VERB/m_c/make/makes} it",
-            "Boasts loudly about all {PRONOUN/m_c/poss} accomplishments"
+            "Boasts loudly about all {PRONOUN/m_c/poss} accomplishments",
+            "Is taking an unnecessarry risk just to get ahead of r_c",
+            "Is pushing {PRONOUN/m_c/self} too hard",
+            "Put {PRONOUN/m_c/self} down to compliment r_c",
+            "Is always on high alert"
         ],
         "involved_cats": {
             "m_c": {
@@ -933,7 +1035,8 @@
             "Stammers through a joke and ruins {PRONOUN/m_c/poss} own punchline",
             "Prefers the company of the wind and the birds",
             "Wishes r_c would stop bothering {PRONOUN/m_c/object}",
-            "Is surprised to find {PRONOUN/m_c/self} enjoying r_c's company"
+            "Is surprised to find {PRONOUN/m_c/self} enjoying r_c's company",
+            "Doesn't see why any cat would enjoy {PRONOUN/m_c/poss} company"
         ],
         "involved_cats": {
             "m_c": {
@@ -963,7 +1066,11 @@
             "Wishes others reciprocated {PRONOUN/m_c/poss} kindness more often",
             "Feels bad for the families of prey animals",
             "Plans a fun surprise for r_c",
-            "Bumps heads with r_c affectionately"
+            "Bumps heads with r_c affectionately",
+            "Is sympathizing with r_c",
+            "Is empathizing with r_c",
+            "Promises to stand with r_c no matter what",
+            "Believes in {PRONOUN/m_c/poss} Clanmates"
         ],
         "involved_cats": {
             "m_c": {
@@ -987,7 +1094,14 @@
             "Is determined to protect {PRONOUN/m_c/poss} loved ones, now more-so than ever",
             "Defends {PRONOUN/m_c/poss} friend against a rumor",
             "Is stricken after breaking a promise",
-            "Reminds r_c that {PRONOUN/r_c/subject} can tell {PRONOUN/m_c/object} anything"
+            "Reminds r_c that {PRONOUN/r_c/subject} can tell {PRONOUN/m_c/object} anything",
+            "Promises to stand with r_c no matter what",
+            "Judges a Clanmate's disloyalty",
+            "Loyally stands by r_c even if {PRONOUN/r_c/subject} {VERB/r_/were/was} wrong",
+            "Refuses to turn {PRONOUN/m_c/poss} back on a Clanmate",
+            "Is pushing r_c to be even better",
+            "Hopes {PRONOUN/m_c/oss} Clanmates rely of {PRONOUN/m_c/subject}",
+            "Hopes {PRONOUN/m_c/oss} Clanmates trust {PRONOUN/m_c/subject}"
         ],
         "involved_cats": {
             "m_c": {
@@ -1021,7 +1135,14 @@
             "Wonders if it's possible to die from a thorn in {PRONOUN/m_c/poss} paw",
             "Has clammy paws",
             "Imagines the worst-case scenario",
-            "Has {PRONOUN/m_c/poss} fur spiked up for no apparent reason"
+            "Has {PRONOUN/m_c/poss} fur spiked up for no apparent reason",
+            "Has {PRONOUN/m_c/poss} ears pinned back for no apparent reason",
+            "Can't stop overthinking everything",
+            "Is too nervous to tell another cat they're wrong",
+            "Apologizes for something that wasn't {PRONOUN/m_c/poss} fault",
+            "Is pushing {PRONOUN/m_c/self} too hard",
+            "Put {PRONOUN/m_c/self} down to compliment r_c",
+            "Is always on high alert"
         ],
         "involved_cats": {
             "m_c": {
@@ -1030,6 +1151,42 @@
                         "nervous"
                     ]
                 }
+            }
+        }
+    },
+    {
+        "event_id": "oblivious_gen",
+        "strings": [
+            "Doesn't notice when a Clanmate says something sarcastically",
+            "Is catching the attention of every cat around {PRONOUN/m_c/object}",
+            "Is daydreaming the day away",
+            "Is crunching leaves with {PRONOUN/m_c/poss} paws",
+            "Is distracted by a shiny Twoleg trinket {PRONOUN/m_c/subject} found",
+            "Grooms {PRONOUN/m_c/self} noisily",
+            "Asked r_c an invasive question earnestly",
+            "Announces {PRONOUN/m_c/subject} {VERB/m_c/are/is} going to go make dirt",
+            "Volunteered r_c for something without even asking {PRONOUN/r_c/object}",
+            "Yawns in the middle of r_c's story",
+            "Is eating and chewing very loudly",
+            "Stumbled into mud earlier and has yet to wash",
+            "Doesn't apologize, even though everyone knows {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} in the wrong",
+            "Doesn't notice when {PRONOUN/m_c/poss} actions bother others",
+            "Fails to notice something new about a Clanmate",
+            "No thoughts, head empty",
+            "Lets things go in one ear and out the other"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "oblivious"
+                    ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
             }
         }
     },
@@ -1048,7 +1205,11 @@
             "Is letting out mrrows of laughter",
             "Is making up songs and encouraging others to join in",
             "Gets caught mid-prank and makes up an excuse",
-            "Makes up a silly story to amuse r_c"
+            "Makes up a silly story to amuse r_c",
+            "Is turning {PRONOUN/m_c/poss} chores into games",
+            "Is telling an entirely fantastical story to explain something boring",
+            "Is bothering r_c with {PRONOUN/m_c/poss} games",
+            "Is inviting r_c to play"
         ],
         "involved_cats": {
             "m_c": {
@@ -1071,7 +1232,14 @@
             "Is doubting why things are done the way they are",
             "Has simply decided not to do what {PRONOUN/m_c/subject} {VERB/m_c/were/was} told",
             "Thinks rules are made to be broken",
-            "Thinks every cat should be in charge of themselves"
+            "Thinks every cat should be in charge of themselves",
+            "Is thinking of breaking a rule",
+            "Is bending the rules of the Code",
+            "Knows the Code better then most",
+            "Broke a rule to help a Clanmate",
+            "Is having to do extra chores after breaking the rules again",
+            "Is debating on why certain rules in the Code are unnecessary",
+            "Broke the code to help a cat in trouble"
         ],
         "involved_cats": {
             "m_c": {
@@ -1095,7 +1263,10 @@
             "Remembers to eat breakfast to keep {PRONOUN/m_c/poss} strength up",
             "Rests for exactly as long as {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to before resuming work",
             "Always makes a plan before launching into action",
-            "Has everything under control"
+            "Has everything under control",
+            "Is struggling to relax",
+            "Is always on high alert",
+            "Believes in {PRONOUN/m_c/poss} Clanmates"
         ],
         "involved_cats": {
             "m_c": {
@@ -1111,7 +1282,16 @@
         "event_id": "righteous_gen",
         "strings": [
             "Is reevaluating {PRONOUN/m_c/poss} morals",
-            "Silently judges r_c from afar"
+            "Silently judges r_c from afar",
+            "Knows {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} right",
+            "Holds {PRONOUN/m_c/self} to the highest standard",
+            "Is passionately arguing {PRONOUN/m_c/poss} beliefs",
+            "Is refusing to accept that breaking morals can be okay sometimes",
+            "Is considering beliefs other then {PRONOUN/m_c/poss} own before dismissing them",
+            "Is proud {PRONOUN/m_c/poss} beliefs proved to be right during an important situation",
+            "Is sharing {PRONOUN/m_c/poss} beliefs with r_c",
+            "Is butting heads with r_c over differing beliefs",
+            "Refuses to accept beliefs that go against {PRONOUN/m_c/poss} own"
         ],
         "involved_cats": {
             "m_c": {
@@ -1146,7 +1326,8 @@
             "Retells r_c's story as if it happened to {PRONOUN/m_c/object}",
             "Grooms {PRONOUN/m_c/self} noisily",
             "Asked r_c an invasive question earnestly",
-            "Announces {PRONOUN/m_c/subject} {VERB/m_c/are/is} going to go make dirt"
+            "Announces {PRONOUN/m_c/subject} {VERB/m_c/are/is} going to go make dirt",
+            "Volunteered r_c for something without even asking {PRONOUN/r_c/object}"
         ],
         "involved_cats": {
             "m_c": {
@@ -1177,7 +1358,12 @@
             "Refuses to tell a white lie and hurts r_c's feelings because of it",
             "Makes uncomfortably long eye contact with r_c",
             "Is quick to reassure a Clanmate even if they don't need it",
-            "Purrs to comfort r_c"
+            "Purrs to comfort r_c",
+            "Is sympathizing with r_c",
+            "Is empathizing with r_c",
+            "Believes in {PRONOUN/m_c/poss} Clanmates",
+            "Is gently conveying a hard truth as gently as possible",
+            "Tells a Clanmate what they needed to hear but not what they wanted to hear"
         ],
         "involved_cats": {
             "m_c": {
@@ -1221,7 +1407,14 @@
             "Rolls around in flowers",
             "Sneezes eleven times in a row",
             "Is thinking about a bug {PRONOUN/m_c/subject} dissected",
-            "Bats at the empty air"
+            "Bats at the empty air",
+            "Is staring at nothing in particular",
+            "Is climbing on the Warrior's den",
+            "Doesn't understand why others fail to understand {PRONOUN/m_c/object}",
+            "Doesn't notice when {PRONOUN/m_c/poss} actions bother others",
+            "Asked r_c an invasive question earnestly",
+            "Announces {PRONOUN/m_c/subject} {VERB/m_c/are/is} going to go make dirt",
+            "Claims to be able to speak dog"
         ],
         "involved_cats": {
             "m_c": {
@@ -1291,7 +1484,17 @@
             "Will not allow {PRONOUN/m_c/self} to rest",
             "Has been tough on {PRONOUN/m_c/self} recently",
             "Refuses to let {PRONOUN/m_c/self} cut corners on {PRONOUN/m_c/poss} work",
-            "Holds {PRONOUN/m_c/self} to the highest standard"
+            "Holds {PRONOUN/m_c/self} to the highest standard",
+            "Is butting heads with r_c over differing beliefs",
+            "Refuses to act against {PRONOUN/m_c/poss} faith",
+            "Rests for exactly as long as {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to before resuming work",
+            "Always makes a plan before launching into action",
+            "Refuses to relax",
+            "Refuses to take a break when there's work to be done",
+            "Is arguing with r_c about different standards",
+            "Feels like other cats don't put in as much effort as {PRONOUN/m_c/subject} {VERB/m_c/do/does}",
+            "Is always on high alert",
+            "Is pushing {PRONOUN/m_c/self} too hard"
         ],
         "involved_cats": {
             "m_c": {
@@ -1309,7 +1512,16 @@
             "Prepared the perfect gift for a friend",
             "Looks out for r_c",
             "Wonders how r_c is doing",
-            "Compliments r_c on {PRONOUN/r_c/poss} grooming"
+            "Compliments r_c on {PRONOUN/r_c/poss} grooming",
+            "Is pushing down {PRONOUN/m_c/poss} problems as to not worry anyone else",
+            "Gives up {PRONOUN/m_c/poss} favorite prey to r_c as it's {PRONOUN/r_c/poss} favorite too",
+            "Is trying to see a problem from r_c's perspective",
+            "Is sympathizing with r_c",
+            "Is empathizing with r_c",
+            "Refuses to turn {PRONOUN/m_c/poss} back on a Clanmate",
+            "Is pushing r_c to be even better",
+            "Hopes {PRONOUN/m_c/oss} Clanmates rely of {PRONOUN/m_c/subject}",
+            "Hopes {PRONOUN/m_c/oss} Clanmates trust {PRONOUN/m_c/subject}"
         ],
         "involved_cats": {
             "m_c": {
@@ -1367,7 +1579,10 @@
             "Is shredding the grass under-paw",
             "Can't let anything go",
             "Bides {PRONOUN/m_c/poss} time",
-            "Considers forgiving {PRONOUN/m_c/poss} enemies, then perishes the thought"
+            "Considers forgiving {PRONOUN/m_c/poss} enemies, then perishes the thought",
+            "Feels {PRONOUN/m_c/poss} grudges eating away at {PRONOUN/m_c/object}",
+            "Wants nothing more then to see {PRONOUN/m_c/poss} enemies suffering",
+            "Seems a bit too interested in deathberries..."
         ],
         "involved_cats": {
             "m_c": {
@@ -1389,7 +1604,11 @@
         "strings": [
             "Won't let r_c get away with it",
             "Whispers the names of cats who have wronged {PRONOUN/m_c/object} before {PRONOUN/m_c/subject} {VERB/m_c/sleep/sleeps}",
-            "Is laughing because a cat {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} like got hurt"
+            "Is laughing because a cat {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} like got hurt",
+            "Is taking an unnecessarry risk just to get ahead of r_c",
+            "Is giving r_c the cold shoulder for no reason",
+            "Glares at r_c for bothering {PRONOUN/m_c/object}",
+            "Is taking an unnecessarry risk just to get ahead of r_c"
         ],
         "involved_cats": {
             "m_c": {
@@ -1435,7 +1654,10 @@
             "Feels the weight of {PRONOUN/m_c/poss} memories wrapped around {PRONOUN/m_c/object} like the softest moss",
             "Advises r_c about {PRONOUN/r_c/poss} woes",
             "Is tired of being the go-to cat for advice",
-            "Tells a Clanmate what they needed to hear but not what they wanted to hear"
+            "Tells a Clanmate what they needed to hear but not what they wanted to hear",
+            "Is staying calm during a stressful situation",
+            "Is calmly removing a harmless snake from camp",
+            "Doesn't understand why everyone else freaks out so easily"
         ],
         "involved_cats": {
             "m_c": {
