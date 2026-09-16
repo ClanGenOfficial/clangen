@@ -1,4 +1,5 @@
 import pygame
+import pygame_gui
 from scripts.ui.windows.window_base_class import GameWindow
 from scripts.ui.scale import ui_scale
 
