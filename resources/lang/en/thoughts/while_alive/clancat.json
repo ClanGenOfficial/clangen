@@ -1739,6 +1739,38 @@
         }
     },
     {
+        "event_id": "oblivious_gen",
+        "strings": [
+            "Has been lazing in {PRONOUN/m_c/poss} nest all day with no sign of stopping",
+            "Made {PRONOUN/m_c/poss} Clanmates roll their eyes",
+            "Is lying in the center of camp",
+            "Took an extra piece of fresh-kill from the pile",
+            "Is grooming intensely in clear view of everyone in camp",
+            "Very loudly corrects something someone said wrong offpawedly",
+            "Announced that {PRONOUN/m_c/subject} {VERB/m_c/are/is} heading to the dirtplace",
+            "Was found napping in another cat's nest!",
+            "Bumped into another cat and had to start {PRONOUN/m_c/poss} grooming routine all over again",
+            "Stretches in the center of camp",
+            "Is chasing a butterfly around the camp",
+            "Sulks after r_c takes the piece of prey {PRONOUN/m_c/subject} secretly wanted",
+            "Chases a fly around camp, nearly crashing into r_c"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "oblivious"
+                    ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
         "event_id": "playful_clan_gen",
         "strings": [
             "Is playing tag with cats around camp",
