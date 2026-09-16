@@ -1272,17 +1272,9 @@
         "strings": [
             "Is doubting why things are done the way they are",
             "Has simply decided not to do what {PRONOUN/m_c/subject} {VERB/m_c/were/was} told",
-            "Thinks rules are made to be broken",
             "Thinks every cat should be in charge of themselves",
-            "Is thinking of breaking a rule",
-            "Broke a rule to help a cat in trouble",
-            "Is having to do extra chores after breaking the rules again",
-            "Is following the rules... for now...",
-            "Is in an argument over whether to follow a debatably stupid rule",
             "Is taking an unnecessary risk",
-            "Is suffering the consequences of breaking the rules",
-            "Is taunting a dog stuck behind a Twoleg fence",
-            "Doesn't understand why other cats make rules that {PRONOUN/m_c/subject} {VERB/m_c/have/has} to follow"
+            "Is taunting a dog stuck behind a Twoleg fence"
         ],
         "involved_cats": {
             "m_c": {
