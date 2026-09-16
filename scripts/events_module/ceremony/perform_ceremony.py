@@ -207,7 +207,7 @@ def _handle_leader_ceremony(main_cat):
     """
     Handles everything pertaining to a leader ceremony.
     """
-    game.clan.leader_lives = 9
+    game.clan.reset_leader_lives()
     trigger_ceremony(main_cat, CatRank.LEADER)
     main_cat.generate_lead_ceremony()
     game.clan.deputy = None
