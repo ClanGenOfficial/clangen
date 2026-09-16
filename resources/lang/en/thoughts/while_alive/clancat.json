@@ -434,7 +434,7 @@
             "Wonders about species of prey beyond the border",
             "Wonders about types of plants beyond the border",
             "Volunteers to explore unclaimed territory to help expand c_n's borders",
-            "Explored past the border when nobody was watching"
+            "Explores past the border when nobody is watching"
         ],
         "involved_cats": {
             "m_c": {
@@ -665,7 +665,7 @@
             "Takes over a patrol that {PRONOUN/m_c/subject} {VERB/m_c/were/was}n't assigned to lead",
             "Pokes {PRONOUN/m_c/poss} head into the leader's den",
             "Snatches up a piece of prey right out from under {PRONOUN/m_c/poss} Clanmate's nose",
-            "Is removing a harmless snake from camp"
+            "Removes a harmless snake from camp"
         ],
         "involved_cats": {
             "m_c": {
@@ -893,7 +893,7 @@
     {
         "event_id": "silly_to_living_clan_kit",
         "strings": [
-            "Is hiding from the rest of the Clan with r_c"
+            "Hides from the rest of the Clan with r_c"
         ],
         "involved_cats": {
             "m_c": {
@@ -1205,7 +1205,7 @@
             "Got a Clanmate to do {PRONOUN/m_c/poss} work, never intending to pay {PRONOUN/r_c/object} back for it",
             "Swindles {PRONOUN/m_c/poss} way into an extra piece of fresh-kill",
             "Convinced a Clanmate to side with {PRONOUN/m_c/object} on something",
-            "Is planning on ways to get {PRONOUN/m_c/poss} Clanmates to do what {PRONOUN/m_c/subject} {VERB/m_c/wish/wishes} indirectly"
+            "Schemes to get {PRONOUN/m_c/poss} Clanmates to do what {PRONOUN/m_c/subject} {VERB/m_c/wish/wishes} indirectly"
         ],
         "involved_cats": {
             "m_c": {
@@ -1598,8 +1598,8 @@
             "Puts c_n first",
             "Would give {PRONOUN/m_c/poss} life for c_n",
             "Is proud to know {PRONOUN/m_c/poss} Clanmates can rely on {PRONOUN/m_c/object}",
-            "Hopes {PRONOUN/m_c/poss} Clanmates rely of {PRONOUN/m_c/subject}",
-            "Hopes {PRONOUN/m_c/poss} Clanmates trust {PRONOUN/m_c/subject}"
+            "Hopes {PRONOUN/m_c/poss} Clanmates rely on {PRONOUN/m_c/object}",
+            "Hopes {PRONOUN/m_c/poss} Clanmates trust {PRONOUN/m_c/object}"
         ],
         "involved_cats": {
             "m_c": {
@@ -1690,17 +1690,17 @@
     {
         "event_id": "oblivious_gen",
         "strings": [
-            "Has been lazing in {PRONOUN/m_c/poss} nest all day with no sign of stopping",
-            "Made {PRONOUN/m_c/poss} Clanmates roll their eyes",
+            "Lazes in {PRONOUN/m_c/poss} nest all day with no sign of stopping",
+            "Makes {PRONOUN/m_c/poss} Clanmates roll their eyes",
             "Is lying in the center of camp",
-            "Took an extra piece of fresh-kill from the pile",
-            "Is grooming intensely in clear view of everyone in camp",
-            "Announced that {PRONOUN/m_c/subject} {VERB/m_c/are/is} heading to the dirtplace",
-            "Was found napping in another cat's nest!",
+            "Takes an extra piece of fresh-kill from the pile",
+            "Grooms intensely in clear view of everyone in camp",
+            "Announces that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} heading to the dirtplace",
+            "Is found napping in another cat's nest!",
             "Stretches in the center of camp",
-            "Is chasing a butterfly around the camp",
+            "Chases a butterfly around the camp",
             "Sulks after r_c takes the piece of prey {PRONOUN/m_c/subject} secretly wanted",
-            "Chases a fly around camp, nearly crashing into r_c"
+            "Chases a fly around camp and nearly crashes into r_c"
         ],
         "involved_cats": {
             "m_c": {
@@ -1773,8 +1773,8 @@
             "Remembers breaking the code and getting away with it",
             "Argues with r_c about the leader's authority",
             "Wonders if {PRONOUN/m_c/poss} Clanmates would back {PRONOUN/m_c/object} up",
-            "Is debating on why certain rules in the Code are unnecessary",
-            "Broke the code to help a Clanmate",
+            "Debates whether certain rules in the Code are necessary",
+            "Broke the Code to help a Clanmate",
             "Is bending the rules of the Code",
             "Knows the Code better then most"
         ],
@@ -1825,7 +1825,7 @@
             "Rolled {PRONOUN/m_c/poss} eyes at a job r_c assigned {PRONOUN/m_c/object} to",
             "Is being scolded by r_c",
             "Undermines r_c in front of Clanmates",
-            "Is challenging r_c's authority"
+            "Challenges r_c's authority"
         ],
         "involved_cats": {
             "m_c": {
@@ -2054,7 +2054,7 @@
             "Chases {PRONOUN/m_c/poss} own tail around camp",
             "Talks to the bugs that crawl around camp",
             "Wonders if StarClan ever gets bored",
-            "Is climbing on top of the Warrior's den"
+            "Climbs on top of the warriors' den"
         ],
         "involved_cats": {
             "m_c": {
@@ -2161,8 +2161,8 @@
             "Plucks feathers off {PRONOUN/m_c/poss} fresh-kill to line {PRONOUN/m_c/poss} Clanmates' nests",
             "Feels exhausted from looking out for everyone",
             "Refuses to turn {PRONOUN/m_c/poss} back on a Clanmate",
-            "Hopes {PRONOUN/m_c/poss} Clanmates rely of {PRONOUN/m_c/subject}",
-            "Hopes {PRONOUN/m_c/poss} Clanmates trust {PRONOUN/m_c/subject}"
+            "Hopes {PRONOUN/m_c/poss} Clanmates rely on {PRONOUN/m_c/object}",
+            "Hopes {PRONOUN/m_c/poss} Clanmates trust {PRONOUN/m_c/object}"
         ],
         "involved_cats": {
             "m_c": {
@@ -2351,7 +2351,7 @@
             "Sits quietly, observing the Clan dynamics with a knowing gaze",
             "Purrs softly at a Clanmate taking a rash course of action",
             "Sighs, watching {PRONOUN/m_c/poss} Clanmates argue over a misunderstanding",
-            "Is calmly removing a harmless snake from camp"
+            "Calmly removes a harmless snake from camp"
         ],
         "involved_cats": {
             "m_c": {
