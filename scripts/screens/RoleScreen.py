@@ -292,7 +292,7 @@ class RoleScreen(Screens):
             ui_scale(pygame.Rect((395, 100), (160, 94))),
             object_id=get_text_box_theme("#text_box_22_horizcenter"),
             manager=MANAGER,
-            #line_spacing=0.95,
+            # line_spacing=0.95,
         )
 
         self.selected_cat_elements["role_blurb"] = pygame_gui.elements.UITextBox(

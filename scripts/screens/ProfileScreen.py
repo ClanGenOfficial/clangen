@@ -1860,7 +1860,7 @@ class ProfileScreen(Screens):
             self.condition_data[f"name_{con}"] = pygame_gui.elements.UITextBox(
                 con[0],
                 ui_scale(pygame.Rect((0, 0), (120, -1))),
-                #line_spacing=0.90,
+                # line_spacing=0.90,
                 object_id="#text_box_30_horizcenter",
                 container=self.condition_data[f"bg_{con}"],
                 manager=MANAGER,
@@ -1875,7 +1875,7 @@ class ProfileScreen(Screens):
             self.condition_data[f"desc_{con}"] = pygame_gui.elements.UITextBox(
                 con[1],
                 details_rect,
-                #line_spacing=0.75,
+                # line_spacing=0.75,
                 object_id="#text_box_22_horizcenter",
                 container=self.condition_data[f"bg_{con}"],
                 manager=MANAGER,

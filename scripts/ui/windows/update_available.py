@@ -39,7 +39,7 @@ class UpdateAvailableWindow(GameWindow):
         self.game_over_message = pygame_gui.elements.UITextBox(
             "windows.update_available",
             ui_scale(pygame.Rect((10, 80), (400, -1))),
-            #line_spacing=0.8,
+            # line_spacing=0.8,
             object_id="#update_popup_title",
             container=self,
             text_kwargs={"latest_version_number": latest_version_number},
@@ -48,7 +48,7 @@ class UpdateAvailableWindow(GameWindow):
         self.game_over_message = pygame_gui.elements.UITextBox(
             "windows.current_version",
             ui_scale(pygame.Rect((11, 100), (400, -1))),
-            #line_spacing=0.8,
+            # line_spacing=0.8,
             object_id="#current_version",
             container=self,
             text_kwargs={"ver": current_version_number},
@@ -57,7 +57,7 @@ class UpdateAvailableWindow(GameWindow):
         self.game_over_message = pygame_gui.elements.UITextBox(
             "windows.install_update",
             ui_scale(pygame.Rect((10, 131), (300, -1))),
-            #line_spacing=0.8,
+            # line_spacing=0.8,
             object_id="#text_box_30",
             container=self,
         )
@@ -77,7 +77,7 @@ class UpdateAvailableWindow(GameWindow):
         self.box_text = pygame_gui.elements.UITextBox(
             "windows.dont_ask_again",
             ui_scale(pygame.Rect((39, 190), (125, -1))),
-            #line_spacing=0.8,
+            # line_spacing=0.8,
             object_id="#text_box_30",
             container=self,
         )

@@ -33,7 +33,7 @@ class GameOverWindow(GameWindow):
         self.game_over_message = pygame_gui.elements.UITextBox(
             "windows.game_over_leave_message",
             ui_scale(pygame.Rect((20, 155), (260, -1))),
-            #line_spacing=0.8,
+            # line_spacing=0.8,
             object_id="#text_box_22_horizcenter",
             container=self,
         )

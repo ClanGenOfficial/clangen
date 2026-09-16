@@ -76,7 +76,7 @@ class UIRelationDisplay(UIContainer):
                 object_id="#text_box_26_horizcenter",
                 anchors={"top_target": prev_element},
                 container=self,
-                #line_spacing=0.95,
+                # line_spacing=0.95,
             )
             self.rel_elements[f"romance_text"].set_tooltip(
                 i18n.t(f"relationships.romance", count=relationship.romance)

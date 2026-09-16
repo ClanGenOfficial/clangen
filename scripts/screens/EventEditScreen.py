@@ -1196,9 +1196,9 @@ class EventEditScreen(Screens):
             manager=MANAGER,
         )
         self.event_text_element["preview_button"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((-30, 30), (36, 36))),
+            ui_scale(pygame.Rect((-30, 30), (37, 37))),
             Icon.MAGNIFY,
-            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (37, 37)),
             manager=MANAGER,
             container=self.event_text_container,
             object_id="@buttonstyles_icon_tab_right",
@@ -1237,9 +1237,9 @@ class EventEditScreen(Screens):
             manager=MANAGER,
         )
         self.add_button = UISurfaceImageButton(
-            ui_scale(pygame.Rect((27, 580), (36, 36))),
+            ui_scale(pygame.Rect((27, 580), (37, 37))),
             Icon.NOTEPAD,
-            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
@@ -1264,18 +1264,18 @@ class EventEditScreen(Screens):
         self.kill_tabs()
 
         self.type_tab_buttons["death"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((27, 136), (36, 36))),
+            ui_scale(pygame.Rect((27, 136), (37, 37))),
             Icon.STARCLAN,
-            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
             tool_tip_text="buttons.edit_deaths",
         )
         self.type_tab_buttons["injury"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((27, 10), (36, 36))),
+            ui_scale(pygame.Rect((27, 10), (37, 37))),
             Icon.SCRATCHES,
-            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
@@ -1283,9 +1283,9 @@ class EventEditScreen(Screens):
             anchors={"top_target": self.type_tab_buttons["death"]},
         )
         self.type_tab_buttons["misc"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((27, 10), (36, 36))),
+            ui_scale(pygame.Rect((27, 10), (37, 37))),
             Icon.CLAN_UNKNOWN,
-            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
@@ -1293,9 +1293,9 @@ class EventEditScreen(Screens):
             anchors={"top_target": self.type_tab_buttons["injury"]},
         )
         self.type_tab_buttons["new_cat"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((27, 10), (36, 36))),
+            ui_scale(pygame.Rect((27, 10), (37, 37))),
             Icon.CAT_HEAD,
-            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
@@ -1308,17 +1308,17 @@ class EventEditScreen(Screens):
         self.kill_tabs()
 
         self.biome_tab_buttons["back"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((27, 90), (36, 36))),
+            ui_scale(pygame.Rect((27, 90), (37, 37))),
             Icon.ARROW_LEFT,
-            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
         )
         self.biome_tab_buttons["general"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((27, 10), (36, 36))),
+            ui_scale(pygame.Rect((27, 10), (37, 37))),
             Icon.PAW,
-            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
@@ -1326,9 +1326,9 @@ class EventEditScreen(Screens):
             anchors={"top_target": self.biome_tab_buttons["back"]},
         )
         self.biome_tab_buttons["forest"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((27, 10), (36, 36))),
+            ui_scale(pygame.Rect((27, 10), (37, 37))),
             Icon.LEAFFALL,
-            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
@@ -1336,9 +1336,9 @@ class EventEditScreen(Screens):
             anchors={"top_target": self.biome_tab_buttons["general"]},
         )
         self.biome_tab_buttons["mountainous"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((27, 10), (36, 36))),
+            ui_scale(pygame.Rect((27, 10), (37, 37))),
             Icon.LEAFBARE,
-            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
@@ -1346,9 +1346,9 @@ class EventEditScreen(Screens):
             anchors={"top_target": self.biome_tab_buttons["forest"]},
         )
         self.biome_tab_buttons["plains"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((27, 10), (36, 36))),
+            ui_scale(pygame.Rect((27, 10), (37, 37))),
             Icon.NEWLEAF,
-            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
@@ -1356,9 +1356,9 @@ class EventEditScreen(Screens):
             anchors={"top_target": self.biome_tab_buttons["mountainous"]},
         )
         self.biome_tab_buttons["beach"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((27, 10), (36, 36))),
+            ui_scale(pygame.Rect((27, 10), (37, 37))),
             Icon.DARKFOREST,
-            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
@@ -1367,9 +1367,9 @@ class EventEditScreen(Screens):
         )
 
         self.biome_tab_buttons["desert"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((27, 10), (36, 36))),
+            ui_scale(pygame.Rect((27, 10), (37, 37))),
             Icon.GREENLEAF,
-            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
@@ -1378,9 +1378,9 @@ class EventEditScreen(Screens):
         )
 
         self.biome_tab_buttons["wetlands"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((27, 10), (36, 36))),
+            ui_scale(pygame.Rect((27, 10), (37, 37))),
             Icon.HERB,
-            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_right",
             starting_height=1,
@@ -1750,9 +1750,9 @@ class EventEditScreen(Screens):
             prev_element = None
             for name, icon in self.section_tabs.items():
                 self.editor_element[name] = UISurfaceImageButton(
-                    ui_scale(pygame.Rect((10, -6), (36, 36))),
+                    ui_scale(pygame.Rect((10, -6), (37, 37))),
                     icon,
-                    get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (36, 36)),
+                    get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (37, 37)),
                     manager=MANAGER,
                     object_id="@buttonstyles_icon_tab_bottom",
                     starting_height=1,
@@ -1825,9 +1825,9 @@ class EventEditScreen(Screens):
             container = self.editor_container
 
         self.lock_buttons[name] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((x_offset, y_offset), (36, 36))),
+            ui_scale(pygame.Rect((x_offset, y_offset), (37, 37))),
             Icon.UNLOCK,
-            get_button_dict(ButtonStyles.ICON, (36, 36)),
+            get_button_dict(ButtonStyles.ICON, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon",
             container=container,
@@ -4276,9 +4276,9 @@ class EventEditScreen(Screens):
         )
 
         self.future_element["add"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((30, 4), (36, 36))),
+            ui_scale(pygame.Rect((30, 4), (37, 37))),
             "+",
-            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_bottom",
             container=self.editor_container,
@@ -4290,9 +4290,9 @@ class EventEditScreen(Screens):
         )
 
         self.future_element["delete"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((5, 4), (36, 36))),
+            ui_scale(pygame.Rect((5, 4), (37, 37))),
             "-",
-            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_bottom",
             container=self.editor_container,
@@ -4635,9 +4635,9 @@ class EventEditScreen(Screens):
         )
 
         self.supply_element["add"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((30, 4), (36, 36))),
+            ui_scale(pygame.Rect((30, 4), (37, 37))),
             "+",
-            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_bottom",
             container=self.editor_container,
@@ -4648,9 +4648,9 @@ class EventEditScreen(Screens):
             tool_tip_text="add a new block",
         )
         self.supply_element["delete"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((5, 4), (36, 36))),
+            ui_scale(pygame.Rect((5, 4), (37, 37))),
             "-",
-            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_bottom",
             container=self.editor_container,
@@ -5148,9 +5148,9 @@ class EventEditScreen(Screens):
             self.injury_element["block_list"].set_selected_list(["0"])
 
         self.injury_element["add"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((30, 4), (36, 36))),
+            ui_scale(pygame.Rect((30, 4), (37, 37))),
             "+",
-            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_bottom",
             container=self.injury_element["container"],
@@ -5162,9 +5162,9 @@ class EventEditScreen(Screens):
         )
 
         self.injury_element["delete"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((5, 4), (36, 36))),
+            ui_scale(pygame.Rect((5, 4), (37, 37))),
             "-",
-            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_bottom",
             container=self.injury_element["container"],
@@ -5449,9 +5449,9 @@ class EventEditScreen(Screens):
             self.history_element["block_list"].set_selected_list(["0"])
 
         self.history_element["add"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((30, 4), (36, 36))),
+            ui_scale(pygame.Rect((30, 4), (37, 37))),
             "+",
-            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_bottom",
             container=self.history_element["container"],
@@ -5463,9 +5463,9 @@ class EventEditScreen(Screens):
         )
 
         self.history_element["delete"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((5, 4), (36, 36))),
+            ui_scale(pygame.Rect((5, 4), (37, 37))),
             "-",
-            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_bottom",
             container=self.history_element["container"],
@@ -5697,9 +5697,9 @@ class EventEditScreen(Screens):
             self.relationships_element["block_list"].set_selected_list(["0"])
 
         self.relationships_element["add"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((30, 4), (36, 36))),
+            ui_scale(pygame.Rect((30, 4), (37, 37))),
             "+",
-            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_bottom",
             container=self.relationships_element["container"],
@@ -5711,9 +5711,9 @@ class EventEditScreen(Screens):
         )
 
         self.relationships_element["delete"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((5, 4), (36, 36))),
+            ui_scale(pygame.Rect((5, 4), (37, 37))),
             "-",
-            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_bottom",
             container=self.relationships_element["container"],
@@ -6045,9 +6045,9 @@ class EventEditScreen(Screens):
         self.update_new_cat_button_tooltips()
 
         self.new_cat_editor["add"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((30, 4), (36, 36))),
+            ui_scale(pygame.Rect((30, 4), (37, 37))),
             "+",
-            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_bottom",
             container=self.editor_container,
@@ -6059,9 +6059,9 @@ class EventEditScreen(Screens):
         )
 
         self.new_cat_editor["delete"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((5, 4), (36, 36))),
+            ui_scale(pygame.Rect((5, 4), (37, 37))),
             "-",
-            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (36, 36)),
+            get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (37, 37)),
             manager=MANAGER,
             object_id="@buttonstyles_icon_tab_bottom",
             container=self.editor_container,

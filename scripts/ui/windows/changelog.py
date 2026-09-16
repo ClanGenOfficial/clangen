@@ -85,7 +85,7 @@ class ChangelogWindow(GameWindow):
             file_cont,
             ui_scale(pygame.Rect((10, 65), (480, 325))),
             object_id="#text_box_30",
-            #line_spacing=0.95,
+            # line_spacing=0.95,
             starting_height=2,
             container=self,
             manager=MANAGER,
