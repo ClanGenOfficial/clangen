@@ -1112,7 +1112,7 @@
               }
             },
     "strings": [
-        "<i>Immediately</i> upon being made an apprentice, m_c turns to {PRONOUN/m_c/poss} Clanmates, explaining <i>exactly</i> how {PRONOUN/m_c/subject} plan for {PRONOUN/m_c/poss} apprenticehood to play out."
+        "<i>Immediately</i> upon being made an apprentice, m_c turns to {PRONOUN/m_c/poss} Clanmates, explaining <i>exactly</i> how {PRONOUN/m_c/subject} plan for {PRONOUN/m_c/poss} apprenticehood to play out. Without a mentor, m_c has to have <i>some</i> plan for their training!"
     ]
     },
     {
