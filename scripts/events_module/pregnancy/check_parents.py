@@ -54,6 +54,10 @@ def check_if_can_have_kits(cat):
         ):
             return False
 
+    # check for role
+    if cat.status.rank not in get_config("pregnancy.can_have_kits"):
+        return False
+
     # if function reaches this point, having kits is possible
     return True
 
