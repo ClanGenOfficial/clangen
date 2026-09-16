@@ -56,7 +56,13 @@ def check_if_can_have_kits(cat):
 
     # check for role
     if cat.status.rank not in get_config("pregnancy.can_have_kits"):
-        return False
+        if not cat.mate:
+            return False
+        elif cat.mate:
+            for mate_id in cat.mate:
+                mate = cat.fetch_cat(mate_id)
+                if mate.status.rank not in get_config("pregnancy.can_have_kits"):
+                    return False
 
     # if function reaches this point, having kits is possible
     return True
