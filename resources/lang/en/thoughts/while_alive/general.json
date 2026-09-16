@@ -1219,7 +1219,11 @@
             "Thinks every cat should be in charge of themselves",
             "Is thinking of breaking a rule",
             "Broke a rule to help a cat in trouble",
-            "Is having to do extra chores after breaking the rules again"
+            "Is having to do extra chores after breaking the rules again",
+            "Is following the rules... for now...",
+            "Is in an argument over whether to follow a debatably stupid rule",
+            "Is taking an unnecessary risk",
+            "Is suffering the consequences of breaking the rules"
         ],
         "involved_cats": {
             "m_c": {
