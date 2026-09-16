@@ -444,7 +444,9 @@
             "Disappeared all day to explore the territory",
             "Promises {PRONOUN/m_c/poss} Clanmates {PRONOUN/m_c/subject} won't do anything dangerous",
             "Wonders about species of prey beyond the border",
-            "Wonders about types of plants beyond the border"
+            "Wonders about types of plants beyond the border",
+            "Volunteers to explore unclaimed territory to help expand c_n's borders",
+            "Explored past the border when nobody was watching"
         ],
         "involved_cats": {
             "m_c": {
@@ -514,7 +516,8 @@
             "Is daydreaming about a Clan celebration in {PRONOUN/m_c/poss} honor",
             "Offers to help {PRONOUN/m_c/poss} Clanmates with their duties",
             "Considers spending the whole day hunting on {PRONOUN/m_c/poss} own",
-            "Encourages every cat to help fortify the dens"
+            "Encourages every cat to help fortify the dens",
+            "Daydreams of establishing a whole new Clan"
         ],
         "involved_cats": {
             "m_c": {
@@ -674,7 +677,8 @@
             "Tells a Clanmate to their face that their pelt has been looking dull lately",
             "Takes over a patrol that {PRONOUN/m_c/subject} {VERB/m_c/were/was}n't assigned to lead",
             "Pokes {PRONOUN/m_c/poss} head into the leader's den",
-            "Snatches up a piece of prey right out from under {PRONOUN/m_c/poss} Clanmate's nose"
+            "Snatches up a piece of prey right out from under {PRONOUN/m_c/poss} Clanmate's nose",
+            "Is removing a harmless snake from camp"
         ],
         "involved_cats": {
             "m_c": {
@@ -910,7 +914,8 @@
     {
         "event_id": "silly_to_living_clan_kit",
         "strings": [
-            "Plays moss ball with r_c"
+            "Plays moss ball with r_c",
+            "Is hiding from the rest of the Clan with r_c"
         ],
         "involved_cats": {
             "m_c": {
@@ -1038,7 +1043,8 @@
             "Is keeping the injured cats company",
             "Can't stop smiling because of another Clanmate's good mood",
             "Says sorry before {PRONOUN/m_c/subject} {VERB/m_c/bite/bites} into {PRONOUN/m_c/poss} fresh-kill",
-            "Purrs contently at the thought of {PRONOUN/m_c/poss} Clanmates being happy"
+            "Purrs contently at the thought of {PRONOUN/m_c/poss} Clanmates being happy",
+            "Believes in {PRONOUN/m_c/poss} Clanmates"
         ],
         "involved_cats": {
             "m_c": {
@@ -1186,7 +1192,8 @@
             "Doesn't think twice before correcting a Clanmate on something minor",
             "Offers tips to every cat in the Clan",
             "Feels uncertain about {PRONOUN/m_c/poss} role for a moment, then brushes it off easily",
-            "Asks for extra work, sure that {PRONOUN/m_c/subject} can handle it"
+            "Asks for extra work, sure that {PRONOUN/m_c/subject} can handle it",
+            "Believes in {PRONOUN/m_c/poss} Clanmates"
         ],
         "involved_cats": {
             "m_c": {
@@ -1234,7 +1241,9 @@
             "Carefully curates {PRONOUN/m_c/poss} appearance to be the most dazzling in the Clan",
             "Got a Clanmate to do {PRONOUN/m_c/poss} work, never intending to pay {PRONOUN/r_c/object} back for it",
             "Persuades r_c to back {PRONOUN/m_c/object} up in a lie",
-            "Swindles {PRONOUN/m_c/poss} way into an extra piece of fresh-kill"
+            "Swindles {PRONOUN/m_c/poss} way into an extra piece of fresh-kill",
+            "Convinced a Clanmate to side with {PRONOUN/m_c/object} on something",
+            "Is planning on ways to get {PRONOUN/m_c/poss} Clanmates to do what {PRONOUN/m_c/subject} {VERB/m_c/wish/wishes} indirectly"
         ],
         "involved_cats": {
             "m_c": {
@@ -1276,7 +1285,8 @@
             "Promises to stick by a Clanmate's side",
             "Refuses to reconsider a belief a Clanmate disagreed with",
             "Is debating a conflicting belief with a Clanmate",
-            "Leaves fresh-kill at the grave of a dead loved one"
+            "Leaves fresh-kill at the grave of a dead loved one",
+            "Believes in {PRONOUN/m_c/poss} Clanmates"
         ],
         "involved_cats": {
             "m_c": {
@@ -1500,7 +1510,8 @@
             "Compares r_c to a legendary StarClan warrior",
             "Brings r_c {PRONOUN/r_c/poss} favorite prey",
             "Daydreams about a whirlwind romance",
-            "Feels giddy watching two Clanmates flirt"
+            "Feels giddy watching two Clanmates flirt",
+            "Believes in {PRONOUN/m_c/poss} Clanmates"
         ],
         "involved_cats": {
             "m_c": {
@@ -1636,7 +1647,9 @@
             "Knows {PRONOUN/m_c/poss} friendships are just as important as Clan bonds",
             "Puts c_n first",
             "Would give {PRONOUN/m_c/poss} life for c_n",
-            "Is proud to know {PRONOUN/m_c/poss} Clanmates can rely on {PRONOUN/m_c/object}"
+            "Is proud to know {PRONOUN/m_c/poss} Clanmates can rely on {PRONOUN/m_c/object}",
+            "Hopes {PRONOUN/m_c/oss} Clanmates rely of {PRONOUN/m_c/subject}",
+            "Hopes {PRONOUN/m_c/oss} Clanmates trust {PRONOUN/m_c/subject}"
         ],
         "involved_cats": {
             "m_c": {
@@ -1784,7 +1797,11 @@
             "Remembers breaking the code and getting away with it",
             "Doesn't understand why other cats make rules that {PRONOUN/m_c/subject} {VERB/m_c/have/has} to follow",
             "Argues with r_c about the leader's authority",
-            "Wonders if {PRONOUN/m_c/poss} Clanmates would back {PRONOUN/m_c/object} up"
+            "Wonders if {PRONOUN/m_c/poss} Clanmates would back {PRONOUN/m_c/object} up",
+            "Is debating on why certain rules in the Code are unnecessary",
+            "Broke the code to help a Clanmate",
+            "Is bending the rules of the Code",
+            "Knows the Code better then most"
         ],
         "involved_cats": {
             "m_c": {
@@ -1865,7 +1882,8 @@
             "Offers to help Clanmates with their duties",
             "Keeps the warrior code in mind",
             "Worries that the Clan may be over-hunting",
-            "Worries that the fresh-kill pile is looking lean"
+            "Worries that the fresh-kill pile is looking lean",
+            "Believes in {PRONOUN/m_c/poss} Clanmates"
         ],
         "involved_cats": {
             "m_c": {
@@ -2032,7 +2050,9 @@
             "Makes the rounds around camp, checking in on every cat",
             "Wonders if {PRONOUN/m_c/poss} blunt correction of a Clanmate was too harsh",
             "Suggested a Clanmate speak with a mediator",
-            "Was brutally honest with a Clanmate and feels bad about it"
+            "Was brutally honest with a Clanmate and feels bad about it",
+            "Believes in {PRONOUN/m_c/poss} Clanmates",
+            "Is quick to reassure a Clanmate even if they don't need it"
         ],
         "involved_cats": {
             "m_c": {
@@ -2060,7 +2080,8 @@
             "Chases {PRONOUN/m_c/poss} own tail around camp",
             "Talks to the bugs that crawl around camp",
             "Wonders if StarClan ever gets bored",
-            "Makes a poultice of mud and grass"
+            "Makes a poultice of mud and grass",
+            "Is climbing on top of the Warrior's den"
         ],
         "involved_cats": {
             "m_c": {
@@ -2170,7 +2191,9 @@
             "Offered to share {PRONOUN/m_c/poss} prey with a Clanmate sitting all by themselves",
             "Plucks feathers off {PRONOUN/m_c/poss} fresh-kill to line {PRONOUN/m_c/poss} Clanmates' nests",
             "Feels exhausted from looking out for everyone",
-            "Brings r_c {PRONOUN/r_c/poss} favorite flower"
+            "Refuses to turn {PRONOUN/m_c/poss} back on a Clanmate",
+            "Hopes {PRONOUN/m_c/oss} Clanmates rely of {PRONOUN/m_c/subject}",
+            "Hopes {PRONOUN/m_c/oss} Clanmates trust {PRONOUN/m_c/subject}"
         ],
         "involved_cats": {
             "m_c": {
@@ -2361,7 +2384,8 @@
             "Is explaining the truth to a Clanmate that said something incorrect",
             "Sits quietly, observing the Clan dynamics with a knowing gaze",
             "Purrs softly at a Clanmate taking a rash course of action",
-            "Sighs, watching {PRONOUN/m_c/poss} Clanmates argue over a misunderstanding"
+            "Sighs, watching {PRONOUN/m_c/poss} Clanmates argue over a misunderstanding",
+            "Is calmly removing a harmless snake from camp"
         ],
         "involved_cats": {
             "m_c": {
