@@ -815,22 +815,6 @@
         }
     },
     {
-        "event_id": "rom_inc_high_traitsincere",
-        "strings": [
-            "r_c is forthcoming and direct when other cats won't speak up, and m_c admires that.",
-            "m_c knows {PRONOUN/m_c/subject} can always count on r_c to tell the truth.",
-            "r_c never hides anything, but m_c dreams that perhaps r_c feels more for {PRONOUN/m_c/object} than {PRONOUN/r_c/subject} {VERB/r_c/let/lets} on."
-        ],
-        "involved_cats": {
-            "m_c": {},
-            "r_c": {
-                "stat": {
-                    "trait": ["gloomy"]
-                }
-            }
-        }
-    },
-    {
         "event_id": "rom_inc_high_traitflamboyant",
         "strings": [
             "m_c finds r_c's big personality magnetic.",
