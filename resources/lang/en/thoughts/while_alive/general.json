@@ -703,7 +703,7 @@
             "Is taking an unnecessarry risk just to get ahead of r_c",
             "Is comparing {PRONOUN/m_c/self} to others",
             "Is turning {PRONOUN/m_c/poss} chores into a competition",
-            "Is pouting after losing a competition {PRONOUN/m_c/subjection} suggested",
+            "Is pouting after losing a competition {PRONOUN/m_c/subject} suggested",
             "Is taking a game way too seriously",
             "Is taking a friendly competition way too seriously",
             "Needs no reassurance in {PRONOUN/m_c/poss} abilities",
@@ -1083,7 +1083,7 @@
             "Reminds r_c that {PRONOUN/r_c/subject} can tell {PRONOUN/m_c/object} anything",
             "Promises to stand with r_c no matter what",
             "Judges a Clanmate's disloyalty",
-            "Loyally stands by r_c even if {PRONOUN/r_c/subject} {VERB/r_/were/was} wrong",
+            "Loyally stands by r_c even if {PRONOUN/r_c/subject} {VERB/r_c/were/was} wrong",
             "Refuses to turn {PRONOUN/m_c/poss} back on a Clanmate",
             "Is pushing r_c to be even better"
         ],

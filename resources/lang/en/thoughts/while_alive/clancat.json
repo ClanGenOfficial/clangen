@@ -1648,8 +1648,8 @@
             "Puts c_n first",
             "Would give {PRONOUN/m_c/poss} life for c_n",
             "Is proud to know {PRONOUN/m_c/poss} Clanmates can rely on {PRONOUN/m_c/object}",
-            "Hopes {PRONOUN/m_c/oss} Clanmates rely of {PRONOUN/m_c/subject}",
-            "Hopes {PRONOUN/m_c/oss} Clanmates trust {PRONOUN/m_c/subject}"
+            "Hopes {PRONOUN/m_c/poss} Clanmates rely of {PRONOUN/m_c/subject}",
+            "Hopes {PRONOUN/m_c/poss} Clanmates trust {PRONOUN/m_c/subject}"
         ],
         "involved_cats": {
             "m_c": {
@@ -2192,8 +2192,8 @@
             "Plucks feathers off {PRONOUN/m_c/poss} fresh-kill to line {PRONOUN/m_c/poss} Clanmates' nests",
             "Feels exhausted from looking out for everyone",
             "Refuses to turn {PRONOUN/m_c/poss} back on a Clanmate",
-            "Hopes {PRONOUN/m_c/oss} Clanmates rely of {PRONOUN/m_c/subject}",
-            "Hopes {PRONOUN/m_c/oss} Clanmates trust {PRONOUN/m_c/subject}"
+            "Hopes {PRONOUN/m_c/poss} Clanmates rely of {PRONOUN/m_c/subject}",
+            "Hopes {PRONOUN/m_c/poss} Clanmates trust {PRONOUN/m_c/subject}"
         ],
         "involved_cats": {
             "m_c": {
