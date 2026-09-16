@@ -843,11 +843,11 @@
         "newborn_exotic_muzzle": "#A56A57"
 },
     "RUST": {
-        "base": "#553233",
+        "base": "#431E2B",
         "base_gradient_bottom": "#432630",
         "base_gradient_top": "#88463F",
         "pattern": "#120A08",
-        "pattern_gradient_top": "#612107",
+        "pattern_gradient_top": "#4C1A05",
         "pattern_fill": "#32121D",
         "masked_light_pattern": "#3A1C1D",
 
