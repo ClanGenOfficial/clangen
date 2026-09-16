@@ -1881,7 +1881,8 @@
             "Had a lengthy debate with r_c",
             "Rolled {PRONOUN/m_c/poss} eyes at a job r_c assigned {PRONOUN/m_c/object} to",
             "Is being scolded by r_c",
-            "Undermines r_c in front of Clanmates"
+            "Undermines r_c in front of Clanmates",
+            "Is challenging r_c's authority"
         ],
         "involved_cats": {
             "m_c": {
