@@ -132,6 +132,20 @@
        "pregnancy.can_have_kits": ["leader", "loner", "rogue", "kittypet"]
     }
   },
+  "weak_stars": {
+    "card_art": "behavior/sorrow.png",
+    "modifiers": {
+      "death_related.max_leader_lives": 5,
+      "death_related.min_leader_lives": 1
+    }
+  },
+  "forsaken": {
+    "card_art": "behavior/forsaken.png",
+    "modifiers": {
+      "death_related.max_leader_lives": 1,
+      "death_related.min_leader_lives": 1
+    }
+  },
   "burnout": {
     "card_art": "behavior/burnout.png",
     "modifiers": {
