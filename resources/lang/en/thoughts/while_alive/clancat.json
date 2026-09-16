@@ -1776,7 +1776,15 @@
             "Debates whether certain rules in the Code are necessary",
             "Broke the Code to help a Clanmate",
             "Is bending the rules of the Code",
-            "Knows the Code better then most"
+            "Knows the Code better then most",
+            "Thinks rules are made to be broken",
+            "Is thinking of breaking a rule",
+            "Broke a rule to help a cat in trouble",
+            "Is having to do extra chores after breaking the rules again",
+            "Is following the rules... for now...",
+            "Is in an argument over whether to follow a debatably stupid rule",
+            "Is suffering the consequences of breaking the rules",
+            "Doesn't understand why other cats make rules that {PRONOUN/m_c/subject} {VERB/m_c/have/has} to follow"
         ],
         "involved_cats": {
             "m_c": {
