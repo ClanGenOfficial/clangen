@@ -29,6 +29,7 @@ from scripts.events_module.pregnancy.check_family_size import (
 from scripts.events_module.short.condition_events import Condition_Events
 from scripts.events_module.text_adjust import event_text_adjust, adjust_list_text
 from scripts.game_structure import game
+from scripts.models.common import cat
 
 
 def get_kits(
@@ -426,6 +427,15 @@ def handle_adoption(cat: Cat, other_cat: Optional[Cat] = None):
     ):
         return
 
+    # account for role limits
+    if cat.status.rank not in get_config("pregnancy.can_have_kits"):
+        if not cat.mate:
+            return
+        elif cat.mate:
+            for mate_id in cat.mate:
+                mate = cat.fetch_cat(mate_id)
+                if mate.status.rank not in get_config("pregnancy.can_have_kits"):
+                    return
     # Gather adoptive parents, to feed into the
     # get kits function.
     adoptive_parents = [cat.ID]
