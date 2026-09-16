@@ -72,38 +72,40 @@ class UIImageButton(pygame_gui.elements.UIButton):
 
     @staticmethod
     def _scale_image_to_fit(
-            image: pygame.Surface, target_size: tuple[int, int]
-        ) -> pygame.Surface:
-            """
-            Scale an image to fit within the target size while maintaining aspect ratio.
-            The image will be scaled to the largest size that fits within the target dimensions.
-    
-            :param image: The image surface to scale.
-            :param target_size: The target size (width, height) to fit the image within.
-            :return: The scaled image surface.
-            """
-            if image is None:
-                return None
-    
-            image_width, image_height = image.get_size()
-            target_width, target_height = target_size
-    
-            # Calculate scale factors for both dimensions
-            scale_x = target_width / image_width
-            scale_y = target_height / image_height
-    
-            # Use the smaller scale factor to ensure the image fits within the target size
-            scale = min(scale_x, scale_y)
-    
-            # Calculate new dimensions
-            new_width = int(image_width * scale)
-            new_height = int(image_height * scale)
-    
-            # Scale the image
-            if new_width > 0 and new_height > 0:
-                return pygame.transform.scale(image, (new_width, new_height)) # This is the only line I changed from the orginal function.
-            else:
-                return image
+        image: pygame.Surface, target_size: tuple[int, int]
+    ) -> pygame.Surface:
+        """
+        Scale an image to fit within the target size while maintaining aspect ratio.
+        The image will be scaled to the largest size that fits within the target dimensions.
+
+        :param image: The image surface to scale.
+        :param target_size: The target size (width, height) to fit the image within.
+        :return: The scaled image surface.
+        """
+        if image is None:
+            return None
+
+        image_width, image_height = image.get_size()
+        target_width, target_height = target_size
+
+        # Calculate scale factors for both dimensions
+        scale_x = target_width / image_width
+        scale_y = target_height / image_height
+
+        # Use the smaller scale factor to ensure the image fits within the target size
+        scale = min(scale_x, scale_y)
+
+        # Calculate new dimensions
+        new_width = int(image_width * scale)
+        new_height = int(image_height * scale)
+
+        # Scale the image
+        if new_width > 0 and new_height > 0:
+            return pygame.transform.scale(
+                image, (new_width, new_height)
+            )  # This is the only line I changed from the orginal function.
+        else:
+            return image
 
     @property
     def mask(self):
