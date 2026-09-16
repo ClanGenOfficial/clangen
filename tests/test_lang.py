@@ -1,5 +1,4 @@
 # Tests for localization
-import os
 import unittest
 from random import Random
 
@@ -7,9 +6,6 @@ import i18n
 import ujson
 
 from scripts.cat.factories.test_cat_factory import TestCatFactory
-
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.localization import (
