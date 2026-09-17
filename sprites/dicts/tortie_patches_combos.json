@@ -247,5 +247,17 @@
     "SIDEPETAL": [
         "LARKPETAL",
         "SIDEMASK"
+    ],
+    "SOCKS": [
+        "PAW_FL_CLOVERTAIL",
+        "PAW_FR_T",
+        "BOTHEARS_T",
+        "PAW_BL_SPLOTCH",
+        "PAW_BR_WING",
+        "TAILTIP_T"
+    ],
+    "STROKE": [
+        "STREAK",
+        "SMOKE"
     ]
 }
