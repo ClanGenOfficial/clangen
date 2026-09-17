@@ -2,12 +2,14 @@
   "colour_groups":
   {
     "WHITE": "white",
+    "CHINCHILLA": "white",
     "PALEGREY": "gray",
     "SILVER": "gray",
     "GREY": "gray",
     "DARKGREY": "black",
     "GHOST": "black",
     "BLACK": "black",
+    "MALLOW": "brown",
     "BLOSSOM": "ginger",
     "DAWN": "ginger",
     "CREAM": "ginger",

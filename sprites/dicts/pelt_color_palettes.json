@@ -43,6 +43,53 @@
         "newborn_exotic_light_pattern": "#EEEEED",
         "newborn_exotic_muzzle": "#EEF9FC"
 },
+    "CHINCHILLA": {
+        "base": "#E1E4EB",
+        "base_gradient_bottom": "#F4FBF4",
+        "base_gradient_top": "#BAC8D6",
+        "pattern": "#37474D",
+        "pattern_gradient_top": "#3A4B54",
+        "pattern_fill": "#D5DEE3",
+        "masked_light_pattern": "#F2FAFA",
+
+        "singlecolour_chinchilla_base_gradient_top": "#ABB5C2",
+        "chinchilla_pattern_gradient_front": "#C7D5E4",
+
+        "newborn_base": "#F5FCFC",
+        "newborn_base_gradient_bottom": "#F3FBF7",
+        "newborn_base_gradient_top": "#BDC5C7",
+        "newborn_pattern": "#C0C8CC",
+        "newborn_pattern_gradient_top": "#9FA7AB",
+        "newborn_pattern_fill": "#EEF9FC",
+
+        "smoke_base": "#DDE6EB",
+        "smoke_base_gradient_top": "#C5CFD4",
+        "smoke_base_gradient_bottom": "#F4FBF4",
+        "smoke_pattern": "#878E91",
+        "smoke_pattern_gradient_top": "#565D61",
+
+        "freckled_pattern_gradient_top": "#A6A9B3",
+
+        "exotic_base": "#F6F6F6",
+        "exotic_base_gradient_bottom": "#FFFFFF",
+        "exotic_base_gradient_top": "#B4B7BF",
+        "exotic_pattern": "#454C4F",
+        "exotic_pattern_gradient_top": "#2F3638",
+        "exotic_pattern_fill": "#FFFFFF",
+        "exotic_pattern_fill_gradient_top": "#F6F6F6",
+        "exotic_light_pattern": "#FFFFFF",
+        "exotic_muzzle": "#B4B7BF",
+
+        "newborn_exotic_base": "#FAFAFA",
+        "newborn_exotic_base_gradient_bottom": "#BFC5C7",
+        "newborn_exotic_base_gradient_top": "#DCDBDF",
+        "newborn_exotic_pattern": "#9DA4A6",
+        "newborn_exotic_pattern_gradient_top": "#9DA4A6",
+        "newborn_exotic_pattern_fill": "#FAFAFA",
+        "newborn_exotic_pattern_fill_gradient_top": "#BFBEBF",
+        "newborn_exotic_light_pattern": "#EEEEED",
+        "newborn_exotic_muzzle": "#DCDBDF"
+},
     "PALEGREY": {
         "base": "#C2D5D3",
         "base_gradient_bottom": "#DEE4D0",

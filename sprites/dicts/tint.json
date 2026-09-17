@@ -2,12 +2,14 @@
   "colour_groups":
   {
     "WHITE": "white",
+    "CHINCHILLA": "white",
     "PALEGREY": "lightgrey",
     "SILVER": "lightgrey",
     "GREY": "darkgrey",
     "DARKGREY": "darkgrey",
     "GHOST": "ghost",
     "BLACK": "black",
+    "MALLOW": "cream",
     "DAWN": "cream",
     "BLOSSOM": "cream",
     "HONEY": "cream",
@@ -17,7 +19,6 @@
     "GINGER": "darkginger",
     "DARKGINGER": "darkginger",
     "SIENNA": "sienna",
-    "MALLOW": "lightbrown",
     "LIGHTBROWN": "lightbrown",
     "LILAC": "lilac",
     "BROWN": "brown",
