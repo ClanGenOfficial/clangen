@@ -1353,6 +1353,7 @@ def _get_cats_with_age(cat_list: list, ages: list[str]) -> list:
     else:
         return [kitty for kitty in cat_list if kitty.age in ages]
 
+
 def _get_cats_with_gender(cat_list: list, genders: list[str]) -> list:
     if not genders:
         return cat_list
