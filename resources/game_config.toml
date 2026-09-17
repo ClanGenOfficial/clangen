@@ -1,5 +1,5 @@
 # whether or not development tools are disabled
-dev_tools = true
+dev_tools = false
 
 [seasons]
   # set to true to force the season to be locked at the Clan's starting_season
