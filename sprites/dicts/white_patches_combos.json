@@ -407,6 +407,13 @@
             "littleLEG_FRONT_RIGHT_MID",
             "littleLEG_BACK_RIGHT_HIGH",
             "littleLEG_BACK_LEFT_MID"
+        ],
+        "AMORE": [
+            "littleUNDER_HEART",
+            "littleREVERSEHEART",
+            "littleTAILTIP",
+            "littleLOCKET",
+            "littleLEFTEAR"
         ]
     },
     "high": {
