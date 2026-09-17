@@ -71,7 +71,7 @@ class UIModifiedScrollingContainer(
             )
             self.join_focus_sets(self.vert_scroll_bar)
 
-            self.vert_scroll_bar.set_container_this_will_scroll(
+            self.vert_scroll_bar.set_container_to_check_hover_for_mousewheel_events(
                 self.scrollable_container
             )
 
@@ -104,7 +104,7 @@ class UIModifiedScrollingContainer(
             )
             self.horiz_scroll_bar.set_dimensions((self.relative_rect.width, 0))
             self.horiz_scroll_bar.set_relative_position((0, 0))
-            self.horiz_scroll_bar.set_container_this_will_scroll(
+            self.horiz_scroll_bar.set_container_to_check_hover_for_mousewheel_events(
                 self.scrollable_container
             )
             self.join_focus_sets(self.horiz_scroll_bar)

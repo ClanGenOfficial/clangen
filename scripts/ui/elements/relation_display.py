@@ -6,7 +6,6 @@ from pygame_gui.core import UIContainer
 from scripts.cat_relations.enums import RelType
 from scripts.ui.elements.relation_status_fill_bar import UIRelationStatusFillBar
 from scripts.ui.elements.relation_status_scale_bar import UIRelationStatusScaleBar
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.scale import ui_scale
 
 
@@ -66,7 +65,7 @@ class UIRelationDisplay(UIContainer):
 
             # ROMANCE
         if romance:
-            self.rel_elements[f"romance_text"] = UITextBoxTweaked(
+            self.rel_elements[f"romance_text"] = pygame_gui.elements.UITextBox(
                 f"relationships.{relationship.romance_tier if relationship.romance_tier else 'neutral'}",
                 ui_scale(
                     pygame.Rect(
@@ -77,7 +76,7 @@ class UIRelationDisplay(UIContainer):
                 object_id="#text_box_26_horizcenter",
                 anchors={"top_target": prev_element},
                 container=self,
-                line_spacing=0.95,
+                # line_spacing=0.95,
             )
             self.rel_elements[f"romance_text"].set_tooltip(
                 i18n.t(f"relationships.romance", count=relationship.romance)
