@@ -358,6 +358,9 @@ dev_tools = false
       trust = 10
 
 [pregnancy]
+  # decides which roles can have kits
+  can_have_kits = ["leader", "deputy", "medicine cat", "warrior", "mediator", "elder", "kittypet", "rogue", "loner"]
+
   # cooldown for cats getting pregnant that applies after giving birth
   birth_cooldown = 6
 
@@ -430,6 +433,7 @@ dev_tools = false
       romance = 20
       comfort = 30
       trust = 25
+
       
 [cat_generation]
   # base 1/chance that a cat will generate with a permanent condition. gets modified further in code
@@ -631,8 +635,9 @@ dev_tools = false
   debug_ensure_ceremony_id = ""
 
 [death_related]
-  # the maximum lives a leader can have
+  # the amount of lives a leader can have
   max_leader_lives = 9
+  min_leader_lives = 9
 
   # base 1/chance that leader will die
   leader_death_chance = 50
@@ -696,6 +701,10 @@ dev_tools = false
   # SUBTRACTS from the denominator so higher = more likely to get injured
   war_injury_modifier = 225
 
+[medcats]
+  # base number of cats each medcat can care for, before skill/experience modifiers
+  medcat_base_capacity = 10
+
 [clan_creation]
   # Set this to -1 for it to be infinite
   rerolls = 3
@@ -729,8 +738,14 @@ dev_tools = false
     member = ["newborn", "kitten", "adolescent", "young adult", "adult", "senior adult", "senior"]
 
 [ranks]
+# force only the leader's kits to be selected as deputy
+    only_leader_kits_deputy = false
+
+  [ranks.can_manually_change]
   # permit player to change cat ranks
-  allow_manual = true
+    all = true
+    deputy = true
+
 
 [graduation]
   # base possible experience gain for apprentices
