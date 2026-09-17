@@ -1599,7 +1599,9 @@
             "Would give {PRONOUN/m_c/poss} life for c_n",
             "Is proud to know {PRONOUN/m_c/poss} Clanmates can rely on {PRONOUN/m_c/object}",
             "Hopes {PRONOUN/m_c/poss} Clanmates rely on {PRONOUN/m_c/object}",
-            "Hopes {PRONOUN/m_c/poss} Clanmates trust {PRONOUN/m_c/object}"
+            "Hopes {PRONOUN/m_c/poss} Clanmates trust {PRONOUN/m_c/object}",
+            "Judges a Clanmate's disloyalty",
+            "Refuses to turn {PRONOUN/m_c/poss} back on a Clanmate"
         ],
         "involved_cats": {
             "m_c": {

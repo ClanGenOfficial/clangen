@@ -296,7 +296,7 @@
                     "adolescent"
                 ],
                 "group": [
-                    "-afterlife"
+                    "match:m_c"
                 ]
             }
         }
@@ -322,6 +322,11 @@
                         "ambitious"
                     ]
                 }
+            },
+            "r_c": {
+                "group": [
+                    "match:m_c"
+                ]
             }
         }
     },
@@ -350,6 +355,11 @@
                         "arrogant"
                     ]
                 }
+            },
+            "r_c": {
+                "group": [
+                    "match:m_c"
+                ]
             }
         }
     },
@@ -409,6 +419,11 @@
                         "bold"
                     ]
                 }
+            },
+            "r_c": {
+                "group": [
+                    "match:m_c"
+                ]
             }
         }
     },
@@ -513,6 +528,11 @@
                         "careful"
                     ]
                 }
+            },
+            "r_c": {
+                "group": [
+                    "match:m_c"
+                ]
             }
         }
     },
@@ -539,7 +559,8 @@
                     "kitten"
                 ],
                 "group": [
-                    "-afterlife"
+                    "-afterlife",
+                    "match:m_c"
                 ]
             }
         }
@@ -606,6 +627,11 @@
                         "childish"
                     ]
                 }
+            },
+            "r_c": {
+                "group": [
+                    "match:m_c"
+                ]
             }
         }
     },
@@ -666,6 +692,11 @@
                         "cold"
                     ]
                 }
+            },
+            "r_c": {
+                "group": [
+                    "match:m_c"
+                ]
             }
         }
     },
@@ -697,6 +728,11 @@
                         "compassionate"
                     ]
                 }
+            },
+            "r_c": {
+                "group": [
+                    "match:m_c"
+                ]
             }
         }
     },
@@ -755,6 +791,11 @@
                         "competitive"
                     ]
                 }
+            },
+            "r_c": {
+                "group": [
+                    "match:m_c"
+                ]
             }
         }
     },
@@ -811,6 +852,11 @@
                         "cunning"
                     ]
                 }
+            },
+            "r_c": {
+                "group": [
+                    "match:m_c"
+                ]
             }
         }
     },
@@ -843,6 +889,11 @@
                         "daring"
                     ]
                 }
+            },
+            "r_c": {
+                "group": [
+                    "match:m_c"
+                ]
             }
         }
     },
@@ -860,7 +911,9 @@
             "Is convinced {PRONOUN/m_c/poss} ancestors guide {PRONOUN/m_c/poss} every decision",
             "Has a constructive talk about beliefs with r_c",
             "Refuses to act against {PRONOUN/m_c/poss} faith",
-            "Leaves fresh-kill at the grave of a dead loved one"
+            "Leaves fresh-kill at the grave of a dead loved one",
+            "Promises to stand with r_c no matter what",
+            "Stands by r_c even if {PRONOUN/r_c/subject} {VERB/r_c/were/was} wrong"
         ],
         "involved_cats": {
             "m_c": {
@@ -869,6 +922,11 @@
                         "faithful"
                     ]
                 }
+            },
+            "r_c": {
+                "group": [
+                    "match:m_c"
+                ]
             }
         }
     },
@@ -922,6 +980,11 @@
                         "fierce"
                     ]
                 }
+            },
+            "r_c": {
+                "group": [
+                    "match:m_c"
+                ]
             }
         }
     },
@@ -981,6 +1044,11 @@
                         "gloomy"
                     ]
                 }
+            },
+            "r_c": {
+                "group": [
+                    "match:m_c"
+                ]
             }
         }
     },
@@ -1015,6 +1083,11 @@
                         "grumpy"
                     ]
                 }
+            },
+            "r_c": {
+                "group": [
+                    "match:m_c"
+                ]
             }
         }
     },
@@ -1048,6 +1121,11 @@
                         "insecure"
                     ]
                 }
+            },
+            "r_c": {
+                "group": [
+                    "match:m_c"
+                ]
             }
         }
     },
@@ -1121,7 +1199,8 @@
             },
             "r_c": {
                 "group": [
-                    "-afterlife"
+                    "-afterlife",
+                    "match:m_c"
                 ]
             }
         }
@@ -1135,10 +1214,10 @@
             "Is stricken after breaking a promise",
             "Reminds r_c that {PRONOUN/r_c/subject} can tell {PRONOUN/m_c/object} anything",
             "Promises to stand with r_c no matter what",
-            "Judges a Clanmate's disloyalty",
             "Stands by r_c even if {PRONOUN/r_c/subject} {VERB/r_c/were/was} wrong",
-            "Refuses to turn {PRONOUN/m_c/poss} back on a Clanmate",
-            "Is pushing r_c to be even better"
+            "Is pushing r_c to be even better",
+            "Leaves fresh-kill at the grave of a dead loved one",
+            "Doesn't question {PRONOUN/m_c/poss} own judgment"
         ],
         "involved_cats": {
             "m_c": {
@@ -1150,7 +1229,8 @@
             },
             "r_c": {
                 "group": [
-                    "-afterlife"
+                    "-afterlife",
+                    "match:m_c"
                 ]
             }
         }
@@ -1189,6 +1269,11 @@
                         "nervous"
                     ]
                 }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
             }
         }
     },
@@ -1224,7 +1309,8 @@
             },
             "r_c": {
                 "group": [
-                    "-afterlife"
+                    "-afterlife",
+                    "match:m_c"
                 ]
             }
         }
@@ -1262,7 +1348,8 @@
             },
             "r_c": {
                 "group": [
-                    "-afterlife"
+                    "-afterlife",
+                    "match:m_c"
                 ]
             }
         }
@@ -1378,7 +1465,8 @@
             },
             "r_c": {
                 "group": [
-                    "-afterlife"
+                    "-afterlife",
+                    "match:m_c"
                 ]
             }
         }
@@ -1412,7 +1500,8 @@
             },
             "r_c": {
                 "group": [
-                    "-afterlife"
+                    "-afterlife",
+                    "match:m_c"
                 ]
             }
         }
@@ -1462,6 +1551,11 @@
                         "strange"
                     ]
                 }
+            },
+            "r_c": {
+                "group": [
+                    "match:m_c"
+                ]
             }
         }
     },
@@ -1511,7 +1605,8 @@
             },
             "r_c": {
                 "group": [
-                    "-afterlife"
+                    "-afterlife",
+                    "match:m_c"
                 ]
             }
         }
@@ -1711,7 +1806,8 @@
             },
             "r_c": {
                 "group": [
-                    "-afterlife"
+                    "-afterlife",
+                    "match:m_c"
                 ]
             }
         }
