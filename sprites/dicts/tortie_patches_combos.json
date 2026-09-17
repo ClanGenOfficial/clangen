@@ -238,5 +238,14 @@
         "BRIE",
         "EMBER",
         "FRECKLED"
+    ],
+    "UNDERS": [
+        "UNDERPAWS_T",
+        "UNDERTAIL_T",
+        "BELLY_T"
+    ],
+    "SIDEPETAL": [
+        "LARKPETAL",
+        "SIDEMASK"
     ]
 }
