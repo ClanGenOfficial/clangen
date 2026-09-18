@@ -8,13 +8,16 @@
     "DARKGREY": "darkgrey",
     "GHOST": "ghost",
     "BLACK": "black",
+    "DAWN": "cream",
     "BLOSSOM": "cream",
+    "HONEY": "cream",
     "CREAM": "cream",
     "PALEGINGER": "lightginger",
     "GOLDEN": "lightginger",
     "GINGER": "darkginger",
     "DARKGINGER": "darkginger",
     "SIENNA": "sienna",
+    "MALLOW": "lightbrown",
     "LIGHTBROWN": "lightbrown",
     "LILAC": "lilac",
     "BROWN": "brown",
@@ -24,19 +27,19 @@
     "RUST": "rust"
   },
   "possible_tints": {
-    "basic": ["pink", "gray", "red", "orange", "warmdilute", "patina", "tawny"],
-    "white": ["yellow", "pinkdilute", "earthydilute", "gloaming", "quartz", "lilacdilute"],
-    "lightgrey": ["purple", "black", "dilute", "pinkdilute", "night", "gloaming", "quartz", "lilacdilute"],
+    "basic": ["pink", "gray", "red", "orange", "warmdilute", "patina", "tawny", "densecocoa"],
+    "white": ["yellow", "pinkdilute", "earthydilute", "gloaming", "quartz", "lilacdilute", "denseamber", "densedust"],
+    "lightgrey": ["purple", "black", "dilute", "pinkdilute", "night", "gloaming", "quartz", "lilacdilute", "denseamber", "densedust"],
     "darkgrey": ["blue", "black", "dilute", "cooldilute", "pinkdilute", "earthydilute", "night", "gloaming", "quartz", "lilacdilute"],
     "ghost": ["blue", "black", "dilute", "cooldilute", "night"],
     "black": ["blue", "black", "dilute", "cooldilute", "pinkdilute", "earthydilute", "night", "gloaming", "quartz"],
-    "cream": ["yellow", "purple", "dilute", "cooldilute", "earthydilute", "quartz", "lilacdilute"],
-    "lightginger": ["yellow", "purple", "dilute", "cooldilute", "earthydilute", "quartz", "lilacdilute"],
+    "cream": ["yellow", "purple", "dilute", "cooldilute", "earthydilute", "quartz", "lilacdilute", "denseamber", "densedust"],
+    "lightginger": ["yellow", "purple", "dilute", "cooldilute", "earthydilute", "quartz", "lilacdilute", "denseamber", "densedust"],
     "darkginger": ["yellow", "purple", "dilute", "cooldilute", "gloaming", "quartz", "lilacdilute"],
     "sienna": ["yellow", "purple", "black", "dilute", "cooldilute", "pinkdilute", "earthydilute", "night", "gloaming", "quartz", "lilacdilute"],
-    "lightbrown": ["yellow", "purple", "black", "dilute", "cooldilute", "pinkdilute", "earthydilute", "gloaming", "quartz", "lilacdilute"],
-    "lilac": ["yellow", "purple", "black", "dilute", "cooldilute", "earthydilute", "gloaming", "quartz"],
-    "brown": ["yellow", "purple", "black", "dilute", "cooldilute", "pinkdilute", "earthydilute", "night", "gloaming", "quartz"],
+    "lightbrown": ["yellow", "purple", "black", "dilute", "cooldilute", "pinkdilute", "earthydilute", "gloaming", "quartz", "lilacdilute", "denseamber", "densedust"],
+    "lilac": ["yellow", "purple", "black", "dilute", "cooldilute", "earthydilute", "gloaming", "quartz", "denseamber", "densedust"],
+    "brown": ["yellow", "purple", "black", "dilute", "cooldilute", "pinkdilute", "earthydilute", "night", "gloaming", "quartz", "denseamber", "densedust"],
     "darkbrown": ["yellow", "purple", "black", "dilute", "cooldilute", "pinkdilute", "earthydilute", "gloaming", "quartz"],
     "rust": ["yellow", "purple", "black", "dilute", "cooldilute", "pinkdilute", "earthydilute", "gloaming", "quartz", "night"]
   },
@@ -66,5 +69,11 @@
     "earthydilute": [44, 33, 11],
     "lilacdilute": [31, 25, 36],
     "none": null
+  },
+  "remove_tone_tint_colours":
+  {
+    "densecocoa": [7, 28, 38],
+    "densedust": [95, 111, 94],
+    "denseamber": [78, 102, 104]
   }
 }

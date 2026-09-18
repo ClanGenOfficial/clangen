@@ -36,6 +36,9 @@ def check_if_can_have_kits(cat):
     if not_correct_age or cat.no_kits or cat.dead:
         return False
 
+    if not check_parent_rank(cat):
+        return False
+
     # check for mate
     if cat.mate:
         for mate_id in cat.mate:
@@ -298,3 +301,20 @@ def _get_unmated_coparenting_chance(relation: Relationship) -> int:
         coparenting_chance -= 5
 
     return coparenting_chance
+
+
+def check_parent_rank(cat):
+    # check for role
+    if cat.status.rank not in get_config("pregnancy.can_have_kits"):
+        if not cat.mate:
+            return False
+        elif cat.mate:
+            if all(
+                [
+                    cat.fetch_cat(mate_id).status.rank
+                    not in get_config("pregnancy.can_have_kits")
+                    for mate_id in cat.mate
+                ]
+            ):
+                return False
+    return True
