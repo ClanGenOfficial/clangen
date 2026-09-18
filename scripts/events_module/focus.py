@@ -201,6 +201,13 @@ def _raid_clans() -> str:
             herb_strs.append(game.clan.herb_supply.herb[herb].plural_display)
 
         herbs_recovered = adjust_list_text(herb_strs)
+        game.herb_events_list.append(
+            i18n.t("focus.raid_herb_log", herbs=herbs_recovered)
+        )
+
+        herbs_recovered = 0
+        for _h in found_herbs:
+            herbs_recovered += found_herbs[_h]
     else:
         herbs_recovered = []
 
@@ -231,7 +238,7 @@ def _raid_clans() -> str:
         game.freshkill_event_list.append(prey_text)
         text.append(prey_text)
     if herbs_recovered:
-        text.append(i18n.t("focus.raid_herb", herbs=herbs_recovered))
+        text.append(i18n.t("focus.raid_herb", count=herbs_recovered))
 
     text.append(
         i18n.t("focus.raid_relations", clan=adjust_list_text(game.clan.clans_in_focus))

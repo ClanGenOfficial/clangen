@@ -402,6 +402,7 @@ class HerbSupply:
 
         # get herbs found
         herb_list = []
+        found_herbs = {}
         for med in med_cats:
             if assistants:
                 list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
@@ -425,7 +426,11 @@ class HerbSupply:
         herb_list = adjust_list_text(herb_strs)
 
         # finish
-        focus_text = i18n.t("focus.focus_herbs", herbs=herb_list, count=len(herb_list))
+        amount = 0
+        for _h in found_herbs:
+            amount += found_herbs[_h]
+
+        focus_text = i18n.t("focus.focus_herbs", count=amount)
 
         if herb_list:
             game.herb_events_list.append(
