@@ -241,9 +241,7 @@ def _load_allowed_thoughts(thought_type: CatThought, main_cat: Cat):
             thoughts.extend(_get_general(main_cat, new_path))
             if prior_rank:
                 prior_rank = prior_rank.replace(" ", "_")
-                thoughts.extend(
-                    load_text_pool_events(f"{new_path}/{prior_rank}.json")
-                )
+                thoughts.extend(load_text_pool_events(f"{new_path}/{prior_rank}.json"))
 
         else:
             thoughts.extend(_get_general(main_cat, new_path))
