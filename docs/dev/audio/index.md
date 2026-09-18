@@ -38,7 +38,7 @@ The `resources/audio/ambiance.json` is used to create our track lists.
 When not on the main menu, ClanGen plays music at random intervals.
 
 !!! note
-    Our music system utilized sound channels just like the sound effect system. This means that each track is loaded into memory. Care should be taken when modifying the music code so that tracks are always being removed from memory once done playing to avoid excessive memory use.
+    Our music system utilizes sound channels just like the sound effect system. This means that each track is loaded into memory. Care should be taken when modifying the music code so that tracks are always being removed from memory once done playing to avoid excessive memory use.
 
 ### Adding New Music
 New music is added to the `resources/audio/music` folder. When adding new tracks, make sure to name the file with `_` instead of spaces.
