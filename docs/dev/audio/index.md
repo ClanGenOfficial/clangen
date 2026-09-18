@@ -25,7 +25,8 @@ We currently utilize a layered approach to ambiance. We have a base track, camp 
 ### Adding New Ambiance
 New ambiance is added to its matching folder in `resources/audio/ambiance`. Separate folders are provided for each biome and for seasonal ambiance (which isn't biome specific). 
 
-The `resources/audio/ambiance.json` is used to create our track lists. 
+The `resources/audio/ambiance.json` is used to create our track lists.
+
 - Seasonal tracks should be added to their respective seasonal lists. These are "overlays", meaning short tracks that play intermittently.
 - Each biome has an individual dictionary containing a `"base"` list. This is the "long" ambiance that plays continuously in the background. If multiple tracks are added to the `base` list, then they will be shuffled and looped through continuously.
 - If a camp has specific ambiances, then it should be given in this dictionary with the key as its name (with spaces replaced by `_`) and the values a list of the ambiances. These are "overlays", meaning short tracks that play intermittently.
