@@ -135,7 +135,9 @@ def _new_thought(
                 if ensured_id
                 else None
             )
-            used_thoughts.add(chosen_thought_group.event_id)
+
+            if not ensured_id:
+                used_thoughts.add(chosen_thought_group.event_id)
 
             # specifically "is not None" so that index 0 isn't picked up as a NoneType
             chosen_thought = (
