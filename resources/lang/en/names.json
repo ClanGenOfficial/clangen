@@ -168,6 +168,10 @@
     "Fringe", "Ibis", "Air", "Bright", "Rime", "Ghost", "Privet", "Egg", "Glacier", "Goose", "Moth", "Moon", "Down", "Daisy", "Cold",
     "Gardenia", "Hemlock", "Piper", "Plover", "Magnolia", "Birch", "Shiver", "Snow", "Snowy"
     ],
+    "WHITETIGER": [
+    "White", "Tiger", "Moon", "Snowy", "Snow", "Leopard", "Ice", "Frost", "Alabaster", "Pale", "Silver", "Lucent", "Brich", "Badger", "Zebra",
+    "Mottled"
+    ],
     "PALEGREY": [
     "Gray", "Gray", "Silver", "Pale", "Light", "Cloud", "Cloudy", "Hail", "Frost", "Ice", "Icy", "Mouse", "Bright", "Fog", "Freeze",
     "Frozen", "Stone", "Pebble", "Dove", "Sky", "Cotton", "Heather", "Ashen", "Tufted", "Pipit", "Azalea", "Pigeon", "Magnolia", "Birch",
@@ -294,6 +298,9 @@
     "WHITE": [
 	"cloud", "frost", "moon", "web", "dove", "ice", "snow", "egg", "shell", "smoke", "bone", "chill", "fog", "freeze", 
 	"gale", "ghost", "goose", "flash", "moth", "stone", "pebble", "rock"
+    ],
+    "WHITETIGER": [
+    "snow", "tiger", "frost", "moon", "winter", "leopard", "ice", "snow", "bone", "chill", "ghost", "phantom", "specter", "gale", "storm"
     ],
     "PALEGREY": [
 	"cloud", "frost", "web", "mist", "ice", "snow", "egg", "minnow", "smoke", "dust", "bone", "chill", "fog", "freeze", 
