@@ -43,5 +43,9 @@ When not on the main menu, ClanGen plays music at random intervals.
 ### Adding New Music
 New music is added to the `resources/audio/music` folder. When adding new tracks, make sure to name the file with `_` instead of spaces.
 
-`resources/audio/music.json` holds the playlist information. `menu_playlist` will only play on the main menu (this includes game settings, saves, and making a new Clan). We currently have a general playlist along with some seasonal playlists. New playlists can be added for missing seasons and biomes without additional coding, simply add a new dictionary entry with the key as `{season/biome}_playlist` in all lowercase.
+`resources/audio/music.json` holds the playlist information. 
+
+- `menu_playlist` will only play on the main menu (this includes game settings, saves, and making a new Clan). 
+- We currently have a general playlist along with some seasonal playlists. 
+- New playlists can be added for missing seasons and biomes without additional coding, simply add a new dictionary entry with the key as `{season/biome}_playlist` in all lowercase.
 
