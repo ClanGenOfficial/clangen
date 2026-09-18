@@ -259,5 +259,31 @@
     "STROKE": [
         "STREAK",
         "SMOKE"
+    ],
+    "LEAKY_EYE": [
+        "EYELINER_T",
+        "MINIMALONE"
+    ],
+    "BRISTLE": [
+        "MASK",
+        "UNDERPAWS_T",
+        "ONE",
+        "BELLY_T",
+        "BELOVED"
+    ],
+    "ONESIE": [
+        "ROSETAIL",
+        "SMOKE",
+        "SWOOP"
+    ],
+    "FOUR": [
+        "TWO",
+        "THREE",
+        "ONE"
+    ],
+    "COZY": [
+        "BIBFULL_T",
+        "BOTHEARS_T",
+        "BLANKET"
     ]
 }

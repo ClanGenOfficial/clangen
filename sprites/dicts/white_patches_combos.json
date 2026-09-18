@@ -116,6 +116,21 @@
             "midCHEST_HIGH",
             "midLEG_BACK_LEFT_FULL",
             "midSADDLE_MIN_REVERSE"
+        ],
+        "EARBROWS": [
+            "littleLEFTEAR",
+            "littleRIGHTEAR",
+            "littleEYEBROW_SMALL"
+        ],
+        "NECKTIE": [
+            "littleVEE",
+            "littleUNDER_MID"
+        ],
+        "TOM": [
+            "littleBELLY_MIN",
+            "littleBLAZE",
+            "littleMUZZLE",
+            "littleTEARDROP"
         ]
     },
     "mid": {
@@ -414,6 +429,22 @@
             "littleTAILTIP",
             "littleLOCKET",
             "littleLEFTEAR"
+        ],
+        "FOG": [
+            "littleUNDER_MIN",
+            "littleBELLY_MIN",
+            "littleLEG_BACK_RIGHT_SMALL_LOW",
+            "littleLEG_BACK_LEFT_SMALL_LOW",
+            "littleLEG_FRONT_LEFT_SMALL_LOW",
+            "littleLEG_FRONT_RIGHT_SMALL_LOW",
+            "littleLEG_FRONT_RIGHT_MIN",
+            "littleLEG_FRONT_LEFT_MIN",
+            "littleLEG_BACK_RIGHT_UNDER",
+            "littleLEG_BACK_LEFT_UNDER",
+            "littleTAIL_MID_LOW",
+            "littleTAIL_MIN_LOW",
+            "littleTAIL_SMALL_LOW",
+            "midFADEBELLY"
         ]
     },
     "high": {
@@ -567,6 +598,15 @@
             "midTAIL_OVER",
             "midTWO_SPOT_MID",
             "midSHIRT"
+        ],
+        "ANGEL": [
+            "littleBLAZE",
+            "littleSPARKLE",
+            "littleTAILTIP",
+            "littleUNDER_MIN",
+            "littleBELLY_MIN",
+            "littleTAIL_UNDER",
+            "midWINGS_REDUCED"
         ]
     },
     "mostly": {
