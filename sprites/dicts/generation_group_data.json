@@ -2,6 +2,7 @@
     "pelts": {
         "colors": {
             "WHITE": "white",
+            "WHITETIGER": "white",
             "PALEGREY": "white",
             "SILVER": "white",
             "GREY": "black",
