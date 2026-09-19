@@ -168,6 +168,12 @@
     "Fringe", "Ibis", "Air", "Bright", "Rime", "Ghost", "Privet", "Egg", "Glacier", "Goose", "Moth", "Moon", "Down", "Daisy", "Cold",
     "Gardenia", "Hemlock", "Piper", "Plover", "Magnolia", "Birch", "Shiver", "Snow", "Snowy"
     ],
+    "IVORY": [
+    "White", "White", "Pale", "Cloud", "Cloudy", "Milk", "Milky", "Moon", "Bleak", "Birch", "Rapid",
+    "Light", "Shine", "Shining", "Bright", "Ghost", "Wisp", "Air", "Breeze", "Wind", "Billow",
+    "Ivory", "Ivory", "Antler", "Horn", "Bone", "Tooth", "Claw", "Fang", "Talon", "Tusk", "Egg", "Shell",
+    "Cotton", "Wool", "Wooly", "Moth", "Silk", "Web", "Bloom", "Blooming", "Magnolia", "Daisy", "Hemlock", "Yarrow", "Clover", "Laurel"
+    ],
     "PALEGREY": [
     "Gray", "Gray", "Silver", "Pale", "Light", "Cloud", "Cloudy", "Hail", "Frost", "Ice", "Icy", "Mouse", "Bright", "Fog", "Freeze",
     "Frozen", "Stone", "Pebble", "Dove", "Sky", "Cotton", "Heather", "Ashen", "Tufted", "Pipit", "Azalea", "Pigeon", "Magnolia", "Birch",
@@ -294,6 +300,9 @@
     "WHITE": [
 	"cloud", "frost", "moon", "web", "dove", "ice", "snow", "egg", "shell", "smoke", "bone", "chill", "fog", "freeze", 
 	"gale", "ghost", "goose", "flash", "moth", "stone", "pebble", "rock"
+    ],
+    "IVORY": [
+    "cloud", "moon", "silk", "web", "shine", "ghost", "light", "gale", "wind", "egg", "shell", "bone", "tusk", "antler", "tooth"
     ],
     "PALEGREY": [
 	"cloud", "frost", "web", "mist", "ice", "snow", "egg", "minnow", "smoke", "dust", "bone", "chill", "fog", "freeze", 
