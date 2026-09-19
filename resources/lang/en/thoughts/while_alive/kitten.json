@@ -138,7 +138,11 @@
             },
             "r_c": {
                 "status": [
-                    "warrior"
+                    "warrior",
+                    "medicine cat",
+                    "deputy",
+                    "leader",
+                    "mediator"
                 ],
                 "has_apprentice": {
                     "current": false
