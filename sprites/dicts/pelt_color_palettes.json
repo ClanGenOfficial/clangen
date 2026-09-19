@@ -45,7 +45,7 @@
 },
     "CHINCHILLA": {
         "base": "#E1E4EB",
-        "base_gradient_bottom": "#F4FBF4",
+        "base_gradient_bottom": "#f8fff8",
         "base_gradient_top": "#BAC8D6",
         "pattern": "#828AA3",
         "pattern_gradient_top": "#3A4B54",
@@ -69,14 +69,15 @@
         "smoke_pattern_gradient_top": "#565D61",
 
         "freckled_pattern_gradient_top": "#A6A9B3",
+        "chinchilla_freckled_pattern_body": "#6f768d",
 
         "exotic_base": "#F6F6F6",
         "exotic_base_gradient_bottom": "#FFFFFF",
-        "exotic_base_gradient_top": "#B4B7BF",
-        "exotic_pattern": "#454C4F",
+        "exotic_base_gradient_top": "#BAC8D6",
+        "exotic_pattern": "#8c94a9",
         "exotic_pattern_gradient_top": "#2F3638",
-        "exotic_pattern_fill": "#FFFFFF",
-        "exotic_pattern_fill_gradient_top": "#F6F6F6",
+        "exotic_pattern_fill": "#e0ebf6",
+        "exotic_pattern_fill_gradient_top": "#E1E4EB",
         "exotic_light_pattern": "#FFFFFF",
         "exotic_muzzle": "#B4B7BF",
 
