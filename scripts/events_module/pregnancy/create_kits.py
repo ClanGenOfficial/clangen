@@ -236,7 +236,8 @@ def get_kits(
                     continue
                 if the_cat.ID in kit.get_parents():
                     parent_to_kit = get_config("new_cat.parent_buff.parent_to_kit")
-                    y = randrange(0, 15)
+                    var_min, var_max = parent_to_kit["variability"]
+                    y = randrange(var_min, var_max)
                     start_relation = Relationship(the_cat, kit, family=True)
                     start_relation.like = parent_to_kit[RelType.LIKE] + y
                     start_relation.comfort = parent_to_kit[RelType.COMFORT] + y
@@ -245,7 +246,8 @@ def get_kits(
                     the_cat.relationships[kit.ID] = start_relation
 
                     kit_to_parent = get_config("new_cat.parent_buff.kit_to_parent")
-                    y = randrange(0, 15)
+                    var_min, var_max = kit_to_parent["variability"]
+                    y = randrange(var_min, var_max)
                     start_relation = Relationship(kit, the_cat, family=True)
                     start_relation.like += kit_to_parent[RelType.LIKE] + y
                     start_relation.comfort = kit_to_parent[RelType.COMFORT] + y
@@ -267,10 +269,11 @@ def get_kits(
     for kitten in all_kitten:
         # update/buff the relationship towards the siblings
         for second_kitten in all_kitten:
-            y = randrange(0, 15)
             if second_kitten.ID == kitten.ID:
                 continue
             relationship_value = get_config("new_cat.sib_buff.littermates_to_eachother")
+            var_min, var_max = relationship_value["variability"]
+            y = randrange(var_min, var_max)
             start_relation = Relationship(kitten, second_kitten, False, True)
             start_relation.like += relationship_value["like"] + y
             start_relation.comfort += relationship_value["comfort"] + y
