@@ -5920,7 +5920,7 @@
             },
             {
                 "frequency": 4,
-                "biome": [
+                "location": [
                     "beach",
                     "forest",
                     "mountainous",
@@ -5967,7 +5967,7 @@
             },
             {
                 "frequency": 4,
-                "biome": [
+                "location": [
                     "plains",
                     "desert"
                 ],
@@ -6059,7 +6059,7 @@
             },
             {
                 "frequency": 4,
-                "biome": [
+                "location": [
                     "beach",
                     "forest",
                     "mountainous",
@@ -6112,7 +6112,7 @@
             },
             {
                 "frequency": 4,
-                "biome": [
+                "location": [
                     "plains",
                     "desert"
                 ],
@@ -6212,7 +6212,7 @@
             },
             {
                 "frequency": 4,
-                "biome": [
+                "location": [
                     "beach",
                     "forest",
                     "mountainous",
@@ -6322,7 +6322,7 @@
             },
             {
                 "frequency": 4,
-                "biome": [
+                "location": [
                     "beach",
                     "forest",
                     "mountainous",
@@ -6450,7 +6450,7 @@
             },
             {
                 "frequency": 4,
-                "biome": [
+                "location": [
                     "plains",
                     "desert"
                 ],
@@ -6511,7 +6511,7 @@
             },
             {
                 "frequency": 3,
-                "biome": [
+                "location": [
                     "plains",
                     "desert"
                 ],
@@ -6597,7 +6597,7 @@
             },
             {
                 "frequency": 3,
-                "biome": [
+                "location": [
                     "beach",
                     "forest",
                     "mountainous",
@@ -6691,7 +6691,7 @@
             },
             {
                 "frequency": 2,
-                "biome": [
+                "location": [
                     "beach",
                     "forest",
                     "mountainous",
@@ -6721,7 +6721,7 @@
             },
             {
                 "frequency": 2,
-                "biome": [
+                "location": [
                     "plains",
                     "desert"
                 ],
@@ -6796,7 +6796,7 @@
             },
             {
                 "frequency": 2,
-                "biome": [
+                "location": [
                     "plains",
                     "desert"
                 ],
@@ -6844,7 +6844,7 @@
         "fail_outcomes": [
             {
                 "frequency": 4,
-                "biome": [
+                "location": [
                     "plains",
                     "desert"
                 ],
@@ -6975,7 +6975,7 @@
             },
             {
                 "frequency": 4,
-                "biome": ["beach", "mountainous"],
+                "location": ["beach", "mountainous"],
                 "strings": [
                     "The patrol comes across a gray vixen at the end of the scent trail. She spots them too, measures herself up against them, then flees, scrambling up a cliff in a move that completely surprises the cats. This round goes to the gray fox."
                 ],
@@ -7027,7 +7027,7 @@
             },
             {
                 "frequency": 3,
-                "biome": [
+                "location": [
                     "plains",
                     "desert"
                 ],
@@ -7116,7 +7116,7 @@
             },
             {
                 "frequency": 3,
-                "biome": [
+                "location": [
                     "beach",
                     "forest",
                     "mountainous",
