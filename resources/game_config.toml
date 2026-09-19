@@ -335,6 +335,7 @@ dev_tools = false
       trust = 30
 
     # default relationships buff for a newborn's relationship towards one of their littermates
+    # note: the game automatically applies a random buff between 0-10 on top of this value
     [new_cat.sib_buff.littermates_to_eachother]
       like = 20
       comfort = 10
