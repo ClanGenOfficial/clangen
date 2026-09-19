@@ -151,13 +151,26 @@
         ],
         "required_cat_types": {
             "patrol_cats": [
-                4,
+                3,
                 6
             ],
             "normal adult": [
                 1,
                 6
             ]
+        },
+        "involved_cats": {
+            "s_c0": {
+                "stat": {
+                    "skill": [
+                        "STORY,1",
+                        "LORE,1"
+                    ]
+                },
+                "prior_abbreviation": [
+                    "any"
+                ]
+            }
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
@@ -180,10 +193,7 @@
                             "skill": [
                                 "STORY,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 40,
@@ -252,10 +262,7 @@
                             "skill": [
                                 "LORE,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 40,
