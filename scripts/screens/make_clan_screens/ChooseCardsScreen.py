@@ -368,6 +368,8 @@ class ChooseCardsScreen(MakeClanScreenBase):
             button = "origin"
         elif card_name in constants.CRUEL_CARDS_BEHAVIOR:
             button = "behavior"
+        elif card_name in constants.CRUEL_CARDS_SOCIETY:
+            button = "society"
         else:
             button = "environment"
 
