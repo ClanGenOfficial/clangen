@@ -4,6 +4,10 @@
             "one": "pale",
             "many": "pale"
         },
+        "WHITETIGER": {
+            "one": "white",
+            "many": "two toned"
+        },
         "FULLWHITE": "white",
         "PALEGREY": {
             "one": "gray",
