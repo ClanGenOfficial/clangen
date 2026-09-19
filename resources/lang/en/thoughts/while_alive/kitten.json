@@ -125,7 +125,10 @@
         "strings": [
             "Hopes r_c will mentor {PRONOUN/m_c/object}",
             "Wonders if r_c wants to mentor {PRONOUN/m_c/object}",
-            "Hopes r_c isn't {PRONOUN/m_c/poss} mentor"
+            "Hopes r_c isn't {PRONOUN/m_c/poss} mentor",
+            "Wonders if r_c will be {PRONOUN/m_c/poss} mentor",
+            "Is begging to be r_c's apprentice",
+            "Is asking r_c why {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} have an apprentice"
         ],
         "involved_cats": {
             "m_c": {
