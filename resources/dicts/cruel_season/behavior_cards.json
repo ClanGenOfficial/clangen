@@ -129,8 +129,8 @@
   "mate_breakup": {
     "card_art": "behavior/sorrow.png",
     "modifiers": {
-      "mates.breakup.inital_chance.threshold": 360,
-      "mates.breakup.inital_chance.default_chance": 15
+      "mates.breakup.initial_chance.threshold": 360,
+      "mates.breakup.initial_chance.default_chance": 15
     }
   },
   "prideful": {
