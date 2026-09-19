@@ -609,15 +609,17 @@
             "midWINGS_REDUCED"
         ],
         "SKELETON": [
+            "littleLEG_BACK_LEFT_UNDER",
+            "littleLEG_BACK_RIGHT_UNDER",
+            "littleLEG_FRONT_LEFT_UNDER",
+            "littleLEG_FRONT_RIGHT_UNDER",
             "littleSTRIPE_SMALL",
             "littleTAILTIP",
             "littleTAIL_HIGH_RING",
             "littleTAIL_LOW_RING",
             "littleTAIL_MID_RING",
-            "littleLEG_BACK_LEFT_UNDER",
-            "littleLEG_BACK_RIGHT_UNDER",
-            "littleLEG_FRONT_LEFT_UNDER",
-            "littleLEG_FRONT_RIGHT_UNDER",
+            "littleHELMET",
+            "littleUNDER_SMALL",
             "midWOODPECKER"
         ]
     },
