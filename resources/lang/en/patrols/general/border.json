@@ -6378,6 +6378,7 @@
             {
                 "frequency": 4,
                 "location": ["mountainous", "wetlands", "forest"],
+                "outcome_art": "gen_pawsdiggingbark_Wr",
                 "strings": [
                     "Bravely, s_c0 charges the gray fox, yowling threats. The vixen spooks and skitters up a tree, growling and barking in a squeaky tone, and s_c0 follows her up into the branches. As the rest of the patrol backs {PRONOUN/s_c0/object} up from the ground, s_c0 screams until the fox is cowering and afraid, then lets her flee."
                 ],
@@ -6730,6 +6731,7 @@
                     "plains",
                     "desert"
                 ],
+                "outcome_art": "gen_judging_Wr",
                 "strings": [
                     "The patrol sneaks closer, until p_l realizes that the swift fox vixen is approaching her den — a den where cubs must surely hide. A competitor denning within c_n's borders is an outrage, and the patrol leaps to attack, pinning the vixen in a cluster of boulders. s_c0 starts to drag the body back towards camp for freshkill... until s_c1 exclaims that the Clan will <i>not</i> be eating that!"
                 ],
@@ -7078,6 +7080,7 @@
             },
             {
                 "frequency": 3,
+                "outcome_art": "gen_injuredfallfox_Wr",
                 "strings": [
                     "The mother red fox's snapping jaws leave s_c0 dripping blood on the sand, forcing the patrol to back off.",
                     "s_c0 is caught momentarily by the red fox, and the patrol decides to retreat before more are hurt."
@@ -7185,6 +7188,7 @@
             },
             {
                 "frequency": 2,
+                "outcome_art": "gen_deadghost_WrSc",
                 "strings": [
                     "Never threaten a mother's young. The red vixen kills s_c0 in the skirmish.",
                     "s_c0 is caught in the red vixen's jaws during the skirmish, {PRONOUN/s_c0/subject} {VERB/s_c0/don't/doesn't} manage to free {PRONOUN/s_c0/self} before {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} killed."
