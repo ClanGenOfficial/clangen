@@ -51,7 +51,8 @@
         ],
         [
             "BACKTAILPATTERNGRAD",
-            "LEGPATTERNGRAD"
+            "LEGPATTERNGRAD",
+            "FRONTPATTERNGRAD"
         ]
 
     ]

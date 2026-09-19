@@ -94,14 +94,24 @@
         },
         {
             "colors": "HONEY",
-            "layer_order": ["1", "2", "4"],
             "layers":
             {
-                "4": {
+                "3": {
                     "group_name": "SIMPLETOPGRAD",
                     "color": "singlecolour_honey_base_gradient_top"
                 }
             }
+        },
+        {
+          "colors": "CHINCHILLA",
+            "layers":
+            {
+                "3": {
+                    "group_name": "BACKTAILPATTERNGRAD",
+                    "color": "base_gradient_top"
+                }
+            }
+
         }
     ]
 }
