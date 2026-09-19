@@ -6507,6 +6507,12 @@
                             "cats_from": "cat_from heard about how cat_to's patrol drove off both a swift fox vixen and her mate."
                         }
                     }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
                 ]
             },
             {
