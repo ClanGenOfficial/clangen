@@ -5865,7 +5865,7 @@
             ]
         },
         "chance_of_success": 40,
-        "patrol_art": "bord_general_intro",
+        "patrol_art": "cat_sprites/gen_bord_scentedafox_Wr",
         "intro_strings": [
             "The patrol catches the scent of a vixen, but is it one of the large or small foxes?",
             "The patrol catches the scent of a vixen and considers the wisdom of confronting it when they aren't sure what kind of fox it is.",
@@ -5879,8 +5879,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "At the end of the trail they find her. The red vixen smells of milk, and hopefully by driving her out of the territory, her litter won't be a threat to the Clan. If they don't starve, c_n will hunt them down. They do not share territory with foxes.",
-                    "The stocky gray vixen they track down smells of milk, and though she's nearly double the weight of any of the patrol and all of its muscle, they meet her eyes squarely and leap to attack. c_n does not tolerate sharing their territory with foxes, and they work together to drive her off."
+                    "At the end of the trail they find her. The red vixen smells of milk, and hopefully by driving her out of the territory, her litter won't be a threat to the Clan. If they don't starve, c_n will hunt them down. They do not share territory with foxes."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
