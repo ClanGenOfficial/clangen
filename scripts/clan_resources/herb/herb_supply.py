@@ -479,7 +479,7 @@ class HerbSupply:
                 else:
                     amount = max(
                         1,
-                        int(
+                        round(
                             choices(population=[2, 3, 4], weights=weight, k=1)[0]
                             * quantity_modifier
                         ),
