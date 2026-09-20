@@ -39,6 +39,9 @@ class TestFocus(unittest.TestCase):
         self.leader = cat_factory.create_cat(rank=CatRank.LEADER)
         self.deputy = cat_factory.create_cat(rank=CatRank.DEPUTY)
         self.medicine_cat = cat_factory.create_cat(rank=CatRank.MEDICINE_CAT)
+        self.leader.disable_random = True
+        self.deputy.disable_random = True
+        self.medicine_cat.disable_random = True
         game.clan = Clan(
             save_id=self.test_clan_name,
             display_name="Test",
@@ -318,7 +321,7 @@ class TestFocus(unittest.TestCase):
         self.assertEqual(
             beginning_herbs + amount_herbs,
             game.clan.herb_supply.total,
-            msg=f"Amount should have been: {beginning_herbs + amount_herbs}. Instead it was {game.clan.herb_supply.total}.",
+            msg=f"Amount should have been: {beginning_herbs} + {amount_herbs}. Instead it was {game.clan.herb_supply.total}.",
         )
         self.assertEqual(
             beginning_prey + amount_prey,
@@ -350,7 +353,7 @@ class TestFocus(unittest.TestCase):
         self.assertEqual(
             beginning_herbs + amount_herbs,
             game.clan.herb_supply.total,
-            msg=f"Amount should have been: {beginning_herbs + amount_herbs}. Instead it was {game.clan.herb_supply.total}.",
+            msg=f"Amount should have been: {beginning_herbs} + {amount_herbs}. Instead it was {game.clan.herb_supply.total}.",
         )
         self.assertEqual(
             beginning_prey + amount_prey,
