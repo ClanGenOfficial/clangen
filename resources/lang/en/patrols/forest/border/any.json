@@ -887,7 +887,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "clan"
@@ -905,7 +905,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "history": "m_c died to keep c_n safe from a large dog."
                     }
