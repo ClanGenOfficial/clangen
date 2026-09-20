@@ -332,14 +332,6 @@ dev_tools = false
       comfort = 40
       trust = 30
 
-    # default relationships buff for siblings' relationships in the other direction
-    [new_cat.sib_buff.cat2_to_cat1]
-      romance = 0
-      like = 40
-      respect = 10
-      comfort = 40
-      trust = 30
-
     # default relationships buff for a newborn's relationship towards one of their littermates
     [new_cat.sib_buff.littermates_to_eachother]
       like = 20
