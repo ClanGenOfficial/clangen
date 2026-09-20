@@ -437,12 +437,12 @@ def create_new_cat_block(
                 if n_c == inter_cat:
                     continue
                 y = randrange(var_min, var_max)
-                start_relation = Relationship(n_c, inter_cat, True)
-                start_relation.like += sib_buff["like"] + y
-                start_relation.respect = sib_buff["respect"] + y
-                start_relation.comfort = sib_buff["comfort"] + y
-                start_relation.trust = sib_buff["trust"] + y
-                n_c.relationships[inter_cat.ID] = start_relation
+                rel_dict = {
+                    reltype: change + y for (reltype, change) in sib_buff.items()
+                }
+                change_relationship_values(
+                    cats_from=[n_c], cats_to=[inter_cat], **rel_dict
+                )
 
             # BIO PARENTS
             var_min, var_max = get_config("new_cat.parent_buff.variability")
@@ -454,20 +454,16 @@ def create_new_cat_block(
                     continue
 
                 y = randrange(var_min, var_max)
-                start_relation = Relationship(par, n_c, True)
-                start_relation.like += parent_to_kit["like"] + y
-                start_relation.respect = parent_to_kit["respect"] + y
-                start_relation.comfort = parent_to_kit["comfort"] + y
-                start_relation.trust = parent_to_kit["trust"] + y
-                par.relationships[n_c.ID] = start_relation
+                rel_dict = {
+                    reltype: change + y for (reltype, change) in parent_to_kit.items()
+                }
+                change_relationship_values(cats_from=[par], cats_to=[n_c], **rel_dict)
 
                 y = randrange(var_min, var_max)
-                start_relation = Relationship(n_c, par, True)
-                start_relation.like += kit_to_parent["like"] + y
-                start_relation.respect = kit_to_parent["respect"] + y
-                start_relation.comfort = kit_to_parent["comfort"] + y
-                start_relation.trust = kit_to_parent["trust"] + y
-                n_c.relationships[par.ID] = start_relation
+                rel_dict = {
+                    reltype: change + y for (reltype, change) in kit_to_parent.items()
+                }
+                change_relationship_values(cats_from=[n_c], cats_to=[par], **rel_dict)
 
             # ADOPTIVE PARENTS
             var_min, var_max = get_config("new_cat.adoptive_parent_buff.variability")
@@ -481,20 +477,16 @@ def create_new_cat_block(
                 par = Cat.fetch_cat(par)
 
                 y = randrange(var_min, var_max)
-                start_relation = Relationship(par, n_c, True)
-                start_relation.like += parent_to_kit["like"] + y
-                start_relation.respect = parent_to_kit["respect"] + y
-                start_relation.comfort = parent_to_kit["comfort"] + y
-                start_relation.trust = parent_to_kit["trust"] + y
-                par.relationships[n_c.ID] = start_relation
+                rel_dict = {
+                    reltype: change + y for (reltype, change) in parent_to_kit.items()
+                }
+                change_relationship_values(cats_from=[par], cats_to=[n_c], **rel_dict)
 
                 y = randrange(var_min, var_max)
-                start_relation = Relationship(n_c, par, True)
-                start_relation.like += kit_to_parent["like"] + y
-                start_relation.respect = kit_to_parent["respect"] + y
-                start_relation.comfort = kit_to_parent["comfort"] + y
-                start_relation.trust = kit_to_parent["trust"] + y
-                n_c.relationships[par.ID] = start_relation
+                rel_dict = {
+                    reltype: change + y for (reltype, change) in kit_to_parent.items()
+                }
+                change_relationship_values(cats_from=[n_c], cats_to=[par], **rel_dict)
 
             # UPDATE INHERITANCE
         inheritance_db.load_inheritances(Cat)
