@@ -1011,7 +1011,7 @@ dev_tools = false
     illness_prevent = 6
 
     # every chance outbreak will be prevented
-    outbreak_prevention = 2
+    outbreak_prevention = 4
 
     # how many moons earlier are cats healed
     moons_earlier_healed = 1
@@ -1019,11 +1019,11 @@ dev_tools = false
     [focus.rest_and_recover.buff]
       [focus.rest_and_recover.buff.HEALER]
         tier = 1
-        # multiplies preventation
-        outbreak_preventation_modifier = 2
+        # subtracted from prevention
+        outbreak_prevention_modifier = -2
       [focus.rest_and_recover.buff.INSIGHTFUL]
         tier = 1
-        # multiplies prevention
+        # subtracted from prevention
         hurt_prevention_modifier = 2
 
 [save_load]
