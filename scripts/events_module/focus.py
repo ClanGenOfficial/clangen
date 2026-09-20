@@ -370,7 +370,6 @@ def _hoarding():
     Gathers additional prey and herbs while also applying conditions to cats.
     """
     info_dict = get_config("focus.hoarding")
-    involved_cats = {"injured": [], "sick": []}
 
     buffs = get_config("focus.hoarding.buff")
     condition_modifier = 1
@@ -422,7 +421,6 @@ def _hoarding():
         text.append(herb_focus_text)
     if prey_recovered:
         prey_text = i18n.t("focus.focus_prey", count=prey_recovered)
-        game.clan.freshkill_pile.add_freshkill(prey_recovered)
 
         game.freshkill_event_list.append(prey_text)
         text.append(prey_text)
