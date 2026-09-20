@@ -88,6 +88,13 @@
       "progress.difficulty_modifier": 0.5
     }
   },
+  "mate_breakup": {
+    "card_art": "behavior/sorrow.png",
+    "modifiers": {
+      "mates.breakup.initial_chance.threshold": 360,
+      "mates.breakup.initial_chance.default_chance": 15
+    }
+  },
   "weak_stars": {
     "card_art": "behavior/sorrow.png",
     "modifiers": {
