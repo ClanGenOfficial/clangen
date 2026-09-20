@@ -126,6 +126,13 @@
       "outsiders.starting_reputation": 15
     }
   },
+  "mate_breakup": {
+    "card_art": "behavior/sorrow.png",
+    "modifiers": {
+      "mates.breakup.initial_chance.threshold": 360,
+      "mates.breakup.initial_chance.default_chance": 15
+    }
+  },
   "prideful": {
     "card_art": "behavior/prideful.png",
     "modifiers": {
@@ -158,7 +165,7 @@
       "settings.force_enable.deputy": true,
       "ranks.can_manually_change.deputy": false,
       "clan_creation.ranks_needed.deputy": false,
-      "ranks.deputy_eligibility.only_leader_kits_deputy": true
+      "ranks.only_leader_kits_deputy": true
     }
   }
 }
