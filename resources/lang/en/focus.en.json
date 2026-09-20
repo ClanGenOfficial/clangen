@@ -17,6 +17,11 @@
         },
         "focus_herbs": {
             "zero": "Despite the focus of the Clan, no additional herbs could be gathered.",
+            "one": "With the focus of the Clan, %{count} herb was gathered.",
+            "many": "With the focus of the Clan, %{count} herbs were gathered."
+        },
+        "focus_herbs_log": {
+            "zero": "Despite the focus of the Clan, no additional herbs could be gathered.",
             "one": "With the focus of the Clan, %{herbs} was gathered.",
             "many": "With the focus of the Clan, %{herbs} were gathered."
         },
@@ -24,7 +29,11 @@
             "one": "%{count} piece of prey was acquired.",
             "many": "%{count} pieces of prey were acquired."
         },
-        "raid_herb": "The warriors snatched %{herbs}.",
+        "raid_herb": {
+            "one": "The warriors snatched %{count} herb.",
+            "many": "The warriors snatched %{count} herbs."
+        },
+        "raid_herb_log": "The warriors snatched %{herbs}.",
         "raid_relations": "Relations with %{clan} were deeply impacted by the raids.",
         "raid_injury": {
             "zero": "Luckily, nobody in the Clan was injured during raids.",

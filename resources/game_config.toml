@@ -962,6 +962,7 @@ dev_tools = false
   [focus.hoarding]
     # injury chance of each warrior(leader/deputy to get injured
     injury_chance_warrior = 25
+    injury_chance_medicine_cat = 35
 
     # illness chance of each warrior(leader/deputy) to get sick
     illness_chance = 35

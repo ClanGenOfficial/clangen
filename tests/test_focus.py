@@ -94,6 +94,7 @@ class TestFocus(unittest.TestCase):
         self.change_setting("hunting")
 
         beginning_supply = game.clan.freshkill_pile.total_amount
+        amount_should_gather = 2 * get_config(f"focus.hunting.{CatRank.WARRIOR}")
 
         season = game.clan.current_season.casefold()
         warrior_prey = get_config(f"focus.hunting.warrior.{season}.prey_amounts")
