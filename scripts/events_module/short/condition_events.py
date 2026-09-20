@@ -294,7 +294,7 @@ class Condition_Events:
             ):
                 # CLAN FOCUS!
                 if get_clan_setting("rest_and_recover") and (
-                        game.clan.deputy and game.clan.deputy.status.alive_in_player_clan
+                    game.clan.deputy and game.clan.deputy.status.alive_in_player_clan
                 ):
                     stopping_chance = constants.CONFIG["focus"]["rest_and_recover"][
                         "illness_prevent"
