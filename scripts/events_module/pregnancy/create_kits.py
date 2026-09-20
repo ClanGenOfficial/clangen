@@ -228,6 +228,9 @@ def get_kits(
                 relationships_to_update.append(other_cat.ID)
 
         if relationships_to_update:
+            parent_to_kit = get_config("new_cat.parent_buff.parent_to_kit")
+            kit_to_parent = get_config("new_cat.parent_buff.kit_to_parent")
+            var_min, var_max = get_config("new_cat.parent_buff.variability")
             for cat_id in relationships_to_update:
                 if cat_id == kit.ID:
                     continue
@@ -235,8 +238,6 @@ def get_kits(
                 if the_cat.dead:
                     continue
                 if the_cat.ID in kit.get_parents():
-                    parent_to_kit = get_config("new_cat.parent_buff.parent_to_kit")
-                    var_min, var_max = get_config("new_cat.parent_buff.variability")
                     y = randrange(var_min, var_max)
                     start_relation = Relationship(the_cat, kit, family=True)
                     start_relation.like = parent_to_kit[RelType.LIKE] + y
@@ -245,8 +246,6 @@ def get_kits(
                     start_relation.trust = parent_to_kit[RelType.TRUST] + y
                     the_cat.relationships[kit.ID] = start_relation
 
-                    kit_to_parent = get_config("new_cat.parent_buff.kit_to_parent")
-                    var_min, var_max = get_config("new_cat.parent_buff.variability")
                     y = randrange(var_min, var_max)
                     start_relation = Relationship(kit, the_cat, family=True)
                     start_relation.like += kit_to_parent[RelType.LIKE] + y
@@ -265,19 +264,21 @@ def get_kits(
         #### GIVE HISTORY ######
         kit.history.add_beginning(clan_born=bool(cat))
 
+    sib_buff = get_config("new_cat.sib_buff.littermates_to_eachother")
+    var_min, var_max = get_config("new_cat.sib_buff.variability")
+
     # check other cats of Clan for siblings
     for kitten in all_kitten:
         # update/buff the relationship towards the siblings
         for second_kitten in all_kitten:
             if second_kitten.ID == kitten.ID:
                 continue
-            relationship_value = get_config("new_cat.sib_buff.littermates_to_eachother")
-            var_min, var_max = get_config("new_cat.sib_buff.variability")
+
             y = randrange(var_min, var_max)
             start_relation = Relationship(kitten, second_kitten, False, True)
-            start_relation.like += relationship_value["like"] + y
-            start_relation.comfort += relationship_value["comfort"] + y
-            start_relation.trust += relationship_value["trust"] + y
+            start_relation.like += sib_buff["like"] + y
+            start_relation.comfort += sib_buff["comfort"] + y
+            start_relation.trust += sib_buff["trust"] + y
             kitten.relationships[second_kitten.ID] = start_relation
 
     # check if the possible adoptive cat is not already in the family tree and
@@ -294,6 +295,9 @@ def get_kits(
 
     # Add the adoptive parents.
     if final_adoptive_parents:
+        kit_to_parent = get_config("new_cat.parent_buff.kit_to_parent")
+        parent_to_kit = get_config("new_cat.parent_buff.parent_to_kit")
+
         for kit in all_kitten:
             kit.adoptive_parents = final_adoptive_parents
 
@@ -301,8 +305,6 @@ def get_kits(
             for parent_id in final_adoptive_parents:
                 parent = Cat.fetch_cat(parent_id)
                 if parent:
-                    kit_to_parent = get_config("new_cat.parent_buff.kit_to_parent")
-                    parent_to_kit = get_config("new_cat.parent_buff.parent_to_kit")
                     change_relationship_values(
                         cats_from=[kit],
                         cats_to=[parent],

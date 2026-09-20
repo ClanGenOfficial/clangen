@@ -430,14 +430,12 @@ def create_new_cat_block(
                 n_c.set_mate(inter_cat)
 
             # LITTERMATES
+            var_min, var_max = get_config("new_cat.sib_buff.variability")
+            sib_buff = get_config("new_cat.sib_buff.cat1_to_cat2")
+
             for inter_cat in new_cats:
                 if n_c == inter_cat:
                     continue
-
-                var_min, var_max = get_config("new_cat.sib_buff.variability")
-
-                sib_buff = get_config("new_cat.sib_buff.cat1_to_cat2")
-
                 y = randrange(var_min, var_max)
                 start_relation = Relationship(n_c, inter_cat, True)
                 start_relation.like += sib_buff["like"] + y
@@ -447,13 +445,14 @@ def create_new_cat_block(
                 n_c.relationships[inter_cat.ID] = start_relation
 
             # BIO PARENTS
+            var_min, var_max = get_config("new_cat.parent_buff.variability")
+            parent_to_kit = get_config("new_cat.parent_buff.parent_to_kit")
+            kit_to_parent = get_config("new_cat.parent_buff.kit_to_parent")
+
             for par in (parent1, parent2):
                 if not par:
                     continue
 
-                var_min, var_max = get_config("new_cat.parent_buff.variability")
-
-                parent_to_kit = get_config("new_cat.parent_buff.parent_to_kit")
                 y = randrange(var_min, var_max)
                 start_relation = Relationship(par, n_c, True)
                 start_relation.like += parent_to_kit["like"] + y
@@ -461,8 +460,6 @@ def create_new_cat_block(
                 start_relation.comfort = parent_to_kit["comfort"] + y
                 start_relation.trust = parent_to_kit["trust"] + y
                 par.relationships[n_c.ID] = start_relation
-
-                kit_to_parent = get_config("new_cat.parent_buff.kit_to_parent")
 
                 y = randrange(var_min, var_max)
                 start_relation = Relationship(n_c, par, True)
@@ -473,16 +470,15 @@ def create_new_cat_block(
                 n_c.relationships[par.ID] = start_relation
 
             # ADOPTIVE PARENTS
+            var_min, var_max = get_config("new_cat.adoptive_parent_buff.variability")
+            parent_to_kit = get_config("new_cat.adoptive_parent_buff.parent_to_kit")
+            kit_to_parent = get_config("new_cat.adoptive_parent_buff.parent_to_kit")
+
             for par in adoptive_parents:
                 if not par:
                     continue
 
                 par = Cat.fetch_cat(par)
-
-                var_min, var_max = get_config(
-                    "new_cat.adoptive_parent_buff.variability"
-                )
-                parent_to_kit = get_config("new_cat.adoptive_parent_buff.parent_to_kit")
 
                 y = randrange(var_min, var_max)
                 start_relation = Relationship(par, n_c, True)
@@ -491,8 +487,6 @@ def create_new_cat_block(
                 start_relation.comfort = parent_to_kit["comfort"] + y
                 start_relation.trust = parent_to_kit["trust"] + y
                 par.relationships[n_c.ID] = start_relation
-
-                kit_to_parent = get_config("new_cat.adoptive_parent_buff.parent_to_kit")
 
                 y = randrange(var_min, var_max)
                 start_relation = Relationship(n_c, par, True)
