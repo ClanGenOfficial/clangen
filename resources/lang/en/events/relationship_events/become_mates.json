@@ -99,7 +99,7 @@
 		"Some cats may say it is wrong to get back with your ex-mate, but for m_c and r_c, it feels so right. They have made amends and gotten back together.",
 		"m_c and r_c realized that their reason for breaking up just wasn't worth it. They've made up and decided to try again.",
 		"After discussing their feelings and the reason why they broke up in the first place, m_c and r_c decided to start over and become mates again.",
-		"It seems there really is no cat better for m_c than r_c. After a lengthy conversation, r_c admits {PRONOUN/r_c/subject} {PRONOUN/r_c/feel/feels} the same and agrees to try again.",
+		"It seems there really is no cat better for m_c than r_c. After a lengthy conversation, r_c admits {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} the same and agrees to try again.",
 		"What were m_c and r_c even fighting about enough to break up? Doesn't matter now, they're back together and that's all that really matters to them."
 	],
 	"low_romantic_makeup":[
