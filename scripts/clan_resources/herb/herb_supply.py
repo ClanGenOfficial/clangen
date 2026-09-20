@@ -834,7 +834,7 @@ class HerbSupply:
 
         message = i18n.t(
             "conditions.herbs.herb_used",
-            herb=i18n.t("conditions.herbs.{herb.name}"),
+            herb=i18n.t(f"conditions.herbs.{herb.name}"),
             count=amount_used,
             condition=condition,
             effect=effect_message,
