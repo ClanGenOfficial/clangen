@@ -178,7 +178,7 @@ def get_injured(
             if usable_herbs:
                 # deplete the herb
                 herb_used = choice(usable_herbs)
-                game.clan.herb_supply.remove_herb(herb_used, -1)
+                game.clan.herb_supply.remove_herb(herb_used, 1)
                 avoided = True
                 text = i18n.t("screens.med_den.blood_loss", name=cat.name)
                 game.herb_events_list.append(text)
