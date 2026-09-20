@@ -292,8 +292,9 @@ dev_tools = false
   # relationship buffs represent "default" relationship values that are then lightly randomized
   # in order to create initial relationship values for cats
 
+  # see adoptive_parent_buff for adoptive parents
   [new_cat.parent_buff]
-    # this is not applied for adoptive parents and absent parents
+    # this is not applied for absent parents
     variability = [0, 15]
 
     # default relationships buff for a kit's relationships to their parents
@@ -319,6 +320,22 @@ dev_tools = false
       respect = 0
       comfort = -10
       trust = 0
+
+  [new_cat.adoptive_parent_buff]
+    variability = [0, 15]
+    [new_cat.adoptive_parent_buff.parent_to_kit]
+      romance = 0
+      like = 60
+      respect = 30
+      comfort = 40
+      trust = 30
+
+    [new_cat.adoptive_parent_buff.kit_to_parent]
+      romance = 0
+      like = 40
+      respect = 30
+      comfort = 70
+      trust = 60
 
   [new_cat.sib_buff]
     # applied for littermates_to_eachother
