@@ -276,14 +276,15 @@
         "SMOKE",
         "SWOOP"
     ],
-    "FOUR": [
-        "TWO",
-        "THREE",
-        "ONE"
-    ],
     "COZY": [
         "BIBFULL_T",
         "BOTHEARS_T",
         "BLANKET"
+    ],
+    "FIVE": [
+        "FOUR",
+        "ONE",
+        "TWO",
+        "THREE"
     ]
 }
