@@ -113,6 +113,9 @@
             "Misses {PRONOUN/m_c/poss} family",
             "Prays to StarClan that {PRONOUN/m_c/poss} loved ones are safe"
         ],
+        "involved_cats": {
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [
@@ -135,6 +138,9 @@
         "strings": [
             "Hopes {PRONOUN/m_c/poss} siblings are doing okay"
         ],
+        "involved_cats": {
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [
@@ -161,7 +167,8 @@
                     "-kitten",
                     "-adolescent"
                 ]
-            }
+            },
+            "r_c": {}
         },
         "relationship_constraint": [
             {
