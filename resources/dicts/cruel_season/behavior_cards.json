@@ -126,6 +126,13 @@
       "outsiders.starting_reputation": 15
     }
   },
+  "mate_breakup": {
+    "card_art": "behavior/sorrow.png",
+    "modifiers": {
+      "mates.breakup.initial_chance.threshold": 360,
+      "mates.breakup.initial_chance.default_chance": 15
+    }
+  },
   "prideful": {
     "card_art": "behavior/prideful.png",
     "modifiers": {
