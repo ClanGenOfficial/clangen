@@ -311,6 +311,9 @@
     "GOLDEN": [
 	"sun", "beam", "shine", "spark", "blaze", "honey", "flash", "bee", "lion", "cougar"
     ],
+    "SUNSHINE": [
+  "sun", "beam", "shine", "spark", "blaze", "honey", "flash", "bee", "lion", "cougar"
+    ],
     "GINGER": [
 	"burn", "sun", "beam", "shine", "spark", "blaze", "flame", "flare", "ember", "fox", "vixen"
     ],
