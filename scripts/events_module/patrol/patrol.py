@@ -4,29 +4,31 @@ import logging
 import random
 import statistics
 from os.path import exists as path_exists
-from random import choice, randint, choices
+from random import choice, randint, choices, sample
 from typing import List, Tuple, Optional, Union, Literal, TypedDict
 
 import pygame
 
 from scripts.cat.cats import Cat
-from scripts.cat_relations.enums import RelType
 from scripts.cat.enums import CatAge, CatRank, CatCompatibility
+from scripts.cat_relations.enums import RelType
 from scripts.clan import get_temper_alignment
+from scripts.clan_resources.point_of_interest import get_poi_from_constraints
 from scripts.config import get_config
 from scripts.events_module.consequences import gather_cat_objects
 from scripts.events_module.event_filters import (
     check_relationship_value,
     get_personality_compatibility,
-    event_for_poi,
-    check_rel_constraint_groups,
 )
-from scripts.events_module.patrol.create_new_cat import updated_create_new_cat
+from scripts.events_module.patrol.enums import PatrolChoice
 from scripts.events_module.patrol.generate_patrol_list import (
     get_patrol_list,
     will_allow_outsider_patrols,
 )
 from scripts.events_module.patrol.patrol_event import PatrolEvent
+from scripts.events_module.text_adjust import (
+    event_text_adjust,
+)
 from scripts.events_module.text_pool_event import handle_consequences
 from scripts.events_module.text_pool_event.check_general_constraints import (
     passes_general_constraints,
@@ -34,14 +36,9 @@ from scripts.events_module.text_pool_event.check_general_constraints import (
 from scripts.events_module.text_pool_event.event_retrieval import get_valid_event
 from scripts.events_module.text_pool_event.find_involved_cats import find_cats
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
-from scripts.game_structure import constants
-from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure import game
-from scripts.events_module.text_adjust import (
-    event_text_adjust,
-)
+from scripts.game_structure.game.settings import game_setting_get
 from scripts.special_dates import SpecialDate, is_today
-
 
 logger = logging.getLogger(__name__)
 
@@ -80,13 +77,13 @@ def get_patrol_temperament(patrol_cats: list, patrol_leader=None) -> tuple[str, 
 
 
 class Patrol:
-    used_patrols = []
+    used_patrols = {"romance": [], "normal": []}
 
     def __init__(self):
         self.patrol_event: Optional[PatrolEvent] = None
         self.debug_patrol_id: str = ""
         self.other_clan = None
-        self.temperament: tuple[str, str] = ()
+        self.temperament: tuple[str, str] = ("", "")
         """Set once the patrol cats are known, in begin_patrol"""
 
         self.patrol_cats: list[Cat] = []
@@ -96,6 +93,7 @@ class Patrol:
         self.outcome_cats: TypedDict(
             "outcome_cats", {"success": dict[str, Cat], "failure": dict[str, Cat]}
         ) = {"success": {}, "failure": {}}
+        self.chosen_poi = None
 
     def begin_patrol(self, patrol_cats: List[Cat], patrol_type: str) -> str:
         """
@@ -103,7 +101,7 @@ class Patrol:
         :param patrol_cats: All cats that have been chosen for this patrol
         :param patrol_type: Type of patrol
         """
-        self.debug_patrol_id = get_config("patrol_generation.debug_ensure_patrol_id")
+        self.debug_patrol_id = get_config("patrol_generation.debug_ensure.patrol_id")
 
         print("PATROL START ---------------------------------------------------")
 
@@ -122,26 +120,32 @@ class Patrol:
             self.other_clan = None
 
         # Find valid patrol
-        self.patrol_event = self._get_possible_patrol(patrol_type)
+        self._load_patrols_and_set_patrol(patrol_type)
+        self._create_needed_cats()
 
-        Patrol.used_patrols.append(self.patrol_event.event_id)
+        if self.patrol_event.poi:
+            self.chosen_poi = get_poi_from_constraints(
+                self.patrol_event.poi.get("name"),
+                self.patrol_event.poi.get("tags"),
+                self.patrol_event.poi.get("category"),
+            )
 
         # Return text adjusted patrol intro
         return event_text_adjust(
             Cat,
-            self.patrol_event.intro_text,
+            choice(self.patrol_event.intro_strings),
             involved_cat_dict=self.involved_cats,
             clan=game.clan,
             other_clan=self.other_clan,
+            chosen_poi=self.chosen_poi,
         )
 
     def proceed_patrol(
-        self, path: Literal["proceed", "antag", "decline"] = "proceed"
-    ) -> Tuple[str, str, list, Optional[str]]:
-        """Proceed the patrol to the next step.
-        path can be: "proceed", "antag", or "decline" """
+        self, path: PatrolChoice = PatrolChoice.PROCEED
+    ) -> Tuple[str, str, dict, pygame.Surface | None]:
+        """Proceed the patrol to the next step."""
 
-        if path == "decline":
+        if path == PatrolChoice.DECLINE:
             if self.patrol_event:
                 print(
                     f"PATROL ID: {self.patrol_event.event_id} | SUCCESS: N/A (did not proceed)"
@@ -149,25 +153,36 @@ class Patrol:
                 return (
                     event_text_adjust(
                         Cat,
-                        self.patrol_event.decline_text,
+                        choice(self.patrol_event.decline_strings),
                         involved_cat_dict=self.involved_cats,
                         clan=game.clan,
                         other_clan=self.other_clan,
+                        chosen_poi=self.chosen_poi,
                     ),
                     "",
-                    [],
+                    {},
                     None,
                 )
             else:
-                return "Error - no event chosen", "", [], None
+                return "Error - no event chosen", "", {}, None
 
-        return self.determine_outcome(antagonize=(path == "antag"))
+        return self.determine_outcome(antagonize=(path == PatrolChoice.ANTAGONIZE))
+
+    def _create_needed_cats(self):
+        """
+        Creates needed cats for the patrol start.  In its own function for unit testing purposes.
+        """
+        handle_consequences.create_needed_cats(
+            self.patrol_event, self.involved_cats, self.other_clan
+        )
 
     def _add_patrol_cats(self, patrol_cats: List[Cat]) -> None:
         """
         Sorts and categorizes patrol cats, then determines a patrol leader.
         :param patrol_cats: list of cats which are on the patrol
         """
+        self.involved_cats.clear()
+
         # ADD TO PATROL_CATS
 
         self.patrol_cats = patrol_cats
@@ -236,13 +251,19 @@ class Patrol:
 
         self.involved_cats["p_l"] = possible_leads[-1]
         self.involved_cats["patrol_cats"] = patrol_cats
+        # some_patrol will be a random assortment of the patrol cats, but not 1 nor all
+        if len(patrol_cats) >= 3:
+            self.involved_cats["some_patrol"] = sample(
+                patrol_cats,
+                k=randint(min(2, len(patrol_cats)), min(5, len(patrol_cats) - 1)),
+            )
 
         print("Patrol Leader:", str(self.involved_cats["p_l"].name))
 
-    def _get_possible_patrol(
+    def _load_patrols_and_set_patrol(
         self,
         patrol_type: str,
-    ) -> PatrolEvent:
+    ):
         # ---------------------------------------------------------------------------- #
         #                                LOAD RESOURCES                                #
         # ---------------------------------------------------------------------------- #
@@ -281,9 +302,9 @@ class Patrol:
 
         # DEBUG - NO FILTER
         # This is a debug option, this allows you to remove any constraints of a patrol regarding location, session, biomes, etc.
-        if constants.CONFIG["patrol_generation"][
-            "debug_override_patrol_stat_requirements"
-        ]:
+        if get_config(
+            "patrol_generation.debug_ensure.override_patrol_stat_requirements"
+        ):
             if self.debug_patrol_id:
                 chosen_patrol = [
                     p for p in patrol_list if p.event_id == self.debug_patrol_id
@@ -295,11 +316,13 @@ class Patrol:
             )
         # FILTER PATROLS when no debug set
         else:
-            chosen_patrol = self._filter_patrols(patrol_list, patrol_type)
+            chosen_patrol = self._filter_and_set_patrol(patrol_list, patrol_type)
 
-        return chosen_patrol
+        self.patrol_event = chosen_patrol
 
-    def _decide_if_romantic(self, romantic_event: Optional[PatrolEvent]) -> bool:
+    def _decide_if_romantic(
+        self, romantic_event: Optional[PatrolEvent], involved_cats: dict
+    ) -> bool:
         """
         Finds the chance of this patrol being romantic based on the cats involved and their current relationship with each other
         :return: True if patrol should be romantic, False otherwise
@@ -308,6 +331,9 @@ class Patrol:
         if not romantic_event:
             print("No romantic event")
             return False
+
+        if romantic_event == self.debug_patrol_id:
+            return True
 
         chance_of_romance_patrol = get_config(
             "patrol_generation.chance_of_romance_patrol"
@@ -320,10 +346,10 @@ class Patrol:
                     Cat,
                     block["cats_from"],
                     event=self,
-                    involved_cats=self.involved_cats,
+                    involved_cats=involved_cats,
                 )
                 cats_to = gather_cat_objects(
-                    Cat, block["cats_to"], event=self, involved_cats=self.involved_cats
+                    Cat, block["cats_to"], event=self, involved_cats=involved_cats
                 )
                 # now affect the chance depending on the compatibility
                 for c in cats_from:
@@ -355,23 +381,25 @@ class Patrol:
         print("final romance chance:", chance_of_romance_patrol)
         return not int(random.random() * chance_of_romance_patrol)
 
-    def _filter_patrols(
+    def _filter_and_set_patrol(
         self,
         possible_patrols: List[PatrolEvent],
         patrol_type: str,
     ) -> PatrolEvent:
         # GET POSSIBLE PATROLS
-        # run the first set of really basic constraint filtering, just to get our base of valid patrols
+        # filter for type initially
         possible_patrols = [
             p
             for p in possible_patrols
-            if self._patrol_pass_basic_constraints(
+            if self._check_patrol_type(
                 p, patrol_type, is_debug_patrol=p.event_id == self.debug_patrol_id
             )
         ]
-        # make sure the hunting patrols are balanced
-        if patrol_type == "hunting":
-            possible_patrols = self.balance_hunting(possible_patrols)
+        # make sure the hunting and herb patrols are balanced
+        if patrol_type == "hunting" and not self.debug_patrol_id:
+            possible_patrols = self._balance_hunting(possible_patrols)
+        if patrol_type == "herb_gathering" and not self.debug_patrol_id:
+            possible_patrols = self._balance_herbs(possible_patrols)
 
         # separate into the two lists
         normal_patrols: list[PatrolEvent] = []
@@ -390,14 +418,16 @@ class Patrol:
         chosen_patrol: Optional[PatrolEvent] = None
 
         # first we see if we can get a romantic patrol
-        if romantic_patrols and not self.debug_patrol_id:
-            chosen_patrol = self._get_valid_patrol(romantic_patrols.copy())
-            if not self._decide_if_romantic(chosen_patrol):
-                chosen_patrol = None
+        if romantic_patrols:
+            chosen_patrol = self._set_valid_patrol(
+                romantic_patrols.copy(), find_romance=True
+            )
 
         # if no romantic patrol possible, we get a normal one!
         if not chosen_patrol:
-            chosen_patrol = self._get_valid_patrol(normal_patrols.copy())
+            chosen_patrol = self._set_valid_patrol(
+                normal_patrols.copy(), find_romance=False
+            )
             if not chosen_patrol:
                 raise Exception(
                     "ERROR: No patrols could be found, even after resetting the used patrol list."
@@ -405,86 +435,60 @@ class Patrol:
 
         return chosen_patrol
 
-    def _clear_used_and_retry(self, possible_patrols: List[PatrolEvent]):
-        """
-        Clears used patrols and attempts to get a new valid patrol
-        """
-        self.used_patrols.clear()
-
-        return self._get_valid_patrol(possible_patrols)
-
-    def _get_valid_patrol(
-        self, possible_patrols: List[PatrolEvent]
+    def _set_valid_patrol(
+        self, possible_patrols: List[PatrolEvent], find_romance: bool = False
     ) -> Optional[PatrolEvent]:
+        """
+        Finds a valid patrol
+        If one if found, sets the patrol event and involved cats,
+            and returns the patrol event.
+        """
         chosen_patrol = None
+        patrols_to_test = [
+            p
+            for p in possible_patrols
+            if p.event_id
+            not in Patrol.used_patrols["romance" if find_romance else "normal"]
+        ]
         while not chosen_patrol:
             chosen_patrol, involved_cats = get_valid_event(
                 primary_cat=self.involved_cats["p_l"],
                 involved_cats=self.involved_cats,
-                interactable_cats=[
-                    c
-                    for c in self.involved_cats["patrol_cats"]
-                    if c != self.involved_cats["p_l"]
-                ],
-                possible_events=possible_patrols,
+                interactable_cats=self.involved_cats["patrol_cats"],
+                possible_events=patrols_to_test,
                 other_clan=self.other_clan,
                 ensured_id=self.debug_patrol_id,
-                general_constraints_active=False,
             )
             if not chosen_patrol:
-                if not self.used_patrols:
+                if not Patrol.used_patrols["romance" if find_romance else "normal"]:
                     # No patrols found even after resetting used patrols.
                     # This should only be possible when filtering for romance patrols.
                     return None
 
                 # if we couldn't find a patrol, then we need to clear the used_patrols and try again
-                chosen_patrol = self._clear_used_and_retry(possible_patrols)
-            else:
-                # otherwise, let's set our involved cats and move on with this patrol!
-                self.involved_cats = involved_cats
+                Patrol.used_patrols["romance" if find_romance else "normal"].clear()
+                patrols_to_test = possible_patrols.copy()
 
+        if find_romance:
+            if not self._decide_if_romantic(chosen_patrol, involved_cats):
+                return None
+            Patrol.used_patrols["romance"].append(chosen_patrol.event_id)
+        else:
+            Patrol.used_patrols["normal"].append(chosen_patrol.event_id)
+
+        self.patrol_event = chosen_patrol
+        self.involved_cats = involved_cats
         return chosen_patrol
 
-    def _patrol_pass_basic_constraints(
-        self, patrol: PatrolEvent, patrol_type: str, is_debug_patrol: bool
+    @staticmethod
+    def _check_patrol_type(
+        patrol: PatrolEvent, patrol_type: str, is_debug_patrol: bool
     ) -> bool:
         # CHECK PATROL TYPE
         if patrol_type not in patrol.types:
             if is_debug_patrol:
                 print("DEBUG: requested patrol does not meet constraints (patrol type)")
             return False
-
-        # CHECK GENERAL
-        if not passes_general_constraints(
-            patrol,
-            self.involved_cats["p_l"],
-            self.involved_cats,
-            self.other_clan,
-            is_debug_patrol,
-        ):
-            return False
-
-        # CHECK POI
-        if not event_for_poi(patrol.poi):
-            if is_debug_patrol:
-                print("DEBUG: requested patrol does not meet constraints (PoI)")
-            return False
-
-        # CHECK NEEDED HERBS
-        if patrol_type == "herb_gathering":
-            # skip this if it's a debug patrol
-            if is_debug_patrol:
-                return True
-
-            target_herbs = game.clan.herb_supply.sorted_by_need
-
-            # if any herb can happen, then we return True
-            if "random_herbs" in patrol.herbs_given:
-                return True
-
-            # if the patrol is not able to give herbs we need, we return False
-            if not set(patrol.herbs_given).intersection(set(target_herbs)):
-                return False
 
         return True
 
@@ -505,18 +509,23 @@ class Patrol:
             success_outcomes = self.patrol_event.success_outcomes
             fail_outcomes = self.patrol_event.fail_outcomes
 
+        debug_outcome = None
+        if self.debug_patrol_id:
+            # outcomes generate an ID based off their parent
+            # it looks like {patrol_id}_{type of outcome}{index}
+            outcome_index = get_config("patrol_generation.debug_ensure.outcome_index")
+            outcome_type = get_config("patrol_generation.debug_ensure.outcome_type")
+            debug_outcome = f"{self.debug_patrol_id}{'_antag' if antagonize else ''}{'_success' if outcome_type else '_fail'}{outcome_index}"
+
         # we'll get an outcome for both success and failure
         # FIND SUCCESS
         chosen_success, self.outcome_cats["success"] = get_valid_event(
             primary_cat=self.involved_cats["p_l"],
             involved_cats=self.involved_cats,
-            interactable_cats=[
-                c
-                for c in self.involved_cats["patrol_cats"]
-                if c != self.involved_cats["p_l"]
-            ],
+            interactable_cats=[c for c in self.involved_cats["patrol_cats"]],
             possible_events=success_outcomes,
             other_clan=self.other_clan,
+            ensured_id=debug_outcome,
         )
 
         if not chosen_success:
@@ -535,6 +544,7 @@ class Patrol:
             ],
             possible_events=fail_outcomes,
             other_clan=self.other_clan,
+            ensured_id=debug_outcome,
         )
         if not chosen_failure:
             raise Exception(
@@ -566,14 +576,14 @@ class Patrol:
         ]
         temp_involved_cats = self.involved_cats.copy()
 
-        temp_involved_cats = find_cats(
+        temp_involved_cats, will_create_how_many = find_cats(
             interactable_cats=temp_involved_cats["patrol_cats"],
             involved_cats=temp_involved_cats,
             outside_cats=outside_cats,
             event=outcome,
             other_clan=self.other_clan,
         )
-        if not temp_involved_cats:
+        if not (temp_involved_cats or will_create_how_many):
             return False
 
         # if we're here, then we must have found all our cats!
@@ -583,7 +593,7 @@ class Patrol:
 
     def determine_outcome(
         self, antagonize=False
-    ) -> Tuple[str, str, list, pygame.Surface]:
+    ) -> Tuple[str, str, dict, pygame.Surface | None]:
         if self.patrol_event is None:
             raise Exception("No patrol event supplied")
 
@@ -591,7 +601,15 @@ class Patrol:
 
         chosen_outcome, success = self.calculate_success(success_outcome, fail_outcome)
 
+        if not self.chosen_poi and chosen_outcome.poi:
+            self.chosen_poi = get_poi_from_constraints(
+                chosen_outcome.poi.get("name"),
+                chosen_outcome.poi.get("tags"),
+                chosen_outcome.poi.get("category"),
+            )
+
         print(f"PATROL ID: {self.patrol_event.event_id} | SUCCESS: {success}")
+        print(f"Success Outcome: {success_outcome} | Failure Outcome: {fail_outcome}")
         print(
             f"Patrol Frequency: {self.patrol_event.frequency} | Patrol Weight: {self.patrol_event.weight}"
         )
@@ -604,6 +622,7 @@ class Patrol:
             chosen_outcome,
             self.outcome_cats["success" if success else "failure"],
             self.other_clan,
+            self.chosen_poi,
         ) + (self.get_patrol_art(chosen_outcome),)
 
     def calculate_success(
@@ -640,7 +659,10 @@ class Patrol:
         for abbr, constraints in success_outcome.involved_cats.items():
             # if this is present, then we know a cat must fulfill it
             if stat_block := constraints.get("stat"):
-                cat = self.outcome_cats["success"][abbr]
+                cat = self.outcome_cats["success"].get(abbr)
+                if not cat:
+                    # likely an n_c cat that hasn't been made yet
+                    continue
                 if "skill" in stat_block:
                     success_chance += get_config(
                         "patrol_generation.skill_cat_modifier"
@@ -657,12 +679,8 @@ class Patrol:
         success = int(random.random() * 120) < success_chance
 
         # This is a debug option, this will forcefully change the outcome of a patrol
-        if isinstance(
-            constants.CONFIG["patrol_generation"]["debug_ensure_patrol_outcome"], bool
-        ):
-            success = constants.CONFIG["patrol_generation"][
-                "debug_ensure_patrol_outcome"
-            ]
+        if isinstance(get_config("patrol_generation.debug_ensure.outcome_type"), bool):
+            success = get_config("patrol_generation.debug_ensure.outcome_type")
             # Logging
             print(
                 f"The outcome of {self.patrol_event.event_id} was altered to {success}"
@@ -670,19 +688,15 @@ class Patrol:
 
         return success_outcome if success else fail_outcome, success
 
-    def balance_hunting(self, possible_patrols: list[PatrolEvent]):
-        """Filter the incoming hunting patrol list to balance the different kinds of hunting patrols.
-        With this filtering, there should be more prey possible patrols.
-
-            Parameters
-            ----------
-            possible_patrols : list
-                list of patrols which should be filtered
-
-            Returns
-            ----------
-            filtered_patrols : list
-                list of patrols which is filtered
+    def _balance_hunting(
+        self, possible_patrols: list[PatrolEvent]
+    ) -> list[PatrolEvent]:
+        """
+        Check which prey amount we want to allow this clan to get and filter the possible_patrols accordingly to ensure
+        they only have patrols where that amount is possible.
+        :param possible_patrols: The list of possible patrols
+        :returns: The list of possible patrols but filtered to only include those patrols which have the chosen prey
+        amount. If there were no patrols with the chosen prey amount, then the original list is returned
         """
         filtered_patrols = []
 
@@ -692,16 +706,17 @@ class Patrol:
             if not game.clan.override_biome
             else game.clan.override_biome
         )
-        season = game.clan.current_season
-        prey_size = ["tiny", "small", "medium", "large", "huge"]
-        prey_size_random_weights = PATROL_BALANCE[biome][season]
+        prey_sizes = ["tiny", "small", "medium", "large", "huge"]
+        prey_size_random_weights = get_config(
+            f"prey.patrol_balance.{biome}.{game.clan.current_season}"
+        )
 
-        chosen_prey_size = choices(prey_size, weights=prey_size_random_weights)[0]
+        chosen_prey_size = choices(prey_sizes, weights=prey_size_random_weights)[0]
         print(f"chosen filter prey size: {chosen_prey_size}")
 
-        # filter all possible patrol depending on the needed prey size
+        # filter all possible patrols depending on the needed prey size
         for patrol in possible_patrols:
-            # count the outcomes + prey size
+            # count how many outcomes award each prey size
             prey_size_to_outcome_amounts = {}
             for outcome in patrol.success_outcomes:
                 if outcome.supply:
@@ -719,20 +734,42 @@ class Patrol:
             for size, amount in prey_size_to_outcome_amounts.items():
                 if amount >= max_occurrences:
                     most_prey_size = size
+                    max_occurrences = amount
 
+            # if the most often awarded prey size matches the one we want, then we allow this patrol through
             if chosen_prey_size == most_prey_size:
                 filtered_patrols.append(patrol)
             elif self.debug_patrol_id and self.debug_patrol_id == patrol.event_id:
                 print(
-                    "DEBUG: requested patrol does not meet constraints (failed prey balancing)"
+                    f"DEBUG: requested patrol does not meet constraints (did not have the prey amount required for prey balancing)"
                 )
         # if the filtering results in an empty list, don't filter and return whole possible patrols
         if len(filtered_patrols) <= 0:
             print(
-                "---- WARNING ---- filtering to balance out the hunting, didn't work."
+                "---- WARNING ---- attempted prey balancing filtering, but there were no patrols with the required prey amount."
             )
-            filtered_patrols = possible_patrols
+            return possible_patrols
+
         return filtered_patrols
+
+    @staticmethod
+    def _balance_herbs(possible_patrols: list[PatrolEvent]) -> list[PatrolEvent]:
+        """
+        Finds and returns patrols that add herbs the medicine cats are currently looking for
+        """
+        target_herbs = game.clan.herb_supply.sorted_by_need
+
+        allowed_patrols = []
+        for patrol in possible_patrols:
+            # if any herb can happen, then we return True
+            if "random_herbs" in patrol.herbs_given:
+                allowed_patrols.append(patrol)
+
+            # if the patrol is not able to give herbs we need, we return False
+            if set(patrol.herbs_given).intersection(set(target_herbs)):
+                allowed_patrols.append(patrol)
+
+        return allowed_patrols
 
     def get_patrol_art(self, outcome: TextPoolEvent = None) -> Optional[pygame.Surface]:
         """Return's patrol art surface"""
@@ -752,6 +789,8 @@ class Patrol:
             file_name = (
                 self.patrol_event.patrol_art if not outcome else outcome.outcome_art
             )
+            if file_name == "POI":
+                file_name = f"backgrounds/poi_{self.chosen_poi}"
 
         if not isinstance(file_name, str) or not path_exists(
             f"{root_dir}{file_name}.png"
@@ -778,11 +817,3 @@ class Patrol:
                 return pygame.image.load(f"{april_fools_root_dir}{file_name}.png")
 
         return pygame.image.load(f"{root_dir}{file_name}.png")
-
-
-# ---------------------------------------------------------------------------- #
-#                               PATROL CLASS END                               #
-# ---------------------------------------------------------------------------- #
-
-PATROL_WEIGHT_ADAPTION = constants.CONFIG["prey"]["patrol_weight_adaption"]
-PATROL_BALANCE = constants.CONFIG["prey"]["patrol_balance"]

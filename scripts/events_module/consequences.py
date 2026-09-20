@@ -85,7 +85,12 @@ def create_new_cat_block(
                 index = f"n_c:{index}"
             if in_event_cats[index].ID not in adoptive_parents:
                 adoptive_parents.append(in_event_cats[index].ID)
-                adoptive_parents.extend(in_event_cats[index].mate)
+                for mate_id in in_event_cats[index].mate:
+                    mate = Cat.fetch_cat(mate_id)
+                    if not mate or not mate.status.alive_in_player_clan:
+                        continue
+                    if mate.ID not in adoptive_parents:
+                        adoptive_parents.append(mate.ID)
 
     # gather mates
     give_mates = []
@@ -363,7 +368,9 @@ def create_new_cat_block(
                         name = new_prefix
                     chosen_cat.name.prefix = name
                     chosen_cat.name.give_suffix(
-                        pelt=chosen_cat.pelt,
+                        eyes=chosen_cat.pelt.eye_colour,
+                        colour=chosen_cat.pelt.colour,
+                        pelt=chosen_cat.pelt.name,
                         biome=game.clan.biome,
                         tortie_pattern=chosen_cat.pelt.tortie_pattern,
                     )
@@ -371,10 +378,13 @@ def create_new_cat_block(
                     chosen_cat.name.give_prefix(
                         eyes=chosen_cat.pelt.eye_colour,
                         colour=chosen_cat.pelt.colour,
+                        pelt=chosen_cat.pelt.name,
                         biome=game.clan.biome,
                     )
                     chosen_cat.name.give_suffix(
-                        pelt=chosen_cat.pelt.colour,
+                        eyes=chosen_cat.pelt.eye_colour,
+                        colour=chosen_cat.pelt.colour,
+                        pelt=chosen_cat.pelt.name,
                         biome=game.clan.biome,
                         tortie_pattern=chosen_cat.pelt.tortie_pattern,
                     )
@@ -809,7 +819,7 @@ def gather_cat_objects(
             found_cat = involved_cats[abbr]
             if is_exclusionary:
                 if isinstance(found_cat, list):
-                    out_set -= found_cat
+                    out_set -= set(found_cat)
                 else:
                     out_set.discard(found_cat)
             else:
@@ -843,9 +853,6 @@ def gather_cat_objects(
             index = int(index)
             if index < len(event.new_cats):
                 found_cat_list.update(event.new_cats[index])
-        elif abbr == "multi" and involved_cats:
-            cat_num = randint(1, max(1, len(involved_cats["patrol_cats"]) - 1))
-            found_cat_list.update(sample(involved_cats["patrol_cats"], cat_num))
         # OVERALL CLAN CATS
         elif abbr == "clan":
             found_cat_list.update(clan_cats)

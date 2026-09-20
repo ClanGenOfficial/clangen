@@ -935,7 +935,7 @@ class Cat:
         life_givers = []
         dead_relations = []
         life_giving_leader = None
-        num_of_lives_to_give = get_config("death_related.max_leader_lives")
+        num_of_lives_to_give = game.clan.leader_lives
 
         # grab life givers that the cat actually knew in life and sort by amount of relationship!
         relationships = self.relationships.values()
@@ -1608,11 +1608,11 @@ class Cat:
             return
         if self.ID in mentor_cat.apprentice:
             mentor_cat.apprentice.remove(self.ID)
-        if self.moons > 6:
-            if self.ID not in mentor_cat.former_apprentices:
-                mentor_cat.former_apprentices.append(self.ID)
-            if mentor_cat.ID not in self.former_mentor:
-                self.former_mentor.append(mentor_cat.ID)
+
+        if self.ID not in mentor_cat.former_apprentices:
+            mentor_cat.former_apprentices.append(self.ID)
+        if mentor_cat.ID not in self.former_mentor:
+            self.former_mentor.append(mentor_cat.ID)
         self.mentor = None
 
     def __add_mentor(self, new_mentor_id: str):
@@ -1655,7 +1655,13 @@ class Cat:
             if mentor_cat and not self.is_valid_mentor(mentor_cat):
                 self.__remove_mentor()
 
+        if get_clan_setting("assign_mentors"):
+            self.assign_random_mentor()
+
+    def assign_random_mentor(self):
         # Need to pick a random mentor if not specified
+
+        new_mentor = None
         if not self.mentor:
             potential_mentors = []
             priority_mentors = []
@@ -2562,20 +2568,6 @@ class Cat:
 # CAT CLASS ITEMS
 cat_class = Cat
 game.cat_class = Cat
-
-# ---------------------------------------------------------------------------- #
-#                                load json files                               #
-# ---------------------------------------------------------------------------- #
-
-resource_directory = "resources/dicts/conditions/"
-
-with open(f"{resource_directory}injuries.json", "r", encoding="utf-8") as read_file:
-    INJURIES = ujson.loads(read_file.read())
-
-with open(
-    f"{resource_directory}permanent_conditions.json", "r", encoding="utf-8"
-) as read_file:
-    PERMANENT = ujson.loads(read_file.read())
 
 
 LEAD_CEREMONY_SC: Optional[Dict] = None

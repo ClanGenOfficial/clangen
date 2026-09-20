@@ -15,7 +15,7 @@ from scripts.cat_relations.relationship import Relationship, create_one_relation
 from scripts.clan_package.settings import get_clan_setting
 from scripts.cat.microservices.conditions import add_congenital_condition
 from scripts.config import get_config
-from scripts.event_class import Single_Event
+from scripts.events_module.event_information import EventInformation
 from scripts.events_module.consequences import (
     create_new_cat,
     change_relationship_values,
@@ -26,9 +26,11 @@ from scripts.events_module.pregnancy.check_family_size import (
     biggest_family_is_big,
     get_biggest_family,
 )
+from scripts.events_module.pregnancy.check_parents import check_parent_rank
 from scripts.events_module.short.condition_events import Condition_Events
 from scripts.events_module.text_adjust import event_text_adjust, adjust_list_text
 from scripts.game_structure import game
+from scripts.models.common import cat
 
 
 def get_kits(
@@ -80,7 +82,7 @@ def get_kits(
                 continue
 
             mate = Cat.fetch_cat(mate_id)
-            if not mate:
+            if not mate or not mate.status.alive_in_player_clan:
                 continue
 
             add_poly_mate = poly_parenting and mate.ID != other_cat.ID
@@ -101,7 +103,7 @@ def get_kits(
                 continue
 
             mate = Cat.fetch_cat(mate_id)
-            if not mate:
+            if not mate or not mate.status.alive_in_player_clan:
                 continue
 
             add_poly_mate = poly_parenting and mate.ID != cat.ID
@@ -426,6 +428,10 @@ def handle_adoption(cat: Cat, other_cat: Optional[Cat] = None):
     ):
         return
 
+    # account for role limits
+    if not check_parent_rank(cat):
+        return
+
     # Gather adoptive parents, to feed into the
     # get kits function.
     adoptive_parents = [cat.ID]
@@ -473,7 +479,7 @@ def handle_adoption(cat: Cat, other_cat: Optional[Cat] = None):
     cat.birth_cooldown = get_config("pregnancy.birth_cooldown")
 
     game.cur_events_list.append(
-        Single_Event(print_event, "birth_death", cat_dict=cats_involved)
+        EventInformation(print_event, ["birth_death"], cat_dict=cats_involved)
     )
 
 

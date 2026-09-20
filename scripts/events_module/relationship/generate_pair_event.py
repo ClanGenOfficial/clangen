@@ -8,7 +8,7 @@ from scripts.cat.enums import CatCompatibility, CatRank
 from scripts.cat_relations.enums import RelType
 from scripts.cat_relations.relationship import Relationship
 from scripts.config import get_config
-from scripts.event_class import Single_Event
+from scripts.events_module.event_information import EventInformation
 from scripts.events_module.consequences import change_relationship_values
 from scripts.events_module.event_filters import (
     get_personality_compatibility,
@@ -318,7 +318,7 @@ def _resolve_event(
     cat_ids = [c.ID for c in involved_cats.values()]
     # append the event to the events list!
     game.cur_events_list.append(
-        Single_Event(event_string, ["relation", "interaction"], cat_ids)
+        EventInformation(event_string, ["relation", "interaction"], cat_ids)
     )
 
     # APPLY INFLUENCE ON RELATIONSHIPS

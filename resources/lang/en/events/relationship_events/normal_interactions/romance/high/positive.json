@@ -270,7 +270,7 @@
         ]
     },
     {
-        "event_id": "rom_inc_high_matetraittroublesome",
+        "event_id": "rom_inc_high_traittroublesome",
         "strings": [
             "m_c finds r_c's attitude exciting.",
             "m_c wonders what kinds of trouble {PRONOUN/m_c/subject} and r_c could get into together.",
@@ -286,7 +286,7 @@
         }
     },
     {
-        "event_id": "rom_inc_high_matetraitlonesome",
+        "event_id": "rom_inc_high_traitlonesome",
         "strings": [
             "m_c thinks r_c's still waters must run deep.",
             "m_c wants to know what's going on in r_c's head.",
@@ -302,7 +302,7 @@
         }
     },
     {
-        "event_id": "rom_inc_high_matetraitfierce",
+        "event_id": "rom_inc_high_traitfierce",
         "strings": [
             "r_c's passion for everything excites m_c.",
             "m_c thinks r_c would defend {PRONOUN/m_c/object} with {PRONOUN/r_c/poss} life.",
@@ -318,7 +318,7 @@
         }
     },
     {
-        "event_id": "rom_inc_high_matetraitbloodthirsty",
+        "event_id": "rom_inc_high_traitbloodthirsty",
         "strings": [
             "m_c thinks nothing bad would ever happen to {PRONOUN/m_c/object} with a cat like r_c in {PRONOUN/m_c/poss} corner.",
             "m_c finds r_c's intimidating aura thrilling.",
@@ -334,7 +334,7 @@
         }
     },
     {
-        "event_id": "rom_inc_high_matetraitcold",
+        "event_id": "rom_inc_high_traitcold",
         "strings": [
             "m_c is flustered by r_c's cool and unflappable attitude.",
             "m_c admires how nothing seems to faze r_c.",
@@ -350,7 +350,7 @@
         }
     },
     {
-        "event_id": "rom_inc_high_matetraitplayful",
+        "event_id": "rom_inc_high_traitplayful",
         "strings": [
             "r_c helps m_c lighten up and enjoy life more.",
             "m_c always purrs with laughter around r_c.",
@@ -366,7 +366,7 @@
         }
     },
     {
-        "event_id": "rom_inc_high_matetraitcharismatic",
+        "event_id": "rom_inc_high_traitcharismatic",
         "strings": [
             "m_c falls prey to r_c's charming personality.",
             "r_c is easy to like, almost infuriatingly so. m_c is peeved to realize {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not immune.",
@@ -382,7 +382,7 @@
         }
     },
     {
-        "event_id": "rom_inc_high_matetraitbolddaring",
+        "event_id": "rom_inc_high_traitbolddaring",
         "strings": [
             "r_c's reckless courage leaves m_c breathless.",
             "m_c is tired of cats who are all talk and no action, which is why r_c is so thrilling.",
@@ -398,7 +398,7 @@
         }
     },
     {
-        "event_id": "rom_inc_high_matetraitnervous",
+        "event_id": "rom_inc_high_traitnervous",
         "strings": [
             "m_c wants to reassure r_c that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing a great job.",
             "m_c finds r_c's anxious behavior endearing.",
@@ -414,7 +414,7 @@
         }
     },
     {
-        "event_id": "rom_inc_high_matetraitinsecure",
+        "event_id": "rom_inc_high_traitinsecure",
         "strings": [
             "The way r_c worries over other cats' feelings charms m_c.",
             "m_c wants to see r_c blossom and grow as a cat.",
@@ -430,7 +430,7 @@
         }
     },
     {
-        "event_id": "rom_inc_high_matetraitrighteous",
+        "event_id": "rom_inc_high_traitrighteous",
         "strings": [
             "m_c finds r_c's strength of belief inspiring and attractive.",
             "m_c appreciates that r_c can lay down the law.",
@@ -441,6 +441,407 @@
             "r_c": {
                 "stat": {
                     "trait": ["righteous"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitstrict",
+        "strings": [
+            "m_c kind of likes it when r_c bosses {PRONOUN/m_c/object} around.",
+            "m_c appreciates that r_c holds {PRONOUN/r_c/self} and others to such a high standard.",
+            "r_c's disciplined and fastidious nature is atttractive to m_c."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["strict"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitcompassionate",
+        "strings": [
+            "m_c is amazed by the depth of r_c's care for other cats.",
+            "m_c melts seeing the way r_c looks after {PRONOUN/r_c/poss} Clanmates.",
+            "m_c wonders how it would feel if r_c concentrated all {PRONOUN/r_c/poss} tenderness on {PRONOUN/m_c/object}."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["compassionate"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitthoughtful",
+        "strings": [
+            "m_c wants to get lost in thought with r_c.",
+            "m_c could listen to r_c's thoughts for hours.",
+            "m_c enjoys keeping r_c company while {PRONOUN/r_c/subject} {VERB/r_c/are/is} deep in thought."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["thoughtful"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitambitious",
+        "strings": [
+            "Hearing r_c's dreams for the future, m_c imagines standing by {PRONOUN/r_c/poss} side.",
+            "m_c is breathless when r_c describes {PRONOUN/r_c/poss} ambitions.",
+            "m_c feels motivated every day by r_c's plans and hopes for the future."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["ambitious"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitconfident",
+        "strings": [
+            "m_c relaxes around r_c, knowing {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} undaunted by most things.",
+            "m_c is flustered by r_c's easy confidence.",
+            "m_c has always found confidence attractive, and r_c embodies it."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["confident"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitadventurous",
+        "strings": [
+            "m_c wants to go on adventures with r_c.",
+            "m_c feels braver by r_c's side.",
+            "m_c seeks out new experiences to try to impress r_c."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["adventurous"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitcalm",
+        "strings": [
+            "m_c feels at peace in r_c's presence.",
+            "r_c tends to set other cats at ease, but m_c gets nervous butterflies around {PRONOUN/r_c/object}.",
+            "r_c's laidback nature appeals to m_c."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["calm"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitcareful",
+        "strings": [
+            "m_c appreciates the care that r_c approaches life with.",
+            "m_c likes that {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't have to worry about r_c, because r_c is cautious and responsible.",
+            "m_c is attracted to how deliberate and careful r_c is in every part of {PRONOUN/r_c/poss} life.",
+            "m_c dreams of making r_c throw caution to the wind one day."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["careful"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitfaithful",
+        "strings": [
+            "m_c wants to give r_c something to believe in.",
+            "m_c feels breathless at the depth of r_c's devotion.",
+            "r_c's faith that things will work out for the best in the end warms m_c all the way to {PRONOUN/m_c/poss} tailtip."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["faithful"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitloving",
+        "strings": [
+            "m_c believes that r_c feels love more deeply than any cat in the Clan.",
+            "m_c wants r_c's passion all focused on {PRONOUN/m_c/object}.",
+            "r_c's conviction in the power of love makes m_c believe it too."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["loving"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitloyal",
+        "strings": [
+            "m_c values loyalty highly; that's why {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} attracted to r_c.",
+            "m_c is reminded of how powerfully devoted to others r_c can be.",
+            "r_c's commitment to serving others makes m_c want to be worth serving."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["loyal"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitresponsible",
+        "strings": [
+            "m_c likes that {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't have to worry about r_c, because r_c is cautious and responsible.",
+            "m_c appreciates how reliable and steady r_c is.",
+            "r_c represents stability, and that attracts m_c."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["responsible"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitshameless",
+        "strings": [
+            "m_c is flustered by how r_c never seems to doubt {PRONOUN/r_c/self}.",
+            "r_c's unapologetic nature draws m_c in.",
+            "m_c adores r_c's shameless flirting."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["shameless"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitstrange",
+        "strings": [
+            "r_c's unique way of looking at the world makes m_c fond of {PRONOUN/r_c/object}.",
+            "m_c could listen to r_c's bizarre chatter for hours.",
+            "m_c loves r_c's oddball ways."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["strange"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitvengeful",
+        "strings": [
+            "m_c imagines r_c avenging {PRONOUN/m_c/object} after some cat wrongs {PRONOUN/m_c/object}.",
+            "The way r_c holds a grudge makes m_c yearn to be held by {PRONOUN/r_c/object}.",
+            "m_c admires r_c's passionate nature and how fiercely {PRONOUN/r_c/subject} {VERB/r_c/defend/defends} how {PRONOUN/r_c/subject} {VERB/r_c/feel/feels}."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["vengeful"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitwise",
+        "strings": [
+            "m_c values r_c's thoughts and feelings more than almost any cat in the Clan.",
+            "m_c is attracted to how contemplative and serene r_c is.",
+            "m_c imagines r_c throwing {PRONOUN/r_c/poss} measured and calm attitude to the wind."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["wise"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitarrogant",
+        "strings": [
+            "m_c finds r_c's excess of confidence wildly attractive.",
+            "r_c's cocky attitude makes m_c flustered.",
+            "r_c thinks {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} StarClan's gift to c_n, and m_c has started to believe it too."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["arrogant"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitcompetitive",
+        "strings": [
+            "r_c's drive to improve at everything motivates m_c.",
+            "m_c is one of the only cats who can keep up with r_c.",
+            "Some cats find r_c's need to turn everything into a competition irritating, but m_c thinks it's fun."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["competitive"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitgrumpy",
+        "strings": [
+            "m_c believes there is a heart of gold under r_c's rough exterior.",
+            "When r_c is unexpectedly gentle with m_c in passing, m_c's heart flutters.",
+            "m_c is one of the few cats in the Clan who seems endlessly patient with r_c's grouchy moods."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["grumpy"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitcunning",
+        "strings": [
+            "m_c is enthralled by how r_c's mind works.",
+            "m_c admires how canny r_c's plans are.",
+            "r_c thinks so many steps ahead; m_c imagines making {PRONOUN/r_c/object} forget everything but the moment."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["cunning"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitoblivious",
+        "strings": [
+            "m_c's maneuvers to catch r_c's eye have become increasingly overt.",
+            "r_c lives in such blissful ignorance; m_c can't help wanting to join {PRONOUN/r_c/object} there.",
+            "m_c loves that r_c isn't easily bothered by things that other cats get hung up on."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["oblivious"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitgloomy",
+        "strings": [
+            "m_c keeps r_c company when r_c is moping around.",
+            "m_c is touched by how tender r_c's heart is.",
+            "m_c wants to bring joy and laughter into r_c's life."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["gloomy"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitsincere",
+        "strings": [
+            "r_c is forthcoming and direct when other cats won't speak up, and m_c admires that.",
+            "m_c knows {PRONOUN/m_c/subject} can always count on r_c to tell the truth.",
+            "r_c never hides anything, but m_c dreams that perhaps r_c feels more for {PRONOUN/m_c/object} than {PRONOUN/r_c/subject} {VERB/r_c/let/lets} on."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["sincere"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitflamboyant",
+        "strings": [
+            "m_c finds r_c's big personality magnetic.",
+            "Few cats can ignore r_c, but m_c has been particularly helpless lately.",
+            "Some cats may find r_c's melodrama obnoxious, but m_c is enchanted by {PRONOUN/r_c/object}."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["flamboyant"]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "rom_inc_high_traitrebellious",
+        "strings": [
+            "m_c finds r_c's disregard for rules thrilling.",
+            "m_c wants to throw caution to the wind with r_c.",
+            "r_c's revolutionary antics make m_c's heart beat faster."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["rebellious"]
                 }
             }
         }

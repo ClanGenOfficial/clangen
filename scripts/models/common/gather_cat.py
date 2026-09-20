@@ -19,8 +19,8 @@ class GatherCatEnum(Enum):
     not_some_clan = "-some_clan"
     patrol = "patrol"
     not_patrol = "-patrol"
-    multi = "multi"
-    not_multi = "-multi"
+    some_patrol = "some_patrol"
+    not_some_patrol = "-some_patrol"
     high_lawful = "high_lawful"
     not_high_lawful = "-high_lawful"
     low_lawful = "low_lawful"
@@ -51,6 +51,8 @@ class GatherCatEnum(Enum):
     not_deputy = "-deputy"
     leader = "leader"
     not_leader = "-leader"
+    past_deputy = "past_deputy"
+    not_past_deputy = "-past_deputy"
 
 
 class GatherCat(RootModel):
