@@ -23,7 +23,9 @@
 		"r_c took m_c to the medicine cat den after {PRONOUN/m_c/subject} {VERB/m_c/were/was} feeling nauseated. When m_c and r_c left the medicine cat den, m_c announces that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant! r_c doesn't seem as enthusiastic as m_c, however.",
 		"m_c announced that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits. r_c doesn't remember spending that much time with {PRONOUN/m_c/object} this moon...",
 		"m_c and r_c had a heated discussion over something. When other cats ask, m_c admits that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant and r_c is upset.",
-		"After m_c announced {PRONOUN/m_c/poss} pregnancy to the Clan, some cats noticed r_c looking at {PRONOUN/m_c/object} with confusion. No one can guess why, but everyone's excited for new life coming to the Clan!"
+		"After m_c announced {PRONOUN/m_c/poss} pregnancy to the Clan, some cats noticed r_c looking at {PRONOUN/m_c/object} with confusion. No one can guess why, but everyone's excited for new life coming to the Clan!",
+        "When r_c hears that m_c is expecting kits, the Clan doesn't seem to understand why r_c is more confused than excited.",
+        "m_c is told {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits. {PRONOUN/m_c/subject/CAP} immediately {VERB/m_c/ask/asks} {PRONOUN/m_c/poss} Clanmates to keep it a secret from r_c."
     ],
     "announcement_surprise": [
     	"The Clan is surprised when m_c announces that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits. m_c refuses to disclose the name of the other parent, but everyone's excited for new life in the Clan regardless!",
@@ -31,7 +33,8 @@
 		"m_c found out that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant! When other cats inquired about the second parent, m_c changed the subject.",
 		"m_c doesn't care what the other cats say — {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} expecting kits and is determined to do this on {PRONOUN/m_c/poss} own, with or without a mate.",
 		"m_c is surprised to find out {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant. How {VERB/m_c/are/is} {PRONOUN/m_c/subject} supposed to do this without a mate?",
-		"m_c proudly announces {PRONOUN/m_c/poss} pregnancy. {PRONOUN/m_c/subject/CAP} {VERB/m_c/refuse/refuses} to answer any cat who questions {PRONOUN/m_c/object} about the second parent."
+		"m_c proudly announces {PRONOUN/m_c/poss} pregnancy. {PRONOUN/m_c/subject/CAP} {VERB/m_c/refuse/refuses} to answer any cat who questions {PRONOUN/m_c/object} about the second parent.",
+        "m_c panics when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} told {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant. What will {PRONOUN/m_c/subject} do? Will {PRONOUN/m_c/subject} be able to raise these kits without a mate?"
     ],
     "announcement_affair_samesex": [
 		"m_c tried to hide it, especially from r_c, but each day, {PRONOUN/m_c/poss} pregnancy symptoms become more noticeable to other cats. m_c has no choice but to announce that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits. r_c looks at {PRONOUN/m_c/object} with confusion.",
@@ -116,7 +119,8 @@
             "No one knows who m_c has had {PRONOUN/m_c/poss} {insert} with, but {PRONOUN/m_c/subject} {VERB/m_c/seem/seems} very happy watching over {PRONOUN/m_c/poss} little offspring in the nursery.",
             "Whenever someone asks whether m_c will be alright raising {PRONOUN/m_c/poss} {insert} alone, {PRONOUN/m_c/subject} just {VERB/m_c/smile/smiles} and {VERB/m_c/reply/replies} that everything is going to work out fine.",
             "A {insert}! m_c welcomes them happily, and seems unperturbed by the lack of a partner in the nursery with {PRONOUN/m_c/object}.",
-            "The Clan is happy to see m_c with {PRONOUN/m_c/poss} brand new {insert} in the nursery, but no one quite seems to know who the other parent is."
+            "The Clan is happy to see m_c with {PRONOUN/m_c/poss} brand new {insert} in the nursery, but no one quite seems to know who the other parent is.",
+            "Nobody has been able to get answers from m_c about who the other parent of {PRONOUN/m_c/poss} new {insert} is."
         ],
         "two_parents": [
             "m_c had a {insert} with r_c.",
