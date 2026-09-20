@@ -173,7 +173,7 @@
 			"r_c adamantly denies that m_c's newly born {insert} belongs to {PRONOUN/r_c/object} when questioned, but it's hard to believe {PRONOUN/r_c/object} when they're so similar...",
 			"Everyone in the Clan can see that m_c's {insert} clearly looks like r_c... rc_mate has been glaring at {PRONOUN/r_c/object} and m_c ever since the {insert} was born.",
 			"rc_mate has been demanding answers from r_c ever since m_c's {insert} was born. The {insert} looks far too much like r_c!",
-            "rc_mate stares at m_c's new {insert} in disbelief. Even if {PRONOUN/rc_mate/subject} may not want to admit it, the truth is staring {PRONOUN/rc_mate/object} in the face. The {insert} is actually r_c's.",
+            "rc_mate looks at m_c's new {insert} in disbelief. Even if {PRONOUN/rc_mate/subject} may not want to admit it, the truth is staring {PRONOUN/rc_mate/object} in the face. The {insert} is actually r_c's.",
             "rc_mate has made {PRONOUN/rc_mate/poss} outrage extremely apparent ever since m_c's {insert} was born. Why do they look so much like r_c?!"
         ],
         "affair_secret": [
