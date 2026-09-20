@@ -1,10 +1,4 @@
 {
-  "forsaken": {
-    "card_art": "danger/forsaken.png",
-    "modifiers": {
-      "death_related.max_leader_lives": 1
-    }
-  },
   "for_the_throne": {
     "card_art": "danger/for_the_throne.png",
     "modifiers": {
@@ -15,7 +9,7 @@
     }
   },
   "plague_ridden": {
-    "card_art": "danger/forsaken.png",
+    "card_art": "danger/blood.png",
     "modifiers": {
       "condition_related.med_infection_reduction": 0,
       "condition_related.illness_outbreak_season": ["Leaf-bare", "Leaf-fall", "Greenleaf", "Newleaf"],
@@ -26,6 +20,14 @@
     "card_art": "danger/stolen_vitality.png",
     "modifiers": {
       "cruel_season.event.stolen_vitality": true
+    }
+  },
+  "tooth_and_claw": {
+    "card_art": "danger/tooth_and_claw.png",
+    "modifiers": {
+      "condition_related.war_injury_modifier": 235,
+      "death_related.war_death_modifier": 340,
+      "death_related.war_death_modifier_leader": 46
     }
   }
 }

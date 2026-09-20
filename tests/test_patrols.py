@@ -195,6 +195,83 @@ class TestInvolvedCats(unittest.TestCase):
             msg=f"r_c should not be the same as {war1}",
         )
 
+    def test_outcome_pl_rc_difference(self):
+        war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR, moons=20, experience=50)
+        app1 = TestCatFactory.create_cat(
+            rank=CatRank.APPRENTICE, moons=10, experience=1
+        )
+        app2 = TestCatFactory.create_cat(
+            rank=CatRank.APPRENTICE, moons=10, experience=1
+        )
+
+        patrol = PatrolEvent(
+            event_id="test",
+            types=["hunting"],
+            intro_strings=["test"],
+            decline_strings=["test"],
+            involved_cats={},
+            success_outcomes=[
+                {"strings": ["test"], "involved_cats": {"r_c0": InvolvedCatDict()}}
+            ],
+            fail_outcomes=[{"strings": ["test"]}],
+        )
+
+        self.patrol_class._add_patrol_cats([war1, app1, app2])
+        self.patrol_class._set_valid_patrol([patrol])
+        self.patrol_class._check_outcome_constraints(
+            patrol.success_outcomes[0], "success"
+        )
+
+        self.assertNotEqual(
+            self.patrol_class.outcome_cats["success"]["p_l"],
+            self.patrol_class.outcome_cats["success"]["r_c0"],
+            msg=f"r_c0 should not be the same as p_l",
+        )
+
+    def test_multiple_rc(self):
+        war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR, moons=20, experience=50)
+        app1 = TestCatFactory.create_cat(
+            rank=CatRank.APPRENTICE, moons=10, experience=1
+        )
+        app2 = TestCatFactory.create_cat(
+            rank=CatRank.APPRENTICE, moons=10, experience=1
+        )
+
+        patrol = PatrolEvent(
+            event_id="test",
+            types=["hunting"],
+            intro_strings=["test"],
+            decline_strings=["test"],
+            involved_cats={
+                "r_c0": InvolvedCatDict(),
+            },
+            success_outcomes=[
+                {"strings": ["test"], "involved_cats": {"r_c1": InvolvedCatDict()}}
+            ],
+            fail_outcomes=[{"strings": ["test"]}],
+        )
+
+        set_up_patrol_class_w_event(self.patrol_class, [war1, app1, app2], [patrol])
+        self.patrol_class._check_outcome_constraints(
+            patrol.success_outcomes[0], "success"
+        )
+
+        self.assertNotEqual(
+            self.patrol_class.outcome_cats["success"]["p_l"],
+            self.patrol_class.outcome_cats["success"]["r_c0"],
+            msg=f"p_l should not be the same as r_c0",
+        )
+        self.assertNotEqual(
+            self.patrol_class.outcome_cats["success"]["p_l"],
+            self.patrol_class.outcome_cats["success"]["r_c1"],
+            msg=f"p_l should not be the same as r_c1",
+        )
+        self.assertNotEqual(
+            self.patrol_class.outcome_cats["success"]["r_c0"],
+            self.patrol_class.outcome_cats["success"]["r_c1"],
+            msg=f"r_c0 should not be the same as r_c1",
+        )
+
     def test_new_cat_found(self):
         war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
         outsider1 = TestCatFactory.create_cat(rank=CatRank.LONER)

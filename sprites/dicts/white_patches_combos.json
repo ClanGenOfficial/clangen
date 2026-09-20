@@ -116,7 +116,53 @@
             "midCHEST_HIGH",
             "midLEG_BACK_LEFT_FULL",
             "midSADDLE_MIN_REVERSE"
-        ]
+        ],
+        "EARBROWS": [
+            "littleLEFTEAR",
+            "littleRIGHTEAR",
+            "littleEYEBROW_SMALL"
+        ],
+        "NECKTIE": [
+            "littleVEE",
+            "littleUNDER_MID"
+        ],
+        "TOM": [
+            "littleBELLY_MIN",
+            "littleBLAZE",
+            "littleMUZZLE",
+            "littleTEARDROP"
+        ],
+	"MINTOESTAIL": [
+            "littleTAIL_MIN",
+            "littleLEG_FRONT_RIGHT_MIN",
+            "littleLEG_FRONT_LEFT_MIN",
+            "littleLEG_BACK_RIGHT_MIN",
+            "littleLEG_BACK_LEFT_MIN"
+        ],
+        "MIDTOESTAIL": [
+            "littleLEG_BACK_LEFT_MID",
+            "littleLEG_BACK_RIGHT_MID",
+            "littleLEG_FRONT_LEFT_MID",
+            "littleLEG_FRONT_RIGHT_MID",
+            "littleTAIL_MID"
+        ],
+        "EXTRAMIN": [
+            "littleEXTRA",
+            "littleCHEST_MIN",
+            "littleBLAZE_SMALL",
+            "littleTAIL_MIN",
+            "littleTAIL_MIN_LOW",
+            "littleUNDEREYE_MIN_L",
+            "littleUNDEREYE_MIN_R",
+            "littleLEG_FRONT_LEFT_MIN",
+            "littleLEG_FRONT_RIGHT_MIN",
+            "littleLEG_FRONT_LEFT_MIN_LOW",
+            "littleLEG_FRONT_RIGHT_MIN_LOW",
+            "littleLEG_BACK_RIGHT_MIN_LOW",
+            "littleLEG_BACK_RIGHT_MIN",
+            "littleLEG_BACK_LEFT_MIN_LOW",
+            "littleLEG_BACK_LEFT_MIN"
+	]
     },
     "mid": {
         "DOUGIE": [
@@ -365,7 +411,113 @@
             "midTWO_SPOT_SMALL",
             "midLEG_FRONT_RIGHT_REVERSE",
             "midLEG_FRONT_LEFT_REVERSE"
-        ]
+        ],
+        "HIGHSOCKS": [
+            "littleEXTRA",
+            "littleEYEBROW_SMALL",
+            "littleLEG_BACK_LEFT_HIGH_LOW",
+            "littleLEG_BACK_RIGHT_HIGH_LOW",
+            "littleLEG_BACK_RIGHT_MID_LOW",
+            "littleLEG_BACK_RIGHT_SMALL_LOW",
+            "littleLEG_BACK_LEFT_MID_LOW",
+            "littleLEG_BACK_LEFT_SMALL_LOW",
+            "littleLEG_FRONT_LEFT_HIGH_LOW",
+            "littleLEG_FRONT_LEFT_SMALL_LOW",
+            "littleLEG_FRONT_RIGHT_HIGH_LOW",
+            "littleLEG_FRONT_RIGHT_MID_LOW",
+            "littleLEG_FRONT_RIGHT_MIN_LOW",
+            "littleLEG_FRONT_LEFT_MID_LOW"
+        ],
+        "BANDIT": [
+            "littleTAIL_HIGH_RING",
+            "littleTAILTIP",
+            "littleTAIL_LOW_RING",
+            "littleTAIL_MID_RING",
+            "littleMASK_SMALL",
+            "midTAIL_FULL_LOW"
+        ],
+        "RED_PANDA": [
+            "littleTAILTIP",
+            "littleTAIL_HIGH_RING",
+            "littleTAIL_LOW_RING",
+            "littleTAIL_MID_RING",
+            "littleTEARS_L",
+            "littleTEARS_R",
+            "littleLEFTEAR",
+            "littleRIGHTEAR",
+            "littleMUZZLE"
+        ],
+        "DOCTOR": [
+            "littleBEARD_MID",
+            "littleLEG_FRONT_LEFT_MID",
+            "littleLEG_FRONT_RIGHT_MID",
+            "littleLEG_BACK_RIGHT_HIGH",
+            "littleLEG_BACK_LEFT_MID"
+        ],
+        "AMORE": [
+            "littleUNDER_HEART",
+            "littleREVERSEHEART",
+            "littleTAILTIP",
+            "littleLOCKET",
+            "littleLEFTEAR"
+        ],
+        "FOG": [
+            "littleUNDER_MIN",
+            "littleBELLY_MIN",
+            "littleLEG_BACK_RIGHT_SMALL_LOW",
+            "littleLEG_BACK_LEFT_SMALL_LOW",
+            "littleLEG_FRONT_LEFT_SMALL_LOW",
+            "littleLEG_FRONT_RIGHT_SMALL_LOW",
+            "littleLEG_FRONT_RIGHT_MIN",
+            "littleLEG_FRONT_LEFT_MIN",
+            "littleLEG_BACK_RIGHT_UNDER",
+            "littleLEG_BACK_LEFT_UNDER",
+            "littleTAIL_MID_LOW",
+            "littleTAIL_MIN_LOW",
+            "littleTAIL_SMALL_LOW",
+            "midFADEBELLY"
+        ],
+	"SKUNKTWO": [
+            "littleLEFTEAR_TIP",
+            "littleLEG_BACK_LEFT_UNDER",
+            "littleLEG_BACK_RIGHT_UNDER",
+            "littleLEG_FRONT_LEFT_UNDER",
+            "littleLEG_FRONT_RIGHT_UNDER",
+            "littleRIGHTEAR_TIP",
+            "littleBLAZE_FULL",
+            "midSTRIPE_MID",
+            "midTAIL_FULL"
+        ],
+        "SUPERHERO": [
+            "littleMASK_SMALL",
+            "littleLEG_FRONT_LEFT_MID",
+            "littleLEG_FRONT_RIGHT_MID",
+            "littleLEG_BACK_RIGHT_MID",
+            "littleLEG_BACK_LEFT_MID",
+            "midSTRIPE_MID"
+        ],
+        "SAVANAH_UNDERS": [
+            "littleTAIL_UNDER",
+            "littleLEG_FRONT_RIGHT_UNDER",
+            "littleLEG_FRONT_LEFT_UNDER",
+            "littleLEG_BACK_RIGHT_UNDER",
+            "littleLEG_BACK_LEFT_UNDER",
+            "littleBELLY_SMALL",
+            "littleBEARD_SMALL",
+            "littleBLAZE_SMALL",
+            "midSAVANNAH"
+        ],
+        "LITTLEJOHN": [
+            "littleBELLY_MID",
+            "littleEYESPOT_L",
+            "littleBEARD_FULL",
+            "littleLEG_BACK_LEFT_HIGH",
+            "littleLEG_BACK_RIGHT_HIGH",
+            "littleLEG_FRONT_RIGHT_HIGH",
+            "littleLEG_FRONT_LEFT_HIGH",
+            "midBIB_FULL",
+            "midCHEST_FULL"
+	]
     },
     "high": {
         "ANY": [
@@ -518,7 +670,35 @@
             "midTAIL_OVER",
             "midTWO_SPOT_MID",
             "midSHIRT"
-        ]
+        ],
+        "ANGEL": [
+            "littleBLAZE",
+            "littleSPARKLE",
+            "littleTAILTIP",
+            "littleUNDER_MIN",
+            "littleBELLY_MIN",
+            "littleTAIL_UNDER",
+            "midWINGS_REDUCED"
+        ],
+        "SKELETON": [
+            "littleLEG_BACK_LEFT_UNDER",
+            "littleLEG_BACK_RIGHT_UNDER",
+            "littleLEG_FRONT_LEFT_UNDER",
+            "littleLEG_FRONT_RIGHT_UNDER",
+            "littleSTRIPE_SMALL",
+            "littleTAILTIP",
+            "littleTAIL_HIGH_RING",
+            "littleTAIL_LOW_RING",
+            "littleTAIL_MID_RING",
+            "littleHELMET",
+            "littleUNDER_SMALL",
+            "midWOODPECKER"
+        ],
+	"WOODFRECKLES": [
+            "littleTAIL_UNDER",
+            "midWOODPECKER",
+            "highFRECKLES"
+	]
     },
     "mostly": {
         "VAN": [

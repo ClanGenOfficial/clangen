@@ -205,5 +205,86 @@
         "HALF",
         "HEARTBEAT",
         "GRUMPYFACE"
+    ],
+    "SATURN": [
+        "SHILOH",
+        "SIDEMASK",
+        "SAFI",
+        "ROBIN"
+    ],
+    "TWO_TURTLE": [
+        "TURTLECRAWL",
+        "TWO",
+        "UNDERTAIL_T",
+        "STREAMSTRIKE"
+    ],
+    "POWDER_HEART": [
+        "TAILTIP_T",
+        "UNDERTAIL_T",
+        "POWDERSNOW",
+        "MINIMALTHREE",
+        "HEARTBEAT"
+    ],
+    "BLAZING_HEART": [
+        "EMBER",
+        "BELOVED",
+        "HEARTBEAT",
+        "MINIMALTHREE",
+        "EYEDOT"
+    ],
+    "RISING_FIRE": [
+        "BOTHEARS_T",
+        "BELOVED",
+        "BRIE",
+        "EMBER",
+        "FRECKLED"
+    ],
+    "UNDERS": [
+        "UNDERPAWS_T",
+        "UNDERTAIL_T",
+        "BELLY_T"
+    ],
+    "SIDEPETAL": [
+        "LARKPETAL",
+        "SIDEMASK"
+    ],
+    "SOCKS": [
+        "PAW_FL_CLOVERTAIL",
+        "PAW_FR_T",
+        "BOTHEARS_T",
+        "PAW_BL_SPLOTCH",
+        "PAW_BR_WING",
+        "TAILTIP_T"
+    ],
+    "STROKE": [
+        "STREAK",
+        "SMOKE"
+    ],
+    "LEAKY_EYE": [
+        "EYELINER_T",
+        "MINIMALONE"
+    ],
+    "BRISTLE": [
+        "MASK",
+        "UNDERPAWS_T",
+        "ONE",
+        "BELLY_T",
+        "BELOVED"
+    ],
+    "ONESIE": [
+        "ROSETAIL",
+        "SMOKE",
+        "SWOOP"
+    ],
+    "COZY": [
+        "BIBFULL_T",
+        "BOTHEARS_T",
+        "BLANKET"
+    ],
+    "FIVE": [
+        "FOUR",
+        "ONE",
+        "TWO",
+        "THREE"
     ]
 }
