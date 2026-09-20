@@ -139,6 +139,7 @@
         "strings": [
             "Wonders if r_c will be {PRONOUN/m_c/poss} apprentice",
             "Hopes to be r_c's mentor when the time comes",
+            "Hopes to have an apprentice like r_c",
             "Wonders who r_c wants to be {PRONOUN/r_c/poss} mentor"
         ],
         "involved_cats": {
