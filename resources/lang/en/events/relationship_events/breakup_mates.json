@@ -7,7 +7,7 @@
 		"When a Clanmate asked m_c about r_c, m_c hissed angrily at them, saying {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} want to hear anything about that fox-heart again, making it clear that they're no longer mates.",
 		"m_c and r_c had enough of each other's fox-dung after arguing about every little thing for the past moon now. They call off their relationship for good.",
 		"Nobody truly knows who started that intense final fight. All the Clan knows is that it ended with m_c and r_c cursing at each other and ending things once and for all.",
-		"m_c and r_c have been fighting a lot recently. But when m_c says something especially hurtful to r_c, {PRONOUN/r_c/subject} can't take it anymore and breaks up with m_c on the spot.",
+		"m_c and r_c have been fighting a lot recently. But when m_c says something especially hurtful to r_c, {PRONOUN/r_c/subject} can't take it anymore and {VERB/r_c/break/breaks} up with m_c on the spot.",
 		"Did m_c ever care for r_c at all? That's the last question r_c leaves m_c with after a particularly bad argument. It's clear after this that they're no longer mates."
 	],
 	"decided_to_be_friends":[
@@ -35,7 +35,10 @@
     	"Some relationships turn out good, some don't, but for m_c and r_c's relationship, things <i>really</i> didn't turn out so well. They've broken up.", 
     	"Things have become tense and sour in m_c and r_c’s relationship. They decided to break up before any fight breaks out between them.",
 		"r_c broke up with m_c and m_c has taken it very hard. {PRONOUN/m_c/subject/CAP} seem to be avoiding r_c as much as possible.",
-		"r_c thought {PRONOUN/r_c/subject} could make things work with m_c. {PRONOUN/r_c/subject/CAP} <i>really</i> did. But {PRONOUN/r_c/subject} can't do it anymore. The pair breaks up, avoiding each other the best they can."
+		"r_c thought {PRONOUN/r_c/subject} could make things work with m_c. {PRONOUN/r_c/subject/CAP} <i>really</i> did. But {PRONOUN/r_c/subject} can't do it anymore. The pair breaks up, avoiding each other the best they can.",
+		"m_c had always tried to see the good in r_c, excusing even {PRONOUN/r_c/poss} worst actions. But the illusion of {PRONOUN/r_c/object} improving wears off, and m_c realizes {PRONOUN/m_c/subject} can't keep up a relationship with a cat like {PRONOUN/r_c/object}.",
+		"m_c has been growing more and more irritated over the little things when it comes to r_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/chew/chews} with {PRONOUN/r_c/poss} mouth open, snore too loud... When r_c seemingly does something inconspicuous, m_c snaps and breaks up with {PRONOUN/r_c/object}.",
+		"When r_c asks if they can talk, m_c's fears that {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been harboring are brought to the surface. The clenching feeling in {PRONOUN/m_c/poss} stomach only worsens when r_c breaks up with {PRONOUN/m_c/object}. m_c wonders who will soothe {PRONOUN/m_c/poss} frantic mind now..."
 	],
 	"chill_breakup":[
 		"m_c and r_c broke up.", 
