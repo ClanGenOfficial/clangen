@@ -12,7 +12,7 @@
         "involved_clans": "<br><b>Involved Clans:</b> %{clans}",
         "what_to_focus": "What should your warriors focus on?",
         "selected_info": "<b>Selected information:</b>\n%{info}",
-        "no_deputy": "Without a healthy deputy, the Clan has nobody to focus the warriors."
+        "no_deputy": "Without a healthy deputy, the Clan has nobody to focus the warriors.",
         "buffed_setting": "%{name} ++",
         "info_with_buff": "%{info} <b>%{buff}</b>",
         "hunting_buff_hunter": "The deputy's skill in hunting will help the warriors gather more prey.",
