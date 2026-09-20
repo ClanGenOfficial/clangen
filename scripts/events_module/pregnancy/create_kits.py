@@ -276,7 +276,9 @@ def get_kits(
 
             y = randrange(var_min, var_max)
             start_relation = Relationship(kitten, second_kitten, False, True)
+            start_relation.romance += sib_buff["romance"] + y
             start_relation.like += sib_buff["like"] + y
+            start_relation.respect += sib_buff["respect"] + y
             start_relation.comfort += sib_buff["comfort"] + y
             start_relation.trust += sib_buff["trust"] + y
             kitten.relationships[second_kitten.ID] = start_relation
