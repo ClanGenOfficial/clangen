@@ -255,7 +255,7 @@
             "m_c lost one of {PRONOUN/m_c/poss} nine lives, but gave birth to a {insert}.",
             "Although m_c gave birth to a {insert}, it came at the cost of one of {PRONOUN/m_c/poss} nine lives.",
             "The birth of m_c's {insert} cost {PRONOUN/m_c/object} one of {PRONOUN/m_c/poss} nine lives, but {PRONOUN/m_c/subject} {VERB/m_c/assert/asserts} that it was worth it.",
-            "m_c's newly born {insert} are fine and healthy, but m_c {PRONOUN/m_c/self} wasn't so lucky. {PRONOUN/m_c/subject/CAP} lost one of {PRONOUN/m_c/poss} nine lives from the birth."
+            "m_c's newly born {insert} is fine and healthy, but m_c {PRONOUN/m_c/self} wasn't so lucky. {PRONOUN/m_c/subject/CAP} lost one of {PRONOUN/m_c/poss} nine lives from the birth."
         ]
     }
 }
