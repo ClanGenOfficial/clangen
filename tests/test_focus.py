@@ -150,7 +150,9 @@ class TestFocus(unittest.TestCase):
         focus.handle_focus()
 
         self.assertEqual(
-            beginning_supply + amount_to_gather, game.clan.herb_supply.total
+            beginning_supply + amount_to_gather,
+            game.clan.herb_supply.total,
+            msg=f"amount should have been: {beginning_supply + amount_to_gather}, instead it was {game.clan.herb_supply.total}",
         )
 
         game.clan.herb_supply.disable_random = False
@@ -161,7 +163,7 @@ class TestFocus(unittest.TestCase):
 
         game.clan.herb_supply.disable_random = True
         beginning_supply = game.clan.herb_supply.total
-        amount_to_gather = (
+        amount_to_gather = round(
             (
                 get_config("focus.herb_gathering.assistant_gather_max")
                 + get_config("focus.herb_gathering.buff.CLEVER.gather_max_increase")
@@ -172,7 +174,9 @@ class TestFocus(unittest.TestCase):
         focus.handle_focus()
 
         self.assertEqual(
-            beginning_supply + amount_to_gather, game.clan.herb_supply.total
+            beginning_supply + amount_to_gather,
+            game.clan.herb_supply.total,
+            msg=f"amount should have been: {beginning_supply + amount_to_gather}, instead it was {game.clan.herb_supply.total}",
         )
 
         game.clan.herb_supply.disable_random = False
@@ -314,7 +318,7 @@ class TestFocus(unittest.TestCase):
         self.assertEqual(
             beginning_herbs + amount_herbs,
             game.clan.herb_supply.total,
-            msg=f"Herb supply did not change as expected.",
+            msg=f"Amount should have been: {beginning_herbs + amount_herbs}. Instead it was {game.clan.herb_supply.total}.",
         )
         self.assertEqual(
             beginning_prey + amount_prey,
@@ -346,7 +350,7 @@ class TestFocus(unittest.TestCase):
         self.assertEqual(
             beginning_herbs + amount_herbs,
             game.clan.herb_supply.total,
-            msg=f"Herb supply did not change as expected.",
+            msg=f"Amount should have been: {beginning_herbs + amount_herbs}. Instead it was {game.clan.herb_supply.total}.",
         )
         self.assertEqual(
             beginning_prey + amount_prey,
@@ -374,7 +378,7 @@ class TestFocus(unittest.TestCase):
         self.assertEqual(
             beginning_herbs + amount_herbs,
             game.clan.herb_supply.total,
-            msg=f"Herb supply did not change as expected.",
+            msg=f"Amount should have been: {beginning_herbs + amount_herbs}. Instead it was {game.clan.herb_supply.total}.",
         )
         self.assertEqual(
             beginning_prey + amount_prey,
@@ -399,7 +403,7 @@ class TestFocus(unittest.TestCase):
         game.clan.deputy.skills.primary = Skill(SkillPath.CAMP, 10)
 
         beginning_herbs = game.clan.herb_supply.total
-        amount_herbs = (
+        amount_herbs = round(
             (
                 get_config("focus.herb_gathering.assistant_gather_max")
                 + get_config("focus.hoarding.buff.CAMP.gather_max_increase")
@@ -421,7 +425,7 @@ class TestFocus(unittest.TestCase):
         self.assertEqual(
             beginning_herbs + amount_herbs,
             game.clan.herb_supply.total,
-            msg=f"Herb supply did not change as expected.",
+            msg=f"Amount should have been: {beginning_herbs + amount_herbs}. Instead it was {game.clan.herb_supply.total}.",
         )
         self.assertEqual(
             beginning_prey + amount_prey,
