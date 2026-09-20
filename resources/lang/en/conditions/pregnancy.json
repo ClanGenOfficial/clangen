@@ -201,7 +201,7 @@
         ],
         "affair_mated_samesex": [
             "mc_mate looks over m_c's new {insert} with mixed feelings. On one paw, m_c did cheat on {PRONOUN/mc_mate/object} with r_c, but at the same time, {PRONOUN/mc_mate/subject} can help m_c raise this {insert} together.",
-            "mc_mate can't understand why m_c would ever cheat on {PRONOUN/mc_mate/object}, but {PRONOUN/mc_mate/subject} can't just abandon the {insert}. Maybe {PRONOUN/mc_mate/subject} could help with raising them."
+            "mc_mate can't understand why m_c would ever cheat on {PRONOUN/mc_mate/object} with r_c, but {PRONOUN/mc_mate/subject} can't just abandon the {insert}. Maybe {PRONOUN/mc_mate/subject} could help with raising them."
         ],
         "affair_mated_dead_mate": [
             "mc_mate was such a wonderful cat, deserving of being a parent, even after death... so why does m_c's {insert} look more like r_c instead?",
