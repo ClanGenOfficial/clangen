@@ -297,18 +297,18 @@ dev_tools = false
     # this is not applied for absent parents
     variability = [0, 15]
 
-    # default relationships buff for a kit's relationships to their parents
-    [new_cat.parent_buff.kit_to_parent]
-      romance = 0
-      like = 40
-      respect = 30
-      comfort = 70
-      trust = 60
-
     # default relationships buff for a parent's relationships to their kits
     [new_cat.parent_buff.parent_to_kit]
       romance = 0
       like = 60
+      respect = 30
+      comfort = 70
+      trust = 60
+
+    # default relationships buff for a kit's relationships to their parents
+    [new_cat.parent_buff.kit_to_parent]
+      romance = 0
+      like = 40
       respect = 30
       comfort = 70
       trust = 60
