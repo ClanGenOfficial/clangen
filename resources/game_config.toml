@@ -346,23 +346,6 @@ dev_tools = false
       comfort = 10
       trust = 10
 
-  [new_cat.rel_buff]
-    # default relationships buff for new cats relationships to other cats in the clan
-    [new_cat.rel_buff.new_to_clan_cat]
-      romance = 0
-      like = 15
-      respect = 10
-      comfort = 15
-      trust = 15
-
-    # default relationships buff for clan cats' relationships to new cats in the clan
-    [new_cat.rel_buff.clan_cat_to_new]
-      romance = 0
-      like = 15
-      respect = 5
-      comfort = 10
-      trust = 10
-
 [pregnancy]
   # cooldown for cats getting pregnant that applies after giving birth
   birth_cooldown = 6
