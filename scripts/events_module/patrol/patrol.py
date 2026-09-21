@@ -300,23 +300,15 @@ class Patrol:
                 "DEBUG: requested patrol not present (check spelling/mismatched season, biome, patrol type, new cat flag, other clan relations, disaster setting)"
             )
 
-        # DEBUG - NO FILTER
         # This is a debug option, this allows you to remove any constraints of a patrol regarding location, session, biomes, etc.
         if get_config(
             "patrol_generation.debug_ensure.override_patrol_stat_requirements"
         ):
-            if self.debug_patrol_id:
-                chosen_patrol = [
-                    p for p in patrol_list if p.event_id == self.debug_patrol_id
-                ][0]
-            else:
-                chosen_patrol = choice(patrol_list)
             print(
-                "All patrol filters regarding location, session, etc. have been removed."
+                f"All patrol filters regarding location, session, etc. have been removed for {self.debug_patrol_id}."
             )
-        # FILTER PATROLS when no debug set
-        else:
-            chosen_patrol = self._filter_and_set_patrol(patrol_list, patrol_type)
+
+        chosen_patrol = self._filter_and_set_patrol(patrol_list, patrol_type)
 
         self.patrol_event = chosen_patrol
 
@@ -450,6 +442,7 @@ class Patrol:
             if p.event_id
             not in Patrol.used_patrols["romance" if find_romance else "normal"]
         ]
+        involved_cats = self.involved_cats.copy()
         while not chosen_patrol:
             chosen_patrol, involved_cats = get_valid_event(
                 primary_cat=self.involved_cats["p_l"],
@@ -458,6 +451,9 @@ class Patrol:
                 possible_events=patrols_to_test,
                 other_clan=self.other_clan,
                 ensured_id=self.debug_patrol_id,
+                ignore_constraints=get_config(
+                    "patrol_generation.debug_ensure.override_patrol_stat_requirements"
+                ),
             )
             if not chosen_patrol:
                 if not Patrol.used_patrols["romance" if find_romance else "normal"]:

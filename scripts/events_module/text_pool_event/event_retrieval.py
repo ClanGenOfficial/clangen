@@ -23,6 +23,7 @@ def get_valid_event(
     possible_events: list[PatrolEvent | TextPoolEvent],
     other_clan: Optional[OtherClan] = None,
     ensured_id: Optional[str] = None,
+    ignore_constraints: bool = False,
     general_constraints_active: bool = True,
     cat_constraints_active: bool = True,
     frequency_active: bool = True,
@@ -110,7 +111,7 @@ def get_valid_event(
             continue
 
         # CHECK GENERAL CONSTRAINTS
-        if general_constraints_active:
+        if general_constraints_active and not (ensured_event and ignore_constraints):
             if not passes_general_constraints(
                 test_event,
                 primary_cat=primary_cat,
@@ -129,6 +130,7 @@ def get_valid_event(
                 outside_cats=outside_cats,
                 event=test_event,
                 other_clan=other_clan,
+                ignore_constrants=ensured_event and ignore_constraints,
             )
             if not (temp_involved_cats or will_create_how_many):
                 tested_events.add(test_event.event_id)

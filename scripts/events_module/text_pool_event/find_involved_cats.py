@@ -19,6 +19,7 @@ def find_cats(
     outside_cats: list,
     event: Union[PatrolEvent, TextPoolEvent],
     other_clan: OtherClan,
+    ignore_constrants: bool = False,
 ) -> tuple[dict, int]:
     """
     Finds and returns cats for a PatrolEvent or TextPoolEvent.
@@ -44,7 +45,7 @@ def find_cats(
     can_give_accessory = hasattr(event, "gain_accessory")
 
     # just an initial relationship check to catch things like patrol_cats
-    if involved_cats and event.relationship_constraint:
+    if involved_cats and event.relationship_constraint and not ignore_constrants:
         if not all(
             check_rel_constraint_groups(block, temp_involved_cats)
             for block in event.relationship_constraint
@@ -87,14 +88,24 @@ def find_cats(
 
         # CHECK MULTI_CAT
         elif abbr == "multi_cat":
-            temp_involved_cats["multi_cat"] = _get_multi_cats(
-                involved_cats,
-                interactable_cats.copy(),
-                event,
-                constraints,
-                possible_injuries,
-                possible_accessories,
-            )
+            if ignore_constrants:
+                temp_involved_cats["multi_cat"] = _get_multi_cats(
+                    involved_cats,
+                    interactable_cats.copy(),
+                    event,
+                    cat_constraints={},
+                    possible_injuries=[],
+                    possible_accessories=[],
+                )  # emptying these params so that any cat can be chosen
+            else:
+                temp_involved_cats["multi_cat"] = _get_multi_cats(
+                    involved_cats,
+                    interactable_cats.copy(),
+                    event,
+                    constraints,
+                    possible_injuries,
+                    possible_accessories,
+                )
             # if we found no one, then this event isn't possible, and we should try a different one
             if not temp_involved_cats["multi_cat"]:
                 return empty
@@ -125,16 +136,19 @@ def find_cats(
         random.shuffle(possible_cats)
 
         # initial filter of the entire list of cats for the more general constraints
-        possible_cats = cat_for_event(
-            constraint_dict=constraints,
-            possible_cats=possible_cats,
-            tags=event.tags,
-            injuries=possible_injuries,
-            new_accessories=possible_accessories,
-            other_involved_clan_id=other_clan.group_ID if other_clan else None,
-            return_list=True,
-            return_id=False,
-        )
+        if ignore_constrants:
+            possible_cats = possible_cats
+        else:
+            possible_cats = cat_for_event(
+                constraint_dict=constraints,
+                possible_cats=possible_cats,
+                tags=event.tags,
+                injuries=possible_injuries,
+                new_accessories=possible_accessories,
+                other_involved_clan_id=other_clan.group_ID if other_clan else None,
+                return_list=True,
+                return_id=False,
+            )
         if not possible_cats:
             if can_create_new_cat:
                 will_create_how_many += 1
@@ -143,14 +157,25 @@ def find_cats(
                 return empty
 
         # now choose a cat to fill the role, checking for relationship constraints
-        new_involved_cat = _find_involved_cat(
-            abbr,
-            possible_cats,
-            relationship_constraint=event.relationship_constraint,
-            cat_constraints=constraints,
-            temp_involved_cats=temp_involved_cats,
-            other_clan=other_clan,
-        )
+        if ignore_constrants:
+            # emptying params to allow any cat
+            new_involved_cat = _find_involved_cat(
+                abbr,
+                possible_cats,
+                relationship_constraint=[],
+                cat_constraints={},
+                temp_involved_cats=temp_involved_cats,
+                other_clan=other_clan,
+            )
+        else:
+            new_involved_cat = _find_involved_cat(
+                abbr,
+                possible_cats,
+                relationship_constraint=event.relationship_constraint,
+                cat_constraints=constraints,
+                temp_involved_cats=temp_involved_cats,
+                other_clan=other_clan,
+            )
 
         if not new_involved_cat:
             if can_create_new_cat:
