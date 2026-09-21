@@ -7,6 +7,15 @@
         "show_living": "Show as Living",
         "show_healthy": "Show as Healthy",
         "sprite_details": "Sprite Details",
-        "life_stages": "Life Stages"
+        "life_stages": "Life Stages",
+
+        "skin_color_label": "Skin color: ",
+        "pelt_color_label": "Pelt color: ",
+        "tint_color_label": "Pelt color tint: ",
+        "tortie_patch_label": "Tortie patch: ",
+        "white_patches_label": "White patch: ",
+        "white_patches_tint_label": "White patch tint: ",
+        "points_label": "Point: ",
+        "vitiligo_patch_label": "Vitiligo patch: "
     }
 }

@@ -10,6 +10,7 @@ from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.checkbox import UICheckbox
 from ..ui.elements.surface_image_button import UISurfaceImageButton
 from ..ui.theme import get_text_box_theme
+from ..ui.elements.text_box_tweaked import UITextBoxTweaked
 from ..events_module.text_adjust import shorten_text_to_fit
 from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset
 from .Screens import Screens
@@ -41,6 +42,7 @@ class SpriteInspectScreen(Screens):
         self.cat_image = None
         self.cat_elements = {}
         self.life_stage_elements = {}
+        self.sprite_detail_elements = {}
         self.checkboxes = {}
         self.textboxes = {}
         self.platform_shown_text = None
@@ -75,7 +77,10 @@ class SpriteInspectScreen(Screens):
                         self.textboxes[ele].kill()
                     self.textboxes = {}
                     self.cat_setup()
-                    self.update_disabled_life_stages()
+                    if self.open_tab == self.elements["life_stages_tab"]:
+                        self.update_disabled_life_stages()
+                    elif self.open_tab == self.elements["sprite_details_tab"]:
+                        self.update_disabled_buttons()
                 else:
                     print("invalid next cat", self.next_cat)
             elif event.ui_element == self.elements["previous_cat_button"]:
@@ -85,7 +90,10 @@ class SpriteInspectScreen(Screens):
                         self.textboxes[ele].kill()
                     self.textboxes = {}
                     self.cat_setup()
-                    self.update_disabled_life_stages()
+                    if self.open_tab == self.elements["life_stages_tab"]:
+                        self.update_disabled_life_stages()
+                    elif self.open_tab == self.elements["sprite_details_tab"]:
+                        self.update_disabled_buttons()
                 else:
                     print("invalid previous cat", self.previous_cat)
             elif event.ui_element == self.elements["save_image_button"]:
@@ -314,13 +322,19 @@ class SpriteInspectScreen(Screens):
             current_life_stage = self.the_cat.age
 
         self.valid_life_stages = []
-        for life_stage in SpriteInspectScreen.cat_life_stages:
-            self.valid_life_stages.append(life_stage)
-            if life_stage == current_life_stage:
-                break
+        for i, life_stage in enumerate(SpriteInspectScreen.cat_life_stages):
+            if self.the_cat.dead:
+                self.valid_life_stages.append(life_stage)
+                if life_stage == current_life_stage:
+                    self.displayed_life_stage = i
+            else:
+                self.valid_life_stages.append(life_stage)
+                if life_stage == current_life_stage:
+                    break
 
         # Store the index of the currently displayed life stage.
-        self.displayed_life_stage = len(self.valid_life_stages) - 1
+        if not self.the_cat.dead:
+            self.displayed_life_stage = len(self.valid_life_stages) - 1
 
         # Reset all the toggles
         self.lifestage = None
@@ -514,12 +528,30 @@ class SpriteInspectScreen(Screens):
         return super().exit_screen()
 
     def update_disabled_buttons(self):
+        for ele in self.sprite_detail_elements:
+            self.sprite_detail_elements[ele].kill()
+        self.sprite_detail_elements = {}
         self.update_previous_next_cat_buttons()
+
+        if self.open_tab == self.elements["sprite_details_tab"]:
+            self.sprite_detail_elements["textbox"] = UITextBoxTweaked(
+                self.get_sprite_details(),
+                ui_scale(pygame.Rect((8, 5), (480, 150))),
+                object_id="#text_box_26_horizleft_pad_10_14",
+                line_spacing=1,
+                manager=MANAGER,
+                starting_height=6,
+                container=self.elements["life_stages_container"]
+            )
 
     def switch_tab_life_stages(self):
         self.open_tab = self.elements["life_stages_tab"]
         self.elements["life_stages_tab"].disable()
         self.elements["sprite_details_tab"].enable()
+
+        for ele in self.sprite_detail_elements:
+            self.sprite_detail_elements[ele].kill()
+        self.sprite_detail_elements = {}
 
         prev_container = None
         for i in range(len(SpriteInspectScreen.cat_life_stages)):
@@ -588,6 +620,68 @@ class SpriteInspectScreen(Screens):
         for ele in self.life_stage_elements:
             self.life_stage_elements[ele].kill()
         self.life_stage_elements = {}
+
+
+        self.sprite_detail_elements["textbox"] =pygame_gui.elements.UITextBox(
+            "",
+            ui_scale(pygame.Rect((0, 0), (491, 160))),
+            manager=MANAGER,
+            container=self.elements["life_stages_container"]
+            )
+
+        self.update_disabled_buttons()
+
+    def get_sprite_details(self):
+        output = ""
+
+        # PELT COLOR
+        output += i18n.t("screens.sprite_inspect.pelt_color_label")
+        output += self.the_cat.pelt.colour.lower()
+
+        # TORTIE PATCH
+        if self.the_cat.pelt.tortie_marking:
+            output += "\n"
+            output += i18n.t("screens.sprite_inspect.tortie_patch_label")
+            output += self.the_cat.pelt.tortie_marking.lower()
+
+        # PELT TINT
+        if self.the_cat.pelt.tint:
+            output += "\n"
+            output += i18n.t("screens.sprite_inspect.tint_color_label")
+            output += self.the_cat.pelt.tint
+
+        # WHITE PATCH
+        if self.the_cat.pelt.white_patches:
+            output += "\n"
+            output += i18n.t("screens.sprite_inspect.white_patches_label")
+            output += self.the_cat.pelt.white_patches.lower()
+
+        # WHITE PATCH TINT
+        if self.the_cat.pelt.white_patches_tint:
+            output += "\n"
+            output += i18n.t("screens.sprite_inspect.white_patches_tint_label")
+            output += self.the_cat.pelt.white_patches_tint.lower()
+
+        # POINTS
+        if self.the_cat.pelt.points:
+            output += "\n"
+            output += i18n.t("screens.sprite_inspect.points_label")
+            output += self.the_cat.pelt.points.lower()
+
+        # VITILIGO PATCH
+        if self.the_cat.pelt.vitiligo:
+            output += "\n"
+            output += i18n.t("screens.sprite_inspect.vitiligo_patch_label")
+            output += self.the_cat.pelt.vitiligo.lower()
+
+        output += "\n"
+
+        # SKIN COLOR
+        output += i18n.t("screens.sprite_inspect.skin_color_label")
+        output += self.the_cat.pelt.skin.lower()
+
+
+        return output
 
 
     def generate_image_to_save(self):
