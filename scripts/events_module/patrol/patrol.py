@@ -300,23 +300,15 @@ class Patrol:
                 "DEBUG: requested patrol not present (check spelling/mismatched season, biome, patrol type, new cat flag, other clan relations, disaster setting)"
             )
 
-        # DEBUG - NO FILTER
         # This is a debug option, this allows you to remove any constraints of a patrol regarding location, session, biomes, etc.
         if get_config(
             "patrol_generation.debug_ensure.override_patrol_stat_requirements"
         ):
-            if self.debug_patrol_id:
-                chosen_patrol = [
-                    p for p in patrol_list if p.event_id == self.debug_patrol_id
-                ][0]
-            else:
-                chosen_patrol = choice(patrol_list)
             print(
-                "All patrol filters regarding location, session, etc. have been removed."
+                f"All patrol filters regarding location, session, etc. have been removed for {self.debug_patrol_id}."
             )
-        # FILTER PATROLS when no debug set
-        else:
-            chosen_patrol = self._filter_and_set_patrol(patrol_list, patrol_type)
+
+        chosen_patrol = self._filter_and_set_patrol(patrol_list, patrol_type)
 
         self.patrol_event = chosen_patrol
 
@@ -450,6 +442,7 @@ class Patrol:
             if p.event_id
             not in Patrol.used_patrols["romance" if find_romance else "normal"]
         ]
+        involved_cats = self.involved_cats.copy()
         while not chosen_patrol:
             chosen_patrol, involved_cats = get_valid_event(
                 primary_cat=self.involved_cats["p_l"],
@@ -458,6 +451,9 @@ class Patrol:
                 possible_events=patrols_to_test,
                 other_clan=self.other_clan,
                 ensured_id=self.debug_patrol_id,
+                ignore_constraints=get_config(
+                    "patrol_generation.debug_ensure.override_patrol_stat_requirements"
+                ),
             )
             if not chosen_patrol:
                 if not Patrol.used_patrols["romance" if find_romance else "normal"]:
@@ -526,6 +522,9 @@ class Patrol:
             possible_events=success_outcomes,
             other_clan=self.other_clan,
             ensured_id=debug_outcome,
+            ignore_constraints=get_config(
+                "patrol_generation.debug_ensure.override_patrol_stat_requirements"
+            ),
         )
 
         if not chosen_success:
@@ -545,6 +544,9 @@ class Patrol:
             possible_events=fail_outcomes,
             other_clan=self.other_clan,
             ensured_id=debug_outcome,
+            ignore_constraints=get_config(
+                "patrol_generation.debug_ensure.override_patrol_stat_requirements"
+            ),
         )
         if not chosen_failure:
             raise Exception(
@@ -552,44 +554,6 @@ class Patrol:
             )
 
         return chosen_success, chosen_failure
-
-    def _check_outcome_constraints(
-        self, outcome: TextPoolEvent, outcome_type: Literal["success", "failure"]
-    ) -> bool:
-        """
-        Checks the outcome constraints and attempts to find appropriate cats. If the outcome is valid and cats are
-        found, the cats will be added to the matching `self.outcome_cats` dict
-        :param outcome: outcome to check
-        :param outcome_type: the outcome_cats dict that the valid cats should be added to
-        """
-        # BASICS
-        if not passes_general_constraints(
-            outcome, self.involved_cats["p_l"], self.involved_cats
-        ):
-            return False
-
-        # CATS
-        outside_cats = [
-            c
-            for c in Cat.all_cats_list
-            if (c.status.is_other_clancat or c.status.is_outsider) and not c.dead
-        ]
-        temp_involved_cats = self.involved_cats.copy()
-
-        temp_involved_cats, will_create_how_many = find_cats(
-            interactable_cats=temp_involved_cats["patrol_cats"],
-            involved_cats=temp_involved_cats,
-            outside_cats=outside_cats,
-            event=outcome,
-            other_clan=self.other_clan,
-        )
-        if not (temp_involved_cats or will_create_how_many):
-            return False
-
-        # if we're here, then we must have found all our cats!
-        self.outcome_cats[outcome_type] = temp_involved_cats
-
-        return True
 
     def determine_outcome(
         self, antagonize=False
