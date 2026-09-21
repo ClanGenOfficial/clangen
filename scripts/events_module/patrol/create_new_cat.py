@@ -91,6 +91,12 @@ def updated_create_new_cat(
             option_dict["group"], involved_cats, other_clan
         )
 
+    # handle applying an age for litters if one wasn't specified
+    is_litter = option_dict["can_create_new_cat"].get("become_litter")
+    if is_litter:
+        if not status.get("age") or not status["age"].is_baby():
+            status["age"] = choice((CatAge.NEWBORN, CatAge.KITTEN))
+
     if not status.get("rank") and not status.get("age"):
         # if no group was given either, then we just pick either no group or other clan
         if not option_dict.get("group"):
@@ -105,12 +111,6 @@ def updated_create_new_cat(
             )
         else:
             status["rank"] = choice([r for r in [*CatRank] if r.is_any_clancat_rank()])
-
-    # handle applying an age for litters if one wasn't specified
-    is_litter = option_dict["can_create_new_cat"].get("become_litter")
-    if is_litter:
-        if not status.get("age") or not status["age"].is_baby():
-            status["age"] = choice((CatAge.NEWBORN, CatAge.KITTEN))
 
     # MOONS OLD
     moons = None
