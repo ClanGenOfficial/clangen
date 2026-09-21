@@ -207,7 +207,7 @@ def _draw_sprite(
             (0, 0),
         )
 
-    # draw eyes & scars1
+    # draw eyes & scars
     sprite_name = (
         f"{sprites.EYE_DATA['spritesheet'][0]}{cat.pelt.eye_colour}{cat_sprite}"
     )
@@ -230,7 +230,7 @@ def _draw_sprite(
     if not scars_hidden:
         for scar in cat.pelt.scars:
             if scar in cat.pelt.general_scars:
-                sprite_name = f"{sprites.SCAR_DATA['spritesheet']}{scar}{cat_sprite}"
+                sprite_name = f"{sprites.SCAR_DATA['spritesheet'][0]}{scar}{cat_sprite}"
                 new_sprite.blit(
                     sprites.sprites[sprite_name],
                     (0, 0),
@@ -303,7 +303,7 @@ def _draw_sprite(
         new_sprite.blit(sprites.sprites["lineart_df" + cat_sprite], (0, 0))
     elif dead:
         new_sprite.blit(sprites.sprites["lineart_sc" + cat_sprite], (0, 0))
-    # draw skin and scars2
+    # draw skin and scar masks
     blendmode = pygame.BLEND_RGBA_MIN
     sprite_name = f"{sprites.SKIN_DATA['spritesheet']}{cat.pelt.skin}{cat_sprite}"
     new_sprite.blit(
@@ -313,19 +313,18 @@ def _draw_sprite(
 
     if not scars_hidden:
         for scar in cat.pelt.scars:
-            if scar in cat.pelt.missing_part_scars:
-                sprite_name = (
-                    f"{sprites.SCAR_MISSING_PART_DATA['spritesheet']}{scar}{cat_sprite}"
-                )
-                new_sprite.blit(
-                    _recolor_lineart(
-                        sprites.sprites[sprite_name],
-                        lineart_color,
-                        gradient_surface,
-                    ),
-                    (0, 0),
-                    special_flags=blendmode,
-                )
+            sprite_name = (
+                f"{sprites.SCAR_DATA['spritesheet'][1]}{scar}{cat_sprite}"
+            )
+            new_sprite.blit(
+                _recolor_lineart(
+                    sprites.sprites[sprite_name],
+                    lineart_color,
+                    gradient_surface,
+                ),
+                (0, 0),
+                special_flags=blendmode,
+            )
 
     # draw accessories
     from scripts.cat.pelts import Pelt
