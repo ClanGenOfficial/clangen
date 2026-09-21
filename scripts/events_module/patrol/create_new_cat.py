@@ -107,10 +107,22 @@ def updated_create_new_cat(
         # then we find an appropriate rank for that group
         if status["group_ID"] == "no_group":
             status["rank"] = choice(
-                [r for r in [*CatRank] if not r.is_any_clancat_rank() and r not in (CatRank.LEADER, CatRank.DEPUTY)]
+                [
+                    r
+                    for r in [*CatRank]
+                    if not r.is_any_clancat_rank()
+                    and r not in (CatRank.LEADER, CatRank.DEPUTY)
+                ]
             )
         else:
-            status["rank"] = choice([r for r in [*CatRank] if r.is_any_clancat_rank() and r not in (CatRank.LEADER, CatRank.DEPUTY)])
+            status["rank"] = choice(
+                [
+                    r
+                    for r in [*CatRank]
+                    if r.is_any_clancat_rank()
+                    and r not in (CatRank.LEADER, CatRank.DEPUTY)
+                ]
+            )
 
     # MOONS OLD
     moons = None
