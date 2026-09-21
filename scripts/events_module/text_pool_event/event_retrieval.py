@@ -45,7 +45,7 @@ def get_valid_event(
     chosen_frequency = get_frequency() if frequency_active else 4
 
     chosen_event: Optional[Union[PatrolEvent, TextPoolEvent]] = None
-    temp_involved_cats = {}
+
     tested_events = set()
 
     # retrieve the ensured event from the list
@@ -55,6 +55,7 @@ def get_valid_event(
         if ensured:
             ensured_event = ensured if ensured else None
             chosen_frequency = ensured_event.frequency
+            print("Attempting to use debug event.")
         else:
             print(
                 "Debug event wasn't in the list of possible event, are you sure it can generate under the current constraints?"
@@ -111,7 +112,7 @@ def get_valid_event(
             continue
 
         # CHECK GENERAL CONSTRAINTS
-        if general_constraints_active and not (ensured_event and ignore_constraints):
+        if general_constraints_active and not ignore_constraints:
             if not passes_general_constraints(
                 test_event,
                 primary_cat=primary_cat,
@@ -130,7 +131,7 @@ def get_valid_event(
                 outside_cats=outside_cats,
                 event=test_event,
                 other_clan=other_clan,
-                ignore_constrants=ensured_event and ignore_constraints,
+                ignore_constrants=ignore_constraints,
             )
             if not (temp_involved_cats or will_create_how_many):
                 tested_events.add(test_event.event_id)
