@@ -40,7 +40,7 @@
     }
   },
   "always_leaf-bare": {
-    "card_art": "environment/tainted.png",
+    "card_art": "environment/always_leaf-bare.png",
     "modifiers": {
       "seasons.lock_season": true,
       "seasons.force_starting_season": "Leaf-bare"
