@@ -87,7 +87,13 @@
             "Wonders how r_c is doing",
             "Wonders what r_c is up to",
             "Considers paying r_c a visit"
-        ]
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "group": ["match:m_c"]
+            }
+        }
     },
     {
         "event_id": "gen_not_kit",
@@ -132,7 +138,7 @@
                     "kitten"
                 ],
                 "group": [
-                    "-afterlife"
+                    "match:m_c"
                 ]
             }
         }
@@ -158,6 +164,9 @@
             "r_c": {
                 "age": [
                     "senior"
+                ],
+                "group": [
+                    "match:m_c"
                 ]
             }
         }
@@ -446,7 +455,7 @@
                     "kitten"
                 ],
                 "group": [
-                    "-afterlife"
+                    "match:m_c"
                 ]
             }
         }
@@ -482,6 +491,7 @@
     },
     {
         "event_id": "calm_to_kit",
+        "tags": ["clan:kitten"],
         "strings": [
             "Is unable to be scared, no matter how much the kits try"
         ],
@@ -492,14 +502,6 @@
                         "calm"
                     ]
                 }
-            },
-            "r_c": {
-                "status": [
-                    "kitten"
-                ],
-                "group": [
-                    "-afterlife"
-                ]
             }
         }
     },
@@ -658,7 +660,7 @@
                     "kitten"
                 ],
                 "group": [
-                    "-afterlife"
+                    "match:m_c"
                 ]
             }
         }

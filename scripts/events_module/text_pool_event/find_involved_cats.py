@@ -128,6 +128,7 @@ def find_cats(
         possible_cats = cat_for_event(
             constraint_dict=constraints,
             possible_cats=possible_cats,
+            involved_cat_dict=involved_cats,
             tags=event.tags,
             injuries=possible_injuries,
             new_accessories=possible_accessories,

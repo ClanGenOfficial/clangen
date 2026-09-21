@@ -1482,14 +1482,14 @@ def _get_cats_from_group(
                     c
                     for c in cat_list
                     if c.status.group
-                    == already_involved_cats[cat_to_match].status.group
+                    != already_involved_cats[cat_to_match].status.group
                 ]
             else:
                 cat_list = [
                     c
                     for c in cat_list
                     if c.status.group
-                    != already_involved_cats[cat_to_match].status.group
+                    == already_involved_cats[cat_to_match].status.group
                 ]
             remaining_tags.remove(tag)
 
