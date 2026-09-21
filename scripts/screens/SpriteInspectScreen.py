@@ -141,27 +141,22 @@ class SpriteInspectScreen(Screens):
                 self.switch_tab_life_stages()
             if self.open_tab == self.elements["life_stages_tab"]:
                 if event.ui_element == self.life_stage_elements["button_0"]:
-                    print("button press 0")
                     self.displayed_life_stage = 0
                     self.make_cat_image()
                     self.update_disabled_life_stages()
                 elif event.ui_element == self.life_stage_elements["button_1"]:
-                    print("button press 1")
                     self.displayed_life_stage = 1
                     self.make_cat_image()
                     self.update_disabled_life_stages()
                 elif event.ui_element == self.life_stage_elements["button_2"]:
-                    print("button press 2")
                     self.displayed_life_stage = 2
                     self.make_cat_image()
                     self.update_disabled_life_stages()
                 elif event.ui_element == self.life_stage_elements["button_3"]:
-                    print("button press 3")
                     self.displayed_life_stage = 3
                     self.make_cat_image()
                     self.update_disabled_life_stages()
                 elif event.ui_element == self.life_stage_elements["button_4"]:
-                    print("button press 4")
                     self.displayed_life_stage = 4
                     self.make_cat_image()
                     self.update_disabled_life_stages()
