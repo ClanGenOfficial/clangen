@@ -218,9 +218,7 @@ class TestInvolvedCats(unittest.TestCase):
 
         self.patrol_class._add_patrol_cats([war1, app1, app2])
         self.patrol_class._set_valid_patrol([patrol])
-        self.patrol_class._check_outcome_constraints(
-            patrol.success_outcomes[0], "success"
-        )
+        self.patrol_class._find_allowed_outcomes()
 
         self.assertNotEqual(
             self.patrol_class.outcome_cats["success"]["p_l"],
@@ -252,9 +250,7 @@ class TestInvolvedCats(unittest.TestCase):
         )
 
         set_up_patrol_class_w_event(self.patrol_class, [war1, app1, app2], [patrol])
-        self.patrol_class._check_outcome_constraints(
-            patrol.success_outcomes[0], "success"
-        )
+        self.patrol_class._find_allowed_outcomes()
 
         self.assertNotEqual(
             self.patrol_class.outcome_cats["success"]["p_l"],
@@ -330,9 +326,7 @@ class TestInvolvedCats(unittest.TestCase):
 
         set_up_patrol_class_w_event(self.patrol_class, [war1, app1, app2], [patrol])
 
-        self.patrol_class._check_outcome_constraints(
-            patrol.success_outcomes[0], "success"
-        )
+        self.patrol_class._find_allowed_outcomes()
 
         self.assertEqual(
             self.patrol_class.involved_cats["p_l"],
@@ -362,9 +356,7 @@ class TestInvolvedCats(unittest.TestCase):
 
         set_up_patrol_class_w_event(self.patrol_class, [war1, app1, app2], [patrol])
 
-        self.patrol_class._check_outcome_constraints(
-            patrol.success_outcomes[0], "success"
-        )
+        self.patrol_class._find_allowed_outcomes()
 
         self.assertEqual(
             self.patrol_class.involved_cats["p_l"],
@@ -394,9 +386,7 @@ class TestInvolvedCats(unittest.TestCase):
 
         set_up_patrol_class_w_event(self.patrol_class, [war1, app1, app2], [patrol])
 
-        self.patrol_class._check_outcome_constraints(
-            patrol.success_outcomes[0], "success"
-        )
+        self.patrol_class._find_allowed_outcomes()
 
         self.assertNotEqual(
             self.patrol_class.involved_cats["p_l"],
@@ -495,12 +485,11 @@ class TestOutcomeExecution(unittest.TestCase):
 
             set_up_patrol_class_w_event(self.patrol_class, [war1], [patrol])
 
-            self.patrol_class._check_outcome_constraints(
-                patrol.success_outcomes[0], "success"
-            )
+            self.patrol_class._find_allowed_outcomes()
+
             handle_consequences.execute_outcome(
                 patrol.success_outcomes[0],
-                self.patrol_class.involved_cats,
+                self.patrol_class.outcome_cats["success"],
                 other_clan=OtherClan(),
             )
 
@@ -525,17 +514,16 @@ class TestOutcomeExecution(unittest.TestCase):
 
             set_up_patrol_class_w_event(self.patrol_class, [war1], [patrol])
 
-            self.patrol_class._check_outcome_constraints(
-                patrol.success_outcomes[0], "success"
-            )
+            self.patrol_class._find_allowed_outcomes()
+
             handle_consequences.execute_outcome(
                 patrol.success_outcomes[0],
-                self.patrol_class.involved_cats,
+                self.patrol_class.outcome_cats["success"],
                 other_clan=OtherClan(),
             )
 
             self.assertIn(
-                self.patrol_class.involved_cats["n_c0"].status.rank,
+                self.patrol_class.outcome_cats["success"]["n_c0"].status.rank,
                 [CatRank.WARRIOR, CatRank.MEDIATOR, CatRank.MEDICINE_CAT],
                 msg=f"{outsider1} should be an adult rank (warrior, mediator, or medicine) but instead is {outsider1.status.rank}",
             )
@@ -563,12 +551,11 @@ class TestOutcomeExecution(unittest.TestCase):
 
         set_up_patrol_class_w_event(self.patrol_class, [war1, app1], [patrol])
 
-        self.patrol_class._check_outcome_constraints(
-            patrol.success_outcomes[0], "success"
-        )
+        self.patrol_class._find_allowed_outcomes()
+
         handle_consequences.execute_outcome(
             patrol.success_outcomes[0],
-            self.patrol_class.involved_cats,
+            self.patrol_class.outcome_cats["success"],
             other_clan=OtherClan(),
         )
 
@@ -605,12 +592,11 @@ class TestOutcomeExecution(unittest.TestCase):
 
         set_up_patrol_class_w_event(self.patrol_class, [war1, app1], [patrol])
 
-        self.patrol_class._check_outcome_constraints(
-            patrol.success_outcomes[0], "success"
-        )
+        self.patrol_class._find_allowed_outcomes()
+
         handle_consequences.execute_outcome(
             patrol.success_outcomes[0],
-            self.patrol_class.involved_cats,
+            self.patrol_class.outcome_cats["success"],
             other_clan=OtherClan(),
         )
 
@@ -642,12 +628,11 @@ class TestOutcomeExecution(unittest.TestCase):
 
         set_up_patrol_class_w_event(self.patrol_class, [war1, app1], [patrol])
 
-        self.patrol_class._check_outcome_constraints(
-            patrol.success_outcomes[0], "success"
-        )
+        self.patrol_class._find_allowed_outcomes()
+
         handle_consequences.execute_outcome(
             patrol.success_outcomes[0],
-            self.patrol_class.involved_cats,
+            self.patrol_class.outcome_cats["success"],
             other_clan=OtherClan(),
         )
 
@@ -682,12 +667,11 @@ class TestOutcomeExecution(unittest.TestCase):
 
         set_up_patrol_class_w_event(self.patrol_class, [war1, app1], [patrol])
 
-        self.patrol_class._check_outcome_constraints(
-            patrol.success_outcomes[0], "success"
-        )
+        self.patrol_class._find_allowed_outcomes()
+
         handle_consequences.execute_outcome(
             patrol.success_outcomes[0],
-            self.patrol_class.involved_cats,
+            self.patrol_class.outcome_cats["success"],
             other_clan=other_clan,
         )
 
@@ -721,13 +705,12 @@ class TestOutcomeExecution(unittest.TestCase):
         honey_count = game.clan.herb_supply.get_single_herb_total("honey")
 
         set_up_patrol_class_w_event(self.patrol_class, [war1], [patrol])
-        self.patrol_class._check_outcome_constraints(
-            patrol.success_outcomes[0], "success"
-        )
+        self.patrol_class._find_allowed_outcomes()
+
         handle_consequences.disable_random = True
         handle_consequences.execute_outcome(
             patrol.success_outcomes[0],
-            self.patrol_class.involved_cats,
+            self.patrol_class.outcome_cats["success"],
             other_clan=OtherClan(),
         )
 
@@ -770,13 +753,12 @@ class TestOutcomeExecution(unittest.TestCase):
 
         set_up_patrol_class_w_event(self.patrol_class, [war1], [patrol])
 
-        self.patrol_class._check_outcome_constraints(
-            patrol.success_outcomes[0], "success"
-        )
+        self.patrol_class._find_allowed_outcomes()
+
         handle_consequences.disable_random = True
         handle_consequences.execute_outcome(
             patrol.success_outcomes[0],
-            self.patrol_class.involved_cats,
+            self.patrol_class.outcome_cats["success"],
             other_clan=OtherClan(),
         )
 
