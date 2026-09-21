@@ -40,6 +40,7 @@ class SpriteInspectScreen(Screens):
         self.the_cat = None
         self.cat_image = None
         self.cat_elements = {}
+        self.life_stage_elements = {}
         self.checkboxes = {}
         self.textboxes = {}
         self.platform_shown_text = None
@@ -47,10 +48,13 @@ class SpriteInspectScreen(Screens):
         self.acc_shown_text = None
         self.override_dead_lineart_text = None
         self.override_not_working_text = None
+        self.next_life_stage = None
+        self.previous_life_stage = None
+        self.open_tab = None
 
         # Image Settings:
         self.platform_shown = None
-        self.displayed_lifestage = None
+        self.displayed_life_stage = None
         self.scars_shown = True
         self.override_dead_lineart = False
         self.acc_shown = True
@@ -71,6 +75,7 @@ class SpriteInspectScreen(Screens):
                         self.textboxes[ele].kill()
                     self.textboxes = {}
                     self.cat_setup()
+                    self.update_disabled_life_stages()
                 else:
                     print("invalid next cat", self.next_cat)
             elif event.ui_element == self.elements["previous_cat_button"]:
@@ -80,35 +85,11 @@ class SpriteInspectScreen(Screens):
                         self.textboxes[ele].kill()
                     self.textboxes = {}
                     self.cat_setup()
+                    self.update_disabled_life_stages()
                 else:
                     print("invalid previous cat", self.previous_cat)
-            elif event.ui_element == self.next_life_stage:
-                self.displayed_life_stage = min(
-                    self.displayed_life_stage + 1, len(self.valid_life_stages) - 1
-                )
-                self.update_disabled_buttons()
-                self.make_cat_image()
             elif event.ui_element == self.elements["save_image_button"]:
                 SaveAsImageWindow(self.generate_image_to_save(), str(self.the_cat.name))
-            elif event.ui_element == self.previous_life_stage:
-                self.displayed_life_stage = max(self.displayed_life_stage - 1, 0)
-                self.update_disabled_buttons()
-                self.make_cat_image()
-            elif event.ui_element == self.elements["button_newborn"]:
-                self.displayed_life_stage = 0
-                self.make_cat_image()
-            elif event.ui_element == self.elements["button_kitten"]:
-                self.displayed_life_stage = 1
-                self.make_cat_image()
-            elif event.ui_element == self.elements["button_adolescent"]:
-                self.displayed_life_stage = 2
-                self.make_cat_image()
-            elif event.ui_element == self.elements["button_adult"]:
-                self.displayed_life_stage = 3
-                self.make_cat_image()
-            elif event.ui_element == self.elements["button_senior"]:
-                self.displayed_life_stage = 4
-                self.make_cat_image()
             elif event.ui_element == self.checkboxes["platform_shown"]:
                 if self.platform_shown:
                     self.platform_shown = False
@@ -154,6 +135,37 @@ class SpriteInspectScreen(Screens):
                 self.cat_elements["favourite_button"].set_tooltip(
                     "Remove favorite" if self.the_cat.favourite else "Mark as favorite"
                 )
+            elif event.ui_element == self.elements["sprite_details_tab"]:
+                self.switch_tab_sprite_details()
+            elif event.ui_element == self.elements["life_stages_tab"]:
+                self.switch_tab_life_stages()
+            if self.open_tab == self.elements["life_stages_tab"]:
+                if event.ui_element == self.life_stage_elements["button_0"]:
+                    print("button press 0")
+                    self.displayed_life_stage = 0
+                    self.make_cat_image()
+                    self.update_disabled_life_stages()
+                elif event.ui_element == self.life_stage_elements["button_1"]:
+                    print("button press 1")
+                    self.displayed_life_stage = 1
+                    self.make_cat_image()
+                    self.update_disabled_life_stages()
+                elif event.ui_element == self.life_stage_elements["button_2"]:
+                    print("button press 2")
+                    self.displayed_life_stage = 2
+                    self.make_cat_image()
+                    self.update_disabled_life_stages()
+                elif event.ui_element == self.life_stage_elements["button_3"]:
+                    print("button press 3")
+                    self.displayed_life_stage = 3
+                    self.make_cat_image()
+                    self.update_disabled_life_stages()
+                elif event.ui_element == self.life_stage_elements["button_4"]:
+                    print("button press 4")
+                    self.displayed_life_stage = 4
+                    self.make_cat_image()
+                    self.update_disabled_life_stages()
+
 
         return super().handle_event(event)
 
@@ -207,62 +219,46 @@ class SpriteInspectScreen(Screens):
             get_box(BoxStyles.ROUNDED_BOX, (491, 160)),
             manager=MANAGER,
             anchors={"left_target": self.elements["checkbox_frame"]},
+            starting_height=3
         )
         self.elements["life_stages_frame"].disable()
 
-        prev_container = None
-        for i in SpriteInspectScreen.cat_life_stages:
-            self.elements[f"container{i}"] = pygame_gui.core.UIContainer(
-                ui_scale(pygame.Rect((0 if prev_container else 8, 0), (95, 160))),
-                starting_height=1,
-                container=self.elements["life_stages_container"],
-                anchors={"left_target": prev_container} if prev_container else None,
-                manager=MANAGER,
-            )
-            self.elements[f"button_{i}"] = UIImageButton(
-                ui_scale(pygame.Rect((0, 0), (95, 140))),
-                "",
-                object_id="#other_clan_select_button",
-                starting_height=2,
-                container=self.elements[f"container{i}"],
-                manager=MANAGER,
-                anchors={"centerx": "centerx", "centery": "centery"},
-            )
 
-            self.elements[f"age_symbol{i}"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((0, -30), (50, 50))),
-                Icon.PAW,
-                get_button_dict(ButtonStyles.ICON, (34, 34)),
-                object_id=f"#clan_symbol{i}",
-                starting_height=1,
-                container=self.elements[f"container{i}"],
-                manager=MANAGER,
-                anchors={"center": "center"},
-            )
 
-            self.elements[f"age_name{i}"] = pygame_gui.elements.UILabel(
-                ui_scale(pygame.Rect((0, 10), (95, -1))),
-                text=i,
-                object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
-                container=self.elements[f"container{i}"],
-                manager=MANAGER,
-                anchors={
-                    "centerx": "centerx",
-                    "top_target": self.elements[f"age_symbol{i}"],
-                },
-            )
-            prev_container = self.elements[f"container{i}"]
+        self.elements["life_stages_tab"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((-130, -190), (120, 34))),
+            "screens.sprite_inspect.life_stages",
+            get_button_dict(ButtonStyles.HORIZONTAL_TAB, (120, 34)),
+            object_id="@buttonstyles_horizontal_tab",
+            anchors={"top_target": self.elements["life_stages_frame"], "left_target": self.elements["life_stages_frame"]},
+            starting_height=4
+        )
+        self.elements["sprite_details_tab"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((-255, -190), (120, 34))),
+            "screens.sprite_inspect.sprite_details",
+            get_button_dict(ButtonStyles.HORIZONTAL_TAB, (120, 34)),
+            object_id="@buttonstyles_horizontal_tab",
+            anchors={"top_target": self.elements["life_stages_frame"], "left_target": self.elements["life_stages_frame"]},
+            starting_height=4
+        )
 
         self.elements["save_image_button"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((25, 95), (135, 30))),
+            ui_scale(pygame.Rect((-135, 5), (135, 30))),
             "screens.sprite_inspect.save_image",
             get_button_dict(ButtonStyles.SQUOVAL, (135, 30)),
             object_id="@buttonstyles_squoval",
+            anchors={"top_target": self.elements["next_cat_button"], "left_target":self.elements["next_cat_button"]}
         )
 
         self.platform_shown = get_clan_setting("backgrounds")
-
         self.cat_setup()
+
+        if self.open_tab == self.elements["sprite_details_tab"]:
+            self.switch_tab_sprite_details()
+        else:
+            self.switch_tab_life_stages()
+            self.update_disabled_life_stages()
+
 
     def cat_setup(self):
         """Sets up all the elements related to the cat"""
@@ -331,7 +327,6 @@ class SpriteInspectScreen(Screens):
         # Store the index of the currently displayed life stage.
         self.displayed_life_stage = len(self.valid_life_stages) - 1
 
-
         # Reset all the toggles
         self.lifestage = None
         self.scars_shown = True
@@ -383,6 +378,8 @@ class SpriteInspectScreen(Screens):
             self.next_cat,
             self.previous_cat,
         ) = self.the_cat.determine_next_and_previous_cats()
+        if self.open_tab == self.elements["life_stages_tab"]:
+            self.update_disabled_life_stages()
         self.update_disabled_buttons()
 
     def update_checkboxes(self):
@@ -437,7 +434,6 @@ class SpriteInspectScreen(Screens):
         if not self.the_cat.dead:
             if not self.the_cat.not_working():
                 self.checkboxes["show_default_sprite"].disable()
-
 
     def update_textboxes(self):
         # Toggle Text:
@@ -506,10 +502,6 @@ class SpriteInspectScreen(Screens):
             self.cat_elements["platform"].hide()
 
     def exit_screen(self):
-        self.previous_life_stage.kill()
-        self.previous_life_stage = None
-        self.next_life_stage.kill()
-        self.next_life_stage = None
         self.scars_shown = None
 
         for ele in self.elements:
@@ -529,15 +521,79 @@ class SpriteInspectScreen(Screens):
     def update_disabled_buttons(self):
         self.update_previous_next_cat_buttons()
 
-        if self.displayed_life_stage >= len(self.valid_life_stages) - 1:
-            self.next_life_stage.disable()
-        else:
-            self.next_life_stage.enable()
+    def switch_tab_life_stages(self):
+        self.open_tab = self.elements["life_stages_tab"]
+        self.elements["life_stages_tab"].disable()
+        self.elements["sprite_details_tab"].enable()
 
-        if self.displayed_life_stage <= 0:
-            self.previous_life_stage.disable()
-        else:
-            self.previous_life_stage.enable()
+        prev_container = None
+        for i in range(len(SpriteInspectScreen.cat_life_stages)):
+            self.life_stage_elements[f"container{i}"] = pygame_gui.core.UIContainer(
+                ui_scale(pygame.Rect((0 if prev_container else 8, 0), (95, 160))),
+                starting_height=1,
+                container=self.elements["life_stages_container"],
+                anchors={"left_target": prev_container} if prev_container else None,
+                manager=MANAGER,
+            )
+            self.life_stage_elements[f"button_{i}"] = UIImageButton(
+                ui_scale(pygame.Rect((0, 0), (95, 140))),
+                "",
+                object_id="#other_clan_select_button",
+                starting_height=5,
+                container=self.life_stage_elements[f"container{i}"],
+                manager=MANAGER,
+                anchors={"centerx": "centerx", "centery": "centery"},
+            )
+
+            self.life_stage_elements[f"age_symbol{i}"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((0, -30), (50, 50))),
+                Icon.PAW,
+                get_button_dict(ButtonStyles.ICON, (34, 34)),
+                object_id=f"#clan_symbol{i}",
+                starting_height=1,
+                container=self.life_stage_elements[f"container{i}"],
+                manager=MANAGER,
+                anchors={"center": "center"},
+            )
+
+            self.life_stage_elements[f"age_name{i}"] = pygame_gui.elements.UILabel(
+                ui_scale(pygame.Rect((0, 10), (95, -1))),
+                text=SpriteInspectScreen.cat_life_stages[i],
+                object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
+                container=self.life_stage_elements[f"container{i}"],
+                manager=MANAGER,
+                anchors={
+                    "centerx": "centerx",
+                    "top_target": self.life_stage_elements[f"age_symbol{i}"],
+                },
+            )
+            prev_container = self.life_stage_elements[f"container{i}"]
+        self.update_disabled_life_stages()
+
+    def update_disabled_life_stages(self):
+        for i in range(len(SpriteInspectScreen.cat_life_stages)):
+            if i == self.displayed_life_stage:
+                self.life_stage_elements[f"age_symbol{i}"].disable()
+                self.life_stage_elements[f"button_{i}"].disable()
+                self.life_stage_elements[f"button_{i}"].show()
+            elif i > (len(self.valid_life_stages) - 1):
+                self.life_stage_elements[f"age_symbol{i}"].disable()
+                self.life_stage_elements[f"button_{i}"].disable()
+                self.life_stage_elements[f"button_{i}"].hide()
+            else:
+                self.life_stage_elements[f"age_symbol{i}"].enable()
+                self.life_stage_elements[f"button_{i}"].enable()
+                self.life_stage_elements[f"button_{i}"].show()
+
+    def switch_tab_sprite_details(self):
+        self.open_tab = self.elements["sprite_details_tab"]
+        self.elements["sprite_details_tab"].disable()
+        self.elements["life_stages_tab"].enable()
+
+        for ele in self.life_stage_elements:
+            self.life_stage_elements[ele].kill()
+        self.life_stage_elements = {}
+
 
     def generate_image_to_save(self):
         """Generates the image to save, with platform if needed."""
