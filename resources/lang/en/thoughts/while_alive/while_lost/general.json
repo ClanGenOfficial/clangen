@@ -79,20 +79,12 @@
             "Panics at the idea StarClan may not be watching over {PRONOUN/m_c/object} out here",
             "Asked a loner for directions",
             "Asked a kittypet for directions",
-            "Asked a rouge for directions"
+            "Asked a rogue for directions"
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "apprentice",
-                    "mediator apprentice",
-                    "medicine cat apprentice",
-                    "warrior",
-                    "mediator",
-                    "medicine cat",
-                    "deputy",
-                    "leader",
-                    "elder"
+                "age": [
+                    "-kitten"
                 ]
             }
         }
@@ -104,19 +96,6 @@
             "Thought {PRONOUN/m_c/subject} spotted r_c while wandering around earlier"
         ],
         "involved_cats": {
-            "m_c": {
-                "status": [
-                    "apprentice",
-                    "mediator apprentice",
-                    "medicine cat apprentice",
-                    "warrior",
-                    "mediator",
-                    "medicine cat",
-                    "deputy",
-                    "leader",
-                    "elder"
-                ]
-            },
             "r_c": {
                 "status": [
                     "any"
@@ -135,19 +114,7 @@
             "Prays to StarClan that {PRONOUN/m_c/poss} loved ones are safe"
         ],
         "involved_cats": {
-            "m_c": {
-                "status": [
-                    "apprentice",
-                    "mediator apprentice",
-                    "medicine cat apprentice",
-                    "warrior",
-                    "mediator",
-                    "medicine cat",
-                    "deputy",
-                    "leader",
-                    "elder"
-                ]
-            }
+            "r_c": {}
         },
         "relationship_constraint": [
             {
@@ -172,19 +139,7 @@
             "Hopes {PRONOUN/m_c/poss} siblings are doing okay"
         ],
         "involved_cats": {
-            "m_c": {
-                "status": [
-                    "apprentice",
-                    "mediator apprentice",
-                    "medicine cat apprentice",
-                    "warrior",
-                    "mediator",
-                    "medicine cat",
-                    "deputy",
-                    "leader",
-                    "elder"
-                ]
-            }
+            "r_c": {}
         },
         "relationship_constraint": [
             {
@@ -208,15 +163,12 @@
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "warrior",
-                    "mediator",
-                    "medicine cat",
-                    "deputy",
-                    "leader",
-                    "elder"
+                "age":[
+                    "-kitten",
+                    "-adolescent"
                 ]
-            }
+            },
+            "r_c": {}
         },
         "relationship_constraint": [
             {
