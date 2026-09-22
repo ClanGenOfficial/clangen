@@ -9,6 +9,13 @@
         "sprite_details": "Sprite Details",
         "life_stages": "Life Stages",
 
+        "life_stage_newborn": "newborn",
+        "life_stage_kitten": "kitten",
+        "life_stage_adolescent": "adolescent",
+        "life_stage_adult": "adult",
+        "life_stage_senior": "senior",
+
+
         "skin_color_label": "Skin color: ",
         "pelt_color_label": "Pelt color: ",
         "tint_color_label": "Pelt color tint: ",

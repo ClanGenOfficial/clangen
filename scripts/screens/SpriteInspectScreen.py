@@ -5,7 +5,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import game
+from scripts.game_structure import game, image_cache
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.checkbox import UICheckbox
 from ..ui.elements.surface_image_button import UISurfaceImageButton
@@ -554,7 +554,7 @@ class SpriteInspectScreen(Screens):
         self.sprite_detail_elements = {}
 
         prev_container = None
-        for i in range(len(SpriteInspectScreen.cat_life_stages)):
+        for i, age in enumerate(SpriteInspectScreen.cat_life_stages):
             self.life_stage_elements[f"container{i}"] = pygame_gui.core.UIContainer(
                 ui_scale(pygame.Rect((0 if prev_container else 8, 0), (95, 160))),
                 starting_height=1,
@@ -563,7 +563,7 @@ class SpriteInspectScreen(Screens):
                 manager=MANAGER,
             )
             self.life_stage_elements[f"button_{i}"] = UIImageButton(
-                ui_scale(pygame.Rect((0, 0), (95, 140))),
+                ui_scale(pygame.Rect((0, 0), (93, 139))),
                 "",
                 object_id="#other_clan_select_button",
                 starting_height=5,
@@ -572,21 +572,42 @@ class SpriteInspectScreen(Screens):
                 anchors={"centerx": "centerx", "centery": "centery"},
             )
 
-            self.life_stage_elements[f"age_symbol{i}"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((0, -30), (50, 50))),
-                Icon.PAW,
-                get_button_dict(ButtonStyles.ICON, (34, 34)),
-                object_id=f"#clan_symbol{i}",
-                starting_height=1,
+            self.life_stage_elements[f"age_frame{i}"] = pygame_gui.elements.UIImage(
+                ui_scale(pygame.Rect((0, 0), (97, 144))),
+                get_box(BoxStyles.NAMEPLATE, (97, 144)),
                 container=self.life_stage_elements[f"container{i}"],
                 manager=MANAGER,
                 anchors={"center": "center"},
             )
 
-            self.life_stage_elements[f"age_name{i}"] = pygame_gui.elements.UILabel(
+            self.life_stage_elements[f"age_symbol_box{i}"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((0, -30), (44, 44))),
+                "",
+                get_button_dict(ButtonStyles.ICON, (44, 44)),
+                object_id="@buttonstyles_icon",
+                container=self.life_stage_elements[f"container{i}"],
+                manager=MANAGER,
+                anchors={
+                    "center": "center",
+                },
+            )
+
+            self.life_stage_elements[f"age_symbol{i}"] = pygame_gui.elements.UIImage(
+                ui_scale(pygame.Rect((0, -30), (34, 34))),
+                pygame.transform.scale(
+                    image_cache.load_image(f"resources/images/sprite_screen_age_{age}.png"),
+                    ui_scale_dimensions((34, 34)),
+                ),
+                starting_height=2,
+                container=self.life_stage_elements[f"container{i}"],
+                manager=MANAGER,
+                anchors={"center": "center"},
+            )
+
+            self.life_stage_elements[f"age_name{i}"] = pygame_gui.elements.UITextBox(
+                f"screens.sprite_inspect.life_stage_{age}",
                 ui_scale(pygame.Rect((0, 10), (95, -1))),
-                text=SpriteInspectScreen.cat_life_stages[i],
-                object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
+                object_id=get_text_box_theme("#text_box_26_horizcenter"),
                 container=self.life_stage_elements[f"container{i}"],
                 manager=MANAGER,
                 anchors={
@@ -600,15 +621,18 @@ class SpriteInspectScreen(Screens):
     def update_disabled_life_stages(self):
         for i in range(len(SpriteInspectScreen.cat_life_stages)):
             if i == self.displayed_life_stage:
-                self.life_stage_elements[f"age_symbol{i}"].disable()
+                self.life_stage_elements[f"age_symbol_box{i}"].enable()
+                self.life_stage_elements[f"age_symbol{i}"].show()
                 self.life_stage_elements[f"button_{i}"].disable()
                 self.life_stage_elements[f"button_{i}"].show()
             elif i > (len(self.valid_life_stages) - 1):
-                self.life_stage_elements[f"age_symbol{i}"].disable()
+                self.life_stage_elements[f"age_symbol_box{i}"].disable()
+                self.life_stage_elements[f"age_symbol{i}"].hide()
                 self.life_stage_elements[f"button_{i}"].disable()
                 self.life_stage_elements[f"button_{i}"].hide()
             else:
-                self.life_stage_elements[f"age_symbol{i}"].enable()
+                self.life_stage_elements[f"age_symbol_box{i}"].enable()
+                self.life_stage_elements[f"age_symbol{i}"].show()
                 self.life_stage_elements[f"button_{i}"].enable()
                 self.life_stage_elements[f"button_{i}"].show()
 
