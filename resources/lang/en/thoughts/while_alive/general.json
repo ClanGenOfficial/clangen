@@ -189,17 +189,8 @@
         ],
         "strings": [
             "Purrs as a cool breeze hits {PRONOUN/m_c/object}",
-            "Is enjoying the warmth"
-        ]
-    },
-    {
-        "event_id": "gen_greenleaf_leafbare",
-        "season": [
-            "greenleaf",
-            "leaf-bare"
-        ],
-        "strings": [
-            "Can't wait for fairer weather"
+            "Is enjoying the warmth",
+            "Is shedding like crazy"
         ]
     },
     {
@@ -392,7 +383,8 @@
             "Takes an unnecessary risk",
             "Seems a bit too interested in deathberries...",
             "Licks fresh-kill blood off {PRONOUN/m_c/poss} lips a little too intently",
-            "Daydreams of a vicious battle breaking out"
+            "Daydreams of a vicious battle breaking out",
+            "Is playing with {PRONOUN/m_c/poss} prey before killing it"
         ],
         "involved_cats": {
             "m_c": {
@@ -1113,7 +1105,8 @@
             "Is pushing {PRONOUN/m_c/self} too hard",
             "Put {PRONOUN/m_c/self} down to compliment r_c",
             "Is always on high alert",
-            "Wonders if r_c has ever struggled with feelings of inadequacy"
+            "Wonders if r_c has ever struggled with feelings of inadequacy",
+            "Lashed out at another cat and feels bad about it"
         ],
         "involved_cats": {
             "m_c": {
@@ -1261,7 +1254,8 @@
             "Is pushing {PRONOUN/m_c/self} too hard",
             "Put {PRONOUN/m_c/self} down to compliment r_c",
             "Is always on high alert",
-            "Thinks that {PRONOUN/m_c/subject} {VERB/m_c/are/is} hearing things"
+            "Thinks that {PRONOUN/m_c/subject} {VERB/m_c/are/is} hearing things",
+            "Lashed out at another cat and feels bad about it"
         ],
         "involved_cats": {
             "m_c": {
@@ -1337,7 +1331,8 @@
             "Bothers r_c with {PRONOUN/m_c/poss} games",
             "Is inviting r_c to play",
             "Is tossing moss balls around",
-            "Can't remember the punchline to {PRONOUN/m_c/poss} own joke"
+            "Can't remember the punchline to {PRONOUN/m_c/poss} own joke",
+            "Is playing with {PRONOUN/m_c/poss} prey before killing it"
         ],
         "involved_cats": {
             "m_c": {
@@ -1454,7 +1449,8 @@
             "Grooms {PRONOUN/m_c/self} noisily",
             "Asked r_c an invasive question earnestly",
             "Announces {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to go make dirt",
-            "Volunteers r_c for something without even asking {PRONOUN/r_c/object}"
+            "Volunteers r_c for something without even asking {PRONOUN/r_c/object}",
+            "Is playing with {PRONOUN/m_c/poss} prey before killing it"
         ],
         "involved_cats": {
             "m_c": {
@@ -1543,7 +1539,8 @@
             "Claims to be able to speak to dogs",
             "Makes a poultice of mud and grass",
             "Tells everyone about {PRONOUN/m_c/poss} weird dreams",
-            "Stands uncomfortably close to other cats without a word"
+            "Stands uncomfortably close to other cats without a word",
+            "Is playing with {PRONOUN/m_c/poss} prey before killing it"
         ],
         "involved_cats": {
             "m_c": {
@@ -1747,7 +1744,8 @@
             "Is laughing because a cat {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} like got hurt",
             "Is giving r_c the cold shoulder for no reason",
             "Glares at r_c for bothering {PRONOUN/m_c/object}",
-            "Takes an unnecessary risk just to get ahead of r_c"
+            "Takes an unnecessary risk just to get ahead of r_c",
+            "Wishes redcough on those who've wronged {PRONOUN/m_c/object}"
         ],
         "involved_cats": {
             "m_c": {
