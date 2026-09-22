@@ -5997,7 +5997,7 @@
                 "frequency": 4,
                 "exp_gained": 0,
                 "strings": [
-                    "It's not worth the risk. s_c0 convinces the patrol to head for home. No patrolling will happen today"
+                    "It's not worth the risk. s_c0 convinces the patrol to head for home. No patrolling will happen today."
                 ],
                 "involved_cats": {
                     "s_c0": {
