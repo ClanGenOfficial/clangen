@@ -506,7 +506,8 @@
             "Offers to help {PRONOUN/m_c/poss} Clanmates with their duties",
             "Considers spending the whole day hunting on {PRONOUN/m_c/poss} own",
             "Encourages every cat to help fortify the dens",
-            "Daydreams of establishing a whole new Clan"
+            "Daydreams of establishing a whole new Clan",
+            "Daydreams about beating a whole hoarde of rouges with one paw tied behind {PRONOUN/m_c/poss} back"
         ],
         "involved_cats": {
             "m_c": {
@@ -666,7 +667,8 @@
             "Takes over a patrol that {PRONOUN/m_c/subject} {VERB/m_c/were/was}n't assigned to lead",
             "Pokes {PRONOUN/m_c/poss} head into the leader's den",
             "Snatches up a piece of prey right out from under {PRONOUN/m_c/poss} Clanmate's nose",
-            "Removes a harmless snake from camp"
+            "Removes a harmless snake from camp",
+            "Daydreams about beating a whole hoarde of rouges with one paw tied behind {PRONOUN/m_c/poss} back"
         ],
         "involved_cats": {
             "m_c": {
@@ -1131,7 +1133,8 @@
             "Makes every patrol into a competition",
             "Is lecturing about something someone said wrong offpawedly",
             "Watches r_c do a chore {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} really good at to see how {PRONOUN/m_c/subject} can improve",
-            "Totals up how much prey {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} caught this moon"
+            "Totals up how much prey {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} caught this moon",
+            "Daydreams about beating a whole hoarde of rouges with one paw tied behind {PRONOUN/m_c/poss} back"
         ],
         "involved_cats": {
             "m_c": {
@@ -1206,7 +1209,9 @@
             "Got a Clanmate to do {PRONOUN/m_c/poss} work, never intending to pay {PRONOUN/r_c/object} back for it",
             "Swindles {PRONOUN/m_c/poss} way into an extra piece of fresh-kill",
             "Convinced a Clanmate to side with {PRONOUN/m_c/object} on something",
-            "Schemes to get {PRONOUN/m_c/poss} Clanmates to do what {PRONOUN/m_c/subject} {VERB/m_c/wish/wishes} indirectly"
+            "Schemes to get {PRONOUN/m_c/poss} Clanmates to do what {PRONOUN/m_c/subject} {VERB/m_c/wish/wishes} indirectly",
+            "Has the whole Clan stumped with a riddle {PRONOUN/m_c/subject} came up with",
+            "Lied about an injury to get out of doing chores"
         ],
         "involved_cats": {
             "m_c": {
@@ -1227,7 +1232,8 @@
         "event_id": "daring_clan_gen",
         "strings": [
             "Is racing through camp, accidentally knocking into Clanmates",
-            "Defends Clanmate in an argument"
+            "Defends Clanmate in an argument",
+            "Daydreams about beating a whole hoarde of rouges with one paw tied behind {PRONOUN/m_c/poss} back"
         ],
         "involved_cats": {
             "m_c": {
@@ -1264,7 +1270,8 @@
         "strings": [
             "Tears up {PRONOUN/m_c/poss} fresh-kill far too violently for others' liking",
             "Wonders if a war will break out anytime soon",
-            "Is ready to defend c_n to the death"
+            "Is ready to defend c_n to the death",
+            "Daydreams about beating a whole hoarde of rouges with one paw tied behind {PRONOUN/m_c/poss} back"
         ],
         "involved_cats": {
             "m_c": {
@@ -1387,14 +1394,16 @@
         }
     },
     {
-        "event_id": "scared_storm_gen",
+        "event_id": "scared_not_leafbare_gen",
         "season": [
             "newleaf",
             "greenleaf",
             "leaf-fall"
         ],
         "strings": [
-            "Cowers in {PRONOUN/m_c/poss} nest during a particularly rough storm"
+            "Cowers in {PRONOUN/m_c/poss} nest during a particularly rough storm",
+            "Got startled by a leaf falling on {PRONOUN/m_c/object}",
+            "Freaked out after running face first into a spider web"
         ],
         "involved_cats": {
             "m_c": {
@@ -1654,7 +1663,11 @@
             "Keeps checking {PRONOUN/m_c/poss} nest for burrs",
             "Is double checking that the camp walls are thoroughly reinforced",
             "Counts every cat in the Clan to make sure nobody's missing",
-            "Sneaks out of {PRONOUN/m_c/poss} nest at moonhigh to make sure the camp's okay"
+            "Sneaks out of {PRONOUN/m_c/poss} nest at moonhigh to make sure the camp's okay",
+            "Is panicking over StarClan knows what",
+            "Has {PRONOUN/m_c/poss} head on a swivel",
+            "Is on high alert",
+            "Is extra jittery today"
         ],
         "involved_cats": {
             "m_c": {
@@ -1733,7 +1746,8 @@
             "Gives fully-grown Clanmates badger rides... or tries",
             "Runs around camp at moonhigh, getting out all {PRONOUN/m_c/poss} energy",
             "Tries to find the cutest piece of fresh-kill",
-            "Sorts the fresh-kill pile from most to least aerodynamic"
+            "Sorts the fresh-kill pile from most to least aerodynamic",
+            "Has the whole Clan stumped with a riddle {PRONOUN/m_c/subject} came up with"
         ],
         "involved_cats": {
             "m_c": {
@@ -1787,7 +1801,8 @@
             "Is following the rules... for now...",
             "Is in an argument over whether to follow a debatably stupid rule",
             "Is suffering the consequences of breaking the rules",
-            "Doesn't understand why other cats make rules that {PRONOUN/m_c/subject} {VERB/m_c/have/has} to follow"
+            "Doesn't understand why other cats make rules that {PRONOUN/m_c/subject} {VERB/m_c/have/has} to follow",
+            "Is refusing to do something r_c told {PRONOUN/m_c/object} to"
         ],
         "involved_cats": {
             "m_c": {
@@ -1997,7 +2012,9 @@
             "Has been lazing in {PRONOUN/m_c/poss} nest all day with no sign of stopping",
             "Made {PRONOUN/m_c/poss} Clanmates roll their eyes",
             "Is lying in the center of camp",
-            "Is blatantly not doing {PRONOUN/m_c/poss} duties"
+            "Is blatantly not doing {PRONOUN/m_c/poss} duties",
+            "Lied about an injury to get out of doing chores",
+            "Refuses to do any work cause {PRONOUN/m_c/subject} 'don't wanna'"
         ],
         "involved_cats": {
             "m_c": {
@@ -2362,7 +2379,8 @@
             "Sits quietly, observing the Clan dynamics with a knowing gaze",
             "Purrs softly at a Clanmate taking a rash course of action",
             "Sighs, watching {PRONOUN/m_c/poss} Clanmates argue over a misunderstanding",
-            "Calmly removes a harmless snake from camp"
+            "Calmly removes a harmless snake from camp",
+            "Has the whole Clan stumped with a riddle {PRONOUN/m_c/subject} came up with"
         ],
         "involved_cats": {
             "m_c": {
@@ -3570,6 +3588,73 @@
                 "mutual": false,
                 "constraints": [
                     "parent/child"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "cat_leadership_parent",
+        "strings": [
+            "Is proud of {PRONOUN/m_c/poss} parent, r_c",
+            "Wonders if the Clan treats {PRONOUN/m_c/object} any differently because of {PRONOUN/m_c/poss} parent, r_c",
+            "Wonders if {PRONOUN/m_c/subject} should aim for r_c's position"
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "leader",
+                    "deputy"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "cat_med_parent",
+        "strings": [
+            "Is visiting the medicine cat den to see {PRONOUN/m_c/poss} parent, r_c",
+            "Is watching r_c work",
+            "Is able to identify herbs better then {PRONOUN/m_c/poss} Clanmates due to {PRONOUN/m_c/poss} upbringing",
+            "Is bringing fresh-kill to {PRONOUN/m_c/poss} parent, r_c",
+            "Is helping r_c out in the medicine cat den"
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "medicine cat"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
                 ]
             }
         ]
@@ -6684,7 +6769,8 @@
             "Listens intently as r_c tries to explain things to {PRONOUN/m_c/object}",
             "Correctly recognizes r_c from the thumps of {PRONOUN/r_c/poss} pawsteps alone",
             "Bristles at the pity from {PRONOUN/m_c/poss} Clanmates",
-            "Tells r_c no, {PRONOUN/m_c/subject} can't see in {PRONOUN/m_c/poss} dreams"
+            "Tells r_c no, {PRONOUN/m_c/subject} can't see in {PRONOUN/m_c/poss} dreams",
+            "Is tired of explaining that no, {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} see black or like {PRONOUN/m_c/poss} eyes are closed, {PRONOUN/m_c/subject} just see nothing"
         ],
         "involved_cats": {
             "m_c": {
