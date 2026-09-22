@@ -18,6 +18,12 @@
       }
     }
   },
+  "hunters_tribute": {
+    "card_art": "environment/tainted.png",
+    "modifiers": {
+      "prey.prey_loss.loss": 20
+    }
+  },
   "always_newleaf": {
     "card_art": "environment/tainted.png",
     "modifiers": {
