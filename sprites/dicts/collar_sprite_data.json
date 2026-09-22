@@ -22,7 +22,12 @@
                 "black_gold"
             ],
             "BOW_GRADIENT": [
-                "rainbow"
+                "rainbow",
+                "sunset",
+                "blurple",
+                "radioactive",
+                "sweetheart",
+                "seaside"
             ]
         },
         {
@@ -90,7 +95,12 @@
                 "indigo_gold"
             ],
             "LEATHER_BELL_GRADIENT": [
-                "rainbow"
+                "rainbow",
+                "sunset",
+                "blurple",
+                "radioactive",
+                "sweetheart",
+                "seaside"
             ]
         },
         {
@@ -111,7 +121,12 @@
                 "indigo"
             ],
             "NYLON_GRADIENT": [
-                "rainbow"
+                "rainbow",
+                "sunset",
+                "blurple",
+                "radioactive",
+                "sweetheart",
+                "seaside"
             ],
             "NYLON_BELL": [
                 "crimson",
@@ -130,7 +145,12 @@
                 "indigo"
             ],
             "NYLON_BELL_GRADIENT": [
-                "rainbow"
+                "rainbow",
+                "sunset",
+                "blurple",
+                "radioactive",
+                "sweetheart",
+                "seaside"
             ]
         }
     ]
