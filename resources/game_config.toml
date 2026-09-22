@@ -358,6 +358,9 @@ dev_tools = false
       trust = 10
 
 [pregnancy]
+  # decides which roles can have kits
+  can_have_kits = ["leader", "deputy", "medicine cat", "warrior", "mediator", "elder", "kittypet", "rogue", "loner"]
+
   # cooldown for cats getting pregnant that applies after giving birth
   birth_cooldown = 6
 
@@ -430,6 +433,7 @@ dev_tools = false
       romance = 20
       comfort = 30
       trust = 25
+
       
 [cat_generation]
   # base 1/chance that a cat will generate with a permanent condition. gets modified further in code
@@ -631,8 +635,9 @@ dev_tools = false
   debug_ensure_ceremony_id = ""
 
 [death_related]
-  # the maximum lives a leader can have
+  # the amount of lives a leader can have
   max_leader_lives = 9
+  min_leader_lives = 9
 
   # base 1/chance that leader will die
   leader_death_chance = 50
@@ -733,8 +738,14 @@ dev_tools = false
     member = ["newborn", "kitten", "adolescent", "young adult", "adult", "senior adult", "senior"]
 
 [ranks]
+# force only the leader's kits to be selected as deputy
+    only_leader_kits_deputy = false
+
+  [ranks.can_manually_change]
   # permit player to change cat ranks
-  allow_manual = true
+    all = true
+    deputy = true
+
 
 [graduation]
   # base possible experience gain for apprentices
@@ -792,20 +803,21 @@ dev_tools = false
 
   [focus."raid_other_clans"]
     # how much prey each working warrior(leader/deputy) will gather
-    prey_warrior = 3
+    prey_amounts = [0, 1, 2]
+    prey_weights = [3, 4, 1]
 
-    # how much herb each working medicine cat will gather
-    herb_medicine = 4
+    # how much herb each working warrior will gather
+    herb_amounts = [0, 1, 2]
+    herb_weights = [8, 2, 1]
 
     # injury chance of each warrior(leader/deputy) or medicine cat to get injured
-    injury_chance_warrior = 18
-    "injury_chance_medicine cat" = 33
+    injury_chance = 18
 
-    # the more clan which are raided the more likely it is to get injured
+    # the more clans that are raided the more likely it is to get injured
     chance_increase_per_clan = 3
 
     # amount of decrease; Clan relation is between 0 and 30, so the number should be small
-    relation = 3
+    relation = -3
 
     # list of injuries which can occur and to which distribution
     # INFO: current sum of injuries is 100 - for easier understanding it should stay the same
@@ -825,12 +837,9 @@ dev_tools = false
     # how much prey each working warrior(leader/deputy) will gather
     prey_warrior = 1
 
-    # how much herb each working medicine cat will gather
-    herb_medicine = 2
-
     # injury chance of each warrior(leader/deputy) or medicine cat to get injured
     injury_chance_warrior = 25
-    "injury_chance_medicine cat" = 35
+    injury_chance_medicine_cat = 35
 
     # illness chance of each warrior(leader/deputy) and medicine cat to get sick
     illness_chance = 35
