@@ -313,9 +313,7 @@ def _draw_sprite(
 
     if not scars_hidden:
         for scar in cat.pelt.scars:
-            sprite_name = (
-                f"{sprites.SCAR_DATA['spritesheet'][1]}{scar}{cat_sprite}"
-            )
+            sprite_name = f"{sprites.SCAR_DATA['spritesheet'][1]}{scar}{cat_sprite}"
             new_sprite.blit(
                 _recolor_lineart(
                     sprites.sprites[sprite_name],
