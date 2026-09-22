@@ -8,7 +8,18 @@
             "Thinks wistfully about the Warrior Code",
             "Is glad for {PRONOUN/m_c/poss} sharp hunting skills",
             "Wishes {PRONOUN/m_c/subject} had other cats to help protect {PRONOUN/m_c/object}",
-            "Dreams of sleeping in a crowded den"
+            "Dreams of sleeping in a crowded den",
+            "Wonders how c_n fares without {PRONOUN/m_c/object}",
+            "Is missing {PRONOUN/m_c/poss} Clanmates",
+            "Wonders if {PRONOUN/m_c/poss} Clanmates miss {PRONOUN/m_c/object}",
+            "Wonders if {PRONOUN/m_c/poss} Clanmates hate {PRONOUN/m_c/object} for turning to this life",
+            "Is gazing off in the direction of c_n",
+            "Is reminiscing on {PRONOUN/m_c/poss} time in c_n",
+            "Considers going back, before remembering why {PRONOUN/m_c/subject} left",
+            "Feels lonely without {PRONOUN/m_c/poss} Clanmates nearby",
+            "Is happy not to have to deal with Clan chores",
+            "Is telling tales of {PRONOUN/m_c/poss} old Clan life",
+            "Wonders how c_n has changed in {PRONOUN/m_c/poss} absence"
         ]
     },
     {
