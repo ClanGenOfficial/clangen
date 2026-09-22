@@ -62,7 +62,12 @@
                 "indigo_gold"
             ],
             "LEATHER_GRADIENT": [
-                "rainbow"
+                "rainbow",
+                "sunset",
+                "blurple",
+                "radioactive",
+                "sweetheart",
+                "seaside"
             ],
             "LEATHER_BELL": [
                 "crimson",
