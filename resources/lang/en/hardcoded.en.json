@@ -64,6 +64,10 @@
         "consumed_prey": {
             "one": "One piece of prey was consumed.",
             "many": "%{count} pieces of prey were consumed."
+        },
+        "tribute_prey":{
+            "one": "One piece of prey was offered as tribute.",
+            "many": "%{count} pieces of prey were offered as a tribute."            
         }
     }
 }
