@@ -210,7 +210,13 @@
             "mc_mate wanted to believe {PRONOUN/mc_mate/subject} {VERB/mc_mate/were/was} just overthinking, but when {PRONOUN/mc_mate/subject} {VERB/mc_mate/realize/realizes} that m_c's {insert} looks so much like r_c, {PRONOUN/mc_mate/subject} {VERB/mc_mate/are/is} forced to accept {PRONOUN/mc_mate/subject}{VERB/mc_mate/'ve/'s} been cheated on.",
             "It doesn't take a lot of questioning for m_c to break down and confess to mc_mate that {PRONOUN/m_c/poss} {insert} is actually r_c's.",
             "When m_c's {insert} is born, the first cat {PRONOUN/m_c/subject} {VERB/m_c/call/calls} over is mc_mate... But it's to confess that {PRONOUN/mc_mate/subject} {VERB/mc_mate/aren't/isn't} the other parent; r_c is.",
-            "m_c originally kept quiet about the affair, hoping no one would be suspicious... But when the {insert} ends up looking just like r_c, the guilt becomes too much, and m_c is forced to come clean."
+            "m_c originally kept quiet about the affair, hoping no one would be suspicious... But when the {insert} ends up looking just like r_c, the guilt becomes too much, and m_c is forced to come clean.",
+            "r_c quietly admits to mc_mate that the {insert} m_c had is actually {PRONOUN/r_c/inposs}. mc_mate deserves to know.",
+            "Nobody questioned why r_c was present during m_c's kitting, but the reason becomes apparent when r_c can't hold back from claiming the {insert} as {PRONOUN/r_c/poss} own, even when mc_mate is right there.",
+            "mc_mate doesn't even need to ask m_c. The sight of r_c's expression when {PRONOUN/r_c/subject} {VERB/r_c/gaze/gazes} at m_c's {insert} extinguishes all doubt.",
+            "In the midst of kitting, m_c admits that the {insert} isn't even mc_mate's, would {PRONOUN/mc_mate/subject} just leave {PRONOUN/m_c/object} alone for two seconds so {PRONOUN/m_c/subject} can breathe?!",
+            "As much as m_c didn't want to ruin such a tender scene, looking at {PRONOUN/m_c/poss} {insert} makes {PRONOUN/m_c/object} realize {PRONOUN/m_c/subject} can't lie to mc_mate any longer. m_c confesses the {insert} is r_c's.",
+            "m_c had to go through {PRONOUN/m_c/poss} kitting alone after admitting to mc_mate that the {insert} is r_c's."
         ],
         "affair_mated_secret": [
 			"m_c secretly had a {insert} with r_c instead of mc_mate.",
@@ -220,7 +226,8 @@
 			"Watching mc_mate look over {PRONOUN/m_c/poss} new {insert}, m_c silently vows to make sure that {PRONOUN/mc_mate/subject} never {VERB/mc_mate/find/finds} out that this {insert} is actually r_c's.",
             "m_c feels guilty about hiding that {PRONOUN/m_c/poss} new {insert} is r_c's, but mc_mate was looking forward to this birth as much as {PRONOUN/m_c/subject} {VERB/m_c/were/was}, so why come clean and spoil it?",
             "m_c's heart breaks when {PRONOUN/m_c/subject} {VERB/m_c/see/sees} mc_mate doting over the {insert} that isn't actually {PRONOUN/mc_mate/inposs}. {PRONOUN/mc_mate/subject/CAP} can't ever find out they're secretly r_c's...",
-            "m_c had told {PRONOUN/m_c/self} {PRONOUN/m_c/subject}'d confess everything about the affair with r_c to mc_mate, but when {PRONOUN/m_c/poss} {insert} is born, {PRONOUN/m_c/subject} {VERB/m_c/opt/opts} to keep quiet. {PRONOUN/m_c/subject/CAP} can't bring {PRONOUN/m_c/self} to admit it after all..."
+            "m_c had told {PRONOUN/m_c/self} {PRONOUN/m_c/subject}'d confess everything about the affair with r_c to mc_mate, but when {PRONOUN/m_c/poss} {insert} is born, {PRONOUN/m_c/subject} {VERB/m_c/opt/opts} to keep quiet. {PRONOUN/m_c/subject/CAP} can't bring {PRONOUN/m_c/self} to admit it after all...",
+            "m_c's eyes meet r_c's at the entrance to the medicine cat's den, exchanging a secret glance. mc_mate coos over the {insert}, none the wiser to the affair."
         ],
         "affair_mated_samesex": [
             "mc_mate looks over m_c's new {insert} with mixed feelings. On one paw, m_c did cheat on {PRONOUN/mc_mate/object} with r_c, but at the same time, {PRONOUN/mc_mate/subject} can help m_c raise this {insert} together.",
