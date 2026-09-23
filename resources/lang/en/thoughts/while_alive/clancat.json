@@ -507,7 +507,7 @@
             "Considers spending the whole day hunting on {PRONOUN/m_c/poss} own",
             "Encourages every cat to help fortify the dens",
             "Daydreams of establishing a whole new Clan",
-            "Daydreams about beating a whole hoarde of rouges with one paw tied behind {PRONOUN/m_c/poss} back"
+            "Daydreams about beating a whole horde of rogues with one paw tied behind {PRONOUN/m_c/poss} back"
         ],
         "involved_cats": {
             "m_c": {
@@ -668,7 +668,7 @@
             "Pokes {PRONOUN/m_c/poss} head into the leader's den",
             "Snatches up a piece of prey right out from under {PRONOUN/m_c/poss} Clanmate's nose",
             "Removes a harmless snake from camp",
-            "Daydreams about beating a whole hoarde of rouges with one paw tied behind {PRONOUN/m_c/poss} back"
+            "Daydreams about beating a whole horde of rogues with one paw tied behind {PRONOUN/m_c/poss} back"
         ],
         "involved_cats": {
             "m_c": {
@@ -1134,7 +1134,7 @@
             "Is lecturing about something someone said wrong offpawedly",
             "Watches r_c do a chore {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} really good at to see how {PRONOUN/m_c/subject} can improve",
             "Totals up how much prey {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} caught this moon",
-            "Daydreams about beating a whole hoarde of rouges with one paw tied behind {PRONOUN/m_c/poss} back"
+            "Daydreams about beating a whole horde of rogues with one paw tied behind {PRONOUN/m_c/poss} back"
         ],
         "involved_cats": {
             "m_c": {
@@ -1233,7 +1233,7 @@
         "strings": [
             "Is racing through camp, accidentally knocking into Clanmates",
             "Defends Clanmate in an argument",
-            "Daydreams about beating a whole hoarde of rouges with one paw tied behind {PRONOUN/m_c/poss} back"
+            "Daydreams about beating a whole horde of rogues with one paw tied behind {PRONOUN/m_c/poss} back"
         ],
         "involved_cats": {
             "m_c": {
@@ -1271,7 +1271,7 @@
             "Tears up {PRONOUN/m_c/poss} fresh-kill far too violently for others' liking",
             "Wonders if a war will break out anytime soon",
             "Is ready to defend c_n to the death",
-            "Daydreams about beating a whole hoarde of rouges with one paw tied behind {PRONOUN/m_c/poss} back"
+            "Daydreams about beating a whole horde of rogues with one paw tied behind {PRONOUN/m_c/poss} back"
         ],
         "involved_cats": {
             "m_c": {
@@ -1403,7 +1403,7 @@
         "strings": [
             "Cowers in {PRONOUN/m_c/poss} nest during a particularly rough storm",
             "Got startled by a leaf falling on {PRONOUN/m_c/object}",
-            "Freaked out after running face first into a spider web"
+            "Freaked out after running face-first into a spiderweb"
         ],
         "involved_cats": {
             "m_c": {
@@ -2014,7 +2014,7 @@
             "Is lying in the center of camp",
             "Is blatantly not doing {PRONOUN/m_c/poss} duties",
             "Lied about an injury to get out of doing chores",
-            "Refuses to do any work cause {PRONOUN/m_c/subject} 'don't wanna'"
+            "Refuses to do any work cause {PRONOUN/m_c/subject} \"{VERB/m_c/do/does}n't wanna\""
         ],
         "involved_cats": {
             "m_c": {
@@ -6770,7 +6770,7 @@
             "Correctly recognizes r_c from the thumps of {PRONOUN/r_c/poss} pawsteps alone",
             "Bristles at the pity from {PRONOUN/m_c/poss} Clanmates",
             "Tells r_c no, {PRONOUN/m_c/subject} can't see in {PRONOUN/m_c/poss} dreams",
-            "Is tired of explaining that no, {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} see black or like {PRONOUN/m_c/poss} eyes are closed, {PRONOUN/m_c/subject} just see nothing"
+            "Is tired of explaining {PRONOUN/m_c/subject} just {VERB/m_c/see/sees} nothing, not darkness"
         ],
         "involved_cats": {
             "m_c": {

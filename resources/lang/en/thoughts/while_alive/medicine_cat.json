@@ -165,11 +165,11 @@
             "Wishes to fight alongside the warriors",
             "Thinks {PRONOUN/m_c/subject}'d be an amazing leader",
             "Ignores the low herb stocks and practices battle moves instead",
-            "'Jokingly' prescribes r_c deathberries",
-            "'Jokingly' prescribes r_c foxglove seeds",
+            "\"Jokingly\" prescribes r_c deathberries",
+            "\"Jokingly\" prescribes r_c foxglove seeds",
             "Is prescribing r_c herbs to give {PRONOUN/r_c/object} a stomachache",
             "Coats {PRONOUN/m_c/poss} claws in deathberry juice",
-            "Only gives a patient half the herbs {PRONOUN/r_c/subject} need",
+            "Only gives a patient half the herbs {PRONOUN/r_c/subject} {VERB/r_c/need/needs}",
             "Is giving a patient stale herbs"
         ],
         "involved_cats": {
@@ -788,7 +788,7 @@
             "Is stocking up on nightshade just in case...",
             "Is stocking up on watermint just in case...",
             "Is stocking up on foxglove seeds just in case...",
-            "Wishes {PRONOUN/m_c/subject} didn't have to treat <i>every<i> cat equally"
+            "Wishes {PRONOUN/m_c/subject} didn't have to treat <i>every</i> cat equally"
         ],
         "involved_cats": {
             "m_c": {
@@ -804,10 +804,10 @@
         "event_id": "vengeful_medcat_to_disliked",
         "strings": [
             "Is sneaking herbs into r_c's food to give {PRONOUN/r_c/object} a stomachache",
-            "'Jokingly' prescribes r_c deathberries",
-            "'Jokingly' prescribes r_c foxglove seeds",
+            "\"Jokingly\" prescribes r_c deathberries",
+            "\"Jokingly\" prescribes r_c foxglove seeds",
             "Is refusing to treat r_c",
-            "Only gives r_c half the herbs {PRONOUN/r_c/subject} need",
+            "Only gives r_c half the herbs {PRONOUN/r_c/subject} {VERB/r_c/need/needs}",
             "Wishes {PRONOUN/m_c/subject} didn't have to treat r_c",
             "Is giving r_c stale herbs",
             "Is making excuses to not have to treat r_c"

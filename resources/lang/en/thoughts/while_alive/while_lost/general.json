@@ -91,7 +91,7 @@
             "Considers starting a new Clan",
             "Dreams of being home again",
             "Had a nightmare where the Clan forgot about {PRONOUN/m_c/object}",
-            "Thinks {PRONOUN/m_c/subject} recognize the scenery",
+            "Thinks {PRONOUN/m_c/subject} {VERB/m_c/recognize/recognizes} the scenery",
             "Got all turned around again",
             "Has started missing even {PRONOUN/m_c/poss} least favorite Clan chores",
             "Would give anything to be back home",
