@@ -423,7 +423,7 @@
                 "frequency": 4,
                 "outcome_art": "backgrounds/bch_pawprints",
                 "strings": [
-                    "p_l reminds r_c0 not to get distracted. {PRONOUN/r_c0/subject/CAP} suddenly {VERB/r_c0/realize/realizes} there is water staining {PRONOUN/r_c0/poss} paws. The sea can return faster than {PRONOUN/r_c0/subject} think{VERB/r_c0//s}, p_l chides, and getting caught out by the rising water is dangerous. Cats have been lost that way. Staring at the ground, r_c0 quickly trudges after {PRONOUN/r_c0/poss} mentor."
+                    "p_l reminds r_c0 not to get distracted. {PRONOUN/r_c0/subject/CAP} suddenly {VERB/r_c0/realize/realizes} there is water staining {PRONOUN/r_c0/poss} paws. The sea can return faster than {PRONOUN/r_c0/subject} {VERB/r_c0/think/thinks}, p_l chides, and getting caught out by the rising water is dangerous. Cats have been lost that way. Staring at the ground, r_c0 quickly trudges after {PRONOUN/r_c0/poss} mentor."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
