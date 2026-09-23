@@ -50,8 +50,6 @@ class SpriteInspectScreen(Screens):
         self.acc_shown_text = None
         self.override_dead_lineart_text = None
         self.override_not_working_text = None
-        self.next_life_stage = None
-        self.previous_life_stage = None
         self.open_tab = None
 
         # Image Settings:
@@ -595,7 +593,7 @@ class SpriteInspectScreen(Screens):
             self.life_stage_elements[f"age_symbol{i}"] = pygame_gui.elements.UIImage(
                 ui_scale(pygame.Rect((0, -30), (34, 34))),
                 pygame.transform.scale(
-                    image_cache.load_image(f"resources/images/sprite_screen_age_{age}.png"),
+                    image_cache.load_image(f"resources/images/icon_spritescreen_age_{age}.png"),
                     ui_scale_dimensions((34, 34)),
                 ),
                 starting_height=2,
