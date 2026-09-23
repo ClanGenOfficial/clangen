@@ -5985,7 +5985,7 @@
                 "frequency": 4,
                 "location": ["mountainous", "beach", "desert"],
                 "strings": [
-                    "The scent leads to a trespassing rogue. p_l leaps off a rocky outcrop onto the rogue and easily overwhelms the lone cat. {PRONOUN/p_l/subject/CAP} {VERB/p_l/accept/accepts} the rogue surrenders graciously and {VERB/p_l/escort/escorts} {PRONOUN/n_c0/object} out of c_n territory."
+                    "The scent leads to a trespassing rogue. p_l leaps off a rocky outcrop onto the rogue and easily overwhelms the lone cat. {PRONOUN/p_l/subject/CAP} {VERB/p_l/accept/accepts} the rogue's surrender graciously and {VERB/p_l/escort/escorts} {PRONOUN/n_c0/object} out of c_n territory."
                 ],
                 "exp_gained": 10,
                 "involved_cats": {
@@ -6017,7 +6017,7 @@
                 "frequency": 4,
                 "location": ["mountainous", "beach", "desert"],
                 "strings": [
-                    "Boldly, p_l follows the scent to a trespassing rogue and confronts them, pointing out the clearly-marked border which the rogue has crossed. From {PRONOUN/p_l/poss} perch on a high rock above the rogue, {PRONOUN/p_l/subject} {VERB/p_l/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/p_l/poss} own strength."
+                    "Boldly, p_l follows the scent to a trespassing rogue and confronts {PRONOUN/n_c0/object}, pointing out the clearly-marked border which the rogue has crossed. From {PRONOUN/p_l/poss} perch on a high rock above the rogue, {PRONOUN/p_l/subject} {VERB/p_l/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/p_l/poss} own strength."
                 ],
                 "exp_gained": 10,
                 "involved_cats": {
@@ -6368,7 +6368,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "cat_from and cat_to fought at the border."
+                            "cats_from": "cat_from and ambushed cat_to at the border."
                         }
                     }
                 ],
@@ -6449,7 +6449,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "cat_from and cat_to fought at the border."
+                            "cats_from": "cat_from ambushed cat_to at the border."
                         }
                     }
                 ],
@@ -6666,7 +6666,7 @@
                 "frequency": 4,
                 "location": ["mountainous", "beach", "desert"],
                 "strings": [
-                    "Boldly, s_c0 follows the scent to a trespassing rogue and confronts them, pointing out the clearly-marked border which the rogue has crossed. From {PRONOUN/s_c0/poss} perch on a high rock above the rogue, {PRONOUN/s_c0/subject} {VERB/s_c0/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c0/poss} own strength."
+                    "Boldly, s_c0 follows the scent to a trespassing rogue and confronts {PRONOUN/n_c0/object}, pointing out the clearly-marked border which the rogue has crossed. From {PRONOUN/s_c0/poss} perch on a high rock above the rogue, {PRONOUN/s_c0/subject} {VERB/s_c0/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c0/poss} own strength."
                 ],
                 "exp_gained": 10,
                 "involved_cats": {
@@ -7061,7 +7061,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "cat_from and cat_to fought at the border."
+                            "cats_from": "cat_from ambushed cat_to at the border."
                         }
                     }
                 ],
@@ -7144,7 +7144,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "cat_from and cat_to fought at the border."
+                            "cats_from": "cat_from ambushed cat_to at the border."
                         }
                     }
                 ],
