@@ -26,7 +26,7 @@
 		"After m_c announced {PRONOUN/m_c/poss} pregnancy to the Clan, some cats noticed r_c looking at {PRONOUN/m_c/object} with confusion. No one can guess why, but everyone's excited for new life coming to the Clan!",
         "When r_c hears that m_c is expecting kits, the Clan doesn't seem to understand why r_c is more confused than excited.",
         "m_c is told {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits. {PRONOUN/m_c/subject/CAP} immediately {VERB/m_c/ask/asks} {PRONOUN/m_c/poss} Clanmates to keep it a secret from r_c.",
-        "Cats approach r_c to congratulate {PRONOUN/r_c/object} for {PRONOUN/r_c/poss} and m_c's soon to be born kits, but r_c has no idea what they're talking about..."
+        "Cats approach r_c to congratulate {PRONOUN/r_c/object} for {PRONOUN/r_c/poss} and m_c's soon-to-be-born kits, but r_c has no idea what they're talking about..."
     ],
     "announcement_surprise": [
     	"The Clan is surprised when m_c announces that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits. m_c refuses to disclose the name of the other parent, but everyone's excited for new life in the Clan regardless!",
