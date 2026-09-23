@@ -804,6 +804,7 @@ def one_moon_cat(cat):
             cat.moons += 1
         else:
             cat.status.increase_current_moons_as()
+        cat.assign_thought()
         handle_fading(cat)  # Deal with fading.
         return
 
