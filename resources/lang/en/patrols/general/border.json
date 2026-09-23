@@ -5880,7 +5880,7 @@
                 "frequency": 4,
                 "strings": [
                     "The scent leads to a trespassing rogue. p_l approaches to question {PRONOUN/n_c0/object}, but the rogue turns and flees c_n territory.",
-                    "The scent leads to a trespassing rogue. p_l runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory. Well, they probably weren't super friendly then, p_l assumes."
+                    "The scent leads to a trespassing rogue. p_l runs down the scree slope to see what's up with {PRONOUN/n_c0/object}, but the rogue turns and flees c_n territory. Well, they probably weren't super friendly then, p_l assumes."
                 ],
                 "exp_gained": 10,
                 "involved_cats": {
@@ -5904,7 +5904,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Boldly, p_l follows the scent to a trespassing rogue and confronts them. Fur puffed but ears pricked forward curiously, {PRONOUN/p_l/subject} {VERB/p_l/ask/asks} what the rogue is doing in c_n territory. It seems to embarrass the other cat, who walks off in a huff back over the border."
+                    "Boldly, p_l follows the scent to a trespassing rogue and confronts {PRONOUN/n_c0/object}. Fur puffed but ears pricked forward curiously, {PRONOUN/p_l/subject} {VERB/p_l/ask/asks} what the rogue is doing in c_n territory. It seems to embarrass the other cat, who walks off in a huff back over the border."
                 ],
                 "exp_gained": 10,
                 "involved_cats": {
