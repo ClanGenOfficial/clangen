@@ -71,7 +71,7 @@ class ChangeCatNameWindow(GameWindow):
             object_id="@buttonstyles_icon",
             manager=MANAGER,
             container=self,
-            tool_tip_text="Randomize the prefix",
+            tool_tip_text="screens.windows.randomize_prefix_tooltip",
             sound_id="dice_roll",
         )
 
@@ -82,7 +82,7 @@ class ChangeCatNameWindow(GameWindow):
             object_id="@buttonstyles_icon",
             manager=MANAGER,
             container=self,
-            tool_tip_text="Randomize the suffix",
+            tool_tip_text="screens.windows.randomize_suffix_tooltip",
             sound_id="dice_roll",
         )
 
@@ -129,9 +129,9 @@ class ChangeCatNameWindow(GameWindow):
                 self.the_cat.name.specsuffix_hidden = self.specsuffix_hidden
 
                 # Note: Prefixes are not allowed be all spaces or empty, but they can have spaces in them.
-                if sub(r"[^A-Za-z0-9 ]+", "", self.prefix_entry_box.get_text()) != "":
+                if sub(r"[^\w ]+", "", self.prefix_entry_box.get_text()) != "":
                     self.the_cat.name.prefix = sub(
-                        r"[^A-Za-z0-9 ]+", "", self.prefix_entry_box.get_text()
+                        r"[^\w ]+", "", self.prefix_entry_box.get_text()
                     )
 
                 # Suffixes can be empty, if you want. However, don't change the suffix if it's currently being hidden
@@ -142,7 +142,7 @@ class ChangeCatNameWindow(GameWindow):
                     or self.the_cat.name.specsuffix_hidden
                 ):
                     self.the_cat.name.suffix = sub(
-                        r"[^A-Za-z0-9 ]+", "", self.suffix_entry_box.get_text()
+                        r"[^\w ]+", "", self.suffix_entry_box.get_text()
                     )
                     self.name_changed.show()
 
