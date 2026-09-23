@@ -26,13 +26,18 @@ from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.generate_box import BoxStyles, get_box
 
 
-
 from ..ui.icon import Icon
 
 
 class SpriteInspectScreen(Screens):
     cat_life_stages = ["newborn", "kitten", "adolescent", "adult", "senior"]
-    sprite_settings = ["save_image", "show_platform", "show_scars", "show_accessory", "change_sprite"]
+    sprite_settings = [
+        "save_image",
+        "show_platform",
+        "show_scars",
+        "show_accessory",
+        "change_sprite",
+    ]
 
     def __init__(self, name=None):
         self.elements = {}
@@ -167,7 +172,6 @@ class SpriteInspectScreen(Screens):
                     self.make_cat_image()
                     self.update_disabled_life_stages()
 
-
         return super().handle_event(event)
 
     def screen_switches(self):
@@ -220,27 +224,31 @@ class SpriteInspectScreen(Screens):
             get_box(BoxStyles.ROUNDED_BOX, (491, 160)),
             manager=MANAGER,
             anchors={"left_target": self.elements["checkbox_frame"]},
-            starting_height=3
+            starting_height=3,
         )
         self.elements["life_stages_frame"].disable()
-
-
 
         self.elements["life_stages_tab"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((-130, -190), (120, 34))),
             "screens.sprite_inspect.life_stages",
             get_button_dict(ButtonStyles.HORIZONTAL_TAB, (120, 34)),
             object_id="@buttonstyles_horizontal_tab",
-            anchors={"top_target": self.elements["life_stages_frame"], "left_target": self.elements["life_stages_frame"]},
-            starting_height=4
+            anchors={
+                "top_target": self.elements["life_stages_frame"],
+                "left_target": self.elements["life_stages_frame"],
+            },
+            starting_height=4,
         )
         self.elements["sprite_details_tab"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((-255, -190), (120, 34))),
             "screens.sprite_inspect.sprite_details",
             get_button_dict(ButtonStyles.HORIZONTAL_TAB, (120, 34)),
             object_id="@buttonstyles_horizontal_tab",
-            anchors={"top_target": self.elements["life_stages_frame"], "left_target": self.elements["life_stages_frame"]},
-            starting_height=4
+            anchors={
+                "top_target": self.elements["life_stages_frame"],
+                "left_target": self.elements["life_stages_frame"],
+            },
+            starting_height=4,
         )
 
         self.elements["save_image_button"] = UISurfaceImageButton(
@@ -248,7 +256,10 @@ class SpriteInspectScreen(Screens):
             "screens.sprite_inspect.save_image",
             get_button_dict(ButtonStyles.SQUOVAL, (135, 30)),
             object_id="@buttonstyles_squoval",
-            anchors={"top_target": self.elements["next_cat_button"], "left_target":self.elements["next_cat_button"]}
+            anchors={
+                "top_target": self.elements["next_cat_button"],
+                "left_target": self.elements["next_cat_button"],
+            },
         )
 
         self.platform_shown = get_clan_setting("backgrounds")
@@ -259,7 +270,6 @@ class SpriteInspectScreen(Screens):
         else:
             self.switch_tab_life_stages()
             self.update_disabled_life_stages()
-
 
     def cat_setup(self):
         """Sets up all the elements related to the cat"""
@@ -354,7 +364,10 @@ class SpriteInspectScreen(Screens):
             ui_scale(pygame.Rect((0, 0), (-1, 40))),
             manager=MANAGER,
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
-            anchors={"centerx": "centerx", "bottom_target": self.cat_elements["platform"]},
+            anchors={
+                "centerx": "centerx",
+                "bottom_target": self.cat_elements["platform"],
+            },
             container=self.cat_elements["container"],
         )
         self.cat_elements["cat_name"].set_relative_position(ui_scale_offset((0, 20)))
@@ -450,7 +463,10 @@ class SpriteInspectScreen(Screens):
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
             container=self.elements["checkbox_frame_container"],
-            anchors={"top_target": self.checkboxes["platform_shown"], "left_target": self.checkboxes["platform_shown"]},
+            anchors={
+                "top_target": self.checkboxes["platform_shown"],
+                "left_target": self.checkboxes["platform_shown"],
+            },
         )
         self.textboxes["scars_shown_text"] = pygame_gui.elements.UITextBox(
             "screens.sprite_inspect.show_scars",
@@ -458,7 +474,10 @@ class SpriteInspectScreen(Screens):
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
             container=self.elements["checkbox_frame_container"],
-            anchors={"top_target": self.checkboxes["scars_shown"], "left_target": self.checkboxes["scars_shown"]},
+            anchors={
+                "top_target": self.checkboxes["scars_shown"],
+                "left_target": self.checkboxes["scars_shown"],
+            },
         )
         self.textboxes["acc_shown_text"] = pygame_gui.elements.UITextBox(
             "screens.sprite_inspect.show_accessory",
@@ -466,15 +485,23 @@ class SpriteInspectScreen(Screens):
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
             container=self.elements["checkbox_frame_container"],
-            anchors={"top_target": self.checkboxes["acc_shown"], "left_target": self.checkboxes["acc_shown"]},
+            anchors={
+                "top_target": self.checkboxes["acc_shown"],
+                "left_target": self.checkboxes["acc_shown"],
+            },
         )
         self.textboxes["show_defailt_sprite_text"] = pygame_gui.elements.UITextBox(
-            "screens.sprite_inspect.show_healthy" if self.the_cat.is_alive() else "screens.sprite_inspect.show_living",
+            "screens.sprite_inspect.show_healthy"
+            if self.the_cat.is_alive()
+            else "screens.sprite_inspect.show_living",
             ui_scale(pygame.Rect((-6, -36), (-1, 50))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
             container=self.elements["checkbox_frame_container"],
-            anchors={"top_target": self.checkboxes["show_default_sprite"], "left_target": self.checkboxes["show_default_sprite"]},
+            anchors={
+                "top_target": self.checkboxes["show_default_sprite"],
+                "left_target": self.checkboxes["show_default_sprite"],
+            },
         )
 
     def make_cat_image(self):
@@ -494,7 +521,11 @@ class SpriteInspectScreen(Screens):
         self.cat_elements["cat_image"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((0, -70), (350, 350))),
             pygame.transform.scale(self.cat_image, ui_scale_dimensions((450, 450))),
-            anchors={"bottom_target": self.cat_elements["platform"], "centerx": "centerx", "centery": "centery"},
+            anchors={
+                "bottom_target": self.cat_elements["platform"],
+                "centerx": "centerx",
+                "centery": "centery",
+            },
             container=self.cat_elements["container"],
         )
 
@@ -539,7 +570,7 @@ class SpriteInspectScreen(Screens):
                 line_spacing=1,
                 manager=MANAGER,
                 starting_height=6,
-                container=self.elements["life_stages_container"]
+                container=self.elements["life_stages_container"],
             )
 
     def switch_tab_life_stages(self):
@@ -593,7 +624,9 @@ class SpriteInspectScreen(Screens):
             self.life_stage_elements[f"age_symbol{i}"] = pygame_gui.elements.UIImage(
                 ui_scale(pygame.Rect((0, -30), (34, 34))),
                 pygame.transform.scale(
-                    image_cache.load_image(f"resources/images/icon_spritescreen_age_{age}.png"),
+                    image_cache.load_image(
+                        f"resources/images/icon_spritescreen_age_{age}.png"
+                    ),
                     ui_scale_dimensions((34, 34)),
                 ),
                 starting_height=2,
@@ -643,13 +676,12 @@ class SpriteInspectScreen(Screens):
             self.life_stage_elements[ele].kill()
         self.life_stage_elements = {}
 
-
-        self.sprite_detail_elements["textbox"] =pygame_gui.elements.UITextBox(
+        self.sprite_detail_elements["textbox"] = pygame_gui.elements.UITextBox(
             "",
             ui_scale(pygame.Rect((0, 0), (491, 160))),
             manager=MANAGER,
-            container=self.elements["life_stages_container"]
-            )
+            container=self.elements["life_stages_container"],
+        )
 
         self.update_disabled_buttons()
 
@@ -702,9 +734,7 @@ class SpriteInspectScreen(Screens):
         output += i18n.t("screens.sprite_inspect.skin_color_label")
         output += self.the_cat.pelt.skin.lower()
 
-
         return output
-
 
     def generate_image_to_save(self):
         """Generates the image to save, with platform if needed."""
