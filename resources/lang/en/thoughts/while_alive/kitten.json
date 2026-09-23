@@ -121,6 +121,39 @@
         }
     },
     {
+        "event_id": "kit_to_future_mentor",
+        "strings": [
+            "Hopes r_c will mentor {PRONOUN/m_c/object}",
+            "Wonders if r_c wants to mentor {PRONOUN/m_c/object}",
+            "Hopes r_c isn't {PRONOUN/m_c/poss} mentor",
+            "Wonders if r_c will be {PRONOUN/m_c/poss} mentor",
+            "Is begging to be r_c's apprentice",
+            "Is asking r_c why {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} have an apprentice"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "warrior",
+                    "medicine cat",
+                    "deputy",
+                    "leader",
+                    "mediator"
+                ],
+                "has_apprentice": {
+                    "current": false
+                }
+            }
+        }
+    },
+    {
         "event_id": "kit_alive_med_cat",
         "strings": [
             "Refuses to eat the herbs the medicine cat has given {PRONOUN/m_c/object} for {PRONOUN/m_c/poss} tummy",

@@ -41,6 +41,60 @@
         }
     },
     {
+        "event_id": "mentor_to_leader",
+        "strings": [
+            "Wonders when r_c will assign {PRONOUN/m_c/object} an apprentice",
+            "Is asking r_c if {PRONOUN/m_c/subject} can train the next apprentice",
+            "Wonders if r_c thinks {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not ready for an apprentice",
+            "Is discussing with r_c about when {PRONOUN/m_c/subject} can have an apprentice"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "medicine cat"
+                ],
+                "has_apprentice": {
+                    "current": false
+                }
+            },
+            "r_c": {
+                "status": [
+                    "leader"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "mentor_to_kit",
+        "strings": [
+            "Wonders if r_c will be {PRONOUN/m_c/poss} apprentice",
+            "Hopes to be r_c's mentor when the time comes",
+            "Hopes to have an apprentice like r_c",
+            "Wonders who r_c wants to be {PRONOUN/r_c/poss} mentor"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "medicine cat"
+                ],
+                "has_apprentice": {
+                    "current": false
+                }
+            },
+            "r_c": {
+                "status": [
+                    "kitten"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
         "event_id": "adventurous_medicine_cat",
         "strings": [
             "Heads out of Clan territory to look for new herbs",
