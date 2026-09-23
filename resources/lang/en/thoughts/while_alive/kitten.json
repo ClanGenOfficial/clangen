@@ -121,6 +121,39 @@
         }
     },
     {
+        "event_id": "kit_to_future_mentor",
+        "strings": [
+            "Hopes r_c will mentor {PRONOUN/m_c/object}",
+            "Wonders if r_c wants to mentor {PRONOUN/m_c/object}",
+            "Hopes r_c isn't {PRONOUN/m_c/poss} mentor",
+            "Wonders if r_c will be {PRONOUN/m_c/poss} mentor",
+            "Is begging to be r_c's apprentice",
+            "Is asking r_c why {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} have an apprentice"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "warrior",
+                    "medicine cat",
+                    "deputy",
+                    "leader",
+                    "mediator"
+                ],
+                "has_apprentice": {
+                    "current": false
+                }
+            }
+        }
+    },
+    {
         "event_id": "kit_alive_med_cat",
         "strings": [
             "Refuses to eat the herbs the medicine cat has given {PRONOUN/m_c/object} for {PRONOUN/m_c/poss} tummy",
@@ -256,7 +289,8 @@
     {
         "event_id": "tattletale_kit",
         "strings": [
-            "Is telling on r_c for something m_c was told {PRONOUN/m_c/subject} couldn't do"
+            "Is telling on r_c for something m_c was told {PRONOUN/m_c/subject} couldn't do",
+            "Is telling on r_c for something minor"
         ],
         "involved_cats": {
             "m_c": {
@@ -947,15 +981,47 @@
         }
     },
     {
+        "event_id": "kit_lead_parent",
+        "strings": [
+            "Hopes to grow up to be like r_c",
+            "Wants to be leader like {PRONOUN/m_c/poss} parent",
+            "Is pretending to be r_c's little deputy"
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "leader"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
         "event_id": "kit_med_parent",
         "strings": [
-            "Is visiting the medicine cat den to see {PRONOUN/m_c/poss} parent, r_c",
             "Is wondering why r_c became a medicine cat and not a warrior",
             "Wonders if {PRONOUN/m_c/subject}'ll receive prophecies like r_c",
             "Is pretending to be r_c",
-            "Is watching r_c work",
             "Is teaching the other kits about herbs",
-            "Wonders if {PRONOUN/m_c/subject} should be a medicine cat like r_c"
+            "Wonders if {PRONOUN/m_c/subject} should be a medicine cat like r_c",
+            "Is learning about herbs from r_c",
+            "Takes {PRONOUN/m_c/poss} herbs better then any other kit"
         ],
         "involved_cats": {
             "r_c": {

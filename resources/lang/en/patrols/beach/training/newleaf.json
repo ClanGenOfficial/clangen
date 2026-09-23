@@ -171,7 +171,7 @@
                             ]
                         },
                         "prior_abbreviation": [
-                            "any"
+                            "-r_c1", "-r_c2"
                         ]
                     }
                 },
@@ -179,7 +179,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c1",
@@ -201,7 +201,7 @@
                             "r_c2"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -243,7 +243,7 @@
                             ]
                         },
                         "prior_abbreviation": [
-                            "any"
+                            "-r_c1", "-r_c2"
                         ]
                     }
                 },
@@ -251,7 +251,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c1",
@@ -273,7 +273,7 @@
                             "r_c2"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -351,15 +351,16 @@
             ]
         },
         "involved_cats": {
-            "p_l": {
+            "s_c0": {
+                "prior_abbreviation": ["any"],
+                "status": ["-apprentice"],
                 "stat": {
                     "skill": [
                         "LORE,1",
                         "TEACHER,1",
                         "SWIMMER,1",
                         "RUNNER,1"
-                    ],
-                    "trait": []
+                    ]
                 }
             },
             "r_c1": {
@@ -384,27 +385,19 @@
                     "s_c0 rolls {PRONOUN/s_c0/poss} eyes. Yes, they <i>are</i> really here to walk and run and jump around the rockpools. It rained last night, and the rock is slippery, so these are perfect conditions. s_c0 tells the tale of a kit once saved by a warrior sprinting along the rocks in a storm, as r_c1 falls over and skids harmlessly into a pool."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "skill": [
                                 "LORE,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c1",
@@ -426,7 +419,7 @@
                             "r_c2"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -457,27 +450,19 @@
                     "s_c0 chides r_c1 for {PRONOUN/r_c1/poss} skepticism. Rock scrambling is its own art form, in c_n's territory. What if r_c1 needs to cross an exposed area during a storm, or if a battle between Clans occurred in the tide pools? r_c1 concedes and pays attention as s_c0 teaches, gaining sure-footed confidence that will serve {PRONOUN/r_c1/object} well."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "skill": [
                                 "TEACHER,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c1",
@@ -499,7 +484,7 @@
                             "r_c2"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -520,27 +505,19 @@
                     "s_c0 laughs. No, they're here for something way cooler — literally. Wetter, too. Here the rockpools are of deceptively different depths, so s_c0's going to teach r_c1 how to judge which ones are deep enough to dive into and which ones won't even get {PRONOUN/r_c1/poss} belly fur wet."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "skill": [
                                 "SWIMMER,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c1",
@@ -562,7 +539,7 @@
                             "r_c2"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -593,17 +570,14 @@
                             "skill": [
                                 "RUNNER,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c1",
@@ -625,7 +599,7 @@
                             "r_c2"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -647,13 +621,6 @@
                 "strings": [
                     "In {PRONOUN/r_c1/poss} haste to prove {PRONOUN/r_c1/subject} {VERB/r_c1/need/needs} no lessons on rock scrambling, r_c1... miscalculates. p_l hauls {PRONOUN/r_c1/object} from the rockpool by the scruff, hoping the fall will make the lesson stick when {PRONOUN/p_l/poss} teaching couldn't."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -707,13 +674,6 @@
                 "strings": [
                     "In {PRONOUN/r_c1/poss} haste to prove {PRONOUN/r_c1/subject} {VERB/r_c1/need/needs} no lessons on rock scrambling, r_c1... miscalculates. The water in newleaf isn't leaf-bare chill, but the cold makes {PRONOUN/r_c1/poss} mouth open in surprise, and by the time p_l hauls {PRONOUN/r_c1/object} out {PRONOUN/r_c1/subject}{VERB/r_c1/'ve/'s} inhaled sea water."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
