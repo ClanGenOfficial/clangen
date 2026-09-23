@@ -289,7 +289,8 @@
     {
         "event_id": "tattletale_kit",
         "strings": [
-            "Is telling on r_c for something m_c was told {PRONOUN/m_c/subject} couldn't do"
+            "Is telling on r_c for something m_c was told {PRONOUN/m_c/subject} couldn't do",
+            "Is telling on r_c for something minor"
         ],
         "involved_cats": {
             "m_c": {
@@ -980,15 +981,47 @@
         }
     },
     {
+        "event_id": "kit_lead_parent",
+        "strings": [
+            "Hopes to grow up to be like r_c",
+            "Wants to be leader like {PRONOUN/m_c/poss} parent",
+            "Is pretending to be r_c's little deputy"
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "leader"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
         "event_id": "kit_med_parent",
         "strings": [
-            "Is visiting the medicine cat den to see {PRONOUN/m_c/poss} parent, r_c",
             "Is wondering why r_c became a medicine cat and not a warrior",
             "Wonders if {PRONOUN/m_c/subject}'ll receive prophecies like r_c",
             "Is pretending to be r_c",
-            "Is watching r_c work",
             "Is teaching the other kits about herbs",
-            "Wonders if {PRONOUN/m_c/subject} should be a medicine cat like r_c"
+            "Wonders if {PRONOUN/m_c/subject} should be a medicine cat like r_c",
+            "Is learning about herbs from r_c",
+            "Takes {PRONOUN/m_c/poss} herbs better then any other kit"
         ],
         "involved_cats": {
             "r_c": {

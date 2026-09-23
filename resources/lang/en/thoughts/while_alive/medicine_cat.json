@@ -23,7 +23,11 @@
             "Has the foul taste of bitter herbs in {PRONOUN/m_c/poss} mouth",
             "Wonders if {PRONOUN/m_c/subject} could borrow some catmint from the other Clans",
             "Is happy that {PRONOUN/m_c/subject} chose life as a medicine cat",
-            "Is proud of {PRONOUN/m_c/poss} ability to care for {PRONOUN/m_c/poss} Clanmates"
+            "Is proud of {PRONOUN/m_c/poss} ability to care for {PRONOUN/m_c/poss} Clanmates",
+            "Is clearing pests out of the herb stores",
+            "Is preparing a poultice",
+            "Is soaking moss balls",
+            "Is enjoying the smell of herbs"
         ]
     },
     {
@@ -102,7 +106,7 @@
             "Is exploring unclaimed lands while searching for herbs",
             "Climbs a tree to gather alder bark instead of clawing the trunk",
             "Thinks about visiting StarClan just to explore their hunting grounds",
-            "Uses extra herbs just to go gather more"
+            "Uses extra herbs just so {PRONOUN/m_c/subject} can go gather more"
         ],
         "involved_cats": {
             "m_c": {
@@ -208,12 +212,19 @@
             "Is stocking up on yew berries",
             "Is stocking up on nightshade",
             "Is stocking up on watermint",
+            "Is stocking up on foxglove seeds",
             "Put herbs in prey to give cats stomachaches",
             "Refused to treat anyone today",
             "Is upset that {PRONOUN/m_c/subject} can't fight alongside the warriors",
             "Wishes to fight alongside the warriors",
             "Thinks {PRONOUN/m_c/subject}'d be an amazing leader",
-            "Ignores the low herb stocks and practices battle moves instead"
+            "Ignores the low herb stocks and practices battle moves instead",
+            "\"Jokingly\" prescribes r_c deathberries",
+            "\"Jokingly\" prescribes r_c foxglove seeds",
+            "Is prescribing r_c herbs to give {PRONOUN/r_c/object} a stomachache",
+            "Coats {PRONOUN/m_c/poss} claws in deathberry juice",
+            "Only gives a patient half the herbs {PRONOUN/r_c/subject} {VERB/r_c/need/needs}",
+            "Is giving a patient stale herbs"
         ],
         "involved_cats": {
             "m_c": {
@@ -301,7 +312,9 @@
         "strings": [
             "Counts and recounts the poppy seeds",
             "Makes sure none of the herbs get mixed up",
-            "Refuses to rush a procedure"
+            "Refuses to rush a procedure",
+            "Only uses the freshest herbs on a patient",
+            "Gives a patient the exact amount of herbs needed"
         ],
         "involved_cats": {
             "m_c": {
@@ -349,7 +362,8 @@
         "event_id": "cold_medicine_cat",
         "strings": [
             "Grumbles when a warrior asks for herbs for a simple bellyache",
-            "Has better things to do than pull splinters out of paws"
+            "Has better things to do than pull splinters out of paws",
+            "Gives a patient the exact amount of herbs needed and nothing more"
         ],
         "involved_cats": {
             "m_c": {
@@ -404,7 +418,9 @@
         "event_id": "confident_medicine_cat",
         "strings": [
             "Is proud of {PRONOUN/m_c/poss} ability to care for {PRONOUN/m_c/poss} Clanmates",
-            "Does not doubt {PRONOUN/m_c/self} while treating a cat"
+            "Does not doubt {PRONOUN/m_c/self} while treating a cat",
+            "Only uses the freshest herbs on a patient",
+            "Gives a patient the exact amount of herbs needed"
         ],
         "involved_cats": {
             "m_c": {
@@ -500,7 +516,7 @@
     {
         "event_id": "lonesome_medicine_cat_to_lead",
         "strings": [
-            "Wants to talk to the leader about having a new apprentice"
+            "Wants to talk to the leader about taking on a new apprentice"
         ],
         "involved_cats": {
             "m_c": {
@@ -556,13 +572,77 @@
     {
         "event_id": "nervous_medicine_cat",
         "strings": [
-            "Recounts the amount of catmint in {PRONOUN/m_c/poss} stores"
+            "Recounts the amount of catmint in {PRONOUN/m_c/poss} stores",
+            "Recounts the herb stores",
+            "Worries {PRONOUN/m_c/subject} {VERB/m_c/smell/smells} less like fragrant herbs and more like mouse bile",
+            "Is soothed by the calming scent of herbs",
+            "Worries about wasting herbs"
         ],
         "involved_cats": {
             "m_c": {
                 "stat": {
                     "trait": [
                         "nervous"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "nervous_medicine_cat_to_all_condition",
+        "strings": [
+            "Is panicking over r_c's condition getting worse... but it's a false alarm",
+            "Is fussing over r_c a little too much",
+            "Is panicking over r_c's condition getting worse"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "nervous"
+                    ]
+                }
+            },
+            "r_c": {
+                "health": {
+                    "condition": [
+                        "bruises",
+                        "cracked pads",
+                        "sore",
+                        "scrapes",
+                        "small cut",
+                        "tick bites",
+                        "torn ear",
+                        "claw-wound",
+                        "bite-wound",
+                        "cat bite",
+                        "beak bite",
+                        "snake bite",
+                        "rat bite",
+                        "dislocated joint",
+                        "sprain",
+                        "quilled by a porcupine",
+                        "torn pelt",
+                        "broken jaw",
+                        "broken back",
+                        "broken bone",
+                        "mangled leg",
+                        "mangled tail",
+                        "head damage",
+                        "severe burn",
+                        "severe headache",
+                        "running nose",
+                        "whitecough",
+                        "stomachache",
+                        "heat stroke",
+                        "a festering wound",
+                        "carrionplace disease",
+                        "an infected wound",
+                        "redcough",
+                        "kittencough",
+                        "poisoned",
+                        "greencough",
+                        "yellowcough"
                     ]
                 }
             }
@@ -608,7 +688,9 @@
         "event_id": "responsible_medicine_cat",
         "strings": [
             "Ensures that all of {PRONOUN/m_c/poss} duties are taken care of",
-            "Ignores the rumbling in {PRONOUN/m_c/poss} stomach in favor of treating cats"
+            "Ignores the rumbling in {PRONOUN/m_c/poss} stomach in favor of treating cats",
+            "Only uses the freshest herbs on a patient",
+            "Gives a patient the exact amount of herbs needed"
         ],
         "involved_cats": {
             "m_c": {
@@ -707,7 +789,9 @@
     {
         "event_id": "strict_medicine_cat",
         "strings": [
-            "Forbids anyone from disturbing {PRONOUN/m_c/object} when working"
+            "Forbids anyone from disturbing {PRONOUN/m_c/object} when working",
+            "Only uses the freshest herbs on a patient",
+            "Gives a patient the exact amount of herbs needed and nothing more"
         ],
         "involved_cats": {
             "m_c": {
@@ -752,7 +836,13 @@
     {
         "event_id": "vengeful_medicine_cat",
         "strings": [
-            "Refuses to treat a cat that once bullied {PRONOUN/m_c/object}"
+            "Refuses to treat a cat that once bullied {PRONOUN/m_c/object}",
+            "Stocks up on deathberries just in case...",
+            "Is stocking up on yew berries just in case...",
+            "Is stocking up on nightshade just in case...",
+            "Is stocking up on watermint just in case...",
+            "Is stocking up on foxglove seeds just in case...",
+            "Wishes {PRONOUN/m_c/subject} didn't have to treat <i>every</i> cat equally"
         ],
         "involved_cats": {
             "m_c": {
@@ -765,9 +855,52 @@
         }
     },
     {
+        "event_id": "vengeful_medcat_to_disliked",
+        "strings": [
+            "Is sneaking herbs into r_c's food to give {PRONOUN/r_c/object} a stomachache",
+            "\"Jokingly\" prescribes r_c deathberries",
+            "\"Jokingly\" prescribes r_c foxglove seeds",
+            "Is refusing to treat r_c",
+            "Only gives r_c half the herbs {PRONOUN/r_c/subject} {VERB/r_c/need/needs}",
+            "Wishes {PRONOUN/m_c/subject} didn't have to treat r_c",
+            "Is giving r_c stale herbs",
+            "Is making excuses to not have to treat r_c"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "vengeful"
+                    ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "dislikes"
+                ]
+            }
+        ]
+    },
+    {
         "event_id": "wise_medicine_cat",
         "strings": [
-            "Tells an ancient tale about StarClan"
+            "Tells an ancient tale about StarClan",
+            "Only uses the freshest herbs on a patient",
+            "Gives a patient the exact amount of herbs needed"
         ],
         "involved_cats": {
             "m_c": {
@@ -833,7 +966,8 @@
             "Is annoyed by Clan gossip surrounding {PRONOUN/m_c/poss} past and {PRONOUN/m_c/poss} connection to StarClan",
             "Knows a great garden in the Twolegplace for gathering catmint",
             "Wishes {PRONOUN/m_c/subject} could get {PRONOUN/m_c/poss} paws on the wrappings the vet uses",
-            "Wonders if there's a way to develop an immunizing poultice"
+            "Wonders if there's a way to develop an immunizing poultice",
+            "Has a newfound appreciation for {PRONOUN/m_c/poss} old vet"
         ],
         "involved_cats": {
             "m_c": {
@@ -854,6 +988,94 @@
                 "group": [
                     "-afterlife"
                 ]
+            }
+        }
+    },
+    {
+        "event_id": "medicine_cat_to_all_conditions",
+        "strings": [
+            "Is so busy treating r_c {PRONOUN/m_c/subject} {VERB/m_c/forget/forgets} to eat",
+            "Gives r_c extra herbs just in case",
+            "Is keeping an extra watchful eye on r_c",
+            "Is changing r_c's bedding",
+            "Is giving r_c some soaked moss",
+            "Is giving r_c {PRONOUN/m_c/poss} full attention",
+            "Is treating r_c",
+            "Is making sure r_c is comfortable",
+            "Is giving r_c herbs"
+        ],
+        "involved_cats": {
+            "r_c": {
+                "health": {
+                    "condition": [
+                        "scrapes",
+                        "tick bites",
+                        "torn ear",
+                        "claw-wound",
+                        "bite-wound",
+                        "cat bite",
+                        "beak bite",
+                        "snake bite",
+                        "rat bite",
+                        "dislocated joint",
+                        "sprain",
+                        "quilled by a porcupine",
+                        "torn pelt",
+                        "broken jaw",
+                        "broken back",
+                        "broken bone",
+                        "mangled leg",
+                        "mangled tail",
+                        "head damage",
+                        "severe burn",
+                        "severe headache",
+                        "running nose",
+                        "whitecough",
+                        "stomachache",
+                        "heat stroke",
+                        "a festering wound",
+                        "carrionplace disease",
+                        "an infected wound",
+                        "redcough",
+                        "kittencough",
+                        "poisoned",
+                        "greencough",
+                        "yellowcough"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "medicine_cat_to_all_injured",
+        "strings": [
+            "Is cleaning r_c's injury",
+            "Is listening to the story of how r_c got injured",
+            "Is rewrapping r_c's injury",
+            "Is putting a poultice on r_c's wound"
+
+        ],
+        "involved_cats": {
+            "r_c": {
+                "health": {
+                    "condition": [
+                        "scrapes",
+                        "small cut",
+                        "torn ear",
+                        "claw-wound",
+                        "bite-wound",
+                        "cat bite",
+                        "beak bite",
+                        "snake bite",
+                        "rat bite",
+                        "quilled by a porcupine",
+                        "torn pelt",
+                        "mangled leg",
+                        "mangled tail",
+                        "severe burn",
+                        "an infected wound"
+                    ]
+                }
             }
         }
     },
