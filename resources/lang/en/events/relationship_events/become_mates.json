@@ -17,7 +17,9 @@
 		"The Clan quickly notices how lovey-dovey m_c and r_c have been to each other since they became mates. No cat could be blamed for assuming they've been together for a very, very long time.",
 		"m_c and r_c don't announce anything to the Clan, but they're so sickeningly sweet to each other these days that it's hard to ignore the love that has blossomed between them.",
 		"The younger cats of c_n shy away from the new mates m_c and r_c, gagging at their sweet talk. m_c and r_c can't help but chuckle.",
-		"m_c can't bear ignoring the butterflies in {PRONOUN/m_c/poss} stomach any longer, and it's with great anxiety that {PRONOUN/m_c/subject} {VERB/m_c/confess/confesses} to r_c. {PRONOUN/m_c/poss/CAP} worries are soothed when r_c returns {PRONOUN/m_c/poss} feelings."
+		"m_c can't bear ignoring the butterflies in {PRONOUN/m_c/poss} stomach any longer, and it's with great anxiety that {PRONOUN/m_c/subject} {VERB/m_c/confess/confesses} to r_c. {PRONOUN/m_c/poss/CAP} worries are soothed when r_c returns {PRONOUN/m_c/poss} feelings.",
+		"Seeing m_c struggling to confess {PRONOUN/m_c/poss} feelings is the cutest thing to r_c. Of course {PRONOUN/r_c/subject} {VERB/r_c/want/wants} to be m_c's mate.",
+		"During a conversation with r_c, m_c accidentally admits that {PRONOUN/m_c/subject} {VERB/m_c/have/has} feelings for {PRONOUN/r_c/object}. The sudden confession is a shock, but when r_c suggests becoming mates, m_c can't say no."
 	],
 	"low_romantic":[
 		"m_c and r_c have become mates.",
@@ -48,7 +50,8 @@
 		"m_c can't deny these feelings anymore. {PRONOUN/m_c/subject/CAP} {VERB/m_c/pull/pulls} r_c aside and {VERB/m_c/declare/declares} {PRONOUN/m_c/poss} love. When both cats return to camp, they announce to the Clan that they've become mates.",
 		"When m_c and r_c announce they've become mates, the only question c_n has is what took them so long.",
 		"m_c has had a lot of time to process {PRONOUN/m_c/poss} newfound feelings for r_c, and feels like it is the time to confess. When {PRONOUN/m_c/subject} {VERB/m_c/get/gets} the courage to blurt it out, r_c joyfully agrees to be {PRONOUN/m_c/poss} mate.",
-		"m_c likes r_c. <i>Loves</i> {PRONOUN/r_c/object}, even. {PRONOUN/m_c/subject/CAP} {VERB/m_c/make/makes} that very clear when {PRONOUN/m_c/subject} {VERB/m_c/confess/confesses} to {PRONOUN/r_c/object}. Overjoyed, r_c tells m_c that {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} the same."
+		"m_c likes r_c. <i>Loves</i> {PRONOUN/r_c/object}, even. {PRONOUN/m_c/subject/CAP} {VERB/m_c/make/makes} that very clear when {PRONOUN/m_c/subject} {VERB/m_c/confess/confesses} to {PRONOUN/r_c/object}. Overjoyed, r_c tells m_c that {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} the same.",
+		"m_c always thought {PRONOUN/m_c/subject}'d spend all {PRONOUN/m_c/poss} life with r_c, but {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} begun to see {PRONOUN/r_c/object} in a different, non-platonic way. When m_c gets the courage to confess, r_c jumps at the opportunity to be {PRONOUN/m_c/poss} mate."
 	],
 	"rejected":[
 		"m_c confessed {PRONOUN/m_c/poss} feelings to r_c but {PRONOUN/m_c/subject} got rejected.",
@@ -69,7 +72,11 @@
 		"m_c tried {PRONOUN/m_c/poss} best to make sure {PRONOUN/m_c/poss} love confession to r_c went flawlessly. But what {PRONOUN/m_c/subject} never accounted for was that {PRONOUN/m_c/subject}'d be rejected.",
 		"m_c <i>swears</i> {PRONOUN/m_c/subject} {VERB/m_c/hear/hears} {PRONOUN/m_c/poss} heart breaking when r_c tells {PRONOUN/m_c/object} that {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} feel the same. All {PRONOUN/m_c/subject} can do is silently walk away.",
 		"m_c is in disbelief when r_c turns down {PRONOUN/m_c/poss} love confession. What {VERB/m_c/are/is} {PRONOUN/m_c/subject} going to do now? {PRONOUN/m_c/subject/CAP} can't live without r_c by {PRONOUN/m_c/poss} side!",
-		"m_c can't stand the butterflies in {PRONOUN/m_c/poss} stomach any longer, so {PRONOUN/m_c/subject} finally {VERB/m_c/confess/confesses} to r_c. m_c's worst fears are affirmed when r_c doesn't feel the same."
+		"m_c can't stand the butterflies in {PRONOUN/m_c/poss} stomach any longer, so {PRONOUN/m_c/subject} finally {VERB/m_c/confess/confesses} to r_c. m_c's worst fears are affirmed when r_c doesn't feel the same.",
+		"m_c prepares all day for {PRONOUN/m_c/poss} love confession to r_c. {PRONOUN/m_c/poss/CAP} hopes for a beautiful, romantic moment are torn to shreds when r_c explains that {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} feel the same.",
+		"r_c doesn't really know how to put this... It's just, well, {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} really see m_c that way. m_c walks away, rejected.",
+		"When m_c begins explaining that {PRONOUN/m_c/subject} {VERB/m_c/have/has} feelings for r_c, r_c quickly shuts it down. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} have the mentality for a relationship right now.",
+		"m_c confesses {PRONOUN/m_c/poss} feelings to r_c. The silence is <i>deafening</i>. r_c doesn't even have to say anything; m_c instantly understands that {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} feel the same."
 	],
 	"makeup_fail":[
 		"m_c wants to get back with r_c, so {PRONOUN/m_c/subject} confessed {PRONOUN/m_c/poss} feelings to r_c but was rejected.",
@@ -85,7 +92,8 @@
 		"It seems m_c never learns when to quit. r_c reminds {PRONOUN/m_c/object} of why they broke up and why m_c's learned nothing since then.",
 		"It seems a few promises to be better aren't enough to get r_c back. m_c's been sulking all day since.",
 		"Before m_c can even open {PRONOUN/m_c/poss} mouth, r_c tells {PRONOUN/m_c/object} to not even try to win {PRONOUN/r_c/object} back.",
-		"m_c sobs, wails and begs for r_c to take {PRONOUN/m_c/object} back, but r_c has long made {PRONOUN/r_c/poss} decision. They broke up for a <i>reason</i>."
+		"m_c sobs, wails and begs for r_c to take {PRONOUN/m_c/object} back, but r_c has long made {PRONOUN/r_c/poss} decision. They broke up for a <i>reason</i>.",
+		"m_c tries to list a bunch of reasons for why {PRONOUN/m_c/subject} and r_c should get back together, but r_c tells {PRONOUN/m_c/object} that {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} moved on, and m_c should too."
 	],
 	"high_romantic_makeup":[
 		"m_c really wanted to get back with r_c, so {PRONOUN/m_c/subject} confessed {PRONOUN/m_c/poss} feelings to r_c. They've become mates again.",
@@ -109,6 +117,7 @@
 		"m_c and r_c realized they still have some feelings for each other. They decided to try their relationship again and got back together.",
 		"Even though they broke up, m_c wants to try to start things over with r_c and asks {PRONOUN/r_c/object} to be {PRONOUN/m_c/poss} mate again. Though r_c is reluctant at first, {PRONOUN/r_c/subject} eventually {VERB/r_c/accept/accepts} and they become mates again.",
 		"Despite being told by every cat that it was a bad idea, m_c and r_c have gotten back together.",
-        "Everyone thought m_c and r_c were done for good after everything between the two. Yet here the pair sits, nuzzling each other with brand new conviction in their hearts."
+        "Everyone thought m_c and r_c were done for good after everything between the two. Yet here the pair sits, nuzzling each other with brand new conviction in their hearts.",
+		"Though they're hesitant at first, m_c and r_c decide to give their relationship another chance."
 	]
 }
