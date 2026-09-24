@@ -24,7 +24,7 @@ _Canon Examples: Sandstorm_
 
 ### **FIGHTER**
 
-Cats with the ```FIGHTER``` skill are those particularly talented in battle, whether it be against warriors, rogues, or predators. While all warriors learn to fight, these cats are particularly skilled and competent, able to accomplish feats unlike others. This skill is applicable in patrols and events where physical conflict is relevant. It can also be used to represent a cat’s physicality and athleticism.
+Cats with the ```FIGHTER``` skill are those particularly talented in battle, whether it be against warriors, rogues, or predators. While all warriors learn to fight, these cats are particularly skilled and competent, able to accomplish feats beyond others. This skill is applicable in patrols and events where physical conflict is relevant. It can also be used to represent a cat’s physicality and athleticism.
 
 _Canon Examples: Scourge, Tigerstar, Lionblaze_
 
@@ -58,14 +58,14 @@ _Canon Examples:_
 
 ### **SPEAKER**
 
-Cats with the ```SPEAKER``` skill are gifted with their words, whether they are used to inspire, outsmart, or deceive. They are skilled at communicating their ideas to others and convincing others of their words. This skill is applicable in events and patrols that are based on communication between clanmates, the Clan and outsiders, or with other Clans.
+Cats with the ```SPEAKER``` skill are gifted with their words, whether they are used to inspire, outsmart, or deceive. They are skilled at communicating their ideas to others and convincing others. This skill is applicable in events and patrols that are based on communication between clanmates, the Clan and outsiders, or with other Clans.
 
 _Canon Examples: Squirrelstar_
 
 
 ### **MEDIATOR**
 
-Cats with the ```MEDIATOR``` skill are those that are able to intuit and negotiate compromises between their peers. They specialize in listening to those around them and influencing relationships for both negative or positive. This skill is applicable in events and patrols that are focused on interpersonal communication as well as stoking or soothing conflict. 
+Cats with the ```MEDIATOR``` skill are those that are able to intuit and negotiate compromises between their peers. They specialize in listening to those around them and influencing relationships for better or for worse. This skill is applicable in events and patrols that are focused on interpersonal communication as well as stoking or soothing conflict. 
 
 _Canon Examples: Tree_
 
@@ -86,7 +86,7 @@ _Canon Examples:_
 
 ### **SENSE**
 
-Cats with the ```SENSE``` skill are those with exceptional sensory capabilities bordering on the supernatural. They can see, hear, taste, or smell further and more vividly than other cats making them exceptionally skilled at picking up on little details in their environment. This skill is applicable in patrols and events on many different spectrums, though it is particularly useful in the context of exploration and detail orientation. 
+Cats with the ```SENSE``` skill are those with exceptional sensory capabilities. At the highest tier their senses even border on supernatural. They can see, hear, taste, or smell further and more vividly than other cats making them exceptionally skilled at picking up on little details in their environment. This skill is applicable in patrols and events on many different spectrums, though it is particularly useful in the context of exploration and detail orientation. 
 
 _Canon Examples: Dovewing_
 
@@ -114,7 +114,7 @@ _Canon Examples:_
 
 ### **CAMP**
 
-Cats with the ```CAMP``` skill are experts at fortifying nests and improving the structural safety of their Clan’s camp. They tend to have great organizational skills. This skill is particularly applicable in events and patrols that require coordination, organization, or any rudimentary ‘building’ or trapsetting. 
+Cats with the ```CAMP``` skill are experts at fortifying dens and improving the structural safety of their Clan’s camp. They tend to have great organizational skills. This skill is particularly applicable in events and patrols that require coordination, organization, or any rudimentary ‘building’ or trapsetting. 
 
 _Canon Examples:_
 
@@ -128,7 +128,7 @@ _Canon Examples: Yellowfang_
 
 ### **STAR & DARK**
 
-Cats with the ```STAR	``` or ```DARK``` skills have an innate connection to their respective afterlife and are favored by cats from that afterlife. They do not experience prophecies or visions but rather tend to be the subject of them. They can occasionally see or hear cats from the respective afterlife or dream of them. This skill is particularly applicable in events and patrols as a form of luck or wisdom that intercedes in their daily life, or occasionally engages with visions/words of cats from the afterlife represented in the skill.  Thoughts and events are great places to consider how the skills would intersect with different personalities e.g. a confident cat thrilled to be chosen by the Dark Forest or an insecure cat unsure they can live up to StarClan’s expectations. 
+Cats with the ```STAR	``` or ```DARK``` skills have an innate connection to their respective afterlife and are favored by cats from that afterlife. They do not experience prophecies or visions but rather tend to be the subject of them. They can occasionally see or hear cats from the respective afterlife or dream of them. This skill is particularly applicable in events and patrols as a form of luck or wisdom that intercedes in their daily life, or occasional encounters with spirits from the afterlife represented in the skill.  Thoughts and events are great places to consider how the skills would intersect with different personalities e.g. a confident cat thrilled to be chosen by the Dark Forest or an insecure cat unsure they can live up to StarClan’s expectations. 
 
 _Canon Examples: Firestar (StarClan) / Ashfur (Dark), Ivypool (Dark)_
 
