@@ -167,10 +167,22 @@ SUPPLY_ADJUSTMENTS = [
 
 CRUEL_CARDS_ALL: dict = {}
 with open(
+    "resources/dicts/cruel_season/origin_cards.json", "r", encoding="utf-8"
+) as read_file:
+    CRUEL_CARDS_ORIGIN: dict = ujson.loads(read_file.read())
+CRUEL_CARDS_ALL.update(CRUEL_CARDS_ORIGIN)
+
+with open(
     "resources/dicts/cruel_season/behavior_cards.json", "r", encoding="utf-8"
 ) as read_file:
     CRUEL_CARDS_BEHAVIOR: dict = ujson.loads(read_file.read())
 CRUEL_CARDS_ALL.update(CRUEL_CARDS_BEHAVIOR)
+
+with open(
+    "resources/dicts/cruel_season/society_cards.json", "r", encoding="utf-8"
+) as read_file:
+    CRUEL_CARDS_SOCIETY: dict = ujson.loads(read_file.read())
+CRUEL_CARDS_ALL.update(CRUEL_CARDS_SOCIETY)
 
 with open(
     "resources/dicts/cruel_season/danger_cards.json", "r", encoding="utf-8"
@@ -184,11 +196,6 @@ with open(
     CRUEL_CARDS_ENVIRONMENT: dict = ujson.loads(read_file.read())
 CRUEL_CARDS_ALL.update(CRUEL_CARDS_ENVIRONMENT)
 
-with open(
-    "resources/dicts/cruel_season/origin_cards.json", "r", encoding="utf-8"
-) as read_file:
-    CRUEL_CARDS_ORIGIN: dict = ujson.loads(read_file.read())
-CRUEL_CARDS_ALL.update(CRUEL_CARDS_ORIGIN)
 
 with open(
     "resources/dicts/cruel_season/card_conflicts.json", "r", encoding="utf-8"
