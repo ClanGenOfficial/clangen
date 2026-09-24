@@ -1089,6 +1089,7 @@
                 "strings": [
                     "The two siblings have been looking for a safe place ever since n_c1 gave birth. They promise to earn their keep, and the patrol brings them back to camp with little further convincing."
                 ],
+                "exp_gained": 10,
                 "involved_cats": {
                     "n_c0": {
                         "can_create_new_cat": {},
@@ -1136,7 +1137,6 @@
                         ]
                     }
                 },
-                "exp_gained": 10,
                 "reputation_changes": {
                     "outsider": 1
                 },
@@ -1186,27 +1186,14 @@
                             "n_c0"
                         ],
                         "history": "This cat died while wandering.",
-                        "no_results": false
+                        "no_results": true
                     }
                 ],
                 "join": [
                     {
                         "cats": [
-                            "n_c0"
-                        ]
-                    },
-                    {
-                        "cats": [
-                            "n_c1"
-                        ]
-                    },
-                    {
-                        "cats": [
-                            "n_c2"
-                        ]
-                    },
-                    {
-                        "cats": [
+                            "n_c1",
+                            "n_c2",
                             "n_c3"
                         ]
                     }

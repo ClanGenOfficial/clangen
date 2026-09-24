@@ -5839,5 +5839,450 @@
                 ]
             }
         ]
+    },
+    {
+        "event_id": "gen_bord_flashflood_group1",
+        "types": [
+            "border"
+        ],
+        "season": ["-leaf-bare"],
+        "frequency": 2,
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ]
+        },
+        "chance_of_success": 40,
+        "patrol_art": "cat_sprites/gen_bord_flashflood_Wr",
+        "intro_strings": [
+            "There are dark clouds on the horizon, and p_l wonders if the patrol should continue.",
+            "Dark clouds hang over the patrol and p_l considers if it would be wiser to turn back.",
+            "There are dark clouds on the horizon, and p_l wonders if this patrol is best postponed."
+        ],
+        "decline_strings": [
+            "The patrol decides to head back early."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "While it's pretty gray up there, the promised rain never comes.",
+                    "The cats get wet in the rain, but the patrol is otherwise successful."
+                ],
+                "exp_gained": 20
+            },
+            {
+                "frequency": 4,
+                "location": ["beach"],
+                "strings": [
+                    "p_l makes a careful judgment, and the patrol keeps going. They stick to the clifftops, avoiding the low beaches as the rain begins to pour around them."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_to made a smart choice to keep cat_from's patrol on high ground during heavy rain."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["forest", "wetlands"],
+                "strings": [
+                    "s_c0 makes a careful judgment, and the patrol keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from approved of cat_to's choice to stick to high ground on a border patrol on a rainy day."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "required_cat_types": {
+                    "patrol_cats": [
+                        2,
+                        6
+                    ]
+                },
+                "strings": [
+                    "s_c0 makes a careful judgment, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from appreciated that cat_to led their border patrol to higher ground during a rainstorm."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 0,
+                "strings": [
+                    "It's not worth the risk. s_c0 convinces the patrol to head for home. No patrolling will happen today."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "careful",
+                                "insecure",
+                                "nervous"
+                            ]
+                        }
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from thought the call from cat_to to head home early was wise."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["covered"]
+                },
+                "strings": [
+                    "The sky opens up on the patrol and the cats are left scrambling for shelter. They end up huddling in POI in an attempt to stay dry and the original goals of this patrol are forgotten."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["high_ground"]
+                },
+                "strings": [
+                    "The sky opens up on the patrol and p_l yells for the patrol to find higher ground. Luckily POI is near and the cats huddle atop it. They end up drenched, but safe from the flash flood they watch ravage the landscape. Unfortunately, the border must go unpatrolled for today."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 3,
+                "poi": {
+                    "tags": ["water:flowing"]
+                },
+                "strings": [
+                    "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away. Some of the patrol manage to pull themselves back to solid ground before they're swept too far, but others are found later on the banks of POI, battered half to death."
+                ],
+                "exp_gained": 0,
+                "condition": [
+                    {
+                        "cats": [
+                            "some_patrol"
+                        ],
+                        "condition": [
+                            "blunt_force_injury",
+                            "water in their lungs"
+                        ],
+                        "scar_history": "m_c was injured in a flood.",
+                        "death_history": "m_c died of injuries sustained in a flood."
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "strings": [
+                    "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away. p_l yowls out a warning, and most of the patrol is able to react fast and strike out strongly for passing pieces of driftwood, but s_c0 doesn't make it, sinking beneath the water."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "exp_gained": 0,
+                "death": [
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "history": "m_c was drowned by floodwaters."
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "required_cat_types": {
+                    "patrol_cats": [
+                        3,
+                        6
+                    ]
+                },
+                "strings": [
+                    "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away. Some manage to ride the waves, paddling for their lives, but many are lost forever."
+                ],
+                "exp_gained": 0,
+                "death": [
+                    {
+                        "cats": [
+                            "some_patrol"
+                        ],
+                        "history": "This cat was drowned by floodwaters."
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "tags": [
+                    "disaster"
+                ],
+                "required_cat_types": {
+                    "patrol_cats": [
+                        2,
+                        6
+                    ]
+                },
+                "strings": [
+                    "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away."
+                ],
+                "exp_gained": 0,
+                "death": [
+                    {
+                        "cats": [
+                            "patrol_cats"
+                        ],
+                        "history": "This cat was drowned by floodwaters."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_bord_flashflood_solo1",
+        "types": [
+            "border"
+        ],
+        "frequency": 2,
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ]
+        },
+        "chance_of_success": 40,
+        "patrol_art": "cat_sprites/gen_bord_flashflood_Wr",
+        "intro_strings": [
+            "There are dark clouds on the horizon, and p_l wonders if {PRONOUN/p_l/subject} should continue.",
+            "Dark clouds hang overhead and p_l considers if it would be wiser to turn back."
+        ],
+        "decline_strings": [
+            "p_l decides to head back early."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "While it's pretty gray up there, the promised rain never comes.",
+                    "p_l gets wet in the rain, but otherwise, the patrol is successful."
+                ],
+                "exp_gained": 20
+            },
+            {
+                "frequency": 4,
+                "location": ["beach"],
+                "strings": [
+                    "p_l makes a careful judgment and keeps going. {PRONOUN/p_l/subject/CAP} {VERB/p_l/stick/sticks} to the clifftops, avoiding the low beaches as the rain begins to pour around {PRONOUN/p_l/object}."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20
+            },
+            {
+                "frequency": 4,
+                "location": ["forest", "wetlands"],
+                "strings": [
+                    "p_l makes a careful judgment and keeps going. {PRONOUN/p_l/subject/CAP} {VERB/p_l/stick/sticks} to solid ground, sometimes routing {PRONOUN/p_l/self} through the trees as the rain begins to pour around {PRONOUN/p_l/object}."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "It's not worth the risk. p_l heads for home. No patrolling will happen today."
+                ],
+                "exp_gained": 0,
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": [
+                                "careful",
+                                "insecure",
+                                "nervous"
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["covered"]
+                },
+                "strings": [
+                    "The sky opens up on p_l and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} left scrambling for shelter. {PRONOUN/p_l/subject/CAP} end up huddling in POI in an attempt to stay dry and the original goals of the patrol are forgotten."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["high_ground"]
+                },
+                "strings": [
+                    "The sky opens up on the patrol and p_l scrambles for higher ground. Luckily POI is near and p_l climbs atop it. {PRONOUN/p_l/subject/CAP} end up drenched, but safe from the flash flood {PRONOUN/p_l/subject} {VERB/p_l/watch/watches} ravage the landscape. Unfortunately, the border must go unpatrolled for today."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "There is a downpour, and a sudden flood from the overflowing river sweeps p_l away. Injured, gasping for air and paddling desperately, p_l remembers enough of {PRONOUN/p_l/poss} training to keep an eye out for driftwood. {PRONOUN/p_l/subject/CAP} {VERB/p_l/sink/sinks} {PRONOUN/p_l/poss} claws into the first piece that's swept past {PRONOUN/p_l/object}. It saves {PRONOUN/p_l/poss} life.",
+                    "There is a downpour, and a sudden flood from the overflowing river sweeps p_l away. With the little warning {PRONOUN/p_l/subject} {VERB/p_l/have/has}, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a branch being carried by the water and {VERB/p_l/strike/strikes} out strongly for it. Hurt and shivering from both exhaustion and the cold, {PRONOUN/p_l/subject} nevertheless {VERB/p_l/cling/clings} to safety as the floodwaters run their course."
+                ],
+                "exp_gained": 0,
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "blunt_force_injury",
+                            "water in their lungs"
+                        ],
+                        "scar_history": "m_c was injured in a flood.",
+                        "death_history": "m_c died of injuries sustained in a flood."
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "strings": [
+                    "There is a downpour, and a sudden flood from the overflowing river sweeps p_l away."
+                ],
+                "exp_gained": 0,
+                "death": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "history": "m_c was drowned by floodwaters."
+                    }
+                ]
+            }
+        ]
     }
 ]
