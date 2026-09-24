@@ -1,35 +1,4 @@
 {
-  "resolute": {
-    "card_art": "behavior/resolute.png",
-    "modifiers": {
-      "focus.duration": 6
-    }
-  },
-  "fated_paths": {
-    "card_art": "behavior/resolute.png",
-    "modifiers": {
-      "ranks.can_manually_change.all": false,
-      "mates.allow_manual": false,
-      "settings.force_enable.deputy": true
-    }
-  },
-  "enmity": {
-    "card_art": "behavior/resolute.png",
-    "modifiers": {
-      "reputation.other_clans.relation_cap": 7,
-      "clan_creation.starting_clan_relation": [1, 7]
-    }
-  },
-  "survival_of_fittest": {
-    "card_art": "behavior/survival_of_fittest.png",
-    "modifiers": {
-      "prey.feeding.starting_order": "experience_first",
-      "prey.feeding.lock_order": true,
-      "prey.feeding.starting_priority": "hunter_first",
-      "prey.feeding.lock_priority": true,
-      "prey.feeding.allow_manual_feeding": false
-    }
-  },
   "kit_season": {
     "card_art": "behavior/underpopulated.png",
     "modifiers": {
@@ -119,24 +88,11 @@
       "progress.difficulty_modifier": 0.5
     }
   },
-  "malicious_aura": {
-    "card_art": "behavior/resolute.png",
-    "modifiers": {
-      "outsiders.max_reputation": 29,
-      "outsiders.starting_reputation": 15
-    }
-  },
   "mate_breakup": {
     "card_art": "behavior/sorrow.png",
     "modifiers": {
       "mates.breakup.initial_chance.threshold": 360,
       "mates.breakup.initial_chance.default_chance": 15
-    }
-  },
-  "prideful": {
-    "card_art": "behavior/prideful.png",
-    "modifiers": {
-       "pregnancy.can_have_kits": ["leader", "loner", "rogue", "kittypet"]
     }
   },
   "weak_stars": {
@@ -157,15 +113,6 @@
     "card_art": "behavior/burnout.png",
     "modifiers": {
       "medcats.medcat_base_capacity": 5
-    }
-  },
-  "pride_and_joy": {
-    "card_art": "behavior/pride_and_joy.png",
-    "modifiers": {
-      "settings.force_enable.deputy": true,
-      "ranks.can_manually_change.deputy": false,
-      "clan_creation.ranks_needed.deputy": false,
-      "ranks.only_leader_kits_deputy": true
     }
   }
 }

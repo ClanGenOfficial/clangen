@@ -53,6 +53,8 @@ class ListCardsCommand(Command):
             card_scope = None
         elif args[0] == "behavior":
             card_scope = constants.CRUEL_CARDS_BEHAVIOR
+        elif args[0] == "society":
+            card_scope = constants.CRUEL_CARDS_SOCIETY
         elif args[0] == "danger":
             card_scope = constants.CRUEL_CARDS_DANGER
         elif args[0] == "environment":

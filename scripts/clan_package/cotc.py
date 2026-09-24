@@ -9,7 +9,7 @@ def get_warring_clan():
     enemy_clan = None
     if game.clan.war.get("at_war", False):
         for other_clan in game.clan.all_other_clans:
-            if other_clan.name == game.clan.war["enemy"]:
+            if other_clan.prefix == game.clan.war["enemy"]:
                 enemy_clan = other_clan
 
     return enemy_clan

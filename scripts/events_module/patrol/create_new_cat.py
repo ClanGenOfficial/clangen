@@ -171,12 +171,6 @@ def updated_create_new_cat(
             if adoptive_parents
             else None,
         )
-        # check if kittypets get collar
-        if created_cat.status.social == CatSocial.KITTYPET and bool(getrandbits(1)):
-            created_cat.pelt.accessory = (
-                *created_cat.pelt.accessory,
-                choice(created_cat.pelt.collar_accessories),
-            )
 
         # MATES
         _assign_mates(created_cat, involved_cats, option_dict)
@@ -286,7 +280,7 @@ def _assign_name(created_cat: Cat):
         # give kittypets a kittypet name
         if created_cat.status.social == CatSocial.KITTYPET:
             weights = constants.CONFIG["cat_name_controls"]["kittypet"]
-            # check if the kittypets come with a pretty acc
+            # check if the kittypets come with a collar
             if bool(getrandbits(1)):
                 created_cat.pelt.accessory = (
                     *created_cat.pelt.accessory,
