@@ -109,7 +109,7 @@ _Canon Examples:_
 
 Cats with the ```LORE``` skill are knowledgeable about information and the history of the cats and land around them. This skill is applicable in events and patrols that have to do with knowledge or the Clan’s history. 
 
-_Canon Examples:_
+_Canon Examples: Skywatcher_
 
 
 ### **CAMP**
