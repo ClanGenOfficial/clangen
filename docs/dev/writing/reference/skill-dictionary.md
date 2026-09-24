@@ -137,7 +137,7 @@ _Canon Examples: Firestar (StarClan) / Ashfur (Dark), Ivypool (Dark)_
 
 Cats with the ```OMEN``` skill are able to read signs in the natural world, such as the way leaves unfold, or the sound of birdcalls into predictions of the future. They do not receive visions or receive spoken-word riddles like those with the ```PROPHET``` skill. While they can receive omens of imminent events, that could be applicable to the way they behave in events or patrols, they also can interpret and intuit events far in the future to attempt to predict the fate of cats in the Clan.
 
-_Canon Examples: Rock_
+_Canon Examples: Rock, Cinderpelt_
 
 
 ### **DREAM**
