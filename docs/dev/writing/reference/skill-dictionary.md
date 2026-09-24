@@ -39,7 +39,7 @@ _Canon Examples: Windstar_
 
 Cats with the ```CLIMBER``` skill are remarkably skilled at scaling the terrain, whether it be trees or cliffs. Their skill sets them apart from other climbers of the Clan due to speed or safety. This skill is applicable in events and patrols involving heights, especially to lessen the risk of height-related challenges. 
 
-_Canon Examples:_
+_Canon Examples: Cherrytail, Sparrowpelt_
 
 
 ### **SWIMMER**
