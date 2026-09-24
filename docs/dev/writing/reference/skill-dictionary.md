@@ -14,13 +14,13 @@ For this documentation, each skill is listed under its internal name.
 
 Cats with the ```TEACHER``` skill are those that are skilled teachers and able to readily pass on knowledge to both their peers and apprentices. Cats with the ```TEACHER``` skill can teach cats with any skill at an increased rate except for supernatural skills that cannot be trained. This skill is particularly applicable in patrols and events where cats are learning information from another cat and are being trained.
 
-_Canon Examples: Rosepetal_
+_Canon Examples: Rosepetal, Tawnypelt_
 
 ### **HUNTER**
 
 While nearly every cat can hunt, cats with the ```HUNTER``` skill are those that are unusually gifted. Those that reach the skill tier ‘Renowned Hunter’ may go down in legend as some of the best hunters of their Clan. This skill is particularly applicable in hunting patrols. However, it can also be used in situations where tracking (like one would prey) is required or hunting other cats. 
 
-_Canon Examples: Sandstorm_
+_Canon Examples: Sandstorm, Sparkpelt_
 
 ### **FIGHTER**
 
@@ -53,14 +53,14 @@ _Canon Examples: Silverstream, Riverstar_
 
 Cats with the ```STEALTH``` skill are those adept at stalking and hiding. Amongst their peers they are able to disappear into cover with ease and remain undetected by predator and prey alike. This skill is applicable in events and patrols in which stealth is a focus or would be advantageous to survival. 
 
-_Canon Examples: Shadowstar_
+_Canon Examples: Shadowstar, Ivypool_
 
 
 ### **SPEAKER**
 
 Cats with the ```SPEAKER``` skill are gifted with their words, whether they are used to inspire, outsmart, or deceive. They are skilled at communicating their ideas to others and convincing others. This skill is applicable in events and patrols that are based on communication between clanmates, the Clan and outsiders, or with other Clans.
 
-_Canon Examples: Squirrelstar, Tigerstar I_
+_Canon Examples: Squirrelstar, Tigerstar I, Ashfur_
 
 
 ### **MEDIATOR**
@@ -137,7 +137,7 @@ _Canon Examples: Firestar (StarClan) / Ashfur (Dark), Ivypool (Dark)_
 
 Cats with the ```OMEN``` skill are able to read signs in the natural world, such as the way leaves unfold, or the sound of birdcalls into predictions of the future. They do not receive visions or receive spoken-word riddles like those with the ```PROPHET``` skill. While they can receive omens of imminent events, that could be applicable to the way they behave in events or patrols, they also can interpret and intuit events far in the future to attempt to predict the fate of cats in the Clan.
 
-_Canon Examples: Rock, Cinderpelt_
+_Canon Examples: Rock, Cinderpelt, Pebbleheart_
 
 
 ### **DREAM**
