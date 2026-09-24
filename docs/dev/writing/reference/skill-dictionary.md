@@ -81,7 +81,7 @@ _Canon Examples: Jayfeather_
 
 Cats with the ```INSIGHTFUL``` skill are able to intuit the emotions and potential motivations of cats around them. They are skilled at detecting truth from lies as well as unspoken or masked feelings. This skill is applicable in events and patrols that focus on interpersonal relationships or discerning the motivations of rogues or other Clans.
 
-_Canon Examples:_
+_Canon Examples: Firestar, Hawkfrost_
 
 
 ### **SENSE**
