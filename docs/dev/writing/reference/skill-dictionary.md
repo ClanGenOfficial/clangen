@@ -32,7 +32,7 @@ _Canon Examples: Scourge, Tigerstar I, Lionblaze_
 
 Cats with the ```RUNNER``` skill are the fastest cats among their peers. Not only are they swift, but their agility is renowned and they run circles around predator and prey alike. This skill is applicable in border patrols, hunting patrols, and concepts linked to battle. It can also be used to represent a cat’s athleticism. 
 
-_Canon Examples: Windstar, Ashfoot_
+_Canon Examples: Windstar, Ashfoot, Runningwind_
 
 
 ### **CLIMBER**
@@ -46,7 +46,7 @@ _Canon Examples: Cherrytail, Sparrowpelt_
 
 Cats with the ```SWIMMER``` skill are unusually strong swimmers and have little issue with getting their pelt wet. Their skill set makes them perfect for patrols involving any body of water and also makes them less likely to be prone to hazards such as drowning. 
 
-_Canon Examples: Silverstream_
+_Canon Examples: Silverstream, Riverstar_
 
 
 ### **STEALTH**
@@ -95,21 +95,21 @@ _Canon Examples: Dovewing_
 
 Cats with the ```KIT``` skill are particularly skilled in taking care of the young and old alike. This skill has little to do with the cat’s personality and more to do with their capabilities. It is particularly applicable in thoughts, events, and patrols that are about the wellbeing of others, particularly looking after younger cats. 
 
-_Canon Examples: Daisy_
+_Canon Examples: Daisy, Ferncloud_
 
 
 ### **STORY**
 
 Cats with the ```STORY``` skill are able to entertain others with fabulous stories and tales. They can use these stories to motivate or entertain those around them. It is particularly applicable in events and patrols that take place in groups with an audience to entertain. 
 
-_Canon Examples:_ 
+_Canon Examples: Purdy, Sol_ 
 
 
 ### **LORE**
 
 Cats with the ```LORE``` skill are knowledgeable about information and the history of the cats and land around them. This skill is applicable in events and patrols that have to do with knowledge or the Clan’s history. 
 
-_Canon Examples: Skywatcher_
+_Canon Examples: Skywatcher, Midnight_
 
 
 ### **CAMP**
@@ -123,7 +123,7 @@ _Canon Examples: Dustpelt, Brackenfur_
 
 Cats with the ```HEALER``` skill are those that are particularly skilled or innovative healers. While cats with the Healer skill make great medicine cats they don’t necessarily have to be one nor do they necessarily have a great bedside manner. This skill is particularly applicable in thoughts, events, and patrols that have to do with medicine or herb gathering. It is important to explore this skill in both how it is applicable to medicine cats but also how it can be written for clan members of other roles. 
 
-_Canon Examples: Yellowfang_
+_Canon Examples: Yellowfang, Leafpool_
 
 
 ### **STAR & DARK**
@@ -151,14 +151,14 @@ _Canon Examples: Jayfeather_
 
 Cats with the ```CLAIRVOYANT``` skill are able to sense fragments of the past or potential futures. Unlike other supernatural skills, which tend to be outside the cat’s control, clairvoyant cats have some degree of control over when they have these visions or can even channel them for their benefit. These visions are both visual or sensory but tend to be vague flashes in time, not long sustained visions. This skill is applicable in events and patrols that directly engage with these visions in snippet lists or even as a way to foresee danger. 
 
-_Canon Examples: Stoneteller_
+_Canon Examples: Stoneteller, Goosefeather_
 
 
 ### **PROPHET**
 
 Cats with the ```PROPHET``` skill are those that receive visions or spoken-word prophetic riddles, typically from StarClan. These cats untangle the potential meanings of the prophecies and who they potentially affect. This skill is more applicable in events and patrols centered around receiving such prophecies or helping interpret them. 
 
-_Canon Examples: Spottedleaf_
+_Canon Examples: Spottedleaf, Firestar_
 
 
 ### **GHOST**
