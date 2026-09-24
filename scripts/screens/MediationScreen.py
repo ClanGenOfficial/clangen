@@ -851,7 +851,7 @@ class MediationScreen(Screens):
 
         # show relation
         if other_cat:
-            if other_cat in cat.mate:
+            if other_cat.ID in cat.mate:
                 output += f"{i18n.t('general.are_mates')}<br>"
             elif cat.is_parent(other_cat):
                 output += f"{i18n.t('general.parent')}<br>"
