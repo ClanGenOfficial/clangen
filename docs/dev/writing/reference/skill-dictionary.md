@@ -165,5 +165,5 @@ _Canon Examples: Spottedleaf_
 
 Cats with the ```GHOST``` skill are able to see ghosts. They often see wispy figures of their ancestors and strangers alike. They are not necessarily chosen by any of the afterlives, but occasionally get glimpses of the spirits of the past and how they engaged in the living world. This skill is applicable in events and patrols that involve death and the dead. They are also subject matter for interactions with ghosts. 
 
-_Canon Examples: Rootspring_
+_Canon Examples: Rootspring, Goosefeather_
 
