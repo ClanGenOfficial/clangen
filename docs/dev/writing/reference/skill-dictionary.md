@@ -116,7 +116,7 @@ _Canon Examples:_
 
 Cats with the ```CAMP``` skill are experts at fortifying dens and improving the structural safety of their Clan’s camp. They tend to have great organizational skills. This skill is particularly applicable in events and patrols that require coordination, organization, or any rudimentary ‘building’ or trapsetting. 
 
-_Canon Examples:_
+_Canon Examples: Dustpelt, Brackenfur_
 
 
 ### **HEALER**
