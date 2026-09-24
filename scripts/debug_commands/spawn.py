@@ -86,6 +86,58 @@ class SpawnColoursCommand(Command):
             add_output_line_to_log(f"Added {cat.name} with ID {cat.ID}")
 
 
+class SpawnColoursTintsCommand(Command):
+    name = "tint colours"
+    description = "Spawn a cat of each colour for a given pelt and tint."
+    usage = "<pelt_name: str> <tint: str>"
+    aliases = ["tc"]
+
+    def callback(self, args: List[str]):
+        possible_pelts_str = ", ".join(
+            set(Sprites.PELT_TO_RECIPE.keys()) - {"Tortie", "Calico"}
+        )
+        if len(args) < 2:
+            add_output_line_to_log(f"Must specify a pelt and tint! (in that order)")
+            return
+
+        pelt_name = args[0]
+        if pelt_name not in Sprites.PELT_TO_RECIPE:
+            add_output_line_to_log(
+                f"Pelt {pelt_name} does not seem to exist! Possible pelts are {possible_pelts_str}."
+            )
+            return
+
+        tint_colours = sprites.cat_tints["tint_colours"].keys()
+        dilute_tint_colours = sprites.cat_tints["dilute_tint_colours"].keys()
+        remove_tone_tint_colours = sprites.cat_tints["remove_tone_tint_colours"].keys()
+
+        possible_tints_str = ", ".join(
+            set(tint_colours and dilute_tint_colours and remove_tone_tint_colours)
+        )
+
+        tint_name = args[1]
+        if not (
+            tint_name in tint_colours
+            or tint_name in dilute_tint_colours
+            or tint_name in remove_tone_tint_colours
+        ):
+            add_output_line_to_log(
+                f"Tint {tint_name} does not seem to exist! Possible tints are {possible_tints_str}."
+            )
+            return
+
+        for colour in Sprites.PELT_COLOR_PALETTES:
+            cat = NewCatFactory.create_cat(
+                prefix=f"{tint_name}_{pelt_name}_{colour}",
+                suffix="",
+                moons=60,
+                pelt=Pelt(name=pelt_name, colour=colour, tint=tint_name),
+            )
+            cat.pelt.cat_sprites["adult"] = "adult_short2"
+            game.clan.add_cat(cat)
+            add_output_line_to_log(f"Added {cat.name} with ID {cat.ID}")
+
+
 class SpawnTintsCommand(Command):
     name = "tints"
     description = "Spawn a cat of each tint for a given pelt and colour."
@@ -148,6 +200,7 @@ class SpawnCommand(Command):
         SpawnPeltsCommand(),
         SpawnColoursCommand(),
         SpawnTintsCommand(),
+        SpawnColoursTintsCommand(),
     ]
 
     def callback(self, args: List[str]):
