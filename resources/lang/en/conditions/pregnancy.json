@@ -230,8 +230,10 @@
             "m_c's eyes meet r_c's at the entrance to the medicine cat's den, exchanging a secret glance. mc_mate coos over the {insert}, none the wiser to the affair."
         ],
         "affair_mated_samesex": [
-            "mc_mate looks over m_c's new {insert} with mixed feelings. On one paw, m_c did cheat on {PRONOUN/mc_mate/object} with r_c, but at the same time, {PRONOUN/mc_mate/subject} can help m_c raise this {insert} together.",
-            "mc_mate can't understand why m_c would ever cheat on {PRONOUN/mc_mate/object} with r_c, but {PRONOUN/mc_mate/subject} can't just abandon the {insert}. Maybe {PRONOUN/mc_mate/subject} could help with raising them."
+            "mc_mate looks over m_c's new {insert} with mixed feelings. It's not the litter's fault... but why did m_c cheat on {PRONOUN/mc_mate/object} with r_c? Could it be that {PRONOUN/mc_mate/subject} {VERB/mc_mate/weren't/wasn't} a good enough mate?",
+            "mc_mate can't understand why m_c would ever cheat on {PRONOUN/mc_mate/object}. They could've raised a family together, but the {insert} {PRONOUN/m_c/subject} had with r_c is now there to taunt mc_mate with what could've been.",
+            "m_c swears on StarClan that {PRONOUN/m_c/poss} {insert} is mc_mate's, despite the obvious. mc_mate can't believe {PRONOUN/m_c/subject} would lie to {PRONOUN/mc_mate/poss} face. The {insert} is clearly r_c's.",
+            "m_c and mc_mate could've adopted kits one day. But m_c's newly born {insert} is clearly not mc_mate's. They're r_c's — and all mc_mate can do is sit there in disbelief as {PRONOUN/mc_mate/subject} {VERB/mc_mate/process/processes} that {PRONOUN/mc_mate/subject}{VERB/mc_mate/'ve/'s} been cheated on."
         ],
         "affair_mated_dead_mate": [
             "mc_mate was such a wonderful cat, deserving of being a parent, even after death... so why does m_c's {insert} look more like r_c instead?",
