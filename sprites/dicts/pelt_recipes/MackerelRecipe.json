@@ -65,7 +65,7 @@
             "layers": {
                 "5":
                 {
-                    "group_name": "BACKTAILTOPGRAD",
+                    "group_name": "BACKTAILPATTERNGRAD",
                     "color": "pattern_gradient_top"
                 },
                 "4.5":
@@ -85,12 +85,12 @@
             "layers": {
                 "5":
                 {
-                    "group_name": "BACKTAILTOPGRAD",
+                    "group_name": "BACKTAILPATTERNGRAD",
                     "color": "pattern_gradient_top"
                 },
                 "3":
                 {
-                    "group_name": "BACKTAILTOPGRAD"
+                    "group_name": "BACKTAILPATTERNGRAD"
                 }
 
             }

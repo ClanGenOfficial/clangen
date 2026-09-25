@@ -43,7 +43,7 @@ Visual guide to all pelt parts, located in `sprite/pelt_part_mask.png`. For visi
 | ![image][FRECKLEDPATTERNBACK]   | FRECKLEDPATTERNBACK <br><br> Another part of the pattern for the Freckled Pelt.          |
 | ![image][FRECKLEDPATTERNGRAD]   | FRECKLEDPATTERNGRAD <br><br> A version of BASICPATTERNGRAD for the Freckled Pelt.        |
 | ![image][LEGTAILBOTTOMGRAD]         | LEGTAILBOTTOMGRAD <br><br>  A bottom gradient that focuses on the legs.  Used for BLOSSOM.   |
-| ![image][BACKTAILTOPGRAD]   | BACKTAILTOPGRAD <br><br> A varient of the pattern gradient. Used for BLOSSOM.        |
+| ![image][BACKTAILPATTERNGRAD]   | BACKTAILPATTERNGRAD <br><br> A varient of the pattern gradient. Used for BLOSSOM.        |
 | ![image][LEGPATTERNGRAD]        | LEGPATTERNGRAD <br><br> A varient of the pattern gradient, focused on the legs. Used for BLOSSOM.   |
 
 
@@ -91,5 +91,5 @@ Visual guide to all pelt parts, located in `sprite/pelt_part_mask.png`. For visi
 [SOKOKEPATTERNFILLGRAD]:  img/pelt-parts-visual-guide/SOKOKEPATTERNFILLGRAD.png
 [MASKEDCHIN]:  img/pelt-parts-visual-guide/MASKEDCHIN.png
 [LEGTAILBOTTOMGRAD]:  img/pelt-parts-visual-guide/LEGTAILBOTTOMGRAD.png
-[BACKTAILTOPGRAD]:  img/pelt-parts-visual-guide/BACKTAILTOPGRAD.png
+[BACKTAILPATTERNGRAD]:  img/pelt-parts-visual-guide/BACKTAILPATTERNGRAD.png
 [LEGPATTERNGRAD]:  img/pelt-parts-visual-guide/LEGPATTERNGRAD.png
