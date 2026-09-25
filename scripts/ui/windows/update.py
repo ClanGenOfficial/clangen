@@ -3,7 +3,6 @@ import threading
 import pygame
 import pygame_gui
 
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.housekeeping.progress_bar_updater import UIUpdateProgressBar
 from scripts.housekeeping.update import self_update, UpdateChannel
 from scripts.housekeeping.version import get_version_info
@@ -26,10 +25,9 @@ class UpdateWindow(GameWindow):
         )
         self.announce_restart_callback = announce_restart_callback
 
-        self.step_text = UITextBoxTweaked(
+        self.step_text = pygame_gui.elements.UITextBox(
             "windows.downloading_update",
             ui_scale(pygame.Rect((20, 40), (260, -1))),
-            line_spacing=1,
             object_id="#text_box_30_horizcenter",
             container=self,
         )

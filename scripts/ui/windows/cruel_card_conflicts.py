@@ -9,7 +9,6 @@ from scripts.game_structure.game import Switch
 from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.scale import ui_scale
 from scripts.ui.windows.window_base_class import GameWindow
@@ -33,7 +32,7 @@ class CruelCardConflicts(GameWindow):
         for l in conflict_lists:
             self.conflicting_cards.extend([c for c in chosen_cards if c in l])
 
-        self.conflict_message = UITextBoxTweaked(
+        self.conflict_message = pygame_gui.elements.UITextBox(
             i18n.t(
                 "windows.cruel_card_conflict",
                 new_card=i18n.t(f"cruel_season.card_names.{new_card}"),
@@ -46,7 +45,6 @@ class CruelCardConflicts(GameWindow):
                 count=len(self.conflicting_cards),
             ),
             ui_scale(pygame.Rect((0, 20), (380, -1))),
-            line_spacing=1,
             manager=MANAGER,
             object_id="#text_box_30_horizcenter",
             container=self,
