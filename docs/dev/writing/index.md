@@ -63,4 +63,10 @@ Thank you for your interest in contributing to the written content within ClanGe
 
     More in-depth information on event handling. Heavy wip.
 
+- __[Tools](tools.md)__
+
+    ---
+
+    Tools that may help with writing for ClanGen.
+
 </div>
