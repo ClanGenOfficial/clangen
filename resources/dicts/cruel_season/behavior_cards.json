@@ -1,6 +1,6 @@
 {
   "kit_season": {
-    "card_art": "behavior/underpopulated.png",
+    "card_art": "behavior/mouths_to_feed.png",
     "modifiers": {
       "pregnancy.birth_cooldown": 2,
       "pregnancy.primary_chance_mated": 20,
@@ -8,7 +8,7 @@
     }
   },
   "mouths_to_feed": {
-    "card_art": "behavior/underpopulated.png",
+    "card_art": "behavior/mouths_to_feed.png",
     "modifiers": {
       "pregnancy.one_kit_possibility.young adult": 0,
       "pregnancy.one_kit_possibility.adult": 4,
@@ -96,7 +96,7 @@
     }
   },
   "weak_stars": {
-    "card_art": "behavior/sorrow.png",
+    "card_art": "behavior/weakened_stars.png",
     "modifiers": {
       "death_related.max_leader_lives": 5,
       "death_related.min_leader_lives": 1
