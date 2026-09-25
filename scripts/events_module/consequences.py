@@ -313,7 +313,7 @@ def create_new_cat_block(
             for i in Cat.all_cats.values()
             if i.status.is_outsider
             and i.status.is_near(CatGroup.PLAYER_CLAN_ID)
-            and not i.status.is_exiled(CatGroup.PLAYER_CLAN_ID)
+            and not i.status.get_last_valid_group_id() == CatGroup.PLAYER_CLAN_ID
             and not i.dead
             and i not in in_event_cats.values()
         ]
