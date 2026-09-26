@@ -1575,6 +1575,10 @@ class Cat:
         if not self.status.rank.is_any_apprentice_rank():
             return False
 
+        # if not going to have a mentor
+        if get_config("roles.app_never_mentor"):
+            return False
+
         # App and mentor must be members of the same clan
         if self.status.group_ID != potential_mentor.status.group_ID:
             return False
