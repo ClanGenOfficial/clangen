@@ -121,14 +121,16 @@ class LeaveClanWindow(GameWindow):
                     for _b in self.checkboxes.values():
                         if isinstance(_b, UICheckbox):
                             _b.uncheck()
-
-                    button.check()
-                    if self.clan_choice == True:
-                        self.chosen_clan = name.group_ID
-                    elif name == "clancat":
-                        self.create_clan_checkboxes()
+                    if button.checked:
+                        button.uncheck()
                     else:
-                        self.chosen_social = CatSocial(name)
+                        button.check()
+                        if self.clan_choice == True:
+                            self.chosen_clan = name.group_ID
+                        elif name == "clancat":
+                            self.create_clan_checkboxes()
+                        else:
+                            self.chosen_social = CatSocial(name)
         return super().process_event(event)
 
     def handle_clan_choice(self):
