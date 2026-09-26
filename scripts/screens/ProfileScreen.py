@@ -811,7 +811,7 @@ class ProfileScreen(Screens):
             if sprites.COLLAR_DATA["palette_map"]:
                 for acc in the_cat.pelt.accessory:
                     potential_collar = "".join(
-                        [x for x in acc if not x.islower()]
+                        [x for x in acc if not x.islower() and not x.isdigit()]
                     ).strip("_")
                     for style in Pelt.collar_styles:
                         if style == potential_collar:

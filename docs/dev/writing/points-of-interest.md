@@ -76,6 +76,7 @@ Points of Interests can use many different tags that denote circumstances around
 |    prey:water     |                                  prey found in or around water. assume your cats will get wet.                                  |
 |    prey:ground    |                                                      ground-dwelling prey.                                                      |
 |       rocks       |                                   feature that primarily includes rocks, boulders, or stone.                                    |
+|    high_ground    |   could be stood atop, perhaps for safety or intimidation. best used for more singular objects, rather than expansive areas.    |
 |      tainted      |                                  carries a risk of injury or illness due to unsafe conditions                                   |
 |       trees       |                                                       incorporates trees.                                                       |
 |      Twolegs      |                revolves around Twolegs. Has more specific tags. Should not be used alongside other twoleg tags.                 |
