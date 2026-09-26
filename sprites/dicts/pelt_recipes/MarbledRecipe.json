@@ -165,6 +165,24 @@
                     "color": "exotic_base"
                 }
                 }
+        },
+        {
+            "colors": "RUST",
+            "layer_order": ["1", "2", "3", "4", ["5", "6"], "7", ["8", "9"], "10", "11"],
+            "layers": {
+                "8": {
+                    "group_name": "BACKTAILPATTERNGRAD",
+                    "color": "exotic_pattern_gradient_top"
+                },
+                "5": {
+                    "group_name": "BACKTAILPATTERNGRAD",
+                    "color": "exotic_pattern_fill_gradient_top"
+                },
+                "3": {
+                    "group_name": "BACKTAILPATTERNGRAD",
+                    "color": "exotic_base_gradient_top"
+                }
+            }
         }
     ]
 }
