@@ -43,7 +43,12 @@ class LeaveClanWindow(GameWindow):
         )
 
         prev_element = self.heading
-        for social in (CatSocial.LONER, CatSocial.ROGUE, CatSocial.KITTYPET, CatSocial.CLANCAT):
+        for social in (
+            CatSocial.LONER,
+            CatSocial.ROGUE,
+            CatSocial.KITTYPET,
+            CatSocial.CLANCAT,
+        ):
             self.checkboxes[social] = UICheckbox(
                 position=(-40, 18),
                 manager=MANAGER,
