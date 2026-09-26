@@ -26,7 +26,7 @@ class LeaveClanWindow(GameWindow):
         super().__init__(
             ui_scale(pygame.Rect((250, 225), (300, 330))),
         )
-        
+
         self.checkboxes = {}
         self.the_cat = cat
         self.chosen_social = None
@@ -75,7 +75,7 @@ class LeaveClanWindow(GameWindow):
             anchors={"centerx": "centerx"},
         )
 
-    def choose_clan(self):
+    def create_clan_checkboxes(self):
         self.clan_choice = True
         self.heading.set_text("windows.join_clan")
 
@@ -126,7 +126,7 @@ class LeaveClanWindow(GameWindow):
                     if self.clan_choice == True:
                         self.chosen_clan = name.group_ID
                     elif name == "clancat":
-                        self.choose_clan()
+                        self.create_clan_checkboxes()
                     else:
                         self.chosen_social = CatSocial(name)
         return super().process_event(event)
