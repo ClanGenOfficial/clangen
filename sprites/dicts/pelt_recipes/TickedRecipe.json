@@ -120,7 +120,7 @@
                 },
                 "7.5":
                 {
-                    "group_name": "LEGTAILBOTTOMGRAD",
+                    "group_name": "LEGBOTTOMGRAD",
                     "color": "pattern_gradient_bottom"
                 },
                 "7": {
@@ -146,7 +146,7 @@
                     "color": "base_gradient_top"
                 },
                 "2.5": {
-                    "group_name": "LEGTAILBOTTOMGRAD",
+                    "group_name": "LEGBOTTOMGRAD",
                     "color": "base_gradient_legs_tail"
                 },
                 "2": {

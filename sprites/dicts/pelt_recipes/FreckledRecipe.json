@@ -168,7 +168,7 @@
                     "color": "freckled_pattern_gradient_top"
                 },
                 "5.5": {
-                    "group_name": "LEGTAILBOTTOMGRAD",
+                    "group_name": "LEGBOTTOMGRAD",
                     "color": "exotic_pattern_gradient_bottom"
                 },
                 "5": {
@@ -188,7 +188,7 @@
                     "color": "exotic_base_gradient_bottom"
                 },
                 "1.5": {
-                        "group_name": "LEGTAILBOTTOMGRAD",
+                        "group_name": "LEGBOTTOMGRAD",
                         "color": "exotic_base_gradient_legs_tail"
                     },
                 "1": {
