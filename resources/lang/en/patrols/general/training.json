@@ -463,6 +463,20 @@
                         "status": ["apprentice"]
                     }
                 },
+                "relationship_constraint": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "constraints": [
+                            "-mentor/app"
+                        ]
+                    }
+                ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
