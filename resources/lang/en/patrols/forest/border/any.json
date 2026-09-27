@@ -1992,7 +1992,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_crouching_Wr",
                 "strings": [
-                    "r_c0 sneaks forward and determines it's a black bear. It should be relatively harmless as long as the Clan keeps an eye on its whereabouts."
+                    "r_c0's pupils dilate as a ray of sunlight illuminates the bear's russet pelt. r_c0 realizes with alarm that it's a brown bear. The patrol slinks away without incident and c_n's leader warns patrols to stay away from the area."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -2003,10 +2003,15 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_crouching_Wr",
                 "strings": [
-                    "r_c0's pupils dilate as a ray of sunlight illuminates the bear's russet pelt. r_c0 realizes with alarm that it's a brown bear. The patrol slinks away without incident and c_n's leader warns patrols to stay away from the area."
+                    "s_c0 sneaks forward and determines it's a black bear. It should be relatively harmless as long as the Clan keeps an eye on its whereabouts."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"],
+                        "stat": {
+                            "skill": ["STEALTH,1"]
+                        }
+                    }
                 },
                 "exp_gained": 10
             },
@@ -2306,7 +2311,6 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0",
                             "some_patrol"
                         ],
                         "condition": [
