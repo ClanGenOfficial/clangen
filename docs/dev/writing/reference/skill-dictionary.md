@@ -65,7 +65,7 @@ _Canon Examples: Squirrelstar, Tigerstar I, Ashfur_
 
 ### **MEDIATOR**
 
-Cats with the ```MEDIATOR``` skill are those that are able to intuit and negotiate compromises between their peers. They specialize in listening to those around them and influencing relationships for better or for worse. This skill is applicable in events and patrols that are focused on interpersonal communication as well as stoking or soothing conflict. 
+Cats with the ```MEDIATOR``` skill are able to intuit and negotiate compromises between their peers. They specialize in listening to those around them and influencing relationships for better or for worse. This skill is applicable in events and patrols that are focused on interpersonal communication as well as stoking or soothing conflict. 
 
 _Canon Examples: Tree_
 
