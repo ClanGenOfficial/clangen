@@ -142,7 +142,7 @@ _Canon Examples: Rock, Cinderpelt, Pebbleheart_
 
 ### **DREAM**
 
-Cats with the ```DREAM``` skill are able to walk in the dreams of other cats while they too are sleeping. As the skill progresses the cat becomes able to control the skill more from mere wanderings to intentionally choosing whether to peer in another's dreams. This skill is applicable primarily in thoughts and events and is linked typically to the contents of or the cat of the dreams they walked in. 
+Cats with the ```DREAM``` skill are able to walk in the dreams of other cats. As the skill progresses the cat becomes able to control the skill more from mere wanderings to intentionally choosing whether to peer in another's dreams. This skill is applicable primarily in thoughts and events and is linked typically to the contents of or the cat of the dreams they walked in. 
 
 _Canon Examples: Jayfeather_
 
