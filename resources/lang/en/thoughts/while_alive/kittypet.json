@@ -186,7 +186,6 @@
         "event_id": "kittypet_adolescent_thoughts",
         "strings": [
             "Is hogging the bed from {PRONOUN/m_c/poss} siblings",
-            "Thinks {PRONOUN/m_c/poss} new collar is uncomfortable",
             "Is playing with a new toy {PRONOUN/m_c/poss} housefolk got {PRONOUN/m_c/object}"
         ],
         "involved_cats": {
@@ -272,7 +271,8 @@
         "event_id": "kittypet_collar_thoughts",
         "strings": [
             "Is glad {PRONOUN/m_c/poss} housefolk collar {PRONOUN/m_c/object} on a leash to walk {PRONOUN/m_c/object} outside",
-            "Can't seem to scratch a certain spot on {PRONOUN/m_c/poss} neck thanks to {PRONOUN/m_c/poss} collar"
+            "Can't seem to scratch a certain spot on {PRONOUN/m_c/poss} neck thanks to {PRONOUN/m_c/poss} collar",
+            "Thinks {PRONOUN/m_c/poss} new collar is uncomfortable"
         ],
         "involved_cats": {
             "m_c": {
