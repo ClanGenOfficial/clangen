@@ -61,13 +61,36 @@
             }
         },
         {
-            "colors": "RUST",
-            "layers": {
-                "2": {
-                    "group_name": "SMOKETOPGRAD",
-                    "color": "smoke_base_gradient_top"
-                }
-            }
+        "colors": "RUST",
+    "layer_order": ["1", "2", "3", "4", ["5", ["5.5", "6", "+blend_mode:mask"]]],
+    "layers": {
+        "6":{
+            "group_name": "SMOKEPATTERNDARK"
+        },
+        "5.5": {
+            "group_name": "SIMPLETOPGRAD"
+        },
+        "5":{
+            "group_name": "BACKTAILPATTERNGRAD",
+            "color": "smoke_pattern_gradient_top"
+        },
+        "4": {
+            "group_name": "SMOKEPATTERNDARK",
+            "color": "smoke_pattern"
+        },
+        "3": {
+            "group_name": "SMOKEPATTERNLIGHT",
+            "color": "smoke_base_gradient_bottom"
+        },
+        "2": {
+            "group_name": "BACKTAILPATTERNGRAD",
+            "color": "smoke_base_gradient_top"
+        },
+        "1": {
+            "group_name": "BASEMASK",
+            "color": "smoke_base"
+        }
+    }
         }
     ]
 }
