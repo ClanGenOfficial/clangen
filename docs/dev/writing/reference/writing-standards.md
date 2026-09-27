@@ -97,7 +97,7 @@ Disability should not be portrayed as the ultimate tragedy of a cat's life. Thei
 
 ***
 
-Avoid inspiration sensationalism. Inspiration sensationalism slants stories and images of disabled people in a way that allows a nondisabled audience to feel warm and fuzzy, but regards the disabled person as nothing more than an object that produces these positive feelings. 
+Avoid inspiration sensationalism. Inspiration sensationalism warps stories and images of disabled people in a way that allows a nondisabled audience to feel warm and fuzzy, but treats the disabled person as nothing more than an object that produces these positive feelings. 
 >Remember that there is a difference between "joy" and "inspiration". Disabled cats can feel joyful and fulfilled in their life without that joy being used solely as inspiration for those around them.
 
 ***
@@ -119,7 +119,7 @@ Cats are allowed to engage with the complexity of their individual disabilities,
 ***
 
 Some conditions can be more visible than others, but remember that the visibility of a condition does not determine its importance or impact. Invisible disabilities are just as impactful to a cat's life as more visible ones. 
->Constantly dizzy and persistent headaches aren't conditions you can tell a cat has just from looking at them, but they still have profound effects on a cat's life. They still impact their level of activity and their capability with certain tasks.
+>Constantly dizzy and persistent headaches aren't conditions you can tell a cat has just from looking at them, but they still have profound effects on a cat's life. They still impact their level of activity and their capability to perform certain tasks.
 
 ***
 
@@ -131,7 +131,7 @@ While the mainly-RNG controlled nature of ClanGen means nuance isn't particularl
 
 - "Tail signals" are a great stand-in for human sign language and can be used to communicate. 
 - While blindness absolutely affects a cat's ability, keep in mind that cats actually rely far more on their other senses! Whiskers, especially, help even seeing cats to navigate the surrounding space. When writing blind cats, consider having them follow a "guiding" Clanmate's scent/presence through complex obstacles or investigate their surroundings before making a move (such as feeling for a safe ledge before jumping up to it.) Have them rely on smell and hearing to understand what's happening around them.
-- The cats within this universe do not have the ability to create wheelchairs or prothesis for their paralyzed or mobility-impaired Clanmates. However, remember that cats are incredibly adaptible creatures. Real-life 3-legged, paralyzed, and weak-legged cats can still be incredibly agile and fast. There are ways in which they may struggle, but they aren't relegated to just wandering around camp.
+- The cats within this universe do not have the ability to create wheelchairs or prothesis for their paralyzed or mobility-impaired Clanmates. However, remember that cats are incredibly adaptible creatures. Real-life 3-legged, paralyzed, and weak-legged cats can still be incredibly agile and fast. There are ways in which they may struggle, but they aren't confined to just wandering around camp.
 - Remember that while these cats aren't so technologically advanced as to create complex tools like a wheelchair, they are still intelligent beings who can be creative in how they support their disabled Clanmates; and disabled cats are likewise intelligent beings who can be creative in how they support themselves.
 
 ### How do we handle terminal conditions?
