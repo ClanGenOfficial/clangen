@@ -1083,6 +1083,7 @@ def _check_cat_health(cat, health_constraints: dict) -> bool:
 
     return True
 
+
 def _check_cat_accessory(cat, accessory: list) -> bool:
     """
     Checks if the cat has the required accessories
@@ -1333,11 +1334,13 @@ def _get_cats_with_health(cat_list: list, health_constraints: dict) -> list:
 
     return [c for c in cat_list if _check_cat_health(c, health_constraints)]
 
+
 def _get_cats_with_accessory(cat_list: list, accessory: str) -> list:
     if not accessory:
         return cat_list
 
     return [c for c in cat_list if _check_cat_accessory(c, accessory)]
+
 
 def _get_cats_matching_name_check(cat_list: list, name_check: dict) -> list:
     if not name_check:
@@ -1584,6 +1587,7 @@ def _get_cats_with_backstory(cat_list: list, backstories: list[str]) -> list:
         return [kitty for kitty in cat_list if kitty.backstory not in allowed_stories]
     else:
         return [kitty for kitty in cat_list if kitty.backstory in allowed_stories]
+
 
 def _check_for_exclusionary_value(possible_values: List[str]) -> bool:
     """

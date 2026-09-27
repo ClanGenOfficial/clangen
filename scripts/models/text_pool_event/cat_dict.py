@@ -82,5 +82,5 @@ class CatDict(BaseModel):
     )
     accessory: List[Accessory] | MISSING = Field(
         MISSING,
-        description="Constrains the event to only occur if the cat has a listed accessory category"
+        description="Constrains the event to only occur if the cat has a listed accessory category",
     )

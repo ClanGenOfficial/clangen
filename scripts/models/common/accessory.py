@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 class Accessory(Enum):
     collar = "collar"
     not_collar = "-collar"
