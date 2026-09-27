@@ -853,8 +853,9 @@
   ],
 
 	"animal_suffixes": [
-	"adder", "ant", "badger", "bat", "bear", "beaver", "bee", "beetle", "bird", "bug", "carp", "cheetah", "chick", "cricket", "crow", "deer", "duck", "eagle", "elk", 
-    "falcon", "fawn", "fish", "fox", "frog", "goat", "goose", "hare", "hawk", "hen", "hog", "hornet", "horse", "horse", "hound", "jay", "kestrel", "kite", "lamb", "leopard", "lion", "loon", "lyre", "mallard", "minnow", "moth", "mouse", "newt", "owl", "panther", "parrot", "rabbit", "ram", "raven", "roach", "rook", "salamander", "salmon", "scorpion", "sheep", "snake", "spider", "squid", "squirrel", "starling", "swan", "swan", "thrush", "tiger", "toad", "trout", "turtle", "vole", "warbler", "wolf"
+	"badger", "bat", "bear", "bee", "beetle", "bird", "bug", "cricket", "deer", "eagle", "elk", "falcon", "fawn", "fish", "fox", "goose", "hare", "hawk", "horse", 
+    "jay", "kestrel", "kite", "lamb", "leopard", "lion", "minnow", "moth", "mouse", "newt", "ram", "raven", "roach", "scorpion", "sheep", "snake", "spider", 
+    "squid", "swan", "thrush", "tiger", "turtle"
 	],
 
 	"animal_prefixes": [
