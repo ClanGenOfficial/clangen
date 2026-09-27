@@ -1542,13 +1542,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l hisses at the dog, warning it off. It skitters back, yapping loudly but headed in the right direction. Maybe {PRONOUN/p_l/subject} should add dog herding to {PRONOUN/p_l/poss} list of accomplishments?"
-                ],
-                "exp_gained": 10
-            },
-            {
-                "frequency": 1,
-                "strings": [
+                    "p_l hisses at the dog, warning it off. It skitters back, yapping loudly but headed in the right direction. Maybe {PRONOUN/p_l/subject} should add dog herding to {PRONOUN/p_l/poss} list of accomplishments?",
                     "p_l unsheathes {PRONOUN/p_l/poss} claws, puffs {PRONOUN/p_l/poss} fur out as far as it'll go, gathers {PRONOUN/p_l/poss} courage, and drives the small dog from the border."
                 ],
                 "exp_gained": 10
@@ -1556,13 +1550,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 unleashes all {PRONOUN/s_c0/poss} battle experience, darting this way and that, ripping chunks of dog fur out as {PRONOUN/s_c0/subject} {VERB/s_c0/drive/drives} it into the distance."
+                    "p_l unleashes all {PRONOUN/p_l/poss} battle experience, darting this way and that, ripping chunks of dog fur out as {PRONOUN/p_l/subject} {VERB/p_l/drive/drives} it into the distance."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "FIGHTER,1"
@@ -1574,7 +1565,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -1601,7 +1592,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -1626,7 +1617,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "history": "This cat was killed in a fight with a small dog, but {PRONOUN/m_c/subject} took the dog out with {PRONOUN/m_c/object}."
                     }
@@ -1641,7 +1632,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -1659,7 +1650,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "condition": [
                             "small_bite_injury"
@@ -1698,33 +1689,9 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l hisses at the small dog, and the rest of {PRONOUN/p_l/poss} small team back {PRONOUN/p_l/object} up. The dog skitters back, yapping loudly, apparently shocked by the display, and the patrol breaks out into yowls and caterwauls, screaming until the small beast's nerve breaks, and it runs from the c_n border into the distance."
-                ],
-                "exp_gained": 10,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_to and cat_from drove off a small dog on patrol together."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "The patrol paces towards the small dog, claws out, fur up, backed up with the courage of their Clanmates. The dog breaks into a barking fit, but that's their opportunity to attack, covering each other as they push the creature away from their lands."
+                    "p_l hisses at the small dog, and the rest of {PRONOUN/p_l/poss} small team back {PRONOUN/p_l/object} up. The dog skitters back, yapping loudly, apparently shocked by the display, and the patrol breaks out into yowls and caterwauls, screaming until the small beast's nerve breaks, and it runs from the c_n border into the distance.",                    "The patrol paces towards the small dog, claws out, fur up, backed up with the courage of their Clanmates. The dog breaks into a barking fit, but that's their opportunity to attack, covering each other as they push the creature away from their lands.",                    "Mobbed by cats and near blind with the blood in its eyes, the dog flees from c_n, yelping pitifully."
+
+
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [
@@ -1759,7 +1726,9 @@
                         ],
                         "stat": {
                             "skill": [
-                                "FIGHTER,1"
+                                "FIGHTER,1",
+                                "CLEVER,1",
+                                "INSIGHTFUL,1"
                             ]
                         }
                     }
@@ -1781,32 +1750,6 @@
                         "amount": 5,
                         "log": {
                             "cats_from": "cat_from was impressed by cat_to's battle tactics in a fight with a small dog."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "Mobbed by cats and near blind with the blood in its eyes, the dog flees from c_n, yelping pitifully."
-                ],
-                "exp_gained": 10,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_to and cat_from drove off a small dog on patrol together."
                         }
                     }
                 ]
@@ -1868,10 +1811,6 @@
                 2,
                 6
             ],
-            "healer cats": [
-                -1,
-                -1
-            ],
             "normal adult": [
                 -1,
                 -1
@@ -1892,16 +1831,8 @@
                     "Scrambling up the hill, r_c1 shoves r_c2 up a slightly too big step, both of them panting eagerly as they run. The mist swirls around them, stinking strangely as they search for the StarClan cat, until r_c2 bumps into a huge pillar that blinks down with slow, glowing red eyes."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
+                    "r_c1": {},
+                    "r_c2": {}
                 },
                 "exp_gained": 0
             }
@@ -1913,11 +1844,7 @@
                     "r_c2 gets stuck on a big stone step as the apprentices try to scramble uphill. By the time they climb up, only the dissipating, strangely-scented mist says that anything magical passed through here at all."
                 ],
                 "involved_cats": {
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
+                    "r_c2": {}
                 },
                 "exp_gained": 0
             }
