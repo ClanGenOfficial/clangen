@@ -121,7 +121,7 @@ _Canon Examples: Dustpelt, Brackenfur_
 
 ### **HEALER**
 
-Cats with the ```HEALER``` skill are those that are particularly skilled or innovative healers. While cats with the Healer skill make great medicine cats they don’t necessarily have to be one nor do they necessarily have a great bedside manner. This skill is particularly applicable in thoughts, events, and patrols that have to do with medicine or herb gathering. It is important to explore this skill in both how it is applicable to medicine cats but also how it can be written for clan members of other roles. 
+Cats with the ```HEALER``` skill are those that are particularly skilled or innovative healers. While cats with the Healer skill make great medicine cats, they don’t necessarily have to be one nor do they necessarily have a great bedside manner. This skill is particularly applicable in thoughts, events, and patrols that have to do with medicine or herb-gathering. This skill can be explored both in its application to medicine cats but also its application to Clan members of other roles. 
 
 _Canon Examples: Yellowfang, Leafpool_
 
