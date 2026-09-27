@@ -86,7 +86,7 @@ _Canon Examples: Firestar, Hawkfrost_
 
 ### **SENSE**
 
-Cats with the ```SENSE``` skill are those with exceptional sensory capabilities. At the highest tier their senses even border on supernatural. They can see, hear, taste, or smell further and more vividly than other cats making them exceptionally skilled at picking up on little details in their environment. This skill is applicable in patrols and events on many different spectrums, though it is particularly useful in the context of exploration and detail orientation. 
+Cats with the ```SENSE``` skill have exceptional sensory capabilities. At the highest tier their senses even border on supernatural. They can see, hear, taste, or smell further and more vividly than other cats, allowing them to pick up on minute environmental details. This skill is applicable to a spectrum of patrols and events, though it is particularly useful in the context of exploration and detail orientation. 
 
 _Canon Examples: Dovewing_
 
