@@ -4,7 +4,7 @@
 
 A skill in ClanGen is a descriptor that dictates something a cat is specializes in or is more talented at compared to their peers. Skills dictate some of the potential strengths of a cat, actions they might take, and things they may have a higher chance of success in. They *do not* have any bearing on a cat's personality.
 
-A cat can have up to two skills. While internally in development circles and as a constraint, we use certain names, skills are displayed to players in a tier system with names depending on the cat's mastery of their skills. A chart can be found [here](../tag-lists.md#traits-and-skills).
+A cat can have up to two skills. While internally in development circles and as a constraint, we use certain names, skills are displayed to players in a tier system with names depending on the cat's mastery of their skills. A chart can be found [here](tag-lists/#traits-and-skills).
 
 For this documentation, each skill is listed under its internal name. 
 
