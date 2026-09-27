@@ -70,7 +70,7 @@ Points of Interests can use many different tags that denote circumstances around
 |      covered      |                                       any location that offers shelter from the elements.                                       |
 |       danger        |                     anything that poses a threat to cats, for any reason. Has multiple more specific tags. Should not be used together.                      |
 |     danger:fall_risk     |                                                 risk of heights-related injury.                                                 |
-|     danger:unstable      | If there is a potential for the structure to collapse in some way, unstable ceilings, unstable ground, an old tree branch, etc. |
+|     danger:unstable      | If there is a potential for the structure to collapse in some way: unstable ceilings, unstable ground, an old tree branch, etc. |
 |      danger:tainted      |                                  carries a risk of injury or illness due to unsafe conditions                                   |
 |       hole        |                                                     a cavity in the earth.                                                      |
 |       nests       |                                                      where birds lay eggs.                                                      |
