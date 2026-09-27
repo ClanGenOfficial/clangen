@@ -30,7 +30,7 @@ _Canon Examples: Scourge, Tigerstar I, Lionblaze_
 
 ### **RUNNER**
 
-Cats with the ```RUNNER``` skill are the fastest cats among their peers. Not only are they swift, but their agility is renowned and they run circles around predator and prey alike. This skill is applicable in border patrols, hunting patrols, and concepts linked to battle. It can also be used to represent a cat’s athleticism. 
+Cats with the ```RUNNER``` skill are the fastest cats among their peers. Not only are they swift, but their agility is renowned and they run circles around predator and prey alike. This skill is applicable in border patrols, hunting patrols, and scenarios linked to battle. It can also be used to represent a cat’s athleticism. 
 
 _Canon Examples: Windstar, Ashfoot, Runningwind_
 
