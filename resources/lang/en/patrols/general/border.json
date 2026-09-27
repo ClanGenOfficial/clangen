@@ -7207,7 +7207,7 @@
                         "values": [
                             "comfort"
                         ],
-                        "amount": 5,
+                        "amount": -5,
                         "log": {
                             "cats_from": "cat_from thought cat_to's plan to eat a swift fox was kinda gross."
                         }
