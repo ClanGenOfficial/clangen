@@ -29,6 +29,7 @@ Developers seeking to gain skills in particular specialties of development (code
 
 
 Everyone who has contributed anything (code, writing, art, audio) to ClanGen is a developer. The Discord role allows you to see developer-only channels and participate in discussions regarding upcoming features, content, and bugfixes.
+
 - *How much do I have to contribute? Are there deadlines?*<br>
     - ClanGen does not have deadlines or requirements for contributions. As mentioned above, developer roles are descriptors. Some developers contribute every week, while others go months between Pull Requests. ClanGen is a passion project in the truest sense of the word; motivation will naturally ebb and flow.<br>
     - If you know you are unlikely or unable to contribute for long stretches of time (3+ months), you can request hiatus roles from a moderator at any time, for any reason, no questions asked.
