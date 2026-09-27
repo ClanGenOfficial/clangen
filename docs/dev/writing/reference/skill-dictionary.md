@@ -24,7 +24,7 @@ _Canon Examples: Sandstorm, Sparkpelt_
 
 ### **FIGHTER**
 
-Cats with the ```FIGHTER``` skill are those particularly talented in battle, whether it be against warriors, rogues, or predators. While all warriors learn to fight, these cats are particularly skilled and competent, able to accomplish feats beyond others. This skill is applicable in patrols and events where physical conflict is relevant. It can also be used to represent a cat’s physicality and athleticism.
+Cats with the ```FIGHTER``` skill are particularly talented in battle, whether it be against warriors, rogues, or predators. While all warriors learn to fight, these cats can accomplish feats beyond others. This skill is applicable in patrols and events where physical conflict is relevant. It can also be used to represent a cat’s physicality and athleticism.
 
 _Canon Examples: Scourge, Tigerstar I, Lionblaze_
 
