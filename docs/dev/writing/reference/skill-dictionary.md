@@ -44,7 +44,7 @@ _Canon Examples: Cherrytail, Sparrowpelt_
 
 ### **SWIMMER**
 
-Cats with the ```SWIMMER``` skill are unusually strong swimmers and have little issue with getting their pelt wet. Their skill set makes them perfect for patrols involving any body of water and also makes them less likely to be prone to hazards such as drowning. 
+Cats with the ```SWIMMER``` skill are unusually strong swimmers and have little issue with getting their pelt wet. Their skill set makes them perfect for patrols involving any body of water and also makes them less prone to hazards such as drowning. 
 
 _Canon Examples: Silverstream, Riverstar_
 
