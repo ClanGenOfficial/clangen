@@ -549,7 +549,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "clan"
@@ -569,13 +569,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 sets up an ambush for the wandering dog, bloodying its snout and leading it on a wild chasing dance across the border and out of c_n territory."
+                    "p_l sets up an ambush for the wandering dog, bloodying its snout and leading it on a wild chasing dance across the border and out of c_n territory."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "FIGHTER,3"
@@ -587,7 +584,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "clan"
@@ -607,13 +604,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "{PRONOUN/s_c0/subject/CAP} {VERB/s_c0/don't/doesn't} feel like {PRONOUN/s_c0/subject} {VERB/s_c0/have/has} anything like the skill or power, but s_c0 would give {PRONOUN/s_c0/poss} life for c_n, charging in to courageously lead the dog away from c_n territory. Each booming bark has to be the herald of {PRONOUN/s_c0/poss} doom, each rancid breath the last thing {PRONOUN/s_c0/subject}'ll ever smell, but somehow, eventually, limbs and lungs burning, {PRONOUN/s_c0/subject} {VERB/s_c0/leap/leaps} to refuge."
+                    "{PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} feel like {PRONOUN/p_l/subject} {VERB/p_l/have/has} anything like the skill or power, but p_l would give {PRONOUN/p_l/poss} life for c_n, charging in to courageously lead the dog away from c_n territory. Each booming bark has to be the herald of {PRONOUN/p_l/poss} doom, each rancid breath the last thing {PRONOUN/p_l/subject}'ll ever smell, but somehow, eventually, limbs and lungs burning, {PRONOUN/p_l/subject} {VERB/p_l/leap/leaps} to refuge."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "ambitious",
@@ -633,7 +627,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "clan"
@@ -654,6 +648,43 @@
         "fail_outcomes": [
             {
                 "frequency": 4,
+                "strings": [
+                    "p_l would give {PRONOUN/p_l/poss} life to protect c_n, and as {PRONOUN/p_l/subject} {VERB/p_l/charge/charges} past the huge dog to lead it far, far from c_n, {PRONOUN/p_l/subject} {VERB/p_l/accept/accepts} it. Fear gives {PRONOUN/p_l/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/p_l/subject} {VERB/p_l/fly/flies} out of the dog's jaws while it shakes {PRONOUN/p_l/object}, landing in a refuge. p_l is injured, desperate, and terrified — but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alive."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "cat_from heard about how cat_to was nearly killed leading a large dog away from the Clan's territory."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "big_bite_injury"
+                        ],
+                        "scar_history": "m_c was scarred while defending the Clan against a dog.",
+                        "death_history": "m_c died of injuries inflicted by a large dog."
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
                 "strings": [
                     "p_l would give {PRONOUN/p_l/poss} life to protect c_n. As {PRONOUN/p_l/subject} {VERB/p_l/lead/leads} the huge dog away from the Clan, in {PRONOUN/p_l/poss} heart, {PRONOUN/p_l/subject} {VERB/p_l/accept/accepts} that's what {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} doing. As darkness closes in around {PRONOUN/p_l/object} and the dog's jaws descend again, p_l tries to sink {PRONOUN/p_l/poss} claws into its face, and hopes desperately that {PRONOUN/p_l/subject} led it far enough."
                 ],
@@ -682,43 +713,6 @@
                             "p_l"
                         ],
                         "history": "m_c died to keep c_n safe from a large dog."
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l would give {PRONOUN/p_l/poss} life to protect c_n, and as {PRONOUN/p_l/subject} {VERB/p_l/charge/charges} past the huge dog to lead it far, far from c_n, {PRONOUN/p_l/subject} {VERB/p_l/accept/accepts} it. Fear gives {PRONOUN/p_l/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/p_l/subject} {VERB/p_l/fly/flies} out of the dog's jaws while it shakes {PRONOUN/p_l/object}, landing in a refuge. p_l is injured, desperate, and terrified — but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alive."
-                ],
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c0"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 15,
-                        "log": {
-                            "cats_from": "cat_from heard about how cat_to was nearly killed leading a large dog away from the Clan's territory."
-                        }
-                    }
-                ],
-                "condition": [
-                    {
-                        "cats": [
-                            "r_c0"
-                        ],
-                        "condition": [
-                            "big_bite_injury"
-                        ],
-                        "scar_history": "m_c was scarred while defending the Clan against a dog.",
-                        "death_history": "m_c died of injuries inflicted by a large dog."
                     }
                 ]
             }
@@ -789,7 +783,7 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 4,
                 "strings": [
                     "The patrol gathers their courage and valiantly tries to lead the dog away. With such a small group of cats, they can only lead it a short distance, but it's better than nothing."
                 ],
@@ -896,6 +890,9 @@
                             "any"
                         ],
                         "stat": {
+                            "skill": [
+                                "RUNNER,1"
+                            ],
                             "trait": [
                                 "compassionate",
                                 "confident",
@@ -905,7 +902,8 @@
                                 "loyal",
                                 "responsible",
                                 "righteous"
-                            ]
+                            ],
+                            "must_have_both": false
                         }
                     }
                 },
@@ -1025,7 +1023,9 @@
                         ],
                         "stat": {
                             "skill": [
-                                "FIGHTER,3"
+                                "FIGHTER,3",
+                                "CLEVER,2",
+                                "INSIGHTFUL,2"
                             ]
                         }
                     }
@@ -1173,6 +1173,7 @@
                 "strings": [
                     "s_c0 tries to take the lion's share of the effort to lead the dog away, but {PRONOUN/s_c0/poss} strength fails {PRONOUN/s_c0/object} — the rest of the patrol needs to rescue {PRONOUN/s_c0/object}, cutting short the results of the patrol. Instead, everyone knows the dog could still be lurking on {PRONOUN/s_c0/poss} borders."
                 ],
+                "exp_gained": 0,
                 "required_cat_types": {
                     "normal adult": [
                         2,
@@ -1185,6 +1186,7 @@
                             "any"
                         ],
                         "stat": {
+                            "skill": ["-RUNNER,1"],
                             "trait": [
                                 "ambitious",
                                 "bloodthirsty",
@@ -1194,7 +1196,6 @@
                         }
                     }
                 },
-                "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
@@ -1227,94 +1228,6 @@
                         "log": {
                             "cats_from": "cat_from heard that cat_to's patrol failed to lead a dog off the territory."
                         }
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "The patrol tries to lead the dog away from the Clan's borders, but with so few cats it's impossible to cover each other's backs. r_c0 falls to the dog as the rest of the patrol runs for their lives back to camp, terrified out of their pelts and mourning their Clanmate."
-                ],
-                "required_cat_types": {
-                    "normal adult": [
-                        2,
-                        3
-                    ]
-                },
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -10,
-                        "log": {
-                            "cats_from": "cat_from heard that cat_to failed to save {PRONOUN/cat_to/poss} Clanmate on a patrol with a dog."
-                        }
-                    }
-                ],
-                "death": [
-                    {
-                        "cats": [
-                            "r_c0"
-                        ],
-                        "history": "m_c died to keep the Clan safe from a large dog."
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "The patrol tries bravely to lead the dog away from c_n borders, but with so few cats it's impossible to cover each other's backs. r_c0 gets caught while running and it's all the rest of the patrol can do to distract the dog long enough to get r_c0 to safety."
-                ],
-                "required_cat_types": {
-                    "normal adult": [
-                        2,
-                        3
-                    ]
-                },
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from heard that cat_to and {PRONOUN/cat_to/poss} patrol failed to lead a dog away from the Clan's territory."
-                        }
-                    }
-                ],
-                "condition": [
-                    {
-                        "cats": [
-                            "r_c0"
-                        ],
-                        "condition": [
-                            "big_bite_injury"
-                        ],
-                        "scar_history": "m_c was scarred while defending the Clan against a dog.",
-                        "death_history": "m_c died of injuries inflicted by a large dog."
                     }
                 ]
             },
@@ -1419,6 +1332,94 @@
                         "log": {
                             "cats_from": "cat_to's excessive caution caused cat_from and {PRONOUN/cat_from/poss} patrol to lose a fight."
                         }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "The patrol tries to lead the dog away from the Clan's borders, but with so few cats it's impossible to cover each other's backs. r_c0 falls to the dog as the rest of the patrol runs for their lives back to camp, terrified out of their pelts and mourning their Clanmate."
+                ],
+                "required_cat_types": {
+                    "normal adult": [
+                        2,
+                        3
+                    ]
+                },
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to failed to save {PRONOUN/cat_to/poss} Clanmate on a patrol with a dog."
+                        }
+                    }
+                ],
+                "death": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "history": "m_c died to keep the Clan safe from a large dog."
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "The patrol tries bravely to lead the dog away from c_n borders, but with so few cats it's impossible to cover each other's backs. r_c0 gets caught while running and it's all the rest of the patrol can do to distract the dog long enough to get r_c0 to safety."
+                ],
+                "required_cat_types": {
+                    "normal adult": [
+                        2,
+                        3
+                    ]
+                },
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to and {PRONOUN/cat_to/poss} patrol failed to lead a dog away from the Clan's territory."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "big_bite_injury"
+                        ],
+                        "scar_history": "m_c was scarred while defending the Clan against a dog.",
+                        "death_history": "m_c died of injuries inflicted by a large dog."
                     }
                 ]
             },
