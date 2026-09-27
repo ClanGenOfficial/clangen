@@ -1096,15 +1096,13 @@ def _check_cat_accessory(cat, accessory: list) -> bool:
         accessory = [x.replace("-", "") for x in accessory]
         print("DEBUG: accessory is exclusionary")
 
-    if "collar" in accessory and cat.accessory in Pelt.acc_categories["collar"]:
-        print("DEBUG: kitty has collar :]")
-        return True
-    elif "wild" in accessory and cat.accessory in Pelt.acc_categories["wild"]:
-        print("DEBUG: kitty has wild accessory :]")
-        return True
-    elif "plant" in accessory and cat.accessory in Pelt.acc_categories["plant"]:
-        print("DEBUG: kitty has plant accessory :]")
-        return True
+    for acc in cat.pelt.accessory:
+        if "collar" in accessory and acc in Pelt.collar_accessories:
+            return True
+        if "wild" in accessory and acc in Pelt.wild_accessories:
+            return True
+        if "plant" in accessory and acc in Pelt.plant_accessories:
+            return True
 
     return False
 
@@ -1153,7 +1151,7 @@ def cat_for_event(
         "current_exp": _get_cats_with_exp,
         "name": _get_cats_matching_name_check,
         "health": _get_cats_with_health,
-        "accessory": _check_cat_accessory,
+        "accessory": _get_cats_with_accessory,
     }
 
     # run funcs
@@ -1335,6 +1333,11 @@ def _get_cats_with_health(cat_list: list, health_constraints: dict) -> list:
 
     return [c for c in cat_list if _check_cat_health(c, health_constraints)]
 
+def _get_cats_with_accessory(cat_list: list, accessory: str) -> list:
+    if not accessory:
+        return cat_list
+
+    return [c for c in cat_list if _check_cat_accessory(c, accessory)]
 
 def _get_cats_matching_name_check(cat_list: list, name_check: dict) -> list:
     if not name_check:
@@ -1581,7 +1584,6 @@ def _get_cats_with_backstory(cat_list: list, backstories: list[str]) -> list:
         return [kitty for kitty in cat_list if kitty.backstory not in allowed_stories]
     else:
         return [kitty for kitty in cat_list if kitty.backstory in allowed_stories]
-
 
 def _check_for_exclusionary_value(possible_values: List[str]) -> bool:
     """
