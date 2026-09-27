@@ -128,7 +128,7 @@ _Canon Examples: Yellowfang, Leafpool_
 
 ### **STAR & DARK**
 
-Cats with the ```STAR	``` or ```DARK``` skills have an innate connection to their respective afterlife and are favored by cats from that afterlife. They do not experience prophecies or visions but rather tend to be the subject of them. They can occasionally see or hear cats from the respective afterlife or dream of them. This skill is particularly applicable in events and patrols as a form of luck or wisdom that intercedes in their daily life, or occasional encounters with spirits from the afterlife represented in the skill.  Thoughts and events are great places to consider how the skills would intersect with different personalities e.g. a confident cat thrilled to be chosen by the Dark Forest or an insecure cat unsure they can live up to StarClan’s expectations. 
+Cats with the ```STAR	``` or ```DARK``` skills have an innate connection to their respective afterlife and are favored by cats from that afterlife. They do not experience prophecies or visions but rather tend to be the subject of them. They can occasionally see or hear cats from the respective afterlife or dream of them. This skill is particularly applicable in events and patrols as a form of luck or wisdom that intercedes in their daily life, or occasional encounters with spirits from the afterlife represented in the skill.  Thoughts and events are great places to consider how the skills would intersect with different personalities (e.g. a confident cat thrilled to be chosen by the Dark Forest or an insecure cat unsure they can live up to StarClan’s expectations). 
 
 _Canon Examples: Firestar (StarClan) / Ashfur (Dark), Ivypool (Dark)_
 
