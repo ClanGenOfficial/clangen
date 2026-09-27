@@ -1955,7 +1955,7 @@
         ]
     },
     {
-        "event_id": "fst_bord_notleafbare_bear",
+        "event_id": "fst_bord_bear1",
         "types": [
             "border"
         ],
