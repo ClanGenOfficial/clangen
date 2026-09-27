@@ -18,7 +18,7 @@ _Canon Examples: Rosepetal, Tawnypelt_
 
 ### **HUNTER**
 
-While nearly every cat can hunt, cats with the ```HUNTER``` skill are those that are unusually gifted. Those that reach the skill tier ‘Renowned Hunter’ may go down in legend as some of the best hunters of their Clan. This skill is particularly applicable in hunting patrols. However, it can also be used in situations where tracking (like one would prey) is required or hunting other cats. 
+While nearly every cat can hunt, cats with the ```HUNTER``` skill are are unusually gifted. Those that reach the skill tier ‘Renowned Hunter’ may go down in legend as one of the best hunters of their Clan. This skill is particularly applicable in hunting patrols. However, it can also be used in situations where tracking (like one would prey) is required (e.g. hunting other cats). 
 
 _Canon Examples: Sandstorm, Sparkpelt_
 
