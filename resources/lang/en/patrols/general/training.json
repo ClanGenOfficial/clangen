@@ -2648,14 +2648,11 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_catlookingup_Wr",
                 "strings": [
-                    "r_c0 might be keen on practicing {PRONOUN/r_c0/poss} tracking, but s_c0 has no time for that on {PRONOUN/s_c0/poss} agenda. {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'ve/'s} constructed a thorough list of battle moves that {PRONOUN/s_c0/poss} Clanmates have been performing poorly, and it takes priority over whatever r_c0 wants. r_c0 concedes, {PRONOUN/r_c0/poss} lashing tail the only sign of {PRONOUN/r_c0/poss} irritation."
+                    "r_c0 might be keen on practicing {PRONOUN/r_c0/poss} tracking, but p_l has no time for that on {PRONOUN/p_l/poss} agenda. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} constructed a thorough list of battle moves that {PRONOUN/p_l/poss} Clanmates have been performing poorly, and it takes priority over whatever r_c0 wants. r_c0 concedes, {PRONOUN/r_c0/poss} lashing tail the only sign of {PRONOUN/r_c0/poss} irritation."
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "p_l"
-                        ],
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "responsible",
@@ -2671,7 +2668,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c0"
