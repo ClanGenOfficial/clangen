@@ -1,3 +1,3 @@
-## Team Culture & Discord
+# Team Culture & Discord
 
 Under construction
