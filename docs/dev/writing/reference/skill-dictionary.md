@@ -12,7 +12,7 @@ For this documentation, each skill is listed under its internal name.
 
 ### **TEACHER**
 
-Cats with the ```TEACHER``` skill are those that are skilled teachers and able to readily pass on knowledge to both their peers and apprentices. Cats with the ```TEACHER``` skill can teach cats with any skill at an increased rate except for supernatural skills that cannot be trained. This skill is particularly applicable in patrols and events where cats are learning information from another cat and are being trained.
+Cats with the ```TEACHER``` skill are skilled teachers who can readily pass on knowledge to both their peers and apprentices. Cats with the ```TEACHER``` skill can teach cats with any skill at an increased rate (except for supernatural skills, which cannot be trained). This skill is particularly applicable in patrols and events where cats are learning information from another cat or are being formally trained.
 
 _Canon Examples: Rosepetal, Tawnypelt_
 
