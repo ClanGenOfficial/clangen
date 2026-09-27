@@ -58,7 +58,7 @@ _Canon Examples: Shadowstar, Ivypool_
 
 ### **SPEAKER**
 
-Cats with the ```SPEAKER``` skill are gifted with their words, whether they are used to inspire, outsmart, or deceive. They are skilled at communicating their ideas to others and convincing others. This skill is applicable in events and patrols that are based on communication between clanmates, the Clan and outsiders, or with other Clans.
+Cats with the ```SPEAKER``` skill are gifted with their words, whether they are used to inspire, outsmart, or deceive. They are skilled at communicating their ideas to others and convincing others. This skill is applicable in events and patrols that are based on communication between Clanmates, the Clan and outsiders, or with other Clans.
 
 _Canon Examples: Squirrelstar, Tigerstar I, Ashfur_
 
