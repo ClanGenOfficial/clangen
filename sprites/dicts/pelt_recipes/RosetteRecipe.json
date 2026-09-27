@@ -112,6 +112,20 @@
                     "color": "base"
                 }
             }
+        },
+        {
+            "colors": "RUST",
+            "layer_order": ["1", "2", "3", "4", "5", ["6", "7"]],
+            "layers": {
+                "6":{
+                    "group_name": "BACKTAILPATTERNGRAD",
+                    "color": "pattern_gradient_top"
+                },
+                "3": {
+                    "group_name": "BACKTAILPATTERNGRAD",
+                    "color": "base_gradient_top"
+                }
+            }
         }
     ]
 }
