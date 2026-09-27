@@ -9009,6 +9009,13 @@
             ]
         },
         "chance_of_success": 50,
+        "involved_cats": {
+            "p_l": {
+                "stat": {
+                    "trait": ["-gloomy", "-grumpy", "-lonesome", "-oblivious", "-strict"]
+                }
+            }
+        },
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "intro_strings": [
             "On their way to mark the far corners of their territory, p_l starts telling a story of their ancestors to keep every cat entertained."
@@ -9109,7 +9116,42 @@
                     "p_l": {
                         "stat": {
                             "skill": [
-                                "SPEAKER,1",
+                                "LORE,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from really enjoyed a story told by cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l regales the patrol with fantastical tales of lions and tigers fighting over the border they're headed towards. It might not be the most believable, but it's plenty fun to imagine and the patrol enjoys the story."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
                                 "STORY,1"
                             ]
                         }
