@@ -51,7 +51,7 @@ _Canon Examples: Silverstream, Riverstar_
 
 ### **STEALTH**
 
-Cats with the ```STEALTH``` skill are those adept at stalking and hiding. Amongst their peers they are able to disappear into cover with ease and remain undetected by predator and prey alike. This skill is applicable in events and patrols in which stealth is a focus or would be advantageous to survival. 
+Cats with the ```STEALTH``` skill are adept at stalking and hiding. Compared to their Clanmates, they disappear into cover with ease and remain undetected by predator and prey alike. This skill is applicable in events and patrols in which stealth is a focus or would be advantageous to survival. 
 
 _Canon Examples: Shadowstar, Ivypool_
 
