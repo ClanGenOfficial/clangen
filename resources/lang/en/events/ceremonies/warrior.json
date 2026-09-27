@@ -1914,7 +1914,7 @@
         ]
     },
     {
-        "event_id": "warrior_gatheringPOI",
+        "event_id": "warrior_POI_gathering",
         "poi": {
             "category": "gathering"
         },
@@ -1929,7 +1929,7 @@
         ]
     },
     {
-        "event_id": "warrior_water_POI",
+        "event_id": "warrior_POI_water",
         "poi": {
             "tags": ["water"]
         },
@@ -1944,9 +1944,9 @@
         ]
     },
     {
-        "event_id": "warrior_danger_POI",
+        "event_id": "warrior_POI_danger",
         "poi": {
-            "tags": ["tainted", "fall_risk", "unstable"]
+            "tags": ["danger"]
         },
         "tags": [
             "clan:leader"
@@ -1956,6 +1956,25 @@
         },
         "strings": [
             "(old_name) remembers being frightened of POI as an apprentice. When lead_name honors {PRONOUN/m_c/poss} r_h and names {PRONOUN/m_c/object} m_c, m_c stands proud before the Clan, knowing {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} conquered that fear."
+        ]
+    },
+    {
+        "event_id": "warrior_POI_rocks",
+        "poi": {
+            "tags": ["rocks"]
+        },
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": ["strict", "grumpy", "righteous", "cold", "responsible", "calm", "wise", "loyal", "thoughtful", "ambitious", "careful", "faithful"]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) bows {PRONOUN/m_c/poss} head to lead_name as {PRONOUN/lead_name/subject} {VERB/lead_name/name/names} {PRONOUN/m_c/object} m_c, honoring {PRONOUN/m_c/object} for {PRONOUN/m_c/poss} r_h. m_c vows silently to be as unwavering and solid as the stones of POI."
         ]
     }
 ]
