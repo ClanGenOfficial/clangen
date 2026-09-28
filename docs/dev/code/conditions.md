@@ -8,6 +8,7 @@ New conditions must have their required information format added to either `reso
     "name": {
         "severity": "",
         "duration": 0,
+        "is_complication": false,
         "mortality": {
             "newborn": 0.0,
             "kitten": 0.0,
@@ -55,6 +56,11 @@ Can be `minor`, `major`, or `severe`. `minor` conditions will not prevent the ca
 
 #### duration: int
 The number of moons this condition will last
+
+***
+
+#### is_complication: bool
+Set to True if this is a complication. A complication is a condition that cannot be given *except* as a risk of another condition (henceforth referred to as the "base" condition.) The base condition will not be able to fully heal until the complication is healed.
 
 ***
 
