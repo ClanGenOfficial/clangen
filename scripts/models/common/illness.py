@@ -21,3 +21,6 @@ class Illness(Enum):
     grief_stricken = "grief_stricken"
     malnourished = "malnourished"
     starving = "starving"
+    sore_throat = "sore_throat"
+    tick_fever = "tick_fever"
+    breathless_fit = "breathless_fit"

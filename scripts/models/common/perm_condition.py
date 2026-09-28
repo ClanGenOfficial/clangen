@@ -24,3 +24,7 @@ class PermCondition(Enum):
     recurring_shock = "recurring_shock"
     lasting_grief = "lasting_grief"
     persistent_headaches = "persistent_headaches"
+    selective_mutism = "selective_mutism"
+    absent = "absent"
+    strange_lump = "strange_lump"
+    damaged_throat = "damaged_throat"

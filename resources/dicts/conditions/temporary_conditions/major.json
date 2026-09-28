@@ -51,7 +51,8 @@
         "progression": {
             "festering_wound": {
                 "chance": 0.1,
-                "when": "CONTINUING"
+                "when": "CONTINUING",
+                "allow_scar": false
             }
         },
         "risks": {},
@@ -86,7 +87,8 @@
         "progression": {
             "greencough": {
                 "chance": 0.056,
-                "when": "CONTINUING"
+                "when": "CONTINUING",
+                "allow_scar": false
             }
         },
         "risks": {
@@ -127,7 +129,8 @@
         "progression": {
             "redcough": {
                 "chance": 0.013,
-                "when": "CONTINUING"
+                "when": "CONTINUING",
+                "allow_scar": false
             }
         },
         "risks": {
@@ -156,7 +159,8 @@
         "progression": {
             "heat_stroke": {
                 "chance": 0.2,
-                "when": "CONTINUING"
+                "when": "CONTINUING",
+                "allow_scar": false
             }
         },
         "risks": {},
@@ -201,11 +205,13 @@
         "progression": {
             "lasting_grief": {
                 "chance": 0.01,
-                "when": "CONTINUING"
+                "when": "CONTINUING",
+                "allow_scar": false
             },
             "selective_mutism": {
                 "chance": 0.007,
-                "when": "CONTINUING"
+                "when": "CONTINUING",
+                "allow_scar": false
             }
         },
         "risks": {
@@ -545,7 +551,8 @@
         "progression": {
             "constant_joint_pain": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": false
             }
         },
         "risks": {},
@@ -623,11 +630,13 @@
         "progression": {
             "lost_leg": {
                 "chance": 0.2,
-                "when": "CONTINUING"
+                "when": "CONTINUING",
+                "allow_scar": true
             },
             "lost_tail": {
                 "chance": 0.2,
-                "when": "CONTINUING"
+                "when": "CONTINUING",
+                "allow_scar": true
             }
         },
         "risks": {
@@ -705,7 +714,8 @@
         "progression": {
             "raspy_lungs": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": false
             }
         },
         "risks": {
@@ -783,7 +793,8 @@
         "progression": {
             "lingering_shock": {
                 "chance": 0.067,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": false
             }
         },
         "risks": {},
@@ -809,15 +820,18 @@
         "progression": {
             "recurring_shock": {
                 "chance": 0.2,
-                "when": "CONTINUING"
+                "when": "CONTINUING",
+                "allow_scar": false
             },
             "absent": {
                 "chance": 0.2,
-                "when": "CONTINUING"
+                "when": "CONTINUING",
+                "allow_scar": false
             },
             "selective_mutism": {
                 "chance": 0.2,
-                "when": "CONTINUING"
+                "when": "CONTINUING",
+                "allow_scar": false
             }
         },
         "risks": {},
@@ -884,31 +898,38 @@
         "progression": {
             "failing_eyesight": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": false
             },
             "one_bad_eye": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": false
             },
             "blind": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": false
             },
             "constantly_dizzy": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": false
             },
             "partial_hearing_loss": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": false
             },
             "persistent_headaches": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": false
             },
             "absent": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": false
             }
         },
         "risks": {
@@ -948,7 +969,8 @@
         "progression": {
             "redcough": {
                 "chance": 0.1,
-                "when": "CONTINUING"
+                "when": "CONTINUING",
+                "allow_scar": false
             }
         },
         "risks": {},
@@ -994,7 +1016,8 @@
         "progression": {
             "recovering_from_birth": {
                 "chance": 2.0,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": false
             }
         },
         "risks": {},
@@ -1100,11 +1123,13 @@
         "progression": {
             "failing_eyesight": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": false
             },
             "constantly_dizzy": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": false
             }
         },
         "risks": {

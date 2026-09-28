@@ -23,9 +23,10 @@ New conditions must have their required information format added to either `reso
             "condition": 0.0
         },
         "progression": {
-            "paralyzed": {
+            "condition": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "STATE",
+                "allow_scar": false
             }
         },
         "risks": {
@@ -99,17 +100,19 @@ A dictionary of potential progressions. A progression is a new condition that th
 > For example:
 > `whitecough` has a `progression` for `greencough`. When a cat has `whitecough`, there's a chance that it may become `greencough`. The cat will no longer have the `whitecough` condition, they will only have `greencough`.
 
-These are written with the key as the condition name and the value as the percentage chance as well as the `State` required, like so:
+These are written with the key as the condition name and the value as the percentage chance as well as the `State` required and if or not a scar can be given, like so:
 
 ```json
 "progression": {
     "paralyzed": {
         "chance": 0.2,
-        "when": "HEALED"
+        "when": "HEALED",
+        "allow_scar": false
     }
     "weak_leg": {
         "chance": 0.4,
-        "when": "CONTINUING"
+        "when": "CONTINUING",
+        "allow_scar": true
     }
 },
 ```
@@ -121,6 +124,9 @@ The `when` parameter is used to dictate which `State` the condition must be in f
 - `HEALED` means the condition will heal this moon. This is commonly used for progressions that should be the *result* of a condition. For example: a mangled leg heals, but is permanently weakened.
 - `REVEALED` is used when a congenital condition is *discovered* and becomes visible to the player. Generally, there is no reason for progression to occur here.
 - `CONTINUING` is used when a cat simply continues to have the condition for this moon; no death, healing, or revealing. The majority of progressions happen in this state. This is also when risks have a chance to be gained.
+
+**Allow Scar**
+This allows you to dictate if progressing to this condition can come with a scar. Setting it to False means that no scar can be given at all. 
 
 ***
 
@@ -168,6 +174,9 @@ The [Herb Dictionary](../writing/reference/herbs.md) is available as a reference
 
 #### possible_scars: list[str]
 A list of possible scars that this condition can apply once healed.
+
+!!! important
+  Do not list scars that can be given by progressions that the cat can "heal" into. For example, do not list `NOPAW` as a possible scar for `mangled_leg`. `mangled_leg` is able to progress into `lost_leg`. `lost_leg` will list `NOPAW` as a scar and will give that scar IF the `mangled_leg` progresses into `lost_leg`.
 
 
 ***

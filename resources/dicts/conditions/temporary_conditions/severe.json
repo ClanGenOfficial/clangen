@@ -114,7 +114,8 @@
         "progression": {
             "whitecough": {
                 "chance": 0.1,
-                "when": "CONTINUING"
+                "when": "CONTINUING",
+                "allow_scar": false
             }
         },
         "risks": {
@@ -220,7 +221,8 @@
         "progression": {
             "strange_lump": {
                 "chance": 0.05,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": false
             }
         },
         "risks": {},
@@ -308,11 +310,13 @@
         "progression": {
             "crooked_jaw": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": true
             },
             "damaged_throat": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": false
             }
         },
         "risks": {
@@ -366,11 +370,13 @@
         "progression": {
             "weak_leg": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": true
             },
             "twisted_leg": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": true
             }
         },
         "risks": {
@@ -417,15 +423,18 @@
         "progression": {
             "blind": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": true
             },
             "one_bad_eye": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": true
             },
             "failing_eyesight": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": true
             }
         },
         "risks": {
@@ -480,15 +489,18 @@
         "progression": {
             "lost_leg": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": true
             },
             "weak_leg": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": true
             },
             "twisted_leg": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": true
             }
         },
         "risks": {
@@ -539,7 +551,8 @@
         "progression": {
             "lost_tail": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": true
             }
         },
         "risks": {
@@ -587,11 +600,13 @@
         "progression": {
             "lost_tail": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": true
             },
             "lost_leg": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": true
             }
         },
         "risks": {
@@ -641,7 +656,8 @@
         "progression": {
             "paralyzed": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": true
             }
         },
         "risks": {

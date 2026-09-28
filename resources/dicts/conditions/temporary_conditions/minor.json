@@ -28,7 +28,8 @@
         "progression": {
             "whitecough": {
                 "chance": 0.3,
-                "when": "CONTINUING"
+                "when": "CONTINUING",
+                "allow_scar": false
             }
         },
         "risks": {
@@ -312,7 +313,8 @@
         "progression": {
             "partial_hearing_loss": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": true
             }
         },
         "risks": {
@@ -399,7 +401,8 @@
         "progression": {
             "damaged_throat": {
                 "chance": 0.2,
-                "when": "HEALED"
+                "when": "HEALED",
+                "allow_scar": true
             }
         },
         "risks": {},

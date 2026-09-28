@@ -7,6 +7,12 @@ import pytest
 from scripts.models.ceremony.ceremony_schema import CeremonySchema
 from scripts.models.condition.base_condition_schema import BaseConditionSchema
 from scripts.models.condition.death_condition_schema import DeathConditionSchema
+from scripts.models.condition.permanent_condition_info_schema import (
+    PermanentConditionInfoSchema,
+)
+from scripts.models.condition.temporary_condition_info_schema import (
+    TemporaryConditionInfoSchema,
+)
 from scripts.models.relationship_group_event.relationship_group_schema import (
     RelationshipGroupEvent,
 )
@@ -153,6 +159,22 @@ def death_condition_event_files():
     )
 
 
+def temporary_condition_info_files():
+    """
+    Iterator for Paths for all temporary condition info files
+    """
+
+    yield from RESOURCES_DIR.glob("dicts/conditions/temporary_conditions/*.json")
+
+
+def permanent_condition_info_files():
+    """
+    Iterator for Paths for all permanent condition info files
+    """
+
+    yield from RESOURCES_DIR.glob("dicts/conditions/permanent_conditions/*.json")
+
+
 @pytest.mark.parametrize(
     "thought_file",
     all_thought_files(),
@@ -257,3 +279,27 @@ def test_base_condition_events(base_condition_file: Path):
 def test_death_condition_events(death_condition_file: Path):
     """Test that all death_condition_file JSONs are correct according to the Pydantic models"""
     DeathConditionSchema.model_validate_json(death_condition_file.read_text())
+
+
+@pytest.mark.parametrize(
+    "temporary_condition_file",
+    temporary_condition_info_files(),
+    ids=format_file_context_string,
+)
+def test_temporary_condition_info(temporary_condition_file: Path):
+    """Test that all temporary_condition_file JSONs are correct according to the Pydantic models"""
+    TemporaryConditionInfoSchema.model_validate_json(
+        temporary_condition_file.read_text()
+    )
+
+
+@pytest.mark.parametrize(
+    "permanent_condition_file",
+    permanent_condition_info_files(),
+    ids=format_file_context_string,
+)
+def test_permanent_condition_info(permanent_condition_file: Path):
+    """Test that all permanent_condition_file JSONs are correct according to the Pydantic models"""
+    PermanentConditionInfoSchema.model_validate_json(
+        permanent_condition_file.read_text()
+    )

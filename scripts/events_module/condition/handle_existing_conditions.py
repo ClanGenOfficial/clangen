@@ -420,24 +420,25 @@ def _check_progression(
             gain_temporary_condition(cat, progression)
         elif progression in PERMANENT_CONDITIONS:
             if condition.name in TEMPORARY_CONDITIONS:
-                requires_scar = PERMANENT_CONDITIONS[progression].get(
-                    "requires_scar", False
-                )
-                scar_pool = TEMPORARY_CONDITIONS[condition.name].get(
-                    "possible_scars", []
-                ) + PERMANENT_CONDITIONS[progression].get("possible_scars", [])
-                # if the condition is going from temp to perm, try to give a scar
-                scar_event = _attempt_scarring(
-                    cat,
-                    condition,
-                    possible_scars=scar_pool,
-                    guarantee_scar=requires_scar,
-                )
+                if condition.progression[progression].get("allow_scar"):
+                    requires_scar = PERMANENT_CONDITIONS[progression].get(
+                        "requires_scar", False
+                    )
+                    scar_pool = TEMPORARY_CONDITIONS[condition.name].get(
+                        "possible_scars", []
+                    ) + PERMANENT_CONDITIONS[progression].get("possible_scars", [])
+                    # if the condition is going from temp to perm, try to give a scar
+                    scar_event = _attempt_scarring(
+                        cat,
+                        condition,
+                        possible_scars=scar_pool,
+                        guarantee_scar=requires_scar,
+                    )
 
-                if requires_scar and not scar_event:
-                    # if the cat couldn't be scarred for some reason, but the condition required it
-                    # then we're gonna continue before we can give the condition
-                    return event_list, conditions_to_remove
+                    if requires_scar and not scar_event:
+                        # if the cat couldn't be scarred for some reason, but the condition required it
+                        # then we're gonna continue before we can give the condition
+                        return event_list, conditions_to_remove
 
             gain_permanent_condition(cat, progression)
 
