@@ -116,6 +116,9 @@ These are written with the key as the condition name and the value as the percen
     }
 },
 ```
+**Chance**
+This is the percentage chance to occur. Set this to `2.0` if it should *always* occur. 
+
 **State Requirements**
 The `when` parameter is used to dictate which `State` the condition must be in for the progression to occur. Conditions can be in 5 states: `SKIPPED`, `FATAL`, `HEALED`, `REVEALED`, and `CONTINUING`.
 
