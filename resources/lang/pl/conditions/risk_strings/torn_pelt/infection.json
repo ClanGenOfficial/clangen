@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "infection0",
+        "strings": [
+            "r_c juices herbs over m_c's torn pelt. It should help m_c fight off the minor infection that's developing there."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "infection1",
+        "strings": [
+            "The tears in m_c's pelt seem to have become inflamed. It's most likely an infection."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

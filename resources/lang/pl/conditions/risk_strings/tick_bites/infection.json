@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "infection0",
+        "strings": [
+            "r_c sighs and tries to gently extract the head of the tick that was left behind when the insect was plucked off of m_c. With that contaminant, the little tick bite has become infected."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "infection1",
+        "strings": [
+            "The tick on m_c was left for far too long. The area is now swollen and warm."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
