@@ -79,6 +79,7 @@ Points of Interests can use many different tags that denote circumstances around
 |    high_ground    |   could be stood atop, perhaps for safety or intimidation. best used for more singular objects, rather than expansive areas.    |
 |      tainted      |                                  carries a risk of injury or illness due to unsafe conditions                                   |
 |       trees       |                                                       incorporates trees.                                                       |
+|       maze        |                a maze-like POI. Cats could get lost here, lose pursuers here, or spend a lot of time exploring.                 |
 |      Twolegs      |                revolves around Twolegs. Has more specific tags. Should not be used alongside other twoleg tags.                 |
 | Twolegs:abandoned |                    An object, structure, area created or modified by Twolegs that has since been abandoned.                     |
 |  Twolegs:present  |                   An object, structure, area created or modified by Twolegs that has regular Twoleg activity.                   |
