@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "torn_pelt0",
+        "event_id": "fleas_torn_pelt0",
         "strings": [
             "m_c has been scratching incessantly at the fleas infesting {PRONOUN/m_c/poss} pelt. r_c scolds {PRONOUN/m_c/object} for it as {PRONOUN/r_c/subject} gently {VERB/r_c/clean/cleans} the now raw areas of m_c's pelt."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "torn_pelt1",
+        "event_id": "fleas_torn_pelt1",
         "strings": [
             "m_c scratches and scratches and scratches, ever frustrated by {PRONOUN/m_c/poss} fleas. The constant scratching has begun to tear up {PRONOUN/m_c/poss} pelt, leaving raw patches of skin exposed.",
             "m_c's constant flea scratching has torn {PRONOUN/m_c/poss} pelt.",

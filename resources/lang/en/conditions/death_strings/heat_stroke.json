@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "heat_stroke0",
+        "event_id": "death_heat_stroke0",
         "strings": [
             "m_c died of heat stroke."
         ],
@@ -17,7 +17,7 @@
         ]
     },
     {
-        "event_id": "heat_stroke1",
+        "event_id": "death_heat_stroke1",
         "strings": [
             "m_c's case of heat stroke has killed {PRONOUN/m_c/object}."
         ],

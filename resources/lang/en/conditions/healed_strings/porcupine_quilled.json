@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "quilled_by_a_porcupine0",
+        "event_id": "healed_quilled_by_a_porcupine0",
         "strings": [
             "m_c has recovered from the wounds {PRONOUN/m_c/subject} got from the porcupine.",
             "The porcupine quills stuck in m_c's pelt have finally come out.",

@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "sore_throat0",
+        "event_id": "damaged_throat_sore_throat0",
         "strings": [
             "m_c mimes the motions for numbing herbs to r_c, who understands and supplies them swiftly. Something must have irritated m_c's damaged throat."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "sore_throat1",
+        "event_id": "damaged_throat_sore_throat1",
         "strings": [
             "m_c overexerted {PRONOUN/m_c/poss} voice and now can hardly speak at all, with how horribly sore {PRONOUN/m_c/poss} throat is."
         ],

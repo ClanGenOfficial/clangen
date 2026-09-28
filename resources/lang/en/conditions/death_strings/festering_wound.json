@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "festering_wound0",
+        "event_id": "death_festering_wound0",
         "strings": [
             "m_c has died from a festering wound.",
             "A festering wound has killed m_c.",

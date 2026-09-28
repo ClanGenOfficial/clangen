@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "one_bad_eye0",
+        "event_id": "severe_burn_one_bad_eye0",
         "strings": [
             "r_c peels the cobwebs away from m_c's face and holds back a wince. The eye is unsalvageable... and the rest of the skin will likely never grow fur again."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "one_bad_eye1",
+        "event_id": "severe_burn_one_bad_eye1",
         "strings": [
             "m_c can only be glad {PRONOUN/m_c/subject} {VERB/m_c/were/was} able to heal from the devastating burn, though {PRONOUN/m_c/subject} can't help but feel angry at {PRONOUN/m_c/poss} now vastly-limited vision."
         ],

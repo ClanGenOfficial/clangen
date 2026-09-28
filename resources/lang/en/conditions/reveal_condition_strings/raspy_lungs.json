@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "raspy_lungs0",
+        "event_id": "reveal_condition_raspy_lungs0",
         "strings": [
             "m_c has been having a lot of trouble keeping up while playing. r_c0 listens to {PRONOUN/m_c/poss} chest and diagnoses {PRONOUN/m_c/object} with raspy lungs."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "raspy_lungs1",
+        "event_id": "reveal_condition_raspy_lungs1",
         "strings": [
             "As m_c grows, {PRONOUN/m_c/subject} {VERB/m_c/seem/seems} incapable of not snoring and panting loudly, until eventually it's clear {PRONOUN/m_c/poss} lungs are a little weaker than normal."
         ],

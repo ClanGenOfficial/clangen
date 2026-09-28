@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "infected_wound0",
+        "event_id": "death_infected_wound0",
         "strings": [
             "m_c died from an infection.",
             "m_c succumbed to an infection.",

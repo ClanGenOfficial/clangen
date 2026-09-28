@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "seizure0",
+        "event_id": "seizure_prone_seizure0",
         "strings": [
             "r_c spots the seizure coming, bringing m_c to {PRONOUN/m_c/poss} nest where it's always a little less upsetting to wake up."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "seizure1",
+        "event_id": "seizure_prone_seizure1",
         "strings": [
             "m_c is exhausted and stressed, both the cause and consequence of {PRONOUN/m_c/poss} seizure."
         ],

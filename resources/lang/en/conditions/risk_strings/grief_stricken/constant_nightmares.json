@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "constant_nightmares0",
+        "event_id": "grief_stricken_constant_nightmares0",
         "strings": [
             "m_c heads to the medicine cat den, hoping that r_c will give {PRONOUN/m_c/object} some poppy seeds to help dampen the nightmares that have been plaguing {PRONOUN/m_c/object}."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "constant_nightmares1",
+        "event_id": "grief_stricken_constant_nightmares1",
         "strings": [
             "m_c wakes from yet another nightmare, feeling as though {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} being haunted by the ghost of the one {PRONOUN/m_c/subject} {VERB/m_c/grieve/grieves}.",
             "m_c wakes and wails, {PRONOUN/m_c/poss} dreams haunted by visions of {PRONOUN/m_c/poss} dead loved one.",

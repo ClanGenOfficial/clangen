@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "snake_bite0",
+        "event_id": "healed_snake_bite0",
         "strings": [
             "The snake bite m_c got has healed.",
             "m_c's snake bite has healed.",

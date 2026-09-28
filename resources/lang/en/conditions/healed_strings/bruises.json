@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "bruises0",
+        "event_id": "healed_bruises0",
         "strings": [
             "m_c's bruises have healed.",
             "m_c is feeling much better. {PRONOUN/m_c/poss/CAP} bruises are gone.",

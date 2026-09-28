@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "joint_pain0",
+        "event_id": "twisted_leg_joint_pain0",
         "strings": [
             "m_c slowly does {PRONOUN/m_c/poss} morning stretches, remembering r_c's promise that it'll help with the pain in {PRONOUN/m_c/poss} joints."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "joint_pain1",
+        "event_id": "twisted_leg_joint_pain1",
         "strings": [
             "m_c just wants to stay very still and quiet, resting as {PRONOUN/m_c/subject} {VERB/m_c/wait/waits} for the joint pain in {PRONOUN/m_c/poss} twisted leg to die down."
         ],

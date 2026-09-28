@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "malnourished0",
+        "event_id": "gain_temporary_condition_malnourished0",
         "strings": [
             "m_c has become malnourished.",
             "Lack of fresh-kill has left m_c malnourished."

@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "infection0",
+        "event_id": "small_cut_infection0",
         "strings": [
             "r_c takes a closer look at m_c's little cut, concern on {PRONOUN/r_c/poss} face. It seems the cut wasn't kept clean enough and has become infected."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "infection1",
+        "event_id": "small_cut_infection1",
         "strings": [
             "Rather than healing, the small cut m_c got has become angry and painful. {PRONOUN/m_c/subject/CAP} {VERB/m_c/worry/worries} that it could be infected."
         ],

@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "crooked_jaw0",
+        "event_id": "broken_jaw_crooked_jaw0",
         "strings": [
             "Despite r_c's best efforts, m_c's jaw is healing crooked. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} just glad it's healing at all.",
             "r_c tells m_c that {PRONOUN/m_c/poss} jaw will never be aligned correctly again, but healing from a broken jaw at all is a miracle."
@@ -15,7 +15,7 @@
         }
     },
     {
-        "event_id": "crooked_jaw2",
+        "event_id": "broken_jaw_crooked_jaw2",
         "strings": [
             "m_c has been feeling the pain in {PRONOUN/m_c/poss} broken jaw lessen, but {PRONOUN/m_c/poss} teeth just don't fit together neatly like they used to.",
             "m_c can finally chew without pain, but it seems {PRONOUN/m_c/poss} jaw is permanently crooked now.",

@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "yellowcough0",
+        "event_id": "death_yellowcough0",
         "strings": [
             "m_c died of yellowcough.",
             "Yellowcough has killed m_c.",

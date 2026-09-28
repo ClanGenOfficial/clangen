@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "tick_fever0",
+        "event_id": "death_tick_fever0",
         "strings": [
             "m_c died of tick fever.",
             "m_c couldn't pull through, and the Clan is harshly reminded how important it is to get every tick."

@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "phantom_pain0",
+        "event_id": "lost_tail_phantom_pain0",
         "strings": [
             "r_c can't give m_c answers; {PRONOUN/m_c/poss} tail is gone, and yet the pain in it remains."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "phantom_pain1",
+        "event_id": "lost_tail_phantom_pain1",
         "strings": [
             "m_c can't understand how an appendage that isn't there can possibly itch so badly, but it's driving {PRONOUN/m_c/object} insane."
         ],

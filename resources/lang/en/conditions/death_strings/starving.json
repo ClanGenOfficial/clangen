@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "starving0",
+        "event_id": "death_starving0",
         "strings": [
             "m_c died of starvation.",
             "m_c couldn't go on any longer and collapsed from starvation.",

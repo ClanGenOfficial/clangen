@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "damaged_throat0",
+        "event_id": "broken_jaw_damaged_throat0",
         "strings": [
             "m_c's jaw has healed, but {PRONOUN/m_c/poss} throat remains sore, making speech difficult.",
             "m_c's jaw has been realigned, but the rest of {PRONOUN/m_c/poss} throat is another story.",
@@ -11,7 +11,7 @@
         }
     },
     {
-        "event_id": "damaged_throat2",
+        "event_id": "broken_jaw_damaged_throat2",
         "strings": [
             "r_c had assumed m_c's difficulty speaking was just the result of {PRONOUN/m_c/poss} broken jaw, but it appears the injury extended deeper into m_c's throat."
         ],

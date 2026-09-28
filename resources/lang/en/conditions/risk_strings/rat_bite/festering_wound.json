@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "festering_wound0",
+        "event_id": "rat_bite_festering_wound0",
         "strings": [
             "The worried look in r_c's eyes as {PRONOUN/r_c/subject} {VERB/r_c/examine/examines} m_c's acrid rat bite makes {PRONOUN/m_c/poss} heart sink."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "festering_wound1",
+        "event_id": "rat_bite_festering_wound1",
         "strings": [
             "m_c tries to ignore the smell coming from the site of {PRONOUN/m_c/poss} festering rat bite."
         ],

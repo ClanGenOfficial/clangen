@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "dehydrated0",
+        "event_id": "healed_dehydrated0",
         "strings": [
             "m_c has recovered from the dehydration {PRONOUN/m_c/subject} {VERB/m_c/were/was} suffering.",
             "After a lot of water and rest, m_c finally feels better.",

@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "joint_pain0",
+        "event_id": "weak_leg_joint_pain0",
         "strings": [
             "m_c comes to r_c feeling like {PRONOUN/m_c/poss} weak leg is going to collapse beneath {PRONOUN/m_c/object} from the pain in its joints."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "joint_pain1",
+        "event_id": "weak_leg_joint_pain1",
         "strings": [
             "{PRONOUN/m_c/subject/CAP} must have put a foot wrong. The joints in m_c's weak leg feel inflamed and painful."
         ],

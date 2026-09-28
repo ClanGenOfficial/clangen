@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "poisoned0",
+        "event_id": "death_poisoned0",
         "strings": [
             "m_c died from the poison in {PRONOUN/m_c/poss} body."
         ],

@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "sore_throat0",
+        "event_id": "dehydrated_sore_throat0",
         "strings": [
             "r_c has tried to get some water into m_c, but {PRONOUN/m_c/poss} thirst has left {PRONOUN/m_c/poss} throat dry and scratchy."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "sore_throat1",
+        "event_id": "dehydrated_sore_throat1",
         "strings": [
             "The lack of water has left m_c's throat dry and sore."
         ],

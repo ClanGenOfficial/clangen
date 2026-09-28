@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "yellowcough0",
+        "event_id": "gain_temporary_condition_yellowcough0",
         "strings": [
             "m_c has gotten yellowcough.",
             "m_c is sick with yellowcough."

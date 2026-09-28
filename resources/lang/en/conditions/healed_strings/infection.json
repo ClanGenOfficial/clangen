@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "infection0",
+        "event_id": "healed_infection0",
         "strings": [
             "The infection in m_c's wound has abated.",
             "m_c's wound is no longer infected.",

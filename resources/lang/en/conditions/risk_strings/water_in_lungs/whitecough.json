@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "whitecough0",
+        "event_id": "water_in_lungs_whitecough0",
         "strings": [
             "m_c hasn't managed to avoid whitecough, r_c tells {PRONOUN/m_c/object}. The water {PRONOUN/m_c/subject} inhaled must have been carrying illness with it. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} confined to camp while {PRONOUN/m_c/subject} {VERB/m_c/recover/recovers}."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "whitecough1",
+        "event_id": "water_in_lungs_whitecough1",
         "strings": [
             "m_c's hacking no longer seems to be just from the water {PRONOUN/m_c/subject} inhaled. It must have progressed into whitecough.",
             "With {PRONOUN/m_c/poss} lungs already weakened by the water still in them, m_c is unable to fight off the whitecough that finds {PRONOUN/m_c/object}."

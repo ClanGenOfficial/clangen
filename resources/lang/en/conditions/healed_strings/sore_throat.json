@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "sore_throat0",
+        "event_id": "healed_sore_throat0",
         "strings": [
             "m_c's throat is no longer sore.",
             "m_c's throat has healed."

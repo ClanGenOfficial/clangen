@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "poisoned0",
+        "event_id": "healed_poisoned0",
         "strings": [
             "m_c got very lucky and has managed to recover from the poison.",
             "Despite the lethality of the poison that coursed through {PRONOUN/m_c/object}, m_c has managed to stay alive.",

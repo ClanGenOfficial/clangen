@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "headache0",
+        "event_id": "persistent_headaches_headache0",
         "strings": [
             "m_c's headaches have plagued {PRONOUN/m_c/object} particularly badly this moon, so much so that r_c is running low on {PRONOUN/r_c/poss} pain-relieving mixture, having used so much up in keeping m_c feeling able."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "headache1",
+        "event_id": "persistent_headaches_headache1",
         "strings": [
             "m_c growls as another wave of pain hits {PRONOUN/m_c/object}. It's on-and-off; herbs have been helping, but StarClan help {PRONOUN/m_c/object}, having so many headaches gets annoying."
         ],

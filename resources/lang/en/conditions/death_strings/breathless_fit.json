@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "breathless_fit0",
+        "event_id": "death_breathless_fit0",
         "strings": [
             "m_c suffocated to death during a breathless fit.",
             "m_c's breathing got worse and worse, until {PRONOUN/m_c/subject} finally suffocated."

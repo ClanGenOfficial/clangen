@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "weak_leg0",
+        "event_id": "mangled_leg_weak_leg0",
         "strings": [
             "r_c tells m_c that {PRONOUN/m_c/subject} might have to accept that the leg that was so badly mangled will always be weaker now. At least {PRONOUN/m_c/subject} still {VERB/m_c/have/has} it... but that's cold consolation to m_c, who feels like {PRONOUN/m_c/subject} {VERB/m_c/were/was} so close to healing perfectly.",
             "r_c explains to m_c that the weakness {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} in {PRONOUN/m_c/poss} leg will likely always be present, a consequence of the severe damage."
@@ -15,7 +15,7 @@
         }
     },
     {
-        "event_id": "weak_leg2",
+        "event_id": "mangled_leg_weak_leg2",
         "strings": [
             "m_c stands triumphantly on a leg that now works only a little worse than before. While it'll always be weaker than {PRONOUN/m_c/poss} others, it's been a long journey to heal such a badly injured limb.",
             "m_c limps around the camp, happy to at least be up and moving, though the new limp is probably permanent."

@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "venom_sickness0",
+        "event_id": "healed_venom_sickness0",
         "strings": [
             "m_c is no longer venom-sick.",
             "Luckily, m_c managed to recover from the venom coursing through {PRONOUN/m_c/poss} body.",

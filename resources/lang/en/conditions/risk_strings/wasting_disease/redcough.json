@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "redcough0",
+        "event_id": "wasting_disease_redcough0",
         "strings": [
             "r_c has quietly begun making m_c comfortable... or as comfortable as {PRONOUN/m_c/subject} can be while hacking blood."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "redcough1",
+        "event_id": "wasting_disease_redcough1",
         "strings": [
             "m_c has been hacking up blood, {PRONOUN/m_c/poss} body growing weaker and weaker.  {PRONOUN/m_c/subject/CAP} may not last much longer."
         ],

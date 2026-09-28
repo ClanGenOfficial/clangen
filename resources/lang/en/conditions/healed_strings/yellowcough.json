@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "yellowcough0",
+        "event_id": "healed_yellowcough0",
         "strings": [
             "m_c has survived yellowcough.",
             "m_c has recovered from yellowcough.",

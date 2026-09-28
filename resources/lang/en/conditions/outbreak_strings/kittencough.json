@@ -1,7 +1,9 @@
 [
     {
-        "event_id": "kittencough_spread0",
-        "strings": ["Kittencough has spread around the nursery. multi_cat are sick."],
+        "event_id": "outbreak_kittencough_spread0",
+        "strings": [
+            "Kittencough has spread around the nursery. multi_cat are sick."
+        ],
         "involved_cats": {
             "multi_cat": {}
         }

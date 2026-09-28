@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "whitecough0",
+        "event_id": "running_nose_whitecough0",
         "strings": [
             "r_c moves m_c to the medicine cat den, where the whitecough that {PRONOUN/m_c/poss} running nose has turned into can be more easily monitored."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "whitecough1",
+        "event_id": "running_nose_whitecough1",
         "strings": [
             "m_c brings {PRONOUN/m_c/self} to the medicine cat den, concerned {PRONOUN/m_c/poss} running nose only seems to be getting worse."
         ],

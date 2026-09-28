@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "whitecough0",
+        "event_id": "kittencough_whitecough0",
         "strings": [
             "r_c tells m_c's parent that {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to move m_c to the medicine cat den. m_c's kittencough has progressed to whitecough."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "whitecough1",
+        "event_id": "kittencough_whitecough1",
         "strings": [
             "m_c coughs pathetically, wondering why it's not getting better and why {PRONOUN/m_c/subject} {VERB/m_c/have/has} to be in the stinky medicine cat den now."
         ],

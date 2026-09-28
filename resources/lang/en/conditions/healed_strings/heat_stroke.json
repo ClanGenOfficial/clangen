@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "heat_stroke0",
+        "event_id": "healed_heat_stroke0",
         "strings": [
             "m_c is no longer suffering from heat stroke.",
             "m_c has recovered from heat stroke.",

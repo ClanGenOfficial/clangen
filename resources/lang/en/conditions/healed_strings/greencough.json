@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "greencough0",
+        "event_id": "healed_greencough0",
         "strings": [
             "m_c has recovered from greencough.",
             "m_c is no longer coughing and sputtering. {PRONOUN/m_c/poss/CAP} case of greencough is now cured.",

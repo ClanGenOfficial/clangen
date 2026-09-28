@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "grief_stricken0",
+        "event_id": "healed_grief_stricken0",
         "strings": [
             "m_c will always feel {PRONOUN/m_c/poss} grief, but time has softened it, at least a little.",
             "m_c gazes up into Silverpelt and finds that, finally, the grief has begun to lessen.",

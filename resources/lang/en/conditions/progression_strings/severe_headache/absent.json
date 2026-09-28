@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "absent0",
+        "event_id": "severe_headache_absent0",
         "strings": [
             "m_c's headaches have been getting worse. {PRONOUN/m_c/subject/CAP} can hardly even think."
         ],
@@ -9,7 +9,7 @@
         }
     },
     {
-        "event_id": "absent1",
+        "event_id": "severe_headache_absent1",
         "strings": [
             "r_c isn't sure why m_c suddenly took such a downward turn, but {PRONOUN/m_c/subject} did. r_c isn't sure it can be treated.",
             "m_c has found it harder and harder to remember what {PRONOUN/m_c/subject} {VERB/m_c/were/was} doing. r_c suspects the worst."

@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "running_nose0",
+        "event_id": "allergies_running_nose0",
         "strings": [
             "r_c sighs to see m_c headed towards {PRONOUN/r_c/object} and goes to fix up {PRONOUN/r_c/poss} normal herbal mix, hoping that the allergic reaction m_c keeps having fades soon."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "running_nose1",
+        "event_id": "allergies_running_nose1",
         "strings": [
             "Seems it's allergy season! m_c has been sneezing and sniffling all moon."
         ],

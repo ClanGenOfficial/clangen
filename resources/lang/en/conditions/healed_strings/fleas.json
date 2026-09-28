@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "fleas0",
+        "event_id": "healed_fleas0",
         "strings": [
             "m_c has finally gotten rid of all {PRONOUN/m_c/poss} fleas.",
             "m_c is free of fleas at last."

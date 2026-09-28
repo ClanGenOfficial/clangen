@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "infection0",
+        "event_id": "rat_bite_infection0",
         "strings": [
             "r_c talks as {PRONOUN/r_c/subject} {VERB/r_c/apply/applies} a strange paste to m_c's rat bite. {PRONOUN/r_c/subject/CAP} {VERB/r_c/tell/tells} {PRONOUN/m_c/object} that this will be a daily routine because it's becoming infected."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "infection1",
+        "event_id": "rat_bite_infection1",
         "strings": [
             "It seems inevitable that all rat bites are nasty, so m_c isn't really surprised when {PRONOUN/m_c/inposs} starts to show signs of infection."
         ],

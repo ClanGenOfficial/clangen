@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "headache0",
+        "event_id": "head_damage_headache0",
         "strings": [
             "r_c prepares a soothing mix of herbs for m_c, who has been complaining of head pain after {PRONOUN/m_c/poss} injury. "
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "headache1",
+        "event_id": "head_damage_headache1",
         "strings": [
             "m_c awakes with a dull, throbbing pain in {PRONOUN/m_c/poss} head. {PRONOUN/m_c/poss/CAP} head injury doesn't appear to be healing as {PRONOUN/m_c/subject} hoped. "
         ],

@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "recovering_from_birth0",
+        "event_id": "healed_recovering_from_birth0",
         "strings": [
             "m_c has recovered from birthing {PRONOUN/m_c/poss} litter.",
             "m_c finally feels back to normal after the strain of birthing a litter.",

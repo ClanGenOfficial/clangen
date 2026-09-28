@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "cracked_pads0",
+        "event_id": "healed_cracked_pads0",
         "strings": [
             "m_c's pads have healed.",
             "m_c can walk without pain. {PRONOUN/m_c/poss/CAP} cracked pads have healed.",

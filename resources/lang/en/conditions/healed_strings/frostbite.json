@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "frostbite0",
+        "event_id": "healed_frostbite0",
         "strings": [
             "m_c's frostbite is gone.",
             "m_c has recovered from {PRONOUN/m_c/poss} frostbite.",

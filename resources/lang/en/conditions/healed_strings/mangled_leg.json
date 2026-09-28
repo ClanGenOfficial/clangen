@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "mangled_leg0",
+        "event_id": "healed_mangled_leg0",
         "strings": [
             "m_c has healed from {PRONOUN/m_c/poss} mangled leg.",
             "m_c's mangled leg has healed up.",

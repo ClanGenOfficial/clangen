@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "breathless_fit0",
+        "event_id": "raspy_lungs_breathless_fit0",
         "strings": [
             "m_c wheezes to r_c that it feels like a cat is sitting on {PRONOUN/m_c/poss} chest. r_c waves fragrant herbs beneath m_c's nose, praying this breathlessness will not progress to suffocation."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "breathless_fit1",
+        "event_id": "raspy_lungs_breathless_fit1",
         "strings": [
             "m_c is used to being breathless, but today {PRONOUN/m_c/subject} can hardly walk a few fox-lengths before growing faint. Something in the air must have irritated {PRONOUN/m_c/poss} lungs."
         ],

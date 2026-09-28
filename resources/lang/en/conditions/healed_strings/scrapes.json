@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "scrapes0",
+        "event_id": "healed_scrapes0",
         "strings": [
             "m_c's scrapes have healed.",
             "m_c's scrapes are all better.",

@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "infection0",
+        "event_id": "lost_leg_infection0",
         "strings": [
             "The stump where m_c's leg used to be has become infected. r_c rubs paste into it as m_c grits {PRONOUN/m_c/poss} teeth and tries not to yowl."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "infection1",
+        "event_id": "lost_leg_infection1",
         "strings": [
             "The stump where m_c's leg used to be has become infected.",
             "Losing the leg was bad enough, but now it feels like there's fire in m_c's veins.  Something is definitely wrong with {PRONOUN/m_c/poss} stump."

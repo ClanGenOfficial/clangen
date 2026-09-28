@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "shock0",
+        "event_id": "healed_shock0",
         "strings": [
             "m_c is no longer suffering from shock.",
             "m_c feels much better and is no longer suffering from shock.",

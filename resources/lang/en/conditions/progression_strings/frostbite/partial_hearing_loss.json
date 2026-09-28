@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "partial_hearing_loss0",
+        "event_id": "frostbite_partial_hearing_loss0",
         "strings": [
             "r_c tells m_c that the frostbite had simply progressed too far into {PRONOUN/m_c/poss} ear; {PRONOUN/m_c/poss} hearing is permanently damaged.",
             "m_c concentrates, trying hard to hear the soft whispers of r_c, but it's barely audible to {PRONOUN/m_c/object} at all. r_c shakes {PRONOUN/r_c/poss} head and tells m_c in a louder voice that {PRONOUN/m_c/poss} hearing was definitely damaged by the frostbite."
@@ -15,7 +15,7 @@
         }
     },
     {
-        "event_id": "partial_hearing_loss2",
+        "event_id": "frostbite_partial_hearing_loss2",
         "strings": [
             "Ever since {PRONOUN/m_c/poss} ears were frostbitten, m_c has struggled to hear clearly."
         ],

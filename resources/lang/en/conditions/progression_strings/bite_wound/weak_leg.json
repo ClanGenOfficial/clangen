@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "weak_leg0",
+        "event_id": "bite_wound_weak_leg0",
         "strings": [
             "r_c informs m_c that {PRONOUN/m_c/poss} healed bite-wound has left {PRONOUN/m_c/poss} leg permanently weakened.",
             "m_c finds that {PRONOUN/m_c/subject} {VERB/m_c/have/has} a new limp, despite having healed from {PRONOUN/m_c/poss} bite-wound. r_c tells {PRONOUN/m_c/object} it's likely permanent."
@@ -15,7 +15,7 @@
         }
     },
     {
-        "event_id": "weak_leg2",
+        "event_id": "bite_wound_weak_leg2",
         "strings": [
             "m_c limps around camp, fully healed from {PRONOUN/m_c/poss} bite-wound but still marked by it for the rest of {PRONOUN/m_c/poss} life."
         ],

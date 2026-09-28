@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "stomachache0",
+        "event_id": "gain_temporary_condition_stomachache0",
         "strings": [
             "m_c has a stomachache.",
             "m_c's belly has been upset all day."

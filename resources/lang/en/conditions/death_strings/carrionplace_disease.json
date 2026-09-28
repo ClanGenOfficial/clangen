@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "carrionplace_disease0",
+        "event_id": "death_carrionplace_disease0",
         "strings": [
             "m_c died of carrionplace disease.",
             "Carrionplace disease has killed m_c."

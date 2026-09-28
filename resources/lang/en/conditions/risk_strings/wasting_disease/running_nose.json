@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "running_nose0",
+        "event_id": "wasting_disease_running_nose0",
         "strings": [
             "r_c feeds m_c disgusting herbs with {PRONOUN/m_c/poss} supper, concerned over {PRONOUN/m_c/poss} running nose. m_c thinks {PRONOUN/r_c/subject} should be more concerned with ruining {PRONOUN/m_c/poss} appetite!"
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "running_nose1",
+        "event_id": "wasting_disease_running_nose1",
         "strings": [
             "m_c's nose has been running perpetually all moon."
         ],

@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "whitecough0",
+        "event_id": "healed_whitecough0",
         "strings": [
             "m_c has recovered from whitecough.",
             "m_c no longer has whitecough.",

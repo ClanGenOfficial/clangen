@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "persistent_headaches0",
+        "event_id": "head_damage_persistent_headaches0",
         "strings": [
             "m_c complains to r_c that {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been plagued with horrible headaches since {PRONOUN/m_c/subject} hurt {PRONOUN/m_c/poss} head. r_c sadly admits that the headaches may always be a problem."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "persistent_headaches1",
+        "event_id": "head_damage_persistent_headaches1",
         "strings": [
             "m_c begrudgingly accepts that the horrible headaches {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been having might be a permanent side effect of {PRONOUN/m_c/poss} head damage."
         ],

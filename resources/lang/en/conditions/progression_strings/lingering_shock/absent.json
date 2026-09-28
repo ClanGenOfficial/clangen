@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "absent0",
+        "event_id": "lingering_shock_absent0",
         "strings": [
             "m_c fails to respond to r_c yet again, leading {PRONOUN/r_c/subject} to accept m_c is never really coming back."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "absent1",
+        "event_id": "lingering_shock_absent1",
         "strings": [
             "m_c never really came around again after going into shock."
         ],

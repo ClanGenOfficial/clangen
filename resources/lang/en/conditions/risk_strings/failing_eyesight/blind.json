@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "blind0",
+        "event_id": "failing_eyesight_blind0",
         "strings": [
             "m_c's vision seems to narrow and darken day by day. Now with only a vague sense of light and shadow, there's nothing more r_c can do to help {PRONOUN/m_c/object}."
         ],
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "blind1",
+        "event_id": "failing_eyesight_blind1",
         "strings": [
             "m_c's eyesight had only been getting worse. Now, it seems to have finally left altogether."
         ],

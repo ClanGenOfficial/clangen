@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "rat_bite0",
+        "event_id": "death_rat_bite0",
         "strings": [
             "m_c died from a rat bite."
         ],

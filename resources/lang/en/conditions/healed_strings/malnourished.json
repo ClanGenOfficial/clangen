@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "malnourished0",
+        "event_id": "healed_malnourished0",
         "strings": [
             "m_c finally feels energized again. It seems the newly consistent meals have done {PRONOUN/m_c/object} good."
         ],
