@@ -697,7 +697,7 @@
         },
         "progression": {},
         "risks": {
-            "infection": 0.067
+            "infection": 0.1
         },
         "treatment_strength": {
             "1": [
@@ -717,13 +717,13 @@
         "severity": "major",
         "duration": 3,
         "mortality": {
-            "newborn": 0.1,
-            "kitten": 0.07,
-            "adolescent": 0.02,
-            "young adult": 0.02,
-            "adult": 0.02,
-            "senior adult": 0.02,
-            "senior": 0.03
+            "newborn": 0.7,
+            "kitten": 0.5,
+            "adolescent": 0.3,
+            "young adult": 0.2,
+            "adult": 0.1,
+            "senior adult": 0.2,
+            "senior": 0.5
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.2,
@@ -736,8 +736,8 @@
             }
         },
         "risks": {
-            "running_nose": 0.1,
-            "whitecough": 0.05
+            "running_nose": 0.3,
+            "whitecough": 0.1
         },
         "treatment_strength": {
             "1": [
@@ -758,20 +758,20 @@
         "severity": "major",
         "duration": 2,
         "mortality": {
-            "newborn": 0.1,
-            "kitten": 0.1,
-            "adolescent": 0.03,
-            "young adult": 0.02,
-            "adult": 0.02,
-            "senior adult": 0.02,
-            "senior": 0.03
+            "newborn": 0.7,
+            "kitten": 0.6,
+            "adolescent": 0.4,
+            "young adult": 0.2,
+            "adult": 0.1,
+            "senior adult": 0.3,
+            "senior": 0.5
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
         "side_effect": {},
         "progression": {},
         "risks": {
-            "infection": 0.04
+            "infection": 0.3
         },
         "treatment_strength": {
             "1": [
@@ -796,20 +796,20 @@
         "severity": "major",
         "duration": 1,
         "mortality": {
-            "newborn": 0.1,
-            "kitten": 0.12,
-            "adolescent": 0.07,
-            "young adult": 0.03,
-            "adult": 0.03,
-            "senior adult": 0.03,
-            "senior": 0.07
+            "newborn": 0.3,
+            "kitten": 0.2,
+            "adolescent": 0.1,
+            "young adult": 0.05,
+            "adult": 0.05,
+            "senior adult": 0.1,
+            "senior": 0.3
         },
         "infectiousness": 0.0,
-        "immune_system_effect": 0.0,
+        "immune_system_effect": 0.05,
         "side_effect": {},
         "progression": {
             "lingering_shock": {
-                "chance": 0.067,
+                "chance": 0.05,
                 "when": "HEALED",
                 "allow_scar": false
             }
@@ -829,7 +829,7 @@
     },
     "lingering_shock": {
         "severity": "major",
-        "duration": 6,
+        "duration": 4,
         "mortality": {},
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
@@ -868,19 +868,17 @@
         "severity": "major",
         "duration": 1,
         "mortality": {
-            "newborn": 0.1,
-            "kitten": 0.1,
-            "adolescent": 0.03,
-            "young adult": 0.02,
+            "newborn": 0.4,
+            "kitten": 0.2,
+            "adolescent": 0.05,
+            "young adult": 0.04,
             "adult": 0.01,
-            "senior adult": 0.02,
-            "senior": 0.05
+            "senior adult": 0.1,
+            "senior": 0.4
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
-        "side_effect": {
-            "heat_exhaustion": 0.2
-        },
+        "side_effect": {},
         "progression": {},
         "risks": {
             "heat_exhaustion": 0.1,
@@ -901,13 +899,13 @@
         "severity": "major",
         "duration": 4,
         "mortality": {
-            "newborn": 0.05,
-            "kitten": 0.07,
-            "adolescent": 0.03,
-            "young adult": 0.03,
-            "adult": 0.02,
-            "senior adult": 0.03,
-            "senior": 0.05
+            "newborn": 0.4,
+            "kitten": 0.3,
+            "adolescent": 0.2,
+            "young adult": 0.1,
+            "adult": 0.1,
+            "senior adult": 0.2,
+            "senior": 0.3
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
@@ -919,12 +917,12 @@
                 "allow_scar": false
             },
             "one_bad_eye": {
-                "chance": 0.2,
+                "chance": 0.1,
                 "when": "HEALED",
                 "allow_scar": false
             },
             "blind": {
-                "chance": 0.2,
+                "chance": 0.1,
                 "when": "HEALED",
                 "allow_scar": false
             },
@@ -944,14 +942,14 @@
                 "allow_scar": false
             },
             "absent": {
-                "chance": 0.2,
+                "chance": 0.05,
                 "when": "HEALED",
                 "allow_scar": false
             }
         },
         "risks": {
-            "headache": 0.05,
-            "severe_headache": 0.05
+            "headache": 0.4,
+            "severe_headache": 0.1
         },
         "treatment_strength": {
             "1": [
