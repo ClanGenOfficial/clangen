@@ -219,7 +219,7 @@ def handle_temporary_conditions(cat: Cat, forced_state: ConditionState = None):
                     0.01,
                     (
                         condition.mortality
-                        - get_config("condition.related.moonskip_mortality_reduction")
+                        - get_config("condition_related.moonskip_mortality_reduction")
                     ),
                 )
 
