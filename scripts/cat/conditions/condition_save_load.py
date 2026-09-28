@@ -66,12 +66,12 @@ def load_conditions(cat: Cat, version_info: dict):
                 condition_data = condition_convert(condition_data)
 
             cat.temporary_conditions = [
-                TemporaryCondition(name=name, **info)
-                for name, info in condition_data.get("temporary_conditions", {}).items()
+                TemporaryCondition(**info)
+                for info in condition_data.get("temporary_conditions", {})
             ]
             cat.permanent_conditions = [
-                PermanentCondition(name=name, **info)
-                for name, info in condition_data.get("permanent_conditions", {}).items()
+                PermanentCondition(**info)
+                for info in condition_data.get("permanent_conditions", {})
             ]
 
         if "paralyzed" in cat.permanent_conditions and not cat.pelt.paralyzed:
@@ -88,15 +88,17 @@ def condition_convert(condition_info: dict) -> dict:
     """
     Needs to happen during cat object creation. `version_convert()` happens afterward, so this func is necessary to preempt it.
     """
-    # TODO: wrote this early on and haven't revisited
-    new_info = {}
+    new_save_info = {
+        "permanent_conditions": [],
+        "temporary_conditions": [],
+    }
 
     for condition_type, conditions in condition_info.items():
         if condition_type == "permanent conditions":
-            new_perm_info = {}
             for name, con in conditions.items():
                 name = _convert_name(name)
-                new_perm_info[name] = {
+                new_info = {
+                    "name": name,
                     "severity": con["severity"],
                     "is_congenital": con["born_with"],
                     "moons_until_discovery": con["moons_until"],
@@ -122,25 +124,26 @@ def condition_convert(condition_info: dict) -> dict:
                 for risk in con["risks"]:
                     risk_name = _convert_name(risk["name"])
                     if (
-                        risk_name in new_perm_info[name]["progression"]
+                        risk_name in new_info["progression"]
                         or risk_name not in PERMANENT_CONDITIONS[name]["risks"]
                     ):
                         continue
-                    new_perm_info[name]["risks"].update(
+                    new_info["risks"].update(
                         {risk_name: max(0.05, round(1 / risk["chance"], 2))}
                     )
                 if (
-                    new_perm_info.get("mortality")
+                    new_info.get("mortality")
                     and not PERMANENT_CONDITIONS[name]["mortality"]
                 ):
-                    new_perm_info["mortality"] = 0.0
+                    new_info["mortality"] = 0.0
 
-            new_info["permanent_conditions"] = new_perm_info
+                new_save_info["permanent_conditions"].append(new_info)
+
         if condition_type in ("illnesses", "injuries"):
-            new_temp_info = {}
             for name, con in conditions.items():
                 name = _convert_name(name)
-                new_temp_info[name] = {
+                new_info = {
+                    "name": name,
                     "severity": con["severity"],
                     "duration": con["duration"],
                     "moon_gained": con["moon_start"]
@@ -167,22 +170,22 @@ def condition_convert(condition_info: dict) -> dict:
                 for risk in con["risks"]:
                     risk_name = _convert_name(risk["name"])
                     if (
-                        risk_name in new_temp_info[name]["progression"]
+                        risk_name in new_info["progression"]
                         or risk_name not in TEMPORARY_CONDITIONS[name]["risks"]
                     ):
                         continue
-                    new_temp_info[name]["risks"].update(
+                    new_info["risks"].update(
                         {risk_name: max(0.05, round(1 / risk["chance"], 2))}
                     )
                 if (
-                    new_temp_info.get("mortality")
+                    new_info.get("mortality")
                     and not TEMPORARY_CONDITIONS[name]["mortality"]
                 ):
-                    new_temp_info["mortality"] = 0.0
+                    new_info["mortality"] = 0.0
 
-            new_info["temporary_conditions"] = new_temp_info
+                new_save_info["temporary_conditions"].append(new_info)
 
-    return new_info
+    return new_save_info
 
 
 def _convert_name(name: str) -> str:

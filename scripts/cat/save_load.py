@@ -4,6 +4,7 @@ from typing import TYPE_CHECKING, Type, List
 
 import ujson
 
+from scripts.cat.conditions.condition_save_load import save_condition
 from scripts.game_structure.game.save_load import safe_save
 from scripts.clan_package.settings.clan_settings import get_clan_setting
 from scripts.housekeeping.datadir import get_save_dir
@@ -42,7 +43,7 @@ def save_cats(clanname, cat_class: Type["Cat"], game: "Game"):
         cat_data = inter_cat.get_save_dict()
         clan_cats.append(cat_data)
 
-        inter_cat.save_condition()
+        save_condition(inter_cat)
 
         if inter_cat.history:
             inter_cat.save_history(history_dir)
