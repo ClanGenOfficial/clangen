@@ -347,5 +347,105 @@
                 "amount": -10
             }
         ]
+    },
+        {
+        "event_id": "snarky_de_med",
+        "strings": [
+            "m_c gives r_c a backhanded compliment.",
+            "m_c's been especially snarky towards r_c today.",
+            "m_c's been laughing with a Clanmate about something about r_c {PRONOUN/r_c/subject} can't control",
+            "m_c refuses to take r_c seriously during a serious conversation.",
+            "m_c repeats something r_c said in a mocking tone.",
+            "m_c's been belittling r_c all day.",
+            "m_c gags at the sound of r_c's voice.",
+            "m_c made it very clear that {PRONOUN/m_c/subject} {VERB/m_c/look/looks} down on r_c"
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "begrudges"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": true,
+                "values": [
+                    "respect",
+                    "like"
+                ],
+                "amount": -10
+            }
+        ]
+    },
+        {
+        "event_id": "snarky_de_med2",
+        "strings": [
+            "m_c couldn't stop laughing at r_c's new name all day.",
+            "m_c told r_c {PRONOUN/r_c/poss} name makes no sense.",
+            "m_c made fun of r_c's new name to a Clanmate.",
+            "m_c wonders aloud if r_c even deserves {PRONOUN/r_c/poss} full name.",
+            "m_c refuses to believe r_c actually likes {PRONOUN/r_c/poss} new name.",
+            "m_c refuses to take r_c's new name seriously.",
+            "m_c's been saying r_c's name in a mocking tone all day"
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "status": [
+                    "warrior",
+                    "medicine cat",
+                    "mediator"
+                ],
+                "past_status": [],
+                "age": [
+                    "adolescent",
+                    "young adult"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "begrudges"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "trust",
+                    "like"
+                ],
+                "amount": -10
+            }
+        ]
     }
 ]
