@@ -179,6 +179,13 @@
                             "cats_from": "cat_from had second thoughts on joining c_n after feeling anxious while encountering cat_to's patrol."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             }
         ],
@@ -421,7 +428,14 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                }
+                },
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -663,7 +677,14 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                }
+                },
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -850,7 +871,14 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                }
+                },
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -1259,7 +1287,7 @@
                             "n_c0"
                         ],
                         "condition": [
-                            "carrionplace disease"
+                            "carrionplace_disease"
                         ],
                         "no_results": true
                     }
@@ -1275,7 +1303,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c0/poss} Twoleg's name. s_c0 gets between the patrol (furious at the intrusion) and the hapless intruder \u2014 in Tigger's name, this cat deserves their help."
+                    "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c0/poss} Twoleg's name. s_c0 gets between the patrol (furious at the intrusion) and the hapless intruder — in Tigger's name, this cat deserves their help."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1329,7 +1357,7 @@
                             "n_c0"
                         ],
                         "condition": [
-                            "carrionplace disease"
+                            "carrionplace_disease"
                         ],
                         "no_results": true
                     }
@@ -1431,6 +1459,14 @@
                         ],
                         "new_status": [
                             "newborn"
+                        ]
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c2",
+                            "n_c0"
                         ]
                     }
                 ]
@@ -1579,8 +1615,8 @@
                         "age": [
                             "adult"
                         ],
-                        "backstory": [
-                            "loner3"
+                        "status": [
+                            "loner"
                         ]
                     }
                 },
@@ -1608,6 +1644,13 @@
                             "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner friend, n_c0, over the border."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -1623,8 +1666,8 @@
                                 "p_l"
                             ]
                         },
-                        "backstory": [
-                            "loner3"
+                        "status": [
+                            "loner"
                         ]
                     }
                 },
@@ -1667,6 +1710,13 @@
                             "cats_from": "n_c0 met {PRONOUN/n_c0/poss} Clancat mate, cat_to, over the border.",
                             "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner mate, n_c0, over the border."
                         }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
                     }
                 ]
             },
@@ -1683,8 +1733,8 @@
                                 "p_l"
                             ]
                         },
-                        "backstory": [
-                            "loner3"
+                        "status": [
+                            "loner"
                         ]
                     }
                 },
@@ -1728,12 +1778,19 @@
                             "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner mate, n_c0, over the border."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
                 "frequency": 4,
                 "strings": [
-                    "n_c0 \u2014 p_l's heart leaps and drops with every single visit, each time a gamble on if {PRONOUN/p_l/poss} hidden love will still be there for the next stolen moment. p_l will fight for them, please, <i>please</i> n_c0, come back to c_n. Stay."
+                    "n_c0 — p_l's heart leaps and drops with every single visit, each time a gamble on if {PRONOUN/p_l/poss} hidden love will still be there for the next stolen moment. p_l will fight for them, please, <i>please</i> n_c0, come back to c_n. Stay."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -1828,8 +1885,8 @@
                                 "p_l"
                             ]
                         },
-                        "backstory": [
-                            "loner3"
+                        "status": [
+                            "loner"
                         ]
                     }
                 },
@@ -1876,6 +1933,13 @@
                             "p_l"
                         ]
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -1890,8 +1954,8 @@
                                 "p_l"
                             ]
                         },
-                        "backstory": [
-                            "loner3"
+                        "status": [
+                            "loner"
                         ]
                     }
                 },
@@ -1946,6 +2010,13 @@
                             "cats_from": "cat_to and n_c0 were mates hiding their relationship from cat_to's Clan."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             }
         ],
@@ -1962,8 +2033,8 @@
                                 "p_l"
                             ]
                         },
-                        "backstory": [
-                            "loner3"
+                        "status": [
+                            "loner"
                         ]
                     }
                 },
@@ -2037,8 +2108,8 @@
                                 "p_l"
                             ]
                         },
-                        "backstory": [
-                            "loner3"
+                        "status": [
+                            "loner"
                         ]
                     }
                 },
@@ -2500,7 +2571,14 @@
                         ]
                     }
                 },
-                "exp_gained": 0
+                "exp_gained": 0,
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -2750,7 +2828,14 @@
                         ]
                     }
                 },
-                "exp_gained": 0
+                "exp_gained": 0,
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -2993,7 +3078,14 @@
                         ]
                     }
                 },
-                "exp_gained": 0
+                "exp_gained": 0,
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -3153,6 +3245,13 @@
                             "cats_from": "cat_from was driven out of c_n territory by cat_to's patrol after {PRONOUN/cat_from/subject} barely attacked p_l."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             }
         ],
@@ -3235,6 +3334,13 @@
                         "scar_history": "m_c gained a scar after tussling with a rogue.",
                         "death_history": "m_c died from injuries sustained in a fight with a rogue."
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -3294,6 +3400,15 @@
                         ],
                         "scar_history": "m_c gained a scar after tussling with a rogue.",
                         "death_history": "m_c was died from injuries sustained in a fight with a rogue."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c2",
+                            "n_c1",
+                            "n_c0"
+                        ]
                     }
                 ]
             }

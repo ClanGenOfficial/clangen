@@ -1199,7 +1199,7 @@
                         ],
                         "condition": [
                             "shock",
-                            "constant nightmares"
+                            "constant_nightmares"
                         ],
                         "scar_history": "m_c was scarred by a badger as an apprentice, after being dared to leap down into an unknown burrow.",
                         "death_history": "m_c died of injuries inflicted by a badger after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dared to leap into an unknown burrow."

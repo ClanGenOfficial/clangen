@@ -901,7 +901,7 @@
                         ],
                         "condition": [
                             "bite_wound",
-                            "torn pelt"
+                            "torn_pelt"
                         ],
                         "scar_history": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
                         "death_history": "m_c died from injuries inflicted by a dog."

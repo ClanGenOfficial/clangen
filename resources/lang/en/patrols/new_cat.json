@@ -2425,7 +2425,7 @@
                             "n_c0"
                         ],
                         "condition": [
-                            "carrionplace disease"
+                            "carrionplace_disease"
                         ],
                         "no_results": true
                     }
@@ -2495,7 +2495,7 @@
                             "n_c0"
                         ],
                         "condition": [
-                            "carrionplace disease"
+                            "carrionplace_disease"
                         ],
                         "no_results": true
                     }
@@ -14078,7 +14078,7 @@
                         ],
                         "condition": [
                             "claw_wound",
-                            "torn pelt",
+                            "torn_pelt",
                             "torn_ear",
                             "minor_injury"
                         ],
@@ -14229,7 +14229,7 @@
                         ],
                         "condition": [
                             "claw_wound",
-                            "torn pelt",
+                            "torn_pelt",
                             "torn_ear",
                             "minor_injury"
                         ],
@@ -14315,7 +14315,7 @@
                         ],
                         "condition": [
                             "claw_wound",
-                            "torn pelt",
+                            "torn_pelt",
                             "torn_ear",
                             "minor_injury"
                         ],

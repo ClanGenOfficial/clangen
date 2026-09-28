@@ -277,7 +277,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "heat exhaustion"
+                            "heat_exhaustion"
                         ],
                         "death_history": "m_c got heatstroke on patrol and never recovered."
                     }

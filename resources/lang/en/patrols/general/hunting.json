@@ -1374,7 +1374,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "carrionplace disease",
+                            "carrionplace_disease",
                             "diarrhea",
                             "poisoned"
                         ],
@@ -1439,7 +1439,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "carrionplace disease",
+                            "carrionplace_disease",
                             "diarrhea",
                             "poisoned"
                         ],

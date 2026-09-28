@@ -463,7 +463,7 @@
                             "some_patrol"
                         ],
                         "condition": [
-                            "heat stroke"
+                            "heat_stroke"
                         ]
                     }
                 ]

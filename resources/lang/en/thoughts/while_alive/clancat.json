@@ -8621,7 +8621,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "an infected wound"
+                        "infection"
                     ]
                 }
             }
@@ -8641,7 +8641,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "carrionplace disease"
+                        "carrionplace_disease"
                     ]
                 }
             }
@@ -8663,7 +8663,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "a festering wound"
+                        "festering_wound"
                     ]
                 }
             }
@@ -8681,7 +8681,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "heat stroke"
+                        "heat_stroke"
                     ]
                 }
             }
@@ -8699,7 +8699,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "heat exhaustion"
+                        "heat_exhaustion"
                     ]
                 }
             }
@@ -8746,7 +8746,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "constant nightmares"
+                        "constant_nightmares"
                     ]
                 }
             }
@@ -8769,7 +8769,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "grief stricken"
+                        "grief_stricken"
                     ]
                 }
             }

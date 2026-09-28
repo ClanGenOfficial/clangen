@@ -1783,7 +1783,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "constant nightmares"
+                            "constant_nightmares"
                         ]
                     }
                 ]
@@ -3010,7 +3010,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "constant nightmares"
+                            "constant_nightmares"
                         ]
                     }
                 ]

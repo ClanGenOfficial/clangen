@@ -3719,7 +3719,7 @@
                             "n_c0"
                         ],
                         "condition": [
-                            "carrionplace disease"
+                            "carrionplace_disease"
                         ],
                         "death_history": "m_c died of carrionplace disease."
                     }
@@ -3792,7 +3792,7 @@
                             "n_c0"
                         ],
                         "condition": [
-                            "carrionplace disease"
+                            "carrionplace_disease"
                         ],
                         "death_history": "m_c died of carrionplace disease."
                     }

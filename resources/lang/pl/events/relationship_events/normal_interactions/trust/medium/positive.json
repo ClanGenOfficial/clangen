@@ -5,11 +5,11 @@
             "m_c thinks about how r_c is always reliable.",
             "m_c notices how r_c is being helpful around camp.",
             "m_c has faith in r_c.",
-            "m_c is grateful that r_c has kept a secret of {PRONOUN\/m_c\/inposs}.",
+            "m_c is grateful that r_c has kept a secret of {PRONOUN/m_c/inposs}.",
             "r_c seems respectful of m_c's boundaries as of late.",
-            "r_c explained something in detail to m_c that others wouldn't explain to {PRONOUN\/m_c\/object}.",
+            "r_c explained something in detail to m_c that others wouldn't explain to {PRONOUN/m_c/object}.",
             "m_c overhears r_c dispelling a false rumor about a Clanmate.",
-            "r_c helps m_c fix a matted piece of fur on {PRONOUN\/m_c\/poss} back.",
+            "r_c helps m_c fix a matted piece of fur on {PRONOUN/m_c/poss} back.",
             "m_c notices how r_c is being helpful around camp."
         ]
     },
@@ -20,7 +20,7 @@
             "r_c doesn't entertain a rumor that is being spread about m_c.",
             "r_c takes m_c's side while m_c is in a debate.",
             "m_c nearly tripped, but was caught by r_c.",
-            "m_c asks r_c to watch {PRONOUN\/m_c\/poss} fresh-kill so {PRONOUN\/m_c\/subject} can go to the dirtplace.",
+            "m_c asks r_c to watch {PRONOUN/m_c/poss} fresh-kill so {PRONOUN/m_c/subject} can go to the dirtplace.",
             "Only m_c and r_c know the details about a specific piece of Clan drama."
         ],
         "relationship_changes": [
@@ -44,8 +44,8 @@
         "event_id": "trust_inc_medpat",
         "strings": [
             "Something embarrassing happens to m_c on a patrol, but r_c promises not to tell anyone.",
-            "m_c lets r_c bring back fresh-kill {PRONOUN\/m_c\/subject} caught on a patrol.",
-            "m_c offers to take r_c's place on a patrol when {PRONOUN\/r_c\/subject} {VERB\/r_c\/aren't\/isn't} feeling well.",
+            "m_c lets r_c bring back fresh-kill {PRONOUN/m_c/subject} caught on a patrol.",
+            "m_c offers to take r_c's place on a patrol when {PRONOUN/r_c/subject} {VERB/r_c/aren't/isn't} feeling well.",
             "r_c stands up for m_c during a patrol.",
             "m_c and r_c find a hidden part of the territory and keep it a secret together.",
             "m_c and r_c work well on a patrol together."
@@ -87,7 +87,7 @@
     {
         "event_id": "trust_inc_med3",
         "strings": [
-            "r_c is telling m_c in great detail how {PRONOUN\/r_c\/subject} would protect {PRONOUN\/m_c\/object} from any danger.",
+            "r_c is telling m_c in great detail how {PRONOUN/r_c/subject} would protect {PRONOUN/m_c/object} from any danger.",
             "r_c gets riled up on m_c's behalf during a debate.",
             "r_c snaps at a Clanmate for disagreeing with m_c."
         ],
@@ -120,7 +120,7 @@
     {
         "event_id": "trust_inc_med5",
         "strings": [
-            "r_c let m_c lean on {PRONOUN\/r_c\/poss} shoulder after a recent injury.",
+            "r_c let m_c lean on {PRONOUN/r_c/poss} shoulder after a recent injury.",
             "r_c skips eating a meal so m_c can have food.",
             "r_c offers to take the blame for something that m_c did.",
             "r_c is poised to help train m_c."
@@ -141,8 +141,8 @@
         "event_id": "trust_de_med3",
         "strings": [
             "r_c is teaching m_c how to walk without making a sound.",
-            "r_c is showing m_c how to sneak up on {PRONOUN\/m_c\/poss} enemies.",
-            "r_c convinces m_c to help {PRONOUN\/r_c\/object} pull a prank on a Clanmate.",
+            "r_c is showing m_c how to sneak up on {PRONOUN/m_c/poss} enemies.",
+            "r_c convinces m_c to help {PRONOUN/r_c/object} pull a prank on a Clanmate.",
             "m_c is whispering quietly with r_c."
         ],
         "involved_cats": {
@@ -175,9 +175,9 @@
         "event_id": "trust_adult_inc_med1",
         "strings": [
             "m_c is giving advice to r_c.",
-            "m_c asks r_c to show off {PRONOUN\/r_c\/poss} skills.",
-            "m_c compliments r_c on a skill {PRONOUN\/r_c\/subject} trained hard on.",
-            "m_c talks with r_c about {PRONOUN\/r_c\/poss} potential warrior name.",
+            "m_c asks r_c to show off {PRONOUN/r_c/poss} skills.",
+            "m_c compliments r_c on a skill {PRONOUN/r_c/subject} trained hard on.",
+            "m_c talks with r_c about {PRONOUN/r_c/poss} potential warrior name.",
             "m_c is looking out for r_c's well-being."
         ],
         "involved_cats": {
@@ -218,7 +218,7 @@
     {
         "event_id": "trust_adult_inc_med2",
         "strings": [
-            "m_c goes to r_c to ask for {PRONOUN\/r_c\/poss} wisdom.",
+            "m_c goes to r_c to ask for {PRONOUN/r_c/poss} wisdom.",
             "m_c is faced with a tough decision and wonders what r_c would do.",
             "m_c turns to r_c in a time of need.",
             "m_c is feeling lost and asks r_c for advice on what to do."
@@ -258,11 +258,11 @@
         "event_id": "trust_kit_parent_inc_med",
         "strings": [
             "m_c always listens to r_c's advice.",
-            "m_c knows r_c won't judge {PRONOUN\/m_c\/object}.",
-            "m_c knows r_c will always have time for {PRONOUN\/r_c\/poss} kit.",
-            "r_c helps m_c up when {PRONOUN\/m_c\/subject} {VERB\/r_c\/trip\/trips}.",
+            "m_c knows r_c won't judge {PRONOUN/m_c/object}.",
+            "m_c knows r_c will always have time for {PRONOUN/r_c/poss} kit.",
+            "r_c helps m_c up when {PRONOUN/m_c/subject} {VERB/r_c/trip/trips}.",
             "r_c answers m_c's silly question honestly.",
-            "r_c takes m_c's bump seriously, even if other cats think {PRONOUN\/m_c\/subject}{VERB\/m_c\/'re\/'s} faking it."
+            "r_c takes m_c's bump seriously, even if other cats think {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} faking it."
         ],
         "involved_cats": {
             "m_c": {
@@ -281,7 +281,7 @@
                 ],
                 "mutual": false,
                 "constraints": [
-                    "child\/parent"
+                    "child/parent"
                 ]
             }
         ]
@@ -294,7 +294,7 @@
             "m_c and r_c chase off a predator on a patrol together.",
             "m_c and r_c make an elaborate plan to evict a predator from the Clan's territory.",
             "m_c and r_c volunteer to go on an extra border patrol together.",
-            "m_c notices that r_c has finished all {PRONOUN\/r_c\/poss} tasks without issues lately.",
+            "m_c notices that r_c has finished all {PRONOUN/r_c/poss} tasks without issues lately.",
             "During a patrol, m_c and r_c have a long conversation about their beliefs and agree on many things.",
             "During the last gathering, m_c and r_c defended their Clan against another Clan's heckling."
         ],
@@ -434,8 +434,8 @@
             "m_c shows r_c how to make an herb taste better.",
             "m_c and r_c invent a new treatment method together.",
             "m_c knows that r_c will always bring back the right herbs from a patrol.",
-            "m_c trusts r_c with a patient {PRONOUN\/m_c\/subject} {VERB\/m_c\/were\/was} treating.",
-            "m_c goes to r_c to ask for {PRONOUN\/r_c\/poss} wisdom.",
+            "m_c trusts r_c with a patient {PRONOUN/m_c/subject} {VERB/m_c/were/was} treating.",
+            "m_c goes to r_c to ask for {PRONOUN/r_c/poss} wisdom.",
             "m_c asks r_c about a specific treatment method."
         ],
         "involved_cats": {
@@ -472,7 +472,7 @@
         "event_id": "trust_med_inc_high2",
         "strings": [
             "m_c observes r_c carefully attending to any cat that needs help.",
-            "m_c feels like {PRONOUN\/m_c\/subject} can count on r_c to give {PRONOUN\/m_c\/object} the best treatment possible."
+            "m_c feels like {PRONOUN/m_c/subject} can count on r_c to give {PRONOUN/m_c/object} the best treatment possible."
         ],
         "involved_cats": {
             "r_c": {

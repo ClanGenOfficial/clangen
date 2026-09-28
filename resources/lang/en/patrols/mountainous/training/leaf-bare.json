@@ -1066,7 +1066,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "constant nightmares"
+                            "constant_nightmares"
                         ]
                     }
                 ]

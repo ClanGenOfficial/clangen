@@ -1,5 +1,5 @@
 [
-    {
+  {
         "event_id": "wtlnd_injury_sore_anymultiage1",
         "location": ["wetlands"],
         "season": ["any"],
@@ -15,7 +15,7 @@
             }
         ]
     },
-    {
+  {
         "event_id": "wtlnd_injury_poisoned_app1",
         "location": ["wetlands"],
         "season": ["any"],
@@ -26,7 +26,7 @@
             "skill": ["-HEALER,1"]
         },
         "r_c": {
-            "age": ["young adult", "adult", "senior adult"]
+          "age": ["young adult", "adult", "senior adult"]
         },
         "injury": [
             {
@@ -35,7 +35,7 @@
             }
         ]
     },
-    {
+  {
         "event_id": "wtlnd_injury_smallcut_anymultiage1",
         "location": ["wetlands"],
         "season": ["any"],
@@ -54,7 +54,7 @@
             }
         ]
     },
-    {
+  {
         "event_id": "wtlnd_injury_snakebite_anymultiage1",
         "location": ["wetlands"],
         "season": ["any"],

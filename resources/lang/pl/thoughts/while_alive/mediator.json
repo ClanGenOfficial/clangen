@@ -3,13 +3,13 @@
         "event_id": "mediator_gen",
         "strings": [
             "Is feeling a sense of pride after mediating a difficult argument",
-            "Wishes {PRONOUN\/m_c\/poss} Clanmates would just talk to each other",
+            "Wishes {PRONOUN/m_c/poss} Clanmates would just talk to each other",
             "Is upset over a recent negotiation with a rival Clan",
             "Negotiates an herb trade with another Clan",
             "Is negotiating with a kittypet to make use of the herbs in their Twoleg garden",
-            "Is dismayed at how quickly {PRONOUN\/m_c\/poss} Clanmates get into arguments",
+            "Is dismayed at how quickly {PRONOUN/m_c/poss} Clanmates get into arguments",
             "Feels exhausted after mediating so many arguments",
-            "Feels pride for {PRONOUN\/m_c\/poss} work",
+            "Feels pride for {PRONOUN/m_c/poss} work",
             "Is mediating a couple's relationship",
             "Is mediating a long time friendship between two Clanmates",
             "Is feeling frustrated after a failed negotiation",
@@ -17,18 +17,18 @@
             "Wants to solve a dispute with another Clan",
             "Wonders if mediating is meant to be so draining",
             "Wonders if being a warrior would have been more fun",
-            "Is proud of how well {PRONOUN\/m_c\/subject} {VERB\/m_c\/are\/is} doing as a mediator",
+            "Is proud of how well {PRONOUN/m_c/subject} {VERB/m_c/are/is} doing as a mediator",
             "Accidentally made an argument worse",
             "Is proud of getting through a difficult mediation session",
-            "Feels exhausted from {PRONOUN\/m_c\/poss} Clanmates' bickering",
+            "Feels exhausted from {PRONOUN/m_c/poss} Clanmates' bickering",
             "Is listening to both sides of an argument",
-            "Is feeling a bit underappreciated for {PRONOUN\/m_c\/poss} mediation",
-            "Is wondering if {PRONOUN\/m_c\/subject} made the right decision in becoming a mediator",
-            "Is relieved {PRONOUN\/m_c\/subject} broke up an argument before it started",
+            "Is feeling a bit underappreciated for {PRONOUN/m_c/poss} mediation",
+            "Is wondering if {PRONOUN/m_c/subject} made the right decision in becoming a mediator",
+            "Is relieved {PRONOUN/m_c/subject} broke up an argument before it started",
             "Is hoping the Clan can stay peaceful",
             "Is contemplating teaching the Clan communication skills",
             "Is mediating a small disagreement between two Clanmates",
-            "Wonders if c_n considers {PRONOUN\/m_c\/object} to be a good mediator"
+            "Wonders if c_n considers {PRONOUN/m_c/object} to be a good mediator"
         ]
     },
     {
@@ -97,9 +97,9 @@
     {
         "event_id": "bloodthirsty_mediator",
         "strings": [
-            "Is wondering if {PRONOUN\/m_c\/subject} should sabotage a relationship that is going a bit too well",
+            "Is wondering if {PRONOUN/m_c/subject} should sabotage a relationship that is going a bit too well",
             "Wishes to break up a sickeningly lovey-dovey couple",
-            "Chuckles to {PRONOUN\/m_c\/self} after sabotaging another relationship"
+            "Chuckles to {PRONOUN/m_c/self} after sabotaging another relationship"
         ],
         "involved_cats": {
             "m_c": {
@@ -164,7 +164,7 @@
         "event_id": "insecure_mediator",
         "strings": [
             "Finds mediating emotionally draining",
-            "Is worried {PRONOUN\/m_c\/subject} may have made things worse"
+            "Is worried {PRONOUN/m_c/subject} may have made things worse"
         ],
         "involved_cats": {
             "m_c": {
@@ -181,7 +181,7 @@
         "strings": [
             "Wonders why everyone can't just get along",
             "Sees all sides of the argument",
-            "Considers {PRONOUN\/m_c\/self} an expert on matters of the heart"
+            "Considers {PRONOUN/m_c/self} an expert on matters of the heart"
         ],
         "involved_cats": {
             "m_c": {
@@ -243,7 +243,7 @@
     {
         "event_id": "vengeful_mediator",
         "strings": [
-            "Is wondering if {PRONOUN\/m_c\/subject} should sabotage a relationship that is going a bit too well",
+            "Is wondering if {PRONOUN/m_c/subject} should sabotage a relationship that is going a bit too well",
             "Wishes to break up a sickeningly lovey-dovey couple",
             "Is sitting back and watching an argument take place"
         ],
@@ -260,7 +260,7 @@
     {
         "event_id": "mediator_to_dead_mediator",
         "strings": [
-            "Wishes {PRONOUN\/m_c\/subject} could ask r_c for advice",
+            "Wishes {PRONOUN/m_c/subject} could ask r_c for advice",
             "Wonders how r_c would have handled c_n's most recent conflict"
         ],
         "involved_cats": {
@@ -277,7 +277,7 @@
     {
         "event_id": "mediator_to_newborn",
         "strings": [
-            "Readies {PRONOUN\/m_c\/self} for the emotions a new birth might provoke"
+            "Readies {PRONOUN/m_c/self} for the emotions a new birth might provoke"
         ],
         "involved_cats": {
             "m_c": {

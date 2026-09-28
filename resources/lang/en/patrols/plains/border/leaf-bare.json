@@ -5383,7 +5383,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "constant nightmares"
+                            "constant_nightmares"
                         ],
                         "death_history": "m_c was killed when another apprentice made the wrong judgment call on a border patrol."
                     }
@@ -5602,7 +5602,7 @@
                         ],
                         "condition": [
                             "shock",
-                            "constant nightmares"
+                            "constant_nightmares"
                         ],
                         "non_lethal": true,
                         "scar_history": "m_c was frostbitten after going out with a group of friends as apprentices and getting caught in a sleet storm.",
@@ -5650,7 +5650,7 @@
                         ],
                         "condition": [
                             "shock",
-                            "constant nightmares"
+                            "constant_nightmares"
                         ],
                         "scar_history": "m_c was frostbitten after going out with a group of friends as apprentices and getting caught in a sleet storm.",
                         "death_history": "m_c was killed after {PRONOUN/m_c/subject} went on a border patrol with {PRONOUN/m_c/poss} friends and got caught in a sleet storm."
