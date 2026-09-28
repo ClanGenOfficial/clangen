@@ -13906,7 +13906,7 @@
             },
             {
                 "cats": ["m_c"],
-                "injuries": ["scrapes", "torn pelt"]
+                "injuries": ["scrapes", "torn_pelt"]
             }
         ],
         "history": [

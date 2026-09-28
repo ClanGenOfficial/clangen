@@ -120,12 +120,21 @@ def condition_convert(condition_info: dict) -> dict:
                     "omit_moonskip": con["event_triggered"],
                 }
                 for risk in con["risks"]:
-                    risk_name = risk["name"].replace(" ", "_").replace("-", "_")
-                    if risk_name in new_perm_info[name]["progression"]:
+                    risk_name = _convert_name(risk["name"])
+                    if (
+                        risk_name in new_perm_info[name]["progression"]
+                        or risk_name not in PERMANENT_CONDITIONS[name]["risks"]
+                    ):
                         continue
                     new_perm_info[name]["risks"].update(
                         {risk_name: max(0.05, round(1 / risk["chance"], 2))}
                     )
+                if (
+                    new_perm_info.get("mortality")
+                    and not PERMANENT_CONDITIONS[name]["mortality"]
+                ):
+                    new_perm_info["mortality"] = 0.0
+
             new_info["permanent_conditions"] = new_perm_info
         if condition_type in ("illnesses", "injuries"):
             new_temp_info = {}
@@ -156,12 +165,20 @@ def condition_convert(condition_info: dict) -> dict:
                     "is_complication": name in ("infection", "festering_wound"),
                 }
                 for risk in con["risks"]:
-                    risk_name = risk["name"].replace(" ", "_").replace("-", "_")
-                    if risk_name in new_temp_info[name]["progression"]:
+                    risk_name = _convert_name(risk["name"])
+                    if (
+                        risk_name in new_temp_info[name]["progression"]
+                        or risk_name not in TEMPORARY_CONDITIONS[name]["risks"]
+                    ):
                         continue
                     new_temp_info[name]["risks"].update(
                         {risk_name: max(0.05, round(1 / risk["chance"], 2))}
                     )
+                if (
+                    new_temp_info.get("mortality")
+                    and not TEMPORARY_CONDITIONS[name]["mortality"]
+                ):
+                    new_temp_info["mortality"] = 0.0
 
             new_info["temporary_conditions"] = new_temp_info
 

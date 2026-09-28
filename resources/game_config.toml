@@ -863,7 +863,7 @@ dev_tools = false
     [focus."raid_other_clans".injuries]
       claw-wound = 15
       "cat_bite" = 15
-      "torn pelt" = 15
+      "torn_pelt" = 15
       "torn_ear" = 15
       bite-wound = 10
       sprain = 10

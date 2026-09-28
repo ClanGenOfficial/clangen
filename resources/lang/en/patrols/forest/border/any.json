@@ -2412,7 +2412,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "torn pelt"
+                            "torn_pelt"
                         ],
                         "scar_history": "s_c0 was scarred by a brown bear."
                     }
@@ -2520,7 +2520,7 @@
                             "claw_wound",
                             "mangled_leg",
                             "mangled_tail",
-                            "torn pelt",
+                            "torn_pelt",
                             "broken_bone"
                         ],
                         "scar_history": "m_c was scarred after being mauled by a black bear.",
@@ -2566,7 +2566,7 @@
                             "claw_wound",
                             "mangled_leg",
                             "mangled_tail",
-                            "torn pelt",
+                            "torn_pelt",
                             "broken_bone"
                         ],
                         "scar_history": "m_c was scarred after being mauled by a brown bear.",
@@ -2611,7 +2611,7 @@
                             "claw_wound",
                             "mangled_leg",
                             "mangled_tail",
-                            "torn pelt",
+                            "torn_pelt",
                             "broken_bone"
                         ],
                         "scar_history": "m_c was scarred on patrol by a black bear.",
@@ -2635,7 +2635,7 @@
                             "claw_wound",
                             "mangled_leg",
                             "mangled_tail",
-                            "torn pelt",
+                            "torn_pelt",
                             "broken_bone"
                         ],
                         "scar_history": "m_c was scarred on patrol by a brown bear.",

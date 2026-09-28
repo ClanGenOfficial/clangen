@@ -9581,7 +9581,7 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "torn pelt",
+                            "torn_pelt",
                             "torn_ear",
                             "minor_injury"
                         ],
@@ -9620,7 +9620,7 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "torn pelt",
+                            "torn_pelt",
                             "torn_ear",
                             "minor_injury"
                         ],
@@ -9853,7 +9853,7 @@
                             "bruises",
                             "scrapes",
                             "torn_ear",
-                            "torn pelt"
+                            "torn_pelt"
                         ],
                         "scar_history": "m_c was scarred after fighting with another cat.",
                         "death_history": "m_c died from injuries sustained after fighting with another cat."
@@ -9905,7 +9905,7 @@
                         ],
                         "condition": [
                             "claw_wound",
-                            "torn pelt",
+                            "torn_pelt",
                             "torn_ear",
                             "minor_injury"
                         ],
@@ -10056,7 +10056,7 @@
                         ],
                         "condition": [
                             "claw_wound",
-                            "torn pelt",
+                            "torn_pelt",
                             "torn_ear",
                             "minor_injury"
                         ],
@@ -10127,7 +10127,7 @@
                         ],
                         "condition": [
                             "claw_wound",
-                            "torn pelt",
+                            "torn_pelt",
                             "torn_ear",
                             "minor_injury"
                         ],

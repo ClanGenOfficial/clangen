@@ -13,7 +13,9 @@ from scripts.events_module.condition.handle_existing_conditions import (
     handle_permanent_conditions,
     handle_nutrition,
 )
-from scripts.events_module.condition.generate_conditions import generate_condition_event
+from scripts.events_module.condition.generate_condition_event import (
+    generate_condition_event,
+)
 from scripts.cat.microservices.add_to_clan import add_dependents_to_clan, add_to_clan
 from scripts.cat_relations.cat_handle_funcs import create_relationships_new_cat
 from scripts.config import get_config
@@ -1552,10 +1554,10 @@ def attempt_outbreak():
             if condition.infectiousness
         ]
         for condition in infectious_conditions:
-            if condition in possible_infections:
+            if condition.name in possible_infections:
                 possible_infections[condition.name] = min(
                     0.9,
-                    (possible_infections[condition] + condition.infectiousness)
+                    (possible_infections[condition.name] + condition.infectiousness)
                     - infection_prevention,
                 )
             else:

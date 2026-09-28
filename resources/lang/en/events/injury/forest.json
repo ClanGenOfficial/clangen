@@ -193,7 +193,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "torn pelt",
+                    "torn_pelt",
                     "scrapes",
                     "small_cut"
                 ],
@@ -530,7 +530,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "torn pelt",
+                    "torn_pelt",
                     "scrapes",
                     "small_cut"
                 ],

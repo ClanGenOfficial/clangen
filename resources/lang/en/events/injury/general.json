@@ -5424,7 +5424,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "torn pelt",
+                    "torn_pelt",
                     "scrapes",
                     "small_cut"
                 ]
@@ -5466,7 +5466,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "torn pelt",
+                    "torn_pelt",
                     "scrapes",
                     "small_cut"
                 ]
@@ -9803,7 +9803,7 @@
         "injury": [
             {
                 "cats": ["m_c"],
-                "injuries": ["torn pelt"]
+                "injuries": ["torn_pelt"]
             }
             ],
         "relationships": [

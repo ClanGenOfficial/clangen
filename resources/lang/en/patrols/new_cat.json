@@ -9881,7 +9881,7 @@
                         "condition": [
                             "claw_wound",
                             "cat_bite",
-                            "torn pelt",
+                            "torn_pelt",
                             "torn_ear"
                         ],
                         "scar_pool_override": [
@@ -13754,7 +13754,7 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "torn pelt",
+                            "torn_pelt",
                             "torn_ear",
                             "minor_injury"
                         ],
@@ -13793,7 +13793,7 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "torn pelt",
+                            "torn_pelt",
                             "torn_ear",
                             "minor_injury"
                         ],
@@ -14026,7 +14026,7 @@
                             "bruises",
                             "scrapes",
                             "torn_ear",
-                            "torn pelt"
+                            "torn_pelt"
                         ],
                         "scar_history": "m_c was scarred after fighting with another cat.",
                         "death_history": "m_c died from injuries sustained after fighting with another cat."

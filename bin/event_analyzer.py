@@ -174,7 +174,7 @@ history_scarrable = [
     "mangled_leg",
     "torn_ear",
     "frostbite",
-    "torn pelt",
+    "torn_pelt",
     "damaged_eyes",
     "quilled by porcupine",
     "claw_wound",

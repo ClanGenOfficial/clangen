@@ -23,7 +23,7 @@ class Injury(Enum):
     phantom_pain = "phantom_pain"
     scrapes = "scrapes"
     small_cut = "small_cut"
-    torn_pelt = "torn pelt"
+    torn_pelt = "torn_pelt"
     torn_ear = "torn_ear"
     frostbite = "frostbite"
     recovering_from_birth = "recovering_from_birth"

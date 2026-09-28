@@ -674,7 +674,7 @@ class HerbSupply:
                 possible_effects.extend(
                     [HerbEffect.PROGRESSION, HerbEffect.PROGRESSION]
                 )
-            if condition.duration > 1:
+            if hasattr(condition, "duration") and condition.duration > 1:
                 possible_effects.append(HerbEffect.DURATION)
 
             if not possible_effects:
@@ -688,7 +688,8 @@ class HerbSupply:
                 will_not_treat = False
                 # only treat if mortality is worse than 0.1 or the condition's default mortality (whichever is lower)
                 if condition.mortality < min(
-                    condition_default["mortality"][treatment_cat.age], 0.1
+                    condition_default.get("mortality", {}).get(treatment_cat.age, 0.0),
+                    0.1,
                 ):
                     will_not_treat = True
                 for risk, current_chance in condition.risks.items():

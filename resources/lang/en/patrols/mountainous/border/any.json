@@ -736,7 +736,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "torn pelt",
+                            "torn_pelt",
                             "scrapes",
                             "shock"
                         ],

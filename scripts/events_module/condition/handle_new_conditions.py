@@ -5,7 +5,9 @@ from scripts.cat.conditions.gain_conditions import gain_temporary_condition
 from scripts.cat.enums import CatRank
 from scripts.clan_package.settings import get_clan_setting
 from scripts.config import get_config
-from scripts.events_module.condition.generate_conditions import generate_condition_event
+from scripts.events_module.condition.generate_condition_event import (
+    generate_condition_event,
+)
 from scripts.events_module.short.short_event_generation import create_short_event
 from scripts.game_structure import constants
 from scripts.game_structure import game

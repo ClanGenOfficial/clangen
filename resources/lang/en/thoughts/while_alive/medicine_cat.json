@@ -622,7 +622,7 @@
                         "dislocated joint",
                         "sprain",
                         "quilled by a porcupine",
-                        "torn pelt",
+                        "torn_pelt",
                         "broken jaw",
                         "broken back",
                         "broken bone",
@@ -1020,7 +1020,7 @@
                         "dislocated joint",
                         "sprain",
                         "quilled by a porcupine",
-                        "torn pelt",
+                        "torn_pelt",
                         "broken jaw",
                         "broken back",
                         "broken bone",
@@ -1069,7 +1069,7 @@
                         "snake bite",
                         "rat bite",
                         "quilled by a porcupine",
-                        "torn pelt",
+                        "torn_pelt",
                         "mangled leg",
                         "mangled tail",
                         "severe burn",
@@ -1121,7 +1121,7 @@
                         "dislocated_joint",
                         "sprain",
                         "porcupine_quilled",
-                        "torn pelt"
+                        "torn_pelt"
                     ]
                 }
             }

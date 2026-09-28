@@ -498,7 +498,7 @@ def reformat(path):
                     "phantom_pain",
                     "scrapes",
                     "small_cut",
-                    "torn pelt",
+                    "torn_pelt",
                     "torn_ear",
                     "frostbite",
                     "recovering_from_birth",

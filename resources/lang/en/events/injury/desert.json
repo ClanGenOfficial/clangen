@@ -1317,7 +1317,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "torn pelt"
+                    "torn_pelt"
                 ]
             }
         ],
@@ -1719,7 +1719,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "torn pelt"
+                    "torn_pelt"
                 ]
             }
         ],
@@ -1755,7 +1755,7 @@
                 ],
                 "injuries": [
                     "small_cut",
-                    "torn pelt",
+                    "torn_pelt",
                     "torn_ear"
                 ]
             }
@@ -2176,7 +2176,7 @@
                 ],
                 "injuries": [
                     "small_cut",
-                    "torn pelt"
+                    "torn_pelt"
                 ],
                 "scars": [
                     "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE", "TOE"
@@ -2352,7 +2352,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "torn pelt"
+                    "torn_pelt"
                 ],
                 "scars": [
                     "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE"
@@ -2941,7 +2941,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "torn pelt"
+                    "torn_pelt"
                 ],
                 "scars": [
                     "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE"
@@ -3303,7 +3303,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "torn pelt"
+                    "torn_pelt"
                 ],
                 "scars": [
                     "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE"
@@ -3509,7 +3509,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "torn pelt"
+                    "torn_pelt"
                 ],
                 "scars": [
                     "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE", "TOE"
@@ -3707,7 +3707,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "torn pelt"
+                    "torn_pelt"
                 ],
                 "scars": [
                     "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE"
@@ -4538,7 +4538,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "torn pelt"
+                    "torn_pelt"
                 ],
                 "scars": [
                     "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE"

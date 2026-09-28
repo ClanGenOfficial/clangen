@@ -7742,7 +7742,7 @@
                         "condition": [
                             "claw_wound",
                             "cat_bite",
-                            "torn pelt",
+                            "torn_pelt",
                             "torn_ear"
                         ],
                         "scar_pool_override": [

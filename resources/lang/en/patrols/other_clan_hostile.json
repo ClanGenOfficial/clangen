@@ -3963,7 +3963,7 @@
                         ],
                         "condition": [
                             "bite_wound",
-                            "torn pelt"
+                            "torn_pelt"
                         ],
                         "scar_history": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
                         "death_history": "m_c died of injuries inflicted by a dog."
@@ -8004,7 +8004,7 @@
                         ],
                         "condition": [
                             "bite_wound",
-                            "torn pelt"
+                            "torn_pelt"
                         ],
                         "scar_history": "m_c carries a scar, and lingering resentment, from when a Clanmate failed to watch {PRONOUN/m_c/poss} back during a border altercation.",
                         "death_history": "m_c died to wounds inflicted by enemy warriors."
@@ -8362,7 +8362,7 @@
                             "battle_injury",
                             "minor_injury",
                             "small_bite_injury",
-                            "torn pelt",
+                            "torn_pelt",
                             "torn_ear"
                         ],
                         "scar_history": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hostilities.",

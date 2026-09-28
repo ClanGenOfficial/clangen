@@ -1085,7 +1085,7 @@ class ProfileScreen(Screens):
 
         if the_cat.permanent_conditions:
             for condition in the_cat.permanent_conditions:
-                if condition.is_congenital and condition.moons_until_discovery <= 0:
+                if condition.is_congenital and condition.moons_until_discovery >= 0:
                     continue
                 output += i18n.t("general.has_permanent_condition")
 
@@ -1094,26 +1094,15 @@ class ProfileScreen(Screens):
                 break
 
         if the_cat.temporary_conditions:
-            if "recovering_from_birth" in the_cat.temporary_conditions:
-                output += i18n.t(
-                    "utility.exclamation",
-                    text=i18n.t(
-                        "conditions.temporary_conditions.recovering from birth"
-                    ),
+            alerts = []
+            for condition in the_cat.temporary_conditions:
+                new_alert = i18n.t(
+                    f"conditions.temporary_conditions.{condition.name}_alert"
                 )
-            elif "pregnant" in the_cat.temporary_conditions:
-                output += i18n.t(
-                    "utility.exclamation",
-                    text=i18n.t("conditions.temporary_conditions.pregnant"),
-                )
-            else:
-                output += i18n.t("utility.exclamation", text=i18n.t("general.injured"))
-            if "grief_stricken" in the_cat.temporary_conditions:
-                output += i18n.t("utility.exclamation", text=i18n.t("general.grieving"))
-            elif "fleas" in the_cat.temporary_conditions:
-                output += i18n.t("utility.exclamation", text=i18n.t("general.fleas"))
-            else:
-                output += i18n.t("utility.exclamation", text=i18n.t("general.sick"))
+                if new_alert not in alerts:
+                    alerts.append(new_alert)
+            if alerts:
+                output += "\n".join(alerts)
 
         return output
 
@@ -1795,7 +1784,7 @@ class ProfileScreen(Screens):
 
         # gather a list of all the conditions and info needed.
         all_conditions = [
-            [i, self.get_condition_details(i)]
+            {"name": i.name, "details": self.get_condition_details(i)}
             for i in self.the_cat.permanent_conditions
             + self.the_cat.temporary_conditions
             if i not in ("infection", "festering_wound")
@@ -1805,17 +1794,11 @@ class ProfileScreen(Screens):
                 and i.moons_until_discovery >= 0
             )
         ]
-        # forgive me. Since I don't know how else to do this,
-        # we just kind of brute-force it
-        for cond in all_conditions:
-            for i in [
-                "conditions.temporary_conditions.",
-                "conditions.permanent_conditions.",
-            ]:
-                temp = i18n.t(i + cond[0].name)
-                if temp != i + cond[0].name:
-                    cond[0].name = temp
-                    break
+        for con in all_conditions:
+            if con["name"] in self.the_cat.permanent_conditions:
+                con["name"] = i18n.t(f"conditions.permanent_conditions.{con['name']}")
+            else:
+                con["name"] = i18n.t(f"conditions.temporary_conditions.{con['name']}")
 
         all_condition_info = self.get_list_chunks(all_conditions, 4)
 
@@ -1846,6 +1829,7 @@ class ProfileScreen(Screens):
         for x in self.condition_data.values():
             x.kill()
         self.condition_data = {}
+
         for con in all_condition_info[self.conditions_page]:
             # Background Box
             self.condition_data[f"bg_{con}"] = pygame_gui.elements.UIPanel(
@@ -1857,7 +1841,7 @@ class ProfileScreen(Screens):
             )
 
             self.condition_data[f"name_{con}"] = UITextBoxTweaked(
-                con[0].name,
+                con["name"],
                 ui_scale(pygame.Rect((0, 0), (120, -1))),
                 line_spacing=0.90,
                 object_id="#text_box_30_horizcenter",
@@ -1867,12 +1851,11 @@ class ProfileScreen(Screens):
                 text_kwargs={"m_c": self.the_cat},
             )
 
-            y_adjust = self.condition_data[f"name_{con}"].get_relative_rect().height
             details_rect = ui_scale(pygame.Rect((0, 0), (142, 100)))
             details_rect.bottomleft = (0, 0)
 
             self.condition_data[f"desc_{con}"] = UITextBoxTweaked(
-                con[1],
+                con["details"],
                 details_rect,
                 line_spacing=0.75,
                 object_id="#text_box_22_horizcenter",
@@ -1885,13 +1868,12 @@ class ProfileScreen(Screens):
             x_pos += 152
         return
 
-    def get_condition_details(self, name):
+    def get_condition_details(self, condition):
         """returns the relevant condition details as one string with line breaks"""
         text_list = []
 
         # collect details for perm conditions
-        if name in self.the_cat.permanent_conditions:
-            condition = self.the_cat.get_condition(name)
+        if condition in self.the_cat.permanent_conditions:
             # display if the cat was born with it
             if condition.is_congenital:
                 text_list.append(i18n.t("general.born_with"))
@@ -1928,17 +1910,16 @@ class ProfileScreen(Screens):
                     )
 
         # collect details for injuries
-        if name in self.the_cat.temporary_conditions:
+        if condition in self.the_cat.temporary_conditions:
             # moons with condition
-            condition = self.the_cat.get_condition(name)
             moons_with = game.clan.age - condition.moon_gained
             insert = "general.had_condition_for"
 
-            if name == "recovering_from_birth":
+            if condition == "recovering_from_birth":
                 insert = "general.recovering_from_birth_for"
-            elif name == "pregnant":
+            elif condition == "pregnant":
                 insert = "general.pregnant_for"
-            elif name == "grief_stricken":
+            elif condition == "grief_stricken":
                 insert = "screens.profile.grieving_for"
 
             if condition.infectiousness:

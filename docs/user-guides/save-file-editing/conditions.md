@@ -196,7 +196,7 @@ Before editing:
             "moon_start": 4,
             "risks": [
                 {
-                    "name": "torn pelt",
+                    "name": "torn_pelt",
                     "chance": 20
                 }
             ],
@@ -220,7 +220,7 @@ After:
             "moon_start": 4,
             "risks": [
                 {
-                    "name": "torn pelt",
+                    "name": "torn_pelt",
                     "chance": 20
                 }
             ],
@@ -234,7 +234,7 @@ After:
             "moon_start": 4,
             "risks": [
                 {
-                    "name": "torn pelt",
+                    "name": "torn_pelt",
                     "chance": 20
                 }
             ],
@@ -280,7 +280,7 @@ Before editing:
             "moon_start": 4,
             "risks": [
                 {
-                    "name": "torn pelt",
+                    "name": "torn_pelt",
                     "chance": 20
                 }
             ],
@@ -303,7 +303,7 @@ Copy from the templates provided [here](#condition-templates) for the condition 
             "moon_start": 4,
             "risks": [
                 {
-                    "name": "torn pelt",
+                    "name": "torn_pelt",
                     "chance": 20
                 }
             ],
@@ -346,7 +346,7 @@ Now edit the new section for the condition you want. Go to the [conditions code 
                     "chance": 60
                 },
                 {
-                    "name": "torn pelt",
+                    "name": "torn_pelt",
                     "chance": 30
                 },
                 {
@@ -467,7 +467,7 @@ Let's say I want to get rid of fleas. Before editing:
             "moon_start": 4,
             "risks": [
                 {
-                    "name": "torn pelt",
+                    "name": "torn_pelt",
                     "chance": 20
                 }
             ],
@@ -555,7 +555,7 @@ Because it's not the only condition in "illnesses", I will delete only "heat str
             "moon_start": 4,
             "risks": [
                 {
-                    "name": "torn pelt",
+                    "name": "torn_pelt",
                     "chance": 20
                 }
             ],
@@ -587,7 +587,7 @@ After:
             "moon_start": 4,
             "risks": [
                 {
-                    "name": "torn pelt",
+                    "name": "torn_pelt",
                     "chance": 20
                 }
             ],
@@ -839,7 +839,7 @@ Before editing:
             "moon_start": 4,
             "risks": [
                 {
-                    "name": "torn pelt",
+                    "name": "torn_pelt",
                     "chance": 20
                 }
             ],
@@ -861,7 +861,7 @@ After removing "pregnant" and "injuries":
             "moon_start": 4,
             "risks": [
                 {
-                    "name": "torn pelt",
+                    "name": "torn_pelt",
                     "chance": 20
                 }
             ],

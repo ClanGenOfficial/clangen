@@ -44,15 +44,15 @@ def generate_condition_event(path: str, involved_cats: dict) -> EventInformation
             if extra_text := check_stolen_vitality(main_cat, 1):
                 processed_text += " " + extra_text
 
-    involved_cats = []
-    for c in involved_cats:
+    involved_ids = []
+    for c in involved_cats.values():
         if isinstance(c, list):
-            involved_cats.extend(c)
+            involved_ids.extend([_c.ID for _c in c])
         else:
-            involved_cats.append(c)
+            involved_ids.append(c.ID)
 
     return EventInformation(
         processed_text,
         types,
-        involved_cats,
+        involved_ids,
     )

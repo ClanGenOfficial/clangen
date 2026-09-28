@@ -26,7 +26,9 @@ from scripts.clan_resources.freshkill import (
 )
 from scripts.config import get_config
 from scripts.events_module.ceremony.generate_normal_ceremony import create_ceremony
-from scripts.events_module.condition.generate_conditions import generate_condition_event
+from scripts.events_module.condition.generate_condition_event import (
+    generate_condition_event,
+)
 from scripts.events_module.condition.handle_new_conditions import logger
 from scripts.events_module.event_information import EventInformation
 from scripts.events_module.text_adjust import event_text_adjust

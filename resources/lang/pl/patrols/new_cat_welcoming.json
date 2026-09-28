@@ -9345,7 +9345,7 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "torn pelt",
+                            "torn_pelt",
                             "torn_ear",
                             "minor_injury"
                         ],

@@ -217,12 +217,6 @@
         "had_injury_for": "has been hurt for %{moons}",
         "pregnant_for": "has been pregnant for %{moons}",
         "recovering_from_birth_for": "has been recovering for %{moons}",
-        "sick": "sick",
-        "injured": "injured",
-        "grieving": "grieving",
-        "fleas": "flea-ridden",
-        "is_infected": "is infected",
-        "is_festering": "is festering",
         "got_condition": "%{cat} got: %{conditions}."
     }
 }
