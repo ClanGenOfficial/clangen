@@ -562,7 +562,7 @@ class Cat:
                 (CatSocial.KITTYPET, CatSocial.LONER, CatSocial.ROGUE)
             )
         self.status.leave_group(new_social_status=new_social_status)
-        self.assign_thought()
+        self.assign_thought(CatThought.ON_RANK_CHANGE)
 
         for app in self.apprentice.copy():
             app_ob = Cat.fetch_cat(app)

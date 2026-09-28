@@ -8,7 +8,10 @@ from scripts.events_module.event_filters import (
     check_rel_constraint_groups,
     cat_for_event,
 )
-from scripts.events_module.parameter_dicts import InvolvedCatDict
+from scripts.events_module.parameter_dicts import (
+    InvolvedCatDict,
+    RelationshipConstraintDict,
+)
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 
@@ -43,11 +46,13 @@ def find_cats(
     can_give_condition = hasattr(event, "condition")
     can_give_accessory = hasattr(event, "gain_accessory")
 
+    relationship_constraints = event.relationship_constraint
+
     # just an initial relationship check to catch things like patrol_cats
-    if involved_cats and event.relationship_constraint:
+    if involved_cats and relationship_constraints:
         if not all(
             check_rel_constraint_groups(block, temp_involved_cats)
-            for block in event.relationship_constraint
+            for block in relationship_constraints
         ):
             return empty
 
@@ -82,6 +87,41 @@ def find_cats(
 
             # CATS THAT CAN BE MADE
             if "can_create_new_cat" in constraints:
+                creation_constraints = constraints["can_create_new_cat"]
+                if creation_constraints.get("become_litter", False):
+                    # this is always gonna make new cats
+                    possible_cats = []
+                if creation_constraints.get("assign_mate"):
+                    relationship_constraints.append(
+                        RelationshipConstraintDict(
+                            cats_to=creation_constraints["assign_mate"],
+                            cats_from=[abbr],
+                            mutual=False,
+                            constraints=["mates"],
+                        )
+                    )
+                if creation_constraints.get("assign_blood_parent"):
+                    # we actually can't differentiate between adoptive and blood in constraints...
+                    # we'll have to add that at some point
+                    relationship_constraints.append(
+                        RelationshipConstraintDict(
+                            cats_to=creation_constraints["assign_blood_parent"],
+                            cats_from=[abbr],
+                            mutual=False,
+                            constraints=["child/parent"],
+                        )
+                    )
+                if creation_constraints.get("assign_adoptive_parent"):
+                    # we actually can't differentiate between adoptive and blood in constraints...
+                    # we'll have to add that at some point
+                    relationship_constraints.append(
+                        RelationshipConstraintDict(
+                            cats_to=creation_constraints["assign_adoptive_parent"],
+                            cats_from=[abbr],
+                            mutual=False,
+                            constraints=["child/parent"],
+                        )
+                    )
                 # It's OK if we can't find a cat - we can create it later.
                 can_create_new_cat = True
 
@@ -128,6 +168,7 @@ def find_cats(
         possible_cats = cat_for_event(
             constraint_dict=constraints,
             possible_cats=possible_cats,
+            involved_cat_dict=involved_cats,
             tags=event.tags,
             injuries=possible_injuries,
             new_accessories=possible_accessories,
@@ -146,7 +187,7 @@ def find_cats(
         new_involved_cat = _find_involved_cat(
             abbr,
             possible_cats,
-            relationship_constraint=event.relationship_constraint,
+            relationship_constraint=relationship_constraints,
             cat_constraints=constraints,
             temp_involved_cats=temp_involved_cats,
             other_clan=other_clan,

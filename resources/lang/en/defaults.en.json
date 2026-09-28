@@ -4,7 +4,6 @@
         "rickroll": "Never going to give r_c up, never going to let {PRONOUN\/r_c\/object} down, never going to run around and desert {PRONOUN\/r_c\/object}.",
         "interaction": "This is a default interaction! ID: %{id} with cats (m_c), (r_c)",
         "ceremony_honor": "hard work",
-        "focus_text": "This shouldn't appear; report as a bug (focus feature).",
         "illness_get_event": "m_c has gotten %{illness}.",
         "warn_no_leader": "c_n has no leader!",
         "warn_no_deputy": "c_n has no deputy!",

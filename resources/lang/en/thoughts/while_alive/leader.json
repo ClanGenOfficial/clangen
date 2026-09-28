@@ -69,7 +69,8 @@
             "Is personally observing r_c's training today",
             "Is having a serious discussion with r_c about being a warrior soon",
             "Is wondering if r_c is ready for the responsibility of being a warrior",
-            "Is asking r_c if {PRONOUN/r_c/subject} {VERB/r_c/are/is} ready for an assessment"
+            "Is asking r_c if {PRONOUN/r_c/subject} {VERB/r_c/are/is} ready for an assessment",
+            "Is thinking up r_c's warrior name"
         ],
         "involved_cats": {
             "r_c": {
@@ -92,7 +93,8 @@
             "Is grateful for r_c's support",
             "Is wondering if r_c will do a good job after {PRONOUN/m_c/object}",
             "Is teaching r_c about the small details of being a leader",
-            "Is trusting r_c to take care of something important"
+            "Is trusting r_c to take care of something important",
+            "Wonders if r_c would be ready to take over if {PRONOUN/m_c/subject} lost all {PRONOUN/m_c/poss} lives"
         ],
         "involved_cats": {
             "r_c": {

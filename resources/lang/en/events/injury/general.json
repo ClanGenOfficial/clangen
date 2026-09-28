@@ -9848,7 +9848,7 @@
             "category": "terrain"
         },
         "frequency": 4,
-        "event_text": "m_c swas harried by a furious flock of birds while hunting near POI.",
+        "event_text": "m_c was harried by a furious flock of birds while hunting near POI.",
         "m_c": {
             "status": ["apprentice", "warrior", "deputy", "leader"]
         },
