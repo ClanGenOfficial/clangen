@@ -232,6 +232,11 @@
           "description": "Extra conditions that can also be applied as a 'bonus' when this condition is given to the cat. Float is the percentage chance that the condition will be applied.",
           "title": "Side Effect",
           "type": "object"
+        },
+        "is_complication": {
+          "description": "If condition is a complication of another condition (i.e. infection is a complication) and cannot be given on it's own.",
+          "title": "Is Complication",
+          "type": "boolean"
         }
       },
       "required": [

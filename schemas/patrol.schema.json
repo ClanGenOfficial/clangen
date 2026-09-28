@@ -1064,7 +1064,11 @@
         "constant_nightmares",
         "grief_stricken",
         "malnourished",
-        "starving"
+        "starving",
+        "sore_throat",
+        "tick_fever",
+        "breathless_fit",
+        "diarrhea_dehydrated"
       ],
       "title": "Illness",
       "type": "string"
@@ -1793,7 +1797,11 @@
         "constantly_dizzy",
         "recurring_shock",
         "lasting_grief",
-        "persistent_headaches"
+        "persistent_headaches",
+        "selective_mutism",
+        "absent",
+        "strange_lump",
+        "damaged_throat"
       ],
       "title": "PermCondition",
       "type": "string"

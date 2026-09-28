@@ -76,7 +76,11 @@
         "constantly_dizzy",
         "recurring_shock",
         "lasting_grief",
-        "persistent_headaches"
+        "persistent_headaches",
+        "selective_mutism",
+        "absent",
+        "strange_lump",
+        "damaged_throat"
       ],
       "title": "PermCondition",
       "type": "string"
@@ -165,6 +169,11 @@
         "requires_scar": {
           "description": "If this cat MUST have one of the scars listed in 'possible_scars' in order to have this condition.",
           "title": "Requires Scar",
+          "type": "boolean"
+        },
+        "remove_on_death": {
+          "description": "If this condition should or should not be removed from the cat when they die.",
+          "title": "Remove On Death",
           "type": "boolean"
         },
         "moons_until_discovery": {
