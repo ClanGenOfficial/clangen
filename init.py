@@ -20,7 +20,7 @@ from importlib import reload
 from scripts.housekeeping.datadir import get_log_dir, setup_data_dir
 from scripts.housekeeping.log_cleanup import prune_logs
 from scripts.housekeeping.stream_duplexer import UnbufferedStreamDuplexer
-from scripts.housekeeping.version import VERSION_NAME, get_version_info
+from scripts.housekeeping.game_version import VERSION_NAME, get_version_info
 
 try:
     directory = os.path.dirname(__file__)

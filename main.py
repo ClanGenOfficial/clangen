@@ -27,7 +27,7 @@ from scripts.game_structure.game.switches import (
 from scripts.game_structure.load_cat import load_cats, version_convert
 from scripts.game_structure.screen_settings import MANAGER, screen, screen_scale
 from scripts.game_input import controller_manager, keyboard_manager
-from scripts.housekeeping.version_retrieval import get_version
+from scripts.housekeeping.save_version_retrieval import get_version
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
 from scripts.screens import all_screens

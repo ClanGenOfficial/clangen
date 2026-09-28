@@ -13,7 +13,7 @@ from scripts.ui.elements.image_button import UIImageButton
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.housekeeping.datadir import get_cache_dir
 from scripts.housekeeping.update import get_latest_version_number
-from scripts.housekeeping.version import get_version_info
+from scripts.housekeeping.game_version import get_version_info
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.windows.announce_restart import RestartAnnouncementWindow
 from scripts.ui.windows.window_base_class import GameWindow

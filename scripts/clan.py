@@ -53,13 +53,13 @@ from scripts.game_structure.game.switches import (
 )
 from scripts.game_structure import game
 from scripts.housekeeping.datadir import get_save_dir
-from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
+from scripts.housekeeping.game_version import get_version_info, SAVE_VERSION_NUMBER
 from scripts.clan_package.clan_symbols import clan_symbol_sprite
 from scripts.clan_package.get_clan_cats import (
     get_living_clan_cat_count,
     find_alive_cats_with_rank,
 )
-from scripts.housekeeping.version_retrieval import get_version
+from scripts.housekeeping.save_version_retrieval import get_version
 from scripts.screens.screens_core.screens_core import rebuild_top_menu_buttons
 
 

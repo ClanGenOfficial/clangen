@@ -39,7 +39,7 @@ from ..game_structure.screen_settings import MANAGER
 from ..game_structure.game.switches import switch_get_value, Switch
 from ..housekeeping.datadir import get_cache_dir
 from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
-from ..housekeeping.version import get_version_info
+from ..housekeeping.game_version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.windows.dev_tool_windows.tortie_patch_tool import TortiePatchToolWindow
 from scripts.ui.windows.dev_tool_windows.white_patch_tool import WhitePatchToolWindow

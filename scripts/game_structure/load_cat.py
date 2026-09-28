@@ -14,7 +14,7 @@ from scripts.game_structure.game.switches import (
     switch_set_value,
     Switch,
 )
-from scripts.housekeeping.version import SAVE_VERSION_NUMBER
+from scripts.housekeeping.game_version import SAVE_VERSION_NUMBER
 from ..cat.conditions.condition_save_load import load_conditions
 from ..cat.conditions.gain_conditions import gain_permanent_condition
 from ..cat.enums import CatGroup, CatRank

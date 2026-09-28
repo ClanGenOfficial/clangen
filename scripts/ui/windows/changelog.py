@@ -3,7 +3,7 @@ import subprocess
 import pygame
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
-from scripts.housekeeping.version import get_version_info
+from scripts.housekeeping.game_version import get_version_info
 from scripts.ui.windows.window_base_class import GameWindow
 from scripts.ui.scale import ui_scale
 from re import search as re_search
