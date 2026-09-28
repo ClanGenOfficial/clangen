@@ -286,6 +286,7 @@ A list of possible scars given when the cat gains this condition.
 
 - [ ] Add condition info dictionary to `resources/dicts/conditions/permanent_conditions` or `resources/dicts/conditions/temporary_conditions`
 - [ ] Add display name to `lang/en/conditions/temporary_conditions.en.json` or `lang/en/conditions/permanent_conditions.en.json`
+  - [ ] If adding a temporary condition, make sure you also add the matching `_alert` string! This is what will display on the cat's main profile info (or, for complications, what will be added to the base condition's display.) 
 - [ ] If the condition can kill, add death strings to `lang/en/conditions/death_strings`
 - [ ] If the condition is an illness or pest where its generation is linked to the seasons:
     - [ ] Add it to `condition_related.seasonal_chance` in `game_config.toml`
@@ -294,3 +295,4 @@ A list of possible scars given when the cat gains this condition.
 - [ ] If the condition is permanent and congenital, add reveal strings to `lang/en/conditions/reveal_condition_strings`
 - [ ] If the condition has risks, add risk strings to `lang/en/conditions/risk_strings`
 - [ ] If the condition can progress, add progression strings to `lang/en/conditions/progression_strings`
+- [ ] If the condition is infectious, add outbreak strings to `lang/en/conditions/outbreak_strings`
