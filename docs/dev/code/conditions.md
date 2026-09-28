@@ -65,7 +65,7 @@ Set to True if this is a complication. A complication is a condition that cannot
 ***
 
 #### mortality: dict[str, float]
-The percentage chance for this condition to kill each age group of cat. Percentages are written as floats (i.e. `0.1` is 10% chance to kill). If this condition shouldn't kill, then leave the dictionary empty: `"mortality": {}`
+The percentage chance for this condition to kill each age group of cat. Percentages are written as floats (i.e. `0.1` is 10% chance to kill). If this condition shouldn't kill, then leave the dictionary empty: `"mortality": {}`. Typically, conditions should be most lethal while the cat is very young and very old. Adult ages are when the cat is safest.
 
 ***
 

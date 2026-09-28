@@ -132,7 +132,7 @@
         }
     },
     "greencough": {
-        "severity": "severe",
+        "severity": "major",
         "duration": 3,
         "mortality": {
             "newborn": 0.9,

@@ -1,14 +1,14 @@
 {
     "fleas": {
         "severity": "minor",
-        "duration": 4,
+        "duration": 2,
         "mortality": {},
-        "infectiousness": 0.2,
+        "infectiousness": 0.3,
         "immune_system_effect": 0.0,
         "side_effect": {},
         "progression": {},
         "risks": {
-            "torn_pelt": 0.05
+            "torn_pelt": 0.3
         },
         "treatment_strength": {
             "1": [
@@ -27,7 +27,7 @@
         "side_effect": {},
         "progression": {
             "whitecough": {
-                "chance": 0.3,
+                "chance": 0.4,
                 "when": "CONTINUING",
                 "allow_scar": false
             }
@@ -55,7 +55,7 @@
         "side_effect": {},
         "progression": {},
         "risks": {
-            "diarrhea": 0.125
+            "diarrhea": 0.3
         },
         "treatment_strength": {
             "1": [
@@ -95,8 +95,8 @@
         "side_effect": {},
         "progression": {},
         "risks": {
-            "infection": 0.033,
-            "tick_fever": 0.02
+            "infection": 0.1,
+            "tick_fever": 0.2
         },
         "treatment_strength": {
             "1": [
@@ -112,13 +112,13 @@
         "severity": "minor",
         "duration": 1,
         "mortality": {
-            "newborn": 0.2,
-            "kitten": 0.2,
-            "adolescent": 0.1,
-            "young adult": 0.05,
-            "adult": 0.04,
-            "senior adult": 0.04,
-            "senior": 0.07
+            "newborn": 0.8,
+            "kitten": 0.6,
+            "adolescent": 0.4,
+            "young adult": 0.2,
+            "adult": 0.1,
+            "senior adult": 0.3,
+            "senior": 0.6
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
@@ -147,7 +147,7 @@
     },
     "joint_pain": {
         "severity": "minor",
-        "duration": 2,
+        "duration": 1,
         "mortality": {},
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
@@ -192,7 +192,7 @@
         "side_effect": {},
         "progression": {},
         "risks": {
-            "infection": 0.05
+            "infection": 0.3
         },
         "treatment_strength": {
             "1": [
@@ -240,7 +240,7 @@
         "side_effect": {},
         "progression": {},
         "risks": {
-            "infection": 0.033
+            "infection": 0.1
         },
         "treatment_strength": {
             "1": [
@@ -263,7 +263,7 @@
         "side_effect": {},
         "progression": {},
         "risks": {
-            "infection": 0.025
+            "infection": 0.2
         },
         "treatment_strength": {
             "1": [
@@ -286,7 +286,7 @@
         "side_effect": {},
         "progression": {},
         "risks": {
-            "infection": 0.04
+            "infection": 0.2
         },
         "treatment_strength": {
             "1": [
@@ -318,7 +318,7 @@
             }
         },
         "risks": {
-            "infection": 0.04
+            "infection": 0.1
         },
         "treatment_strength": {
             "1": [
@@ -343,15 +343,15 @@
     },
     "bee_sting": {
         "severity": "minor",
-        "duration": 2,
+        "duration": 1,
         "mortality": {
-            "newborn": 0.1,
-            "kitten": 0.05,
-            "adolescent": 0.03,
-            "young adult": 0.02,
-            "adult": 0.02,
-            "senior adult": 0.02,
-            "senior": 0.03
+            "newborn": 0.2,
+            "kitten": 0.1,
+            "adolescent": 0.05,
+            "young adult": 0.05,
+            "adult": 0.05,
+            "senior adult": 0.05,
+            "senior": 0.1
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
@@ -400,7 +400,7 @@
         "side_effect": {},
         "progression": {
             "damaged_throat": {
-                "chance": 0.2,
+                "chance": 0.05,
                 "when": "HEALED",
                 "allow_scar": true
             }
