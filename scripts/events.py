@@ -1611,7 +1611,8 @@ def attempt_outbreak():
             )  # SPREAD THE GERMS >:)
 
         event = generate_condition_event(
-            path=f"conditions/outbreak_strings/{condition}.json", involved_cats={"multi_cat": cats}
+            path=f"conditions/outbreak_strings/{condition}.json",
+            involved_cats={"multi_cat": cats},
         )
 
         game.cur_events_list.append(event)
