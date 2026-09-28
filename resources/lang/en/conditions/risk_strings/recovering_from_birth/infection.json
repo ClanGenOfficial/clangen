@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "infection0",
+        "strings": [
+            "r_c gently asks m_c to turn over and winces when {PRONOUN/m_c/subject} {VERB/m_c/do/does}. The strain of birth isn't healing as r_c had hoped it might: instead, the area looks swollen and painful."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "infection1",
+        "strings": [
+            "m_c tries not to hiss as {PRONOUN/m_c/poss} litter suckles. {PRONOUN/m_c/subject/CAP} {VERB/m_c/love/loves} them, {PRONOUN/m_c/subject} {VERB/m_c/do/does}, but giving birth was so painful and the area feels swollen and infected now."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

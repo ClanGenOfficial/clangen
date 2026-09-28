@@ -1108,7 +1108,6 @@
             }
         },
         "risks": {
-            "infection": 0.2,
             "seizure": 0.4
         },
         "treatment_strength": {

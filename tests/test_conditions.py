@@ -161,7 +161,7 @@ class TestTemporaryCondition(unittest.TestCase):
                     cat1 = cat_factory.create_cat()
                     gain_temporary_condition(cat1, c, allow_side_effects=False)
 
-                    condition_events.force_risk = r
+                    handle_existing_conditions.force_risk = r
 
                     handle_temporary_conditions(
                         cat1, forced_state=ConditionState.CONTINUING
@@ -182,7 +182,7 @@ class TestTemporaryCondition(unittest.TestCase):
                             msg=f"{r} is a complication, but was not added to {c} as such.",
                         )
 
-                condition_events.force_risk = ""
+                handle_existing_conditions.force_risk = ""
 
             with self.subTest(f"Test progression gain for {c}"):
                 if not TEMPORARY_CONDITIONS[c]["progression"]:
@@ -192,7 +192,7 @@ class TestTemporaryCondition(unittest.TestCase):
                     cat1 = cat_factory.create_cat()
                     gain_temporary_condition(cat1, c, allow_side_effects=False)
 
-                    condition_events.force_progression = p
+                    handle_existing_conditions.force_progression = p
 
                     handle_temporary_conditions(cat1, forced_state=info["when"])
                     self.assertTrue(
@@ -203,7 +203,7 @@ class TestTemporaryCondition(unittest.TestCase):
                         c in cat1.temporary_conditions + cat1.permanent_conditions,
                         msg=f"{c} was not removed from cat's conditions, even though it progressed into {p}",
                     )
-                condition_events.force_progression = ""
+                handle_existing_conditions.force_progression = ""
 
 
 class TestPermanentCondition(unittest.TestCase):
@@ -277,7 +277,7 @@ class TestPermanentCondition(unittest.TestCase):
                     cat1 = cat_factory.create_cat()
                     gain_permanent_condition(cat1, c)
 
-                    condition_events.force_risk = r
+                    handle_existing_conditions.force_risk = r
                     handle_permanent_conditions(
                         cat1, forced_state=ConditionState.CONTINUING
                     )
@@ -290,7 +290,7 @@ class TestPermanentCondition(unittest.TestCase):
                         msg=f"{c} was not in cat's conditions: {cat1.permanent_conditions}",
                     )
 
-                condition_events.force_risk = ""
+                handle_existing_conditions.force_risk = ""
 
             with self.subTest(f"Test progression for {c}"):
                 if not PERMANENT_CONDITIONS[c]["progression"]:
@@ -300,7 +300,7 @@ class TestPermanentCondition(unittest.TestCase):
                     cat1 = cat_factory.create_cat()
                     gain_permanent_condition(cat1, c)
 
-                    condition_events.force_progression = p
+                    handle_existing_conditions.force_progression = p
 
                     handle_permanent_conditions(cat1, forced_state=info["when"])
                     self.assertTrue(
@@ -311,4 +311,4 @@ class TestPermanentCondition(unittest.TestCase):
                         c in cat1.temporary_conditions + cat1.permanent_conditions,
                         msg=f"{c} was not removed from cat's conditions, even though it progressed into {p}",
                     )
-                condition_events.force_progression = ""
+                handle_existing_conditions.force_progression = ""
