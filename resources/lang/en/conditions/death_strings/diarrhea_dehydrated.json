@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "death_diarrhea0",
+        "event_id": "death_diarrhea_dehydrated0",
         "strings": [
             "m_c died of dehydration caused by diarrhea.",
             "m_c's body could not keep up with the demands of {PRONOUN/m_c/poss} illness and {PRONOUN/m_c/subject} died.",

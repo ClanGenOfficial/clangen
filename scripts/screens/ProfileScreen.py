@@ -1787,7 +1787,7 @@ class ProfileScreen(Screens):
             {"name": i.name, "details": self.get_condition_details(i)}
             for i in self.the_cat.permanent_conditions
             + self.the_cat.temporary_conditions
-            if i not in ("infection", "festering_wound")
+            if not (hasattr(i, "is_complication") and i.is_complication)
             and not (
                 isinstance(i, PermanentCondition)
                 and i.is_congenital
@@ -1892,20 +1892,15 @@ class ProfileScreen(Screens):
                 i18n.t(f"conditions.permanent_conditions.permanent_condition")
             )
 
-            # infected or festering
+            # has complication
             if condition.current_complication:
                 complication = self.the_cat.get_condition(
                     condition.current_complication
                 )
                 if complication:
-                    if complication == "festering_wound":
-                        complication = "festering"
-                    else:
-                        complication = "infected"
                     text_list.append(
                         i18n.t(
-                            "utility.exclamation",
-                            text=i18n.t(f"general.is_{complication}"),
+                            f"conditions.temporary_conditions.{complication.name}_alert"
                         )
                     )
 
@@ -1929,20 +1924,15 @@ class ProfileScreen(Screens):
                 i18n.t(insert, moons=i18n.t("general.moons_age", count=moons_with))
             )
 
-            # infected or festering
+            # has complication
             if condition.current_complication:
                 complication = self.the_cat.get_condition(
                     condition.current_complication
                 )
                 if complication:
-                    if complication == "festering_wound":
-                        complication = "festering"
-                    else:
-                        complication = "infected"
                     text_list.append(
                         i18n.t(
-                            "utility.exclamation",
-                            text=i18n.t(f"general.is_{complication}"),
+                            f"conditions.temporary_conditions.{complication.name}_alert"
                         )
                     )
 

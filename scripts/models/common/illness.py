@@ -24,3 +24,4 @@ class Illness(Enum):
     sore_throat = "sore_throat"
     tick_fever = "tick_fever"
     breathless_fit = "breathless_fit"
+    diarrhea_dehydrated = "diarrhea_dehydrated"

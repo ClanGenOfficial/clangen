@@ -61,38 +61,41 @@
             ]
         }
     },
-    "greencough": {
-        "severity": "severe",
+    "yellowcough": {
+        "severity": "major",
         "duration": 3,
         "mortality": {
-            "newborn": 0.33,
-            "kitten": 0.33,
-            "adolescent": 0.12,
-            "young adult": 0.12,
-            "adult": 0.1,
-            "senior adult": 0.12,
+            "newborn": 0.5,
+            "kitten": 0.5,
+            "adolescent": 0.33,
+            "young adult": 0.2,
+            "adult": 0.2,
+            "senior adult": 0.2,
             "senior": 0.33
         },
-        "infectiousness": 0.3,
+        "infectiousness": 0.6,
         "immune_system_effect": 0.0,
         "side_effect": {},
-        "progression": {},
+        "progression": {
+            "redcough": {
+                "chance": 0.013,
+                "when": "CONTINUING",
+                "allow_scar": false
+            }
+        },
         "risks": {
             "sore_throat": 0.05
         },
         "treatment_strength": {
             "1": [
-                "plantain",
-                "honey",
-                "poppy",
-                "moss"
+                "mallow",
+                "honey"
             ],
             "2": [
-                "tansy",
-                "mullein"
+                "tansy"
             ],
             "3": [
-                "catmint"
+                "lungwort"
             ]
         }
     },
@@ -100,15 +103,15 @@
         "severity": "severe",
         "duration": 3,
         "mortality": {
-            "newborn": 0.5,
-            "kitten": 0.5,
-            "adolescent": 0.07,
-            "young adult": 0,
-            "adult": 0,
-            "senior adult": 0,
-            "senior": 0.2
+            "newborn": 0.7,
+            "kitten": 0.6,
+            "adolescent": 0.0,
+            "young adult": 0.0,
+            "adult": 0.0,
+            "senior adult": 0.0,
+            "senior": 0.0
         },
-        "infectiousness": 0.2,
+        "infectiousness": 0.4,
         "immune_system_effect": 0.0,
         "side_effect": {},
         "progression": {

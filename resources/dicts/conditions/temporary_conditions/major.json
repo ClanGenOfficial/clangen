@@ -2,21 +2,13 @@
     "diarrhea": {
         "severity": "major",
         "duration": 2,
-        "mortality": {
-            "newborn": 0.33,
-            "kitten": 0.33,
-            "adolescent": 0.12,
-            "young adult": 0.1,
-            "adult": 0.07,
-            "senior adult": 0.1,
-            "senior": 0.2
-        },
+        "mortality": {},
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
         "side_effect": {},
         "progression": {},
         "risks": {
-            "dehydrated": 0.033
+            "diarrhea_dehydrated": 0.7
         },
         "treatment_strength": {
             "1": [
@@ -32,25 +24,53 @@
             ]
         }
     },
+    "diarrhea_dehydrated": {
+        "severity": "major",
+        "is_complication": true,
+        "duration": 1,
+        "mortality": {
+            "newborn": 0.7,
+            "kitten": 0.5,
+            "adolescent": 0.4,
+            "young adult": 0.3,
+            "adult": 0.3,
+            "senior adult": 0.4,
+            "senior": 0.5
+        },
+        "infectiousness": 0.0,
+        "immune_system_effect": 0.0,
+        "progression": {},
+        "risks": {},
+        "treatment_strength": {
+            "1": [
+                "ragwort",
+                "juniper"
+            ],
+            "2": [],
+            "3": [
+                "moss"
+            ]
+        }
+    },
     "infection": {
         "severity": "major",
         "is_complication": true,
-        "duration": 3,
+        "duration": 2,
         "mortality": {
-            "newborn": 0.33,
+            "newborn": 0.50,
             "kitten": 0.33,
-            "adolescent": 0.12,
-            "young adult": 0.12,
+            "adolescent": 0.25,
+            "young adult": 0.2,
             "adult": 0.1,
-            "senior adult": 0.12,
-            "senior": 0.2
+            "senior adult": 0.2,
+            "senior": 0.5
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
         "side_effect": {},
         "progression": {
             "festering_wound": {
-                "chance": 0.1,
+                "chance": 0.3,
                 "when": "CONTINUING",
                 "allow_scar": false
             }
@@ -73,26 +93,26 @@
         "severity": "major",
         "duration": 3,
         "mortality": {
-            "newborn": 0.1,
-            "kitten": 0.1,
-            "adolescent": 0.05,
-            "young adult": 0.02,
-            "adult": 0.02,
-            "senior adult": 0.02,
-            "senior": 0.1
+            "newborn": 0.8,
+            "kitten": 0.7,
+            "adolescent": 0.3,
+            "young adult": 0.1,
+            "adult": 0.05,
+            "senior adult": 0.1,
+            "senior": 0.3
         },
-        "infectiousness": 0.1,
+        "infectiousness": 0.2,
         "immune_system_effect": 0.0,
         "side_effect": {},
         "progression": {
             "greencough": {
-                "chance": 0.056,
+                "chance": 0.4,
                 "when": "CONTINUING",
                 "allow_scar": false
             }
         },
         "risks": {
-            "sore_throat": 0.05
+            "sore_throat": 0.3
         },
         "treatment_strength": {
             "1": [
@@ -111,41 +131,38 @@
             ]
         }
     },
-    "yellowcough": {
-        "severity": "major",
+    "greencough": {
+        "severity": "severe",
         "duration": 3,
         "mortality": {
-            "newborn": 0.5,
-            "kitten": 0.5,
-            "adolescent": 0.33,
-            "young adult": 0.2,
-            "adult": 0.2,
-            "senior adult": 0.2,
-            "senior": 0.33
+            "newborn": 0.9,
+            "kitten": 0.8,
+            "adolescent": 0.5,
+            "young adult": 0.4,
+            "adult": 0.3,
+            "senior adult": 0.4,
+            "senior": 0.5
         },
-        "infectiousness": 0.6,
+        "infectiousness": 0.4,
         "immune_system_effect": 0.0,
         "side_effect": {},
-        "progression": {
-            "redcough": {
-                "chance": 0.013,
-                "when": "CONTINUING",
-                "allow_scar": false
-            }
-        },
+        "progression": {},
         "risks": {
             "sore_throat": 0.05
         },
         "treatment_strength": {
             "1": [
-                "mallow",
-                "honey"
+                "plantain",
+                "honey",
+                "poppy",
+                "moss"
             ],
             "2": [
-                "tansy"
+                "tansy",
+                "mullein"
             ],
             "3": [
-                "lungwort"
+                "catmint"
             ]
         }
     },
