@@ -104,47 +104,47 @@ You can override the default minimums by including `(min:#)` after the status or
 
      > | Injuries                 | Allowed within events? | Capable of scarring? |
     |--------------------------|:------------------------:|:----------------------:|
-    | `blood loss`             | :x:                    | :x:                  |
-    | `tick bites`             | :fontawesome-solid-check:     | :x:                  |
-    | `claw-wound`             | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `bite-wound`             | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `cat bite`               | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `beak bite`              | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `snake bite`             | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `quilled by a porcupine` | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `rat bite`               | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `mangled leg`            | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `mangled tail`           | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `broken jaw`             | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `broken bone`            | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
+    | `blood_loss`             | :x:                    | :x:                  |
+    | `tick_bites`             | :fontawesome-solid-check:     | :x:                  |
+    | `claw_wound`             | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
+    | `bite_wound`             | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
+    | `cat_bite`               | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
+    | `beak_bite`              | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
+    | `snake_bite`             | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
+    | `porcupine_quilled` | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
+    | `rat_bite`               | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
+    | `mangled_leg`            | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
+    | `mangled_tail`           | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
+    | `broken_jaw`             | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
+    | `broken_bone`            | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
     | `sore`                   | :fontawesome-solid-check:     | :x:                  |
-    | `phantom pain`           | :x:                    | :x:                  |
+    | `phantom_pain`           | :x:                    | :x:                  |
     | `bruises`                | :fontawesome-solid-check:     | :x:                  |
     | `scrapes`                | :fontawesome-solid-check:     | :x:                  |
-    | `cracked pads`           | :fontawesome-solid-check:     | :x:                  |
-    | `small cut`              | :fontawesome-solid-check:     | :x:                  |
+    | `cracked_pads`           | :fontawesome-solid-check:     | :x:                  |
+    | `small_cut`              | :fontawesome-solid-check:     | :x:                  |
     | `sprain`                 | :fontawesome-solid-check:     | :x:                  |
-    | `bee sting`              | :fontawesome-solid-check:     | :x:                  |
-    | `joint pain`             | :fontawesome-solid-check:     | :x:                  |
-    | `dislocated joint`       | :fontawesome-solid-check:     | :x:                  |
-    | `torn pelt`              | :fontawesome-solid-check:     | :x:                  |
-    | `torn ear`               | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `water in their lungs`   | :fontawesome-solid-check:     | :x:                  |
-    | `shivering`              | :fontawesome-solid-check:     | :x:                  |
+    | `bee_sting`              | :fontawesome-solid-check:     | :x:                  |
+    | `joint_pain`             | :fontawesome-solid-check:     | :x:                  |
+    | `dislocated_joint`       | :fontawesome-solid-check:     | :x:                  |
+    | `torn_pelt`              | :fontawesome-solid-check:     | :x:                  |
+    | `torn_ear`               | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
+    | `water_in_lungs`   | :fontawesome-solid-check:     | :x:                  |
+    | `dangerously_cold`              | :fontawesome-solid-check:     | :x:                  |
     | `frostbite`              | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
     | `burn`                   | :fontawesome-solid-check:     | :x:                  |
-    | `severe burn`            | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
+    | `severe_burn`            | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
     | `shock`                  | :fontawesome-solid-check:     | :x:                  |
-    | `lingering shock`        | :fontawesome-solid-check:     | :x:                  |
+    | `lingering_shock`        | :fontawesome-solid-check:     | :x:                  |
     | `dehydrated`             | :fontawesome-solid-check:     | :x:                  |
-    | `head damage`            | :fontawesome-solid-check:     | :x:                  |
-    | `damaged eyes`           | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `broken back`            | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
+    | `head_damage`            | :fontawesome-solid-check:     | :x:                  |
+    | `damaged_eyes`           | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
+    | `broken_back`            | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
     | `poisoned`               | :fontawesome-solid-check:     | :x:                  |
     | `headache`               | :fontawesome-solid-check:     | :x:                  |
-    | `severe headache`        | :fontawesome-solid-check:     | :x:                  |
+    | `severe_headache`        | :fontawesome-solid-check:     | :x:                  |
     | `pregnant`               | :x:                    | :x:                  |
-    | `recovering from birth`  | :x:                    | :x:                  |
+    | `recovering_from_birth`  | :x:                    | :x:                  |
 
 ===  "Illnesses"
 
@@ -159,8 +159,8 @@ You can override the default minimums by including `(min:#)` after the status or
     | `greencough`           | :fontawesome-solid-check:     |
     | `yellowcough`          | :fontawesome-solid-check:     |
     | `redcough`             | :fontawesome-solid-check:     |
-    | `an_infected_wound`    | :x:                    |
-    | `a_festering_wound`    | :x:                    |
+    | `infection`    | :x:                    |
+    | `festering_wound`    | :x:                    |
     | `carrionplace_disease` | :fontawesome-solid-check:     |
     | `heat_stroke`          | :fontawesome-solid-check:     |
     | `heat_exhaustion`      | :fontawesome-solid-check:     |
@@ -176,12 +176,12 @@ You can override the default minimums by including `(min:#)` after the status or
         Generally we want to avoid giving a permanent condition to a cat. Instead, you should give them a condition that can lead to permanence (e.g. give 'broken back' instead of 'paralyzed')
     > | crooked jaw          |
     |----------------------|
-    | lost_a_leg           |
-    | born_without_a_leg   |
+    | lost_leg           |
+    | born_without_leg   |
     | weak_leg             |
     | twisted_leg          |
-    | lost_their_tail      |
-    | born_without_a_tail  |
+    | lost_tail      |
+    | born_without_tail  |
     | paralyzed            |
     | raspy_lungs          |
     | wasting_disease      |
