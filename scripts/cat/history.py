@@ -347,7 +347,7 @@ class History:
                 "other_cat": other_cat.ID if other_cat else None,
             }
 
-    def remove_possible_history(self, condition: TemporaryCondition):
+    def remove_possible_history(self, condition: str):
         """
         use to remove possible death/scar histories
         :param condition: condition linked to the death/scar you're removing
@@ -355,8 +355,8 @@ class History:
         # :param death: set True if removing death
         """
 
-        if condition.name in self.possible_history:
-            self.possible_history.pop(condition.name)
+        if condition in self.possible_history:
+            self.possible_history.pop(condition)
 
     def add_death(self, death_text, condition=None, other_cat=None):
         """Adds death to cat's history. If a condition is passed, it will look into
@@ -419,7 +419,7 @@ class History:
                     afterlife_acceptance_options[f"{afterlife}_default"]
                 )
 
-    def add_scar(self, scar_text, condition=None, other_cat=None):
+    def add_scar(self, scar_text, condition: str = None, other_cat=None):
         if not game.clan:
             return
 

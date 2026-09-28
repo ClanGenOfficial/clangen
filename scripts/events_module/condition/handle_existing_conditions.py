@@ -29,7 +29,6 @@ from scripts.events_module.ceremony.generate_normal_ceremony import create_cerem
 from scripts.events_module.condition.generate_condition_event import (
     generate_condition_event,
 )
-from scripts.events_module.condition.handle_new_conditions import logger
 from scripts.events_module.event_information import EventInformation
 from scripts.events_module.text_adjust import event_text_adjust
 from scripts.game_structure import game
@@ -181,23 +180,24 @@ def handle_temporary_conditions(cat: Cat, forced_state: ConditionState = None):
                 possible_scars=condition_extra_info.get("possible_scars", []),
             )
 
-            if not event:
-                event = generate_condition_event(
-                    path=f"conditions/healed_strings/{condition.name}.json",
-                    involved_cats={"m_c": cat},
-                )
+            if condition.name == "pregnant":
+                if not event:
+                    event = generate_condition_event(
+                        path=f"conditions/healed_strings/{condition.name}.json",
+                        involved_cats={"m_c": cat},
+                    )
 
-            else:
-                # if nothing else happened, make the scar event into EventInformation
-                event = EventInformation(
-                    event,
-                    ["health"],
-                    [cat.ID],
-                )
+                else:
+                    # if nothing else happened, make the scar event into EventInformation
+                    event = EventInformation(
+                        event,
+                        ["health"],
+                        [cat.ID],
+                    )
 
-            game.herb_events_list.append(event.text)
+                game.herb_events_list.append(event.text)
 
-            cat.history.remove_possible_history(condition)
+            cat.history.remove_possible_history(condition.name)
             conditions_to_remove.append(condition)
 
             if condition.is_complication:
