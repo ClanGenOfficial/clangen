@@ -2,11 +2,11 @@
     {
         "event_id": "burn_infection0",
         "strings": [
-            "The flesh of m_c's burn is far too warm. r_c applies a salve to try and help fight off the developing infection."
+            "The flesh of m_c's burn is far too warm. r_c0 applies a salve to try and help fight off the developing infection."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

@@ -1,13 +1,13 @@
 [
     {
-        "event_id": "failing_eyesight0",
+        "event_id": "head_damage_failing_eyesight0",
         "strings": [
-            "m_c tells r_c that {PRONOUN/m_c/poss} vision seems to be growing blurrier and blurrier by the day. r_c looks worried at the news.",
-            "r_c tests m_c's eyesight one day, asking {PRONOUN/m_c/object} to follow r_c's tail with {PRONOUN/m_c/poss} eyes. m_c struggles with the task. r_c tells {PRONOUN/m_c/object} it may be a permanent consequence of {PRONOUN/m_c/poss} head injury."
+            "m_c tells r_c0 that {PRONOUN/m_c/poss} vision seems to be growing blurrier and blurrier by the day. r_c0 looks worried at the news.",
+            "r_c0 tests m_c's eyesight one day, asking {PRONOUN/m_c/object} to follow r_c0's tail with {PRONOUN/m_c/poss} eyes. m_c struggles with the task. r_c0 tells {PRONOUN/m_c/object} it may be a permanent consequence of {PRONOUN/m_c/poss} head injury."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]
@@ -15,7 +15,7 @@
         }
     },
     {
-        "event_id": "failing_eyesight2",
+        "event_id": "head_damage_failing_eyesight2",
         "strings": [
             "m_c only seems to grow more disoriented, despite {PRONOUN/m_c/poss} head injury seeming to be fully healed. It seems {PRONOUN/m_c/poss} vision is blurry and slightly doubled now. {PRONOUN/m_c/subject/CAP}'ll have to find a way to adjust."
         ],

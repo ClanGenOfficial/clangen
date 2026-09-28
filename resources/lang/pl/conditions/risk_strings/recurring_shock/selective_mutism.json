@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "selective_mutism1",
+        "event_id": "recurring_shock_selective_mutism1",
         "strings": [
             "m_c finds that, at times, {PRONOUN/m_c/subject} simply cannot bring {PRONOUN/m_c/self} to speak."
         ],

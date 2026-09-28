@@ -2,11 +2,11 @@
     {
         "event_id": "mangled_leg_infection0",
         "strings": [
-            "r_c wonders if {PRONOUN/r_c/subject} might need to consult with a medicine cat from another Clan. m_c's mangled leg has become infected and swollen, and {PRONOUN/r_c/subject} {VERB/r_c/need/needs} more ideas."
+            "r_c0 wonders if {PRONOUN/r_c0/subject} might need to consult with a medicine cat from another Clan. m_c's mangled leg has become infected and swollen, and {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} more ideas."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

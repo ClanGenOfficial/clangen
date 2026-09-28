@@ -2,11 +2,11 @@
     {
         "event_id": "grief_stricken_lasting_grief0",
         "strings": [
-            "m_c gazes blankly at the wall of the medicine cat den, not acknowledging r_c beside {PRONOUN/m_c/object}. r_c sighs and sits beside {PRONOUN/m_c/object}, hoping that {PRONOUN/r_c/poss} presence can provide some comfort."
+            "m_c gazes blankly at the wall of the medicine cat den, not acknowledging r_c0 beside {PRONOUN/m_c/object}. r_c0 sighs and sits beside {PRONOUN/m_c/object}, hoping that {PRONOUN/r_c0/poss} presence can provide some comfort."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

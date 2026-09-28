@@ -2,11 +2,11 @@
     {
         "event_id": "lasting_grief_grief_stricken0",
         "strings": [
-            "r_c presses {PRONOUN/r_c/self} against m_c's side and purrs in the most comforting way {PRONOUN/r_c/subject} can. m_c remains still and staring, {PRONOUN/m_c/poss} eyes full of a deep sadness."
+            "r_c0 presses {PRONOUN/r_c0/self} against m_c's side and purrs in the most comforting way {PRONOUN/r_c0/subject} can. m_c remains still and staring, {PRONOUN/m_c/poss} eyes full of a deep sadness."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

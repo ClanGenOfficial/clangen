@@ -1,12 +1,12 @@
 [
     {
-        "event_id": "infection0",
+        "event_id": "cat_bite_infection0",
         "strings": [
-            "The cat bite feels hot. m_c winces as r_c cleans it. It's becoming infected."
+            "The cat bite feels hot. m_c winces as r_c0 cleans it. It's becoming infected."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "infection1",
+        "event_id": "cat_bite_infection1",
         "strings": [
             "m_c's skin is starting to feel feverish around the area of {PRONOUN/m_c/poss} wound. It looks a bit worse than it did yesterday."
         ],

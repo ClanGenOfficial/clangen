@@ -2,11 +2,11 @@
     {
         "event_id": "twisted_leg_joint_pain0",
         "strings": [
-            "m_c slowly does {PRONOUN/m_c/poss} morning stretches, remembering r_c's promise that it'll help with the pain in {PRONOUN/m_c/poss} joints."
+            "m_c slowly does {PRONOUN/m_c/poss} morning stretches, remembering r_c0's promise that it'll help with the pain in {PRONOUN/m_c/poss} joints."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

@@ -2,11 +2,11 @@
     {
         "event_id": "one_bad_eye_failing_eyesight0",
         "strings": [
-            "m_c wanders directly into a rock on {PRONOUN/m_c/poss} bad side. r_c takes {PRONOUN/m_c/object} aside. Softly, {PRONOUN/r_c/subject} {VERB/r_c/tell/tells} m_c {PRONOUN/m_c/poss} bad vision is worsening."
+            "m_c wanders directly into a rock on {PRONOUN/m_c/poss} bad side. r_c0 takes {PRONOUN/m_c/object} aside. Softly, {PRONOUN/r_c0/subject} {VERB/r_c0/tell/tells} m_c {PRONOUN/m_c/poss} bad vision is worsening."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

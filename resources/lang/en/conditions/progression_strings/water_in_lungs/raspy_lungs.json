@@ -2,12 +2,12 @@
     {
         "event_id": "water_in_lungs_raspy_lungs0",
         "strings": [
-            "r_c places a bunch of fragrant herbs under m_c's nose, hoping the scent will help the rasp in {PRONOUN/m_c/poss} throat {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} had since inhaling all that water. Unfortunately it seems this rasp may never leave.",
-            "The damage to m_c's lungs is permanent. r_c gives {PRONOUN/m_c/object} strict instructions about not overexerting {PRONOUN/m_c/self}."
+            "r_c0 places a bunch of fragrant herbs under m_c's nose, hoping the scent will help the rasp in {PRONOUN/m_c/poss} throat {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} had since inhaling all that water. Unfortunately it seems this rasp may never leave.",
+            "The damage to m_c's lungs is permanent. r_c0 gives {PRONOUN/m_c/object} strict instructions about not overexerting {PRONOUN/m_c/self}."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

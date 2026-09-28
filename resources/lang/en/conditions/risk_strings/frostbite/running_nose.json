@@ -2,11 +2,11 @@
     {
         "event_id": "frostbite_running_nose0",
         "strings": [
-            "It's minor compared to the frostbite, but r_c remembers to bring along herbs for m_c's running nose when {PRONOUN/r_c/subject} {VERB/r_c/go/goes} to check up on {PRONOUN/m_c/object}."
+            "It's minor compared to the frostbite, but r_c0 remembers to bring along herbs for m_c's running nose when {PRONOUN/r_c0/subject} {VERB/r_c0/go/goes} to check up on {PRONOUN/m_c/object}."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

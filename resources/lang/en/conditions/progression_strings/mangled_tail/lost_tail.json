@@ -2,12 +2,12 @@
     {
         "event_id": "mangled_tail_lost_their_tail0",
         "strings": [
-            "r_c helps m_c bury {PRONOUN/m_c/poss} tail wordlessly, hoping the ritual brings {PRONOUN/m_c/object} closure from the trauma of losing it.",
-            "When m_c wakes up, r_c has to explain to {PRONOUN/m_c/object} that {PRONOUN/r_c/subject} removed m_c's tail as a last resort. The damage was too great."
+            "r_c0 helps m_c bury {PRONOUN/m_c/poss} tail wordlessly, hoping the ritual brings {PRONOUN/m_c/object} closure from the trauma of losing it.",
+            "When m_c wakes up, r_c0 has to explain to {PRONOUN/m_c/object} that {PRONOUN/r_c0/subject} removed m_c's tail as a last resort. The damage was too great."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

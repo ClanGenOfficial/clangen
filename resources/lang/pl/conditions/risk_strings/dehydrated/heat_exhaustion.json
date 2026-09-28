@@ -1,12 +1,12 @@
 [
     {
-        "event_id": "heat_exhaustion0",
+        "event_id": "dehydrated_heat_exhaustion0",
         "strings": [
-            "r_c has managed to get some water into m_c, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} showing signs of confusion and fatigue: clear indications of heat exhaustion."
+            "r_c0 has managed to get some water into m_c, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} showing signs of confusion and fatigue: clear indications of heat exhaustion."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "heat_exhaustion1",
+        "event_id": "dehydrated_heat_exhaustion1",
         "strings": [
             "m_c pants, helplessly searching for a cooler place to lie and nap. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} utterly exhausted by this heat."
         ],

@@ -1,12 +1,12 @@
 [
     {
-        "event_id": "infection0",
+        "event_id": "broken_back_infection0",
         "strings": [
-            "r_c does {PRONOUN/r_c/poss} best to further prop up m_c's body. {PRONOUN/r_c/subject/CAP} {VERB/r_c/feel/feels} growing concern at the rancid smell coming from the broken and twisted part of m_c's back."
+            "r_c0 does {PRONOUN/r_c0/poss} best to further prop up m_c's body. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/feel/feels} growing concern at the rancid smell coming from the broken and twisted part of m_c's back."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "infection1",
+        "event_id": "broken_back_infection1",
         "strings": [
             "m_c can smell the infection from {PRONOUN/m_c/poss} back and feels the fever coming over {PRONOUN/m_c/self}. This injury feels less survivable by the day."
         ],

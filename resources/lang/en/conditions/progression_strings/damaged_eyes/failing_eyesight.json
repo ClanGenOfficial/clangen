@@ -2,11 +2,11 @@
     {
         "event_id": "damaged_eyes_failing_eyesight0",
         "strings": [
-            "r_c tells m_c that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} lucky to have regained any eyesight at all. Hopefully, {PRONOUN/m_c/poss} sight won't degrade any further."
+            "r_c0 tells m_c that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} lucky to have regained any eyesight at all. Hopefully, {PRONOUN/m_c/poss} sight won't degrade any further."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

@@ -1,12 +1,12 @@
 [
     {
-        "event_id": "yellowcough0",
+        "event_id": "wasting_disease_yellowcough0",
         "strings": [
-            "If only {PRONOUN/r_c/subject} had lungwort... r_c searches the herb stores, desperate for a way to help m_c through yellowcough."
+            "If only {PRONOUN/r_c0/subject} had lungwort... r_c0 searches the herb stores, desperate for a way to help m_c through yellowcough."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "yellowcough1",
+        "event_id": "wasting_disease_yellowcough1",
         "strings": [
             "m_c has been weak and fevered, only barely coherent... it seems {PRONOUN/m_c/subject} {VERB/m_c/have/has} yellowcough."
         ],

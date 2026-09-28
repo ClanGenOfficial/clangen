@@ -2,12 +2,12 @@
     {
         "event_id": "mangled_leg_twisted_leg0",
         "strings": [
-            "m_c tells r_c it's fine, and {PRONOUN/m_c/subject} {VERB/m_c/know/knows} r_c did {PRONOUN/r_c/poss} best. {PRONOUN/m_c/poss/CAP} leg was too badly mangled. The leg healing at all is a miracle from StarClan, even if it is twisted.",
-            "m_c's leg has healed, but r_c has to explain that it will always be awkwardly twisted and uncomfortable to walk with.  Sometimes herbs can only do so much."
+            "m_c tells r_c0 it's fine, and {PRONOUN/m_c/subject} {VERB/m_c/know/knows} r_c0 did {PRONOUN/r_c0/poss} best. {PRONOUN/m_c/poss/CAP} leg was too badly mangled. The leg healing at all is a miracle from StarClan, even if it is twisted.",
+            "m_c's leg has healed, but r_c0 has to explain that it will always be awkwardly twisted and uncomfortable to walk with.  Sometimes herbs can only do so much."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

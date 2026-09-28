@@ -2,11 +2,11 @@
     {
         "event_id": "partial_hearing_loss_deaf0",
         "strings": [
-            "r_c listens as m_c explains that it doesn't seem like {PRONOUN/m_c/subject} can hear the details of the world anymore."
+            "r_c0 listens as m_c explains that it doesn't seem like {PRONOUN/m_c/subject} can hear the details of the world anymore."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

@@ -2,12 +2,12 @@
     {
         "event_id": "torn_ear_partial_hearing_loss0",
         "strings": [
-            "r_c continues {PRONOUN/m_c/poss} test, but it's clear that m_c's hearing isn't what it used to be, likely as a result of {PRONOUN/m_c/poss} ear injury.",
-            "r_c informs m_c that though {PRONOUN/m_c/poss} ear has healed from its tear, there was still permanent damage done. m_c will struggle to hear out of that ear for the rest of {PRONOUN/m_c/poss} life."
+            "r_c0 continues {PRONOUN/m_c/poss} test, but it's clear that m_c's hearing isn't what it used to be, likely as a result of {PRONOUN/m_c/poss} ear injury.",
+            "r_c0 informs m_c that though {PRONOUN/m_c/poss} ear has healed from its tear, there was still permanent damage done. m_c will struggle to hear out of that ear for the rest of {PRONOUN/m_c/poss} life."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

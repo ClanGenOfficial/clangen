@@ -2,11 +2,11 @@
     {
         "event_id": "snake_bite_infection0",
         "strings": [
-            "r_c mutters something about plantain as m_c carefully licks around {PRONOUN/m_c/poss} snake bite wound. It's not healing like it should."
+            "r_c0 mutters something about plantain as m_c carefully licks around {PRONOUN/m_c/poss} snake bite wound. It's not healing like it should."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

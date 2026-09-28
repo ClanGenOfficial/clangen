@@ -2,11 +2,11 @@
     {
         "event_id": "broken_back_paralyzed0",
         "strings": [
-            "r_c is gentle when {PRONOUN/r_c/subject} {VERB/r_c/break/breaks} the news, but m_c had already expected it. {PRONOUN/m_c/subject/CAP} will never walk again."
+            "r_c0 is gentle when {PRONOUN/r_c0/subject} {VERB/r_c0/break/breaks} the news, but m_c had already expected it. {PRONOUN/m_c/subject/CAP} will never walk again."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

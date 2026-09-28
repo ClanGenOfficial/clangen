@@ -2,11 +2,11 @@
     {
         "event_id": "head_damage_severe_headache0",
         "strings": [
-            "m_c yowls with pain, begging r_c for any relief. The damage to {PRONOUN/m_c/poss} head must have been severe to cause such painful headaches."
+            "m_c yowls with pain, begging r_c0 for any relief. The damage to {PRONOUN/m_c/poss} head must have been severe to cause such painful headaches."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

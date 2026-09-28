@@ -2,11 +2,11 @@
     {
         "event_id": "lost_leg_phantom_pain0",
         "strings": [
-            "m_c reports to r_c in the medicine cat den, swearing {PRONOUN/m_c/poss} toes feel cramped and in spasm on the limb {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have anymore."
+            "m_c reports to r_c0 in the medicine cat den, swearing {PRONOUN/m_c/poss} toes feel cramped and in spasm on the limb {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have anymore."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

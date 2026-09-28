@@ -2,11 +2,11 @@
     {
         "event_id": "dehydrated_sore_throat0",
         "strings": [
-            "r_c has tried to get some water into m_c, but {PRONOUN/m_c/poss} thirst has left {PRONOUN/m_c/poss} throat dry and scratchy."
+            "r_c0 has tried to get some water into m_c, but {PRONOUN/m_c/poss} thirst has left {PRONOUN/m_c/poss} throat dry and scratchy."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

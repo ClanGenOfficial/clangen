@@ -2,11 +2,11 @@
     {
         "event_id": "tick_bites_infection0",
         "strings": [
-            "r_c sighs and tries to gently extract the head of the tick that was left behind when the insect was plucked off of m_c. With that contaminant, the little tick bite has become infected."
+            "r_c0 sighs and tries to gently extract the head of the tick that was left behind when the insect was plucked off of m_c. With that contaminant, the little tick bite has become infected."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

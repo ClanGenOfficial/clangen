@@ -2,12 +2,12 @@
     {
         "event_id": "festering_wound_strange_lump0",
         "strings": [
-            "m_c complains about being unable to sleep properly, leading r_c to find a strange lump under the wound.",
-            "m_c won't let r_c see the new lump that appeared on {PRONOUN/m_c/poss} body."
+            "m_c complains about being unable to sleep properly, leading r_c0 to find a strange lump under the wound.",
+            "m_c won't let r_c0 see the new lump that appeared on {PRONOUN/m_c/poss} body."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

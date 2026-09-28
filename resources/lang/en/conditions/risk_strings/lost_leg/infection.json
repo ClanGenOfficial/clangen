@@ -2,11 +2,11 @@
     {
         "event_id": "lost_leg_infection0",
         "strings": [
-            "The stump where m_c's leg used to be has become infected. r_c rubs paste into it as m_c grits {PRONOUN/m_c/poss} teeth and tries not to yowl."
+            "The stump where m_c's leg used to be has become infected. r_c0 rubs paste into it as m_c grits {PRONOUN/m_c/poss} teeth and tries not to yowl."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

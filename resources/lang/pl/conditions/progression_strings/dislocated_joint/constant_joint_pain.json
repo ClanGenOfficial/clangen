@@ -1,13 +1,13 @@
 [
     {
-        "event_id": "constant_joint_pain0",
+        "event_id": "dislocated_joint_constant_joint_pain0",
         "strings": [
-            "It feels like {PRONOUN/m_c/poss} formerly dislocated joint just isn't the same anymore. r_c is understanding, but prepares m_c for the possibility that this could be permanent.",
-            "r_c explains to m_c that dislocating a joint can have permanent consequences. The pain m_c is feeling could be permanent."
+            "It feels like {PRONOUN/m_c/poss} formerly dislocated joint just isn't the same anymore. r_c0 is understanding, but prepares m_c for the possibility that this could be permanent.",
+            "r_c0 explains to m_c that dislocating a joint can have permanent consequences. The pain m_c is feeling could be permanent."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]
@@ -15,7 +15,7 @@
         }
     },
     {
-        "event_id": "constant_joint_pain2",
+        "event_id": "dislocated_joint_constant_joint_pain2",
         "strings": [
             "m_c needs pain relief far more often these days, the joint {PRONOUN/m_c/subject} dislocated giving {PRONOUN/m_c/object} trouble."
         ],

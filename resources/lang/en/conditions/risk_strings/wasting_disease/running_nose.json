@@ -2,11 +2,11 @@
     {
         "event_id": "wasting_disease_running_nose0",
         "strings": [
-            "r_c feeds m_c disgusting herbs with {PRONOUN/m_c/poss} supper, concerned over {PRONOUN/m_c/poss} running nose. m_c thinks {PRONOUN/r_c/subject} should be more concerned with ruining {PRONOUN/m_c/poss} appetite!"
+            "r_c0 feeds m_c disgusting herbs with {PRONOUN/m_c/poss} supper, concerned over {PRONOUN/m_c/poss} running nose. m_c thinks {PRONOUN/r_c0/subject} should be more concerned with ruining {PRONOUN/m_c/poss} appetite!"
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

@@ -2,11 +2,11 @@
     {
         "event_id": "heat_exhaustion_heat_stroke0",
         "strings": [
-            "r_c presses the damp moss onto m_c's forehead as {PRONOUN/m_c/subject} {VERB/m_c/lie/lies} completely drained and panting. This is more than heat exhaustion now, m_c will need time to recover from this heat stroke."
+            "r_c0 presses the damp moss onto m_c's forehead as {PRONOUN/m_c/subject} {VERB/m_c/lie/lies} completely drained and panting. This is more than heat exhaustion now, m_c will need time to recover from this heat stroke."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

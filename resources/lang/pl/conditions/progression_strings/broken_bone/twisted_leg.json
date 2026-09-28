@@ -1,13 +1,13 @@
 [
     {
-        "event_id": "twisted_leg0",
+        "event_id": "broken_bone_twisted_leg0",
         "strings": [
-            "r_c considers m_c's leg. It might be possible to re-break it, but it will likely always heal twisted after this. Instead, {PRONOUN/r_c/subject} {VERB/r_c/leave/leaves} it as it's healing well.",
-            "The damage to m_c's leg was simply too great. While it has managed to heal, r_c tells m_c that it will always be twisted at an odd angle."
+            "r_c0 considers m_c's leg. It might be possible to re-break it, but it will likely always heal twisted after this. Instead, {PRONOUN/r_c0/subject} {VERB/r_c0/leave/leaves} it as it's healing well.",
+            "The damage to m_c's leg was simply too great. While it has managed to heal, r_c0 tells m_c that it will always be twisted at an odd angle."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]
@@ -15,7 +15,7 @@
         }
     },
     {
-        "event_id": "twisted_leg2",
+        "event_id": "broken_bone_twisted_leg2",
         "strings": [
             "{PRONOUN/m_c/poss/CAP} broken bone has healed twisted, but m_c is just so glad to be free of the boredom of recovery.",
             "<i>Twisted is better than gone</i> is what m_c tells {PRONOUN/m_c/self}. Broken legs can be deadly. m_c is lucky to still be alive."

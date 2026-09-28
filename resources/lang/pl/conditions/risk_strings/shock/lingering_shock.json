@@ -1,12 +1,12 @@
 [
     {
-        "event_id": "lingering_shock0",
+        "event_id": "shock_lingering_shock0",
         "strings": [
-            "r_c gives m_c the poppy seeds {PRONOUN/m_c/subject} {VERB/m_c/ask/asks} for to help {PRONOUN/m_c/object} sleep, but it worries {PRONOUN/r_c/object} that m_c's shock has lingered so long."
+            "r_c0 gives m_c the poppy seeds {PRONOUN/m_c/subject} {VERB/m_c/ask/asks} for to help {PRONOUN/m_c/object} sleep, but it worries {PRONOUN/r_c0/object} that m_c's shock has lingered so long."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "lingering_shock1",
+        "event_id": "shock_lingering_shock1",
         "strings": [
             "m_c wakes again from another nightmare, feeling adrenaline rush through {PRONOUN/m_c/poss} veins as {PRONOUN/m_c/subject} {VERB/m_c/try/tries} not to bolt. It feels like days since {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been able to sleep through the night and it's wearing {PRONOUN/m_c/object} down."
         ],

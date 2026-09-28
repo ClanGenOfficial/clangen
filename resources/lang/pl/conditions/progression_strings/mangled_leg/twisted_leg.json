@@ -1,13 +1,13 @@
 [
     {
-        "event_id": "twisted_leg0",
+        "event_id": "mangled_leg_twisted_leg0",
         "strings": [
-            "m_c tells r_c it's fine, and {PRONOUN/m_c/subject} {VERB/m_c/know/knows} r_c did {PRONOUN/r_c/poss} best. {PRONOUN/m_c/poss/CAP} leg was too badly mangled. The leg healing at all is a miracle from StarClan, even if it is twisted.",
-            "m_c's leg has healed, but r_c has to explain that it will always be awkwardly twisted and uncomfortable to walk with.  Sometimes herbs can only do so much."
+            "m_c tells r_c0 it's fine, and {PRONOUN/m_c/subject} {VERB/m_c/know/knows} r_c0 did {PRONOUN/r_c0/poss} best. {PRONOUN/m_c/poss/CAP} leg was too badly mangled. The leg healing at all is a miracle from StarClan, even if it is twisted.",
+            "m_c's leg has healed, but r_c0 has to explain that it will always be awkwardly twisted and uncomfortable to walk with.  Sometimes herbs can only do so much."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]
@@ -15,7 +15,7 @@
         }
     },
     {
-        "event_id": "twisted_leg2",
+        "event_id": "mangled_leg_twisted_leg2",
         "strings": [
             "{PRONOUN/m_c/poss/CAP} twisted limb frustrates {PRONOUN/m_c/object} constantly, but m_c tells {PRONOUN/m_c/self} it could've been worse. At least {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} still there to feel irritated by it.",
             "m_c has to hold {PRONOUN/m_c/poss} healed but twisted limb up near {PRONOUN/m_c/poss} body as {PRONOUN/m_c/subject} {VERB/m_c/hop/hops} around camp. {PRONOUN/m_c/subject/CAP} survived {PRONOUN/m_c/poss} injury, but the leg will never comfortably support {PRONOUN/m_c/poss} weight again."

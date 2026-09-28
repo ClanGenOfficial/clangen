@@ -2,12 +2,12 @@
     {
         "event_id": "damaged_eyes_one_bad_eye0",
         "strings": [
-            "r_c breaks the news gently that m_c is never going to see out of that eye again. This doesn't have to hinder {PRONOUN/m_c/object}, though! {PRONOUN/m_c/subject/CAP} still {VERB/m_c/have/has} one good eye and {PRONOUN/m_c/subject} {VERB/m_c/plan/plans} to make full use of it.",
-            "m_c growls when r_c tells {PRONOUN/m_c/object} that the lack of vision in {PRONOUN/m_c/poss} eye is permanent. It feels unfair to have half of {PRONOUN/m_c/poss} vision stolen away."
+            "r_c0 breaks the news gently that m_c is never going to see out of that eye again. This doesn't have to hinder {PRONOUN/m_c/object}, though! {PRONOUN/m_c/subject/CAP} still {VERB/m_c/have/has} one good eye and {PRONOUN/m_c/subject} {VERB/m_c/plan/plans} to make full use of it.",
+            "m_c growls when r_c0 tells {PRONOUN/m_c/object} that the lack of vision in {PRONOUN/m_c/poss} eye is permanent. It feels unfair to have half of {PRONOUN/m_c/poss} vision stolen away."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

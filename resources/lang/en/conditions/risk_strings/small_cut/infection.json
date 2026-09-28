@@ -2,11 +2,11 @@
     {
         "event_id": "small_cut_infection0",
         "strings": [
-            "r_c takes a closer look at m_c's little cut, concern on {PRONOUN/r_c/poss} face. It seems the cut wasn't kept clean enough and has become infected."
+            "r_c0 takes a closer look at m_c's little cut, concern on {PRONOUN/r_c0/poss} face. It seems the cut wasn't kept clean enough and has become infected."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

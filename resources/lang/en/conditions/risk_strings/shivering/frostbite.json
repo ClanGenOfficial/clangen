@@ -2,11 +2,11 @@
     {
         "event_id": "shivering_frostbite0",
         "strings": [
-            "r_c massages m_c's paw pads, looking for signs that blood flow is returning to them. This has definitely crossed the line into frostbite."
+            "r_c0 massages m_c's paw pads, looking for signs that blood flow is returning to them. This has definitely crossed the line into frostbite."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

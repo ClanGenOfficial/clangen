@@ -2,11 +2,11 @@
     {
         "event_id": "fleas_torn_pelt0",
         "strings": [
-            "m_c has been scratching incessantly at the fleas infesting {PRONOUN/m_c/poss} pelt. r_c scolds {PRONOUN/m_c/object} for it as {PRONOUN/r_c/subject} gently {VERB/r_c/clean/cleans} the now raw areas of m_c's pelt."
+            "m_c has been scratching incessantly at the fleas infesting {PRONOUN/m_c/poss} pelt. r_c0 scolds {PRONOUN/m_c/object} for it as {PRONOUN/r_c0/subject} gently {VERB/r_c0/clean/cleans} the now raw areas of m_c's pelt."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

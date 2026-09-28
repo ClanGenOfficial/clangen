@@ -1,12 +1,12 @@
 [
     {
-        "event_id": "joint_pain0",
+        "event_id": "paralyzed_joint_pain0",
         "strings": [
-            "m_c has been ordered by r_c to sit still and let {PRONOUN/m_c/poss} joints recover. It's the only way the joint pain in {PRONOUN/m_c/poss} front half will ease up."
+            "m_c has been ordered by r_c0 to sit still and let {PRONOUN/m_c/poss} joints recover. It's the only way the joint pain in {PRONOUN/m_c/poss} front half will ease up."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "joint_pain1",
+        "event_id": "paralyzed_joint_pain1",
         "strings": [
             "The effort of moving {PRONOUN/m_c/self} across camp has left m_c's joints aching and sore."
         ],

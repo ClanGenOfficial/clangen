@@ -1,12 +1,12 @@
 [
     {
-        "event_id": "joint_pain0",
+        "event_id": "constant_joint_pain_joint_pain0",
         "strings": [
-            "Sleepily, m_c thanks r_c for the pain relief. It feels like moons since {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} been able to have a good rest without the awful pain that's been so intense lately."
+            "Sleepily, m_c thanks r_c0 for the pain relief. It feels like moons since {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} been able to have a good rest without the awful pain that's been so intense lately."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "joint_pain1",
+        "event_id": "constant_joint_pain_joint_pain1",
         "strings": [
             "m_c's joint pain is worse than usual this moon, {PRONOUN/m_c/subject} {VERB/m_c/find/finds} {PRONOUN/m_c/self} barely able to get up out of {PRONOUN/m_c/poss} nest."
         ],

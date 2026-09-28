@@ -1,13 +1,13 @@
 [
     {
-        "event_id": "lost_a_leg0",
+        "event_id": "severe_burn_lost_a_leg0",
         "strings": [
-            "As m_c sleeps under the influence of poppy seeds, r_c prepares for the grim task of removing {PRONOUN/m_c/poss} burned leg before the festering illness in it can spread to the rest of {PRONOUN/m_c/object}.",
-            "r_c informs m_c that the harsh burn has rendered {PRONOUN/m_c/poss} leg nearly useless. It will be better in the long run to remove the limb entirely."
+            "As m_c sleeps under the influence of poppy seeds, r_c0 prepares for the grim task of removing {PRONOUN/m_c/poss} burned leg before the festering illness in it can spread to the rest of {PRONOUN/m_c/object}.",
+            "r_c0 informs m_c that the harsh burn has rendered {PRONOUN/m_c/poss} leg nearly useless. It will be better in the long run to remove the limb entirely."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]
@@ -15,7 +15,7 @@
         }
     },
     {
-        "event_id": "lost_a_leg2",
+        "event_id": "severe_burn_lost_a_leg2",
         "strings": [
             "The absence of m_c's leg is just so much less painful than the horrible burns. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} almost guilty, but it feels so much better now that it's impossible not to be relieved."
         ],

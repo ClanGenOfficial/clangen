@@ -1,12 +1,12 @@
 [
     {
-        "event_id": "greencough0",
+        "event_id": "whitecough_greencough0",
         "strings": [
-            "r_c searches through {PRONOUN/r_c/poss} herb stores. m_c's whitecough has progressed to greencough, greatly worrying r_c."
+            "r_c0 searches through {PRONOUN/r_c0/poss} herb stores. m_c's whitecough has progressed to greencough, greatly worrying r_c0."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "greencough1",
+        "event_id": "whitecough_greencough1",
         "strings": [
             "m_c coughs, feeling like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} hacking up half {PRONOUN/m_c/poss} lungs. This is definitely worse than whitecough ever gets."
         ],

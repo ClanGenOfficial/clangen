@@ -2,11 +2,11 @@
     {
         "event_id": "head_damage_persistent_headaches0",
         "strings": [
-            "m_c complains to r_c that {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been plagued with horrible headaches since {PRONOUN/m_c/subject} hurt {PRONOUN/m_c/poss} head. r_c sadly admits that the headaches may always be a problem."
+            "m_c complains to r_c0 that {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been plagued with horrible headaches since {PRONOUN/m_c/subject} hurt {PRONOUN/m_c/poss} head. r_c0 sadly admits that the headaches may always be a problem."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

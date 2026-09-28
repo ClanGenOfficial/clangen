@@ -1,13 +1,13 @@
 [
     {
-        "event_id": "lost_a_leg0",
+        "event_id": "mangled_leg_lost_a_leg0",
         "strings": [
-            "The leg is too mangled. r_c sighs and prepares the poppy seeds to knock m_c out while it's removed.",
-            "When m_c wakes up from {PRONOUN/m_c/poss} poppy-induced sleep, r_c breaks the news that m_c's leg had to be removed."
+            "The leg is too mangled. r_c0 sighs and prepares the poppy seeds to knock m_c out while it's removed.",
+            "When m_c wakes up from {PRONOUN/m_c/poss} poppy-induced sleep, r_c0 breaks the news that m_c's leg had to be removed."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]
@@ -15,7 +15,7 @@
         }
     },
     {
-        "event_id": "lost_a_leg2",
+        "event_id": "mangled_leg_lost_a_leg2",
         "strings": [
             "m_c wakes up one leg less than {PRONOUN/m_c/subject} went to sleep with, and it's both upsetting and a relief. {PRONOUN/m_c/poss/CAP} leg was so mangled, and m_c in so much pain, that this might be for the best. But it's still a loss.",
             "The damage to m_c's leg has turned out to be too great. {PRONOUN/m_c/poss/CAP} leg had to be removed for any hope of recovery.",

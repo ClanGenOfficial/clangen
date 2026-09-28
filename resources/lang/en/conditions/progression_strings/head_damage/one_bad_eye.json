@@ -2,11 +2,11 @@
     {
         "event_id": "head_damage_one_bad_eye0",
         "strings": [
-            "m_c waits a few days before telling r_c, hoping that {PRONOUN/m_c/poss} vision will come back on its own. It doesn't, and {PRONOUN/m_c/subject} begrudgingly {VERB/m_c/admit/admits} to r_c that {PRONOUN/m_c/subject} {VERB/m_c/have/has}n't been able to see out of one eye ever since {PRONOUN/m_c/subject} {VERB/m_c/were/was} hit in the head."
+            "m_c waits a few days before telling r_c0, hoping that {PRONOUN/m_c/poss} vision will come back on its own. It doesn't, and {PRONOUN/m_c/subject} begrudgingly {VERB/m_c/admit/admits} to r_c0 that {PRONOUN/m_c/subject} {VERB/m_c/have/has}n't been able to see out of one eye ever since {PRONOUN/m_c/subject} {VERB/m_c/were/was} hit in the head."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

@@ -2,11 +2,11 @@
     {
         "event_id": "head_damage_constantly_dizzy0",
         "strings": [
-            "m_c stumbles through the medicine cat den, trying to walk a straight line as r_c instructed. r_c tells {PRONOUN/m_c/object} that the newfound lack of balance might be a permanent result of {PRONOUN/m_c/poss} head injury."
+            "m_c stumbles through the medicine cat den, trying to walk a straight line as r_c0 instructed. r_c0 tells {PRONOUN/m_c/object} that the newfound lack of balance might be a permanent result of {PRONOUN/m_c/poss} head injury."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

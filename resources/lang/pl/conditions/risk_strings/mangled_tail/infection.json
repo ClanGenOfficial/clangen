@@ -1,12 +1,12 @@
 [
     {
-        "event_id": "infection0",
+        "event_id": "mangled_tail_infection0",
         "strings": [
-            "m_c's poor mangled tail is swollen and hot to the touch: r_c searches the herb stores for those that fight infection."
+            "m_c's poor mangled tail is swollen and hot to the touch: r_c0 searches the herb stores for those that fight infection."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "infection1",
+        "event_id": "mangled_tail_infection1",
         "strings": [
             "As if the injury wasn't bad enough, the skin on m_c's mangled tail has started to swell and feel feverish."
         ],

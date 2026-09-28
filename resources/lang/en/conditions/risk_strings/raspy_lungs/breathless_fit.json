@@ -2,11 +2,11 @@
     {
         "event_id": "raspy_lungs_breathless_fit0",
         "strings": [
-            "m_c wheezes to r_c that it feels like a cat is sitting on {PRONOUN/m_c/poss} chest. r_c waves fragrant herbs beneath m_c's nose, praying this breathlessness will not progress to suffocation."
+            "m_c wheezes to r_c0 that it feels like a cat is sitting on {PRONOUN/m_c/poss} chest. r_c0 waves fragrant herbs beneath m_c's nose, praying this breathlessness will not progress to suffocation."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

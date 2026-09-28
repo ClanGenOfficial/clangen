@@ -2,11 +2,11 @@
     {
         "event_id": "strange_lump_redcough0",
         "strings": [
-            "r_c braces for the inevitable when m_c finally contracts redcough. It's just a matter of moons now."
+            "r_c0 braces for the inevitable when m_c finally contracts redcough. It's just a matter of moons now."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

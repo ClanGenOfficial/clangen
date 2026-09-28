@@ -2,12 +2,12 @@
     {
         "event_id": "severe_burn_lost_their_tail0",
         "strings": [
-            "m_c makes a weak, very bad joke about {PRONOUN/m_c/poss} tail smelling like Twoleg food. Gently, r_c breaks the news that {PRONOUN/m_c/poss} burned flesh is going to need to be removed.",
-            "m_c's tail was almost completely taken by the fire. r_c tells {PRONOUN/m_c/object} that at this point it would be better to cleanly remove what still remains."
+            "m_c makes a weak, very bad joke about {PRONOUN/m_c/poss} tail smelling like Twoleg food. Gently, r_c0 breaks the news that {PRONOUN/m_c/poss} burned flesh is going to need to be removed.",
+            "m_c's tail was almost completely taken by the fire. r_c0 tells {PRONOUN/m_c/object} that at this point it would be better to cleanly remove what still remains."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

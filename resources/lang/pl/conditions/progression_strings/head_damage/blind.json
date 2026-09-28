@@ -1,13 +1,13 @@
 [
     {
-        "event_id": "blind0",
+        "event_id": "head_damage_blind0",
         "strings": [
-            "The knock to {PRONOUN/m_c/poss} head has blinded {PRONOUN/m_c/object}. r_c tells m_c {PRONOUN/m_c/poss} vision will never return. Something in {PRONOUN/m_c/poss} eyes must have been damaged by the blow.",
-            "m_c hasn't been able to see clearly since {PRONOUN/m_c/subject} {VERB/m_c/were/was} hit in the head, and it only gets worse by the day. Eventually, r_c breaks the news that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going blind."
+            "The knock to {PRONOUN/m_c/poss} head has blinded {PRONOUN/m_c/object}. r_c0 tells m_c {PRONOUN/m_c/poss} vision will never return. Something in {PRONOUN/m_c/poss} eyes must have been damaged by the blow.",
+            "m_c hasn't been able to see clearly since {PRONOUN/m_c/subject} {VERB/m_c/were/was} hit in the head, and it only gets worse by the day. Eventually, r_c0 breaks the news that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going blind."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]
@@ -15,7 +15,7 @@
         }
     },
     {
-        "event_id": "blind2",
+        "event_id": "head_damage_blind2",
         "strings": [
             "m_c stumbles through camp, trying {PRONOUN/m_c/poss} best to learn the layout. It seems like {PRONOUN/m_c/poss} head injury has made {PRONOUN/m_c/object} go blind... and {PRONOUN/m_c/poss} vision doesn't seem to be returning any time soon."
         ],

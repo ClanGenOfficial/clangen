@@ -1,12 +1,12 @@
 [
     {
-        "event_id": "infection0",
+        "event_id": "scrapes_infection0",
         "strings": [
-            "m_c hangs {PRONOUN/m_c/poss} head, embarrassed. {PRONOUN/m_c/subject/CAP} thought {PRONOUN/m_c/subject} could get away with not cleaning {PRONOUN/m_c/poss} scrapes since they're such minor wounds, but now the skin is irritated and infected. r_c is clearly judging {PRONOUN/m_c/object} for not taking care of {PRONOUN/m_c/self}."
+            "m_c hangs {PRONOUN/m_c/poss} head, embarrassed. {PRONOUN/m_c/subject/CAP} thought {PRONOUN/m_c/subject} could get away with not cleaning {PRONOUN/m_c/poss} scrapes since they're such minor wounds, but now the skin is irritated and infected. r_c0 is clearly judging {PRONOUN/m_c/object} for not taking care of {PRONOUN/m_c/self}."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "infection1",
+        "event_id": "scrapes_infection1",
         "strings": [
             "The scrapes m_c had gotten seemed minor at first, but even the smallest wounds can get infected."
         ],

@@ -2,11 +2,11 @@
     {
         "event_id": "wasting_disease_redcough0",
         "strings": [
-            "r_c has quietly begun making m_c comfortable... or as comfortable as {PRONOUN/m_c/subject} can be while hacking blood."
+            "r_c0 has quietly begun making m_c comfortable... or as comfortable as {PRONOUN/m_c/subject} can be while hacking blood."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

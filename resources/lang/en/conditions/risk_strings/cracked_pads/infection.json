@@ -2,11 +2,11 @@
     {
         "event_id": "cracked_pads_infection0",
         "strings": [
-            "r_c spreads the last of the salve on m_c's cracked and swollen pads, sternly telling {PRONOUN/m_c/object} to stay off {PRONOUN/m_c/poss} paws unless {PRONOUN/m_c/subject}'d like the infection to get any worse."
+            "r_c0 spreads the last of the salve on m_c's cracked and swollen pads, sternly telling {PRONOUN/m_c/object} to stay off {PRONOUN/m_c/poss} paws unless {PRONOUN/m_c/subject}'d like the infection to get any worse."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

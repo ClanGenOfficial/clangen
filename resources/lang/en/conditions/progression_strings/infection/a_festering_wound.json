@@ -2,11 +2,11 @@
     {
         "event_id": "infection_festering_wound0",
         "strings": [
-            "The stink of infection has strengthened and worsened. r_c mutters about different herbs as m_c watches {PRONOUN/r_c/object} change yet another poultice that probably won't work."
+            "The stink of infection has strengthened and worsened. r_c0 mutters about different herbs as m_c watches {PRONOUN/r_c0/object} change yet another poultice that probably won't work."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

@@ -2,11 +2,11 @@
     {
         "event_id": "rat_bite_festering_wound0",
         "strings": [
-            "The worried look in r_c's eyes as {PRONOUN/r_c/subject} {VERB/r_c/examine/examines} m_c's acrid rat bite makes {PRONOUN/m_c/poss} heart sink."
+            "The worried look in r_c0's eyes as {PRONOUN/r_c0/subject} {VERB/r_c0/examine/examines} m_c's acrid rat bite makes {PRONOUN/m_c/poss} heart sink."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

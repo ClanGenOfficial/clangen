@@ -2,11 +2,11 @@
     {
         "event_id": "damaged_throat_sore_throat0",
         "strings": [
-            "m_c mimes the motions for numbing herbs to r_c, who understands and supplies them swiftly. Something must have irritated m_c's damaged throat."
+            "m_c mimes the motions for numbing herbs to r_c0, who understands and supplies them swiftly. Something must have irritated m_c's damaged throat."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

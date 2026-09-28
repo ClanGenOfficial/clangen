@@ -1,12 +1,12 @@
 [
     {
-        "event_id": "redcough0",
+        "event_id": "yellowcough_redcough0",
         "strings": [
-            "r_c spots the specks of blood in the bedding where m_c has been coughing and swallows a wail of despair. If {PRONOUN/m_c/poss} yellowcough has progressed to redcough, it's practically a death sentence."
+            "r_c0 spots the specks of blood in the bedding where m_c has been coughing and swallows a wail of despair. If {PRONOUN/m_c/poss} yellowcough has progressed to redcough, it's practically a death sentence."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "redcough1",
+        "event_id": "yellowcough_redcough1",
         "strings": [
             "m_c is going to be fine. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} sure of it. {PRONOUN/m_c/poss/CAP} lungs don't hurt nearly as much anymore, and if there's blood in {PRONOUN/m_c/poss} mouth when {PRONOUN/m_c/subject} {VERB/m_c/finish/finishes} a coughing fit, what of it?"
         ],

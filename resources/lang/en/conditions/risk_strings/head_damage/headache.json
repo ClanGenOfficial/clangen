@@ -2,11 +2,11 @@
     {
         "event_id": "head_damage_headache0",
         "strings": [
-            "r_c prepares a soothing mix of herbs for m_c, who has been complaining of head pain after {PRONOUN/m_c/poss} injury. "
+            "r_c0 prepares a soothing mix of herbs for m_c, who has been complaining of head pain after {PRONOUN/m_c/poss} injury. "
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

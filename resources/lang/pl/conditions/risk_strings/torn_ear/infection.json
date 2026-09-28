@@ -1,12 +1,12 @@
 [
     {
-        "event_id": "infection0",
+        "event_id": "torn_ear_infection0",
         "strings": [
-            "r_c examines {PRONOUN/m_c/poss} ear as m_c keeps twitching it involuntarily. The area is swollen and irritated, probably an infection developing from the tear."
+            "r_c0 examines {PRONOUN/m_c/poss} ear as m_c keeps twitching it involuntarily. The area is swollen and irritated, probably an infection developing from the tear."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "infection1",
+        "event_id": "torn_ear_infection1",
         "strings": [
             "m_c's torn ear has become inflamed and itchy. It's most likely infected."
         ],

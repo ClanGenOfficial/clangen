@@ -2,12 +2,12 @@
     {
         "event_id": "broken_bone_weak_leg0",
         "strings": [
-            "r_c has noticed m_c hasn't been the most diligent with {PRONOUN/m_c/poss} leg strengthening exercises. As a consequence, {PRONOUN/m_c/poss} healing broken bone has given {PRONOUN/m_c/object} a weaker leg.",
-            "r_c examines m_c's leg and reports that though everything seems to be healed, the weakness m_c has complained about is likely a permanent consequence of the injury."
+            "r_c0 has noticed m_c hasn't been the most diligent with {PRONOUN/m_c/poss} leg strengthening exercises. As a consequence, {PRONOUN/m_c/poss} healing broken bone has given {PRONOUN/m_c/object} a weaker leg.",
+            "r_c0 examines m_c's leg and reports that though everything seems to be healed, the weakness m_c has complained about is likely a permanent consequence of the injury."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

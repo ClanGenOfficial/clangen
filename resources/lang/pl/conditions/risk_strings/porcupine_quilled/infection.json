@@ -1,12 +1,12 @@
 [
     {
-        "event_id": "infection0",
+        "event_id": "porcupine_quilled_infection0",
         "strings": [
-            "r_c was careful when removing the quills from m_c's face, but unfortunately infection still found its way in."
+            "r_c0 was careful when removing the quills from m_c's face, but unfortunately infection still found its way in."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "infection1",
+        "event_id": "porcupine_quilled_infection1",
         "strings": [
             "The wounds left behind on m_c by the porcupine quills have become infected.",
             "m_c is distraught to find that infection has set in on {PRONOUN/m_c/poss} quill wounds."

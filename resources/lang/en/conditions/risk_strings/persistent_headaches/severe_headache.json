@@ -2,11 +2,11 @@
     {
         "event_id": "persistent_headaches_severe_headache0",
         "strings": [
-            "r_c sees m_c headed towards the medicine cat den, wincing with every step. {PRONOUN/r_c/subject/CAP} {VERB/r_c/duck/ducks} inside to prepare a nest for {PRONOUN/m_c/object} in the darkest, quietest corner possible."
+            "r_c0 sees m_c headed towards the medicine cat den, wincing with every step. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/duck/ducks} inside to prepare a nest for {PRONOUN/m_c/object} in the darkest, quietest corner possible."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

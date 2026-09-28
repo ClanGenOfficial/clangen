@@ -2,11 +2,11 @@
     {
         "event_id": "lost_tail_phantom_pain0",
         "strings": [
-            "r_c can't give m_c answers; {PRONOUN/m_c/poss} tail is gone, and yet the pain in it remains."
+            "r_c0 can't give m_c answers; {PRONOUN/m_c/poss} tail is gone, and yet the pain in it remains."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

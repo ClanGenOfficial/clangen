@@ -2,11 +2,11 @@
     {
         "event_id": "stomachache_diarrhea0",
         "strings": [
-            "Embarrassed, m_c reports to r_c that {PRONOUN/m_c/poss} stomachache is now having consequences at the other end of {PRONOUN/m_c/poss} digestive system. r_c, as unsqueamish as all medicine cats, tells m_c that it's now very important {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} drinking water, as the diarrhea will make {PRONOUN/m_c/object} lose it quickly."
+            "Embarrassed, m_c reports to r_c0 that {PRONOUN/m_c/poss} stomachache is now having consequences at the other end of {PRONOUN/m_c/poss} digestive system. r_c0, as unsqueamish as all medicine cats, tells m_c that it's now very important {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} drinking water, as the diarrhea will make {PRONOUN/m_c/object} lose it quickly."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

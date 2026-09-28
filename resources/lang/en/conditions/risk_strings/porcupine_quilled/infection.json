@@ -2,11 +2,11 @@
     {
         "event_id": "porcupine_quilled_infection0",
         "strings": [
-            "r_c was careful when removing the quills from m_c's face, but unfortunately infection still found its way in."
+            "r_c0 was careful when removing the quills from m_c's face, but unfortunately infection still found its way in."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

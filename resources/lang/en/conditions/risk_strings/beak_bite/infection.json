@@ -2,11 +2,11 @@
     {
         "event_id": "beak_bite_infection0",
         "strings": [
-            "The beak wound feels hot. m_c winces as r_c cleans it. It's becoming infected."
+            "The beak wound feels hot. m_c winces as r_c0 cleans it. It's becoming infected."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

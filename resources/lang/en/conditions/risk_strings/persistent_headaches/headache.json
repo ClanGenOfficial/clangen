@@ -2,11 +2,11 @@
     {
         "event_id": "persistent_headaches_headache0",
         "strings": [
-            "m_c's headaches have plagued {PRONOUN/m_c/object} particularly badly this moon, so much so that r_c is running low on {PRONOUN/r_c/poss} pain-relieving mixture, having used so much up in keeping m_c feeling able."
+            "m_c's headaches have plagued {PRONOUN/m_c/object} particularly badly this moon, so much so that r_c0 is running low on {PRONOUN/r_c0/poss} pain-relieving mixture, having used so much up in keeping m_c feeling able."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

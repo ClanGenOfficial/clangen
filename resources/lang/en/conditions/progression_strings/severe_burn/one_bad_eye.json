@@ -2,11 +2,11 @@
     {
         "event_id": "severe_burn_one_bad_eye0",
         "strings": [
-            "r_c peels the cobwebs away from m_c's face and holds back a wince. The eye is unsalvageable... and the rest of the skin will likely never grow fur again."
+            "r_c0 peels the cobwebs away from m_c's face and holds back a wince. The eye is unsalvageable... and the rest of the skin will likely never grow fur again."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

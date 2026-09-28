@@ -1,12 +1,12 @@
 [
     {
-        "event_id": "infection0",
+        "event_id": "paralyzed_infection0",
         "strings": [
-            "r_c brings m_c into the medicine cat den and starts searching. The stink of infection is coming from {PRONOUN/m_c/object}, but m_c hasn't noticed anything that could cause it."
+            "r_c0 brings m_c into the medicine cat den and starts searching. The stink of infection is coming from {PRONOUN/m_c/object}, but m_c hasn't noticed anything that could cause it."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]
@@ -14,7 +14,7 @@
         }
     },
     {
-        "event_id": "infection1",
+        "event_id": "paralyzed_infection1",
         "strings": [
             "It seems that m_c got a scratch on a part of {PRONOUN/m_c/poss} body {PRONOUN/m_c/subject} can't feel. The wound went unnoticed until the stench of infection began to waft from it."
         ],

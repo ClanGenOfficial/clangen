@@ -2,11 +2,11 @@
     {
         "event_id": "venom_sickness_infection0",
         "strings": [
-            "Despite the hard work of r_c, an infection has found its way into m_c's body through the venom."
+            "Despite the hard work of r_c0, an infection has found its way into m_c's body through the venom."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

@@ -2,11 +2,11 @@
     {
         "event_id": "broken_jaw_infection0",
         "strings": [
-            "A meat paste for getting food and water into m_c's stomach, an herb paste to fight the infection growing in {PRONOUN/m_c/poss} broken jaw... r_c wracks {PRONOUN/r_c/poss} brain for anything else that might help {PRONOUN/r_c/poss} patient."
+            "A meat paste for getting food and water into m_c's stomach, an herb paste to fight the infection growing in {PRONOUN/m_c/poss} broken jaw... r_c0 wracks {PRONOUN/r_c0/poss} brain for anything else that might help {PRONOUN/r_c0/poss} patient."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]

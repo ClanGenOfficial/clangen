@@ -2,11 +2,11 @@
     {
         "event_id": "recurring_shock_constant_nightmares0",
         "strings": [
-            "r_c sits with m_c, listening to {PRONOUN/m_c/poss} troubles and providing a comforting, sympathetic ear. m_c has had a rough moon, haunted by constant nightmares."
+            "r_c0 sits with m_c, listening to {PRONOUN/m_c/poss} troubles and providing a comforting, sympathetic ear. m_c has had a rough moon, haunted by constant nightmares."
         ],
         "involved_cats": {
             "m_c": {},
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "medicine cat"
                 ]
