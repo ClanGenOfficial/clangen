@@ -65,13 +65,13 @@
         "severity": "major",
         "duration": 3,
         "mortality": {
-            "newborn": 0.5,
-            "kitten": 0.5,
-            "adolescent": 0.33,
-            "young adult": 0.2,
-            "adult": 0.2,
-            "senior adult": 0.2,
-            "senior": 0.33
+            "newborn": 0.9,
+            "kitten": 0.8,
+            "adolescent": 0.6,
+            "young adult": 0.5,
+            "adult": 0.4,
+            "senior adult": 0.5,
+            "senior": 0.6
         },
         "infectiousness": 0.6,
         "immune_system_effect": 0.0,
