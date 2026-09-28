@@ -1898,10 +1898,17 @@ class ProfileScreen(Screens):
             else:
                 # moons with the condition if not born with condition
                 moons_with = game.clan.age - condition.moon_gained
-                text_list.append(i18n.t("general.had_condition_for", count=moons_with))
+                text_list.append(
+                    i18n.t(
+                        "general.had_condition_for",
+                        moons=i18n.t("general.moons_age", count=moons_with),
+                    )
+                )
 
             # is permanent
-            text_list.append(i18n.t(f"conditions.permanent_conditions.{name}"))
+            text_list.append(
+                i18n.t(f"conditions.permanent_conditions.permanent_condition")
+            )
 
             # infected or festering
             if condition.current_complication:
