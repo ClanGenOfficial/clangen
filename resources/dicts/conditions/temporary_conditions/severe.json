@@ -201,7 +201,7 @@
             "3": []
         }
     },
-    "a_festering_wound": {
+    "festering_wound": {
         "severity": "severe",
         "is_complication": true,
         "duration": 3,
@@ -316,7 +316,7 @@
             }
         },
         "risks": {
-            "an_infected_wound": 0.2
+            "infection": 0.2
         },
         "treatment_strength": {
             "1": [
@@ -374,7 +374,7 @@
             }
         },
         "risks": {
-            "an_infected_wound": 0.2
+            "infection": 0.2
         },
         "treatment_strength": {
             "1": [
@@ -429,7 +429,7 @@
             }
         },
         "risks": {
-            "an_infected_wound": 0.25
+            "infection": 0.25
         },
         "treatment_strength": {
             "1": [
@@ -478,7 +478,7 @@
             "bruises": 0.2
         },
         "progression": {
-            "lost_a_leg": {
+            "lost_leg": {
                 "chance": 0.2,
                 "when": "HEALED"
             },
@@ -492,7 +492,7 @@
             }
         },
         "risks": {
-            "an_infected_wound": 0.2
+            "infection": 0.2
         },
         "treatment_strength": {
             "1": [
@@ -537,13 +537,13 @@
             "blood_loss": 0.2
         },
         "progression": {
-            "lost_their_tail": {
+            "lost_tail": {
                 "chance": 0.2,
                 "when": "HEALED"
             }
         },
         "risks": {
-            "an_infected_wound": 0.2
+            "infection": 0.2
         },
         "treatment_strength": {
             "1": [
@@ -585,17 +585,17 @@
         "immune_system_effect": 0.0,
         "side_effect": {},
         "progression": {
-            "lost_their_tail": {
+            "lost_tail": {
                 "chance": 0.2,
                 "when": "HEALED"
             },
-            "lost_a_leg": {
+            "lost_leg": {
                 "chance": 0.2,
                 "when": "HEALED"
             }
         },
         "risks": {
-            "an_infected_wound": 0.067
+            "infection": 0.067
         },
         "treatment_strength": {
             "1": [
@@ -645,7 +645,7 @@
             }
         },
         "risks": {
-            "an_infected_wound": 0.1
+            "infection": 0.1
         },
         "treatment_strength": {
             "1": [

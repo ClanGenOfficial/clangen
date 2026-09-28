@@ -94,7 +94,7 @@
         "side_effect": {},
         "progression": {},
         "risks": {
-            "an_infected_wound": 0.033,
+            "infection": 0.033,
             "tick_fever": 0.02
         },
         "treatment_strength": {
@@ -191,7 +191,7 @@
         "side_effect": {},
         "progression": {},
         "risks": {
-            "an_infected_wound": 0.05
+            "infection": 0.05
         },
         "treatment_strength": {
             "1": [
@@ -239,7 +239,7 @@
         "side_effect": {},
         "progression": {},
         "risks": {
-            "an_infected_wound": 0.033
+            "infection": 0.033
         },
         "treatment_strength": {
             "1": [
@@ -262,7 +262,7 @@
         "side_effect": {},
         "progression": {},
         "risks": {
-            "an_infected_wound": 0.025
+            "infection": 0.025
         },
         "treatment_strength": {
             "1": [
@@ -285,7 +285,7 @@
         "side_effect": {},
         "progression": {},
         "risks": {
-            "an_infected_wound": 0.04
+            "infection": 0.04
         },
         "treatment_strength": {
             "1": [
@@ -316,7 +316,7 @@
             }
         },
         "risks": {
-            "an_infected_wound": 0.04
+            "infection": 0.04
         },
         "treatment_strength": {
             "1": [

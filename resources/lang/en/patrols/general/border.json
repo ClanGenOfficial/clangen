@@ -1957,7 +1957,7 @@
                             "r_c2"
                         ],
                         "condition": [
-                            "water_in_their_lungs"
+                            "water_in_lungs"
                         ],
                         "death_history": "m_c died from water in {PRONOUN/m_c/poss} lungs after s_c0 took a game way too far on patrol."
                     }

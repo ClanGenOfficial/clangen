@@ -134,8 +134,8 @@ These are written with the key as the condition name and the value as the percen
 
 ```json
 "risks": {
-    "an_infected_wound": 0.2,
-    "a_festering_wound": 0.2
+    "infection": 0.2,
+    "festering_wound": 0.2
 }
 ```
 

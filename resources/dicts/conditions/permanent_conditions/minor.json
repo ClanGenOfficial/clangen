@@ -33,7 +33,7 @@
             "HINDLEG"
         ]
     },
-    "lost_their_tail": {
+    "lost_tail": {
         "severity": "minor",
         "can_be_congenital": false,
         "can_be_acquired": true,
@@ -43,7 +43,7 @@
         "immune_system_effect": 0.0,
         "progression": {},
         "risks": {
-            "an_infected_wound": 0.05,
+            "infection": 0.05,
             "phantom_pain": 0.1
         },
         "treatment_strength": {
@@ -62,7 +62,7 @@
             "HALFTAIL"
         ]
     },
-    "born_without_a_tail": {
+    "born_without_tail": {
         "severity": "minor",
         "can_be_congenital": true,
         "can_be_acquired": false,

@@ -583,7 +583,7 @@ class TestNewCatCreation(unittest.TestCase):
         ):
             option_dict = InvolvedCatDict(
                 can_create_new_cat={},
-                health=HealthDict(condition=["lost_a_leg"]),
+                health=HealthDict(condition=["lost_leg"]),
             )
 
             cat_list = updated_create_new_cat(

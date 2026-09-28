@@ -17,7 +17,6 @@ import ujson  # type: ignore
 
 import scripts.game_structure.localization as pronouns
 from scripts.cat import pronouns
-from scripts.cat.conditions.condition_save_conversion import condition_convert
 from scripts.cat.conditions.permanent_condition import PermanentCondition
 from scripts.cat.conditions.temporary_condition import TemporaryCondition
 from scripts.cat.enums import (
@@ -1357,80 +1356,6 @@ class Cat:
 
         self.rank_change(CatRank.ELDER)
         return
-
-    def save_condition(self):
-        # save conditions for each cat
-        save_id = None
-        if switch_get_value(Switch.clan_save_id) != "":
-            save_id = switch_get_value(Switch.clan_save_id)
-        elif len(switch_get_value(Switch.clan_list)) > 0:
-            save_id = switch_get_value(Switch.clan_list)[0]
-        elif game.clan is not None:
-            save_id = game.clan.save_id
-
-        condition_directory = get_save_dir() + "/" + save_id + "/conditions"
-        condition_file_path = condition_directory + "/" + self.ID + "_conditions.json"
-
-        if (not self.temporary_conditions and not self.permanent_conditions) or (
-            (self.dead or self.status.is_outsider) and not self.permanent_conditions
-        ):
-            if os.path.exists(condition_file_path):
-                os.remove(condition_file_path)
-            return
-
-        conditions = {}
-
-        if self.temporary_conditions:
-            conditions["temporary_conditions"] = [
-                dataclasses.asdict(con) for con in self.temporary_conditions
-            ]
-
-        if self.permanent_conditions:
-            conditions["permanent_conditions"] = [
-                dataclasses.asdict(con) for con in self.permanent_conditions
-            ]
-
-        safe_save(condition_file_path, conditions)
-
-    def load_conditions(self):
-        if switch_get_value(Switch.clan_save_id) != "":
-            clanname = switch_get_value(Switch.clan_save_id)
-        else:
-            clanname = switch_get_value(Switch.clan_list)[0]
-
-        condition_directory = get_save_dir() + "/" + clanname + "/conditions/"
-        condition_cat_directory = condition_directory + self.ID + "_conditions.json"
-        if not os.path.exists(condition_cat_directory):
-            return
-
-        try:
-            with open(condition_cat_directory, "r", encoding="utf-8") as read_file:
-                condition_data = ujson.loads(read_file.read())
-                if (
-                    condition_data.get("permanent conditions")
-                    or condition_data.get("illnesses")
-                    or condition_data.get("injuries")
-                ):
-                    # presence of this term means this is an old condition file
-                    condition_data = condition_convert(condition_data)
-
-                self.temporary_conditions = [
-                    TemporaryCondition(**info)
-                    for info in condition_data.get("temporary_conditions", {})
-                ]
-                self.permanent_conditions = [
-                    PermanentCondition(**info)
-                    for info in condition_data.get("permanent_conditions", {})
-                ]
-
-            if "paralyzed" in self.permanent_conditions and not self.pelt.paralyzed:
-                self.pelt.paralyzed = True
-
-        except Exception as e:
-            print(
-                f"WARNING: There was an error reading the condition file of cat #{self}.\n",
-                e,
-            )
 
     def remove_condition(self, name: str):
         """

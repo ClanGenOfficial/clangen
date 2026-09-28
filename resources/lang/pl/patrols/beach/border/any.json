@@ -879,7 +879,7 @@
                         ],
                         "condition": [
                             "blunt_force_injury",
-                            "water_in_their_lungs"
+                            "water_in_lungs"
                         ],
                         "scar_history": "m_c was injured in a flood.",
                         "death_history": "m_c died of injuries sustained in a flood."
@@ -899,7 +899,7 @@
                         ],
                         "condition": [
                             "blunt_force_injury",
-                            "water_in_their_lungs"
+                            "water_in_lungs"
                         ],
                         "scar_history": "m_c was injured in a flood.",
                         "death_history": "m_c died of injuries sustained in a flood."

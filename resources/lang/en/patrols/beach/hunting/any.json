@@ -7331,7 +7331,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "water_in_their_lungs"
+                            "water_in_lungs"
                         ],
                         "death_history": "m_c died from the water in {PRONOUN/m_c/poss} lungs after a rogue wave struck {PRONOUN/m_c/object} during a hunt."
                     }
@@ -7838,7 +7838,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "water_in_their_lungs"
+                            "water_in_lungs"
                         ],
                         "death_history": "m_c died from the water in {PRONOUN/m_c/poss} lungs after being chased off a cliff into the ocean by a gannet parent whose nest {PRONOUN/m_c/subject} tried to raid."
                     }
@@ -7924,7 +7924,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "water_in_their_lungs"
+                            "water_in_lungs"
                         ],
                         "death_history": "m_c died from the water in {PRONOUN/m_c/poss} lungs after overestimating {PRONOUN/m_c/self} and falling off a cliff."
                     }

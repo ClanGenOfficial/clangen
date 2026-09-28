@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 VERSION_NAME = "unknown"
 # This is saved in the Clan save-file, and is used for save-file converstion.
-SAVE_VERSION_NUMBER = 5
+SAVE_VERSION_NUMBER = 6
 
 
 def get_version_info():

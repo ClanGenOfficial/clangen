@@ -2383,7 +2383,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "water_in_their_lungs"
+                            "water_in_lungs"
                         ],
                         "death_history": "m_c died to complications caused by water in {PRONOUN/m_c/poss} lungs."
                     }

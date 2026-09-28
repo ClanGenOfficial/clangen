@@ -2149,10 +2149,10 @@
                 ],
                 "health": {
                     "condition": [
-                        "lost_a_leg",
-                        "lost_their_tail",
-                        "born_without_a_leg",
-                        "born_without_a_tail"
+                        "lost_leg",
+                        "lost_tail",
+                        "born_without_leg",
+                        "born_without_tail"
                     ]
                 }
             },
@@ -2179,10 +2179,10 @@
                 ],
                 "health": {
                     "condition": [
-                        "lost_a_leg",
-                        "lost_their_tail",
-                        "born_without_a_leg",
-                        "born_without_a_tail"
+                        "lost_leg",
+                        "lost_tail",
+                        "born_without_leg",
+                        "born_without_tail"
                     ]
                 }
             },
@@ -2208,8 +2208,8 @@
                 ],
                 "health": {
                     "condition": [
-                        "lost_a_leg",
-                        "lost_their_tail"
+                        "lost_leg",
+                        "lost_tail"
                     ]
                 }
             },
@@ -2235,8 +2235,8 @@
                 ],
                 "health": {
                     "condition": [
-                        "lost_a_leg",
-                        "born_without_a_leg"
+                        "lost_leg",
+                        "born_without_leg"
                     ]
                 }
             },
@@ -2262,7 +2262,7 @@
                 ],
                 "health": {
                     "condition": [
-                        "born_without_a_leg"
+                        "born_without_leg"
                     ]
                 }
             },
@@ -2275,7 +2275,7 @@
                 ],
                 "health": {
                     "condition": [
-                        "born_without_a_leg"
+                        "born_without_leg"
                     ]
                 }
             }
@@ -2293,8 +2293,8 @@
                 ],
                 "health": {
                     "condition": [
-                        "born_without_a_leg",
-                        "lost_a_leg"
+                        "born_without_leg",
+                        "lost_leg"
                     ]
                 }
             },
@@ -2307,7 +2307,7 @@
                 ],
                 "health": {
                     "condition": [
-                        "born_without_a_leg"
+                        "born_without_leg"
                     ]
                 }
             }
@@ -2325,8 +2325,8 @@
                 ],
                 "health": {
                     "condition": [
-                        "lost_their_tail",
-                        "born_without_a_tail"
+                        "lost_tail",
+                        "born_without_tail"
                     ]
                 }
             },
@@ -2353,8 +2353,8 @@
                 ],
                 "health": {
                     "condition": [
-                        "lost_their_tail",
-                        "born_without_a_tail"
+                        "lost_tail",
+                        "born_without_tail"
                     ]
                 }
             },
@@ -2378,8 +2378,8 @@
                 ],
                 "health": {
                     "condition": [
-                        "lost_their_tail",
-                        "born_without_a_tail"
+                        "lost_tail",
+                        "born_without_tail"
                     ]
                 }
             },
@@ -2392,8 +2392,8 @@
                 ],
                 "health": {
                     "condition": [
-                        "lost_their_tail",
-                        "born_without_a_tail"
+                        "lost_tail",
+                        "born_without_tail"
                     ]
                 }
             }
@@ -2412,8 +2412,8 @@
                 ],
                 "health": {
                     "condition": [
-                        "lost_their_tail",
-                        "born_without_a_tail"
+                        "lost_tail",
+                        "born_without_tail"
                     ]
                 }
             },
@@ -2426,8 +2426,8 @@
                 ],
                 "health": {
                     "condition": [
-                        "lost_their_tail",
-                        "born_without_a_tail"
+                        "lost_tail",
+                        "born_without_tail"
                     ]
                 }
             }
@@ -2447,7 +2447,7 @@
                 ],
                 "health": {
                     "condition": [
-                        "lost_their_tail"
+                        "lost_tail"
                     ]
                 }
             },
@@ -2474,8 +2474,8 @@
                 ],
                 "health": {
                     "condition": [
-                        "lost_their_tail",
-                        "born_without_a_tail"
+                        "lost_tail",
+                        "born_without_tail"
                     ]
                 }
             },

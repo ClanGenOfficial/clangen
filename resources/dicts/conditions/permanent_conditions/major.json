@@ -14,7 +14,7 @@
             "3": []
         }
     },
-    "lost_a_leg": {
+    "lost_leg": {
         "severity": "major",
         "can_be_congenital": false,
         "can_be_acquired": true,
@@ -24,7 +24,7 @@
         "immune_system_effect": 0.0,
         "progression": {},
         "risks": {
-            "an_infected_wound": 0.05,
+            "infection": 0.05,
             "phantom_pain": 0.1,
             "sore": 0.15
         },
@@ -45,7 +45,7 @@
             "NOPAW"
         ]
     },
-    "born_without_a_leg": {
+    "born_without_leg": {
         "severity": "major",
         "can_be_congenital": true,
         "can_be_acquired": false,

@@ -59,6 +59,7 @@ from scripts.clan_package.get_clan_cats import (
     get_living_clan_cat_count,
     find_alive_cats_with_rank,
 )
+from scripts.housekeeping.version_retrieval import get_version
 from scripts.screens.screens_core.screens_core import rebuild_top_menu_buttons
 
 
@@ -877,13 +878,6 @@ class Clan:
         if game.clan.game_mode != "classic":
             self.load_freshkill_pile(game.clan)
         switch_set_value(Switch.error_message, "")
-
-        # Return Version Info.
-        return {
-            "version_name": clan_data.get("version_name"),
-            "version_commit": clan_data.get("version_commit"),
-            "source_build": clan_data.get("source_build"),
-        }
 
     def load_pregnancy(self, clan):
         """

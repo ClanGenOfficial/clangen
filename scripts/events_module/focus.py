@@ -3,8 +3,8 @@ from random import random, choice, choices, randint
 import i18n
 
 from scripts.cat.cats import Cat
+from scripts.cat.conditions.gain_conditions import gain_temporary_condition
 from scripts.cat.enums import CatRank
-from scripts.cat.microservices.conditions import get_injured, get_ill
 from scripts.clan_package.cotc import change_clan_reputation, change_clan_relations
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.clan_package.settings import get_clan_setting
@@ -222,7 +222,7 @@ def _raid_clans() -> str:
             chosen_injury = choices(
                 list(injury_dict.keys()), list(injury_dict.values())
             )[0]
-            get_injured(cat, chosen_injury)
+            gain_temporary_condition(cat, chosen_injury)
             injured_cats.append(cat.ID)
 
     for name in game.clan.clans_in_focus:
@@ -295,14 +295,14 @@ def _hoarding():
             chosen_injury = choices(
                 list(injury_dict.keys()), list(injury_dict.values())
             )[0]
-            get_injured(cat, chosen_injury)
+            gain_temporary_condition(cat, chosen_injury)
             involved_cats["injured"].append(cat.ID)
         elif not int(random() * illness_chance) or disable_random:
             illness_dict = info_dict["illnesses"]
             chosen_illness = choices(
                 list(illness_dict.keys()), list(illness_dict.values())
             )[0]
-            get_ill(cat, chosen_illness)
+            gain_temporary_condition(cat, chosen_illness)
             involved_cats["sick"].append(cat.ID)
 
     text = []

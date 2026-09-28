@@ -1120,7 +1120,7 @@
                         "rat_bite",
                         "dislocated_joint",
                         "sprain",
-                        "quilled_by_a_porcupine",
+                        "porcupine_quilled",
                         "torn pelt"
                     ]
                 }
@@ -1186,9 +1186,9 @@
                 "health": {
                     "condition": [
                         "heat_stroke",
-                        "a_festering_wound",
+                        "festering_wound",
                         "carrionplace_disease",
-                        "an_infected_wound",
+                        "infection",
                         "redcough",
                         "kittencough",
                         "poisoned"

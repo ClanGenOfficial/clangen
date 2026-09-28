@@ -3,12 +3,12 @@ from enum import Enum
 
 class PermCondition(Enum):
     crooked_jaw = "crooked_jaw"
-    lost_a_leg = "lost_a_leg"
-    born_without_a_leg = "born_without_a_leg"
+    lost_a_leg = "lost_leg"
+    born_without_a_leg = "born_without_leg"
     weak_leg = "weak_leg"
     twisted_leg = "twisted_leg"
-    lost_their_tail = "lost_their_tail"
-    born_without_a_tail = "born_without_a_tail"
+    lost_their_tail = "lost_tail"
+    born_without_a_tail = "born_without_tail"
     paralyzed = "paralyzed"
     raspy_lungs = "raspy_lungs"
     wasting_disease = "wasting_disease"

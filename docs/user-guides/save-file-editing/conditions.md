@@ -141,7 +141,7 @@ Illnesses have their own information for every individual condition. Please refe
 | "illness_infectiousness": [],  | Unused code, please keep empty |
 | "risks": [],  |  Additional "small" conditions that may be given during the duration of the condition. |
 | "complication": null,  | Used in the situation where the condition is infected or festering. Add the condition "an infected wound" or "a festering wound" into illnesses, then add the corresponding "infected"/"festering" to replace null,  |
-| "cause_permanent": [],  | Possible given permanent conditions when an injury heals. Looks like "cause_permanent": ["lost_a_leg"],  |
+| "cause_permanent": [],  | Possible given permanent conditions when an injury heals. Looks like "cause_permanent": ["lost_leg"],  |
 |  "event_triggered": false, | Should be left as false if save file editing. |
 |  "potential_scars": [] | A list of potential scars the cat can get from this condition once it heals. "potential_scars": ["HALFTAIL","NOTAIL"]. |
 
@@ -411,11 +411,11 @@ For example:
 
 Now edit the new section for the condition you want. Go to the [conditions code information](https://github.com/ClanGenOfficial/ClanGen/tree/development/resources/dicts/conditions) and use the information to edit the copied section to reflect the condition you want.
 
-Example with "lost_a_leg":
+Example with "lost_leg":
 ```json
 {
     "permanent conditions": {
-        "lost_a_leg": {
+        "lost_leg": {
             "severity": "major",
             "born_with": false,
             "moons_until": 0,
@@ -475,7 +475,7 @@ Let's say I want to get rid of fleas. Before editing:
         }
     },
     "permanent conditions": {
-        "lost_a_leg": {
+        "lost_leg": {
             "severity": "major",
             "born_with": false,
             "moons_until": 0,
@@ -508,7 +508,7 @@ From "illnesses" until the bracket with the comma `},`, delete until it looks li
 ```json
 {
     "permanent conditions": {
-        "lost_a_leg": {
+        "lost_leg": {
             "severity": "major",
             "born_with": false,
             "moons_until": 0,

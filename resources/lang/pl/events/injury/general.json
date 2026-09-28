@@ -1305,7 +1305,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "water_in_their_lungs"
+                    "water_in_lungs"
                 ]
             }
         ],
@@ -6412,7 +6412,7 @@
         "injury": [
             {
                 "cats": ["m_c"],
-                "injuries": ["water_in_their_lungs"]
+                "injuries": ["water_in_lungs"]
             }
         ],
         "history": [
@@ -6584,7 +6584,7 @@
         "injury": [
             {
                 "cats": ["m_c"],
-                "injuries": ["water_in_their_lungs"]
+                "injuries": ["water_in_lungs"]
             }
         ],
         "history": [

@@ -435,7 +435,7 @@
                         ],
                         "condition": [
                             "running_nose",
-                            "water_in_their_lungs",
+                            "water_in_lungs",
                             "dangerously_cold",
                             "minor_injury",
                             "blunt_force_injury"
@@ -526,7 +526,7 @@
                         ],
                         "condition": [
                             "running_nose",
-                            "water_in_their_lungs",
+                            "water_in_lungs",
                             "dangerously_cold",
                             "minor_injury",
                             "blunt_force_injury"

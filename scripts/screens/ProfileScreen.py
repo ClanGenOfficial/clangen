@@ -1798,7 +1798,7 @@ class ProfileScreen(Screens):
             [i, self.get_condition_details(i)]
             for i in self.the_cat.permanent_conditions
             + self.the_cat.temporary_conditions
-            if i not in ("an_infected_wound", "a_festering_wound")
+            if i not in ("infection", "festering_wound")
             and not (
                 isinstance(i, PermanentCondition)
                 and i.is_congenital
@@ -1909,7 +1909,7 @@ class ProfileScreen(Screens):
                     condition.current_complication
                 )
                 if complication:
-                    if complication == "a_festering_wound":
+                    if complication == "festering_wound":
                         complication = "festering"
                     else:
                         complication = "infected"
@@ -1947,7 +1947,7 @@ class ProfileScreen(Screens):
                     condition.current_complication
                 )
                 if complication:
-                    if complication == "a_festering_wound":
+                    if complication == "festering_wound":
                         complication = "festering"
                     else:
                         complication = "infected"

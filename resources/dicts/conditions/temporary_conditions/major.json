@@ -32,7 +32,7 @@
             ]
         }
     },
-    "an_infected_wound": {
+    "infection": {
         "severity": "major",
         "is_complication": true,
         "duration": 3,
@@ -49,7 +49,7 @@
         "immune_system_effect": 0.0,
         "side_effect": {},
         "progression": {
-            "a_festering_wound": {
+            "festering_wound": {
                 "chance": 0.1,
                 "when": "CONTINUING"
             }
@@ -276,7 +276,7 @@
         },
         "progression": {},
         "risks": {
-            "an_infected_wound": 0.2
+            "infection": 0.2
         },
         "treatment_strength": {
             "1": [
@@ -332,7 +332,7 @@
         },
         "progression": {},
         "risks": {
-            "an_infected_wound": 0.2
+            "infection": 0.2
         },
         "treatment_strength": {
             "1": [
@@ -378,7 +378,7 @@
         },
         "progression": {},
         "risks": {
-            "an_infected_wound": 0.2
+            "infection": 0.2
         },
         "treatment_strength": {
             "1": [
@@ -422,7 +422,7 @@
         },
         "progression": {},
         "risks": {
-            "an_infected_wound": 0.2
+            "infection": 0.2
         },
         "treatment_strength": {
             "1": [
@@ -461,7 +461,7 @@
         },
         "progression": {},
         "risks": {
-            "an_infected_wound": 0.2
+            "infection": 0.2
         },
         "treatment_strength": {
             "1": [
@@ -505,8 +505,8 @@
         },
         "progression": {},
         "risks": {
-            "an_infected_wound": 0.2,
-            "a_festering_wound": 0.2
+            "infection": 0.2,
+            "festering_wound": 0.2
         },
         "treatment_strength": {
             "1": [
@@ -621,11 +621,11 @@
         "immune_system_effect": 0.17,
         "side_effect": {},
         "progression": {
-            "lost_a_leg": {
+            "lost_leg": {
                 "chance": 0.2,
                 "when": "CONTINUING"
             },
-            "lost_their_tail": {
+            "lost_tail": {
                 "chance": 0.2,
                 "when": "CONTINUING"
             }
@@ -671,7 +671,7 @@
         },
         "progression": {},
         "risks": {
-            "an_infected_wound": 0.067
+            "infection": 0.067
         },
         "treatment_strength": {
             "1": [
@@ -687,7 +687,7 @@
             "3": []
         }
     },
-    "water_in_their_lungs": {
+    "water_in_lungs": {
         "severity": "major",
         "duration": 3,
         "mortality": {
@@ -744,7 +744,7 @@
         "side_effect": {},
         "progression": {},
         "risks": {
-            "an_infected_wound": 0.04
+            "infection": 0.04
         },
         "treatment_strength": {
             "1": [
@@ -1036,7 +1036,7 @@
             ]
         }
     },
-    "quilled_by_a_porcupine": {
+    "porcupine_quilled": {
         "severity": "major",
         "duration": 2,
         "mortality": {
@@ -1055,7 +1055,7 @@
         },
         "progression": {},
         "risks": {
-            "an_infected_wound": 0.2
+            "infection": 0.2
         },
         "treatment_strength": {
             "1": [
@@ -1108,7 +1108,7 @@
             }
         },
         "risks": {
-            "an_infected_wound": 0.2,
+            "infection": 0.2,
             "seizure": 0.4
         },
         "treatment_strength": {

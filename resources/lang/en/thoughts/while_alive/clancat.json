@@ -7552,8 +7552,8 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "lost_a_leg",
-                        "born_without_a_leg"
+                        "lost_leg",
+                        "born_without_leg"
                     ]
                 }
             },
@@ -7580,7 +7580,7 @@
                 ],
                 "health": {
                     "condition": [
-                        "lost_a_leg"
+                        "lost_leg"
                     ]
                 }
             },
@@ -7604,8 +7604,8 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "lost_their_tail",
-                        "born_without_a_tail"
+                        "lost_tail",
+                        "born_without_tail"
                     ]
                 }
             },
@@ -7627,7 +7627,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "lost_their_tail"
+                        "lost_tail"
                     ]
                 }
             },
@@ -7650,8 +7650,8 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "lost_their_tail",
-                        "born_without_a_tail"
+                        "lost_tail",
+                        "born_without_tail"
                     ]
                 }
             },
@@ -8273,7 +8273,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "water_in_their_lungs"
+                        "water_in_lungs"
                     ]
                 }
             }
@@ -8970,7 +8970,7 @@
                         "rat_bite",
                         "dislocated_joint",
                         "sprain",
-                        "quilled_by_a_porcupine",
+                        "porcupine_quilled",
                         "torn pelt"
                     ]
                 }

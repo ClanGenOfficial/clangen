@@ -727,7 +727,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "water_in_their_lungs"
+                            "water_in_lungs"
                         ],
                         "death_history": "m_c died from complications caused by inhaling water after falling into a rockpool."
                     }

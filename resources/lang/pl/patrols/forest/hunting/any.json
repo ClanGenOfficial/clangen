@@ -220,7 +220,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "quilled_by_a_porcupine"
+                            "porcupine_quilled"
                         ],
                         "scar_pool_override": [
                             "QUILLSCRATCH"
@@ -409,7 +409,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "quilled_by_a_porcupine"
+                            "porcupine_quilled"
                         ],
                         "scar_pool_override": [
                             "QUILLSCRATCH"

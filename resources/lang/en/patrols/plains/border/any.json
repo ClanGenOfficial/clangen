@@ -4016,7 +4016,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "water_in_their_lungs"
+                            "water_in_lungs"
                         ],
                         "death_history": "m_c died from complications after falling into a sinkhole and being buried as an apprentice."
                     }

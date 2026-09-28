@@ -1,24 +1,24 @@
 import logging
 import os
+
 import ujson
 
-import scripts.cat.conditions.coverage_check
-import scripts.cat.conditions.gain_conditions
 from scripts.cat.cats import Cat
+from scripts.cat.save_load import get_faded_ids
 from scripts.cat.save_load import load_faded_cat_ids
 from scripts.cat_relations.inheritance2 import inheritance_db
-from scripts.cat.save_load import get_faded_ids
-from ..cat.conditions.gain_conditions import gain_permanent_condition
-from ..cat.enums import CatGroup, CatRank
+from scripts.game_structure import constants
+from scripts.game_structure import game
 from scripts.game_structure.game.switches import (
     switch_get_value,
     switch_set_value,
     Switch,
 )
-from ..cat.factories.load_cat_factory import LoadCatFactory
 from scripts.housekeeping.version import SAVE_VERSION_NUMBER
-from scripts.game_structure import constants
-from scripts.game_structure import game
+from ..cat.conditions.condition_save_load import load_conditions
+from ..cat.conditions.gain_conditions import gain_permanent_condition
+from ..cat.enums import CatGroup, CatRank
+from ..cat.factories.load_cat_factory import LoadCatFactory
 from ..cat_relations.cat_handle_funcs import (
     init_all_relationships,
     load_relationship_of_cat,
@@ -33,29 +33,26 @@ from ..housekeeping.datadir import get_save_dir
 logger = logging.getLogger(__name__)
 
 
-def load_cats():
+def load_cats(version_info: dict):
     load_faded_cat_ids(switch_get_value(Switch.clan_save_id))
     try:
-        json_load()
+        json_load(version_info)
     except FileNotFoundError:
-        csv_load(Cat.all_cats)
+        csv_load()
     except Exception:
         Cat.all_cats.clear()
         Cat.all_cats_list.clear()
         raise
 
 
-def json_load():
+def json_load(version_info: dict):
     Cat.all_cats.clear()
     Cat.all_cats_list.clear()
 
     all_cats = []
     clanname = switch_get_value(Switch.clan_list)[0]
     clan_cats_json_path = f"{get_save_dir()}/{clanname}/clan_cats.json"
-    with open(
-        f"resources/dicts/conversion_dict.json", "r", encoding="utf-8"
-    ) as read_file:
-        convert = ujson.loads(read_file.read())
+
     try:
         with open(clan_cats_json_path, "r", encoding="utf-8") as read_file:
             cat_data = ujson.loads(read_file.read())
@@ -94,7 +91,7 @@ def json_load():
             elif cat.status.group == CatGroup.DARK_FOREST:
                 game.dark_forest.adjust_facets_by_cat(cat)
 
-        cat.load_conditions()
+        load_conditions(cat, version_info)
 
         # this is here to handle paralyzed cats in old saves
         if cat.pelt.paralyzed and "paralyzed" not in cat.permanent_conditions:
@@ -127,7 +124,7 @@ def json_load():
     inheritance_db.load_inheritances(Cat, get_faded_ids)
 
 
-def csv_load(all_cats):
+def csv_load():
     if switch_get_value(Switch.clan_list)[0].strip() == "":
         return
     else:
@@ -170,7 +167,7 @@ def save_check():
 
 
 def version_convert(version_info):
-    """Does all save-conversion that require referencing the saved version number.
+    """Does most save-conversion that require referencing the saved version number.
     This is a separate function, since the version info is stored in clan.json, but most conversion needs to be
     done on the cats. Clan data is loaded in after cats, however."""
 
