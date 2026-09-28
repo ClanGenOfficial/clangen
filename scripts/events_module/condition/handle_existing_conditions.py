@@ -195,8 +195,6 @@ def handle_temporary_conditions(cat: Cat, forced_state: ConditionState = None):
                         [cat.ID],
                     )
 
-                game.herb_events_list.append(event.text)
-
             cat.history.remove_possible_history(condition.name)
             conditions_to_remove.append(condition)
 
@@ -322,7 +320,6 @@ def _apply_fatality(cat, condition, event_list) -> list:
     # clear event list first to make sure any heal or risk events from other injuries are not shown
     event_list.clear()
     event_list.append(event)
-    game.herb_events_list.append(event.text)
 
     return event_list
 

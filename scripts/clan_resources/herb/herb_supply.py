@@ -825,11 +825,16 @@ class HerbSupply:
 
         herb = self.herb[herb_used]
 
+        if condition in treated_cat.permanent_conditions:
+            condition_name = i18n.t(f"conditions.permanent_conditions.{condition}")
+        else:
+            condition_name = i18n.t(f"conditions.temporary_conditions.{condition}")
+
         message = i18n.t(
             "conditions.herbs.herb_used",
             herb=i18n.t(f"conditions.herbs.{herb.name}", count=amount_used),
             count=amount_used,
-            condition=condition,
+            condition=condition_name,
             effect=effect_message,
         )
 
