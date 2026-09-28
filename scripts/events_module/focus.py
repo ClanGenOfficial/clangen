@@ -271,13 +271,10 @@ def _hoarding():
     )
     prey_recovered = len(healthy_warriors) * info_dict["prey_warrior"]
 
-    healthy_meds = list(
-        filter(
-            lambda c: c.status.rank == CatRank.MEDICINE_CAT
-            and c.status.alive_in_player_clan
-            and not c.not_working(),
-            Cat.all_cats.values(),
-        )
+    healthy_meds = find_alive_cats_with_rank(
+        Cat,
+        ranks=[CatRank.MEDICINE_CAT],
+        working=True,
     )
 
     injury_chance_warrior = info_dict["injury_chance_warrior"]

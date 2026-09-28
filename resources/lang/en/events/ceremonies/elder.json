@@ -133,7 +133,7 @@
             }
         },
         "strings": [
-            "Seeing old_name struggling the last few moons, r_c0 approached {PRONOUN/m_c/object} and promised that no one would think less of {PRONOUN/m_c/object} for retiring early, and that {PRONOUN/m_c/subject} would still be a valuable member of the Clan as an elder. old_name agreed; later that day, {PRONOUN/m_c/poss} elder ceremony was held and {PRONOUN/m_c/subject} were given the name m_c."
+            "Seeing old_name struggling the last few moons, r_c0 approached {PRONOUN/m_c/object} and promised that no one would think less of {PRONOUN/m_c/object} for retiring early, and that {PRONOUN/m_c/subject} would still be a valuable member of the Clan as an elder. {PRONOUN/m_c/subject/CAP} agreed; later that day, {PRONOUN/m_c/poss} elder ceremony was held and {PRONOUN/m_c/subject} were given the name m_c."
         ]
     },
     {

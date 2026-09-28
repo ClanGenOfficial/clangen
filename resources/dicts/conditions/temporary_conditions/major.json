@@ -39,6 +39,7 @@
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
+        "side_effect": {},
         "progression": {},
         "risks": {},
         "treatment_strength": {

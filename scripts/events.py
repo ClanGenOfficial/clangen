@@ -1614,11 +1614,7 @@ def attempt_outbreak():
         if len(cats) < 2:
             # don't infect just one cat
             continue
-        infected_names = []
-        involved_cats = []
         for _c in cats:
-            infected_names.append(str(_c.name))
-            involved_cats.append(_c.ID)
             gain_temporary_condition(
                 _c, condition, omit_moonskip=True
             )  # SPREAD THE GERMS >:)
