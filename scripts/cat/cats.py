@@ -322,7 +322,7 @@ class Cat:
             elif self.age in (CatAge.KITTEN, CatAge.NEWBORN):
                 self.history.add_afterlife_acceptance(
                     game.clan.instructor.status.group
-                    if game.clan
+                    if (game.clan and game.clan.instructor)
                     else CatGroup.STARCLAN,
                     is_kit=True,
                 )

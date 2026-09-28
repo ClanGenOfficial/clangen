@@ -864,16 +864,16 @@ dev_tools = false
     # list of injuries which can occur and to which distribution
     # INFO: current sum of injuries is 100 - for easier understanding it should stay the same
     [focus."raid_other_clans".injuries]
-      claw-wound = 15
-      "cat_bite" = 15
-      "torn_pelt" = 15
-      "torn_ear" = 15
-      bite-wound = 10
+      claw_wound = 15
+      cat_bite = 15
+      torn_pelt = 15
+      torn_ear = 15
+      bite_wound = 10
       sprain = 10
       bruises = 7
       sore = 6
-      "small_cut" = 4
-      "cracked_pads" = 3
+      small_cut = 4
+      cracked_pads = 3
 
   [focus.hoarding]
     # how much prey each working warrior(leader/deputy) will gather
@@ -892,20 +892,20 @@ dev_tools = false
     # list of injuries which can occur and to which distribution
     # INFO: current sum of injuries is 100 - for easier understanding it should stay the same
     [focus.hoarding.injuries]
-      "cracked_pads" = 15
+      cracked_pads = 15
       sore = 15
       bruises = 15
       sprain = 12
-      "small_cut" = 10
-      "torn_pelt" = 10
-      "torn_ear" = 10
+      small_cut = 10
+      torn_pelt = 10
+      torn_ear = 10
       claw_wound = 5
       bite_wound = 5
-      "cat_bite" = 3
+      cat_bite = 3
 
     # list of illnesses which can occur and to which distribution
     [focus.hoarding.illnesses]
-      "running_nose" = 5
+      running_nose = 5
       whitecough = 1
 
   [focus.rest_and_recover]
