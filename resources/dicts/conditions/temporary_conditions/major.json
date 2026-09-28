@@ -968,13 +968,13 @@
         "severity": "major",
         "duration": 2,
         "mortality": {
-            "newborn": 0.1,
-            "kitten": 0.2,
-            "adolescent": 0.07,
-            "young adult": 0.05,
-            "adult": 0.03,
-            "senior adult": 0.05,
-            "senior": 0.07
+            "newborn": 0.6,
+            "kitten": 0.5,
+            "adolescent": 0.4,
+            "young adult": 0.3,
+            "adult": 0.2,
+            "senior adult": 0.3,
+            "senior": 0.5
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
@@ -1046,13 +1046,13 @@
         "severity": "major",
         "duration": 2,
         "mortality": {
-            "newborn": 0.1,
-            "kitten": 0.1,
-            "adolescent": 0.03,
-            "young adult": 0.02,
-            "adult": 0.01,
-            "senior adult": 0.02,
-            "senior": 0.05
+            "newborn": 0.7,
+            "kitten": 0.6,
+            "adolescent": 0.4,
+            "young adult": 0.2,
+            "adult": 0.2,
+            "senior adult": 0.3,
+            "senior": 0.5
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.2,
@@ -1078,13 +1078,13 @@
         "severity": "major",
         "duration": 2,
         "mortality": {
-            "newborn": 0.1,
-            "kitten": 0.05,
-            "adolescent": 0.03,
-            "young adult": 0.02,
+            "newborn": 0.3,
+            "kitten": 0.2,
+            "adolescent": 0.1,
+            "young adult": 0.05,
             "adult": 0.02,
-            "senior adult": 0.02,
-            "senior": 0.03
+            "senior adult": 0.05,
+            "senior": 0.1
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
@@ -1093,7 +1093,7 @@
         },
         "progression": {},
         "risks": {
-            "infection": 0.2
+            "infection": 0.3
         },
         "treatment_strength": {
             "1": [
@@ -1122,13 +1122,13 @@
         "severity": "major",
         "duration": 3,
         "mortality": {
-            "newborn": 0.5,
+            "newborn": 0.6,
             "kitten": 0.5,
-            "adolescent": 0.15,
+            "adolescent": 0.3,
             "young adult": 0.2,
-            "adult": 0.2,
-            "senior adult": 0.15,
-            "senior": 0.1
+            "adult": 0.1,
+            "senior adult": 0.3,
+            "senior": 0.4
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.2,
