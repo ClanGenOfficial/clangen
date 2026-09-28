@@ -215,7 +215,13 @@ def handle_temporary_conditions(cat: Cat, forced_state: ConditionState = None):
 
             # decrease mortality on all conditions (mimicking the idea that the cat is healing in increments)
             if condition.mortality:
-                condition.mortality = max(0.01, (condition.mortality - get_config("condition.related.moonskip_mortality_reduction")))
+                condition.mortality = max(
+                    0.01,
+                    (
+                        condition.mortality
+                        - get_config("condition.related.moonskip_mortality_reduction")
+                    ),
+                )
 
             additional_events, conditions_to_remove = _check_risks(
                 cat, condition, conditions_to_remove
