@@ -1512,6 +1512,7 @@ def attempt_outbreak():
     """
     Attempts to spread infectious conditions to other cats in the Clan
     """
+
     clan_cats = list(
         filter(lambda _cat: _cat.status.alive_in_player_clan, Cat.all_cats.values())
     )
@@ -1554,6 +1555,10 @@ def attempt_outbreak():
             if condition.infectiousness
         ]
         for condition in infectious_conditions:
+            # spread can only happen in certain season (unless it's fleas)
+            if condition != "fleas" and game.clan.current_season not in get_config("condition_related.illness_outbreak_season"):
+                continue
+
             if condition.name in possible_infections:
                 possible_infections[condition.name] = min(
                     0.9,
