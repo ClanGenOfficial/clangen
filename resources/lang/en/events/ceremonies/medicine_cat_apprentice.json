@@ -386,7 +386,7 @@
         ]
     },
     {
-        "event_id": "med_app_POI_moonplace3",
+        "event_id": "med_app_POI_darkmoonpool",
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -402,7 +402,7 @@
         ]
     },
     {
-        "event_id": "med_app_POI_moonplace4",
+        "event_id": "med_app_POI_darkwhisperingcave",
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -418,7 +418,7 @@
         ]
     },
     {
-        "event_id": "med_app_POI_moonplace5",
+        "event_id": "med_app_POI_darkmothermouth",
         "involved_cats": {
             "m_c": {
                 "stat": {
