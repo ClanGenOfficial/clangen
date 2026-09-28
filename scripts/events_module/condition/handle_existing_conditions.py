@@ -180,7 +180,7 @@ def handle_temporary_conditions(cat: Cat, forced_state: ConditionState = None):
                 possible_scars=condition_extra_info.get("possible_scars", []),
             )
 
-            if condition.name == "pregnant":
+            if condition.name != "pregnant":
                 if not event:
                     event = generate_condition_event(
                         path=f"conditions/healed_strings/{condition.name}.json",

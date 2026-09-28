@@ -1564,13 +1564,13 @@ def attempt_outbreak():
             if condition.name in possible_infections:
                 possible_infections[condition.name] = min(
                     0.9,
-                    (possible_infections[condition.name] + condition.infectiousness)
-                    - infection_prevention,
+                    (possible_infections[condition.name] + condition.infectiousness),
                 )
             else:
-                possible_infections[condition.name] = (
-                    condition.infectiousness - infection_prevention
-                )
+                possible_infections[condition.name] = condition.infectiousness
+
+    for infection in possible_infections:
+        possible_infections[infection] -= infection_prevention
 
     # the cats who are allowed to get sick
     vulnerable_cats = list(filter(lambda _cat: _cat not in infectious_cats, clan_cats))
@@ -1600,6 +1600,12 @@ def attempt_outbreak():
             if random.random() <= min(0.9, infectiousness + immune_system_effect):
                 created_infections[condition].append(_cat)
                 max_infected_allowed -= 1
+
+            if max_infected_allowed <= 0:
+                break
+
+        for c in created_infections[condition]:
+            vulnerable_cats.remove(c)
 
         if max_infected_allowed <= 0:
             break
