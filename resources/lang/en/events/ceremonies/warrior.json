@@ -102,7 +102,25 @@
             }
         },
         "strings": [
-            "Although {PRONOUN/m_c/poss} training has been long, (old_name) has failed to master the skills needed of a warrior. However, {PRONOUN/m_c/subject} {VERB/m_c/are/is} getting too old to stay in the apprentices' den. The mood is tense and awkward as {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c and honored for {PRONOUN/m_c/poss} r_h. "
+            "Although {PRONOUN/m_c/poss} training has been long, (old_name) has failed to master the skills needed of a warrior. However, {PRONOUN/m_c/subject} {VERB/m_c/are/is} getting too old to stay in the apprentices' den. The mood is tense and awkward as {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c and honored for {PRONOUN/m_c/poss} r_h.",
+            "(old_name) has spent moons falling just shy of the tasks set before {PRONOUN/m_c/object}. When {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c and honored for {PRONOUN/m_c/poss} r_h, many question whether {PRONOUN/m_c/subject} {VERB/m_c/are/is} ready for the responsibilities of a warrior.",
+            "Despite struggling to pass {PRONOUN/m_c/poss} final assessment, (old_name) is honored for {PRONOUN/m_c/poss} r_h and given the warrior name m_c.",
+            "Perhaps (old_name) is simply a late bloomer. When {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c and honored for {PRONOUN/m_c/poss} r_h, the Clan hopes {PRONOUN/m_c/poss} skills will continue to blossom as a warrior."
+        ]
+    },
+    {
+        "event_id": "warrior_unprepared_condition",
+        "involved_cats": {
+            "m_c": {
+                "current_exp": ["untrained", "learning"],
+                "health": {
+                    "working": false
+                }
+            }
+        },
+        "strings": [
+            "Due to {PRONOUN/m_c/poss} health, (old_name) has been unable to complete {PRONOUN/m_c/poss} warrior training. Though {PRONOUN/m_c/subject} {VERB/m_c/have/has} much to learn in the future, {PRONOUN/m_c/subject} {VERB/m_c/are/is} honored for {PRONOUN/m_c/poss} r_h and named m_c.",
+            "(old_name)'s condition has prevented {PRONOUN/m_c/object} from mastering the skills necessary to become a warrior. Despite the uncertainty of {PRONOUN/m_c/poss} future, {PRONOUN/m_c/subject} {VERB/m_c/are/is} honored for {PRONOUN/m_c/poss} r_h and given the name m_c."
         ]
     },
     {
@@ -319,7 +337,7 @@
         ],
         "involved_cats": {
             "m_c": {},
-             "r_c0": {
+            "r_c0": {
                 "group": [
                     "player_clan"
                 ],
