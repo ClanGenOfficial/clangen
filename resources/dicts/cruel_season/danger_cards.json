@@ -33,7 +33,7 @@
   "miasma": {
     "card_art": "danger/miasma.png",
     "modifiers": {
-      "condition_related.illness_chance": 150
+      "condition_related.illness_chance": 175
 
     }
   }
