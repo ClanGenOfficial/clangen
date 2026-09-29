@@ -787,6 +787,10 @@ def one_moon_outside_cat(cat, other_clan_cats: list = None):
     cat.skills.progress_skill(cat)
     pregnancy_events.handle_having_kits(cat)
 
+    # CHECK CONDITIONS
+    if cat.temporary_conditions:
+        handle_temporary_conditions(cat)
+
     if not cat.dead:
         outsider_events.killing_outsiders(cat)
 
@@ -843,16 +847,15 @@ def one_moon_cat(cat):
         if cat.dead:
             return
 
+    # newborns don't do much
+    if cat.status.rank == CatRank.NEWBORN:
+        return
+
     # CHECK CONDITIONS
     if cat.temporary_conditions:
         handle_temporary_conditions(cat)
         if cat.dead:
             return
-
-    # newborns don't do much
-    if cat.status.rank == CatRank.NEWBORN:
-        return
-
     # GIVE CONDITIONS
     else:
         if random.getrandbits(1):

@@ -129,8 +129,6 @@
             "3": []
         },
         "possible_scars": [
-            "LEFTEAR",
-            "RIGHTEAR",
             "NOLEFTEAR",
             "NORIGHTEAR",
             "NOEAR"
