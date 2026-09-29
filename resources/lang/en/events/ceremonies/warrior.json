@@ -120,7 +120,7 @@
         },
         "strings": [
             "Due to {PRONOUN/m_c/poss} health, (old_name) has been unable to complete {PRONOUN/m_c/poss} warrior training. Though {PRONOUN/m_c/subject} {VERB/m_c/have/has} much to learn in the future, {PRONOUN/m_c/subject} {VERB/m_c/are/is} honored for {PRONOUN/m_c/poss} r_h and named m_c.",
-            "(old_name)'s condition has prevented {PRONOUN/m_c/object} from mastering the skills necessarily to become a warrior. Despite the uncertainty of {PRONOUN/m_c/poss} future, {PRONOUN/m_c/subject} {VERB/m_c/are/is} honored for {PRONOUN/m_c/poss} r_h and given the name m_c."
+            "(old_name)'s condition has prevented {PRONOUN/m_c/object} from mastering the skills necessary to become a warrior. Despite the uncertainty of {PRONOUN/m_c/poss} future, {PRONOUN/m_c/subject} {VERB/m_c/are/is} honored for {PRONOUN/m_c/poss} r_h and given the name m_c."
         ]
     },
     {
