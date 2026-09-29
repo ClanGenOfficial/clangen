@@ -364,18 +364,6 @@
                 "m_c": {},
                 "r_c": {}
             },
-        "relationship_constraint": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "mutual": false,
-                "constraints": []
-            }
-        ],
         "relationship_changes": [
             {
                 "cats_from": [
