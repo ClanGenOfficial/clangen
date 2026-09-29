@@ -353,12 +353,12 @@
         "strings": [
             "m_c gives r_c a backhanded compliment.",
             "m_c's been especially snarky towards r_c today.",
-            "m_c's been laughing with a Clanmate about something about r_c {PRONOUN/r_c/subject} can't control",
             "m_c refuses to take r_c seriously during a serious conversation.",
             "m_c repeats something r_c said in a mocking tone.",
-            "m_c's been belittling r_c all day.",
-            "m_c gags at the sound of r_c's voice.",
-            "m_c made it very clear that {PRONOUN/m_c/subject} {VERB/m_c/look/looks} down on r_c"
+            "m_c admits being embarrassed about liking something r_c also likes.",
+            "When r_c vents to m_c, m_c rudely asks {PRONOUN/r_c/object} what {PRONOUN/r_c/subject} {VERB/r_c/want/wants} {PRONOUN/m_c/object} to do about it.",
+            "m_c asks r_c if {PRONOUN/r_c/subject} actually {VERB/r_c/have/has} any friends.",
+            "When asked for help, m_c tells r_c that its not {PRONOUN/m_c/poss} problem and walks off."
         ],
         "involved_cats": {
             "m_c": {},
@@ -374,7 +374,7 @@
                 ],
                 "mutual": false,
                 "constraints": [
-                    "begrudges"
+                    "envies"
                 ]
             }
         ],
@@ -400,7 +400,7 @@
             "m_c wonders aloud if r_c even deserves {PRONOUN/r_c/poss} full name.",
             "m_c refuses to believe r_c actually likes {PRONOUN/r_c/poss} new name.",
             "m_c refuses to take r_c's new name seriously.",
-            "m_c's been saying r_c's name in a mocking tone all day"
+            "m_c's been saying r_c's name in a mocking tone all day."
         ],
         "involved_cats": {
             "m_c": {},
@@ -427,7 +427,7 @@
                 ],
                 "mutual": false,
                 "constraints": [
-                    "begrudges"
+                    "envies"
                 ]
             }
         ],
@@ -442,6 +442,50 @@
                 "mutual": true,
                 "values": [
                     "trust",
+                    "like"
+                ],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "event_id": "snarky_de_med3",
+        "strings": [
+            "After r_c returned to Camp with a big catch, m_c simply scoffed and asked if that was it.",
+            "m_c refuses to believe r_c can catch anything with a crouch like <i>that</i>."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "status": [
+                    "warrior",
+                    "apprentice",
+                    "deputy",
+                    "leader"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "begrudges"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": true,
+                "values": [
+                    "respect",
                     "like"
                 ],
                 "amount": -10
