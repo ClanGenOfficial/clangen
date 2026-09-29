@@ -46,6 +46,7 @@ Documentation is... what you're currently reading! It is our database of informa
 
 ## How to Start Projects
 If you have a big idea for a feature and want to start a project yourself, that's great!<br>
+
 1. Pitch your idea to other developers in the Discord to gauge interest and get feedback. It's crucial to hear from senior developers to get feedback on whether your proposed feature is a good fit for the game. Otherwise, you might end up sinking a lot of time and energy into a project that won't ultimately be accepted.
 2. Chat with other interested developers to see who may be able to help you realize your idea! Most features requires collaboration from many developers to bring it to life.
 3. Make a thread in the #development forum (anyone can make threads, not just seniors!). In your initial post, describe the feature, define the scope of the project, and list the steps that must be taken to create the feature. If other devs have requested it, you can ping them in the thread to continue brainstorming and collaborating.
