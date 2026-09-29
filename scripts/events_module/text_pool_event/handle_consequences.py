@@ -484,7 +484,9 @@ def _handle_conditions(
         scars = block.get("scar_pool_override", [])
 
         for c in cat_list:
-            current_conditions = c.temporary_conditions + c.permanent_conditions
+            current_conditions = [
+                con.name for con in c.temporary_conditions + c.permanent_conditions
+            ]
 
             if set(possible_conditions).issubset(current_conditions):
                 print(

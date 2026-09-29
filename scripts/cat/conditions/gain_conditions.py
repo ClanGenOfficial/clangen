@@ -181,7 +181,7 @@ def add_congenital_condition(cat):
 
     for condition in PERMANENT_CONDITIONS:
         possible = PERMANENT_CONDITIONS[condition]
-        if possible["congenital"] in ("always", "sometimes"):
+        if possible["is_congenital"]:
             possible_conditions.append(condition)
 
     new_condition = choice(possible_conditions)
