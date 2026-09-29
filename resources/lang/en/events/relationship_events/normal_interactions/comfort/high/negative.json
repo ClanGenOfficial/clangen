@@ -73,7 +73,8 @@
             "m_c sees a darkness in r_c's eyes.",
             "A heavy feeling of guilt weighs on m_c whenever {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} kind to r_c.",
             "The bad dreams that m_c has about r_c are progressively getting worse and worse.",
-            "m_c wonders why they always see r_c out of {PRONOUN/r_c/poss} den at night."
+            "m_c wonders why they always see r_c out of {PRONOUN/r_c/poss} den at night.",
+            "m_c makes sure to never turn {PRONOUN/m_c/poss} back on r_c out of fear {PRONOUN/r_c/subject}'d do something."
         ],
         "involved_cats": {
             "r_c": {
