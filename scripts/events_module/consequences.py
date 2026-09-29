@@ -732,10 +732,7 @@ def create_new_cat(
             possible_conditions = []
             for condition in PERMANENT_CONDITIONS:
                 if (kit or litter) and PERMANENT_CONDITIONS[condition][
-                    "congenital"
-                ] not in [
-                    "always",
-                    "sometimes",
+                    "can_be_congenital"
                 ]:
                     continue
                 # next part ensures that a kit won't get a condition that takes too long to reveal
@@ -747,10 +744,7 @@ def create_new_cat(
 
             if possible_conditions:
                 chosen_condition = choice(possible_conditions)
-                if PERMANENT_CONDITIONS[chosen_condition]["congenital"] in [
-                    "always",
-                    "sometimes",
-                ]:
+                if PERMANENT_CONDITIONS[chosen_condition]["can_be_congenital"]:
                     gain_permanent_condition(
                         new_cat,
                         chosen_condition,
