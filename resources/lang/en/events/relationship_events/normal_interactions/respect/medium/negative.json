@@ -88,7 +88,10 @@
             "m_c thinks that r_c acted disrespectfully during a patrol.",
             "m_c notices that r_c seems to disappear whenever difficult tasks are being discussed.",
             "r_c was meant to take a piece of prey to a Clanmate, but m_c saw {PRONOUN/r_c/object} eat it.",
-            "r_c didn't finish a chore that m_c asked {PRONOUN/r_c/object} to do."
+            "r_c didn't finish a chore that m_c asked {PRONOUN/r_c/object} to do.",
+            "After r_c returned to Camp with a big catch, m_c simply scoffed and asked if that was it.",
+            "m_c refuses to believe r_c can catch anything with a crouch like <i>that</i>.",
+            "m_c adamantly refuses to eat any prey r_c caught."
         ],
         "involved_cats": {
             "m_c": {
@@ -113,7 +116,11 @@
         "event_id": "respect_adult_de_med2",
         "strings": [
             "m_c has noticed r_c isn't doing a lot of work lately.",
-            "m_c is disappointed in r_c's lack of initiative."
+            "m_c is disappointed in r_c's lack of initiative.",
+            "m_c is disappointed in how r_c doesn't seem to be carrying {PRONOUN/r_c/poss} weight.",
+            "m_c can't believe r_c would pass {PRONOUN/m_c/poss} work onto another Clanmate.",
+            "m_c can't help but notice how r_c got help for something that {PRONOUN/r_c/subject} could easily do {PRONOUN/r_c/self}.",
+            "m_c wonders why r_c's taking a break while everyone else is working hard."
         ],
         "involved_cats": {
             "m_c": {
@@ -137,7 +144,10 @@
         "event_id": "respect_gathering_de_med",
         "strings": [
             "m_c is jealous that r_c got to go to the last Gathering.",
-            "r_c was complimented by another Clan during the recent Gathering, but m_c wasn't."
+            "r_c was complimented by another Clan during the recent Gathering, but m_c wasn't.",
+            "m_c is jealous that r_c 's achievements were recognized during the gathering but {PRONOUN/m_c/inposs} wasn't.",
+            "m_c's jealous at how well r_c gets along with the cats from other Clans.",
+            "m_c wonders how r_c carries {PRONOUN/r_c/self} so well during gatherings."
         ],
         "involved_cats": {
             "m_c": {
@@ -404,55 +414,6 @@
                 "age": [
                     "adolescent",
                     "young adult"
-                ]
-            }
-        },
-        "relationship_constraint": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "mutual": false,
-                "constraints": [
-                    "envies"
-                ]
-            }
-        ],
-        "relationship_changes": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "mutual": true,
-                "values": [
-                    "respect",
-                    "like"
-                ],
-                "amount": -10
-            }
-        ]
-    },
-    {
-        "event_id": "snarky_de_med3",
-        "strings": [
-            "After r_c returned to Camp with a big catch, m_c simply scoffed and asked if that was it.",
-            "m_c refuses to believe r_c can catch anything with a crouch like <i>that</i>.",
-            "m_c adamantly refuses to eat any prey r_c caught."
-        ],
-        "involved_cats": {
-            "m_c": {},
-            "r_c": {
-                "status": [
-                    "warrior",
-                    "apprentice",
-                    "deputy",
-                    "leader"
                 ]
             }
         },
