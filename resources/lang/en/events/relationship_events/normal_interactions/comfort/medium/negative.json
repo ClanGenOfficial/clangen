@@ -16,7 +16,7 @@
             "The moon casts a shadow on r_c's face in a way that makes m_c uneasy.",
             "For a moment, m_c thought r_c sounded like someone else.",
             "m_c feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} walking on eggshells when around r_c.",
-            "m_c yelled at r_c for seemingly no reason whatsoever."
+            "m_c yelled at r_c for seemingly no reason."
         ]
     },
     {
@@ -115,7 +115,7 @@
             "m_c is put off by r_c's big, toothy grin.",
             "m_c swears that r_c hasn't blinked today.",
             "m_c notices that r_c looks a little too entertained by a Clanmate's unsettling story.",
-            "m_c was unsettled after watching r_c dissect a bug with their sharp claws.",
+            "m_c was unsettled after watching r_c dissect a bug with {PRONOUN/r_c/poss} sharp claws.",
             "r_c invited {PRONOUN/r_c/self} to share tongues with m_c without even asking."
         ],
         "involved_cats": {

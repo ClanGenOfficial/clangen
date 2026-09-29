@@ -16,7 +16,7 @@
             "m_c feels extremely unsettled when r_c looks at {PRONOUN/m_c/object}.",
             "m_c can't stop thinking about the way r_c glared at {PRONOUN/m_c/poss} Clanmate.",
             "m_c hides any time {PRONOUN/m_c/subject} {VERB/m_c/see/sees} r_c.",
-            "m_c does {PRONOUN/m_c/poss} best to avoid r_c any chance {PRONOUN/m_c/subject} {VERB/m_c/get/gets}."
+            "m_c does {PRONOUN/m_c/poss} best to avoid r_c."
         ]
     },
     {
@@ -76,7 +76,7 @@
             "A heavy feeling of guilt weighs on m_c whenever {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} kind to r_c.",
             "The bad dreams that m_c has about r_c are progressively getting worse and worse.",
             "m_c wonders why they always see r_c out of {PRONOUN/r_c/poss} den at night.",
-            "m_c makes sure to never turn {PRONOUN/m_c/poss} back on r_c out of fear {PRONOUN/r_c/subject}'d do something."
+            "m_c makes sure to never turn {PRONOUN/m_c/poss} back on r_c."
         ],
         "involved_cats": {
             "r_c": {

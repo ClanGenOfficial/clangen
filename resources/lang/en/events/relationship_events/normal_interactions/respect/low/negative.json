@@ -33,8 +33,8 @@
             "r_c acts childishly in front of m_c.",
             "m_c doesn't tell r_c that {PRONOUN/r_c/subject} forgot to groom a part of {PRONOUN/r_c/poss} fur.",
             "m_c admits to a belief r_c doesn't fully agree with.",
-            "m_c admits to being petty towards certain cats to r_c.",
-            "r_c notices that m_c's been rather petty towards {PRONOUN/r_c/object} as of late."
+            "m_c admits to being petty toward certain cats to r_c.",
+            "r_c notices m_c has acted petty toward {PRONOUN/r_c/object} lately."
         ],
         "relationship_changes": [
             {
