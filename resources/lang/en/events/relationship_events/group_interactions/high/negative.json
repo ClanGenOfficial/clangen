@@ -131,7 +131,7 @@
         "strings": [
             "r_c1 scolds m_c for being rude to r_c2.",
             "r_c1 makes m_c apologize to r_c2 for {PRONOUN/m_c/poss} bad behavior.",
-            "m_c tramples r_c2 during a rambunctious game, and r_c1 rebukes {PRONOUN/m_c/object} in front of {PRONOUN/r_c2/object}."
+            "m_c tramples r_c2 during a rambunctious game, and r_c1 rebukes {PRONOUN/m_c/object} in front of r_c2."
         ],
         "involved_cats": {
             "m_c": {
