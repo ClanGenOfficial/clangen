@@ -440,22 +440,22 @@ dev_tools = false
   base_permanent_condition = 90
 
   # 1/2^(chance - 1) that a male cat will be a tortie
-  base_male_tortie = 4
+  base_male_tortie = 13
 
   # 1/2^(chance/2) that a female cat will be a tortie
-  base_female_tortie = 3
+  base_female_tortie = 4
 
   # base 1/(chance + 1) that a cat will have heterochromia. gets modified further in code
-  base_heterochromia = 90
+  base_heterochromia = 120
 
   # 1/(chance + 1) for a cat to have same pelt as one of their parents
   direct_inheritance = 15
 
   # 1/2^(chance) that a cat will be a wildcard tortie
-  wildcard_tortie = 4
+  wildcard_tortie = 9
 
   # base 1/2^(chance) that a cat will have vitiligo
-  vit_chance = 7
+  vit_chance = 8
 
   # 1/2^(chance) that a cat will have colourpoint
   random_point_chance = 5
@@ -480,7 +480,7 @@ dev_tools = false
 
 [accessory_generation]
   # base 1/chance a cat generates with an accessory 
-  base_acc_chance = 80
+  base_acc_chance = 150
 
   # modifiers for accessories add or subtract from chance IN THE DENOMINATOR 
   #   i.e. 1/(chance + med_modifier + baby_modifier + elder_modifier + ...)
@@ -667,12 +667,12 @@ dev_tools = false
     base_random_murder_chance = 25
 
     # base 1/chance a disliked cat will be murdered
-    base_murder_kill_chance = 70
+    base_murder_kill_chance = 80
 
     # The higher this number, the more likely a deputy will murder their leader.
     # note that this doesn't make the deputy more likely to murder in general
     # so they still need to be "capable" of it and have negative relationship with their leader.
-    deputy_murder_modifier = 5
+    deputy_murder_modifier = 0
 
     # set to true to have the deputy prefer to murder the leader over other negative relationships
     deputy_prefer_leader = false
@@ -707,7 +707,7 @@ dev_tools = false
 
 [clan_creation]
   # Set this to -1 for it to be infinite
-  rerolls = -1
+  rerolls = 3
 
   # other clans will start with a random relation between the two numbers
   starting_clan_relation = [8, 12]
@@ -803,20 +803,21 @@ dev_tools = false
 
   [focus."raid_other_clans"]
     # how much prey each working warrior(leader/deputy) will gather
-    prey_warrior = 3
+    prey_amounts = [0, 1, 2]
+    prey_weights = [3, 4, 1]
 
-    # how much herb each working medicine cat will gather
-    herb_medicine = 4
+    # how much herb each working warrior will gather
+    herb_amounts = [0, 1, 2]
+    herb_weights = [8, 2, 1]
 
     # injury chance of each warrior(leader/deputy) or medicine cat to get injured
-    injury_chance_warrior = 18
-    "injury_chance_medicine cat" = 33
+    injury_chance = 18
 
-    # the more clan which are raided the more likely it is to get injured
+    # the more clans that are raided the more likely it is to get injured
     chance_increase_per_clan = 3
 
     # amount of decrease; Clan relation is between 0 and 30, so the number should be small
-    relation = 3
+    relation = -3
 
     # list of injuries which can occur and to which distribution
     # INFO: current sum of injuries is 100 - for easier understanding it should stay the same
@@ -836,12 +837,9 @@ dev_tools = false
     # how much prey each working warrior(leader/deputy) will gather
     prey_warrior = 1
 
-    # how much herb each working medicine cat will gather
-    herb_medicine = 2
-
     # injury chance of each warrior(leader/deputy) or medicine cat to get injured
     injury_chance_warrior = 25
-    "injury_chance_medicine cat" = 35
+    injury_chance_medicine_cat = 35
 
     # illness chance of each warrior(leader/deputy) and medicine cat to get sick
     illness_chance = 35
@@ -911,11 +909,11 @@ dev_tools = false
   # colours are specified as [r, g, b] where r, g, b are numbers from 0 to 255
   # alpha transparency is from 0 to 255, where 0 is fully transparent and 255 is fully opaque
 
-  dark_mode_background = [44, 50, 45]
+  dark_mode_background = [57, 50, 36]
   light_mode_background = [206, 194, 168]
   dark_mode_clan_symbols = [239, 229, 206]
   light_mode_clan_symbols = [87, 76, 45]
-  dark_mode_event_alternate = [22, 24, 22]
+  dark_mode_event_alternate = [87, 76, 55]
   light_mode_event_alternate = [167, 148, 111]
 
   fade = [23, 20, 15, 192]
