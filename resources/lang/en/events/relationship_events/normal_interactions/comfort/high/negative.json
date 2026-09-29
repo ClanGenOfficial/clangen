@@ -98,7 +98,10 @@
             "m_c thinks that r_c is casting a dark shadow over the whole Clan's reputation.",
             "m_c noticed that things have gotten more tense since r_c earned {PRONOUN/r_c/poss} rank.",
             "When r_c addresses the Clan, m_c notices a frightening edge to {PRONOUN/r_c/poss} tone.",
-            "m_c is worried that r_c might be sending the Clan down a dark path."
+            "m_c is worried that r_c might be sending the Clan down a dark path.",
+            "m_c hides any time {PRONOUN/m_c/subject} {VERB/m_c/see/sees} r_c.",
+            "m_c is scared of angering r_c.",
+            "m_c considers fleeing the Clan to escape r_c."
         ],
         "involved_cats": {
             "m_c": {
