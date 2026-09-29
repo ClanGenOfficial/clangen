@@ -372,7 +372,8 @@
                 "cats_to": [
                     "r_c"
                 ],
-                "mutual": false
+                "mutual": false,
+                "constraints": []
             }
         ],
         "relationship_changes": [
@@ -402,7 +403,7 @@
             "m_c refuses to believe r_c actually likes {PRONOUN/r_c/poss} new name.",
             "m_c refuses to take r_c's new name seriously.",
             "m_c's been saying r_c's name in a mocking tone all day.",
-            "m_c keeps referring to r_c as a 'paw rather than {PRONOUN/r_c/poss} full name."
+            "m_c keeps referring to r_c as a 'paw rather than by {PRONOUN/r_c/poss} full name."
         ],
         "involved_cats": {
             "m_c": {},
