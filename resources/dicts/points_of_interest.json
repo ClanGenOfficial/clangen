@@ -94,7 +94,7 @@
         "biome": ["beach"],
         "tags": ["prey:flying", "prey:bird", "nests", "danger:fall_risk", "danger:unstable"]
     },
-    "terrain_eyrie": {
+    "terrain_eaglenest": {
         "category": "terrain",
         "biome": ["mountainous"],
         "tags": ["nests"]
