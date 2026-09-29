@@ -84,7 +84,7 @@
         ]
     },
     {
-        "id": "group_3_pos_warning",
+        "id": "group_3_pos_warning1",
         "strings": [
             "r_c1 claims that m_c wants r_c2 dead.",
             "r_c1 warns r_c2 that m_c seems out to get {PRONOUN/r_c2/object}.",
@@ -101,6 +101,47 @@
                 "cats_to": ["r_c2"],
                 "mutual": false,
                 "constraints": ["loathes"]
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "constraints": ["listens_to"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["trust"],
+                "amount": 5
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": -15
+            }
+        ]
+    },
+    {
+        "id": "group_3_pos_warning2",
+        "strings": [
+            "r_c1 cautions r_c2 about being alone with m_c."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "constraints": ["fears"]
             },
             {
                 "cats_from": ["r_c2"],
@@ -156,15 +197,15 @@
         ],
         "relationship_changes": [
             {
-                "cats_from": ["r_c1"],
-                "cats_to": ["m_c"],
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
                 "mutual": false,
                 "amount": -10,
                 "values": ["comfort"]
             },
             {
-                "cats_from": ["r_c1"],
-                "cats_to": ["m_c"],
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
                 "mutual": false,
                 "amount": 10,
                 "values": ["respect"]
