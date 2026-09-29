@@ -353,17 +353,13 @@
         "strings": [
             "m_c gives r_c a backhanded compliment.",
             "m_c's been especially snarky towards r_c today.",
-            "m_c refuses to take r_c seriously during a serious conversation.",
             "m_c repeats something r_c said in a mocking tone.",
             "m_c admits being embarrassed about liking something r_c also likes.",
             "When r_c vents to m_c, m_c rudely asks {PRONOUN/r_c/object} what {PRONOUN/r_c/subject} {VERB/r_c/want/wants} {PRONOUN/m_c/object} to do about it.",
             "m_c asks r_c if {PRONOUN/r_c/subject} actually {VERB/r_c/have/has} any friends.",
-            "When asked for help, m_c tells r_c that its not {PRONOUN/m_c/poss} problem and walks off."
+            "When asked for help, m_c tells r_c that it's not {PRONOUN/m_c/poss} problem and walks off.",
+            "m_c has to try not to laugh when r_c tries to be serious."
         ],
-        "involved_cats": {
-            "m_c": {},
-            "r_c": {}
-        },
         "relationship_constraint": [
             {
                 "cats_from": [
@@ -372,10 +368,7 @@
                 "cats_to": [
                     "r_c"
                 ],
-                "mutual": false,
-                "constraints": [
-                    "envies"
-                ]
+                "mutual": false
             }
         ],
         "relationship_changes": [
@@ -400,7 +393,8 @@
             "m_c wonders aloud if r_c even deserves {PRONOUN/r_c/poss} full name.",
             "m_c refuses to believe r_c actually likes {PRONOUN/r_c/poss} new name.",
             "m_c refuses to take r_c's new name seriously.",
-            "m_c's been saying r_c's name in a mocking tone all day."
+            "m_c's been saying r_c's name in a mocking tone all day.",
+            "m_c keeps referring to r_c as a 'paw rather than {PRONOUN/r_c/poss} full name."
         ],
         "involved_cats": {
             "m_c": {},
@@ -452,7 +446,8 @@
         "event_id": "snarky_de_med3",
         "strings": [
             "After r_c returned to Camp with a big catch, m_c simply scoffed and asked if that was it.",
-            "m_c refuses to believe r_c can catch anything with a crouch like <i>that</i>."
+            "m_c refuses to believe r_c can catch anything with a crouch like <i>that</i>.",
+            "m_c adamantly refuses to eat any prey r_c caught."
         ],
         "involved_cats": {
             "m_c": {},
@@ -475,7 +470,7 @@
                 ],
                 "mutual": false,
                 "constraints": [
-                    "begrudges"
+                    "envies"
                 ]
             }
         ],
