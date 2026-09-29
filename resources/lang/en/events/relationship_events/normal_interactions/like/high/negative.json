@@ -175,8 +175,7 @@
             "r_c has been getting on m_c's nerves as of late.",
             "m_c mocks r_c for something inconsequential.",
             "m_c tells r_c something {PRONOUN/m_c/subject} {VERB/m_c/hate/hates} about {PRONOUN/r_c/object}.",
-            "The Clan watches m_c and r_c slowly lose their patience with one another.",
-            "A Clanmate has to comfort m_c when r_c says something cruel."
+            "The Clan watches m_c and r_c slowly lose their patience with one another."
         ],
         "relationship_changes": [
             {
@@ -204,7 +203,6 @@
             "m_c thinks about telling others that r_c broke the Code.",
             "m_c finds fault in everything r_c does.",
             "m_c always assumes the worst of r_c.",
-            "A Clanmate claims that m_c wants r_c dead.",
             "The Clan is very uncomfortable whenever m_c talks about r_c.",
             "m_c makes all kinds of faces whenever r_c is brought up in conversation.",
             "m_c sighs at the mere mention of r_c.",
@@ -217,7 +215,6 @@
         "strings": [
             "m_c had a fight with r_c.",
             "m_c had a heated argument with r_c and said some very hurtful things.",
-            "m_c and r_c nearly got in a bloody fight if it weren't for the intervention of a Clanmate.",
             "m_c and r_c are always back-talking to each other.",
             "m_c and r_c snarl at one another over something trivial.",
             "r_c told all of m_c's friends something embarrassing about {PRONOUN/m_c/object}.",
@@ -260,6 +257,10 @@
             "m_c doesn't believe r_c is capable of good.",
             "m_c refuses to do any work with r_c."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [
