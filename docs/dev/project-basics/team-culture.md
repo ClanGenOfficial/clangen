@@ -63,7 +63,7 @@ Decisions relating to features and content are mainly taken by the **developers 
 - The art developer creating the background may solicit feedback and criticism from other art developers, at which point those developers are welcome to chime in.<br>
 
 #### Feedback
-When a developer opens themself up to feedback, they will hear from many different team members. Some may have conflicting opinions or suggestions. The developer working on the project must use their discretion when deciding what feedback to incorporate. Later, when the developer open the Pull Request with their changes, they will be in direct conversation with the senior developer reviewing the PR. That senior’s feedback is the most important; see “Getting your PR reviewed.”(to be linkified)
+When a developer opens themself up to feedback, they will hear from many different team members. Some may have conflicting opinions or suggestions. The developer working on the project must use their discretion when deciding what feedback to incorporate. Later, when the developer opens the Pull Request with their changes, they will be in direct conversation with the senior developer reviewing the PR. That senior’s feedback is the most important; see “Getting your PR reviewed.”(to be linkified)
 
 #### Polling and Consultation
 The developer team is constantly changing; developers become inactive or go on hiatus, new developers join the team, old developers return, and so on. This means it is impractical to consult every developer on every decision. **Polls will occasionally be conducted** for proposed changes that affect a wide range of development, but this is not standard or required for new features and content.
