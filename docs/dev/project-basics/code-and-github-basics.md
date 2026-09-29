@@ -1,4 +1,27 @@
-# Getting started with GitHub and ClanGen
+# Code & GitHub Basics
+
+## Terms to Know
+
+#### Git
+Git is distributed version control system. It allows many versions of ClanGen to exist across different forks and branches, which is how developers can make their own changes and then merge those changes into the ClanGen repository. (If you don’t understand any of that, it’s okay; you don’t need to know how Git works. You just need to download it!)
+
+#### GitHub
+GitHub is a website and desktop application that ClanGen’s development uses as its central platform for all code changes. This is where you can download the development version of the game, clone it on your computer, commit changes, and open pull requests. Create a GitHub account and download the desktop app if you don’t already have them!
+
+#### Repositories
+Repositories are code projects. ClanGen is a repository! Standalone mods like LifeGen are repositories too.
+
+#### Forks
+Forks are clones of existing repositories. To start contributing to ClanGen, you will fork the ClanGen repository so that you have your own version of ClanGen on your computer that you can freely edit through GitHub and your IDE. Every developer has their own fork. It’s possible to work on somebody else’s fork, but that is rare and more advanced.
+
+#### Branches
+Branches are based off forks; on a branch, you can make changes to the game that you will later merge into the game with a Pull Request. As a developer, you will make lots and lots of branches! You could make one branch to fix a bug, or a branch to add a new feature entirely!
+
+Think of repositories like trees. Imagine that the Clangen repository is one of these trees. The Clangen tree has several branches representing its changes and history. A fork is like a copy of the Clangen tree. This fork has its own branches, which may end up growing differently from the branches on the original tree.
+
+#### Pull Requests
+Pull Requests are how you move changes from your own personal branch to the main repository itself! As you edit your branch, the option to “commit changes” will appear in your GitHub desktop. Once you have finished making and committing changes, you can open a Pull Request. You can view currently open Pull Requests on the ClanGen GitHub to get an idea of what they are. Check out the Pull Request Guide for an in-depth rundown of Pull Requests in general and ClanGen’s etiquette in particular.
+
 
 ## Getting started on Github
 
