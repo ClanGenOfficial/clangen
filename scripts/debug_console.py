@@ -85,7 +85,7 @@ class DebugMenu(UIWindow):
         # command name, arguments
         if not args:
             return
-        
+
         return args[0], args[1:]
 
     def process_command(self, raw_command: str):
@@ -95,7 +95,9 @@ class DebugMenu(UIWindow):
         """
         # to stop no input crash
         if not raw_command:
-            self.push_line("Error: No input detected! Type 'help' for a list of commands!")
+            self.push_line(
+                "Error: No input detected! Type 'help' for a list of commands!"
+            )
             return
 
         commands = raw_command.split("&", 1)
