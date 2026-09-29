@@ -60,7 +60,9 @@ ClanGen is a volunteer project; it is shaped by those who have an interest in co
 #### Who decides what?
 Decisions relating to features and content are mainly taken by the **developers who are bringing that feature to life**, alongside the **senior developers who are associated with that specialty.**
 - For example, the style of a new camp background will be guided by the art developer who is creating it, along with the senior developers who specialize in art.
-- The art developer creating the background may solicit feedback and criticism from other art developers, at which point those developers are welcome to chime in.<br>
+- The art developer creating the background may solicit feedback and criticism from other art developers, at which point those developers are welcome to chime in, though the art developer isn't required to implement this feedback.<br>
+- If a senior developer specializing in art requests changes to the background, then the art developer should implement those changes.
+
 
 #### Feedback
 When a developer opens themself up to feedback, they will hear from many different team members. Some may have conflicting opinions or suggestions. The developer working on the project must use their discretion when deciding what feedback to incorporate. Later, when the developer opens the Pull Request with their changes, they will be in direct conversation with the senior developer reviewing the PR. That senior’s feedback is the most important; see “Getting your PR reviewed.”(to be linkified)
