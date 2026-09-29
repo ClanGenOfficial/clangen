@@ -9,7 +9,6 @@ from scripts.cat.enums import CatRank
 from scripts.cat.skills import SkillPath
 from scripts.clan_resources.freshkill import (
     FRESHKILL_EVENT_ACTIVE,
-    FRESHKILL_EVENT_TRIGGER_FACTOR,
 )
 from scripts.events_module.event_filters import (
     event_for_location,
@@ -17,6 +16,7 @@ from scripts.events_module.event_filters import (
     event_for_cat,
     event_for_reputation,
     event_for_clan_relations,
+    event_for_temperament,
     event_for_freshkill_supply,
     event_for_herb_supply,
     event_for_season,
@@ -468,6 +468,11 @@ def filter_events(
             ):
                 continue
 
+            if not event_for_temperament(
+                event.other_clan["temperament"], other_clan.temperament
+            ):
+                continue
+
             # during a war we want to encourage the clans to have positive events
             # when the overall war notice was positive
             if "war" in event.sub_type:
@@ -506,10 +511,7 @@ def filter_events(
                         continue
 
                     if not event_for_freshkill_supply(
-                        game.clan.freshkill_pile,
-                        trigger,
-                        FRESHKILL_EVENT_TRIGGER_FACTOR,
-                        clan_size,
+                        game.clan.freshkill_pile, trigger, clan_size
                     ):
                         discard = True
                         break
@@ -517,7 +519,7 @@ def filter_events(
                         discard = False
 
                 else:  # if supply type wasn't freshkill, then it must be an herb type
-                    if not event_for_herb_supply(trigger, supply_type, clan_size):
+                    if not event_for_herb_supply(trigger, supply_type):
                         discard = True
                         break
                     else:

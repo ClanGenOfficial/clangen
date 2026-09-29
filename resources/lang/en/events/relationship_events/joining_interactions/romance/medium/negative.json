@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_romance_med_neg1",
+        "event_id": "gen_romance_med_neg1",
         "strings": [
 			"m_c found {PRONOUN/m_c/poss} interest in r_c dwindled the moment they were in close quarters."
         ]

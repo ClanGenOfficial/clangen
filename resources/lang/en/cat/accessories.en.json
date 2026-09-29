@@ -109,6 +109,56 @@
             "many": "verbenas",
             "one": "bunch of verbenas"
         },
+        "CREEPING ZINNIA BRACELET": {
+            "zero": "creeping zinnia bracelet",
+            "many": "creeping zinnia bracelets",
+            "one": "creeping zinnia bracelet"
+        },
+        "VINE BRACELET": {
+            "zero": "vine bracelet",
+            "many": "vine bracelets",
+            "one": "vine bracelet"
+        },
+        "PINECONE": {
+            "zero": "pinecone",
+            "many": "pinecones",
+            "one": "pinecone"
+        },
+        "SHINING BEDSTRAW": {
+            "zero": "shining bedstraw",
+            "many": "shining bedstraws",
+            "one": "shining bedstraw"
+        },
+        "CREEPING ZINNIA": {
+            "zero": "creeping zinnia",
+            "many": "zinnias",
+            "one": "bunch of zinnias"
+        },
+        "GREEK VALERIAN": {
+            "zero": "greek valerian",
+            "many": "greek valerians",
+            "one": "greek valerian"
+        },
+        "LARKSPUR": {
+            "zero": "larkspur",
+            "many": "larkspurs",
+            "one": "larkspur"
+        },
+        "GHOST ORCHID": {
+            "zero": "ghost orchid",
+            "many": "ghost orchids",
+            "one": "ghost orchid"
+        },
+        "PINE PINK ORCHID": {
+            "zero": "pink orchid",
+            "many": "pink orchids",
+            "one": "pink orchid"
+        },
+        "ACORN": {
+            "zero": "acorn",
+            "many": "acorns",
+            "one": "acorn"
+        },
         "DRY HERBS": {
             "zero": "herb-covered pelt",
             "many": "dry herbs",
@@ -222,7 +272,7 @@
         "GORSE": {
             "zero": "gorse flowers",
             "many": "gorse flowers",
-            "one": "gorse flowers"
+            "one": "gorse flower"
         },
         "BULB WHITE": {
             "zero": "white flower bulb",
@@ -294,6 +344,26 @@
             "many": "road runner feathers",
             "one": "road runner feather"
         },
+        "GOLDFINCH": {
+            "zero": "goldfinch feather",
+            "many": "goldfinch feathers",
+            "one": "goldfinch feather"
+        },
+        "DAMSELFLY ORANGE": {
+            "zero": "orange damselfly",
+            "many": "orange damselflies",
+            "one": "orange damselfly"
+        },
+        "DAMSELFLY BLUE": {
+            "zero": "blue damselfly",
+            "many": "blue damselflies",
+            "one": "blue damselfly"
+        },
+        "DAMSELFLY RED": {
+            "zero": "red damselfly",
+            "many": "red damselflies",
+            "one": "red damselfly"
+        },
         "BOW": {
             "zero": "bow",
             "many": "bows",
@@ -358,6 +428,21 @@
             "zero": "colorful belled nylon collar",
             "many": "colorful belled nylon collars",
             "one": "colorful belled nylon collar"
+        },
+        "PUFFBALL": {
+            "zero": "puffball collar",
+            "many": "puffball collars",
+            "one": "puffball collar"
+        },
+        "PUFFBALL_DOUBLECOLOR": {
+            "zero": "two-color puffball collar",
+            "many": "two-color puffball collars",
+            "one": "two-color puffball collar"
+        },
+        "PUFFBALL_GRADIENT": {
+            "zero": "colorful puffball collar",
+            "many": "colorful puffball collars",
+            "one": "colorful puffball collar"
         }
     }
 }

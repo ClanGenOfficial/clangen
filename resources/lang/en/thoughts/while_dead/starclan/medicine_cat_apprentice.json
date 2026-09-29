@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_dead_med_app",
+        "event_id": "gen_dead_med_app",
         "strings": [
             "Is organizing StarClan's herb collection",
             "Wishes {PRONOUN/m_c/subject} could have gotten to serve c_n as a medicine cat"

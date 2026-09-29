@@ -2,6 +2,8 @@ from enum import Enum
 
 
 class RelationshipStatus(Enum):
+    can_romance = "can_romance"
+    not_can_romance = "-can_romance"
     strangers = "strangers"
     siblings = "siblings"
     not_siblings = "-siblings"
@@ -18,6 +20,10 @@ class RelationshipStatus(Enum):
     not_mentor = "-mentor/app"
     app_mentor = "app/mentor"
     not_app = "-app/mentor"
+    past_mentor_app = "past_mentor/app"
+    not_past_mentor = "-past_mentor/app"
+    past_app_mentor = "past_app/mentor"
+    not_past_app = "-past_app/mentor"
     uninterested = "uninterested"
     fancies = "fancies"
     adores = "adores"

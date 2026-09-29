@@ -6,9 +6,8 @@ import i18n
 
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatCompatibility
-from scripts.cat_relations.relationship import Relationship
-from scripts.config import get_config
-from scripts.event_class import Single_Event
+from scripts.cat_relations.relationship import Relationship, create_one_relationship
+from scripts.events_module.event_information import EventInformation
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.events_module.text_adjust import (
@@ -49,9 +48,9 @@ def handle_mates_and_breakup(cat: Cat):
     for m in cat.mate:
         mate = Cat.fetch_cat(m)
         if mate.ID not in cat.relationships:
-            cat.create_one_relationship(mate)
+            create_one_relationship(cat, mate)
         if cat.ID not in mate.relationships:
-            mate.create_one_relationship(cat)
+            create_one_relationship(mate, cat)
 
     _handle_moving_on(cat)
     _handle_breakup_events(cat)
@@ -94,7 +93,9 @@ def _handle_moving_on(cat: Cat, disable_random: bool = False):
             if random.random() <= chance or disable_random:
                 text = i18n.t("hardcoded.move_on_dead_mate", mate=str(mate.name))
                 game.cur_events_list.append(
-                    Single_Event(text, "relation", cat_dict={"m_c": cat, "r_c": mate})
+                    EventInformation(
+                        text, ["relation"], cat_dict={"m_c": cat, "r_c": mate}
+                    )
                 )
                 cat.unset_mate(mate)
 
@@ -179,7 +180,7 @@ def _attempt_breakup(cat_from: Cat, cat_to: Cat, disable_random: bool = False):
     cat_from.unset_mate(cat_to, user_initiated_breakup=False)
 
     game.cur_events_list.append(
-        Single_Event(
+        EventInformation(
             text,
             ["relation", "misc"],
             [cat_from.ID, cat_to.ID],
@@ -335,7 +336,7 @@ def _attempt_confession(cat_from: Cat) -> bool:
     )
 
     game.cur_events_list.append(
-        Single_Event(
+        EventInformation(
             mate_string,
             ["relation", "misc"],
             cat_dict={"m_c": cat_from, "r_c": cat_to},
@@ -431,12 +432,12 @@ def _attempt_mutual_interest_mates(
     if cat_to.ID in cat_from.relationships:
         relationship_from = cat_from.relationships[cat_to.ID]
     else:
-        relationship_from = cat_from.create_one_relationship(cat_to)
+        relationship_from = create_one_relationship(cat_from, cat_to)
 
     if cat_from.ID in cat_to.relationships:
         relationship_to = cat_to.relationships[cat_from.ID]
     else:
-        relationship_to = cat_to.create_one_relationship(cat_from)
+        relationship_to = create_one_relationship(cat_to, cat_from)
 
     mate_string = None
     mate_chance = get_config("mates.chance_fulfilled_condition")
@@ -539,7 +540,7 @@ def _attempt_mutual_interest_mates(
 
     cat_from.set_mate(cat_to)
     game.cur_events_list.append(
-        Single_Event(
+        EventInformation(
             mate_string,
             ["relation", "misc"],
             cat_dict={"m_c": cat_from, "r_c": cat_to},

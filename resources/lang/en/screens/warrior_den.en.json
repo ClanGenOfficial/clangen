@@ -11,6 +11,7 @@
         },
         "involved_clans": "<br><b>Involved Clans:</b> %{clans}",
         "what_to_focus": "What should your warriors focus on?",
-        "selected_info": "<b>Selected information:</b>\n%{info}"
+        "selected_info": "<b>Selected information:</b>\n%{info}",
+        "no_deputy": "Without a healthy deputy, the Clan has nobody to focus the warriors."
     }
 }

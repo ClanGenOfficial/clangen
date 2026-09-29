@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_new_parent",
+        "event_id": "gen_new_parent",
         "strings": [
             "Watches over the new litter",
             "Is brimming with love",
@@ -29,7 +29,7 @@
         ]
     },
     {
-        "id": "gen_new_parent_to_friend",
+        "event_id": "gen_new_parent_to_friend",
         "strings": [
             "Asks r_c to watch over the kits"
         ],
@@ -59,7 +59,7 @@
         ]
     },
     {
-        "id": "gen_parent_to_newborn",
+        "event_id": "gen_parent_to_newborn",
         "strings": [
             "Stops r_c from falling out of the nest",
             "Makes sure r_c has fed enough",

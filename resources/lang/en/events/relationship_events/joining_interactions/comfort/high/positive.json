@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_comfort_high_inc1",
+        "event_id": "gen_comfort_high_inc1",
         "strings": [
 			"r_c and m_c had no trouble discovering common interests."
         ],

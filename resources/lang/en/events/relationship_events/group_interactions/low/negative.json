@@ -1,7 +1,7 @@
 [
 
     {
-        "id": "group_3_negative_gossip",
+        "event_id": "group_3_negative_gossip",
         "strings": [
             "m_c is gossiping with r_c1 about r_c2."
         ],
@@ -43,7 +43,7 @@
         ]
     },
     {
-        "id": "group_3_negative_romanticrivalslow",
+        "event_id": "group_3_negative_romanticrivalslow",
         "strings": [
             "m_c knows r_c2 is also interested in r_c1.",
             "m_c is annoyed r_c1 paid more attention to r_c2 than {PRONOUN/r_c1/subject} did to {PRONOUN/m_c/object} recently.",
@@ -84,7 +84,7 @@
         ]
     },
     {
-        "id": "glutton_multicat",
+        "event_id": "glutton_multicat",
         "strings": [
             "m_c eats as ravenously as a wolverine and by the time {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} done, multi_cat barely have the stomach to finish their own meals.",
             "While m_c gorges on {PRONOUN/m_c/poss} piece of fresh kill, multi_cat find that eating is suddenly less appealing.",
@@ -105,7 +105,7 @@
         ]
     },
     {
-        "id": "badstory_multicat",
+        "event_id": "badstory_multicat",
         "strings": [
             "m_c shares a suspiciously exaggerated tale with multi_cat, who seem far from convinced of its veracity.",
             "m_c tells multi_cat a story that seems to grow less believable every meow.",
@@ -126,7 +126,7 @@
         ]
     },
     {
-        "id": "patrolcomplainer_multicat",
+        "event_id": "patrolcomplainer_multicat",
         "strings": [
             "m_c complained about {PRONOUN/m_c/poss} patrol assignment all day, much to the annoyance of multi_cat.",
             "m_c complained so relentlessly about {PRONOUN/m_c/poss} patrol assignment that multi_cat could only sigh and bear it."
@@ -158,7 +158,7 @@
         ]
     },
     {
-        "id": "neg_observations_low",
+        "event_id": "neg_observations_low",
         "strings": [
 			"m_c noticed that r_c1 had a sour expression while looking at a r_c2 in the distance.",
 			"m_c notices how rude r_c1 is being to r_c2.",
@@ -188,7 +188,7 @@
         ]
     },
     {
-        "id": "group_multicat_neg_polymateslow",
+        "event_id": "group_multicat_neg_polymateslow",
         "strings": [
             "m_c left camp without telling multi_cat where {PRONOUN/m_c/subject} {VERB/m_c/were/was} going.",
             "m_c was the last one to leave the nest, but multi_cat found it messy and unkempt.",
@@ -229,7 +229,7 @@
         ]
     },
     {
-        "id": "group_multicat_neg_carelessapp",
+        "event_id": "group_multicat_neg_carelessapp",
         "strings": [
             "multi_cat know m_c was assigned to clean the warriors' den today but did a poor job.",
             "Even though m_c was supposed to clean up camp today, everything still looks a mess, and multi_cat notice.",
@@ -258,7 +258,7 @@
         ]
     },
     {
-        "id": "group_multicat_friendlydebatesoured",
+        "event_id": "group_multicat_friendlydebatesoured",
         "strings": [
             "m_c, multi_cat's friendly debate over their favorite colors sours when m_c takes it too seriously.",
             "m_c, multi_cat's friendly debate over their favorite season sours when m_c takes it too seriously.",

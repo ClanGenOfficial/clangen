@@ -8,6 +8,8 @@
     "DARKGREY": "black",
     "GHOST": "black",
     "BLACK": "black",
+    "BLOSSOM": "ginger",
+    "DAWN": "ginger",
     "CREAM": "ginger",
     "PALEGINGER": "ginger",
     "GOLDEN": "ginger",
@@ -19,7 +21,8 @@
     "BROWN": "brown",
     "GOLDEN-BROWN": "brown",
     "DARKBROWN": "brown",
-    "CHOCOLATE": "brown"
+    "CHOCOLATE": "brown",
+    "RUST": "brown"
   },
   "possible_tints": {
     "basic": ["offwhite", "offwhite"],

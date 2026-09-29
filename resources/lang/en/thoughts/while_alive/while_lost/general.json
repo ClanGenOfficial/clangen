@@ -1,6 +1,6 @@
 [
     {
-        "id": "general_outside_thoughts",
+        "event_id": "general_outside_thoughts",
         "strings": [
             "Ran into another cat while sheltering from the rain",
             "Caught a massive mouse!",
@@ -33,7 +33,7 @@
         ]
     },
     {
-        "id": "general_lost_thoughts",
+        "event_id": "general_lost_thoughts",
         "strings": [
             "Desperately tries to find {PRONOUN/m_c/poss} way back",
             "Misses {PRONOUN/m_c/poss} nest",
@@ -79,44 +79,44 @@
             "Panics at the idea StarClan may not be watching over {PRONOUN/m_c/object} out here",
             "Asked a loner for directions",
             "Asked a kittypet for directions",
-            "Asked a rouge for directions"
+            "Asked a rogue for directions",
+            "Wonders how c_n fares without {PRONOUN/m_c/object}",
+            "Is missing {PRONOUN/m_c/poss} Clanmates",
+            "Wonders if {PRONOUN/m_c/poss} Clanmates miss {PRONOUN/m_c/object}",
+            "Is reminiscing on {PRONOUN/m_c/poss} time in c_n",
+            "Feels lonely without {PRONOUN/m_c/poss} Clanmates nearby",
+            "Is telling tales of {PRONOUN/m_c/poss} Clan life to anyone who will listen",
+            "Wonders how c_n has changed in {PRONOUN/m_c/poss} absence",
+            "Hopes {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going the right way",
+            "Considers starting a new Clan",
+            "Dreams of being home again",
+            "Had a nightmare where the Clan forgot about {PRONOUN/m_c/object}",
+            "Thinks {PRONOUN/m_c/subject} {VERB/m_c/recognize/recognizes} the scenery",
+            "Got all turned around again",
+            "Has started missing even {PRONOUN/m_c/poss} least favorite Clan chores",
+            "Would give anything to be back home",
+            "Wonders just how far away {PRONOUN/m_c/subject} ended up",
+            "Thought {PRONOUN/m_c/subject} caught a whiff of c_n scent",
+            "Is confident {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going the right way",
+            "Isn't sure {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going the right way",
+            "Can't let {PRONOUN/m_c/self} lose hope",
+            "Swears {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going in circles"
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "apprentice",
-                    "mediator apprentice",
-                    "medicine cat apprentice",
-                    "warrior",
-                    "mediator",
-                    "medicine cat",
-                    "deputy",
-                    "leader",
-                    "elder"
+                "age": [
+                    "-kitten"
                 ]
             }
         }
     },
     {
-        "id": "lost_thoughts_to_random_cat",
+        "event_id": "lost_thoughts_to_random_cat",
         "strings": [
             "Is missing r_c",
             "Thought {PRONOUN/m_c/subject} spotted r_c while wandering around earlier"
         ],
         "involved_cats": {
-            "m_c": {
-                "status": [
-                    "apprentice",
-                    "mediator apprentice",
-                    "medicine cat apprentice",
-                    "warrior",
-                    "mediator",
-                    "medicine cat",
-                    "deputy",
-                    "leader",
-                    "elder"
-                ]
-            },
             "r_c": {
                 "status": [
                     "any"
@@ -128,26 +128,14 @@
         }
     },
     {
-        "id": "lost_cats_with_family",
+        "event_id": "lost_cats_with_family",
         "strings": [
             "Wonders how {PRONOUN/m_c/poss} family is doing",
             "Misses {PRONOUN/m_c/poss} family",
             "Prays to StarClan that {PRONOUN/m_c/poss} loved ones are safe"
         ],
         "involved_cats": {
-            "m_c": {
-                "status": [
-                    "apprentice",
-                    "mediator apprentice",
-                    "medicine cat apprentice",
-                    "warrior",
-                    "mediator",
-                    "medicine cat",
-                    "deputy",
-                    "leader",
-                    "elder"
-                ]
-            }
+            "r_c": {}
         },
         "relationship_constraint": [
             {
@@ -167,24 +155,12 @@
         ]
     },
     {
-        "id": "lost_cats_with_siblings",
+        "event_id": "lost_cats_with_siblings",
         "strings": [
             "Hopes {PRONOUN/m_c/poss} siblings are doing okay"
         ],
         "involved_cats": {
-            "m_c": {
-                "status": [
-                    "apprentice",
-                    "mediator apprentice",
-                    "medicine cat apprentice",
-                    "warrior",
-                    "mediator",
-                    "medicine cat",
-                    "deputy",
-                    "leader",
-                    "elder"
-                ]
-            }
+            "r_c": {}
         },
         "relationship_constraint": [
             {
@@ -202,21 +178,18 @@
         ]
     },
     {
-        "id": "lost_cats_with_kits",
+        "event_id": "lost_cats_with_kits",
         "strings": [
             "Sends a prayer to the stars for the safety of {PRONOUN/m_c/poss} kits"
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "warrior",
-                    "mediator",
-                    "medicine cat",
-                    "deputy",
-                    "leader",
-                    "elder"
+                "age":[
+                    "-kitten",
+                    "-adolescent"
                 ]
-            }
+            },
+            "r_c": {}
         },
         "relationship_constraint": [
             {

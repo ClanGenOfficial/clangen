@@ -18,9 +18,10 @@ All cards use the same frame, but color variations are allowed per-card. We've p
 
 ![frame4.png](img/cruel-card-style-guide/frame4.png)![frame0.png](img/cruel-card-style-guide/frame0.png)![frame2.png](img/cruel-card-style-guide/frame2.png)![frame3.png](img/cruel-card-style-guide/frame3.png)![frame5.png](img/cruel-card-style-guide/frame5.png)![frame1.png](img/cruel-card-style-guide/frame1.png)
 
-The symbol for the bottom right circle indicates the category of the card: butterfly for Environment, blood for Danger, star for Origin, and clan head for Behavior. 
+The symbol for the bottom right circle indicates the category of the card: butterfly for Environment, blood for Danger, star for Origin, clan head for Behavior, and eye for Society. 
 
-![butterfly.png](img/cruel-card-style-guide/butterfly.png)![blood.png](img/cruel-card-style-guide/blood.png)![star.png](img/cruel-card-style-guide/star.png)![symbol.png](img/cruel-card-style-guide/symbol.png)
+![butterfly.png](img/cruel-card-style-guide/butterfly.png)![blood.png](img/cruel-card-style-guide/blood.png)![star.png](img/cruel-card-style-guide/star.png)![symbol.png](img/cruel-card-style-guide/symbol.png)![eye.png](img/cruel-card-style-guide/eye.png)
+
 
 The above symbol images are transparent with correct sizing to layer atop the provided frames without any extra work from you. They are also provided within the aforementioned full frame .psd file.
 

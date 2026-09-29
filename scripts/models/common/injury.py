@@ -39,6 +39,7 @@ class Injury(Enum):
     quilled_by_a_porcupine = "quilled by a porcupine"
     broken_back = "broken back"
     poisoned = "poisoned"
+    venom_sickness = "venom sickness"
     bee_sting = "bee sting"
     headache = "headache"
     severe_headache = "severe headache"

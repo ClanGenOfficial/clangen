@@ -19,6 +19,27 @@ class Sprites:
     clan_symbols = []
     empty_indexes = []
 
+    @classmethod
+    def load_pelt_recipes(cls):
+        cls.PELT_RECIPES = {}
+        for file in os.listdir("sprites/dicts/pelt_recipes"):
+            with open(
+                os.path.join("sprites/dicts/pelt_recipes", file), "r", encoding="utf-8"
+            ) as read_file:
+                temp_read = ujson.loads(read_file.read())
+
+            cls.PELT_RECIPES[temp_read["name"]] = temp_read
+
+        with open(
+            "sprites/dicts/pelt_to_recipe.json", "r", encoding="utf-8"
+        ) as read_file:
+            cls.PELT_TO_RECIPE = ujson.loads(read_file.read())
+
+        with open(
+            "sprites/dicts/pelt_color_palettes.json", "r", encoding="utf-8"
+        ) as read_file:
+            cls.PELT_COLOR_PALETTES = ujson.loads(read_file.read())
+
     with open(
         "sprites/dicts/pose_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
@@ -48,9 +69,9 @@ class Sprites:
         SCAR_DATA = ujson.loads(read_file.read())
 
     with open(
-        "sprites/dicts/scar_missing_sprite_data.json", "r", encoding="utf-8"
+        "sprites/dicts/generation_group_data.json", "r", encoding="utf-8"
     ) as read_file:
-        SCAR_MISSING_PART_DATA = ujson.loads(read_file.read())
+        GENERATION_GROUP_DATA = ujson.loads(read_file.read())
 
     with open(
         "sprites/dicts/skin_sprite_data.json", "r", encoding="utf-8"
@@ -72,9 +93,9 @@ class Sprites:
         TORTIE_PATCH_COMBOS = {}
 
     with open(
-        "sprites/dicts/pelt_sprite_data.json", "r", encoding="utf-8"
+        "sprites/dicts/pelt_parts_masks_data.json", "r", encoding="utf-8"
     ) as read_file:
-        PELT_DATA = ujson.loads(read_file.read())
+        PELT_MASK_DATA = ujson.loads(read_file.read())
 
     with open("sprites/dicts/eye_sprite_data.json", "r", encoding="utf-8") as read_file:
         EYE_DATA = ujson.loads(read_file.read())
@@ -291,7 +312,7 @@ class Sprites:
 
         data_jsons = (
             self.EYE_DATA,
-            self.PELT_DATA,
+            self.PELT_MASK_DATA,
             self.WHITE_MOSTLY_DATA,
             self.WHITE_HIGH_DATA,
             self.WHITE_MID_DATA,
@@ -301,7 +322,6 @@ class Sprites:
             self.TORTIE_DATA,
             self.SKIN_DATA,
             self.SCAR_DATA,
-            self.SCAR_MISSING_PART_DATA,
             self.PLANT_DATA,
             self.WILD_DATA,
             self.COLLAR_DATA,
@@ -588,6 +608,8 @@ class Sprites:
             )
         )
 
+
+Sprites.load_pelt_recipes()
 
 # CREATE INSTANCE
 sprites = Sprites()

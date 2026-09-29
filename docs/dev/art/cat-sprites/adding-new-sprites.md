@@ -8,6 +8,11 @@ If you would like to add new collars, head to [Palette Maps](palette-maps.md) fo
 Spritesheets can be found in the `sprites` folder and their matching `DATA` can be found in `sprites/dicts`.  The `DATA` is how we control the creation of individual sprites off of the spritesheet. The `sprites` and `pelts` scripts pull all of their information from the `DATA` file.
 
 ## Adding to the Spritesheet
+
+!!! warning
+    For adding cat-colors, and modifing sprites, read the Pelt Recipes documentation. 
+    
+
 New sprite sets can be added to the spritesheets by simply adding the new set to the end of a row or beginning a new row. 
 
 ![image](../img/spritesheet_editing_example1.png)
@@ -38,8 +43,8 @@ As mentioned, some DATA sheets contain more information than others. At it's mos
 |--------------------------------------|----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
 | `eye_sprite_data`                    | List containing both eye spritesheets. | List containing dicts, each dict contains key:value pairs for `"NAME": "color category"`. Allowed colors are `yellow`, `green`, or `blue`.  |
 | `skin_sprite_data`                   | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
-| `plant_sprite_data`                  | Name of the spritesheet.               | List of dicts, each dict contains key:value pairs for `"NAME": "sprite position"`. Allowed sprite positions are `head`, `body`, and `tail`. |
-| `wild_sprite_data`                   | Name of the spritesheet.               | List of dicts, each dict contains key:value pairs for `"NAME": "sprite position"`. Allowed sprite positions are `head`, `body`, and `tail`. |
+| `plant_sprite_data`                  | Name of the spritesheet.               | List of dicts, each dict contains key:value pairs for `"NAME": "sprite position"`. Allowed sprite positions are `head`, `body`, `tail`, and `paw`. |
+| `wild_sprite_data`                   | Name of the spritesheet.               | List of dicts, each dict contains key:value pairs for `"NAME": "sprite position"`. Allowed sprite positions are `head`, `body`, `tail`, and `paw`. |
 | `scar_sprite_data`                   | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
 | `scar_missing_sprite_data`           | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
 | `white_patches_mostly_sprite_data`   | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |

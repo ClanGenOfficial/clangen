@@ -19,7 +19,7 @@ class Command(ABC):
 
     @property
     def usage(self):
-        """The usage of the command"""
+        """The usage of the command."""
         return ""
 
     def help(self):
@@ -42,7 +42,7 @@ class Command(ABC):
         return False
 
     @property
-    def _aliases(self):
+    def valid_names(self):
         return [self.name] + self.aliases
 
     @abstractmethod

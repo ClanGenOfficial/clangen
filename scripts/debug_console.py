@@ -5,10 +5,11 @@ Stores the DebugMenu class and the DebugMode class
 import pygame
 import pygame_gui
 import html
+import shlex
 
 from pygame_gui.elements import UIWindow, UITextBox, UITextEntryLine, UIButton
 from scripts.ui.scale import ui_scale
-from scripts.debug_commands import commandList
+from scripts.debug_commands import command_list
 from scripts.debug_commands.utils import set_debug_class, add_output_line_to_log
 from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER, offset, screen_scale
@@ -67,66 +68,58 @@ class DebugMenu(UIWindow):
             anchors={"top": "bottom", "left": "right"},
         )
 
-        self.previous_command = ""
+        self.prev_command_index = -1
+        self.previous_commands = []
 
         self.change_layer(1000)
 
-        ev = pygame.event.Event(
-            pygame_gui.UI_CONSOLE_COMMAND_ENTERED, {"command": "help"}
-        )
-        self.process_event(ev)
+        self.push_line('Enter "help" for a list of commands')
+
+    def _parse_command_string(self, raw_command: str) -> tuple[str, list[str]]:
+        """
+        Parses a command string and returns a tuple with the command name and
+        a list of parsed arguments.
+        """
+        args: list[str] = shlex.split(raw_command)
+
+        # command name, arguments
+        return args[0], args[1:]
 
     def process_command(self, raw_command: str):
         """
         Processes a string containing the command and it's arguments and calls
         the appropriate command's callback.
         """
-        command_list = raw_command.split(" ")
-        args = command_list[1:]
-        command = command_list[0]
+        commands = raw_command.split("&", 1)
+        command, args = self._parse_command_string(commands[0])
 
-        commandFound = False
-        for cmd in commandList:
-            if command in cmd._aliases:  # pylint: disable=protected-access
-                commandFound = True
-                if not cmd.bypass_conjoined_strings:
-                    _args = []
-                    curArgGroup = ""
-                    inGroup = False
-                    for arg in args:
-                        if not inGroup:
-                            if arg.startswith('"'):
-                                inGroup = True
-                                curArgGroup = arg[1:]
-                            else:
-                                _args.append(arg)
-                        else:
-                            if arg.endswith('"'):
-                                inGroup = False
-                                curArgGroup += " " + arg[:-1]
-                                _args.append(curArgGroup)
-                            else:
-                                curArgGroup += " " + arg
-                    args = _args
-                if len(args) > 0:
-                    for subcommand in cmd.sub_commands:
-                        if (
-                            args[0]
-                            in subcommand._aliases  # pylint: disable=protected-access
-                        ):  # pylint: disable=protected-access
-                            args = args[1:]
-                            cmd = subcommand
-                            break
-                try:
-                    cmd.callback(args)
-                except Exception as e:
-                    self.push_line(f"Error while executing command {command}: {e}")
-                    raise e
-                break
-        if command in ["self", "clear"]:
-            self.log.set_text("")
-        elif not commandFound:
-            self.push_line(f"Command {command} not found")
+        for cmd in command_list:
+            if not command in cmd.valid_names:
+                continue
+
+            if cmd.bypass_conjoined_strings:
+                args = raw_command.strip().split(" ")[1:]
+
+            index = 0
+            for possible_cmd in args:
+                for sub_command in cmd.sub_commands:
+                    if possible_cmd not in sub_command.valid_names:
+                        continue
+
+                    index += 1
+                    cmd = sub_command
+            args = args[index:]
+
+            try:
+                cmd.callback(args)
+                if len(commands) > 1:
+                    self.process_command(commands[1])
+                return
+            except Exception as e:
+                self.push_line(f"Error while executing command '{command}': {e}")
+                raise e
+
+        self.push_line(f"Command '{command}' not found")
 
     def process_event(self, event: pygame.Event):
         if (
@@ -136,23 +129,44 @@ class DebugMenu(UIWindow):
             event.type == pygame_gui.UI_BUTTON_PRESSED
             and event.ui_element == self.submit_command
         ):
-            add_output_line_to_log(f"> {self.command_line.get_text()}")
+            command_text = self.command_line.get_text()
+            add_output_line_to_log(f"> {command_text}")
             pygame.event.post(
                 pygame.Event(
                     pygame_gui.UI_CONSOLE_COMMAND_ENTERED,
-                    {"command": self.command_line.get_text()},
+                    {"command": command_text},
                 )
             )
-            self.previous_command = self.command_line.get_text()
+            self.prev_command_index = -1
+            if command_text in self.previous_commands:
+                self.previous_commands.remove(command_text)
+            self.previous_commands.insert(0, command_text)
             self.command_line.clear()
 
-        if event.type == pygame.KEYDOWN:
+        consume_event = False
+        if event.type == pygame.KEYDOWN and len(self.previous_commands) > 0:
             if event.key == pygame.K_UP:
-                self.command_line.set_text(self.previous_command)
+                self.prev_command_index = min(
+                    len(self.previous_commands) - 1, self.prev_command_index + 1
+                )
+                self.command_line.set_text(
+                    self.previous_commands[self.prev_command_index]
+                )
+            elif event.key == pygame.K_DOWN:
+                self.prev_command_index = max(-1, self.prev_command_index - 1)
+                if self.prev_command_index < 0:
+                    self.command_line.set_text("")
+                else:
+                    self.command_line.set_text(
+                        self.previous_commands[self.prev_command_index]
+                    )
+
+            # Prevent keybinds from being processed if the command line is currently accepting input
+            consume_event = self.command_line.is_focused
 
         if event.type == pygame_gui.UI_CONSOLE_COMMAND_ENTERED:
             self.process_command(event.command)
-        return super().process_event(event)
+        return super().process_event(event) or consume_event
 
     def push_line(self, line: str):
         """
@@ -166,6 +180,12 @@ class DebugMenu(UIWindow):
         """
         for line in lines.split("\n"):
             self.push_line(line)
+
+    def clear(self):
+        """
+        Clears the output log
+        """
+        self.log.clear()
 
     def on_close_window_button_pressed(self):
         self.hide()
@@ -188,7 +208,7 @@ class DebugMode:
         """
         Toggles the debug menu.
         """
-        if self.debug_menu.visible == 0:
+        if not self.debug_menu.visible:
             self.debug_menu.show()
             self.debug_menu.command_line.focus()
         else:
@@ -214,6 +234,8 @@ class DebugMode:
             pygame.Rect((0, 0), (-1, -1)), "0 fps", object_id=get_text_box_theme()
         )
 
+        if self.debug_menu:
+            self.debug_menu.kill()
         self.debug_menu = DebugMenu(
             pygame.Rect(
                 (0, 0),

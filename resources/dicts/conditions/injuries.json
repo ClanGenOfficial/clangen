@@ -1679,8 +1679,55 @@
             "honey"
             ]
         }
+    },    
+ "venom sickness":{
+        "duration": 3,
+        "severity": "major",
+        "medicine_duration": 2,
+        "mortality": {
+            "newborn": 5,
+            "kitten": 5,
+            "adolescent": 15,
+            "young adult": 20,
+            "adult": 20,
+            "senior adult": 15,
+            "senior": 10
+        },
+        "illness_infectiousness": [],
+        "risks":[
+            {
+                "name":"an infected wound",
+                "chance": 15
+            },
+            {
+                "name": "seizure",
+                "chance": 40
+            }
+        
+        ],
+        "also_got": [
+            "shock",
+            "seizure"
+        ],
+        "cause_permanent": [
+              "failing eyesight",
+              "constantly dizzy"
+        ],
+        "herbs": {
+            "1": [
+            "juniper",
+            "dandelion"
+        ],
+            "2": [
+                "oak_leaves",
+                "marigold"
+            ],
+            "3": [
+                "poppy"
+
+            ]
+        }
     },
-    
     "pregnant": {
         "duration": 2,
         "severity": "major",
@@ -1707,7 +1754,6 @@
             "3": []
         }
     }
-    
 }
 
     

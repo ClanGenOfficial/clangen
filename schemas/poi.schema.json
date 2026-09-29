@@ -42,6 +42,7 @@
           "type": "array"
         },
         "tags": {
+          "description": "Points of Interests can use many different tags that denote circumstances around them to help specify how it can be used and what events/patrols it would fit with",
           "items": {
             "$ref": "#/$defs/PointsOfInterestTag"
           },

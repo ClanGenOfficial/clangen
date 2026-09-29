@@ -44,6 +44,7 @@
         "symbol_leader": "Leader name: %{prefix}star",
         "symbol_recommended": "Recommended Symbol: %{symbol}",
         "symbol_selected": "Selected Symbol: %{symbol}",
+        "filters_tab": "Filters",
         "not_applicable": "N/A",
         "save_confirm": "Your Clan has been created and saved!",
         "camp_classic": "Classic",

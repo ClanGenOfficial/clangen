@@ -1,6 +1,6 @@
 [
     {
-        "id": "apprentice_dark_forest_thoughts",
+        "event_id": "apprentice_dark_forest_thoughts",
         "strings": [
             "Wishes {PRONOUN/m_c/subject}'d finished {PRONOUN/m_c/poss} battle training",
             "Tries to imitate the battle moves of other Dark Forest cats",

@@ -1,0 +1,787 @@
+[
+    {
+        "event_id": "bch_death_drown_any1",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "no_body",
+            "all_lives"
+        ],
+        "frequency": 2,
+        "event_text": "m_c was washed out to sea, never to be seen again.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was washed out to sea."
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death_poison_any1",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "m_c was poisoned by a sea creature and died.",
+        "m_c": {
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was killed by a poisonous sea creature."
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death_drown_any2",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "no_body",
+            "all_lives"
+        ],
+        "frequency": 3,
+        "event_text": "m_c was lost to the sea while trying to save r_c from drowning.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "trait": [
+                "bold",
+                "ambitious",
+                "compassionate",
+                "daring",
+                "confident",
+                "fierce",
+                "loyal",
+                "loving",
+                "responsible"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "r_c"
+                ],
+                "injuries": [
+                    "water in their lungs",
+                    "shock"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was lost to the sea while trying to save r_c."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "like",
+                    "trust",
+                    "respect"
+                ],
+                "amount": 30,
+                "log": {
+                    "cats_from": "cat_to drowned trying to save r_c's life."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death_abyss_any1",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "no_body"
+        ],
+        "frequency": 1,
+        "event_text": "When m_c fell into the water, something large and unseen dragged {PRONOUN\/m_c\/object} beneath the waves.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was taken by a sea creature."
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death_drown_any3",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "m_c drowned after being pushed out to sea by o_c_n warriors.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "leader",
+                "deputy",
+                "mediator",
+                "mediator apprentice",
+                "medicine cat",
+                "medicine cat apprentice"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was pushed out to sea by enemy warriors."
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -3
+        }
+    },
+    {
+        "event_id": "bch_death_heat_multiapp1",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "tags": [
+            "classic"
+        ],
+        "frequency": 2,
+        "event_text": "m_c carelessly died to dehydration and heat.",
+        "m_c": {
+            "age": [
+                "adolescent"
+            ],
+            "status": [
+                "apprentice"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c succumbed to dehydration and overheating."
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death_heat_multiapp3",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "r_c discovered m_c's dead body. It seems {PRONOUN\/m_c\/subject} died to dehydration and heat.",
+        "m_c": {
+            "age": [
+                "adolescent"
+            ],
+            "status": [
+                "apprentice"
+            ],
+            "relationship_status": [],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c died due to dehydration and heat exhaustion."
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death_heat_multiapp4",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "m_c misjudged the weather and succumbed to the intense heat of the day.",
+        "m_c": {
+            "age": [
+                "adolescent"
+            ],
+            "status": [
+                "apprentice"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was claimed by dehydration and heat exhaustion."
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death_heat_multiapp6",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "r_c was surprised to stumble upon m_c's dead body. It seems {PRONOUN\/m_c\/subject} died to the heat.",
+        "m_c": {
+            "age": [
+                "adolescent"
+            ],
+            "status": [
+                "apprentice"
+            ],
+            "relationship_status": [],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was claimed by dehydration and heat exhaustion."
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death_murder_cliffdrop1",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "murder"
+        ],
+        "tags": [
+            "all_lives",
+            "no_body"
+        ],
+        "frequency": 4,
+        "event_text": "m_c was pushed off a cliff into the rock-filled waves below. r_c stood at the edge until the body slid beneath the waves.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "relationship_status": [],
+            "trait": [
+                "adventurous",
+                "daring",
+                "bold",
+                "childish",
+                "confident",
+                "playful"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ],
+            "skill": [
+                "HUNTER,2",
+                "CLEVER,2",
+                "SENSE,2",
+                "INSIGHTFUL,1"
+            ],
+            "trait": [
+                "bloodthirsty",
+                "ambitious",
+                "bold",
+                "careful",
+                "calm",
+                "cold",
+                "fierce",
+                "insecure",
+                "nervous",
+                "responsible",
+                "strict",
+                "vengeful",
+                "wise"
+            ]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c died when {PRONOUN\/m_c\/subject} {VERB\/m_c\/were\/was} shoved off a cliff by r_c"
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "like"
+                ],
+                "amount": -50,
+                "log": {
+                    "cats_from": "cat_from was shoved off a cliff by cat_to."
+                }
+            }
+        ],
+        "future_event": [
+            {
+                "event_type": "misc",
+                "pool": {
+                    "sub_type": [
+                        "murder_reveal"
+                    ]
+                },
+                "moon_delay": [
+                    1,
+                    12
+                ],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": {
+                        "age": [
+                            "any"
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death_murder_cliffdrop2",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "murder"
+        ],
+        "tags": [
+            "all_lives",
+            "no_body"
+        ],
+        "frequency": 4,
+        "event_text": "m_c was pushed off a cliff into the rock-filled waves below. r_c insists it was an accident and that m_c slipped on loose shale.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "trait": [
+                "adventurous",
+                "daring",
+                "bold",
+                "childish",
+                "confident",
+                "playful"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "adult",
+                "young adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ],
+            "skill": [
+                "HUNTER,2",
+                "CLEVER,2",
+                "SENSE,2",
+                "INSIGHTFUL,1"
+            ],
+            "trait": [
+                "bloodthirsty",
+                "ambitious",
+                "bold",
+                "careful",
+                "calm",
+                "cold",
+                "fierce",
+                "insecure",
+                "nervous",
+                "responsible",
+                "strict",
+                "vengeful",
+                "wise"
+            ]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c died when {PRONOUN\/m_c\/subject} {VERB\/m_c\/were\/was} shoved off a cliff by r_c"
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "like"
+                ],
+                "amount": -50,
+                "log": {
+                    "cats_from": "cat_from was shoved off a cliff by cat_to, who made the death look like an accident."
+                }
+            }
+        ],
+        "future_event": [
+            {
+                "event_type": "misc",
+                "pool": {
+                    "sub_type": [
+                        "murder_reveal"
+                    ]
+                },
+                "moon_delay": [
+                    1,
+                    12
+                ],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": {
+                        "age": [
+                            "any"
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death_murder_anyleader1",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "murder"
+        ],
+        "tags": [
+            "all_lives",
+            "no_body"
+        ],
+        "frequency": 4,
+        "event_text": "Distracted by other matters, m_c forgot the tide. {PRONOUN\/m_c\/subject\/CAP} died trapped between the waves and the cliffs as r_c watched.",
+        "m_c": {
+            "status": [
+                "leader"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult"
+            ],
+            "status": [
+                "any"
+            ],
+            "skill": [
+                "HUNTER,2",
+                "CLEVER,2",
+                "SENSE,2",
+                "SPEAKER,2"
+            ],
+            "trait": [
+                "ambitious",
+                "bold",
+                "careful",
+                "calm",
+                "cold",
+                "confident",
+                "daring",
+                "lonesome",
+                "shameless",
+                "strange",
+                "vengeful",
+                "wise"
+            ]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c died after being trapped in the tides by r_c"
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "like"
+                ],
+                "amount": -50,
+                "log": {
+                    "cats_from": "cat_from drowned in the tides as cat_to stood by and watched."
+                }
+            }
+        ],
+        "future_event": [
+            {
+                "event_type": "misc",
+                "pool": {
+                    "sub_type": [
+                        "murder_reveal"
+                    ]
+                },
+                "moon_delay": [
+                    1,
+                    12
+                ],
+                "involved_cats": {
+                    "m_c": "r_c",
+                    "mur_c": "m_c",
+                    "r_c": {
+                        "age": [
+                            "any"
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death_kitappshipwreckfall",
+        "location": [
+            "beach:camp3"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "frequency": 1,
+        "event_text": "m_c climbed aboard the broken ship in camp, playing pretend as a Twoleg. No cat noticed what {PRONOUN\/m_c\/subject} {VERB\/m_c\/were\/was} doing until the floorboards beneath {PRONOUN\/m_c\/object} gave way and {PRONOUN\/m_c\/subject} fell into the nothingness below.",
+        "m_c": {
+            "age": [
+                "kitten",
+                "adolescent"
+            ],
+            "skill": [
+                "-CLIMBER,0"
+            ],
+            "trait": [
+                "unruly",
+                "impulsive",
+                "attention-seeker",
+                "skittish",
+                "daydreamer",
+                "fearless",
+                "bossy",
+                "troublesome",
+                "childish",
+                "playful",
+                "bold",
+                "daring",
+                "confident",
+                "adventurous",
+                "shameless",
+                "strange",
+                "rebellious"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c fell through the floorboards of the broken ship."
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death_extinction_drown",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "-greenleaf"
+        ],
+        "sub_type": [
+            "mass_death"
+        ],
+        "frequency": 2,
+        "event_text": "The Clan fails to notice the rising tide, and aren't able to get to high enough ground in time before multi_cat are swept away.",
+        "history": [
+            {
+                "cats": [
+                    "multi_cat"
+                ],
+                "death": "m_c was swept away by the rising tide."
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death_kit_drown",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "-greenleaf"
+        ],
+        "frequency": 1,
+        "event_text": "While playing close to the water, m_c is swept away. {PRONOUN\/m_c\/poss\/CAP} wails are swallowed by the ocean as {PRONOUN\/m_c\/subject} {VERB\/m_c\/go\/goes} under and does not resurface.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c played too close to the water and got swept away."
+            }
+        ]
+    }
+]

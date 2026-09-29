@@ -1,0 +1,10 @@
+{
+    "pl": {
+        "starving": "starving",
+        "very hungry": "very hungry",
+        "hungry": "hungry",
+        "satiated": "satiated",
+        "full": "full",
+        "stuffed": "stuffed"
+    }
+}

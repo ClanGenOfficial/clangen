@@ -1,6 +1,6 @@
 import threading
 import time
-from random import randint, choice
+from random import randint
 from threading import Thread
 from typing import Optional, Tuple
 
@@ -9,6 +9,7 @@ import pygame
 import pygame_gui
 
 import scripts.game_structure.screen_settings
+from pygame_gui.elements import UITextBox
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure import game
@@ -280,14 +281,33 @@ def rebuild_moon_n_season_indicator(change_moon: bool = False, visible: bool = F
     if "season_indicator" in menu_buttons:
         menu_buttons["season_indicator"].kill()
 
-    if "moon_indicator" not in menu_buttons:
+    if "moon_indicator_frame" not in menu_buttons:
         global chosen_moon_phase
+
         chosen_moon_phase = randint(0, 7)
 
-        menu_buttons["moon_indicator"] = pygame_gui.elements.UIImage(
+        moon_icon = getattr(Icon, f"MOON_PHASE{chosen_moon_phase}")
+
+        menu_buttons["moon_indicator"] = UITextBox(
+            moon_icon,
+            ui_scale(pygame.Rect((-23, -26), (30, 30))),
+            visible=visible,
+            manager=MANAGER,
+            starting_height=5,
+            anchors={
+                "right_target": menu_buttons["heading"],
+                "right": "right",
+                "bottom_target": menu_buttons["events"],
+                "bottom": "bottom",
+            },
+            object_id="@clangen_16",
+        )
+        menu_buttons["moon_indicator_frame"] = pygame_gui.elements.UIImage(
             scale_rect,
             pygame.transform.scale(
-                moon_phases[chosen_moon_phase],
+                image_cache.load_image(
+                    "resources/images/moon_container.png"
+                ).convert_alpha(),
                 (22, 26),
             ),
             visible=visible,
@@ -309,6 +329,7 @@ def rebuild_moon_n_season_indicator(change_moon: bool = False, visible: bool = F
         i18n.t("general.moon_date", moon=clan_age)
     )
     menu_buttons["moon_indicator"].tool_tip_delay = 0
+    menu_buttons["moon_indicator"].disable()
 
     menu_buttons["season_indicator"] = UIModifiedImage(
         ui_scale(pygame.Rect((404, 3), (144, 67))),
@@ -330,9 +351,7 @@ def load_moon_phases():
     global moon_phases
 
     for i in range(0, 8):
-        moon_phases.append(
-            pygame.image.load(f"resources/images/moon_phase{i}.png").convert_alpha()
-        )
+        moon_phases.append(getattr(Icon, f"MOON_PHASE{i}"))
 
 
 def start_moon_animation():
@@ -367,11 +386,8 @@ def run_moon_animation():
         frames.append(i)
 
     for frame in frames:
-        menu_buttons["moon_indicator"].set_image(
-            pygame.transform.scale(
-                moon_phases[frame],
-                (22, 26),
-            )
+        menu_buttons["moon_indicator"].set_text(
+            moon_phases[frame],
         )
         time.sleep(0.125)
 

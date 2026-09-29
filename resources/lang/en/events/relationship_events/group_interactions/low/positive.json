@@ -210,7 +210,7 @@
         ]
     },
     {
-        "id": "group_multicat_neutral_talk1",
+        "event_id": "group_multicat_neutral_talk1",
         "strings": [
 			"m_c, multi_cat had a nice talk while eating.",
 			"m_c, multi_cat took a sunbath and had a little small talk."
@@ -230,7 +230,7 @@
         ]
     },
     {
-        "id": "group_multicat_pos_chillstretches",
+        "event_id": "group_multicat_pos_chillstretches",
         "strings": [
 			"Late into the evening, m_c invites multi_cat to stretch with {PRONOUN/m_c/object} and enjoy each other's company.",
 			"m_c convinces multi_cat to wind down and stretch with {PRONOUN/m_c/object}.",
@@ -261,7 +261,7 @@
         ]
     },
     {
-        "id": "group_multicat_pos_polymateslow",
+        "event_id": "group_multicat_pos_polymateslow",
         "strings": [
             "m_c, multi_cat shared prey and stories of each other's days.",
             "m_c, multi_cat were reluctant to leave their shared nest and start the day.",
@@ -302,7 +302,7 @@
         ]
     },
     {
-        "id": "group_multicat_friendlydebate",
+        "event_id": "group_multicat_friendlydebate",
         "strings": [
             "m_c, multi_cat had a friendly debate over their favorite colors.",
             "m_c, multi_cat had a friendly debate over their favorite season.",
@@ -323,7 +323,7 @@
         ]
     },
     {
-        "id": "group_multicat_discusstrust",
+        "event_id": "group_multicat_discusstrust",
         "strings": [
             "m_c, multi_cat discuss whether they think c_n is headed in a good direction.",
             "m_c, multi_cat discuss whether c_n is doing better or worse than it was last season.",
@@ -348,7 +348,7 @@
         ]
     },
     {
-        "id": "group_multicat_newnests",
+        "event_id": "group_multicat_newnests",
         "strings": [
             "multi_cat notice that m_c refreshed the nests in the warriors' den.",
             "multi_cat appreciate the soft, fresh moss that m_c added to their nests earlier that day."
@@ -372,7 +372,7 @@
         ]
     },
     {
-        "id": "group_multicat_pos_gossipingdislike",
+        "event_id": "group_multicat_pos_gossipingdislike",
         "strings": [
             "multi_cat agree they dislike m_c."
         ],
@@ -407,7 +407,7 @@
         ]
     },
     {
-        "id": "group_multicat_neg_gossipingavoids",
+        "event_id": "group_multicat_neg_gossipingavoids",
         "strings": [
             "multi_cat discuss how they feel uncomfortable around m_c."
         ],
@@ -442,7 +442,7 @@
         ]
     },
     {
-        "id": "group_multicat_warriorsreminisceapp",
+        "event_id": "group_multicat_warriorsreminisceapp",
         "strings": [
             "m_c, multi_cat reminisce about being apprentices.",
             "m_c, multi_cat trade stories of apprenticehood hijinks over a meal.",
@@ -469,7 +469,7 @@
         ]
     },
     {
-        "id": "group_multicat_warriorsreminiscekit",
+        "event_id": "group_multicat_warriorsreminiscekit",
         "strings": [
             "m_c, multi_cat reminisce about being kits.",
             "m_c, multi_cat trade stories of nursery hijinks over a meal.",

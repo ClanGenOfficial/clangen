@@ -25,7 +25,7 @@ def set_cat_relationship_to_cat(cat_a: Cat, rel_type: str, cat_b: Cat, rel_value
 class SetRelationshipCommand(Command):
     name = "set"
     description = "Set the relationship values of a cat towards another cat."
-    usage = "<cat_from name|id> <romance|like|respect|trust|comfort> <cat_to name|id> [number] <mutual>"
+    usage = "<cat_from_name: str|id: int> [romance|like|respect|trust|comfort] <cat_to_name: str|id: int> <amount: int> <mutual>?"
     aliases = ["s"]
 
     def callback(self, args):

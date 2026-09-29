@@ -1,6 +1,6 @@
 [
     {
-        "id": "becoming_loner",
+        "event_id": "becoming_loner",
         "strings": [
             "Is better off on {PRONOUN/m_c/poss} own anyway"
         ]

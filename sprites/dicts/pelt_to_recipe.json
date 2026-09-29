@@ -1,0 +1,21 @@
+{
+    "Tortie": "TortieRecipe",
+    "Calico": "TortieRecipe",
+    "Classic": "ClassicRecipe",
+    "SingleColour": "SingleColourRecipe",
+    "Single": "SingleColourRecipe",
+    "TwoColour": "SingleColourRecipe",
+    "Tabby": "TabbyRecipe",
+    "Ticked": "TickedRecipe",
+    "Mackerel": "MackerelRecipe",
+    "Sokoke": "SokokeRecipe",
+    "Agouti": "AgoutiRecipe",
+    "Speckled": "SpeckledRecipe",
+    "Rosette": "RosetteRecipe",
+    "Freckled": "FreckledRecipe",
+    "Smoke": "SmokeRecipe",
+    "Singlestripe": "SinglestripeRecipe",
+    "Bengal": "BengalRecipe",
+    "Marbled": "MarbledRecipe",
+    "Masked": "MaskedRecipe"
+}

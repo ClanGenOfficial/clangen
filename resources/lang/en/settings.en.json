@@ -44,6 +44,8 @@
         "deputy_tooltip": "The Warrior Code rules will be taken into account when choosing a deputy.",
         "12_moon_graduation": "Disable experience-based apprentice graduation",
         "12_moon_graduation_tooltip": "All apprentices will graduate at 12 moons.",
+        "assign_mentors": "Assign mentors to apprentices automatically.",
+        "assign_mentors_tooltip": "If disabled, all mentors will need to be set manually.",
         "retirement": "Cats will never retire due to a permanent condition",
         "retirement_tooltip": "When this setting is off, cats with permanent conditions will choose whether or not they want to retire",
         "become_mediator": "Allow warriors and elders to choose to become mediators",
