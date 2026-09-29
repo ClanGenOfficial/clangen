@@ -46,9 +46,10 @@ Documentation is... what you're currently reading! It is our database of informa
 
 ## How to Start Projects
 If you have a big idea for a feature and want to start a project yourself, that's great!<br>
+
 1. Pitch your idea to other developers in the Discord to gauge interest and get feedback. It's crucial to hear from senior developers to get feedback on whether your proposed feature is a good fit for the game. Otherwise, you might end up sinking a lot of time and energy into a project that won't ultimately be accepted.
 2. Chat with other interested developers to see who may be able to help you realize your idea! Most features requires collaboration from many developers to bring it to life.
-3. Make a thread in the #development forum (anyone can make threads, not just seniors!). In your initial post, describe the feature, define the scope of the project, and list the steps that must be taken to create the feature. If other devs have requested it, you can ping them in the thread to continue brainstorming and collaborating.
+3. Make a thread in the #development forum (anyone can make threads, not just seniors!) In your initial post, describe the feature, define the scope of the project, and list the steps that must be taken to create the feature. If other devs have requested it, you can ping them in the thread to continue brainstorming and collaborating.
 
 ---
 
@@ -58,11 +59,14 @@ ClanGen is a volunteer project; it is shaped by those who have an interest in co
 
 #### Who decides what?
 Decisions relating to features and content are mainly taken by the **developers who are bringing that feature to life**, alongside the **senior developers who are associated with that specialty.**
-- For example, the style of a new camp background will be guided by the art developer who is creating it, along with the senior developers who specialize in art.
-- The art developer creating the background may solicit feedback and criticism from other art developers, at which point those developers are welcome to chime in.<br>
+
+- For example, the contents of a new camp background will be guided by the art developer who is creating it, along with the senior developers who specialize in art.
+- The art developer creating the background may solicit feedback and criticism from other art developers, at which point those developers are welcome to chime in, though the art developer isn't required to implement this feedback.<br>
+- If a senior developer specializing in art requests changes to the background, then the art developer should implement those changes.
+
 
 #### Feedback
-When a developer opens themself up to feedback, they will hear from many different team members. Some may have conflicting opinions or suggestions. The developer working on the project must use their discretion when deciding what feedback to incorporate. Later, when the developer open the Pull Request with their changes, they will be in direct conversation with the senior developer reviewing the PR. That senior’s feedback is the most important; see “Getting your PR reviewed.”(to be linkified)
+When a developer opens themself up to feedback, they will hear from many different team members. Some may have conflicting opinions or suggestions. The developer working on the project must use their discretion when deciding what feedback to incorporate. Later, when the developer opens the Pull Request with their changes, they will be in direct conversation with the senior developer reviewing the PR. That senior’s feedback is the most important; see “Getting your PR reviewed.”(to be linkified)
 
 #### Polling and Consultation
 The developer team is constantly changing; developers become inactive or go on hiatus, new developers join the team, old developers return, and so on. This means it is impractical to consult every developer on every decision. **Polls will occasionally be conducted** for proposed changes that affect a wide range of development, but this is not standard or required for new features and content.
