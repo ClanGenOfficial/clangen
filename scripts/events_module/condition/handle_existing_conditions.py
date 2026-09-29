@@ -146,6 +146,7 @@ def handle_temporary_conditions(cat: Cat, forced_state: ConditionState = None):
 
     for condition in cat.temporary_conditions.copy():
         if condition.omit_moonskip:
+            condition.omit_moonskip = False
             continue
 
         condition_extra_info = TEMPORARY_CONDITIONS[condition.name]
@@ -194,6 +195,7 @@ def handle_temporary_conditions(cat: Cat, forced_state: ConditionState = None):
                         ["health"],
                         [cat.ID],
                     )
+                event_list.append(event)
 
             cat.history.remove_possible_history(condition.name)
             conditions_to_remove.append(condition)
@@ -633,7 +635,14 @@ def _attempt_scarring(
         "hardcoded.scar_event1",
         "hardcoded.scar_event2",
     ]
-    event = event_text_adjust(Cat, choice(scar_gain_strings), main_cat=cat)
+    event = event_text_adjust(
+        Cat,
+        i18n.t(
+            choice(scar_gain_strings),
+            condition=i18n.t(f"conditions.temporary_conditions.{condition.name}"),
+        ),
+        main_cat=cat,
+    )
 
     return i18n.t(
         event,
