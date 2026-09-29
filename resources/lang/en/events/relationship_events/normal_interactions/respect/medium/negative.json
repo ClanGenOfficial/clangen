@@ -360,6 +360,10 @@
             "When asked for help, m_c tells r_c that it's not {PRONOUN/m_c/poss} problem and walks off.",
             "m_c has to try not to laugh when r_c tries to be serious."
         ],
+            "involved_cats": {
+                "m_c": {},
+                "r_c": {}
+            },
         "relationship_constraint": [
             {
                 "cats_from": [
