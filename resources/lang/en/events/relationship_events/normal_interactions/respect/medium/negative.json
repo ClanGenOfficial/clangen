@@ -412,7 +412,6 @@
                     "medicine cat",
                     "mediator"
                 ],
-                "past_status": [],
                 "age": [
                     "adolescent",
                     "young adult"
@@ -443,7 +442,7 @@
                 ],
                 "mutual": true,
                 "values": [
-                    "trust",
+                    "respect",
                     "like"
                 ],
                 "amount": -10
@@ -484,8 +483,12 @@
         ],
         "relationship_changes": [
             {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
                 "mutual": true,
                 "values": [
                     "respect",
