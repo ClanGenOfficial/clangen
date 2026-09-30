@@ -1,0 +1,4 @@
+{
+    "_comment": "not to be confused with names.json, the dict where the names are stored!",
+    "name_format": "{prefix}{suffix}"
+}
