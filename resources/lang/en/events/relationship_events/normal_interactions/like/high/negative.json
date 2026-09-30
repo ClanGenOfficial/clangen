@@ -108,7 +108,9 @@
         "strings": [
             "m_c snarls at r_c for coming too close to the herbs.",
             "m_c shoos r_c away, not having time for curious little kits.",
-            "m_c tells r_c if {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} stay away from the medicine den {PRONOUN/m_c/subject} will feed {PRONOUN/r_c/object} nasty tasting herbs!"
+            "m_c tells r_c if {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} stay away from the medicine den {PRONOUN/m_c/subject} will feed {PRONOUN/r_c/object} nasty tasting herbs!",
+            "r_c refuses to take the nasty herbs m_c tries to give {PRONOUN/r_c/object}.",
+            "m_c catches r_c stealing a scrap of catnip and insists {PRONOUN/r_c/subject} be punished for it."
         ],
         "involved_cats": {
             "m_c": {
@@ -316,7 +318,9 @@
         "strings": [
             "m_c accuses r_c of being a bad deputy.",
             "m_c scoffs at r_c's instructions.",
-            "m_c says that r_c is such a bad deputy {PRONOUN/r_c/subject} should step down."
+            "m_c says that r_c is such a bad deputy {PRONOUN/r_c/subject} should step down.",
+            "m_c insists {PRONOUN/m_c/subject}'d be a far better deputy then r_c any day.",
+            "m_c swears the Clan would be better off with no deputy rather than r_c."
         ],
         "involved_cats": {
             "r_c": {

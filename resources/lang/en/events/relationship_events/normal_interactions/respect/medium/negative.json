@@ -88,7 +88,10 @@
             "m_c thinks that r_c acted disrespectfully during a patrol.",
             "m_c notices that r_c seems to disappear whenever difficult tasks are being discussed.",
             "r_c was meant to take a piece of prey to a Clanmate, but m_c saw {PRONOUN/r_c/object} eat it.",
-            "r_c didn't finish a chore that m_c asked {PRONOUN/r_c/object} to do."
+            "r_c didn't finish a chore that m_c asked {PRONOUN/r_c/object} to do.",
+            "After r_c returned to camp with a big catch, m_c scoffed and asked if that was it.",
+            "m_c refuses to believe r_c can catch anything with a crouch like <i>that</i>.",
+            "m_c adamantly refuses to eat any prey r_c caught."
         ],
         "involved_cats": {
             "m_c": {
@@ -113,7 +116,11 @@
         "event_id": "respect_adult_de_med2",
         "strings": [
             "m_c has noticed r_c isn't doing a lot of work lately.",
-            "m_c is disappointed in r_c's lack of initiative."
+            "m_c is disappointed in r_c's lack of initiative.",
+            "m_c is disappointed in how r_c doesn't seem to be carrying {PRONOUN/r_c/poss} weight.",
+            "m_c can't believe r_c would pass {PRONOUN/m_c/poss} work onto another Clanmate.",
+            "m_c notices r_c ask for help with something {PRONOUN/r_c/subject} could easily do {PRONOUN/r_c/self}.",
+            "m_c wonders why r_c's taking a break while everyone else is working hard."
         ],
         "involved_cats": {
             "m_c": {
@@ -137,7 +144,10 @@
         "event_id": "respect_gathering_de_med",
         "strings": [
             "m_c is jealous that r_c got to go to the last Gathering.",
-            "r_c was complimented by another Clan during the recent Gathering, but m_c wasn't."
+            "r_c was complimented by another Clan during the recent Gathering, but m_c wasn't.",
+            "m_c is jealous that r_c 's achievements were recognized at the Gathering but {PRONOUN/m_c/inposs} wasn't.",
+            "m_c's jealous at how well r_c gets along with the cats from other Clans.",
+            "m_c wonders how r_c carries {PRONOUN/r_c/self} so well during Gatherings."
         ],
         "involved_cats": {
             "m_c": {
@@ -343,6 +353,96 @@
                 "mutual": false,
                 "values": [
                     "respect"
+                ],
+                "amount": -10
+            }
+        ]
+    },
+        {
+        "event_id": "snarky_de_med",
+        "strings": [
+            "m_c gives r_c a backhanded compliment.",
+            "m_c's been especially snarky with r_c today.",
+            "m_c repeats something r_c said in a mocking tone.",
+            "m_c admits being embarrassed about liking something r_c also likes.",
+            "When r_c vents to m_c, m_c rudely asks {PRONOUN/r_c/object} what {PRONOUN/r_c/subject} {VERB/r_c/want/wants} {PRONOUN/m_c/object} to do about it.",
+            "m_c asks r_c if {PRONOUN/r_c/subject} actually {VERB/r_c/have/has} any friends.",
+            "When asked for help, m_c tells r_c that it's not {PRONOUN/m_c/poss} problem and walks off.",
+            "m_c struggles not to laugh when r_c tries to be serious."
+        ],
+            "involved_cats": {
+                "m_c": {},
+                "r_c": {}
+            },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect",
+                    "like"
+                ],
+                "amount": -5
+            }
+        ]
+    },
+        {
+        "event_id": "snarky_de_med2",
+        "strings": [
+            "m_c couldn't stop laughing at r_c's new name all day.",
+            "m_c told r_c {PRONOUN/r_c/poss} name makes no sense.",
+            "m_c made fun of r_c's new name to a Clanmate.",
+            "m_c wonders aloud if r_c even deserves {PRONOUN/r_c/poss} full name.",
+            "m_c refuses to believe r_c actually likes {PRONOUN/r_c/poss} new name.",
+            "m_c refuses to take r_c's new name seriously.",
+            "m_c's been saying r_c's name in a mocking tone all day.",
+            "m_c keeps referring to r_c as a 'paw rather than by {PRONOUN/r_c/poss} full name."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "status": [
+                    "warrior",
+                    "medicine cat",
+                    "mediator"
+                ],
+                "age": [
+                    "adolescent",
+                    "young adult"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "envies"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect",
+                    "like"
                 ],
                 "amount": -10
             }
