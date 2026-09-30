@@ -48,7 +48,7 @@ def execute_outcome(
     event_involved_cats: dict[str, Union[Cat, list[Cat]]],
     other_clan: OtherClan = None,
     chosen_poi: str = None,
-) -> tuple[str, str, dict]:
+) -> tuple[str, dict, dict]:
     """
     Executes the outcome, applying any specified consequences.
     If new cats are created, event_involved_cats *will* be modified to add the newly created cats.
@@ -70,20 +70,20 @@ def execute_outcome(
         chosen_poi=chosen_poi,
     )
 
-    results = [
-        _handle_joining(event, event_involved_cats),
-        _handle_death(event, event_involved_cats, other_clan, chosen_poi),
-        _handle_meeting(event, event_involved_cats),
-        _handle_lost(event, event_involved_cats),
-        _handle_conditions(event, event_involved_cats, other_clan),
-        _handle_reputation_changes(event, other_clan),
-        _handle_supply_changes(event, event_involved_cats),
-    ]
+    results = {
+        "join": _handle_joining(event, event_involved_cats),
+        "death": _handle_death(event, event_involved_cats, other_clan, chosen_poi),
+        "meet": _handle_meeting(event, event_involved_cats),
+        "lost": _handle_lost(event, event_involved_cats),
+        "condition": _handle_conditions(event, event_involved_cats, other_clan),
+        "reputation": _handle_reputation_changes(event, other_clan),
+        "supply": _handle_supply_changes(event, event_involved_cats),
+    }
 
     acc_results, processed_text = _handle_accessories(
         event, event_involved_cats, processed_text
     )
-    results.append(acc_results)
+    results["acc"] = acc_results
 
     _handle_exp(event, event_involved_cats)
     _handle_mentor_app(event_involved_cats)
@@ -108,15 +108,10 @@ def execute_outcome(
         unpack_rel_block(Cat, rel_changes, involved_cats=event_involved_cats)
     )
     if rel_results:
-        results.append(i18n.t(f"screens.patrol.relationship_changed"))
-
-    final_results = []
-    for r in results:
-        if r:
-            final_results.append(r)
+        results["relationship"] = i18n.t(f"screens.patrol.relationship_changed")
 
     # return all the bullshit
-    return processed_text, "\n".join(final_results), rel_results
+    return processed_text, results, rel_results
 
 
 def create_needed_cats(
@@ -532,7 +527,12 @@ def _handle_conditions(
             i18n.t(
                 "general.got_condition",
                 cat=_profile_link(c),
-                conditions=adjust_list_text(conditions),
+                conditions=adjust_list_text(
+                    [
+                        i18n.t(f"conditions.temporary_conditions.{_con}")
+                        for _con in conditions
+                    ]
+                ),
             )
         )
 

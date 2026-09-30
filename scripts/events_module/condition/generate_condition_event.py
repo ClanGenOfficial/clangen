@@ -38,11 +38,7 @@ def generate_condition_event(path: str, involved_cats: dict) -> EventInformation
 
         # add life loss message
         if main_cat.status.is_leader:
-            processed_text = (
-                processed_text + " " + get_leader_life_notice(str(main_cat.name))
-            )
-            if extra_text := check_stolen_vitality(main_cat, 1):
-                processed_text += " " + extra_text
+            processed_text += results["death"]
 
     involved_ids = []
     for c in involved_cats.values():
