@@ -137,5 +137,50 @@
                 ]
             }
         }
+    },
+    {
+        "event_id": "snarky_de_high",
+        "strings": [
+            "m_c laughs with a Clanmate at r_c's expense about something {PRONOUN/r_c/subject} can't control.",
+            "m_c's been belittling r_c all day.",
+            "m_c gags at the sound of r_c's voice.",
+            "m_c makes it very clear {PRONOUN/m_c/subject} {VERB/m_c/look/looks} down on r_c.",
+            "m_c refuses to treat r_c as an equal.",
+            "When r_c vented about something important to {PRONOUN/r_c/object}, m_c told {PRONOUN/r_c/object} to go find someone that cares.",
+            "m_c wonders aloud how anyone can tolerate r_c's presence.",
+            "m_c suggested r_c go somewhere {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} wanted... like, far from c_n.",
+            "m_c called r_c far too unlikable to have any friends.",
+            "m_c is the first to put down any of r_c's accomplishments, claiming there's no way r_c could do anything useful."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "begrudges"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": true,
+                "values": [
+                    "respect",
+                    "like"
+                ],
+                "amount": -10
+            }
+        ]
     }
 ]
