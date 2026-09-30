@@ -562,7 +562,7 @@ class Cat:
                 (CatSocial.KITTYPET, CatSocial.LONER, CatSocial.ROGUE)
             )
         self.status.leave_group(new_social_status=new_social_status)
-        self.assign_thought()
+        self.assign_thought(CatThought.ON_RANK_CHANGE)
 
         for app in self.apprentice.copy():
             app_ob = Cat.fetch_cat(app)
@@ -935,7 +935,7 @@ class Cat:
         life_givers = []
         dead_relations = []
         life_giving_leader = None
-        num_of_lives_to_give = get_config("death_related.max_leader_lives")
+        num_of_lives_to_give = game.clan.leader_lives
 
         # grab life givers that the cat actually knew in life and sort by amount of relationship!
         relationships = self.relationships.values()

@@ -4,7 +4,7 @@
         "types": [
             "herb_gathering"
         ],
-        "frequency": 3,
+        "frequency": 4,
         "location": [
             "beach"
         ],
@@ -111,10 +111,6 @@
                 2,
                 2
             ],
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat apprentice": [
                 1,
                 1
@@ -122,24 +118,15 @@
             "medicine cat": [
                 1,
                 1
-            ],
-            "normal adult": [
-                -1,
-                -1
             ]
         },
         "involved_cats": {
-            "r_c1": {
-                "status": [
-                    "apprentice",
-                    "medicine cat apprentice"
-                ]
-            }
+            "r_c0": {}
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_med_meadow_ApMc",
         "intro_strings": [
-            "Sea-scented mist blows across the salt meadow in damp gusts. p_l and r_c1's whiskers bead with water as they stalk through the growing grass, fixating on each plant in turn, scanning for the right herb."
+            "Sea-scented mist blows across the salt meadow in damp gusts. p_l and r_c0's whiskers bead with water as they stalk through the growing grass, fixating on each plant in turn, scanning for the right herb."
         ],
         "decline_strings": [
             "The fog thickens, and p_l turns right around. They won't find any herbs like this."
@@ -149,16 +136,8 @@
                 "frequency": 4,
                 "outcome_art": "backgrounds/gen_GL_gatheringplantain",
                 "strings": [
-                    "Plantain is especially good against the insect bites common in greenleaf. The days are still lengthening, but a medicine cat always has to look toward the next season as well as the Clan's present needs. r_c1 can only twitch an ear in agreement, carrying the bulk of the leaves home while p_l teaches."
+                    "Plantain is especially good against the insect bites common in greenleaf. The days are still lengthening, but a medicine cat always has to look toward the next season as well as the Clan's present needs. r_c0 can only twitch an ear in agreement, carrying the bulk of the leaves home while p_l teaches."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 25,
                 "relationship_changes": [
                     {
@@ -166,7 +145,7 @@
                             "p_l"
                         ],
                         "cats_to": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -201,21 +180,13 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_med_running_McApmed_app",
                 "strings": [
-                    "Not long into their search, the fog thickens, obscuring their own paws and dappling their pelts. In the haze, the two of them drift apart. Hooves crunching fresh grass are their only warning before a flock of sheep push and jostle against r_c1 on all sides. {PRONOUN/r_c1/subject/CAP}{VERB/r_c1/'re/'s} bruised and panicked by the time {PRONOUN/r_c1/subject} {VERB/r_c1/get/gets} away."
+                    "Not long into their search, the fog thickens, obscuring their own paws and dappling their pelts. In the haze, the two of them drift apart. Hooves crunching fresh grass are their only warning before a flock of sheep push and jostle against r_c0 on all sides. {PRONOUN/r_c0/subject/CAP}{VERB/r_c0/'re/'s} bruised and panicked by the time {PRONOUN/r_c0/subject} {VERB/r_c0/get/gets} away."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -233,7 +204,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "condition": [
                             "bruises"
@@ -245,21 +216,13 @@
                 "frequency": 1,
                 "outcome_art": "gen_train_patrolapprenticesessionfail",
                 "strings": [
-                    "Not long into their search, the fog thickens, obscuring their own paws and dappling their pelts. In the haze, the two of them drift apart and p_l doesn't see it coming. Hooves crunching fresh grass are the only warning before a flock of sheep envelop r_c1, trampling {PRONOUN/r_c1/object} underhoof. {PRONOUN/r_c1/subject/CAP}{VERB/r_c1/'re/'s} battered and panicked by the time {PRONOUN/r_c1/subject} finally {VERB/r_c1/get/gets} away."
+                    "Not long into their search, the fog thickens, obscuring their own paws and dappling their pelts. In the haze, the two of them drift apart and p_l doesn't see it coming. Hooves crunching fresh grass are the only warning before a flock of sheep envelop r_c0, trampling {PRONOUN/r_c0/object} underhoof. {PRONOUN/r_c0/subject/CAP}{VERB/r_c0/'re/'s} battered and panicked by the time {PRONOUN/r_c0/subject} finally {VERB/r_c0/get/gets} away."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -277,13 +240,13 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "condition": [
                             "blunt_force_injury"
                         ],
-                        "scar_history": "r_c1 was scarred after being trampled by a flock of sheep.",
-                        "death_history": "r_c1 died from {PRONOUN/r_c1/poss} injuries after being trampled by a flock of sheep."
+                        "scar_history": "r_c0 was scarred after being trampled by a flock of sheep.",
+                        "death_history": "r_c0 died from {PRONOUN/r_c0/poss} injuries after being trampled by a flock of sheep."
                     }
                 ]
             }

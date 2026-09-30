@@ -29,10 +29,12 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 explains that the sea has always given mysterious gifts to c_n and that those strange ginger cat statues are probably just another gift from the ocean... Probably."
+                    "s_c0 explains that the sea has always given mysterious gifts to c_n and that those strange ginger cat statues are probably just another gift from the ocean... Probably."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
                 "exp_gained": 5,
                 "relationship_changes": [
@@ -58,10 +60,12 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The strange ginger cat statues seem to be purring slightly. r_c0 suggests they leave the beach as soon as possible; those things don't seem... entirely of this world."
+                    "The strange ginger cat statues seem to be purring slightly. s_c0 suggests they leave the beach as soon as possible; those things don't seem... entirely of this world."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
                 "exp_gained": 5,
                 "relationship_changes": [
@@ -97,7 +101,8 @@
                         "stat": {
                             "skill": [
                                 "STORY,1",
-                                "SPEAKER,3"
+                                "SPEAKER,3",
+                                "LORE,1"
                             ]
                         }
                     }
@@ -169,16 +174,18 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_running_Wr",
                 "strings": [
-                    "There is no way r_c0 is staying around here. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/tear/tears} off back to camp at the sight of a broken ginger cat statue."
+                    "There is no way s_c0 is staying around here. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/tear/tears} off back to camp at the sight of a broken ginger cat statue."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -198,7 +205,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The whole patrol agrees this beach is abandoned by StarClan. There's no way so many broken ginger cat statues are here naturally, and well, s_c0 has always been a little odd..."
+                    "The whole patrol agrees this beach is abandoned by StarClan. There's no way so many broken ginger cat statues are here naturally, and well, s_c0 has always been a little odd, perhaps this is another one of {PRONOUN/s_c0/poss} funny \"projects\"..."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -266,13 +273,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_running_Wr",
                 "strings": [
-                    "p_l is shocked to find green and black lizards scattered around the beach. {PRONOUN/p_l/subject/CAP} {VERB/p_l/freeze/freezes}, trying not to get bit. When nothing moves, {PRONOUN/p_l/subject} {VERB/p_l/head/heads} back to camp unscathed."
-                ],
-                "exp_gained": 5
-            },
-            {
-                "frequency": 1,
-                "strings": [
+                    "p_l is shocked to find green and black lizards scattered around the beach. {PRONOUN/p_l/subject/CAP} {VERB/p_l/freeze/freezes}, trying not to get bit. When nothing moves, {PRONOUN/p_l/subject} {VERB/p_l/head/heads} back to camp unscathed.",
                     "Green and black lizards are everywhere! p_l freezes up, only to notice that they're not moving and some of them stick straight up. They're not real! {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} a fake lizard home to show the others."
                 ],
                 "exp_gained": 5
@@ -333,7 +334,9 @@
                         "stat": {
                             "skill": [
                                 "LORE,1"
-                            ]
+                            ],
+                            "trait": ["adventurous"],
+                            "must_have_both": false
                         }
                     }
                 },
@@ -383,7 +386,7 @@
         ],
         "required_cat_types": {
             "patrol_cats": [
-                4,
+                3,
                 6
             ],
             "apprentice": [
@@ -396,15 +399,16 @@
             ]
         },
         "involved_cats": {
-            "p_l": {
+            "s_c0": {
+                "prior_abbreviation": ["any"],
                 "stat": {
                     "skill": [
                         "STORY,1",
                         "LORE,1",
                         "SWIMMER,1"
-                    ],
-                    "trait": []
-                }
+                    ]
+                },
+                "status": ["-apprentice"]
             },
             "r_c1": {
                 "status": [
@@ -415,7 +419,7 @@
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/bch_train_session1_ApWr",
         "intro_strings": [
-            "The large patrol practices holding another cat's head above the water, using the calm (but <i>very</i> chilly) waters of a rockpool. r_c1 shivers, despite being huddled with p_l. Why couldn't {PRONOUN/r_c1/subject} practice this on a hot sunny day?"
+            "The patrol practices holding another cat's head above the water, using the calm (but <i>very</i> chilly) waters of a rockpool. r_c1 shivers, despite being huddled with s_c0. Why couldn't {PRONOUN/r_c1/subject} practice this on a hot sunny day?"
         ],
         "decline_strings": [
             "Taking a break turns into ending the patrol early."
@@ -428,20 +432,12 @@
                     "s_c0 sits on the windward side of r_c1, trying to give {PRONOUN/r_c1/object} a little more shelter. It's understandable, {PRONOUN/s_c0/subject} {VERB/s_c0/sympathize/sympathizes}, but r_c1 can't rely on cats in distress only showing up when the sea is inviting. The sympathy (and a little physical warmth) puts cheer back into r_c1, and {PRONOUN/r_c1/subject} {VERB/r_c1/take/takes} {PRONOUN/r_c1/poss} next turn at lifeguarding practice with enthusiasm."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "skill": [
                                 "SWIMMER,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 30,
@@ -489,20 +485,12 @@
                     "s_c0 nods. Lifeguarding isn't easy, even in practice. But {PRONOUN/s_c0/subject} {VERB/s_c0/offer/offers} up the story of a kitten saved by a c_n warrior who had the strength and will to keep the little ball of fur above the waves under nearly impossible circumstances. It makes r_c1 sit up straight, proud to be carrying on that tradition."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "skill": [
                                 "LORE,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 30,
@@ -550,20 +538,12 @@
                     "Doesn't r_c1 want to be an ocean dancer, one of the many cats in c_n's ancestry who managed to master the waves, streaking in and out to save lives that have been lost to the ocean's jaws, s_c0 asks? And well, when {PRONOUN/s_c0/subject} {VERB/s_c0/put/puts} it like <i>that</i>... r_c1's motivation returns."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "skill": [
                                 "STORY,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 30,
@@ -612,13 +592,6 @@
                 "strings": [
                     "Learning the art of water rescue is important, of course, but safety comes first. r_c1 has {PRONOUN/r_c1/poss} pelt licked dry and warm again, and the patrol is called off early."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -646,13 +619,6 @@
                 "strings": [
                     "r_c1 is right — this is far, far too cold of a pool to train in, and {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} shivering too badly to continue. Time to go home. p_l apologizes for bringing the patrol out here."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {

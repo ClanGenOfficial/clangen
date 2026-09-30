@@ -23,35 +23,22 @@
             ]
         },
         "involved_cats": {
-            "r_c1": {
-                "status": [
-                    "apprentice",
-                    "medicine cat apprentice"
-                ]
-            }
+            "r_c0": {}
         },
         "chance_of_success": 65,
         "patrol_art": "med_general_intro",
         "intro_strings": [
-            "p_l looks at the calm, cloudless sky and decides it's a good opportunity to show r_c1 where some of the most commonly needed herbs are located in {PRONOUN/p_l/poss} territory, as well as where and when to burrow into the sand to find the more potent roots {PRONOUN/p_l/subject} {VERB/p_l/tend/tends} to use."
+            "p_l looks at the calm, cloudless sky and decides it's a good opportunity to show r_c0 where some of the most commonly needed herbs are located in {PRONOUN/p_l/poss} territory, as well as where and when to burrow into the sand to find the more potent roots {PRONOUN/p_l/subject} {VERB/p_l/tend/tends} to use."
         ],
         "decline_strings": [
-            "As {PRONOUN/p_l/subject} {VERB/p_l/look/looks} at r_c1's absent-minded gaze, {PRONOUN/p_l/subject} {VERB/p_l/hesitate/hesitates} and {VERB/p_l/change/changes} {PRONOUN/p_l/poss} mind. Maybe another day would be best, when r_c1 is more focused... and less liable to get sand everywhere, or damage the herbs."
+            "As {PRONOUN/p_l/subject} {VERB/p_l/look/looks} at r_c0's absent-minded gaze, {PRONOUN/p_l/subject} {VERB/p_l/hesitate/hesitates} and {VERB/p_l/change/changes} {PRONOUN/p_l/poss} mind. Maybe another day would be best, when r_c0 is more focused... and less liable to get sand everywhere, or damage the herbs."
         ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 is focused and attentive, giving p_l confidence that next time there is an emergency, r_c1 will be able to find the herbs {PRONOUN/r_c1/subject} {VERB/r_c1/need/needs} both in and out of the sand."
+                    "r_c0 is focused and attentive, giving p_l confidence that next time there is an emergency, r_c0 will be able to find the herbs {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} both in and out of the sand."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
@@ -59,7 +46,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -81,18 +68,10 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 3,
                 "strings": [
-                    "As p_l is explaining why and where the herbs are growing, r_c1 lets out a shout and bolts ahead. To p_l's surprise, {PRONOUN/r_c1/subject} {VERB/r_c1/have/has} found a previously unknown patch of an uncommon herb! Stunned, but filled with pride that {PRONOUN/r_c1/subject} found and recognized the herb, p_l promises {PRONOUN/r_c1/object} the first pick of fresh-kill as soon as they return to camp."
+                    "As p_l is explaining why and where the herbs are growing, r_c0 lets out a shout and bolts ahead. To p_l's surprise, {PRONOUN/r_c0/subject} {VERB/r_c0/have/has} found a previously unknown patch of an uncommon herb! Stunned, but filled with pride that {PRONOUN/r_c0/subject} found and recognized the herb, p_l promises {PRONOUN/r_c0/object} the first pick of fresh-kill as soon as they return to camp."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
@@ -100,7 +79,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -126,21 +105,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 is constantly distracted, running ahead at every little noise or interesting sight, much to the frustration of p_l. Evidently, no new knowledge will be gained that day."
+                    "r_c0 is constantly distracted, running ahead at every little noise or interesting sight, much to the frustration of p_l. Evidently, no new knowledge will be gained that day."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -198,19 +169,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l is focused, determined to prove {PRONOUN/p_l/poss} independence. {PRONOUN/p_l/subject/CAP} {VERB/p_l/find/finds} the herbs easily and bring them back to camp with {PRONOUN/p_l/poss} head held up high — no sweat, no stress, no fuss."
-                ],
-                "exp_gained": 10,
-                "supply": [
-                    {
-                        "type": "random_herbs",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
+                    "p_l is focused, determined to prove {PRONOUN/p_l/poss} independence. {PRONOUN/p_l/subject/CAP} {VERB/p_l/find/finds} the herbs easily and bring them back to camp with {PRONOUN/p_l/poss} head held up high — no sweat, no stress, no fuss.",
                     "p_l goes to an herb patch {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} sure {PRONOUN/p_l/subject} {VERB/p_l/know/knows}, only to find the plants withered and dead. {PRONOUN/p_l/subject/CAP} {VERB/p_l/refuse/refuses} to give up, however, tenaciously searching the area until {PRONOUN/p_l/subject} {VERB/p_l/come/comes} across a smaller, overlooked patch that still has some leaves hanging on."
                 ],
                 "exp_gained": 10,
@@ -296,7 +255,7 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 3,
                 "strings": [
                     "p_l and r_c0 decide on a little friendly competition — one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
                 ],
