@@ -78,13 +78,13 @@ class Name:
         if prefix is None or suffix is None:
             return True
 
-        name = prefix + suffix
+        name = i18n.t("cat.names.name_format", prefix=prefix, suffix=suffix)
 
         # Prevent triple letter names from joining prefix and suffix from occurring (ex. Beeeye)
         # Prevent crash on empty prefix or suffix (e.g. empty-suffix loner names)
         if not prefix or not suffix:
             triple_letter = False
-        else:
+        elif name == prefix + suffix:
             possible_three_letter = (
                 prefix[-2:] + suffix[0],
                 prefix[-1] + suffix[:2],
