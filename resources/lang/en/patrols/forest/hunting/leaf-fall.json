@@ -1106,7 +1106,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "shivering"
+                            "dangerously_cold"
                         ],
                         "scar_history": "m_c was scarred after catching a chill on patrol.",
                         "death_history": "m_c caught a chill on patrol and never recovered."

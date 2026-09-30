@@ -1957,7 +1957,7 @@
                             "r_c2"
                         ],
                         "condition": [
-                            "water in their lungs"
+                            "water_in_lungs"
                         ],
                         "death_history": "m_c died from water in {PRONOUN/m_c/poss} lungs after s_c0 took a game way too far on patrol."
                     }
@@ -2173,7 +2173,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "snake bite"
+                            "snake_bite"
                         ],
                         "scar_pool_override": [
                             "SNAKE"
@@ -2186,7 +2186,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "venom sickness"
+                            "venom_sickness"
                         ],
                         "scar_history": "m_c was scarred by a snake bite.",
                         "death_history": "m_c died from the bite of a venomous snake."
@@ -7392,7 +7392,7 @@
                         ],
                         "condition": [
                             "blunt_force_injury",
-                            "water in their lungs"
+                            "water_in_lungs"
                         ],
                         "scar_history": "m_c was injured in a flood.",
                         "death_history": "m_c died of injuries sustained in a flood."
@@ -7584,7 +7584,7 @@
                         ],
                         "condition": [
                             "blunt_force_injury",
-                            "water in their lungs"
+                            "water_in_lungs"
                         ],
                         "scar_history": "m_c was injured in a flood.",
                         "death_history": "m_c died of injuries sustained in a flood."

@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "born_without_a_tail0",
+        "strings": [
+            "m_c is healthy, r_c0 confirms, but {PRONOUN/m_c/subject} simply {VERB/m_c/haven't/hasn't} been born with a tail."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "born_without_a_tail1",
+        "strings": [
+            "m_c is fluffy and full of yelling and the want for milk, but {PRONOUN/m_c/subject}'ll never be able to lash {PRONOUN/m_c/poss} tail like the other kittens, having been born without one."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

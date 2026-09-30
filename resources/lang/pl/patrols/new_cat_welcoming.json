@@ -159,7 +159,14 @@
                         ]
                     }
                 },
-                "exp_gained": 0
+                "exp_gained": 0,
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -496,8 +503,7 @@
                     "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
-                            "adult",
-                            "senior adult"
+                            "adult", "senior adult"
                         ],
                         "status": [
                             "loner"
@@ -546,8 +552,7 @@
                     "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
-                            "senior",
-                            "senior adult"
+                            "senior", "senior adult"
                         ],
                         "status": [
                             "loner"
@@ -589,8 +594,7 @@
                     "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
-                            "adult",
-                            "senior adult"
+                            "adult", "senior adult"
                         ],
                         "status": [
                             "loner"
@@ -632,8 +636,7 @@
                             "n_c1"
                         ],
                         "new_status": [
-                            "apprentice",
-                            "medicine cat apprentice"
+                            "apprentice", "medicine cat apprentice"
                         ]
                     }
                 ]
@@ -762,8 +765,7 @@
                             ]
                         },
                         "age": [
-                            "adolescent",
-                            "kitten"
+                            "adolescent", "kitten"
                         ],
                         "status": [
                             "loner"
@@ -1217,6 +1219,14 @@
                             "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c1",
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -1253,7 +1263,15 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                }
+                },
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c1",
+                            "n_c0"
+                        ]
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -1392,7 +1410,7 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_train_talking_WrLn",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u2014 n_c0 \u2014 is in love with the other \u2014 n_c1 \u2014 who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells n_c0 {PRONOUN/n_c0/subject} should take no for an answer. n_c1 shoots p_l a grateful look."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells n_c0 {PRONOUN/n_c0/subject} should take no for an answer. n_c1 shoots p_l a grateful look."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -1490,13 +1508,21 @@
                             "cats_from": "cat_from was grateful for cat_to helping {PRONOUN/cat_from/object} with {PRONOUN/cat_from/poss} relationship conflict."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c1",
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_bord_newcathostile_Ln",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u2014 n_c0 \u2014 is in love with the other \u2014 n_c1 \u2014 who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells the kittypets to keep their drama away from c_n's border."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells the kittypets to keep their drama away from c_n's border."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -1576,13 +1602,21 @@
                             "cats_from": "cat_from rejected {PRONOUN/cat_from/poss} friend, cat_to, <b>only</b> seeing cat_to as a friend."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c1",
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_speakingcat_Wr",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u2014 n_c0 \u2014 is in love with the other \u2014 n_c1 \u2014 who is having none of it. s_c0 steps forward to help them see each other's side and come to a resolution. n_c0 apologizes for badgering n_c1, and n_c1 admits {PRONOUN/n_c1/subject} {VERB/n_c1/do/does} feel some fondness for {PRONOUN/n_c0/object}, but {PRONOUN/n_c1/subject} {VERB/n_c1/are/is}n't ready for that kind of commitment."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. s_c0 steps forward to help them see each other's side and come to a resolution. n_c0 apologizes for badgering n_c1, and n_c1 admits {PRONOUN/n_c1/subject} {VERB/n_c1/do/does} feel some fondness for {PRONOUN/n_c0/object}, but {PRONOUN/n_c1/subject} {VERB/n_c1/are/is}n't ready for that kind of commitment."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1679,13 +1713,21 @@
                             "cats_from": "cat_from was grateful for cat_to helping {PRONOUN/cat_from/object} resolve {PRONOUN/cat_from/poss} relationship conflict."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c1",
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_speakingcat_Wr",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u2014 n_c0 \u2014 is in love with the other \u2014 n_c1 \u2014 who is having none of it. s_c0 steps forward to help them see each other's side and come to a resolution. n_c0 apologizes for badgering n_c1, and n_c1 admits {PRONOUN/n_c1/subject} {VERB/n_c1/do/does} feel some fondness for {PRONOUN/n_c0/object}, but {PRONOUN/n_c1/subject} {VERB/n_c1/are/is}n't ready for that kind of commitment."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. s_c0 steps forward to help them see each other's side and come to a resolution. n_c0 apologizes for badgering n_c1, and n_c1 admits {PRONOUN/n_c1/subject} {VERB/n_c1/do/does} feel some fondness for {PRONOUN/n_c0/object}, but {PRONOUN/n_c1/subject} {VERB/n_c1/are/is}n't ready for that kind of commitment."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1779,6 +1821,14 @@
                             "cats_from": "cat_from was grateful for cat_to helping {PRONOUN/cat_from/object} resolve {PRONOUN/cat_from/poss} relationship conflict."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c1",
+                            "n_c0"
+                        ]
+                    }
                 ]
             }
         ],
@@ -1787,7 +1837,7 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_happycat_Ln",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u2014 n_c0 \u2014 is in love with the other \u2014 n_c1 \u2014 who is having none of it. p_l steps in and tells n_c0 {PRONOUN/n_c0/subject} should take no for an answer. n_c1 shoots p_l a grateful and flirty look, and p_l hastily backs off. n_c0 catches that glance, jealousy in {PRONOUN/n_c0/poss} eyes."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. p_l steps in and tells n_c0 {PRONOUN/n_c0/subject} should take no for an answer. n_c1 shoots p_l a grateful and flirty look, and p_l hastily backs off. n_c0 catches that glance, jealousy in {PRONOUN/n_c0/poss} eyes."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -1900,13 +1950,21 @@
                             "cats_from": "cat_from was jealous that n_c1 seemed more interested in cat_to than {PRONOUN/cat_from/object}."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c1",
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_bord_twocathostile_LnLn",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u2014 n_c0 \u2014 is in love with the other \u2014 n_c1 \u2014 who is having none of it. p_l steps in and lectures n_c0, but it just seems to annoy both kittypets. Maybe they just like to argue."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. p_l steps in and lectures n_c0, but it just seems to annoy both kittypets. Maybe they just like to argue."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -1986,6 +2044,14 @@
                         "log": {
                             "cats_from": "cat_from was annoyed when cat_to tried to intervene in {PRONOUN/cat_from/poss} argument with {PRONOUN/cat_from/poss} friend."
                         }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c1",
+                            "n_c0"
+                        ]
                     }
                 ]
             },
@@ -2083,6 +2149,14 @@
                             "cats_from": "cat_to and cat_from are friends and were in the middle of an argument before being interrupted."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c1",
+                            "n_c0"
+                        ]
+                    }
                 ]
             }
         ],
@@ -2091,7 +2165,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_twocathostile_WrWr",
                 "strings": [
-                    "p_l rolls {PRONOUN/p_l/poss} eyes and interrupts the kittypets' argument to tell them both to scram \u2014 and to go tell all their kittypet friends to keep their personal lives on the other side of the border."
+                    "p_l rolls {PRONOUN/p_l/poss} eyes and interrupts the kittypets' argument to tell them both to scram — and to go tell all their kittypet friends to keep their personal lives on the other side of the border."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -2255,7 +2329,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_newcathostile_Ln",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u2014 n_c0 \u2014 is in love with the other \u2014 n_c1 \u2014 who is having none of it. p_l interrupts to tell n_c1 that an ugly mangepelt like {PRONOUN/n_c1/self} should be pleased that any cat at all has shown an interest."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. p_l interrupts to tell n_c1 that an ugly mangepelt like {PRONOUN/n_c1/self} should be pleased that any cat at all has shown an interest."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -2341,7 +2415,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_twocathostile_LnLn",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u2014 n_c0 \u2014 is in love with the other \u2014 n_c1 \u2014 who is having none of it. p_l interrupts to tell n_c0 that {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} flattering a prideful and vain-hearted mouse-brain. Neither kittypet seems to appreciate this."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. p_l interrupts to tell n_c0 that {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} flattering a prideful and vain-hearted mouse-brain. Neither kittypet seems to appreciate this."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -2497,7 +2571,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "cat bite"
+                            "cat_bite"
                         ],
                         "scar_pool_override": [
                             "CATBITETWO"
@@ -2511,7 +2585,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_happycat_Ln",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u2014 n_c0 \u2014 is in love with the other \u2014 n_c1 \u2014 who is having none of it. p_l interrupts to tell n_c1 that {PRONOUN/n_c1/subject}{VERB/n_c1/'re/'s} one of the ugliest badger-faced fleapelts p_l's ever had the displeasure of looking on. Inexplicably, n_c1 bats {PRONOUN/n_c1/poss} eyelashes at p_l and giggles. n_c0 looks on jealously."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. p_l interrupts to tell n_c1 that {PRONOUN/n_c1/subject}{VERB/n_c1/'re/'s} one of the ugliest badger-faced fleapelts p_l's ever had the displeasure of looking on. Inexplicably, n_c1 bats {PRONOUN/n_c1/poss} eyelashes at p_l and giggles. n_c0 looks on jealously."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -2785,7 +2859,14 @@
                         ]
                     }
                 },
-                "exp_gained": 0
+                "exp_gained": 0,
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -2999,7 +3080,14 @@
                         ]
                     }
                 },
-                "exp_gained": 0
+                "exp_gained": 0,
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -3178,7 +3266,14 @@
                         ]
                     }
                 },
-                "exp_gained": 0
+                "exp_gained": 0,
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -3624,9 +3719,9 @@
                             "n_c0"
                         ],
                         "condition": [
-                            "carrionplace disease"
+                            "carrionplace_disease"
                         ],
-                        "no_results": true
+                        "death_history": "m_c died of carrionplace disease."
                     }
                 ],
                 "join": [
@@ -3697,9 +3792,9 @@
                             "n_c0"
                         ],
                         "condition": [
-                            "carrionplace disease"
+                            "carrionplace_disease"
                         ],
-                        "no_results": true
+                        "death_history": "m_c died of carrionplace disease."
                     }
                 ],
                 "join": [
@@ -3803,6 +3898,14 @@
                         ],
                         "new_status": [
                             "newborn"
+                        ]
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c2",
+                            "n_c0"
                         ]
                     }
                 ]
@@ -3949,8 +4052,8 @@
                         "age": [
                             "adult"
                         ],
-                        "backstory": [
-                            "loner3"
+                        "status": [
+                            "loner"
                         ]
                     }
                 },
@@ -3978,6 +4081,13 @@
                             "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner friend, n_c0, over the border."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -3993,8 +4103,8 @@
                                 "p_l"
                             ]
                         },
-                        "backstory": [
-                            "loner3"
+                        "status": [
+                            "loner"
                         ]
                     }
                 },
@@ -4037,6 +4147,13 @@
                             "cats_from": "n_c0 met {PRONOUN/n_c0/poss} Clancat mate, cat_to, over the border.",
                             "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner mate, n_c0, over the border."
                         }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
                     }
                 ]
             },
@@ -4053,8 +4170,8 @@
                                 "p_l"
                             ]
                         },
-                        "backstory": [
-                            "loner3"
+                        "status": [
+                            "loner"
                         ]
                     }
                 },
@@ -4098,12 +4215,19 @@
                             "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner mate, n_c0, over the border."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
                 "frequency": 4,
                 "strings": [
-                    "n_c0 \u2014 p_l's heart leaps and drops with every single visit, each time a gamble on if {PRONOUN/p_l/poss} hidden love will still be there for the next stolen moment. {PRONOUN/p_l/subject/CAP} can't take the uncertainty for much longer, but {PRONOUN/p_l/subject} can't let go of this connection {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} either. Please, <i>please</i> n_c0, come back to c_n. Stay."
+                    "n_c0 — p_l's heart leaps and drops with every single visit, each time a gamble on if {PRONOUN/p_l/poss} hidden love will still be there for the next stolen moment. {PRONOUN/p_l/subject/CAP} can't take the uncertainty for much longer, but {PRONOUN/p_l/subject} can't let go of this connection {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} either. Please, <i>please</i> n_c0, come back to c_n. Stay."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -4199,8 +4323,8 @@
                                 "p_l"
                             ]
                         },
-                        "backstory": [
-                            "loner3"
+                        "status": [
+                            "loner"
                         ]
                     }
                 },
@@ -4247,6 +4371,13 @@
                             "p_l"
                         ]
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -4261,8 +4392,8 @@
                                 "p_l"
                             ]
                         },
-                        "backstory": [
-                            "loner3"
+                        "status": [
+                            "loner"
                         ]
                     }
                 },
@@ -4302,6 +4433,13 @@
                             "cats_from": "cat_to tried to meet {PRONOUN/cat_to/poss} mate, n_c0, by the border, but {PRONOUN/n_c0/subject} {VERB/n_c0/were/was} gone already."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             }
         ],
@@ -4318,8 +4456,8 @@
                                 "p_l"
                             ]
                         },
-                        "backstory": [
-                            "loner3"
+                        "status": [
+                            "loner"
                         ]
                     }
                 },
@@ -4393,8 +4531,8 @@
                                 "p_l"
                             ]
                         },
-                        "backstory": [
-                            "loner3"
+                        "status": [
+                            "loner"
                         ]
                     }
                 },
@@ -4866,7 +5004,14 @@
                         ]
                     }
                 },
-                "exp_gained": 0
+                "exp_gained": 0,
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -5094,7 +5239,14 @@
                         ]
                     }
                 },
-                "exp_gained": 0
+                "exp_gained": 0,
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             }
         ],
         "antag_success_outcomes": [
@@ -5293,7 +5445,14 @@
                         ]
                     }
                 },
-                "exp_gained": 0
+                "exp_gained": 0,
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             },
             {
                 "frequency": 3,
@@ -5316,10 +5475,17 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "claw-wound"
+                            "claw_wound"
                         ],
                         "scar_history": "m_c was scarred when a loner attacked {PRONOUN/m_c/object}.",
                         "death_history": "m_c died after a loner attacked {PRONOUN/m_c/object}."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
                     }
                 ]
             }
@@ -5710,7 +5876,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "claw-wound"
+                            "claw_wound"
                         ],
                         "scar_pool_override": [
                             "FACE",
@@ -5720,6 +5886,13 @@
                         ],
                         "scar_history": "m_c gained a scar after tussling with a rogue.",
                         "death_history": "m_c died from injuries sustained in a fight with a rogue."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
                     }
                 ]
             }
@@ -7628,7 +7801,14 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                }
+                },
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             },
             {
                 "frequency": 4,
@@ -7657,7 +7837,14 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                }
+                },
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             },
             {
                 "frequency": 3,
@@ -7687,6 +7874,13 @@
                         ],
                         "scar_history": "m_c gained a scar from a fight with an angry kittypet.",
                         "death_history": "m_c died of injuries inflicted by an intruding kittypet."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
                     }
                 ]
             }
@@ -9135,6 +9329,13 @@
                             "cats_from": "cat_to and cat_from trained and talked for hours about how each other's lives are."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -9175,6 +9376,13 @@
                         "log": {
                             "cats_from": "cat_to and cat_from talked for hours about how each other's lives are."
                         }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
                     }
                 ]
             },
@@ -9229,6 +9437,13 @@
                             "cats_from": "cat_to and cat_from talked for hours and quickly became friends."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -9282,6 +9497,13 @@
                             "cats_from": "cat_to and cat_from talked for hours about kittypet life and quickly became friends."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             }
         ],
@@ -9302,7 +9524,14 @@
                         ]
                     }
                 },
-                "exp_gained": 0
+                "exp_gained": 0,
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             },
             {
                 "frequency": 4,
@@ -9320,7 +9549,14 @@
                         ]
                     }
                 },
-                "exp_gained": 0
+                "exp_gained": 0,
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             },
             {
                 "frequency": 4,
@@ -9345,12 +9581,19 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "torn pelt",
-                            "torn ear",
+                            "torn_pelt",
+                            "torn_ear",
                             "minor_injury"
                         ],
                         "scar_history": "m_c was scarred after being attacked by a startled loner.",
                         "death_history": "m_c died from injuries {PRONOUN/p_l/subject} sustained after being attacked by a startled loner."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
                     }
                 ]
             },
@@ -9377,12 +9620,19 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "torn pelt",
-                            "torn ear",
+                            "torn_pelt",
+                            "torn_ear",
                             "minor_injury"
                         ],
                         "scar_history": "m_c was scarred after being attacked by a startled kittypet.",
                         "death_history": "m_c died from injuries {PRONOUN/p_l/subject} sustained after being attacked by a startled kittypet."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
                     }
                 ]
             },
@@ -9433,6 +9683,13 @@
                             "p_l"
                         ]
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -9480,6 +9737,13 @@
                     {
                         "cats": [
                             "p_l"
+                        ]
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
                         ]
                     }
                 ]
@@ -9574,7 +9838,7 @@
                         "condition": [
                             "battle_injury",
                             "minor_injury",
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "no_results": true,
                         "scar_history": "m_c was scarred after fighting with another cat.",
@@ -9588,8 +9852,8 @@
                             "sore",
                             "bruises",
                             "scrapes",
-                            "torn ear",
-                            "torn pelt"
+                            "torn_ear",
+                            "torn_pelt"
                         ],
                         "scar_history": "m_c was scarred after fighting with another cat.",
                         "death_history": "m_c died from injuries sustained after fighting with another cat."
@@ -9640,9 +9904,9 @@
                             "n_c0"
                         ],
                         "condition": [
-                            "claw-wound",
-                            "torn pelt",
-                            "torn ear",
+                            "claw_wound",
+                            "torn_pelt",
+                            "torn_ear",
                             "minor_injury"
                         ],
                         "no_results": true,
@@ -9791,9 +10055,9 @@
                             "p_l"
                         ],
                         "condition": [
-                            "claw-wound",
-                            "torn pelt",
-                            "torn ear",
+                            "claw_wound",
+                            "torn_pelt",
+                            "torn_ear",
                             "minor_injury"
                         ],
                         "scar_history": "m_c was scarred after losing a fight with a loner.",
@@ -9862,9 +10126,9 @@
                             "p_l"
                         ],
                         "condition": [
-                            "claw-wound",
-                            "torn pelt",
-                            "torn ear",
+                            "claw_wound",
+                            "torn_pelt",
+                            "torn_ear",
                             "minor_injury"
                         ],
                         "scar_history": "m_c was scarred after losing a fight with a kittypet.",
@@ -9962,6 +10226,13 @@
                             "cats_from": "cat_from was amused by how confidently cat_to trespassed to ask for directions to a stream or river."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -10040,6 +10311,13 @@
                         "type": "freshkill",
                         "adjust": "increase_medium"
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -10113,6 +10391,13 @@
                     {
                         "type": "freshkill",
                         "adjust": "increase_medium"
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
                     }
                 ]
             }
@@ -10189,6 +10474,13 @@
                         "log": {
                             "cats_from": "cat_from heard that cat_to let a loner get away with stealing prey from c_n."
                         }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
                     }
                 ]
             },
@@ -10275,6 +10567,13 @@
                             "cats_from": "cat_to fooled cat_from while stealing prey from c_n's territory..."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -10327,6 +10626,13 @@
                         "log": {
                             "cats_from": "p_l let n_c0 get away with stealing prey, and the two cats spent the day flirting and getting to know each other."
                         }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
                     }
                 ]
             },
@@ -10414,10 +10720,17 @@
                             "p_l"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c was scarred up by a fight {PRONOUN/m_c/subject} had with a treacherous, flirtatious rogue.",
                         "death_history": "m_c died of wounds sustained fighting a treacherous, flirtatious rogue."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
                     }
                 ]
             }
@@ -10766,7 +11079,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c was scarred in a fight with another cat.",
                         "death_history": "m_c died of wounds sustained from a fight with another cat."

@@ -112,14 +112,14 @@
             "Here on the plains, the reaches of c_n's territory is vast, particularly in the direction p_l and {PRONOUN/p_l/poss} patrol are heading, where there is endless grass but no permanent water sources. The greenleaf sun beats down strongly."
         ],
         "decline_strings": [
-            "The patrol is interrupted by a hunting patrol that needs help carrying prey back to camp \u2014 border marking will wait til later."
+            "The patrol is interrupted by a hunting patrol that needs help carrying prey back to camp — border marking will wait til later."
         ],
         "success_outcomes": [
             {
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_train_talking_WrWr",
                 "strings": [
-                    "The grass has gone to seed in this area. p_l makes a note to share the knowledge back at camp \u2014 there'll be good hunting here, even if it's a trek to come out so far. c_n will need to send out another patrol to finish the task, there's still more ground to cover here."
+                    "The grass has gone to seed in this area. p_l makes a note to share the knowledge back at camp — there'll be good hunting here, even if it's a trek to come out so far. c_n will need to send out another patrol to finish the task, there's still more ground to cover here."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -145,7 +145,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_hunt_funrun_WrWr",
                 "strings": [
-                    "s_c0 isn't just talented at running fast \u2014 on the plains, you also need to cover lots of ground too, and {PRONOUN/s_c0/subject} {VERB/s_c0/share/shares} {PRONOUN/s_c0/poss} tips for endurance. The other cats purr gratitude at the end of the day. Everyone's exhausted, but they made it the entire length of that far off border thanks to s_c0."
+                    "s_c0 isn't just talented at running fast — on the plains, you also need to cover lots of ground too, and {PRONOUN/s_c0/subject} {VERB/s_c0/share/shares} {PRONOUN/s_c0/poss} tips for endurance. The other cats purr gratitude at the end of the day. Everyone's exhausted, but they made it the entire length of that far off border thanks to s_c0."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -463,7 +463,7 @@
                             "some_patrol"
                         ],
                         "condition": [
-                            "heat stroke"
+                            "heat_stroke"
                         ]
                     }
                 ]
@@ -675,7 +675,7 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyotedanger",
                 "strings": [
-                    "There's a lone oak near here. p_l darts towards it with the patrol, scrambling up. Not a moment too soon \u2014 from their perch in the oak, the patrol hears the scrabbling of paws and a yip of frustration. That confirms the coyote exists and is interested in cat meat. They wait for the predator to give up, so they can go warn c_n."
+                    "There's a lone oak near here. p_l darts towards it with the patrol, scrambling up. Not a moment too soon — from their perch in the oak, the patrol hears the scrabbling of paws and a yip of frustration. That confirms the coyote exists and is interested in cat meat. They wait for the predator to give up, so they can go warn c_n."
                 ],
                 "exp_gained": 40,
                 "relationship_changes": [
@@ -1072,7 +1072,7 @@
                         ],
                         "condition": [
                             "minor_injury",
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "Killing a juvenile coyote and being driven off by its parents left its scars on r_c0.",
                         "death_history": "m_c died to keep coyotes away from c_n's borders."
@@ -1253,7 +1253,7 @@
         "chance_of_success": 10,
         "patrol_art": "cat_sprites/gen_bord_dogscent_Wr",
         "intro_strings": [
-            "Approaching the border, the patrol stops in their tracks. A coyote has marked over c_n's border markings \u2014 so recently that it stinks from several fox-lengths away, so recently that the canine might be still here, hiding in the tall greenleaf grass."
+            "Approaching the border, the patrol stops in their tracks. A coyote has marked over c_n's border markings — so recently that it stinks from several fox-lengths away, so recently that the canine might be still here, hiding in the tall greenleaf grass."
         ],
         "decline_strings": [
             "The patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp."
@@ -1501,7 +1501,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "Mauling a juvenile coyote and being driven off by its parents left its scars on r_c0.",
                         "death_history": "m_c died from injuries sustained keeping coyotes away from c_n's borders."
@@ -1656,7 +1656,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "bite-wound"
+                            "bite_wound"
                         ],
                         "scar_history": "Killing a juvenile coyote and being driven off by its parents left its scars on r_c0.",
                         "death_history": "m_c died from injuries sustained keeping coyotes away from c_n's borders."
@@ -1666,7 +1666,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "blood loss"
+                            "blood_loss"
                         ],
                         "scar_history": "Killing a juvenile coyote and being driven off by its parents left its scars on r_c0.",
                         "death_history": "m_c died from injuries sustained keeping coyotes away from c_n's borders."
@@ -1943,7 +1943,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "A coyote encounter left its scars on r_c0.",
                         "death_history": "m_c died from injuries sustained keeping coyotes away from c_n's borders."
@@ -2066,7 +2066,7 @@
                         ],
                         "condition": [
                             "minor_injury",
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "Killing a juvenile coyote and being driven off by its parents left its scars on r_c0.",
                         "death_history": "m_c died from injuries sustained keeping coyotes away from c_n's borders."
@@ -2836,7 +2836,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "claw-wound",
+                            "claw_wound",
                             "beak_bite"
                         ],
                         "scar_history": "m_c proudly bears scars from defending a friend from an eagle.",
@@ -2931,7 +2931,7 @@
                             "r_c2"
                         ],
                         "condition": [
-                            "claw-wound",
+                            "claw_wound",
                             "beak_bite"
                         ],
                         "scar_history": "m_c bears scars from an eagle that nearly killed {PRONOUN/m_c/object} as an apprentice.",
@@ -3087,7 +3087,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c was scarred up by a fight {PRONOUN/m_c/subject} had as an apprentice with another apprentice of c_n.",
                         "death_history": "The wounds obtained fighting another apprentice eventually killed m_c."
@@ -3097,7 +3097,7 @@
                             "r_c2"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c was scarred up by a fight {PRONOUN/m_c/subject} had as an apprentice with another apprentice of c_n.",
                         "death_history": "The wounds obtained fighting another apprentice eventually killed m_c."

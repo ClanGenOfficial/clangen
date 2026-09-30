@@ -1,0 +1,12 @@
+[
+    {
+        "event_id": "crooked_jaw0",
+        "strings": [
+            "m_c's jaw never seemed to close quite right, and {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} definitely not growing out of it.",
+            "m_c has always had trouble suckling, but the reason why is only now starting to be really apparent."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

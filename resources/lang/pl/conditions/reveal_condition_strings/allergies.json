@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "allergies0",
+        "strings": [
+            "m_c sneezes again, {PRONOUN/m_c/poss} frantic parent yowling about whitecough, but r_c0 calms everyone down. It's only allergies, and {PRONOUN/r_c0/subject} {VERB/r_c0/have/has} just the herbs to help."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "allergies1",
+        "strings": [
+            "In the middle of playing, m_c sneezes so hard {PRONOUN/m_c/subject} {VERB/m_c/fall/falls} over. Again. This is really becoming a pattern."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

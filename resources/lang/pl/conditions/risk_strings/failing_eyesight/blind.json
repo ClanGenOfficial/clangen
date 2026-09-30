@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "failing_eyesight_blind0",
+        "strings": [
+            "m_c's vision seems to narrow and darken day by day. Now with only a vague sense of light and shadow, there's nothing more r_c0 can do to help {PRONOUN/m_c/object}."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "failing_eyesight_blind1",
+        "strings": [
+            "m_c's eyesight had only been getting worse. Now, it seems to have finally left altogether."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

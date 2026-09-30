@@ -53,12 +53,13 @@ from scripts.game_structure.game.switches import (
 )
 from scripts.game_structure import game
 from scripts.housekeeping.datadir import get_save_dir
-from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
+from scripts.housekeeping.game_version import get_version_info, SAVE_VERSION_NUMBER
 from scripts.clan_package.clan_symbols import clan_symbol_sprite
 from scripts.clan_package.get_clan_cats import (
     get_living_clan_cat_count,
     find_alive_cats_with_rank,
 )
+from scripts.housekeeping.save_version_retrieval import get_version
 from scripts.screens.screens_core.screens_core import rebuild_top_menu_buttons
 
 
@@ -619,7 +620,8 @@ class Clan:
         ) or os.path.exists(
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "/clan.json"
         ):
-            version_info = self.load_clan_json()
+            version_info = get_version()
+            self.load_clan_json()
         elif os.path.exists(
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "clan.txt"
         ):
@@ -877,13 +879,6 @@ class Clan:
         if game.clan.game_mode != "classic":
             self.load_freshkill_pile(game.clan)
         switch_set_value(Switch.error_message, "")
-
-        # Return Version Info.
-        return {
-            "version_name": clan_data.get("version_name"),
-            "version_commit": clan_data.get("version_commit"),
-            "source_build": clan_data.get("source_build"),
-        }
 
     def load_pregnancy(self, clan):
         """

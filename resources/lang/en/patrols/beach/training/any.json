@@ -1988,7 +1988,7 @@
                             "s_c1"
                         ],
                         "condition": [
-                            "small cut"
+                            "small_cut"
                         ]
                     }
                 ]

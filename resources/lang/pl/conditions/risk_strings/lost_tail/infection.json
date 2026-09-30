@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "lost_tail_infection0",
+        "strings": [
+            "r_c0 drags m_c into the medicine cat den to apply an herbal salve despite m_c's protests. {PRONOUN/r_c0/subject/CAP}{VERB/r_c0/'ve/'s} begun to smell infection in the tail stump."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "lost_tail_infection1",
+        "strings": [
+            "The stump where m_c's tail used to be has become infected."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

@@ -434,7 +434,7 @@ dev_tools = false
       comfort = 30
       trust = 25
 
-      
+
 [cat_generation]
   # base 1/chance that a cat will generate with a permanent condition. gets modified further in code
   base_permanent_condition = 90
@@ -580,6 +580,20 @@ dev_tools = false
   lineart_color_sc = [47, 51, 64]
   lineart_color_df = [30, 8, 11]
 
+  # determines which scars can't show up with other scars
+  # if cat has the key scar, then the value scars will no longer be allowed
+  [cat_sprites.scar_conflicts]
+    NOPAW = ["TOETRAP", "RATBITE", "FROSTSOCK"]
+    NOTAIL = ["HALFTAIL", "TAILBASE", "TAILSCAR", "MANTAIL", "BURNTAIL", "FROSTTAIL"]
+    HALFTAIL = ["TAILSCAR", "MANTAIL", "FROSTTAIL"]
+    BRIGHTHEART = ["RIGHTBLIND", "BOTHBLIND"]
+    BOTHBLIND = ["THREE", "RIGHTBLIND", "LEFTBLIND", "BOTHBLIND", "BRIGHTHEART"]
+    NOEAR = ["LEFTEAR", "RIGHTEAR", "NOLEFTEAR", "NORIGHTEAR", "FROSTFACE"]
+    MANTAIL = ["BURNTAIL", "FROSTTAIL"]
+    BURNTAIL = ["MANTAIL", "FROSTTAIL"]
+    NOLEFT = ["LEFTEAR"]
+    NORIGHT = ["RIGHTEAR"]
+
 [thought_generation]
   # the ID of the thoughts to ensure
   debug_ensure_thought_id = ""
@@ -682,8 +696,11 @@ dev_tools = false
   illness_chance = 250
   classic_illness_chance = 500
 
+  # how much the mortality will decrease each moon that the cat has a condition
+  moonskip_mortality_reduction = 0.05
+
   # how much each medicine cat reduces the chance of infection, higher number is better
-  med_infection_reduction = 10
+  med_infection_reduction = 0.05
   # the seasons in which illnesses can spread. Fleas will always be able to spread in all seasons.
   illness_outbreak_season = ["Leaf-bare", "Leaf-fall"]
   # if there are more sick cats than this percentage of healthy cats then further outbreaks are prevented
@@ -701,9 +718,34 @@ dev_tools = false
   # SUBTRACTS from the denominator so higher = more likely to get injured
   war_injury_modifier = 225
 
-[medcats]
-  # base number of cats each medcat can care for, before skill/experience modifiers
-  medcat_base_capacity = 10
+  [condition_related.medcats]
+    # base number of cats each medcat can care for, before skill/experience modifiers
+    medcat_base_capacity = 10
+
+  # dictates the chance for cats to get various diseases in each season
+  [condition_related.seasonal_chances]
+    [condition_related.seasonal_chances.newleaf]
+      running_nose = 2
+      stomachache = 1
+      tick_fever = 1
+    [condition_related.seasonal_chances.greenleaf]
+      fleas = 2
+      stomachache = 1
+      heat_exhaustion = 3
+      heat_stroke = 1
+      tick_fever = 1
+    [condition_related.seasonal_chances.leaf-fall]
+      stomachache = 1
+      greencough = 1
+      kittencough = 1
+      running_nose = 3
+    [condition_related.seasonal_chances.leaf-bare]
+      stomachache = 1
+      greencough = 3
+      running_nose = 1
+      kittencough = 4
+      yellowcough = 3
+
 
 [clan_creation]
   # Set this to -1 for it to be infinite
@@ -822,16 +864,16 @@ dev_tools = false
     # list of injuries which can occur and to which distribution
     # INFO: current sum of injuries is 100 - for easier understanding it should stay the same
     [focus."raid_other_clans".injuries]
-      claw-wound = 15
-      "cat bite" = 15
-      "torn pelt" = 15
-      "torn ear" = 15
-      bite-wound = 10
+      claw_wound = 15
+      cat_bite = 15
+      torn_pelt = 15
+      torn_ear = 15
+      bite_wound = 10
       sprain = 10
       bruises = 7
       sore = 6
-      "small cut" = 4
-      "cracked pads" = 3
+      small_cut = 4
+      cracked_pads = 3
 
   [focus.hoarding]
     # how much prey each working warrior(leader/deputy) will gather
@@ -850,20 +892,20 @@ dev_tools = false
     # list of injuries which can occur and to which distribution
     # INFO: current sum of injuries is 100 - for easier understanding it should stay the same
     [focus.hoarding.injuries]
-      "cracked pads" = 15
+      cracked_pads = 15
       sore = 15
       bruises = 15
       sprain = 12
-      "small cut" = 10
-      "torn pelt" = 10
-      "torn ear" = 10
-      claw-wound = 5
-      bite-wound = 5
-      "cat bite" = 3
+      small_cut = 10
+      torn_pelt = 10
+      torn_ear = 10
+      claw_wound = 5
+      bite_wound = 5
+      cat_bite = 3
 
     # list of illnesses which can occur and to which distribution
     [focus.hoarding.illnesses]
-      "running nose" = 5
+      running_nose = 5
       whitecough = 1
 
   [focus.rest_and_recover]
@@ -944,9 +986,10 @@ dev_tools = false
     excess = 2
 
     # base effects for herbs that have specified effects
-    base_mortality_effect = 3
+    base_mortality_effect = 0.05
     base_duration_effect = 1
-    base_risk_effect = 3
+    base_risk_effect = 0.05
+    base_progression_effect = 0.05
 
     # herb bonus applied when cats should gather a boosted number of herbs
     general_amount_bonus = 2

@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "outbreak_whitecough_spread0",
+        "strings": [
+            "Whitecough has spread around the camp. multi_cat have been infected."
+        ],
+        "involved_cats": {
+            "multi_cat": {}
+        }
+    }
+]

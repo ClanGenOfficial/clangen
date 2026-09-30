@@ -1,0 +1,15 @@
+[
+    {
+        "event_id": "cracked_pads0",
+        "strings": [
+            "m_c's pads have healed.",
+            "m_c can walk without pain. {PRONOUN/m_c/poss/CAP} cracked pads have healed.",
+            "m_c's cracked pads are feeling better.",
+            "m_c's pads are no longer cracked.",
+            "m_c's cracked pads have healed."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

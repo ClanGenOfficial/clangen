@@ -255,11 +255,14 @@ class UICatListDisplay(UIContainer):
     def create_cat_button(self, i, kitty, container):
         if self.tool_tip_nutrition:
             condition_list = []
-            if kitty.illnesses:
-                if "starving" in kitty.illnesses.keys():
-                    condition_list.append(i18n.t("conditions.illnesses.starving"))
-                elif "malnourished" in kitty.illnesses.keys():
-                    condition_list.append(i18n.t("conditions.illnesses.malnourished"))
+            if "starving" in kitty.temporary_conditions:
+                condition_list.append(
+                    i18n.t("conditions.temporary_conditions.starving")
+                )
+            elif "malnourished" in kitty.temporary_conditions:
+                condition_list.append(
+                    i18n.t("conditions.temporary_conditions.malnourished")
+                )
             nutrition_info = game.clan.freshkill_pile.nutrition_info
             if kitty.ID in nutrition_info:
                 full_text = i18n.t(

@@ -13,10 +13,6 @@
         "relations_neutral": " (o_c_n relations unchanged.)",
         "relations_worsened": " (o_c_n relations worsened.)",
         "lead_den_killed": "m_c was killed by c_n.",
-        "condition_retire_adolescent": "%{name} decides {PRONOUN\/m_c\/subject}'d rather spend {PRONOUN\/m_c\/poss} time helping around camp and entertaining the kits; {PRONOUN\/m_c\/subject}{VERB\/m_c\/'re\/'s} warmly welcomed into the elders' den.",
-        "condition_retire_adolescent_ceremony": " {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/are\/is} given the name %{newname} in honor of {PRONOUN\/m_c\/poss} contributions to %{clan}.",
-        "condition_retire_no_leader": "m_c has decided to retire from normal Clan duty.",
-        "condition_retire_normal": "Seeing m_c struggling the last few moons, lead_name approaches {PRONOUN\/m_c\/object} and promises that no one would think less of {PRONOUN\/m_c\/object} for retiring early, and that {PRONOUN\/m_c\/subject} would still be a valuable member of the Clan as an elder. m_c agrees; later that day, {PRONOUN\/m_c\/poss} elder ceremony is held.",
         "ceremony_closer": "Visit lead_name's profile to see {PRONOUN\/lead_name\/poss} full leader ceremony.",
         "ceremony_deputy_none": "There are no cats fit to become deputy.",
         "adoption_kittens_single": {
@@ -53,9 +49,9 @@
             "many": "Fleas have been hopping from pelt to pelt and now %{cats} are all infested."
         },
         "illness_spread": "%{illness} has spread around the camp. %{cats} have been infected.",
-        "scar_event0": "m_c's %{injury} has healed, but {PRONOUN/m_c/subject}'ll always carry evidence of it on {PRONOUN/m_c/poss} pelt.",
-        "scar_event1": "m_c healed from {PRONOUN/m_c/poss} %{injury} but will forever be marked by a scar.",
-        "scar_event2": "m_c's %{injury} has healed, but the injury left {PRONOUN/m_c/object} scarred.",
+        "scar_event0": "m_c's %{condition} has healed, but {PRONOUN/m_c/subject}'ll always carry evidence of it on {PRONOUN/m_c/poss} pelt.",
+        "scar_event1": "m_c healed from {PRONOUN/m_c/poss} %{condition} but will forever be marked by a scar.",
+        "scar_event2": "m_c's %{condition} has healed, but the injury left {PRONOUN/m_c/object} scarred.",
         "move_on_dead_mate": "m_c will always love r_c, but has decided to move on.",
         "expired_prey": {
             "one": "A piece of freshkill expired and was removed from the freshkill pile.",

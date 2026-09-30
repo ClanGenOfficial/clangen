@@ -1013,7 +1013,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "shivering"
+                            "dangerously_cold"
                         ],
                         "scar_history": "m_c was scarred from the bite of the cold stream {PRONOUN/m_c/subject} fell into as an apprentice.",
                         "death_history": "Falling into a cold stream gave m_c problems that eventually resulted in {PRONOUN/m_c/poss} death."

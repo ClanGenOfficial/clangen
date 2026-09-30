@@ -1,0 +1,263 @@
+{
+  "$defs": {
+    "Age": {
+      "enum": [
+        "newborn",
+        "-newborn",
+        "kitten",
+        "-kitten",
+        "adolescent",
+        "-adolescent",
+        "young adult",
+        "-young adult",
+        "adult",
+        "-adult",
+        "senior adult",
+        "-senior adult",
+        "senior",
+        "-senior"
+      ],
+      "title": "Age",
+      "type": "string"
+    },
+    "Herb": {
+      "enum": [
+        "elder_leaves",
+        "cobwebs",
+        "daisy",
+        "horsetail",
+        "juniper",
+        "lungwort",
+        "mallow",
+        "marigold",
+        "moss",
+        "oak_leaves",
+        "ragwort",
+        "raspberry",
+        "tansy",
+        "thyme",
+        "wild_garlic",
+        "dandelion",
+        "mullein",
+        "rosemary",
+        "burdock",
+        "blackberry",
+        "betony",
+        "goldenrod",
+        "poppy",
+        "plantain",
+        "catmint",
+        "honey",
+        "yew_berries"
+      ],
+      "title": "Herb",
+      "type": "string"
+    },
+    "ProgressionDict": {
+      "additionalProperties": false,
+      "properties": {
+        "chance": {
+          "description": "Percentage chance to progress to this condition",
+          "title": "Chance",
+          "type": "number"
+        },
+        "when": {
+          "description": "The state the condition must be in to allow this progression to occur.",
+          "enum": [
+            "CONTINUING",
+            "FATAL",
+            "HEALED",
+            "REVEALED"
+          ],
+          "title": "When",
+          "type": "string"
+        },
+        "allow_scar": {
+          "description": "If progressing to this condition should be allowed the chance to scar.",
+          "title": "Allow Scar",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "chance",
+        "when"
+      ],
+      "title": "ProgressionDict",
+      "type": "object"
+    },
+    "Scar": {
+      "enum": [
+        "ONE",
+        "TWO",
+        "THREE",
+        "TAILSCAR",
+        "SNOUT",
+        "CHEEK",
+        "SIDE",
+        "THROAT",
+        "TAILBASE",
+        "BELLY",
+        "LEGBITE",
+        "NECKBITE",
+        "FACE",
+        "MANLEG",
+        "BRIGHTHEART",
+        "MANTAIL",
+        "BRIDGE",
+        "RIGHTBLIND",
+        "LEFTBLIND",
+        "BOTHBLIND",
+        "BEAKCHEEK",
+        "BEAKLOWER",
+        "CATBITE",
+        "RATBITE",
+        "QUILLCHUNK",
+        "QUILLSCRATCH",
+        "HINDLEG",
+        "BACK",
+        "QUILLSIDE",
+        "SCRATCHSIDE",
+        "BEAKSIDE",
+        "CATBITETWO",
+        "FOUR",
+        "LEFTEAR",
+        "RIGHTEAR",
+        "NOTAIL",
+        "HALFTAIL",
+        "NOPAW",
+        "NOLEFTEAR",
+        "NORIGHTEAR",
+        "NOEAR",
+        "SNAKE",
+        "TOETRAP",
+        "BURNPAWS",
+        "BURNTAIL",
+        "BURNBELLY",
+        "BURNRUMP",
+        "FROSTFACE",
+        "FROSTTAIL",
+        "FROSTMITT",
+        "FROSTSOCK",
+        "TOE",
+        "SNAKETWO"
+      ],
+      "title": "Scar",
+      "type": "string"
+    },
+    "TemporaryConditionInfoSchemaItem": {
+      "additionalProperties": false,
+      "properties": {
+        "severity": {
+          "description": "Severity of the condition. For permanent conditions, major and severe conditions can cause the cat to retire early. For temporary conditions, major and minors conditions will prevent the cat from working.",
+          "enum": [
+            "major",
+            "minor",
+            "severe"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "mortality": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "description": "Percent chance for this condition to kill the cat. Can be left empty if the condition is not fatal.",
+          "propertyNames": {
+            "$ref": "#/$defs/Age"
+          },
+          "title": "Mortality",
+          "type": "object"
+        },
+        "immune_system_effect": {
+          "description": "Effect on the percent chance that this cat will be infected by a different condition. This float will be added to the percent chance, thus increasing the cat's likely-hood to contract an infectious condition.",
+          "title": "Immune System Effect",
+          "type": "number"
+        },
+        "progression": {
+          "additionalProperties": {
+            "$ref": "#/$defs/ProgressionDict"
+          },
+          "description": "The conditions that this condition can progress into (i.e. be replaced by). Can be left empty if the condition has no progressions.",
+          "title": "Progression",
+          "type": "object"
+        },
+        "risks": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "description": "Extra conditions that can be gained while the cat has this condition. Float is the percentage chance to apply this condition.",
+          "title": "Risks",
+          "type": "object"
+        },
+        "treatment_strength": {
+          "additionalProperties": {
+            "items": {
+              "$ref": "#/$defs/Herb"
+            },
+            "type": "array"
+          },
+          "description": "Lists of herbs that can be used for treatment of this condition. The 1, 2, 3 keys correspond to the strength of the herbs. Can be left empty if no herbs can be used to treat this condition.",
+          "propertyNames": {
+            "enum": [
+              "1",
+              "2",
+              "3"
+            ]
+          },
+          "title": "Treatment Strength",
+          "type": "object"
+        },
+        "possible_scars": {
+          "description": "List of scars this condition can give upon healing.",
+          "items": {
+            "$ref": "#/$defs/Scar"
+          },
+          "title": "Possible Scars",
+          "type": "array"
+        },
+        "duration": {
+          "description": "How many moons the cat will have this condition.",
+          "title": "Duration",
+          "type": "integer"
+        },
+        "infectiousness": {
+          "description": "Percentage chance that the cat will infect others with this condition. Can be set to 0.0 if the condition cannot infect others.",
+          "title": "Infectiousness",
+          "type": "number"
+        },
+        "side_effect": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "description": "Extra conditions that can also be applied as a 'bonus' when this condition is given to the cat. Float is the percentage chance that the condition will be applied.",
+          "title": "Side Effect",
+          "type": "object"
+        },
+        "is_complication": {
+          "description": "If condition is a complication of another condition (i.e. infection is a complication) and cannot be given on it's own.",
+          "title": "Is Complication",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "severity",
+        "mortality",
+        "immune_system_effect",
+        "progression",
+        "risks",
+        "treatment_strength",
+        "duration",
+        "infectiousness",
+        "side_effect"
+      ],
+      "title": "TemporaryConditionInfoSchemaItem",
+      "type": "object"
+    }
+  },
+  "additionalProperties": {
+    "$ref": "#/$defs/TemporaryConditionInfoSchemaItem"
+  },
+  "description": "Temporary condition info in Clan Generator.",
+  "title": "TemporaryConditionInfoSchema",
+  "type": "object"
+}

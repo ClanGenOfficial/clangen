@@ -1,0 +1,248 @@
+{
+    "weak_leg": {
+        "severity": "minor",
+        "can_be_congenital": true,
+        "can_be_acquired": true,
+        "requires_scar": false,
+        "moons_until_discovery": 3,
+        "mortality": {},
+        "immune_system_effect": 0.0,
+        "progression": {},
+        "risks": {
+            "sore": 0.1,
+            "joint_pain": 0.05
+        },
+        "treatment_strength": {
+            "1": [
+                "marigold",
+                "ragwort"
+            ],
+            "2": [
+                "daisy",
+                "juniper"
+            ],
+            "3": [
+                "thyme"
+            ]
+        },
+        "possible_scars": [
+            "FOUR",
+            "MANLEG",
+            "LEGBITE",
+            "TOETRAP",
+            "HINDLEG"
+        ]
+    },
+    "lost_tail": {
+        "severity": "minor",
+        "can_be_congenital": false,
+        "can_be_acquired": true,
+        "requires_scar": true,
+        "moons_until_discovery": 0,
+        "mortality": {},
+        "immune_system_effect": 0.0,
+        "progression": {},
+        "risks": {
+            "infection": 0.05,
+            "phantom_pain": 0.1
+        },
+        "treatment_strength": {
+            "1": [
+                "juniper"
+            ],
+            "2": [
+                "ragwort"
+            ],
+            "3": [
+                "poppy"
+            ]
+        },
+        "possible_scars": [
+            "NOTAIL",
+            "HALFTAIL"
+        ]
+    },
+    "born_without_tail": {
+        "severity": "minor",
+        "can_be_congenital": true,
+        "can_be_acquired": false,
+        "requires_scar": true,
+        "remove_on_death": false,
+        "moons_until_discovery": 0,
+        "mortality": {},
+        "immune_system_effect": 0.0,
+        "progression": {},
+        "risks": {},
+        "treatment_strength": {
+            "1": [],
+            "2": [],
+            "3": []
+        },
+        "possible_scars": [
+            "NOTAIL",
+            "HALFTAIL"
+        ]
+    },
+    "raspy_lungs": {
+        "severity": "minor",
+        "can_be_congenital": true,
+        "can_be_acquired": true,
+        "moons_until_discovery": 3,
+        "mortality": {},
+        "immune_system_effect": 0.0,
+        "progression": {},
+        "risks": {
+            "whitecough": 0.1,
+            "breathless_fit": 0.4
+        },
+        "treatment_strength": {
+            "1": [
+                "betony"
+            ],
+            "2": [
+                "rosemary",
+                "juniper"
+            ],
+            "3": [
+                "mullein"
+            ]
+        }
+    },
+    "partial_hearing_loss": {
+        "severity": "minor",
+        "can_be_congenital": true,
+        "can_be_acquired": true,
+        "requires_scar": false,
+        "moons_until_discovery": 2,
+        "mortality": {},
+        "immune_system_effect": 0.0,
+        "progression": {
+            "deaf": {
+                "chance": 0.05,
+                "when": "CONTINUING"
+            }
+        },
+        "risks": {},
+        "treatment_strength": {
+            "1": [],
+            "2": [],
+            "3": []
+        },
+        "possible_scars": [
+            "NOLEFTEAR",
+            "NORIGHTEAR",
+            "NOEAR"
+        ]
+    },
+    "constant_joint_pain": {
+        "severity": "minor",
+        "can_be_congenital": true,
+        "can_be_acquired": true,
+        "moons_until_discovery": 2,
+        "mortality": {},
+        "immune_system_effect": 0.0,
+        "progression": {},
+        "risks": {
+            "joint_pain": 0.4
+        },
+        "treatment_strength": {
+            "1": [
+                "marigold"
+            ],
+            "2": [
+                "daisy",
+                "ragwort",
+                "juniper"
+            ],
+            "3": [
+                "poppy"
+            ]
+        }
+    },
+    "allergies": {
+        "severity": "minor",
+        "can_be_congenital": true,
+        "can_be_acquired": false,
+        "moons_until_discovery": 2,
+        "mortality": {},
+        "immune_system_effect": 0.0,
+        "progression": {},
+        "risks": {
+            "running_nose": 0.1
+        },
+        "treatment_strength": {
+            "1": [
+                "juniper"
+            ],
+            "2": [],
+            "3": []
+        }
+    },
+    "lasting_grief": {
+        "severity": "minor",
+        "can_be_congenital": false,
+        "can_be_acquired": true,
+        "moons_until_discovery": 0,
+        "mortality": {},
+        "immune_system_effect": 0.0,
+        "progression": {},
+        "risks": {
+            "grief_stricken": 0.2,
+            "absent": 0.02
+        },
+        "treatment_strength": {
+            "1": [
+                "poppy"
+            ],
+            "2": [
+                "juniper",
+                "ragwort"
+            ],
+            "3": [
+                "thyme"
+            ]
+        }
+    },
+    "selective_mutism": {
+        "severity": "minor",
+        "can_be_congenital": true,
+        "can_be_acquired": true,
+        "moons_until_discovery": 4,
+        "mortality": {},
+        "immune_system_effect": 0.0,
+        "progression": {},
+        "risks": {},
+        "treatment_strength": {
+            "1": [
+                "poppy",
+                "juniper"
+            ],
+            "2": [],
+            "3": []
+        }
+    },
+    "damaged_throat": {
+        "severity": "minor",
+        "can_be_congenital": false,
+        "can_be_acquired": true,
+        "requires_scar": true,
+        "moons_until_discovery": 4,
+        "mortality": {},
+        "immune_system_effect": 0.0,
+        "progression": {},
+        "risks": {
+            "sore_throat": 0.4
+        },
+        "treatment_strength": {
+            "1": [
+                "poppy",
+                "honey"
+            ],
+            "2": [],
+            "3": []
+        },
+        "possible_scars": [
+            "THROAT"
+        ]
+    }
+}

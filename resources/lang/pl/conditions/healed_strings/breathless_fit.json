@@ -1,0 +1,12 @@
+[
+    {
+        "event_id": "breathless_fit0",
+        "strings": [
+            "The tightness in m_c's chest has finally abated.",
+            "m_c is thrilled to finally be out of {PRONOUN/m_c/poss} nest and breathing easy."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

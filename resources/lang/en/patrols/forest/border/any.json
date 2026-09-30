@@ -2412,7 +2412,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "torn pelt"
+                            "torn_pelt"
                         ],
                         "scar_history": "s_c0 was scarred by a brown bear."
                     }
@@ -2517,11 +2517,11 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "claw-wound",
-                            "mangled leg",
-                            "mangled tail",
-                            "torn pelt",
-                            "broken bone"
+                            "claw_wound",
+                            "mangled_leg",
+                            "mangled_tail",
+                            "torn_pelt",
+                            "broken_bone"
                         ],
                         "scar_history": "m_c was scarred after being mauled by a black bear.",
                         "death_history": "m_c was killed by their injuries after being mauled by a black bear."
@@ -2563,11 +2563,11 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "claw-wound",
-                            "mangled leg",
-                            "mangled tail",
-                            "torn pelt",
-                            "broken bone"
+                            "claw_wound",
+                            "mangled_leg",
+                            "mangled_tail",
+                            "torn_pelt",
+                            "broken_bone"
                         ],
                         "scar_history": "m_c was scarred after being mauled by a brown bear.",
                         "death_history": "m_c was killed by their injuries after being mauled by a brown bear."
@@ -2608,11 +2608,11 @@
                             "some_patrol"
                         ],
                         "condition": [
-                            "claw-wound",
-                            "mangled leg",
-                            "mangled tail",
-                            "torn pelt",
-                            "broken bone"
+                            "claw_wound",
+                            "mangled_leg",
+                            "mangled_tail",
+                            "torn_pelt",
+                            "broken_bone"
                         ],
                         "scar_history": "m_c was scarred on patrol by a black bear.",
                         "death_history": "m_c died of {PRONOUN/m_c/poss} injuries after a black bear attack."
@@ -2632,11 +2632,11 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "claw-wound",
-                            "mangled leg",
-                            "mangled tail",
-                            "torn pelt",
-                            "broken bone"
+                            "claw_wound",
+                            "mangled_leg",
+                            "mangled_tail",
+                            "torn_pelt",
+                            "broken_bone"
                         ],
                         "scar_history": "m_c was scarred on patrol by a brown bear.",
                         "death_history": "m_c died of {PRONOUN/m_c/poss} injuries after a brown bear attack."

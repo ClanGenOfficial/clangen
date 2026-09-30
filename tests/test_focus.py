@@ -189,8 +189,8 @@ class TestFocus(unittest.TestCase):
             game.clan.freshkill_pile.total_amount,
             msg=f"Prey supply did not change as expected.",
         )
-        self.assertTrue(self.leader.is_injured())
-        self.assertTrue(self.deputy.is_injured())
+        self.assertTrue(self.leader.temporary_conditions)
+        self.assertTrue(self.deputy.temporary_conditions)
 
     def test_hoarding(self):
         self.change_setting("hoarding")
@@ -215,9 +215,9 @@ class TestFocus(unittest.TestCase):
         self.assertTrue(
             all(
                 [
-                    self.leader.is_injured(),
-                    self.deputy.is_injured(),
-                    self.medicine_cat.is_injured(),
+                    self.leader.temporary_conditions,
+                    self.deputy.temporary_conditions,
+                    self.medicine_cat.temporary_conditions,
                 ]
             )
         )

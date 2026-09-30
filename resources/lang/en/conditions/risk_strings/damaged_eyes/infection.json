@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "damaged_eyes_infection0",
+        "strings": [
+            "r_c0 drips the juice of herbs into m_c's damaged eyes, not paying any attention to {PRONOUN/m_c/poss} protests. This infection needs to be stopped before it goes any further."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "damaged_eyes_infection1",
+        "strings": [
+            "m_c can't open {PRONOUN/m_c/poss} eyes for the swelling and crust that has accumulated. Hopefully this infection doesn't spread."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

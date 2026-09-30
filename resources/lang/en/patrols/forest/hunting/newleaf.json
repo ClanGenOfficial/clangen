@@ -1169,7 +1169,7 @@
                         "condition": [
                             "sprain",
                             "sore",
-                            "shivering"
+                            "dangerously_cold"
                         ],
                         "scar_history": "m_c was scarred after disappearing on patrol and catching a chill.",
                         "death_history": "m_c caught a chill on patrol and never recovered."

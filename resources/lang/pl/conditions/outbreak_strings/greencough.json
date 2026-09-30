@@ -1,0 +1,9 @@
+[
+    {
+        "event_id": "greencough_spread0",
+        "strings": ["Greencough has spread around the camp. multi_cat have been infected."],
+        "involved_cats": {
+            "multi_cat": {}
+        }
+    }
+]

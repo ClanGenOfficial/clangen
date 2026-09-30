@@ -1,0 +1,13 @@
+[
+    {
+        "event_id": "heat_stroke0",
+        "strings": [
+            "m_c is no longer suffering from heat stroke.",
+            "m_c has recovered from heat stroke.",
+            "m_c is feeling much better. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} recovered from the heat stroke."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

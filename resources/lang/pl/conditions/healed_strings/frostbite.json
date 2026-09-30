@@ -1,0 +1,14 @@
+[
+    {
+        "event_id": "frostbite0",
+        "strings": [
+            "m_c's frostbite is gone.",
+            "m_c has recovered from {PRONOUN/m_c/poss} frostbite.",
+            "m_c has managed to get rid of {PRONOUN/m_c/poss} frostbite.",
+            "m_c is no longer frostbitten."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

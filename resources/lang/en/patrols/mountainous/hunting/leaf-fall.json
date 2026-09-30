@@ -1740,7 +1740,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "broken bone"
+                            "broken_bone"
                         ],
                         "scar_history": "m_c was scarred after falling out of a tree on a hunt.",
                         "death_history": "m_c succumbed to a broken bone after falling out of a tree."
@@ -1988,7 +1988,7 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "shivering"
+                            "dangerously_cold"
                         ],
                         "scar_history": "m_c caught a chill while hunting in leaf-bare.",
                         "death_history": "m_c died to a chill {PRONOUN/m_c/subject} caught while hunting in leaf-fall."
@@ -2383,7 +2383,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "water in their lungs"
+                            "water_in_lungs"
                         ],
                         "death_history": "m_c died to complications caused by water in {PRONOUN/m_c/poss} lungs."
                     }

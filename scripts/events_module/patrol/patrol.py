@@ -613,13 +613,25 @@ class Patrol:
             f"Outcome Frequency: {chosen_outcome.frequency} | Outcome Weight: {chosen_outcome.weight}"
         )
 
-        # Run the chosen outcome
-        return handle_consequences.execute_outcome(
+        processed_text, results, rel_results = handle_consequences.execute_outcome(
             chosen_outcome,
             self.outcome_cats["success" if success else "failure"],
             self.other_clan,
             self.chosen_poi,
-        ) + (self.get_patrol_art(chosen_outcome),)
+        )
+        final_results = []
+        for r in results.values():
+            # filter out the "empty" values
+            if r:
+                final_results.append(r)
+
+        # Run the chosen outcome
+        return (
+            processed_text,
+            "\n".join(final_results),
+            rel_results,
+            self.get_patrol_art(chosen_outcome),
+        )
 
     def calculate_success(
         self, success_outcome: TextPoolEvent, fail_outcome: TextPoolEvent

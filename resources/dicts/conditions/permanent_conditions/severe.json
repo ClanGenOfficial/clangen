@@ -1,0 +1,59 @@
+{
+    "paralyzed": {
+        "severity": "severe",
+        "can_be_congenital": true,
+        "can_be_acquired": true,
+        "remove_on_death": false,
+        "moons_until_discovery": 0,
+        "mortality": {},
+        "immune_system_effect": 0.0,
+        "progression": {},
+        "risks": {
+            "torn_pelt": 0.3,
+            "sore": 0.4,
+            "joint_pain": 0.3
+        },
+        "treatment_strength": {
+            "1": [
+                "juniper",
+                "ragwort",
+                "marigold",
+                "dandelion"
+            ],
+            "2": [
+                "daisy",
+                "poppy"
+            ],
+            "3": [
+                "elder_leaves"
+            ]
+        }
+    },
+    "absent": {
+        "severity": "severe",
+        "can_be_congenital": true,
+        "can_be_acquired": true,
+        "moons_until_discovery": 95,
+        "mortality": {},
+        "immune_system_effect": 0.0,
+        "progression": {},
+        "risks": {
+            "joint_pain": 0.05,
+            "torn_pelt": 0.1,
+            "selective_mutism": 0.05
+        },
+        "treatment_strength": {
+            "1": [
+                "daisy",
+                "betony"
+            ],
+            "2": [
+                "thyme"
+            ],
+            "3": [
+                "juniper",
+                "ragwort"
+            ]
+        }
+    }
+}

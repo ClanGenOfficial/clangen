@@ -4753,7 +4753,7 @@
         "injury": [
             {
                 "cats": ["m_c"],
-                "injuries": ["beak bite"]
+                "injuries": ["beak_bite"]
             }
         ],
         "history": [
@@ -4800,7 +4800,7 @@
         "injury": [
             {
                 "cats": ["r_c"],
-                "injuries": ["beak bite"]
+                "injuries": ["beak_bite"]
             }
         ],
         "history": [
@@ -13835,7 +13835,7 @@
         "injury": [
             {
                 "cats": ["r_c"],
-                "injuries": ["claw-wound", "cat bite"]
+                "injuries": ["claw_wound", "cat_bite"]
             }
         ],
         "history": [
@@ -13902,11 +13902,11 @@
         "injury": [
             {
                 "cats": ["r_c"],
-                "injuries": ["claw-wound", "cat bite"]
+                "injuries": ["claw_wound", "cat_bite"]
             },
             {
                 "cats": ["m_c"],
-                "injuries": ["scrapes", "torn pelt"]
+                "injuries": ["scrapes", "torn_pelt"]
             }
         ],
         "history": [
@@ -14129,7 +14129,7 @@
         "injury": [
             {
                 "cats": ["r_c"],
-                "injuries": ["water in their lungs"]
+                "injuries": ["water_in_lungs"]
             }
         ],
         "history": [
@@ -14266,7 +14266,7 @@
         "injury": [
             {
                 "cats": ["r_c"],
-                "injuries": ["cat bite"]
+                "injuries": ["cat_bite"]
             }
         ],
         "history": [

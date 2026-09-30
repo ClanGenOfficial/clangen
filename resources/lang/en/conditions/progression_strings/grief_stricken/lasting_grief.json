@@ -1,0 +1,28 @@
+[
+    {
+        "event_id": "grief_stricken_lasting_grief0",
+        "strings": [
+            "m_c gazes blankly at the wall of the medicine cat den, not acknowledging r_c0 beside {PRONOUN/m_c/object}. r_c0 sighs and sits beside {PRONOUN/m_c/object}, hoping that {PRONOUN/r_c0/poss} presence can provide some comfort."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "grief_stricken_lasting_grief1",
+        "strings": [
+            "m_c curls up in {PRONOUN/m_c/poss} nest, numb to the other cats beside {PRONOUN/m_c/object}. There's a hole inside {PRONOUN/m_c/poss} heart now that {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} could never again be filled.",
+            "m_c pads out of camp, wanting nothing more than to be away from the pitying looks of {PRONOUN/m_c/poss} Clanmates.",
+            "m_c wishes desperately to hear the voice of {PRONOUN/m_c/poss} loved one again, to see their face and smell their scent. The reality of the situation makes m_c want to wail into the sky.",
+            "m_c realizes one day that this grief will never leave. {PRONOUN/m_c/subject/CAP}'ll just have to learn to live with it. There's nothing else to do."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "event_id": "headache0",
+        "strings": [
+            "m_c's headache is gone.",
+            "m_c feels relieved at the lack of pain in {PRONOUN/m_c/poss} head. {PRONOUN/m_c/poss/CAP} headache seems to have finally gone away."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

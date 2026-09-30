@@ -5,6 +5,7 @@ Contains the Cat and Personality classes
 from __future__ import annotations
 
 import bisect
+import dataclasses
 import itertools
 import os.path
 import sys
@@ -16,6 +17,8 @@ import ujson  # type: ignore
 
 import scripts.game_structure.localization as pronouns
 from scripts.cat import pronouns
+from scripts.cat.conditions.permanent_condition import PermanentCondition
+from scripts.cat.conditions.temporary_condition import TemporaryCondition
 from scripts.cat.enums import (
     CatAge,
     CatRank,
@@ -37,33 +40,26 @@ from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
 from scripts.cat.skills import CatSkills, SkillPath, scale_progress
+from scripts.cat.sprites.display_sprites import update_sprite, update_mask
 from scripts.cat.status import Status
-from scripts.cat_relations.cat_handle_funcs import init_all_relationships
-from scripts.config import get_config
+from scripts.cat_relations.enums import RelType
 from scripts.cat_relations.inheritance import Inheritance
 from scripts.cat_relations.inheritance2 import inheritance_db
-from scripts.cat_relations.relationship import Relationship, create_one_relationship
-from scripts.cat_relations.enums import RelType, RelTier, rel_type_tiers
+from scripts.cat_relations.relationship import create_one_relationship
 from scripts.clan_package.settings import get_clan_setting
-
+from scripts.config import get_config
+from scripts.events_module.event_filters import get_personality_compatibility
 from scripts.events_module.generate_events import GenerateEvents
-from scripts.game_structure import image_cache, constants, game
-from scripts.game_structure.game.save_load import safe_save
-from scripts.game_structure.game.settings import game_setting_get
-from scripts.game_structure.game.switches import switch_get_value, Switch
-from scripts.game_structure.localization import load_lang_resource
-from scripts.game_structure.screen_settings import screen
-from scripts.housekeeping.datadir import get_save_dir
-from scripts.cat import microservices
-from scripts.cat.sprites.display_sprites import update_sprite, update_mask
 from scripts.events_module.text_adjust import (
     event_text_adjust,
     leader_ceremony_text_adjust,
 )
-from scripts.events_module.event_filters import get_personality_compatibility
-from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
-
-import scripts.game_structure.screen_settings
+from scripts.game_structure import image_cache, constants, game
+from scripts.game_structure.game.save_load import safe_save
+from scripts.game_structure.game.switches import switch_get_value, Switch
+from scripts.game_structure.localization import load_lang_resource
+from scripts.game_structure.screen_settings import screen
+from scripts.housekeeping.datadir import get_save_dir
 
 if TYPE_CHECKING:
     import pygame
@@ -243,12 +239,10 @@ class Cat:
         self.assign_thought()
 
         # conditions setup
-        self.illnesses = {}
-        self.injuries = {}
+        self.temporary_conditions: list[TemporaryCondition] = []
+        self.permanent_conditions: list[PermanentCondition] = []
         self.healed_condition = None
         self.leader_death_heal = None
-        self.also_got = False
-        self.permanent_condition = {}
 
         self.faded = faded  # This is only used to flag cats that are faded, but won't be added to the faded list until
         # the next save.
@@ -256,7 +250,7 @@ class Cat:
         # Private Sprite
         self._sprite: Optional["pygame.Surface"] = None
         self._sprite_mask: Optional["pygame.Mask"] = None
-        self._sprite_working: bool = self.not_working()
+        self._sprite_working: bool = self.can_work()
         """used to store whether we should be displaying sick sprite or not"""
 
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
@@ -327,7 +321,9 @@ class Cat:
             # kits are auto-accepted
             elif self.age in (CatAge.KITTEN, CatAge.NEWBORN):
                 self.history.add_afterlife_acceptance(
-                    game.clan.instructor.status.group,
+                    game.clan.instructor.status.group
+                    if (game.clan and game.clan.instructor)
+                    else CatGroup.STARCLAN,
                     is_kit=True,
                 )
             else:
@@ -492,19 +488,17 @@ class Cat:
         """
         if (
             self.status.is_leader
-            and "pregnant" in self.injuries
+            and "pregnant" in self.temporary_conditions
             and game.clan.leader_lives > 0
         ):
-            self.illnesses.clear()
+            self.temporary_conditions = [
+                condition
+                for condition in self.temporary_conditions
+                if condition != "pregnant"
+            ]
 
-            self.injuries = {
-                key: value
-                for (key, value) in self.injuries.items()
-                if key == "pregnant"
-            }
         else:
-            self.injuries.clear()
-            self.illnesses.clear()
+            self.temporary_conditions.clear()
 
         # Deal with leader death
         if self.status.is_leader:
@@ -520,6 +514,11 @@ class Cat:
         else:
             self.dead = True
             game.just_died.append(self.ID)
+            self.permanent_conditions = [
+                condition
+                for condition in self.permanent_conditions
+                if not condition.removed_on_death
+            ]
 
         self.assign_thought(CatThought.ON_DEATH)
 
@@ -780,6 +779,21 @@ class Cat:
             else:
                 clanname = switch_get_value(Switch.clan_list)[0]
         except IndexError:
+            print("History failed to load, no Clan in switches?")
+            self._history = History(
+                beginning={},
+                mentor_influence={},
+                app_ceremony={},
+                lead_ceremony=None,
+                possible_history={},
+                died_by=[],
+                scar_events=[],
+                murder={},
+                cat=self,
+            )
+            return
+
+        except KeyError:
             print("History failed to load, no Clan in switches?")
             self._history = History(
                 beginning={},
@@ -1264,138 +1278,6 @@ class Cat:
 
         self.next_thought_type = thought_type
 
-    def moon_skip_illness(self, illness):
-        """handles the moon skip for illness"""
-        if not self.is_ill():
-            return True
-
-        if self.illnesses[illness]["event_triggered"]:
-            self.illnesses[illness]["event_triggered"] = False
-            return True
-
-        mortality = self.illnesses[illness]["mortality"]
-
-        # leader should have a higher chance of death
-        if self.status.is_leader and mortality != 0:
-            mortality = int(mortality * 0.7)
-            if mortality == 0:
-                mortality = 1
-
-        if mortality and not int(random() * mortality):
-            if self.status.is_leader:
-                self.leader_death_heal = True
-                game.clan.leader_lives -= 1
-
-            self.die()
-            return False
-
-        moons_with = game.clan.age - self.illnesses[illness]["moon_start"]
-
-        # focus buff
-        recovery_buff = constants.CONFIG["focus"]["rest_and_recover"][
-            "moons_earlier_healed"
-        ]
-
-        if self.illnesses[illness]["duration"] - moons_with <= 0:
-            self.healed_condition = True
-            return False
-
-        # CLAN FOCUS! - if the focus 'rest_and_recover' is selected
-        elif (
-            get_clan_setting("rest_and_recover")
-            and self.illnesses[illness]["duration"] - recovery_buff - moons_with <= 0
-        ):
-            self.healed_condition = True
-            return False
-
-    def moon_skip_injury(self, injury):
-        """handles the moon skip for injury"""
-        if not self.is_injured():
-            return True
-
-        if self.injuries[injury]["event_triggered"] is True:
-            self.injuries[injury]["event_triggered"] = False
-            return True
-
-        mortality = self.injuries[injury]["mortality"]
-
-        # leader should have a higher chance of death
-        if self.status.is_leader and mortality != 0:
-            mortality = int(mortality * 0.7)
-            if mortality == 0:
-                mortality = 1
-
-        if mortality and not int(random() * mortality):
-            if self.status.is_leader:
-                game.clan.leader_lives -= 1
-            self.die()
-            return False
-
-        moons_with = game.clan.age - self.injuries[injury]["moon_start"]
-
-        # focus buff
-        recovery_buff = constants.CONFIG["focus"]["rest_and_recover"][
-            "moons_earlier_healed"
-        ]
-
-        # if the cat has an infected wound, the wound shouldn't heal till the illness is cured
-        if (
-            not self.injuries[injury]["complication"]
-            and self.injuries[injury]["duration"] - moons_with <= 0
-        ):
-            self.healed_condition = True
-            return False
-
-        # CLAN FOCUS! - if the focus 'rest_and_recover' is selected
-        elif (
-            not self.injuries[injury]["complication"]
-            and get_clan_setting("rest_and_recover")
-            and self.injuries[injury]["duration"] - recovery_buff - moons_with <= 0
-        ):
-            self.healed_condition = True
-            return False
-
-    def moon_skip_permanent_condition(self, condition):
-        """handles the moon skip for permanent conditions"""
-        if not self.is_disabled():
-            return "skip"
-
-        if self.permanent_condition[condition]["event_triggered"]:
-            self.permanent_condition[condition]["event_triggered"] = False
-            return "skip"
-
-        mortality = self.permanent_condition[condition]["mortality"]
-        moons_until = self.permanent_condition[condition]["moons_until"]
-        born_with = self.permanent_condition[condition]["born_with"]
-
-        # handling the countdown till a congenital condition is revealed
-        if moons_until is not None and moons_until >= 0 and born_with is True:
-            self.permanent_condition[condition]["moons_until"] = int(moons_until - 1)
-            self.permanent_condition[condition]["moons_with"] = 0
-            if self.permanent_condition[condition]["moons_until"] != -1:
-                return "skip"
-        if (
-            self.permanent_condition[condition]["moons_until"] == -1
-            and self.permanent_condition[condition]["born_with"] is True
-        ):
-            self.permanent_condition[condition]["moons_until"] = -2
-            return "reveal"
-
-        # leader should have a higher chance of death
-        if self.status.is_leader and mortality != 0:
-            mortality = int(mortality * 0.7)
-            if mortality == 0:
-                mortality = 1
-
-        if mortality and not int(random() * mortality):
-            if self.status.is_leader:
-                game.clan.leader_lives -= 1
-            self.die()
-            return "continue"
-
-    # ---------------------------------------------------------------------------- #
-    #                                   relative                                   #
-    # ---------------------------------------------------------------------------- #
     def get_parents(self):
         """Returns list containing parent IDs of this cat.
 
@@ -1451,30 +1333,14 @@ class Cat:
     #                                  conditions                                  #
     # ---------------------------------------------------------------------------- #
 
-    def not_working(self):
-        """returns True if the cat cannot work, False if the cat can work"""
-        for illness in self.illnesses:
-            if self.illnesses[illness]["severity"] != "minor":
-                return True
-        return any(
-            self.injuries[injury]["severity"] != "minor" for injury in self.injuries
+    def can_work(self):
+        """returns True if the cat can work, False if the cat cannot work"""
+        if not self.temporary_conditions and not self.permanent_conditions:
+            return True
+        return all(
+            condition.severity == "minor"
+            for condition in self.temporary_conditions + self.permanent_conditions
         )
-
-    def not_work_because_hunger(self):
-        """returns True if the only condition, why the cat cannot work is because of starvation"""
-        non_minor_injuries = [
-            injury
-            for injury in self.injuries
-            if self.injuries[injury]["severity"] != "minor"
-        ]
-        if len(non_minor_injuries) > 0:
-            return False
-        non_minor_illnesses = [
-            illness
-            for illness in self.illnesses
-            if self.illnesses[illness]["severity"] != "minor"
-        ]
-        return "starving" in non_minor_illnesses and len(non_minor_illnesses) == 1
 
     def retire_cat(self):
         """This is only for cats that retire due to health condition"""
@@ -1491,80 +1357,29 @@ class Cat:
         self.rank_change(CatRank.ELDER)
         return
 
-    def is_ill(self):
-        """Returns true if the cat is ill."""
-        return len(self.illnesses) > 0
+    def remove_condition(self, name: str):
+        """
+        If the cat has a condition matching the given name, then that condition will be removed
+        """
+        condition = [c for c in self.temporary_conditions if c.name == name]
+        if condition:
+            self.temporary_conditions.remove(condition[0])
+        condition = [c for c in self.permanent_conditions if c.name == name]
+        if condition:
+            self.permanent_conditions.remove(condition[0])
 
-    def is_injured(self):
-        """Returns true if the cat is injured."""
-        return len(self.injuries) > 0
-
-    def is_disabled(self):
-        """Returns true if the cat have permanent condition"""
-        return len(self.permanent_condition) > 0
-
-    def available_to_work(self):
-        return self.status.alive_in_player_clan and not self.not_working()
-
-    def save_condition(self):
-        # save conditions for each cat
-        save_id = None
-        if switch_get_value(Switch.clan_save_id) != "":
-            save_id = switch_get_value(Switch.clan_save_id)
-        elif len(switch_get_value(Switch.clan_list)) > 0:
-            save_id = switch_get_value(Switch.clan_list)[0]
-        elif game.clan is not None:
-            save_id = game.clan.save_id
-
-        condition_directory = get_save_dir() + "/" + save_id + "/conditions"
-        condition_file_path = condition_directory + "/" + self.ID + "_conditions.json"
-
-        if (not self.is_ill() and not self.is_injured() and not self.is_disabled()) or (
-            (self.dead or self.status.is_outsider) and not self.is_disabled()
-        ):
-            if os.path.exists(condition_file_path):
-                os.remove(condition_file_path)
-            return
-
-        conditions = {}
-
-        if self.is_ill():
-            conditions["illnesses"] = self.illnesses
-
-        if self.is_injured():
-            conditions["injuries"] = self.injuries
-
-        if self.is_disabled():
-            conditions["permanent conditions"] = self.permanent_condition
-
-        safe_save(condition_file_path, conditions)
-
-    def load_conditions(self):
-        if switch_get_value(Switch.clan_save_id) != "":
-            clanname = switch_get_value(Switch.clan_save_id)
-        else:
-            clanname = switch_get_value(Switch.clan_list)[0]
-
-        condition_directory = get_save_dir() + "/" + clanname + "/conditions/"
-        condition_cat_directory = condition_directory + self.ID + "_conditions.json"
-        if not os.path.exists(condition_cat_directory):
-            return
-
-        try:
-            with open(condition_cat_directory, "r", encoding="utf-8") as read_file:
-                rel_data = ujson.loads(read_file.read())
-                self.illnesses = rel_data.get("illnesses", {})
-                self.injuries = rel_data.get("injuries", {})
-                self.permanent_condition = rel_data.get("permanent conditions", {})
-
-            if "paralyzed" in self.permanent_condition and not self.pelt.paralyzed:
-                self.pelt.paralyzed = True
-
-        except Exception as e:
-            print(
-                f"WARNING: There was an error reading the condition file of cat #{self}.\n",
-                e,
-            )
+    def get_condition(
+        self, name: str
+    ) -> TemporaryCondition | PermanentCondition | None:
+        """
+        If the cat has a condition matching the given name, then that condition will be removed
+        """
+        condition = [
+            c
+            for c in self.temporary_conditions + self.permanent_conditions
+            if c.name == name
+        ]
+        return condition[0] if condition else None
 
     # ---------------------------------------------------------------------------- #
     #                                    mentor                                    #
@@ -1668,7 +1483,7 @@ class Cat:
             for cat in self.all_cats.values():
                 if self.is_valid_mentor(cat):
                     potential_mentors.append(cat)
-                    if not cat.apprentice and not cat.not_working():
+                    if not cat.apprentice and cat.can_work():
                         priority_mentors.append(cat)
             # First try for a cat who currently has no apprentices and is working
             if priority_mentors:  # length of list > 0
@@ -2336,9 +2151,9 @@ class Cat:
             return self._sprite
 
         # Update the sprite
-        if self.pelt.rebuild_sprite or self.not_working() != self._sprite_working:
+        if self.pelt.rebuild_sprite or self.can_work() != self._sprite_working:
             self.pelt.rebuild_sprite = False
-            self._sprite_working = self.not_working()
+            self._sprite_working = self.can_work()
             update_sprite(self)
             update_mask(self)
         return self._sprite

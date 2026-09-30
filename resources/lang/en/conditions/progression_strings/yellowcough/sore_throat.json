@@ -1,0 +1,12 @@
+[
+    {
+        "event_id": "yellowcough_sore_throat0",
+        "strings": [
+            "m_c's endless coughing has dried out {PRONOUN/m_c/poss} throat.",
+            "m_c's throat is sore from coughing."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

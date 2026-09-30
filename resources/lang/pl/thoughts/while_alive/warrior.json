@@ -3,11 +3,11 @@
         "event_id": "warrior_gen_alive_kits",
         "strings": [
             "Is watching over the kits",
-            "Begrudgingly allows kits to play with {PRONOUN\/m_c\/poss} tail",
+            "Begrudgingly allows kits to play with {PRONOUN/m_c/poss} tail",
             "Was roped into playing moss ball with the kits",
-            "Is being begged by r_c to teach {PRONOUN\/r_c\/object} a few moves",
+            "Is being begged by r_c to teach {PRONOUN/r_c/object} a few moves",
             "Somehow got roped up in watching r_c for the day",
-            "Theatrically dies after r_c slays {PRONOUN\/m_c\/object}",
+            "Theatrically dies after r_c slays {PRONOUN/m_c/object}",
             "Has to pretend to be a captured warrior for r_c's games",
             "Is pretending to be a big, evil warrior for r_c",
             "Gave a badger ride to r_c, and is now being begged by more kittens to do the same"
@@ -108,12 +108,66 @@
         }
     },
     {
+        "event_id": "warrior_to_leader_about_app",
+        "strings": [
+            "Wonders when r_c will assign {PRONOUN/m_c/object} an apprentice",
+            "Is asking r_c if {PRONOUN/m_c/subject} can train the next apprentice",
+            "Wonders if r_c thinks {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not ready for an apprentice",
+            "Is discussing with r_c about when {PRONOUN/m_c/subject} can have an apprentice"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "warrior"
+                ],
+                "has_apprentice": {
+                    "current": false
+                }
+            },
+            "r_c": {
+                "status": [
+                    "leader"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "warrior_to_kit_about_app",
+        "strings": [
+            "Wonders if r_c will be {PRONOUN/m_c/poss} apprentice",
+            "Hopes to be r_c's mentor when the time comes",
+            "Hopes to have an apprentice like r_c",
+            "Wonders who r_c wants to be {PRONOUN/r_c/poss} mentor"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "warrior"
+                ],
+                "has_apprentice": {
+                    "current": false
+                }
+            },
+            "r_c": {
+                "status": [
+                    "kitten"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
         "event_id": "ambitious_forest_warrior",
         "location": [
             "forest"
         ],
         "strings": [
-            "Wishes {PRONOUN\/m_c\/poss} pelt would turn silver as the moon, just like the wolves"
+            "Wishes {PRONOUN/m_c/poss} pelt would turn silver as the moon, just like the wolves"
         ],
         "involved_cats": {
             "m_c": {
@@ -134,10 +188,10 @@
             "Has been taking on extra patrols lately",
             "Sucks up to the leader and deputy by offering to lead every patrol",
             "Sets out to catch five pieces of fresh-kill today",
-            "Evaluates how {PRONOUN\/m_c\/subject}{VERB\/m_c\/'re\/'s} going to sharpen up {PRONOUN\/m_c\/poss} battle skills",
+            "Evaluates how {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to sharpen up {PRONOUN/m_c/poss} battle skills",
             "Tries to emulate the leader's body language when talking to younger cats",
             "Feels inadequate about being nothing more than an ordinary warrior",
-            "Knows {PRONOUN\/m_c\/subject}{VERB\/m_c\/'re\/'s} a shoo-in for deputy"
+            "Knows {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a shoo-in for deputy"
         ],
         "involved_cats": {
             "m_c": {
@@ -153,7 +207,7 @@
         "event_id": "careful_warrior",
         "strings": [
             "Is dutifully standing guard outside of camp",
-            "Is going back to check on an old fox burrow {PRONOUN\/m_c\/subject} discovered yesterday, just to be safe",
+            "Is going back to check on an old fox burrow {PRONOUN/m_c/subject} discovered yesterday, just to be safe",
             "Coaches other warriors to take a more guarded stance for their technique"
         ],
         "involved_cats": {
@@ -169,7 +223,7 @@
     {
         "event_id": "careful_warrior_to_deputy",
         "strings": [
-            "Asks the deputy about sending out some more hunting patrols \u00e2\u20ac\u201d just to be sure"
+            "Asks the deputy about sending out some more hunting patrols — just to be sure"
         ],
         "involved_cats": {
             "m_c": {
@@ -212,13 +266,13 @@
         "strings": [
             "Patiently waits for a rabbit to come out of its burrow, eventually catching it",
             "Offered to walk at the front of the patrol",
-            "Offered to stick {PRONOUN\/m_c\/poss} nose into a badger sett to check if the badger is still there",
-            "Offered to stick {PRONOUN\/m_c\/poss} nose into a fox den to check if the fox is still there",
+            "Offered to stick {PRONOUN/m_c/poss} nose into a badger sett to check if the badger is still there",
+            "Offered to stick {PRONOUN/m_c/poss} nose into a fox den to check if the fox is still there",
             "Volunteered for extra patrols",
             "Volunteered for extra duties",
             "Volunteered to stand guard of the camp",
             "Shares the best hunting spots with the other warriors",
-            "Does {PRONOUN\/m_c\/poss} Clanmates' chores with a smile on {PRONOUN\/m_c\/poss} face"
+            "Does {PRONOUN/m_c/poss} Clanmates' chores with a smile on {PRONOUN/m_c/poss} face"
         ],
         "involved_cats": {
             "m_c": {
@@ -233,7 +287,7 @@
     {
         "event_id": "compassionate_warrior_to_living_apprentices",
         "strings": [
-            "Takes r_c's place in the dawn patrol so {PRONOUN\/r_c\/subject} can sleep in a little"
+            "Takes r_c's place in the dawn patrol so {PRONOUN/r_c/subject} can sleep in a little"
         ],
         "involved_cats": {
             "m_c": {
@@ -256,11 +310,11 @@
     {
         "event_id": "daring_warrior",
         "strings": [
-            "Is challenging any Clanmate {PRONOUN\/m_c\/subject} can to a sparring match... with minimal recruiting success",
+            "Is challenging any Clanmate {PRONOUN/m_c/subject} can to a sparring match... with minimal recruiting success",
             "Is challenging some Clanmates to a sparring match, two-on-one!",
             "Batted at a snake on a patrol recently and fled",
             "Is walking along the edge of a very tall cliff",
-            "Recently avoided a monster on the Thunderpath by the skin of {PRONOUN\/m_c\/poss} teeth!",
+            "Recently avoided a monster on the Thunderpath by the skin of {PRONOUN/m_c/poss} teeth!",
             "Challenges a Clanmate to a friendly spar"
         ],
         "involved_cats": {
@@ -276,10 +330,10 @@
     {
         "event_id": "fierce_warrior",
         "strings": [
-            "Is showing off {PRONOUN\/m_c\/poss} battle moves",
+            "Is showing off {PRONOUN/m_c/poss} battle moves",
             "Offered to lead a border patrol today",
             "Has been waiting for a war to be declared",
-            "Doesn't understand why the other warriors are hesitant to train with {PRONOUN\/m_c\/object}"
+            "Doesn't understand why the other warriors are hesitant to train with {PRONOUN/m_c/object}"
         ],
         "involved_cats": {
             "m_c": {
@@ -317,7 +371,7 @@
     {
         "event_id": "fierce_warrior_to_living_medcat",
         "strings": [
-            "Is asking the medicine cat for herbs that may help {PRONOUN\/m_c\/object} in battle"
+            "Is asking the medicine cat for herbs that may help {PRONOUN/m_c/object} in battle"
         ],
         "involved_cats": {
             "m_c": {
@@ -365,9 +419,9 @@
         "event_id": "loyal_warrior_to_leader",
         "strings": [
             "Is listening to the leader intently",
-            "Is telling the leader details about {PRONOUN\/m_c\/poss} recent patrol",
-            "Listened to the leader's orders recently, despite {PRONOUN\/m_c\/poss} own doubts",
-            "Proclaimed {PRONOUN\/m_c\/poss} unwavering loyalty to the leader",
+            "Is telling the leader details about {PRONOUN/m_c/poss} recent patrol",
+            "Listened to the leader's orders recently, despite {PRONOUN/m_c/poss} own doubts",
+            "Proclaimed {PRONOUN/m_c/poss} unwavering loyalty to the leader",
             "Is suspicious of a Clanmate who questions their leader"
         ],
         "involved_cats": {
@@ -392,7 +446,7 @@
         "event_id": "loyal_warrior_to_deputy",
         "strings": [
             "Is listening to the deputy intently",
-            "Is telling the deputy details about {PRONOUN\/m_c\/poss} recent patrol",
+            "Is telling the deputy details about {PRONOUN/m_c/poss} recent patrol",
             "Is offering constructive criticism to the deputy"
         ],
         "involved_cats": {
@@ -416,7 +470,7 @@
     {
         "event_id": "responsible_warrior",
         "strings": [
-            "Is making sure {PRONOUN\/m_c\/subject}{VERB\/m_c\/'ve\/'s} done all of {PRONOUN\/m_c\/poss} daily duties",
+            "Is making sure {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} done all of {PRONOUN/m_c/poss} daily duties",
             "Is offering to lead the next patrol out",
             "Volunteers to lead a patrol"
         ],
@@ -433,7 +487,7 @@
     {
         "event_id": "righteous_warrior",
         "strings": [
-            "Is refusing to follow the deputy's recent orders due to {PRONOUN\/m_c\/poss} own morals"
+            "Is refusing to follow the deputy's recent orders due to {PRONOUN/m_c/poss} own morals"
         ],
         "involved_cats": {
             "m_c": {
@@ -457,7 +511,7 @@
         "event_id": "strict_warrior",
         "strings": [
             "Is conducting a rather rigorous training session for the younger warriors",
-            "Takes pride in how well-run {PRONOUN\/m_c\/poss} patrols always are"
+            "Takes pride in how well-run {PRONOUN/m_c/poss} patrols always are"
         ],
         "involved_cats": {
             "m_c": {
@@ -510,12 +564,12 @@
     {
         "event_id": "warrior_parent_alive_kits",
         "strings": [
-            "Excitedly plays games with r_c, letting {PRONOUN\/r_c\/object} win every time",
-            "Is woken up by r_c jumping on {PRONOUN\/m_c\/object}, begging for something",
-            "Grooms r_c clean and makes {PRONOUN\/r_c\/object} presentable",
-            "Carries r_c to the nursery because {PRONOUN\/r_c\/subject} fell asleep",
+            "Excitedly plays games with r_c, letting {PRONOUN/r_c/object} win every time",
+            "Is woken up by r_c jumping on {PRONOUN/m_c/object}, begging for something",
+            "Grooms r_c clean and makes {PRONOUN/r_c/object} presentable",
+            "Carries r_c to the nursery because {PRONOUN/r_c/subject} fell asleep",
             "Is scolding r_c for almost being reckless",
-            "Hopes {PRONOUN\/m_c\/poss} kits aren't getting into too much trouble",
+            "Hopes {PRONOUN/m_c/poss} kits aren't getting into too much trouble",
             "Is in awe with how fast r_c is growing"
         ],
         "involved_cats": {
@@ -538,7 +592,7 @@
                 ],
                 "mutual": false,
                 "constraints": [
-                    "parent\/child"
+                    "parent/child"
                 ]
             }
         ]
@@ -546,8 +600,8 @@
     {
         "event_id": "warrior_formerly_a_loner_alive_kits",
         "strings": [
-            "Is telling the kits about {PRONOUN\/m_c\/poss} days as a loner",
-            "Is being begged by r_c to tell {PRONOUN\/r_c\/object} about what being a loner was like"
+            "Is telling the kits about {PRONOUN/m_c/poss} days as a loner",
+            "Is being begged by r_c to tell {PRONOUN/r_c/object} about what being a loner was like"
         ],
         "involved_cats": {
             "m_c": {
@@ -573,8 +627,8 @@
     {
         "event_id": "warrior_formerly_a_rogue_alive_kits",
         "strings": [
-            "Is telling the kits about {PRONOUN\/m_c\/poss} days as a rogue",
-            "Is being begged by r_c to tell {PRONOUN\/r_c\/object} more what being a rogue was like"
+            "Is telling the kits about {PRONOUN/m_c/poss} days as a rogue",
+            "Is being begged by r_c to tell {PRONOUN/r_c/object} more what being a rogue was like"
         ],
         "involved_cats": {
             "m_c": {

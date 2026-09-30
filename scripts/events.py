@@ -8,6 +8,14 @@ TODO: Docs
 import logging
 import random
 
+from scripts.events_module.condition.handle_existing_conditions import (
+    handle_temporary_conditions,
+    handle_permanent_conditions,
+    handle_nutrition,
+)
+from scripts.events_module.condition.generate_condition_event import (
+    generate_condition_event,
+)
 from scripts.cat.microservices.add_to_clan import add_dependents_to_clan, add_to_clan
 from scripts.cat_relations.cat_handle_funcs import create_relationships_new_cat
 from scripts.config import get_config
@@ -29,17 +37,20 @@ from scripts.cat.names import Name
 from scripts.cat.save_load import save_cats, add_cat_to_fade_id
 from scripts.clan_package.settings import get_clan_setting, set_clan_setting
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
-from scripts.conditions import (
+from scripts.cat.conditions.coverage_check import (
     medicine_cats_can_cover_clan,
     get_amount_cat_for_one_medic,
 )
-from scripts.cat.microservices.conditions import get_ill, get_injured
+from scripts.cat.conditions.gain_conditions import gain_temporary_condition
+from scripts.events_module.condition.handle_new_conditions import (
+    attempt_give_injuries,
+    attempt_give_illness,
+)
 from scripts.events_module.event_information import EventInformation
 from scripts.events_module.ceremony.perform_ceremony import (
     check_for_ceremony,
     trigger_ceremony,
     check_and_promote_deputy,
-    _adult_becomes_mediator,
 )
 
 from scripts.events_module.generate_events import GenerateEvents, generate_events
@@ -48,7 +59,6 @@ from scripts.events_module.outsider import outsider_events
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.events_module.relationship import relation_events
 from scripts.events_module.pregnancy import pregnancy_events
-from scripts.events_module.short.condition_events import Condition_Events
 from scripts.events_module.short.short_event_generation import create_short_event
 from scripts.events_module.thoughts.generate_thoughts import get_new_thought
 from scripts.events_module.transition.generate_transition_event import (
@@ -137,6 +147,9 @@ def one_moon():
     # Adding in any potential lead den events that have been saved
     if get_clan_setting("lead_den_interaction"):
         handle_lead_den_event()
+
+    # try to cause a condition outbreak
+    attempt_outbreak()
 
     # checking if a lost cat returns on their own
     rejoin_upperbound = constants.CONFIG["lost_cat"]["rejoin_chance"]
@@ -227,11 +240,11 @@ def one_moon():
                 shaken_cat_names = []
                 for cat in shaken_cats:
                     shaken_cat_names.append(str(cat.name))
-                    get_injured(
+                    gain_temporary_condition(
                         cat,
                         "shock",
-                        event_triggered=False,
-                        lethal=False,
+                        omit_moonskip=False,
+                        prevent_death=True,
                         severity="minor",
                     )
 
@@ -290,10 +303,7 @@ def one_moon():
     )
 
     if game.clan.game_mode in ("expanded", "cruel_season"):
-        amount_per_med = get_amount_cat_for_one_medic(game.clan)
-        med_fulfilled = medicine_cats_can_cover_clan(
-            Cat.all_cats.values(), amount_per_med
-        )
+        med_fulfilled = medicine_cats_can_cover_clan(Cat.all_cats.values())
 
         if not med_fulfilled:
             string = i18n.t("defaults.warn_low_medcats")
@@ -777,6 +787,10 @@ def one_moon_outside_cat(cat, other_clan_cats: list = None):
     cat.skills.progress_skill(cat)
     pregnancy_events.handle_having_kits(cat)
 
+    # CHECK CONDITIONS
+    if cat.temporary_conditions:
+        handle_temporary_conditions(cat)
+
     if not cat.dead:
         outsider_events.killing_outsiders(cat)
 
@@ -828,43 +842,41 @@ def one_moon_cat(cat):
     # handle nutrition amount
     # (CARE: the cats have to be fed before this happens - should be handled in "one_moon" function)
     if game.clan.game_mode in ("expanded", "cruel_season") and game.clan.freshkill_pile:
-        Condition_Events.handle_nutrient(cat, game.clan.freshkill_pile.nutrition_info)
+        handle_nutrition(cat, game.clan.freshkill_pile.nutrition_info)
 
         if cat.dead:
             return
-
-    # prevent injured or sick cats from unrealistic Clan events
-    if cat.is_ill() or cat.is_injured():
-        if cat.is_ill() and cat.is_injured():
-            if random.getrandbits(1):
-                triggered_death = Condition_Events.handle_injuries(cat)
-                if not triggered_death:
-                    Condition_Events.handle_illnesses(cat)
-            else:
-                triggered_death = Condition_Events.handle_illnesses(cat)
-                if not triggered_death:
-                    Condition_Events.handle_injuries(cat)
-        elif cat.is_ill():
-            Condition_Events.handle_illnesses(cat)
-        else:
-            Condition_Events.handle_injuries(cat)
-        switch_set_value(Switch.skip_conditions, [])
-        if cat.dead:
-            return
-        handle_outbreaks(cat)
 
     # newborns don't do much
     if cat.status.rank == CatRank.NEWBORN:
         return
 
+    # CHECK CONDITIONS
+    if cat.temporary_conditions:
+        handle_temporary_conditions(cat)
+        if cat.dead:
+            return
+    # GIVE CONDITIONS
+    else:
+        if random.getrandbits(1):
+            triggered_death = handle_injuries_or_general_death(cat)
+            if not triggered_death:
+                handle_illnesses_or_illness_deaths(cat)
+        else:
+            triggered_death = handle_illnesses_or_illness_deaths(cat)
+            if not triggered_death:
+                handle_injuries_or_general_death(cat)
+        if cat.dead:
+            return
+
     handle_apprentice_EX(cat)  # This must be before perform_ceremonies!
-    # this HAS TO be before the cat.is_disabled() so that disabled kits can choose a med cat or mediator position
+    # this HAS TO be before handling permanent conditions so that disabled kits can choose a med cat or mediator position
     check_for_ceremony(cat)
     cat.skills.progress_skill(cat)  # This must be done after ceremonies.
 
     # check for death/reveal/risks/retire caused by permanent conditions
-    if cat.is_disabled():
-        Condition_Events.handle_already_disabled(cat)
+    if cat.permanent_conditions:
+        handle_permanent_conditions(cat)
         if cat.dead:
             return
 
@@ -879,7 +891,7 @@ def one_moon_cat(cat):
         relation_events.handle_relationships(cat)
 
     # now we make sure ill and injured cats don't get interactions they shouldn't
-    if cat.is_ill() or cat.is_injured():
+    if cat.temporary_conditions:
         return
 
     invite_new_cats(cat)
@@ -887,20 +899,6 @@ def one_moon_cat(cat):
     gain_accessories(cat)
 
     # switches between the two death handles
-    if random.getrandbits(1):
-        triggered_death = handle_injuries_or_general_death(cat)
-        if not triggered_death:
-            handle_illnesses_or_illness_deaths(cat)
-        else:
-            switch_set_value(Switch.skip_conditions, [])
-            return
-    else:
-        triggered_death = handle_illnesses_or_illness_deaths(cat)
-        if not triggered_death:
-            handle_injuries_or_general_death(cat)
-        else:
-            switch_set_value(Switch.skip_conditions, [])
-            return
 
     handle_murder(cat)
 
@@ -1104,7 +1102,7 @@ def gain_accessories(cat):
 # but I put it here to keep the exp functions together
 def handle_outside_EX(cat):
     if cat.status.is_outsider or cat.status.is_other_clancat:
-        if cat.not_working() and int(random.random() * 3):
+        if not cat.can_work() and int(random.random() * 3):
             return
 
         if cat.age == CatAge.KITTEN:
@@ -1141,7 +1139,7 @@ def handle_apprentice_EX(cat):
     TODO: DOCS
     """
     if cat.status.rank.is_any_apprentice_rank():
-        if cat.not_working() and int(random.random() * 3):
+        if not cat.can_work() and int(random.random() * 3):
             return
 
         if cat.experience > cat.experience_levels_range["learning"][1]:
@@ -1153,7 +1151,7 @@ def handle_apprentice_EX(cat):
             ran = constants.CONFIG["graduation"]["base_app_timeskip_ex"]
 
         mentor_modifier = 1
-        if not cat.mentor or Cat.fetch_cat(cat.mentor).not_working():
+        if not cat.mentor or not Cat.fetch_cat(cat.mentor).can_work():
             # Sick mentor debuff
             mentor_modifier = 0.7
             mentor_skill_modifier = 0
@@ -1269,10 +1267,11 @@ def handle_injuries_or_general_death(cat):
             event_type="birth_death",
             main_cat=cat,
         )
-        return
+        return True
+
     elif constants.CONFIG["event_generation"]["debug_type_override"] == "injury":
-        Condition_Events.handle_injuries(cat)
-        return
+        attempt_give_injuries(cat)
+        return False
 
     use_war_modifier = (
         game.clan.war["at_war"]
@@ -1287,7 +1286,7 @@ def handle_injuries_or_general_death(cat):
     if (
         not int(random.random() * leader_death_chance)
         and cat.status.is_leader
-        and not cat.not_working()
+        and cat.can_work()
     ):
         create_short_event(
             event_type="birth_death",
@@ -1337,14 +1336,14 @@ def handle_injuries_or_general_death(cat):
     death_chance = get_config(path) - (
         get_config("death_related.war_death_modifier") if use_war_modifier else 0
     )
-    if not int(random.random() * death_chance) and not cat.not_working():  # 1/400
+    if not int(random.random() * death_chance) and cat.can_work():  # 1/400
         create_short_event(
             event_type="birth_death",
             main_cat=cat,
         )
         return True
     else:
-        triggered_death = Condition_Events.handle_injuries(cat)
+        triggered_death = attempt_give_injuries(cat)
 
         return triggered_death
 
@@ -1507,144 +1506,128 @@ def handle_illnesses_or_illness_deaths(cat):
     #                           decide if cat dies                                 #
     # ---------------------------------------------------------------------------- #
     # if triggered_death is True then the cat will die
-    triggered_death = Condition_Events.handle_illnesses(cat, game.clan.current_season)
-    if not triggered_death:
-        handle_outbreaks(cat)
+    triggered_death = attempt_give_illness(cat, game.clan.current_season)
 
     return triggered_death
 
 
-def handle_outbreaks(cat):
-    """Try to infect some cats."""
-    # check if the cat is ill,
-    # or if Clan has sufficient med cats
-    if not cat.is_ill():
-        return
+def attempt_outbreak():
+    """
+    Attempts to spread infectious conditions to other cats in the Clan
+    """
 
-    # check how many kitties are already ill
-    already_sick = list(
-        filter(
-            lambda kitty: (kitty.status.alive_in_player_clan and kitty.is_ill()),
-            Cat.all_cats.values(),
-        )
+    clan_cats = list(
+        filter(lambda _cat: _cat.status.alive_in_player_clan, Cat.all_cats.values())
     )
-    already_sick_count = len(already_sick)
 
-    # round up the living kitties
-    healthy_cats = list(
-        filter(
-            lambda kitty: kitty.status.alive_in_player_clan and not kitty.is_ill(),
-            Cat.all_cats.values(),
-        )
-    )
-    healthy_count = len(healthy_cats)
+    healthy_cats = list(filter(lambda _cat: not _cat.temporary_conditions, clan_cats))
 
     # if large amount of the population is already sick, stop spreading
-    if already_sick_count >= healthy_count * get_config(
+    if (len(clan_cats) - len(healthy_cats)) >= len(healthy_cats) * get_config(
         "condition_related.illness_percentage_max"
     ):
         return
 
+    # find who can infect
+    infectious_cats = list(
+        filter(
+            lambda _cat: any(
+                [condition.infectiousness for condition in _cat.temporary_conditions]
+            ),
+            clan_cats,
+        )
+    )
+
+    # find who can prevent infection
     meds = find_alive_cats_with_rank(
         Cat,
         [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE],
         working=True,
         sort=True,
     )
+    infection_prevention = len(meds) * get_config(
+        "condition_related.med_infection_reduction"
+    )
 
-    for illness in cat.illnesses:
-        # check if illness can infect other cats
-        if cat.illnesses[illness]["infectiousness"] == 0:
-            continue
-        chance = cat.illnesses[illness]["infectiousness"]
-        chance += len(meds) * get_config("condition_related.med_infection_reduction")
-        if not int(random.random() * chance):  # 1/chance to infect
-            # fleas are the only condition allowed to spread outside of cold seasons
-            if (
-                game.clan.current_season
-                not in get_config("condition_related.illness_outbreak_season")
-                and illness != "fleas"
+    # gather possible infections
+    possible_infections: dict[str, float] = {}
+    for _cat in infectious_cats:
+        infectious_conditions = [
+            condition
+            for condition in _cat.temporary_conditions
+            if condition.infectiousness
+        ]
+        for condition in infectious_conditions:
+            # spread can only happen in certain season (unless it's fleas)
+            if condition != "fleas" and game.clan.current_season not in get_config(
+                "condition_related.illness_outbreak_season"
             ):
                 continue
 
-            if get_clan_setting("rest_and_recover"):
-                stopping_chance = constants.CONFIG["focus"]["rest_and_recover"][
-                    "outbreak_prevention"
-                ]
-                if not int(random.random() * stopping_chance):
-                    continue
-
-            if illness == "kittencough":
-                # adjust alive cats list to only include kittens
-                healthy_cats = list(
-                    filter(
-                        lambda kitty: (
-                            kitty.status.rank.is_baby()
-                            and kitty.status.alive_in_player_clan
-                            and not kitty.is_ill()
-                        ),
-                        Cat.all_cats.values(),
-                    )
-                )
-                healthy_count = len(healthy_cats)
-
-            max_infected = int(healthy_count / 2)  # 1/2 of alive cats
-            # If there are less than two cat to infect,
-            # you are allowed to infect all the cats
-            if max_infected < 2:
-                max_infected = healthy_count
-            # If, event with all the cats, there is less
-            # than two cats to infect, cancel outbreak.
-            if max_infected < 2:
-                return
-
-            weights = []
-            population = []
-            for n in range(2, max_infected + 1):
-                population.append(n)
-                weight = 1 / (0.75 * n)  # Lower chance for more infected cats
-                weights.append(weight)
-            infected_count = random.choices(population, weights=weights)[
-                0
-            ]  # the infected..
-
-            infected_names = []
-            involved_cats = []
-            infected_cats = random.sample(healthy_cats, infected_count)
-            for sick_meowmeow in infected_cats:
-                infected_names.append(str(sick_meowmeow.name))
-                involved_cats.append(sick_meowmeow.ID)
-                get_ill(
-                    sick_meowmeow, illness, event_triggered=True
-                )  # SPREAD THE GERMS >:)
-
-            # TODO: hardcoded text events, not good, need to consider how to convert
-            #  should this be handled in condition_events.py?
-            if illness == "kittencough":
-                event = i18n.t(
-                    "hardcoded.kittencough_spread",
-                    kits=adjust_list_text(infected_names),
-                    count=len(infected_names),
-                )
-            elif illness == "fleas":
-                event = i18n.t(
-                    "hardcoded.flea_spread",
-                    cats=adjust_list_text(infected_names),
-                    count=len(infected_names),
+            if condition.name in possible_infections:
+                possible_infections[condition.name] = min(
+                    0.9,
+                    (possible_infections[condition.name] + condition.infectiousness),
                 )
             else:
-                event = i18n.t(
-                    "hardcoded.illness_spread",
-                    illness=str(illness).capitalize(),
-                    cats=adjust_list_text(infected_names),
-                    count=len(infected_names),
-                )
+                possible_infections[condition.name] = condition.infectiousness
 
-            game.cur_events_list.append(
-                EventInformation(event, ["health"], involved_cats)
-            )
-            # game.health_events_list.append(event)
+    for infection in possible_infections:
+        possible_infections[infection] -= infection_prevention
+
+    # the cats who are allowed to get sick
+    vulnerable_cats = list(filter(lambda _cat: _cat not in infectious_cats, clan_cats))
+
+    # shuffle the cats to ensure we aren't attempting to infect them in the same order each time
+    random.shuffle(vulnerable_cats)
+
+    # figure out how many cats we can infect at maximum
+    max_infected_allowed = int(len(healthy_cats) / 2)
+
+    if max_infected_allowed < 2:
+        # not enough to infect, so we'll cancel our attempt
+        return
+
+    # key is condition, value is list of cats infected with it
+    created_infections = {}
+    # now find who will get what infection
+    for condition, infectiousness in possible_infections.items():
+        created_infections[condition] = []
+        for _cat in vulnerable_cats:
+            # collect immune system debuffs
+            immune_system_effect = 0.0
+            for _con in _cat.temporary_conditions + _cat.permanent_conditions:
+                immune_system_effect += _con.immune_system_effect
+
+            # now see if they get infected
+            if random.random() <= min(0.9, infectiousness + immune_system_effect):
+                created_infections[condition].append(_cat)
+                max_infected_allowed -= 1
+
+            if max_infected_allowed <= 0:
+                break
+
+        for c in created_infections[condition]:
+            vulnerable_cats.remove(c)
+
+        if max_infected_allowed <= 0:
             break
+
+    for condition, cats in created_infections.items():
+        if len(cats) < 2:
+            # don't infect just one cat
+            continue
+        for _c in cats:
+            gain_temporary_condition(
+                _c, condition, omit_moonskip=True
+            )  # SPREAD THE GERMS >:)
+
+        event = generate_condition_event(
+            path=f"conditions/outbreak_strings/{condition}.json",
+            involved_cats={"multi_cat": cats},
+        )
+
+        game.cur_events_list.append(event)
 
 
 def check_leader():

@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "weak_leg_sore0",
+        "strings": [
+            "r_c0 notices m_c limping from across the other side of the camp and gives {PRONOUN/m_c/object} some exercises to help strengthen {PRONOUN/m_c/poss} weak leg and reduce the pain."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "weak_leg_sore1",
+        "strings": [
+            "m_c's bad leg is feeling particularly sore this moon."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

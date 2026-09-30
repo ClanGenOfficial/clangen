@@ -525,7 +525,7 @@ class MediationScreen(Screens):
                         else game.clan.biome
                     ),
                     season=game.clan.current_season,
-                    show_nest=mediator.not_working(),
+                    show_nest=not mediator.can_work(),
                     group=mediator.status.group,
                 ),
                 ui_scale_dimensions((240, 210)),
@@ -556,10 +556,10 @@ class MediationScreen(Screens):
             container=self.mediator_elements["container"],
             anchors={"top_target": self.mediator_elements["mediator_image"]},
             manager=MANAGER,
-            visible=not mediator.not_working(),  # doesn't appear if the cat isn't working
+            visible=mediator.can_work(),  # doesn't appear if the cat isn't working
         )
         # disable buttons if mediator can't work
-        if mediator.not_working():
+        if not mediator.can_work():
             self.elements["improve_rel"].disable()
             self.elements["sabotage_rel"].disable()
         else:
@@ -894,7 +894,7 @@ class MediationScreen(Screens):
         # finding mediator status string
         invalid_mediator = False  # will be True if a mediator can't work
         mediator_name = self.mediators[0].name
-        if self.mediators[0].not_working():
+        if not self.mediators[0].can_work():
             invalid_mediator = True
             mediator_status = i18n.t(
                 "screens.mediation.mediator_cant_work", name=mediator_name

@@ -25,7 +25,7 @@ def check_if_can_have_kits(cat):
     if cat.birth_cooldown:
         return False
 
-    if "recovering from birth" in cat.injuries:
+    if "recovering_from_birth" in cat.temporary_conditions:
         return False
 
     # decide chances of having kits, and if it's possible at all.

@@ -652,7 +652,7 @@ class TestOutcomeExecution(unittest.TestCase):
         )
 
         self.assertTrue(
-            "sore" in war1.injuries and "sore" in app1.injuries,
+            "sore" in war1.temporary_conditions and "sore" in app1.temporary_conditions,
             msg=f"{war1} and {app1} should be sore.",
         )
 

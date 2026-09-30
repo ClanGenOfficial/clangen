@@ -68,9 +68,9 @@ class RemovePregnancyCommand(Command):
             )
             return
         cat = get_cat_from_name_or_id(args[0])
-        if cat and "pregnant" in cat.injuries:
+        if cat and "pregnant" in cat.temporary_conditions:
             del game.clan.pregnancy_data[cat.ID]
-            cat.injuries.pop("pregnant")
+            cat.remove_condition("pregnant")
             add_output_line_to_log(f"Removed pregnancy from {cat.name} ({cat.ID})")
         else:
             add_output_line_to_log("Invalid name/id or cat is not pregnant.")
@@ -103,7 +103,7 @@ class EditPregnancyCommand(Command):
 
         severity = args[3] if len(args) > 3 else None
         if not severity or severity in ("same" or "" or "s"):
-            severity = current_cat.injuries["pregnant"]["severity"]
+            severity = current_cat.get_condition("pregnant").severity
 
         second_parent = args[4] if len(args) > 4 else None
         if not second_parent or second_parent in ("same" or "" or "s"):
@@ -117,10 +117,10 @@ class EditPregnancyCommand(Command):
             if second_parent_cat
             else "None"
         )
-        if "pregnant" in current_cat.injuries:
+        if "pregnant" in current_cat.temporary_conditions:
             game.clan.pregnancy_data[current_cat.ID]["moons"] = int(moons_amt)
             game.clan.pregnancy_data[current_cat.ID]["amount"] = int(kits_amt)
-            current_cat.injuries["pregnant"]["severity"] = severity
+            current_cat.get_condition("pregnant").severity = severity
             game.clan.pregnancy_data[current_cat.ID]["second_parent"] = second_parent
             add_output_line_to_log(
                 f"Successfully edited pregnancy of {current_cat.name} ({current_cat.ID}), new pregnancy data: "
@@ -160,12 +160,12 @@ class ViewPregnancyCommand(Command):
             if second_parent_cat
             else "None"
         )
-        if "pregnant" in cat.injuries:
+        if "pregnant" in cat.temporary_conditions:
             add_multiple_lines_to_log(
                 f"""Cat: {cat.name} ({cat.ID})
                                         Moons: {game.clan.pregnancy_data[cat.ID]["moons"]}
                                         Amount of Kits: {game.clan.pregnancy_data[cat.ID]["amount"]}
-                                        Severity: {cat.injuries["pregnant"]["severity"]}
+                                        Severity: {cat.get_condition("pregnant").severity}
                                         Second Parent: {second_parent_repr}"""
             )
         else:

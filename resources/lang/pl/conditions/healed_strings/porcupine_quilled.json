@@ -1,0 +1,13 @@
+[
+    {
+        "event_id": "quilled_by_a_porcupine0",
+        "strings": [
+            "m_c has recovered from the wounds {PRONOUN/m_c/subject} got from the porcupine.",
+            "The porcupine quills stuck in m_c's pelt have finally come out.",
+            "The barbed quills were no fun to remove, but at least m_c is feeling better now."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

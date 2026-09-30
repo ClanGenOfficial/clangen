@@ -47,7 +47,7 @@
         "injury": [
             {
                 "cats": ["m_c"],
-                "injuries": ["small cut"],
+                "injuries": ["small_cut"],
                 "scars": [
                     "QUILLSCRATCH", "QUILLSIDE", "SCRATCHSIDE"
                 ]
@@ -66,7 +66,7 @@
         "injury": [
             {
                 "cats": ["m_c"],
-                "injuries": ["snake bite"]
+                "injuries": ["snake_bite"]
             }
         ]
     }

@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "paralyzed_torn_pelt0",
+        "strings": [
+            "m_c licks the scrape on {PRONOUN/m_c/poss} pelt fastidiously. {PRONOUN/m_c/subject/CAP} might not be able to feel it, but {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been warned of the danger of infection by r_c0."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "paralyzed_torn_pelt1",
+        "strings": [
+            "Rough ground in the camp has torn m_c's pelt as {PRONOUN/m_c/subject} {VERB/m_c/move/moves} around."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

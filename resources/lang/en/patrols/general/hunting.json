@@ -1374,7 +1374,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "carrionplace disease",
+                            "carrionplace_disease",
                             "diarrhea",
                             "poisoned"
                         ],
@@ -1439,7 +1439,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "carrionplace disease",
+                            "carrionplace_disease",
                             "diarrhea",
                             "poisoned"
                         ],
@@ -1620,7 +1620,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "running nose"
+                            "running_nose"
                         ],
                         "death_history": "m_c died after a running nose progressed to something worse."
                     }
@@ -1735,7 +1735,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "running nose"
+                            "running_nose"
                         ],
                         "death_history": "m_c died after a running nose progressed to something worse."
                     }
@@ -1906,7 +1906,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "running nose"
+                            "running_nose"
                         ],
                         "death_history": "m_c died after a running nose progressed to something worse."
                     }
@@ -2025,7 +2025,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "running nose"
+                            "running_nose"
                         ],
                         "death_history": "m_c died after a running nose progressed to something worse."
                     }
@@ -2144,7 +2144,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "running nose"
+                            "running_nose"
                         ],
                         "death_history": "m_c died after a running nose progressed to something worse."
                     }
@@ -2251,7 +2251,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "torn ear",
+                            "torn_ear",
                             "scrapes"
                         ],
                         "scar_history": "m_c got a bit torn up on a solo hunt as an apprentice.",
@@ -2360,7 +2360,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "torn ear",
+                            "torn_ear",
                             "scrapes"
                         ],
                         "scar_history": "m_c got a bit torn up on a solo hunt as an apprentice.",
@@ -2469,7 +2469,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "torn ear",
+                            "torn_ear",
                             "scrapes"
                         ],
                         "scar_history": "m_c got a bit torn up on a solo hunt as an apprentice.",
@@ -2581,7 +2581,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "torn ear",
+                            "torn_ear",
                             "scrapes"
                         ],
                         "scar_history": "m_c got a bit torn up on a solo hunt as an apprentice.",
@@ -2690,7 +2690,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "torn ear",
+                            "torn_ear",
                             "scrapes"
                         ],
                         "scar_history": "m_c got a bit torn up on a solo hunt as an apprentice.",
@@ -4827,7 +4827,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c got a bit torn up on a solo hunt as an apprentice.",
                         "death_history": "m_c died after a small injury progressed to something worse."
@@ -5057,7 +5057,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c got a bit torn up on a solo hunt as an apprentice.",
                         "death_history": "m_c died after a small injury progressed to something worse."
@@ -5286,7 +5286,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c got a bit torn up on a solo hunt as an apprentice.",
                         "death_history": "m_c died after a small injury progressed to something worse."
@@ -5490,7 +5490,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c got a bit torn up on a solo hunt as an apprentice.",
                         "death_history": "m_c died after a small injury progressed to something worse."
@@ -5694,7 +5694,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c got a bit torn up on a solo hunt as an apprentice.",
                         "death_history": "m_c died after a small injury progressed to something worse."
@@ -6280,7 +6280,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "torn pelt"
+                            "torn_pelt"
                         ],
                         "scar_pool_override": [
                             "CHEEK"
@@ -8327,7 +8327,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "claw-wound"
+                            "claw_wound"
                         ],
                         "scar_history": "m_c was scarred after an unfortunate encounter with a wolverine.",
                         "death_history": "m_c died of a claw-wound inflicted by a wolverine."
@@ -10050,7 +10050,7 @@
                             "some_patrol"
                         ],
                         "condition": [
-                            "shivering"
+                            "dangerously_cold"
                         ]
                     }
                 ]
@@ -10827,12 +10827,12 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "broken bone",
-                            "broken jaw",
-                            "broken back",
-                            "head damage",
-                            "mangled leg",
-                            "mangled tail"
+                            "broken_bone",
+                            "broken_jaw",
+                            "broken_back",
+                            "head_damage",
+                            "mangled_leg",
+                            "mangled_tail"
                         ],
                         "scar_history": "m_c carries a scar from fighting a wild hog.",
                         "death_history": "m_c died from {PRONOUN/m_c/poss} wounds after battling a wild hog."
@@ -13119,7 +13119,7 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "claw-wound",
+                            "claw_wound",
                             "scrapes"
                         ],
                         "non_lethal": true,
@@ -13291,7 +13291,7 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "claw-wound",
+                            "claw_wound",
                             "scrapes"
                         ],
                         "non_lethal": true,
@@ -14320,8 +14320,8 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "snake bite",
-                            "venom sickness"
+                            "snake_bite",
+                            "venom_sickness"
                         ],
                         "scar_history": "m_c was scarred by a rattlesnake.",
                         "death_history": "m_c died after being bitten by a rattlesnake on patrol."
@@ -14499,8 +14499,8 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "snake bite",
-                            "venom sickness"
+                            "snake_bite",
+                            "venom_sickness"
                         ],
                         "scar_history": "m_c was scarred by a rattlesnake.",
                         "death_history": "m_c died after being bitten by a rattlesnake on patrol."
@@ -14678,8 +14678,8 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "snake bite",
-                            "venom sickness"
+                            "snake_bite",
+                            "venom_sickness"
                         ],
                         "scar_history": "m_c was scarred by a rattlesnake.",
                         "death_history": "m_c died after being bitten by a rattlesnake on patrol."
@@ -14854,8 +14854,8 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "snake bite",
-                            "venom sickness"
+                            "snake_bite",
+                            "venom_sickness"
                         ],
                         "scar_history": "This cat was scarred by a rattlesnake while hunting.",
                         "death_history": "m_c died of a rattlesnake bite."
@@ -14897,9 +14897,9 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "snake bite",
-                            "venom sickness",
-                            "damaged eyes"
+                            "snake_bite",
+                            "venom_sickness",
+                            "damaged_eyes"
                         ],
                         "scar_pool_override": [
                             "LEFTBLIND",

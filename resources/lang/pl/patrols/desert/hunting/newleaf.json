@@ -238,7 +238,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "heat exhaustion"
+                            "heat_exhaustion"
                         ],
                         "death_history": "m_c got heat exhaustion on patrol and died."
                     }

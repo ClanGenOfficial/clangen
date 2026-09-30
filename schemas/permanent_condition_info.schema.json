@@ -1,0 +1,299 @@
+{
+  "$defs": {
+    "Age": {
+      "enum": [
+        "newborn",
+        "-newborn",
+        "kitten",
+        "-kitten",
+        "adolescent",
+        "-adolescent",
+        "young adult",
+        "-young adult",
+        "adult",
+        "-adult",
+        "senior adult",
+        "-senior adult",
+        "senior",
+        "-senior"
+      ],
+      "title": "Age",
+      "type": "string"
+    },
+    "Herb": {
+      "enum": [
+        "elder_leaves",
+        "cobwebs",
+        "daisy",
+        "horsetail",
+        "juniper",
+        "lungwort",
+        "mallow",
+        "marigold",
+        "moss",
+        "oak_leaves",
+        "ragwort",
+        "raspberry",
+        "tansy",
+        "thyme",
+        "wild_garlic",
+        "dandelion",
+        "mullein",
+        "rosemary",
+        "burdock",
+        "blackberry",
+        "betony",
+        "goldenrod",
+        "poppy",
+        "plantain",
+        "catmint",
+        "honey",
+        "yew_berries"
+      ],
+      "title": "Herb",
+      "type": "string"
+    },
+    "PermCondition": {
+      "enum": [
+        "crooked_jaw",
+        "lost_leg",
+        "born_without_leg",
+        "weak_leg",
+        "twisted_leg",
+        "lost_tail",
+        "born_without_tail",
+        "paralyzed",
+        "raspy_lungs",
+        "wasting_disease",
+        "blind",
+        "one_bad_eye",
+        "failing_eyesight",
+        "partial_hearing_loss",
+        "deaf",
+        "constant_joint_pain",
+        "seizure_prone",
+        "allergies",
+        "constantly_dizzy",
+        "recurring_shock",
+        "lasting_grief",
+        "persistent_headaches",
+        "selective_mutism",
+        "absent",
+        "strange_lump",
+        "damaged_throat"
+      ],
+      "title": "PermCondition",
+      "type": "string"
+    },
+    "PermanentConditionInfoSchemaItem": {
+      "additionalProperties": false,
+      "properties": {
+        "severity": {
+          "description": "Severity of the condition. For permanent conditions, major and severe conditions can cause the cat to retire early. For temporary conditions, major and minors conditions will prevent the cat from working.",
+          "enum": [
+            "major",
+            "minor",
+            "severe"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "mortality": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "description": "Percent chance for this condition to kill the cat. Can be left empty if the condition is not fatal.",
+          "propertyNames": {
+            "$ref": "#/$defs/Age"
+          },
+          "title": "Mortality",
+          "type": "object"
+        },
+        "immune_system_effect": {
+          "description": "Effect on the percent chance that this cat will be infected by a different condition. This float will be added to the percent chance, thus increasing the cat's likely-hood to contract an infectious condition.",
+          "title": "Immune System Effect",
+          "type": "number"
+        },
+        "progression": {
+          "additionalProperties": {
+            "$ref": "#/$defs/ProgressionDict"
+          },
+          "description": "The conditions that this condition can progress into (i.e. be replaced by). Can be left empty if the condition has no progressions.",
+          "title": "Progression",
+          "type": "object"
+        },
+        "risks": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "description": "Extra conditions that can be gained while the cat has this condition. Float is the percentage chance to apply this condition.",
+          "title": "Risks",
+          "type": "object"
+        },
+        "treatment_strength": {
+          "additionalProperties": {
+            "items": {
+              "$ref": "#/$defs/Herb"
+            },
+            "type": "array"
+          },
+          "description": "Lists of herbs that can be used for treatment of this condition. The 1, 2, 3 keys correspond to the strength of the herbs. Can be left empty if no herbs can be used to treat this condition.",
+          "propertyNames": {
+            "enum": [
+              "1",
+              "2",
+              "3"
+            ]
+          },
+          "title": "Treatment Strength",
+          "type": "object"
+        },
+        "possible_scars": {
+          "description": "Scars that can be given when this permanent condition is acquired.",
+          "items": {
+            "$ref": "#/$defs/Scar"
+          },
+          "title": "Possible Scars",
+          "type": "array"
+        },
+        "can_be_congenital": {
+          "description": "If this condition can be given at birth.",
+          "title": "Can Be Congenital",
+          "type": "boolean"
+        },
+        "can_be_acquired": {
+          "description": "If this condition can be acquired later in life.",
+          "title": "Can Be Acquired",
+          "type": "boolean"
+        },
+        "requires_scar": {
+          "description": "If this cat MUST have one of the scars listed in 'possible_scars' in order to have this condition.",
+          "title": "Requires Scar",
+          "type": "boolean"
+        },
+        "remove_on_death": {
+          "description": "If this condition should or should not be removed from the cat when they die.",
+          "title": "Remove On Death",
+          "type": "boolean"
+        },
+        "moons_until_discovery": {
+          "description": "ONLY FOR CONGENITAL CONDITIONS. The number of moons a cat can have this condition before it is revealed/discovered.",
+          "title": "Moons Until Discovery",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "severity",
+        "mortality",
+        "immune_system_effect",
+        "progression",
+        "risks",
+        "treatment_strength",
+        "can_be_congenital",
+        "can_be_acquired"
+      ],
+      "title": "PermanentConditionInfoSchemaItem",
+      "type": "object"
+    },
+    "ProgressionDict": {
+      "additionalProperties": false,
+      "properties": {
+        "chance": {
+          "description": "Percentage chance to progress to this condition",
+          "title": "Chance",
+          "type": "number"
+        },
+        "when": {
+          "description": "The state the condition must be in to allow this progression to occur.",
+          "enum": [
+            "CONTINUING",
+            "FATAL",
+            "HEALED",
+            "REVEALED"
+          ],
+          "title": "When",
+          "type": "string"
+        },
+        "allow_scar": {
+          "description": "If progressing to this condition should be allowed the chance to scar.",
+          "title": "Allow Scar",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "chance",
+        "when"
+      ],
+      "title": "ProgressionDict",
+      "type": "object"
+    },
+    "Scar": {
+      "enum": [
+        "ONE",
+        "TWO",
+        "THREE",
+        "TAILSCAR",
+        "SNOUT",
+        "CHEEK",
+        "SIDE",
+        "THROAT",
+        "TAILBASE",
+        "BELLY",
+        "LEGBITE",
+        "NECKBITE",
+        "FACE",
+        "MANLEG",
+        "BRIGHTHEART",
+        "MANTAIL",
+        "BRIDGE",
+        "RIGHTBLIND",
+        "LEFTBLIND",
+        "BOTHBLIND",
+        "BEAKCHEEK",
+        "BEAKLOWER",
+        "CATBITE",
+        "RATBITE",
+        "QUILLCHUNK",
+        "QUILLSCRATCH",
+        "HINDLEG",
+        "BACK",
+        "QUILLSIDE",
+        "SCRATCHSIDE",
+        "BEAKSIDE",
+        "CATBITETWO",
+        "FOUR",
+        "LEFTEAR",
+        "RIGHTEAR",
+        "NOTAIL",
+        "HALFTAIL",
+        "NOPAW",
+        "NOLEFTEAR",
+        "NORIGHTEAR",
+        "NOEAR",
+        "SNAKE",
+        "TOETRAP",
+        "BURNPAWS",
+        "BURNTAIL",
+        "BURNBELLY",
+        "BURNRUMP",
+        "FROSTFACE",
+        "FROSTTAIL",
+        "FROSTMITT",
+        "FROSTSOCK",
+        "TOE",
+        "SNAKETWO"
+      ],
+      "title": "Scar",
+      "type": "string"
+    }
+  },
+  "additionalProperties": {
+    "$ref": "#/$defs/PermanentConditionInfoSchemaItem"
+  },
+  "description": "Permanent condition info in Clan Generator.",
+  "propertyNames": {
+    "$ref": "#/$defs/PermCondition"
+  },
+  "title": "PermanentConditionInfoSchema",
+  "type": "object"
+}

@@ -1,0 +1,28 @@
+[
+    {
+        "event_id": "broken_jaw_crooked_jaw0",
+        "strings": [
+            "Despite r_c0's best efforts, m_c's jaw is healing crooked. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} just glad it's healing at all.",
+            "r_c0 tells m_c that {PRONOUN/m_c/poss} jaw will never be aligned correctly again, but healing from a broken jaw at all is a miracle."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "broken_jaw_crooked_jaw2",
+        "strings": [
+            "m_c has been feeling the pain in {PRONOUN/m_c/poss} broken jaw lessen, but {PRONOUN/m_c/poss} teeth just don't fit together neatly like they used to.",
+            "m_c can finally chew without pain, but it seems {PRONOUN/m_c/poss} jaw is permanently crooked now.",
+            "While m_c is glad that {PRONOUN/m_c/poss} jaw is finally healed, it's still frustrating that it's now permanently twisted."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

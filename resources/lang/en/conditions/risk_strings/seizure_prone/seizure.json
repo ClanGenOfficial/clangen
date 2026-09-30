@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "seizure_prone_seizure0",
+        "strings": [
+            "r_c0 spots the seizure coming, bringing m_c to {PRONOUN/m_c/poss} nest where it's always a little less upsetting to wake up."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "seizure_prone_seizure1",
+        "strings": [
+            "m_c is exhausted and stressed, both the cause and consequence of {PRONOUN/m_c/poss} seizure."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

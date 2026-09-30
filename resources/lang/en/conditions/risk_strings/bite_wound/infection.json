@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "bite_wound_infection0",
+        "strings": [
+            "The bite wound feels hot. m_c winces as r_c0 cleans it. It's becoming infected."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "bite_wound_infection1",
+        "strings": [
+            "m_c's skin is starting to feel feverish around the area of {PRONOUN/m_c/poss} wound. It looks a bit worse than it did yesterday."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

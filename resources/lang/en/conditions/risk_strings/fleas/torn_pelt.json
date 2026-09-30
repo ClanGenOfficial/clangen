@@ -1,0 +1,28 @@
+[
+    {
+        "event_id": "fleas_torn_pelt0",
+        "strings": [
+            "m_c has been scratching incessantly at the fleas infesting {PRONOUN/m_c/poss} pelt. r_c0 scolds {PRONOUN/m_c/object} for it as {PRONOUN/r_c0/subject} gently {VERB/r_c0/clean/cleans} the now raw areas of m_c's pelt."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "fleas_torn_pelt1",
+        "strings": [
+            "m_c scratches and scratches and scratches, ever frustrated by {PRONOUN/m_c/poss} fleas. The constant scratching has begun to tear up {PRONOUN/m_c/poss} pelt, leaving raw patches of skin exposed.",
+            "m_c's constant flea scratching has torn {PRONOUN/m_c/poss} pelt.",
+            "m_c can't help scratching at {PRONOUN/m_c/poss} fleas and has left raw spots on {PRONOUN/m_c/poss} pelt.",
+            "Raw hairless patches are forming on m_c's pelt as {PRONOUN/m_c/subject} {VERB/m_c/scratch/scratches} and {VERB/m_c/scratch/scratches} at {PRONOUN/m_c/poss} fleas."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

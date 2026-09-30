@@ -1,0 +1,12 @@
+[
+    {
+        "event_id": "sore_throat_damaged_throat0",
+        "strings": [
+            "The soreness of m_c's throat has lessened, but {PRONOUN/m_c/subject} still {VERB/m_c/struggle/struggles} to mew and purr as {PRONOUN/m_c/subject} did before.",
+            "m_c's sore throat was a sign of greater damage to the area, making vocalization difficult."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

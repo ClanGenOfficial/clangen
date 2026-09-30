@@ -1,0 +1,689 @@
+{
+    "seizure": {
+        "severity": "severe",
+        "duration": 1,
+        "mortality": {
+            "newborn": 0.7,
+            "kitten": 0.4,
+            "adolescent": 0.2,
+            "young adult": 0.05,
+            "adult": 0.05,
+            "senior adult": 0.1,
+            "senior": 0.4
+        },
+        "infectiousness": 0.0,
+        "immune_system_effect": 0.0,
+        "side_effect": {},
+        "progression": {},
+        "risks": {
+            "severe_headache": 0.4
+        },
+        "treatment_strength": {
+            "1": [
+                "poppy"
+            ],
+            "2": [
+                "thyme"
+            ],
+            "3": [
+                "ragwort",
+                "juniper"
+            ]
+        }
+    },
+    "breathless_fit": {
+        "severity": "severe",
+        "duration": 1,
+        "mortality": {
+            "newborn": 0.5,
+            "kitten": 0.2,
+            "adolescent": 0.1,
+            "young adult": 0.05,
+            "adult": 0.05,
+            "senior adult": 0.05,
+            "senior": 0.2
+        },
+        "infectiousness": 0.0,
+        "immune_system_effect": 0.0,
+        "side_effect": {},
+        "progression": {},
+        "risks": {},
+        "treatment_strength": {
+            "1": [
+                "betony"
+            ],
+            "2": [
+                "rosemary",
+                "juniper"
+            ],
+            "3": [
+                "mullein"
+            ]
+        }
+    },
+    "yellowcough": {
+        "severity": "severe",
+        "duration": 3,
+        "mortality": {
+            "newborn": 0.9,
+            "kitten": 0.8,
+            "adolescent": 0.6,
+            "young adult": 0.5,
+            "adult": 0.4,
+            "senior adult": 0.5,
+            "senior": 0.6
+        },
+        "infectiousness": 0.6,
+        "immune_system_effect": 0.0,
+        "side_effect": {},
+        "progression": {
+            "redcough": {
+                "chance": 0.1,
+                "when": "CONTINUING",
+                "allow_scar": false
+            }
+        },
+        "risks": {
+            "sore_throat": 0.2
+        },
+        "treatment_strength": {
+            "1": [
+                "mallow",
+                "honey"
+            ],
+            "2": [
+                "tansy"
+            ],
+            "3": [
+                "lungwort"
+            ]
+        }
+    },
+    "kittencough": {
+        "severity": "severe",
+        "duration": 3,
+        "mortality": {
+            "newborn": 0.7,
+            "kitten": 0.6,
+            "adolescent": 0.0,
+            "young adult": 0.0,
+            "adult": 0.0,
+            "senior adult": 0.0,
+            "senior": 0.0
+        },
+        "infectiousness": 0.4,
+        "immune_system_effect": 0.0,
+        "side_effect": {},
+        "progression": {
+            "whitecough": {
+                "chance": 0.1,
+                "when": "CONTINUING",
+                "allow_scar": false
+            }
+        },
+        "risks": {
+            "sore_throat": 0.2
+        },
+        "treatment_strength": {
+            "1": [
+                "plantain",
+                "honey",
+                "poppy",
+                "moss"
+            ],
+            "2": [
+                "catmint",
+                "ragwort"
+            ],
+            "3": [
+                "mullein",
+                "tansy"
+            ]
+        }
+    },
+    "carrionplace_disease": {
+        "severity": "severe",
+        "duration": 3,
+        "mortality": {
+            "newborn": 0.9,
+            "kitten": 0.8,
+            "adolescent": 0.5,
+            "young adult": 0.5,
+            "adult": 0.5,
+            "senior adult": 0.5,
+            "senior": 0.9
+        },
+        "infectiousness": 0.0,
+        "immune_system_effect": 0.1,
+        "side_effect": {},
+        "progression": {},
+        "risks": {},
+        "treatment_strength": {
+            "1": [
+                "marigold",
+                "poppy"
+            ],
+            "2": [
+                "burdock"
+            ],
+            "3": [
+                "dandelion",
+                "wild_garlic"
+            ]
+        }
+    },
+    "redcough": {
+        "severity": "severe",
+        "duration": 24,
+        "mortality": {
+            "newborn": 1.0,
+            "kitten": 1.0,
+            "adolescent": 0.8,
+            "young adult": 0.5,
+            "adult": 0.5,
+            "senior adult": 0.8,
+            "senior": 1.0
+        },
+        "infectiousness": 0.0,
+        "immune_system_effect": 0.3,
+        "side_effect": {},
+        "progression": {},
+        "risks": {},
+        "treatment_strength": {
+            "1": [
+                "lungwort",
+                "plantain",
+                "honey",
+                "ragwort",
+                "poppy",
+                "moss"
+            ],
+            "2": [
+                "tansy",
+                "mullein"
+            ],
+            "3": []
+        }
+    },
+    "festering_wound": {
+        "severity": "severe",
+        "is_complication": true,
+        "duration": 2,
+        "mortality": {
+            "newborn": 0.9,
+            "kitten": 0.8,
+            "adolescent": 0.4,
+            "young adult": 0.3,
+            "adult": 0.2,
+            "senior adult": 0.3,
+            "senior": 0.5
+        },
+        "infectiousness": 0.0,
+        "immune_system_effect": 0.2,
+        "side_effect": {},
+        "progression": {
+            "strange_lump": {
+                "chance": 0.05,
+                "when": "HEALED",
+                "allow_scar": false
+            }
+        },
+        "risks": {},
+        "treatment_strength": {
+            "1": [
+                "marigold",
+                "poppy",
+                "moss"
+            ],
+            "2": [
+                "goldenrod",
+                "dandelion"
+            ],
+            "3": [
+                "burdock",
+                "yew_berries"
+            ]
+        }
+    },
+    "heat_stroke": {
+        "severity": "severe",
+        "duration": 1,
+        "mortality": {
+            "newborn": 0.5,
+            "kitten": 0.5,
+            "adolescent": 0.2,
+            "young adult": 0.2,
+            "adult": 0.1,
+            "senior adult": 0.2,
+            "senior": 0.3
+        },
+        "infectiousness": 0.0,
+        "immune_system_effect": 0.0,
+        "side_effect": {},
+        "progression": {},
+        "risks": {},
+        "treatment_strength": {
+            "1": [
+                "ragwort"
+            ],
+            "2": [
+                "juniper"
+            ],
+            "3": [
+                "moss"
+            ]
+        }
+    },
+    "starving": {
+        "severity": "severe",
+        "duration": 100,
+        "mortality": {},
+        "infectiousness": 0.0,
+        "immune_system_effect": 0.1,
+        "side_effect": {},
+        "progression": {},
+        "risks": {},
+        "treatment_strength": {
+            "1": [
+                "thyme"
+            ],
+            "2": [],
+            "3": []
+        }
+    },
+    "broken_jaw": {
+        "severity": "severe",
+        "duration": 4,
+        "mortality": {
+            "newborn": 0.8,
+            "kitten": 0.7,
+            "adolescent": 0.4,
+            "young adult": 0.3,
+            "adult": 0.2,
+            "senior adult": 0.3,
+            "senior": 0.5
+        },
+        "infectiousness": 0.0,
+        "immune_system_effect": 0.0,
+        "side_effect": {
+            "blood_loss": 0.2,
+            "scrapes": 0.2,
+            "bruises": 0.2
+        },
+        "progression": {
+            "crooked_jaw": {
+                "chance": 0.9,
+                "when": "HEALED",
+                "allow_scar": true
+            },
+            "damaged_throat": {
+                "chance": 0.2,
+                "when": "HEALED",
+                "allow_scar": false
+            }
+        },
+        "risks": {
+            "infection": 0.2
+        },
+        "treatment_strength": {
+            "1": [
+                "cobwebs",
+                "marigold",
+                "tansy",
+                "moss"
+            ],
+            "2": [
+                "wild_garlic",
+                "horsetail",
+                "oak_leaves"
+            ],
+            "3": [
+                "poppy",
+                "goldenrod"
+            ]
+        },
+        "possible_scars": [
+            "SNOUT",
+            "CHEEK",
+            "BRIDGE",
+            "BEAKCHEEK"
+        ]
+    },
+    "broken_bone": {
+        "severity": "severe",
+        "duration": 5,
+        "mortality": {
+            "newborn": 0.5,
+            "kitten": 0.4,
+            "adolescent": 0.2,
+            "young adult": 0.1,
+            "adult": 0.2,
+            "senior adult": 0.3,
+            "senior": 0.4
+        },
+        "infectiousness": 0.0,
+        "immune_system_effect": 0.0,
+        "side_effect": {
+            "torn_pelt": 0.2,
+            "mangled_leg": 0.2,
+            "blood_loss": 0.2,
+            "scrapes": 0.2,
+            "bruises": 0.2
+        },
+        "progression": {
+            "weak_leg": {
+                "chance": 0.2,
+                "when": "HEALED",
+                "allow_scar": true
+            },
+            "twisted_leg": {
+                "chance": 0.2,
+                "when": "HEALED",
+                "allow_scar": true
+            }
+        },
+        "risks": {
+            "infection": 0.2
+        },
+        "treatment_strength": {
+            "1": [
+                "cobwebs",
+                "marigold",
+                "tansy",
+                "moss"
+            ],
+            "2": [
+                "wild_garlic",
+                "horsetail",
+                "oak_leaves"
+            ],
+            "3": [
+                "poppy",
+                "goldenrod"
+            ]
+        },
+        "possible_scars": [
+            "MANLEG",
+            "TOETRAP",
+            "FOUR"
+        ]
+    },
+    "damaged_eyes": {
+        "severity": "severe",
+        "duration": 6,
+        "mortality": {
+            "newborn": 0.3,
+            "kitten": 0.2,
+            "adolescent": 0.1,
+            "young adult": 0.05,
+            "adult": 0.05,
+            "senior adult": 0.1,
+            "senior": 0.2
+        },
+        "infectiousness": 0.0,
+        "immune_system_effect": 0.0,
+        "side_effect": {},
+        "progression": {
+            "blind": {
+                "chance": 0.2,
+                "when": "HEALED",
+                "allow_scar": true
+            },
+            "one_bad_eye": {
+                "chance": 0.3,
+                "when": "HEALED",
+                "allow_scar": true
+            },
+            "failing_eyesight": {
+                "chance": 0.5,
+                "when": "HEALED",
+                "allow_scar": true
+            }
+        },
+        "risks": {
+            "infection": 0.25
+        },
+        "treatment_strength": {
+            "1": [
+                "cobwebs",
+                "marigold",
+                "oak_leaves",
+                "ragwort"
+            ],
+            "2": [
+                "juniper",
+                "wild_garlic"
+            ],
+            "3": [
+                "moss",
+                "goldenrod",
+                "poppy"
+            ]
+        },
+        "possible_scars": [
+            "THREE",
+            "RIGHTBLIND",
+            "LEFTBLIND",
+            "BOTHBLIND"
+        ]
+    },
+    "mangled_leg": {
+        "severity": "severe",
+        "duration": 3,
+        "mortality": {
+            "newborn": 0.5,
+            "kitten": 0.4,
+            "adolescent": 0.2,
+            "young adult": 0.1,
+            "adult": 0.2,
+            "senior adult": 0.3,
+            "senior": 0.4
+        },
+        "infectiousness": 0.0,
+        "immune_system_effect": 0.0,
+        "side_effect": {
+            "torn_pelt": 0.2,
+            "broken_bone": 0.2,
+            "dislocated_joint": 0.2,
+            "blood_loss": 0.2,
+            "scrapes": 0.2,
+            "bruises": 0.2
+        },
+        "progression": {
+            "lost_leg": {
+                "chance": 0.2,
+                "when": "HEALED",
+                "allow_scar": true
+            },
+            "weak_leg": {
+                "chance": 0.3,
+                "when": "HEALED",
+                "allow_scar": true
+            },
+            "twisted_leg": {
+                "chance": 0.4,
+                "when": "HEALED",
+                "allow_scar": true
+            }
+        },
+        "risks": {
+            "infection": 0.4
+        },
+        "treatment_strength": {
+            "1": [
+                "cobwebs",
+                "marigold",
+                "tansy",
+                "mullein"
+            ],
+            "2": [
+                "wild_garlic",
+                "horsetail",
+                "oak_leaves",
+                "moss"
+            ],
+            "3": [
+                "poppy",
+                "goldenrod"
+            ]
+        },
+        "possible_scars": [
+            "TOETRAP",
+            "MANLEG",
+            "FOUR"
+        ]
+    },
+    "mangled_tail": {
+        "severity": "severe",
+        "duration": 3,
+        "mortality": {
+            "newborn": 0.5,
+            "kitten": 0.4,
+            "adolescent": 0.2,
+            "young adult": 0.1,
+            "adult": 0.2,
+            "senior adult": 0.3,
+            "senior": 0.4
+        },
+        "infectiousness": 0.0,
+        "immune_system_effect": 0.0,
+        "side_effect": {
+            "torn_pelt": 0.2,
+            "blood_loss": 0.2
+        },
+        "progression": {
+            "lost_tail": {
+                "chance": 0.3,
+                "when": "HEALED",
+                "allow_scar": true
+            }
+        },
+        "risks": {
+            "infection": 0.4
+        },
+        "treatment_strength": {
+            "1": [
+                "cobwebs",
+                "marigold",
+                "tansy",
+                "mullein"
+            ],
+            "2": [
+                "wild_garlic",
+                "horsetail",
+                "oak_leaves",
+                "moss"
+            ],
+            "3": [
+                "poppy",
+                "goldenrod"
+            ]
+        },
+        "possible_scars": [
+            "TAILSCAR",
+            "TAILBASE",
+            "MANTAIL"
+        ]
+    },
+    "severe_burn": {
+        "severity": "severe",
+        "duration": 4,
+        "mortality": {
+            "newborn": 0.8,
+            "kitten": 0.7,
+            "adolescent": 0.5,
+            "young adult": 0.3,
+            "adult": 0.2,
+            "senior adult": 0.4,
+            "senior": 0.6
+        },
+        "infectiousness": 0.0,
+        "immune_system_effect": 0.0,
+        "side_effect": {},
+        "progression": {
+            "lost_tail": {
+                "chance": 0.2,
+                "when": "HEALED",
+                "allow_scar": true
+            },
+            "lost_leg": {
+                "chance": 0.2,
+                "when": "HEALED",
+                "allow_scar": true
+            }
+        },
+        "risks": {
+            "infection": 0.5
+        },
+        "treatment_strength": {
+            "1": [
+                "cobwebs",
+                "oak_leaves",
+                "juniper",
+                "ragwort"
+            ],
+            "2": [
+                "marigold",
+                "wild_garlic"
+            ],
+            "3": [
+                "moss",
+                "poppy",
+                "goldenrod",
+                "honey"
+            ]
+        },
+        "possible_scars": [
+            "BRIGHTHEART",
+            "BURNPAWS",
+            "BURNTAIL",
+            "BURNBELLY",
+            "BURNRUMP"
+        ]
+    },
+    "broken_back": {
+        "severity": "severe",
+        "duration": 8,
+        "mortality": {
+            "newborn": 0.9,
+            "kitten": 0.5,
+            "adolescent": 0.3,
+            "young adult": 0.1,
+            "adult": 0.1,
+            "senior adult": 0.3,
+            "senior": 0.7
+        },
+        "infectiousness": 0.0,
+        "immune_system_effect": 0.0,
+        "side_effect": {},
+        "progression": {
+            "paralyzed": {
+                "chance": 0.8,
+                "when": "HEALED",
+                "allow_scar": true
+            }
+        },
+        "risks": {
+            "infection": 0.1
+        },
+        "treatment_strength": {
+            "1": [
+                "juniper",
+                "ragwort"
+            ],
+            "2": [
+                "thyme",
+                "dandelion"
+            ],
+            "3": [
+                "poppy",
+                "burdock"
+            ]
+        },
+        "possible_scars": [
+            "TWO",
+            "TAILBASE",
+            "BACK"
+        ]
+    }
+}

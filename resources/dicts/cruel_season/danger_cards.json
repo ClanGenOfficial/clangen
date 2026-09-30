@@ -11,7 +11,7 @@
   "plague_ridden": {
     "card_art": "danger/tooth_and_claw.png",
     "modifiers": {
-      "condition_related.med_infection_reduction": 0,
+      "condition_related.med_infection_reduction": 0.0,
       "condition_related.illness_outbreak_season": ["Leaf-bare", "Leaf-fall", "Greenleaf", "Newleaf"],
       "condition_related.illness_percentage_max": 1.25
     }

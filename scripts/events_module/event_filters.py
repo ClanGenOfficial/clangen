@@ -499,11 +499,11 @@ def event_for_cat(
 
     # checking injuries
     if injuries:
-        if "mangled tail" in injuries and (
+        if "mangled_tail" in injuries and (
             "NOTAIL" in cat.pelt.scars or "HALFTAIL" in cat.pelt.scars
         ):
             return False
-        if "torn ear" in injuries and "NOEAR" in cat.pelt.scars:
+        if "torn_ear" in injuries and "NOEAR" in cat.pelt.scars:
             return False
 
     # checking relationships
@@ -1027,10 +1027,10 @@ def _check_cat_health(cat, health_constraints: dict) -> bool:
     # so that a missing value and a False value will be treated differently
     if "working" in health_constraints:
         # "working" equals True and cat isn't working
-        if health_constraints["working"] and cat.not_working():
+        if health_constraints["working"] and not cat.can_work():
             return False
         # "working" equals False and cat IS working
-        elif not health_constraints["working"] and not cat.not_working():
+        elif not health_constraints["working"] and cat.can_work():
             return False
 
     if health_constraints.get("condition"):
@@ -1042,9 +1042,9 @@ def _check_cat_health(cat, health_constraints: dict) -> bool:
         if is_exclusionary:
             required_conditions = [x.replace("-", "") for x in required_conditions]
 
-        current_conditions = set(cat.illnesses.keys())
-        current_conditions.update(cat.injuries.keys())
-        current_conditions.update(cat.permanent_condition.keys())
+        current_conditions = set(
+            [con.name for con in cat.temporary_conditions + cat.permanent_conditions]
+        )
 
         if current_conditions.intersection(set(required_conditions)):
             if is_exclusionary:
@@ -1054,31 +1054,26 @@ def _check_cat_health(cat, health_constraints: dict) -> bool:
                 return False
 
         # need to check if the perm conditions were congenital
+        perm_conditions = cat.permanent_conditions
+        # gathering conditions to check
+        if is_exclusionary:
+            matching = perm_conditions
+        else:
+            matching = [con for con in perm_conditions if con in required_conditions]
+
         if health_constraints.get("must_be_congenital", False):
-            perm_conditions = set(cat.permanent_condition.keys())
-            # gathering conditions to check
-            if is_exclusionary:
-                matching = perm_conditions
-            else:
-                matching = perm_conditions.intersection(set(required_conditions))
             # checking if they're congenital
             if matching:
                 for cond in matching:
-                    if not cat.permanent_condition[cond].get("born_with"):
+                    if not cond.is_congenital:
                         return False
 
         # need to check if the perm conditions were NOT congenital
         elif health_constraints.get("must_be_acquired", False):
-            perm_conditions = set(cat.permanent_condition.keys())
-            # gathering conditions to check
-            if is_exclusionary:
-                matching = perm_conditions
-            else:
-                matching = perm_conditions.intersection(set(required_conditions))
             # checking if they're NOT congenital
             if matching:
                 for cond in matching:
-                    if cat.permanent_condition[cond].get("born_with"):
+                    if cond.is_congenital:
                         return False
 
     return True
@@ -1161,11 +1156,11 @@ def cat_for_event(
     # find cats that can get the injuries that will be given
     if injuries:
         for cat in allowed_cats.copy():
-            if "mangled tail" in injuries and (
+            if "mangled_tail" in injuries and (
                 "NOTAIL" in cat.pelt.scars or "HALFTAIL" in cat.pelt.scars
             ):
                 allowed_cats.remove(cat)
-            if "torn ear" in injuries and "NOEAR" in cat.pelt.scars:
+            if "torn_ear" in injuries and "NOEAR" in cat.pelt.scars:
                 allowed_cats.remove(cat)
 
         # if the list is emptied, return

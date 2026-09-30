@@ -1,0 +1,19 @@
+[
+    {
+        "event_id": "poisoned0",
+        "strings": [
+            "m_c died from the poison in {PRONOUN/m_c/poss} body."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        },
+        "death": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "history": "m_c died from the poison in {PRONOUN/m_c/poss} body."
+            }
+        ]
+    }
+]

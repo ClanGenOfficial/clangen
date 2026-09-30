@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "weak_leg_joint_pain0",
+        "strings": [
+            "m_c comes to r_c0 feeling like {PRONOUN/m_c/poss} weak leg is going to collapse beneath {PRONOUN/m_c/object} from the pain in its joints."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "weak_leg_joint_pain1",
+        "strings": [
+            "{PRONOUN/m_c/subject/CAP} must have put a foot wrong. The joints in m_c's weak leg feel inflamed and painful."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

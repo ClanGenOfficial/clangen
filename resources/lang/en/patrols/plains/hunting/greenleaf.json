@@ -243,7 +243,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c was scarred by a sharp piece of Twoleg garbage.",
                         "death_history": "m_c died after being cut by a piece of Twoleg garbage."

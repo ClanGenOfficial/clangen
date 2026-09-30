@@ -1839,7 +1839,7 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "shivering"
+                            "dangerously_cold"
                         ],
                         "death_history": "m_c caught a chill while hunting and couldn't recover."
                     }
@@ -4579,7 +4579,7 @@
                             "bruises",
                             "sore",
                             "scrapes",
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_pool_override": [
                             "LEFTEAR",
@@ -5227,7 +5227,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "shivering"
+                            "dangerously_cold"
                         ],
                         "scar_history": "m_c was scarred from the bite of the cold stream {PRONOUN/m_c/subject} fell into as an apprentice.",
                         "death_history": "m_c couldn't recover from {PRONOUN/m_c/poss} chill after falling in a freezing stream."

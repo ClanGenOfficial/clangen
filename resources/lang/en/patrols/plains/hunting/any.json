@@ -6507,8 +6507,8 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "small cut",
-                            "damaged eyes"
+                            "small_cut",
+                            "damaged_eyes"
                         ],
                         "scar_history": "m_c was permanently marked by the claws of a hare as an apprentice — but {PRONOUN/m_c/subject} survived.",
                         "death_history": "m_c died from injuries inflicted by a hare {PRONOUN/m_c/subject} encountered on a hunt as a foolish apprentice."
@@ -9016,7 +9016,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "dislocated joint"
+                            "dislocated_joint"
                         ]
                     }
                 ]
@@ -9187,7 +9187,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "severe headache"
+                            "severe_headache"
                         ]
                     }
                 ]
@@ -9843,7 +9843,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "dislocated joint"
+                            "dislocated_joint"
                         ]
                     }
                 ]
@@ -10187,7 +10187,7 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "claw-wound",
+                            "claw_wound",
                             "scrapes"
                         ],
                         "non_lethal": true,
@@ -10796,8 +10796,8 @@
                             "p_l"
                         ],
                         "condition": [
-                            "beak bite",
-                            "claw-wound"
+                            "beak_bite",
+                            "claw_wound"
                         ],
                         "scar_history": "m_c was scarred by a pheasant on patrol.",
                         "death_history": "m_c died of {PRONOUN/m_c/poss} wounds after being attacked by a pheasant."

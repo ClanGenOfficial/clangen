@@ -720,7 +720,7 @@
                         ],
                         "condition": [
                             "minor_injury",
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "Driving off coyotes left its scars on r_c0.",
                         "death_history": "r_c0 died from injuries sustained in keeping coyotes away from c_n's borders."
@@ -1349,7 +1349,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "bite-wound"
+                            "bite_wound"
                         ],
                         "scar_history": "A nursing coyote scarred r_c0's pelt.",
                         "death_history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."
@@ -1359,7 +1359,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "blood loss"
+                            "blood_loss"
                         ],
                         "scar_history": "A nursing coyote scarred r_c0's pelt.",
                         "death_history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."
@@ -1635,7 +1635,7 @@
                         ],
                         "condition": [
                             "scrapes",
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "A nursing coyote scarred r_c0.",
                         "death_history": "m_c died of injuries inflicted by a nursing coyote."
@@ -1687,7 +1687,7 @@
                         ],
                         "condition": [
                             "minor_injury",
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "Driving off coyotes left its scars on r_c0.",
                         "death_history": "r_c0 died from injuries sustained in keeping coyotes away from c_n's borders."
@@ -1740,7 +1740,7 @@
                         ],
                         "condition": [
                             "minor_injury",
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "Driving off coyotes left its scars on r_c0.",
                         "death_history": "r_c0 died from injuries sustained in keeping coyotes away from c_n's borders."
@@ -1782,7 +1782,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "A coyote encounter left its scars on r_c0.",
                         "death_history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."

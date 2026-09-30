@@ -202,5 +202,16 @@
         "MULTINYLON": "NYLON_BELL_rose",
         "INDIGONYLON": "NYLON_BELL_indigo",
         "RAINBOWNYLON": "NYLON_BELL_GRADIENT_rainbow"
+    },
+    "condition_map": {
+        "lost_a_leg": "lost_leg",
+        "born_without_a_leg": "born_without_leg",
+        "lost_their_tail": "lost_tail",
+        "born_without_a_tail": "born_without_tail",
+        "an_infected_wound": "infection",
+        "a_festering_wound": "festering_wound",
+        "water_in_lungs": "water_in_lungs",
+        "shivering": "dangerously_cold",
+        "quilled_by_a_porcupine": "porcupine_quilled"
     }
 }

@@ -187,7 +187,7 @@
         "injury": [
             {
                 "cats": ["n_c:0"],
-                "injuries": ["water in their lungs"]
+                "injuries": ["water_in_lungs"]
             }
         ],
         "history": [
@@ -245,7 +245,7 @@
                     "n_c:0"
                 ],
                 "injuries": [
-                    "water in their lungs"
+                    "water_in_lungs"
                 ]
             }
         ],

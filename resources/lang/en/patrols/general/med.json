@@ -8898,7 +8898,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "snake bite"
+                            "snake_bite"
                         ],
                         "scar_history": "m_c was scarred after being bitten by a snake on patrol",
                         "death_history": "m_c died after being bitten by a snake on patrol."
@@ -8972,7 +8972,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "snake bite"
+                            "snake_bite"
                         ],
                         "scar_history": "m_c was scarred after being bitten by a snake on patrol",
                         "death_history": "m_c died from a snake bite while gathering herbs."
@@ -12488,7 +12488,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "torn pelt"
+                            "torn_pelt"
                         ]
                     }
                 ]
@@ -14293,7 +14293,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "small cut"
+                            "small_cut"
                         ]
                     }
                 ]
@@ -14378,7 +14378,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "small cut"
+                            "small_cut"
                         ]
                     }
                 ]
@@ -50958,7 +50958,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "small cut"
+                            "small_cut"
                         ],
                         "scar_pool_override": [
                             "SCRATCHSIDE"

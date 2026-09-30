@@ -4,12 +4,12 @@ from typing import Optional, Dict, List
 import i18n
 
 from scripts.cat.cats import Cat
+from scripts.cat.conditions.gain_conditions import gain_temporary_condition
 from scripts.cat.enums import CatGroup, CatRank
 from scripts.cat.names import Name
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.clan_package.settings import get_clan_setting
-from scripts.cat.microservices.conditions import get_injured
 from scripts.config import get_config
 from scripts.events_module.event_information import EventInformation
 from scripts.events_module.consequences import (
@@ -67,10 +67,12 @@ def handle_one_moon_pregnant(cat: Cat):
         text = choice(pregnancy_strings["litter_guess"]["unsure"])
 
     try:
-        if cat.injuries["pregnant"]["severity"] == "minor":
-            cat.injuries["pregnant"]["severity"] = "major"
+        pregnancy_condition = cat.get_condition("pregnant")
+        if pregnancy_condition.severity == "minor":
+            pregnancy_condition.severity = "major"
             text += choice(pregnancy_strings["major_severity"])
-    except KeyError:
+
+    except AttributeError:
         print("Is this an old save? Cat does not have the pregnant condition")
 
     text = event_text_adjust(Cat, text, main_cat=cat, clan=game.clan)
@@ -213,8 +215,8 @@ def handle_two_moon_pregnant(cat: Cat):
 
     if game.clan.game_mode != "classic":
         try:
-            death_chance = cat.injuries["pregnant"]["mortality"]
-        except KeyError:
+            death_chance = cat.get_condition("pregnant").mortality
+        except AttributeError:
             death_chance = 40
     else:
         death_chance = 40
@@ -248,15 +250,15 @@ def handle_two_moon_pregnant(cat: Cat):
             death_event = i18n.t("conditions.pregnancy.kitting_death", name=cat.name)
         cat.history.add_death(death_text=death_event)
     elif not cat.status.is_outsider:  # if cat doesn't die, give recovering from birth
-        get_injured(cat, "recovering from birth", event_triggered=True)
-        if "blood loss" in cat.injuries:
+        gain_temporary_condition(cat, "recovering_from_birth", omit_moonskip=True)
+        if "blood_loss" in cat.temporary_conditions:
             if cat.status.is_leader:
                 death_event = i18n.t("conditions.pregnancy.leader_kitting_death_severe")
             else:
                 death_event = i18n.t(
                     "conditions.pregnancy.kitting_death_harsh", name=cat.name
                 )
-            cat.history.add_possible_history("blood loss", death_text=death_event)
+            cat.history.add_possible_history("blood_loss", death_text=death_event)
             possible_events = events["birth"]["difficult_birth"]
             # just makin sure meds aren't mentioned if they aren't around or if they are a parent
             meds = find_alive_cats_with_rank(
@@ -272,7 +274,7 @@ def handle_two_moon_pregnant(cat: Cat):
     if not cat.dead:
         # If they are dead in childbirth above, all condition are cleared anyway.
         try:
-            cat.injuries.pop("pregnant")
+            cat.remove_condition("pregnant")
         except KeyError:
             print("Is this an old save? Your cat didn't have the pregnant condition!")
     print_event = " ".join(event_list)

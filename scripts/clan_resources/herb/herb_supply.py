@@ -3,6 +3,7 @@ from typing import Optional
 
 import i18n
 
+from scripts.cat.conditions.permanent_condition import PermanentCondition
 from scripts.cat.skills import SkillPath
 from scripts.clan_resources.herb.herb import Herb
 from scripts.game_structure.constants import HERBS
@@ -12,7 +13,7 @@ from scripts.config import get_config
 from scripts.game_structure import constants
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
-from scripts.cat.constants import ILLNESSES, INJURIES, PERMANENT
+from scripts.cat.constants import TEMPORARY_CONDITIONS, PERMANENT_CONDITIONS
 from scripts.events_module.text_adjust import event_text_adjust, adjust_list_text
 from collections import defaultdict
 
@@ -214,7 +215,7 @@ class HerbSupply:
         cats_to_treat = [
             kitty
             for kitty in clan_cats
-            if kitty.is_ill() or kitty.is_injured() or kitty.is_disabled()
+            if kitty.temporary_conditions or kitty.permanent_conditions
         ]
         for kitty in cats_to_treat:
             # if there are no working med cats, then only allow med cats to be treated. the idea being that a med cat
@@ -225,11 +226,11 @@ class HerbSupply:
 
             severities = []
 
-            conditions = kitty.permanent_condition.copy()
-            conditions.update(kitty.injuries)
-            conditions.update(kitty.illnesses)
+            conditions = (
+                kitty.permanent_conditions.copy() + kitty.temporary_conditions.copy()
+            )
             for con in conditions:
-                severities.append(conditions[con]["severity"])
+                severities.append(con.severity)
             if "severe" in severities:
                 severity_ranking["severe"].append(kitty)
             elif "major" in severities:
@@ -243,13 +244,8 @@ class HerbSupply:
             + severity_ranking["minor"]
         )
         if treatment_cats:
-            # collate all the source info for conditions
-            source_dict = ILLNESSES.copy()
-            source_dict.update(INJURIES)
-            source_dict.update(PERMANENT)
-
             for kitty in treatment_cats:
-                self._use_herbs(kitty, source_dict)
+                self._use_herbs(kitty)
 
         # remove expired herbs
         expired = []
@@ -624,22 +620,24 @@ class HerbSupply:
         # clear collection dict
         self.collected = {}
 
-    def _use_herbs(self, treatment_cat, source_dict):
+    def _use_herbs(self, treatment_cat):
         """
         utilize current herb supply on given condition
         :param treatment_cat: the cat object to be treated
         :source_dict: a full dict of all possible conditions
         """
-        # collate all cat's conditions
-        condition_dict = treatment_cat.injuries.copy()
-        condition_dict.update(treatment_cat.illnesses)
-        condition_dict.update(treatment_cat.permanent_condition)
+        # collate all the source info for conditions
+        source_dict = TEMPORARY_CONDITIONS.copy()
+        source_dict.update(PERMANENT_CONDITIONS)
 
-        for name, condition in condition_dict.items():
+        for condition in (
+            treatment_cat.permanent_conditions + treatment_cat.temporary_conditions
+        ):
+            name = condition.name
             # get the herbs that the condition allows as treatment
             try:
                 required_herbs = []
-                for level in source_dict[name]["herbs"].values():
+                for level in source_dict[name]["treatment_strength"].values():
                     required_herbs.extend(level)
             except KeyError:
                 print(
@@ -666,13 +664,17 @@ class HerbSupply:
             possible_effects = []
 
             # effects are weighted mortality most likely, then risks, then duration
-            if condition.get("mortality", 0):
+            if condition.mortality:
                 possible_effects.extend(
                     [HerbEffect.MORTALITY, HerbEffect.MORTALITY, HerbEffect.MORTALITY]
                 )
-            if condition.get("risks", []):
+            if condition.risks:
                 possible_effects.extend([HerbEffect.RISK, HerbEffect.RISK])
-            if condition.get("duration", 0) > 1:
+            if condition.progression:
+                possible_effects.extend(
+                    [HerbEffect.PROGRESSION, HerbEffect.PROGRESSION]
+                )
+            if hasattr(condition, "duration") and condition.duration > 1:
                 possible_effects.append(HerbEffect.DURATION)
 
             if not possible_effects:
@@ -681,38 +683,32 @@ class HerbSupply:
             chosen_effect = choice(possible_effects)
 
             # check if perm condition gets treatment
-            if (
-                treatment_cat.is_disabled()
-                and name in treatment_cat.permanent_condition
-            ):
+            if name in treatment_cat.permanent_conditions:
                 condition_default = source_dict[name]
                 will_not_treat = False
-                # only treat if mortality is worse than 20 or the condition's default mortality (whichever is higher)
-                if condition.get("mortality") and condition["mortality"] > max(
-                    condition_default["mortality"][treatment_cat.age], 20
+                # only treat if mortality is worse than 0.1 or the condition's default mortality (whichever is lower)
+                if condition.mortality < min(
+                    condition_default.get("mortality", {}).get(treatment_cat.age, 0.0),
+                    0.1,
                 ):
                     will_not_treat = True
-                for risk in condition.get("risks", []):
-                    # only treat if risk chance is worse than 20 or the risk's default chance (whichever is higher)
-                    default_chance = 20
-                    for default_risk in condition_default.get("risks", []):
-                        if default_risk["name"] == risk["name"]:
-                            default_chance = risk["chance"]
-                            break
+                for risk, current_chance in condition.risks.items():
+                    # only treat if risk chance is worse than 0.1 or the risk's default chance (whichever is lower)
+                    default_chance = min(0.1, condition_default["risks"].get(risk, 0.0))
 
-                    if risk["chance"] > default_chance:
+                    if current_chance < default_chance:
                         will_not_treat = True
                     else:  # if any risk needs treatment, then we'll treat
                         will_not_treat = False
                         break
 
                 if will_not_treat:
-                    self.__apply_lack_of_herb(treatment_cat, name, chosen_effect)
+                    self._apply_lack_of_herb(treatment_cat, name, chosen_effect)
                     return
 
             if game.clan.game_mode == "classic":
                 # classic always applies basic treatment, regardless of herb supply
-                self.__apply_herb_effect(
+                self._apply_herb_effect(
                     treatment_cat,
                     name,
                     "cobwebs",
@@ -735,18 +731,18 @@ class HerbSupply:
                     1, total_herb_amount if total_herb_amount < 3 else 3
                 )
                 strength = 1
-                for level, herb_list in source_dict[name]["herbs"].items():
+                for level, herb_list in source_dict[name]["treatment_strength"].items():
                     if herb_used in herb_list:
                         strength = int(level)
 
                 self.remove_herb(herb_used, amount_used)
 
-                self.__apply_herb_effect(
+                self._apply_herb_effect(
                     treatment_cat, name, herb_used, chosen_effect, amount_used, strength
                 )
 
             elif random() > 0.30:  # 70% chance that lack of treatment is detrimental
-                self.__apply_lack_of_herb(treatment_cat, name, chosen_effect)
+                self._apply_lack_of_herb(treatment_cat, name, chosen_effect)
 
     def _gather_herbs(self, med_cat):
         """
@@ -783,12 +779,12 @@ class HerbSupply:
 
         return needed_num
 
-    def __apply_herb_effect(
+    def _apply_herb_effect(
         self,
         treated_cat,
         condition: str,
         herb_used: str,
-        effect: str,
+        effect: HerbEffect,
         amount_used: int,
         strength: int,
     ):
@@ -797,47 +793,29 @@ class HerbSupply:
         """
 
         # grab the correct condition dict so that we can modify it
-        if condition in treated_cat.illnesses:
-            con_info = treated_cat.illnesses[condition]
-        elif condition in treated_cat.injuries:
-            con_info = treated_cat.injuries[condition]
-        else:
-            con_info = treated_cat.permanent_condition[condition]
-            if con_info["born_with"] and con_info["moons_until"] != -2:
-                return
+        con_info = treated_cat.get_condition(condition)
+        if (
+            isinstance(con_info, PermanentCondition)
+            and con_info.is_congenital
+            and con_info.moons_until_discovery >= 0
+        ):
+            return
 
-        amt_modifier = amount_used
+        # apply effect
+        con_info.apply_herb_effect(effect, strength, amount_used * 0.01)
 
+        # get log message
         effect_message = ""
-        # apply mortality effect
         if effect == HerbEffect.MORTALITY:
-            con_info[effect] += (
-                constants.CONFIG["clan_resources"]["herbs"]["base_mortality_effect"]
-                * strength
-                + amt_modifier
-            )
             effect_message = i18n.t("screens.med_den.mortality_down")
 
-        # apply duration effect
         elif effect == HerbEffect.DURATION:
-            # duration doesn't get amt_modifier, as that would be far too strong an affect
-            con_info[effect] -= (
-                constants.CONFIG["clan_resources"]["herbs"]["base_duration_effect"]
-                * strength
-            )
-            if con_info["duration"] < 0:
-                con_info["duration"] = 0
             effect_message = i18n.t("screens.med_den.duration_down")
 
-        # apply risk effect
         elif effect == HerbEffect.RISK:
-            for risk in con_info[effect]:
-                risk["chance"] += (
-                    constants.CONFIG["clan_resources"]["herbs"]["base_risk_effect"]
-                    * strength
-                    + amt_modifier
-                )
-                effect_message = i18n.t("screens.med_den.risks_down")
+            effect_message = i18n.t("screens.med_den.risks_down")
+        elif effect == HerbEffect.PROGRESSION:
+            effect_message = i18n.t("screens.med_den.progression_down")
 
         if game.clan.game_mode == "classic":
             # classic doesn't get logs
@@ -847,11 +825,16 @@ class HerbSupply:
 
         herb = self.herb[herb_used]
 
+        if condition in treated_cat.permanent_conditions:
+            condition_name = i18n.t(f"conditions.permanent_conditions.{condition}")
+        else:
+            condition_name = i18n.t(f"conditions.temporary_conditions.{condition}")
+
         message = i18n.t(
             "conditions.herbs.herb_used",
             herb=i18n.t(f"conditions.herbs.{herb.name}", count=amount_used),
             count=amount_used,
-            condition=condition,
+            condition=condition_name,
             effect=effect_message,
         )
 
@@ -861,33 +844,19 @@ class HerbSupply:
         self.log.append(message)
 
     @staticmethod
-    def __apply_lack_of_herb(treatment_cat, condition: str, effect):
+    def _apply_lack_of_herb(treatment_cat, condition: str, effect):
         """
         if the condition is a perm condition or redcough, give some consequence for not treated it
         """
-        # TODO: this kinda feels like something that should happen within a theoretical condition class...
 
         # only perm conditions and redcough can degenerate
-        if condition in treatment_cat.illnesses and condition != "redcough":
-            return
-        elif condition in treatment_cat.injuries:
+        if (
+            condition not in treatment_cat.permanent_conditions
+            or condition != "redcough"
+        ):
             return
 
-        # grab the correct condition dict so that we can modify it
-        if condition == "redcough":
-            con_info = treatment_cat.illnesses[condition]
-        else:
-            con_info = treatment_cat.permanent_condition[condition]
-
-        if effect == HerbEffect.RISK:
-            for risk in con_info[effect]:
-                risk["chance"] -= randint(1, 3)
-                if risk["chance"] <= 1:
-                    risk["chance"] = 2
-        elif effect == HerbEffect.MORTALITY:
-            con_info[effect] -= randint(1, 3)
-            if con_info[effect] <= 1:
-                con_info[effect] = 2
+        treatment_cat.get_condition(condition).apply_lack_of_herb(effect)
 
 
 MESSAGES: Optional[dict] = None

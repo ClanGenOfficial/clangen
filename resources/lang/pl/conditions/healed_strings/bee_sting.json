@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "bee_sting0",
+        "strings": [
+            "m_c's bee sting is feeling all better."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

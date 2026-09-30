@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "partial_hearing_loss_deaf0",
+        "strings": [
+            "r_c0 listens as m_c explains that it doesn't seem like {PRONOUN/m_c/subject} can hear the details of the world anymore."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "partial_hearing_loss_deaf1",
+        "strings": [
+            "m_c realizes one day that the noises around {PRONOUN/m_c/object} are no longer just quiet, but functionally silent. It seems {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} lost too much of {PRONOUN/m_c/poss} hearing."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

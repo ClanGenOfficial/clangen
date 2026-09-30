@@ -1,0 +1,13 @@
+[
+    {
+        "event_id": "running_nose0",
+        "strings": [
+            "m_c's running nose has finally stopped running.",
+            "m_c no longer has a running nose.",
+            "m_c's running nose is gone."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

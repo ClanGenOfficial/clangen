@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "strange_lump_redcough0",
+        "strings": [
+            "r_c0 braces for the inevitable when m_c finally contracts redcough. It's just a matter of moons now."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "strange_lump_redcough1",
+        "strings": [
+            "m_c has finally started coughing up blood. The Clan has seen this before \u00e2\u20ac\u201d that lump was poison."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

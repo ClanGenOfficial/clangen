@@ -1,0 +1,12 @@
+[
+    {
+        "event_id": "absent_joint_pain0",
+        "strings": [
+            "m_c's joints hurt lately. {PRONOUN/m_c/subject/CAP} must have been walking around more than {PRONOUN/m_c/subject} thought.",
+            "m_c isn't moving as much today, mumbling about being sore."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

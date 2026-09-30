@@ -1,0 +1,22 @@
+[
+    {
+        "event_id": "yellowcough0",
+        "strings": [
+            "m_c died of yellowcough.",
+            "Yellowcough has killed m_c.",
+            "m_c was killed by yellowcough.",
+            "Yellowcough has taken m_c's life."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        },
+        "death": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "history": "m_c died of yellowcough."
+            }
+        ]
+    }
+]

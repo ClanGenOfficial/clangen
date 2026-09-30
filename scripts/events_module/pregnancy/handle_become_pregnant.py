@@ -4,8 +4,8 @@ from typing import Optional, List
 import i18n
 
 from scripts.cat.cats import Cat
+from scripts.cat.conditions.gain_conditions import gain_temporary_condition
 from scripts.clan_package.settings import get_clan_setting
-from scripts.cat.microservices.conditions import get_injured
 from scripts.events_module.event_information import EventInformation
 from scripts.events_module.pregnancy.build_strings import (
     get_pregnancy_strings,
@@ -165,7 +165,7 @@ def _create_pregnancy_announcement(
     text = choice(get_pregnancy_strings()[announcement_key])
     event_text = text
     severity = choices(["minor", "major"], [3, 1], k=1)[0]
-    get_injured(pregnant_cat, "pregnant", severity=severity)
+    gain_temporary_condition(pregnant_cat, "pregnant", severity=severity)
     text += choice(get_pregnancy_strings()[f"{severity}_severity"])
     text = event_text_adjust(
         Cat,

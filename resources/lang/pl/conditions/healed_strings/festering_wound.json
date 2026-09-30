@@ -1,0 +1,12 @@
+[
+    {
+        "event_id": "festering_wound0",
+        "strings": [
+            "m_c's wound is no longer festering, and the infection is gone.",
+            "m_c's festering wound seems to have gotten a bit better."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

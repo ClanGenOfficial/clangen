@@ -329,10 +329,10 @@
                             "p_l"
                         ],
                         "condition": [
-                            "broken bone",
-                            "broken jaw",
-                            "head damage",
-                            "dislocated joint"
+                            "broken_bone",
+                            "broken_jaw",
+                            "head_damage",
+                            "dislocated_joint"
                         ],
                         "scar_history": "m_c was scarred after gaining injuries exploring the territory.",
                         "death_history": "m_c died of injuries gained exploring the territory."
@@ -12588,7 +12588,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "small cut"
+                            "small_cut"
                         ]
                     }
                 ]
@@ -13295,7 +13295,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "claw-wound"
+                            "claw_wound"
                         ],
                         "scar_history": "m_c was scarred from a wound inflicted by a Clanmate who insisted on training with claws unsheathed.",
                         "death_history": "m_c died from a wound inflicted by a Clanmate who insisted on training with claws unsheathed."
@@ -13305,7 +13305,7 @@
                             "some_patrol"
                         ],
                         "condition": [
-                            "small cut",
+                            "small_cut",
                             "scrapes"
                         ],
                         "scar_history": "m_c was scarred from a wound inflicted by a Clanmate who insisted on training with claws unsheathed.",
@@ -13722,7 +13722,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "claw-wound"
+                            "claw_wound"
                         ],
                         "scar_history": "m_c was scarred from a wound inflicted by a Clanmate who insisted on training with claws unsheathed.",
                         "death_history": "m_c died from a wound inflicted by a Clanmate who insisted on training with claws unsheathed."
@@ -13732,7 +13732,7 @@
                             "some_patrol"
                         ],
                         "condition": [
-                            "small cut",
+                            "small_cut",
                             "scrapes"
                         ],
                         "scar_history": "m_c was scarred from a wound inflicted by a Clanmate who insisted on training with claws unsheathed.",
@@ -14058,7 +14058,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c was scarred after sparring with claws unsheathed as an apprentice.",
                         "death_history": "m_c died of an injury inflicted by a Clanmate during a spar with claws unsheathed."
@@ -14681,7 +14681,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "claw-wound"
+                            "claw_wound"
                         ],
                         "scar_pool_override": [
                             "FACE",
@@ -16050,7 +16050,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "broken back"
+                            "broken_back"
                         ],
                         "scar_history": "m_c's back was broken after attempting to enter the forbidden tunnels.",
                         "death_history": "m_c couldn't recover from {PRONOUN/m_c/poss} broken back after attempting to enter the forbidden tunnels."
@@ -29401,7 +29401,7 @@
                             "r_c3"
                         ],
                         "condition": [
-                            "claw-wound"
+                            "claw_wound"
                         ],
                         "scar_pool_override": [
                             "RIGHTEAR"
@@ -33162,7 +33162,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "bite-wound"
+                            "bite_wound"
                         ],
                         "scar_history": "m_c got scarred training in the plains as an apprentice.",
                         "death_history": "m_c died from a bite-wound {PRONOUN/m_c/subject} got while training in the tall grass."

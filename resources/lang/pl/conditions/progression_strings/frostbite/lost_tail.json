@@ -1,0 +1,26 @@
+[
+    {
+        "event_id": "frostbite_lost_their_tail0",
+        "strings": [
+            "m_c sighs sadly as r_c0 suggests that it's time to take {PRONOUN/m_c/poss} tail off. The flesh is blackened from frostbite and is obviously dead; there's no use in leaving it attached. m_c agrees.",
+            "m_c's tail can hardly even move. r_c0 tells {PRONOUN/m_c/object} that the frostbite has progressed too far: if m_c is to survive, the tail will have to be removed."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "frostbite_lost_their_tail2",
+        "strings": [
+            "m_c's tail is finally gone. It's more of a relief than anything. The frostbitten flesh was already dead and blackened, so {PRONOUN/m_c/subject} had no issue with taking it off before it fell off on its own."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

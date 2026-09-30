@@ -1,0 +1,14 @@
+[
+    {
+        "event_id": "poisoned0",
+        "strings": [
+            "m_c got very lucky and has managed to recover from the poison.",
+            "Despite the lethality of the poison that coursed through {PRONOUN/m_c/object}, m_c has managed to stay alive.",
+            "m_c is no longer poisoned.",
+            "m_c has recovered from the poison."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
