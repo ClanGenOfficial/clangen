@@ -1,5 +1,3 @@
-## Team Roles & Responsibilities
-
 !!! important
     ClanGen is open-source and free to play. This means both that anyone can contribute, and also that no one is compensated for their contribution. Developer roles are neither titles nor jobs; they are descriptors! If you contribute to the game, you are a contributor. If you contribute to the game on an ongoing basis, you are a developer!
 
