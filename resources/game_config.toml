@@ -693,7 +693,7 @@ dev_tools = false
 
 [condition_related]
   # 10/chance an illness will occur
-  illness_chance = 250
+  illness_chance = 260
   classic_illness_chance = 500
 
   # how much the mortality will decrease each moon that the cat has a condition
@@ -709,7 +709,7 @@ dev_tools = false
 
   # 5/chance (for most personalities) or 15/chance (for some personalities) an injury will occur 
   classic_injury_chance = 450
-  injury_chance = 250
+  injury_chance = 260
 
   # 1/chance a cat will get a permanent condition from an event with that possibility 
   permanent_condition_chance = 15
