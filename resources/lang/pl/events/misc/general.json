@@ -4774,7 +4774,7 @@
             "name": ["terrain_rookery"]
         },
         "frequency": 4,
-        "event_text": "r_c climbed up into POIto steal some feathers. {PRONOUN/r_c/subject/CAP} returned with a few missing chunks of fur and triumphantly presented a flustered m_c with {PRONOUN/r_c/poss} prize.",
+        "event_text": "r_c climbed up into POI to steal some feathers. {PRONOUN/r_c/subject/CAP} returned with a few missing chunks of fur and triumphantly presented a flustered m_c with {PRONOUN/r_c/poss} prize.",
         "new_accessory": ["JAY FEATHERS", "BLUE FEATHERS"],
         "m_c": {
             "relationship_status": ["fancies"]
@@ -4825,7 +4825,7 @@
         ]
     },
     {
-        "event_id": "gen_misc_any_accessoryeaglenestPOI1",
+        "event_id": "gen_misc_any_accessoryeyriePOI1",
         "location": ["any"],
         "season": ["any"],
         "sub_type": ["accessory"],
@@ -4859,7 +4859,7 @@
         ]
     },
     {
-        "event_id": "gen_misc_any_accessoryeaglenestPOI2",
+        "event_id": "gen_misc_any_accessoryeyriePOI2",
         "location": ["any"],
         "season": ["any"],
         "sub_type": ["accessory"],
@@ -4949,13 +4949,13 @@
         }
     },
     {
-        "event_id": "gen_misc_any_accessorypreyflyingPOI1",
+        "event_id": "gen_misc_any_accessorypreybirdPOI1",
         "location": ["any"],
         "season": ["any"],
         "sub_type": ["accessory"],
         "tags": [],
         "poi": {
-            "tags": ["prey:flying"]
+            "tags": ["prey:bird"]
         },
         "frequency": 4,
         "event_text": "m_c was on a walk by POI when {PRONOUN/m_c/subject} found some lovely feathers. {PRONOUN/m_c/subject/CAP} decided to wear them.",
@@ -8085,7 +8085,7 @@
         "sub_type": [],
         "tags": [],
         "poi": {
-            "tags": ["fall_risk"]
+            "tags": ["danger:fall_risk"]
         },
         "frequency": 1,
         "event_text": "Whenever m_c is near POI, {PRONOUN/m_c/subject} {VERB/m_c/hear/hears} the wails of a cat in distress, but no cat is there. m_c wonders if it's a sign.",
@@ -8100,7 +8100,7 @@
         "sub_type": [],
         "tags": [],
         "poi": {
-            "tags": ["fall_risk"]
+            "tags": ["danger:fall_risk"]
         },
         "frequency": 1,
         "event_text": "m_c had a dream of POI. The feeling of plummeting to {PRONOUN/m_c/poss} death jerked {PRONOUN/m_c/object} awake.",
@@ -10851,7 +10851,7 @@
         "location": ["any"],
         "season": ["any"],
         "poi": {
-            "tags": ["fall_risk"]
+            "tags": ["danger:fall_risk"]
         },
         "frequency": 1,
         "event_text": "m_c took r_c out to teach {PRONOUN/r_c/object} how to keep {PRONOUN/r_c/poss} footing around POI.",
@@ -10878,7 +10878,7 @@
         "location": ["any"],
         "season": ["any"],
         "poi": {
-            "tags": ["tainted"]
+            "tags": ["danger:tainted"]
         },
         "frequency": 1,
         "event_text": "m_c took r_c out to teach {PRONOUN/r_c/object} how to hunt safely near POI.",
@@ -10905,7 +10905,7 @@
         "location": ["any"],
         "season": ["any"],
         "poi": {
-            "tags": ["unstable"]
+            "tags": ["danger:unstable"]
         },
         "frequency": 1,
         "event_text": "m_c took r_c out to teach {PRONOUN/r_c/object} what might collapse and what can be safely walked over around POI.",
@@ -15479,7 +15479,7 @@
         "sub_type": [],
         "tags": [],
         "poi": {
-            "tags": ["tainted"]
+            "tags": ["danger:tainted"]
         },
         "frequency": 1,
         "event_text": "Most c_n cats find POI a filthy, unpleasant part of the territory, but m_c finds a strange beauty in it.",
@@ -15506,7 +15506,7 @@
         "sub_type": [],
         "tags": [],
         "poi": {
-            "tags": ["prey:flying"]
+            "tags": ["prey:bird"]
         },
         "frequency": 1,
         "event_text": "m_c and r_c watched birds perform courtship rituals near POI and talked loudly about how ridiculous lovers can be. Their Clanmates exchanged glances.",
@@ -15649,7 +15649,7 @@
         "sub_type": [],
         "tags": [],
         "poi": {
-            "tags": ["fall_risk"]
+            "tags": ["danger:fall_risk"]
         },
         "frequency": 1,
         "event_text": "m_c and r_c yowled down POI, trying to make their meows echo.",
@@ -15679,7 +15679,7 @@
         "sub_type": [],
         "tags": [],
         "poi": {
-            "tags": ["fall_risk"]
+            "tags": ["danger:fall_risk"]
         },
         "frequency": 1,
         "event_text": "m_c had a near-death experience by POI.",
@@ -17267,7 +17267,7 @@
         ]
     },
     {
-        "event_id": "gen_misc_accessoryeaglenestPOI3",
+        "event_id": "gen_misc_accessoryeyriePOI3",
         "location": [],
         "season": [],
         "sub_type": [],
@@ -17360,7 +17360,7 @@
         "tags": [],
         "poi": {
             "tags": [
-                "tainted"
+                "danger:tainted"
             ]
         },
         "frequency": 2,
@@ -17407,7 +17407,7 @@
         "season": ["-leaf-bare"],
         "tags": ["romance"],
         "poi": {
-            "tags": ["tainted"]
+            "tags": ["danger:tainted"]
         },
         "frequency": 1,
         "event_text": "When m_c returned from POI smelling absolutely vile, r_c refused to share tongues with {PRONOUN/m_c/object} unless {PRONOUN/m_c/subject} took a swim. In return, m_c pulled r_c in with {PRONOUN/m_c/object}, and there was far more splashing about together than washing up.",
