@@ -98,7 +98,7 @@ Points of Interests can use many different tags that denote circumstances around
 
 Patrols, Short Events, and text pools such as Thoughts and Ceremonies now have an additional constraint that can be utilized to include either a specific Point of Interest ID, tag, or category. 
 
-You can add this to any short event or patrol to constrain by Point of Interest. You can constrain by both tag and category if you wish but name must be used independently.
+You can add this to any short event or patrol to constrain by Point of Interest. You can constrain by both tag and category if you wish, but name must be used independently.
 
 ~~~
 "poi": {
