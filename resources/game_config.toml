@@ -1097,6 +1097,10 @@ dev_tools = false
       "queen/pregnant" = 4
       kitten = 0.5
       newborn = 0.25
+  
+  # the percentage of freshkill that is lost per moon, after the decay formula has run
+  [prey.prey_loss]
+    loss = 0
 
   # the bonus prey a hunter skill cat will catch according to exp rank
   [prey.hunter_exp_bonus]
