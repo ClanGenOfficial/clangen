@@ -8,6 +8,7 @@ from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from ..ui.elements.sprite_button import UISpriteButton
 from ..ui.elements.image_button import UIImageButton
+from ..ui.elements.modified_image import UIModifiedImage
 from ..ui.elements.surface_image_button import UISurfaceImageButton
 from ..ui.theme import get_text_box_theme
 from ..events_module.text_adjust import adjust_list_text, shorten_text_to_fit
@@ -76,6 +77,7 @@ class FamilyTreeScreen(Screens):
 
         self.cat_elements = {}
         self.relation_elements = {}
+        self.tree_elements = {}
         self.tabs = {}
 
         self.group_page_number = 1
@@ -439,30 +441,76 @@ class FamilyTreeScreen(Screens):
         )
 
         if self.parents:
-            self.siblings_button = UIImageButton(
-                ui_scale(pygame.Rect((76 + x_pos, 32 + y_pos), (158, 30))),
-                "",
-                object_id="#siblings_button",
+            self.siblings_button = UISurfaceImageButton(
+                ui_scale(pygame.Rect((144 + x_pos, 32 + y_pos), (90, 30))),
+                "screens.family_tree.siblings",
+                get_button_dict(ButtonStyles.SQUOVAL, (90, 30)),
+                object_id="@buttonstyles_squoval",
                 manager=MANAGER,
+                container=self.family_tree,
+            )
+            self.tree_elements["siblings_line"] = UIModifiedImage(
+                ui_scale(pygame.Rect((-6, 0), (72, 6))),
+                pygame.transform.scale(
+                    image_cache.load_image(
+                        "resources/images/horizontal_line.png"
+                    ),
+                    ui_scale_dimensions((72, 6)),
+                ),
+                manager=MANAGER,
+                anchors={"right_target": self.siblings_button, "centery": "centery", "centery_target": self.siblings_button,
+                         "left_target": self.center_cat_frame},
                 container=self.family_tree,
             )
             if self.siblings:
                 if self.siblings_mates or self.siblings_kits:
-                    self.sibling_mates_button = UIImageButton(
-                        ui_scale(pygame.Rect((232 + x_pos, 32 + y_pos), (209, 30))),
-                        "",
-                        object_id="#siblingmates_button",
+                    self.sibling_mates_button = UISurfaceImageButton(
+                        ui_scale(pygame.Rect((70, 0), (135, 30))),
+                        "screens.family_tree.siblings_mates",
+                        get_button_dict(ButtonStyles.SQUOVAL, (135, 30)),
+                        object_id="@buttonstyles_squoval",
+                        anchors={"left_target": self.siblings_button, "centery": "centery", "centery_target": self.siblings_button,},
                         manager=MANAGER,
+                        container=self.family_tree,
+                    )
+                    self.tree_elements["siblings_mates_line"] = UIModifiedImage(
+                        ui_scale(pygame.Rect((-2, 0), (74, 6))),
+                        pygame.transform.scale(
+                            image_cache.load_image(
+                                "resources/images/horizontal_line.png"
+                            ),
+                            ui_scale_dimensions((74, 6)),
+                        ),
+                        manager=MANAGER,
+                        anchors={"left_target": self.siblings_button, "centery": "centery", "centery_target": self.siblings_button,
+                                 "right_target": self.sibling_mates_button},
                         container=self.family_tree,
                     )
                 if self.siblings_kits:
-                    self.sibling_kits_button = UIImageButton(
-                        ui_scale(pygame.Rect((203 + x_pos, 48 + y_pos), (126, 82))),
-                        "",
-                        object_id="#siblingkits_button",
+                    self.tree_elements["siblings_kits_line"] = UIModifiedImage(
+                        ui_scale(pygame.Rect((0, -2), (6, 78))),
+                        pygame.transform.scale(
+                            image_cache.load_image(
+                                "resources/images/vertical_line.png"
+                            ),
+                            ui_scale_dimensions((6, 78)),
+                        ),
                         manager=MANAGER,
+                        anchors={"top_target": self.tree_elements["siblings_mates_line"],
+                                 "centerx": "centerx", "centerx_target": self.tree_elements["siblings_mates_line"]},
+                        container=self.family_tree,
+                        starting_height=2
+                    )
+                    self.sibling_kits_button = UISurfaceImageButton(
+                        ui_scale(pygame.Rect((0, -2), (126, 30))),
+                        "screens.family_tree.siblings_kits",
+                        get_button_dict(ButtonStyles.SQUOVAL, (126, 30)),
+                        object_id="@buttonstyles_squoval",
+                        manager=MANAGER,
+                        anchors={"top_target": self.tree_elements["siblings_kits_line"], "centerx": "centerx", "centerx_target": self.tree_elements["siblings_kits_line"]},
                         container=self.family_tree,
                     )
+
             self.parents_button = UIImageButton(
                 ui_scale(pygame.Rect((68 + x_pos, -98 + y_pos), (88, 144))),
                 "",
