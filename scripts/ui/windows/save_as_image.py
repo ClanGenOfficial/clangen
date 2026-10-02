@@ -52,19 +52,21 @@ class SaveAsImageWindow(GameWindow):
         self.small_size_button.disable()
 
         self.medium_size_button = UIImageButton(
-            ui_scale(pygame.Rect((151, 50), (97, 30))),
+            ui_scale(pygame.Rect((0, 50), (97, 30))),
             "",
             object_id="#image_medium_button",
             container=self,
             starting_height=2,
+            anchors={"left_target": self.small_size_button},
         )
 
         self.large_size_button = UIImageButton(
-            ui_scale(pygame.Rect((248, 50), (97, 30))),
+            ui_scale(pygame.Rect((0, 50), (97, 30))),
             "",
             object_id="#image_large_button",
             container=self,
             starting_height=2,
+            anchors={"left_target": self.medium_size_button},
         )
 
         self.confirm_text = pygame_gui.elements.UITextBox(

@@ -28,6 +28,7 @@ class FamilyTreeScreen(Screens):
         super().__init__(name)
         self.next_cat = None
         self.previous_cat = None
+        self.inspect_button = None
         self.grandkits_tab = None
         self.kits_mates_tab = None
         self.kits_tab = None
@@ -105,6 +106,8 @@ class FamilyTreeScreen(Screens):
                     self.screen_switches()
                 else:
                     print("invalid next cat", self.next_cat)
+            elif event.ui_element == self.inspect_button:
+                self.change_screen(GameScreen.SPRITE_INSPECT)
             elif event.ui_element == self.parents_button:
                 self.current_group = self.parents
                 self.current_group_name = "parents"
@@ -206,6 +209,12 @@ class FamilyTreeScreen(Screens):
             get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
+        )
+        self.inspect_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((741, 60), (34, 34))),
+            Icon.MAGNIFY,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
         )
 
         # our container for the family tree, this will center itself based on visible relation group buttons
@@ -657,6 +666,8 @@ class FamilyTreeScreen(Screens):
         del self.next_cat_button
         self.back_button.kill()
         del self.back_button
+        self.inspect_button.kill()
+        del self.inspect_button
         self.family_tree.kill()
         del self.family_tree
         self.relation_backdrop.kill()
