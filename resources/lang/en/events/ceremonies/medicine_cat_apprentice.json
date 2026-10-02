@@ -398,7 +398,7 @@
             "name": ["moon_pool"]
         },
         "strings": [
-            "(old_name) has {PRONOUN/m_c/poss} heart set on becoming a medicine cat. r_c0 agrees to train {PRONOUN/m_c/object}, trying in vain to forget {PRONOUn/r_c0/poss} dream of m_c washing bloodstained paws in the waters of POI."
+            "(old_name) has {PRONOUN/m_c/poss} heart set on becoming a medicine cat. r_c0 agrees to train {PRONOUN/m_c/object}, trying in vain to forget {PRONOUN/r_c0/poss} dream of m_c washing bloodstained paws in the waters of POI."
         ]
     },
     {
@@ -414,7 +414,7 @@
             "name": ["moon_cave"]
         },
         "strings": [
-            "(old_name) has {PRONOUN/m_c/poss} heart set on becoming a medicine cat. r_c0 agrees to train {PRONOUN/m_c/object}, trying in vain to forget {PRONOUn/r_c0/poss} dream of screams drowning out the whispers of POI."
+            "(old_name) has {PRONOUN/m_c/poss} heart set on becoming a medicine cat. r_c0 agrees to train {PRONOUN/m_c/object}, trying in vain to forget {PRONOUN/r_c0/poss} dream of screams drowning out the whispers of POI."
         ]
     },
     {
@@ -430,7 +430,7 @@
             "name": ["moon_mothermouth"]
         },
         "strings": [
-            "(old_name) has {PRONOUN/m_c/poss} heart set on becoming a medicine cat. r_c0 agrees to train {PRONOUN/m_c/object}, trying in vain to forget {PRONOUn/r_c0/poss} dream of bloodred eyes peering out from the shadows of POI."
+            "(old_name) has {PRONOUN/m_c/poss} heart set on becoming a medicine cat. r_c0 agrees to train {PRONOUN/m_c/object}, trying in vain to forget {PRONOUN/r_c0/poss} dream of bloodred eyes peering out from the shadows of POI."
         ]
     }
 ]
