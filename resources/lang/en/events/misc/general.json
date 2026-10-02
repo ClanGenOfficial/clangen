@@ -13270,8 +13270,10 @@
         "sub_type": [
             "failed_murder"
         ],
+        "poi": {
+    "tags": ["danger"],
         "frequency": 4,
-        "event_text": "m_c took r_c to a dangerous part of the territory and, while nothing happened, r_c couldn't help but notice that m_c seemed to be waiting for something to happen...",
+        "event_text": "m_c took r_c to POI part of the territory and, while nothing happened, r_c couldn't help but notice that m_c seemed to be waiting for something to happen...",
         "m_c": {
         	"status": [
         		"-kitten"
@@ -13315,7 +13317,7 @@
             "failed_murder"
         ],
         "frequency": 4,
-        "event_text": "r_c was about to take a walk to shake the sinister aura that'd been following {PRONOUN/r_c/object} all day but the aura vanished as soon as {PRONOUN/r_c/subject} {VERB/r_c/were/was} pulled away to do something else instead.",
+        "event_text": "m_c seens strangely irritated that r_c's plans to take a walk alone were interrupted.",
         "m_c": {
         	"status": [
         		"-kitten"
@@ -13366,11 +13368,19 @@
             "failed_murder"
         ],
         "frequency": 4,
-        "event_text": "r_c saved m_c from a big dog but, rather then be happy, {PRONOUN/m_c/subject} seemed dissapointed... Did m_c want something else to happen?",
+        "event_text": "r_c saved m_c from a big dog but, rather then be happy, {PRONOUN/m_c/subject} seemed dissapointed... Was that not what m_c wanted to happen?",
         "m_c": {
         	"status": [
         		"-kitten"
         ]
+        "m_c": {
+        "trait": [
+        "ambitious"
+        "bold",
+        "confident",
+        "daring"
+        ],
+    },
         },
         "r_c": {
         "status": [
@@ -13511,7 +13521,10 @@
         		"-kitten"
         ]
         },
-        "r_c": {}
+        "r_c": {
+        "oblivious",
+        "strage"
+        }
     },
     {
         "event_id": "gen_misc_failedmurder_message1",
