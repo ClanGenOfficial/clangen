@@ -23,6 +23,7 @@
         "terrain_rookery": "the rookery",
         "terrain_batcaves": "the bat caves",
         "terrain_carrionbeach": "the carrionbeach",
-        "terrain_abandonednest": "the abandoned Twoleg nest"
+        "terrain_abandonednest": "the abandoned Twoleg nest",
+        "terrain_thunderpath": "the Thunderpath"
     }
 }

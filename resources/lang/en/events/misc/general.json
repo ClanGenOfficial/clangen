@@ -13205,6 +13205,204 @@
         }
     },
     {
+        "event_id": "gen_misc_failedmurder8",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "poi": {
+        	"name": ["terrain_thunderpath"]
+        },
+        "frequency": 4,
+        "event_text": "m_c bumped into r_c while dangerously close to POI, claiming to have done it by accident but the glint in m_c's eyes, however, tells another story...",
+        "m_c": {
+        	"status": [
+        		"-kitten"
+        ]
+        },
+        "r_c": {
+            "status": [
+                "-kitten"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_misc_failedmurder9",
+        "location": [
+            "forest",
+            "mountainous",
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "m_c bumped into r_c while dangerously close to a cliff, claiming to have done it by accident but the glint in m_c's eyes, however, tells another story...",
+        "m_c": {
+        	"status": [
+        		"-kitten"
+        ]
+        },
+        "r_c": {
+            "status": [
+                "-kitten"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_misc_failedmurder9",
+        "location": [
+            "forest",
+            "mountainous",
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "m_c took r_c to a dangerous part of the territory and, while nothing happened, r_c couldn't help but notice that m_c seemed to be waiting for something to happen...",
+        "m_c": {
+        	"status": [
+        		"-kitten"
+        ]
+        },
+        "r_c": {}
+    },
+    {
+        "event_id": "gen_misc_failedmurder10",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "r_c noticed m_c stalking {PRONOUN/r_c/object} when {PRONOUN/r_c/subject} {VERB/r_c/were/was} about to go on a walk alone so {PRONOUN/r_c/subject} changed {PRONOUN/r_c/poss} mind.",
+        "m_c": {
+        	"status": [
+        		"-kitten"
+        ]
+        },
+        "r_c": {
+        "status": [
+        		"-kitten"
+        ]
+       }
+    },
+    {
+        "event_id": "gen_misc_failedmurder11",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "r_c was about to take a walk to shake the sinister aura that'd been following {PRONOUN/r_c/object} all day but the aura vanished as soon as {PRONOUN/r_c/subject} {VERB/r_c/were/was} pulled away to do something else instead.",
+        "m_c": {
+        	"status": [
+        		"-kitten"
+        ]
+        },
+        "r_c": {
+        "status": [
+        		"-kitten"
+        ]
+        },
+        "exclude_involved": ["m_c"]
+    },
+    {
+        "event_id": "gen_misc_failedmurder12",
+        "location": [
+            "forest",
+            "mountainous",
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "r_c dodged some dangerous falling debris and, upon looking up, spotted m_c above looking dissapointed... Did {PRONOUN/m_c/subject} just try to kill {PRONOUN/r_c/object}?",
+        "m_c": {
+        	"status": [
+        		"-kitten"
+        ]
+        },
+        "r_c": {
+        "status": [
+        		"-kitten"
+        ]
+       }
+    },
+    {
+        "event_id": "gen_misc_failedmurder13",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "r_c saved m_c from a big dog but, rather then be happy, {PRONOUN/m_c/subject} seemed dissapointed... Did m_c want something else to happen?",
+        "m_c": {
+        	"status": [
+        		"-kitten"
+        ]
+        },
+        "r_c": {
+        "status": [
+        		"-kitten"
+        ]
+       }
+    },
+    {
+        "event_id": "gen_misc_failedmurder14",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "r_c was attacked by a rogue but when r_c won, the rouge claimed to be hired by m_c before fleeing.",
+        "m_c": {
+        	"status": [
+        		"-kitten"
+        ]
+        },
+        "r_c": {
+        "status": [
+        		"-kitten"
+        ]
+       }
+    },
+    {
         "event_id": "gen_misc_failedmurder_oblivious1",
         "location": [
             "any"
@@ -13294,6 +13492,26 @@
             "skill": ["CLEVER,1"]
         },
         "exclude_involved": ["m_c", "r_c"]
+    },
+    {
+        "event_id": "gen_misc_failedmurder_deathberry2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 4,
+        "event_text": "m_c offered r_c some small red berries as a snack but r_c, noticing the sinister air around {PRONOUN/m_c/object} said {PRONOUN/r_c/subject} {VERB/r_c/weren't/wasn't} hungry.",
+        "m_c": {
+        	"status": [
+        		"-kitten"
+        ]
+        },
+        "r_c": {}
     },
     {
         "event_id": "gen_misc_failedmurder_message1",
