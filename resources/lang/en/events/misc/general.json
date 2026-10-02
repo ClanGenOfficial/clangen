@@ -13343,6 +13343,8 @@
         "sub_type": [
             "failed_murder"
         ],
+        "poi": {
+    "tags": ["danger:unstable"],
         "frequency": 4,
         "event_text": "r_c dodged some dangerous falling debris and glimpsed m_c nearby, looking disappointed.",
         "m_c": {
