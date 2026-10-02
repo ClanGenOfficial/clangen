@@ -13317,7 +13317,7 @@
             "failed_murder"
         ],
         "frequency": 4,
-        "event_text": "m_c seens strangely irritated that r_c's plans to take a walk alone were interrupted.",
+        "event_text": "m_c seems strangely irritated that r_c's plans to take a walk alone were interrupted.",
         "m_c": {
         	"status": [
         		"-kitten"
@@ -13327,8 +13327,7 @@
         "status": [
         		"-kitten"
         ]
-        },
-        "exclude_involved": ["m_c"]
+        }
     },
     {
         "event_id": "gen_misc_failedmurder12",
