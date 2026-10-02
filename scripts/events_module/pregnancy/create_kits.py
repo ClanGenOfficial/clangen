@@ -230,6 +230,9 @@ def get_kits(
                 relationships_to_update.append(other_cat.ID)
 
         if relationships_to_update:
+            parent_to_kit = get_config("new_cat.parent_buff.parent_to_kit")
+            kit_to_parent = get_config("new_cat.parent_buff.kit_to_parent")
+            var_min, var_max = get_config("new_cat.parent_buff.variability")
             for cat_id in relationships_to_update:
                 if cat_id == kit.ID:
                     continue
@@ -237,26 +240,26 @@ def get_kits(
                 if the_cat.dead:
                     continue
                 if the_cat.ID in kit.get_parents():
-                    parent_to_kit = get_config("new_cat.parent_buff.parent_to_kit")
-                    y = randrange(0, 15)
-                    start_relation = Relationship(the_cat, kit, family=True)
-                    start_relation.like = parent_to_kit[RelType.LIKE] + y
-                    start_relation.comfort = parent_to_kit[RelType.COMFORT] + y
-                    start_relation.respect = parent_to_kit[RelType.RESPECT] + y
-                    start_relation.trust = parent_to_kit[RelType.TRUST] + y
-                    the_cat.relationships[kit.ID] = start_relation
+                    y = randrange(var_min, var_max)
+                    rel_dict = {
+                        reltype: change + y
+                        for (reltype, change) in parent_to_kit.items()
+                    }
+                    change_relationship_values(
+                        cats_from=[the_cat], cats_to=[kit], **rel_dict
+                    )
 
-                    kit_to_parent = get_config("new_cat.parent_buff.kit_to_parent")
-                    y = randrange(0, 15)
-                    start_relation = Relationship(kit, the_cat, family=True)
-                    start_relation.like += kit_to_parent[RelType.LIKE] + y
-                    start_relation.comfort = kit_to_parent[RelType.COMFORT] + y
-                    start_relation.respect = kit_to_parent[RelType.RESPECT] + y
-                    start_relation.trust = kit_to_parent[RelType.TRUST] + y
-                    kit.relationships[the_cat.ID] = start_relation
+                    y = randrange(var_min, var_max)
+                    rel_dict = {
+                        reltype: change + y
+                        for (reltype, change) in kit_to_parent.items()
+                    }
+                    change_relationship_values(
+                        cats_from=[kit], cats_to=[the_cat], **rel_dict
+                    )
                 else:
-                    the_cat.relationships[kit.ID] = Relationship(the_cat, kit)
-                    kit.relationships[the_cat.ID] = Relationship(kit, the_cat)
+                    create_one_relationship(kit, the_cat)
+                    create_one_relationship(the_cat, kit)
 
         #### REMOVE ACCESSORY ######
         kit.pelt.accessory = tuple()
@@ -265,19 +268,19 @@ def get_kits(
         #### GIVE HISTORY ######
         kit.history.add_beginning(clan_born=bool(cat))
 
+    sib_buff = get_config("new_cat.sib_buff.littermates_to_eachother")
+    var_min, var_max = get_config("new_cat.sib_buff.variability")
+
     # check other cats of Clan for siblings
     for kitten in all_kitten:
         # update/buff the relationship towards the siblings
         for second_kitten in all_kitten:
-            y = randrange(0, 15)
             if second_kitten.ID == kitten.ID:
                 continue
-            relationship_value = get_config("new_cat.sib_buff.littermates_to_eachother")
-            start_relation = Relationship(kitten, second_kitten, False, True)
-            start_relation.like += relationship_value["like"] + y
-            start_relation.comfort += relationship_value["comfort"] + y
-            start_relation.trust += relationship_value["trust"] + y
-            kitten.relationships[second_kitten.ID] = start_relation
+
+            y = randrange(var_min, var_max)
+            rel_dict = {reltype: change + y for (reltype, change) in sib_buff.items()}
+            change_relationship_values(cats_from=[kit], cats_to=[the_cat], **rel_dict)
 
     # check if the possible adoptive cat is not already in the family tree and
     # add them as adoptive parents if not
@@ -293,6 +296,9 @@ def get_kits(
 
     # Add the adoptive parents.
     if final_adoptive_parents:
+        kit_to_parent = get_config("new_cat.parent_buff.kit_to_parent")
+        parent_to_kit = get_config("new_cat.parent_buff.parent_to_kit")
+
         for kit in all_kitten:
             kit.adoptive_parents = final_adoptive_parents
 
@@ -300,8 +306,6 @@ def get_kits(
             for parent_id in final_adoptive_parents:
                 parent = Cat.fetch_cat(parent_id)
                 if parent:
-                    kit_to_parent = get_config("new_cat.parent_buff.kit_to_parent")
-                    parent_to_kit = get_config("new_cat.parent_buff.parent_to_kit")
                     change_relationship_values(
                         cats_from=[kit],
                         cats_to=[parent],
