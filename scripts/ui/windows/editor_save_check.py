@@ -2,7 +2,6 @@ import pygame
 import pygame_gui
 import ujson
 
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.windows.window_base_class import GameWindow
@@ -21,18 +20,16 @@ class EditorSaveCheck(GameWindow):
         self.old_event_list = old_event_list
         # adding a variable for starting_height to make sure that this menu is always on top
 
-        self.game_over_message = UITextBoxTweaked(
+        self.game_over_message = pygame_gui.elements.UITextBox(
             "windows.editor_save_check_message",
             ui_scale(pygame.Rect((0, 20), (360, -1))),
-            line_spacing=1,
             object_id="#text_box_30_horizcenter",
             container=self,
             anchors={"centerx": "centerx"},
         )
-        self.path_text = UITextBoxTweaked(
+        self.path_text = pygame_gui.elements.UITextBox(
             path,
             ui_scale(pygame.Rect((0, 0), (360, -1))),
-            line_spacing=1,
             object_id="#text_box_30_horizcenter",
             container=self,
             anchors={"top_target": self.game_over_message, "centerx": "centerx"},

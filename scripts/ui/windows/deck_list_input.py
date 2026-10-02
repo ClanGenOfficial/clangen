@@ -8,7 +8,6 @@ from scripts.game_structure.game import Switch
 from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.scale import ui_scale, ui_scale_dimensions
 from scripts.ui.windows.window_base_class import GameWindow
@@ -23,7 +22,7 @@ class ViewCardsWindow(GameWindow):
         self.current_cards = current_cards
         self.elements = {}
 
-        self.elements["text"] = UITextBoxTweaked(
+        self.elements["text"] = pygame_gui.elements.UITextBox(
             relative_rect=ui_scale(pygame.Rect((0, 20), (380, -1))),
             html_text="Input a list of desired cards. Card names should be separated by a comma.",
             container=self,
@@ -41,7 +40,7 @@ class ViewCardsWindow(GameWindow):
             placeholder_text="Card1, Card2, Card3...",
         )
 
-        self.elements["warning"] = UITextBoxTweaked(
+        self.elements["warning"] = pygame_gui.elements.UITextBox(
             relative_rect=ui_scale(pygame.Rect((0, -5), (380, -1))),
             html_text="error",
             container=self,
