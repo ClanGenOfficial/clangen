@@ -119,7 +119,7 @@
         "biome": ["any"],
         "tags": ["Twolegs:abandoned", "prey:ground", "covered", "danger:unstable", "high_ground", "maze"]
     },
-    "terrain_Thunderpath": {
+    "terrain_thunderpath": {
         "category": "terrain",
         "biome": ["any"],
         "tags": ["Twolegs:present", "danger"]

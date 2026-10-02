@@ -13219,7 +13219,7 @@
         	"name": ["terrain_thunderpath"]
         },
         "frequency": 4,
-        "event_text": "m_c bumped into r_c while dangerously close to POI, claiming to have done it by accident but the glint in m_c's eyes, however, tells another story...",
+        "event_text": "m_c bumped into r_c while dangerously close to POI, claiming to have done it by accident. The glint in m_c's eyes, however, tells another story...",
         "m_c": {
         	"status": [
         		"-kitten"
