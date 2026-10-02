@@ -13271,7 +13271,8 @@
             "failed_murder"
         ],
         "poi": {
-    "tags": ["danger"],
+    "tags": ["danger"]
+	    },
         "frequency": 4,
         "event_text": "m_c took r_c to POI and, while nothing happened, r_c couldn't help but notice that m_c seemed to be waiting for something to happen...",
         "m_c": {
@@ -13343,7 +13344,8 @@
             "failed_murder"
         ],
         "poi": {
-    "tags": ["danger:unstable"],
+    "tags": ["danger:unstable"]
+	    },
         "frequency": 4,
         "event_text": "r_c dodged some dangerous falling debris and glimpsed m_c nearby, looking disappointed.",
         "m_c": {
@@ -13370,9 +13372,6 @@
         ],
         "frequency": 4,
         "event_text": "r_c saved m_c from a big dog but, rather then be happy, {PRONOUN/m_c/subject} seemed dissapointed... Was that not what m_c wanted to happen?",
-        "m_c": {
-        	"status": [
-        		"-kitten"
         ]
         "m_c": {
         "trait": [
@@ -13380,9 +13379,8 @@
         "bold",
         "confident",
         "daring"
-        ],
-    },
-        },
+        ]
+      },
         "r_c": {
         "status": [
         		"-kitten"
@@ -13413,7 +13411,7 @@
         ]
        },
        "new_cat": [
-        ["loner"]
+        ["rogue"]
     ]
     },
     {
@@ -13525,10 +13523,10 @@
         		"-kitten"
         ]
         },
-        "r_c": {
+        "r_c": [
         "oblivious",
         "strange"
-        }
+        ]
     },
     {
         "event_id": "gen_misc_failedmurder_message1",
