@@ -46,11 +46,13 @@ class Name:
             eyes = cat.pelt.eye_colour
             pelt = cat.pelt.name
             tortie_pattern = cat.pelt.tortie_pattern
+            skills = cat.skills.primary.path.name
         except AttributeError:
             color = None
             eyes = None
             pelt = None
             tortie_pattern = None
+            skills = None
 
         name_fixpref = False
         # Set prefix
@@ -61,7 +63,7 @@ class Name:
 
         # Set suffix
         if self.suffix is None:
-            self.give_suffix(eyes, color, pelt, biome, tortie_pattern)
+            self.give_suffix(eyes, color, pelt, biome, tortie_pattern, skills)
             if name_fixpref and self.prefix is None:
                 # needed for random dice when we're changing the Prefix
                 name_fixpref = False
@@ -71,7 +73,7 @@ class Name:
             if name_fixpref:
                 self.give_prefix(eyes, color, pelt, biome)
             else:
-                self.give_suffix(eyes, color, pelt, biome, tortie_pattern)
+                self.give_suffix(eyes, color, pelt, biome, tortie_pattern, skills)
 
     @classmethod
     def _usable_name(cls, prefix, suffix):
@@ -285,7 +287,8 @@ class Name:
             if pelt is not None or pelt != "SingleColour":
                 named_after_pelt = not random.getrandbits(
                     2
-                )  # Chance for True is '1/8'.
+                )  # Chance for True is '1/8'. 
+                named_after_skills = not random.getrandbits(1)  # 1/8
                 named_after_biome = not random.getrandbits(3)  # 1/8
                 # Pelt name only gets used if there's an associated suffix.
                 if named_after_pelt:
@@ -324,6 +327,11 @@ class Name:
                                 self.names_dict["pelt_suffixes"][pelt]
                                 + self.names_dict["colour_suffixes"][colour]
                             )
+                    else:
+                        pool = self.names_dict["normal_suffixes"]
+                elif named_after_skills:
+                    if skills in self.names_dict["primary_suffixes"]:
+                        pool = self.names_dict["primary_suffixes"][skills]
                     else:
                         pool = self.names_dict["normal_suffixes"]
                 elif named_after_biome:
