@@ -13219,7 +13219,7 @@
         	"name": ["terrain_thunderpath"]
         },
         "frequency": 4,
-        "event_text": "m_c bumped into r_c dangerously close to POI and claimed it was an accident.",
+        "event_text": "m_c bumped r_c dangerously close to POI and claimed it was an accident.",
         "m_c": {
         	"status": [
         		"-kitten"
@@ -13245,7 +13245,7 @@
             "failed_murder"
         ],
         "frequency": 4,
-        "event_text": "m_c bumped into r_c dangerously close to a cliff and claimed it was an accident.",
+        "event_text": "m_c bumped r_c dangerously close to a cliff and claimed it was an accident.",
         "m_c": {
         	"status": [
         		"-kitten"
@@ -13273,7 +13273,7 @@
         "poi": {
     "tags": ["danger"],
         "frequency": 4,
-        "event_text": "m_c took r_c to POI part of the territory and, while nothing happened, r_c couldn't help but notice that m_c seemed to be waiting for something to happen...",
+        "event_text": "m_c took r_c to POI and, while nothing happened, r_c couldn't help but notice that m_c seemed to be waiting for something to happen...",
         "m_c": {
         	"status": [
         		"-kitten"
@@ -13412,7 +13412,10 @@
         "status": [
         		"-kitten"
         ]
-       }
+       },
+       "new_cat": [
+        ["loner"]
+    ]
     },
     {
         "event_id": "gen_misc_failedmurder_oblivious1",
@@ -13517,7 +13520,7 @@
             "failed_murder"
         ],
         "frequency": 4,
-        "event_text": "m_c offered r_c some small red berries as a snack but r_c, noticing the sinister air around {PRONOUN/m_c/object} said {PRONOUN/r_c/subject} {VERB/r_c/weren't/wasn't} hungry.",
+        "event_text": "m_c offered r_c some small red berries as a snack but r_c said {PRONOUN/r_c/subject} {VERB/r_c/weren't/wasn't} hungry.",
         "m_c": {
         	"status": [
         		"-kitten"
