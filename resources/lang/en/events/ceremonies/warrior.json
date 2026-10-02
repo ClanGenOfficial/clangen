@@ -1955,7 +1955,7 @@
             "m_c": {}
         },
         "strings": [
-            "(old_name) remembers being frightened of POI as an apprentice. When lead_name honors {PRONOUN/m_c/poss} r_h and names {PRONOUN/m_c/object} m_c, m_c stands proud before the Clan, knowing {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} conquered that fear."
+            "(old_name) remembers being frightened of POI as an apprentice. When lead_name honors {PRONOUN/m_c/poss} r_h and names {PRONOUN/m_c/object} m_c, {PRONOUN/m_c/subject} {VERB/m_c/stand/stands} proud before the Clan, knowing {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} conquered that fear."
         ]
     },
     {
