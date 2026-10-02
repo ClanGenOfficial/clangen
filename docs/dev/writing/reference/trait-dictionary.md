@@ -748,7 +748,7 @@ Pop-Culture Examples: Cloudstar (Warrior Cats), Zazu (Lion King); C-3PO (Star Wa
 * “I might share some traits with **[quiet](#quiet), [self-conscious](#self-conscious), and [skittish](#skittish)** kits.”
 * "I might grow up to be a **[lonesome](#lonesome), [shameless](#shameless), or [cunning](#cunning)** cat."
 
-**Pop-Culture Examples:** TODO
+**Pop-Culture Examples:** Fluttershy [My Little Pony]
 
 ---
 
