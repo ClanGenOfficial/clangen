@@ -463,6 +463,20 @@
                         "status": ["apprentice"]
                     }
                 },
+                "relationship_constraint": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "constraints": [
+                            "-mentor/app"
+                        ]
+                    }
+                ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -2634,7 +2648,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_catlookingup_Wr",
                 "strings": [
-                    "r_c0 might be keen on practicing {PRONOUN/r_c0/poss} tracking, but p_l has no time for that on {PRONOUN/p_l/poss} agenda. {PRONOUN/p_l/subject/CAP}{VERB/s_c0/'ve/'s} constructed a thorough list of battle moves that {PRONOUN/p_l/poss} Clanmates have been performing poorly, and it takes priority over whatever r_c0 wants. r_c0 concedes, {PRONOUN/r_c0/poss} lashing tail the only sign of {PRONOUN/r_c0/poss} irritation."
+                    "r_c0 might be keen on practicing {PRONOUN/r_c0/poss} tracking, but p_l has no time for that on {PRONOUN/p_l/poss} agenda. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} constructed a thorough list of battle moves that {PRONOUN/p_l/poss} Clanmates have been performing poorly, and it takes priority over whatever r_c0 wants. r_c0 concedes, {PRONOUN/r_c0/poss} lashing tail the only sign of {PRONOUN/r_c0/poss} irritation."
                 ],
                 "involved_cats": {
                     "r_c0": {},
@@ -3906,7 +3920,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_speakingromance_WrWr",
                 "strings": [
-                    "p_l has a comprehensive list to get through, it's good to make sure {PRONOUN/s_c0/subject}{VERB/p_l/'ve/'s} always got a clear assessment of c_n's capabilities. Should the world come to threaten them, p_l will know which Clanmates {PRONOUN/p_l/subject} can rely on, and which will be suited to what tasks. It's a challenging, productive afternoon."
+                    "p_l has a comprehensive list to get through, it's good to make sure {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} always got a clear assessment of c_n's capabilities. Should the world come to threaten them, p_l will know which Clanmates {PRONOUN/p_l/subject} can rely on, and which will be suited to what tasks. It's a challenging, productive afternoon."
                 ],
                 "involved_cats": {
                     "p_l": {
@@ -4185,7 +4199,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_starclanromance_WrWr",
                 "strings": [
-                    "p_l's tension is obvious as the patrol heads out. Eventually, r_c0 asks what's wrong, and p_l admits {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} worried about one of {PRONOUN/p_l/poss} recent decisions. r_c0 tries to comfort {PRONOUN/p_l/object}, but p_l interrupts, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} want platitudes. {PRONOUN/p_l/subject/CAP} {VERB/p_l/want/wants} r_c0 and the rest of the patrol's opinions. The trust {PRONOUN/p_l/subject} {VERB/p_l/place/places} in {PRONOUN/s_c0/poss} patrol-mates is rewarded with a thoughtful discussion on the issue."
+                    "p_l's tension is obvious as the patrol heads out. Eventually, r_c0 asks what's wrong, and p_l admits {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} worried about one of {PRONOUN/p_l/poss} recent decisions. r_c0 tries to comfort {PRONOUN/p_l/object}, but p_l interrupts, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} want platitudes. {PRONOUN/p_l/subject/CAP} {VERB/p_l/want/wants} r_c0 and the rest of the patrol's opinions. The trust {PRONOUN/p_l/subject} {VERB/p_l/place/places} in {PRONOUN/p_l/poss} patrol-mates is rewarded with a thoughtful discussion on the issue."
                 ],
                 "involved_cats": {
                     "r_c0": {},
@@ -4215,7 +4229,7 @@
                         ],
                         "amount": 20,
                         "log": {
-                            "cats_from": "cat_from and cat_to had a frank discussion about one of s_c0's recent leadership decisions while training together."
+                            "cats_from": "cat_from and cat_to had a frank discussion about one of p_l's recent leadership decisions while training together."
                         }
                     },
                     {
@@ -4329,7 +4343,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "s_c0 was awkward and stiff while training with {PRONOUN/s_c0/poss} Clanmates."
+                            "cats_from": "p_l was awkward and stiff while training with {PRONOUN/p_l/poss} Clanmates."
                         }
                     }
                 ]
@@ -5189,7 +5203,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from and cat_to got into an argument about a technique, and s_c0 scolded r_c1."
+                            "cats_from": "cat_from and cat_to got into an argument about a technique, and p_l scolded r_c1."
                         }
                     },
                     {
@@ -5462,7 +5476,7 @@
                 "involved_cats": {
                     "s_c0": {
                         "prior_abbreviation": [
-                            "any"
+                            "-r_c0"
                         ],
                         "stat": {
                             "skill": [
@@ -5988,7 +6002,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "s_c0 was shocked to hear that r_c1's dreams have been causing {PRONOUN/r_c1/object} so much anxiety and offered {PRONOUN/r_c1/object} support."
+                            "cats_from": "p_l was shocked to hear that r_c1's dreams have been causing {PRONOUN/r_c1/object} so much anxiety and offered {PRONOUN/r_c1/object} support."
                         }
                     }
                 ]
@@ -6510,7 +6524,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c2"
@@ -6530,7 +6544,7 @@
                             "r_c2"
                         ],
                         "cats_from": [
-                            "r_c1"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -6701,7 +6715,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "s_c0 brought back some prey from an assessment and shared it with cat_to."
+                            "cats_from": "p_l brought back some prey from an assessment and shared it with cat_to."
                         }
                     }
                 ],
@@ -10075,19 +10089,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 always manages to bring a smile onto s_c0's face, replacing the usual scowl. {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} so lucky to have r_c0 by {PRONOUN/s_c0/poss} side."
+                    "r_c0 always manages to bring a smile onto p_l's face, replacing the usual scowl. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} so lucky to have r_c0 by {PRONOUN/p_l/poss} side."
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "grumpy"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -10107,7 +10118,7 @@
                         ],
                         "amount": 7,
                         "log": {
-                            "cats_from": "While training together, r_c0 brought out the best in s_c0."
+                            "cats_from": "While training together, r_c0 brought out the best in p_l."
                         }
                     }
                 ]
@@ -10115,20 +10126,17 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 isn't a confident cat — but for r_c0, {PRONOUN/s_c0/subject} {VERB/s_c0/swear/swears}, {PRONOUN/s_c0/subject}'ll always stay strong."
+                    "p_l isn't a confident cat — but for r_c0, {PRONOUN/p_l/subject} {VERB/p_l/swear/swears}, {PRONOUN/p_l/subject}'ll always stay strong."
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "nervous",
                                 "insecure"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -10148,7 +10156,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "While training together, r_c0 brought out the best in s_c0."
+                            "cats_from": "While training together, r_c0 brought out the best in p_l."
                         }
                     }
                 ]
@@ -10156,20 +10164,17 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "{PRONOUN/r_c0/poss/CAP} mate is <i>so</i> mouse-brained. Mouse-brained and {PRONOUN/r_c0/subject} {VERB/r_c0/love/loves} {PRONOUN/s_c0/object} for it. r_c0 helps up s_c0 from where their silly game has left {PRONOUN/s_c0/object} sprawled on the ground and joins in with s_c0's laughter."
+                    "{PRONOUN/r_c0/poss/CAP} mate is <i>so</i> mouse-brained. Mouse-brained and {PRONOUN/r_c0/subject} {VERB/r_c0/love/loves} {PRONOUN/p_l/object} for it. r_c0 helps up p_l from where their silly game has left {PRONOUN/p_l/object} sprawled on the ground and joins in with p_l's laughter."
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "playful",
                                 "childish"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -10189,7 +10194,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "s_c0 convinced r_c0 to get playful with {PRONOUN/s_c0/object} when they were supposed to be training together."
+                            "cats_from": "p_l convinced r_c0 to get playful with {PRONOUN/p_l/object} when they were supposed to be training together."
                         }
                     }
                 ]
@@ -10197,21 +10202,18 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Training goes okay — nothing special. But afterwards, s_c0 curls around r_c0, grooming the hard-to-reach place on the back of {PRONOUN/r_c0/poss} neck, and quietly whispers {PRONOUN/s_c0/poss} gratitude for the wonderful life they share together."
+                    "Training goes okay — nothing special. But afterwards, p_l curls around r_c0, grooming the hard-to-reach place on the back of {PRONOUN/r_c0/poss} neck, and quietly whispers {PRONOUN/p_l/poss} gratitude for the wonderful life they share together."
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "sincere",
                                 "thoughtful",
                                 "loving"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -10230,7 +10232,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "s_c0 expressed {PRONOUN/s_c0/poss} devotion to r_c0 after they trained together."
+                            "cats_from": "p_l expressed {PRONOUN/p_l/poss} devotion to r_c0 after they trained together."
                         }
                     }
                 ]
@@ -10238,20 +10240,17 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 is the sort of cat that is driven by the need to be better, to keep moving forward, and they train hard together. After, s_c0 helps groom all the dust off r_c0's coat, thanking {PRONOUN/s_c0/poss} mate for indulging {PRONOUN/s_c0/object} with a productive afternoon of tough exercises."
+                    "p_l is the sort of cat that is driven by the need to be better, to keep moving forward, and they train hard together. After, p_l helps groom all the dust off r_c0's coat, thanking {PRONOUN/p_l/poss} mate for indulging {PRONOUN/p_l/object} with a productive afternoon of tough exercises."
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "competitive",
                                 "ambitious"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -10261,7 +10260,7 @@
                             "r_c0"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -10270,7 +10269,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "s_c0 appreciated that r_c0 indulged {PRONOUN/s_c0/object} in a friendly competition while training together.",
+                            "cats_from": "p_l appreciated that r_c0 indulged {PRONOUN/p_l/object} in a friendly competition while training together.",
                             "cats_to": "r_c0 indulged {PRONOUN/r_c0/poss} mate in a competition while training together."
                         }
                     }
@@ -10279,19 +10278,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "With r_c0 by {PRONOUN/s_c0/poss} side, being alone together for the afternoon doesn't feel lonesome at all."
+                    "With r_c0 by {PRONOUN/p_l/poss} side, being alone together for the afternoon doesn't feel lonesome at all."
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "lonesome"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -10311,7 +10307,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "s_c0 came out of {PRONOUN/s_c0/poss} shell while training with r_c0."
+                            "cats_from": "p_l came out of {PRONOUN/p_l/poss} shell while training with r_c0."
                         }
                     }
                 ]
@@ -10547,18 +10543,15 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 can't stay grumpy, not with an entire afternoon with {PRONOUN/s_c0/poss} mates. The opportunities spread out before {PRONOUN/s_c0/object} like a fully-stocked fresh-kill pile. What'll they do? Who cares! Where will they go? No idea! The gift is the presence of the ones s_c0 loves."
+                    "p_l can't stay grumpy, not with an entire afternoon with {PRONOUN/p_l/poss} mates. The opportunities spread out before {PRONOUN/p_l/object} like a fully-stocked fresh-kill pile. What'll they do? Who cares! Where will they go? No idea! The gift is the presence of the ones p_l loves."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "grumpy"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -10568,7 +10561,7 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -10583,7 +10576,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -10604,19 +10597,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 isn't a confident cat — but with {PRONOUN/s_c0/poss} mates around {PRONOUN/s_c0/object}, {PRONOUN/s_c0/subject} {VERB/s_c0/feel/feels} light as a feather, ready to tackle any challenge."
+                    "p_l isn't a confident cat — but with {PRONOUN/p_l/poss} mates around {PRONOUN/p_l/object}, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} light as a feather, ready to tackle any challenge."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "nervous",
                                 "insecure"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -10626,7 +10616,7 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -10641,7 +10631,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -10662,19 +10652,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 launches them all into a rollicking, leaping game, and the afternoon lights up with the cats' laughter."
+                    "p_l launches them all into a rollicking, leaping game, and the afternoon lights up with the cats' laughter."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "playful",
                                 "childish"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -10694,7 +10681,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "s_c0 started a silly game with {PRONOUN/s_c0/poss} mates when they spent the day together."
+                            "cats_from": "p_l started a silly game with {PRONOUN/p_l/poss} mates when they spent the day together."
                         }
                     }
                 ]
@@ -10702,20 +10689,17 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Training goes okay — nothing special. But afterwards, s_c0 curls around {PRONOUN/s_c0/poss} mates and quietly gives voice to {PRONOUN/s_c0/poss} gratitude for the wonderful life they share together."
+                    "Training goes okay — nothing special. But afterwards, p_l curls around {PRONOUN/p_l/poss} mates and quietly gives voice to {PRONOUN/p_l/poss} gratitude for the wonderful life they share together."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "sincere",
                                 "thoughtful",
                                 "loving"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -10725,7 +10709,7 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -10734,7 +10718,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "s_c0 expressed {PRONOUN/s_c0/poss} devotion to {PRONOUN/s_c0/poss} mates when they all spent the day together."
+                            "cats_from": "p_l expressed {PRONOUN/p_l/poss} devotion to {PRONOUN/p_l/poss} mates when they all spent the day together."
                         }
                     }
                 ]
@@ -10742,18 +10726,15 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 can't feel lonely, not here, not with {PRONOUN/s_c0/poss} mates around {PRONOUN/s_c0/object}. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/don't/doesn't} need to be the center of attention; {PRONOUN/s_c0/subject} {VERB/s_c0/know/knows} {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} loved right here and now."
+                    "p_l can't feel lonely, not here, not with {PRONOUN/p_l/poss} mates around {PRONOUN/p_l/object}. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} need to be the center of attention; {PRONOUN/p_l/subject} {VERB/p_l/know/knows} {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} loved right here and now."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "lonesome"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -10763,7 +10744,7 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -10928,18 +10909,15 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 can be a bit of a sourpuss, but {PRONOUN/s_c0/poss} mates lure {PRONOUN/s_c0/object} away from no-nonsense training and infuse the afternoon with joy and tenderness instead. s_c0's heart is full as the cats turn for home."
+                    "p_l can be a bit of a sourpuss, but {PRONOUN/p_l/poss} mates lure {PRONOUN/p_l/object} away from no-nonsense training and infuse the afternoon with joy and tenderness instead. p_l's heart is full as the cats turn for home."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "grumpy"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -10983,19 +10961,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 isn't a confident cat — but that gives {PRONOUN/s_c0/object} a lot of empathy. {PRONOUN/s_c0/subject/CAP} make sure no one feels left out of the training session and that each of {PRONOUN/s_c0/poss} mates gets a moment to shine."
+                    "p_l isn't a confident cat — but that gives {PRONOUN/p_l/object} a lot of empathy. {PRONOUN/p_l/subject/CAP} make sure no one feels left out of the training session and that each of {PRONOUN/p_l/poss} mates gets a moment to shine."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "nervous",
                                 "insecure"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -11039,19 +11014,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 launches them all into a rollicking, leaping game, and the afternoon lights up with the cats' laughter."
+                    "p_l launches them all into a rollicking, leaping game, and the afternoon lights up with the cats' laughter."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "playful",
                                 "childish"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -11071,7 +11043,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from and cat_to enjoyed a playful afternoon of games led by s_c0."
+                            "cats_from": "cat_from and cat_to enjoyed a playful afternoon of games led by p_l."
                         }
                     },
                     {
@@ -11095,20 +11067,17 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Training goes okay — nothing special. But afterwards, s_c0 curls around {PRONOUN/s_c0/poss} mates and quietly gives voice to {PRONOUN/s_c0/poss} gratitude for the wonderful life they share together."
+                    "Training goes okay — nothing special. But afterwards, p_l curls around {PRONOUN/p_l/poss} mates and quietly gives voice to {PRONOUN/p_l/poss} gratitude for the wonderful life they share together."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "sincere",
                                 "thoughtful",
                                 "loving"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -11118,7 +11087,7 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -11128,7 +11097,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "s_c0 expressed {PRONOUN/s_c0/poss} devotion to {PRONOUN/s_c0/poss} mates while training together."
+                            "cats_from": "p_l expressed {PRONOUN/p_l/poss} devotion to {PRONOUN/p_l/poss} mates while training together."
                         }
                     }
                 ]
@@ -11136,18 +11105,15 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 can't feel lonely, not here, not with {PRONOUN/s_c0/poss} mates around {PRONOUN/s_c0/object}. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/don't/doesn't} need to be the center of attention; {PRONOUN/s_c0/subject} {VERB/s_c0/know/knows} {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} loved right here and now."
+                    "p_l can't feel lonely, not here, not with {PRONOUN/p_l/poss} mates around {PRONOUN/p_l/object}. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} need to be the center of attention; {PRONOUN/p_l/subject} {VERB/p_l/know/knows} {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} loved right here and now."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "lonesome"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -11167,7 +11133,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from and cat_to enjoyed a playful afternoon of games led by s_c0."
+                            "cats_from": "cat_from and cat_to enjoyed a playful afternoon of games led by p_l."
                         }
                     },
                     {
@@ -11773,10 +11739,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 shows off a technique {PRONOUN/r_c0/subject}{VERB/p_l/'ve/'s} been practicing, but {PRONOUN/r_c0/subject} {VERB/r_c0/don't/doesn't} quite pull it off. s_c0 reassures {PRONOUN/r_c0/object} that {PRONOUN/r_c0/subject} {VERB/r_c0/don't/doesn't} need to worry; practice will make perfect, and s_c0 is sure {PRONOUN/r_c0/subject}'ll meet {PRONOUN/r_c0/poss} own admirably high standards soon enough."
+                    "r_c0 shows off a technique {PRONOUN/r_c0/subject}{VERB/p_l/'ve/'s} been practicing, but {PRONOUN/r_c0/subject} {VERB/r_c0/don't/doesn't} quite pull it off. p_l reassures {PRONOUN/r_c0/object} that {PRONOUN/r_c0/subject} {VERB/r_c0/don't/doesn't} need to worry; practice will make perfect, and p_l is sure {PRONOUN/r_c0/subject}'ll meet {PRONOUN/r_c0/poss} own admirably high standards soon enough."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "loyal",
@@ -11785,10 +11751,7 @@
                                 "compassionate",
                                 "charismatic"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -11812,7 +11775,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c0"
@@ -11832,7 +11795,7 @@
                             "r_c0"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -11849,27 +11812,24 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Check this out! s_c0 launches into a flashy, impressive backflip, landing smoothly and reveling in r_c0's approving laughter. Acrobatics might not be practical, but no one specified <i>practical</i> hunting techniques!"
+                    "Check this out! p_l launches into a flashy, impressive backflip, landing smoothly and reveling in r_c0's approving laughter. Acrobatics might not be practical, but no one specified <i>practical</i> hunting techniques!"
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "flamboyant",
                                 "shameless",
                                 "playful"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c0"
@@ -11881,8 +11841,8 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "r_c0 was entertained by s_c0's acrobatic hunting techniques when they trained together.",
-                            "cats_to": "s_c0 showed off {PRONOUN/s_c0/poss} acrobatic hunting techniques while training with r_c0."
+                            "cats_from": "r_c0 was entertained by p_l's acrobatic hunting techniques when they trained together.",
+                            "cats_to": "p_l showed off {PRONOUN/p_l/poss} acrobatic hunting techniques while training with r_c0."
                         }
                     }
                 ]
@@ -11890,18 +11850,15 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "For s_c0, {PRONOUN/s_c0/subject} {VERB/s_c0/explain/explains}, it's less about how {PRONOUN/s_c0/subject} {VERB/s_c0/kill/kills} the prey and more about <i>getting</i> to the prey. {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} happy to share {PRONOUN/s_c0/poss} interest in stalking with r_c0, and they turn it into a little game."
+                    "For p_l, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, it's less about how {PRONOUN/p_l/subject} {VERB/p_l/kill/kills} the prey and more about <i>getting</i> to the prey. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} happy to share {PRONOUN/p_l/poss} interest in stalking with r_c0, and they turn it into a little game."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "cunning"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -11928,20 +11885,17 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 watches r_c0 demonstrate {PRONOUN/r_c0/poss} favorite methods intently — of course {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} always after more techniques to add to {PRONOUN/s_c0/poss} own repertoire, but it's also flattering for r_c0 to be taken so seriously."
+                    "p_l watches r_c0 demonstrate {PRONOUN/r_c0/poss} favorite methods intently — of course {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} always after more techniques to add to {PRONOUN/p_l/poss} own repertoire, but it's also flattering for r_c0 to be taken so seriously."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "fierce",
                                 "bloodthirsty",
                                 "competitive"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -11968,7 +11922,7 @@
                             "r_c0"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -11982,7 +11936,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c0"
@@ -12041,7 +11995,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -12223,18 +12177,15 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Whether s_c0 is actually showing off or {PRONOUN/s_c0/poss} talent just makes it seem like {PRONOUN/s_c0/subject} {VERB/s_c0/are/is}, r_c0 has no patience for it and ends the session early."
+                    "Whether p_l is actually showing off or {PRONOUN/p_l/poss} talent just makes it seem like {PRONOUN/p_l/subject} {VERB/p_l/are/is}, r_c0 has no patience for it and ends the session early."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "HUNTER,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 0,
@@ -12244,7 +12195,7 @@
                             "r_c0"
                         ],
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -12362,7 +12313,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 takes charge and coordinates exercises for the duo. They practice taking down prey together, their confidence in their team hunting growing. The warrior praises how quickly r_c1 picks it up, and the apprentice comes back to camp fluffed up with pride."
+                    "p_l takes charge and coordinates exercises for the duo. They practice taking down prey together, their confidence in their team hunting growing. The warrior praises how quickly r_c1 picks it up, and the apprentice comes back to camp fluffed up with pride."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -12370,16 +12321,13 @@
                             "apprentice"
                         ]
                     },
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "TEACHER,1",
                                 "HUNTER,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 30,
@@ -12399,8 +12347,8 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "r_c1 learned a lot about hunting in pairs by training with s_c0.",
-                            "cats_to": "s_c0 enjoyed teaching r_c1 about hunting in pairs."
+                            "cats_from": "r_c1 learned a lot about hunting in pairs by training with p_l.",
+                            "cats_to": "p_l enjoyed teaching r_c1 about hunting in pairs."
                         }
                     }
                 ]
@@ -28657,25 +28605,22 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_appmentor_ApWr",
                 "strings": [
-                    "s_c0 busts out {PRONOUN/s_c0/poss} flashiest battle move, a surefire crowd-pleaser. The apprentices are wowed by s_c0's skills and listen attentively in hopes of becoming more like {PRONOUN/s_c0/object}."
+                    "p_l busts out {PRONOUN/p_l/poss} flashiest battle move, a surefire crowd-pleaser. The apprentices are wowed by p_l's skills and listen attentively in hopes of becoming more like {PRONOUN/p_l/object}."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "FIGHTER,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "apprentice"
@@ -28687,7 +28632,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "cat_from was impressed by s_c0's battle moves in a training session and wanted to learn to fight like {PRONOUN/s_c0/object}."
+                            "cats_from": "cat_from was impressed by cat_to's battle moves in a training session and wanted to learn to fight like {PRONOUN/cat_to/object}."
                         }
                     },
                     {
@@ -28695,7 +28640,7 @@
                             "apprentice"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -28703,7 +28648,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "s_c0 enjoyed showing off in front of cat_to and the other apprentices."
+                            "cats_from": "cat_from enjoyed showing off in front of cat_to and the other apprentices."
                         }
                     }
                 ]
@@ -28723,7 +28668,7 @@
                             ]
                         },
                         "prior_abbreviation": [
-                            "any"
+                            "-p_l"
                         ]
                     }
                 },
@@ -28743,7 +28688,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from enjoyed learning a new battle move from p_l."
+                            "cats_from": "cat_from enjoyed learning a new battle move from cat_to."
                         }
                     },
                     {
@@ -28760,7 +28705,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "s_c0 felt pleased when p_l told {PRONOUN/s_c0/object} {PRONOUN/s_c0/subject}'d make a wonderful mentor."
+                            "cats_from": "cat_from felt pleased when cat_to told {PRONOUN/cat_from/object} {PRONOUN/cat_from/subject}'d make a wonderful mentor."
                         }
                     },
                     {
@@ -28777,7 +28722,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l was impressed by how helpful s_c0 was during a training session."
+                            "cats_from": "cat_from was impressed by how helpful cat_to was during a training session."
                         }
                     }
                 ]
@@ -28786,25 +28731,22 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_mentorandapp_WrAp",
                 "strings": [
-                    "s_c0 knows {PRONOUN/s_c0/poss} abilities as a teacher, but this is a challenge, even for {PRONOUN/s_c0/object}. With a bit of cooperation from the apprentices, s_c0 is able to set up spars and drills for every cat to participate in."
+                    "p_l knows {PRONOUN/p_l/poss} abilities as a teacher, but this is a challenge, even for {PRONOUN/p_l/object}. With a bit of cooperation from the apprentices, p_l is able to set up spars and drills for every cat to participate in."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "TEACHER,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "apprentice"
@@ -28816,7 +28758,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "cat_from really enjoyed learning a new battle move from p_l."
+                            "cats_from": "cat_from really enjoyed learning a new battle move from cat_to."
                         }
                     }
                 ]
@@ -28825,7 +28767,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_talking_ApAp",
                 "strings": [
-                    "Even this number of apprentices is no sweat for s_c0. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/know/knows} exactly how to challenge and encourage each apprentice best. By the end of the session, r_c1's chest is puffed up with pride, and r_c2 and r_c3 are exchanging eager scenarios of future battles where they'll use this new move."
+                    "Even this number of apprentices is no sweat for p_l. {PRONOUN/p_l/subject/CAP} {VERB/p_l/know/knows} exactly how to challenge and encourage each apprentice best. By the end of the session, r_c1's chest is puffed up with pride, and r_c2 and r_c3 are exchanging eager scenarios of future battles where they'll use this new move."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -28843,22 +28785,19 @@
                             "apprentice"
                         ]
                     },
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "TEACHER,3"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "apprentice"
@@ -28870,7 +28809,7 @@
                         ],
                         "amount": 18,
                         "log": {
-                            "cats_from": "cat_from really enjoyed learning a new battle move from p_l."
+                            "cats_from": "cat_from really enjoyed learning a new battle move from cat_to."
                         }
                     },
                     {
@@ -28896,25 +28835,22 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_funrun_ApAp",
                 "strings": [
-                    "s_c0 takes one look at the apprentices bouncing around and decides no one is learning anything until they get some energy out. A challenge is issued: beat s_c0 in a race and get the first pick of the fresh-kill pile. No apprentice is faster than s_c0, but they do give it their all. After, s_c0 is able to run a proper training exercise with the now-panting apprentices."
+                    "p_l takes one look at the apprentices bouncing around and decides no one is learning anything until they get some energy out. A challenge is issued: beat p_l in a race and get the first pick of the fresh-kill pile. No apprentice is faster than p_l, but they do give it their all. After, p_l is able to run a proper training exercise with the now-panting apprentices."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "RUNNER,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "apprentice"
@@ -28926,7 +28862,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "cat_from enjoyed racing s_c0 and then learning a new battle move from {PRONOUN/s_c0/object}."
+                            "cats_from": "cat_from enjoyed racing cat_to and then learning a new battle move from {PRONOUN/cat_to/object}."
                         }
                     }
                 ]
@@ -28935,25 +28871,22 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_playbite_ApAp",
                 "strings": [
-                    "Apprentices aren't so different from kits, when it comes down to it. s_c0 organizes a big game of capture-the-bush and shows the apprentices a few moves along the way."
+                    "Apprentices aren't so different from kits, when it comes down to it. p_l organizes a big game of capture-the-bush and shows the apprentices a few moves along the way."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "KIT,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "apprentice"
@@ -28965,7 +28898,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "cat_from had a lot of fun playing a training game with s_c0."
+                            "cats_from": "cat_from had a lot of fun playing a training game with cat_to."
                         }
                     }
                 ]
@@ -28974,10 +28907,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/pln_med_herblocation_Ap",
                 "strings": [
-                    "As it turns out, the apprentices seem to think s_c0 is quite <i>cool</i>. Flattered, s_c0 soaks up their attention and indulges them by showing them a few more advanced tricks."
+                    "As it turns out, the apprentices seem to think p_l is quite <i>cool</i>. Flattered, p_l soaks up their attention and indulges them by showing them a few more advanced tricks."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "charismatic",
@@ -28994,17 +28927,14 @@
                                 "shameless",
                                 "troublesome"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "apprentice"
@@ -29016,7 +28946,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "cat_from had a lot of fun playing a training game with s_c0."
+                            "cats_from": "cat_from had a lot of fun playing a training game with cat_to."
                         }
                     },
                     {
@@ -29024,7 +28954,7 @@
                             "apprentice"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -29048,7 +28978,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "apprentice"
@@ -29059,7 +28989,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from didn't learn much when p_l took {PRONOUN/cat_from/object} out for training."
+                            "cats_from": "cat_from didn't learn much when cat_to took {PRONOUN/cat_from/object} out for training."
                         }
                     }
                 ]
@@ -29068,25 +28998,22 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_happycat_Ap",
                 "strings": [
-                    "Unfortunately for s_c0, the apprentices are far more interested in {PRONOUN/s_c0/poss} hunting skills and pester {PRONOUN/s_c0/object} to reveal {PRONOUN/s_c0/poss} secret tricks. s_c0's pleas to focus on battle moves are drowned out by a chorus of young voices."
+                    "Unfortunately for p_l, the apprentices are far more interested in {PRONOUN/p_l/poss} hunting skills and pester {PRONOUN/p_l/object} to reveal {PRONOUN/p_l/poss} secret tricks. p_l's pleas to focus on battle moves are drowned out by a chorus of young voices."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "HUNTER,2"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "apprentice"
@@ -29097,7 +29024,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from pestered s_c0 about {PRONOUN/s_c0/poss} secret hunting tricks, but {PRONOUN/s_c0/subject} wouldn't let them slip, which means they must be extra-secret and very cool..."
+                            "cats_from": "cat_from pestered cat_to about {PRONOUN/cat_to/poss} secret hunting tricks, but {PRONOUN/cat_to/subject} wouldn't let them slip, which means they must be extra-secret and very cool..."
                         }
                     },
                     {
@@ -29105,7 +29032,7 @@
                             "apprentice"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -29113,7 +29040,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "s_c0 had an aggravating training patrol trying to teach battle moves to cat_to and a gang of apprentices who wouldn't shut up about {PRONOUN/s_c0/poss} \"secret hunting tricks.\""
+                            "cats_from": "cat_from had an aggravating training patrol trying to teach battle moves to cat_to and a gang of apprentices who wouldn't shut up about {PRONOUN/cat_from/poss} \"secret hunting tricks.\""
                         }
                     }
                 ]
@@ -29132,7 +29059,7 @@
                             ]
                         },
                         "prior_abbreviation": [
-                            "any"
+                            "-p_l"
                         ]
                     }
                 },
@@ -29151,7 +29078,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from didn't learn much when p_l took {PRONOUN/cat_from/object} out for training."
+                            "cats_from": "cat_from didn't learn much when cat_to took {PRONOUN/cat_from/object} out for training."
                         }
                     },
                     {
@@ -29177,7 +29104,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_playbite_ApAp",
                 "strings": [
-                    "s_c0 knows exactly what will make these apprentices focus: a good story. But just as {PRONOUN/s_c0/subject} {VERB/s_c0/settle/settles} down to tell the apprentices of story_list, r_c3 goes haring off into the bushes after r_c2, yowling about a game of catch-the-tail. s_c0's story falls on deaf ears."
+                    "p_l knows exactly what will make these apprentices focus: a good story. But just as {PRONOUN/p_l/subject} {VERB/p_l/settle/settles} down to tell the apprentices of story_list, r_c3 goes haring off into the bushes after r_c2, yowling about a game of catch-the-tail. p_l's story falls on deaf ears."
                 ],
                 "involved_cats": {
                     "r_c2": {
@@ -29190,22 +29117,19 @@
                             "apprentice"
                         ]
                     },
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "STORY,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "apprentice"
@@ -29216,7 +29140,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from didn't learn much when p_l took {PRONOUN/cat_from/object} out for training."
+                            "cats_from": "cat_from didn't learn much when cat_to took {PRONOUN/cat_from/object} out for training."
                         }
                     },
                     {
@@ -29224,7 +29148,7 @@
                             "apprentice"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -29257,10 +29181,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_catlookingup_Ap",
                 "strings": [
-                    "As s_c0 settles down to instruct the apprentices, {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} offended to see the apprentices exchanging mock-yawns and eye-rolls. Apparently, s_c0 has a reputation for being a boring, stuffy warrior, and the apprentices have no interest in learning from {PRONOUN/s_c0/object}."
+                    "As p_l settles down to instruct the apprentices, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} offended to see the apprentices exchanging mock-yawns and eye-rolls. Apparently, p_l has a reputation for being a boring, stuffy warrior, and the apprentices have no interest in learning from {PRONOUN/p_l/object}."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "calm",
@@ -29278,17 +29202,14 @@
                                 "wise",
                                 "cold"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "apprentice"
@@ -29299,7 +29220,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from didn't learn much when p_l took {PRONOUN/cat_from/object} out for training."
+                            "cats_from": "cat_from didn't learn much when cat_to took {PRONOUN/cat_from/object} out for training."
                         }
                     },
                     {
@@ -29307,7 +29228,7 @@
                             "apprentice"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -30009,25 +29930,22 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_happycat_Wr",
                 "strings": [
-                    "s_c0 rarely has trouble getting along with any of {PRONOUN/s_c0/poss} Clanmates, and r_c0 is no exception. One training session later, r_c0 is looking forward to {PRONOUN/r_c0/poss} next chance to hang out with s_c0."
+                    "p_l rarely has trouble getting along with any of {PRONOUN/p_l/poss} Clanmates, and r_c0 is no exception. One training session later, r_c0 is looking forward to {PRONOUN/r_c0/poss} next chance to hang out with p_l."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "charismatic"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c0"
@@ -30047,19 +29965,16 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_talking_WrWr",
                 "strings": [
-                    "It isn't surprising that r_c0 hasn't gotten close to s_c0, since s_c0 holds most cats at a distance. While r_c0 ends the training session wondering if s_c0 even likes {PRONOUN/r_c0/object}, s_c0 thinks of r_c0 as a friend."
+                    "It isn't surprising that r_c0 hasn't gotten close to p_l, since p_l holds most cats at a distance. While r_c0 ends the training session wondering if p_l even likes {PRONOUN/r_c0/object}, p_l thinks of r_c0 as a friend."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "lonesome",
                                 "cold"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 10,
@@ -30069,7 +29984,7 @@
                             "r_c0"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -30083,7 +29998,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c0"
@@ -30103,10 +30018,10 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_bumpheads_WrWr",
                 "strings": [
-                    "s_c0's infectious energy transfers to r_c0, and the two have a fun, productive training session together."
+                    "p_l's infectious energy transfers to r_c0, and the two have a fun, productive training session together."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "charismatic",
@@ -30123,17 +30038,14 @@
                                 "confident",
                                 "adventurous"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_to": [
                             "r_c0"
@@ -30153,10 +30065,10 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_train_sunny_WrWr",
                 "strings": [
-                    "s_c0's mellow attitude helps r_c0 relax and unwind. They enjoy a low-key training session together, and r_c0 ends the day with an appreciation for s_c0's company."
+                    "p_l's mellow attitude helps r_c0 relax and unwind. They enjoy a low-key training session together, and r_c0 ends the day with an appreciation for p_l's company."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "calm",
@@ -30170,10 +30082,7 @@
                                 "compassionate",
                                 "strange"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 10,
@@ -30183,7 +30092,7 @@
                             "r_c0"
                         ],
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -30295,10 +30204,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_catlookingup_Wr",
                 "strings": [
-                    "r_c0 realizes there's a reason {PRONOUN/r_c0/subject} {VERB/r_c0/have/has}n't hung out with s_c0 more. {PRONOUN/s_c0/subject/CAP} can be a real thorn in the paw."
+                    "r_c0 realizes there's a reason {PRONOUN/r_c0/subject} {VERB/r_c0/have/has}n't hung out with p_l more. {PRONOUN/p_l/subject/CAP} can be a real thorn in the paw."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "arrogant",
@@ -30309,10 +30218,7 @@
                                 "competitive",
                                 "fierce"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 0,
@@ -30322,7 +30228,7 @@
                             "r_c0"
                         ],
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -30340,10 +30246,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_catlookingup_Wr",
                 "strings": [
-                    "r_c0 strikes up a conversation with s_c0, but no matter what topic r_c0 raises, s_c0 gives brief and uninterested replies. r_c0 stops trying and the training session ends in awkward silence."
+                    "r_c0 strikes up a conversation with p_l, but no matter what topic r_c0 raises, p_l gives brief and uninterested replies. r_c0 stops trying and the training session ends in awkward silence."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "cold",
@@ -30354,10 +30260,7 @@
                                 "bloodthirsty",
                                 "oblivious"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 0,
@@ -30367,7 +30270,7 @@
                             "r_c0"
                         ],
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -30385,20 +30288,17 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_catlookingup_Wr",
                 "strings": [
-                    "s_c0 is confident in {PRONOUN/s_c0/poss} ability to get along with r_c0, but despite {PRONOUN/s_c0/poss} charms, r_c0 seems unreceptive. Unused to rejection, s_c0 ends the training session early."
+                    "p_l is confident in {PRONOUN/p_l/poss} ability to get along with r_c0, but despite {PRONOUN/p_l/poss} charms, r_c0 seems unreceptive. Unused to rejection, p_l ends the training session early."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "charismatic",
                                 "flamboyant",
                                 "confident"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 0,
@@ -30408,7 +30308,7 @@
                             "r_c0"
                         ],
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -30568,7 +30468,7 @@
                 "involved_cats": {
                     "s_c0": {
                         "prior_abbreviation": [
-                            "any"
+                            "-p_l"
                         ],
                         "stat": {
                             "skill": [
@@ -32135,7 +32035,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "s_c0"
+                            "r_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -32155,7 +32055,7 @@
                             "p_l"
                         ],
                         "cats_to": [
-                            "s_c0"
+                            "r_c0"
                         ],
                         "values": [
                             "respect",
@@ -32465,7 +32365,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "values": [
                             "respect",
@@ -33547,7 +33447,7 @@
                     "p_l pads confidently through c_n territory. There's a particular peace in exploring {PRONOUN/p_l/poss} beloved home, {PRONOUN/p_l/poss} ears pricked up curiously whenever {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} how the seasons and weather have reshaped it since {PRONOUN/p_l/subject} last passed this way."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "adventurous",
@@ -33854,7 +33754,7 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from had so much fun training alone with cat_to that {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} surprised by how late it got.",
-                            "cats_to": "p_l was happy to have s_c0 all to {PRONOUN/p_l/self} during a romantic evening training session."
+                            "cats_to": "cat_to was happy to have cat_from all to {PRONOUN/cat_to/self} during a romantic evening training session."
                         }
                     }
                 ]
@@ -34047,7 +33947,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -34056,7 +33956,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l was highly appreciative of s_c0's hunting prowess during a romantic evening training session together."
+                            "cats_from": "cat_to was highly appreciative of cat_from's hunting prowess during a romantic evening training session together."
                         }
                     }
                 ]
@@ -34086,7 +33986,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -34095,7 +33995,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l was highly appreciative of s_c0's hunting prowess during a romantic evening training session together."
+                            "cats_from": "cat_to was highly appreciative of cat_from's hunting prowess during a romantic evening training session together."
                         }
                     }
                 ]
@@ -34125,7 +34025,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -34134,7 +34034,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l was highly appreciative of s_c0's hunting prowess during a romantic evening training session together."
+                            "cats_from": "cat_to was highly appreciative of cat_from's hunting prowess during a romantic evening training session together."
                         }
                     }
                 ]
@@ -34164,7 +34064,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -34173,7 +34073,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l was highly appreciative of s_c0's hunting prowess during a romantic evening training session together."
+                            "cats_from": "cat_to was highly appreciative of cat_from's hunting prowess during a romantic evening training session together."
                         }
                     }
                 ]
@@ -34204,7 +34104,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -34213,7 +34113,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l was highly appreciative of s_c0's hunting prowess during a romantic evening training session together."
+                            "cats_from": "cat_to was highly appreciative of cat_from's hunting prowess during a romantic evening training session together."
                         }
                     }
                 ]
@@ -34243,7 +34143,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -34252,7 +34152,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l was highly appreciative of s_c0's hunting prowess during a romantic evening training session together."
+                            "cats_from": "cat_to was highly appreciative of cat_from's hunting prowess during a romantic evening training session together."
                         }
                     }
                 ]
@@ -34521,7 +34421,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "s_c0 indulged r_c1 and let {PRONOUN/r_c1/object} run off during training."
+                            "cats_from": "cat_from indulged cat_to and let {PRONOUN/cat_to/object} run off during training."
                         }
                     }
                 ]
