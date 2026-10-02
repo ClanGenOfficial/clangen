@@ -488,12 +488,12 @@ class FamilyTreeScreen(Screens):
                     )
                 if self.siblings_kits:
                     self.tree_elements["siblings_kits_line"] = UIModifiedImage(
-                        ui_scale(pygame.Rect((0, -2), (6, 78))),
+                        ui_scale(pygame.Rect((0, -2), (6, 54))),
                         pygame.transform.scale(
                             image_cache.load_image(
                                 "resources/images/vertical_line.png"
                             ),
-                            ui_scale_dimensions((6, 78)),
+                            ui_scale_dimensions((6, 54)),
                         ),
                         manager=MANAGER,
                         anchors={"top_target": self.tree_elements["siblings_mates_line"],
@@ -511,11 +511,25 @@ class FamilyTreeScreen(Screens):
                         container=self.family_tree,
                     )
 
-            self.parents_button = UIImageButton(
-                ui_scale(pygame.Rect((68 + x_pos, -98 + y_pos), (88, 144))),
-                "",
-                object_id="#parents_button",
+            self.parents_button = UISurfaceImageButton(
+                ui_scale(pygame.Rect((68 + x_pos, -98 + y_pos), (88, 30))),
+                "screens.family_tree.parents",
+                get_button_dict(ButtonStyles.SQUOVAL, (88, 30)),
+                object_id="@buttonstyles_squoval",
                 manager=MANAGER,
+                container=self.family_tree,
+            )
+            self.tree_elements["parents_line"] = UIModifiedImage(
+                ui_scale(pygame.Rect((0, -2), (6, 116))),
+                pygame.transform.scale(
+                    image_cache.load_image(
+                        "resources/images/vertical_line.png"
+                    ),
+                    ui_scale_dimensions((6, 116)),
+                ),
+                manager=MANAGER,
+                anchors={"top_target": self.parents_button, "centerx": "centerx", "centerx_target": self.tree_elements["siblings_line"],
+                         "bottom_target": self.tree_elements["siblings_line"]},
                 container=self.family_tree,
             )
             self.family_tree.add_element(self.parents_button)
