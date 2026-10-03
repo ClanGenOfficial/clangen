@@ -53,3 +53,7 @@ class Icon(StrEnum):
     MOON_PHASE5 = "\U0001f312"
     MOON_PHASE6 = "\U0001f313"
     MOON_PHASE7 = "\U0001f314"
+
+    LARGE_SQUARE = "\u25fe"
+    MEDIUM_SQUARE = "\U0001f533"
+    SMALL_SQUARE = "\ufe0f"

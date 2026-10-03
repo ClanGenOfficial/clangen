@@ -9,6 +9,7 @@ from scripts.housekeeping.datadir import get_saved_images_dir, open_data_dir
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.windows.window_base_class import GameWindow
 from scripts.ui.scale import ui_scale
+from scripts.ui.icon import Icon
 
 
 class SaveAsImageWindow(GameWindow):
@@ -42,10 +43,19 @@ class SaveAsImageWindow(GameWindow):
             anchors={"centerx": "centerx"},
         )
 
-        self.small_size_button = UIImageButton(
+        self.small_size_button_text = pygame_gui.elements.UITextBox(
+            "",
+            ui_scale(pygame.Rect((5, 125), (390, 45))),
+            object_id="#text_box_26_horizcenter_vertcenter_spacing_95",
+            container=self,
+            starting_height=2,
+        )
+
+        self.small_size_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((54, 50), (97, 30))),
             "",
-            object_id="#image_small_button",
+            get_button_dict(ButtonStyles.PROFILE_LEFT, (97, 30)),
+            object_id="@buttonstyles_profile_left",
             container=self,
             starting_height=2,
         )
