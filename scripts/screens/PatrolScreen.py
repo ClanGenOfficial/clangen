@@ -430,7 +430,7 @@ class PatrolScreen(Screens):
 
             self.elements["info"].kill()  # clearing the text before displaying new text
 
-            if not get_config( "patrol_related.allow_nonrandom_selection.all"):
+            if not get_config("patrol_related.allow_nonrandom_selection.all"):
                 self.elements["paw"].disable()
                 self.elements["mouse"].disable()
                 self.elements["claws"].disable()
@@ -440,7 +440,10 @@ class PatrolScreen(Screens):
             else:
                 # making sure meds don't get the option for other patrols
                 if any(
-                    (cat.status.rank.is_any_medicine_rank() for cat in self.current_patrol)
+                    (
+                        cat.status.rank.is_any_medicine_rank()
+                        for cat in self.current_patrol
+                    )
                 ):
                     self.patrol_type = "med"
                 else:
