@@ -13371,7 +13371,7 @@
             "failed_murder"
         ],
         "frequency": 4,
-        "event_text": "r_c saved m_c from a big dog but, rather then be happy, {PRONOUN/m_c/subject} seemed dissapointed... Was that not what m_c wanted to happen?",
+        "event_text": "r_c saved m_c from a big dog but, rather then be happy, {PRONOUN/m_c/subject} seemed disappointed... Was that not what m_c wanted to happen?",
         "m_c": {
         "trait": [
         "ambitious",
@@ -13522,10 +13522,12 @@
         		"-kitten"
         ]
         },
-        "r_c": [
-        "oblivious",
-        "strange"
-        ]
+        "r_c": {
+            "trait": [
+                "oblivious",
+                "strange"
+            ]
+        }
     },
     {
         "event_id": "gen_misc_failedmurder_message1",
