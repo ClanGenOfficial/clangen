@@ -45,7 +45,7 @@ class SaveAsImageWindow(GameWindow):
 
         self.small_size_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((54, 50), (97, 30))),
-            "\u2b1d  small",
+            "\u25ab   small",
             get_button_dict(ButtonStyles.PROFILE_LEFT, (97, 30)),
             object_id="@buttonstyles_profile_left",
             container=self,
@@ -56,9 +56,9 @@ class SaveAsImageWindow(GameWindow):
 
         self.medium_size_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 0), (97, 30))),
-            "\U0001f533  medium",
-            get_button_dict(ButtonStyles.MENU_MIDDLE, (97, 30)),
-            object_id="@buttonstyles_menu_middle",
+            "\U0001f533   medium",
+            get_button_dict(ButtonStyles.PROFILE_MIDDLE, (97, 30)),
+            object_id="@buttonstyles_profile_middle",
             container=self,
             anchors={"left_target": self.small_size_button, "centery": "centery", "centery_target": self.small_size_button},
             starting_height=2,
