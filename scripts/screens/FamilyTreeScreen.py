@@ -444,14 +444,15 @@ class FamilyTreeScreen(Screens):
             self.tree_elements["siblings_line"] = UIModifiedImage(
                 ui_scale(pygame.Rect((-6, 0), (72, 6))),
                 pygame.transform.scale(
-                    image_cache.load_image(
-                        "resources/images/horizontal_line.png"
-                    ),
+                    image_cache.load_image("resources/images/horizontal_line.png"),
                     ui_scale_dimensions((72, 6)),
                 ),
                 manager=MANAGER,
-                anchors={ "centery": "centery", "centery_target": self.center_cat_frame,
-                         "left_target": self.center_cat_frame},
+                anchors={
+                    "centery": "centery",
+                    "centery_target": self.center_cat_frame,
+                    "left_target": self.center_cat_frame,
+                },
                 starting_height=2,
                 container=self.family_tree,
             )
@@ -461,8 +462,11 @@ class FamilyTreeScreen(Screens):
                 get_button_dict(ButtonStyles.SQUOVAL, (90, 30)),
                 object_id="@buttonstyles_squoval",
                 manager=MANAGER,
-                anchors={ "centery": "centery", "centery_target": self.tree_elements["siblings_line"],
-                          "left_target": self.tree_elements["siblings_line"]},
+                anchors={
+                    "centery": "centery",
+                    "centery_target": self.tree_elements["siblings_line"],
+                    "left_target": self.tree_elements["siblings_line"],
+                },
                 container=self.family_tree,
             )
 
@@ -477,8 +481,11 @@ class FamilyTreeScreen(Screens):
                             ui_scale_dimensions((74, 6)),
                         ),
                         manager=MANAGER,
-                        anchors={"left_target": self.siblings_button, "centery": "centery", "centery_target": self.siblings_button
-                                 },
+                        anchors={
+                            "left_target": self.siblings_button,
+                            "centery": "centery",
+                            "centery_target": self.siblings_button,
+                        },
                         starting_height=2,
                         container=self.family_tree,
                     )
@@ -487,7 +494,11 @@ class FamilyTreeScreen(Screens):
                         "screens.family_tree.siblings_mates",
                         get_button_dict(ButtonStyles.SQUOVAL, (135, 30)),
                         object_id="@buttonstyles_squoval",
-                        anchors={"left_target": self.tree_elements["siblings_mates_line"], "centery": "centery", "centery_target": self.tree_elements["siblings_mates_line"]},
+                        anchors={
+                            "left_target": self.tree_elements["siblings_mates_line"],
+                            "centery": "centery",
+                            "centery_target": self.tree_elements["siblings_mates_line"],
+                        },
                         manager=MANAGER,
                         container=self.family_tree,
                     )
@@ -501,10 +512,13 @@ class FamilyTreeScreen(Screens):
                             ui_scale_dimensions((6, 54)),
                         ),
                         manager=MANAGER,
-                        anchors={"top_target": self.tree_elements["siblings_mates_line"],
-                                 "centerx": "centerx", "centerx_target": self.tree_elements["siblings_mates_line"]},
+                        anchors={
+                            "top_target": self.tree_elements["siblings_mates_line"],
+                            "centerx": "centerx",
+                            "centerx_target": self.tree_elements["siblings_mates_line"],
+                        },
                         container=self.family_tree,
-                        starting_height=2
+                        starting_height=2,
                     )
                     self.sibling_kits_button = UISurfaceImageButton(
                         ui_scale(pygame.Rect((0, -2), (126, 30))),
@@ -512,19 +526,26 @@ class FamilyTreeScreen(Screens):
                         get_button_dict(ButtonStyles.SQUOVAL, (126, 30)),
                         object_id="@buttonstyles_squoval",
                         manager=MANAGER,
-                        anchors={"top_target": self.tree_elements["siblings_kits_line"], "centerx": "centerx", "centerx_target": self.tree_elements["siblings_kits_line"]},
+                        anchors={
+                            "top_target": self.tree_elements["siblings_kits_line"],
+                            "centerx": "centerx",
+                            "centerx_target": self.tree_elements["siblings_kits_line"],
+                        },
                         container=self.family_tree,
                     )
             self.tree_elements["parents_line"] = UIModifiedImage(
                 ui_scale(pygame.Rect((0, -114), (6, 110))),
                 pygame.transform.scale(
-                    image_cache.load_image(
-                        "resources/images/vertical_line.png"
-                    ),
+                    image_cache.load_image("resources/images/vertical_line.png"),
                     ui_scale_dimensions((6, 110)),
                 ),
                 manager=MANAGER,
-                anchors={"bottom": "top", "top_target": self.tree_elements["siblings_line"], "centerx": "centerx", "centerx_target": self.tree_elements["siblings_line"]},
+                anchors={
+                    "bottom": "top",
+                    "top_target": self.tree_elements["siblings_line"],
+                    "centerx": "centerx",
+                    "centerx_target": self.tree_elements["siblings_line"],
+                },
                 starting_height=2,
                 container=self.family_tree,
             )
@@ -534,8 +555,12 @@ class FamilyTreeScreen(Screens):
                 get_button_dict(ButtonStyles.SQUOVAL, (88, 30)),
                 object_id="@buttonstyles_squoval",
                 manager=MANAGER,
-                anchors={"centerx": "centerx", "centerx_target": self.tree_elements["parents_line"], "bottom": "bottom",
-                         "bottom_target": self.tree_elements["parents_line"]},
+                anchors={
+                    "centerx": "centerx",
+                    "centerx_target": self.tree_elements["parents_line"],
+                    "bottom": "bottom",
+                    "bottom_target": self.tree_elements["parents_line"],
+                },
                 container=self.family_tree,
             )
             self.family_tree.add_element(self.parents_button)
@@ -544,25 +569,29 @@ class FamilyTreeScreen(Screens):
                 self.tree_elements["parents_siblings_line"] = UIModifiedImage(
                     ui_scale(pygame.Rect((-2, 0), (72, 6))),
                     pygame.transform.scale(
-                        image_cache.load_image(
-                            "resources/images/horizontal_line.png"
-                        ),
+                        image_cache.load_image("resources/images/horizontal_line.png"),
                         ui_scale_dimensions((72, 6)),
                     ),
                     manager=MANAGER,
-                    anchors={"centery": "centery", "centery_target": self.parents_button,
-                             "left_target": self.parents_button},
+                    anchors={
+                        "centery": "centery",
+                        "centery_target": self.parents_button,
+                        "left_target": self.parents_button,
+                    },
                     starting_height=2,
                     container=self.family_tree,
                 )
                 self.parents_siblings_button = UISurfaceImageButton(
                     ui_scale(pygame.Rect((-2, 0), (140, 30))),
                     "screens.family_tree.parents_siblings",
-                get_button_dict(ButtonStyles.SQUOVAL, (140, 30)),
-                object_id="@buttonstyles_squoval",
-                manager=MANAGER,
-                anchors={"centery": "centery", "centery_target": self.tree_elements["parents_siblings_line"],
-                         "left_target": self.tree_elements["parents_siblings_line"]},
+                    get_button_dict(ButtonStyles.SQUOVAL, (140, 30)),
+                    object_id="@buttonstyles_squoval",
+                    manager=MANAGER,
+                    anchors={
+                        "centery": "centery",
+                        "centery_target": self.tree_elements["parents_siblings_line"],
+                        "left_target": self.tree_elements["parents_siblings_line"],
+                    },
                     container=self.family_tree,
                 )
 
@@ -576,8 +605,11 @@ class FamilyTreeScreen(Screens):
                             ui_scale_dimensions((6, 52)),
                         ),
                         manager=MANAGER,
-                        anchors={"top_target": self.parents_siblings_button, "centerx": "centerx", "centerx_target": self.parents_siblings_button
-                                 },
+                        anchors={
+                            "top_target": self.parents_siblings_button,
+                            "centerx": "centerx",
+                            "centerx_target": self.parents_siblings_button,
+                        },
                         starting_height=2,
                         container=self.family_tree,
                     )
@@ -587,22 +619,27 @@ class FamilyTreeScreen(Screens):
                         get_button_dict(ButtonStyles.SQUOVAL, (85, 30)),
                         object_id="@buttonstyles_squoval",
                         manager=MANAGER,
-                        anchors={"top_target": self.tree_elements["cousins_line"], "centerx": "centerx", "centerx_target": self.tree_elements["cousins_line"]
-                                 },
+                        anchors={
+                            "top_target": self.tree_elements["cousins_line"],
+                            "centerx": "centerx",
+                            "centerx_target": self.tree_elements["cousins_line"],
+                        },
                         container=self.family_tree,
                     )
             if self.grandparents:
                 self.tree_elements["grandparents_line"] = UIModifiedImage(
                     ui_scale(pygame.Rect((0, -56), (6, 58))),
                     pygame.transform.scale(
-                        image_cache.load_image(
-                            "resources/images/vertical_line.png"
-                        ),
+                        image_cache.load_image("resources/images/vertical_line.png"),
                         ui_scale_dimensions((6, 58)),
                     ),
                     manager=MANAGER,
-                    anchors={"bottom": "bottom", "bottom_target": self.parents_button, "centerx": "centerx", "centerx_target": self.parents_button,
-                             },
+                    anchors={
+                        "bottom": "bottom",
+                        "bottom_target": self.parents_button,
+                        "centerx": "centerx",
+                        "centerx_target": self.parents_button,
+                    },
                     starting_height=2,
                     container=self.family_tree,
                 )
@@ -612,8 +649,12 @@ class FamilyTreeScreen(Screens):
                     get_button_dict(ButtonStyles.SQUOVAL, (130, 30)),
                     object_id="@buttonstyles_squoval",
                     manager=MANAGER,
-                    anchors={"centerx": "centerx", "centerx_target": self.tree_elements["grandparents_line"], "bottom": "bottom",
-                         "bottom_target": self.tree_elements["grandparents_line"]},
+                    anchors={
+                        "centerx": "centerx",
+                        "centerx_target": self.tree_elements["grandparents_line"],
+                        "bottom": "bottom",
+                        "bottom_target": self.tree_elements["grandparents_line"],
+                    },
                     container=self.family_tree,
                 )
 
@@ -621,14 +662,15 @@ class FamilyTreeScreen(Screens):
             self.tree_elements["mates_line"] = UIModifiedImage(
                 ui_scale(pygame.Rect((-146, 0), (72, 6))),
                 pygame.transform.scale(
-                    image_cache.load_image(
-                        "resources/images/horizontal_line.png"
-                    ),
+                    image_cache.load_image("resources/images/horizontal_line.png"),
                     ui_scale_dimensions((72, 6)),
                 ),
                 manager=MANAGER,
-                anchors={"centery": "centery", "centery_target": self.center_cat_frame,
-                         "left_target": self.center_cat_frame},
+                anchors={
+                    "centery": "centery",
+                    "centery_target": self.center_cat_frame,
+                    "left_target": self.center_cat_frame,
+                },
                 starting_height=2,
                 container=self.family_tree,
             )
@@ -638,22 +680,27 @@ class FamilyTreeScreen(Screens):
                 get_button_dict(ButtonStyles.SQUOVAL, (75, 30)),
                 object_id="@buttonstyles_squoval",
                 manager=MANAGER,
-                anchors={"centery": "centery", "centery_target": self.tree_elements["mates_line"], "right": "right",
-                         "right_target": self.tree_elements["mates_line"]},
+                anchors={
+                    "centery": "centery",
+                    "centery_target": self.tree_elements["mates_line"],
+                    "right": "right",
+                    "right_target": self.tree_elements["mates_line"],
+                },
                 container=self.family_tree,
             )
         if self.kits:
             self.tree_elements["kits_line"] = UIModifiedImage(
                 ui_scale(pygame.Rect((0, -2), (6, 52))),
                 pygame.transform.scale(
-                    image_cache.load_image(
-                        "resources/images/vertical_line.png"
-                    ),
+                    image_cache.load_image("resources/images/vertical_line.png"),
                     ui_scale_dimensions((6, 52)),
                 ),
                 manager=MANAGER,
-                anchors={"top_target": self.tree_elements["mates_line"], "centerx": "centerx", "centerx_target": self.tree_elements["mates_line"]
-                         },
+                anchors={
+                    "top_target": self.tree_elements["mates_line"],
+                    "centerx": "centerx",
+                    "centerx_target": self.tree_elements["mates_line"],
+                },
                 starting_height=3,
                 container=self.family_tree,
             )
@@ -663,22 +710,26 @@ class FamilyTreeScreen(Screens):
                 get_button_dict(ButtonStyles.SQUOVAL, (58, 30)),
                 object_id="@buttonstyles_squoval",
                 manager=MANAGER,
-                anchors={"centerx": "centerx", "centerx_target": self.tree_elements["kits_line"],
-                         "top_target": self.tree_elements["kits_line"]},
+                anchors={
+                    "centerx": "centerx",
+                    "centerx_target": self.tree_elements["kits_line"],
+                    "top_target": self.tree_elements["kits_line"],
+                },
                 container=self.family_tree,
             )
             if self.kits_mates or self.grandkits:
                 self.tree_elements["kits_mates_line"] = UIModifiedImage(
                     ui_scale(pygame.Rect((-128, 0), (72, 6))),
                     pygame.transform.scale(
-                        image_cache.load_image(
-                            "resources/images/horizontal_line.png"
-                        ),
+                        image_cache.load_image("resources/images/horizontal_line.png"),
                         ui_scale_dimensions((72, 6)),
                     ),
                     manager=MANAGER,
-                    anchors={"centery": "centery", "centery_target": self.kits_button,
-                             "left_target": self.kits_button},
+                    anchors={
+                        "centery": "centery",
+                        "centery_target": self.kits_button,
+                        "left_target": self.kits_button,
+                    },
                     starting_height=2,
                     container=self.family_tree,
                 )
@@ -688,22 +739,27 @@ class FamilyTreeScreen(Screens):
                     get_button_dict(ButtonStyles.SQUOVAL, (110, 30)),
                     object_id="@buttonstyles_squoval",
                     manager=MANAGER,
-                    anchors={"centery": "centery", "centery_target": self.tree_elements["kits_mates_line"], "right": "left",
-                         "right_target": self.tree_elements["kits_mates_line"]},
+                    anchors={
+                        "centery": "centery",
+                        "centery_target": self.tree_elements["kits_mates_line"],
+                        "right": "left",
+                        "right_target": self.tree_elements["kits_mates_line"],
+                    },
                     container=self.family_tree,
                 )
             if self.grandkits:
                 self.tree_elements["grandkits_line"] = UIModifiedImage(
                     ui_scale(pygame.Rect((0, -2), (6, 50))),
                     pygame.transform.scale(
-                        image_cache.load_image(
-                            "resources/images/vertical_line.png"
-                        ),
+                        image_cache.load_image("resources/images/vertical_line.png"),
                         ui_scale_dimensions((6, 50)),
                     ),
                     manager=MANAGER,
-                    anchors={"top_target": self.tree_elements["kits_mates_line"], "centerx": "centerx", "centerx_target": self.tree_elements["kits_mates_line"],
-                             },
+                    anchors={
+                        "top_target": self.tree_elements["kits_mates_line"],
+                        "centerx": "centerx",
+                        "centerx_target": self.tree_elements["kits_mates_line"],
+                    },
                     starting_height=2,
                     container=self.family_tree,
                 )
@@ -713,8 +769,11 @@ class FamilyTreeScreen(Screens):
                     get_button_dict(ButtonStyles.SQUOVAL, (101, 30)),
                     object_id="@buttonstyles_squoval",
                     manager=MANAGER,
-                    anchors={"centerx": "centerx", "centerx_target": self.tree_elements["grandkits_line"],
-                         "top_target": self.tree_elements["grandkits_line"]},
+                    anchors={
+                        "centerx": "centerx",
+                        "centerx_target": self.tree_elements["grandkits_line"],
+                        "top_target": self.tree_elements["grandkits_line"],
+                    },
                     container=self.family_tree,
                 )
 
