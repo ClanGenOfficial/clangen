@@ -740,10 +740,11 @@ class ProfileScreen(Screens):
             self.load_user_notes()
 
         if self.the_cat.status.is_leader and not self.the_cat.dead:
-            self.profile_elements["leader_ceremony"] = UIImageButton(
+            self.profile_elements["leader_ceremony"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((383, 110), (34, 34))),
-                "",
-                object_id="#leader_ceremony_button",
+                Icon.STAR_SPARKLE,
+                get_button_dict(ButtonStyles.ICON, (34, 34)),
+                object_id="@buttonstyles_icon",
                 tool_tip_text="screens.profile.leader_ceremony",
                 manager=MANAGER,
             )
