@@ -46,7 +46,7 @@ game.rpc.start()
 game.rpc.start_rpc.set()
 
 # for the loading screen font
-font = pygame.freetype.Font("resources/fonts/clangen.ttf", 25)
+font = pygame.freetype.Font("resources/fonts/clangen.ttf", 32)
 
 # LOAD cats & clan
 finished_loading = False
