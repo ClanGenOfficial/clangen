@@ -145,7 +145,7 @@ def loading_animation(scale: float = 1):
         )
         screen.blit(
             loading_text,
-            (x - loading_text.get_width() / 2, y - loading_text.get_height() / 2 + 100),
+            (x - loading_text.get_width() / 2, y - loading_text.get_height() / 2 + 100 * screen_scale),
         )
 
         i += 1
