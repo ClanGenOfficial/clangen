@@ -96,20 +96,17 @@ Points of Interests can use many different tags that denote circumstances around
 
 ### Constraints
 
-Patrols and Short Events now have an additional constraint that can be utilized to include either a specific Point of Interest ID or tag. 
+Patrols, Short Events, and text pools such as Thoughts and Ceremonies now have an additional constraint that can be utilized to include either a specific Point of Interest ID, tag, or category. 
 
-You can add this to any short event or patrol to constrain by Point of Interest. You can constrain by multiple parameters (i.e. both tag and category constraints) if you wish.
+You can add this to any short event or patrol to constrain by Point of Interest. You can constrain by both tag and category if you wish, but name must be used independently.
 
 ~~~
 "poi": {
-    "name": ["name"]
-    "tags": ["tag"]
-    "category": "category"
+    "name": ["name"],
+    "tags": ["tag"],
+    "category": "category",
     }
 ~~~
-
-!!! tip
-    While you *can* combine the `name` constraint with the other constraint parameters, you really don't need to. For example, if entering `["moon_meteor"]` as the name constraint then there's no need to also set category as `"moonplace"`.
 
 ## Using the Point Of Interest in a Sentence
 
