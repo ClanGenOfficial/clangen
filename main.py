@@ -1,5 +1,7 @@
 # ==== DO NOT MOVE THIS IMPORT!
 # ==== DO NOT ADD ANYTHING BEFORE THIS IMPORT!
+import i18n
+
 import init  # isort: skip
 
 # Load game
@@ -7,6 +9,7 @@ import logging
 import threading
 
 import pygame
+import pygame.freetype
 
 import scripts.game_structure.screen_settings
 from scripts.cat.sprites.load_sprites import sprites
@@ -41,6 +44,9 @@ pygame.display.set_icon(pygame.image.load("resources/images/icon.png"))
 game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
 game.rpc.start()
 game.rpc.start_rpc.set()
+
+# for the loading screen font
+font = pygame.freetype.Font("resources/fonts/clangen.ttf", 32)
 
 # LOAD cats & clan
 finished_loading = False
@@ -97,11 +103,13 @@ images = []
 
 def loading_animation(scale: float = 1):
     # Load images, adjust color
-    color = pygame.Surface((200 * scale, 210 * scale))
+    color_surface = pygame.Surface((200 * scale, 210 * scale))
     if game_setting_get("dark mode"):
-        color.fill(constants.CONFIG["theme"]["light_mode_background"])
+        color = constants.CONFIG["theme"]["light_mode_background"]
     else:
-        color.fill(constants.CONFIG["theme"]["dark_mode_background"])
+        color = constants.CONFIG["theme"]["dark_mode_background"]
+
+    color_surface.fill(color)
 
     if len(images) == 0:
         for i in range(1, 11):
@@ -109,15 +117,18 @@ def loading_animation(scale: float = 1):
                 pygame.image.load(f"resources/images/loading_animate/startup/{i}.png"),
                 screen_scale,
             )
-            im.blit(color, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+            im.blit(color_surface, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
             images.append(im)
         del im
 
     # Cleanup
-    del color
+    del color_surface
 
     x = screen.get_width() / 2
     y = screen.get_height() / 2
+
+    loading_text, _ = font.render(i18n.t("screens.start.loading"), color)
+    loading_text = pygame.transform.scale_by(loading_text, screen_scale)
 
     i = 0
     total_frames = len(images)
@@ -131,6 +142,13 @@ def loading_animation(scale: float = 1):
 
         screen.blit(
             images[i], (x - images[i].get_width() / 2, y - images[i].get_height() / 2)
+        )
+        screen.blit(
+            loading_text,
+            (
+                x - loading_text.get_width() / 2,
+                y - loading_text.get_height() / 2 + 100 * screen_scale,
+            ),
         )
 
         i += 1
