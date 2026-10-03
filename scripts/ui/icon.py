@@ -56,4 +56,4 @@ class Icon(StrEnum):
 
     LARGE_SQUARE = "\u25fe"
     MEDIUM_SQUARE = "\U0001f533"
-    SMALL_SQUARE = "\ufe0f"
+    SMALL_SQUARE = "\u2b1d"

@@ -43,17 +43,9 @@ class SaveAsImageWindow(GameWindow):
             anchors={"centerx": "centerx"},
         )
 
-        self.small_size_button_text = pygame_gui.elements.UITextBox(
-            "",
-            ui_scale(pygame.Rect((5, 125), (390, 45))),
-            object_id="#text_box_26_horizcenter_vertcenter_spacing_95",
-            container=self,
-            starting_height=2,
-        )
-
         self.small_size_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((54, 50), (97, 30))),
-            "",
+            "\u2b1d  small",
             get_button_dict(ButtonStyles.PROFILE_LEFT, (97, 30)),
             object_id="@buttonstyles_profile_left",
             container=self,
@@ -61,19 +53,24 @@ class SaveAsImageWindow(GameWindow):
         )
         self.small_size_button.disable()
 
-        self.medium_size_button = UIImageButton(
-            ui_scale(pygame.Rect((151, 50), (97, 30))),
-            "",
-            object_id="#image_medium_button",
+
+        self.medium_size_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((0, 0), (97, 30))),
+            "\U0001f533  medium",
+            get_button_dict(ButtonStyles.MENU_MIDDLE, (97, 30)),
+            object_id="@buttonstyles_menu_middle",
             container=self,
+            anchors={"left_target": self.small_size_button, "centery": "centery", "centery_target": self.small_size_button},
             starting_height=2,
         )
 
-        self.large_size_button = UIImageButton(
-            ui_scale(pygame.Rect((248, 50), (97, 30))),
-            "",
-            object_id="#image_large_button",
+        self.large_size_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((0, 0), (97, 30))),
+            "\u25fe  large",
+            get_button_dict(ButtonStyles.PROFILE_RIGHT, (97, 30)),
+            object_id="@buttonstyles_profile_middle",
             container=self,
+            anchors={"left_target": self.medium_size_button, "centery": "centery", "centery_target": self.medium_size_button},
             starting_height=2,
         )
 
