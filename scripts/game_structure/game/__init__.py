@@ -1,6 +1,7 @@
 from typing import Optional, TYPE_CHECKING, Any
 
 import pygame
+import pygame.freetype
 import ujson
 
 from scripts.events_module.event_information import EventInformation
@@ -18,6 +19,7 @@ from ...screens.enums import GameScreen
 from ...cat.enums import CatGroup
 
 pygame.init()
+pygame.freetype.init()
 
 if TYPE_CHECKING:
     from scripts.clan import Clan, Afterlife
@@ -63,7 +65,7 @@ all_screens = {}
 
 debug_settings = {
     "showcoords": False,
-    "showbounds": False,
+    "showbounds": True,
     "visualdebugmode": False,
     "showfps": False,
 }
