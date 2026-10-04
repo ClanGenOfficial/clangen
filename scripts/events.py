@@ -541,13 +541,13 @@ def handle_lead_den_event():
                                     cat=invited_cat,
                                 )
                                 invited_cat.name.give_suffix(
-                                    eyes=invited_cat.pelt.eyes,
+                                    eyes=invited_cat.pelt.eye_colour,
                                     colour=invited_cat.pelt.colour,
                                     pelt=invited_cat.pelt.name,
                                     biome=game.clan.biome
                                     if not game.clan.override_biome
                                     else game.clan.override_biome,
-                                    tortie_pattern=invited_cat.pelt.tortie,
+                                    tortie_pattern=invited_cat.pelt.tortie_pattern,
                                 )
                                 invited_cat.specsuffix_hidden = False
                         # if cat is an apprentice, make sure they get a mentor!
