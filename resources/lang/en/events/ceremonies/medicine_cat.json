@@ -84,6 +84,21 @@
         ]
     },
     {
+        "event_id": "med_unprepared_notworking",
+        "involved_cats": {
+            "m_c": {
+                "current_exp": ["untrained", "learning"],
+                "health": {
+                    "working": false
+                }
+            }
+        },
+        "strings": [
+            "(old_name) has spent being treated in the medicine cat than treating others. Despite their condition, {PRONOUN/m_c/subject} {VERB/m_c/have/has} been a diligent student and will only continue to learn more. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} given the name m_c and honored for {PRONOUN/m_c/poss} r_h.",
+            "(old_name)'s condition has held {PRONOUN/m_c/object} back from fully attending to {PRONOUN/m_c/poss} training as a medicine cat. Despite this, many moons have passed and {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c and expected to perform {PRONOUN/m_c/poss} full duties."
+        ]
+    },
+    {
         "event_id": "med_dead_mentor0",
         "involved_cats": {
             "m_c": {},
