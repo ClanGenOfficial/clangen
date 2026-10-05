@@ -52,7 +52,7 @@
         "strings": [
             "(old_name) has spent moons falling just shy of the tasks set before {PRONOUN/m_c/object}. When {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c and honored for {PRONOUN/m_c/poss} r_h, many question whether they truly can properly mediate for the Clan."
         ],
-        "relationships": [
+        "relationship_changes": [
             {
                 "cats_from": ["some_clan", "high_lawful"],
                 "cats_to": ["m_c"],
