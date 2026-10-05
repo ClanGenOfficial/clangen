@@ -21,6 +21,7 @@ class TagEnum(Enum):
     april_fools = "april_fools"
     new_years = "new_years"
     disaster = "disaster"
+    never_mentor = "never_mentor"
 
 
 class Tag(RootModel):
