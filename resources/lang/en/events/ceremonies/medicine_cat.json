@@ -80,7 +80,7 @@
             "category": "moonplace"
         },
         "strings": [
-            "(old_name) may still mix up herb dosages from time to time but the Clan is in need of another medicine cat and {PRONOUN/m_c/subject} {VERB/m_c/are/is} far too old to still be an apprentice. m_c is given {PRONOUN/m_c/poss} medicine cat name at POI and honored for {PRONOUN/m_c/poss} r_h."
+            "(old_name) may still mix up herb dosages from time to time, but the Clan is in need of another medicine cat and {PRONOUN/m_c/subject} {VERB/m_c/are/is} far too old to still be an apprentice. m_c is given {PRONOUN/m_c/poss} medicine cat name at POI and honored for {PRONOUN/m_c/poss} r_h."
         ]
     },
     {
@@ -94,8 +94,8 @@
             }
         },
         "strings": [
-            "(old_name) has spent being treated in the medicine cat than treating others. Despite their condition, {PRONOUN/m_c/subject} {VERB/m_c/have/has} been a diligent student and will only continue to learn more. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} given the name m_c and honored for {PRONOUN/m_c/poss} r_h.",
-            "(old_name)'s condition has held {PRONOUN/m_c/object} back from fully attending to {PRONOUN/m_c/poss} training as a medicine cat. Despite this, many moons have passed and {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c and expected to perform {PRONOUN/m_c/poss} full duties."
+            "(old_name) has spent more time being treated in the medicine cat den than treating others. Despite {PRONOUN/m_c/poss} condition, {PRONOUN/m_c/subject} {VERB/m_c/have/has} been a diligent student and will only continue to learn more. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} given the name m_c and honored for {PRONOUN/m_c/poss} r_h.",
+            "(old_name)'s condition has held {PRONOUN/m_c/object} back from fully attending to {PRONOUN/m_c/poss} training as a medicine cat. Despite this, {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c and expected to perform {PRONOUN/m_c/poss} full duties."
         ]
     },
     {
