@@ -24,12 +24,15 @@
             "m_c threatens to blackmail r_c.",
             "m_c and r_c refuse to trust one another, which nearly leads to one of them getting hurt.",
             "r_c's prank on m_c almost turned deadly.",
-            "r_c has been pitting a Clanmate against m_c.",
             "m_c claims to have had a prophetic dream about r_c betraying the Clan.",
             "m_c and r_c tell everyone embarrassing secrets about each other.",
             "r_c destroys something dear to m_c.",
             "r_c blackmails m_c with one of {PRONOUN/m_c/poss} secrets."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [
