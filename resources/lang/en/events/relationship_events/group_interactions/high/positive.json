@@ -93,7 +93,7 @@
         ]
     },
     {
-        "id": "group_3_medicinecathelper",
+        "event_id": "group_3_medicinecathelper",
         "strings": [
             "r_c1 tells r_c2 that m_c did a great job helping around the medicine cat den."
         ],
@@ -124,7 +124,7 @@
         ]
     },
     {
-        "id": "group_3_medicinecatadmiration",
+        "event_id": "group_3_medicinecatadmiration",
         "strings": [
             "m_c sees the skill with which r_c1 treats r_c2.",
             "m_c is surprised by how efficiently r_c1 treats r_c2.",
@@ -155,7 +155,7 @@
         ]
     },
     {
-        "id": "group_3_defendrespect",
+        "event_id": "group_3_defendrespect",
         "strings": [
             "m_c defends r_c1 from r_c2's rude remarks.",
             "m_c calls out r_c2 for spreading a rumor about r_c1.",
@@ -199,7 +199,7 @@
         ]
     },
     {
-        "id": "group_multicat_pos_gossipinghates",
+        "event_id": "group_multicat_pos_gossipinghates",
         "strings": [
             "multi_cat discuss how they could drive m_c out of the Clan."
         ],
@@ -310,7 +310,7 @@
         ]
     },
     {
-        "id": "group_multi_pos_supportblacksheep",
+        "event_id": "group_multi_pos_supportblacksheep",
         "strings": [
             "m_c sees r_c1 stand up for r_c2 despite pushback from multi_cat.",
             "m_c notices that r_c1 won't stand for multi_cat talking poorly about r_c2 behind {PRONOUN/r_c2/poss} back."
@@ -353,7 +353,7 @@
         ]
     },
     {
-        "id": "group_3_pos_reconsider",
+        "event_id": "group_3_pos_reconsider",
         "strings": [
             "The way r_c1 jumps to help r_c2 makes m_c think {PRONOUN/r_c1/subject} might not be all that bad.",
             "m_c sees a more sympathetic side of r_c1 in how {PRONOUN/r_c1/subject} {VERB/r_c1/treat/treats} r_c2.",
@@ -397,7 +397,7 @@
         ]
     },
     {
-        "id": "group_multicat_pastoutsidersreminisce",
+        "event_id": "group_multicat_pastoutsidersreminisce",
         "strings": [
             "m_c, multi_cat reminisce about life outside c_n.",
             "m_c, multi_cat trade stories of their lives before they came to c_n.",

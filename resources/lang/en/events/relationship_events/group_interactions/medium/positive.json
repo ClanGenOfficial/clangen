@@ -131,7 +131,7 @@
         ]
     },
     {
-        "id": "group_3_helpfulrespect",
+        "event_id": "group_3_helpfulrespect",
         "strings": [
             "m_c sees r_c1 help r_c2 get unstuck from some brambles.",
             "m_c overhears r_c1 dispelling a false rumor about r_c2.",
@@ -169,7 +169,7 @@
         ]
     },
     {
-        "id": "group_3_pos_helpful",
+        "event_id": "group_3_pos_helpful",
         "strings": [
             "r_c1 sends r_c2 to help m_c with something {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} struggling with.",
             "r_c1 includes m_c in a conversation with r_c2 that m_c struggled to join.",
@@ -199,7 +199,7 @@
         ]
     },
     {
-        "id": "group_3_pos_defensivefriend",
+        "event_id": "group_3_pos_defensivefriend",
         "strings": [
             "r_c1 snaps at r_c2 for disagreeing with m_c.",
             "r_c1 won't hear a bad word about m_c from r_c2.",
@@ -240,7 +240,7 @@
         ]
     },
     {
-        "id": "group_3_pos_enemyofmyenemy",
+        "event_id": "group_3_pos_enemyofmyenemy",
         "strings": [
             "r_c1 helps m_c hide from r_c2.",
             "r_c1 lets m_c know that r_c2 was talking badly about {PRONOUN/m_c/object}."
@@ -282,7 +282,7 @@
         ]
     },
     {
-        "id": "group_3_pos_friendofmyfriend",
+        "event_id": "group_3_pos_friendofmyfriend",
         "strings": [
             "Both m_c and r_c1 enthusiastically congratulate r_c2 on something.",
             "m_c and r_c1 grow closer through their mutual connection to r_c2."
@@ -311,7 +311,7 @@
         ]
     },
     {
-        "id": "group_3_pos_thirdwheel",
+        "event_id": "group_3_pos_thirdwheel",
         "strings": [
             "m_c went on patrol with r_c1 and r_c2 and says they talked the entire time and almost left {PRONOUN/m_c/object} behind."
         ],
@@ -344,7 +344,7 @@
         ]
     },
     {
-        "id": "group_multicat_pos_kit_kitsitting",
+        "event_id": "group_multicat_pos_kit_kitsitting",
         "strings": [
             "multi_cat are on their best behavior around m_c.",
             "After kitsitting multi_cat, m_c gushes about their perfect behavior.",

@@ -1,6 +1,6 @@
 [
     {
-        "id": "group_3_neg_comfortdecrease",
+        "event_id": "group_3_neg_comfortdecrease",
         "strings": [
             "m_c sees r_c1 neglect r_c2.",
             "m_c can't stop thinking about the way r_c1 glared at r_c2."
@@ -29,7 +29,7 @@
         ]
     },
     {
-        "id": "group_3_neg_differentopiniononClanmate",
+        "event_id": "group_3_neg_differentopiniononClanmate",
         "strings": [    
             "m_c and r_c1 talk about r_c2 and realize they have very different opinions on {PRONOUN/r_c2/object}.",
             "m_c isn't happy to see r_c1 hanging around r_c2."
@@ -64,7 +64,7 @@
         ]
     },
     {
-        "id": "group_3_negative_scarystories",
+        "event_id": "group_3_negative_scarystories",
         "strings": [
             "m_c notices that r_c1 looks a little too entertained by r_c2's unsettling story.",
             "m_c thinks r_c2 shouldn't tell such graphic stories of battle, but r_c1 is listening raptly."
@@ -98,7 +98,7 @@
         ]
     },
     {
-        "id": "group_3_neg_intervention",
+        "event_id": "group_3_neg_intervention",
         "strings": [
             "m_c and r_c1 nearly got in a bloody fight if it weren't for the intervention of r_c2.",
             "r_c2 dresses r_c1 and m_c down for arguing in the middle of camp.",
@@ -141,7 +141,7 @@
         ]
     },
     {
-        "id": "group_3_ruderc",
+        "event_id": "group_3_ruderc",
         "strings": [
             "r_c1 was meant to take a piece of prey to r_c2, but m_c saw {PRONOUN/r_c1/object} eat it.",
             "m_c overhears r_c1 being rude to r_c2 in passing.",
@@ -179,7 +179,7 @@
         ]
     },
     {
-        "id": "group_3_negative_kitsnitch",
+        "event_id": "group_3_negative_kitsnitch",
         "strings": [
             "m_c tells r_c2 that r_c1 did something bad.",
             "m_c snitches on r_c1 to r_c2.",
@@ -216,7 +216,7 @@
         ]
     },
     {
-        "id": "group_3_negative_kitjealousy",
+        "event_id": "group_3_negative_kitjealousy",
         "strings": [
             "r_c2 tells m_c to be nice to r_c1.",
             "m_c thinks r_c1 always gets special treatment from r_c2."
@@ -251,7 +251,7 @@
         ]
     },
     {
-        "id": "group_3_negative_leaderjealousy",
+        "event_id": "group_3_negative_leaderjealousy",
         "strings": [
             "m_c is jealous that r_c1 was praised by the r_c2.",
             "r_c2 was more impressed by what r_c1 brought back from a hunting patrol than what m_c did.",
@@ -300,7 +300,7 @@
         ]
     },
     {
-        "id": "group_multi_negative_jealousyofgrouppraise",
+        "event_id": "group_multi_negative_jealousyofgrouppraise",
         "strings": [
             "m_c can't stand hearing multi_cat talk about how helpful r_c1 is.",
             "m_c plans to embarrass r_c1 in front of multi_cat.",
@@ -348,7 +348,7 @@
         ]
     },
     {
-        "id": "group_multi_negative_groupjealousy",
+        "event_id": "group_multi_negative_groupjealousy",
         "strings": [
             "m_c gets hit with waves of envy whenever r_c1 is laughing with multi_cat.",
             "m_c can't understand why multi_cat like r_c1 so much.",
@@ -385,7 +385,7 @@
         ]
     },
     {
-        "id": "group_3_negative_storyjealousy",
+        "event_id": "group_3_negative_storyjealousy",
         "strings": [
             "r_c2 tells m_c that r_c1's stories are better."
         ],
@@ -424,7 +424,7 @@
         ]
     },
     {
-        "id": "group_3_negative_friendshipjealousy",
+        "event_id": "group_3_negative_friendshipjealousy",
         "strings": [
             "m_c can't understand why r_c2 likes r_c1 so much.",
             "m_c wishes r_c2 and r_c1 weren't so close.",
@@ -477,7 +477,7 @@
         ]
     },
     {
-        "id": "group_3_negative_strangerjealousy",
+        "event_id": "group_3_negative_strangerjealousy",
         "strings": [
             "m_c overhears r_c2 praise r_c1 for something m_c actually did.",
             "m_c wants to asks r_c2 to eat with {PRONOUN/m_c/object}, but {PRONOUN/r_c2/subject}{VERB/r_c2/'re/'s} busy with r_c1.",
@@ -521,7 +521,7 @@
         ]
     },
     {
-        "id": "group_3_negative_trustdecrease1",
+        "event_id": "group_3_negative_trustdecrease1",
         "strings": [
             "m_c sees r_c1 whispering suspiciously to r_c2.",
             "r_c1 sides with r_c2 instead of m_c on something.",
@@ -551,7 +551,7 @@
         ]
     },
     {
-        "id": "group_3_negative_hater",
+        "event_id": "group_3_negative_hater",
         "strings": [
             "r_c1 won't stop looking at r_c2 while talking to m_c.",
             "r_c1 said something about r_c2 that concerned m_c.",
@@ -587,7 +587,7 @@
         ]
     },
     {
-        "id": "group_3_negative_friendopiniondecreasetrust",
+        "event_id": "group_3_negative_friendopiniondecreasetrust",
         "strings": [
             "m_c's friend r_c1 doesn't trust r_c2.",
             "r_c1's low opinion of r_c2 has begun to influence m_c.",

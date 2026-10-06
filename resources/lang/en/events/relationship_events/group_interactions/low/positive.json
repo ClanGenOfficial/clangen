@@ -1,6 +1,6 @@
 [
     {
-        "id": "group_3_pos_comfortincrease",
+        "event_id": "group_3_pos_comfortincrease",
         "strings": [
             "r_c1 shows m_c a side of r_c2 that {PRONOUN/m_c/subject} never noticed.",
             "m_c learns something new about r_c2 from r_c1."
@@ -29,7 +29,7 @@
         ]
     },
     {
-        "id": "group_3_pos_wonover",
+        "event_id": "group_3_pos_wonover",
         "strings": [
             "m_c talks to r_c2 and begins to understand why others like r_c1.",
             "m_c notices that r_c2 speaks very highly of r_c1.",
@@ -71,7 +71,7 @@
         ]
     },
     {
-        "id": "group_3_pos_helpfrommediator",
+        "event_id": "group_3_pos_helpfrommediator",
         "strings": [
             "m_c asks r_c1 to help {PRONOUN/m_c/object} find the right words to say to r_c2 after a dispute.",
             "m_c asks r_c1 for help resolving an argument with r_c2.",
@@ -116,7 +116,7 @@
         ]
     },
     {
-        "id": "group_3_pos_pranksters",
+        "event_id": "group_3_pos_pranksters",
         "strings": [
             "m_c convinces r_c1 to help {PRONOUN/m_c/object} pull a prank on r_c2.",
             "m_c and r_c1's antics disturb r_c2's nap."
@@ -168,7 +168,7 @@
         ]
     },
     {
-        "id": "group_3_neutral_talk",
+        "event_id": "group_3_neutral_talk",
         "strings": [
 			"m_c confesses to r_c1 that {PRONOUN/m_c/subject} {VERB/m_c/have/has} feelings for r_c2.",
 			"While m_c and r_c1 are talking, m_c gets the feeling that {PRONOUN/m_c/subject} can trust r_c1, and confesses that {PRONOUN/m_c/subject} {VERB/m_c/like/likes} r_c2."
