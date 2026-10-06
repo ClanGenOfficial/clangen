@@ -69,7 +69,7 @@ def _handle_pregnancy_notice(pregnant_cat, second_parent):
     amab_mate = []
     for mate_id in pregnant_cat.mate:
         mate_cat = Cat.fetch_cat(mate_id)
-        if not mate_cat:
+        if not mate_cat or not mate_cat.status.alive_in_player_clan:
             continue
         mate.append(mate_cat)
 
@@ -96,8 +96,11 @@ def _handle_pregnancy_notice(pregnant_cat, second_parent):
     # sometimes they won't...
     elif (
         allow_affair is True
-        and second_parent
-        and second_parent.ID not in pregnant_cat.mate
+        and (
+            second_parent
+            and second_parent.ID not in pregnant_cat.mate
+            or not second_parent
+        )
         and amab_mate
     ):
         announcement_key = choice(["announcement_affair", "announcement"])
@@ -110,8 +113,11 @@ def _handle_pregnancy_notice(pregnant_cat, second_parent):
     # by another cat, let there be some drama for that!
     elif (
         allow_affair is True
-        and second_parent
-        and second_parent.ID not in pregnant_cat.mate
+        and (
+            second_parent
+            and second_parent.ID not in pregnant_cat.mate
+            or not second_parent
+        )
         and afab_mate
     ):
         random_cat = afab_mate[0]

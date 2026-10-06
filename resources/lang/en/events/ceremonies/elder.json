@@ -101,5 +101,121 @@
         "strings": [
             "m_c takes a deep breath, and tries to see the celebration of {PRONOUN/m_c/poss} retirement as a compliment, not an exile to the elders' den. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} it isn't meant that way."
         ]
+    },
+    {
+        "event_id": "elder_failinghealth",
+        "involved_cats": {
+            "m_c": {
+                "health": {
+                    "condition": ["-grief stricken", "-deaf", "-blind", "-lasting grief", "-recovering from birth", "-lingering shock", "-allergies", "-persistent headaches", "-seizure prone", "-raspy lungs"],
+                    "working": false
+                }
+            }
+        },
+        "strings": [
+            "m_c's failing health has forced {PRONOUN/m_c/object} to slow down. {PRONOUN/m_c/subject/CAP} {VERB/m_c/come/comes} to terms with the knowledge that {PRONOUN/m_c/poss} body will never be capable of what it once was, and it's time for {PRONOUN/m_c/object} to retire."
+        ]
+    },
+    {
+        "event_id": "elder_POI_tree",
+        "involved_cats": {
+            "m_c": {}
+        },
+        "poi": {
+            "tags": ["trees"]
+        },
+        "season": ["leaf-fall"],
+        "strings": [
+            "m_c looks at the changing leaves of POI and reflects that nothing stays the same forever. It's the push {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been waiting for to solidify {PRONOUN/m_c/poss} decision to retire."
+        ]
+    },
+    {
+        "event_id": "elder_POI_sunningrocks",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": ["-strict", "-ambitious", "-competitive", "-adventurous"]
+                }
+            },
+            "r_c0": {
+                "status": ["elder"]
+            }
+        },
+        "poi": {
+            "name": ["terrain_sunningrocks"]
+        },
+        "season": ["-leaf-bare"],
+        "strings": [
+            "r_c0 points out to m_c that when {PRONOUN/m_c/subject} {VERB/m_c/retire/retires}, {PRONOUN/m_c/subject} can spend as much time as {PRONOUN/m_c/subject} {VERB/m_c/like/likes} basking at POI. m_c can't argue with that reasoning and announces {PRONOUN/m_c/poss} retirement later that day."
+        ]
+    },
+    {
+        "event_id": "elder_POI_gathering",
+        "involved_cats": {
+            "m_c": {}
+        },
+        "poi": {
+            "category": "gathering"
+        },
+        "strings": [
+            "Tonight isn't the first Gathering where m_c has loitered around POI with the elders of other Clans. {PRONOUN/m_c/subject/CAP} can't deny what {PRONOUN/m_c/subject} {VERB/m_c/are/is} anymore; {PRONOUN/m_c/subject} {VERB/m_c/announce/announces} {PRONOUN/m_c/poss} retirement the next morning."
+        ]
+    },
+    {
+        "event_id": "elder_POI_prey",
+        "involved_cats": {
+            "m_c": {
+                "health": {
+                    "working": true
+                }
+            }
+        },
+        "poi": {
+            "tags": ["prey"]
+        },
+        "strings": [
+            "m_c seems wistful on a hunting patrol at POI. Back at camp, {PRONOUN/m_c/subject} {VERB/m_c/announce/announces} {PRONOUN/m_c/poss} retirement; that was the last formal hunting patrol {PRONOUN/m_c/subject} will ever go on."
+        ]
+    },
+    {
+        "event_id": "elder_POI_moonplace",
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "stat": {
+                    "trait": ["-calm", "-compassionate", "-careful", "-nervous", "-gloomy", "-lonesome", "-playful", "-charismatic"]
+                }
+            }
+        },
+        "poi": {
+            "category": "moonplace"
+        },
+        "strings": [
+            "m_c has been mulling over retiring for so long that r_c0 snaps that if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} waiting for a sign, {PRONOUN/m_c/subject} should take a trip to POI and spare the rest of them. m_c comes to {PRONOUN/m_c/poss} senses and announces {PRONOUN/m_c/poss} retirement."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c0"],
+                "constraints": ["listens_to"],
+                "mutual": false
+            }
+        ]
+    },
+    {
+        "event_id": "elder_POI_danger",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": ["-adventurous", "-daring", "-fierce", "-bold", "-ambitious", "-arrogant", "-confident", "-bloodthirsty", "-cold"]
+                }
+            }
+        },
+        "poi": {
+            "tags": ["danger"]
+        },
+        "strings": [
+            "m_c always dreaded patrolling at POI, but just before {PRONOUN/m_c/subject} {VERB/m_c/announce/announces} {PRONOUN/m_c/poss} retirement, {PRONOUN/m_c/subject} {VERB/m_c/volunteer/volunteers} for a patrol there. It's funny, the things {PRONOUN/m_c/subject}'ll miss."
+        ]
     }
 ]

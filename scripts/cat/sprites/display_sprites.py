@@ -283,7 +283,7 @@ def _draw_sprite(
             for y in range(height):
                 if sprite.get_at((x, y)) == pygame.Color(0, 0, 0):
                     color = source.get_at((x, y))
-                    sprite.set_at((x, y), color)
+                    out.set_at((x, y), color)
         return out
 
     # draw line art

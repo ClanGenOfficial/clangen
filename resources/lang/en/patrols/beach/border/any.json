@@ -17,7 +17,7 @@
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
         "intro_strings": [
-            "As p_l crosses a beach, shivering with the cold, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a creaking, rushing sound, like a wave — but out of sync with the ocean."
+            "As p_l crosses a beach, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a creaking, rushing sound, like a wave — but out of sync with the ocean."
         ],
         "decline_strings": [
             "p_l decides to head back early."
@@ -26,7 +26,15 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l leaps forward, dashing to the other side of the beach and up onto the rocks. {PRONOUN/p_l/subject/CAP} {VERB/p_l/make/makes} it in time to watch the beach get lost under a tide of water from inland."
+                    "p_l leaps forward, dashing to the other side of the beach and up onto the rocks. {PRONOUN/p_l/subject/CAP} {VERB/p_l/make/makes} it in time to watch the beach get lost under a tide of water from inland.",
+                    "p_l's body moves before {PRONOUN/p_l/poss} mind, and {PRONOUN/p_l/subject} {VERB/p_l/race/races} towards a vantage point. {PRONOUN/p_l/poss/CAP} breath hitches as {PRONOUN/p_l/subject} {VERB/p_l/watch/watches} the beach be swallowed by flood surging in from inland, grateful for {PRONOUN/p_l/poss} instincts."
+                ],
+                "exp_gained": 20
+            },
+            {
+                "frequency": 2,
+                "strings": [
+                    "p_l scrambles back the way {PRONOUN/p_l/subject} came and watches the beach disappear under a flood of water from inland. It leaves behind a changed landscape, tons of debris — and a bounty of fish. p_l pounces on the opportunity to scavenge."
                 ],
                 "exp_gained": 20,
                 "supply": [
@@ -37,26 +45,22 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 2,
                 "strings": [
-                    "p_l scrambles back the way {PRONOUN/p_l/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris — and a large dead sheep. p_l pounces on the opportunity to scavenge."
+                    "p_l ignores the sound and continues onwards until a ghostly voice orders {PRONOUN/p_l/object} to get to higher ground. {PRONOUN/p_l/subject/CAP} {VERB/p_l/bolt/bolts} across the beach as a flood from inland surges forth, but {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} to reach safety in the nick of time. If it wasn't for the warning, {PRONOUN/p_l/subject}, too, would have been devoured by the flood."
                 ],
                 "involved_cats": {
                     "p_l": {
                         "stat": {
                             "skill": [
-                                "CLEVER,3"
+                                "STAR,0",
+                                "DARK,0",
+                                "GHOST,0"
                             ]
                         }
                     }
                 },
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
+                "exp_gained": 20
             },
             {
                 "frequency": 4,
@@ -64,11 +68,10 @@
                     "p_l shrieks at the strange sound, paws digging into the sand as {PRONOUN/p_l/subject} {VERB/p_l/turn/turns} and {VERB/p_l/run/runs} for home. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} proven right when the beach disappears under a flood of water from inland. {PRONOUN/p_l/poss/CAP} caution saved {PRONOUN/p_l/poss} life."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "careful",
-                                "insecure",
                                 "nervous"
                             ]
                         }
@@ -81,7 +84,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l is in the middle of the beach when the flood hits {PRONOUN/p_l/object}. Freezing water rushes from inland, sweeping {PRONOUN/p_l/object} straight out to sea to die in the cold ocean."
+                    "p_l is in the middle of the beach when the flood hits {PRONOUN/p_l/object}. Violent water rushes from inland, sweeping {PRONOUN/p_l/object} straight out to sea to die in the ocean.",
+                    "p_l ignores the distant sound and focuses on {PRONOUN/p_l/poss} trek until {PRONOUN/p_l/subject} {VERB/p_l/realize/realizes} the sound is thundering behind {PRONOUN/p_l/object}. {PRONOUN/p_l/subject/CAP} {VERB/p_l/attempt/attempts} to flee the flood surging from inland, but {PRONOUN/p_l/poss} efforts come too late and {PRONOUN/p_l/subject} {VERB/p_l/are/is} swept into the ocean."
                 ],
                 "exp_gained": 0,
                 "death": [
@@ -89,7 +93,54 @@
                         "cats": [
                             "p_l"
                         ],
+                        "body": false,
                         "history": "m_c was swept out to sea by a flood."
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "The sound draws near, and as it dawns on p_l that a flood is coming from inland, {PRONOUN/p_l/subject} {VERB/p_l/are/is} swept into the water. {PRONOUN/p_l/subject/CAP} {VERB/p_l/fight/fights} against the thrashing tide, managing to escape its wrath through luck alone, but it's not without its downsides — {PRONOUN/p_l/poss} body is bruised and {PRONOUN/p_l/subject} {VERB/p_l/have/has} a new, hacking cough.",
+                    "Thoughts flash in p_l's mind as the flood smashes into {PRONOUN/p_l/object}. Powered by adrenaline, {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} to swim {PRONOUN/p_l/poss} way out of the rough tide, but it's not without an aching body and a heaving, wet cough."
+                ],
+                "exp_gained": 0,
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "water in their lungs",
+                            "bruises"
+                        ],
+                        "death_history": "m_c died from water in {PRONOUN/p_l/poss} lungs after getting swept into a flood."
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "strings": [
+                    "p_l glances back once, but chooses to continue anyways. {PRONOUN/p_l/poss/CAP} journey is paused whenever a flood surges from inland and drags {PRONOUN/p_l/object} under. Water is {PRONOUN/p_l/poss} territory, and it is only through {PRONOUN/p_l/poss} knowledge that {PRONOUN/p_l/subject} {VERB/p_l/survive/survives} — beaten up, but alive."
+                ],
+                "exp_gained": 0,
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "SWIMMER,0"
+                            ]
+                        }
+                    }
+                },
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "minor_injury"
+                        ]
                     }
                 ]
             }
