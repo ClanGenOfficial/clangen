@@ -1623,7 +1623,7 @@
             "r_c0": {}
         },
         "strings": [
-            "m_c listens to {PRONOUN/m_c/poss} new name on the lips of {PRONOUN/m_c/poss} Clanmates, beaming with pride next to {PRONOUN/m_c/poss} mentor, r_c0. {PRONOUN/m_c/subject/CAP} can't wait for Gathering to meet the other Clans at POI!"
+            "m_c listens to {PRONOUN/m_c/poss} new name on the lips of {PRONOUN/m_c/poss} Clanmates, beaming with pride next to {PRONOUN/m_c/poss} mentor, r_c0. {PRONOUN/m_c/subject/CAP} can't wait for a Gathering to meet the other Clans at POI!"
         ],
         "relationship_constraint": [
             {
