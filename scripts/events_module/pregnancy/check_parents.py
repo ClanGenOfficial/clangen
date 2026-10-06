@@ -94,18 +94,7 @@ def get_second_parent(cat: Cat) -> tuple[Optional[Cat], bool]:
     same_sex_birth_allowed = get_clan_setting("same sex birth")
     coparenting_allowed = get_clan_setting("unmated parentage")
     if cat.mate:
-        if same_sex_birth_allowed:
-            # choose any mate
-            chosen_mate = cat.fetch_cat(choice(cat.mate))
-        else:
-            # choose mate that is opposite sex
-            possible_mates = [
-                cat.fetch_cat(mate_id)
-                for mate_id in cat.mate
-                if cat.fetch_cat(mate_id).gender != cat.gender
-            ]
-            if possible_mates:
-                chosen_mate = choice(possible_mates)
+        chosen_mate = cat.fetch_cat(choice(cat.mate))
     elif not coparenting_allowed:
         # if coparenting is OFF, then an unmated cat can't have a kitten
         return None, False
