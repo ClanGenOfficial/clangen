@@ -102,7 +102,25 @@
             }
         },
         "strings": [
-            "Although {PRONOUN/m_c/poss} training has been long, (old_name) has failed to master the skills needed of a warrior. However, {PRONOUN/m_c/subject} {VERB/m_c/are/is} getting too old to stay in the apprentices' den. The mood is tense and awkward as {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c and honored for {PRONOUN/m_c/poss} r_h. "
+            "Although {PRONOUN/m_c/poss} training has been long, (old_name) has failed to master the skills needed of a warrior. However, {PRONOUN/m_c/subject} {VERB/m_c/are/is} getting too old to stay in the apprentices' den. The mood is tense and awkward as {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c and honored for {PRONOUN/m_c/poss} r_h.",
+            "(old_name) has spent moons falling just shy of the tasks set before {PRONOUN/m_c/object}. When {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c and honored for {PRONOUN/m_c/poss} r_h, many question whether {PRONOUN/m_c/subject} {VERB/m_c/are/is} ready for the responsibilities of a warrior.",
+            "Despite struggling to pass {PRONOUN/m_c/poss} final assessment, (old_name) is honored for {PRONOUN/m_c/poss} r_h and given the warrior name m_c.",
+            "Perhaps (old_name) is simply a late bloomer. When {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c and honored for {PRONOUN/m_c/poss} r_h, the Clan hopes {PRONOUN/m_c/poss} skills will continue to blossom as a warrior."
+        ]
+    },
+    {
+        "event_id": "warrior_unprepared_condition",
+        "involved_cats": {
+            "m_c": {
+                "current_exp": ["untrained", "learning"],
+                "health": {
+                    "working": false
+                }
+            }
+        },
+        "strings": [
+            "Due to {PRONOUN/m_c/poss} health, (old_name) has been unable to complete {PRONOUN/m_c/poss} warrior training. Though {PRONOUN/m_c/subject} {VERB/m_c/have/has} much to learn in the future, {PRONOUN/m_c/subject} {VERB/m_c/are/is} honored for {PRONOUN/m_c/poss} r_h and named m_c.",
+            "(old_name)'s condition has prevented {PRONOUN/m_c/object} from mastering the skills necessary to become a warrior. Despite the uncertainty of {PRONOUN/m_c/poss} future, {PRONOUN/m_c/subject} {VERB/m_c/are/is} honored for {PRONOUN/m_c/poss} r_h and given the name m_c."
         ]
     },
     {
@@ -319,7 +337,7 @@
         ],
         "involved_cats": {
             "m_c": {},
-             "r_c0": {
+            "r_c0": {
                 "group": [
                     "player_clan"
                 ],
@@ -1893,6 +1911,88 @@
         },
         "strings": [
             "lead_name calls (old_name) forward, honoring {PRONOUN/m_c/poss} r_h with the name m_c. One day, it'll be m_c's power to grant names to the warriors of c_n. This marks the first completed goal on that quest."
+        ]
+    },
+    {
+        "event_id": "warrior_POI_visit",
+        "poi": {
+            "category": "terrain"
+        },
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "-insecure", "-nervous", "-strict", "-calm", "-careful"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "As soon as (old_name) is honored for {PRONOUN/m_c/poss} r_h and granted the name m_c, {PRONOUN/m_c/subject} {VERB/m_c/leave/leaves} camp at once to visit POI alone. This solo trip represents the independence m_c will enjoy as a warrior!"
+        ]
+    },
+    {
+        "event_id": "warrior_POI_gathering",
+        "poi": {
+            "category": "gathering"
+        },
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {}
+        },
+        "strings": [
+            "(old_name) waits with bated breath as lead_name honors {PRONOUN/m_c/object} for {PRONOUN/m_c/poss} r_h and names {PRONOUN/m_c/object} m_c. As {PRONOUN/m_c/poss} Clanmates call {PRONOUN/m_c/poss} new name, m_c imagines that name echoing around POI."
+        ]
+    },
+    {
+        "event_id": "warrior_POI_water",
+        "poi": {
+            "tags": ["water"]
+        },
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {}
+        },
+        "strings": [
+            "The morning of {PRONOUN/m_c/poss} warrior ceremony, (old_name) gazes into {PRONOUN/m_c/poss} reflection in the waters of POI. Later, lead_name recognizes {PRONOUN/m_c/object} for {PRONOUN/m_c/poss} r_h and names {PRONOUN/m_c/object} m_c. m_c wonders if {PRONOUN/m_c/subject} will still see the same reflection in the water."
+        ]
+    },
+    {
+        "event_id": "warrior_POI_danger",
+        "poi": {
+            "tags": ["danger"]
+        },
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {}
+        },
+        "strings": [
+            "(old_name) remembers being frightened of POI as an apprentice. When lead_name honors {PRONOUN/m_c/poss} r_h and names {PRONOUN/m_c/object} m_c, {PRONOUN/m_c/subject} {VERB/m_c/stand/stands} proud before the Clan, knowing {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} conquered that fear."
+        ]
+    },
+    {
+        "event_id": "warrior_POI_rocks",
+        "poi": {
+            "tags": ["rocks"]
+        },
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": ["strict", "grumpy", "righteous", "cold", "responsible", "calm", "wise", "loyal", "thoughtful", "ambitious", "careful", "faithful"]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) bows {PRONOUN/m_c/poss} head to lead_name as {PRONOUN/lead_name/subject} {VERB/lead_name/name/names} {PRONOUN/m_c/object} m_c, honoring {PRONOUN/m_c/object} for {PRONOUN/m_c/poss} r_h. m_c vows silently to be as unwavering and solid as the stones of POI."
         ]
     }
 ]

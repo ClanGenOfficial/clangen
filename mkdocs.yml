@@ -11,8 +11,11 @@ nav:
     - dev/index.md
     - Project Basics:
         - dev/project-basics/index.md
-        - dev/project-basics/development-team-roles.md
-        - dev/project-basics/getting-started-with-github-and-clangen.md
+        - dev/project-basics/joining-the-team.md
+        - dev/project-basics/team-roles.md
+        - dev/project-basics/team-culture.md
+        - dev/project-basics/code-and-github-basics.md
+        - dev/project-basics/dev-specific-guides.md
         - Senior Developer Guides:
             - dev/senior/index.md
     - Code:

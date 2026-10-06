@@ -31,7 +31,10 @@
             "r_c snickered when m_c tripped.",
             "r_c pulled an embarrassing prank on m_c's friend.",
             "r_c acts childishly in front of m_c.",
-            "m_c doesn't tell r_c that {PRONOUN/r_c/subject} forgot to groom a part of {PRONOUN/r_c/poss} fur."
+            "m_c doesn't tell r_c that {PRONOUN/r_c/subject} forgot to groom a part of {PRONOUN/r_c/poss} fur.",
+            "m_c admits to a belief r_c doesn't fully agree with.",
+            "m_c admits to being petty toward certain cats to r_c.",
+            "r_c notices m_c has acted petty toward {PRONOUN/r_c/object} lately."
         ],
         "relationship_changes": [
             {

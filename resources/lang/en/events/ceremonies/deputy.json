@@ -32,9 +32,9 @@
             "past_deputy": {}
         },
         "strings": [
-            "r_c0 chooses m_c to take over as deputy. \"{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/know/knows} past_deputy would approve.",
-            "r_c0 chooses m_c to take over as deputy. \"{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/hope/hopes} past_deputy would approve.",
-            "r_c0 chooses m_c to take over as deputy. \"{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/don't/doesn't} know if past_deputy would approve, but life must go on."
+            "r_c0 chooses m_c to take over as deputy. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/know/knows} past_deputy would approve.",
+            "r_c0 chooses m_c to take over as deputy. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/hope/hopes} past_deputy would approve.",
+            "r_c0 chooses m_c to take over as deputy. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/don't/doesn't} know if past_deputy would approve, but life must go on."
         ]
     },
     {

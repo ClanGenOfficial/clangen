@@ -14,7 +14,9 @@
             "m_c realizes that a strange smell in camp is coming from r_c.",
             "m_c tells {PRONOUN/m_c/poss} Clanmates that something's off about r_c.",
             "The moon casts a shadow on r_c's face in a way that makes m_c uneasy.",
-            "For a moment, m_c thought r_c sounded like someone else."
+            "For a moment, m_c thought r_c sounded like someone else.",
+            "m_c feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} walking on eggshells when around r_c.",
+            "m_c yelled at r_c for seemingly no reason."
         ]
     },
     {
@@ -46,7 +48,9 @@
             "r_c enforces m_c's bedtime.",
             "r_c won't let m_c have an extra piece of prey today.",
             "m_c thinks r_c is the strictest parent in the Clan.",
-            "m_c sulks after r_c prohibits a dangerous game."
+            "m_c sulks after r_c prohibits a dangerous game.",
+            "r_c put m_c in timeout.",
+            "r_c doesn't trust m_c not to sneak off."
         ],
         "involved_cats": {
             "m_c": {
@@ -111,7 +115,8 @@
             "m_c is put off by r_c's big, toothy grin.",
             "m_c swears that r_c hasn't blinked today.",
             "m_c notices that r_c looks a little too entertained by a Clanmate's unsettling story.",
-            "m_c was unsettled after watching r_c dissect a bug with their sharp claws."
+            "m_c was unsettled after watching r_c dissect a bug with {PRONOUN/r_c/poss} sharp claws.",
+            "r_c invited {PRONOUN/r_c/self} to share tongues with m_c without even asking."
         ],
         "involved_cats": {
             "r_c": {
