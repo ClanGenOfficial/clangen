@@ -54,7 +54,7 @@
                 "values": [
                     "respect"
                 ],
-                "amount": 5,
+                "amount": 10,
                 "log": {
                     "cats_from": "m_c was made r_c0's apprentice."
                 }
@@ -118,7 +118,7 @@
                 "values": [
                     "respect"
                 ],
-                "amount": 5,
+                "amount": 10,
                 "log": {
                     "cats_from": "m_c was made r_c0's apprentice."
                 }
