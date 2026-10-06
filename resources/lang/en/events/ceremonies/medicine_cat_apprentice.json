@@ -35,6 +35,24 @@
                     "app/mentor"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
+            }
         ]
     },
     {
@@ -158,6 +176,24 @@
                     "app/mentor"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
+            }
         ]
     },
     {
@@ -190,6 +226,24 @@
                     "app/mentor"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
+            }
         ]
     },
     {
@@ -221,6 +275,24 @@
                 "constraints": [
                     "app/mentor"
                 ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
             }
         ]
     },
@@ -263,10 +335,43 @@
                         "thoughtful"
                     ]
                 }
-            }
+            },
+            "r_c0": {}
         },
         "strings": [
             "m_c has been wondering and pondering about the mysteries of life and the meaning of it all. r_c0 is eager to start teaching {PRONOUN/m_c/object}; {PRONOUN/m_c/subject} {VERB/m_c/sound/sounds} like a delight to work with!"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
+            }
         ]
     },
     {
@@ -298,11 +403,44 @@
                         "bold"
                     ]
                 }
-            }
+            },
+            "r_c0": {}
         },
         "strings": [
             "After m_c touches noses with r_c0, {PRONOUN/m_c/subject} immediately {VERB/m_c/run/runs} towards the medicine cat den, boasting that {PRONOUN/m_c/subject} will be the best medicine cat any Clan has ever seen.",
             "Right after {PRONOUN/m_c/poss} medicine cat apprentice ceremony, m_c declares that {PRONOUN/m_c/subject} won't hesitate to tell r_c0 if {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} being a mouse-brain. All the other cats immediately gasp and look to r_c0's reaction. They relax as {PRONOUN/r_c0/subject} only {VERB/r_c0/laugh/laughs} and says that m_c better prove that {PRONOUN/m_c/subject} {VERB/m_c/have/has} the skills to back that up."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
+            }
         ]
     },
     {
@@ -314,10 +452,43 @@
                         "vengeful"
                     ]
                 }
-            }
+            },
+            "r_c0": {}
         },
         "strings": [
             "While m_c does not really like other cats, {PRONOUN/m_c/subject} {VERB/m_c/dislike/dislikes} fighting even more. {PRONOUN/m_c/subject/CAP} {VERB/m_c/prefer/prefers} a more cunning approach, and being a medicine cat gives {PRONOUN/m_c/object} the opportunity to do so. r_c0 takes {PRONOUN/m_c/object} on as apprentice, admiring {PRONOUN/m_c/poss} sharp tongue and the cunning gleam in {PRONOUN/m_c/poss} eyes."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
+            }
         ]
     },
     {
@@ -329,10 +500,43 @@
                         "adventurous"
                     ]
                 }
-            }
+            },
+            "r_c0": {}
         },
         "strings": [
             "m_c has always longed for adventure and {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} like being a medicine cat apprentice will be the greatest adventure of them all. r_c0 eagerly accepts such an eager and willing apprentice."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
+            }
         ]
     },
     {
@@ -342,13 +546,46 @@
                 "stat": {
                     "skill": ["STAR,0", "DREAM,0", "CLAIRVOYANT,0"]
                 }
-            }
+            },
+            "r_c0": {}
         },
         "poi": {
             "category": "moonplace"
         },
         "strings": [
             "The night before (old_name)'s apprentice ceremony, {PRONOUN/m_c/subject} {VERB/m_c/have/has} a vivid dream of POI. r_c0 takes it as a sign and takes m_c on as {PRONOUN/r_c0/poss} apprentice."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
+            }
         ]
     },
     {
@@ -358,13 +595,46 @@
                 "stat": {
                     "trait": ["charismatic", "bold", "fierce", "daring", "compassionate", "loving", "arrogant", "ambitious", "competitive", "flamboyant", "cunning", "shameless", "childish", "playful", "sincere"]
                 }
-            }
+            },
+            "r_c0": {}
         },
         "poi": {
             "category": "moonplace"
         },
         "strings": [
             "r_c0 agrees to train m_c to be a medicine cat. m_c can't wait to visit POI and meet the other medicine cats."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
+            }
         ]
     },
     {
@@ -376,13 +646,46 @@
                     "skill": ["STAR,0", "PROPHET,0", "OMEN,0", "CLAIRVOYANT,0"],
                     "must_have_both": false
                 }
-            }
+            },
+            "r_c0": {}
         },
         "poi": {
             "category": "moonplace"
         },
         "strings": [
             "r_c0 agrees to train m_c to be a medicine cat. m_c can't wait to visit POI and enter the mysteries of StarClan."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
+            }
         ]
     },
     {
@@ -392,13 +695,46 @@
                 "stat": {
                     "skill": ["DARK,0"]
                 }
-            }
+            },
+            "r_c0": {}
         },
         "poi": {
             "name": ["moon_pool"]
         },
         "strings": [
             "(old_name) has {PRONOUN/m_c/poss} heart set on becoming a medicine cat. r_c0 agrees to train {PRONOUN/m_c/object}, trying in vain to forget {PRONOUN/r_c0/poss} dream of m_c washing bloodstained paws in the waters of POI."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
+            }
         ]
     },
     {
@@ -408,13 +744,46 @@
                 "stat": {
                     "skill": ["DARK,0"]
                 }
-            }
+            },
+            "r_c0": {}
         },
         "poi": {
             "name": ["moon_cave"]
         },
         "strings": [
             "(old_name) has {PRONOUN/m_c/poss} heart set on becoming a medicine cat. r_c0 agrees to train {PRONOUN/m_c/object}, trying in vain to forget {PRONOUN/r_c0/poss} dream of screams drowning out the whispers of POI."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
+            }
         ]
     },
     {
@@ -424,13 +793,46 @@
                 "stat": {
                     "skill": ["DARK,0"]
                 }
-            }
+            },
+            "r_c0": {}
         },
         "poi": {
             "name": ["moon_mothermouth"]
         },
         "strings": [
             "(old_name) has {PRONOUN/m_c/poss} heart set on becoming a medicine cat. r_c0 agrees to train {PRONOUN/m_c/object}, trying in vain to forget {PRONOUN/r_c0/poss} dream of bloodred eyes peering out from the shadows of POI."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
+            }
         ]
     }
 ]
