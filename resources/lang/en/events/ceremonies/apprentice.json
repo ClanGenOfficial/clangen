@@ -2179,6 +2179,24 @@
                     "app/mentor"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
+            }
         ]
     },
     {
@@ -2215,6 +2233,24 @@
                     "app/mentor"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
+            }
         ]
     },
     {
@@ -2242,6 +2278,24 @@
                 "constraints": [
                     "app/mentor"
                 ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
             }
         ]
     },
@@ -2281,6 +2335,24 @@
                     "app/mentor"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
+            }
         ]
     },
     {
@@ -2314,6 +2386,24 @@
                 "constraints": [
                     "app/mentor"
                 ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
             }
         ]
     },
@@ -2349,6 +2439,24 @@
                     "app/mentor"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
+            }
         ]
     },
     {
@@ -2380,6 +2488,24 @@
                     "app/mentor"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
+            }
         ]
     },
     {
@@ -2406,6 +2532,24 @@
                 "constraints": [
                     "app/mentor"
                 ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
             }
         ]
     }
