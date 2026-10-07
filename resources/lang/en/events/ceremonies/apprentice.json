@@ -1408,5 +1408,263 @@
                 ]
             }
         ]
+    },
+    {
+        "event_id": "app_POI_terrain0",
+        "tags": [
+            "clan:leader"
+        ],
+        "poi": {
+            "category": "terrain"
+        },
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {}
+        },
+        "strings": [
+            "When lead_name gives m_c to r_c0 to train, r_c0 leads {PRONOUN/r_c0/poss} new apprentice out of camp to see the sights, starting with POI."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_POI_terrain1",
+        "tags": [
+            "clan:leader"
+        ],
+        "poi": {
+            "category": "terrain"
+        },
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": ["STORY,0", "LORE,0"],
+                    "trait": ["adventurous", "daring", "bold", "thoughtful", "playful", "strange", "ambitious", "fierce", "flamboyant"],
+                    "must_have_both": false
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "Once m_c has been apprenticed to r_c0, {PRONOUN/m_c/subject} {VERB/m_c/beg/begs} {PRONOUN/m_c/poss} new mentor to show {PRONOUN/m_c/object} POI! {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} heard so many stories, and {PRONOUN/m_c/subject} can't wait to see it in real life."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_POI_covered",
+        "poi": {
+            "tags": ["covered"],
+            "category": "terrain"
+        },
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c is apprenticed to r_c0, who shows {PRONOUN/m_c/object} the territory right away. Under the shade of POI, r_c0 promises to teach m_c everything {PRONOUN/r_c0/subject} {VERB/r_c0/know/knows}."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_POI_prey",
+        "tags": [
+            "clan:leader"
+        ],
+        "poi": {
+            "tags": ["prey"]
+        },
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": ["HUNTER,0"]
+                }
+            },
+            "r_c0": {
+                "stat": {
+                    "trait": ["-strict", "-cold", "-grumpy", "-rebellious"]
+                }
+            }
+        },
+        "strings": [
+            "r_c0 has barely touched {PRONOUN/r_c0/poss} nose to m_c's, accepting {PRONOUN/r_c0/poss} role as {PRONOUN/m_c/poss} mentor, before m_c asks to go hunting. r_c0 indulges {PRONOUN/m_c/object}, and later that day m_c makes {PRONOUN/m_c/poss} first catch at POI."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_POI_water",
+        "tags": [
+            "clan:leader"
+        ],
+        "poi": {
+            "tags": ["water"]
+        },
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": ["SWIMMER,0"]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "As soon as m_c is apprenticed to r_c0, {PRONOUN/m_c/subject} {VERB/m_c/ask/asks} to go see POI; {PRONOUN/m_c/subject} can't wait to get {PRONOUN/m_c/poss} paws wet!"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_POI_moonplace",
+        "tags": [
+            "clan:medicine cat"
+        ],
+        "poi": {
+            "category": "moonplace"
+        },
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": ["STAR,0", "PROPHET,0", "OMEN,0"]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "Standing beside {PRONOUN/m_c/poss} new mentor, r_c0, m_c asks if {PRONOUN/m_c/subject}'ll get the chance to see POI even though {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not a medicine cat apprentice. r_c0 agrees to talk to the medicine cat about a trip."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_POI_gathering",
+        "poi": {
+            "category": "gathering"
+        },
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": ["flamboyant", "strange", "thoughtful", "ambitious", "arrogant", "compassionate", "competitive", "loving", "bold", "fierce", "daring", "adventurous", "charismatic", "playful", "childish", "shameless", "troublesome", "confident"]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c listens to {PRONOUN/m_c/poss} new name on the lips of {PRONOUN/m_c/poss} Clanmates, beaming with pride next to {PRONOUN/m_c/poss} mentor, r_c0. {PRONOUN/m_c/subject/CAP} can't wait for a Gathering to meet the other Clans at POI!"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_POI_twoleg",
+        "poi": {
+            "tags": ["Twolegs:present"]
+        },
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c begs {PRONOUN/m_c/poss} new mentor, r_c0, to take {PRONOUN/m_c/object} to POI. {PRONOUN/m_c/subject/CAP} {VERB/m_c/want/wants} to see a real-life Twoleg!"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
     }
 ]
