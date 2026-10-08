@@ -357,7 +357,7 @@
             "The cats head out into the crisp clear newleaf sun, and p_l leads them towards a massive messy eagle nest."
         ],
         "decline_strings": [
-            "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe."
+            "The patrol decides that investigating the eagle nest is too risky, seeing as its occupant could still be around. The training session is called off."
         ],
         "success_outcomes": [
             {
