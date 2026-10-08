@@ -17632,9 +17632,6 @@
 		        "leader",
 		        "apprentice"
             ],
-            "age": [
-                "any"
-            ],
 	        "trait": [
 		        "troublesome",
                 "fierce",
@@ -17718,9 +17715,6 @@
                 "leader",
                 "apprentice"
             ],
-            "age": [
-                "any"
-            ],
 	        "trait": [
                 "troublesome",
                 "fierce",
@@ -17793,16 +17787,13 @@
             "accessory"
         ],
         "frequency": 1,
-        "event_text": "In the midst of a battle, m_c found a acc_singular dropped by a fleeing o_c_n warrior. {PRONOUN/m_c/subject/CAP} took it to showcase their strength and victory.",
+        "event_text": "In the midst of a battle, m_c found a acc_singular dropped by a fleeing o_c_n warrior. {PRONOUN/m_c/subject/CAP} took it to showcase {PRONOUN/m_c/poss} strength and victory.",
         "m_c": {
             "status": [
                 "warrior",
                 "deputy",
                 "leader",
                 "apprentice"
-            ],
-            "age": [
-                "any"
             ],
 	        "trait": [
                 "troublesome",
@@ -17876,7 +17867,7 @@
             "accessory"
         ],
         "frequency": 2,
-        "event_text": "To cheer m_c up during the war, r_c found a acc_singular for {PRONOUN/m_c/object}. Grateful, m_c decided to wear it.",
+        "event_text": "To cheer m_c up during the war r_c found a acc_singular for {PRONOUN/m_c/object}. Grateful, m_c decided to wear it.",
         "m_c": {
             "status": [
 		        "-newborn"
@@ -17929,7 +17920,7 @@
     		    "cats_to": [
 		            "m_c"
 		        ],
-    		    "mutual": false,
+    		    "mutual": true,
     		    "values": [
 		            "like",
 		            "comfort"
@@ -17937,23 +17928,7 @@
     		    "amount": 5,
     		    "log": {
         	        "cats_from": "cat_from was happy to see cat_to appreciate {PRONOUN/cat_from/poss} gift."
-    		    }
-	        },
-	        {
-    		    "cats_from": [
-		        "m_c"
-		        ],
-    		    "cats_to": [
-		            "r_c"
-		        ],
-    		    "mutual": false,
-    		    "values": [
-		            "like",
-		            "comfort"
-		        ],
-    		    "amount": 5,
-    		    "log": {
-        	        "cats_from": "cat_from appreciative of cat_to's gift to cheer {PRONOUN/cat_from/object} up."
+					"cats_to": "cat_to appreciative of cat_from's gift to cheer {PRONOUN/cat_from/object} up."
     		    }
 	        }
 	    ]
@@ -18024,7 +17999,7 @@
     	    	"cats_to": [
 		            "m_c"
         		],
-    	    	"mutual": false,
+    	    	"mutual": true,
     		    "values": [
         		    "like",
 		            "comfort"
@@ -18032,24 +18007,8 @@
     	    	"amount": 5,
     		    "log": {
         	        "cats_from": "cat_from was happy to see cat_to appreciate {PRONOUN/cat_from/poss} gift."
+					"cats_to": "cat_to appreciative of cat_from's gift to cheer {PRONOUN/cat_from/object} up."
         		}
-	        },
-	        {
-    		    "cats_from": [
-        		    "m_c"
-		        ],
-    		    "cats_to": [
-        		    "r_c"
-		        ],
-        		"mutual": false,
-        		"values": [
-		            "like",
-        		    "comfort"
-		        ],
-        		"amount": 5,
-        		"log": {
-            	    "cats_from": "cat_from appreciative of cat_to's gift to cheer {PRONOUN/cat_from/object} up."
-    		    }
 	        }
     	]
     },
@@ -18119,7 +18078,7 @@
     	    	"cats_to": [
 		            "m_c"
         		],
-    	    	"mutual": false,
+    	    	"mutual": true,
     		    "values": [
         		    "like",
 		            "comfort"
@@ -18127,24 +18086,8 @@
     	    	"amount": 5,
     		    "log": {
         	        "cats_from": "cat_from was happy to see cat_to appreciate {PRONOUN/cat_from/poss} gift."
+					"cats_to": "cat_to appreciative of cat_from's gift to cheer {PRONOUN/cat_from/object} up."
         		}
-	        },
-	        {
-    		    "cats_from": [
-        		    "m_c"
-		        ],
-    		    "cats_to": [
-        		    "r_c"
-		        ],
-        		"mutual": false,
-        		"values": [
-		            "like",
-        		    "comfort"
-		        ],
-        		"amount": 5,
-        		"log": {
-            	    "cats_from": "cat_from appreciative of cat_to's gift to cheer {PRONOUN/cat_from/object} up."
-    		    }
 	        }
     	]
     },
@@ -18173,14 +18116,7 @@
 		        "child/parent"
 	        ]
         },
-	    "r_c": {
-	        "status": [
-		        "any"
-	        ],
-	        "age": [
-		        "any"
-	        ]
-        },
+	    "r_c": {},
         "new_accessory": [
             "WILD",
 	        "PLANT"
@@ -18230,14 +18166,7 @@
 		        "child/parent"
 	        ]
         },
-    	"r_c": {
-	        "status": [
-        		"any"
-	        ],
-	        "age": [
-        		"any"
-	        ]
-        },
+    	"r_c": {},
         "new_accessory": [
             "WILD",
     	    "PLANT"
@@ -18291,9 +18220,6 @@
 	        "status": [
 		        "-kitten",
         		"-newborn"
-	        ],
-    	    "age": [
-        		"any"
 	        ]
         },
         "new_accessory": [
@@ -18330,10 +18256,7 @@
 	        "status": [
 		        "-kitten",
         		"-newborn"
-	        ],
-	        "age": [
-		        "any"
-    	    ]
+	        ]
         },
         "new_accessory": [
             "OAK LEAVES",
@@ -18371,9 +18294,6 @@
 		        "-kitten",
 		        "-newborn"
             ],
-            "age": [
-                "any"
-            ],
 	        "skill": [
 		        "CAMP,2"
 	        ]
@@ -18402,9 +18322,6 @@
                 "-kitten",
                 "-newborn"
             ],
-            "age": [
-                "any"
-            ],
 	        "skill": [
 		        "CAMP,2"
 	        ]
@@ -18432,9 +18349,6 @@
             "status": [
 		        "-kitten",
 		        "-newborn"
-            ],
-            "age": [
-                "any"
             ],
 	        "trait": [
                 "fierce",
