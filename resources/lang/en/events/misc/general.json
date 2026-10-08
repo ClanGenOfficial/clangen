@@ -17867,7 +17867,7 @@
             "accessory"
         ],
         "frequency": 2,
-        "event_text": "To cheer m_c up during the war r_c found a acc_singular for {/m_c/object}. Grateful, m_c decided to wear it.",
+        "event_text": "To cheer m_c up during the war r_c found a acc_singular for {PRONOUN/m_c/object}. Grateful, m_c decided to wear it.",
         "m_c": {
             "status": [
 		        "-newborn"
@@ -17928,7 +17928,7 @@
     		    "amount": 5,
     		    "log": {
         	        "cats_from": "cat_from was happy to see cat_to appreciate {PRONOUN/cat_from/poss} gift.",
-					"cats_to": "cat_to appreciative of cat_from's gift to cheer {PRONOUN/cat_from/object} up."
+					"cats_to": "cat_to appreciative of cat_from's gift to cheer {PRONOUN/cat_to/object} up."
     		    }
 	        }
 	    ]
@@ -18007,7 +18007,7 @@
     	    	"amount": 5,
     		    "log": {
         	        "cats_from": "cat_from was happy to see cat_to appreciate {PRONOUN/cat_from/poss} gift.",
-					"cats_to": "cat_to appreciative of cat_from's gift to cheer {PRONOUN/cat_from/object} up."
+					"cats_to": "cat_to appreciative of cat_from's gift to cheer {PRONOUN/cat_to/object} up."
         		}
 	        }
     	]
@@ -18086,7 +18086,7 @@
     	    	"amount": 5,
     		    "log": {
         	        "cats_from": "cat_from was happy to see cat_to appreciate {PRONOUN/cat_from/poss} gift.",
-					"cats_to": "cat_to appreciative of cat_from's gift to cheer {PRONOUN/cat_from/object} up."
+					"cats_to": "cat_to appreciative of cat_from's gift to cheer {PRONOUN/cat_to/object} up."
         		}
 	        }
     	]
