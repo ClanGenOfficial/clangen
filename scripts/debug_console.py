@@ -83,6 +83,9 @@ class DebugMenu(UIWindow):
         args: list[str] = shlex.split(raw_command)
 
         # command name, arguments
+        if not args:
+            return
+
         return args[0], args[1:]
 
     def process_command(self, raw_command: str):
@@ -90,6 +93,13 @@ class DebugMenu(UIWindow):
         Processes a string containing the command and it's arguments and calls
         the appropriate command's callback.
         """
+        # to stop no input crash
+        if not raw_command:
+            self.push_line(
+                "Error: No input detected! Type 'help' for a list of commands!"
+            )
+            return
+
         commands = raw_command.split("&", 1)
         command, args = self._parse_command_string(commands[0])
 
