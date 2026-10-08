@@ -7378,6 +7378,12 @@
             },
             {
                 "frequency": 3,
+                "required_cat_types": {
+                    "patrol_cats": [
+                        3,
+                        6
+                    ]
+                },
                 "poi": {
                     "tags": ["water:flowing"]
                 },
