@@ -141,13 +141,14 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
     if not tags:
         return True
 
-    # some events are mode specific
+    # check game mode
     mode = game.clan.game_mode
     possible_modes = ["classic", "expanded", "cruel_season"]
     for _poss in possible_modes:
         if _poss in tags and mode != _poss:
             return False
 
+    # check disaster
     if "disaster" in tags and not get_clan_setting("disasters"):
         return False
 
@@ -188,77 +189,98 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
         ):
             return False
 
-    # check for required ranks within the clan
     for _tag in tags:
-        rank_match = re.match(r"-?clan:(.+)", _tag)
-        if not rank_match:
-            continue
-        is_exclusionary = _check_for_exclusionary_value([_tag])
+        # check for required ranks within the clan
+        if "clan" in _tag:
+            rank_match = re.match(r"-?clan:(.+)", _tag)
+            if not rank_match:
+                continue
+            is_exclusionary = _check_for_exclusionary_value([_tag])
 
-        ranks = []
-        minimums = []
-        for rank_spec in rank_match.group(1).split(","):
-            # Check for extra "min" subtag
-            sub_tag_check = re.match(r"([^(]+)(?:\(min:([0-9]+)\))?", rank_spec)
-            ranks.append(sub_tag_check.group(1))
+            ranks = []
+            minimums = []
+            for rank_spec in rank_match.group(1).split(","):
+                # Check for extra "min" subtag
+                sub_tag_check = re.match(r"([^(]+)(?:\(min:([0-9]+)\))?", rank_spec)
+                ranks.append(sub_tag_check.group(1))
 
-            if sub_tag_check.group(2):
-                minimums.append(int(sub_tag_check.group(2)))
-            else:
-                if sub_tag_check.group(1) in CatRank and sub_tag_check.group(1) not in [
-                    CatRank.LEADER,
-                    CatRank.DEPUTY,
-                ]:
-                    minimums.append(2)
-                    # Default Minimum is 2 for non deputy, non leader ranks.
+                if sub_tag_check.group(2):
+                    minimums.append(int(sub_tag_check.group(2)))
                 else:
-                    # Default minimun is 1 for anything else.
-                    minimums.append(1)
+                    if sub_tag_check.group(1) in CatRank and sub_tag_check.group(
+                        1
+                    ) not in [
+                        CatRank.LEADER,
+                        CatRank.DEPUTY,
+                    ]:
+                        minimums.append(2)
+                        # Default Minimum is 2 for non deputy, non leader ranks.
+                    else:
+                        # Default minimun is 1 for anything else.
+                        minimums.append(1)
 
-        for rank, mi in zip(ranks, minimums):
-            rank_matched = True
-            if rank == "apps":
-                if (
-                    not len(
-                        find_alive_cats_with_rank(
-                            cat,
-                            [
-                                CatRank.APPRENTICE,
-                                CatRank.MEDIATOR_APPRENTICE,
-                                CatRank.MEDICINE_APPRENTICE,
-                            ],
+            for rank, mi in zip(ranks, minimums):
+                rank_matched = True
+                if rank == "apps":
+                    if (
+                        not len(
+                            find_alive_cats_with_rank(
+                                cat,
+                                [
+                                    CatRank.APPRENTICE,
+                                    CatRank.MEDIATOR_APPRENTICE,
+                                    CatRank.MEDICINE_APPRENTICE,
+                                ],
+                            )
                         )
-                    )
-                    >= mi
-                ):
+                        >= mi
+                    ):
+                        rank_matched = False
+
+                elif rank == "warrior-like":
+                    if (
+                        not len(
+                            find_alive_cats_with_rank(
+                                cat,
+                                [
+                                    CatRank.LEADER,
+                                    CatRank.DEPUTY,
+                                    CatRank.WARRIOR,
+                                ],
+                            )
+                        )
+                        >= mi
+                    ):
+                        rank_matched = False
+
+                elif not len(find_alive_cats_with_rank(cat, [rank])) >= mi:
                     rank_matched = False
 
-            elif rank == "warrior-like":
-                if (
-                    not len(
-                        find_alive_cats_with_rank(
-                            cat,
-                            [
-                                CatRank.LEADER,
-                                CatRank.DEPUTY,
-                                CatRank.WARRIOR,
-                            ],
-                        )
-                    )
-                    >= mi
-                ):
-                    rank_matched = False
+                if is_exclusionary and rank_matched:
+                    return False
+                elif not is_exclusionary and not rank_matched:
+                    return False
 
-            elif not len(find_alive_cats_with_rank(cat, [rank])) >= mi:
-                rank_matched = False
+        # check for required card presence
+        if "card" in _tag:
+            card_match = re.match(r"-?card:(.+)", _tag)
+            if not card_match:
+                continue
 
-            if is_exclusionary and rank_matched:
-                return False
-            elif not is_exclusionary and not rank_matched:
-                return False
+            is_exclusionary = _check_for_exclusionary_value([_tag])
+            # get just the plain card name
+            required_card = _tag.replace("card:", "")
+            # present, but shouldn't be is a failure
+            if required_card in game.clan.cruel_cards:
+                if is_exclusionary:
+                    return False
+            # not present, but should be is a failure
+            elif required_card not in game.clan.cruel_cards:
+                if not is_exclusionary:
+                    return False
 
+    # check special dates
     special_date = get_special_date()
-    # filtering for dates
     if contains_special_date_tag(tags):
         if not special_date or special_date.patrol_tag not in tags:
             return False
