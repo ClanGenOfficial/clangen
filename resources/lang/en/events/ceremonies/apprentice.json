@@ -1446,7 +1446,7 @@
         "involved_cats": {
             "m_c": {
                 "stat": {
-                    "skill": ["STAR,0", "DARK,0", "OMEN,0", "GHOST,0", "PROPHET,0"]
+                    "skill": ["STAR,0", "DARK,0", "OMEN,0", "PROPHET,0"]
                 }
             },
             "r_c0": {},
@@ -1482,7 +1482,7 @@
             "m_c": {},
             "r_c0": {
                 "stat": {
-                    "skill": ["STAR,1", "DARK,1", "OMEN,1", "GHOST,1", "PROPHET,1", "CLAIRVOYANT,1"]
+                    "skill": ["PROPHET,1"]
                 }
             }
         },
