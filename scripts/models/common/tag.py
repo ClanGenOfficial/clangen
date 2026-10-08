@@ -31,4 +31,8 @@ class Tag(RootModel):
             StringConstraints(pattern=r"^-?clan:(.+)$"),
             AfterValidator(validate_clan_ranks_with_min),
         ],
+        Annotated[
+            str,
+            StringConstraints(pattern=r"^-?card:(.+)$"),
+        ],
     ]
