@@ -9909,7 +9909,7 @@
         ]
     },
     {
-        "event_id": "fst_hunt_rabbitburrow_group1",
+        "event_id": "gen_hunt_rabbitburrow_group1",
         "types": [
             "hunting"
         ],
@@ -10106,7 +10106,7 @@
         ]
     },
     {
-        "event_id": "fst_hunt_rabbitburrow_solo1",
+        "event_id": "gen_hunt_rabbitburrow_solo1",
         "types": [
             "hunting"
         ],
