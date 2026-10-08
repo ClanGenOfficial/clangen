@@ -156,13 +156,16 @@ class Pelt:
 
     # SCARS
     # bite scars by @wood pank on discord
+    all_scars = []
     general_scars = []
-    for sprite_list in sprites.SCAR_DATA["sprite_list"]:
-        general_scars.extend(sprite_list)
-
     missing_part_scars = []
-    for sprite_list in sprites.SCAR_MISSING_PART_DATA["sprite_list"]:
-        missing_part_scars.extend(sprite_list)
+    for sprite_list in sprites.SCAR_DATA["sprite_list"]:
+        # missing parts are the last row of the sheet.
+        if sprite_list == sprites.SCAR_DATA["sprite_list"][-1]:
+            missing_part_scars.extend(sprite_list)
+        # general_scars is everything else
+        else:
+            general_scars.extend(sprite_list)
 
     all_scars = general_scars + missing_part_scars
 
