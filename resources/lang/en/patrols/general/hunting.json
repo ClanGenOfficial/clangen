@@ -10018,7 +10018,6 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites/gen_pawsdiggingdirt_Wr",
                 "season": ["leaf-bare"],
                 "strings": [
                     "The cats dig down through the snow, hoping for some sleeping rabbits, but they end up with nothing for their troubles."
@@ -10149,6 +10148,7 @@
             },
             {
                 "frequency": 4,
+                "outcome_art": "cat_sprites/gen_pawsdiggingdirt_Wr",
                 "season": ["greenleaf", "newleaf"],
                 "strings": [
                     "The burrow seems to hold a nest of baby rabbits! p_l digs them out, they'll make for pleasant bite-sized snacks."
@@ -10179,6 +10179,7 @@
         "fail_outcomes": [
             {
                 "frequency": 4,
+                "outcome_art": "cat_sprites/gen_pawsdiggingdirt_Wr",
                 "strings": [
                     "Either the rabbits aren't home right now, or this burrow is abandoned. Nothing of worth is found.",
                     "The burrow is abandoned, with no prey to be found in there. This was a waste of time."
@@ -10195,6 +10196,7 @@
             },
             {
                 "frequency": 3,
+                "outcome_art": "animals/gen_rabbit",
                 "strings": [
                     "p_l is about to start digging into the burrow when a rabbit bursts out, colliding with {PRONOUN/p_l/poss} head! The rabbit escapes in the wake of {PRONOUN/p_l/poss} shock and p_l is left with a headache."
                 ],
@@ -10251,6 +10253,7 @@
             },
             {
                 "frequency": 2,
+                "outcome_art": "animals/gen_scarysnake",
                 "strings": [
                     "A snake seems to have taken up residence in this burrow, much to the detriment of p_l's paw."
                 ],
