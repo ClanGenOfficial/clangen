@@ -424,54 +424,6 @@
         ]
     },
     {
-        "event_id": "fst_hunt_rabbitburrow1",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 4,
-        "location": [
-            "forest"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                1,
-                6
-            ]
-        },
-        "chance_of_success": 50,
-        "patrol_art": "hunt_general_intro",
-        "intro_strings": [
-            "While hunting, p_l comes across a rabbit burrow."
-        ],
-        "decline_strings": [
-            "p_l decides to ignore the burrow."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l catches the rabbit hiding in its burrow."
-                ],
-                "exp_gained": 10,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "The burrow is abandoned, with no prey to be found in there."
-                ],
-                "exp_gained": 0
-            }
-        ]
-    },
-    {
         "event_id": "fst_hunt_twolegplace1",
         "types": [
             "hunting"
