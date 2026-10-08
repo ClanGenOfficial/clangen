@@ -138,7 +138,8 @@
                 }
             },
             "r_c0": {
-                "status": ["elder"]
+                "status": ["elder"],
+                "group": ["player_clan"]
             }
         },
         "poi": {
@@ -184,7 +185,8 @@
             "r_c0": {
                 "stat": {
                     "trait": ["-calm", "-compassionate", "-careful", "-nervous", "-gloomy", "-lonesome", "-playful", "-charismatic"]
-                }
+                },
+                "group": ["player_clan"]
             }
         },
         "poi": {
