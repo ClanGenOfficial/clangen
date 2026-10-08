@@ -270,6 +270,9 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
             is_exclusionary = _check_for_exclusionary_value([_tag])
             # get just the plain card name
             required_card = _tag.replace("card:", "")
+            if is_exclusionary:
+                required_card = required_card.replace("-", "")
+
             # present, but shouldn't be is a failure
             if required_card in game.clan.cruel_cards:
                 if is_exclusionary:
