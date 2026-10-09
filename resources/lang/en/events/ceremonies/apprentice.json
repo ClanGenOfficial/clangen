@@ -1436,6 +1436,24 @@
                     "app/mentor"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
+            }
         ]
     },
     {
@@ -1471,6 +1489,24 @@
                     "app/mentor"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 13,
+                "log": {
+                    "cats_from": "m_c was spiritually guided to train under r_c0."
+                }
+            }
         ]
     },
     {
@@ -1501,6 +1537,24 @@
                 "constraints": [
                     "app/mentor"
                 ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 13,
+                "log": {
+                    "cats_from": "r_c0 was commanded by a vision to take m_c as {PRONOUN/r_c0/poss} apprentice."
+                }
             }
         ]
     },
