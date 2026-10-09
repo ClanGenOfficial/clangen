@@ -368,6 +368,7 @@ def create_new_cat_block(
                         name = new_prefix
                     chosen_cat.name.prefix = name
                     chosen_cat.name.give_suffix(
+                        skills=chosen_cat.skills.primary.path.name,
                         eyes=chosen_cat.pelt.eye_colour,
                         colour=chosen_cat.pelt.colour,
                         pelt=chosen_cat.pelt.name,
@@ -382,6 +383,7 @@ def create_new_cat_block(
                         biome=game.clan.biome,
                     )
                     chosen_cat.name.give_suffix(
+                        skills=chosen_cat.skills.primary.path.name,
                         eyes=chosen_cat.pelt.eye_colour,
                         colour=chosen_cat.pelt.colour,
                         pelt=chosen_cat.pelt.name,
