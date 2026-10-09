@@ -1421,7 +1421,7 @@
             "r_c0": {}
         },
         "strings": [
-            "Some thought (old_name) was fated for the medicine den, considering {PRONOUN/m_c/poss} knack for herbs and healing, but (old_name) is certain {PRONOUN/m_c/poss} passions lie elsewhere. r_c0 promises to train m_c into a great warrior."
+            "Some thought {PRONOUN/m_c/subject} was fated for the medicine den, considering {PRONOUN/m_c/poss} knack for herbs and healing, but (old_name) is certain {PRONOUN/m_c/poss} passions lie elsewhere. r_c0 promises to train m_c into a great warrior."
         ],
         "relationship_constraint": [
             {
@@ -1455,8 +1455,8 @@
             }
         },
         "strings": [
-            "(old_name) has always been spiritual, but lead_name is still surprised when {PRONOUN/m_c/subject} {VERB/m_c/announce/announces} StarClan wants r_c0 to be {PRONOUN/m_c/poss} mentor. After a few days of consulting with r_c1, r_c0 touches noses with m_c, wondering what the stars have planned.",
-            "(old_name) announces to lead_name that StarClan wants r_c0 to be {PRONOUN/m_c/poss} mentor. lead_name is skeptical, but (old_name) has always been spiritual, and {PRONOUN/m_c/subject} {VERB/m_c/speak/speaks} with no hint of mischief. After consulting with r_c1, m_c is apprenticed to r_c0."
+            "(old_name) has always been spiritual, but lead_name is surprised when {PRONOUN/m_c/subject} {VERB/m_c/announce/announces} StarClan wants r_c0 to be {PRONOUN/m_c/poss} mentor. After a few days of consulting with r_c1, r_c0 touches noses with m_c, wondering what the stars have planned.",
+            "(old_name) announces to lead_name that StarClan wants r_c0 to be {PRONOUN/m_c/poss} mentor. lead_name is skeptical, but (old_name) has always been spiritual, and {PRONOUN/m_c/subject} {VERB/m_c/speak/speaks} with no hint of mischief. After consulting r_c1, m_c is apprenticed to r_c0."
         ],
         "relationship_constraint": [
             {
