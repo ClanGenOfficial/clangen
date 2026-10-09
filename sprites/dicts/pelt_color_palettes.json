@@ -236,11 +236,11 @@
         "newborn_pattern_gradient_top": "#717F82",
         "newborn_pattern_fill": "#646E73",
 
-        "smoke_base": "#393E4A",
-        "smoke_base_gradient_top": "#393E4A",
-        "smoke_base_gradient_bottom": "#595A61",
+        "smoke_base": "#53545a",
+        "smoke_base_gradient_top": "#617175",
+        "smoke_base_gradient_bottom": "#393E4A",
         "smoke_pattern": "#617175",
-        "smoke_pattern_gradient_top": "#617175",
+        "smoke_pattern_gradient_top": "#6f8286",
 
         "freckled_pattern_gradient_top": "#3F4758",
 
