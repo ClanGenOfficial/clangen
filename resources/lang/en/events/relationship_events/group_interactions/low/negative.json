@@ -109,7 +109,11 @@
         "strings": [
             "m_c shares a suspiciously exaggerated tale with multi_cat, who seem far from convinced of its veracity.",
             "m_c tells multi_cat a story that seems to grow less believable every meow.",
-            "m_c tells multi_cat a story that earns more skepticism than admiration."
+            "m_c tells multi_cat a story that earns more skepticism than admiration.",
+            "m_c tells multi_cat a story but {PRONOUN/m_c/subject} {VERB/m_c/stop/stops} after noticing the skeptical glances they're passing each other.",
+            "m_c tells multi_cat a story that only makes sense when one of the cats retells the un-embellished version of the story afterwards, embarrassing m_c.",
+            "multi_cat regret asking m_c to tell a story when it becomes clear {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} lying about half of it.",
+            "m_c shares a story to multi_cat that is so exaggerated it makes them roll their eyes."
         ],
         "involved_cats": {
             "m_c": {},
@@ -233,7 +237,9 @@
         "strings": [
             "multi_cat know m_c was assigned to clean the warriors' den today but did a poor job.",
             "Even though m_c was supposed to clean up camp today, everything still looks a mess, and multi_cat notice.",
-            "m_c was assigned to tidy up the dens today, but multi_cat spot {PRONOUN/m_c/object} slacking off and basking in the sun instead."
+            "m_c was assigned to tidy up the dens today, but multi_cat spot {PRONOUN/m_c/object} slacking off and basking in the sun instead.",
+            "multi_cat notices that m_c was supposed to clean the warriors' den today but it looks exactly the same as it did that morning.",
+            "m_c was supposed to tidy up the nursery but they find the task half done with m_c nowhere in sight."
         ],
         "involved_cats": {
             "m_c": {

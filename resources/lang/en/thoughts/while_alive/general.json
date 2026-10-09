@@ -384,7 +384,8 @@
             "Seems a bit too interested in deathberries...",
             "Licks fresh-kill blood off {PRONOUN/m_c/poss} lips a little too intently",
             "Daydreams of a vicious battle breaking out",
-            "Is playing with {PRONOUN/m_c/poss} prey before killing it"
+            "Is playing with {PRONOUN/m_c/poss} prey before killing it",
+            "Is laughing sinisterly to {PRONOUN/m_c/self}..."
         ],
         "involved_cats": {
             "m_c": {
@@ -1540,7 +1541,8 @@
             "Makes a poultice of mud and grass",
             "Tells everyone about {PRONOUN/m_c/poss} weird dreams",
             "Stands uncomfortably close to other cats without a word",
-            "Is playing with {PRONOUN/m_c/poss} prey before killing it"
+            "Is playing with {PRONOUN/m_c/poss} prey before killing it",
+            "Is playing with {PRONOUN/m_c/poss} imaginary friend."
         ],
         "involved_cats": {
             "m_c": {
@@ -1720,7 +1722,8 @@
             "Wants nothing more then to see {PRONOUN/m_c/poss} enemies suffering",
             "Seems a bit too interested in deathberries...",
             "Has to bite {PRONOUN/m_c/poss} tongue, even though {PRONOUN/m_c/subject} really {VERB/m_c/want/wants} the last word",
-            "Hisses at a certain cat when they walk by"
+            "Hisses at a certain cat when they walk by",
+            "Is laughing sinisterly to {PRONOUN/m_c/self}..."
         ],
         "involved_cats": {
             "m_c": {
@@ -1745,7 +1748,13 @@
             "Is giving r_c the cold shoulder for no reason",
             "Glares at r_c for bothering {PRONOUN/m_c/object}",
             "Takes an unnecessary risk just to get ahead of r_c",
-            "Wishes redcough on those who've wronged {PRONOUN/m_c/object}"
+            "Wishes redcough on those who've wronged {PRONOUN/m_c/object}",
+            "Is plotting r_c's demise",
+            "Is celebrating r_c's failures",
+            "Is jealous of r_c... but why?",
+            "Is trying to get r_c in trouble",
+            "Missed an opportunity to exact revenge on r_c",
+            "Is daydreaming of getting back at r_c"
         ],
         "involved_cats": {
             "m_c": {
@@ -1793,7 +1802,8 @@
             "Is tired of being the go-to cat for advice",
             "Tells r_c what they needed to hear but not what they wanted to hear",
             "Is staying calm during a stressful situation",
-            "Doesn't understand why everyone else freaks out so easily"
+            "Doesn't understand why everyone else freaks out so easily",
+            "Is answering r_c's riddle with ease"
         ],
         "involved_cats": {
             "m_c": {
@@ -1818,10 +1828,17 @@
         "Worries about r_c's health",
         "Worries about {PRONOUN/m_c/poss} kit's future",
         "Worries {PRONOUN/m_c/subject} {VERB/m_c/are/is} a bad parent",
-        "Hopes StarClan watches over r_c",
         "Checks in on r_c",
         "Fusses over a tiny cut r_c has",
-        "Is so proud of r_c"
+        "Is so proud of r_c",
+        "Wonders if r_c knows how much {PRONOUN/m_c/subject} love {PRONOUN/r_c/object}",
+        "Has to remind {PRONOUN/m_c/self} to let r_c make {PRONOUN/r_c/poss} own decisions",
+        "Tries to be a good parent for r_c",
+        "Wants to be a good role model for r_c",
+        "Wants to be the kind of cat r_c looks up to",
+        "Feels like {PRONOUN/m_c/subject} {VERB/m_c/are/is} failing r_c",
+        "Is checking on r_c while {PRONOUN/r_c/subject} sleeps",
+        "Is reminding r_c that {PRONOUN/m_c/subject} {VERB/m_c/love/loves} {PRONOUN/r_c/object}"
     ],
     "involved_cats": {
         "m_c": {},
@@ -1849,8 +1866,11 @@
         "Misses when r_c needed {PRONOUN/m_c/object}",
         "Can't believe how quickly r_c grew up",
         "Wonders if {PRONOUN/m_c/subject} did a good job raising r_c",
-        "Reminded r_c that {PRONOUN/r_c/subject}{VERB/r_c/'re/s} still {PRONOUN/m_c/poss} kit no matter how old {PRONOUN/r_c/subject} {VERB/r_c/are/is}",
-        "Is reminding r_c that {PRONOUN/m_c/subject} {VERB/m_c/love/loves} {PRONOUN/r_c/object}"
+        "Reminds r_c that {PRONOUN/r_c/subject}{VERB/r_c/'re/s} still {PRONOUN/m_c/poss} kit no matter how old {PRONOUN/r_c/subject} {VERB/r_c/are/is}",
+        "Hopes r_c still needs {PRONOUN/m_c/object} sometimes",
+        "Wonders if r_c feels like {PRONOUN/r_c/subject} had a good kithood",
+        "Reminds {PRONOUN/m_c/self} that r_c is no longer a kit now and can make {PRONOUN/r_c/poss} own decisions",
+        "Reminds {PRONOUN/m_c/self} that {PRONOUN/m_c/subject} raised r_c the best {PRONOUN/m_c/subject} could"
     ],
     "involved_cats": {
         "m_c": {},
@@ -1874,7 +1894,15 @@
         "Is snuggled in {PRONOUN/m_c/poss} nest with {PRONOUN/m_c/poss} litter",
         "Grooms r_c while {PRONOUN/r_c/subject} squeak complaints",
         "Doesn't want r_c to grow up and face the dangers of the world",
-        "Is daydreaming of the life r_c will lead"
+        "Is daydreaming of the life r_c will lead",
+        "Is realizing r_c's been a little too quiet for a little too long...",
+        "Hopes r_c will always need {PRONOUN/m_c/object} like {PRONOUN/r_c/subject} {VERB/r_c/do/does} now",
+        "Promises to raise r_c the best {PRONOUN/m_c/subject} can",
+        "Panicks when r_c is out of sight for too long",
+        "Is curled tightly around r_c",
+        "Fusses over r_c after {PRONOUN/r_c/subject} trips over {PRONOUN/r_c/poss} own paws",
+        "Wishes r_c would just stay small and innocent forever",
+        "Is teaching r_c skills {PRONOUN/r_c/subject} will need to survive on {PRONOUN/r_c/poss} own"
     ],
     "involved_cats": {
         "m_c": {},
