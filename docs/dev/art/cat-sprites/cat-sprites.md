@@ -18,7 +18,7 @@ Spritesheets is how the game picks which sprite parts to draw for each cat, by f
 5. Eyes
 6. Lineart
 7. Skin
-8. Missing limb mask
+8. Scar masks
 9. Accessories
 
 One set of poses is 3 columns and 7 rows, with 21 sprite poses in total. Each of them is 50x50 pixels, making one pose sheet 150x350 pixels big. Entire spritesheets are multiples of the pose sheets, laid directly next to and under each other. The positions of the sprites has to be pixel-perfect.
@@ -31,7 +31,7 @@ Some spritesheets (like white patches, scar, and accessory) have multiple pose s
 
 ![image](img/multi-sheet-example.png)
 
-Some spritesheets are made to be masks rather than be drawn normally. At the time of writing this, the spritesheets that work as masks are the tortie patch, missing limb scar spritesheets, and pelt parts. We'll go over their uses individually.
+Some spritesheets are made to be masks rather than be drawn normally. At the time of writing this, the spritesheets that work as masks are the tortie patch, scar masks, and pelt parts. We'll go over their uses individually.
 
 ## Lineart
 ![lineart](img/lineart-small.png)

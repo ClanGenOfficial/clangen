@@ -24,6 +24,7 @@ from scripts.cat.microservices.conditions import (
     get_injured,
     get_permanent_condition,
 )
+from scripts.clan_resources.point_of_interest import get_poi_from_constraints
 from scripts.config import get_config
 from scripts.events_module.consequences import unpack_rel_block, check_stolen_vitality
 from scripts.events_module.future.prep_and_trigger import prep_future_event
@@ -61,6 +62,13 @@ def execute_outcome(
 
     rel_results = {}
     chosen_string = choice(event.strings)
+
+    if not chosen_poi and event.poi:
+        chosen_poi = get_poi_from_constraints(
+            event.poi.get("name"),
+            event.poi.get("tags"),
+            event.poi.get("category"),
+        )
     # process text
     processed_text = event_text_adjust(
         Cat,

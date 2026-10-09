@@ -8,11 +8,9 @@
             "r_c forgot something important about m_c.",
             "r_c keeps calling m_c by the wrong name.",
             "m_c is disappointed when r_c doesn't uphold a promise.",
-            "r_c sides with a Clanmate instead of m_c on something.",
             "m_c thinks that r_c spread a rumor about {PRONOUN/m_c/object}.",
             "m_c doesn't think that r_c's intentions are all pure.",
             "r_c tries to convince m_c that an obvious lie is real.",
-            "r_c said something about a Clanmate that concerned m_c.",
             "m_c knows that r_c fake-laughed at {PRONOUN/m_c/poss} joke.",
             "m_c doubts r_c would be able to protect {PRONOUN/m_c/object} if something went wrong.",
             "m_c swears {PRONOUN/m_c/subject} {VERB/m_c/see/sees} r_c sneaking around the camp at night.",
@@ -61,7 +59,9 @@
             "r_c tries to dig into one of m_c's secrets.",
             "m_c finds r_c trying to eavesdrop into one of {PRONOUN/m_c/poss} conversations.",
             "m_c wakes up to r_c trying to steal a piece of {PRONOUN/m_c/poss} nest.",
-            "m_c is spreading a rumor about r_c."
+            "r_c is spreading a rumor about m_c.",
+            "m_c catches r_c plotting to do something to {PRONOUN/m_c/object}.",
+            "m_c gets caught up in a mess caused by r_c."
         ],
         "involved_cats": {
             "r_c": {
@@ -81,7 +81,11 @@
             "m_c always shifts the blame to r_c!",
             "m_c won't stop crying whenever r_c starts winning in a game.",
             "m_c grins while r_c is being scolded by an older Clanmate.",
-            "m_c is relentlessly pestering r_c."
+            "m_c is relentlessly pestering r_c.",
+            "m_c keeps sneaking up on and pouncing on r_c when {PRONOUN/r_c/subject} least {VERB/r_c/expect/expects} it.",
+            "m_c keeps being naughty as soon as r_c lowers {PRONOUN/r_c/poss} guard.",
+            "m_c interrupts r_c's nap and then runs away.",
+            "r_c swears m_c looks exactly like an evil cat from an old legend."
         ],
         "involved_cats": {
             "m_c": {

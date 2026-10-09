@@ -68,22 +68,25 @@ Points of Interests can use many different tags that denote circumstances around
 |:-----------------:|:-------------------------------------------------------------------------------------------------------------------------------:|
 |       cave        |                                                  a natural underground hollow.                                                  |
 |      covered      |                                       any location that offers shelter from the elements.                                       |
-|     fall_risk     |                                                 risk of heights-related injury.                                                 |
+|       danger        |                     anything that poses a threat to cats, for any reason. Has multiple more specific tags that should not be used together.                      |
+|     danger:fall_risk     |                                                 risk of heights-related injury.                                                 |
+|     danger:unstable      | if there is a potential for the structure to collapse in some way: unstable ceilings, unstable ground, an old tree branch, etc. |
+|      danger:tainted      |                                  carries a risk of injury or illness due to unsafe environmental conditions: pollution, rot, mold, ect.                                   |
 |       hole        |                                                     a cavity in the earth.                                                      |
 |       nests       |                                                      where birds lay eggs.                                                      |
 |       prey        |                     anything the Clan hunts. Has multiple more specific tags. Should not be used together.                      |
 |    prey:flying    |                                                 any prey that primarily flies.                                                  |
+|    prey:bird    |                                                 birds                                                  |
 |    prey:water     |                                  prey found in or around water. assume your cats will get wet.                                  |
 |    prey:ground    |                                                      ground-dwelling prey.                                                      |
+|    prey:fish     |                                  fish                                  |
 |       rocks       |                                   feature that primarily includes rocks, boulders, or stone.                                    |
 |    high_ground    |   could be stood atop, perhaps for safety or intimidation. best used for more singular objects, rather than expansive areas.    |
-|      tainted      |                                  carries a risk of injury or illness due to unsafe conditions                                   |
 |       trees       |                                                       incorporates trees.                                                       |
 |       maze        |                a maze-like POI. Cats could get lost here, lose pursuers here, or spend a lot of time exploring.                 |
 |      Twolegs      |                revolves around Twolegs. Has more specific tags. Should not be used alongside other twoleg tags.                 |
 | Twolegs:abandoned |                    An object, structure, area created or modified by Twolegs that has since been abandoned.                     |
 |  Twolegs:present  |                   An object, structure, area created or modified by Twolegs that has regular Twoleg activity.                   |
-|     unstable      | If there is a potential for the structure to collapse in some way, unstable ceilings, unstable ground, an old tree branch, etc. |
 |       water       |                  revolves around water. Has more specific tags. Should not be used alongside other water tags.                  |
 |    water:still    |                              still bodies of water such as lakes, ponds, and some areas of marshes                              |
 |   water:flowing   |                                              streams, rivers, rills, deltas, etc.                                               |
@@ -93,20 +96,17 @@ Points of Interests can use many different tags that denote circumstances around
 
 ### Constraints
 
-Patrols and Short Events now have an additional constraint that can be utilized to include either a specific Point of Interest ID or tag. 
+Patrols, Short Events, and text pools such as Thoughts and Ceremonies now have an additional constraint that can be utilized to include either a specific Point of Interest ID, tag, or category. 
 
-You can add this to any short event or patrol to constrain by Point of Interest. You can constrain by multiple parameters (i.e. both tag and category constraints) if you wish.
+You can add this to any short event or patrol to constrain by Point of Interest. You can constrain by both tag and category if you wish, but name must be used independently.
 
 ~~~
 "poi": {
-    "name": ["name"]
-    "tags": ["tag"]
-    "category": "category"
+    "name": ["name"],
+    "tags": ["tag"],
+    "category": "category",
     }
 ~~~
-
-!!! tip
-    While you *can* combine the `name` constraint with the other constraint parameters, you really don't need to. For example, if entering `["moon_meteor"]` as the name constraint then there's no need to also set category as `"moonplace"`.
 
 ## Using the Point Of Interest in a Sentence
 
