@@ -60,37 +60,64 @@
                 }
             }
         },
-        {
+      {
         "colors": "RUST",
-    "layer_order": ["1", "2", "3", "4", ["5", ["5.5", "6", "+blend_mode:mask"]]],
-    "layers": {
-        "6":{
+        "layer_order": [
+          "1",
+          "2",
+          "3",
+          "4",
+          [
+            "5",
+            [
+              "5.5",
+              "6",
+              "+blend_mode:mask"
+            ]
+          ]
+        ],
+        "layers": {
+          "6": {
             "group_name": "SMOKEPATTERNDARK"
-        },
-        "5.5": {
+          },
+          "5.5": {
             "group_name": "SIMPLETOPGRAD"
-        },
-        "5":{
+          },
+          "5": {
             "group_name": "BACKTAILPATTERNGRAD",
             "color": "smoke_pattern_gradient_top"
-        },
-        "4": {
+          },
+          "4": {
             "group_name": "SMOKEPATTERNDARK",
             "color": "smoke_pattern"
-        },
-        "3": {
+          },
+          "3": {
             "group_name": "SMOKEPATTERNLIGHT",
             "color": "smoke_base_gradient_bottom"
-        },
-        "2": {
+          },
+          "2": {
             "group_name": "BACKTAILPATTERNGRAD",
             "color": "smoke_base_gradient_top"
+          },
+          "1": {
+                "group_name": "BASEMASK",
+                "color": "smoke_base"
+            }
+          }
         },
-        "1": {
-            "group_name": "BASEMASK",
-            "color": "smoke_base"
-        }
-    }
+        {
+            "colors": "CHINCHILLA",
+            "layer_order": ["1", "2", "3", "4", ["5", "4.5", "6"]],
+            "layers": {
+                "4.5": {
+                    "group_name": "FRONTPATTERNGRAD",
+                    "color": "chinchilla_pattern_gradient_front"
+                },
+                "2": {
+                    "group_name": "BACKTAILPATTERNGRAD",
+                    "color": "smoke_base_gradient_top"
+                }
+            }
         }
     ]
 }
