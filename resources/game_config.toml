@@ -748,6 +748,14 @@ dev_tools = false
     all = true
     deputy = true
 
+[patrol_related]
+[patrol_related.allow_nonrandom_selection]
+  all = true
+  training = true
+  hunting = true
+  border = true
+  med = true
+
 
 [graduation]
   # base possible experience gain for apprentices

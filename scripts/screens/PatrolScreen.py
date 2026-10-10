@@ -21,6 +21,7 @@ from ..clan_package.settings import get_clan_setting
 from ..game_structure import image_cache, constants
 from ..game_structure.game.switches import switch_set_value, Switch
 from ..game_structure.game.settings import game_setting_get
+from scripts.config import get_config
 from ..cat.enums import CatRank
 from ..game_structure.propagating_thread import PropagatingThread
 from ..game_structure.screen_settings import MANAGER
@@ -427,43 +428,55 @@ class PatrolScreen(Screens):
             self.elements["add_six"].enable()
             self.elements["random"].enable()
 
-            # making sure meds don't get the option for other patrols
-            if any(
-                (cat.status.rank.is_any_medicine_rank() for cat in self.current_patrol)
-            ):
-                self.patrol_type = "med"
-            else:
-                if self.patrol_type == "med":
-                    self.patrol_type = "general"
-
-            self.elements["paw"].enable()
-            self.elements["mouse"].enable()
-            self.elements["claws"].enable()
-            self.elements["herb"].enable()
             self.elements["info"].kill()  # clearing the text before displaying new text
 
-            if self.patrol_type != "med" and self.current_patrol:
+            if not get_config("patrol_related.allow_nonrandom_selection.all"):
+                self.elements["paw"].disable()
+                self.elements["mouse"].disable()
+                self.elements["claws"].disable()
                 self.elements["herb"].disable()
-                if self.patrol_type == "med":
-                    self.patrol_type = "general"
-            if self.patrol_type == "general":
                 text = "screens.patrol.random_patrol"
-            elif self.patrol_type == "training":
-                text = "screens.patrol.training"
-            elif self.patrol_type == "border":
-                text = "screens.patrol.border"
-            elif self.patrol_type == "hunting":
-                text = "screens.patrol.hunting"
-            elif self.patrol_type == "med":
-                if self.current_patrol:
-                    text = "screens.patrol.herb_gathering"
-                    self.elements["mouse"].disable()
-                    self.elements["claws"].disable()
-                    self.elements["paw"].disable()
-                else:
-                    text = "screens.patrol.herb_gathering"
+
             else:
-                text = ""
+                # making sure meds don't get the option for other patrols
+                if any(
+                    (
+                        cat.status.rank.is_any_medicine_rank()
+                        for cat in self.current_patrol
+                    )
+                ):
+                    self.patrol_type = "med"
+                else:
+                    if self.patrol_type == "med":
+                        self.patrol_type = "general"
+
+                self.elements["paw"].enable()
+                self.elements["mouse"].enable()
+                self.elements["claws"].enable()
+                self.elements["herb"].enable()
+
+                if self.patrol_type != "med" and self.current_patrol:
+                    self.elements["herb"].disable()
+                    if self.patrol_type == "med":
+                        self.patrol_type = "general"
+                if self.patrol_type == "general":
+                    text = "screens.patrol.random_patrol"
+                elif self.patrol_type == "training":
+                    text = "screens.patrol.training"
+                elif self.patrol_type == "border":
+                    text = "screens.patrol.border"
+                elif self.patrol_type == "hunting":
+                    text = "screens.patrol.hunting"
+                elif self.patrol_type == "med":
+                    if self.current_patrol:
+                        text = "screens.patrol.herb_gathering"
+                        self.elements["mouse"].disable()
+                        self.elements["claws"].disable()
+                        self.elements["paw"].disable()
+                    else:
+                        text = "screens.patrol.herb_gathering"
+                else:
+                    text = ""
 
             self.elements["info"] = pygame_gui.elements.UITextBox(
                 text,
