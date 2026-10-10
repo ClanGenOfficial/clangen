@@ -483,12 +483,12 @@
         "newborn_exotic_base": "#FCDF9E",
         "newborn_exotic_base_gradient_bottom": "#F7F4F0",
         "newborn_exotic_base_gradient_top": "#F1C090",
-        "newborn_exotic_pattern": "#844726",
-        "newborn_exotic_pattern_gradient_top": "#371f21",
-        "newborn_exotic_pattern_fill": "#c6802b",
-        "newborn_exotic_pattern_fill_gradient_top": "#371f21",
-        "newborn_exotic_light_pattern": "#fff8ec",
-        "newborn_exotic_muzzle": "#844726"
+        "newborn_exotic_pattern": "#E6B383",
+        "newborn_exotic_pattern_gradient_top": "#D0936E",
+        "newborn_exotic_pattern_fill": "#EABC8F",
+        "newborn_exotic_pattern_fill_gradient_top": "#D0936E",
+        "newborn_exotic_light_pattern": "#F7F4F0",
+        "newborn_exotic_muzzle": "#F2D6B3"
 },
     "GINGER": {
         "base": "#F2A96B",
