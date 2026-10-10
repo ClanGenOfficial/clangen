@@ -58,7 +58,6 @@
             "Heard about a strange Clan in the alleyways in the housefolk city",
             "Is proud of {PRONOUN/m_c/poss} large belly",
             "Lounges on {PRONOUN/m_c/poss} fence, looking at the wild beyond",
-            "Can't seem to scratch a certain spot on {PRONOUN/m_c/poss} neck thanks to {PRONOUN/m_c/poss} collar",
             "Just saw a flaming ball in the sky",
             "Bit {PRONOUN/m_c/poss} housefolk who tried to pet {PRONOUN/m_c/object}",
             "Is throwing a hissy fit at the vet",
@@ -187,7 +186,6 @@
         "event_id": "kittypet_adolescent_thoughts",
         "strings": [
             "Is hogging the bed from {PRONOUN/m_c/poss} siblings",
-            "Thinks {PRONOUN/m_c/poss} new collar is uncomfortable",
             "Is playing with a new toy {PRONOUN/m_c/poss} housefolk got {PRONOUN/m_c/object}"
         ],
         "involved_cats": {
@@ -204,7 +202,6 @@
             "Is meowing for food",
             "Was wandering in the backyard when a strange noise scared {PRONOUN/m_c/object} back inside",
             "Left {PRONOUN/m_c/poss} den to go scratch up that tree {PRONOUN/m_c/subject} had been eyeing",
-            "Is glad {PRONOUN/m_c/poss} housefolk collar {PRONOUN/m_c/object} on a leash to walk {PRONOUN/m_c/object} outside",
             "Is wandering in {PRONOUN/m_c/poss} neighborhood"
         ],
         "involved_cats": {
@@ -267,6 +264,19 @@
                         "shameless"
                     ]
                 }
+            }
+        }
+    },
+    {
+        "event_id": "kittypet_collar_thoughts",
+        "strings": [
+            "Is glad {PRONOUN/m_c/poss} housefolk collar {PRONOUN/m_c/object} on a leash to walk {PRONOUN/m_c/object} outside",
+            "Can't seem to scratch a certain spot on {PRONOUN/m_c/poss} neck thanks to {PRONOUN/m_c/poss} collar",
+            "Thinks {PRONOUN/m_c/poss} new collar is uncomfortable"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "accessory": ["collar"]
             }
         }
     }

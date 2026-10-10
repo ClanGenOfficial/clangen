@@ -218,7 +218,7 @@ class Pelt:
         for sprite_list in sprites.COLLAR_DATA["sprite_list"]:
             collar_accessories.extend(sprite_list)
 
-    # this is used for acc-giving events, only change if you're adding a new category tag to the event filter
+    # this is used for acc-giving events and acc constraints, only change if you're adding a new category tag to the event filter
     # adding a category here will automatically update the event editor's options
     acc_categories = {
         "PLANT": plant_accessories,

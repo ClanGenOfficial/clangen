@@ -1084,6 +1084,30 @@ def _check_cat_health(cat, health_constraints: dict) -> bool:
     return True
 
 
+def _check_cat_accessory(cat, accessory: list) -> bool:
+    """
+    Checks if the cat has the required accessories
+    """
+    if not accessory:
+        return True
+
+    is_exclusionary = _check_for_exclusionary_value(accessory)
+
+    if is_exclusionary:
+        accessory = [x.replace("-", "") for x in accessory]
+        print("DEBUG: accessory is exclusionary")
+
+    for acc in cat.pelt.accessory:
+        if "collar" in accessory and acc in Pelt.collar_accessories:
+            return True
+        if "wild" in accessory and acc in Pelt.wild_accessories:
+            return True
+        if "plant" in accessory and acc in Pelt.plant_accessories:
+            return True
+
+    return False
+
+
 def cat_for_event(
     constraint_dict: Union[dict, InvolvedCatDict],
     possible_cats: list,
@@ -1128,6 +1152,7 @@ def cat_for_event(
         "current_exp": _get_cats_with_exp,
         "name": _get_cats_matching_name_check,
         "health": _get_cats_with_health,
+        "accessory": _get_cats_with_accessory,
     }
 
     # run funcs
@@ -1308,6 +1333,13 @@ def _get_cats_with_health(cat_list: list, health_constraints: dict) -> list:
         return cat_list
 
     return [c for c in cat_list if _check_cat_health(c, health_constraints)]
+
+
+def _get_cats_with_accessory(cat_list: list, accessory: str) -> list:
+    if not accessory:
+        return cat_list
+
+    return [c for c in cat_list if _check_cat_accessory(c, accessory)]
 
 
 def _get_cats_matching_name_check(cat_list: list, name_check: dict) -> list:
