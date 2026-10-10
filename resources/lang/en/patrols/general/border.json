@@ -7378,6 +7378,12 @@
             },
             {
                 "frequency": 3,
+                "required_cat_types": {
+                    "patrol_cats": [
+                        3,
+                        6
+                    ]
+                },
                 "poi": {
                     "tags": ["water:flowing"]
                 },
@@ -7566,7 +7572,7 @@
                     "tags": ["high_ground"]
                 },
                 "strings": [
-                    "The sky opens up on the patrol and p_l scrambles for higher ground. Luckily POI is near and p_l climbs atop it. {PRONOUN/p_l/subject/CAP} end up drenched, but safe from the flash flood {PRONOUN/p_l/subject} {VERB/p_l/watch/watches} ravage the landscape. Unfortunately, the border must go unpatrolled for today."
+                    "The sky opens up on the patrol and p_l scrambles for higher ground. Luckily POI is near and p_l climbs atop it. {PRONOUN/p_l/subject/CAP} {VERB/p_l/end/ends} up drenched, but safe from the flash flood {PRONOUN/p_l/subject} {VERB/p_l/watch/watches} ravage the landscape. Unfortunately, the border must go unpatrolled for today."
                 ],
                 "exp_gained": 0
             },
