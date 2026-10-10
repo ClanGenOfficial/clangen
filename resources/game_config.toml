@@ -292,19 +292,23 @@ dev_tools = false
   # relationship buffs represent "default" relationship values that are then lightly randomized
   # in order to create initial relationship values for cats
 
+  # see adoptive_parent_buff for adoptive parents
   [new_cat.parent_buff]
-    # default relationships buff for a kit's relationships to their parents
-    [new_cat.parent_buff.kit_to_parent]
-      romance = 0
-      like = 40
-      respect = 30
-      comfort = 70
-      trust = 60
+    # this is not applied for absent parents
+    variability = [0, 15]
 
     # default relationships buff for a parent's relationships to their kits
     [new_cat.parent_buff.parent_to_kit]
       romance = 0
       like = 60
+      respect = 30
+      comfort = 70
+      trust = 60
+
+    # default relationships buff for a kit's relationships to their parents
+    [new_cat.parent_buff.kit_to_parent]
+      romance = 0
+      like = 40
       respect = 30
       comfort = 70
       trust = 60
@@ -317,17 +321,28 @@ dev_tools = false
       comfort = -10
       trust = 0
 
-  [new_cat.sib_buff]
-    # default relationships buff for siblings' relationships in one direction
-    [new_cat.sib_buff.cat1_to_cat2]
+  [new_cat.adoptive_parent_buff]
+    variability = [0, 15]
+    [new_cat.adoptive_parent_buff.parent_to_kit]
       romance = 0
-      like = 40
-      respect = 10
+      like = 60
+      respect = 30
       comfort = 40
       trust = 30
 
-    # default relationships buff for siblings' relationships in the other direction
-    [new_cat.sib_buff.cat2_to_cat1]
+    [new_cat.adoptive_parent_buff.kit_to_parent]
+      romance = 0
+      like = 40
+      respect = 30
+      comfort = 70
+      trust = 60
+
+  [new_cat.sib_buff]
+    # applied for littermates_to_eachother
+    variability = [0, 15]
+
+    # default relationships buff for siblings' relationships in one direction
+    [new_cat.sib_buff.cat1_to_cat2]
       romance = 0
       like = 40
       respect = 10
@@ -337,23 +352,6 @@ dev_tools = false
     # default relationships buff for a newborn's relationship towards one of their littermates
     [new_cat.sib_buff.littermates_to_eachother]
       like = 20
-      comfort = 10
-      trust = 10
-
-  [new_cat.rel_buff]
-    # default relationships buff for new cats relationships to other cats in the clan
-    [new_cat.rel_buff.new_to_clan_cat]
-      romance = 0
-      like = 15
-      respect = 10
-      comfort = 15
-      trust = 15
-
-    # default relationships buff for clan cats' relationships to new cats in the clan
-    [new_cat.rel_buff.clan_cat_to_new]
-      romance = 0
-      like = 15
-      respect = 5
       comfort = 10
       trust = 10
 
