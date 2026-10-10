@@ -9766,7 +9766,7 @@
             "category": "terrain"
         },
         "frequency": 3,
-        "event_text": "m_c was chased by a preadator and injured before {PRONOUN/m_c/subject} could take cover by POI.",
+        "event_text": "m_c was chased by a predator and injured before {PRONOUN/m_c/subject} could take cover by POI.",
         "m_c": {
             "age": ["-newborn", "-kitten"]
         },
@@ -9789,7 +9789,7 @@
         "location": ["any"],
         "season": ["any"],
         "poi": {
-            "tags": ["fall_risk"],
+            "tags": ["danger:fall_risk"],
             "category": "terrain"
         },
         "frequency": 3,
@@ -9840,15 +9840,15 @@
         ]
     },
     {
-        "event_id": "gen_injury_poi_preyflying1",
+        "event_id": "gen_injury_poi_preybird1",
         "location": ["any"],
         "season": ["any"],
         "poi": {
-            "tags": ["prey:flying"],
+            "tags": ["prey:bird"],
             "category": "terrain"
         },
         "frequency": 4,
-        "event_text": "m_c swas harried by a furious flock of birds while hunting near POI.",
+        "event_text": "m_c was harried by a furious flock of birds while hunting near POI.",
         "m_c": {
             "status": ["apprentice", "warrior", "deputy", "leader"]
         },

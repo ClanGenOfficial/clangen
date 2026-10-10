@@ -4,7 +4,6 @@
         "rickroll": "Never going to give r_c up, never going to let {PRONOUN\/r_c\/object} down, never going to run around and desert {PRONOUN\/r_c\/object}.",
         "interaction": "This is a default interaction! ID: %{id} with cats (m_c), (r_c)",
         "ceremony_honor": "hard work",
-        "focus_text": "This shouldn't appear; report as a bug (focus feature).",
         "illness_get_event": "m_c has gotten %{illness}.",
         "illness_death_event": "m_c was killed by {PRONOUN/m_c/poss} illness.",
         "illness_death_history": "m_c died to an illness.",
