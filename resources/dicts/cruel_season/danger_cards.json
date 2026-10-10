@@ -29,5 +29,12 @@
       "death_related.war_death_modifier": 340,
       "death_related.war_death_modifier_leader": 46
     }
+  },
+  "miasma": {
+    "card_art": "danger/miasma.png",
+    "modifiers": {
+      "condition_related.illness_chance": 175
+
+    }
   }
 }
