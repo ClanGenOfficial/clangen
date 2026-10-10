@@ -1293,7 +1293,13 @@
             "Fails to notice something new about r_c",
             "Lets things go in one ear and out the other",
             "Very loudly corrects something someone said wrong offpawedly",
-            "Bumped into another cat and had to start {PRONOUN/m_c/poss} grooming routine all over again"
+            "Bumped into another cat and had to start {PRONOUN/m_c/poss} grooming routine all over again",
+            "Is grooming {PRONOUN/m_c/poss} fur backwards",
+            "Wasn't paying attention when a cat addressed {PRONOUN/m_c/object}",
+            "Wonders why other cats call {PRONOUN/m_c/object} mouse-brained",
+            "Believes another cats' obvious lie",
+            "Wonders why another cat is laughing after {PRONOUN/m_c/subject} asks an earnest question",
+            "Has the survival instinct of a rock"
         ],
         "involved_cats": {
             "m_c": {
@@ -1542,7 +1548,14 @@
             "Tells everyone about {PRONOUN/m_c/poss} weird dreams",
             "Stands uncomfortably close to other cats without a word",
             "Is playing with {PRONOUN/m_c/poss} prey before killing it",
-            "Is playing with {PRONOUN/m_c/poss} imaginary friend."
+            "Is playing with {PRONOUN/m_c/poss} imaginary friend.",
+            "Is practicing how to kill prey using a rock as the prey",
+            "Is chasing {PRONOUN/m_c/poss} own tail",
+            "Is walking in small circles",
+            "Is grooming {PRONOUN/m_c/poss} fur backwards",
+            "Is claiming {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} \"not like other cats\"",
+            "Is pretending to be \"normal\" but is quickly getting bored",
+            "Wonders why other cats call {PRONOUN/m_c/object} mouse-brained"
         ],
         "involved_cats": {
             "m_c": {
@@ -1754,7 +1767,9 @@
             "Is jealous of r_c... but why?",
             "Is trying to get r_c in trouble",
             "Missed an opportunity to exact revenge on r_c",
-            "Is daydreaming of getting back at r_c"
+            "Is daydreaming of getting back at r_c",
+            "Hopes something good happens to r_c just so life can cruelly take it away from {PRONOUN/r_c/object}",
+            "Promises to make r_c pay... but for what?"
         ],
         "involved_cats": {
             "m_c": {
@@ -1870,7 +1885,8 @@
         "Hopes r_c still needs {PRONOUN/m_c/object} sometimes",
         "Wonders if r_c feels like {PRONOUN/r_c/subject} had a good kithood",
         "Reminds {PRONOUN/m_c/self} that r_c is no longer a kit now and can make {PRONOUN/r_c/poss} own decisions",
-        "Reminds {PRONOUN/m_c/self} that {PRONOUN/m_c/subject} raised r_c the best {PRONOUN/m_c/subject} could"
+        "Reminds {PRONOUN/m_c/self} that {PRONOUN/m_c/subject} raised r_c the best {PRONOUN/m_c/subject} could",
+        "Wonders if r_c's finds m_c's affections embarrassing now that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} grown"
     ],
     "involved_cats": {
         "m_c": {},

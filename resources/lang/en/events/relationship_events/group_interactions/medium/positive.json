@@ -889,5 +889,65 @@
                 "amount": 5
             }
         ]
+    },
+    {
+        "event_id": "group_3_pos_plotting",
+        "strings": [
+            "m_c admits to wanting to kill r_c2, to which r_c1 admits the same!",
+            "m_c and r_c1 are plotting something against r_c2.",
+            "m_c and r_c1 talk about how much they want r_c2 dead.",
+            "m_c and r_c1 are discussing when r_c2 is most often alone...",
+            "m_c is helping r_c1 plan how to get back at r_c2.",
+            "m_c and r_c1 are discussing ways an \"accident\" could befall r_c2."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "bloodthirsty",
+                        "vengeful"
+                    ]
+                }
+            },
+            "r_c1": {
+                "stat": {
+                    "trait": [
+                        "bloodthirsty",
+                        "vengeful"
+                    ]
+                }
+            }
+        },
+            "relationship_constraint": [
+            {
+                "cats_from": ["m_c", "r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["dislikes"]
+            }
+        ],
+            "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["like", "trust", "respect"],
+                "amount": 5
+            },
+            {
+                "cats_from": ["m_c", "r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": -10
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["m_c", "r_c1"],
+                "mutual": false,
+                "values": ["trust"],
+                "amount": -10
+            }
+        ]
     }
 ]
