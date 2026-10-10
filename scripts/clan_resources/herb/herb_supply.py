@@ -4,7 +4,8 @@ from typing import Optional
 import i18n
 
 from scripts.cat.skills import SkillPath
-from scripts.clan_resources.herb.herb import Herb, HERBS
+from scripts.clan_resources.herb.herb import Herb
+from scripts.game_structure.constants import HERBS
 from scripts.clan_resources.herb.herb_effects import HerbEffect
 from scripts.clan_resources.supply import Supply
 from scripts.config import get_config
@@ -46,6 +47,8 @@ class HerbSupply:
 
         # med den log for current moon
         self.log = []
+
+        self.disable_random: bool = False
 
     @property
     def combined_supply_dict(self) -> dict:
@@ -390,49 +393,6 @@ class HerbSupply:
             if self.collected[herb] < 0:
                 self.collected[herb] = 0
 
-    def handle_focus(self, med_cats: list, assistants: list = None):
-        """
-        Handles sending med cats to gather extra herbs in accordance to Clan focus
-        :param med_cats: a list of medicine cat objects,
-        :param assistants: a list of any non-meddies who are assisting the search for herbs
-        """
-
-        # get herbs found
-        herb_list = []
-        for med in med_cats:
-            if assistants:
-                list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
-                    med,
-                    general_amount_bonus=True,
-                    specific_quantity_bonus=2,
-                )
-            else:
-                list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
-                    med
-                )
-            herb_list.extend(found_herbs)
-
-        # remove dupes
-        herb_list = list(set(herb_list))
-        # get display strings for herbs
-        herb_strs = []
-        for herb in herb_list:
-            herb_strs.append(game.clan.herb_supply.herb[herb].plural_display)
-
-        herb_list = adjust_list_text(herb_strs)
-
-        # finish
-        focus_text = i18n.t(
-            "hardcoded.focus_herbs", herbs=herb_list, count=len(herb_list)
-        )
-
-        if herb_list:
-            game.herb_events_list.append(
-                i18n.t("screens.med_den.focus", herbs=herb_list)
-            )
-
-        return focus_text
-
     def get_found_herbs(
         self,
         med_cat,
@@ -477,6 +437,9 @@ class HerbSupply:
         amount_of_herbs = (
             choices(population=[1, 2, 3], weights=weight, k=1)[0] + amount_modifier
         )
+        if self.disable_random:
+            amount_of_herbs = 3
+
         if general_amount_bonus:
             amount_of_herbs *= constants.CONFIG["clan_resources"]["herbs"][
                 "general_amount_bonus"
@@ -503,18 +466,24 @@ class HerbSupply:
                 continue
 
             # chance to find an herb is based on its rarity
-            if randint(1, rarity) == 1:
-                if rarity in (5, 6):
+            if randint(1, rarity) == 1 or self.disable_random:
+                if self.disable_random:
+                    quantity_modifier = quantity_modifier
+                elif rarity in (5, 6):
                     quantity_modifier = quantity_modifier / 2
                 elif rarity in (1, 2):
                     quantity_modifier += 1
-                amount = max(
-                    1,
-                    int(
-                        choices(population=[2, 3, 4], weights=weight, k=1)[0]
-                        * quantity_modifier
-                    ),
-                )
+
+                if self.disable_random:
+                    amount = 3
+                else:
+                    amount = max(
+                        1,
+                        round(
+                            choices(population=[2, 3, 4], weights=weight, k=1)[0]
+                            * quantity_modifier
+                        ),
+                    )
                 found_herbs[herb] = (
                     min(allowed_quantity, amount) if allowed_quantity else amount
                 )
@@ -829,13 +798,13 @@ class HerbSupply:
             return
 
         # create and append log message
+
+        herb = self.herb[herb_used]
+
         message = i18n.t(
-            "screens.med_den.herb_used",
-            herb=(
-                self.herb[herb_used].plural_display
-                if amount_used > 1
-                else str("a ") + self.herb[herb_used].singular_display
-            ),
+            "conditions.herbs.herb_used",
+            herb=i18n.t(f"conditions.herbs.{herb.name}", count=amount_used),
+            count=amount_used,
             condition=condition,
             effect=effect_message,
         )

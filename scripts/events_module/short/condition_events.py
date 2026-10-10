@@ -293,10 +293,24 @@ class Condition_Events:
                 and not event_string
             ):
                 # CLAN FOCUS!
-                if get_clan_setting("rest_and_recover"):
+                if get_clan_setting("rest_and_recover") and (
+                    game.clan.deputy and game.clan.deputy.status.alive_in_player_clan
+                ):
                     stopping_chance = constants.CONFIG["focus"]["rest_and_recover"][
                         "illness_prevent"
                     ]
+                    buffs = get_config("focus.rest_and_recover.buff")
+                    for skill, tier in game.clan.deputy.skills.get_all().items():
+                        skill = skill.name
+                        if skill not in buffs.keys():
+                            continue
+                        if buffs[skill]["tier"] > tier:
+                            continue
+
+                        if "hurt_prevention_modifier" in buffs[skill]:
+                            stopping_chance -= get_config(
+                                f"focus.rest_and_recover.buff.{skill}.hurt_prevention_modifier"
+                            )
                     if not int(random.random() * stopping_chance):
                         return triggered
 
@@ -429,10 +443,24 @@ class Condition_Events:
 
             if triggered:
                 # CLAN FOCUS!
-                if get_clan_setting("rest_and_recover"):
+                if get_clan_setting("rest_and_recover") and (
+                    game.clan.deputy and game.clan.deputy.status.alive_in_player_clan
+                ):
                     stopping_chance = constants.CONFIG["focus"]["rest_and_recover"][
                         "injury_prevent"
                     ]
+                    buffs = get_config("focus.rest_and_recover.buff")
+                    for skill, tier in game.clan.deputy.skills.get_all().items():
+                        skill = skill.name
+                        if skill not in buffs.keys():
+                            continue
+                        if buffs[skill]["tier"] > tier:
+                            continue
+
+                        if "hurt_prevention_modifier" in buffs[skill]:
+                            stopping_chance -= get_config(
+                                f"focus.rest_and_recover.buff.{skill}.hurt_prevention_modifier"
+                            )
                     if not int(random.random() * stopping_chance):
                         return False
 

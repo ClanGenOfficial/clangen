@@ -36,6 +36,9 @@ def check_if_can_have_kits(cat):
     if not_correct_age or cat.no_kits or cat.dead:
         return False
 
+    if not check_parent_rank(cat):
+        return False
+
     # check for mate
     if cat.mate:
         for mate_id in cat.mate:
@@ -91,18 +94,7 @@ def get_second_parent(cat: Cat) -> tuple[Optional[Cat], bool]:
     same_sex_birth_allowed = get_clan_setting("same sex birth")
     coparenting_allowed = get_clan_setting("unmated parentage")
     if cat.mate:
-        if same_sex_birth_allowed:
-            # choose any mate
-            chosen_mate = cat.fetch_cat(choice(cat.mate))
-        else:
-            # choose mate that is opposite sex
-            possible_mates = [
-                cat.fetch_cat(mate_id)
-                for mate_id in cat.mate
-                if cat.fetch_cat(mate_id).gender != cat.gender
-            ]
-            if possible_mates:
-                chosen_mate = choice(possible_mates)
+        chosen_mate = cat.fetch_cat(choice(cat.mate))
     elif not coparenting_allowed:
         # if coparenting is OFF, then an unmated cat can't have a kitten
         return None, False
@@ -298,3 +290,20 @@ def _get_unmated_coparenting_chance(relation: Relationship) -> int:
         coparenting_chance -= 5
 
     return coparenting_chance
+
+
+def check_parent_rank(cat):
+    # check for role
+    if cat.status.rank not in get_config("pregnancy.can_have_kits"):
+        if not cat.mate:
+            return False
+        elif cat.mate:
+            if all(
+                [
+                    cat.fetch_cat(mate_id).status.rank
+                    not in get_config("pregnancy.can_have_kits")
+                    for mate_id in cat.mate
+                ]
+            ):
+                return False
+    return True

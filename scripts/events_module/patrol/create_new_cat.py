@@ -91,6 +91,12 @@ def updated_create_new_cat(
             option_dict["group"], involved_cats, other_clan
         )
 
+    # handle applying an age for litters if one wasn't specified
+    is_litter = option_dict["can_create_new_cat"].get("become_litter")
+    if is_litter:
+        if not status.get("age") or not status["age"].is_baby():
+            status["age"] = choice((CatAge.NEWBORN, CatAge.KITTEN))
+
     if not status.get("rank") and not status.get("age"):
         # if no group was given either, then we just pick either no group or other clan
         if not option_dict.get("group"):
@@ -101,16 +107,22 @@ def updated_create_new_cat(
         # then we find an appropriate rank for that group
         if status["group_ID"] == "no_group":
             status["rank"] = choice(
-                [r for r in [*CatRank] if not r.is_any_clancat_rank()]
+                [
+                    r
+                    for r in [*CatRank]
+                    if not r.is_any_clancat_rank()
+                    and r not in (CatRank.LEADER, CatRank.DEPUTY)
+                ]
             )
         else:
-            status["rank"] = choice([r for r in [*CatRank] if r.is_any_clancat_rank()])
-
-    # handle applying an age for litters if one wasn't specified
-    is_litter = option_dict["can_create_new_cat"].get("become_litter")
-    if is_litter:
-        if not status.get("age") or not status["age"].is_baby():
-            status["age"] = choice((CatAge.NEWBORN, CatAge.KITTEN))
+            status["rank"] = choice(
+                [
+                    r
+                    for r in [*CatRank]
+                    if r.is_any_clancat_rank()
+                    and r not in (CatRank.LEADER, CatRank.DEPUTY)
+                ]
+            )
 
     # MOONS OLD
     moons = None
@@ -159,12 +171,6 @@ def updated_create_new_cat(
             if adoptive_parents
             else None,
         )
-        # check if kittypets get collar
-        if created_cat.status.social == CatSocial.KITTYPET and bool(getrandbits(1)):
-            created_cat.pelt.accessory = (
-                *created_cat.pelt.accessory,
-                choice(created_cat.pelt.collar_accessories),
-            )
 
         # MATES
         _assign_mates(created_cat, involved_cats, option_dict)
@@ -274,7 +280,7 @@ def _assign_name(created_cat: Cat):
         # give kittypets a kittypet name
         if created_cat.status.social == CatSocial.KITTYPET:
             weights = constants.CONFIG["cat_name_controls"]["kittypet"]
-            # check if the kittypets come with a pretty acc
+            # check if the kittypets come with a collar
             if bool(getrandbits(1)):
                 created_cat.pelt.accessory = (
                     *created_cat.pelt.accessory,
