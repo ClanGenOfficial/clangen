@@ -132,7 +132,7 @@
             "littleMUZZLE",
             "littleTEARDROP"
         ],
-	"MINTOESTAIL": [
+	    "MINTOESTAIL": [
             "littleTAIL_MIN",
             "littleLEG_FRONT_RIGHT_MIN",
             "littleLEG_FRONT_LEFT_MIN",
@@ -492,7 +492,7 @@
             "littleTAIL_SMALL_LOW",
             "midFADEBELLY"
         ],
-	"SKUNKTWO": [
+	    "SKUNKTWO": [
             "littleLEFTEAR_TIP",
             "littleLEG_BACK_LEFT_UNDER",
             "littleLEG_BACK_RIGHT_UNDER",
@@ -532,12 +532,28 @@
             "littleLEG_FRONT_LEFT_HIGH",
             "midBIB_FULL",
             "midCHEST_FULL"
-	],
+	    ],
         "SHORELINE": [
             "midFCTWO_REDUCED",
             "midMITAINE",
             "midSAVANNAH",
             "midFADESPOTS"
+        ],
+        "PROTAGONIST": [
+            "littleCHIN",
+            "littleESTRELLA",
+            "littleLEG_BACK_LEFT_UNDER",
+            "littleLEG_BACK_RIGHT_UNDER",
+            "littleLEG_FRONT_RIGHT_SMALL",
+            "littleLOCKET",
+            "littleMUZZLE",
+            "littleSCOURGE",
+            "littleSPARKLE",
+            "littleTAILTIP",
+            "littleTAIL_UNDER",
+            "littleUNDER_MIN",
+            "littleREV_SHOOTINGSTAR",
+            "midFADEBELLY"
         ],
         "PIKAPATCH": [
             "littleTAIL_REVERSE_HALF",
