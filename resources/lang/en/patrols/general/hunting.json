@@ -9285,6 +9285,9 @@
             "hunting"
         ],
         "frequency": 2,
+        "poi": {
+        	"name": ["terrain_thunderpath"]
+        },
         "required_cat_types": {
             "patrol_cats": [
                 2,
@@ -9294,7 +9297,7 @@
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_hunt_thunderpath_WrWr",
         "intro_strings": [
-            "The patrol comes across the Thunderpath at the edge of their territory."
+            "The patrol comes across POI at the edge of their territory."
         ],
         "decline_strings": [
             "They decide it is better not to cross."
@@ -9303,7 +9306,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol crosses the Thunderpath and hunts on the other side."
+                    "The patrol crosses POI and hunts on the other side."
                 ],
                 "exp_gained": 10,
                 "supply": [
@@ -9316,7 +9319,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with damp paws but a successful haul of prey."
+                    "The patrol finds a pipe running under POI and uses it to cross. They end up with damp paws but a successful haul of prey."
                 ],
                 "exp_gained": 10,
                 "supply": [
@@ -9329,7 +9332,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol stops on the edge of the Thunderpath. s_c0 organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat."
+                    "The patrol stops on the edge of POI. s_c0 organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -9359,7 +9362,7 @@
                         "mutual": false,
                         "amount": 5,
                         "log": {
-                            "cats_from": "cat_to's clever scavenging saved cat_from from having to cross the Thunderpath to hunt."
+                            "cats_from": "cat_to's clever scavenging saved cat_from from having to cross POI to hunt."
                         }
                     }
                 ],
@@ -9373,7 +9376,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 is patient enough to wait until the Thunderpath is completely clear, then trot across to hunt on the other side."
+                    "s_c0 is patient enough to wait until POI is completely clear, then trot across to hunt on the other side."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -9417,7 +9420,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As the group crosses the Thunderpath, a speeding monster appears out of nowhere. The cats scatter in all directions, and several of them get hit and die."
+                    "As the group crosses POI, a speeding monster appears out of nowhere. The cats scatter in all directions, and several of them get hit and die."
                 ],
                 "required_cat_types": {
                     "normal adult": [
