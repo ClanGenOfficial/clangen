@@ -13,6 +13,10 @@
             "one": "silver",
             "many": "silver"
         },
+        "SOOT": {
+            "one": "gray",
+            "many": "gray"
+        },
         "GREY": {
             "one": "gray",
             "many": "gray"

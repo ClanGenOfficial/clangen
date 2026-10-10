@@ -61,7 +61,7 @@
         },
         {
             "colors": "BLOSSOM",
-            "layer_order": ["1", "2", "3", "4", ["4.5", "5", "6"]],
+            "layer_order": ["1", "2", "2.5", "3", "4", ["4.5", "5", "6"]],
             "layers": {
                 "5":
                 {
@@ -76,6 +76,17 @@
                 "2.5": {
                     "group_name": "LEGBOTTOMGRAD",
                     "color": "base_gradient_legs_tail"
+                }
+            }
+    },
+        {
+            "colors": "RUST",
+            "layer_order": ["1", "2", "3", "4", ["5", "6"]],
+            "layers": {
+                "5":
+                {
+                    "group_name": "BACKTAILPATTERNGRAD",
+                    "color": "pattern_gradient_top"
                 }
             }
     },
