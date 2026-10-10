@@ -691,9 +691,9 @@
         "newborn_base": "#F2D6B3",
         "newborn_base_gradient_bottom": "#F4E0BA",
         "newborn_base_gradient_top": "#DFB395",
-        "newborn_pattern": "#935331",
-        "newborn_pattern_gradient_top": "#371f21",
-        "newborn_pattern_fill": "#935331",
+        "newborn_pattern": "#EEBB8D",
+        "newborn_pattern_gradient_top": "#E2AF85",
+        "newborn_pattern_fill": "#EEBB8D",
 
         "smoke_base": "#cb8153",
         "smoke_base_gradient_top": "#a74b35",
