@@ -11,6 +11,7 @@ from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache, constants
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure import game
+from scripts.events_module.thoughts.generate_thoughts import get_new_thought
 
 from ..game_structure.screen_settings import MANAGER
 from ..ui.elements.sprite_button import UISpriteButton
@@ -74,7 +75,10 @@ class ClanScreen(Screens):
                 self.change_screen(GameScreen.LEADER_DEN)
             else:
                 self.menu_button_pressed(event)
-
+        elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
+            if event.ui_element in self.cat_buttons:
+                if get_clan_setting("thought_tooltips"):
+                    self.handle_thought_tooltip(event.ui_element)
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
                 self.change_screen(GameScreen.LIST)
@@ -488,3 +492,14 @@ class ClanScreen(Screens):
         else:
             for ele in self.camp_labels:
                 self.camp_labels[ele].hide()
+
+    def handle_thought_tooltip(self, button):
+        c = Cat.fetch_cat(button.cat_id)
+
+        if not c.thought:
+            thought_type = c.next_thought_type
+            get_new_thought(c, thought_type)
+
+        tooltip_text = f"<b>{c.name}</b>\n{c.thought}"
+
+        button.set_tooltip(tooltip_text)
