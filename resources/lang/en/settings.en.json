@@ -40,6 +40,8 @@
         "backgrounds_tooltip": "Even with this off, the camp you choose will still affect the events you encounter.",
         "moons and seasons": "Show moons and seasons widget",
         "moons and seasons_tooltip": "Displays Clan age and current Clan season on several pages.",
+        "thought_tooltips": "Show cat thoughts on hover",
+        "thought_tooltips_tooltip": "Cats' names and thoughts will be displayed when they are hovered over in camp.",
         "deputy": "Allow leaders to automatically choose a new deputy",
         "deputy_tooltip": "The Warrior Code rules will be taken into account when choosing a deputy.",
         "12_moon_graduation": "Disable experience-based apprentice graduation",

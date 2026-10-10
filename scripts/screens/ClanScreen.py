@@ -77,7 +77,8 @@ class ClanScreen(Screens):
                 self.menu_button_pressed(event)
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
             if event.ui_element in self.cat_buttons:
-                self.handle_thought_tooltip(event.ui_element)
+                if get_clan_setting("thought_tooltips"):
+                    self.handle_thought_tooltip(event.ui_element)
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
                 self.change_screen(GameScreen.LIST)
@@ -494,6 +495,7 @@ class ClanScreen(Screens):
 
     def handle_thought_tooltip(self, button):
         c = Cat.fetch_cat(button.cat_id)
+
         if not c.thought:
             thought_type = c.next_thought_type
             get_new_thought(c, thought_type)
