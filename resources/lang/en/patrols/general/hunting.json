@@ -9478,18 +9478,11 @@
         ]
     },
     {
-        "event_id": "gen_hunt_rabbit2",
+        "event_id": "gen_hunt_rabbit1",
         "types": [
             "hunting"
         ],
         "frequency": 4,
-        "location": [
-            "forest",
-            "desert",
-            "mountainous",
-            "plains",
-            "wetlands"
-        ],
         "required_cat_types": {
             "patrol_cats": [
                 2,
@@ -9744,18 +9737,11 @@
         ]
     },
     {
-        "event_id": "gen_hunt_rabbit3",
+        "event_id": "gen_hunt_rabbit2",
         "types": [
             "hunting"
         ],
         "frequency": 4,
-        "location": [
-            "forest",
-            "desert",
-            "mountainous",
-            "plains",
-            "wetlands"
-        ],
         "required_cat_types": {
             "patrol_cats": [
                 1,
@@ -9917,6 +9903,371 @@
                         "condition": [
                             "sprain"
                         ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_hunt_rabbitburrow_group1",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 4,
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "hunt_general_intro",
+        "intro_strings": [
+            "While hunting, the patrol comes across a rabbit burrow.",
+            "The patrol happens across a rabbit burrow.",
+            "p_l leads the patrol to a known rabbit burrow location."
+        ],
+        "decline_strings": [
+            "p_l decides to look elsewhere for fresh-kill."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 catches the rabbit hiding in its burrow.",
+                    "s_c0 manages to fish a rabbit out of the burrow, a great catch to bring home!"
+                ],
+                "exp_gained": 10,
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_pawsdiggingdirt_Wr",
+                "season": ["greenleaf", "newleaf"],
+                "strings": [
+                    "The burrow seems to hold a nest of baby rabbits! The patrol digs them out, they'll make for pleasant bite-sized snacks."
+                ],
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "s_c0 suggests flushing the rabbits out of the burrow, with cats waiting at one of the open holes to catch the rabbits as they flee. The plan goes great and the patrol goes home with plenty of freshkill.",
+                    "s_c0 suggests that the patrol hide nearby the burrow and wait for a rabbit to emerge, then take it by surprise. After a bit of patience, a few rabbits hop out unawares and the patrol dispatches them easily."
+                ],
+                "exp_gained": 10,
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,1",
+                                "HUNTER,1",
+                                "INSIGHTFUL,1"
+                            ]
+                        }
+                    }
+                },
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_huge"
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "season": ["leaf-bare"],
+                "strings": [
+                    "The patrol digs down, shifting snow out of the way to reveal a snuggly bundle of sleepy rabbits. Their slumber makes it easy to prevent any escape."
+                ],
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_huge"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_pawsdiggingdirt_Wr",
+                "strings": [
+                    "The burrow is abandoned, with no prey to be found in there. This was a waste of time.",
+                    "Either the rabbits aren't home right now, or this burrow is abandoned. Nothing of worth is found."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "season": ["leaf-bare"],
+                "strings": [
+                    "The cats dig down through the snow, hoping for some sleeping rabbits, but they end up with nothing for their troubles."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 3,
+                "outcome_art": "animals/gen_rabbit",
+                "strings": [
+                    "s_c0 is about to start digging into the burrow when a rabbit bursts out, colliding with {PRONOUN/s_c0/poss} head! The rabbit escapes in the wake of the patrol's shock and s_c0 is left with a headache."
+                ],
+                "exp_gained": 0,
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "condition": [
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "condition": [
+                            "head damage"
+                        ],
+                        "death_history": "m_c died after being hit in the head by a fleeing rabbit."
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "s_c0 doesn't hesitate before sticking {PRONOUN/s_c0/poss} head straight into the burrow. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/regret/regrets} this immediately when the buck inside rakes its claws over {PRONOUN/s_c0/poss} eyes."
+                ],
+                "exp_gained": 0,
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"],
+                        "stat": {
+                            "trait": [
+                                "oblivious",
+                                "daring",
+                                "bold",
+                                "playful",
+                                "childish",
+                                "adventurous"
+                            ]
+                        }
+                    }
+                },
+                "condition": [
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "condition": [
+                            "damaged eyes"
+                        ],
+                        "scar_history": "m_c's eyes were scarred by an angry buck rabbit.",
+                        "death_history": "m_c died after being clawed by an angry buck rabbit."
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "outcome_art": "animals/gen_scarysnake",
+                "strings": [
+                    "A snake seems to have taken up residence in this burrow, much to the detriment of s_c0's paw."
+                ],
+                "exp_gained": 0,
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "condition": [
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "condition": [
+                            "snake bite"
+                        ],
+                        "scar_history": "m_c was bitten by a snake on patrol.",
+                        "death_history": "m_c died after being bitten by a snake on a patrol."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_hunt_rabbitburrow_solo1",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 4,
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "hunt_general_intro",
+        "intro_strings": [
+            "While hunting, p_l comes across a rabbit burrow.",
+            "p_l happens across a rabbit burrow.",
+            "p_l heads to a known rabbit burrow location."
+        ],
+        "decline_strings": [
+            "p_l decides to look elsewhere for fresh-kill."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l catches the rabbit hiding in its burrow.",
+                    "p_l manages to fish a rabbit out of the burrow, a great catch to bring home!"
+                ],
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_pawsdiggingdirt_Wr",
+                "season": ["greenleaf", "newleaf"],
+                "strings": [
+                    "The burrow seems to hold a nest of baby rabbits! p_l digs them out, they'll make for pleasant bite-sized snacks."
+                ],
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "season": ["leaf-bare"],
+                "strings": [
+                    "p_l digs down, shifting snow out of the way to reveal a snuggly bundle of sleepy rabbits. Their slumber makes it easy to prevent any escape."
+                ],
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_huge"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_pawsdiggingdirt_Wr",
+                "strings": [
+                    "Either the rabbits aren't home right now, or this burrow is abandoned. Nothing of worth is found.",
+                    "The burrow is abandoned, with no prey to be found in there. This was a waste of time."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "season": ["leaf-bare"],
+                "strings": [
+                    "p_l digs down through the snow, hoping for some sleeping rabbits, but {PRONOUN/p_l/subject} end up with nothing for {PRONOUN/p_l/poss} troubles."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 3,
+                "outcome_art": "animals/gen_rabbit",
+                "strings": [
+                    "p_l is about to start digging into the burrow when a rabbit bursts out, colliding with {PRONOUN/p_l/poss} head! The rabbit escapes in the wake of {PRONOUN/p_l/poss} shock and p_l is left with a headache."
+                ],
+                "exp_gained": 0,
+                "involved_cats": {
+                    "p_l": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "head damage"
+                        ],
+                        "death_history": "m_c died after being hit in the head by a fleeing rabbit."
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "p_l doesn't hesitate before sticking {PRONOUN/p_l/poss} head straight into the burrow. {PRONOUN/p_l/subject/CAP} {VERB/p_l/regret/regrets} this immediately when the buck inside rakes its claws over {PRONOUN/p_l/poss} eyes."
+                ],
+                "exp_gained": 0,
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": [
+                                "oblivious",
+                                "daring",
+                                "bold",
+                                "playful",
+                                "childish",
+                                "adventurous"
+                            ]
+                        }
+                    }
+                },
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "damaged eyes"
+                        ],
+                        "scar_history": "m_c's eyes were scarred by an angry buck rabbit.",
+                        "death_history": "m_c died after being clawed by an angry buck rabbit."
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "outcome_art": "animals/gen_scarysnake",
+                "strings": [
+                    "A snake seems to have taken up residence in this burrow, much to the detriment of p_l's paw."
+                ],
+                "exp_gained": 0,
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "snake bite"
+                        ],
+                        "scar_history": "m_c was bitten by a snake on patrol.",
+                        "death_history": "m_c died after being bitten by a snake on a patrol."
                     }
                 ]
             }
