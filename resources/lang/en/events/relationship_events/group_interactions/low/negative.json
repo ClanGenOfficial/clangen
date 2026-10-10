@@ -243,7 +243,7 @@
             "Even though m_c was supposed to clean up camp today, everything still looks a mess, and multi_cat notice.",
             "m_c was assigned to tidy up the dens today, but multi_cat spot {PRONOUN/m_c/object} slacking off and basking in the sun instead.",
             "multi_cat notices that m_c was supposed to clean the warriors' den today but it looks exactly the same as it did that morning.",
-            "m_c was supposed to tidy up the nursery but they find the task half done with m_c nowhere in sight."
+            "m_c was supposed to tidy up the nursery but multi_cat find the task half done with m_c nowhere in sight."
         ],
         "involved_cats": {
             "m_c": {
