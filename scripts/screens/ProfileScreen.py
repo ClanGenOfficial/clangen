@@ -2328,7 +2328,7 @@ class ProfileScreen(Screens):
                 self.kill_cat_button.enable()
 
                 # no exile allowed if not in a clan
-                if not self.the_cat.status.is_clancat:
+                if not self.the_cat.status.alive_in_player_clan:
                     self.exile_cat_button.disable()
                     self.leave_clan_button.disable()
 
