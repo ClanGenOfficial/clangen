@@ -224,7 +224,7 @@
             "Is listening to a story r_c heard when {PRONOUN/r_c/subject} {VERB/r_c/were/was} a kit"
         ],
         "involved_cats": {
-            "r_c": {
+            "m_c": {
                 "status": [
                     "warrior"
                 ],
@@ -239,6 +239,11 @@
                     "clanborn_backstories",
                     "outsider_roots_backstories",
                     "half_clan_backstories"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "apprentice"
                 ]
             }
         }

@@ -479,5 +479,51 @@
                 ]
             }
         }
+    },
+    {
+        "event_id": "trust_inc_highplotting",
+        "strings": [
+            "m_c feels an odd sense of kinship with r_c.",
+            "m_c is plotting something with r_c.",
+            "m_c and r_c are practicing forbidden moves while training together.",
+            "m_c and r_c are discussing the most brutal ways to kill their \"prey.\"",
+            "m_c and r_c are laughing sinisterly together.",
+            "m_c and r_c are training with their claws unsheathed.",
+            "m_c and r_c are discussing where to find deathberries."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "bloodthirsty",
+                        "vengeful"
+                    ]
+                }
+            },
+            "r_c": {
+                "stat": {
+                    "trait": [
+                        "bloodthirsty",
+                        "vengeful"
+                    ]
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "trust",
+                    "comfort"
+                ],
+                "amount": 10
+            }
+        ]
     }
 ]

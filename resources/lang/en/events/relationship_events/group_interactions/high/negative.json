@@ -46,7 +46,8 @@
         "event_id": "group_3_negative_turnfriendagainstrival",
         "strings": [
             "r_c1 tries to undermine r_c2's good opinion of m_c.",
-            "r_c1 has been pitting r_c2 against m_c."
+            "r_c1 has been pitting r_c2 against m_c.",
+            "r_c1 claims m_c actually hates r_c2 and is only pretending to be friendly."
         ],
         "involved_cats": {
             "m_c": {},
@@ -88,7 +89,9 @@
         "strings": [
             "r_c1 claims that m_c wants r_c2 dead.",
             "r_c1 warns r_c2 that m_c seems out to get {PRONOUN/r_c2/object}.",
-            "r_c1 cautions r_c2 about being alone with m_c."
+            "r_c1 cautions r_c2 about being alone with m_c.",
+            "r_c1 warns r_c2 that m_c is not to be trusted.",
+            "r_c1 claims that m_c is plotting against r_c2."
         ],
         "involved_cats": {
             "m_c": {},
@@ -129,7 +132,10 @@
     {
         "event_id": "group_3_pos_warning2",
         "strings": [
-            "r_c1 cautions r_c2 about being alone with m_c."
+            "r_c1 cautions r_c2 about being alone with m_c.",
+            "r_c1 admits to r_c2 about being scared of m_c.",
+            "r_c1 tells r_c2 why {PRONOUN/r_c1/subject} {VERB/r_c1/fear/fears} m_c.",
+            "r_c1 hid behind r_c2 when m_c was around, and now {PRONOUN/r_c1/subject} warns r_c2 to do the same."
         ],
         "involved_cats": {
             "m_c": {},
@@ -278,7 +284,12 @@
             "m_c keeps a mental count of how often r_c1 brings up r_c2's name.",
             "m_c knows r_c1 is {PRONOUN/m_c/poss} mate and not r_c2's, but {PRONOUN/m_c/subject} still {VERB/m_c/feel/feels} jealous seeing them together.",
             "m_c wonders if r_c1 is flirting with r_c2 because {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} bored of m_c.",
-            "m_c hopes r_c1's interest in r_c2 is just a crush and will go away soon."
+            "m_c hopes r_c1's interest in r_c2 is just a crush and will go away soon.",
+            "m_c notices how often r_c1's gaze lingers on r_c2, and it makes {PRONOUN/m_c/poss} stomach churn.",
+            "The idea of r_c1 being in love with in r_c2 makes m_c feel sick to {PRONOUN/m_c/poss} stomach.",
+            "m_c wonders if r_c1 is falling for r_c2.",
+            "m_c demands r_c1 stop talking to r_c2.",
+            "m_c scoffs whenever r_c1 brings up r_c2's name."
         ],
         "involved_cats": {
             "m_c": {},
@@ -333,7 +344,11 @@
             "m_c craves more of r_c1's attention, but these days it's all going to r_c2.",
             "m_c wonders if r_c1 has fallen more deeply in love with r_c2 than {PRONOUN/r_c1/subject} ever did with m_c.",
             "m_c plots to win r_c1's attention back away from r_c2.",
-            "m_c hears r_c1 murmuring r_c2's name in {PRONOUN/r_c1/poss} sleep."
+            "m_c hears r_c1 murmuring r_c2's name in {PRONOUN/r_c1/poss} sleep.",
+            "m_c hisses whenever r_c1 brings up r_c2's name.",
+            "m_c wishes r_c2 would just leave r_c1 alone and let {PRONOUN/m_c/poss} mate be happy with {PRONOUN/m_c/object}.",
+            "m_c hates how jealous {PRONOUN/m_c/subject} {VERB/m_c/get/gets} when {PRONOUN/m_c/subject} see r_c1 and r_c2 together.",
+            "m_c has a nightmare where r_c1 and r_c2 had an affair."
         ],
         "involved_cats": {
             "m_c": {},
@@ -696,7 +711,13 @@
         "strings": [
             "m_c chews r_c1 out after {PRONOUN/r_c1/subject} wandered off while {PRONOUN/r_c1/subject} {VERB/r_c1/were/was} supposed to be watching r_c2.",
             "m_c isn't happy to find r_c1 letting r_c2 run wild.",
-            "m_c scolds r_c1 for doing a poor job of kitsitting r_c2."
+            "m_c scolds r_c1 for doing a poor job of kitsitting r_c2.",
+            "m_c regrets letting r_c1 watch r_c2 after catching {PRONOUN/r_c2/object} doing something dangerous while r_c1 was nowhere in sight.",
+            "m_c is frustrated with r_c1 for not keeping a better eye on r_c2.",
+            "m_c feels like r_c2 would have been in better hands unattended then with r_c1 watching {PRONOUN/r_c2/object}.",
+            "m_c promises to never let r_c1 watch r_c2 again after r_c1 gets hurt under {PRONOUN/r_c1/poss} watch.",
+            "m_c can't believe r_c1 thinks {PRONOUN/r_c1/subject} did a good job kitsitting r_c2 after {PRONOUN/r_c2/subject} let r_c1 get in trouble.",
+            "m_c can't believe r_c1 would punish r_c2 for something that was {PRONOUN/r_c1/poss} fault."
         ],
         "involved_cats": {
             "m_c": {},
@@ -742,7 +763,9 @@
         "strings": [
             "m_c feels uncomfortable hearing how sharply r_c1 scolds r_c2.",
             "r_c1 shouts at r_c2 so loudly that m_c hears it from across the camp.",
-            "m_c thinks r_c1 is too harsh on r_c2."
+            "m_c thinks r_c1 is too harsh on r_c2.",
+            "m_c wonders what r_c2 did to deserve such a scolding from r_c1.",
+            "m_c feels bad for r_c2 after how harshly r_c1 scolded {PRONOUN/r_c2/object}."
         ],
         "involved_cats": {
             "m_c": {

@@ -1369,7 +1369,8 @@
             "r_c2 has learned some very bad words recently, and r_c1 suspects that m_c is the one who taught them to {PRONOUN/r_c2/object}.",
             "r_c2 won't stop calling everyone a fox-heart, and r_c1 blames m_c for teaching {PRONOUN/r_c2/object} that word.",
             "r_c2 won't stop calling everything a load of fox-dung, and r_c1 blames m_c for teaching {PRONOUN/r_c2/object} that word.",
-            "r_c1 scolds m_c for being a bad influence on r_c2. When {PRONOUN/r_c1/subject} {VERB/r_c1/turn/turns} {PRONOUN/r_c1/poss} back, m_c winks at r_c2."
+            "r_c1 scolds m_c for being a bad influence on r_c2. When {PRONOUN/r_c1/subject} {VERB/r_c1/turn/turns} {PRONOUN/r_c1/poss} back, m_c winks at r_c2.",
+            "r_c1 fears the idea of r_c2 growing up to be like m_c."
         ],
         "involved_cats": {
             "m_c": {
@@ -1466,6 +1467,80 @@
                 "mutual": false,
                 "values": ["respect"],
                 "amount": -10
+            }
+        ]
+    },
+    {
+        "event_id": "group_3_negative_siblings_arguingtoparent",
+        "strings": [
+            "m_c and r_c1 are arguing over something small and r_c2 ends up having to put {PRONOUN/r_c2/poss} paw down.",
+            "r_c2 has to drag m_c and r_c1 back into the nursery after they cause a scene.",
+            "r_c2 tells m_c and r_c1 to handle an argument between themselves instead.",
+            "m_c and r_c1 are whining to r_c2 for the umpteenth time today.",
+            "r_c2 couldn't figure out who started the fight between r_c1 and m_c so {PRONOUN/r_c2/subject} punished them both.",
+            "m_c isn't touching r_c1, m_c isn't touching r_c1. r_c1 gets so upset, r_c2 has to separate the two.",
+            "r_c2 just can't figure out what m_c and r_c1 have come crying to {PRONOUN/r_c2/object} about this time.",
+            "r_c2 is embarrassed by the scene m_c and r_c1 caused with their fighting.",
+            "r_c2 has to use {PRONOUN/r_c2/poss} scary {ADJ/r_c2/parent/dad/mom} voice to get m_c and r_c1 to stop arguing.",
+            "r_c2 is can't get m_c and r_c2 to stay out of the way of everyone else trying to work.",
+            "r_c2 refuses to let m_c and r_c1 out of the nursery until they stop arguing.",
+            "m_c doesn't want to play with r_c1 but r_c2 insists they play together.",
+            "m_c tattled to r_c2 for something r_c1 did. r_c1 got in trouble while m_c got scolded for tattling.",
+            "r_c2 is trying to teach m_c something but r_c1 wont stop pestering them.",
+            "r_c2 is trying to teach m_c and r_c1 something but the kits, already bored, start pestering each other.",
+            "r_c2 tries to get m_c to apologize to r_c1 for something but {PRONOUN/m_c/subject} {VERB/m_c/refuse/refuses} to.",
+            "r_c2 stopped m_c and r_c1 from roughhousing before they hurt each other, but now they're both mad at r_c2.",
+            "r_c2 is tired of trying to get m_c and r_c1 to stop arguing all the time.",
+            "m_c lied about something r_c1 did, getting {PRONOUN/r_c1/object} in trouble. After learning the truth, however, both r_c1 and r_c2 are upset with m_c.",
+            "r_c2 promised to do something nice for m_c and r_c1 if they promised to be good but they couldn't be good long enough to keep their end of the bargain.",
+            "r_c2 urges m_c and r_c1 to get along since they're littermates, but that only makes them argue more.",
+            "m_c and r_c1 were getting along fine until r_c2 commented on it, which made them start arguing again.",
+            "r_c2 put m_c and r_c1 in time out for being mean to each other."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["kitten"]
+            },
+            "r_c1": {
+                "status": ["kitten"]
+            },
+            "r_c2": {}
+        },
+         "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": true,
+                "constraints": ["littermates"]
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": true,
+                "constraints": ["child/parent"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
+                "mutual": true,
+                "values": ["like"],
+                "amount": -5
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c2"],
+                "mutual": true,
+                "values": ["like"],
+                "amount": -5
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": true,
+                "values": ["like"],
+                "amount": -5
             }
         ]
     }

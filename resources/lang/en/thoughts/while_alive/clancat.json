@@ -3493,8 +3493,8 @@
             "Wants to work hard to impress r_c",
             "Had a pointless, petty argument with r_c",
             "Startles r_c to get back at {PRONOUN/r_c/object} for something or other",
-            "Casually insults r_c in passing",
-            "Leaves r_c's favorite prey on the pile for {PRONOUN/m_c/poss} sibling"
+            "Affectionately insults r_c in passing",
+            "Leaves r_c's favorite prey on the pile for {PRONOUN/m_c/poss} {ADJ/r_c/sibling/brother/sister}"
         ],
         "involved_cats": {
             "r_c": {
@@ -3529,7 +3529,7 @@
             "Reminds r_c of that time {PRONOUN/r_c/subject} wet the bedding in the nursery",
             "Roasts r_c's hunting",
             "Uses a kit-move to beat r_c in a spar, just like old times",
-            "Reminds r_c of something embarrassing"
+            "Reminds r_c of something embarrassing from {PRONOUN/r_c/poss} kithood"
         ],
         "involved_cats": {
             "m_c": {
@@ -3595,8 +3595,8 @@
     {
         "event_id": "cat_leadership_parent",
         "strings": [
-            "Is proud of {PRONOUN/m_c/poss} parent, r_c",
-            "Wonders if the Clan treats {PRONOUN/m_c/object} any differently because of {PRONOUN/m_c/poss} parent, r_c",
+            "Is proud of {PRONOUN/m_c/poss} {ADJ/r_c/parent/dad/mom}, r_c",
+            "Wonders if the Clan treats {PRONOUN/m_c/object} any differently because of {PRONOUN/m_c/poss} {ADJ/r_c/parent/dad/mom}, r_c",
             "Wonders if {PRONOUN/m_c/subject} should aim for r_c's position"
         ],
         "involved_cats": {
@@ -3628,10 +3628,10 @@
     {
         "event_id": "cat_med_parent",
         "strings": [
-            "Is visiting the medicine cat den to see {PRONOUN/m_c/poss} parent, r_c",
+            "Is visiting the medicine cat den to see {PRONOUN/m_c/poss} {ADJ/r_c/parent/dad/mom}, r_c",
             "Is watching r_c work",
             "Is able to identify herbs better then {PRONOUN/m_c/poss} Clanmates due to {PRONOUN/m_c/poss} upbringing",
-            "Is bringing fresh-kill to {PRONOUN/m_c/poss} parent, r_c",
+            "Is bringing fresh-kill to {PRONOUN/m_c/poss} {ADJ/r_c/parent/dad/mom}, r_c",
             "Is helping r_c out in the medicine cat den"
         ],
         "involved_cats": {
@@ -6570,7 +6570,7 @@
     {
         "event_id": "dead_littermate",
         "strings": [
-            "Never had to imagine life without {PRONOUN/m_c/poss} sibling...",
+            "Never had to imagine life without {PRONOUN/m_c/poss} {ADJ/r_c/sibling/brother/sister}...",
             "Is remembering growing up with r_c",
             "Thinks of being snuggled safe with r_c as kits",
             "Feels something missing without r_c at {PRONOUN/m_c/poss} side",
@@ -8494,7 +8494,7 @@
             "Is staring lovingly at {PRONOUN/m_c/poss} flank",
             "Felt {PRONOUN/m_c/poss} kits move!",
             "Is spending extra time tending to {PRONOUN/m_c/poss} nest",
-            "Is stressing over whether {PRONOUN/m_c/subject}'ll be a good parent...",
+            "Is stressing over whether {PRONOUN/m_c/subject}'ll be a good {ADJ/m_c/parent/dad/mom}...",
             "Is purring hard, hoping {PRONOUN/m_c/poss} kits will feel how much {PRONOUN/m_c/object} {VERB/m_c/love/loves} them",
             "Is stressed over finding the right bedding",
             "Would kill for a toad covered in herbs right about now",
