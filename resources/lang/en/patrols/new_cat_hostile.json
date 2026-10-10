@@ -1615,8 +1615,8 @@
                         "age": [
                             "adult"
                         ],
-                        "backstory": [
-                            "loner3"
+                        "status": [
+                            "loner"
                         ]
                     }
                 },
@@ -1666,8 +1666,8 @@
                                 "p_l"
                             ]
                         },
-                        "backstory": [
-                            "loner3"
+                        "status": [
+                            "loner"
                         ]
                     }
                 },
@@ -1733,8 +1733,8 @@
                                 "p_l"
                             ]
                         },
-                        "backstory": [
-                            "loner3"
+                        "status": [
+                            "loner"
                         ]
                     }
                 },
@@ -1885,8 +1885,8 @@
                                 "p_l"
                             ]
                         },
-                        "backstory": [
-                            "loner3"
+                        "status": [
+                            "loner"
                         ]
                     }
                 },
@@ -1954,8 +1954,8 @@
                                 "p_l"
                             ]
                         },
-                        "backstory": [
-                            "loner3"
+                        "status": [
+                            "loner"
                         ]
                     }
                 },
@@ -2033,8 +2033,8 @@
                                 "p_l"
                             ]
                         },
-                        "backstory": [
-                            "loner3"
+                        "status": [
+                            "loner"
                         ]
                     }
                 },
@@ -2108,8 +2108,8 @@
                                 "p_l"
                             ]
                         },
-                        "backstory": [
-                            "loner3"
+                        "status": [
+                            "loner"
                         ]
                     }
                 },

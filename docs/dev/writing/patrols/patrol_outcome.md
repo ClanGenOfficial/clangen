@@ -156,6 +156,16 @@ Used to dictate some odds-and-ends about event constraints: [General Tags](../re
 
 ***
 
+#### poi: Dict
+> Used to specify which POI (Point Of Interest) a Clan must have access to in order for this event to trigger. [POI Constraint Tagging](../points-of-interest.md/#using-points-of-interest)
+
+!!! tip
+    If the top level of the patrol already has a POI constraint, then that POI will be used for all the outcomes as well. You cannot specify a second, different POI to use for an outcome.  
+
+    If you're looking to utilize the top level POI in the outcome, then no extra constraints are necessary on the outcome level. You can simply refer to the POI in the text and it will use the same POI as the top level.
+
+***
+
 #### frequency: int
 >Controls how common a patrol is. This works on a 1-4 scale. 
 
@@ -175,16 +185,16 @@ Used to dictate some odds-and-ends about event constraints: [General Tags](../re
 
 ***
 
-### art: str
-Optional. Name of outcome-specific art, without file extension (no .png). If no art is specified, the intro art will be used. 
+### outcome_art: str
+Optional. Name of outcome-specific art, without file extension (no .png). If no art is specified, the intro art will be used. If you would like this to be art of the POI, you can just enter `"POI"` as the art file.
 
- Example: "art": "bord_general_intro",
+ Example: "outcome_art": "bord_general_intro",
 
 
-### art_clean: str
+### outcome_art_clean: str
 Optional. Name of non-gore outcome-specific art, without file extension (no .png). Adding a clean version of the art marks the normal version as containing gore. The game will then use the clean version if the "Allow mild gore and blood in patrol artwork" setting is off, and the explicit version if this setting is on.
 
- Example: "art_clean": "bord_general_intro",
+ Example: "outcome_art_clean": "bord_general_intro",
 
 ### strings: list[str]
 This is a list of events applicable to the constraints on this events block. You may include as many or as few events here as you wish, but remember that the constraints will apply to *all* of them. 

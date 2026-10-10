@@ -517,7 +517,7 @@ Constrains the event to only occur is the specified relationships exist. Multipl
 
 
 #### patrol_art: str
->The name of displayed patrol art file, without any file extension (no .png).
+>The name of displayed patrol art file, without any file extension (no .png). If you would like this to be art of the POI, you can just enter `"POI"` as the art file.
 >
 > Example: "patrol_art": "bord_general_intro",
 

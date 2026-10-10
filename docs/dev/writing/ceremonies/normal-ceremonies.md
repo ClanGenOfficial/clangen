@@ -178,6 +178,12 @@ You can tag with a mix of "newleaf", "greenleaf", "leaf-fall", "leaf-bare", or r
 
 ***
 
+#### poi: Dict
+> Used to specify which POI (Point Of Interest) a Clan must have access to in order for this event to trigger. [POI Constraint Tagging](../points-of-interest.md/#using-points-of-interest)
+
+
+***
+
 ### tags: list[str]
 Used to dictate some odds-and-ends about event constraints: [General Tags](../reference/tag-lists.md#general-tags).
 

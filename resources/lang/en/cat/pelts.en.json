@@ -13,6 +13,10 @@
             "one": "silver",
             "many": "silver"
         },
+        "SOOT": {
+            "one": "gray",
+            "many": "gray"
+        },
         "GREY": {
             "one": "gray",
             "many": "gray"
@@ -32,6 +36,10 @@
         "BLOSSOM": {
             "one": "cream",
             "many": "cream"
+        },
+        "DAWN": {
+            "one": "cream",
+            "many": "bimetallic"
         },
         "CREAM": {
             "one": "cream",
@@ -80,6 +88,10 @@
         "DARKBROWN": {
             "one": "brown",
             "many": "dark brown"
+        },
+        "MALLOW": {
+            "one": "brown",
+            "many": "light brown"
         },
         "CHOCOLATE": {
             "one": "brown",

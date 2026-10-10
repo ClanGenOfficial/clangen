@@ -8,6 +8,7 @@ from pydantic_core import MISSING
 from scripts.models.common.future_event import FutureEvent
 from scripts.models.common.gather_cat import GatherCat
 from scripts.models.common.location import Location
+from scripts.models.common.points_of_interest import PointsOfInterestGroup
 from scripts.models.common.season import Season
 from scripts.models.common.tag import Tag
 from scripts.models.common.temperament import Temperament
@@ -40,6 +41,10 @@ class BaseTextPoolEvent(BaseModel):
     )
     tags: List[Tag] | MISSING = Field(
         MISSING, description="Used for some filtering purposes"
+    )
+    poi: PointsOfInterestGroup | MISSING = Field(
+        MISSING,
+        description="The relevant points of interest. Points of Interest never affect outcome.",
     )
     strings: List[str] = Field(
         ..., description="List of the text that will be displayed in-game as events."
