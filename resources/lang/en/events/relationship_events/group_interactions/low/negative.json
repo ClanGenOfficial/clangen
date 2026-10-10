@@ -3,7 +3,10 @@
     {
         "event_id": "group_3_negative_gossip",
         "strings": [
-            "m_c is gossiping with r_c1 about r_c2."
+            "m_c is gossiping with r_c1 about r_c2.",
+            "m_c and r_c1 talk about the things they hate most about r_c2.",
+            "m_c and r_c1 are spreading a rumor about r_c2.",
+            "m_c and r_c1 talk about how r_c2's the worst."
         ],
         "involved_cats": {
             "m_c": {},
@@ -133,7 +136,8 @@
         "event_id": "patrolcomplainer_multicat",
         "strings": [
             "m_c complained about {PRONOUN/m_c/poss} patrol assignment all day, much to the annoyance of multi_cat.",
-            "m_c complained so relentlessly about {PRONOUN/m_c/poss} patrol assignment that multi_cat could only sigh and bear it."
+            "m_c complained so relentlessly about {PRONOUN/m_c/poss} patrol assignment that multi_cat could only sigh and bear it.",
+            "multi_cat regrets going on a patrol with m_c if they knew {PRONOUN/m_c/subject}'d complain <i>this</i> much."
         ],
         "involved_cats": {
             "m_c": {

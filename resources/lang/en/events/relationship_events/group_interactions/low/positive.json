@@ -33,7 +33,9 @@
         "strings": [
             "m_c talks to r_c2 and begins to understand why others like r_c1.",
             "m_c notices that r_c2 speaks very highly of r_c1.",
-            "r_c2 convinces m_c to give r_c1 another chance."
+            "r_c2 convinces m_c to give r_c1 another chance.",
+            "r_c2 clears up a misconception m_c had about r_c1.",
+            "r_c2 convinces m_c to hang out with r_c1 and {PRONOUN/m_c/subject} actually has a good time."
         ],
         "involved_cats": {
             "m_c": {},
@@ -171,7 +173,8 @@
         "event_id": "group_3_neutral_talk",
         "strings": [
 			"m_c confesses to r_c1 that {PRONOUN/m_c/subject} {VERB/m_c/have/has} feelings for r_c2.",
-			"While m_c and r_c1 are talking, m_c gets the feeling that {PRONOUN/m_c/subject} can trust r_c1, and confesses that {PRONOUN/m_c/subject} {VERB/m_c/like/likes} r_c2."
+			"While m_c and r_c1 are talking, m_c gets the feeling that {PRONOUN/m_c/subject} can trust r_c1, and confesses that {PRONOUN/m_c/subject} {VERB/m_c/like/likes} r_c2.",
+            "r_c1 joked about m_c having a crush on r_c2 but did not expect m_c to get all flustered, confirming everything."
 		],
         "involved_cats": {
             "m_c": {},
@@ -351,7 +354,10 @@
         "event_id": "group_multicat_newnests",
         "strings": [
             "multi_cat notice that m_c refreshed the nests in the warriors' den.",
-            "multi_cat appreciate the soft, fresh moss that m_c added to their nests earlier that day."
+            "multi_cat appreciate the soft, fresh moss that m_c added to their nests earlier that day.",
+            "multi_cat appreciate how m_c tidied up the warriors' den.",
+            "multi_cat thanks m_c for refreshing their bedding.",
+            "multi_cat are impressed at how quickly m_c tidies up the warriors den."
         ],
         "involved_cats": {
             "m_c": {
@@ -374,7 +380,10 @@
     {
         "event_id": "group_multicat_pos_gossipingdislike",
         "strings": [
-            "multi_cat agree they dislike m_c."
+            "multi_cat agree they dislike m_c.",
+            "multi_cat are gossiping about m_c.",
+            "multi_cat bond over their shared distain for m_c.",
+            "multi_cat enjoy mocking m_c behind {PRONOUN/m_c/poss} back."
         ],
         "involved_cats": {
             "m_c": {},
@@ -409,7 +418,10 @@
     {
         "event_id": "group_multicat_neg_gossipingavoids",
         "strings": [
-            "multi_cat discuss how they feel uncomfortable around m_c."
+            "multi_cat discuss how they feel uncomfortable around m_c.",
+            "multi_cat discuss ways to avoid m_c the best they can.",
+            "multi_cat feel a bit braver around m_c together.",
+            "multi_cat take turns keeping an eye out for m_c while they relax together."
         ],
         "involved_cats": {
             "m_c": {},

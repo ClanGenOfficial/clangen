@@ -102,7 +102,11 @@
             "multi_cat are amazed when m_c teaches them about the intricacies of herbs.",
             "m_c's vast knowledge of the territory and how plants grow astounds multi_cat.",
             "m_c warns multi_cat about a plant they were discussing and teaches them about its dangers.",
-            "multi_cat listen to m_c explain the process of storing herbs and gain a newfound respect for m_c's craft."
+            "multi_cat listen to m_c explain the process of storing herbs and gain a newfound respect for m_c's craft.",
+            "multi_cat are impressed at how easily m_c identifies herbs.",
+            "multi_cat are impressed at m_c's ability to tell herbs from random leaves.",
+            "multi_cat are impressed by the way m_c draws out the effects of the herbs to heal others faster,",
+            "m_c teaches multi_cat how to tell when an herb is at its most effective."
         ],
         "involved_cats": {
             "m_c": {
@@ -136,7 +140,8 @@
             "m_c sees r_c1 help r_c2 get unstuck from some brambles.",
             "m_c overhears r_c1 dispelling a false rumor about r_c2.",
             "m_c wasn't going to help r_c2 but realized that r_c1 would do it in a heartbeat.",
-            "m_c hears r_c1 laugh at r_c2's joke even though it was lame."
+            "m_c hears r_c1 laugh at r_c2's joke even though it was lame.",
+            "m_c was going to help r_c2 but r_c1, who already looked busy, rushed over to help earning m_c's respect."
         ],
         "involved_cats": {
             "m_c": {},
@@ -243,7 +248,8 @@
         "event_id": "group_3_pos_enemyofmyenemy",
         "strings": [
             "r_c1 helps m_c hide from r_c2.",
-            "r_c1 lets m_c know that r_c2 was talking badly about {PRONOUN/m_c/object}."
+            "r_c1 lets m_c know that r_c2 was talking badly about {PRONOUN/m_c/object}.",
+            "r_c1 stands up for m_c against r_c2, despite not liking {PRONOUN/m_c/object}."
         ],
         "involved_cats": {
             "m_c": {},
@@ -285,7 +291,12 @@
         "event_id": "group_3_pos_friendofmyfriend",
         "strings": [
             "Both m_c and r_c1 enthusiastically congratulate r_c2 on something.",
-            "m_c and r_c1 grow closer through their mutual connection to r_c2."
+            "m_c and r_c1 grow closer through their mutual connection to r_c2.",
+            "m_c and r_c1 knew they both liked r_c2 but they had no idea they'd like each other so much!",
+            "m_c and r_c1 both offered a gift to r_c2 only to realize they had the same thing!,",
+            "m_c and r_c1 both ate with r_c2 and bonded over a shared favorite prey.",
+            "m_c and r_c1 talk about how great r_c2 is together.",
+            "m_c and r_c1 both wanted to hang out with r_c2 but {PRONOUN/r_c2/subject} had to rain check, leaving m_c and r_c1 to hang out together."
         ],
         "involved_cats": {
             "m_c": {},
@@ -712,7 +723,10 @@
         "event_id": "group_multicat_newnestsCAMP",
         "strings": [
             "multi_cat notice that m_c refreshed the nests in the warriors' den without being asked.",
-            "multi_cat always know when m_c is assigned to refresh the warriors' nests, because {PRONOUN/m_c/subject} {VERB/m_c/do/does} such a good job."
+            "multi_cat always know when m_c is assigned to refresh the warriors' nests, because {PRONOUN/m_c/subject} {VERB/m_c/do/does} such a good job.",
+            "multi_cat appreciates how m_c often volunteers to clean out the dens.",
+            "multi_cat knows that when m_c is assigned to cleaning out the warriors' den, their nests are in good paws.",
+            "multi_cat knows when m_c cleans out the warriors' den cause the bedding always seems softer then usual."
         ],
         "involved_cats": {
             "m_c": {
