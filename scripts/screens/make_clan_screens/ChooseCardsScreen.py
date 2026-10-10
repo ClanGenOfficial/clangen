@@ -17,7 +17,6 @@ from scripts.ui.elements.cruel_card_icon import UICruelCardIcon
 from scripts.ui.elements.cruel_card_large import UICruelCardLarge
 from scripts.ui.elements.modified_image import UIModifiedImage
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
 from scripts.ui.icon import Icon
@@ -254,7 +253,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
             manager=MANAGER,
             container=self.elements["card_info_container"],
         )
-        self.elements["card_description"] = UITextBoxTweaked(
+        self.elements["card_description"] = pygame_gui.elements.UITextBox(
             "",
             ui_scale(pygame.Rect((0, -10), (280, 80))),
             object_id=get_text_box_theme("#text_box_22_horizleft_spacing_95"),
