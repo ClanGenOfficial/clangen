@@ -2606,25 +2606,19 @@ def check_starcrossed_lovers(cat) -> Optional[str]:
         c = Cat.fetch_cat(c)
         if not c.dead:
             cat_mates.append(c)
-            print(
-                "DEBUG:",
-                c.name,
-                "is a mate of",
-                cat.name,
-                "! and shall be KILLED! :3c",
-            )
-
     cat_names = adjust_list_text([str(c.name) for c in cat_mates])
 
     # kill cat mates
     for c in cat_mates:
-        if c.status.is_leader:
-            game.clan.leader_lives -= 1
-        c.die()
-        c.history.add_death(
-            i18n.t("cruel_season.special_text.starcrossed_lovers_history"),
-            other_cat=cat,
-        )
+        if not c.dead:
+            if c.status.is_leader:
+                game.clan.leader_lives -= 1
+            c.die()
+            check_starcrossed_lovers(c)
+            c.history.add_death(
+                i18n.t("cruel_season.special_text.starcrossed_lovers_history"),
+                other_cat=cat,
+            )
     # special txt
     text = i18n.t(
         "cruel_season.special_text.starcrossed_lovers_base",
