@@ -102,8 +102,8 @@ class KillCat(GameWindow):
                     death_message = self.initial
 
                 if extra_text := check_starcrossed_lovers(self.the_cat):
-                                        self.result_text = extra_text
-                
+                    self.result_text = extra_text
+
                 if self.the_cat.status.is_leader:
                     if self.take_all:
                         lives_lost = game.clan.leader_lives

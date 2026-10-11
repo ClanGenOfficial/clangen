@@ -614,7 +614,7 @@ class ShortEvent:
 
             else:
                 cat.die(body)
-            
+
             if extra_text := check_starcrossed_lovers(cat):
                 self.additional_event_text += " " + extra_text
 
