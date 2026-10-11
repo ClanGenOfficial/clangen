@@ -1419,7 +1419,7 @@
         ]
     },
     {
-        "event_id": "fst_hunt_strange1",
+        "event_id": "fst_hunt_strange_group1",
         "types": [
             "hunting"
         ],
@@ -1445,19 +1445,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "They can't think of anything that would work, but their hunt goes well regardless."
-                ],
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
+                    "They can't think of anything that would work, but their hunt goes well regardless.",
                     "A stinky bush will do! The plan works, and their hunt goes well."
                 ],
                 "exp_gained": 20,
@@ -1575,21 +1563,15 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol finds nothing to disguise their scent, and no prey either."
-                ],
-                "exp_gained": 0
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "The patrol finds no prey; it seems like all the prey was scared off because of their stench!"
+                    "The patrol finds nothing to disguise their scent, and no prey either.",
+                    "A stinky bush will do! The patrol finds no prey; it seems like all the prey was scared off because of their stench!"
                 ],
                 "exp_gained": 0
             }
         ]
     },
     {
-        "event_id": "fst_hunt_strange2",
+        "event_id": "fst_hunt_strange_solo1",
         "types": [
             "hunting"
         ],
@@ -1606,7 +1588,7 @@
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
         "intro_strings": [
-            "p_l looks around for something to disguise their scent while hunting."
+            "p_l looks around for something to disguise {PRONOUN/p_l/poss} scent while hunting."
         ],
         "decline_strings": [
             "On second thought, maybe not."
@@ -1615,7 +1597,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "{PRONOUN/p_l/subject/CAP} can't think of anything that would work, but {PRONOUN/p_l/poss} hunt goes well regardless."
+                    "{PRONOUN/p_l/subject/CAP} can't think of anything that would work, but {PRONOUN/p_l/poss} hunt goes well regardless.",
+                    "A stinky bush will do! The plan works, and {PRONOUN/p_l/poss} hunt goes well."
                 ],
                 "exp_gained": 20,
                 "supply": [
@@ -1628,13 +1611,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 finds some deer droppings in the forest — it's not clean, but it's extremely effective, and the hunt goes well."
+                    "p_l finds some deer droppings in the forest — it's not clean, but it's extremely effective, and the hunt goes well."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "CLEVER,2"
@@ -1650,7 +1630,7 @@
                             "high_stable"
                         ],
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "values": [
                             "comfort"
@@ -1666,7 +1646,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "values": [
                             "respect"
@@ -1688,13 +1668,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 rolls in a patch of garlic to disguise {PRONOUN/p_l/poss} scent, which works perfectly. It's a funny taste to wash off {PRONOUN/p_l/poss} pelt though."
+                    "p_l rolls in a patch of garlic to disguise {PRONOUN/p_l/poss} scent, which works perfectly. It's a funny taste to wash off {PRONOUN/p_l/poss} pelt though."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "strange"
@@ -1722,7 +1699,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l finds no prey; it seems like all the prey was scared off because of {PRONOUN/p_l/poss} stench!"
+                    "A stinky bush will do! p_l finds no prey; it seems like all the prey was scared off because of {PRONOUN/p_l/poss} stench!"
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
