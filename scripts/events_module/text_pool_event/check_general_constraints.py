@@ -27,6 +27,7 @@ def passes_general_constraints(
     primary_cat: "Cat",
     involved_cats: dict,
     other_clan: Optional["OtherClan"] = None,
+    chosen_poi: Optional[str] = None,
     is_debug_event: bool = False,
 ) -> bool:
     # CHECK LOCATION
@@ -54,7 +55,7 @@ def passes_general_constraints(
         return False
 
     # CHECK POI
-    if not event_for_poi(event.poi):
+    if not event_for_poi(event.poi, chosen_poi):
         if is_debug_event:
             print("DEBUG: requested event does not meet constraints (PoI)")
         return False
