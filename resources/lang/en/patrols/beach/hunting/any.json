@@ -54,7 +54,7 @@
         ]
     },
     {
-        "event_id": "bch_gen_hunt_twolegplace1",
+        "event_id": "bch_hunt_twolegplace1",
         "types": [
             "hunting"
         ],
@@ -65,7 +65,7 @@
         "required_cat_types": {
             "patrol_cats": [
                 1,
-                3
+                6
             ]
         },
         "chance_of_success": 40,
@@ -166,6 +166,61 @@
                     {
                         "type": "freshkill",
                         "adjust": "increase_tiny"
+                    }
+                ]
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "A Twoleg kit approaches the patrol, and they send it away squawking with its blood on their claws."
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "like"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from had fun antagonizing Twoleg kits on a hunting patrol with cat_to."
+                        }
+                    }
+                ]
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The Twoleg kits wandering around are unimpressed by the patrol and chase the cats for fun."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "mutual": false,
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from was not pleased that cat_to told {PRONOUN/cat_to/poss} patrol to attack Twoleg kits."
+                        }
                     }
                 ]
             }

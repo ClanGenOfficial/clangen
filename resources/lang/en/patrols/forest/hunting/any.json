@@ -435,7 +435,7 @@
         "required_cat_types": {
             "patrol_cats": [
                 1,
-                3
+                6
             ]
         },
         "chance_of_success": 40,
@@ -449,10 +449,16 @@
         "success_outcomes": [
             {
                 "frequency": 4,
+                "required_cat_types": {
+                    "patrol_cats": [
+                        1,
+                        3
+                    ]
+                },
                 "strings": [
-                    "The patrol has a successful hunt, avoiding any Twolegs."
+                    "The patrol has a successful hunt around the nest, avoiding any Twolegs."
                 ],
-                "exp_gained": 10,
+                "exp_gained": 20,
                 "supply": [
                     {
                         "type": "freshkill",
@@ -461,9 +467,53 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 4,
+                "required_cat_types": {
+                    "patrol_cats": [
+                        4,
+                        6
+                    ]
+                },
+                "strings": [
+                    "The patrol cats split up, using sentries to ensure that the Twolegs don't disturb their hunts."
+                ],
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "required_cat_types": {
+                    "patrol_cats": [
+                        1,
+                        3
+                    ]
+                },
                 "strings": [
                     "The patrol finds some astonishingly fat chickens running around the Twoleg nest and help themselves to one."
+                ],
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "required_cat_types": {
+                    "patrol_cats": [
+                        4,
+                        6
+                    ]
+                },
+                "strings": [
+                    "The patrol finds some astonishingly fat chickens running around the Twoleg nest and help themselves to as many as they can carry."
                 ],
                 "exp_gained": 10,
                 "supply": [
@@ -478,7 +528,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Twoleg kits scare the patrol away."
+                    "Twoleg kits scare the patrol away and they spend what meager time they have left in the day hunting prey in their more typical haunts.",
+                    "Twoleg kits stomp through the trees, scaring away prey and ruining the hunt. The patrol has to spend what meager time they have left in the day hunting prey in their more typical haunts."
                 ],
                 "exp_gained": 0,
                 "supply": [
@@ -546,54 +597,36 @@
         ]
     },
     {
-        "event_id": "fst_hunt_twolegplace2",
+        "event_id": "fst_hunt_squirrelchase_solo1",
         "types": [
             "hunting"
         ],
-        "frequency": 2,
+        "frequency": 3,
         "location": [
             "forest"
         ],
         "required_cat_types": {
             "patrol_cats": [
-                4,
-                6
+                1,
+                1
             ]
         },
-        "chance_of_success": 10,
-        "patrol_art": "backgrounds/fst_twolegplace",
+        "chance_of_success": 50,
+        "patrol_art": "animals/fst_squirrelchase",
         "intro_strings": [
-            "The patrol approaches a Twoleg nest in the woods while hunting."
+            "p_l notices a commotion and finds two squirrels chasing each other across the forest floor."
         ],
         "decline_strings": [
-            "The patrol decides to hunt elsewhere."
+            "p_l decides there's probably easier prey to find elsewhere."
         ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol cats split up, using sentries to ensure that the Twolegs don't disturb their hunts."
+                    "The squirrels are so distracted that p_l is able to quickly catch them both.",
+                    "p_l springs onto the squirrels without a second thought, easily dispatching them."
                 ],
                 "exp_gained": 10,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "mutual": false,
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_to led cat_from on a successful hunting patrol near a Twoleg nest."
-                        }
-                    }
-                ],
                 "supply": [
                     {
                         "type": "freshkill",
@@ -602,11 +635,20 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 4,
                 "strings": [
-                    "The patrol finds some astonishingly fat chickens running around the Twoleg nest and help themselves to as many as they can carry."
+                    "p_l is quick on the jump! Though the squirrels notice the cats and begin scampering away, p_l easily cuts them off and kills both squirrels."
                 ],
                 "exp_gained": 10,
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "HUNTER,1"
+                            ]
+                        }
+                    }
+                },
                 "supply": [
                     {
                         "type": "freshkill",
@@ -619,7 +661,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Twoleg kits stomp through the woods, scaring away prey and ruining the hunt."
+                    "The squirrels are far too excited and quick — they slip right out from between p_l's claws."
                 ],
                 "exp_gained": 0,
                 "supply": [
@@ -628,66 +670,58 @@
                         "adjust": "increase_tiny"
                     }
                 ]
-            }
-        ],
-        "antag_success_outcomes": [
+            },
             {
                 "frequency": 4,
                 "strings": [
-                    "Finding a Twoleg kit wandering alone, the cats harass it until it flees squawking, its blood on their claws."
+                    "p_l runs at the squirrels, laughing at the prey's antics and playfully jumping into the middle of their game.  The squirrels scatter away at the disturbance and disappear into the canopy. p_l doesn't find much prey after that."
                 ],
-                "exp_gained": 10,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "values": [
-                            "like"
-                        ],
-                        "mutual": false,
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from had fun antagonizing Twoleg kits on a hunting patrol with cat_to."
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": [
+                                "troublesome",
+                                "childish",
+                                "playful"
+                            ]
                         }
                     }
+                },
+                "exp_gained": 0,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
                 ]
-            }
-        ],
-        "antag_fail_outcomes": [
+            },
             {
-                "frequency": 4,
+                "frequency": 3,
                 "strings": [
-                    "The Twoleg kits wandering around are unimpressed by the patrol and chase the cats for fun."
+                    "The squirrels dart up a tree, and p_l tries to climb up after them but slips and falls, twisting {PRONOUN/p_l/poss} paw."
                 ],
                 "exp_gained": 0,
-                "relationship_changes": [
+                "supply": [
                     {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
                             "p_l"
                         ],
-                        "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "mutual": false,
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from was not pleased that cat_to told {PRONOUN/cat_to/poss} patrol to attack Twoleg kits."
-                        }
+                        "condition": [
+                            "sprain"
+                        ]
                     }
                 ]
             }
         ]
     },
     {
-        "event_id": "fst_hunt_squirrelchase1",
+        "event_id": "fst_hunt_squirrelchase_group1",
         "types": [
             "hunting"
         ],
@@ -697,7 +731,7 @@
         ],
         "required_cat_types": {
             "patrol_cats": [
-                1,
+                2,
                 6
             ]
         },
@@ -713,38 +747,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The squirrels are so distracted that the patrol is able to quickly catch them both."
-                ],
-                "exp_gained": 10,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "mutual": false,
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to had a pleasant time hunting squirrels together."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
+                    "The squirrels are so distracted that the patrol is able to quickly catch them both.",
                     "The patrol springs onto the squirrels without a second thought, easily dispatching them."
                 ],
                 "exp_gained": 10,
@@ -779,6 +782,7 @@
                 "strings": [
                     "s_c0 is quick on the jump! Though the squirrels notice the cats and begin scampering away, s_c0 easily cuts them off and kills both squirrels."
                 ],
+                "exp_gained": 10,
                 "involved_cats": {
                     "s_c0": {
                         "prior_abbreviation": [
@@ -791,7 +795,6 @@
                         }
                     }
                 },
-                "exp_gained": 10,
                 "relationship_changes": [
                     {
                         "cats_from": [
@@ -836,7 +839,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 runs at the squirrels before anyone else can pounce, laughing at the prey's antics and playfully jumping into the middle of their game.  The squirrels scatter away at the disturbance and disappear into the canopy."
+                    "s_c0 runs at the squirrels before anyone else can pounce, laughing at the prey's antics and playfully jumping into the middle of their game.  The squirrels scatter away at the disturbance and disappear into the canopy. They can't find much prey afterwards."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -882,9 +885,16 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The squirrels dart up a tree, and r_c0 tries to climb up after them but slips and falls, twisting {PRONOUN/p_l/poss} paw."
+                    "The squirrels dart up a tree, and s_c0 tries to climb up after them but slips and falls, twisting {PRONOUN/s_c0/poss} paw."
                 ],
                 "exp_gained": 0,
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ]
+                    }
+                },
                 "supply": [
                     {
                         "type": "freshkill",
@@ -894,7 +904,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "condition": [
                             "sprain"
