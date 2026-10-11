@@ -494,11 +494,11 @@ class ClanScreen(Screens):
                 self.camp_labels[ele].hide()
 
     def handle_thought_tooltip(self, button):
-        c = Cat.fetch_cat(button.cat_id)
+        cat = Cat.fetch_cat(button.cat_id)
 
-        if not c.thought:
-            get_new_thought(c, c.next_thought_type)
+        if not cat.thought:
+            get_new_thought(cat, cat.next_thought_type)
 
-        tooltip_text = f"<b>{c.name}</b>\n{c.thought}"
+        tooltip_text = f"<b>{cat.name}</b>\n{cat.thought}"
 
         button.set_tooltip(tooltip_text)
