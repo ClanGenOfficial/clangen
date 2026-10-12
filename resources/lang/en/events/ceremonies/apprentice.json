@@ -1261,7 +1261,7 @@
      {
         "event_id": "app_no_mentor_mentor_hoping1",
         "tags": [
-            "clan:leader"
+            "clan:leader", "-card:pride_and_joy"
         ],
         "involved_cats": {
             "m_c": {},
