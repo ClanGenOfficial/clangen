@@ -171,8 +171,8 @@ class DebugMenu(UIWindow):
                         self.previous_commands[self.prev_command_index]
                     )
 
-            # Prevent keybinds from being processed if the command line is currently accepting input
-            consume_event = self.command_line.is_focused
+        # Prevent keybinds from being processed if the command line is currently accepting input
+        consume_event = self.command_line.is_focused
 
         if event.type == pygame_gui.UI_CONSOLE_COMMAND_ENTERED:
             self.process_command(event.command)
