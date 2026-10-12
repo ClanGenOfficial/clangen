@@ -51,6 +51,16 @@ formatter = logging.Formatter(
     "%(name)s - %(levelname)s - %(filename)s / %(funcName)s / %(lineno)d - %(message)s"
 )
 
+
+class LevelFilter(logging.Filter):
+    def __init__(self, level):
+        super().__init__()
+        self.level = level
+
+    def filter(self, record):
+        return record.levelno < self.level
+
+
 # Logging for file
 timestr = time.strftime("%Y%m%d_%H%M%S")
 log_file_name = get_log_dir() + f"/clangen_{timestr}.log"
@@ -59,10 +69,23 @@ file_handler.setFormatter(formatter)
 # Only log errors to file
 file_handler.setLevel(logging.ERROR)
 # Logging for console
-stream_handler = logging.StreamHandler()
+stream_handler = logging.StreamHandler(stream=sys.stderr)
+stream_handler.set_name("stderr")
 stream_handler.setFormatter(formatter)
+stream_handler.setLevel(logging.WARNING)
+
+debug_handler = logging.StreamHandler(stream=sys.stdout)
+debug_handler.set_name("stdout")
+debug_handler.setFormatter(formatter)
+debug_handler.setLevel(logging.DEBUG)
+debug_handler.addFilter(LevelFilter(logging.WARNING))
+
 logging.root.addHandler(file_handler)
 logging.root.addHandler(stream_handler)
+
+# ENABLE THESE LINES TO ENABLE DEBUG
+# logging.root.setLevel(logging.DEBUG)
+# logging.root.addHandler(debug_handler)
 
 prune_logs(logs_to_keep=10, retain_empty_logs=False)
 

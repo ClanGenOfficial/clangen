@@ -67,9 +67,7 @@ def set_display_mode(
 
     display_change_in_progress = True
 
-    old_offset = offset
     old_scale = screen_scale
-    mouse_pos = pygame.mouse.get_pos()
 
     if fullscreen is None:
         fullscreen = game_setting_get("fullscreen")
@@ -138,21 +136,9 @@ def set_display_mode(
             game_settings_save(currentscreen=source_screen)
             source_screen.exit_screen()
 
-            if fullscreen:
-                mouse_pos = (
-                    (mouse_pos[0] * screen_scale) + offset[0],
-                    mouse_pos[1] * screen_scale + offset[1],
-                )
-            else:
-                mouse_pos = (
-                    (mouse_pos[0] - old_offset[0]) / old_scale,
-                    (mouse_pos[1] - old_offset[1]) / old_scale,
-                )
-
             MANAGER.clear_and_reset()
             MANAGER.set_window_resolution(game_screen_size)
             MANAGER.set_offset(offset)
-            pygame.mouse.set_pos(mouse_pos)
 
             all_screens.rebuild_all_screens()
 
@@ -174,49 +160,92 @@ def set_display_mode(
         )
         new_screen.display_change_load(curr_variable_dict)
 
-    # preloading the associated fonts
-    if not MANAGER.ui_theme.get_font_dictionary().check_font_preloaded(
-        f"notosans_bold_aa_{floor(11 * screen_scale)}"
-    ):
-        MANAGER.preload_fonts(
-            [
-                {
-                    "name": "notosans",
-                    "point_size": floor(11 * screen_scale),
-                    "style": "bold",
-                },
-                {
-                    "name": "notosans",
-                    "point_size": floor(13 * screen_scale),
-                    "style": "bold",
-                },
-                {
-                    "name": "notosans",
-                    "point_size": floor(15 * screen_scale),
-                    "style": "bold",
-                },
-                {
-                    "name": "notosans",
-                    "point_size": floor(13 * screen_scale),
-                    "style": "italic",
-                },
-                {
-                    "name": "notosans",
-                    "point_size": floor(15 * screen_scale),
-                    "style": "italic",
-                },
-                {
-                    "name": "notosans",
-                    "point_size": floor(17 * screen_scale),
-                    "style": "bold",
-                },  # this is only used on the allegiances screen?
-                {
-                    "name": "clangen",
-                    "point_size": floor(18 * screen_scale),
-                    "style": "regular",
-                },
-            ]
-        )
+    # preloading the associated fonts if we have an active UI
+    if MANAGER:
+        if not MANAGER.ui_theme.get_font_dictionary().check_font_preloaded(
+            f"notosans_bold_aa_{floor(11 * screen_scale)}"
+        ):
+            logger.debug(
+                f"Preloading font: notosans_bold_aa_{floor(11 * screen_scale)} (11)"
+            )
+            MANAGER.preload_fonts(
+                [
+                    {
+                        "name": "notosans",
+                        "point_size": floor(11 * screen_scale),
+                        "style": "regular",
+                    },
+                    {
+                        "name": "notosans",
+                        "point_size": floor(11 * screen_scale),
+                        "style": "bold",
+                    },
+                ]
+            )
+        if not MANAGER.ui_theme.get_font_dictionary().check_font_preloaded(
+            f"notosans_bold_aa_{floor(13 * screen_scale)}"
+        ):
+            logger.debug(
+                f"Preloading font: notosans_bold_aa_{floor(13 * screen_scale)} (13)"
+            )
+            MANAGER.preload_fonts(
+                [
+                    {
+                        "name": "notosans",
+                        "point_size": floor(13 * screen_scale),
+                        "style": "italic",
+                    },
+                    {
+                        "name": "notosans",
+                        "point_size": floor(13 * screen_scale),
+                        "style": "bold",
+                    },
+                ]
+            )
+        if not MANAGER.ui_theme.get_font_dictionary().check_font_preloaded(
+            f"notosans_bold_aa_{floor(15 * screen_scale)}"
+        ):
+            logger.debug("Preloading font: notosans_bold_aa_15")
+            MANAGER.preload_fonts(
+                [
+                    {
+                        "name": "notosans",
+                        "point_size": floor(15 * screen_scale),
+                        "style": "bold",
+                    },
+                    {
+                        "name": "notosans",
+                        "point_size": floor(15 * screen_scale),
+                        "style": "italic",
+                    },
+                ]
+            )
+        if not MANAGER.ui_theme.get_font_dictionary().check_font_preloaded(
+            f"notosans_bold_aa_{floor(17 * screen_scale)}"
+        ):
+            logger.debug("Preloading font: notosans_bold_aa_17")
+            MANAGER.preload_fonts(
+                [
+                    {
+                        "name": "notosans",
+                        "point_size": floor(17 * screen_scale),
+                        "style": "bold",
+                    },  # this is only used on the allegiances screen?
+                ]
+            )
+        if not MANAGER.ui_theme.get_font_dictionary().check_font_preloaded(
+            f"clangen_regular_aa_{floor(18 * screen_scale)}"
+        ):
+            logger.debug("Preloading font: clangen_regular_aa_18")
+            MANAGER.preload_fonts(
+                [
+                    {
+                        "name": "clangen",
+                        "point_size": floor(18 * screen_scale),
+                        "style": "regular",
+                    },
+                ]
+            )
 
     display_change_in_progress = False
     if source_screen is not None and show_confirm_dialog:
@@ -233,13 +262,14 @@ def determine_screen_scale(x, y):
     global screen_scale, screen_x, screen_y, offset, game_screen_size
 
     if game_setting_get("fullscreen scaling"):
-        scalex = (x - 20) // 80
-        scaley = (y - 20) // 70
+        max_x = round(x / 800, 1)
+        max_y = round(y / 700, 1)
+        screen_scale = min(max_x, max_y)
 
-        screen_scale = min(scalex, scaley) / 10
+        # screen_scale = min(scalex, scaley) / 100
 
-        screen_x = 800 * screen_scale
-        screen_y = 700 * screen_scale
+        screen_x = floor(800 * screen_scale)
+        screen_y = floor(700 * screen_scale)
     else:
         # this means screen scales in multiples of 200 x 175 which has a reasonable tradeoff for crunch
         scalex = x // 200
@@ -292,7 +322,6 @@ def toggle_fullscreen(
         window.set_fullscreen(True)
     else:
         window.set_windowed()
-        window.resizable = True
         window.size = (800, 700)
 
 

@@ -35,6 +35,8 @@ from scripts.ui.windows.save_check import SaveCheckWindow
 from scripts.housekeeping.quit_game import quit_game
 from scripts.ui.load_animation_screen import loading_animation, FINISHED_LOADING
 
+logger = logging.getLogger(__name__)
+
 # P Y G A M E
 clock = pygame.time.Clock()
 pygame.display.set_icon(pygame.image.load("resources/images/icon.png"))
@@ -90,7 +92,7 @@ def load_data():
         scripts.screens.screens_core.screens_core.rebuild_core()
 
     pygame.event.post(pygame.event.Event(FINISHED_LOADING))
-    logging.info("Finished loading in %f seconds.", pygame.time.get_ticks() / 1000.0)
+    logger.info("Finished loading in %f seconds.", pygame.time.get_ticks() / 1000.0)
 
 
 def load_game():
