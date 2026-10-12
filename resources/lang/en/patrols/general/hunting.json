@@ -2899,11 +2899,12 @@
         ]
     },
     {
-        "event_id": "gen_hunt_verysmallprey_balancing_appgrouphunt1",
+        "event_id": "gen_hunt_appgrouphunt1",
         "types": [
             "hunting"
         ],
         "frequency": 1,
+        "tags": ["clan:warrior-like"],
         "required_cat_types": {
             "patrol_cats": [
                 2,
@@ -2921,50 +2922,22 @@
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_train_talking_ApAp",
         "intro_strings": [
-            "A hunting patrol of <i>just apprentices!</i> This is going to go great!"
+            "A hunting patrol of <i>just apprentices!</i> This is going to go great!",
+            "Maybe they <i>should</i> bring along a warrior, but they don't <i>want</i> to. There's no reason to always need an adult around, they aren't <i>kits</i>.",
+            "On a dare, the apprentices sneak out in the middle of the night. They're going to prove who's the best hunter!",
+            "Sometimes, it's a lot easier to work on their hunting techniques without a warrior around. Not that there's anything wrong with the warriors! Just... sometimes there's less pressure hunting as an apprentice-only patrol."
         ],
         "decline_strings": [
-            "It's not a great day for hunting, p_l decides, and calls it off before they even start."
+            "It's not a great day for hunting, p_l decides, and calls it off before they even start.",
+            "Another cat spots the group of apprentices definitely-not-sneaking-out and orders them back to camp."
         ],
         "success_outcomes": [
             {
-                "frequency": 3,
+                "frequency": 4,
                 "strings": [
-                    "It doesn't!"
+                    "Well, at least they caught <i>something</i>, though it wasn't very much."
                 ],
                 "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "Okay, so, maybe <i>someone</i> should've brought their mentor. The apprentices argue about who should've."
-                ],
-                "exp_gained": 10,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to went on a patrol without any warriors and ended up arguing over who <i>should've</i> thought to invite one."
-                        }
-                    }
-                ],
                 "supply": [
                     {
                         "type": "freshkill",
@@ -3015,130 +2988,7 @@
                         "adjust": "increase_tiny"
                     }
                 ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "The patrol heads out, finding an excellent hunting ground! A hunting ground on the wrong side of the border! They all quickly decide that no one caught anything — and <i>definitely</i> not anything on any other Clan's territory — and swear each other to secrecy."
-                ],
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "comfort"
-                        ],
-                        "amount": 15,
-                        "log": {
-                            "cats_from": "cat_from and cat_to hunted together in another Clan's territory. Afterwards, they swore each other to secrecy."
-                        }
-                    }
-                ]
             },
-            {
-                "frequency": 4,
-                "strings": [
-                    "r_c1 had no idea {PRONOUN/r_c1/subject} had so much in common with r_c2, the apprentices exchanging complaints about training and gossip. It's a wonderful time — a wonderful time where they completely neglect to do any hunting."
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c1"
-                        ],
-                        "cats_from": [
-                            "r_c2"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from and cat_to had a great time talking together while on a hunting patrol."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "Not only does r_c1 find a particularly vicious prey animal who tears up {PRONOUN/r_c1/poss} ear, but in the process, {PRONOUN/r_c1/subject} {VERB/r_c1/squawk/squawks} with surprise and {VERB/r_c1/let/lets} go. Well. So ends the hunt for the only prey they've managed to find. Fox-dung."
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "condition": [
-                    {
-                        "cats": [
-                            "r_c1"
-                        ],
-                        "condition": [
-                            "torn ear"
-                        ],
-                        "scar_history": "m_c got a bit torn up on a solo hunt as an apprentice.",
-                        "death_history": "m_c died after a small injury progressed to something worse."
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "gen_hunt_smallprey_balancing_appgrouphunt1",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 1,
-        "required_cat_types": {
-            "patrol_cats": [
-                2,
-                6
-            ],
-            "apprentice": [
-                2,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
-        },
-        "chance_of_success": 50,
-        "patrol_art": "cat_sprites/gen_train_talking_ApAp",
-        "intro_strings": [
-            "Maybe they <i>should</i> bring along one of their mentors, but they don't <i>want</i> to. There's no reason to always need an adult around, they aren't <i>kits</i>."
-        ],
-        "decline_strings": [
-            "Another cat spots the group of apprentices definitely-not-sneaking-out and orders them back to camp."
-        ],
-        "success_outcomes": [
             {
                 "frequency": 3,
                 "strings": [
@@ -3174,38 +3024,6 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "Okay, so, maybe <i>someone</i> should've brought their mentor. The apprentices argue about who should've."
-                ],
-                "exp_gained": 10,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to went on a patrol without any warriors and ended up arguing over who <i>should've</i> thought to invite one."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_small"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
                     "Who needs a warrior to tell them what to do when they have s_c0, who will tell them what to do just as extensively and annoyingly. Even more irritatingly, s_c0 gets the most prey by far."
                 ],
                 "involved_cats": {
@@ -3215,7 +3033,9 @@
                         ],
                         "stat": {
                             "skill": [
-                                "HUNTER,0"
+                                "HUNTER,0",
+                                "INSIGHTFUL,0",
+                                "CLEVER,0"
                             ]
                         }
                     }
@@ -3245,166 +3065,11 @@
                         "adjust": "increase_small"
                     }
                 ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "The patrol heads out, finding an excellent hunting ground! A hunting ground on the wrong side of the border! They all quickly decide that no one caught anything — and <i>definitely</i> not anything on any other Clan's territory — and swear each other to secrecy."
-                ],
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "comfort"
-                        ],
-                        "amount": 15,
-                        "log": {
-                            "cats_from": "cat_from and cat_to hunted together in another Clan's territory. Afterwards, they swore each other to secrecy."
-                        }
-                    }
-                ]
             },
             {
-                "frequency": 4,
+                "frequency": 2,
                 "strings": [
-                    "r_c1 had no idea {PRONOUN/r_c1/subject} had so much in common with r_c2, the apprentices exchanging complaints about training and gossip. It's a wonderful time — a wonderful time where they completely neglect to do any hunting."
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c1"
-                        ],
-                        "cats_from": [
-                            "r_c2"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from and cat_to had a great time talking together while on a hunting patrol."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "Not only does r_c1 find a particularly vicious prey animal who tears up {PRONOUN/r_c1/poss} ear, but in the process, {PRONOUN/r_c1/subject} {VERB/r_c1/squawk/squawks} with surprise and {VERB/r_c1/let/lets} go. Well. So ends the hunt for the only prey they've managed to find. Fox-dung."
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "condition": [
-                    {
-                        "cats": [
-                            "r_c1"
-                        ],
-                        "condition": [
-                            "torn ear"
-                        ],
-                        "scar_history": "m_c got a bit torn up on a solo hunt as an apprentice.",
-                        "death_history": "m_c died after a small injury progressed to something worse."
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "gen_hunt_mediumprey_balancing_appgrouphunt1",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 1,
-        "required_cat_types": {
-            "patrol_cats": [
-                2,
-                6
-            ],
-            "apprentice": [
-                2,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
-        },
-        "chance_of_success": 50,
-        "patrol_art": "cat_sprites/gen_train_talking_ApAp",
-        "intro_strings": [
-            "On a dare, the apprentices sneak out in the middle of the night. They're going to prove who's the best hunter!"
-        ],
-        "decline_strings": [
-            "Another cat spots the group of apprentices definitely-not-sneaking-out and orders them back to camp."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 3,
-                "strings": [
-                    "The world takes on an almost shadowy hue, brought to life by the night ambience; the once-familiar now made novel and thrilling under the cloak of darkness. The apprentices tear around c_n territory, fishing prey from unexpected places, shivering with pride at their own daring — and not noticing the camp guard silently shadowing them, keeping them safe."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to had a great adventure while hunting together."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
+                    "The world takes on an almost shadowy hue, brought to life by the night ambience; the once-familiar now made novel and thrilling under the cloak of darkness. The apprentices tear around c_n territory, fishing prey from unexpected places, shivering with pride at their own daring — and not noticing the camp guard silently shadowing them, keeping them safe.",
                     "Their competition is forgotten in the thrill of adventure, c_n's territory at night a strange and foreign land. The next morning, the apprentices smirk as they watch the adults puzzle over the extra prey in the fresh-kill pile, a secret shared in smug smiles and lashing tails."
                 ],
                 "exp_gained": 20,
@@ -3420,7 +3085,7 @@
                         "values": [
                             "like",
                             "respect",
-                            "trust"
+                            "comfort"
                         ],
                         "amount": 5,
                         "log": {
@@ -3436,9 +3101,9 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 2,
                 "strings": [
-                    "s_c0 wins the competition, easily. But {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} magnanimous in victory, managing to not completely look like a mouse-brain. Maybe that's the more impressive achievement."
+                    "s_c0 wins the competition for best hunter, easily. But {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} magnanimous in victory, managing to not completely look like a mouse-brain. Maybe that's the more impressive achievement."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -3479,161 +3144,11 @@
                         "adjust": "increase_medium"
                     }
                 ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "The night is dark and void of prey. Even worse, r_c1 gets scared and starts calling out for {PRONOUN/r_c1/poss} mentor. But they're too far away from camp to be heard and r_c1 shuts up quickly. What should've been a fun, cool adventure has been ruined."
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c1"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_to proved {PRONOUN/cat_to/self} a mouse-heart while on an adventure with cat_from."
-                        }
-                    }
-                ]
             },
             {
-                "frequency": 3,
+                "frequency": 1,
                 "strings": [
-                    "Their competition is forgotten in the thrill of adventure, c_n's territory at night a strange and foreign land. Sure, they don't get any hunting done — but that doesn't seem to matter to the adventurous apprentices."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to had a great adventure while hunting together."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "Not only does r_c1 find a particularly vicious prey animal who tears up {PRONOUN/r_c1/poss} ear, but  squawks with surprise and lets go in the process, causing the critter to scamper away. Well. So ends the hunt for the only prey they've managed to find tonight. Fox-dung."
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "condition": [
-                    {
-                        "cats": [
-                            "r_c1"
-                        ],
-                        "condition": [
-                            "torn ear"
-                        ],
-                        "scar_history": "m_c got a bit torn up on a solo hunt as an apprentice.",
-                        "death_history": "m_c died after a small injury progressed to something worse."
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "gen_hunt_largeprey_balancing_appgrouphunt1",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 1,
-        "required_cat_types": {
-            "patrol_cats": [
-                2,
-                6
-            ],
-            "apprentice": [
-                2,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
-        },
-        "chance_of_success": 50,
-        "patrol_art": "cat_sprites/gen_train_talking_ApAp",
-        "intro_strings": [
-            "Sometimes, it's a lot easier to work on their hunting techniques without a warrior around. Not that there's anything wrong with the warriors! Just... sometimes there's less pressure hunting as an apprentice-only patrol."
-        ],
-        "decline_strings": [
-            "Another cat spots the group of apprentices definitely-not-sneaking-out and orders them back to camp."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 3,
-                "strings": [
-                    "The lack of pressure lets them try things, fail, and try again, not worrying too hard about the results. And that experimentation nets them some <i>really good results</i>."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "comfort"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to had a great learning experience while hunting together."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
+                    "The lack of pressure lets them try things, fail, and try again, not worrying too hard about the results. And that experimentation nets them some <i>really good results</i>.",
                     "They try, and try, and try again, without any success. It's only when they all give up on their independent attempts and combine to drive prey out as a team that the apprentices see results — and learn an important lesson in the process."
                 ],
                 "exp_gained": 20,
@@ -3649,7 +3164,7 @@
                         "values": [
                             "like",
                             "respect",
-                            "trust"
+                            "comfort"
                         ],
                         "amount": 5,
                         "log": {
@@ -3665,9 +3180,9 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 1,
                 "strings": [
-                    "s_c0, who actually really likes hunting, is open about offering {PRONOUN/s_c0/poss} help."
+                    "s_c0, who actually really likes hunting, is open about offering {PRONOUN/s_c0/poss} help. It leads to an incredibly successful hunting session."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -3709,103 +3224,12 @@
                         "adjust": "increase_large"
                     }
                 ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "But then sometimes, they realize it's difficult to learn if the only cats to learn from <i>also</i> don't know what they're doing."
-                ],
-                "exp_gained": 0
             },
             {
-                "frequency": 3,
+                "frequency": 1,
                 "strings": [
-                    "Maybe they don't manage to catch anything, but just getting the chance to try without any pressure is pretty good on its own, and only an apprentice really understands the struggles of another apprentice."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to had a great learning experience while hunting together."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "Not only does r_c1 find a particularly vicious prey animal who tears up {PRONOUN/r_c1/poss} ear, but in the process, {PRONOUN/r_c1/subject} {VERB/r_c1/squawk/squawks} with surprise and {VERB/r_c1/let/lets} go. Well. So ends the hunt for the only prey they've managed to find. Fox-dung."
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "condition": [
-                    {
-                        "cats": [
-                            "r_c1"
-                        ],
-                        "condition": [
-                            "torn ear"
-                        ],
-                        "scar_history": "m_c got a bit torn up on a solo hunt as an apprentice.",
-                        "death_history": "m_c died after a small injury progressed to something worse."
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "gen_hunt_hugeprey_balancing_appgrouphunt1",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 1,
-        "required_cat_types": {
-            "patrol_cats": [
-                2,
-                6
-            ],
-            "apprentice": [
-                2,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
-        },
-        "chance_of_success": 50,
-        "patrol_art": "cat_sprites/gen_train_talking_ApAp",
-        "intro_strings": [
-            "A hunting patrol of just apprentices! This is going to go great!"
-        ],
-        "decline_strings": [
-            "Another cat spots the group of apprentices definitely-not-sneaking-out and orders them back to camp."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 3,
-                "strings": [
-                    "Determined, the apprentices work hard and long, coordinating with each other to drive prey to each other's claws. Maybe it'll take twice as long without a warrior to guide them — but they're still going to do it, all by themselves!"
+                    "Determined, the apprentices work hard and long, coordinating with each other to drive prey to each other's claws. Maybe it'll take twice as long without a warrior to guide them, but they're still going to do it, all by themselves!",
+                    "They try, and try, and try again, without any success. It's only when they all give up on their independent attempts and combine to drive prey out as a team that the apprentices see results; and learn an important lesson in the process."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -3836,42 +3260,9 @@
                 ]
             },
             {
-                "frequency": 3,
+                "frequency": 1,
                 "strings": [
-                    "They try, and try, and try again, without any success. It's only when they all give up on their independent attempts and combine to drive prey out as a team that the apprentices see results — and learn an important lesson in the process."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from and cat_to had a great learning experience while hunting together."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_huge"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0, swearing the patrol to secrecy, leads them to their absolute favorite hunting spot, where the apprentices catch so much prey that they need two separate trips to carry it all home."
+                    "s_c0, swearing the patrol to secrecy, leads them to {PRONOUN/s_c0/poss} absolute favorite hunting spot, where the apprentices catch so much prey that they need two separate trips to carry it all home."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -3924,7 +3315,171 @@
                 "exp_gained": 0
             },
             {
-                "frequency": 3,
+                "frequency": 4,
+                "strings": [
+                    "Okay, so, maybe <i>someone</i> should've brought their mentor. The apprentices argue about who should've."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"],
+                        "has_mentor": {
+                            "current": true
+                        }
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": ["-s_c0"],
+                        "has_mentor": {
+                            "current": true
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to went on a patrol without any warriors and ended up arguing over who <i>should've</i> thought to invite one."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "The night is dark and void of prey. Even worse, r_c1 gets scared and starts calling out for {PRONOUN/r_c1/poss} mentor. But they're too far away from camp to be heard and r_c1 shuts up quickly. What should've been a fun, cool adventure has been ruined."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "has_mentor": {
+                            "current": true
+                        }
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to proved {PRONOUN/cat_to/self} a mouse-heart while on an adventure with cat_from."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol heads out, finding an excellent hunting ground! A hunting ground on the wrong side of the border! They all quickly decide that no one caught anything — and <i>definitely</i> not anything on any other Clan's territory — and swear each other to secrecy."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "cat_from and cat_to hunted together in another Clan's territory. Afterwards, they swore each other to secrecy."
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "other_clan": -1
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c1 had no idea {PRONOUN/r_c1/subject} had so much in common with r_c2, the apprentices exchanging complaints about training and gossip. It's a wonderful time — a wonderful time where they completely neglect to do any hunting."
+                ],
+                "involved_cats": {
+                    "r_c1": {},
+                    "r_c2": {}
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "r_c2"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had a great time talking together while on a hunting patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "Their hunting competition is forgotten in the thrill of adventure, c_n's territory at night a strange and foreign land. Sure, they don't get any hunting done — but that doesn't seem to matter to the adventurous apprentices."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had a great adventure while hunting together."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
                 "strings": [
                     "Maybe they don't manage to catch anything, but just getting the chance to try without any pressure is pretty good on its own, and only an apprentice really understands the struggles of another apprentice."
                 ],
@@ -3950,16 +3505,12 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 1,
                 "strings": [
                     "Not only does r_c1 find a particularly vicious prey animal who tears up {PRONOUN/r_c1/poss} ear, but in the process, {PRONOUN/r_c1/subject} {VERB/r_c1/squawk/squawks} with surprise and {VERB/r_c1/let/lets} go. Well. So ends the hunt for the only prey they've managed to find. Fox-dung."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
+                    "r_c1": {}
                 },
                 "exp_gained": 0,
                 "condition": [
