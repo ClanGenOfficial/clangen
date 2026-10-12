@@ -3558,7 +3558,7 @@
                 ],
                 "mutual": false,
                 "constraints": [
-                    "siblings"
+                    "littermate"
                 ]
             }
         ]
