@@ -393,52 +393,6 @@ class HerbSupply:
             if self.collected[herb] < 0:
                 self.collected[herb] = 0
 
-    def handle_focus(self, med_cats: list, assistants: list = None):
-        """
-        Handles sending med cats to gather extra herbs in accordance to Clan focus
-        :param med_cats: a list of medicine cat objects,
-        :param assistants: a list of any non-meddies who are assisting the search for herbs
-        """
-
-        # get herbs found
-        herb_list = []
-        found_herbs = {}
-        for med in med_cats:
-            if assistants:
-                list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
-                    med,
-                    general_amount_bonus=True,
-                    specific_quantity_bonus=2,
-                )
-            else:
-                list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
-                    med
-                )
-            herb_list.extend(found_herbs)
-
-        # remove dupes
-        herb_list = list(set(herb_list))
-        # get display strings for herbs
-        herb_strs = []
-        for herb in herb_list:
-            herb_strs.append(game.clan.herb_supply.herb[herb].plural_display)
-
-        herb_list = adjust_list_text(herb_strs)
-
-        # finish
-        amount = 0
-        for _h in found_herbs:
-            amount += found_herbs[_h]
-
-        focus_text = i18n.t("focus.focus_herbs", count=amount)
-
-        if herb_list:
-            game.herb_events_list.append(
-                i18n.t("screens.med_den.focus", herbs=herb_list)
-            )
-
-        return focus_text
-
     def get_found_herbs(
         self,
         med_cat,
@@ -484,7 +438,7 @@ class HerbSupply:
             choices(population=[1, 2, 3], weights=weight, k=1)[0] + amount_modifier
         )
         if self.disable_random:
-            amount_of_herbs = 2
+            amount_of_herbs = 3
 
         if general_amount_bonus:
             amount_of_herbs *= constants.CONFIG["clan_resources"]["herbs"][
@@ -525,7 +479,7 @@ class HerbSupply:
                 else:
                     amount = max(
                         1,
-                        int(
+                        round(
                             choices(population=[2, 3, 4], weights=weight, k=1)[0]
                             * quantity_modifier
                         ),

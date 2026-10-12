@@ -541,13 +541,13 @@ def handle_lead_den_event():
                                     cat=invited_cat,
                                 )
                                 invited_cat.name.give_suffix(
-                                    eyes=invited_cat.pelt.eyes,
+                                    eyes=invited_cat.pelt.eye_colour,
                                     colour=invited_cat.pelt.colour,
                                     pelt=invited_cat.pelt.name,
                                     biome=game.clan.biome
                                     if not game.clan.override_biome
                                     else game.clan.override_biome,
-                                    tortie_pattern=invited_cat.pelt.tortie,
+                                    tortie_pattern=invited_cat.pelt.tortie_pattern,
                                 )
                                 invited_cat.specsuffix_hidden = False
                         # if cat is an apprentice, make sure they get a mentor!
@@ -1567,10 +1567,25 @@ def handle_outbreaks(cat):
             ):
                 continue
 
-            if get_clan_setting("rest_and_recover"):
+            if get_clan_setting("rest_and_recover") and (
+                game.clan.deputy and game.clan.deputy.status.alive_in_player_clan
+            ):
                 stopping_chance = constants.CONFIG["focus"]["rest_and_recover"][
                     "outbreak_prevention"
                 ]
+                buffs = get_config("focus.rest_and_recover.buff")
+                for skill, tier in game.clan.deputy.skills.get_all().items():
+                    skill = skill.name
+                    if skill not in buffs.keys():
+                        continue
+                    if buffs[skill]["tier"] > tier:
+                        continue
+
+                    if "outbreak_prevention_modifier" in buffs[skill]:
+                        stopping_chance -= get_config(
+                            f"focus.rest_and_recover.buff.{skill}.outbreak_prevention_modifier"
+                        )
+
                 if not int(random.random() * stopping_chance):
                     continue
 
