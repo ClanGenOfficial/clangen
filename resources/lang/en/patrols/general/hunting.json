@@ -2555,6 +2555,12 @@
                             "cats_from": "cat_from and cat_to had a successful hunt together, despite poor circumstances."
                         }
                     }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
                 ]
             },
             {
@@ -2903,7 +2909,7 @@
         "types": [
             "hunting"
         ],
-        "frequency": 1,
+        "frequency": 4,
         "tags": ["clan:warrior-like"],
         "required_cat_types": {
             "patrol_cats": [
