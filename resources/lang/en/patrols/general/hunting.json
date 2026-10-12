@@ -15669,7 +15669,7 @@
                 },
                 "strings": [
                     "The patrol is spotted by Twolegs and r_c:0 is taken.",
-                    "While isolated from the patrol, Twolegs take r_c:0 and {PRONOUN/r_c:0/subject} vanish within POI."
+                    "While isolated from the patrol, Twolegs take r_c:0 and vanish within POI."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -15791,7 +15791,7 @@
             {
                 "frequency": 4,
                 "poi": {
-                    "tags": ["high_ground"]
+                    "tags": ["trees"]
                 },
                 "strings": [
                     "The patrol searches for any openings within the roots at POI and is unable to sniff out any prey."
