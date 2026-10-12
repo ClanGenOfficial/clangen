@@ -3,6 +3,8 @@ import os.path
 from typing import TYPE_CHECKING
 
 import ujson
+
+from scripts.game_structure import constants
 from scripts.game_structure.game.settings import (
     game_setting_get,
     game_setting_set,
@@ -34,7 +36,7 @@ MANAGER: Optional[pygame_gui.UIManager] = None
 window: Optional[pygame.Window] = pygame.Window(
     title="ClanGen", size=game_screen_size, resizable=True, mouse_focus=True
 )
-window.minimum_size = (820, 720)
+window.minimum_size = (800, 700)
 
 screen: Optional[pygame.Surface] = window.get_surface()
 curr_variable_dict = {}
@@ -94,24 +96,24 @@ def set_display_mode(
         window.resizable = True
 
     screen = window.get_surface()
-    determine_screen_scale(*window.size)
-    # screen = pygame.display.set_mode(
-    #     display_size, pygame.FULLSCREEN, display=screen_config["fullscreen_display"]
-    # )
-    offset = (
-        floor((window.size[0] - screen_x) / 2),
-        floor((window.size[1] - screen_y) / 2),
-    )
-    game_screen_size = (screen_x, screen_y)
-    # else:
-    #     offset = (0, 0)
-    #     screen_x = 800
-    #     screen_y = 700
-    #     screen_scale = 1
-    #     game_screen_size = (800, 700)
-    #     window.size = (screen_x, screen_y)
-    #     window.set_windowed()
-    #     screen = window.get_surface()
+
+    if window.size == (800, 700):
+        offset = (0, 0)
+        screen_x = 800
+        screen_y = 700
+        screen_scale = 1
+        game_screen_size = (800, 700)
+        window.set_windowed()
+        screen = window.get_surface()
+    else:
+        determine_screen_scale(*window.size)
+        # screen = pygame.display.set_mode(
+        #     display_size, pygame.FULLSCREEN, display=screen_config["fullscreen_display"]
+        # )
+        offset = (
+            floor((window.size[0] - screen_x) / 2),
+            floor((window.size[1] - screen_y) / 2),
+        )
     game_screen_size = (screen_x, screen_y)
 
     if source_screen is None or MANAGER is None:
@@ -258,6 +260,7 @@ def toggle_fullscreen(
     source_screen: Optional["Screens"] = None,
     show_confirm_dialog: bool = True,
     ingame_switch: bool = True,
+    theme="light",
 ):
     """
     Swap between fullscreen modes. Wraps the necessary game save to store the new value.
@@ -265,6 +268,7 @@ def toggle_fullscreen(
     :param source_screen: Screen requesting the fullscreen toggle.
     :param show_confirm_dialog: True to show the confirm changes dialog, default True. Does nothing if source_screen is None.
     :param ingame_switch: Whether this was triggered by a user. Default True
+    :param theme: User's current UI theme. Defaults to light
     :return:
     """
     global display_change_in_progress
@@ -278,6 +282,11 @@ def toggle_fullscreen(
 
     game_setting_set("fullscreen", fullscreen)
     game_settings_save()
+    screen.fill(
+        constants.CONFIG["theme"][
+            ("dark" if theme == "light" else "light") + "_mode_background"
+        ]
+    )
 
     if fullscreen:
         window.set_fullscreen(True)
@@ -285,13 +294,6 @@ def toggle_fullscreen(
         window.set_windowed()
         window.resizable = True
         window.size = (800, 700)
-
-    if ingame_switch:
-        from scripts.ui.load_animation_screen import loading_animation
-
-        loading_animation(
-            screen_scale, "dark" if game_setting_get("dark mode") else "light"
-        )
 
 
 def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: float):
