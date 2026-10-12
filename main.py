@@ -147,6 +147,17 @@ while 1:
     # This occurs before events are handled to stop pygame_gui buttons from blinking.
     game.all_screens[game.current_screen].on_use()
     # EVENTS
+
+    if pygame.event.peek(pygame.WINDOWRESIZED):
+        window.get_surface().fill(
+            constants.CONFIG["theme"][
+                ("light" if game_setting_get("dark mode") else "dark")
+                + "_mode_background"
+            ]
+        )
+        loading_animation(
+            screen_scale, "dark" if game_setting_get("dark mode") else "light"
+        )
     for event in pygame.event.get():
         if event.type == INPUT_ACTION_PRESSED and debug_mode.debug_menu.visible:
             pass
@@ -195,11 +206,12 @@ while 1:
                 del _
 
         if event.type == pygame.WINDOWRESIZED:
-            scripts.game_structure.screen_settings.toggle_fullscreen(
+            scripts.game_structure.screen_settings.set_display_mode(
                 source_screen=all_screens.screen_dict[
                     switch_get_value(Switch.cur_screen).replace(" ", "_")
                 ],
                 show_confirm_dialog=False,
+                ingame_switch=True,
             )
             continue
 
