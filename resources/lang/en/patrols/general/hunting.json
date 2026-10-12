@@ -15668,8 +15668,8 @@
                     "tags": ["Twolegs:present"]
                 },
                 "strings": [
-                    "The patrol is spotted by Twolegs and r_c:0 is taken.",
-                    "While isolated from the patrol, Twolegs take r_c:0 and vanish within POI."
+                    "The patrol is spotted by Twolegs and r_c0 is taken.",
+                    "While isolated from the patrol, Twolegs take r_c0 and vanish within POI."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -15678,7 +15678,7 @@
                 "exp_gained": 0,
                 "lost": [
                     {
-                        "cats": ["r_c:0"]
+                        "cats": ["r_c0"]
                     }
                 ]
             },
