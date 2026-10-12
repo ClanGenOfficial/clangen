@@ -770,13 +770,6 @@
             "hunting"
         ],
         "frequency": 1,
-        "location": [
-            "forest",
-            "plains",
-            "mountainous",
-            "beach",
-            "wetlands"
-        ],
         "season": [
             "leaf-bare"
         ],
@@ -787,7 +780,10 @@
             ]
         },
         "chance_of_success": 40,
-        "patrol_art": "cat_sprites/gen_hunt_LB_snowstorm_Wr",
+        "poi": {
+            "name": ["terrain_carrionbeach", "terrain_abandonednest", "terrain_twolegplace", "terrain_carrionplace"]
+        },
+        "patrol_art": "POI",
         "intro_strings": [
             "The patrol comes across a large rat. It's too busy digging around in a frozen pile of foul Twoleg crowfood to notice the approaching patrol."
         ],
@@ -827,19 +823,9 @@
                 ]
             },
             {
-                "frequency": 3,
-                "strings": [
-                    "r_c0 drops into a hunter's crouch and silently moves closer to make a clean kill. Strangely, the rat turns to r_c0 and makes a series of pained squeaks. p_l orders a retreat after r_c0 smells the disgusting scent of crowfood from the rat's breath."
-                ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 30
-            },
-            {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 drops into the perfect hunter's crouch and slowly creeps closer. {PRONOUN/s_c0/subject/CAP} suddenly {VERB/s_c0/hiss/hisses} loudly, scaring the rat away and startling {PRONOUN/s_c0/poss} Clanmates. s_c0 explains crossly that the rat was carrying a foul, sickly-sweet scent on its breath. It would have poisoned any cat that bit it."
+                    "s_c0 drops into the perfect hunter's crouch and slowly creeps closer. {PRONOUN/s_c0/subject/CAP} suddenly {VERB/s_c0/hiss/hisses} loudly, scaring the rat away and startling {PRONOUN/s_c0/poss} Clanmates. s_c0 explains crossly that the rat was carrying a foul, sickly-sweet scent on its breath. It would have poisoned any cat that bit it. The patrol still manages to pick up a few bits of freshkill on the way home."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -874,12 +860,18 @@
                             "cats_from": "cat_to's knowledge stopped cat_from's patrol from catching a diseased rat."
                         }
                     }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
                 ]
             },
             {
                 "frequency": 4,
                 "strings": [
-                    "Before any cat makes a move, s_c0 stops the patrol. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/explain/explains} that rogues and loners are taught at a young age to stay away from rats that touch Twoleg crowfood to avoid the deadly sickness they carry."
+                    "Before any cat makes a move, s_c0 stops the patrol. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/explain/explains} that rogues and loners are taught at a young age to stay away from rats that touch Twoleg crowfood to avoid the deadly sickness they carry. The patrol still manages to pick up a few bits of freshkill on the way home and no one ends up sick from bad rat."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -911,12 +903,18 @@
                             "cats_from": "cat_to's knowledge stopped cat_from's patrol from catching a diseased rat."
                         }
                     }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
                 ]
             },
             {
                 "frequency": 4,
                 "strings": [
-                    "Before any cat makes a move, s_c0 stops the patrol. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/explain/explains} that rats found in Twoleg crowfood often carry a deadly disease found in carrion. It's not worth the risk of catching, no matter how hungry the Clan is this leaf-bare."
+                    "Before any cat makes a move, s_c0 stops the patrol. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/explain/explains} that rats found in Twoleg crowfood often carry a deadly disease found in carrion. It's not worth the risk of catching, no matter how hungry the Clan is this leaf-bare. The patrol still manages to pick up a few bits of freshkill on the way home and no one ends up sick from bad rat."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -928,7 +926,9 @@
                                 "wise",
                                 "thoughtful",
                                 "careful"
-                            ]
+                            ],
+                            "skill": ["CLEVER,1"],
+                            "must_have_both": false
                         }
                     }
                 },
@@ -951,28 +951,36 @@
                             "cats_from": "cat_to's knowledge stopped cat_from's patrol from catching a diseased rat."
                         }
                     }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
                 ]
             },
             {
-                "frequency": 3,
+                "frequency": 4,
                 "strings": [
-                    "r_c0 kills the distracted rat easily, but p_l points out the putrid scent. c_n could use the prey, but it isn't safe to risk sickness. r_c0 cocks {PRONOUN/r_c0/poss} head. If they aren't going to eat it, can they at least name it? Before p_l can figure out how to reply to that, r_c0 touches {PRONOUN/r_c0/poss} nose to the body of the rat. Henceforth, this rat will be known as Stinkyrat, honored for its stinkiness. Stinkyrat! Stinkyrat!"
+                    "s_c0 kills the distracted rat easily, but p_l points out the putrid scent. c_n could use the prey, but it isn't safe to risk sickness. s_c0 cocks {PRONOUN/s_c0/poss} head. If they aren't going to eat it, can they at least name it? Before p_l can figure out how to reply to that, s_c0 touches {PRONOUN/s_c0/poss} nose to the body of the rat. Henceforth, this rat will be known as Stinkyrat, honored for its stinkiness. Stinkyrat! Stinkyrat!"
                 ],
+                "exp_gained": 30,
                 "involved_cats": {
-                    "r_c0": {
+                    "s_c0": {
+                        "prior_abbreviation": ["-p_l"],
                         "stat": {
                             "trait": [
                                 "childish",
-                                "playful"
+                                "playful",
+                                "strange"
                             ]
                         }
                     }
                 },
-                "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -986,6 +994,12 @@
                             "cats_from": "cat_to's silly reaction to a smelly rat left cat_from feeling disarmed."
                         }
                     }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
                 ]
             }
         ],
@@ -993,18 +1007,20 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Just as r_c0 is about to pounce the rat scurries away with an angry squeak. Both the patrol and the rat go home with empty paws."
+                    "Just as r_c0 is about to pounce the rat scurries away with an angry squeak. Both the patrol and the rat go home with empty paws.",
+                    "r_c0 drops into a hunter's crouch and silently moves closer to make a clean kill. Strangely, the rat turns to r_c0 and makes a series of pained squeaks. p_l orders a retreat after r_c0 smells the disgusting scent of crowfood from the rat's breath. This trip was a waste."
                 ],
                 "involved_cats": {
                     "r_c0": {}
                 },
-                "exp_gained": 30
+                "exp_gained": 0
             },
             {
                 "frequency": 4,
                 "strings": [
                     "Without thinking, s_c0 pounces at the rat. The patrol watches completely stunned as s_c0 misses the rat by several tail lengths and scares it off. The disgruntled patrol heads home and s_c0 has to explain why {PRONOUN/s_c0/subject} missed an easy catch in the middle of leaf-bare."
                 ],
+                "exp_gained": 0,
                 "involved_cats": {
                     "s_c0": {
                         "prior_abbreviation": [
@@ -1016,11 +1032,11 @@
                                 "arrogant",
                                 "confident",
                                 "shameless"
-                            ]
+                            ],
+                            "skill": ["-HUNTER,2"]
                         }
                     }
                 },
-                "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_to": [
@@ -1042,78 +1058,7 @@
                 ]
             },
             {
-                "frequency": 2,
-                "strings": [
-                    "r_c0 easily catches the distracted rat. p_l meows triumphantly. This is a great catch during leaf-bare. Unfortunately, while carrying the fresh-kill home, r_c0's mouth begins to sour. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days r_c0 falls violently ill and never recovers."
-                ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 30,
-                "death": [
-                    {
-                        "cats": [
-                            "r_c0"
-                        ],
-                        "history": "m_c died after tasting a tainted rat."
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "r_c0 easily catches the distracted rat. p_l meows triumphantly. This is a great catch during leaf-bare. Unfortunately, while carrying the fresh-kill home, r_c0's mouth begins to sour. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days r_c0 falls violently ill."
-                ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 30,
-                "condition": [
-                    {
-                        "cats": [
-                            "r_c0"
-                        ],
-                        "condition": [
-                            "carrionplace disease",
-                            "diarrhea",
-                            "poisoned"
-                        ],
-                        "death_history": "m_c died after tasting a tainted rat."
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "Without thinking, s_c0 recklessly pounces at the rat. The patrol watches completely stunned as s_c0 actually catches the rat. While s_c0 is smugly carrying the fresh-kill home, s_c0's mouth begins to sour. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days s_c0 falls violently ill and never recovers."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "oblivious",
-                                "arrogant",
-                                "confident",
-                                "shameless"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 30,
-                "death": [
-                    {
-                        "cats": [
-                            "s_c0"
-                        ],
-                        "history": "m_c died after tasting a tainted rat."
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
+                "frequency": 3,
                 "strings": [
                     "Without thinking, s_c0 recklessly pounces at the rat. The patrol watches completely stunned as s_c0 actually catches the rat. While s_c0 is smugly carrying the fresh-kill home, s_c0's mouth begins to sour. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days s_c0 falls violently ill."
                 ],
@@ -1128,7 +1073,8 @@
                                 "arrogant",
                                 "confident",
                                 "shameless"
-                            ]
+                            ],
+                            "skill": ["-HUNTER,2"]
                         }
                     }
                 },
@@ -1144,6 +1090,78 @@
                             "poisoned"
                         ],
                         "death_history": "m_c died after tasting a tainted rat."
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "r_c0 easily catches the distracted rat. p_l meows triumphantly. This is a great catch during leaf-bare. Unfortunately, while carrying the fresh-kill home, r_c0's mouth begins to sour. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days r_c0 falls violently ill."
+                ],
+                "exp_gained": 0,
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "carrionplace disease",
+                            "diarrhea",
+                            "poisoned"
+                        ],
+                        "death_history": "m_c died after tasting a tainted rat."
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "strings": [
+                    "r_c0 easily catches the distracted rat. p_l meows triumphantly. This is a great catch during leaf-bare. Unfortunately, while carrying the fresh-kill home, r_c0's mouth begins to sour. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days r_c0 falls violently ill and never recovers."
+                ],
+                "exp_gained": 0,
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "death": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "history": "m_c died after tasting a tainted rat."
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "strings": [
+                    "Without thinking, s_c0 recklessly pounces at the rat. The patrol watches completely stunned as s_c0 actually catches the rat. While s_c0 is smugly carrying the fresh-kill home, s_c0's mouth begins to sour. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days s_c0 falls violently ill and never recovers."
+                ],
+                "exp_gained": 0,
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "oblivious",
+                                "arrogant",
+                                "confident",
+                                "shameless"
+                            ],
+                            "skill": ["-HUNTER,2"]
+                        }
+                    }
+                },
+                "death": [
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "history": "m_c died after tasting a tainted rat."
                     }
                 ]
             }
