@@ -25,7 +25,7 @@ from scripts.game_structure.game.switches import (
     switch_set_value,
 )
 from scripts.game_structure.load_cat import load_cats, version_convert
-from scripts.game_structure.screen_settings import MANAGER, screen, screen_scale
+from scripts.game_structure.screen_settings import MANAGER, screen, screen_scale, window
 from scripts.game_input import controller_manager, keyboard_manager
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
@@ -33,6 +33,7 @@ from scripts.screens import all_screens
 from scripts.screens.enums import GameScreen
 from scripts.ui.windows.save_check import SaveCheckWindow
 from scripts.housekeeping.quit_game import quit_game
+from scripts.ui.load_animation_screen import loading_animation, FINISHED_LOADING
 
 # P Y G A M E
 clock = pygame.time.Clock()
@@ -43,7 +44,6 @@ game.rpc.start()
 game.rpc.start_rpc.set()
 
 # LOAD cats & clan
-finished_loading = False
 
 controller_manager.init()
 
@@ -89,59 +89,8 @@ def load_data():
 
         scripts.screens.screens_core.screens_core.rebuild_core()
 
-    finished_loading = True
-
-
-images = []
-
-
-def loading_animation(scale: float = 1):
-    # Load images, adjust color
-    color = pygame.Surface((200 * scale, 210 * scale))
-    if game_setting_get("dark mode"):
-        color.fill(constants.CONFIG["theme"]["light_mode_background"])
-    else:
-        color.fill(constants.CONFIG["theme"]["dark_mode_background"])
-
-    if len(images) == 0:
-        for i in range(1, 11):
-            im = pygame.transform.scale_by(
-                pygame.image.load(f"resources/images/loading_animate/startup/{i}.png"),
-                screen_scale,
-            )
-            im.blit(color, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
-            images.append(im)
-        del im
-
-    # Cleanup
-    del color
-
-    x = screen.get_width() / 2
-    y = screen.get_height() / 2
-
-    i = 0
-    total_frames = len(images)
-    while not finished_loading:
-        clock.tick(8)  # Loading screen is 8FPS
-
-        if game_setting_get("dark mode"):
-            screen.fill(constants.CONFIG["theme"]["dark_mode_background"])
-        else:
-            screen.fill(constants.CONFIG["theme"]["light_mode_background"])
-
-        screen.blit(
-            images[i], (x - images[i].get_width() / 2, y - images[i].get_height() / 2)
-        )
-
-        i += 1
-        if i >= total_frames:
-            i = 0
-        for event in pygame.event.get():
-            controller_manager.process_event(event)
-            if event.type == pygame.QUIT:
-                quit_game(savesettings=False)
-
-        pygame.display.update()
+    pygame.event.post(pygame.event.Event(FINISHED_LOADING))
+    logging.info("Finished loading in %f seconds.", pygame.time.get_ticks() / 1000.0)
 
 
 def load_game():
@@ -162,10 +111,11 @@ def load_game():
     game.dark_forest = None
     switch_set_value(Switch.switch_clan, False)
 
-    finished_loading = False
     loading_thread = threading.Thread(target=load_data)
     loading_thread.start()
-    loading_animation(screen_scale)
+    loading_animation(
+        screen_scale, "dark" if game_setting_get("dark mode") else "light"
+    )
 
     # loading thread should be done by now, so just join it for safety.
     loading_thread.join()
@@ -244,6 +194,15 @@ while 1:
                     print(f"(x: {_[0] * screen_scale}, y: {_[1] * screen_scale})")
                 del _
 
+        if event.type == pygame.WINDOWRESIZED:
+            scripts.game_structure.screen_settings.toggle_fullscreen(
+                source_screen=all_screens.screen_dict[
+                    switch_get_value(Switch.cur_screen).replace(" ", "_")
+                ],
+                show_confirm_dialog=False,
+            )
+            continue
+
         # F2 turns toggles visual debug mode for pygame_gui, allowed for easier bug fixes.
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_F2:
@@ -275,11 +234,11 @@ while 1:
     debug_mode.pre_update(clock)
     # END FRAME
 
-    MANAGER.draw_ui(screen)
+    MANAGER.draw_ui(window.get_surface())
 
-    debug_mode.post_update(screen)
+    debug_mode.post_update(window.get_surface())
 
-    pygame.display.update()
+    window.flip()
 
     if not game.audio.disabled and not game.audio.muted:
         game.audio.start()

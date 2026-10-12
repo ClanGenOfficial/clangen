@@ -12,7 +12,7 @@ from scripts.ui.scale import ui_scale
 from scripts.debug_commands import command_list
 from scripts.debug_commands.utils import set_debug_class, add_output_line_to_log
 from scripts.game_structure import game
-from scripts.game_structure.screen_settings import MANAGER, offset, screen_scale
+from scripts.game_structure.screen_settings import MANAGER, offset, screen_scale, window
 from scripts.ui.theme import get_text_box_theme
 
 
@@ -250,8 +250,8 @@ class DebugMode:
             pygame.Rect(
                 (0, 0),
                 (
-                    pygame.display.get_surface().get_width() / 1.35,
-                    pygame.display.get_surface().get_height() / 1.35,
+                    window.get_surface().get_width() / 1.35,
+                    window.get_surface().get_height() / 1.35,
                 ),
             ),
             MANAGER,

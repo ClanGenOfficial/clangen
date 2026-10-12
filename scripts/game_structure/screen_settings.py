@@ -31,7 +31,12 @@ screen_y = 700
 screen_scale = 1
 game_screen_size = (800, 700)
 MANAGER: Optional[pygame_gui.UIManager] = None
-screen: Optional[pygame.Surface] = None
+window: Optional[pygame.Window] = pygame.Window(
+    title="ClanGen", size=game_screen_size, resizable=True, mouse_focus=True
+)
+window.minimum_size = game_screen_size
+
+screen: Optional[pygame.Surface] = window.get_surface()
 curr_variable_dict = {}
 
 display_change_in_progress = False  # this acts as a lock to ensure we don't end up in a loop of fullscreen changes
@@ -83,11 +88,12 @@ def set_display_mode(
         display_size = display_sizes[screen_config["fullscreen_display"]]
         # display_size = [3840, 2160]
 
-        determine_screen_scale(display_size[0], display_size[1])
-
-        screen = pygame.display.set_mode(
-            display_size, pygame.FULLSCREEN, display=screen_config["fullscreen_display"]
-        )
+        window.set_fullscreen(True)
+        screen = window.get_surface()
+        determine_screen_scale(*window.size)
+        # screen = pygame.display.set_mode(
+        #     display_size, pygame.FULLSCREEN, display=screen_config["fullscreen_display"]
+        # )
         offset = (
             floor((display_size[0] - screen_x) / 2),
             floor((display_size[1] - screen_y) / 2),
@@ -99,7 +105,9 @@ def set_display_mode(
         screen_y = 700
         screen_scale = 1
         game_screen_size = (800, 700)
-        screen = pygame.display.set_mode((screen_x, screen_y))
+        window.size = (screen_x, screen_y)
+        window.set_windowed()
+        screen = window.get_surface()
     game_screen_size = (screen_x, screen_y)
 
     if source_screen is None or MANAGER is None:
