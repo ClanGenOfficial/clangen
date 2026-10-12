@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "gen_hunt_vision1",
+        "event_id": "gen_hunt_vision_group1",
         "types": [
             "hunting"
         ],
@@ -338,7 +338,7 @@
         ]
     },
     {
-        "event_id": "gen_hunt_vision2",
+        "event_id": "gen_hunt_vision_solo1",
         "types": [
             "hunting"
         ],
@@ -1168,7 +1168,7 @@
         ]
     },
     {
-        "event_id": "gen_hunt_fish1",
+        "event_id": "gen_hunt_fish_group1",
         "types": [
             "hunting"
         ],
@@ -1181,8 +1181,8 @@
         },
         "required_cat_types": {
             "patrol_cats": [
-                1,
-                3
+                2,
+                6
             ]
         },
         "chance_of_success": 50,
@@ -1197,9 +1197,15 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l very carefully walks to the water's edge and waits for {PRONOUN/p_l/poss} chance. When the fish is near, {PRONOUN/p_l/subject} {VERB/p_l/hook/hooks} it out of the water with {PRONOUN/p_l/poss} claws. More fresh-kill!"
+                    "s_c0 very carefully walks to the water's edge and waits for {PRONOUN/s_c0/poss} chance. When the fish is near, {PRONOUN/s_c0/subject} {VERB/s_c0/hook/hooks} it out of the water with {PRONOUN/s_c0/poss} claws. More fresh-kill!",
+                    "s_c0 pads closer to the water's edge, careful to keep {PRONOUN/s_c0/poss} shadow away from the water. The fish doesn't seem to notice {PRONOUN/s_c0/object} and darts too close. s_c0's paw flashes into the water and the fish flops onto the bank. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/kill/kills} it and happily {VERB/s_c0/carry/carries} it back to camp."
                 ],
                 "exp_gained": 10,
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
                 "supply": [
                     {
                         "type": "freshkill",
@@ -1208,9 +1214,119 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 4,
+                "required_cat_types": {
+                    "patrol_cats": [
+                        3,
+                        6
+                    ]
+                },
                 "strings": [
-                    "p_l pads closer to the water's edge, careful to keep {PRONOUN/p_l/poss} shadow away from the water. The fish doesn't seem to notice {PRONOUN/p_l/object} and darts too close. r_c0's paw flashes into the water and the fish flops onto the bank. {PRONOUN/p_l/subject/CAP} {VERB/p_l/kill/kills} it and happily {VERB/p_l/carry/carries} it back to camp."
+                    "The cats have a great time taking turns swiping fish out of the water and sunning on the banks.",
+                    "The fish are plentiful and the sun is shining, everyone has a pleasant time.",
+                    "What could be better than a day of fishing and pleasant conversation? The cats spread out along POI and end up going home with a heavy haul of fish."
+                ],
+                "exp_gained": 10,
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_to enjoyed a pleasant day of fishing with cat_from."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol moves too suddenly. The flickering shadow causes the fish to quickly vanish into murkier water."
+                ],
+                "exp_gained": 0,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "As they approach the water, s_c0 trips on a stone and goes head over tail into POI! Well, there goes all the fish."
+                ],
+                "exp_gained": 0,
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_hunt_fish_solo1",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 4,
+        "poi": {
+            "tags": [
+                "water:flowing"
+            ],
+            "category": "terrain"
+        },
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "cat_sprites/gen_hunt_fish_Wr",
+        "intro_strings": [
+            "p_l glimpses the shadow of a fish as they hunt near POI."
+        ],
+        "decline_strings": [
+            "p_l ignores the fish."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l very carefully walks to the water's edge and waits for {PRONOUN/p_l/poss} chance. When the fish is near, {PRONOUN/p_l/subject} {VERB/p_l/hook/hooks} it out of the water with {PRONOUN/p_l/poss} claws. More fresh-kill!",
+                    "p_l pads closer to the water's edge, careful to keep {PRONOUN/p_l/poss} shadow away from the water. The fish doesn't seem to notice {PRONOUN/p_l/object} and darts too close. p_l's paw flashes into the water and the fish flops onto the bank. {PRONOUN/p_l/subject/CAP} {VERB/p_l/kill/kills} it and happily {VERB/p_l/carry/carries} it back to camp.",
+                    "p_l spends the day alternating between catching fish and sunning on the banks, altogether a pleasant way to spend a solo patrol.",
+                    "The fish are plentiful and the sun is shining, p_l has a pleasant time."
                 ],
                 "exp_gained": 10,
                 "supply": [
@@ -1225,7 +1341,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol moves too suddenly. The flickering shadow causes the fish to quickly vanish into murkier water."
+                    "p_l moves too suddenly. The flickering shadow causes the fish to quickly vanish into murkier water.",
+                    "As {PRONOUN/p_l/subject} approach the water, p_l trips on a stone and goes head over tail into POI! Well, there goes all the fish."
                 ],
                 "exp_gained": 0,
                 "supply": [
