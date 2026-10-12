@@ -1838,11 +1838,11 @@
         ]
     },
     {
-        "event_id": "gen_hunt_verysmallprey_balancing_smallwarriorhunt1",
+        "event_id": "gen_hunt_smallwarriorhunt1",
         "types": [
             "hunting"
         ],
-        "frequency": 1,
+        "frequency": 4,
         "required_cat_types": {
             "patrol_cats": [
                 2,
@@ -1856,187 +1856,18 @@
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_train_talking_WrWr",
         "intro_strings": [
-            "As they head out into c_n's territory, p_l suggests a high cover hunting ground, perfect for ambushing."
+            "As they head out into c_n's territory, p_l suggests a high cover hunting ground, perfect for ambushing.",
+            "The small hunting patrol heads out together.",
+            "This hunting patrol might be small, but p_l thinks {PRONOUN/p_l/subject} {VERB/p_l/know/knows} the perfect spot to take advantage of that.",
+            "With a smaller hunting party, the cats are going to need to coordinate together well to succeed.",
+            "Eyes glowing with the last rays of the sunset, the small hunting party heads out into the gathering dusk."
         ],
         "decline_strings": [
             "The cats encounter a border patrol that needs more paws, and volunteer their time for that instead."
         ],
         "success_outcomes": [
             {
-                "frequency": 3,
-                "strings": [
-                    "Perfect for ambushing, p_l said. Perfect for ambushing each other, maybe! First r_c0 ruins p_l's hunt, then p_l trips over r_c0 as {PRONOUN/r_c0/subject} {VERB/r_c0/stalk/stalks}. This did <i>not</i> go to plan."
-                ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to tripped all over each other while hunting."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "There might be tons of cover here to pounce from, but there's tons of places for the prey to hide, too. The patrol doesn't bring much home."
-                ],
-                "exp_gained": 10,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ]
-            },
-            {
                 "frequency": 4,
-                "strings": [
-                    "Look, s_c0 might be a talented hunter, but {PRONOUN/s_c0/subject} can't succeed if there's no prey in the first place — this hunting spot just didn't work out well."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "skill": [
-                                "HUNTER,0"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "In setting up an overly complicated ambush strategy, all the cats do is drive away the prey from the local area. And also fall over each other a bit."
-                ],
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to did nothing but get in each other's way while hunting."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "The cats lose track of each other under the thick cover and end up ruining the hunt in the name of reforming the patrol."
-                ],
-                "exp_gained": 0
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l goes down hard on a misjudged pounce and stands up with a wince. r_c0 trots over, telling p_l to take it easy and lean on {PRONOUN/r_c0/object} as {PRONOUN/p_l/subject} {VERB/p_l/limp/limps} home."
-                ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "trust",
-                            "comfort"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_to lent cat_from a helping paw when {PRONOUN/cat_from/subject} tripped while hunting."
-                        }
-                    }
-                ],
-                "condition": [
-                    {
-                        "cats": [
-                            "p_l"
-                        ],
-                        "condition": [
-                            "sprain"
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "gen_hunt_smallprey_balancing_smallwarriorhunt1",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 1,
-        "required_cat_types": {
-            "patrol_cats": [
-                2,
-                3
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
-        },
-        "chance_of_success": 50,
-        "patrol_art": "cat_sprites/gen_train_talking_WrWr",
-        "intro_strings": [
-            "The small hunting patrol heads out together."
-        ],
-        "decline_strings": [
-            "The cats encounter a border patrol that needs more paws, and volunteer their time for that instead."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 3,
                 "strings": [
                     "The scent trails here are very dispersed and weak — the patrol kills a couple good pieces of prey, but not much. p_l makes a note to report the state of this hunting ground when they get back to camp."
                 ],
@@ -2067,7 +1898,7 @@
                 ]
             },
             {
-                "frequency": 3,
+                "frequency": 4,
                 "strings": [
                     "They don't quite have enough cats to set up an inescapable net, and several times, prey slips away from them. Still, they're not empty-pawed."
                 ],
@@ -2121,147 +1952,12 @@
                         "adjust": "increase_small"
                     }
                 ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 tries to show off, and it screws up the coordination of the entire patrol. Wonderful. Great job s_c0."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "arrogant",
-                                "shameless",
-                                "childish",
-                                "flamboyant",
-                                "competitive",
-                                "ambitious"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_to tried to show off during a hunting patrol and utterly ruined it."
-                        }
-                    }
-                ]
             },
-            {
-                "frequency": 4,
-                "strings": [
-                    "Sometimes, hunts just go bad. It's no one's fault, but today is one of those times. The cats commiserate with each other as they walk home."
-                ],
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "comfort"
-                        ],
-                        "amount": 3,
-                        "log": {
-                            "cats_from": "cat_from and cat_to commiserated with each other after a difficult hunting patrol."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l goes down hard on a misjudged pounce and stands up with a wince. r_c0 trots over, telling p_l to take it easy and lean on {PRONOUN/r_c0/object} as {PRONOUN/p_l/subject} {VERB/p_l/limp/limps} home."
-                ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "trust",
-                            "comfort"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_to lent cat_from a helping paw when {PRONOUN/cat_from/subject} tripped while hunting."
-                        }
-                    }
-                ],
-                "condition": [
-                    {
-                        "cats": [
-                            "p_l"
-                        ],
-                        "condition": [
-                            "sprain"
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "gen_hunt_mediumprey_balancing_smallwarriorhunt1",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 1,
-        "required_cat_types": {
-            "patrol_cats": [
-                2,
-                3
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
-        },
-        "chance_of_success": 50,
-        "patrol_art": "hunt_general_intro",
-        "intro_strings": [
-            "This hunting patrol might be small, but p_l thinks {PRONOUN/p_l/subject} {VERB/p_l/know/knows} the perfect spot to take advantage of that."
-        ],
-        "decline_strings": [
-            "The cats encounter a border patrol that needs more paws, and volunteer their time for that instead."
-        ],
-        "success_outcomes": [
             {
                 "frequency": 3,
                 "strings": [
-                    "This particular hunting ground isn't very productive, so it's not usually anyone's favorite. But that means the prey here hasn't been chased for a while, and the patrol is able to spread out and find a fair amount of success."
+                    "This particular hunting ground isn't very productive, so it's not usually anyone's favorite. But that means the prey here hasn't been chased for a while, and the patrol is able to spread out and find a fair amount of success.",
+                    "Having a large patrol hunting near a border might send the wrong message to their neighbors. But the borderlands still have prey, and with a smaller hunting patrol, there's no accidental diplomatic passive-aggressive messaging to hunting there."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -2292,38 +1988,6 @@
             },
             {
                 "frequency": 3,
-                "strings": [
-                    "Having a large patrol hunting near a border might send the wrong message to their neighbors. But the borderlands still have prey, and with a smaller hunting patrol, there's no accidental diplomatic passive-aggressive messaging to hunting there."
-                ],
-                "exp_gained": 30,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_to's leadership led to a successful hunting patrol."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
                 "strings": [
                     "It turns out to not really matter where they hunt — s_c0's hunting skills carry the day. Not that the other members of the patrol don't bring back their own perfectly respectable kills too."
                 ],
@@ -2364,145 +2028,9 @@
                         "adjust": "increase_medium"
                     }
                 ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 tries to show off, and it screws up the coordination of the entire patrol. Wonderful. Great job s_c0."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "arrogant",
-                                "shameless",
-                                "childish",
-                                "flamboyant",
-                                "competitive",
-                                "ambitious"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_to tried to show off during a hunting patrol and utterly ruined it."
-                        }
-                    }
-                ]
             },
             {
-                "frequency": 4,
-                "strings": [
-                    "Sometimes, hunts just go bad. It's no one's fault, but today is one of those times. The cats commiserate with each other as they walk home."
-                ],
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "comfort"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to commiserated with each other after a difficult hunting patrol."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l goes down hard on a misjudged pounce and stands up with a wince. r_c0 trots over, telling p_l to take it easy and lean on {PRONOUN/r_c0/object} as {PRONOUN/p_l/subject} {VERB/p_l/limp/limps} home."
-                ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c0"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "comfort"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_to lent cat_from a helping paw when {PRONOUN/cat_from/subject} tripped while hunting."
-                        }
-                    }
-                ],
-                "condition": [
-                    {
-                        "cats": [
-                            "p_l"
-                        ],
-                        "condition": [
-                            "sprain"
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "gen_hunt_largeprey_balancing_smallwarriorhunt1",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 1,
-        "required_cat_types": {
-            "patrol_cats": [
-                2,
-                3
-            ],
-            "normal adult": [
-                1,
-                6
-            ]
-        },
-        "chance_of_success": 50,
-        "patrol_art": "hunt_general_intro",
-        "intro_strings": [
-            "With a smaller hunting party, the cats are going to need to coordinate together well to succeed."
-        ],
-        "decline_strings": [
-            "The cats encounter a border patrol that needs more paws, and volunteer their time for that instead."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 3,
+                "frequency": 2,
                 "strings": [
                     "Everyone turns to p_l to lead, and p_l rises to the occasion, giving a clear plan of attack that the patrol pulls off flawlessly. Each cat can be proud of the work they put in today."
                 ],
@@ -2551,7 +2079,7 @@
                 ]
             },
             {
-                "frequency": 3,
+                "frequency": 2,
                 "strings": [
                     "This is what Clanmates do — this is what a Clan is <i>for</i>. Nodding to each other, the patrol heads out, determined to back each other up. That's what ends up making all the difference, and their hunt goes flawlessly."
                 ],
@@ -2583,7 +2111,7 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 2,
                 "strings": [
                     "The cats defer to s_c0 as the expert, and s_c0 nods, laying out {PRONOUN/s_c0/poss} thoughts and consulting with everyone to make sure each cat is comfortable with the part they'll play. It's a good use of {PRONOUN/s_c0/poss} skills, one that rewards the cats handsomely."
                 ],
@@ -2594,7 +2122,8 @@
                         ],
                         "stat": {
                             "skill": [
-                                "HUNTER,0"
+                                "HUNTER,1",
+                                "INSIGHTFUL,1"
                             ]
                         }
                     }
@@ -2625,148 +2154,9 @@
                         "adjust": "increase_large"
                     }
                 ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 tries to show off, and it screws up the coordination of the entire patrol. Wonderful. Great job s_c0."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "arrogant",
-                                "shameless",
-                                "childish",
-                                "flamboyant",
-                                "competitive",
-                                "ambitious"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_to tried to show off during a hunting patrol and utterly ruined it."
-                        }
-                    }
-                ]
             },
             {
-                "frequency": 4,
-                "strings": [
-                    "Sometimes, hunts just go bad. It's no one's fault, but today is one of those times. The cats commiserate with each other as they walk home."
-                ],
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to commiserated with each other after a difficult hunting patrol."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l goes down hard on a misjudged pounce and stands up with a wince. r_c0 trots over, telling p_l to take it easy and lean on {PRONOUN/r_c0/object} as {PRONOUN/p_l/subject} {VERB/p_l/limp/limps} home."
-                ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c0"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "comfort"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_to lent cat_from a helping paw when {PRONOUN/cat_from/subject} tripped while hunting."
-                        }
-                    }
-                ],
-                "condition": [
-                    {
-                        "cats": [
-                            "p_l"
-                        ],
-                        "condition": [
-                            "sprain"
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "gen_hunt_hugeprey_balancing_smallwarriorhunt1",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 1,
-        "season": [
-            "-leaf-bare"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                2,
-                3
-            ],
-            "normal adult": [
-                1,
-                3
-            ]
-        },
-        "chance_of_success": 50,
-        "patrol_art": "hunt_general_intro",
-        "intro_strings": [
-            "Eyes glowing with the last rays of the sunset, the small hunting party heads out into the gathering dusk."
-        ],
-        "decline_strings": [
-            "The cats encounter a border patrol that needs more paws, and volunteer their time for that instead."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 3,
+                "frequency": 1,
                 "strings": [
                     "It's the perfect time of day, the cats melting in and out of the shadows, piling up fresh-kill. Finally, p_l calls off the patrol: not because the prey has escaped them, but because they're going to have trouble carrying it all home."
                 ],
@@ -2797,7 +2187,7 @@
                 ]
             },
             {
-                "frequency": 3,
+                "frequency": 1,
                 "strings": [
                     "As the day's prey heads home, the evening's prey awakens. The patrol capitalizes on the animals' sleepiness, so much so that the entire Clan comes to comment on the patrol's success when they return."
                 ],
@@ -2844,7 +2234,7 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 1,
                 "strings": [
                     "s_c0 knows <i>exactly</i> how to take advantage of the growing gloom, giving the rest of the patrol a couple of ideas that tip the balance from a successful patrol to an astonishingly outstanding one."
                 ],
@@ -2855,7 +2245,10 @@
                         ],
                         "stat": {
                             "skill": [
-                                "HUNTER,0"
+                                "HUNTER,1",
+                                "INSIGHTFUL,1",
+                                "CLEVER,1",
+                                "STEALTH,1"
                             ]
                         }
                     }
@@ -2876,7 +2269,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_to's leadership and knowledge of hunting led to a successful patrol."
+                            "cats_from": "cat_to's leadership and knowledge led to a successful patrol."
                         }
                     }
                 ],
@@ -2886,13 +2279,58 @@
                         "adjust": "increase_huge"
                     }
                 ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "There might be tons of cover here to pounce from, but there's tons of places for the prey to hide, too. The patrol doesn't bring much home, but at least it's something."
+                ],
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 tries to show off, but it screws up the coordination of the entire patrol. Wonderful. Great job, s_c0."
+                    "The cats lose track of each other under the thick cover and end up ruining the hunt in the name of reforming the patrol."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "Sometimes, hunts just go bad. It's no one's fault, but today is one of those times. The cats commiserate with each other as they walk home."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "cat_from and cat_to commiserated with each other after a difficult hunting patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 tries to show off, and it screws up the coordination of the entire patrol. Wonderful. Great job s_c0."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -2933,9 +2371,9 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 3,
                 "strings": [
-                    "Sometimes, hunts just go bad. It's no one's fault, but today is one of those times. The cats console one another as they walk home."
+                    "In setting up an overly complicated ambush strategy, all the cats do is drive away the prey from the local area. And also fall over each other a bit."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -2948,17 +2386,52 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "comfort"
+                            "trust"
                         ],
-                        "amount": 5,
+                        "amount": -5,
                         "log": {
-                            "cats_from": "cat_from and cat_to commiserated with each other after a difficult hunting patrol."
+                            "cats_from": "cat_from and cat_to did nothing but get in each other's way while hunting."
                         }
                     }
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 3,
+                "strings": [
+                    "Perfect for ambushing, p_l said. Perfect for ambushing each other, maybe! First r_c0 ruins p_l's hunt, then p_l trips over r_c0 as {PRONOUN/r_c0/subject} {VERB/r_c0/stalk/stalks}. This did <i>not</i> go to plan."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to tripped all over each other while hunting."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
                 "strings": [
                     "p_l goes down hard on a misjudged pounce and stands up with a wince. r_c0 trots over, telling p_l to take it easy and lean on {PRONOUN/r_c0/object} as {PRONOUN/p_l/subject} {VERB/p_l/limp/limps} home."
                 ],
@@ -2969,12 +2442,12 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
-                        ],
-                        "cats_from": [
                             "p_l"
                         ],
-                        "mutual": false,
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
                         "values": [
                             "trust",
                             "comfort"
@@ -2995,6 +2468,25 @@
                         ]
                     }
                 ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "Look, s_c0 might be a talented hunter, but {PRONOUN/s_c0/subject} can't succeed if there's no prey in the first place — this hunting spot just didn't work out well."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "HUNTER,0"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20
             }
         ]
     },
