@@ -1851,7 +1851,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "history": "This cat was killed in a fight with a small dog, but {PRONOUN/m_c/subject} took the dog out with {PRONOUN/m_c/object}."
                     }
