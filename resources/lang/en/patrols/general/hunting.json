@@ -462,32 +462,34 @@
         "required_cat_types": {
             "patrol_cats": [
                 1,
-                1
-            ],
-            "all apprentices": [
-                -1,
-                -1
+                6
             ]
+        },
+        "involved_cats": {
+            "s_c0": {
+                "prior_abbreviation": ["any"]
+            }
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_sneakprey_Wr",
         "intro_strings": [
-            "p_l is tempted to eat the prey {PRONOUN/p_l/subject} just caught."
+            "s_c0 is tempted to eat the prey {PRONOUN/s_c0/subject} just caught."
         ],
         "decline_strings": [
-            "p_l decides against breaking the Warrior Code."
+            "s_c0 decides against breaking the Warrior Code."
         ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "{PRONOUN/p_l/subject/CAP} {VERB/p_l/resist/resists} the temptation, going on to make a couple of great catches to make sure the elders are fed."
+                    "{PRONOUN/s_c0/subject/CAP} {VERB/s_c0/resist/resists} the temptation, going on to make a couple of great catches to make sure the elders are fed.",
+                    "After all, {PRONOUN/s_c0/subject} {VERB/s_c0/have/has} caught enough on this hunt that {PRONOUN/s_c0/subject} won't be able to carry it all back to camp. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/stop/stops} for a quick snack and {VERB/s_c0/return/returns} to camp laden with prey for the fresh-kill pile."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "clan"
@@ -511,18 +513,25 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 4,
+                "required_cat_types": {
+                    "patrol_cats": [
+                        3,
+                        6
+                    ]
+                },
                 "strings": [
-                    "After all, {PRONOUN/p_l/subject} {VERB/p_l/have/has} caught enough on this solo hunt that {PRONOUN/p_l/subject} won't be able to carry it all back to camp. {PRONOUN/p_l/subject/CAP} {VERB/p_l/stop/stops} for a quick snack and {VERB/p_l/return/returns} to camp laden with prey for the fresh-kill pile."
+                    "After all, the patrol has caught enough on this hunt that {PRONOUN/s_c0/subject}'ll have trouble carrying it all back to camp. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/stop/stops} for a quick snack and {VERB/s_c0/return/returns} to camp laden with prey for the fresh-kill pile."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "cats_from": [
-                            "clan"
+                            "clan",
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -541,19 +550,51 @@
                         "adjust": "increase_huge"
                     }
                 ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "{PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} so hungry — but this prey is for the Clan, not s_c0. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/hold/holds} {PRONOUN/s_c0/poss} head up high and {VERB/s_c0/bring/brings} {PRONOUN/s_c0/poss} small catch home to the freshkill pile."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
             {
                 "frequency": 4,
+                "tags": ["clan:warrior(min:3)"],
+                "required_cat_types": {
+                    "patrol_cats": [
+                        1,
+                        1
+                    ]
+                },
                 "strings": [
-                    "p_l gives in to {PRONOUN/p_l/poss} grumbling belly, reasoning that no one will notice, but when {PRONOUN/p_l/subject} {VERB/p_l/arrive/arrives} back at camp empty-pawed and with blood on {PRONOUN/p_l/poss} lips, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the stares of the other warriors on {PRONOUN/p_l/poss} pelt."
+                    "s_c0 gives in to {PRONOUN/s_c0/poss} grumbling belly, reasoning that no one will notice, but when {PRONOUN/s_c0/subject} {VERB/s_c0/arrive/arrives} back at camp empty-pawed and with blood on {PRONOUN/s_c0/poss} lips, {PRONOUN/s_c0/subject} {VERB/s_c0/feel/feels} the stares of the other warriors on {PRONOUN/s_c0/poss} pelt."
                 ],
+                "involved_cats": {
+                    "s_c0": {
+                        "status": ["-apprentice"]
+                    }
+                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "clan",
@@ -576,110 +617,29 @@
                         "adjust": "increase_tiny"
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "event_id": "gen_hunt_sneakprey2",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 1,
-        "required_cat_types": {
-            "patrol_cats": [
-                1,
-                1
-            ],
-            "apprentice": [
-                1,
-                6
-            ]
-        },
-        "chance_of_success": 50,
-        "patrol_art": "cat_sprites/gen_hunt_sneakprey_Wr",
-        "intro_strings": [
-            "p_l is tempted to eat the prey {PRONOUN/p_l/subject} just caught."
-        ],
-        "decline_strings": [
-            "p_l decides against breaking the Warrior Code."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "{PRONOUN/p_l/subject/CAP} {VERB/p_l/resist/resists} the temptation, going on to make a couple of great catches to make sure the elders are fed."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c0"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was impressed by cat_to's hunting prowess."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
             },
             {
-                "frequency": 1,
-                "strings": [
-                    "After all, {PRONOUN/p_l/subject} {VERB/p_l/have/has} caught enough on this solo hunt that {PRONOUN/p_l/subject} won't be able to carry it all back to camp. {PRONOUN/p_l/subject/CAP} {VERB/p_l/stop/stops} for a quick snack and {VERB/p_l/return/returns} to camp laden with prey for the fresh-kill pile."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c0"
-                        ],
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was impressed by cat_to's hunting prowess."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_huge"
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
                 "frequency": 4,
+                "tags": ["clan:warrior"],
+                "required_cat_types": {
+                    "patrol_cats": [
+                        1,
+                        1
+                    ]
+                },
                 "strings": [
-                    "p_l gives in to {PRONOUN/p_l/poss} grumbling belly, reasoning that no one will notice, but when {PRONOUN/p_l/subject} {VERB/p_l/arrive/arrives} back at camp empty-pawed and with blood on {PRONOUN/p_l/poss} lips, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the stares of the warriors on {PRONOUN/p_l/poss} pelt. p_l slinks back to the apprentices' den, tail and ears low."
+                    "s_c0 gives in to {PRONOUN/s_c0/poss} grumbling belly, reasoning that no one will notice, but when {PRONOUN/s_c0/subject} {VERB/s_c0/arrive/arrives} back at camp empty-pawed and with blood on {PRONOUN/s_c0/poss} lips, {PRONOUN/s_c0/subject} {VERB/s_c0/feel/feels} the stares of the warriors on {PRONOUN/s_c0/poss} pelt. s_c0 slinks back to the apprentices' den, tail and ears low."
                 ],
                 "exp_gained": 0,
+                "involved_cats": {
+                    "s_c0": {
+                        "status": ["apprentice"]
+                    }
+                },
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "clan",
@@ -702,122 +662,23 @@
                         "adjust": "increase_tiny"
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "event_id": "gen_hunt_sneakprey3",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 1,
-        "tags": [
-            "clan:deputy"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                2,
-                6
-            ],
-            "all apprentices": [
-                -1,
-                -1
-            ],
-            "deputy": [
-                -1,
-                -1
-            ]
-        },
-        "involved_cats": {
-            "r_c0": {}
-        },
-        "chance_of_success": 50,
-        "patrol_art": "cat_sprites/gen_hunt_sneakprey_Wr",
-        "intro_strings": [
-            "r_c0 is tempted to eat the prey {PRONOUN/r_c0/subject} just caught."
-        ],
-        "decline_strings": [
-            "r_c0 decides against breaking the Warrior Code."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/resist/resists} the temptation, going on to make a couple of great catches to make sure the elders are fed."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c0"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was impressed by cat_to's hunting prowess."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
             },
             {
-                "frequency": 1,
-                "strings": [
-                    "After all, the patrol has caught enough on this hunt that {PRONOUN/r_c0/subject}'ll have trouble carrying it all back to camp. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/stop/stops} for a quick snack and {VERB/r_c0/return/returns} to camp laden with prey for the fresh-kill pile."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c0"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was impressed by cat_to's hunting prowess."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_huge"
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
                 "frequency": 4,
+                "required_cat_types": {
+                    "patrol_cats": [
+                        3,
+                        6
+                    ]
+                },
                 "strings": [
-                    "r_c0 gives in to {PRONOUN/r_c0/poss} grumbling belly, reasoning that no one will notice, but when the patrol reforms and r_c0 arrives back empty-pawed with blood on {PRONOUN/r_c0/poss} lips, {PRONOUN/r_c0/subject} {VERB/r_c0/feel/feels} the suspicious stares of the other warriors on {PRONOUN/r_c0/poss} pelt."
+                    "s_c0 gives in to {PRONOUN/s_c0/poss} grumbling belly, reasoning that no one will notice, but when the patrol reforms and s_c0 arrives back empty-pawed with blood on {PRONOUN/s_c0/poss} lips, {PRONOUN/s_c0/subject} {VERB/s_c0/feel/feels} the suspicious stares of the other warriors on {PRONOUN/s_c0/poss} pelt."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "clan",
@@ -844,14 +705,27 @@
             },
             {
                 "frequency": 4,
+                "required_cat_types": {
+                    "patrol_cats": [
+                        3,
+                        6
+                    ]
+                },
+                "tags": ["clan:deputy"],
                 "strings": [
-                    "{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/think/thinks} {PRONOUN/r_c0/subject}{VERB/r_c0/'ve/'s} gotten away with {PRONOUN/r_c0/poss} clandestine snacking, but when r_c0 arrives back at camp, another patrol member pulls dep_name aside for a quiet word, glaring back at r_c0. The deputy assigns {PRONOUN/r_c0/object} to dig a new trench for the Clan's dirtplace, and r_c0 hears snide remarks when {PRONOUN/r_c0/subject} {VERB/r_c0/slink/slinks} into {PRONOUN/r_c0/poss} nest that night."
+                    "{PRONOUN/s_c0/subject/CAP} {VERB/s_c0/think/thinks} {PRONOUN/s_c0/subject}{VERB/s_c0/'ve/'s} gotten away with {PRONOUN/s_c0/poss} clandestine snacking, but when r_c0 arrives back at camp, another patrol member pulls dep_name aside for a quiet word, glaring back at s_c0. The deputy assigns {PRONOUN/s_c0/object} to dig a new trench for the Clan's dirtplace, and s_c0 hears snide remarks when {PRONOUN/s_c0/subject} {VERB/s_c0/slink/slinks} into {PRONOUN/s_c0/poss} nest that night.",
+                    "{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/think/thinks} {PRONOUN/r_c0/subject}{VERB/r_c0/'ve/'s} gotten away with {PRONOUN/r_c0/poss} clandestine snacking, but when r_c0 arrives back at camp, another patrol member pulls dep_name aside for a quiet word, glaring back at r_c0. The deputy assigns {PRONOUN/r_c0/object} to dig a new trench for the Clan's dirtplace; r_c0 prickles with humiliation and terrible smells."
                 ],
                 "exp_gained": 0,
+                "involved_cats": {
+                    "s_c0": {
+                        "status": ["-deputy"]
+                    }
+                },
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "clan",
@@ -874,157 +748,12 @@
                         "adjust": "increase_tiny"
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "event_id": "gen_hunt_sneakprey4",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 1,
-        "tags": [
-            "clan:deputy"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                2,
-                6
-            ],
-            "apprentice": [
-                1,
-                6
-            ],
-            "deputy": [
-                -1,
-                -1
-            ]
-        },
-        "involved_cats": {
-            "r_c1": {
-                "status": [
-                    "apprentice"
-                ]
-            }
-        },
-        "chance_of_success": 50,
-        "patrol_art": "cat_sprites/gen_hunt_sneakprey_Wr",
-        "intro_strings": [
-            "r_c1 is tempted to eat the prey {PRONOUN/r_c1/subject} just caught."
-        ],
-        "decline_strings": [
-            "r_c1 decides against breaking the warrior code."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "{PRONOUN/r_c1/subject/CAP}{VERB/r_c1/'re/'s} so hungry — but this prey is for the Clan, not r_c1. {PRONOUN/r_c1/subject/CAP} hold {PRONOUN/r_c1/poss} head up high and bring {PRONOUN/r_c1/poss} small catch home to the freshkill pile."
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_small"
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "After all, the patrol has caught enough on this hunt that {PRONOUN/r_c1/subject}'ll have trouble carrying it all back to camp. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/stop/stops} for a quick snack and {VERB/r_c1/return/returns} to camp laden with prey for the fresh-kill pile."
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c1"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to had a successful hunt together."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/think/thinks} {PRONOUN/r_c0/subject}{VERB/r_c0/'ve/'s} gotten away with {PRONOUN/r_c0/poss} clandestine snacking, but when r_c0 arrives back at camp, another patrol member pulls dep_name aside for a quiet word, glaring back at r_c0. The deputy assigns {PRONOUN/r_c0/object} to dig a new trench for the Clan's dirtplace; r_c0 prickles with humiliation and terrible smells."
-                ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c1"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from knew that cat_to at fresh-kill while on a hunting patrol."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ]
             },
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 gets away with it, burying the evidence. But {PRONOUN/r_c1/poss} pelt still prickles with guilt when the patrol brings so little home."
+                    "s_c0 gets away with it, burying the evidence. But {PRONOUN/s_c0/poss} pelt still prickles with guilt when the patrol brings so little home."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "supply": [
                     {
