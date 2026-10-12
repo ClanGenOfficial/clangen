@@ -1622,11 +1622,12 @@
         ]
     },
     {
-        "event_id": "gen_hunt_verysmallprey_balancing_soloapphunt1",
+        "event_id": "gen_hunt_soloapphunt1",
         "types": [
             "hunting"
         ],
-        "frequency": 1,
+        "frequency": 4,
+        "tags": ["clan:warrior-like"],
         "required_cat_types": {
             "patrol_cats": [
                 1,
@@ -1637,51 +1638,25 @@
                 1
             ]
         },
-        "involved_cats": {
-            "p_l": {
-                "status": [
-                    "apprentice"
-                ]
-            }
-        },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_train_solo_Ap",
         "intro_strings": [
-            "p_l has snuck out late, timed with the last flares of the sunset, to try to hunt alone."
+            "p_l has snuck out late, timed with the last flares of the sunset, to try to hunt alone.",
+            "Look, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} so close to perfecting {PRONOUN/p_l/poss} pounce, p_l can <i>feel</i> it. {PRONOUN/p_l/subject/CAP} {VERB/p_l/head/heads} out to prove so.",
+            "p_l is tired of being treated like {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} know anything — {PRONOUN/p_l/subject} {VERB/p_l/stalk/stalks} off to hunt alone.",
+            "p_l doesn't want to be in the apprentices' den until {PRONOUN/p_l/poss} muzzle grays — {PRONOUN/p_l/subject} {VERB/p_l/need/needs} to prove to {PRONOUN/p_l/poss} clanmates that they should pay attention to {PRONOUN/p_l/object}.",
+            "p_l nervously creeps out towards c_n's dirtplace, profile low to the ground as {PRONOUN/p_l/subject} {VERB/p_l/sneak/sneaks} out of camp. Let's see what a night hunt feels like."
         ],
         "decline_strings": [
-            "It's not a great day for hunting, p_l decides, and calls it off before someone figures out {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} snuck out of camp."
+            "It's not a great day for hunting, p_l decides, and calls it off before someone figures out {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} snuck out of camp.",
+            "Just as {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} about to leave camp, someone calls out and offers to share something from the fresh-kill pile with {PRONOUN/p_l/object}. p_l can't refuse, even if {PRONOUN/p_l/subject}'d like to, and {PRONOUN/p_l/poss} clandestine hunt is canceled."
         ],
         "success_outcomes": [
             {
-                "frequency": 3,
-                "strings": [
-                    "Maybe the light makes it harder for the prey to see p_l — but it makes it harder for p_l to see {PRONOUN/p_l/poss} prey, too. Not a stellar success."
-                ],
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "Trying to hunt after a full day's warrior training isn't {PRONOUN/p_l/poss} smartest idea. p_l is too exhausted to bring much home."
-                ],
-                "exp_gained": 10,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ]
-            },
-            {
                 "frequency": 4,
                 "strings": [
+                    "Maybe the light makes it harder for the prey to see p_l — but it makes it harder for p_l to see {PRONOUN/p_l/poss} prey, too. Not a stellar success.",
+                    "Trying to hunt after a full day's warrior training isn't {PRONOUN/p_l/poss} smartest idea. p_l is too exhausted to bring much home.",
                     "It doesn't matter how keen on hunting p_l is — if the prey isn't there, not even the mightiest hunter in StarClan can do anything, let alone a rangy adolescent. Still, not much is better than nothing."
                 ],
                 "exp_gained": 20,
@@ -1691,77 +1666,7 @@
                         "adjust": "increase_tiny"
                     }
                 ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l is so busy hiding from the notice of a dusk border patrol that {PRONOUN/p_l/subject} outright {VERB/p_l/fail/fails} to catch <i>anything</i>."
-                ],
-                "exp_gained": 0
             },
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l gets so distracted by the pretty sunset that zero hunting gets done."
-                ],
-                "exp_gained": 0
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l lines up what {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is a perfect pounce, launches — and goes flying into a rock. Well. At least no one saw that. {PRONOUN/p_l/poss/CAP} ear kind of hurts."
-                ],
-                "exp_gained": 0,
-                "condition": [
-                    {
-                        "cats": [
-                            "p_l"
-                        ],
-                        "condition": [
-                            "torn ear",
-                            "scrapes"
-                        ],
-                        "scar_history": "m_c got a bit torn up on a solo hunt as an apprentice.",
-                        "death_history": "m_c died after a small injury progressed to something worse."
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "gen_hunt_smallprey_balancing_soloapphunt1",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 1,
-        "required_cat_types": {
-            "patrol_cats": [
-                1,
-                1
-            ],
-            "apprentice": [
-                1,
-                1
-            ]
-        },
-        "involved_cats": {
-            "p_l": {
-                "status": [
-                    "apprentice"
-                ]
-            }
-        },
-        "chance_of_success": 50,
-        "patrol_art": "cat_sprites/gen_train_solo_Ap",
-        "intro_strings": [
-            "Look, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} so close to perfecting {PRONOUN/p_l/poss} pounce, p_l can <i>feel</i> it. {PRONOUN/p_l/subject/CAP} head out to prove so."
-        ],
-        "decline_strings": [
-            "Just as {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} about to leave camp, someone calls out and offers to share something from the fresh-kill pile with {PRONOUN/p_l/object}. p_l can't refuse, even if {PRONOUN/p_l/subject}'d like to, and {PRONOUN/p_l/poss} clandestine hunt is canceled."
-        ],
-        "success_outcomes": [
             {
                 "frequency": 3,
                 "strings": [
@@ -1778,103 +1683,28 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "Trying to hunt after a full day's warrior training isn't {PRONOUN/p_l/poss} smartest idea. p_l is too exhausted to bring much home."
-                ],
-                "exp_gained": 10,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_small"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
                     "There's something really special about the clear focus of hunting. Or, at least, p_l thinks so. This might not be the world's greatest haul of prey, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} proud of the work {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} done and the progress in {PRONOUN/p_l/poss} training {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} making."
                 ],
                 "exp_gained": 20,
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": ["HUNTER,0"]
+                        }
+                    }
+                },
                 "supply": [
                     {
                         "type": "freshkill",
                         "adjust": "increase_small"
                     }
                 ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "Forget pouncing — p_l can't find any prey to pounce <i>on</i>."
-                ],
-                "exp_gained": 0
             },
             {
-                "frequency": 4,
+                "frequency": 2,
                 "strings": [
-                    "{PRONOUN/p_l/subject/CAP} {VERB/p_l/line/lines} up the perfect shot, {VERB/p_l/go/goes} for it — and one of {PRONOUN/p_l/poss} hindfeet slips out from under {PRONOUN/p_l/object}. Fox-dung!"
-                ],
-                "exp_gained": 0
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l lines up what {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is a perfect pounce, launches — and goes flying into a rock. Well. At least no one saw that. {PRONOUN/p_l/poss/CAP} ear kind of hurts."
-                ],
-                "exp_gained": 0,
-                "condition": [
-                    {
-                        "cats": [
-                            "p_l"
-                        ],
-                        "condition": [
-                            "torn ear",
-                            "scrapes"
-                        ],
-                        "scar_history": "m_c got a bit torn up on a solo hunt as an apprentice.",
-                        "death_history": "m_c died after a small injury progressed to something worse."
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "gen_hunt_mediumprey_balancing_soloapphunt1",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 1,
-        "required_cat_types": {
-            "patrol_cats": [
-                1,
-                1
-            ],
-            "apprentice": [
-                1,
-                1
-            ]
-        },
-        "involved_cats": {
-            "p_l": {
-                "status": [
-                    "apprentice"
-                ]
-            }
-        },
-        "chance_of_success": 50,
-        "patrol_art": "cat_sprites/gen_train_solo_Ap",
-        "intro_strings": [
-            "p_l is tired of being treated like {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} know anything — {PRONOUN/p_l/subject} {VERB/p_l/stalk/stalks} off to hunt alone."
-        ],
-        "decline_strings": [
-            "Just as {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} about to leave camp, someone calls out and offers to share something from the fresh-kill pile with {PRONOUN/p_l/object}. p_l can't refuse, even if {PRONOUN/p_l/subject}'d like to, and {PRONOUN/p_l/poss} clandestine hunt is canceled."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 3,
-                "strings": [
-                    "This will surely be enough prey to prove {PRONOUN/p_l/self}. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} not asking for {PRONOUN/p_l/poss} warrior name early — just to be acknowledged for the skills {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} put so much effort into learning."
+                    "This will surely be enough prey to prove {PRONOUN/p_l/self}. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} not asking for {PRONOUN/p_l/poss} warrior name early — just to be acknowledged for the skills {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} put so much effort into learning.",
+                    "This isn't enough. p_l swallows hard, lifts {PRONOUN/p_l/poss} head up, and brings what {PRONOUN/p_l/subject} {VERB/p_l/have/has} back to camp, squashing down {PRONOUN/p_l/poss} hopes for a naming ceremony."
                 ],
                 "exp_gained": 20,
                 "supply": [
@@ -1885,120 +1715,29 @@
                 ]
             },
             {
-                "frequency": 3,
-                "strings": [
-                    "This isn't enough. p_l swallows hard, lifts {PRONOUN/p_l/poss} head up, and brings what {PRONOUN/p_l/subject} {VERB/p_l/have/has} back to camp, squashing down {PRONOUN/p_l/poss} hopes for a naming ceremony."
-                ],
-                "exp_gained": 10,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
+                "frequency": 2,
                 "strings": [
                     "Sure, {PRONOUN/p_l/subject} might not be the greatest fighter or the Clan's cleverest cat, but hunting? Hunting is a <i>breeze</i> for p_l, and {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp with the proof of that."
                 ],
                 "exp_gained": 20,
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": ["HUNTER,0"]
+                        }
+                    }
+                },
                 "supply": [
                     {
                         "type": "freshkill",
                         "adjust": "increase_medium"
                     }
                 ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "Forget pouncing — p_l can't find any prey to pounce <i>on</i>."
-                ],
-                "exp_gained": 0
             },
             {
-                "frequency": 4,
+                "frequency": 1,
                 "strings": [
-                    "{PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} manage a single kill. Instead, p_l pretends {PRONOUN/p_l/subject} {VERB/p_l/were/was} just out in the dirtplace for a really, <i>really</i> long time when {PRONOUN/p_l/subject} {VERB/p_l/slink/slinks} back into camp."
-                ],
-                "exp_gained": 0
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l lines up what {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is a perfect pounce, launches — and goes flying into a rock. Well. At least no one saw that. {PRONOUN/p_l/poss/CAP} ear kind of hurts."
-                ],
-                "exp_gained": 0,
-                "condition": [
-                    {
-                        "cats": [
-                            "p_l"
-                        ],
-                        "condition": [
-                            "torn ear",
-                            "scrapes"
-                        ],
-                        "scar_history": "m_c got a bit torn up on a solo hunt as an apprentice.",
-                        "death_history": "m_c died after a small injury progressed to something worse."
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "gen_hunt_largeprey_balancing_soloapphunt1",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 1,
-        "tags": [
-            "clan:leader"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                1,
-                1
-            ],
-            "apprentice": [
-                1,
-                1
-            ]
-        },
-        "involved_cats": {
-            "p_l": {
-                "status": [
-                    "apprentice"
-                ]
-            }
-        },
-        "chance_of_success": 50,
-        "patrol_art": "cat_sprites/gen_train_solo_Ap",
-        "intro_strings": [
-            "p_l doesn't want to be in the apprentices' den until {PRONOUN/p_l/poss} muzzle grays — {PRONOUN/p_l/subject} {VERB/p_l/need/needs} to prove lead_name should pay attention to {PRONOUN/p_l/object}."
-        ],
-        "decline_strings": [
-            "Just as {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} about to leave camp, someone calls out and offers to share something from the fresh-kill pile with {PRONOUN/p_l/object}. p_l can't refuse, even if {PRONOUN/p_l/subject}'d like to, and {PRONOUN/p_l/poss} clandestine hunt is canceled."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 3,
-                "strings": [
-                    "p_l knows that a warrior would have more experience, more strength, more endurance, more <i>everything</i>. But that doesn't matter, p_l has more heart, and this amount of success stacking the fresh-kill pile proves it."
-                ],
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
+                    "p_l knows that a warrior would have more experience, more strength, more endurance, more <i>everything</i>. But that doesn't matter, p_l has more heart, and this amount of success stacking the fresh-kill pile proves it.",
                     "Bringing the last of {PRONOUN/p_l/poss} catch back to camp, p_l sits proudly beside the fresh-kill pile, chest fluffed out in achievement."
                 ],
                 "exp_gained": 20,
@@ -2010,104 +1749,29 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 1,
                 "strings": [
                     "p_l leans on {PRONOUN/p_l/poss} strengths, choosing to go hunting, which {PRONOUN/p_l/subject} {VERB/p_l/know/knows} is one of {PRONOUN/p_l/poss} talents. And it's critical to c_n too, making {PRONOUN/p_l/poss} heart swell with pride as {PRONOUN/p_l/subject} {VERB/p_l/see/sees} another cat blink in surprise at {PRONOUN/p_l/poss} hunting haul."
                 ],
                 "exp_gained": 20,
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": ["HUNTER,0"]
+                        }
+                    }
+                },
                 "supply": [
                     {
                         "type": "freshkill",
                         "adjust": "increase_large"
                     }
                 ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "Forget pouncing — p_l can't find any prey to pounce <i>on</i>."
-                ],
-                "exp_gained": 0
             },
             {
-                "frequency": 4,
+                "frequency": 1,
                 "strings": [
-                    "{PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} manage a single kill. Instead, p_l pretends {PRONOUN/p_l/subject} {VERB/p_l/were/was} just out in the dirtplace for a really, <i>really</i> long time when {PRONOUN/p_l/subject} {VERB/p_l/slink/slinks} back into camp."
-                ],
-                "exp_gained": 0
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l lines up what {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is a perfect pounce, launches — and goes flying into a rock. Well. At least no one saw that. {PRONOUN/p_l/poss/CAP} ear kind of hurts."
-                ],
-                "exp_gained": 0,
-                "condition": [
-                    {
-                        "cats": [
-                            "p_l"
-                        ],
-                        "condition": [
-                            "torn ear",
-                            "scrapes"
-                        ],
-                        "scar_history": "m_c got a bit torn up on a solo hunt as an apprentice.",
-                        "death_history": "m_c died after a small injury progressed to something worse."
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "gen_hunt_hugeprey_balancing_soloapphunt1",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 1,
-        "required_cat_types": {
-            "patrol_cats": [
-                1,
-                1
-            ],
-            "apprentice": [
-                1,
-                1
-            ]
-        },
-        "involved_cats": {
-            "p_l": {
-                "status": [
-                    "apprentice"
-                ]
-            }
-        },
-        "chance_of_success": 50,
-        "patrol_art": "cat_sprites/gen_train_solo_Ap",
-        "intro_strings": [
-            "p_l nervously creeps out towards c_n's dirtplace, profile low to the ground as {PRONOUN/p_l/subject} {VERB/p_l/sneak/sneaks} out of camp. Let's see what a night hunt feels like."
-        ],
-        "decline_strings": [
-            "p_l thinks better of the plan and returns to {PRONOUN/p_l/poss} nest."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 3,
-                "strings": [
-                    "Flashing through the night, claws out, teeth bared, alone in the darkness, p_l feels <i>powerful</i>. Also, {PRONOUN/p_l/subject} swear the prey is more blind than in daylight."
-                ],
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_huge"
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
+                    "Flashing through the night, claws out, teeth bared, alone in the darkness, p_l feels <i>powerful</i>. Also, {PRONOUN/p_l/subject} swear the prey is more blind than in daylight.",
                     "It's cold, alone by {PRONOUN/p_l/self}. But p_l shakes it off, and {PRONOUN/p_l/subject} {VERB/p_l/find/finds} enough food that the Clan will have questions, waking up with a fresh-kill pile weirdly fuller than when they went to sleep."
                 ],
                 "exp_gained": 20,
@@ -2119,11 +1783,18 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 1,
                 "strings": [
                     "Hunting is always exciting, always fun, but this — the feeling of the wind ruffling {PRONOUN/p_l/poss} pelt, the way the animal calls have all changed with the darkness, the thrill of ambushing one thing after another, this is great!"
                 ],
                 "exp_gained": 20,
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": ["HUNTER,0"]
+                        }
+                    }
+                },
                 "supply": [
                     {
                         "type": "freshkill",
@@ -2136,13 +1807,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Forget pouncing — p_l can't find any prey to pounce <i>on</i>."
-                ],
-                "exp_gained": 0
-            },
-            {
-                "frequency": 4,
-                "strings": [
+                    "p_l is so busy hiding from the notice of a dusk border patrol that {PRONOUN/p_l/subject} outright {VERB/p_l/fail/fails} to catch <i>anything</i>.",
+                    "p_l gets so distracted by the pretty sunset that zero hunting gets done.",
+                    "{PRONOUN/p_l/subject/CAP} {VERB/p_l/line/lines} up the perfect shot, {VERB/p_l/go/goes} for it — and one of {PRONOUN/p_l/poss} hindfeet slips out from under {PRONOUN/p_l/object}. Fox-dung!",
+                    "{PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} manage a single kill. Instead, p_l pretends {PRONOUN/p_l/subject} {VERB/p_l/were/was} just out in the dirtplace for a really, <i>really</i> long time when {PRONOUN/p_l/subject} {VERB/p_l/slink/slinks} back into camp.",
                     "It's <i>dark</i>. How{VERB/p_l/'re/'s} {PRONOUN/p_l/subject} supposed to hunt like this?"
                 ],
                 "exp_gained": 0
