@@ -610,8 +610,50 @@
             "m_c can't believe {PRONOUN/m_c/poss} apprenticeship is finally here! Nearly tripping over {PRONOUN/m_c/poss} own paws, {PRONOUN/m_c/subject} {VERB/m_c/scurry/scurries} up to r_c0, excitedly touching noses with {PRONOUN/r_c0/object}.",
             "m_c fidgets impatiently beside r_c0 as {PRONOUN/m_c/subject} {VERB/m_c/wait/waits} for the meeting to end. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} finally an apprentice! {PRONOUN/m_c/subject/CAP} {VERB/m_c/want/wants} to hurry up, get out there and go, go, go!",
             "(old_name) sits in front of the Clan with pride, {PRONOUN/m_c/poss} tiny heart beating so fast {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} it might explode! {PRONOUN/m_c/subject/CAP} very excitedly {VERB/m_c/touch/touches} noses with r_c0, happy to start {PRONOUN/m_c/poss} apprenticeship.",
+            "m_c blurts out to r_c0 that {PRONOUN/m_c/subject} {VERB/m_c/are/is} going to catch more prey than any apprentice ever has in the history of the Clan!"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+    "event_id": "app_eager2",
+        "involved_cats": {
+            "m_c": {
+                "past_status": [
+                    "-rogue", "-loner", "-kittypet"
+                ],
+                "stat": {
+                    "trait": [
+                        "playful",
+                        "troublesome",
+                        "oblivious",
+                        "fierce",
+                        "flamboyant",
+                        "strange",
+                        "daring",
+                        "bold",
+                        "childish",
+                        "adventurous",
+                        "shameless"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
             "m_c buzzes with excitement as {PRONOUN/m_c/subject} {VERB/m_c/step/steps} up to meet r_c0. {PRONOUN/m_c/subject/CAP} {VERB/m_c/have/has} spent moons waiting to see the world beyond camp, and now's {PRONOUN/m_c/poss} chance!",
-            "m_c blurts out to r_c0 that {PRONOUN/m_c/subject} {VERB/m_c/are/is} going to catch more prey than any apprentice ever has in the history of the Clan!",
             "After a life confined to camp, (m_c) chatters endlessly to r_c0. Can they practice climbing? No, wait, they should swim! Or maybe fight a fox? {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} ready for anything, as long as it's exciting!"
         ],
         "relationship_constraint": [
@@ -948,7 +990,7 @@
         ]
     },
     {
-        "event_id": "app_confident0",
+        "event_id": "app_decisive0",
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -1005,7 +1047,46 @@
             "r_c0": {}
         },
         "strings": [
-            "m_c has always wanted to dedicate {PRONOUN/m_c/poss} life to protecting {PRONOUN/m_c/poss} Clan. With r_c0's guidance, {PRONOUN/m_c/subject} {VERB/m_c/know/knows} {PRONOUN/m_c/subject} can fulfill {PRONOUN/m_c/poss} dream.",
+            "m_c has always wanted to dedicate {PRONOUN/m_c/poss} life to protecting {PRONOUN/m_c/poss} Clan. With r_c0's guidance, {PRONOUN/m_c/subject} {VERB/m_c/know/knows} {PRONOUN/m_c/subject} can fulfill {PRONOUN/m_c/poss} dream."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_safety0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "CAMP,0"
+                    ],
+                    "trait": [
+                        "strict",
+                        "righteous",
+                        "ambitious",
+                        "faithful",
+                        "loyal",
+                        "responsible",
+                        "careful"
+                    ],
+                    "must_have_both": false
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
             "The first thing m_c asks r_c0 to learn after {PRONOUN/m_c/poss} ceremony ends is how to secure the camp walls. {PRONOUN/m_c/subject/CAP} {VERB/m_c/want/wants} to make absolutely sure camp is safe before {PRONOUN/m_c/subject} even {VERB/m_c/think/thinks} about leaving it!"
         ],
         "relationship_constraint": [
@@ -1374,7 +1455,7 @@
     {
         "event_id": "app_blunt0",
         "tags": [
-            "clan:leader"
+            "clan:leader", "clan:warrior"
         ],
         "involved_cats": {
             "m_c": {
@@ -1386,35 +1467,18 @@
                         "arrogant",
                         "shameless",
                         "troublesome",
-                        "rebellious"
+                        "rebellious",
+                        "strict"
                     ]
                 }
-            },
-            "r_c0": {}
+            }
         },
         "strings": [
-            "There isn't a single cat in the Clan who doubts whether or not m_c is ready to become an apprentice. How could they, when {PRONOUN/m_c/subject} {VERB/m_c/walk/walks} right up to the leader and announces {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} waited long enough?"
-        ],
-        "relationship_constraint": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c0"
-                ],
-                "mutual": false,
-                "constraints": [
-                    "app/mentor"
-                ]
-            }
+            "There isn't a single cat in the Clan who doubts whether or not m_c is ready to become an apprentice. How could they, when {PRONOUN/m_c/subject} {VERB/m_c/walk/walks} right up to lead_name and announces {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} waited long enough?"
         ]
     },
     {
         "event_id": "app_faith0",
-        "tags": [
-            "clan:leader"
-        ],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -1426,7 +1490,7 @@
             "r_c0": {}
         },
         "strings": [
-            "m_c bows {PRONOUN/m_c/poss} head and {VERB/m_c/pray/prays} silently as {PRONOUN/m_c/subject} {VERB/m_c/touch/touches} noses with r_c0. {PRONOUN/m_c/subject/CAP} {VERB/m_c/ask/asks} StarClan to guide {PRONOUN/m_c/object} in all things."
+            "m_c bows {PRONOUN/m_c/poss} head and prays silently as {PRONOUN/m_c/subject} {VERB/m_c/touch/touches} noses with r_c0. {PRONOUN/m_c/subject/CAP} {VERB/m_c/ask/asks} StarClan to guide {PRONOUN/m_c/object} in all things."
         ],
         "relationship_constraint": [
             {
@@ -1445,9 +1509,6 @@
     },
     {
         "event_id": "app_glum0",
-        "tags": [
-            "clan:leader"
-        ],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -1466,9 +1527,45 @@
             "m_c stumbles on {PRONOUN/m_c/poss} way up to r_c0, too busy staring at {PRONOUN/m_c/poss} own paws to pay attention. r_c0 helps {PRONOUN/m_c/object} up and hears {PRONOUN/m_c/subject} muttering that {PRONOUN/m_c/subject} knew something bad would happen.",
             "After the ceremony m_c trudges over to r_c0 and sighs. {PRONOUN/m_c/subject} glumly {VERB/m_c/ask/asks} if they'll be starting with something boring, like gathering moss. It would be just {PRONOUN/m_c/poss} luck.",
             "r_c0 ignores the way m_c mutters under {PRONOUN/m_c/poss} breath as they touch noses. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/hope/hopes} that {PRONOUN/r_c0/subject} can help m_c grow out of {PRONOUN/m_c/poss} attitude.",
-            "Why did the leader have to call the meeting so early? No amount of excitement over {PRONOUN/m_c/poss} apprenticeship or getting r_c0 as a mentor can make up for how cranky {PRONOUN/m_c/subject} {VERB/m_c/are/is} in the morning.",
-            "m_c is more withdrawn than most cats {PRONOUN/m_c/poss} age, but the leader hopes that r_c0 might help {PRONOUN/m_c/object} come out of {PRONOUN/m_c/poss} shell.",
             "m_c grits {PRONOUN/m_c/poss} teeth as {PRONOUN/m_c/subject} {VERB/m_c/slink/slinks} up to the waiting crowd. Too many eyes on {PRONOUN/m_c/object}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/try/tries} to ignore them all as {PRONOUN/m_c/subject}{VERB/m_c/touch/touches} noses with r_c0."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_glum1",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "cold",
+                        "gloomy",
+                        "grumpy",
+                        "insecure",
+                        "lonesome"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "Why did lead_name have to call the meeting so early? No amount of excitement over {PRONOUN/m_c/poss} apprenticeship or getting r_c0 as a mentor can make up for how cranky {PRONOUN/m_c/subject} {VERB/m_c/are/is} in the morning.",
+            "m_c is more withdrawn than most cats {PRONOUN/m_c/poss} age, but lead_name hopes that r_c0 might help {PRONOUN/m_c/object} come out of {PRONOUN/m_c/poss} shell."
         ],
         "relationship_constraint": [
             {
