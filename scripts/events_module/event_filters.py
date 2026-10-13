@@ -468,7 +468,7 @@ def event_for_cat(
         "has_apprentice": _check_cat_apprentice,
         "current_exp": _check_cat_exp,
         "name": _check_cat_name,
-        "accessory": _check_cat_accessory
+        "accessory": _check_cat_accessory,
     }
 
     for param, func in func_lookup.items():

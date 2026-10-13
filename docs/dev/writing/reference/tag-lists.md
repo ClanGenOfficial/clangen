@@ -566,3 +566,17 @@ You can utilize [#exclusionary tags](#exclusionary-tags).
 | **low lawful**  | chaotic       | mercurial     | calculating    |
 | **mid lawful**  | eager         | observant     | adaptable      |
 | **high lawful** | decisive      | methodical    | steadfast      |
+
+***
+
+## Accessories
+> Accessory tags can be used to constrain an event/outcome to only occur if a cat has/does not have an accessory type. These options are based on the three accessory categories, rather than a specific location on a cat's body or a specific accessory. 
+
+    > !!! tip 
+    Full lists of the acessories in each category can be found in the following files: collar_sprite_data.json, wild_sprite_data.json, plant_sprite_data.json
+
+|    category     |    description    |                  examples                   |
+|-----------------|-------------------|---------------------------------------------|
+|   **"collar"**  |      collars      |            BOW, PUFFBALL, NYLON             |
+|   **"wild"**    | animal acessories | RED FEATHERS, BLACK CICADA, ROSY MOTH WINGS |
+|   **"plant"**   | plant accessories |        MAPLE LEAF, VINE BRACELET, HERBS     |
