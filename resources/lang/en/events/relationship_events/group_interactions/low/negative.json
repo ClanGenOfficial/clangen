@@ -138,7 +138,10 @@
                     "-elder",
                     "-leader",
                     "-deputy"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             },
             "multi_cat": {
                 "status": [
