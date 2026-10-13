@@ -399,7 +399,10 @@
                     "leader",
                     "medicine cat apprentice",
                     "medicine cat"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             },
             "r_c": {
                 "status": [
@@ -409,7 +412,10 @@
                     "leader",
                     "medicine cat apprentice",
                     "medicine cat"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             }
         },
         "relationship_constraint": [
