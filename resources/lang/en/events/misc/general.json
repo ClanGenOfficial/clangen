@@ -18439,7 +18439,7 @@
             "category": "gathering"
         },
         "frequency": 4,
-        "event_text": "m_c begins to bristle at how easily others discuss c_n's struggles, and does {PRONOUN/m_c/poss} best to ignore the clouds covering the moon above POI as {PRONOUN/m_c/subject} {VERB/m_c/snap/snaps} at the other leaders to control their Clans.",
+        "event_text": "m_c begins to bristle at how casually others discuss c_n's struggles, and does {PRONOUN/m_c/poss} best to ignore the clouds covering the moon above POI as {PRONOUN/m_c/subject} {VERB/m_c/snap/snaps} at the other leaders to control their Clans.",
         "m_c": {
             "status": [
                 "leader"
