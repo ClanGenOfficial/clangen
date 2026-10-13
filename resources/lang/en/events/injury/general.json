@@ -9865,6 +9865,654 @@
                 "death": "m_c was killed by complications of {PRONOUN/m_c/poss} wounds after angering a flock of birds."
             }
         ]
+    },
+    {
+        "event_id": "gen_injury_beakbite_newleafPOInests",
+        "location": ["any"],
+        "season": ["newleaf"],
+        "sub_type": [],
+        "tags": ["nests"],
+        "poi": {
+        "tags": ["nests"]
+        },
+        "frequency": 2,
+        "event_text": "m_c tried to raid the nests in POI, but was mobbed by birds.",
+        "m_c": {
+            "status": ["warrior","apprentice","deputy","leader"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["beak_bite"],
+                "scars": ["BEAKSIDE"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred when {PRONOUN/m_c/subject} {VERB/m_c/were/was} mobbed by birds while raiding nests.",
+                "death": "m_c died of {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/subject} {VERB/m_c/were/was} mobbed by birds while raiding nests."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_waterlungs_multiPOIhighground",
+        "location": ["any"],
+        "season": ["leaf-fall","greenleaf","newleaf"],
+        "sub_type": [],
+        "tags": ["high_ground"],
+        "poi": {
+        "tags": ["high_ground"]
+        },
+        "frequency": 2,
+        "event_text": "During a flood, m_c barely found refuge on POI in time, coughing up water.",
+        "m_c": {
+            "status": ["-kitten"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["water in their lungs"],
+                "scars": []
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "death": "m_c died of the water in {PRONOUN/m_c/poss} lungs after escaping a flood."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_smallcut_POItwolegAbandoned",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": ["Twolegs:abandoned"],
+        "poi": {
+        "tags": ["Twolegs:abandoned"]
+        },
+        "frequency": 1,
+        "event_text": "At POI, m_c investigated what the Twolegs left behind. {PRONOUN/m_c/subject/CAP} regretted {PRONOUN/m_c/poss} nosiness after something sharp left a cut in {PRONOUN/m_c/poss} paw.",
+        "m_c": {
+            "status": ["-kitten", "-elder"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["small cut"],
+                "scars": []
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c's small cut scarred."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_beakbite_POIpreybird1",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": ["prey:bird"],
+        "poi": {
+        "tags": ["prey:bird"]
+        },
+        "frequency": 2,
+        "event_text": "m_c underestimated a large bird while hunting by POI, and suffered a beak bite.",
+        "m_c": {
+            "status": ["warrior","apprentice","leader","deputy"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["beak bite"],
+                "scars": ["BEAKCHEEK"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after being attacked by a large bird.",
+                "death": "m_c died from a beak bite."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_beakbite_POIpreybird2",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": ["prey:bird"],
+        "poi": {
+        "tags": ["prey:bird"]
+        },
+        "frequency": 3,
+        "event_text": "m_c got mobbed by a flock of birds while hunting by POI.",
+        "m_c": {
+            "status": ["warrior","apprentice","leader","deputy"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["beak bite"],
+                "scars": []
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after being mobbed by birds.",
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after being mobbed by birds."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_clawwound_POIprey",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": ["prey"],
+        "poi": {
+        "tags": ["prey"]
+        },
+        "frequency": 2,
+        "event_text": "A bird of prey fought m_c for the fresh-kill {PRONOUN/m_c/subject} caught at POI, leaving {PRONOUN/m_c/object} injured.",
+        "m_c": {
+            "status": ["warrior","apprentice","leader","deputy"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["claw-wound"],
+                "scars": []
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after a bird of prey fought {PRONOUN/m_c/object} for {PRONOUN/m_c/poss} fresh-kill.",
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after a bird of prey fought {PRONOUN/m_c/object} for {PRONOUN/m_c/poss} fresh-kill."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_ratbite_POI",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+        "name": ["terrain_carrionplace","terrain_carrionbeach","terrain_abandonednest"]
+        },
+        "frequency": 2,
+        "event_text": "m_c was bitten by a rat that crawled out of POI.",
+        "m_c": {
+            "status": ["-kitten","-elder"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["rat bite"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred by a rat bite.",
+                "death": "m_c died from a rat bite."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_dislocatedjoint_POIrocks",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": ["rocks"],
+        "poi": {
+        "tags": ["rocks"]
+        },
+        "frequency": 4,
+        "event_text": "m_c slipped on a rock by POI and dislocated a joint.",
+        "m_c": {
+            "status": ["-kitten"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["dislocated joint"]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_sprain_POIrocks",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": ["rocks"],
+        "poi": {
+        "tags": ["rocks"]
+        },
+        "frequency": 4,
+        "event_text": "m_c slipped on a rock by POI and sprained {PRONOUN/m_c/poss} leg.",
+        "m_c": {
+            "status": ["-kitten"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["sprain"]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_sprain_POIpreyflying",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": ["prey:flying"],
+        "poi": {
+        "tags": ["prey:flying"]
+        },
+        "frequency": 4,
+        "event_text": "m_c tried to leap into the air for prey at POI and landed wrong, spraining {PRONOUN/m_c/poss} leg.",
+        "m_c": {
+            "status": ["warrior","leader","apprentice","deputy"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["sprain"]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_dislocatedjoint_POIpreyflying",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": ["prey:flying"],
+        "poi": {
+        "tags": ["prey:flying"]
+        },
+        "frequency": 4,
+        "event_text": " m_c tried to leap into the air for prey at POI, but came down awkwardly and tumbled down a slope, landing in a heap.",
+        "m_c": {
+            "status": ["warrior","leader","apprentice","deputy"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["dislocated joint"]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_bluntforce_POIpreyflying",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": ["prey:flying"],
+        "poi": {
+        "tags": ["prey:flying"]
+        },
+        "frequency": 2,
+        "event_text": "m_c tried to leap into the air for prey at POI, but came down awkwardly and tumbled down an incline, hitting hard against a rock.",
+        "m_c": {
+            "status": ["warrior","leader","apprentice","deputy"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["blunt_force_injury"],
+                "scars": []
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred when {PRONOUN/m_c/subject} leapt, tumbled, and hit a rock.",
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/subject} leapt, tumbled, and hit a rock."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_tornear_POItwolegs",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": ["Twolegs:present"],
+        "poi": {
+        "tags": ["Twolegs:present"]
+        },
+        "frequency": 3,
+        "event_text": "m_c got into a spat with a kittypet by POI, who tore {PRONOUN/m_c/poss} ear.",
+        "m_c": {
+            "status": ["warrior","leader","apprentice","deputy"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["torn ear"],
+                "scars": []
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c's ear was torn in a spat with a kittypet."
+            }
+        ],  
+        "new_cat": [
+            ["exists","meeting","kittypet","-kitten","-newborn"]
+        ],
+        "outsider": {
+            "changed": -1
+        },
+        "relationships":[{
+            
+            "cats_from": ["n_c:0"],
+            "cats_to": ["m_c"],
+            "mutual": true,
+            "values": ["like"],
+            "amount": -15,
+            "log": {
+                "cats_from": "cat_from tore cat_to's ear when they got into a spat."
+            }
+        }
+        ]
+        
+    },
+    {
+        "event_id": "gen_injury_battleinjury_POItwolegs",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": ["Twolegs:present"],
+        "poi": {
+        "tags": ["Twolegs:present"]
+        },
+        "frequency": 1,
+        "event_text": "m_c got into a serious fight with a kittypet by POI.",
+        "m_c": {
+            "status": ["warrior","leader","apprentice","deputy"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["battle_injury"],
+                "scars": []
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after a serious fight with a kittypet.",
+                "death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/subject} fought a kittypet."
+            }
+        ],  
+        "new_cat": [
+            ["exists","meeting","kittypet","-senior","-adolescent","-kitten","-newborn"]
+        ],
+        "outsider": {
+            "changed": -1
+        },
+        "relationships": [
+            {
+                "cats_from": ["n_c:0"],
+                "cats_to": ["m_c"],
+                "mutual": true,
+                "values": ["like"],
+                "amount": -25,
+                "log": {
+                    "cats_from": "cat_from seriously injured cat_to in a fight."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_waterinlungs_POIwater:still1",
+        "location": ["any"],
+        "season": ["newleaf","leaf-fall","greenleaf"],
+        "sub_type": [],
+        "tags": ["water:still"],
+        "poi": {
+        "tags": ["water:still"]
+        },
+        "frequency": 3,
+        "event_text": "m_c went to practice swimming in POI. It's a little deeper than {PRONOUN/m_c/subject} anticipated, and {PRONOUN/m_c/subject} swallowed some water before scrambling back ashore.",
+        "m_c": {
+            "status": ["-kitten","-elder"],
+            "skill": ["-SWIMMER,1"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["water in their lungs"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "death": "m_c died from the water in {PRONOUN/m_c/poss} lungs after swimming practice went wrong."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_waterinlungs_POIwater:still2",
+        "location": ["any"],
+        "season": ["newleaf","leaf-fall","greenleaf"],
+        "sub_type": [],
+        "tags": ["water:still"],
+        "poi": {
+        "tags": ["water:still"]
+        },
+        "frequency": 1,
+        "event_text": "m_c and r_c splashed each other in the waters of POI. Caught in the game, m_c didn't notice the ground under {PRONOUN/m_c/poss} paws dropping away, and stepped into deep water. r_c rescued a flailing m_c, but {PRONOUN/m_c/subject} was left coughing up water.",
+        "m_c": {
+            "status": ["apprentice","mediator apprentice","medicine cat apprentice"]
+        },
+        "r_c": {
+            "status": ["apprentice","mediator apprentice","medicine cat apprentice"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["water in their lungs"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "death": "m_c died from the water in {PRONOUN/m_c/poss} lungs after splashing around went wrong."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": true,
+                "values": ["like"],
+                "amount": 6,
+                "log": {
+                    "cats_from": "cat_from had a great time splashing around with cat_to."
+                }
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": false,
+                "values": ["trust"],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from felt grateful to cat_to for {PRONOUN/cat_to/poss} rescue when {PRONOUN/cat_from/subject} stepped into deep water."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_waterinlungs_POIwater:flowing1",
+        "location": ["any"],
+        "season": ["newleaf","leaf-fall","greenleaf"],
+        "sub_type": [],
+        "tags": ["water:flowing"],
+        "poi": {
+        "tags": ["water:flowing"]
+        },
+        "frequency": 3,
+        "event_text": "m_c tried to practice swimming in POI. The current swept {PRONOUN/m_c/subject} away, and {PRONOUN/m_c/subject} clambered onto shore downstream, coughing up water.",
+        "m_c": {
+            "status": ["-kitten","-elder"],
+            "skill": ["-SWIMMER,1"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["water in their lungs"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "death": "m_c died from the water in {PRONOUN/m_c/poss} lungs after swimming practice went wrong."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_waterinlungs_leaffallPOIwater:flowing",
+        "location": ["any"],
+        "season": ["leaf-fall"],
+        "sub_type": [],
+        "tags": ["water:flowing"],
+        "poi": {
+        "tags": ["water:flowing"]
+        },
+        "frequency": 3,
+        "event_text": "Recent rain swelled POI's banks. m_c still tried to cross, but had to admit afterwards, through coughs of water, that {PRONOUN/m_c/poss} skill was not sufficient to ignore the raw power of the elements today.",
+        "m_c": {
+            "status": ["-kitten","-elder"],
+            "skill": ["SWIMMER,1"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["water in their lungs"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "death": "m_c died from the water in {PRONOUN/m_c/poss} lungs after overestimating {PRONOUN/m_c/poss} swimming ability."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_waterinlungs_newleafPOIwater:flowing",
+        "location": ["any"],
+        "season": ["newleaf"],
+        "sub_type": [],
+        "tags": ["water:flowing"],
+        "poi": {
+        "tags": ["water:flowing"]
+        },
+        "frequency": 3,
+        "event_text": "Recent snowmelt swelled POI's banks. m_c still tried to cross, but had to admit afterwards, through coughs of water, that {PRONOUN/m_c/poss} skill was not sufficient to ignore the raw power of the elements today.",
+        "m_c": {
+            "status": ["-kitten","-elder"],
+            "skill": ["SWIMMER,1"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["water in their lungs"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "death": "m_c died from the water in {PRONOUN/m_c/poss} lungs after overestimating {PRONOUN/m_c/poss} swimming ability."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_sore_POImaze",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": ["maze"],
+        "poi": {
+        "tags": ["maze"]
+        },
+        "frequency": 4,
+        "event_text": "m_c got lost in POI for hours, returning sore.",
+        "m_c": {
+            "status": ["-kitten","-elder"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["sore"]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_clawwound_POImaze",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": ["maze"],
+        "poi": {
+        "tags": ["maze"]
+        },
+        "frequency": 2,
+        "event_text": "m_c padded along the confusing paths of POI, and suddenly came face to face with a predator! Through the flash of pain, {PRONOUN/m_c/subject} whirled around and fled, trailing blood.",
+        "m_c": {
+            "status": ["-kitten","-elder"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["claw-wound"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred by a surprise encounter with a predator.",
+                "death": "m_c died from the wound inflicted by a surprise encounter with a predator."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_bigbite_POImaze",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": ["maze"],
+        "poi": {
+        "tags": ["maze"]
+        },
+        "frequency": 2,
+        "event_text": "m_c padded along the confusing paths of POI, and suddenly came face to face with a predator! Jaws snapped closed, but {PRONOUN/m_c/subject} tore {PRONOUN/m_c/self} free, whirled around, and fled.",
+        "m_c": {
+            "status": ["-kitten","-elder"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["big_bite_injury"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred by a surprise encounter with a predator.",
+                "death": "m_c died from the wound inflicted by a surprise encounter with a predator."
+            }
+        ]
     }
 ]
 
