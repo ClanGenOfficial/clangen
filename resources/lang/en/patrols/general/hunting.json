@@ -15329,7 +15329,7 @@
                         "values": ["like"],
                         "amount": 7,
                         "log": {
-                            "cats_from": "cat_from and cat_to had a greatly successful hunt."
+                            "cats_from": "cat_from and cat_to had a highly successful hunt."
                         }
                     }
                 ]
