@@ -2610,7 +2610,6 @@ def check_starcrossed_lovers(cat) -> Optional[str]:
 
     # kill cat mates
 
-
     # Writing this here cause i cant get to my phone to log into github rn but will convert starcrossed lovers into a draft - unintended behaviour with double death leader lives
     for c in cat_mates:
         if not c.dead:

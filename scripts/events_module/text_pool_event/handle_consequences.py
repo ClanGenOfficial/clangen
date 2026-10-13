@@ -372,11 +372,12 @@ def _handle_death(
             else:
                 player_cat_names.append(_profile_link(c))
 
-            if extra_result := check_starcrossed_lovers(c):
-                results.append(extra_result)
             # KILL
             __handle_death_history(c, block["history"], other_clan)
             c.die(body)
+
+            if extra_result := check_starcrossed_lovers(c):
+                results.append(extra_result)
 
         # CREATE RESULTS
         if block.get("no_results"):
