@@ -18393,47 +18393,47 @@
                 "-leader",
                 "-deputy",
                 "-medicine cat"
-            ],
-            "relationships": [
-                {
-                    "cats_from": [
-                        "some_clan",
-                        "high_lawful"
-                    ],
-                    "cats_to": [
-                        "m_c"
-                    ],
-                    "mutual": false,
-                    "values": [
-                        "like",
-                        "trust",
-                        "respect"
-                    ],
-                    "amount": -5,
-                    "log": {
-                        "cats_from": "cat_from watched in horror as cat_to yowled at a group of cats from other Clans at the Gathering."
-                    }
-                },
-                {
-                    "cats_from": [
-                        "some_clan",
-                        "high_aggress"
-                    ],
-                    "cats_to": [
-                        "m_c"
-                    ],
-                    "mutual": false,
-                    "values": [
-                        "like",
-                        "respect"
-                    ],
-                    "amount": 5,
-                    "log": {
-                        "cats_from": "cat_from felt vicious satisfaction when cat_to laid into a group of cats at the Gathering for talking about the war with o_c_n."
-                    }
-                }
             ]
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "some_clan",
+                    "high_lawful"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "trust",
+                    "respect"
+                ],
+                "amount": -5,
+                "log": {
+                    "cats_from": "cat_from watched in horror as cat_to yowled at a group of cats from other Clans at the Gathering."
+                }
+            },
+            {
+                "cats_from": [
+                    "some_clan",
+                    "high_aggress"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "respect"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "cat_from felt vicious satisfaction when cat_to laid into a group of cats at the Gathering for talking about the war with o_c_n."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_misc_any_warangstgathering2",
