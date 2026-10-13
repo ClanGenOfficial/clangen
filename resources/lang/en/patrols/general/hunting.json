@@ -15745,7 +15745,7 @@
                     "tags": ["high_ground"]
                 },
                 "strings": [
-                    "The patrol perches on POI waiting for prey that never emerges from their burrows. "
+                    "The patrol perches on POI waiting for prey that never emerges from their burrows."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 0,
