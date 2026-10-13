@@ -2622,12 +2622,21 @@ def check_starcrossed_lovers(cat) -> Optional[str]:
                 other_cat=cat,
             )
     # special txt
-    text = i18n.t(
-        "cruel_season.special_text.starcrossed_lovers_base",
-        mate_name=str(cat.name),
-        dead_name=str(cat_names),
-        clan_name=str(game.clan.name),
-        count=len(cat_mates),
+    if cat.status.is_leader and game.clan.leader_lives > 0:
+        text = i18n.t(
+            "cruel_season.special_text.starcrossed_lovers_revived",
+            mate_name=str(cat.name),
+            dead_name=str(cat_names),
+            clan_name=str(game.clan.name),
+            count=len(cat_mates),
+        )
+    else:
+        text = i18n.t(
+            "cruel_season.special_text.starcrossed_lovers_base",
+            mate_name=str(cat.name),
+            dead_name=str(cat_names),
+            clan_name=str(game.clan.name),
+            count=len(cat_mates),
     )
     # yuh
     return text

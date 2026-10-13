@@ -11,6 +11,10 @@
       "one": "As the ancestors of %{clan_name} past cradled %{mate_name} in their arms, %{dead_name} was soon to follow, joining %{mate_name} in the afterlife.",
       "many": "As the ancestors of %{clan_name} past cradled %{mate_name} in their arms, %{dead_name} were all soon to follow, joining their mate in the ranks of the afterlife."
     },
+    "starcrossed_lovers_revived": {
+      "one": "As the ancestors of %{clan_name} past looked down upon the revival of %{mate_name}, %{dead_name} was brought to observe from the safety of the stars.",
+      "many": "As the ancestors of %{clan_name} past looked down upon the revival of %{mate_name}, %{dead_name} were all brought to observe from the safety of the stars."
+    },
     "starcrossed_lovers_history": "m_c's path was always bound to end with {PRONOUN/m_c/poss} lover, r_c."
   }
 }
