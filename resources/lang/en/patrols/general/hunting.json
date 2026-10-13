@@ -15437,7 +15437,7 @@
                 },
                 "strings": [
                     "The patrol evades the attention of Twolegs in POI and brings home both plump mice and healthy rats.",
-                    "Rats and mice dangle from the jaws of each patrol member, caught by their tails as they saunter home from POI after a successful hunt."
+                    "Rats and mice dangle by their tails from the patrol members' jaws. They saunter home from POI after a successful hunt."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 15,
@@ -15463,7 +15463,7 @@
             {
                 "frequency": 4,
                 "poi": {
-                    "tags": ["Twolegs"]
+                    "name": ["terrain_carrionplace", "terrain_twolegplace", "terrain_horseplace"]
                 },
                 "strings": [
                     "The patrol navigates the strange, sharp-cornered terrain of POI and has a successful hunt.",
@@ -15508,8 +15508,8 @@
                     }
                 },
                 "strings": [
-                    "The patrol encounters another cat in POI. n_c:0 surprises the Clancats by showing them some clever hunting techniques.",
-                    "The patrol meets n_c:0 who lives around POI and offers to show them some hunting techniques perfect for the area."
+                    "The patrol encounters another cat in POI. n_c:0 surprises the Clan cats by showing them some clever hunting techniques.",
+                    "The patrol meets n_c:0, who lives around POI and offers to show them some hunting techniques perfect for the area."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 20,
@@ -15547,7 +15547,7 @@
                 },
                 "strings": [
                     "The patrol digs out shrews nestled in the roots of POI and returns to camp proud of their persistence.",
-                    "The patrol sniffs out the concealed opening of a mouse nest, nestled in the roots of POI and delight at the prey trapped within."
+                    "The patrol sniffs out the opening of a mouse nest, concealed among the roots of POI. The cats delight at the prey trapped within."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 15,
@@ -15637,7 +15637,7 @@
                     }
                 },
                 "strings": [
-                    "The patrol encounters another cat in POI. n_c:0 snarls and demands the patrol leave. Well fine. {PRONOUN/n_c:0/poss/CAP} angry yowls drove away all the prey anyway."
+                    "The patrol encounters another cat in POI. n_c:0 snarls and demands the patrol leave. The patrol does; {PRONOUN/n_c:0/poss} angry yowls drove away all the prey anyway."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 0,
@@ -15668,8 +15668,8 @@
                     "tags": ["Twolegs:present"]
                 },
                 "strings": [
-                    "The patrol is spotted by Twolegs and r_c0 is taken.",
-                    "While isolated from the patrol, Twolegs take r_c0 and vanish within POI."
+                    "The patrol is spotted by Twolegs, and r_c0 is taken.",
+                    "While isolated from the patrol, r_c:0 is taken by Twolegs and vanishes within POI."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -15830,9 +15830,9 @@
             "p_l eagerly approaches POI in search of prey."
         ],
         "decline_strings": [
-            "On second thought, hunting seems poor today.",
+            "Unfortunately, hunting seems poor today.",
             "On second thought, p_l heard of good hunting in another area of the territory.",
-            "The clouds darken overhead, perhaps now isn't the best time to hunt."
+            "The clouds darken overhead. Perhaps this hunt were best postponed."
         ],
         "success_outcomes": [
             {
@@ -15884,7 +15884,7 @@
                 "frequency": 2,
                 "strings": [
                     "p_l only manages to catch a pawful of prey.",
-                    "Hunting could've gone better but there's little more p_l can do beyond carry {PRONOUN/p_l/poss} meager score home."
+                    "Hunting could've gone better, but p_l can do little else except carry {PRONOUN/p_l/poss} meager score home."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 5,
@@ -15916,8 +15916,8 @@
                     "tags": ["Twolegs:present"]
                 },
                 "strings": [
-                    "p_l expertly evades the attention of Twolegs in POI and manages to bring home both plump mice and healthy rats.",
-                    "Mice dangle from p_l's jaw, caught by their tails as {PRONOUN/p_l/subject} {VERB/p_l/saunter/saunters} home from POI after a successful hunt."
+                    "p_l evades the attention of Twolegs in POI and brings home both plump mice and healthy rats.",
+                    "Mice dangle by their tails, caught in p_l's jaw as {PRONOUN/p_l/subject} {VERB/p_l/saunter/saunters} home from POI after a successful hunt."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 15,
@@ -15931,7 +15931,7 @@
             {
                 "frequency": 4,
                 "poi": {
-                    "tags": ["Twolegs"]
+                    "name": ["terrain_carrionplace", "terrain_twolegplace", "terrain_horseplace"]
                 },
                 "strings": [
                     "p_l navigates the strange, sharp-cornered terrain of POI and has a successful hunt.",
@@ -15965,7 +15965,7 @@
                 },
                 "strings": [
                     "p_l encounters another cat in POI. n_c:0 surprises {PRONOUN/p_l/object} by showing {PRONOUN/p_l/object} some clever hunting techniques.",
-                    "p_l meets n_c:0 who lives around POI and offers to show {PRONOUN/p_l/object} some hunting techniques perfect for the area."
+                    "p_l meets n_c:0, who lives around POI and offers to show {PRONOUN/p_l/object} some hunting techniques perfect for the area."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 20,
@@ -16003,7 +16003,7 @@
                 },
                 "strings": [
                     "p_l digs out shrews nestled in the roots of POI and returns to camp proud of {PRONOUN/p_l/poss} persistence.",
-                    "p_l sniffs out the concealed opening of a mouse nest, nestled in the roots of POI and delights at the prey trapped within."
+                    "p_l sniffs out the opening of a mouse nest, concealed among the roots of POI. {PRONOUN/p_l/subject/CAP} {VERB/p_l/delight/delights} at the prey trapped within."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 15,
@@ -16057,7 +16057,7 @@
                     }
                 },
                 "strings": [
-                    "p_l encounters another cat in POI. n_c:0 snarls and demands the patrol leaves. Well fine. {PRONOUN/n_c:0/poss/CAP} angry yowls drove away all the prey anyway."
+                    "p_l encounters another cat in POI. n_c:0 snarls and demands the patrol leaves. p_l does; the outsider's angry yowls drove away all the prey anyway."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 0,
@@ -16088,7 +16088,7 @@
                     "tags": ["Twolegs:present"]
                 },
                 "strings": [
-                    "p_l is spotted by Twolegs and taken."
+                    "p_l is spotted and taken by Twolegs."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 0,
@@ -16116,7 +16116,7 @@
                     "tags": ["danger:tainted"]
                 },
                 "strings": [
-                    "p_l comes back to camp from POI, carrying a fat rat. While the Clan celebrates their good fortune in the moment, hours later, after eating, many grow ill and the Clan is forced to carefully sort through their fresh kill for contamination."
+                    "p_l comes back to camp from POI, carrying a fat rat. The Clan celebrates this good fortune with a feast, but later on, many grow ill. The Clan must sort through their fresh-kill for contamination."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 0,
@@ -16158,7 +16158,7 @@
                     "tags": ["high_ground"]
                 },
                 "strings": [
-                    "p_l perches on POI waiting for prey that never emerges from their burrows. "
+                    "p_l perches on POI waiting for prey that never emerges from their burrows."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 0
@@ -16169,7 +16169,7 @@
                     "tags": ["high_ground"]
                 },
                 "strings": [
-                    "p_l searches for any openings within the roots at POI and is unable to sniff out any prey."
+                    "p_l searches for any openings among the roots of POI and is unable to sniff out any prey."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 0
