@@ -522,11 +522,11 @@
             "r_c": {
                 "status": [
                     "deputy"
-                ]
-            },
+                ],
                 "health": {
                     "working": true
                 }
+            }
         },
         "relationship_constraint": [
             {
