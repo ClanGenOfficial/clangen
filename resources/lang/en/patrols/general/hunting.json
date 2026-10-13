@@ -15771,7 +15771,7 @@
                     "tags": ["high_ground"]
                 },
                 "strings": [
-                    "The patrol crowds on POI to wait for their prey, but their murmuring, shuffling paws, and scrabbling claws as p_l nearly falls give away their position and any hope of stealth."
+                    "The patrol crowds on POI to wait for their prey, but their murmuring, shuffling paws, and scrabbling claws when p_l nearly falls give away their position and any hope of stealth."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 0,
