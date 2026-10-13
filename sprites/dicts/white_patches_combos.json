@@ -162,7 +162,22 @@
             "littleLEG_BACK_RIGHT_MIN",
             "littleLEG_BACK_LEFT_MIN_LOW",
             "littleLEG_BACK_LEFT_MIN"
-	]
+	    ],
+        "CHOSEN_ONE": [
+            "littleESTRELLA",
+            "littleSPARKLE",
+            "littleSCOURGE",
+            "littleMUZZLE",
+            "littleLOCKET",
+            "littleCHIN",
+            "littleTAILTIP",
+            "littleTAIL_UNDER",
+            "littleUNDER_MIN"
+        ],
+        "SPARKLECAT": [
+            "littleESTRELLA",
+            "littleSPARKLE"
+        ]
     },
     "mid": {
         "DOUGIE": [
@@ -517,7 +532,21 @@
             "littleLEG_FRONT_LEFT_HIGH",
             "midBIB_FULL",
             "midCHEST_FULL"
-	]
+	],
+        "SHORELINE": [
+            "midFCTWO_REDUCED",
+            "midMITAINE",
+            "midSAVANNAH",
+            "midFADESPOTS"
+        ],
+        "PIKAPATCH": [
+            "littleTAIL_REVERSE_HALF",
+            "littleUNDEREYE_MAX_L",
+            "littleUNDEREYE_MAX_R",
+            "littleRIGHTEAR_MID",
+            "littleLEFTEAR_MID",
+            "midTWO_SPOT_SMALL"
+        ]
     },
     "high": {
         "ANY": [
@@ -694,11 +723,58 @@
             "littleUNDER_SMALL",
             "midWOODPECKER"
         ],
-	"WOODFRECKLES": [
+	    "WOODFRECKLES": [
             "littleTAIL_UNDER",
             "midWOODPECKER",
             "highFRECKLES"
-	]
+	    ],
+        "OVERCOAT": [
+            "midFLANK_FULL",
+            "midLEG_FRONT_RIGHT_REVERSE",
+            "midLEG_FRONT_LEFT_REVERSE"
+        ],
+        "DUTCH_RABBIT": [
+            "littleBLAZE",
+            "littleLEG_BACK_LEFT_MIN",
+            "littleLEG_BACK_RIGHT_MIN",
+            "littleMASK_PARTIAL",
+            "littleUNDER_MID",
+            "littleVEE_FULL",
+            "midBELLY_FULL",
+            "midBIB_FULL",
+            "midCHEST_FULL",
+            "midLEG_FRONT_LEFT_FULL",
+            "midLEG_FRONT_RIGHT_FULL"
+        ],
+        "OWLFLIGHT": [
+            "littleLEFTEAR",
+            "littleLEG_BACK_LEFT_SMALL",
+            "littleLEG_BACK_RIGHT_SMALL",
+            "littleLEG_FRONT_LEFT_MID",
+            "littleLEG_FRONT_RIGHT_MID",
+            "littleMASK_HIGH",
+            "littleRIGHTEAR",
+            "littleVEE_FULL",
+            "littleTAIL_UNDER",
+            "midWINGS_REDUCED",
+            "midMIA_REDUCED"
+        ],
+        "BROKEN-APPALOOSA": [
+            "highAPPALOOSA_REDUCED",
+            "highBROKEN_REDUCED"
+        ],
+        "SPLATTER": [
+            "littleTAIL_MID",
+            "littleEYELINER_MAX_R",
+            "littleREVERSEHEART",
+            "littleSPARKLE",
+            "littleTAIL_MID_RING",
+            "littleTAIL_LOW_RING",
+            "littleTAIL_REVERSE_MIN",
+            "littleUNDEREYE_MIN_L",
+            "littleUNDEREYE_MIN_R",
+            "highPAINTED_REDUCED"
+        ]
     },
     "mostly": {
         "VAN": [

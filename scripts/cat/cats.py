@@ -1292,9 +1292,11 @@ class Cat:
         moons_with = game.clan.age - self.illnesses[illness]["moon_start"]
 
         # focus buff
-        recovery_buff = constants.CONFIG["focus"]["rest_and_recover"][
-            "moons_earlier_healed"
-        ]
+        recovery_buff = 0
+        if game.clan.deputy and game.clan.deputy.status.alive_in_player_clan:
+            recovery_buff = constants.CONFIG["focus"]["rest_and_recover"][
+                "moons_earlier_healed"
+            ]
 
         if self.illnesses[illness]["duration"] - moons_with <= 0:
             self.healed_condition = True

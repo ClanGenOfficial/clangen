@@ -135,7 +135,7 @@
             "r_c has been impatient for the end of m_c's pregnancy, so when {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} m_c has gone into labor, {PRONOUN/r_c/subject} {VERB/r_c/drop/drops} what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing and {VERB/r_c/sprint/sprints} for the nursery, where m_c is bringing a {insert} into the world.",
             "m_c is so, so grateful that {PRONOUN/m_c/poss} adorable {insert} is here — both thrilled to meet them, and thrilled that r_c can take a turn parenting while m_c finally takes a little break from the stuffy air of the nursery.",
             "m_c and r_c were so busy worrying about and looking forward to the birth that it's only now that they look at their {insert} that they wonder what to name them.",
-            "With r_c purring against {PRONOUN/m_c/poss} back, m_c feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to explode with love, looking at the tiny creatures in {PRONOUN/m_c/poss} new {insert}.",
+            "With r_c purring against {PRONOUN/m_c/poss} back, m_c feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to explode with love, looking at the tiny new {insert}.",
             "While on a walk in the territory with r_c, m_c unexpectedly had {PRONOUN/m_c/poss} {insert} with help from {PRONOUN/m_c/poss} mate.",
             "While in the nursery, m_c can't help but chuckle when r_c asks {PRONOUN/m_c/object} if {PRONOUN/m_c/subject} {VERB/m_c/need/needs} anything for the fifth time that day. {PRONOUN/r_c/subject/CAP} clearly {VERB/r_c/care/cares} a lot for m_c and their new {insert}.",
             "Curled up in the nursery together, m_c and r_c spend the entire day brainstorming names for their new {insert}."
@@ -190,7 +190,7 @@
             "The Clan was so excited to welcome m_c's {insert} into the world, but the happy chattering dies down when everyone realizes they look a <i>bit</i> too much like r_c.",
             "At first, when m_c's {insert} is born, everyone around {PRONOUN/m_c/object} celebrates the new life in the Clan. But it only takes one comment about them looking a lot like r_c for the entire situation to go south.",
             "m_c dreaded that the {insert} would look too much like r_c, and {PRONOUN/m_c/subject} can't ignore the stares of {PRONOUN/m_c/poss} Clanmates, who must all be thinking the same thing.",
-            "When rc_mate begins demanding answers from m_c, {PRONOUN/m_c/subject} {VERB/m_c/fess/fesses} up and admits {PRONOUN/m_c/poss} newly born {insert} belongs to r_c.",
+            "When rc_mate begins demanding answers from m_c, {PRONOUN/m_c/subject} {VERB/m_c/fess/fesses} up and {VERB/m_c/admit/admits} {PRONOUN/m_c/poss} newly born {insert} belongs to r_c.",
             "Overwhelmed by guilt, m_c pulls rc_mate aside and confesses that the {insert} {PRONOUN/m_c/subject} just gave birth to belongs to rc_mate's mate, r_c."
         ],
         "affair_secret": [
