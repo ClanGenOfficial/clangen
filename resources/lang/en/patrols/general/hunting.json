@@ -15700,7 +15700,7 @@
                     "tags": ["danger:tainted"]
                 },
                 "strings": [
-                    "The patrol comes back to camp from POI, each carrying a fat rat. While the Clan celebrates their good fortune in the moment, hours later, after eating, many grow ill and the Clan is forced to carefully sort through their fresh kill for contamination."
+                    "The patrol comes back to camp from POI, each carrying a fat rat. The Clan celebrates this good fortune with a feast, but later on, many grow ill. The Clan must sort through their fresh-kill for contamination."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 0,
