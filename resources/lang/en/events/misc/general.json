@@ -18559,6 +18559,25 @@
                 "log": {
                     "cats_from": "cat_from lowered {PRONOUN/cat_from/poss} head in shame when m_c snapped at the other leaders during a Gathering and clouds covered the moon."
                 }
+            },
+            {
+                "cats_from": [
+                    "some_clan",
+                    "high_aggress"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "trust",
+                    "respect"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "cat_from was proud of cat_to for standing up for c_n's dignity against the other Clan leaders."
+                }
             }
         ]
     },
