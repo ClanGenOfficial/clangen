@@ -15794,7 +15794,7 @@
                     "tags": ["trees"]
                 },
                 "strings": [
-                    "The patrol searches for any openings within the roots at POI and is unable to sniff out any prey."
+                    "The patrol searches for any openings among the roots of POI and is unable to sniff out any prey."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 0,
