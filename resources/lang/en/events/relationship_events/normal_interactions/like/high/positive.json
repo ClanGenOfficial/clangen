@@ -359,12 +359,18 @@
             "m_c": {
                 "status": [
                     "-kitten"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             },
             "r_c": {
                 "status": [
                     "-kitten"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             }
         },
         "relationship_changes": [
