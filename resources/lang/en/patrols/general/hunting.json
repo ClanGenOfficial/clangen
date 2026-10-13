@@ -15304,7 +15304,7 @@
         "decline_strings": [
             "Unfortunately, hunting seems poor today.",
             "On second thought, p_l heard of good hunting in another area of the territory.",
-            "The clouds darken overhead, perhaps now isn't the best time to hunt."
+            "The clouds darken overhead. Perhaps this hunt were best postponed."
         ],
         "success_outcomes": [
             {
