@@ -46,7 +46,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -111,7 +111,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -172,7 +172,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -243,7 +243,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -308,7 +308,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -372,7 +372,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             },
             {
@@ -457,7 +457,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -478,7 +478,6 @@
             }
         },
         "strings": [
-            "(old_name) runs up to the front of the crowd, eager to get {PRONOUN/m_c/poss} new name. When {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} called m_c for the first time, r_c1 and r_c2's voices can be heard the loudest as the Clan welcomes the new apprentice.",
             "(old_name) runs up to the front of the crowd, eager to get {PRONOUN/m_c/poss} new name. When {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} called m_c for the first time, r_c1 and r_c2's voices can be heard the loudest as the Clan welcomes the new apprentice."
 
         ],
@@ -584,7 +583,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             },
             {
@@ -670,7 +669,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             },
             {
@@ -730,7 +729,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -782,7 +781,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             },
             {
@@ -850,7 +849,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             },
             {
@@ -866,7 +865,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c appreciated r_c0's attempt to comfort {PRONOUN/m_c/object}."
+                    "cats_from": "m_c appreciated r_c0's attempt to comfort {PRONOUN/m_c/object} during {PRONOUN/m_c/poss} apprentice ceremony."
                 }
             }
         ]
@@ -921,7 +920,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -980,7 +979,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             },
             {
@@ -996,7 +995,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "r_c0 appreciated how excited m_c seemed to be to become {PRONOUN/m_c/poss} apprentice."
+                    "cats_from": "r_c0 appreciated how excited m_c seemed to become {PRONOUN/m_c/poss} apprentice."
                 }
             }
         ]
@@ -1057,7 +1056,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -1114,7 +1113,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -1172,7 +1171,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -1233,7 +1232,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -1279,7 +1278,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -1339,7 +1338,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -1394,7 +1393,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -1453,7 +1452,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -1516,7 +1515,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -1573,7 +1572,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -1627,7 +1626,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -1685,7 +1684,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -1739,7 +1738,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -1792,7 +1791,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -1838,7 +1837,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -2023,7 +2022,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -2070,7 +2069,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -2146,7 +2145,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -2194,7 +2193,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -2248,7 +2247,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -2294,7 +2293,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -2350,7 +2349,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -2402,7 +2401,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -2454,7 +2453,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -2503,7 +2502,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
@@ -2548,7 +2547,7 @@
                 ],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c was made r_c0's apprentice."
+                    "cats_from": "m_c was apprenticed to r_c0."
                 }
             }
         ]
