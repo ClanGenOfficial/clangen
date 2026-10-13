@@ -117,9 +117,7 @@ class SpawnTintColoursCommand(Command):
 
         tint_name = args[1]
         if not (
-            tint_name in tint_colours
-            or tint_name in dilute_tint_colours
-            or tint_name in remove_tone_tint_colours
+            tint_name in tint_colours + dilute_tint_colours + remove_tone_tint_colours
         ):
             add_output_line_to_log(
                 f"Tint {tint_name} does not seem to exist! Possible tints are {possible_tints_str}."
