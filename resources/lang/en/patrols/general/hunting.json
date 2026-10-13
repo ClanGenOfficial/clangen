@@ -15356,7 +15356,7 @@
                         "values": ["like"],
                         "amount": 4,
                         "log": {
-                            "cats_from": "cat_from and cat_to had a greatly successful hunt."
+                            "cats_from": "cat_from and cat_to had a successful hunt."
                         }
                     }
                 ]
