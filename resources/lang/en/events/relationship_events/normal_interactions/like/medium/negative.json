@@ -317,7 +317,7 @@
             "m_c punishes r_c with extra work.",
             "m_c divides r_c into extra patrols.",
             "m_c gives r_c a particularly hard task, expecting {PRONOUN/r_c/object} to fail.",
-            "m_c always tries to avoid making r_c the leader of a patrol.",
+            "m_c always tries to avoid making r_c the leader of a patrol."
         ],
         "involved_cats": {
             "m_c": {
