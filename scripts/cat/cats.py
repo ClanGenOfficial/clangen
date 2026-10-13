@@ -2591,7 +2591,7 @@ with open("resources/dicts/backstories.json", "r", encoding="utf-8") as read_fil
     BACKSTORIES = ujson.loads(read_file.read())
 
 
-def check_starcrossed_lovers(cat) -> Optional[str]:
+def check_starcrossed_lovers(cat, loop_cause=None) -> Optional[str]:
     """Checks and kills cat mates if starcrossed lovers is active"""
     # ADD THE CONFIG HERE
     if not get_config("cruel_season.event.starcrossed_lovers"):
@@ -2604,7 +2604,7 @@ def check_starcrossed_lovers(cat) -> Optional[str]:
 
     for c in cat.mate:
         c = Cat.fetch_cat(c)
-        if not c.dead:
+        if not c.dead and c != loop_cause:
             cat_mates.append(c)
     cat_names = adjust_list_text([str(c.name) for c in cat_mates])
 
@@ -2616,7 +2616,7 @@ def check_starcrossed_lovers(cat) -> Optional[str]:
             if c.status.is_leader:
                 game.clan.leader_lives -= 1
             c.die()
-            check_starcrossed_lovers(c)
+            check_starcrossed_lovers(c, loop_cause=cat)
             c.history.add_death(
                 i18n.t("cruel_season.special_text.starcrossed_lovers_history"),
                 other_cat=cat,
@@ -2637,6 +2637,6 @@ def check_starcrossed_lovers(cat) -> Optional[str]:
             dead_name=str(cat_names),
             clan_name=str(game.clan.name),
             count=len(cat_mates),
-    )
+        )
     # yuh
     return text
