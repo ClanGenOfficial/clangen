@@ -18367,5 +18367,126 @@
             "BLUEBELLS",
             "LAVENDER"
        ]
+    },
+    {
+        "event_id": "gen_misc_any_warangstgathering1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "poi": {
+            "category": "gathering"
+        },
+        "frequency": 4,
+        "event_text": "m_c can't stand the stares and the whispers about the war from cats who aren't living it, and {PRONOUN/m_c/subject} {VERB/m_c/turn/turns} around to snap at them to stop talking about things they know nothing about.",
+        "m_c": {
+            "age": [
+                "-newborn",
+                "-kitten"
+            ],
+            "status": [
+                "-leader",
+                "-deputy",
+                "-medicine cat"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_misc_any_warangstgathering2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "poi": {
+            "category": "gathering"
+        },
+        "frequency": 4,
+        "event_text": "m_c can't handle all the cats talking about the war, so {PRONOUN/m_c/subject} {VERB/m_c/turn/turns} and {VERB/m_c/run/runs} from POI.",
+        "m_c": {
+            "age": [
+                "-newborn",
+                "-kitten"
+            ],
+            "status": [
+                "-leader",
+                "-deputy",
+                "-medicine cat"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_misc_any_warangstgatheringleader",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "poi": {
+            "category": "gathering"
+        },
+        "frequency": 4,
+        "event_text": "m_c begins to bristle at how easily others discuss c_n's struggles, and does {PRONOUN/m_c/poss} best to ignore the clouds covering the moon above POI as {PRONOUN/m_c/subject} {VERB/m_c/snap/snaps} at the other leaders to control their Clans.",
+        "m_c": {
+            "status": [
+                "leader"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_misc_any_warangstgatheringdeputy",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 4,
+        "event_text": "m_c feels r_c's eyes upon {PRONOUN/m_c/object} as {PRONOUN/m_c/subject} {VERB/m_c/converse/converses} with the other Clans' deputies while pointedly ignoring o_c_n's.",
+        "m_c": {
+            "status": [
+                "deputy"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "leader"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_misc_any_warangstgatheringmed",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 4,
+        "event_text": "m_c gives up on ignoring the pitying looks of the other medicine cats, and {PRONOUN/m_c/subject} turns {PRONOUN/m_c/poss} back on {PRONOUN/m_c/poss} fellows for the remainder of the Gathering.",
+        "m_c": {
+            "status": [
+                "medicine cat"
+            ]
+        }
     }
 ]
