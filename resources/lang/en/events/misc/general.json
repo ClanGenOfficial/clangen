@@ -18461,7 +18461,46 @@
                 "-deputy",
                 "-medicine cat"
             ]
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "some_clan",
+                    "high_aggress"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "respect"
+                ],
+                "amount": -5,
+                "log": {
+                    "cats_from": "cat_from watched with narrowed eyes as cat_to fled like a coward from a tense Gathering."
+                }
+            },
+            {
+                "cats_from": [
+                    "some_clan",
+                    "high_lawful"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "respect",
+                    "trust"
+                ],
+                "amount": -5,
+                "log": {
+                    "cats_from": "cat_from was dismayed to witness cat_to fleeing POI and leaving c_n one clanmate shorter during such a tense Gathering."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_misc_any_warangstgatheringleader",
