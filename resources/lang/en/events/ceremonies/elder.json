@@ -159,7 +159,7 @@
             "category": "gathering"
         },
         "strings": [
-            "Tonight wasn't the first Gathering where m_c had loitered around POI with the elders of other Clans. {PRONOUN/m_c/subject/CAP} couldn't deny what {PRONOUN/m_c/subject} {VRRB/m_c/were/was} anymore; {PRONOUN/m_c/subject} announced {PRONOUN/m_c/poss} retirement the next morning."
+            "Tonight wasn't the first Gathering where m_c had loitered around POI with the elders of other Clans. {PRONOUN/m_c/subject/CAP} couldn't deny what {PRONOUN/m_c/subject} {VERB/m_c/were/was} anymore; {PRONOUN/m_c/subject} announced {PRONOUN/m_c/poss} retirement the next morning."
         ]
     },
     {
