@@ -654,7 +654,7 @@
         },
         "strings": [
             "m_c buzzes with excitement as {PRONOUN/m_c/subject} {VERB/m_c/step/steps} up to meet r_c0. {PRONOUN/m_c/subject/CAP} {VERB/m_c/have/has} spent moons waiting to see the world beyond camp, and now's {PRONOUN/m_c/poss} chance!",
-            "After a life confined to camp, (m_c) chatters endlessly to r_c0. Can they practice climbing? No, wait, they should swim! Or maybe fight a fox? {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} ready for anything, as long as it's exciting!"
+            "After a life confined to camp, m_c chatters endlessly to r_c0. Can they practice climbing? No, wait, they should swim! Or maybe fight a fox? {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} ready for anything, as long as it's exciting!"
         ],
         "relationship_constraint": [
             {
@@ -1009,7 +1009,7 @@
             "r_c0": {}
         },
         "strings": [
-            "m_c stands tall as {PRONOUN/m_c/subject} {VERB/m_c/become/becomes} an apprentice. After the ceremony, {SUBJECT/m_c/subject} {VERB/m_c/ask/asks} r_c0 when they'll begin training. This is {PRONOUN/m_c/poss} chance to prove {PRONOUN/m_c/self}.",
+            "m_c stands tall as {PRONOUN/m_c/subject} {VERB/m_c/become/becomes} an apprentice. After the ceremony, {PRONOUN/m_c/subject} {VERB/m_c/ask/asks} r_c0 when they'll begin training. This is {PRONOUN/m_c/poss} chance to prove {PRONOUN/m_c/self}.",
             "m_c loudly boasts to r_c0 that {PRONOUN/m_c/subject} already {VERB/m_c/know/knows} everything about being an apprentice...but {PRONOUN/m_c/subject} {VERB/m_c/suppose/supposes} a bit of training couldn't hurt.",
             "Halfway through the meeting, m_c marches up to the front of the crowd and announces that {PRONOUN/m_c/subject} {VERB/m_c/are/is} ready to become an apprentice. Nobody can disagree with {PRONOUN/m_c/poss} confidence, least of all {PRONOUN/m_c/poss} new mentor, r_c0."
         ],
@@ -1525,7 +1525,7 @@
         },
         "strings": [
             "m_c stumbles on {PRONOUN/m_c/poss} way up to r_c0, too busy staring at {PRONOUN/m_c/poss} own paws to pay attention. r_c0 helps {PRONOUN/m_c/object} up and hears {PRONOUN/m_c/subject} muttering that {PRONOUN/m_c/subject} knew something bad would happen.",
-            "After the ceremony m_c trudges over to r_c0 and sighs. {PRONOUN/m_c/subject} glumly {VERB/m_c/ask/asks} if they'll be starting with something boring, like gathering moss. It would be just {PRONOUN/m_c/poss} luck.",
+            "After the ceremony m_c trudges over to r_c0 and sighs. {PRONOUN/m_c/subject/CAP} glumly {VERB/m_c/ask/asks} if they'll be starting with something boring, like gathering moss. It would be just {PRONOUN/m_c/poss} luck.",
             "r_c0 ignores the way m_c mutters under {PRONOUN/m_c/poss} breath as they touch noses. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/hope/hopes} that {PRONOUN/r_c0/subject} can help m_c grow out of {PRONOUN/m_c/poss} attitude.",
             "m_c grits {PRONOUN/m_c/poss} teeth as {PRONOUN/m_c/subject} {VERB/m_c/slink/slinks} up to the waiting crowd. Too many eyes on {PRONOUN/m_c/object}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/try/tries} to ignore them all as {PRONOUN/m_c/subject}{VERB/m_c/touch/touches} noses with r_c0."
         ],
