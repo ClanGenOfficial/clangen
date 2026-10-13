@@ -1096,17 +1096,16 @@ def _check_cat_accessory(cat, accessory: list) -> bool:
 
     if is_exclusionary:
         accessory = [x.replace("-", "") for x in accessory]
-        print("DEBUG: accessory is exclusionary")
 
     for acc in cat.pelt.accessory:
         if "collar" in accessory and acc in Pelt.collar_accessories:
-            return True
+            return not is_exclusionary
         if "wild" in accessory and acc in Pelt.wild_accessories:
-            return True
+            return not is_exclusionary
         if "plant" in accessory and acc in Pelt.plant_accessories:
-            return True
+            return not is_exclusionary
 
-    return False
+    return is_exclusionary
 
 
 def cat_for_event(
