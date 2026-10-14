@@ -51,5 +51,11 @@
     "modifiers": {
       "condition_related.duration_modifier": 2
     }
+  },
+  "crowfood": {
+    "card_art": "environment/tainted.png",
+    "modifiers": {
+      "prey.time_to_rot": 2
+    }
   }
 }
