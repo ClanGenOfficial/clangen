@@ -10,6 +10,7 @@ from scripts.cat.constants import TEMPORARY_CONDITIONS, PERMANENT_CONDITIONS
 from scripts.cat.enums import CatRank
 from scripts.cat.pelts import Pelt
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
+from scripts.config import get_config
 from scripts.game_structure import game
 
 
@@ -61,6 +62,8 @@ def gain_temporary_condition(
         scar_pool_override=scar_pool_override,
         omit_moonskip=omit_moonskip,
     )
+
+    new_condition.duration *= get_config("condition_related.duration_modifier")
 
     cat.temporary_conditions.append(new_condition)
 
