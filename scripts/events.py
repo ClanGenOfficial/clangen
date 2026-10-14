@@ -1718,27 +1718,29 @@ def check_sinkhole():
     print("DEBUG:", cats_killed_amount, "shall be lost to the sinkhole")
 
     # kill random cats
-    for i in range(cats_killed_amount):
+    for _ in range(cats_killed_amount):
         kitty = get_random_player_clan_cat(Cat, not_allowed=dead_kitties)
-        kitty.die()
         dead_kitties.append(kitty)
 
-    print("Dead kitties:", dead_kitties)
     for c in dead_kitties:
-        c.die()
-        # cat history
-        c.history.add_death(
-            i18n.t("cruel_season.special_text.sinkhole_history")
-        )
+        if not c.dead:
+            c.die()
+            c.history.add_death(i18n.t("cruel_season.special_text.sinkhole_history"))
+            
     # special event text
     game.cur_events_list.insert(
-                0,
-                EventInformation(
-                    event_text_adjust(
-                        Cat, i18n.t("cruel_season.special_text.sinkhole_base", 
-                        count=len(dead_kitties))
-                    ),
-                    cats_involved=dead_kitties,
+        0,
+        EventInformation(
+            event_text_adjust(
+                Cat,
+                i18n.t(
+                    "cruel_season.special_text.sinkhole_base", 
+                    dead_name=str(dead_kitties),
+                    clan_name=str(game.clan.name),
+                    count=len(dead_kitties)
                 ),
-            )
+            ),
+            cats_involved=dead_kitties
+        ),
+    )
     # # something about lucky the clan is if none, less than 25% few, more than 25% more, 40+% broken
