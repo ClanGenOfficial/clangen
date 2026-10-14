@@ -6,6 +6,13 @@
     },
     "stolen_vitality_failed": "The price could not be paid in full; %{lead_name} pays the rest.",
     "stolen_vitality_sacrifice_history": "m_c paid the price for r_c's revival.",
-    "stolen_vitality_lead_history": "No cat remained to give their life for m_c's."
+    "stolen_vitality_lead_history": "No cat remained to give their life for m_c's.",
+    "sinkhole_base": {
+      "zero": "placeholder none",
+      "one":"placeholder one",
+      "some": "placeholder some",
+      "many": "placeholder many"
+    },
+    "sinkhole_history": "m_c "
   }
 }

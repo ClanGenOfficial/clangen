@@ -1701,7 +1701,7 @@ def check_missing_mentors():
 load_war_resources()
 
 
-def check_sinkhole(cat):
+def check_sinkhole():
     """The Sinkhole cruel card"""
     if not get_config("cruel_season.event.sinkhole"):
         return
@@ -1728,9 +1728,7 @@ def check_sinkhole(cat):
         c.die()
         # cat history
         c.history.add_death(
-                    i18n.t("cruel_season.special_text.sinkhole_death"),
-                    other_cat=cat,
-                )
-        
+            # nothing here yet
+        )
     # special event text
-    # something about lucky the clan is if none, less than 25% few, more than 25% more, 40+% broken
+    # # something about lucky the clan is if none, less than 25% few, more than 25% more, 40+% broken
