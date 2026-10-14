@@ -8,7 +8,6 @@ from scripts.cat.cats import Cat
 from scripts.clan_resources.herb.herb_supply import MESSAGES
 from scripts.game_structure import game
 from ..ui.elements.modified_image import UIModifiedImage
-from ..ui.elements.text_box_tweaked import UITextBoxTweaked
 from ..ui.elements.sprite_button import UISpriteButton
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton
@@ -337,11 +336,10 @@ class MedDenScreen(Screens):
         self.draw_med_den()
         self.update_med_cat()
 
-        self.meds_messages = UITextBoxTweaked(
+        self.meds_messages = pygame_gui.elements.UITextBox(
             "",
             ui_scale(pygame.Rect((108, 310), (600, 100))),
             object_id=get_text_box_theme("#text_box_30_horizcenter_vertcenter"),
-            line_spacing=1,
         )
 
         if self.meds:
@@ -477,11 +475,10 @@ class MedDenScreen(Screens):
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 manager=MANAGER,
             )
-            self.med_info = UITextBoxTweaked(
+            self.med_info = pygame_gui.elements.UITextBox(
                 "",
                 ui_scale(pygame.Rect((580, 185), (120, 90))),
                 object_id=get_text_box_theme("#text_box_22_horizcenter"),
-                line_spacing=1,
                 manager=MANAGER,
             )
             med_skill = cat.skills.skill_string(short=True)
