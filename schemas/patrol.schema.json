@@ -380,6 +380,61 @@
       "title": "CatEnum",
       "type": "string"
     },
+    "Condition": {
+      "additionalProperties": false,
+      "properties": {
+        "cats": {
+          "description": "List of cats who will receive these conditions. patrol_cats can be used to give the condition to the entire patrol",
+          "items": {
+            "$ref": "#/$defs/GatherCat"
+          },
+          "title": "Cats",
+          "type": "array"
+        },
+        "no_results": {
+          "description": "Set to True if there should be no result text about this condition application",
+          "title": "No Results",
+          "type": "boolean"
+        },
+        "non_lethal": {
+          "description": "Set to True to prevent this condition from killing the cat. It's not necessary if the condition is already non-lethal (eg. scrapes)",
+          "title": "Non Lethal",
+          "type": "boolean"
+        },
+        "condition": {
+          "description": "List of possible conditions. One condition will be chosen from this list. You can also utilize Injury Pools",
+          "items": {
+            "$ref": "#/$defs/ConditionEnum"
+          },
+          "title": "Condition",
+          "type": "array"
+        },
+        "scar_pool_override": {
+          "description": "Override the default scars given for the assigned condition. Instead, a scar will be chosen from this list",
+          "items": {
+            "$ref": "#/$defs/Scar"
+          },
+          "title": "Scar Pool Override",
+          "type": "array"
+        },
+        "scar_history": {
+          "description": "String to be added to the cat's history if the condition creates a scar. Use m_c in place of the dead cat's name and pronoun",
+          "title": "Scar History",
+          "type": "string"
+        },
+        "death_history": {
+          "description": "String to be added to the cat's history if the condition kills them. Use m_c in place of the dead cat's name and pronoun",
+          "title": "Death History",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cats",
+        "condition"
+      ],
+      "title": "Condition",
+      "type": "object"
+    },
     "ConditionEnum": {
       "enum": [
         "seizure",
@@ -1381,7 +1436,7 @@
         "condition": {
           "description": "Indicate which cats should receive conditions and what conditions they receive. You can add multiple condition blocks",
           "items": {
-            "$ref": "#/$defs/ConditionEnum"
+            "$ref": "#/$defs/Condition"
           },
           "title": "Condition",
           "type": "array"
@@ -2037,6 +2092,65 @@
       },
       "title": "RequiredReputation",
       "type": "object"
+    },
+    "Scar": {
+      "enum": [
+        "ONE",
+        "TWO",
+        "THREE",
+        "TAILSCAR",
+        "SNOUT",
+        "CHEEK",
+        "SIDE",
+        "THROAT",
+        "TAILBASE",
+        "BELLY",
+        "LEGBITE",
+        "NECKBITE",
+        "FACE",
+        "MANLEG",
+        "BRIGHTHEART",
+        "MANTAIL",
+        "BRIDGE",
+        "RIGHTBLIND",
+        "LEFTBLIND",
+        "BOTHBLIND",
+        "BEAKCHEEK",
+        "BEAKLOWER",
+        "CATBITE",
+        "RATBITE",
+        "QUILLCHUNK",
+        "QUILLSCRATCH",
+        "HINDLEG",
+        "BACK",
+        "QUILLSIDE",
+        "SCRATCHSIDE",
+        "BEAKSIDE",
+        "CATBITETWO",
+        "FOUR",
+        "LEFTEAR",
+        "RIGHTEAR",
+        "NOTAIL",
+        "HALFTAIL",
+        "NOPAW",
+        "NOLEFTEAR",
+        "NORIGHTEAR",
+        "NOEAR",
+        "SNAKE",
+        "TOETRAP",
+        "BURNPAWS",
+        "BURNTAIL",
+        "BURNBELLY",
+        "BURNRUMP",
+        "FROSTFACE",
+        "FROSTTAIL",
+        "FROSTMITT",
+        "FROSTSOCK",
+        "TOE",
+        "SNAKETWO"
+      ],
+      "title": "Scar",
+      "type": "string"
     },
     "Season": {
       "enum": [
