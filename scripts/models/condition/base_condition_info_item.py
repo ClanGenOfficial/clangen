@@ -6,10 +6,8 @@ from pydantic import Field, ConfigDict, BaseModel
 from pydantic_core import MISSING
 
 from scripts.models.common.age import Age
+from scripts.models.common.condition import ConditionEnum
 from scripts.models.common.herb import Herb
-from scripts.models.common.illness import Illness
-from scripts.models.common.injury import Injury
-from scripts.models.common.perm_condition import PermCondition
 from scripts.models.common.scar import Scar
 from scripts.models.condition.progression import ProgressionDict
 
@@ -29,10 +27,10 @@ class BaseConditionInfoSchemaItem(BaseModel):
     immune_system_effect: float = Field(
         description="Effect on the percent chance that this cat will be infected by a different condition. This float will be added to the percent chance, thus increasing the cat's likely-hood to contract an infectious condition."
     )
-    progression: Dict[Illness | Injury | PermCondition, ProgressionDict] = Field(
+    progression: Dict[ConditionEnum, ProgressionDict] = Field(
         description="The conditions that this condition can progress into (i.e. be replaced by). Can be left empty if the condition has no progressions."
     )
-    risks: Dict[Illness | Injury | PermCondition, float] = Field(
+    risks: Dict[ConditionEnum, float] = Field(
         description="Extra conditions that can be gained while the cat has this condition. Float is the percentage chance to apply this condition."
     )
     treatment_strength: Dict[Literal["1", "2", "3"], List[Herb]] = Field(

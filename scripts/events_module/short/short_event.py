@@ -4,8 +4,11 @@ from typing import List, Optional, Dict
 import i18n
 
 from scripts.cat.cats import Cat
-from scripts.cat.conditions.gain_conditions import gain_temporary_condition
-from scripts.cat.constants import CONDITION_GROUPS
+from scripts.cat.conditions.gain_conditions import (
+    gain_temporary_condition,
+    gain_permanent_condition,
+)
+from scripts.cat.constants import CONDITION_GROUPS, TEMPORARY_CONDITIONS
 from scripts.cat.enums import CatAge, CatRank
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
@@ -807,17 +810,23 @@ class ShortEvent:
                 # MAIN CAT
                 if abbr == "m_c":
                     injury = choice(possible_injuries)
-                    gain_temporary_condition(
-                        self.main_cat, injury, scar_pool_override=potential_scars
-                    )
+                    if injury in TEMPORARY_CONDITIONS:
+                        gain_temporary_condition(
+                            self.main_cat, injury, scar_pool_override=potential_scars
+                        )
+                    else:
+                        gain_permanent_condition(self.main_cat, injury)
                     self.handle_injury_history(self.main_cat, "m_c", injury)
 
                 # RANDOM CAT
                 elif abbr == "r_c":
                     injury = choice(possible_injuries)
-                    gain_temporary_condition(
-                        self.random_cat, injury, scar_pool_override=potential_scars
-                    )
+                    if injury in TEMPORARY_CONDITIONS:
+                        gain_temporary_condition(
+                            self.random_cat, injury, scar_pool_override=potential_scars
+                        )
+                    else:
+                        gain_permanent_condition(self.random_cat, injury)
                     self.handle_injury_history(self.random_cat, "r_c", injury)
 
                 # NEW CATS
@@ -825,9 +834,12 @@ class ShortEvent:
                     index = int(abbr.replace("n_c:", ""))
                     for new_cat in self.new_cats[index]:
                         injury = choice(possible_injuries)
-                        gain_temporary_condition(
-                            new_cat, injury, scar_pool_override=potential_scars
-                        )
+                        if injury in TEMPORARY_CONDITIONS:
+                            gain_temporary_condition(
+                                new_cat, injury, scar_pool_override=potential_scars
+                            )
+                        else:
+                            gain_permanent_condition(new_cat, injury)
                         self.handle_injury_history(new_cat, abbr, injury)
 
     def handle_injury_history(self, cat, cat_abbr, injury=None):

@@ -47,7 +47,7 @@ with open(
     PERMANENT_CONDITIONS.update(ujson.loads(read_file.read()))
 
 CONDITION_GROUPS = {}
-for name, info in TEMPORARY_CONDITIONS:
+for name, info in TEMPORARY_CONDITIONS.items():
     for _t in info.get("tags", []):
         if _t not in CONDITION_GROUPS:
             CONDITION_GROUPS[_t] = [name]

@@ -12,7 +12,7 @@ from scripts.models.common.points_of_interest import PointsOfInterestGroup
 from scripts.models.common.season import Season
 from scripts.models.common.tag import Tag
 from scripts.models.common.temperament import Temperament
-from scripts.models.text_pool_event.condition import Condition
+from scripts.models.text_pool_event.condition import ConditionEnum
 from scripts.models.text_pool_event.death import Death
 from scripts.models.text_pool_event.join import Join
 from scripts.models.text_pool_event.supply import Supply
@@ -74,7 +74,7 @@ class BaseTextPoolEvent(BaseModel):
         MISSING,
         description='Indicate which cats should die as a result of this event. You can specify different "types" of death as separate blocks',
     )
-    condition: List[Condition] | MISSING = Field(
+    condition: List[ConditionEnum] | MISSING = Field(
         MISSING,
         description="Indicate which cats should receive conditions and what conditions they receive. You can add multiple condition blocks",
     )
