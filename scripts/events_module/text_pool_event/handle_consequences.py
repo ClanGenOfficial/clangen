@@ -60,6 +60,13 @@ def execute_outcome(
 
     rel_results = {}
     chosen_string = choice(event.strings)
+
+    if not chosen_poi and event.poi:
+        chosen_poi = get_poi_from_constraints(
+            event.poi.get("name"),
+            event.poi.get("tags"),
+            event.poi.get("category"),
+        )
     # process text
     processed_text = event_text_adjust(
         Cat,

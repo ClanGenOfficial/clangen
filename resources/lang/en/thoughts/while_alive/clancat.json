@@ -3534,12 +3534,14 @@
         "involved_cats": {
             "m_c": {
                 "status": [
-                    "-kitten"
+                    "-kitten",
+                    "-newborn"
                 ]
             },
             "r_c": {
                 "status": [
-                    "-kitten"
+                    "-kitten",
+                    "-newborn"
                 ],
                 "group": [
                     "-afterlife"
@@ -3556,7 +3558,7 @@
                 ],
                 "mutual": false,
                 "constraints": [
-                    "siblings"
+                    "littermates"
                 ]
             }
         ]

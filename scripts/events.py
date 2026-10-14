@@ -551,13 +551,13 @@ def handle_lead_den_event():
                                     cat=invited_cat,
                                 )
                                 invited_cat.name.give_suffix(
-                                    eyes=invited_cat.pelt.eyes,
+                                    eyes=invited_cat.pelt.eye_colour,
                                     colour=invited_cat.pelt.colour,
                                     pelt=invited_cat.pelt.name,
                                     biome=game.clan.biome
                                     if not game.clan.override_biome
                                     else game.clan.override_biome,
-                                    tortie_pattern=invited_cat.pelt.tortie,
+                                    tortie_pattern=invited_cat.pelt.tortie_pattern,
                                 )
                                 invited_cat.specsuffix_hidden = False
                         # if cat is an apprentice, make sure they get a mentor!
@@ -1552,6 +1552,13 @@ def attempt_outbreak():
     # gather possible infections
     possible_infections: dict[str, float] = {}
     for _cat in infectious_cats:
+        if get_clan_setting("rest_and_recover"):
+            stopping_chance = constants.CONFIG["focus"]["rest_and_recover"][
+                "outbreak_prevention"
+            ]
+            if not int(random.random() * stopping_chance):
+                continue
+
         infectious_conditions = [
             condition
             for condition in _cat.temporary_conditions
@@ -1575,11 +1582,15 @@ def attempt_outbreak():
     for infection in possible_infections:
         possible_infections[infection] -= infection_prevention
 
+
+
     # the cats who are allowed to get sick
     vulnerable_cats = list(filter(lambda _cat: _cat not in infectious_cats, clan_cats))
 
     # shuffle the cats to ensure we aren't attempting to infect them in the same order each time
     random.shuffle(vulnerable_cats)
+
+
 
     # figure out how many cats we can infect at maximum
     max_infected_allowed = int(len(healthy_cats) / 2)

@@ -4030,7 +4030,7 @@
         "location": ["any"],
         "season": ["any"],
         "poi": {
-            "tags": ["fall_risk"],
+            "tags": ["danger:fall_risk"],
             "category": "terrain"
         },
         "frequency": 2,
