@@ -55,7 +55,7 @@
   "crowfood": {
     "card_art": "environment/tainted.png",
     "modifiers": {
-      "prey.time_to_rot": 2
+      "prey.time_to_rot": 1
     }
   }
 }
