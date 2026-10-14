@@ -51,4 +51,4 @@ class Injury(Enum):
     cold_injury = "cold_injury"
     big_bite_injury = "big_bite_injury"
     small_bite_injury = "small_bite_injury"
-    sickness = "sickness"
+    sickness = "illness"

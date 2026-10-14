@@ -5,6 +5,7 @@ import i18n
 
 from scripts.cat.cats import Cat
 from scripts.cat.conditions.gain_conditions import gain_temporary_condition
+from scripts.cat.constants import CONDITION_GROUPS
 from scripts.cat.enums import CatAge, CatRank
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
@@ -796,8 +797,8 @@ class ShortEvent:
             # find all possible injuries
             possible_injuries = []
             for injury in block["injuries"]:
-                if injury in constants.INJURY_GROUPS:
-                    possible_injuries.extend(constants.INJURY_GROUPS[injury])
+                if injury in CONDITION_GROUPS:
+                    possible_injuries.extend(CONDITION_GROUPS[injury])
                 else:
                     possible_injuries.append(injury)
 

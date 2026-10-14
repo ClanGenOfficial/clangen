@@ -10,7 +10,11 @@ from scripts.cat.conditions.gain_conditions import (
     gain_temporary_condition,
     gain_permanent_condition,
 )
-from scripts.cat.constants import TEMPORARY_CONDITIONS, PERMANENT_CONDITIONS
+from scripts.cat.constants import (
+    TEMPORARY_CONDITIONS,
+    PERMANENT_CONDITIONS,
+    CONDITION_GROUPS,
+)
 from scripts.cat.enums import CatRank, CatThought, CatStanding, CatGroup
 from scripts.cat.microservices.add_to_clan import add_to_clan, add_dependents_to_clan
 from scripts.cat.pelts import Pelt
@@ -457,7 +461,7 @@ def _handle_conditions(
         return ""
 
     results = []
-    condition_groups = constants.INJURY_GROUPS
+    condition_groups = CONDITION_GROUPS
 
     cats_and_conditions: dict[Cat, list[str]] = {}
 

@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Literal, Dict, List
 
 from pydantic import Field, ConfigDict, BaseModel
+from pydantic_core import MISSING
 
 from scripts.models.common.age import Age
 from scripts.models.common.herb import Herb
@@ -15,6 +16,10 @@ from scripts.models.condition.progression import ProgressionDict
 
 class BaseConditionInfoSchemaItem(BaseModel):
     model_config = ConfigDict(extra="forbid")
+    tags: List[str] | MISSING = Field(
+        MISSING,
+        description="Tag this condition to link it with other conditions for the purpose of creating pools for events to apply, or otherwise utilizing common-groups of conditions within the code.",
+    )
     severity: Literal["major", "minor", "severe"] = Field(
         description="Severity of the condition. For permanent conditions, major and severe conditions can cause the cat to retire early. For temporary conditions, major and minors conditions will prevent the cat from working."
     )

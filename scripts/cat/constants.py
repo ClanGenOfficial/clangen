@@ -45,3 +45,11 @@ with open(
     encoding="utf-8",
 ) as read_file:
     PERMANENT_CONDITIONS.update(ujson.loads(read_file.read()))
+
+CONDITION_GROUPS = {}
+for name, info in TEMPORARY_CONDITIONS:
+    for _t in info.get("tags", []):
+        if _t not in CONDITION_GROUPS:
+            CONDITION_GROUPS[_t] = [name]
+        else:
+            CONDITION_GROUPS[_t].append(name)

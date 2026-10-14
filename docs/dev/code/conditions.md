@@ -6,6 +6,7 @@ New conditions must have their required information format added to either `reso
 
 ```json
     "name": {
+        "tags": [],
         "severity": "",
         "duration": 0,
         "is_complication": false,
@@ -46,6 +47,11 @@ New conditions must have their required information format added to either `reso
 
 #### name: str
 Internal code-name for the condition. This will not be seen in-game. 
+
+***
+
+#### tags: list[str]
+Tag this condition to link it with other conditions for the purpose of creating pools for events to apply, or otherwise utilizing common-groups of conditions within the code. For example, illnesses are all tagged `illness` so that we can treat them differently from other temporary conditions within the code (such as extending specifically illness duration as the result of a Cruel Card.) This is also how we create the "condition pools" for use in the event format.
 
 ***
 
@@ -193,6 +199,7 @@ A list of possible scars that this condition can apply once healed.
 ## Permanent Condition Format
 ```json
     "name": {
+        "tags": [],
         "severity": "",
         "can_be_congenital": false,
         "can_be_acquired": false,

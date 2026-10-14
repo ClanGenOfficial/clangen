@@ -1,5 +1,6 @@
 {
     "diarrhea": {
+        "tags": ["illness"],
         "severity": "major",
         "duration": 2,
         "mortality": {},
@@ -25,6 +26,7 @@
         }
     },
     "diarrhea_dehydrated": {
+        "tags": [],
         "severity": "major",
         "is_complication": true,
         "duration": 1,
@@ -54,6 +56,7 @@
         }
     },
     "infection": {
+        "tags": [],
         "severity": "major",
         "is_complication": true,
         "duration": 2,
@@ -91,6 +94,7 @@
         }
     },
     "whitecough": {
+        "tags": ["illness"],
         "severity": "major",
         "duration": 3,
         "mortality": {
@@ -133,6 +137,7 @@
         }
     },
     "greencough": {
+        "tags": ["illness"],
         "severity": "major",
         "duration": 3,
         "mortality": {
@@ -168,6 +173,7 @@
         }
     },
     "heat_exhaustion": {
+        "tags": ["hot_injury"],
         "severity": "major",
         "duration": 2,
         "mortality": {},
@@ -194,6 +200,7 @@
         }
     },
     "constant_nightmares": {
+        "tags": [],
         "severity": "major",
         "duration": 1,
         "mortality": {},
@@ -214,6 +221,7 @@
         }
     },
     "grief_stricken": {
+        "tags": [],
         "severity": "major",
         "duration": 4,
         "mortality": {},
@@ -248,6 +256,7 @@
         }
     },
     "tick_fever": {
+        "tags": ["illness"],
         "severity": "major",
         "duration": 4,
         "mortality": {
@@ -280,6 +289,7 @@
         }
     },
     "claw_wound": {
+        "tags": ["battle_injury"],
         "severity": "major",
         "duration": 3,
         "mortality": {
@@ -337,6 +347,7 @@
         ]
     },
     "bite_wound": {
+        "tags": ["big_bite_injury", "small_bite_injury"],
         "severity": "major",
         "duration": 3,
         "mortality": {
@@ -383,6 +394,7 @@
         ]
     },
     "cat_bite": {
+        "tags": ["battle_injury"],
         "severity": "major",
         "duration": 2,
         "mortality": {
@@ -427,6 +439,7 @@
         ]
     },
     "beak_bite": {
+        "tags": [],
         "severity": "major",
         "duration": 2,
         "mortality": {
@@ -467,6 +480,7 @@
         }
     },
     "snake_bite": {
+        "tags": [],
         "severity": "major",
         "duration": 2,
         "mortality": {
@@ -511,6 +525,7 @@
         ]
     },
     "rat_bite": {
+        "tags": [],
         "severity": "major",
         "duration": 2,
         "mortality": {
@@ -556,6 +571,7 @@
         ]
     },
     "dislocated_joint": {
+        "tags": [],
         "severity": "major",
         "duration": 1,
         "mortality": {},
@@ -589,6 +605,7 @@
         }
     },
     "sprain": {
+        "tags": ["minor_injury"],
         "severity": "major",
         "duration": 1,
         "mortality": {},
@@ -610,6 +627,7 @@
         }
     },
     "phantom_pain": {
+        "tags": [],
         "severity": "major",
         "duration": 1,
         "mortality": {},
@@ -631,6 +649,7 @@
         }
     },
     "frostbite": {
+        "tags": ["cold_injury"],
         "severity": "major",
         "duration": 2,
         "mortality": {
@@ -688,6 +707,7 @@
         ]
     },
     "recovering_from_birth": {
+        "tags": [],
         "severity": "major",
         "duration": 3,
         "mortality": {},
@@ -715,6 +735,7 @@
         }
     },
     "water_in_lungs": {
+        "tags": [],
         "severity": "major",
         "duration": 3,
         "mortality": {
@@ -756,6 +777,7 @@
         }
     },
     "burn": {
+        "tags": [],
         "severity": "major",
         "duration": 2,
         "mortality": {
@@ -794,6 +816,7 @@
         }
     },
     "shock": {
+        "tags": [],
         "severity": "major",
         "duration": 1,
         "mortality": {
@@ -829,6 +852,7 @@
         }
     },
     "lingering_shock": {
+        "tags": [],
         "severity": "major",
         "duration": 4,
         "mortality": {},
@@ -866,6 +890,7 @@
         }
     },
     "dehydrated": {
+        "tags": ["hot_injury"],
         "severity": "major",
         "duration": 1,
         "mortality": {
@@ -897,6 +922,7 @@
         }
     },
     "head_damage": {
+        "tags": ["blunt_force_injury"],
         "severity": "major",
         "duration": 4,
         "mortality": {
@@ -966,6 +992,7 @@
         }
     },
     "poisoned": {
+        "tags": [],
         "severity": "major",
         "duration": 2,
         "mortality": {
@@ -1002,6 +1029,7 @@
         }
     },
     "severe_headache": {
+        "tags": ["blunt_force_injury"],
         "severity": "major",
         "duration": 1,
         "mortality": {},
@@ -1023,6 +1051,7 @@
         }
     },
     "pregnant": {
+        "tags": [],
         "severity": "major",
         "duration": 2,
         "mortality": {},
@@ -1044,6 +1073,7 @@
         }
     },
     "dangerously_cold": {
+        "tags": ["cold_injury"],
         "severity": "major",
         "duration": 2,
         "mortality": {
@@ -1076,6 +1106,7 @@
         }
     },
     "porcupine_quilled": {
+        "tags": [],
         "severity": "major",
         "duration": 2,
         "mortality": {
@@ -1120,6 +1151,7 @@
         ]
     },
     "venom_sickness": {
+        "tags": [],
         "severity": "major",
         "duration": 3,
         "mortality": {

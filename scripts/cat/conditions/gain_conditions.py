@@ -35,14 +35,16 @@ def gain_temporary_condition(
     """
     if cat.dead:
         return
-    # TODO: check if name is legit condition name
-    if name in cat.temporary_conditions:
+    if name in cat.temporary_conditions or name not in list(
+        TEMPORARY_CONDITIONS.keys()
+    ):
         return
     if name == "kittencough" and cat.status.rank not in (
         CatRank.KITTEN,
         CatRank.NEWBORN,
     ):
-        return
+        # kinda hacky, but it'll work
+        name = "whitecough"
 
     condition_info = TEMPORARY_CONDITIONS[name]
 

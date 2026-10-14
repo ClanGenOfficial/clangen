@@ -1,5 +1,6 @@
 {
     "seizure": {
+        "tags": [],
         "severity": "severe",
         "duration": 1,
         "mortality": {
@@ -32,6 +33,7 @@
         }
     },
     "breathless_fit": {
+        "tags": [],
         "severity": "severe",
         "duration": 1,
         "mortality": {
@@ -62,6 +64,7 @@
         }
     },
     "yellowcough": {
+        "tags": ["illness"],
         "severity": "severe",
         "duration": 3,
         "mortality": {
@@ -100,6 +103,7 @@
         }
     },
     "kittencough": {
+        "tags": ["illness"],
         "severity": "severe",
         "duration": 3,
         "mortality": {
@@ -142,6 +146,7 @@
         }
     },
     "carrionplace_disease": {
+        "tags": ["illness"],
         "severity": "severe",
         "duration": 3,
         "mortality": {
@@ -173,6 +178,7 @@
         }
     },
     "redcough": {
+        "tags": ["illness"],
         "severity": "severe",
         "duration": 24,
         "mortality": {
@@ -206,6 +212,7 @@
         }
     },
     "festering_wound": {
+        "tags": [],
         "severity": "severe",
         "is_complication": true,
         "duration": 2,
@@ -246,6 +253,7 @@
         }
     },
     "heat_stroke": {
+        "tags": ["hot_injury"],
         "severity": "severe",
         "duration": 1,
         "mortality": {
@@ -275,6 +283,7 @@
         }
     },
     "starving": {
+        "tags": [],
         "severity": "severe",
         "duration": 100,
         "mortality": {},
@@ -292,6 +301,7 @@
         }
     },
     "broken_jaw": {
+        "tags": ["blunt_force_injury"],
         "severity": "severe",
         "duration": 4,
         "mortality": {
@@ -350,6 +360,7 @@
         ]
     },
     "broken_bone": {
+        "tags": ["blunt_force_injury", "big_bite_injury"],
         "severity": "severe",
         "duration": 5,
         "mortality": {
@@ -409,6 +420,7 @@
         ]
     },
     "damaged_eyes": {
+        "tags": [],
         "severity": "severe",
         "duration": 6,
         "mortality": {
@@ -468,6 +480,7 @@
         ]
     },
     "mangled_leg": {
+        "tags": ["battle_injury", "big_bite_injury"],
         "severity": "severe",
         "duration": 3,
         "mortality": {
@@ -534,6 +547,7 @@
         ]
     },
     "mangled_tail": {
+        "tags": ["battle_injury", "big_bite_injury"],
         "severity": "severe",
         "duration": 3,
         "mortality": {
@@ -586,6 +600,7 @@
         ]
     },
     "severe_burn": {
+        "tags": [],
         "severity": "severe",
         "duration": 4,
         "mortality": {
@@ -642,6 +657,7 @@
         ]
     },
     "broken_back": {
+        "tags": ["blunt_force_injury"],
         "severity": "severe",
         "duration": 8,
         "mortality": {

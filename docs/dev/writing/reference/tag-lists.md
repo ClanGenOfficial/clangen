@@ -95,15 +95,13 @@ You can override the default minimums by including `(min:#)` after the status or
 
     > | **INJURY POOL NAME** | **INJURIES**                                                            |
     |----------------------|-------------------------------------------------------------------------|
-    | `battle_injury`      | `claw-wound`, `cat bite`, `mangled leg`, `mangled tail`, `torn pelt`    |
-    | `minor_injury`       | `sprain`, `sore`, `bruises`, `scrapes`                                  |
-    | `blunt_force_injury` | `broken bone`, `broken back`, `head damage`, `broken jaw`               |
-    | `hot_injury`         | `heat exhaustion`, `heat stroke`, `dehydrated`                          |
-    | `cold_injury`        | `shivering`, `"frostbite" `                                               |
-    | `big_bite_injury`    | `bite-wound`, `broken bone`, `torn pelt`, `mangled leg`, `mangled tail` |
-    | `small_bite_injury`  | `bite-wound`, `torn ear`, `torn pelt`, `scrapes`                        |
-    | `beak_bite`          | `beak bite`, `torn ear`, `scrapes`                                      |
-    | `rat_bite`           | `rat bite`, `torn ear`, `torn pelt`                                     |
+    | `battle_injury`      | `claw_wound`, `cat_bite`, `mangled_leg`, `mangled_tail`, `torn_pelt`, `torn_ear    |
+    | `minor_injury`       | `sprain`, `sore`, `bruises`, `scrapes` , `small_cut                                 |
+    | `blunt_force_injury` | `broken_bone`, `broken_back`, `broken_jaw` `head_damage`, `severe_headache`               |
+    | `hot_injury`         | `heat_exhaustion`, `heat_stroke`, `dehydrated`                          |
+    | `cold_injury`        | `dangerously_cold`, `"frostbite" `                                               |
+    | `big_bite_injury`    | `bite_wound`, `broken_bone`, `mangled_leg`, `mangled_tail` |
+    | `small_bite_injury`  | `bite_wound`, `torn_ear`, `torn_pelt`                        |
 
     > If you’d like a patrol to have an injury from one of the injury pools above, use the pool name (i.e. "battle_injury" for injuries from other cats) instead of the injury.  Think we need another pool? Let the senior developers know in the discord developer areas and let's talk.  We can have many pools, there's no limit!
 

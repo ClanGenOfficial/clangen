@@ -8,7 +8,11 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
-from scripts.cat.constants import TEMPORARY_CONDITIONS
+from scripts.cat.constants import (
+    TEMPORARY_CONDITIONS,
+    CONDITION_GROUPS,
+    PERMANENT_CONDITIONS,
+)
 from scripts.cat.factories.create_example_cat import create_option_preview_cat
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
@@ -145,9 +149,11 @@ class EventEditScreen(Screens):
     new_cat_genders: list = TAGS["new_cat"]["genders"]
     """List of all gender tags available to new cats"""
 
-    all_injury_pools: dict = constants.INJURY_GROUPS
+    all_injury_pools: dict = CONDITION_GROUPS
     """Dict of all injury pools. Key is pool name, value is the injuries within the pool."""
-    all_possible_injuries: list = constants.EVENT_ALLOWED_CONDITIONS
+    all_possible_injuries: list = list(TEMPORARY_CONDITIONS.keys()) + list(
+        PERMANENT_CONDITIONS.keys()
+    )
     """List of all possible injuries/conditions."""
     fatal_conditions: list = []
     """We need this for death history validity checking. This is a list of all conditions that can kill."""

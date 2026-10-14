@@ -1,5 +1,6 @@
 {
     "fleas": {
+        "tags": [],
         "severity": "minor",
         "duration": 2,
         "mortality": {},
@@ -19,6 +20,7 @@
         }
     },
     "running_nose": {
+        "tags": ["illness"],
         "severity": "minor",
         "duration": 2,
         "mortality": {},
@@ -47,6 +49,7 @@
         }
     },
     "stomachache": {
+        "tags": ["illness"],
         "severity": "minor",
         "duration": 2,
         "mortality": {},
@@ -70,6 +73,7 @@
         }
     },
     "malnourished": {
+        "tags": [],
         "severity": "minor",
         "duration": 100,
         "mortality": {},
@@ -87,6 +91,7 @@
         }
     },
     "tick_bites": {
+        "tags": [],
         "severity": "minor",
         "duration": 2,
         "mortality": {},
@@ -109,6 +114,7 @@
         }
     },
     "blood_loss": {
+        "tags": [],
         "severity": "minor",
         "duration": 1,
         "mortality": {
@@ -146,6 +152,7 @@
         }
     },
     "joint_pain": {
+        "tags": [],
         "severity": "minor",
         "duration": 1,
         "mortality": {},
@@ -169,6 +176,7 @@
         }
     },
     "bruises": {
+        "tags": ["minor_injury"],
         "severity": "minor",
         "duration": 1,
         "mortality": {},
@@ -184,6 +192,7 @@
         }
     },
     "cracked_pads": {
+        "tags": ["minor_injury"],
         "severity": "minor",
         "duration": 1,
         "mortality": {},
@@ -208,6 +217,7 @@
         }
     },
     "sore": {
+        "tags": ["minor_injury"],
         "severity": "minor",
         "duration": 1,
         "mortality": {},
@@ -232,6 +242,7 @@
         }
     },
     "scrapes": {
+        "tags": [],
         "severity": "minor",
         "duration": 1,
         "mortality": {},
@@ -255,6 +266,7 @@
         }
     },
     "small_cut": {
+        "tags": ["minor_injury"],
         "severity": "minor",
         "duration": 1,
         "mortality": {},
@@ -278,6 +290,7 @@
         }
     },
     "torn_pelt": {
+        "tags": ["battle_injury", "small_bite_injury"],
         "severity": "minor",
         "duration": 1,
         "mortality": {},
@@ -304,6 +317,7 @@
         }
     },
     "torn_ear": {
+        "tags": ["battle_injury", "small_bite_injury"],
         "severity": "minor",
         "duration": 1,
         "mortality": {},
@@ -340,6 +354,7 @@
         ]
     },
     "bee_sting": {
+        "tags": [],
         "severity": "minor",
         "duration": 1,
         "mortality": {
@@ -369,6 +384,7 @@
         }
     },
     "headache": {
+        "tags": [],
         "severity": "minor",
         "duration": 1,
         "mortality": {},
@@ -390,6 +406,7 @@
         }
     },
     "sore_throat": {
+        "tags": ["illness"],
         "severity": "minor",
         "duration": 1,
         "mortality": {},

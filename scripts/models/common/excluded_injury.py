@@ -52,4 +52,4 @@ class ExcludedInjury(Enum):
     not_small_bite_injury = "-small_bite_injury"
     not_beak_bite_1 = "-beak_bite"
     not_rat_bite_1 = "-rat_bite"
-    not_sickness = "-sickness"
+    not_sickness = "-illness"

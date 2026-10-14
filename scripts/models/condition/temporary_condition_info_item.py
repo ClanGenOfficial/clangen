@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Literal, Dict, List
 
 from pydantic import Field, ConfigDict, BaseModel
+from pydantic.v1 import PositiveInt
 from pydantic_core import MISSING
 
 from scripts.cat.conditions.permanent_condition import PermanentCondition
@@ -20,7 +21,7 @@ from scripts.models.text_pool_event.base_text_pool_event import BaseTextPoolEven
 
 class TemporaryConditionInfoSchemaItem(BaseConditionInfoSchemaItem):
     model_config = ConfigDict(extra="forbid")
-    duration: int = Field(
+    duration: PositiveInt = Field(
         description="How many moons the cat will have this condition."
     )
     infectiousness: float = Field(
