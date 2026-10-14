@@ -169,7 +169,7 @@
         "involved_cats": {
             "m_c": {
                 "health": {
-                    "condition": ["-grief stricken", "-deaf", "-blind", "-lasting grief", "-recovering from birth", "-lingering shock", "-allergies", "-persistent headaches", "-seizure prone", "-raspy lungs"],
+                    "condition": ["-grief_stricken", "-deaf", "-blind", "-lasting_grief", "-recovering_from_birth", "-lingering_shock", "-allergies", "-persistent_headaches", "-seizure_prone", "-raspy_lungs"],
                     "working": false
                 }
             }

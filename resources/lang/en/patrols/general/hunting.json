@@ -10045,7 +10045,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "head damage"
+                            "head_damage"
                         ],
                         "death_history": "m_c died after being hit in the head by a fleeing rabbit."
                     }
@@ -10078,7 +10078,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "damaged eyes"
+                            "damaged_eyes"
                         ],
                         "scar_history": "m_c's eyes were scarred by an angry buck rabbit.",
                         "death_history": "m_c died after being clawed by an angry buck rabbit."
@@ -10103,7 +10103,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "snake bite"
+                            "snake_bite"
                         ],
                         "scar_history": "m_c was bitten by a snake on patrol.",
                         "death_history": "m_c died after being bitten by a snake on a patrol."
@@ -10215,7 +10215,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "head damage"
+                            "head_damage"
                         ],
                         "death_history": "m_c died after being hit in the head by a fleeing rabbit."
                     }
@@ -10247,7 +10247,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "damaged eyes"
+                            "damaged_eyes"
                         ],
                         "scar_history": "m_c's eyes were scarred by an angry buck rabbit.",
                         "death_history": "m_c died after being clawed by an angry buck rabbit."
@@ -10267,7 +10267,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "snake bite"
+                            "snake_bite"
                         ],
                         "scar_history": "m_c was bitten by a snake on patrol.",
                         "death_history": "m_c died after being bitten by a snake on a patrol."

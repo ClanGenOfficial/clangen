@@ -1582,15 +1582,11 @@ def attempt_outbreak():
     for infection in possible_infections:
         possible_infections[infection] -= infection_prevention
 
-
-
     # the cats who are allowed to get sick
     vulnerable_cats = list(filter(lambda _cat: _cat not in infectious_cats, clan_cats))
 
     # shuffle the cats to ensure we aren't attempting to infect them in the same order each time
     random.shuffle(vulnerable_cats)
-
-
 
     # figure out how many cats we can infect at maximum
     max_infected_allowed = int(len(healthy_cats) / 2)
