@@ -1305,11 +1305,7 @@
             },
             "r_c": {
                 "status": [
-                    "medicine cat",
-                    "medicine cat apprentice"
-                ],
-                "group": [
-                    "-afterlife"
+                    "medicine cat"
                 ]
             }
         }
@@ -1618,7 +1614,8 @@
                     ],
                     "skill": [
                         "CLIMBER,0"
-                    ]
+                    ],
+                    "must_have_both": true
                 }
             },
             "r_c": {
@@ -1691,7 +1688,7 @@
                 ],
                 "stat": {
                     "skill": [
-                        "SWIMMER,0"
+                        "SENSE,0"
                     ]
                 }
             },
