@@ -23,6 +23,7 @@ from scripts.clan_resources.freshkill import (
     HUNTER_BONUS,
     HUNTER_EXP_BONUS,
 )
+from scripts.clan_resources.point_of_interest import get_poi_from_constraints
 from scripts.config import get_config
 from scripts.events_module.consequences import unpack_rel_block, check_stolen_vitality
 from scripts.events_module.future.prep_and_trigger import prep_future_event
