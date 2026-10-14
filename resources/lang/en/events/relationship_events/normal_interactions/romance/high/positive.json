@@ -67,6 +67,10 @@
             "m_c hopes to dream of r_c tonight.",
             "m_c is the only cat who can make r_c laugh."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [
@@ -108,6 +112,10 @@
             "m_c and r_c snuck out of camp together.",
             "m_c promises r_c to always be there to protect {PRONOUN/r_c/object} with {PRONOUN/m_c/poss} life."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [
@@ -147,6 +155,10 @@
             "m_c purrs for a long time at one of r_c's lame jokes.",
             "m_c can't stop gushing over r_c."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [

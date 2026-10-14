@@ -4681,7 +4681,7 @@
             "name": ["terrain_sunningrocks"]
         },
         "frequency": 4,
-        "event_text": "m_c gathered some pretty leaves and laid them out to dry on POI. A few days later, {PRONOUN/m_c/subject/CAP} returned to camp with a new accessory",
+        "event_text": "m_c gathered some pretty leaves and laid them out to dry on POI. A few days later, {PRONOUN/m_c/subject} returned to camp with a new accessory!",
         "new_accessory": ["DRY HERBS", "DRY CATMINT", "DRY NETTLES", "DRY LAURELS"],
         "m_c": {
             "status": ["-kitten"]

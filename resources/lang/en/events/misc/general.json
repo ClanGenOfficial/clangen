@@ -4681,7 +4681,7 @@
             "name": ["terrain_sunningrocks"]
         },
         "frequency": 4,
-        "event_text": "m_c gathered some pretty leaves and laid them out to dry on POI. A few days later, {PRONOUN/m_c/subject/CAP} returned to camp with a new accessory",
+        "event_text": "m_c gathered some pretty leaves and laid them out to dry on POI. A few days later, {PRONOUN/m_c/subject} returned to camp with a new accessory!",
         "new_accessory": ["DRY HERBS", "DRY CATMINT", "DRY NETTLES", "DRY LAURELS"],
         "m_c": {
             "status": ["-kitten"]
@@ -17610,5 +17610,762 @@
                 }
             }
         ]
+    },
+    {
+        "event_id": "gen_misc_war_stolen_accessory1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war",
+            "accessory"
+        ],
+        "frequency": 1,
+        "event_text": "m_c had returned from battle not only victoriously, but with a new acc_singular in {PRONOUN/m_c/poss} pelt, taken from the battlefield.",
+        "m_c": {
+            "status": [
+                "warrior",
+		        "deputy",
+		        "leader",
+		        "apprentice"
+            ],
+	        "trait": [
+		        "troublesome",
+                "fierce",
+                "bloodthirsty",
+                "bold",
+                "ambitious",
+                "shameless",
+                "strange",
+                "vengeful",
+                "arrogant",
+                "competitive",
+                "cunning"
+            ]
+        },
+        "new_accessory": [
+            "WILD",
+	        "PLANT"
+        ],
+	    "relationships": [
+	        {
+    		    "cats_from": [
+		            "some_clan",
+		            "low_aggress",
+		            "high_lawful"
+		        ],
+    		    "cats_to": [
+		            "m_c"
+		        ],
+    		    "mutual": false,
+    		    "values": [
+		            "comfort"
+		        ],
+    		    "amount": -5,
+    		    "log": {
+        	        "cats_from": "cat_from was uncomfortable with cat_to returning from battle with a victory trophy."
+    		    }
+	        },
+	        {
+    		    "cats_from": [
+		            "some_clan",
+		            "high_aggress"
+		        ],
+    		    "cats_to": [
+		            "m_c"
+		        ],
+    		    "mutual": false,
+    		    "values": [
+		            "respect"
+		        ],
+    		    "amount": 5,
+    		    "log": {
+        	        "cats_from": "cat_from was impressed with cat_to returning from battle with a victory trophy."
+    		    }
+	        }
+	    ],
+        "other_clan": {
+            "current_rep": [
+                "any"
+            ],
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_misc_war_stolen_accessory2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war",
+            "accessory"
+        ],
+        "frequency": 1,
+        "event_text": "In a battle with o_c_n, m_c had managed to take some acc_plural from a defeated enemy. {PRONOUN/m_c/subject/CAP} came home displaying {PRONOUN/m_c/poss} victory spoils.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader",
+                "apprentice"
+            ],
+	        "trait": [
+                "troublesome",
+                "fierce",
+                "bloodthirsty",
+                "bold",
+                "ambitious",
+                "shameless",
+                "strange",
+                "vengeful",
+                "arrogant",
+                "competitive",
+                "cunning"
+            ]
+        },
+        "new_accessory": [
+            "WILD",
+	        "PLANT"
+        ],
+	    "relationships": [
+	        {
+    		    "cats_from": [
+		            "some_clan",
+		            "low_aggress",
+		            "high_lawful"
+		        ],
+    		    "cats_to": [
+		            "m_c"
+		        ],
+    		    "mutual": false,
+    		    "values": [
+		            "comfort"
+		        ],
+    		    "amount": -5,
+    		    "log": {
+        	        "cats_from": "cat_from was uncomfortable with cat_to returning from battle with a victory trophy."
+    		    }
+	        },
+	        {
+    		    "cats_from": [
+		            "some_clan",
+		            "high_aggress"
+		        ],
+    		    "cats_to": [
+		            "m_c"
+		        ],
+    		    "mutual": false,
+    		    "values": [
+		            "respect"
+		        ],
+    		    "amount": 5,
+    		    "log": {
+        	        "cats_from": "cat_from was impressed with cat_to returning from battle with a victory trophy."
+    		    }
+	        }
+	    ],
+        "other_clan": {
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_misc_war_stolen_accessory3",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war",
+            "accessory"
+        ],
+        "frequency": 1,
+        "event_text": "In the midst of a battle, m_c found a acc_singular dropped by a fleeing o_c_n warrior. {PRONOUN/m_c/subject/CAP} took it to showcase {PRONOUN/m_c/poss} strength and victory.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader",
+                "apprentice"
+            ],
+	        "trait": [
+                "troublesome",
+                "fierce",
+                "bloodthirsty",
+                "bold",
+                "ambitious",
+                "shameless",
+                "strange",
+                "vengeful",
+                "arrogant",
+                "competitive",
+                "cunning"
+	        ]
+        },
+        "new_accessory": [
+            "WILD",
+	        "PLANT"
+        ],
+	    "relationships": [
+	        {
+    		    "cats_from": [
+                    "some_clan",
+                    "low_aggress",
+                    "high_lawful"
+		        ],
+    		    "cats_to": [
+		            "m_c"
+		        ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+		        ],
+    		    "amount": -5,
+    		    "log": {
+        	        "cats_from": "cat_from was uncomfortable with cat_to returning from battle with a victory trophy."
+    		    }
+	        },
+	        {
+    		    "cats_from": [
+		            "some_clan",
+		            "low_aggress"
+		        ],
+    		    "cats_to": [
+		            "m_c"
+		        ],
+    		    "mutual": false,
+    		    "values": [
+		            "respect"
+		        ],
+    		    "amount": 5,
+    		    "log": {
+        	        "cats_from": "cat_from was impressed with cat_to returning from battle with a victory trophy."
+    		    }
+	        }
+	    ],
+        "other_clan": {
+            "changed": -1
+        }
+    },
+    {
+        "event_id": "gen_misc_war_friend_accessory1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war",
+            "accessory"
+        ],
+        "frequency": 2,
+        "event_text": "To cheer m_c up during the war r_c found a acc_singular for {PRONOUN/m_c/object}. Grateful, m_c decided to wear it.",
+        "m_c": {
+            "status": [
+		        "-newborn"
+            ],
+            "age": [
+                "-newborn"
+            ],
+	        "relationship_status": [
+                "likes",
+                "listens_to",
+                "relates_to"
+	        ],
+	        "trait": [
+		        "-bloodthirsty"
+	        ]
+        },
+	    "r_c": {
+	        "status": [
+		        "-newborn",
+		        "-kitten"
+	        ],
+	        "age": [
+		        "-newborn",
+		        "-kitten"
+	        ],
+	        "relationship_status": [
+		        "enjoys",
+		        "relates_to"
+	        ],
+	        "trait": [
+                "sincere",
+                "wise",
+                "loyal",
+                "loving",
+                "thoughtful",
+                "compassionate",
+                "righteous",
+                "charismatic"
+	        ]
+        },
+        "new_accessory": [
+            "WILD",
+	        "PLANT"
+        ],
+	    "relationships": [
+	        {
+    		    "cats_from": [
+		            "r_c"
+		        ],
+    		    "cats_to": [
+		            "m_c"
+		        ],
+    		    "mutual": true,
+    		    "values": [
+		            "like",
+		            "comfort"
+		        ],
+    		    "amount": 5,
+    		    "log": {
+        	        "cats_from": "cat_from was happy to see cat_to appreciate {PRONOUN/cat_from/poss} gift.",
+					"cats_to": "cat_to appreciative of cat_from's gift to cheer {PRONOUN/cat_to/object} up."
+    		    }
+	        }
+	    ]
+    },
+    {
+        "event_id": "gen_misc_war_friend_accessory2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war",
+            "accessory"
+        ],
+        "frequency": 2,
+        "event_text": "m_c had seemed gloomy and stressed during the war. r_c decided to bring {PRONOUN/m_c/object} a gift to cheer {PRONOUN/m_c/object} up.",
+        "m_c": {
+            "status": [
+		        "-newborn"
+            ],
+            "age": [
+                "-newborn"
+            ],
+	        "relationship_status": [
+                "likes",
+                "listens_to",
+                "relates_to"
+	        ],
+	        "trait": [
+		        "-bloodthirsty"
+	        ]
+        },
+    	"r_c": {
+	        "status": [
+		    "-newborn",
+    		"-kitten"
+	        ],
+	        "age": [
+        		"-newborn",
+		        "-kitten"
+    	    ],
+	        "relationship_status": [
+		        "enjoys",
+        		"relates_to"
+	        ],
+    	    "trait": [
+                "sincere",
+                "wise",
+                "loyal",
+                "loving",
+                "thoughtful",
+                "compassionate",
+                "righteous",
+                "charismatic"
+            ]
+        },
+        "new_accessory": [
+            "WILD",
+	        "PLANT"
+        ],
+    	"relationships": [
+	        {
+    	    	"cats_from": [
+		            "r_c"
+        		],
+    	    	"cats_to": [
+		            "m_c"
+        		],
+    	    	"mutual": true,
+    		    "values": [
+        		    "like",
+		            "comfort"
+        		],
+    	    	"amount": 5,
+    		    "log": {
+        	        "cats_from": "cat_from was happy to see cat_to appreciate {PRONOUN/cat_from/poss} gift.",
+					"cats_to": "cat_to appreciative of cat_from's gift to cheer {PRONOUN/cat_to/object} up."
+        		}
+	        }
+    	]
+    },
+    {
+        "event_id": "gen_misc_war_friend_accessory3",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war",
+            "accessory"
+        ],
+        "frequency": 2,
+        "event_text": "To help {PRONOUN/r_c/poss} friend through these difficult times, r_c offered m_c a gift. m_c decided to wear it in {PRONOUN/m_c/poss} pelt, much to r_c's delight.",
+        "m_c": {
+            "status": [
+		        "-newborn"
+            ],
+            "age": [
+                "-newborn"
+            ],
+	        "relationship_status": [
+                "likes",
+                "listens_to",
+                "relates_to"
+            ],
+	        "trait": [
+		        "-bloodthirsty"
+	        ]
+        },
+	    "r_c": {
+	        "status": [
+		        "-newborn",
+        		"-kitten"
+	        ],
+    	    "age": [
+	        	"-newborn",
+        		"-kitten"
+	        ],
+    	    "relationship_status": [
+	        	"enjoys",
+        		"relates_to"
+	        ],
+    	    "trait": [
+                "sincere",
+                "wise",
+                "loyal",
+                "loving",
+                "thoughtful",
+                "compassionate",
+                "righteous",
+                "charismatic"
+          ]
+        },
+        "new_accessory": [
+            "WILD",
+	        "PLANT"
+        ],
+    	"relationships": [
+	        {
+    	    	"cats_from": [
+		            "r_c"
+        		],
+    	    	"cats_to": [
+		            "m_c"
+        		],
+    	    	"mutual": true,
+    		    "values": [
+        		    "like",
+		            "comfort"
+        		],
+    	    	"amount": 5,
+    		    "log": {
+        	        "cats_from": "cat_from was happy to see cat_to appreciate {PRONOUN/cat_from/poss} gift.",
+					"cats_to": "cat_to appreciative of cat_from's gift to cheer {PRONOUN/cat_to/object} up."
+        		}
+	        }
+    	]
+    },
+    {
+        "event_id": "gen_misc_war_parentkit_accessory1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war",
+            "accessory"
+        ],
+        "frequency": 2,
+        "event_text": "After m_c had a nightmare about o_c_n invading camp, r_c found a acc_singular for {PRONOUN/r_c/poss} kit, promising it'll protect m_c.",
+        "m_c": {
+            "status": [
+		        "kitten"
+            ],
+            "age": [
+                "kitten"
+            ],
+	        "relationship_status": [
+		        "child/parent"
+	        ]
+        },
+	    "r_c": {},
+        "new_accessory": [
+            "WILD",
+	        "PLANT"
+        ],
+    	"relationships": [
+	        {
+    		    "cats_from": [
+        		    "m_c"
+		        ],
+        		"cats_to": [
+	        	    "r_c"
+        		],
+    	    	"mutual": false,
+    		    "values": [
+        		    "like",
+		            "comfort"
+        		],
+    	    	"amount": 5,
+    		    "log": {
+        	        "cats_from": "cat_from received a good-luck charm from cat_to in wartime."
+        		}
+	        }
+	    ]
+    },
+    {
+        "event_id": "gen_misc_war_parentkit_accessory2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war",
+            "accessory"
+        ],
+        "frequency": 2,
+        "event_text": "m_c was comforted by {PRONOUN/m_c/poss} parent, r_c, after a nightmare about o_c_n attacking. The next day, r_c gave m_c a acc_singular, saying it'll keep {PRONOUN/m_c/object} safe.",
+        "m_c": {
+            "status": [
+        		"kitten"
+            ],
+            "age": [
+                "kitten"
+            ],
+	        "relationship_status": [
+		        "child/parent"
+	        ]
+        },
+    	"r_c": {},
+        "new_accessory": [
+            "WILD",
+    	    "PLANT"
+        ],
+	    "relationships": [
+	        {
+    		    "cats_from": [
+        		    "m_c"
+		        ],
+        		"cats_to": [
+	        	    "r_c"
+		        ],
+        		"mutual": false,
+        		"values": [
+		            "like",
+        		    "comfort"
+		        ],
+        		"amount": 5,
+        		"log": {
+            	    "cats_from": "cat_from received a good-luck charm from cat_to in wartime."
+    		    }
+    	    }
+	    ]
+    },
+    {
+        "event_id": "gen_misc_war_leaflitter_accessory1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "sub_type": [
+            "war",
+            "accessory"
+        ],
+	    "tags": [
+	        "clan:kitten"
+    	],
+        "frequency": 2,
+        "event_text": "r_c was teaching the kits how to hide in leaf litter, in case o_c_n attacked unexpectedly. Afterwards, m_c decided {PRONOUN/m_c/subject} really liked the look of leaves on {PRONOUN/m_c/poss} pelt!",
+        "m_c": {
+            "status": [
+	        	"kitten"
+            ],
+            "age": [
+                "kitten"
+            ]
+        },
+    	"r_c": {
+	        "status": [
+		        "-kitten",
+        		"-newborn"
+	        ]
+        },
+        "new_accessory": [
+            "OAK LEAVES",
+    	    "MAPLE LEAF"
+        ]
+    },
+    {
+        "event_id": "gen_misc_war_leaflitter_accessory2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "sub_type": [
+            "war",
+            "accessory"
+        ],
+	    "tags": [
+	        "clan:kitten"
+    	],
+        "frequency": 2,
+        "event_text": "r_c was teaching the kits how to hide in leaf litter, in case o_c_n attacked unexpectedly. However, the session was interrupted as m_c found a pretty acc_singular buried in the foliage, and decided to wear it.",
+        "m_c": {
+            "status": [
+	        	"kitten"
+            ],
+            "age": [
+                "kitten"
+            ]
+        },
+    	"r_c": {
+	        "status": [
+		        "-kitten",
+        		"-newborn"
+	        ]
+        },
+        "new_accessory": [
+            "OAK LEAVES",
+            "MAPLE LEAF",
+            "NETTLE",
+            "HERBS",
+            "PETALS",
+            "VINE BRACELET",
+            "PINECONE",
+            "ACORN",
+            "DRY HERBS",
+            "DRY NETTLES",
+            "MAPLE SEED",
+            "MOTH WINGS",
+            "CLOVER",
+            "DAISY"
+        ]
+    },
+    {
+        "event_id": "gen_misc_war_fortify_accessory1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war",
+            "accessory"
+        ],
+        "frequency": 2,
+        "event_text": "While fortifying camp, m_c found a nice-looking acc_singular. {PRONOUN/m_c/subject/CAP} decided to wear it.",
+        "m_c": {
+            "status": [
+		        "-kitten",
+		        "-newborn"
+            ],
+	        "skill": [
+		        "CAMP,2"
+	        ]
+        },
+        "new_accessory": [
+            "WILD",
+	        "PLANT"
+        ]
+    },
+    {
+        "event_id": "gen_misc_war_fortify_accessory2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war",
+            "accessory"
+        ],
+        "frequency": 2,
+        "event_text": "m_c was working on fortifying camp against a possible o_c_n attack, when {PRONOUN/m_c/subject} found a acc_singular. {PRONOUN/m_c/subject/CAP} ended up wearing it.",
+        "m_c": {
+            "status": [
+                "-kitten",
+                "-newborn"
+            ],
+	        "skill": [
+		        "CAMP,2"
+	        ]
+        },
+        "new_accessory": [
+            "WILD",
+	        "PLANT"
+        ]
+    },
+    {
+        "event_id": "gen_misc_war_evil_accessory",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war",
+            "accessory"
+        ],
+        "frequency": 1,
+        "event_text": "With the war still going on, m_c felt {PRONOUN/m_c/subject} could do more to prepare. {PRONOUN/m_c/subject/CAP} found a acc_singular and carefully put it on {PRONOUN/m_c/poss} pelt, hoping an enemy might bite the poisonous plant.",
+        "m_c": {
+            "status": [
+		        "-kitten",
+		        "-newborn"
+            ],
+	        "trait": [
+                "fierce",
+                "bloodthirsty",
+                "cold",
+                "daring",
+                "nervous",
+                "shameless",
+                "vengeful",
+                "cunning"
+    	    ]
+        },
+        "new_accessory": [
+            "HOLLY",
+            "LILY OF THE VALLEY",
+            "BLUEBELLS",
+            "LAVENDER"
+       ]
     }
 ]

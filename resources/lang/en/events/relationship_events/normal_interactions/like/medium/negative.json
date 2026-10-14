@@ -86,7 +86,6 @@
             "m_c stiffens up a little whenever someone mentions r_c.",
             "m_c is tired of interacting with r_c lately.",
             "After sharing tongues, m_c washed off r_c's scent from {PRONOUN/m_c/poss} pelt.",
-            "A Clanmate notices m_c mocking r_c behind {PRONOUN/r_c/poss} back.",
             "When m_c needs someone to do {PRONOUN/m_c/object} a favor, {PRONOUN/m_c/subject} never {VERB/m_c/ask/asks} r_c first."
         ]
     },
@@ -249,6 +248,10 @@
             "r_c is telling others about how terrible m_c can really be.",
             "r_c leaves as soon as m_c arrives and refuses to be nearby."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [
@@ -454,8 +457,6 @@
         "strings": [
             "m_c tried to have a friendly discussion with r_c about what prey tastes best, but it turned into an argument.",
             "m_c and r_c always end up arguing over what games to play.",
-            "m_c tells an older Clanmate that r_c did something bad.",
-            "m_c snitches on r_c to an older Clanmate.",
             "m_c cries that r_c hurt {PRONOUN/m_c/object}, but is lying.",
             "m_c is not playing fairly with r_c!"
         ],
