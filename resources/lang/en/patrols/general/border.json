@@ -9001,5 +9001,402 @@
                 ]
             }
         ]
+    },
+    {
+        "event_id": "gen_bord_story1",
+        "types": [
+            "border"
+        ],
+        "frequency": 3,
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ]
+        },
+        "chance_of_success": 50,
+        "involved_cats": {
+            "p_l": {
+                "stat": {
+                    "trait": ["-gloomy", "-grumpy", "-lonesome", "-oblivious", "-strict"]
+                }
+            }
+        },
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
+        "intro_strings": [
+            "On their way to mark the far corners of their territory, p_l starts telling a story of their ancestors to keep every cat entertained."
+        ],
+        "decline_strings": [
+            "The story is forgotten as the patrol comes across a strange scent trail."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "It keeps the cats' minds off their long walk. The patrol goes quickly and easily.",
+                    "It keeps the cats' minds off the distance they have to cover. The patrol goes quickly and easily."
+                ],
+                "exp_gained": 15,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from enjoyed a story told by cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["mountainous", "desert"],
+                "strings": [
+                    "It keeps the cats' minds off their sore pads and the sharp stones they walk on. The patrol goes quickly and easily."
+                ],
+                "exp_gained": 15,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from enjoyed a story told by cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["wetlands"],
+                "strings": [
+                    "It keeps the cats' minds off their damp paws and the muddy path. The patrol goes quickly and easily."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from appreciated cat_to telling a story on a border patrol to keep everyone's minds off their damp paws."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l spins a vivid, engaging tale of a massive war their ancestors fought over the border the patrol is headed to mark. Not only does it keep every cat entertained, but it also emphasizes the importance of the patrol and motivates everyone."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "LORE,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from really enjoyed a story told by cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l regales the patrol with fantastical tales of lions and tigers fighting over the border they're headed towards. It might not be the most believable, but it's plenty fun to imagine and the patrol enjoys the story."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "STORY,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from really enjoyed a story told by cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "It's a fantastic idea, making the patrol fly by as cats chat and laugh with their Clanmates, and everyone ends the day feeling much closer to each other."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to chatted on patrol."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "{PRONOUN/p_l/subject/CAP} {VERB/p_l/try/tries}, but {PRONOUN/p_l/poss} Clanmates seem unenthused, so p_l stops."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from tried to tell a story on patrol, but cat_to seemed uninterested."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats", "low_social"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect",
+                            "comfort"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from had to put up with cat_to trying to tell another story."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["forest", "wetlands"],
+                "strings": [
+                    "As the patrol weaves through the trees and undergrowth, it becomes obvious that the bushes block the sound of {PRONOUN/p_l/poss} meows, and p_l gives up on {PRONOUN/p_l/poss} story."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to tried to tell a story during a patrol, but couldn't quite keep it going."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["-desert"],
+                "strings": [
+                    "p_l skids on mud as {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} getting to an exciting part and has to stop the story to pay attention to the path. "
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to tried to tell a story during a patrol, but couldn't quite keep it going."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["mountainous", "desert"],
+                "outcome_art": "cat_sprites/gen_hunt_heat_WrWr",
+                "strings": [
+                    "The rocky terrain is too rough to keep up a story, and eventually p_l peters out, breathless and panting."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to tried to tell a story during a patrol, but couldn't quite keep it going."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 takes p_l aside and reminds {PRONOUN/p_l/object} coldly to focus on {PRONOUN/p_l/poss} duties."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "-p_l"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "cold",
+                                "strict",
+                                "righteous",
+                                "responsible",
+                                "thoughtful",
+                                "wise"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was rebuked by cat_to on patrol."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_to was chatting and telling stories instead of focusing on the patrol with cat_from."
+                        }
+                    }
+                ]
+            }
+        ]
     }
 ]
