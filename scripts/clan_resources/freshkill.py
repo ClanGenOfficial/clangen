@@ -104,7 +104,7 @@ class FreshkillPile:
                 the amount which should be added to the pile
         """
         highest_rot = "expires_in_"
-        highest_rot = f"{highest_rot}{get_config("prey.time_to_rot")}"
+        highest_rot = f"{highest_rot}{get_config('prey.time_to_rot')}"
         self.pile[highest_rot] += amount
         self.total_amount += amount
         self.total_amount = round(self.total_amount, 2)
