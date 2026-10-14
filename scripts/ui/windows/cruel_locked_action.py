@@ -9,7 +9,6 @@ from scripts.game_structure.game import Switch
 from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.scale import ui_scale
 from scripts.ui.windows.window_base_class import GameWindow
@@ -21,10 +20,9 @@ class CruelLockedAction(GameWindow):
             ui_scale(pygame.Rect((200, 240), (400, 150))),
             window_display_title="Cruel Locked Action",
         )
-        self.conflict_message = UITextBoxTweaked(
+        self.conflict_message = pygame_gui.elements.UITextBox(
             "windows.cruel_locked_action",
             ui_scale(pygame.Rect((0, 20), (380, -1))),
-            line_spacing=1,
             manager=MANAGER,
             object_id="#text_box_30_horizcenter",
             starting_height=self.layer,
