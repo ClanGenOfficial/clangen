@@ -214,7 +214,9 @@ def handle_temporary_conditions(cat: Cat, forced_state: ConditionState = None):
                 continue
 
             # decrease mortality on all conditions (mimicking the idea that the cat is healing in increments)
-            if condition.mortality and condition.name not in get_config("condition_related.excluded_from_mortality_reduction"):
+            if condition.mortality and condition.name not in get_config(
+                "condition_related.excluded_from_mortality_reduction"
+            ):
                 condition.mortality = max(
                     0.01,
                     (
