@@ -181,12 +181,12 @@
                 ]
             },
             "r_c1": {
-                "age": [
+                "status": [
                     "any"
                 ]
             },
             "r_c2": {
-                "age": [
+                "status": [
                     "any"
                 ]
             }
