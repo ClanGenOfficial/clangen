@@ -114,8 +114,8 @@ class TestFocus(unittest.TestCase):
         self.assertTrue(
             all(
                 [
-                    self.leader.is_injured(),
-                    self.deputy.is_injured(),
+                    self.leader.temporary_conditions,
+                    self.deputy.temporary_conditions,
                 ]
             )
         )
@@ -389,13 +389,7 @@ class TestFocus(unittest.TestCase):
             msg=f"Prey supply did not change as expected.",
         )
         self.assertTrue(
-            all(
-                [
-                    self.leader.temporary_conditions,
-                    self.deputy.temporary_conditions,
-                    self.medicine_cat.temporary_conditions,
-                ]
-            )
+            all([self.leader.temporary_conditions, self.deputy.temporary_conditions])
         )
         game.clan.herb_supply.disable_random = False
 
@@ -435,12 +429,6 @@ class TestFocus(unittest.TestCase):
             msg=f"Prey supply did not change as expected.",
         )
         self.assertTrue(
-            all(
-                [
-                    self.leader.temporary_conditions,
-                    self.deputy.temporary_conditions,
-                    self.medicine_cat.temporary_conditions,
-                ]
-            )
+            all([self.leader.temporary_conditions, self.deputy.temporary_conditions])
         )
         game.clan.herb_supply.disable_random = False

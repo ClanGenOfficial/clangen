@@ -838,11 +838,11 @@ dev_tools = false
     injury_chance = 15
 
     [focus.hunting.injuries]
-      "cracked pads" = 25
+      cracked_pads = 25
       sore = 25
       bruises = 25
       sprain = 10
-      "small cut" = 15
+      small_cut = 15
 
     # Defines how much a working warrior(leader/deputy) or apprentice gathers additionally
     # these are also borrowed by the hoarding focus
