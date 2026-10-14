@@ -1728,7 +1728,9 @@ def check_sinkhole():
         c.die()
         # cat history
         c.history.add_death(
-            # nothing here yet
+            i18n.t("cruel_season.special_text.sinkhole_history")
         )
     # special event text
+
+    
     # # something about lucky the clan is if none, less than 25% few, more than 25% more, 40+% broken
