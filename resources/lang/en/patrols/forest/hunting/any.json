@@ -882,7 +882,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The squirrels dart up a tree, and r_c0 tries to climb up after them but slips and falls, twisting {PRONOUN/p_l/poss} paw."
+                    "The squirrels dart up a tree, and p_l tries to climb up after them but slips and falls, twisting {PRONOUN/p_l/poss} paw."
                 ],
                 "exp_gained": 0,
                 "supply": [
