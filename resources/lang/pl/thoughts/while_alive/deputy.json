@@ -6,19 +6,19 @@
             "Is assigning cats to a hunting patrol",
             "Is wondering what it would be like to be a leader",
             "Is stressed about organizing patrols",
-            "Wonders who will give {PRONOUN\/m_c\/object} {PRONOUN\/m_c\/poss} nine lives",
+            "Wonders who will give {PRONOUN/m_c/object} {PRONOUN/m_c/poss} nine lives",
             "Feels overworked",
             "Is hoping for a break",
             "Is assigning cats to the dawn patrol",
-            "Can't believe {PRONOUN\/m_c\/subject} overslept today",
-            "Is unsure of what the rest of the Clan thinks of {PRONOUN\/m_c\/object} as deputy"
+            "Can't believe {PRONOUN/m_c/subject} overslept today",
+            "Is unsure of what the rest of the Clan thinks of {PRONOUN/m_c/object} as deputy"
         ]
     },
     {
         "event_id": "deputy_alive_leader",
         "strings": [
-            "Is doing {PRONOUN\/m_c\/poss} best to honor {PRONOUN\/m_c\/poss} Clan and {PRONOUN\/m_c\/poss} leader",
-            "Must speak with the leader soon about something {PRONOUN\/m_c\/subject} found while out on patrol"
+            "Is doing {PRONOUN/m_c/poss} best to honor {PRONOUN/m_c/poss} Clan and {PRONOUN/m_c/poss} leader",
+            "Must speak with the leader soon about something {PRONOUN/m_c/subject} found while out on patrol"
         ],
         "involved_cats": {
             "r_c": {
@@ -50,9 +50,9 @@
     {
         "event_id": "ambitious_deputy",
         "strings": [
-            "Is imagining the respect {PRONOUN\/m_c\/subject}'d command as the leader of the Clan",
+            "Is imagining the respect {PRONOUN/m_c/subject}'d command as the leader of the Clan",
             "Is considering innovative strategies to earn more recognition",
-            "Feels a burning desire to prove {PRONOUN\/m_c\/self} worthy of leadership"
+            "Feels a burning desire to prove {PRONOUN/m_c/self} worthy of leadership"
         ],
         "involved_cats": {
             "m_c": {
@@ -133,7 +133,7 @@
         "strings": [
             "Is sternly instructing a patrol about the importance of strength in defending the Clan",
             "Feels a rush of adrenaline at the thought of an upcoming battle",
-            "Impressed {PRONOUN\/m_c\/poss} Clanmates by scaring off an intruder"
+            "Impressed {PRONOUN/m_c/poss} Clanmates by scaring off an intruder"
         ],
         "involved_cats": {
             "m_c": {
@@ -148,11 +148,11 @@
     {
         "event_id": "insecure_deputy",
         "strings": [
-            "Hopes {PRONOUN\/m_c\/subject}'ll make a decent leader someday",
-            "Wonders how {PRONOUN\/m_c\/subject} became deputy in the first place",
+            "Hopes {PRONOUN/m_c/subject}'ll make a decent leader someday",
+            "Wonders how {PRONOUN/m_c/subject} became deputy in the first place",
             "Feels a pang of self-doubt when a patrol returns late",
-            "Questions whether {PRONOUN\/m_c\/subject}{VERB\/m_c\/'re\/'s} respected or just tolerated by the Clan",
-            "Worries that {PRONOUN\/m_c\/poss} mistakes will lead to the Clan's downfall"
+            "Questions whether {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} respected or just tolerated by the Clan",
+            "Worries that {PRONOUN/m_c/poss} mistakes will lead to the Clan's downfall"
         ],
         "involved_cats": {
             "m_c": {
@@ -167,7 +167,7 @@
     {
         "event_id": "insecure_deputy_to_leader",
         "strings": [
-            "Keeps confirming with the leader that the patrols {PRONOUN\/m_c\/subject}{VERB\/m_c\/'re\/'s} organizing sound right"
+            "Keeps confirming with the leader that the patrols {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} organizing sound right"
         ],
         "involved_cats": {
             "m_c": {
@@ -256,7 +256,7 @@
         "event_id": "rebellious_deputy_to_leader",
         "strings": [
             "Feels an urge to challenge the leader's decision for the betterment of the Clan",
-            "Decides to change patrol routes on {PRONOUN\/m_c\/poss} own, hoping the leader will see the benefits"
+            "Decides to change patrol routes on {PRONOUN/m_c/poss} own, hoping the leader will see the benefits"
         ],
         "involved_cats": {
             "m_c": {
@@ -299,7 +299,7 @@
         "event_id": "wise_deputy",
         "strings": [
             "Is reflecting on a past lesson to make a crucial decision",
-            "Ponders how {PRONOUN\/m_c\/poss} decisions will impact the Clan in the long term",
+            "Ponders how {PRONOUN/m_c/poss} decisions will impact the Clan in the long term",
             "Feels a sense of understanding after meditating on an issue"
         ],
         "involved_cats": {
@@ -432,7 +432,7 @@
         "strings": [
             "Is recalling an old story that might inspire the Clan in tough times",
             "Feels inspired to craft a new legend based on recent events",
-            "Uses the stories of old to help guide {PRONOUN\/m_c\/self} decisions"
+            "Uses the stories of old to help guide {PRONOUN/m_c/self} decisions"
         ],
         "involved_cats": {
             "m_c": {
@@ -487,7 +487,7 @@
         "event_id": "teacher_deputy_to_apprentice",
         "strings": [
             "Feels satisfaction watching an apprentice master a lesson",
-            "Guides an apprentice through {PRONOUN\/m_c\/poss} hunting assessment"
+            "Guides an apprentice through {PRONOUN/m_c/poss} hunting assessment"
         ],
         "involved_cats": {
             "m_c": {
@@ -510,7 +510,7 @@
     {
         "event_id": "deputy_dead_deputy",
         "strings": [
-            "Wishes {PRONOUN\/m_c\/subject} could speak to r_c to learn how to assign patrols better"
+            "Wishes {PRONOUN/m_c/subject} could speak to r_c to learn how to assign patrols better"
         ],
         "involved_cats": {
             "r_c": {
@@ -526,11 +526,11 @@
     {
         "event_id": "former_kittypet_deputy",
         "strings": [
-            "Is proud of how far {PRONOUN\/m_c\/subject} {verb\/m_c\/have\/has} come from {PRONOUN\/m_c\/poss} kittypet life",
-            "Is annoyed to still hear gossip about {PRONOUN\/m_c\/poss} past",
-            "Would never wish to return to {PRONOUN\/m_c\/poss} old kittypet life",
-            "Wishes other cats would trust in the leader's choice of making {PRONOUN\/m_c\/object} deputy",
-            "Wouldn't mind bragging about {PRONOUN\/m_c\/poss} position in the Clan to some old kittypet friends",
+            "Is proud of how far {PRONOUN/m_c/subject} {verb/m_c/have/has} come from {PRONOUN/m_c/poss} kittypet life",
+            "Is annoyed to still hear gossip about {PRONOUN/m_c/poss} past",
+            "Would never wish to return to {PRONOUN/m_c/poss} old kittypet life",
+            "Wishes other cats would trust in the leader's choice of making {PRONOUN/m_c/object} deputy",
+            "Wouldn't mind bragging about {PRONOUN/m_c/poss} position in the Clan to some old kittypet friends",
             "Treats Clanmates fairly regardless of their pasts"
         ],
         "involved_cats": {

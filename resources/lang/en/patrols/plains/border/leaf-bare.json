@@ -306,7 +306,7 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "shivering"
+                            "dangerously_cold"
                         ],
                         "scar_history": "m_c carried the marks of frostbite on {PRONOUN/m_c/poss} pelt from a freezing border patrol in leaf-bare.",
                         "death_history": "m_c died from frostbite after a freezing border patrol in leaf-bare."
@@ -419,7 +419,7 @@
                             "some_patrol"
                         ],
                         "condition": [
-                            "shivering"
+                            "dangerously_cold"
                         ],
                         "scar_history": "m_c was scarred after a chill caught on patrol progressed to frostbite.",
                         "death_history": "m_c caught a chill on patrol and never recovered."
@@ -939,7 +939,7 @@
                         ],
                         "condition": [
                             "minor_injury",
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "Driving off coyotes left its scars on r_c0.",
                         "death_history": "r_c0 died from injuries sustained in keeping coyotes away from c_n's borders."
@@ -1710,7 +1710,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "A coyote encounter left its scars on r_c0.",
                         "death_history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."
@@ -1848,7 +1848,7 @@
                         ],
                         "condition": [
                             "minor_injury",
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "Driving off coyotes left its scars on r_c0.",
                         "death_history": "r_c0 died from injuries sustained in keeping coyotes away from c_n's borders."
@@ -1994,7 +1994,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "bite-wound"
+                            "bite_wound"
                         ],
                         "scar_history": "Courting coyotes scarred r_c0's pelt.",
                         "death_history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."
@@ -2004,7 +2004,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "blood loss"
+                            "blood_loss"
                         ],
                         "scar_history": "Courting coyotes scarred r_c0's pelt.",
                         "death_history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."
@@ -2572,7 +2572,7 @@
                             "some_patrol"
                         ],
                         "condition": [
-                            "shivering"
+                            "dangerously_cold"
                         ],
                         "scar_history": "m_c was caught out in the cold on a border patrol, and the cold burned {PRONOUN/m_c/object}.",
                         "death_history": "Though m_c's patrol found shelter during a snowstorm, m_c still caught a chill that eventually killed {PRONOUN/m_c/object}."
@@ -3099,7 +3099,7 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "shivering"
+                            "dangerously_cold"
                         ],
                         "scar_pool_override": [
                             "FROSTSOCK",
@@ -3149,7 +3149,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "claw-wound"
+                            "claw_wound"
                         ],
                         "scar_history": "m_c was injured after disturbing a sheltering coyote in leaf-bare.",
                         "death_history": "m_c died of injuries inflicted by a coyote sheltering from leaf-bare's cold."
@@ -3762,7 +3762,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "shivering"
+                            "dangerously_cold"
                         ],
                         "scar_history": "Digging through new tunnels in leaf-bare was a bad idea, and marked up m_c's pelt.",
                         "death_history": "Digging through new tunnels in leaf-bare was a bad idea, and the consequences killed m_c."
@@ -3815,7 +3815,7 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "shivering"
+                            "dangerously_cold"
                         ],
                         "scar_history": "A snowstorm struck while m_c was out patrolling in leaf-bare, and frostbite left its mark on m_c.",
                         "death_history": "While sheltering from a snowstorm, m_c caught a chill that eventually killed {PRONOUN/m_c/object}."
@@ -3993,8 +3993,8 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "claw-wound",
-                            "torn ear",
+                            "claw_wound",
+                            "torn_ear",
                             "scrapes",
                             "shock"
                         ],
@@ -4006,7 +4006,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "torn ear",
+                            "torn_ear",
                             "scrapes",
                             "shock"
                         ],
@@ -4441,7 +4441,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "shivering"
+                            "dangerously_cold"
                         ],
                         "scar_history": "The weather caved in while m_c was out patrolling in leaf-bare, and frostbite left its mark on m_c.",
                         "death_history": "m_c caught a chill while sheltering from a leaf-bare storm and couldn't recover."
@@ -4797,7 +4797,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c was injured after disturbing a wrathful prairie dog.",
                         "death_history": "m_c died of injuries inflicted by a prairie dog."
@@ -4807,7 +4807,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "claw-wound"
+                            "claw_wound"
                         ],
                         "scar_pool_override": [
                             "BRIDGE"
@@ -4888,7 +4888,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c was injured after disturbing a badger in its sett.",
                         "death_history": "m_c died of injuries inflicted by a badger."
@@ -4898,7 +4898,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "claw-wound"
+                            "claw_wound"
                         ],
                         "scar_history": "m_c was injured after disturbing a badger in its sett.",
                         "death_history": "m_c died of injuries inflicted by a badger."
@@ -5383,7 +5383,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "constant nightmares"
+                            "constant_nightmares"
                         ],
                         "death_history": "m_c was killed when another apprentice made the wrong judgment call on a border patrol."
                     }
@@ -5437,7 +5437,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c was injured after disturbing a wrathful prairie dog.",
                         "death_history": "m_c died of injuries inflicted by a prairie dog."
@@ -5447,7 +5447,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "claw-wound"
+                            "claw_wound"
                         ],
                         "scar_pool_override": [
                             "BRIDGE"
@@ -5602,7 +5602,7 @@
                         ],
                         "condition": [
                             "shock",
-                            "constant nightmares"
+                            "constant_nightmares"
                         ],
                         "non_lethal": true,
                         "scar_history": "m_c was frostbitten after going out with a group of friends as apprentices and getting caught in a sleet storm.",
@@ -5650,7 +5650,7 @@
                         ],
                         "condition": [
                             "shock",
-                            "constant nightmares"
+                            "constant_nightmares"
                         ],
                         "scar_history": "m_c was frostbitten after going out with a group of friends as apprentices and getting caught in a sleet storm.",
                         "death_history": "m_c was killed after {PRONOUN/m_c/subject} went on a border patrol with {PRONOUN/m_c/poss} friends and got caught in a sleet storm."

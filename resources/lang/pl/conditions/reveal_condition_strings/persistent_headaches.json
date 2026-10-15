@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "persistent_headaches0",
+        "strings": [
+            "r_c0 notices with some concern that any time m_c opens {PRONOUN/m_c/poss} eyes, {PRONOUN/m_c/subject} {VERB/m_c/mewl/mewls} incessantly and {VERB/m_c/try/tries} to wriggle into the darkest corners of the medicine cat den. r_c0 suspects {PRONOUN/m_c/subject} may have chronic headaches."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "persistent_headaches1",
+        "strings": [
+            "Rather than go outside in the bright sunlight to play with {PRONOUN/m_c/poss} littermates, m_c prefers to huddle by {PRONOUN/m_c/self} in the dark and quiet of the medicine cat den, {PRONOUN/m_c/poss} head hurting too much to move."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

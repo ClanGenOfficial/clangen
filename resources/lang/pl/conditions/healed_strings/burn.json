@@ -1,0 +1,14 @@
+[
+    {
+        "event_id": "burn0",
+        "strings": [
+            "m_c's burn has healed.",
+            "m_c has healed from {PRONOUN/m_c/poss} burn.",
+            "m_c is no longer suffering from a burn.",
+            "m_c has recovered from the burn {PRONOUN/m_c/subject} suffered."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

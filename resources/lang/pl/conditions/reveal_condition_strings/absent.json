@@ -1,0 +1,26 @@
+[
+    {
+        "event_id": "absent0",
+        "strings": [
+            "r_c0 has to repeat m_c's name several times to get {PRONOUN/m_c/poss} attention, quietly concerned about how long it takes {PRONOUN/m_c/object} to respond.",
+            "m_c has trouble remembering where {PRONOUN/m_c/poss} nest is. r_c0 takes note: m_c has been fading fast."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "absent2",
+        "strings": [
+            "m_c has been getting more and more forgetful lately. {PRONOUN/m_c/subject/CAP} is starting to fade."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
