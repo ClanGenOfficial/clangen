@@ -1,7 +1,7 @@
 import unittest
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 
-from scripts.cat.conditions import gain_conditions
+from scripts.cat.conditions import gain_conditions, condition_state
 from scripts.cat.conditions.condition_state import ConditionState
 from scripts.cat.conditions.coverage_check import medicine_cats_can_cover_clan
 from scripts.cat.conditions.gain_conditions import (
@@ -133,9 +133,15 @@ class TestTemporaryCondition(unittest.TestCase):
             if TEMPORARY_CONDITIONS[c]["mortality"]:
                 with self.subTest(f"Test state change (FATAL) for {c}"):
                     cat1 = cat_factory.create_cat()
+
                     gain_temporary_condition(cat1, c, allow_side_effects=False)
 
-                    handle_temporary_conditions(cat1, forced_state=ConditionState.FATAL)
+                    handle_existing_conditions.update_temporary_condition_state = Mock(
+                        return_value=ConditionState.FATAL
+                    )
+
+                    handle_temporary_conditions(cat1)
+
                     self.assertTrue(cat1.dead, msg=f"cat did not die to {c}")
                     self.assertTrue(
                         not cat1.temporary_conditions,
@@ -146,7 +152,11 @@ class TestTemporaryCondition(unittest.TestCase):
                 cat1 = cat_factory.create_cat()
                 gain_temporary_condition(cat1, c, allow_side_effects=False)
 
-                handle_temporary_conditions(cat1, forced_state=ConditionState.HEALED)
+                handle_existing_conditions.update_temporary_condition_state = Mock(
+                    return_value=ConditionState.HEALED
+                )
+
+                handle_temporary_conditions(cat1)
 
                 self.assertFalse(
                     cat1.dead, msg=f"cat died to {c} when they should have healed"
@@ -160,15 +170,19 @@ class TestTemporaryCondition(unittest.TestCase):
                 if not TEMPORARY_CONDITIONS[c]["risks"]:
                     continue
 
-                for r in TEMPORARY_CONDITIONS[c]["risks"]:
+                for r, chance in TEMPORARY_CONDITIONS[c]["risks"].items():
                     cat1 = cat_factory.create_cat()
                     gain_temporary_condition(cat1, c, allow_side_effects=False)
 
-                    handle_existing_conditions.force_risk = r
+                    cat1.get_condition(c).risks = {r: chance}
 
-                    handle_temporary_conditions(
-                        cat1, forced_state=ConditionState.CONTINUING
+                    handle_existing_conditions.random = Mock(return_value=chance - 0.01)
+
+                    handle_existing_conditions.update_temporary_condition_state = Mock(
+                        return_value=ConditionState.CONTINUING
                     )
+
+                    handle_temporary_conditions(cat1)
                     self.assertTrue(
                         r in cat1.temporary_conditions,
                         msg=f"{r} was not in cat's conditions: {cat1.temporary_conditions}",
@@ -185,8 +199,6 @@ class TestTemporaryCondition(unittest.TestCase):
                             msg=f"{r} is a complication, but was not added to {c} as such.",
                         )
 
-                handle_existing_conditions.force_risk = ""
-
             with self.subTest(f"Test progression gain for {c}"):
                 if not TEMPORARY_CONDITIONS[c]["progression"]:
                     continue
@@ -195,9 +207,18 @@ class TestTemporaryCondition(unittest.TestCase):
                     cat1 = cat_factory.create_cat()
                     gain_temporary_condition(cat1, c, allow_side_effects=False)
 
-                    handle_existing_conditions.force_progression = p
+                    cat1.get_condition(c).progression = {p: info}
+                    cat1.get_condition(c).risks = {}
 
-                    handle_temporary_conditions(cat1, forced_state=info["when"])
+                    handle_existing_conditions.random = Mock(
+                        return_value=info["chance"] - 0.01
+                    )
+
+                    handle_existing_conditions.update_temporary_condition_state = Mock(
+                        return_value=info["when"]
+                    )
+
+                    handle_temporary_conditions(cat1)
                     self.assertTrue(
                         p in cat1.temporary_conditions + cat1.permanent_conditions,
                         msg=f"{p} was not in cat's conditions: {cat1.temporary_conditions + cat1.permanent_conditions}",
@@ -206,7 +227,6 @@ class TestTemporaryCondition(unittest.TestCase):
                         c in cat1.temporary_conditions + cat1.permanent_conditions,
                         msg=f"{c} was not removed from cat's conditions, even though it progressed into {p}",
                     )
-                handle_existing_conditions.force_progression = ""
 
 
 class TestPermanentCondition(unittest.TestCase):
@@ -281,18 +301,7 @@ class TestPermanentCondition(unittest.TestCase):
         Tests that conditions are able to progress through their various states correctly
         """
         for c in PERMANENT_CONDITIONS:
-            if PERMANENT_CONDITIONS[c]["mortality"]:
-                with self.subTest(f"Test state change (FATAL) for {c}"):
-                    cat1 = cat_factory.create_cat()
-                    gain_permanent_condition(cat1, c)
-
-                    handle_permanent_conditions(cat1, forced_state=ConditionState.FATAL)
-                    self.assertTrue(cat1.dead, msg=f"cat did not die to {c}")
-                    self.assertTrue(
-                        not cat1.temporary_conditions,
-                        msg=f"cat's conditions were not cleared on death to {c}",
-                    )
-
+            # easier to separate this specifically before we start mocking state changes
             if PERMANENT_CONDITIONS[c]["can_be_congenital"]:
                 with self.subTest(f"Test state change (REVEALED) for {c}"):
                     cat1 = cat_factory.create_cat()
@@ -306,18 +315,40 @@ class TestPermanentCondition(unittest.TestCase):
                         cat1.get_condition(c).moons_until_discovery < 0,
                     )
 
+        for c in PERMANENT_CONDITIONS:
+            if PERMANENT_CONDITIONS[c]["mortality"]:
+                with self.subTest(f"Test state change (FATAL) for {c}"):
+                    cat1 = cat_factory.create_cat()
+                    gain_permanent_condition(cat1, c)
+
+                    handle_existing_conditions.update_permanent_condition_state = Mock(
+                        return_value=ConditionState.FATAL
+                    )
+
+                    handle_permanent_conditions(cat1)
+                    self.assertTrue(cat1.dead, msg=f"cat did not die to {c}")
+                    self.assertTrue(
+                        not cat1.temporary_conditions,
+                        msg=f"cat's conditions were not cleared on death to {c}",
+                    )
+
             with self.subTest(f"Test state change (CONTINUING: risk gain) for {c}"):
                 if not PERMANENT_CONDITIONS[c]["risks"]:
                     continue
 
-                for r in PERMANENT_CONDITIONS[c]["risks"]:
+                for r, chance in PERMANENT_CONDITIONS[c]["risks"].items():
                     cat1 = cat_factory.create_cat()
                     gain_permanent_condition(cat1, c)
 
-                    handle_existing_conditions.force_risk = r
-                    handle_permanent_conditions(
-                        cat1, forced_state=ConditionState.CONTINUING
+                    cat1.get_condition(c).risks = {r: chance}
+
+                    handle_existing_conditions.random = Mock(return_value=chance - 0.01)
+
+                    handle_existing_conditions.update_permanent_condition_state = Mock(
+                        return_value=ConditionState.CONTINUING
                     )
+
+                    handle_permanent_conditions(cat1)
                     self.assertTrue(
                         r in cat1.temporary_conditions + cat1.permanent_conditions,
                         msg=f"{r} was not in cat's conditions: {cat1.temporary_conditions + cat1.permanent_conditions}",
@@ -327,8 +358,6 @@ class TestPermanentCondition(unittest.TestCase):
                         msg=f"{c} was not in cat's conditions: {cat1.permanent_conditions}",
                     )
 
-                handle_existing_conditions.force_risk = ""
-
             with self.subTest(f"Test progression for {c}"):
                 if not PERMANENT_CONDITIONS[c]["progression"]:
                     continue
@@ -337,9 +366,18 @@ class TestPermanentCondition(unittest.TestCase):
                     cat1 = cat_factory.create_cat()
                     gain_permanent_condition(cat1, c)
 
-                    handle_existing_conditions.force_progression = p
+                    cat1.get_condition(c).progression = {p: info}
+                    cat1.get_condition(c).risks = {}
 
-                    handle_permanent_conditions(cat1, forced_state=info["when"])
+                    handle_existing_conditions.random = Mock(
+                        return_value=info["chance"] - 0.01
+                    )
+
+                    handle_existing_conditions.update_permanent_condition_state = Mock(
+                        return_value=info["when"]
+                    )
+
+                    handle_permanent_conditions(cat1)
                     self.assertTrue(
                         p in cat1.temporary_conditions + cat1.permanent_conditions,
                         msg=f"{p} was not in cat's conditions: {cat1.temporary_conditions + cat1.permanent_conditions}",
@@ -348,4 +386,3 @@ class TestPermanentCondition(unittest.TestCase):
                         c in cat1.temporary_conditions + cat1.permanent_conditions,
                         msg=f"{c} was not removed from cat's conditions, even though it progressed into {p}",
                     )
-                handle_existing_conditions.force_progression = ""

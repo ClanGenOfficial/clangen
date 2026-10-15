@@ -35,10 +35,6 @@ from scripts.game_structure import game
 
 logger = logging.getLogger(__name__)
 
-# these are only for use by tests!!!!!
-force_progression = ""
-force_risk = ""
-
 
 def handle_nutrition(cat: Cat, nutrition_info: dict) -> None:
     """
@@ -136,7 +132,7 @@ def handle_nutrition(cat: Cat, nutrition_info: dict) -> None:
         game.cur_events_list.append(event)
 
 
-def handle_temporary_conditions(cat: Cat, forced_state: ConditionState = None):
+def handle_temporary_conditions(cat: Cat):
     """
     Checks on the temporary conditions of the cat: updating their state and applying any relevant changes to both the condition and the cat
     """
@@ -151,10 +147,7 @@ def handle_temporary_conditions(cat: Cat, forced_state: ConditionState = None):
 
         condition_extra_info = TEMPORARY_CONDITIONS[condition.name]
 
-        if forced_state:
-            state = forced_state
-        else:
-            state = update_temporary_condition_state(condition)
+        state = update_temporary_condition_state(condition)
 
         # PROGRESSION - this can happen during various states, so we check it first
         for progression, info in condition.progression.items():
@@ -245,7 +238,7 @@ def handle_temporary_conditions(cat: Cat, forced_state: ConditionState = None):
         game.cur_events_list.extend(event_list)
 
 
-def handle_permanent_conditions(cat: Cat, forced_state: ConditionState = None):
+def handle_permanent_conditions(cat: Cat):
     """
     Checks on the permanent conditions of the cat: updating their state and applying any relevant changes to both the condition and the cat
     """
@@ -257,10 +250,7 @@ def handle_permanent_conditions(cat: Cat, forced_state: ConditionState = None):
         if condition.omit_moonskip:
             continue
 
-        if forced_state:
-            state = forced_state
-        else:
-            state = update_permanent_condition_state(condition)
+        state = update_permanent_condition_state(condition)
 
         # PROGRESSION - this can happen during various states, so we check it first
         for progression, info in condition.progression.items():
@@ -356,15 +346,11 @@ def _check_risks(
             # don't double up
             continue
 
-        # check for force_progression too, cus we don't want to do any risks if we need to progress instead
-        if force_risk and risk != force_risk or force_progression:
-            continue
-
         # don't give them a condition that they already have a progression of
         if _condition_overlaps(current_conditions, risk):
             continue
 
-        if (chance and random() <= chance) or force_risk:
+        if chance and random() <= chance:
             # set the risk chance back down to make it less likely it occurs again
             # for complications this is set to 0 to avoid annoying loops
             if full_condition_dict[risk].get("is_complication", False):
@@ -412,9 +398,6 @@ def _check_progression(
         # don't double up
         return event_list, conditions_to_remove
 
-    if force_progression and progression != force_progression:
-        return event_list, conditions_to_remove
-
     current_conditions = {
         c.name
         for c in cat.temporary_conditions + cat.permanent_conditions
@@ -425,7 +408,7 @@ def _check_progression(
     if _condition_overlaps(current_conditions, progression):
         return event_list, conditions_to_remove
 
-    if (chance and random() <= chance) or force_progression:
+    if chance and random() <= chance:
         scar_event = None
         if progression in TEMPORARY_CONDITIONS:
             gain_temporary_condition(cat, progression)
