@@ -8,10 +8,10 @@
     "stolen_vitality_sacrifice_history": "m_c paid the price for r_c's revival.",
     "stolen_vitality_lead_history": "No cat remained to give their life for m_c's.",
     "sinkhole_base": {
-      "zero": "placeholder none",
-      "one":"placeholder one",
-      "some": "placeholder some",
-      "many": "placeholder many"
+      "zero": "As the recent 12 moons came to an end, %{clan_name} breathed a sigh of relief. The force eating away at their numbers was merciful this time, allowing %{clan_name} to go another moon without extended sorrow.",
+      "one": "Though %{clan_name} would've preffered to ",
+      "some": "As the recent 12 moons came to an end",
+      "many": "As the recent 12 moons came to an end, %{clan_name} stares to the stars, wondering what they had done to warrant such a cruel fate. %{dead_name} all joined the afterlife this moon, leaving their clanmates to mourn the sudden loss."
     },  
     "sinkhole_history": "m_c died because sinkhole this is a placeholder"
   }
