@@ -53,7 +53,11 @@ def update_temporary_condition_state(condition: TemporaryCondition):
 
     recovery_buff = get_config("focus.rest_and_recover.moons_earlier_healed")
 
-    condition.duration -= 1 + recovery_buff
+    # pregnancy's duration is fixed
+    if condition.name == "pregnant":
+        condition.duration -= 1
+    else:
+        condition.duration -= 1 + recovery_buff
 
     if condition.duration <= 0:
         if condition.current_complication:
