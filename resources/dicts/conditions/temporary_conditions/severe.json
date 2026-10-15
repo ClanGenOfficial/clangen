@@ -503,10 +503,10 @@
             "bruises": 0.2
         },
         "progression": {
-            "lost_leg": {
+            "amputated_leg": {
                 "chance": 0.2,
-                "when": "HEALED",
-                "allow_scar": true
+                "when": "CONTINUING",
+                "allow_scar": false
             },
             "weak_leg": {
                 "chance": 0.3,
@@ -566,10 +566,10 @@
             "blood_loss": 0.2
         },
         "progression": {
-            "lost_tail": {
+            "amputated_tail": {
                 "chance": 0.3,
                 "when": "HEALED",
-                "allow_scar": true
+                "allow_scar": false
             }
         },
         "risks": {
@@ -598,6 +598,104 @@
             "TAILBASE",
             "MANTAIL"
         ]
+    },
+    "amputated_leg": {
+        "tags": [],
+        "severity": "severe",
+        "duration": 2,
+        "is_complication": false,
+        "mortality": {
+            "newborn": 0.5,
+            "kitten": 0.3,
+            "adolescent": 0.2,
+            "young adult": 0.1,
+            "adult": 0.1,
+            "senior adult": 0.2,
+            "senior": 0.5
+        },
+        "infectiousness": 0.0,
+        "immune_system_effect": 0,
+        "side_effect": {
+            "blood_loss": 0.5
+        },
+        "progression": {
+            "lost_leg": {
+                "chance": 2.0,
+                "when": "HEALED",
+                "allow_scar": true
+            }
+        },
+        "risks": {
+            "infection": 0.2
+        },
+        "treatment_strength": {
+            "1": [
+                "cobwebs",
+                "marigold",
+                "tansy",
+                "mullein"
+            ],
+            "2": [
+                "wild_garlic",
+                "horsetail",
+                "oak_leaves",
+                "moss"
+            ],
+            "3": [
+                "poppy",
+                "goldenrod"
+            ]
+        },
+        "possible_scars": []
+    },
+    "amputated_tail": {
+        "tags": [],
+        "severity": "severe",
+        "duration": 2,
+        "is_complication": false,
+        "mortality": {
+            "newborn": 0.5,
+            "kitten": 0.3,
+            "adolescent": 0.2,
+            "young adult": 0.1,
+            "adult": 0.1,
+            "senior adult": 0.2,
+            "senior": 0.5
+        },
+        "infectiousness": 0.0,
+        "immune_system_effect": 0,
+        "side_effect": {
+            "blood_loss": 0.5
+        },
+        "progression": {
+            "lost_tail": {
+                "chance": 2.0,
+                "when": "HEALED",
+                "allow_scar": true
+            }
+        },
+        "risks": {
+            "infection": 0.2
+        },
+        "treatment_strength": {
+            "1": [
+                "cobwebs",
+                "marigold",
+                "tansy",
+                "mullein"
+            ],
+            "2": [
+                "wild_garlic",
+                "horsetail",
+                "oak_leaves",
+                "moss"
+            ],
+            "3": [
+                "poppy",
+                "goldenrod"
+            ]
+        },
+        "possible_scars": []
     },
     "severe_burn": {
         "tags": [],
