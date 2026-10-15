@@ -7,6 +7,7 @@ from scripts.config import get_config
 from scripts.game_structure import game
 from scripts.clan_package.settings import get_clan_setting
 
+
 class ConditionState(Enum):
     REVEALED = auto()
     SKIPPED = auto()
