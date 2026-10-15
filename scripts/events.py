@@ -1721,15 +1721,13 @@ def check_sinkhole():
     while len(dead_kitties) < cats_killed_amount:
         kitty = get_random_player_clan_cat(Cat, not_allowed=dead_kitties)
         if kitty and kitty not in dead_kitties:
+            kitty.die()
+            kitty.history.add_death(i18n.t("cruel_season.special_text.sinkhole_history"))
             dead_kitties.append(kitty.ID)
-            
+            if kitty.ID == game.clan.leader:
+                game.clan.leader_lives -= 1
 
     print(dead_kitties)
-
-    for c in dead_kitties:
-        if not c.dead:
-            c.die()
-            c.history.add_death(i18n.t("cruel_season.special_text.sinkhole_history"))
 
     # special event text
     game.cur_events_list.insert(
