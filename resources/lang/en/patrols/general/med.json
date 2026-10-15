@@ -16567,7 +16567,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The betony shrubs are in full bloom, with bees buzzing busily around them, and p_l directs {PRONOUN/p_l/poss} patrol to follow their industrious example as they gather. {PRONOUN/p_l/subject/CAP} prune back enough betony to find a surprisingly intact goldenrod plant hidden under it, also ready for harvest."
+                    "The betony shrubs are in full bloom, with bees buzzing busily around them, and p_l directs {PRONOUN/p_l/poss} patrol to follow their industrious example as they gather. {PRONOUN/p_l/subject/CAP} {VERB/p_l/prune/prunes} back enough betony to find a surprisingly intact goldenrod plant hidden under it, also ready for harvest."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [
