@@ -38,7 +38,7 @@ New conditions must have their required information format added to either `reso
             "1": [],
             "2": [],
             "3": []
-        }
+        },
         "possible_scars": []
     },
 ```
@@ -207,7 +207,7 @@ A list of possible scars that this condition can apply once healed.
         "can_be_acquired": false,
         "requires_scar": false,
         "remove_on_death": true,
-        "moons_until_discovery": 0,
+        "moons_until_discovery": [0,0],
         "mortality": {},
         "immune_system_effect": 0,
         "progression": {
@@ -261,8 +261,8 @@ Marks if this condition will be removed from the cat upon death. Defaults to Tru
 
 ***
 
-#### moons_until_discovery: int
-If this condition is congenital, this dictates how many moons the condition can "hide" before being noticed by the cat.
+#### moons_until_discovery: list[int, int]
+If this condition is congenital, this dictates how many moons the condition can "hide" before being noticed by the cat. This should be two numbers acting as a range. First number is the lowest number of moons_until_discovery and second number is the highest number of moons_until_discovery.
 
 ***
 
