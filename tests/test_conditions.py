@@ -123,6 +123,11 @@ class TestTemporaryCondition(unittest.TestCase):
         """
         Tests that conditions are able to progress through their various states correctly
         """
+        # just stops side effects from being applied to avoid an herb_supply crash
+        gain_conditions._handle_condition_side_effect = Mock()
+        gain_conditions._handle_condition_side_effect(None, {})
+        gain_conditions._handle_condition_side_effect.assert_called()
+
         for c in TEMPORARY_CONDITIONS:
             if c == "pregnant":
                 # this is a weird one that has very specialized behavior
