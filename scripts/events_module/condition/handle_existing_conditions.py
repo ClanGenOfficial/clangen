@@ -398,6 +398,7 @@ def _check_progression(
         # don't double up
         return event_list, conditions_to_remove
 
+    # gather current conditions so we can check for overlaps
     current_conditions = {
         c.name
         for c in cat.temporary_conditions + cat.permanent_conditions
@@ -408,32 +409,44 @@ def _check_progression(
     if _condition_overlaps(current_conditions, progression):
         return event_list, conditions_to_remove
 
+    # gather the base progression info
+    base_progression_info = TEMPORARY_CONDITIONS.get(progression)
+    if not base_progression_info:
+        base_progression_info = PERMANENT_CONDITIONS.get(progression)
+
+    # gather the base condition info
+    base_condition_info = TEMPORARY_CONDITIONS.get(condition.name)
+    if not base_condition_info:
+        base_condition_info = PERMANENT_CONDITIONS.get(condition.name)
+
+    # ATTEMPT TO PROGRESS
     if chance and random() <= chance:
+        # CHECK FOR SCARRING
         scar_event = None
+        if condition.progression[progression].get("allow_scar"):
+            requires_scar = base_progression_info.get("requires_scar", False)
+
+            scar_pool = base_condition_info.get(
+                "possible_scars", []
+            ) + base_progression_info.get("possible_scars", [])
+
+            # try to give a scar
+            scar_event = _attempt_scarring(
+                cat,
+                condition,
+                possible_scars=scar_pool,
+                guarantee_scar=requires_scar,
+            )
+
+            if requires_scar and not scar_event:
+                # if the cat couldn't be scarred for some reason, but the condition required it
+                # then we're gonna continue before we can give the condition
+                return event_list, conditions_to_remove
+
+        # PROGRESS
         if progression in TEMPORARY_CONDITIONS:
             gain_temporary_condition(cat, progression)
-        elif progression in PERMANENT_CONDITIONS:
-            if condition.name in TEMPORARY_CONDITIONS:
-                if condition.progression[progression].get("allow_scar"):
-                    requires_scar = PERMANENT_CONDITIONS[progression].get(
-                        "requires_scar", False
-                    )
-                    scar_pool = TEMPORARY_CONDITIONS[condition.name].get(
-                        "possible_scars", []
-                    ) + PERMANENT_CONDITIONS[progression].get("possible_scars", [])
-                    # if the condition is going from temp to perm, try to give a scar
-                    scar_event = _attempt_scarring(
-                        cat,
-                        condition,
-                        possible_scars=scar_pool,
-                        guarantee_scar=requires_scar,
-                    )
-
-                    if requires_scar and not scar_event:
-                        # if the cat couldn't be scarred for some reason, but the condition required it
-                        # then we're gonna continue before we can give the condition
-                        return event_list, conditions_to_remove
-
+        else:
             gain_permanent_condition(cat, progression)
 
         event = generate_condition_event(
@@ -548,13 +561,10 @@ def _attempt_scarring(
         return None
 
     # scar chance increased by num of moons with the condition
-    if guarantee_scar:
-        chance = 1
-    else:
-        moons_with = (game.clan.age if game.clan else 0) - condition.moon_gained
-        chance = max(5 - moons_with, 1)
+    moons_with = (game.clan.age if game.clan else 0) - condition.moon_gained
+    chance = max(5 - moons_with, 1)
 
-    if not int(random() * chance):
+    if guarantee_scar or not int(random() * chance):
         scar_pool = possible_scars
         scar_conflicts = get_config("cat_sprites.scar_conflicts")
 

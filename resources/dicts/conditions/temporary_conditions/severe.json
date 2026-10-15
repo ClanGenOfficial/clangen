@@ -504,9 +504,9 @@
         },
         "progression": {
             "amputated_leg": {
-                "chance": 0.2,
+                "chance": 0.4,
                 "when": "CONTINUING",
-                "allow_scar": false
+                "allow_scar": true
             },
             "weak_leg": {
                 "chance": 0.3,
@@ -567,9 +567,9 @@
         },
         "progression": {
             "amputated_tail": {
-                "chance": 0.3,
-                "when": "HEALED",
-                "allow_scar": false
+                "chance": 0.5,
+                "when": "CONTINUING",
+                "allow_scar": true
             }
         },
         "risks": {
@@ -601,6 +601,7 @@
     },
     "amputated_leg": {
         "tags": [],
+        "requires_scar": true,
         "severity": "severe",
         "duration": 2,
         "is_complication": false,
@@ -614,7 +615,7 @@
             "lost_leg": {
                 "chance": 2.0,
                 "when": "HEALED",
-                "allow_scar": true
+                "allow_scar": false
             }
         },
         "risks": {
@@ -638,10 +639,11 @@
                 "goldenrod"
             ]
         },
-        "possible_scars": []
+        "possible_scars": ["NOPAW"]
     },
     "amputated_tail": {
         "tags": [],
+        "requires_scar": true,
         "severity": "severe",
         "duration": 2,
         "is_complication": false,
@@ -655,7 +657,7 @@
             "lost_tail": {
                 "chance": 2.0,
                 "when": "HEALED",
-                "allow_scar": true
+                "allow_scar": false
             }
         },
         "risks": {
@@ -679,7 +681,7 @@
                 "goldenrod"
             ]
         },
-        "possible_scars": []
+        "possible_scars": ["NOTAIL", "HALFTAIL"]
     },
     "severe_burn": {
         "tags": [],

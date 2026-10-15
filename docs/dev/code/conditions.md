@@ -7,6 +7,7 @@ New conditions must have their required information format added to either `reso
 ```json
     "name": {
         "tags": [],
+        "requires_scar": false,
         "severity": "",
         "duration": 0,
         "is_complication": false,
@@ -59,6 +60,11 @@ You can check the [Condition List](../writing/reference/tag-lists.md#__tabbed_1_
 
 #### severity: str
 Can be `minor`, `major`, or `severe`. `minor` conditions will not prevent the cat from working. For temporary conditions, the difference between `major` and `severe` is mostly arbitrary and doesn't have gameplay effects beyond a display change in the medicine cat den. `major` or `severe` conditions **will** prevent the cat from working.
+
+***
+
+#### requires_scar: bool
+Marks if this condition can only be applied if the cat has a pre-requisite scar. Scars needed *must* be listed in [possible scars](#possible_scars-liststr-1). Defaults to False.
 
 ***
 
@@ -252,7 +258,8 @@ Marks if this condition can be given later in life
 ***
 
 #### requires_scar: bool
-Marks if this condition can only be applied if the cat has a pre-requisite scar. Scars needed *must* be listed in [possible scars](#possible_scars-liststr-1). Defaults to False.
+Same as [temporary condition requires_scar](#requires_scar-bool) 
+
 
 ***
 
