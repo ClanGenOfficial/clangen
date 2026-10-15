@@ -4774,7 +4774,7 @@
             "name": ["terrain_rookery"]
         },
         "frequency": 4,
-        "event_text": "r_c climbed up into POIto steal some feathers. {PRONOUN/r_c/subject/CAP} returned with a few missing chunks of fur and triumphantly presented a flustered m_c with {PRONOUN/r_c/poss} prize.",
+        "event_text": "r_c climbed up into POI to steal some feathers. {PRONOUN/r_c/subject/CAP} returned with a few missing chunks of fur and triumphantly presented a flustered m_c with {PRONOUN/r_c/poss} prize.",
         "new_accessory": ["JAY FEATHERS", "BLUE FEATHERS"],
         "m_c": {
             "relationship_status": ["fancies"]
