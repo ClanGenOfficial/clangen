@@ -137,7 +137,7 @@ def handle_temporary_conditions(cat: Cat):
     Checks on the temporary conditions of the cat: updating their state and applying any relevant changes to both the condition and the cat
     """
     conditions_to_remove = []
-    event_list = []
+    event_list: list[EventInformation] = []
     progression_events = []
 
     for condition in cat.temporary_conditions.copy():
@@ -151,7 +151,7 @@ def handle_temporary_conditions(cat: Cat):
 
         # PROGRESSION - this can happen during various states, so we check it first
         for progression, info in condition.progression.items():
-            if info["when"] == state:
+            if info["when"] == state.name:
                 chance = info["chance"]
                 progression_events, conditions_to_remove = _check_progression(
                     cat, condition, progression, chance, conditions_to_remove
@@ -199,8 +199,6 @@ def handle_temporary_conditions(cat: Cat):
                     if condition == c.current_complication:
                         c.current_complication = None
 
-            continue
-
         elif state == ConditionState.CONTINUING:
             if condition in conditions_to_remove:
                 # we don't want to give a risk if the condition was removed
@@ -218,18 +216,18 @@ def handle_temporary_conditions(cat: Cat):
                     ),
                 )
 
-            additional_events, conditions_to_remove = _check_risks(
-                cat, condition, conditions_to_remove
-            )
+                additional_events, conditions_to_remove = _check_risks(
+                    cat, condition, conditions_to_remove
+                )
 
-            if additional_events:
-                event_list.extend(additional_events)
+                if additional_events:
+                    event_list.extend(additional_events)
 
-        # add progression events to the end of the event_list
-        # we want them at the end for continuity purposes,
-        # i.e. cat heals from mangled leg -> discovers the leg is weakened
-        if progression_events:
-            event_list.extend(progression_events)
+    # add progression events to the end of the event_list
+    # we want them at the end for continuity purposes,
+    # i.e. cat heals from mangled leg -> discovers the leg is weakened
+    if progression_events:
+        event_list.extend(progression_events)
 
     for c in conditions_to_remove:
         cat.remove_condition(c.name)
@@ -382,7 +380,7 @@ def _check_progression(
     progression: str,
     chance: float,
     conditions_to_remove: list,
-):
+) -> tuple[list[EventInformation], list[TemporaryCondition | PermanentCondition]]:
     """
     Checks if the condition should progress into the given progression
     :param cat: The cat that the condition belongs to
@@ -392,7 +390,7 @@ def _check_progression(
     :param conditions_to_remove: The current list of conditions being removed. This will be modified within this function and returned.
     :return: A tuple of two lists: A list of new events created, and a list of conditions to remove
     """
-    event_list = []
+    event_list: list[EventInformation] = []
 
     if progression in cat.temporary_conditions + cat.permanent_conditions:
         # don't double up
@@ -426,9 +424,13 @@ def _check_progression(
         if condition.progression[progression].get("allow_scar"):
             requires_scar = base_progression_info.get("requires_scar", False)
 
-            scar_pool = base_condition_info.get(
-                "possible_scars", []
-            ) + base_progression_info.get("possible_scars", [])
+            if requires_scar:
+                # has specific scars it wants
+                scar_pool = base_progression_info.get("possible_scars", [])
+            else:
+                scar_pool = base_condition_info.get(
+                    "possible_scars", []
+                ) + base_progression_info.get("possible_scars", [])
 
             # try to give a scar
             scar_event = _attempt_scarring(
@@ -437,11 +439,16 @@ def _check_progression(
                 possible_scars=scar_pool,
                 guarantee_scar=requires_scar,
             )
-
             if requires_scar and not scar_event:
                 # if the cat couldn't be scarred for some reason, but the condition required it
                 # then we're gonna continue before we can give the condition
                 return event_list, conditions_to_remove
+
+            if scar_event and progression in TEMPORARY_CONDITIONS:
+                # all the hardcoded scar events reference "healing" but if the progression is a temp condition
+                # then it didn't really "heal", so until we put together a fancier way of handling scar events
+                # this is a decent enough work around
+                scar_event = None
 
         # PROGRESS
         if progression in TEMPORARY_CONDITIONS:
@@ -459,8 +466,6 @@ def _check_progression(
 
         event_list.append(event)
         conditions_to_remove.append(condition)
-
-        return event_list, conditions_to_remove
 
     return event_list, conditions_to_remove
 
