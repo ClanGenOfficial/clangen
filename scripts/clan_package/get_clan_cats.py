@@ -69,7 +69,7 @@ def find_alive_cats_with_rank(
     ]
 
     if working:
-        alive_cats = [i for i in alive_cats if not i.not_working()]
+        alive_cats = [i for i in alive_cats if i.can_work()]
 
     if sort:
         alive_cats = sorted(alive_cats, key=lambda cat: cat.moons, reverse=True)

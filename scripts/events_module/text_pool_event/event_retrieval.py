@@ -17,7 +17,7 @@ loaded_events = {}
 
 
 def get_valid_event(
-    primary_cat: Cat,
+    primary_cat: Cat | None,
     involved_cats: dict,
     interactable_cats: list[Cat],
     possible_events: list[PatrolEvent | TextPoolEvent],
@@ -44,7 +44,7 @@ def get_valid_event(
     chosen_frequency = get_frequency() if frequency_active else 4
 
     chosen_event: Optional[Union[PatrolEvent, TextPoolEvent]] = None
-    temp_involved_cats = {}
+
     tested_events = set()
 
     # retrieve the ensured event from the list

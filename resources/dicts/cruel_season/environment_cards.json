@@ -49,7 +49,8 @@
   "longer_illnesses": {
     "card_art": "environment/tainted.png",
     "modifiers": {
-      "condition_related.duration_modifier": 2
+      "condition_related.duration_modifier": 2,
+      "condition_related.duration_modifier_tags": ["illness"]
     }
   }
 }

@@ -1,0 +1,13 @@
+[
+    {
+        "event_id": "blood_loss0",
+        "strings": [
+            "m_c has recovered from the blood loss {PRONOUN/m_c/subject} suffered.",
+            "m_c is no longer suffering from blood loss.",
+            "m_c has made a full recovery from the blood loss {PRONOUN/m_c/subject} suffered."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

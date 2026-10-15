@@ -1,0 +1,13 @@
+[
+    {
+        "event_id": "lingering_shock0",
+        "strings": [
+            "It took a little while, but m_c finally feels normal again.",
+            "m_c has finally processed the shock of {PRONOUN/m_c/poss} ordeal.",
+            "m_c feels much better this moon, the old memories of {PRONOUN/m_c/poss} pain fading."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

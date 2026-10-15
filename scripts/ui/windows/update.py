@@ -6,7 +6,7 @@ import pygame_gui
 from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.housekeeping.progress_bar_updater import UIUpdateProgressBar
 from scripts.housekeeping.update import self_update, UpdateChannel
-from scripts.housekeeping.version import get_version_info
+from scripts.housekeeping.game_version import get_version_info
 from scripts.ui.windows.window_base_class import GameWindow
 from scripts.ui.scale import ui_scale
 

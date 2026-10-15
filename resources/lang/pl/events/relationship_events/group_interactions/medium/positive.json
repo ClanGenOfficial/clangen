@@ -4,9 +4,9 @@
         "strings": [
             "multi_cat are impressed by m_c's recent catch.",
             "m_c offers multi_cat hunting tips.",
-            "m_c brags about {PRONOUN\/m_c\/poss} recent catches and impresses multi_cat.",
-            "m_c's latest catch is the talk of the Clan, and multi_cat compliment {PRONOUN\/m_c\/object}.",
-            "multi_cat congratulate m_c on {PRONOUN\/m_c\/poss} latest catch."
+            "m_c brags about {PRONOUN/m_c/poss} recent catches and impresses multi_cat.",
+            "m_c's latest catch is the talk of the Clan, and multi_cat compliment {PRONOUN/m_c/object}.",
+            "multi_cat congratulate m_c on {PRONOUN/m_c/poss} latest catch."
         ],
         "involved_cats": {
             "m_c": {
@@ -16,25 +16,17 @@
                     "warrior"
                 ],
                 "stat": {
-                    "skill": [
-                        "HUNTER,1"
-                    ]
+                    "skill": ["HUNTER,1"]
                 }
             },
             "multi_cat": {}
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "respect"
-                ],
+                "values": ["respect"],
                 "amount": 10
             }
         ]
@@ -43,9 +35,9 @@
         "event_id": "group_multicat_pos_fighterbrag",
         "strings": [
             "multi_cat talk about m_c's combat prowess during a skirmish.",
-            "m_c regales multi_cat with stories about {PRONOUN\/m_c\/poss} latest fight.",
+            "m_c regales multi_cat with stories about {PRONOUN/m_c/poss} latest fight.",
             "m_c gives multi_cat fighting tips.",
-            "multi_cat congratulate m_c on {PRONOUN\/m_c\/poss} win during a border skirmish.",
+            "multi_cat congratulate m_c on {PRONOUN/m_c/poss} win during a border skirmish.",
             "After hearing about m_c's combat prowess, multi_cat's respect for m_c increases."
         ],
         "involved_cats": {
@@ -56,25 +48,17 @@
                     "warrior"
                 ],
                 "stat": {
-                    "skill": [
-                        "FIGHTER,1"
-                    ]
+                    "skill": ["FIGHTER,1"]
                 }
             },
             "multi_cat": {}
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "respect"
-                ],
+                "values": ["respect"],
                 "amount": 10
             }
         ]
@@ -85,7 +69,7 @@
             "m_c has a way with words that impresses multi_cat.",
             "multi_cat are enthralled by m_c's eloquence.",
             "multi_cat listen intently to m_c's well-phrased point.",
-            "multi_cat talk about how m_c effortlessly diffused a border skirmish with {PRONOUN\/m_c\/poss} words.",
+            "multi_cat talk about how m_c effortlessly diffused a border skirmish with {PRONOUN/m_c/poss} words.",
             "m_c slips into multi_cat's conversation seamlessly and provides a new point of view."
         ],
         "involved_cats": {
@@ -96,25 +80,17 @@
                     "warrior"
                 ],
                 "stat": {
-                    "skill": [
-                        "SPEAKER,1"
-                    ]
+                    "skill": ["SPEAKER,1"]
                 }
             },
             "multi_cat": {}
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "respect"
-                ],
+                "values": ["respect"],
                 "amount": 10
             }
         ]
@@ -134,34 +110,22 @@
                     "medicine cat"
                 ],
                 "stat": {
-                    "skill": [
-                        "HEALER,1"
-                    ]
+                    "skill": ["HEALER,1"]
                 }
             },
             "multi_cat": {
-                "status": [
-                    "-medicine cat"
-                ],
+                "status": ["-medicine cat"],
                 "stat": {
-                    "skill": [
-                        "-HEALER,1"
-                    ]
+                    "skill": ["-HEALER,1"]
                 }
             }
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "respect"
-                ],
+                "values": ["respect"],
                 "amount": 10
             }
         ]
@@ -171,7 +135,7 @@
         "strings": [
             "multi_cat are on their best behavior around m_c.",
             "After kitsitting multi_cat, m_c gushes about their perfect behavior.",
-            "m_c rewards multi_cat for being perfectly behaved for {PRONOUN\/m_c\/object}.",
+            "m_c rewards multi_cat for being perfectly behaved for {PRONOUN/m_c/object}.",
             "multi_cat don't fuss when m_c tells them it's time to take a nap.",
             "multi_cat settle down when reminded to by m_c.",
             "A fight between multi_cat over a toy is short-lived when m_c intervenes.",
@@ -181,44 +145,27 @@
         "involved_cats": {
             "m_c": {
                 "stat": {
-                    "skill": [
-                        "KIT,1"
-                    ]
+                    "skill": ["KIT,1"]
                 }
             },
             "multi_cat": {
-                "status": [
-                    "kitten"
-                ]
+                "status": ["kitten"]
             }
         },
         "relationship_constraint": [
             {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "multi_cat"
-                ],
+                "cats_from": ["m_c"],
+                "cats_to": ["multi_cat"],
                 "mutual": false,
-                "constraints": [
-                    "-parent\/child"
-                ]
+                "constraints": ["-parent/child"]
             }
         ],
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "respect",
-                    "like"
-                ],
+                "values": ["respect", "like"],
                 "amount": 10
             }
         ]
@@ -230,36 +177,25 @@
             "After multi_cat get in trouble, m_c helps them understand what they did wrong through a lesson.",
             "m_c teaches multi_cat what to do during an emergency.",
             "m_c teaches multi_cat about the seasons their territory experiences.",
-            "m_c spends the day teaching multi_cat {PRONOUN\/m_c\/poss} favorite facts.",
-            "m_c teaches multi_cat a few tricks {PRONOUN\/m_c\/subject} {VERB\/m_c\/know\/knows}."
+            "m_c spends the day teaching multi_cat {PRONOUN/m_c/poss} favorite facts.",
+            "m_c teaches multi_cat a few tricks {PRONOUN/m_c/subject} {VERB/m_c/know/knows}."
         ],
         "involved_cats": {
             "m_c": {
                 "stat": {
-                    "skill": [
-                        "TEACHER,1"
-                    ]
+                    "skill": ["TEACHER,1"]
                 }
             },
             "multi_cat": {
-                "status": [
-                    "kitten"
-                ]
+                "status": ["kitten"]
             }
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "respect",
-                    "like"
-                ],
+                "values": ["respect", "like"],
                 "amount": 10
             }
         ]
@@ -282,29 +218,18 @@
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "mediator"
-                ]
+                "status": ["mediator"]
             },
             "multi_cat": {
-                "status": [
-                    "kitten"
-                ]
+                "status": ["kitten"]
             }
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "respect",
-                    "comfort"
-                ],
+                "values": ["respect", "comfort"],
                 "amount": 10
             }
         ]
@@ -312,57 +237,37 @@
     {
         "event_id": "group_multicat_pos_notkit_kitsitting",
         "strings": [
-            "At first, m_c wasn't certain about watching multi_cat. However, the kits surprise {PRONOUN\/m_c\/object} by being on their best behavior.",
+            "At first, m_c wasn't certain about watching multi_cat. However, the kits surprise {PRONOUN/m_c/object} by being on their best behavior.",
             "m_c doesn't think it's usually this easy to convince multi_cat to settle down, but it is today.",
             "Shockingly, multi_cat listen to m_c with little fuss or complaint.",
-            "When m_c tells multi_cat it's time to take a nap, {PRONOUN\/m_c\/subject} {VERB\/m_c\/expect\/expects} whining. Instead, the kits obediently listen to m_c.",
+            "When m_c tells multi_cat it's time to take a nap, {PRONOUN/m_c/subject} {VERB/m_c/expect/expects} whining. Instead, the kits obediently listen to m_c.",
             "m_c assumes that kitsitting multi_cat will be a nightmare, but it goes well!"
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "-kitten"
-                ],
+                "status": ["-kitten"],
                 "stat": {
-                    "skill": [
-                        "-KIT,0"
-                    ]
+                    "skill": ["-KIT,0"]
                 }
             },
             "multi_cat": {
-                "status": [
-                    "kitten"
-                ]
+                "status": ["kitten"]
             }
         },
         "relationship_constraint": [
             {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "multi_cat"
-                ],
+                "cats_from": ["m_c"],
+                "cats_to": ["multi_cat"],
                 "mutual": false,
-                "constraints": [
-                    "-parent\/child",
-                    "-littermates"
-                ]
+                "constraints": ["-parent/child", "-littermates"]
             }
         ],
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "respect",
-                    "like"
-                ],
+                "values": ["respect", "like"],
                 "amount": 10
             }
         ]
@@ -373,9 +278,9 @@
             "m_c is proud of how productive and attentive multi_cat are during a lesson about poisonous plants.",
             "multi_cat listen intently to m_c's lecture about basic first aid.",
             "After giving multi_cat a lecture about the basic herbs, m_c quizzes them and is proud of the results.",
-            "m_c appreciates how multi_cat don't goof around during {PRONOUN\/m_c\/poss} lecture about herbs.",
+            "m_c appreciates how multi_cat don't goof around during {PRONOUN/m_c/poss} lecture about herbs.",
             "After conducting a lesson about basic first aid, m_c raves about multi_cat's fantastic behavior.",
-            "m_c assumed that {PRONOUN\/m_c\/poss} lesson about poisonous plants would go unheard, but multi_cat are diligent listeners.",
+            "m_c assumed that {PRONOUN/m_c/poss} lesson about poisonous plants would go unheard, but multi_cat are diligent listeners.",
             "m_c is impressed by multi_cat's attitudes during a short lesson about illnesses, their symptoms, and when to worry.",
             "During a lecture about the severity of injuries, multi_cat wow m_c with their maturity."
         ],
@@ -394,16 +299,10 @@
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "multi_cat"
-                ],
+                "cats_from": ["m_c"],
+                "cats_to": ["multi_cat"],
                 "mutual": true,
-                "values": [
-                    "respect"
-                ],
+                "values": ["respect"],
                 "amount": 10
             }
         ]
@@ -411,9 +310,9 @@
     {
         "event_id": "group_multicat_pos_mediatorcommunity",
         "strings": [
-            "m_c beckons multi_cat to relax with {PRONOUN\/m_c\/object} and chat.",
+            "m_c beckons multi_cat to relax with {PRONOUN/m_c/object} and chat.",
             "At first, multi_cat are unsure about m_c's bonding exercise, but it goes wonderfully.",
-            "m_c has noticed tensions in the Clan, so {PRONOUN\/m_c\/subject} {VERB\/m_c\/organize\/organizes} time for multi_cat to relax and have others to talk to.",
+            "m_c has noticed tensions in the Clan, so {PRONOUN/m_c/subject} {VERB/m_c/organize/organizes} time for multi_cat to relax and have others to talk to.",
             "multi_cat attend a get-together m_c hosts and have a newfound appreciation for each other.",
             "m_c invites multi_cat to share what's been on their minds and to have an honest talk with each other."
         ],
@@ -427,17 +326,10 @@
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "multi_cat"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["multi_cat"],
                 "mutual": true,
-                "values": [
-                    "like",
-                    "comfort"
-                ],
+                "values": ["like", "comfort"],
                 "amount": 10
             }
         ]
@@ -446,18 +338,16 @@
         "event_id": "group_multicat_pos_elderstory",
         "strings": [
             "m_c tells multi_cat about days long past.",
-            "m_c recalls {PRONOUN\/m_c\/poss} kithood to multi_cat.",
+            "m_c recalls {PRONOUN/m_c/poss} kithood to multi_cat.",
             "multi_cat fondly think about one of m_c's stories.",
             "multi_cat think that m_c has the best stories.",
-            "m_c imparts onto multi_cat how {PRONOUN\/m_c\/subject} navigated the toughest moments of {PRONOUN\/m_c\/poss} life.",
+            "m_c imparts onto multi_cat how {PRONOUN/m_c/subject} navigated the toughest moments of {PRONOUN/m_c/poss} life.",
             "multi_cat take m_c's lesson to heart.",
-            "The way m_c weaves {PRONOUN\/m_c\/poss} wisdom into {PRONOUN\/m_c\/poss} stories astounds multi_cat."
+            "The way m_c weaves {PRONOUN/m_c/poss} wisdom into {PRONOUN/m_c/poss} stories astounds multi_cat."
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "elder"
-                ],
+                "status": ["elder"],
                 "age": [
                     "senior adult",
                     "senior"
@@ -471,16 +361,10 @@
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "like"
-                ],
+                "values": ["like"],
                 "amount": 10
             }
         ]
@@ -496,9 +380,7 @@
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "leader"
-                ]
+                "status": ["leader"]
             },
             "multi_cat": {
                 "status": [
@@ -511,16 +393,10 @@
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "respect"
-                ],
+                "values": ["respect"],
                 "amount": 10
             }
         ]
@@ -529,18 +405,16 @@
         "event_id": "group_multicat_pos_leaderlistens",
         "strings": [
             "m_c listens to multi_cat's feedback regarding a recent change.",
-            "m_c understands multi_cat's concern about a decision and explains {PRONOUN\/m_c\/poss} reasoning behind it.",
+            "m_c understands multi_cat's concern about a decision and explains {PRONOUN/m_c/poss} reasoning behind it.",
             "multi_cat approach m_c about a concern and feel reassured by the end of the discussion.",
-            "While m_c doesn't change {PRONOUN\/m_c\/poss} mind about a decision {PRONOUN\/m_c\/subject} made, multi_cat appreciate m_c listening to their opinions.",
+            "While m_c doesn't change {PRONOUN/m_c/poss} mind about a decision {PRONOUN/m_c/subject} made, multi_cat appreciate m_c listening to their opinions.",
             "m_c allows multi_cat to voice their opinions about a decision without judgment.",
-            "m_c doesn't boss multi_cat around with {PRONOUN\/m_c\/poss} authority during a discussion about Clan policies.",
+            "m_c doesn't boss multi_cat around with {PRONOUN/m_c/poss} authority during a discussion about Clan policies.",
             "multi_cat feel comfortable talking to m_c about recent events."
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "leader"
-                ],
+                "status": ["leader"],
                 "stat": {
                     "trait": [
                         "-ambitious",
@@ -570,17 +444,10 @@
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "respect",
-                    "trust"
-                ],
+                "values": ["respect", "trust"],
                 "amount": 10
             }
         ]
@@ -632,39 +499,25 @@
         "event_id": "group_multicat_newnestsCAMP",
         "strings": [
             "multi_cat notice that m_c refreshed the nests in the warriors' den without being asked.",
-            "multi_cat always know when m_c is assigned to refresh the warriors' nests, because {PRONOUN\/m_c\/subject} {VERB\/m_c\/do\/does} such a good job."
+            "multi_cat always know when m_c is assigned to refresh the warriors' nests, because {PRONOUN/m_c/subject} {VERB/m_c/do/does} such a good job."
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "apprentice"
-                ],
+                "status": ["apprentice"],
                 "stat": {
-                    "skill": [
-                        "CAMP,0"
-                    ]
+                    "skill": ["CAMP,0"]
                 }
             },
             "multi_cat": {
-                "status": [
-                    "warrior",
-                    "deputy"
-                ]
+                "status": ["warrior", "deputy"]
             }
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "like",
-                    "respect"
-                ],
+                "values": ["like", "respect"],
                 "amount": 10
             }
         ]
@@ -672,45 +525,29 @@
     {
         "event_id": "group_multicat_newnestsCAMPfstpln",
         "strings": [
-            "multi_cat are delighted that m_c lined their nests with soft down and seed-fluff when {PRONOUN\/m_c\/subject} refreshed the warriors' nests.",
-            "multi_cat notice that m_c wove some sprigs of lavender and basil into the walls of the warriors' den when {PRONOUN\/m_c\/subject} cleaned it earlier."
+            "multi_cat are delighted that m_c lined their nests with soft down and seed-fluff when {PRONOUN/m_c/subject} refreshed the warriors' nests.",
+            "multi_cat notice that m_c wove some sprigs of lavender and basil into the walls of the warriors' den when {PRONOUN/m_c/subject} cleaned it earlier."
         ],
         "location": [
-            "forest",
-            "plains",
-            "-plains:camp3"
+            "forest", "plains", "-plains:camp3"
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "apprentice"
-                ],
+                "status": ["apprentice"],
                 "stat": {
-                    "skill": [
-                        "CAMP,0"
-                    ]
+                    "skill": ["CAMP,0"]
                 }
             },
             "multi_cat": {
-                "status": [
-                    "warrior",
-                    "deputy"
-                ]
+                "status": ["warrior", "deputy"]
             }
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "like",
-                    "respect"
-                ],
+                "values": ["like", "respect"],
                 "amount": 10
             }
         ]
@@ -718,43 +555,29 @@
     {
         "event_id": "group_multicat_newnestsCAMPtunnels",
         "strings": [
-            "multi_cat are delighted that m_c lined their nests with rabbit fur and seed-fluff when {PRONOUN\/m_c\/subject} refreshed the warriors' nests.",
-            "multi_cat notice that m_c embedded some sweet-scented roots into the earthen walls of the warriors' den when {PRONOUN\/m_c\/subject} cleaned it earlier."
+            "multi_cat are delighted that m_c lined their nests with rabbit fur and seed-fluff when {PRONOUN/m_c/subject} refreshed the warriors' nests.",
+            "multi_cat notice that m_c embedded some sweet-scented roots into the earthen walls of the warriors' den when {PRONOUN/m_c/subject} cleaned it earlier."
         ],
         "location": [
             "plains:camp3"
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "apprentice"
-                ],
+                "status": ["apprentice"],
                 "stat": {
-                    "skill": [
-                        "CAMP,0"
-                    ]
+                    "skill": ["CAMP,0"]
                 }
             },
             "multi_cat": {
-                "status": [
-                    "warrior",
-                    "deputy"
-                ]
+                "status": ["warrior", "deputy"]
             }
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "like",
-                    "respect"
-                ],
+                "values": ["like", "respect"],
                 "amount": 10
             }
         ]
@@ -762,43 +585,29 @@
     {
         "event_id": "group_multicat_newnestsCAMPmtn",
         "strings": [
-            "multi_cat are delighted that m_c lined their nests with downy feathers when {PRONOUN\/m_c\/subject} refreshed the warriors' nests.",
-            "multi_cat notice that m_c wedged some sprigs of edelweiss and jasmine into the crevices of the warriors' den when {PRONOUN\/m_c\/subject} cleaned it earlier."
+            "multi_cat are delighted that m_c lined their nests with downy feathers when {PRONOUN/m_c/subject} refreshed the warriors' nests.",
+            "multi_cat notice that m_c wedged some sprigs of edelweiss and jasmine into the crevices of the warriors' den when {PRONOUN/m_c/subject} cleaned it earlier."
         ],
         "location": [
             "mountainous"
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "apprentice"
-                ],
+                "status": ["apprentice"],
                 "stat": {
-                    "skill": [
-                        "CAMP,0"
-                    ]
+                    "skill": ["CAMP,0"]
                 }
             },
             "multi_cat": {
-                "status": [
-                    "warrior",
-                    "deputy"
-                ]
+                "status": ["warrior", "deputy"]
             }
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "like",
-                    "respect"
-                ],
+                "values": ["like", "respect"],
                 "amount": 10
             }
         ]
@@ -806,43 +615,27 @@
     {
         "event_id": "group_multicat_newnestsCAMPbch",
         "strings": [
-            "multi_cat are delighted that m_c lined their nests with duck down and seagull feathers when {PRONOUN\/m_c\/subject} refreshed the warriors' nests.",
-            "multi_cat notice that m_c decorated into the walls of the warriors' den with seaglass and small shells when {PRONOUN\/m_c\/subject} cleaned it earlier."
+            "multi_cat are delighted that m_c lined their nests with duck down and seagull feathers when {PRONOUN/m_c/subject} refreshed the warriors' nests.",
+            "multi_cat notice that m_c decorated into the walls of the warriors' den with seaglass and small shells when {PRONOUN/m_c/subject} cleaned it earlier."
         ],
-        "location": [
-            "beach"
-        ],
+        "location": ["beach"],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "apprentice"
-                ],
+                "status": ["apprentice"],
                 "stat": {
-                    "skill": [
-                        "CAMP,0"
-                    ]
+                    "skill": ["CAMP,0"]
                 }
             },
             "multi_cat": {
-                "status": [
-                    "warrior",
-                    "deputy"
-                ]
+                "status": ["warrior", "deputy"]
             }
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "like",
-                    "respect"
-                ],
+                "values": ["like", "respect"],
                 "amount": 10
             }
         ]
@@ -856,59 +649,30 @@
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "-kitten"
-                ],
+                "status": ["-kitten"],
                 "stat": {
                     "must_have_both": false,
-                    "skill": [
-                        "INSIGHTFUL,0",
-                        "CLEVER,0"
-                    ],
-                    "trait": [
-                        "calm",
-                        "wise",
-                        "thoughtful",
-                        "sincere",
-                        "charismatic",
-                        "confident"
-                    ]
+                    "skill": ["INSIGHTFUL,0", "CLEVER,0"],
+                    "trait": ["calm", "wise", "thoughtful", "sincere", "charismatic", "confident"]
                 }
             },
             "multi_cat": {
-                "status": [
-                    "-kitten"
-                ]
+                "status": ["-kitten"]
             }
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
                 "mutual": true,
-                "values": [
-                    "like",
-                    "trust",
-                    "respect"
-                ],
+                "values": ["like", "trust", "respect"],
                 "amount": 8
             },
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "multi_cat"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["multi_cat"],
                 "mutual": false,
-                "values": [
-                    "like",
-                    "trust"
-                ],
+                "values": ["like", "trust"],
                 "amount": 5
             }
         ]

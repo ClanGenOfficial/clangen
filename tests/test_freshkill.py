@@ -1,8 +1,8 @@
 import os
 import shutil
 from pathlib import Path
-from random import Random
 
+from scripts.cat.conditions.gain_conditions import gain_temporary_condition
 from scripts.cat.factories.test_cat_factory import TestCatFactory
 from scripts.game_structure.game.save_load import read_clans
 from scripts.housekeeping.datadir import get_save_dir
@@ -95,7 +95,7 @@ class FreshkillPileTest(unittest.TestCase):
                 _c.skills.primary = Skill(SkillPath.CLIMBER, 20)
 
         # set dep as injured for later testing
-        game.clan.deputy.injuries["test_injury"] = {"severity": "major"}
+        gain_temporary_condition(game.clan.deputy, "broken_bone")
 
         # make list of relevant cats
         self.cat_list = [c for c in Cat.all_cats_list if c.status.alive_in_player_clan]
@@ -506,7 +506,8 @@ class FreshkillPileTest(unittest.TestCase):
             moons=1,
             disable_random=True,
         )
-        pregnant_cat.injuries["pregnant"] = {"severity": "minor"}
+
+        gain_temporary_condition(pregnant_cat, "pregnant", severity="minor")
         cat2 = cat_factory.create_cat(
             status_dict={"rank": CatRank.WARRIOR},
             moons=1,
