@@ -604,15 +604,7 @@
         "severity": "severe",
         "duration": 2,
         "is_complication": false,
-        "mortality": {
-            "newborn": 0.5,
-            "kitten": 0.3,
-            "adolescent": 0.2,
-            "young adult": 0.1,
-            "adult": 0.1,
-            "senior adult": 0.2,
-            "senior": 0.5
-        },
+        "mortality": {},
         "infectiousness": 0.0,
         "immune_system_effect": 0,
         "side_effect": {
@@ -653,15 +645,7 @@
         "severity": "severe",
         "duration": 2,
         "is_complication": false,
-        "mortality": {
-            "newborn": 0.5,
-            "kitten": 0.3,
-            "adolescent": 0.2,
-            "young adult": 0.1,
-            "adult": 0.1,
-            "senior adult": 0.2,
-            "senior": 0.5
-        },
+        "mortality": {},
         "infectiousness": 0.0,
         "immune_system_effect": 0,
         "side_effect": {
