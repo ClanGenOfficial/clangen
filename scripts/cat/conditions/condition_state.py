@@ -5,7 +5,7 @@ from scripts.cat.conditions.permanent_condition import PermanentCondition
 from scripts.cat.conditions.temporary_condition import TemporaryCondition
 from scripts.config import get_config
 from scripts.game_structure import game
-
+from scripts.clan_package.settings import get_clan_setting
 
 class ConditionState(Enum):
     REVEALED = auto()
@@ -51,13 +51,14 @@ def update_temporary_condition_state(condition: TemporaryCondition):
     if mortality == ConditionState.FATAL:
         return ConditionState.FATAL
 
-    recovery_buff = get_config("focus.rest_and_recover.moons_earlier_healed")
-
-    # pregnancy's duration is fixed
-    if condition.name == "pregnant":
-        condition.duration -= 1
+    if get_clan_setting("rest_and_recover"):
+        recovery_buff = get_config("focus.rest_and_recover.moons_earlier_healed")
+        if condition.name == "pregnant":
+            condition.duration -= 1
+        else:
+            condition.duration -= 1 + recovery_buff
     else:
-        condition.duration -= 1 + recovery_buff
+        condition.duration -= 1
 
     if condition.duration <= 0:
         if condition.current_complication:
