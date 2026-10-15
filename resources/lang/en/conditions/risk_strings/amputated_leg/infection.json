@@ -1,8 +1,8 @@
 [
     {
-        "event_id": "amputated_tail_infection0",
+        "event_id": "amputated_leg_infection0",
         "strings": [
-            "r_c0 has been worried, it seems the stump of m_c's amputated tail has become infected."
+            "r_c0 has been worried, it seems the stump of m_c's amputated leg has become infected."
         ],
         "involved_cats": {
             "m_c": {},
@@ -14,9 +14,9 @@
         }
     },
     {
-        "event_id": "amputated_tail_infection1",
+        "event_id": "amputated_leg_infection1",
         "strings": [
-            "m_c's amputated tail has become infected."
+            "m_c's amputated leg has become infected."
         ],
         "involved_cats": {
             "m_c": {}
