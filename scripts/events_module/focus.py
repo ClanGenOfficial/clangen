@@ -463,7 +463,7 @@ def _give_conditions(
                     list(injury_dict.keys()), list(injury_dict.values())
                 )[0]
                 gain_temporary_condition(
-                    cat, chosen_injury, allow_side_effects=disable_random
+                    cat, chosen_injury, allow_side_effects=not disable_random
                 )
                 involved_cats["injured"].append(cat.ID)
         if illness_chance:
@@ -472,7 +472,7 @@ def _give_conditions(
                     list(illness_dict.keys()), list(illness_dict.values())
                 )[0]
                 gain_temporary_condition(
-                    cat, chosen_illness, allow_side_effects=disable_random
+                    cat, chosen_illness, allow_side_effects=not disable_random
                 )
                 involved_cats["sick"].append(cat.ID)
 
