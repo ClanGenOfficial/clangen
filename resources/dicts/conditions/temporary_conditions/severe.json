@@ -700,14 +700,14 @@
         "immune_system_effect": 0.0,
         "side_effect": {},
         "progression": {
-            "lost_tail": {
+            "amputated_tail": {
                 "chance": 0.2,
-                "when": "HEALED",
+                "when": "CONTINUING",
                 "allow_scar": true
             },
-            "lost_leg": {
+            "amputated_leg": {
                 "chance": 0.2,
-                "when": "HEALED",
+                "when": "CONTINUING",
                 "allow_scar": true
             }
         },
