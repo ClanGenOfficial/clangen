@@ -1,0 +1,15 @@
+[
+    {
+        "event_id": "bruises0",
+        "strings": [
+            "m_c's bruises have healed.",
+            "m_c is feeling much better. {PRONOUN/m_c/poss/CAP} bruises are gone.",
+            "m_c's bruises are gone.",
+            "m_c's bruises have disappeared.",
+            "m_c is no longer bruised."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

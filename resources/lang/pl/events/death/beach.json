@@ -104,8 +104,7 @@
                     "r_c"
                 ],
                 "injuries": [
-                    "water in their lungs",
-                    "shock"
+                    "water_in_lungs", "shock"
                 ]
             }
         ],
@@ -149,7 +148,7 @@
             "no_body"
         ],
         "frequency": 1,
-        "event_text": "When m_c fell into the water, something large and unseen dragged {PRONOUN\/m_c\/object} beneath the waves.",
+        "event_text": "When m_c fell into the water, something large and unseen dragged {PRONOUN/m_c/object} beneath the waves.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -252,7 +251,7 @@
         ],
         "tags": [],
         "frequency": 2,
-        "event_text": "r_c discovered m_c's dead body. It seems {PRONOUN\/m_c\/subject} died to dehydration and heat.",
+        "event_text": "r_c discovered m_c's dead body. It seems {PRONOUN/m_c/subject} died to dehydration and heat.",
         "m_c": {
             "age": [
                 "adolescent"
@@ -321,7 +320,7 @@
         ],
         "tags": [],
         "frequency": 2,
-        "event_text": "r_c was surprised to stumble upon m_c's dead body. It seems {PRONOUN\/m_c\/subject} died to the heat.",
+        "event_text": "r_c was surprised to stumble upon m_c's dead body. It seems {PRONOUN/m_c/subject} died to the heat.",
         "m_c": {
             "age": [
                 "adolescent"
@@ -422,7 +421,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c died when {PRONOUN\/m_c\/subject} {VERB\/m_c\/were\/was} shoved off a cliff by r_c"
+                "death": "m_c died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} shoved off a cliff by r_c"
             }
         ],
         "relationships": [
@@ -445,24 +444,17 @@
             }
         ],
         "future_event": [
-            {
+                {
                 "event_type": "misc",
                 "pool": {
-                    "sub_type": [
-                        "murder_reveal"
-                    ]
+                    "sub_type": ["murder_reveal"]
                 },
-                "moon_delay": [
-                    1,
-                    12
-                ],
+                "moon_delay": [1,12],
                 "involved_cats": {
                     "m_c": "r_c",
                     "mur_c": "m_c",
                     "r_c": {
-                        "age": [
-                            "any"
-                        ]
+                        "age": ["any"]
                     }
                 }
             }
@@ -538,7 +530,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c died when {PRONOUN\/m_c\/subject} {VERB\/m_c\/were\/was} shoved off a cliff by r_c"
+                "death": "m_c died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} shoved off a cliff by r_c"
             }
         ],
         "relationships": [
@@ -561,24 +553,17 @@
             }
         ],
         "future_event": [
-            {
+                {
                 "event_type": "misc",
                 "pool": {
-                    "sub_type": [
-                        "murder_reveal"
-                    ]
+                    "sub_type": ["murder_reveal"]
                 },
-                "moon_delay": [
-                    1,
-                    12
-                ],
+                "moon_delay": [1,12],
                 "involved_cats": {
                     "m_c": "r_c",
                     "mur_c": "m_c",
                     "r_c": {
-                        "age": [
-                            "any"
-                        ]
+                        "age": ["any"]
                     }
                 }
             }
@@ -600,7 +585,7 @@
             "no_body"
         ],
         "frequency": 4,
-        "event_text": "Distracted by other matters, m_c forgot the tide. {PRONOUN\/m_c\/subject\/CAP} died trapped between the waves and the cliffs as r_c watched.",
+        "event_text": "Distracted by other matters, m_c forgot the tide. {PRONOUN/m_c/subject/CAP} died trapped between the waves and the cliffs as r_c watched.",
         "m_c": {
             "status": [
                 "leader"
@@ -665,78 +650,71 @@
             }
         ],
         "future_event": [
-            {
+                {
                 "event_type": "misc",
                 "pool": {
-                    "sub_type": [
-                        "murder_reveal"
-                    ]
+                    "sub_type": ["murder_reveal"]
                 },
-                "moon_delay": [
-                    1,
-                    12
-                ],
+                "moon_delay": [1,12],
                 "involved_cats": {
                     "m_c": "r_c",
                     "mur_c": "m_c",
                     "r_c": {
-                        "age": [
-                            "any"
-                        ]
+                        "age": ["any"]
                     }
                 }
             }
         ]
     },
     {
-        "event_id": "bch_death_kitappshipwreckfall",
-        "location": [
-            "beach:camp3"
-        ],
-        "season": [
-            "any"
-        ],
-        "tags": [],
-        "frequency": 1,
-        "event_text": "m_c climbed aboard the broken ship in camp, playing pretend as a Twoleg. No cat noticed what {PRONOUN\/m_c\/subject} {VERB\/m_c\/were\/was} doing until the floorboards beneath {PRONOUN\/m_c\/object} gave way and {PRONOUN\/m_c\/subject} fell into the nothingness below.",
-        "m_c": {
-            "age": [
-                "kitten",
-                "adolescent"
-            ],
-            "skill": [
-                "-CLIMBER,0"
-            ],
-            "trait": [
-                "unruly",
-                "impulsive",
-                "attention-seeker",
-                "skittish",
-                "daydreamer",
-                "fearless",
-                "bossy",
-                "troublesome",
-                "childish",
-                "playful",
-                "bold",
-                "daring",
-                "confident",
-                "adventurous",
-                "shameless",
-                "strange",
-                "rebellious"
-            ],
-            "dies": true
-        },
-        "history": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "death": "m_c fell through the floorboards of the broken ship."
-            }
-        ]
-    },
+  "event_id": "bch_death_kitappshipwreckfall",
+  "location": [
+    "beach:camp3"
+  ],
+  "season": [
+    "any"
+  ],
+  "tags": [],
+  "frequency": 1,
+  "event_text": "m_c climbed aboard the broken ship in camp, playing pretend as a Twoleg. No cat noticed what {PRONOUN/m_c/subject} {VERB/m_c/were/was} doing until the floorboards beneath {PRONOUN/m_c/object} gave way and {PRONOUN/m_c/subject} fell into the nothingness below.",
+  "m_c": {
+    "age": [
+      "kitten",
+      "adolescent"
+    ],
+    "skill": [
+      "-CLIMBER,0"
+    ],
+    "trait": [
+      "unruly",
+      "impulsive",
+      "attention-seeker",
+      "skittish",
+      "daydreamer",
+      "fearless",
+      "bossy",
+      "troublesome",
+      "childish",
+      "playful",
+      "bold",
+      "daring",
+      "confident",
+      "adventurous",
+      "shameless",
+      "strange",
+      "rebellious"
+    ],
+    "dies": true
+  },
+  "history": [
+    {
+      "cats": [
+        "m_c"
+      ],
+      "death": "m_c fell through the floorboards of the broken ship."
+    }
+  ]
+},
     {
         "event_id": "bch_death_extinction_drown",
         "location": [
@@ -768,7 +746,7 @@
             "-greenleaf"
         ],
         "frequency": 1,
-        "event_text": "While playing close to the water, m_c is swept away. {PRONOUN\/m_c\/poss\/CAP} wails are swallowed by the ocean as {PRONOUN\/m_c\/subject} {VERB\/m_c\/go\/goes} under and does not resurface.",
+        "event_text": "While playing close to the water, m_c is swept away. {PRONOUN/m_c/poss/CAP} wails are swallowed by the ocean as {PRONOUN/m_c/subject} {VERB/m_c/go/goes} under and does not resurface.",
         "m_c": {
             "age": [
                 "kitten"
