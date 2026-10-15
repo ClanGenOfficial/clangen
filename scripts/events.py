@@ -1549,10 +1549,11 @@ def attempt_outbreak():
         "condition_related.med_infection_reduction"
     )
 
-
     # check for focus buff
     stopping_chance = 0
-    if get_clan_setting("rest_and_recover") and (game.clan.deputy and game.clan.deputy.status.alive_in_player_clan):
+    if get_clan_setting("rest_and_recover") and (
+        game.clan.deputy and game.clan.deputy.status.alive_in_player_clan
+    ):
         stopping_chance = get_config("focus.rest_and_recover.outbreak_prevention")
 
         buffs = get_config("focus.rest_and_recover.buff")
