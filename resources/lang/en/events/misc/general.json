@@ -4697,7 +4697,7 @@
             "name": ["terrain_sunningrocks"]
         },
         "frequency": 4,
-        "event_text": "r_c gathered some pretty leaves and laid them out to dry on POI. When {PRONOUN/r_c/subject} returned days later to gather {PRONOUN/r_c/poss} new accessory, {PRONOUN/r_c/subject} discovered some cat has stolen them!",
+        "event_text": "r_c gathered some pretty leaves and laid them out to dry on POI. When {PRONOUN/r_c/subject} returned days later to gather {PRONOUN/r_c/poss} new accessory, {PRONOUN/r_c/subject} discovered some cat had stolen them!",
         "new_accessory": ["DRY HERBS", "DRY CATMINT", "DRY NETTLES", "DRY LAURELS"],
         "exclude_involved": ["m_c"],
         "m_c": {
