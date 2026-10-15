@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "poisoned_redcough0",
+        "strings": [
+            "m_c woke feeling worse than before. When {PRONOUN/m_c/subject} start coughing up blood later, {PRONOUN/m_c/subject} realised the poison must have done even more damage than {PRONOUN/m_c/subject} thought."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
