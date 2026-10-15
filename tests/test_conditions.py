@@ -1,13 +1,12 @@
 import unittest
-from unittest.mock import Mock, patch
+from unittest.mock import Mock
 
-from scripts.cat.conditions import gain_conditions, condition_state
+from scripts.cat.conditions import gain_conditions
 from scripts.cat.conditions.condition_state import ConditionState
 from scripts.cat.conditions.coverage_check import medicine_cats_can_cover_clan
 from scripts.cat.conditions.gain_conditions import (
     gain_temporary_condition,
     gain_permanent_condition,
-    find_moons_until,
 )
 from scripts.cat.constants import TEMPORARY_CONDITIONS, PERMANENT_CONDITIONS
 from scripts.cat.enums import CatRank

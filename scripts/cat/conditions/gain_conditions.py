@@ -154,7 +154,7 @@ def gain_permanent_condition(
         removed_on_death=condition.get("removed_on_death", True),
         moons_until_discovery=set_moons_until
         if set_moons_until is not None
-        else find_moons_until(
+        else _find_moons_until(
             cat.moons, condition.get("moons_until_discovery", [0, 0])
         ),
         moon_gained=game.clan.age if game.clan else 0,
@@ -199,7 +199,10 @@ def add_congenital_condition(cat):
     gain_permanent_condition(cat, new_condition, is_congenital=True)
 
 
-def find_moons_until(cat_moon_age: int, moons_until: list[int]) -> int:
+def _find_moons_until(cat_moon_age: int, moons_until: list[int]) -> int:
+    """
+    Finds out what moons_until_discovery a condition should have based off the cat's current age
+    """
     reveal_moon = randint(*moons_until)
 
     if cat_moon_age == 0:
