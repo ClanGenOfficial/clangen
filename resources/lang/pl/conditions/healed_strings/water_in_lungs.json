@@ -1,0 +1,15 @@
+[
+    {
+        "event_id": "water_in_their_lungs0",
+        "strings": [
+            "m_c's lungs finally feel back to normal.",
+            "m_c is breathing normally again, the water in {PRONOUN/m_c/poss} lungs is gone.",
+            "m_c has recovered from the water in {PRONOUN/m_c/poss} lungs.",
+            "There's no longer water in m_c's lungs: {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} back to breathing normally.",
+            "m_c's breathing has returned to normal. {PRONOUN/m_c/poss/CAP} lungs are no longer filled with water."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

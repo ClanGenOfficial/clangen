@@ -12,7 +12,7 @@ from scripts.models.common.points_of_interest import PointsOfInterestGroup
 from scripts.models.common.season import Season
 from scripts.models.common.tag import Tag
 from scripts.models.common.temperament import Temperament
-from scripts.models.text_pool_event.condition import Condition
+from scripts.models.text_pool_event.condition import ConditionEnum, Condition
 from scripts.models.text_pool_event.death import Death
 from scripts.models.text_pool_event.join import Join
 from scripts.models.text_pool_event.supply import Supply

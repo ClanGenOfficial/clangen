@@ -592,7 +592,7 @@ class Status:
             return CatGroup.UNKNOWN_RESIDENCE_ID
 
         # meanwhile clan cats go wherever their guide points them
-        if game.clan:
+        if game.clan and game.clan.instructor:
             return game.clan.instructor.status.group_ID
         return CatGroup.STARCLAN_ID
 
