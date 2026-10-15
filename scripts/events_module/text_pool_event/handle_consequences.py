@@ -31,7 +31,6 @@ from scripts.events_module.future.prep_and_trigger import prep_future_event
 from scripts.events_module.parameter_dicts import SupplyDict
 from scripts.events_module.patrol.create_new_cat import updated_create_new_cat
 from scripts.events_module.patrol.patrol_event import PatrolEvent
-from scripts.events_module.relationship import relation_events
 from scripts.events_module.text_adjust import (
     event_text_adjust,
     adjust_list_text,
@@ -256,6 +255,11 @@ def _handle_joining(
     for c in joined:
         cat_names.append(_profile_link(c))
         c.assign_thought(CatThought.ON_JOIN)
+
+    # i'm sorry this is so gross but it was the only way to get the bulk timeskip test to stop dying over circular imports
+    # eventually we should rework how the `trigger_joining_relationship_events` is handled so that we don't have
+    # to call it here
+    from scripts.events_module.relationship import relation_events
 
     relation_events.trigger_joining_relationship_events(joined)
 
