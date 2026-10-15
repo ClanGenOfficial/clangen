@@ -65,7 +65,10 @@ def gain_temporary_condition(
         omit_moonskip=omit_moonskip,
     )
 
-    new_condition.duration *= get_config("condition_related.duration_modifier")
+    if set(condition_info["tags"]).intersection(
+        set(get_config("condition_related.duration_modifier_tags"))
+    ):
+        new_condition.duration *= get_config("condition_related.duration_modifier")
 
     cat.temporary_conditions.append(new_condition)
 

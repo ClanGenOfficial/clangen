@@ -702,6 +702,8 @@ dev_tools = false
 
   # duration of applied conditions is multiplied by this number
   duration_modifier = 1
+  # conditions with listed tags will have modifier applied
+  duration_modifier_tags = []
 
   # how much each medicine cat reduces the chance of infection, higher number is better
   med_infection_reduction = 0.05
