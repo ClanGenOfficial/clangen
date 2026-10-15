@@ -1720,12 +1720,16 @@ def check_sinkhole():
     # kill random cats
     while len(dead_kitties) < cats_killed_amount:
         kitty = get_random_player_clan_cat(Cat, not_allowed=dead_kitties)
-        if kitty:
-            dead_kitties.append(kitty)
-            print(len(dead_kitties), "out of needed", cats_killed_amount)
-            Cat.all_cats.get(kitty)
-            kitty.die()
-            kitty.history.add_death(i18n.t("cruel_season.special_text.sinkhole_history"))
+        if kitty and kitty not in dead_kitties:
+            dead_kitties.append(kitty.ID)
+            
+
+    print(dead_kitties)
+
+    for c in dead_kitties:
+        if not c.dead:
+            c.die()
+            c.history.add_death(i18n.t("cruel_season.special_text.sinkhole_history"))
 
     # special event text
     game.cur_events_list.insert(
