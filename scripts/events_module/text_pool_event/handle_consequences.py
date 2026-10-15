@@ -9,6 +9,11 @@ from scripts.cat.cats import Cat
 from scripts.cat.constants import PERMANENT, ILLNESSES, INJURIES
 from scripts.cat.enums import CatRank, CatThought, CatStanding, CatGroup
 from scripts.cat.microservices.add_to_clan import add_to_clan, add_dependents_to_clan
+from scripts.cat.microservices.conditions import (
+    get_ill,
+    get_injured,
+    get_permanent_condition,
+)
 from scripts.cat.pelts import Pelt
 from scripts.cat.skills import SkillPath
 from scripts.clan import OtherClan
@@ -19,17 +24,12 @@ from scripts.clan_resources.freshkill import (
     HUNTER_BONUS,
     HUNTER_EXP_BONUS,
 )
-from scripts.cat.microservices.conditions import (
-    get_ill,
-    get_injured,
-    get_permanent_condition,
-)
 from scripts.clan_resources.point_of_interest import get_poi_from_constraints
 from scripts.config import get_config
 from scripts.events_module.consequences import unpack_rel_block, check_stolen_vitality
 from scripts.events_module.future.prep_and_trigger import prep_future_event
-from scripts.events_module.patrol.create_new_cat import updated_create_new_cat
 from scripts.events_module.parameter_dicts import SupplyDict
+from scripts.events_module.patrol.create_new_cat import updated_create_new_cat
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.relationship import relation_events
 from scripts.events_module.text_adjust import (
@@ -38,7 +38,6 @@ from scripts.events_module.text_adjust import (
     accessory_text_adjust,
 )
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
-from scripts.events_module.thoughts.generate_thoughts import get_new_thought
 from scripts.game_structure import game, constants
 
 disable_random: bool = False
@@ -284,7 +283,7 @@ def _handle_meeting(
 
     for c in met:
         c.status.change_standing(CatStanding.KNOWN, CatGroup.PLAYER_CLAN_ID)
-        get_new_thought(c, CatThought.ON_MEETING)
+        c.next_thought_type = CatThought.ON_MEETING
 
     return i18n.t(
         "screens.patrol.met_outsider",
