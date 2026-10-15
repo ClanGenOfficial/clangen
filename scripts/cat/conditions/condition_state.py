@@ -54,7 +54,9 @@ def update_temporary_condition_state(condition: TemporaryCondition):
 
     if get_clan_setting("rest_and_recover"):
         recovery_buff = get_config("focus.rest_and_recover.moons_earlier_healed")
-        if condition.name == "pregnant":
+        if condition.name in get_config(
+            "focus.rest_and_recover.exempt_from_moons_earlier_healed"
+        ):
             condition.duration -= 1
         else:
             condition.duration -= 1 + recovery_buff
