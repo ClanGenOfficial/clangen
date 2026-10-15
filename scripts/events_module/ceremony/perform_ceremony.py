@@ -12,7 +12,6 @@ from scripts.conditions import (
     medicine_cats_can_cover_clan,
     get_amount_cat_for_one_medic,
 )
-from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.config import get_config
 from scripts.events_module.ceremony.generate_normal_ceremony import create_ceremony
 from scripts.events_module.event_information import EventInformation

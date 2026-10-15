@@ -8,10 +8,6 @@ TODO: Docs
 import logging
 import random
 
-from scripts.cat.microservices.add_to_clan import add_dependents_to_clan, add_to_clan
-from scripts.cat_relations.cat_handle_funcs import create_relationships_new_cat
-from scripts.config import get_config
-
 # pylint: enable=line-too-long
 import traceback
 
@@ -25,60 +21,59 @@ from scripts.cat.enums import (
     CatStanding,
     CatSocial,
 )
+from scripts.cat.microservices.add_to_clan import add_dependents_to_clan, add_to_clan
+from scripts.cat.microservices.conditions import get_ill, get_injured
 from scripts.cat.names import Name
 from scripts.cat.save_load import save_cats, add_cat_to_fade_id
-from scripts.clan_package.settings import get_clan_setting, set_clan_setting
-from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
-from scripts.conditions import (
-    medicine_cats_can_cover_clan,
-    get_amount_cat_for_one_medic,
-)
-from scripts.cat.microservices.conditions import get_ill, get_injured
-from scripts.events_module.event_information import EventInformation
-from scripts.events_module.ceremony.perform_ceremony import (
-    check_for_ceremony,
-    trigger_ceremony,
-    check_and_promote_deputy,
-    _adult_becomes_mediator,
-)
-
-from scripts.events_module.generate_events import GenerateEvents, generate_events
-from scripts.events_module.focus import handle_focus
-from scripts.events_module.outsider import outsider_events
-from scripts.events_module.patrol.patrol import Patrol
-from scripts.events_module.relationship import relation_events
-from scripts.events_module.pregnancy import pregnancy_events
-from scripts.events_module.short.condition_events import Condition_Events
-from scripts.events_module.short.short_event_generation import create_short_event
-from scripts.events_module.thoughts.generate_thoughts import get_new_thought
-from scripts.events_module.transition.generate_transition_event import (
-    attempt_coming_out,
-)
-from scripts.game_structure import constants
-from scripts.game_structure.game.switches import (
-    Switch,
-    switch_get_value,
-    switch_set_value,
-)
-from scripts.game_structure import game
-from scripts.game_structure.localization import load_lang_resource
-from scripts.ui.windows.save_error import SaveErrorWindow
-from scripts.events_module.text_adjust import (
-    ongoing_event_text_adjust,
-    event_text_adjust,
-    adjust_list_text,
-    history_text_adjust,
-)
-from scripts.events_module.consequences import unpack_rel_block
+from scripts.cat_relations.cat_handle_funcs import create_relationships_new_cat
 from scripts.clan_package.cotc import (
-    change_clan_reputation,
-    change_clan_relations,
     get_other_clan,
 )
 from scripts.clan_package.get_clan_cats import (
     find_alive_cats_with_rank,
     get_living_clan_cat_count,
 )
+from scripts.clan_package.settings import get_clan_setting, set_clan_setting
+from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
+from scripts.conditions import (
+    medicine_cats_can_cover_clan,
+    get_amount_cat_for_one_medic,
+)
+from scripts.config import get_config
+from scripts.events_module.ceremony.perform_ceremony import (
+    check_for_ceremony,
+    trigger_ceremony,
+    check_and_promote_deputy,
+)
+from scripts.events_module.consequences import unpack_rel_block
+from scripts.events_module.event_information import EventInformation
+from scripts.events_module.focus import handle_focus
+from scripts.events_module.generate_events import GenerateEvents, generate_events
+from scripts.events_module.outsider import outsider_events
+from scripts.events_module.patrol.patrol import Patrol
+from scripts.events_module.pregnancy import pregnancy_events
+from scripts.events_module.relationship import relation_events
+from scripts.events_module.short.condition_events import Condition_Events
+from scripts.events_module.short.short_event_generation import create_short_event
+from scripts.events_module.text_adjust import (
+    ongoing_event_text_adjust,
+    event_text_adjust,
+    adjust_list_text,
+    history_text_adjust,
+)
+from scripts.events_module.thoughts.generate_thoughts import get_new_thought
+from scripts.events_module.transition.generate_transition_event import (
+    attempt_coming_out,
+)
+from scripts.game_structure import constants
+from scripts.game_structure import game
+from scripts.game_structure.game.switches import (
+    Switch,
+    switch_get_value,
+    switch_set_value,
+)
+from scripts.game_structure.localization import load_lang_resource
+from scripts.ui.windows.save_error import SaveErrorWindow
 
 logger = logging.getLogger(__name__)
 
