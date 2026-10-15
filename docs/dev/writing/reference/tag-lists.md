@@ -91,88 +91,88 @@ You can override the default minimums by including `(min:#)` after the status or
 
 ## Conditions and Scars
 
-=== "Taggable Injury Pools"
+=== "Taggable Condition Pools"
 
-    > | **INJURY POOL NAME** | **INJURIES**                                                            |
-    |----------------------|-------------------------------------------------------------------------|
-    | `battle_injury`      | `claw_wound`, `cat_bite`, `mangled_leg`, `mangled_tail`, `torn_pelt`, `torn_ear    |
-    | `minor_injury`       | `sprain`, `sore`, `bruises`, `scrapes` , `small_cut                                 |
-    | `blunt_force_injury` | `broken_bone`, `broken_back`, `broken_jaw` `head_damage`, `severe_headache`               |
-    | `hot_injury`         | `heat_exhaustion`, `heat_stroke`, `dehydrated`                          |
-    | `cold_injury`        | `dangerously_cold`, `"frostbite" `                                               |
-    | `big_bite_injury`    | `bite_wound`, `broken_bone`, `mangled_leg`, `mangled_tail` |
-    | `small_bite_injury`  | `bite_wound`, `torn_ear`, `torn_pelt`                        |
+    > | **CONDITION POOL NAME** | **CONDITIONS**                                                                                                                                                        | **USAGE**                                                                                                                                                                                                                   |
+    |-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+    | `battle_injury`         | `claw_wound`, `cat_bite`, `mangled_leg`, `mangled_tail`, `torn_pelt`, `torn_ear`                                                                                       | Used for injuries given in battle by other cats                                                                                                                                                                             |
+    | `minor_injury`          | `sprain`, `sore`, `bruises`, `scrapes` , `small_cut`                                                                                                                  | Used for small scrapes and bumps                                                                                                                                                                                            |
+    | `blunt_force_injury`    | `broken_bone`, `broken_back`, `broken_jaw` `head_damage`, `severe_headache`                                                                                           | Something heavy hit the cat!                                                                                                                                                                                                |
+    | `hot_injury`            | `heat_exhaustion`, `heat_stroke`, `dehydrated`                                                                                                                        | The cat got too hot                                                                                                                                                                                                         |
+    | `cold_injury`           | `dangerously_cold`, `frostbite`                                                                                                                                    | The cat got too cold                                                                                                                                                                                                        |
+    | `big_bite_injury`       | `bite_wound`, `broken_bone`, `mangled_leg`, `mangled_tail`                                                                                                            | The cat encountered something large that bit them (like a wolf or bear)                                                                                                                                                     |
+    | `small_bite_injury`     | `bite_wound`, `torn_ear`, `torn_pelt`                                                                                                                                 | The cat encountered something small that bit them (NOT a cat, but a ferret or terrier.) Don't use this for an animal we have a specific wound for, such as rats (`rat_bite`), snakes (`snake_bite`), or birds (`beak_bite`) |
+    | `illness`               | `diarrhea`, `whitecough`, `green_cough`, `tick_fever`, `running_nose`, `stomachache`, `sore_throat`, `yellowcough`, `kittencough`, `redcough`, `carrionplace_disease` | The cat got sick with some sort of illness                                                                                                                                                                                  |                      |
 
-    > If you’d like a patrol to have an injury from one of the injury pools above, use the pool name (i.e. "battle_injury" for injuries from other cats) instead of the injury.  Think we need another pool? Let the senior developers know in the discord developer areas and let's talk.  We can have many pools, there's no limit!
+    > If you’d like a patrol to have an condition from one of the condition pools above, use the pool name (i.e. "battle_injury" for injuries from other cats) instead of the condition.  Think we need another pool? Let the senior developers know in the discord developer areas and let's talk.  We can have many pools, there's no limit!
 
 
-===  "Injuries"
+===  "Conditions"
 
-     > | Injuries                 | Allowed within events? | Capable of scarring? |
-    |--------------------------|:------------------------:|:----------------------:|
-    | `blood_loss`             | :x:                    | :x:                  |
-    | `tick_bites`             | :fontawesome-solid-check:     | :x:                  |
-    | `claw_wound`             | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `bite_wound`             | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `cat_bite`               | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `beak_bite`              | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `snake_bite`             | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `porcupine_quilled` | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `rat_bite`               | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `mangled_leg`            | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `mangled_tail`           | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `broken_jaw`             | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `broken_bone`            | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `sore`                   | :fontawesome-solid-check:     | :x:                  |
-    | `phantom_pain`           | :x:                    | :x:                  |
-    | `bruises`                | :fontawesome-solid-check:     | :x:                  |
-    | `scrapes`                | :fontawesome-solid-check:     | :x:                  |
-    | `cracked_pads`           | :fontawesome-solid-check:     | :x:                  |
-    | `small_cut`              | :fontawesome-solid-check:     | :x:                  |
-    | `sprain`                 | :fontawesome-solid-check:     | :x:                  |
-    | `bee_sting`              | :fontawesome-solid-check:     | :x:                  |
-    | `joint_pain`             | :fontawesome-solid-check:     | :x:                  |
-    | `dislocated_joint`       | :fontawesome-solid-check:     | :x:                  |
-    | `torn_pelt`              | :fontawesome-solid-check:     | :x:                  |
-    | `torn_ear`               | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `water_in_lungs`   | :fontawesome-solid-check:     | :x:                  |
-    | `dangerously_cold`              | :fontawesome-solid-check:     | :x:                  |
-    | `frostbite`              | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `burn`                   | :fontawesome-solid-check:     | :x:                  |
-    | `severe_burn`            | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `shock`                  | :fontawesome-solid-check:     | :x:                  |
-    | `lingering_shock`        | :fontawesome-solid-check:     | :x:                  |
-    | `dehydrated`             | :fontawesome-solid-check:     | :x:                  |
-    | `head_damage`            | :fontawesome-solid-check:     | :x:                  |
-    | `damaged_eyes`           | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `broken_back`            | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `poisoned`               | :fontawesome-solid-check:     | :x:                  |
-    | `headache`               | :fontawesome-solid-check:     | :x:                  |
-    | `severe_headache`        | :fontawesome-solid-check:     | :x:                  |
-    | `pregnant`               | :x:                    | :x:                  |
-    | `recovering_from_birth`  | :x:                    | :x:                  |
-
-===  "Illnesses"
-
-    > | Illness                | Allowed within events? |
-    |------------------------|:------------------------:|
+     > | Conditions                 | Allowed within events? |
+    |--------------------------|:------------------------:|
+    | `blood_loss`             | :x:                    |
+    | `tick_bites`             | :fontawesome-solid-check:     |
+    | `claw_wound`             | :fontawesome-solid-check:     |
+    | `bite_wound`             | :fontawesome-solid-check:     |
+    | `cat_bite`               | :fontawesome-solid-check:     |
+    | `beak_bite`              | :fontawesome-solid-check:     |
+    | `snake_bite`             | :fontawesome-solid-check:     |
+    | `porcupine_quilled`      | :fontawesome-solid-check:     |
+    | `rat_bite`               | :fontawesome-solid-check:     |
+    | `mangled_leg`            | :fontawesome-solid-check:     |
+    | `mangled_tail`           | :fontawesome-solid-check:     |
+    | `broken_jaw`             | :fontawesome-solid-check:     |
+    | `broken_bone`            | :fontawesome-solid-check:     |
+    | `sore`                   | :fontawesome-solid-check:     |
+    | `phantom_pain`           | :x:                    |
+    | `bruises`                | :fontawesome-solid-check:     |
+    | `scrapes`                | :fontawesome-solid-check:     |
+    | `cracked_pads`           | :fontawesome-solid-check:     |
+    | `small_cut`              | :fontawesome-solid-check:     |
+    | `sprain`                 | :fontawesome-solid-check:     |
+    | `bee_sting`              | :fontawesome-solid-check:     |
+    | `joint_pain`             | :fontawesome-solid-check:     |
+    | `dislocated_joint`       | :fontawesome-solid-check:     |
+    | `torn_pelt`              | :fontawesome-solid-check:     |
+    | `torn_ear`               | :fontawesome-solid-check:     |
+    | `venom_sickness`               | :fontawesome-solid-check:     |
+    | `water_in_lungs`   | :fontawesome-solid-check:     |
+    | `dangerously_cold`              | :fontawesome-solid-check:     |
+    | `frostbite`              | :fontawesome-solid-check:     |
+    | `burn`                   | :fontawesome-solid-check:     |
+    | `severe_burn`            | :fontawesome-solid-check:     |
+    | `shock`                  | :fontawesome-solid-check:     |
+    | `lingering_shock`        | :fontawesome-solid-check:     |
+    | `dehydrated`             | :fontawesome-solid-check:     |
+    | `head_damage`            | :fontawesome-solid-check:     |
+    | `damaged_eyes`           | :fontawesome-solid-check:     |
+    | `broken_back`            | :fontawesome-solid-check:     |
+    | `poisoned`               | :fontawesome-solid-check:     |
+    | `headache`               | :fontawesome-solid-check:     |
+    | `severe_headache`        | :fontawesome-solid-check:     |
+    | `pregnant`               | :x:                    |
+    | `recovering_from_birth`  | :x:                    |
     | `fleas`                | :fontawesome-solid-check:     |
+    | `tick_fever`                | :fontawesome-solid-check:     |
     | `seizure`              | :fontawesome-solid-check:     |
     | `diarrhea`             | :fontawesome-solid-check:     |
+    | `diarrhea_dehydratian`             | :x:     |
     | `running_nose`         | :fontawesome-solid-check:     |
     | `kittencough`          | :fontawesome-solid-check:     |
     | `whitecough`           | :fontawesome-solid-check:     |
     | `greencough`           | :fontawesome-solid-check:     |
     | `yellowcough`          | :fontawesome-solid-check:     |
     | `redcough`             | :fontawesome-solid-check:     |
-    | `infection`    | :x:                    |
-    | `festering_wound`    | :x:                    |
+    | `infection`            | :x:                    |
+    | `festering_wound`      | :x:                    |
     | `carrionplace_disease` | :fontawesome-solid-check:     |
     | `heat_stroke`          | :fontawesome-solid-check:     |
     | `heat_exhaustion`      | :fontawesome-solid-check:     |
     | `stomachache`          | :fontawesome-solid-check:     |
+    | `sore_throat`          | :fontawesome-solid-check:     |
     | `constant_nightmares`  | :fontawesome-solid-check:     |
-    | `grief_stricken`       | :x:                    |
+    | `grief_stricken`       | :fontawesome-solid-check:                    |
     | `malnourished`         | :x:                    |
     | `starving`             | :x:                    |
 
@@ -180,8 +180,10 @@ You can override the default minimums by including `(min:#)` after the status or
 
     > !!! important
         Generally we want to avoid giving a permanent condition to a cat. Instead, you should give them a condition that can lead to permanence (e.g. give 'broken back' instead of 'paralyzed')
-    > | crooked jaw          |
+
+    > | CONDITIONS         |
     |----------------------|
+    | crooked_jaw           |
     | lost_leg           |
     | born_without_leg   |
     | weak_leg             |
@@ -203,6 +205,9 @@ You can override the default minimums by including `(min:#)` after the status or
     | recurring_shock      |
     | lasting_grief        |
     | persistent_headaches |
+    | selective_mutism |
+    | damaged_throat |
+    | absent |
     
 
 === "Scars"

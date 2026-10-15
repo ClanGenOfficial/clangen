@@ -53,6 +53,8 @@ Internal code-name for the condition. This will not be seen in-game.
 #### tags: list[str]
 Tag this condition to link it with other conditions for the purpose of creating pools for events to apply, or otherwise utilizing common-groups of conditions within the code. For example, illnesses are all tagged `illness` so that we can treat them differently from other temporary conditions within the code (such as extending specifically illness duration as the result of a Cruel Card.) This is also how we create the "condition pools" for use in the event format.
 
+You can check the [Condition List](../writing/reference/tag-lists.md#__tabbed_1_1) to see what tags are currently being used as event pools. If adding a new condition, consider if it fits in one of these pools and add tags accordingly.
+
 ***
 
 #### severity: str
@@ -229,6 +231,11 @@ Same as [temporary condition name](#name-str)
 
 ***
 
+#### tags: list[str]
+Same as [temporary condition tags](#tags-liststr) 
+
+***
+
 #### severity: str
 Can be `minor`, `major`, or `severe`. `major` and `severe` conditions can cause the cat to retire to the `elder` rank early. This chance is higher for `severe` conditions.
 
@@ -293,7 +300,7 @@ A list of possible scars given when the cat gains this condition.
 
 - [ ] Add condition info dictionary to `resources/dicts/conditions/permanent_conditions` or `resources/dicts/conditions/temporary_conditions`
 - [ ] Add display name to `lang/en/conditions/temporary_conditions.en.json` or `lang/en/conditions/permanent_conditions.en.json`
-  - [ ] If adding a temporary condition, make sure you also add the matching `_alert` string! This is what will display on the cat's main profile info (or, for complications, what will be added to the base condition's display.) 
+    - [ ] If adding a temporary condition, make sure you also add the matching `_alert` string! This is what will display on the cat's main profile info (or, for complications, what will be added to the base condition's display.) 
 - [ ] If the condition can kill, add death strings to `lang/en/conditions/death_strings`
 - [ ] If the condition is an illness or pest where its generation is linked to the seasons:
     - [ ] Add it to `condition_related.seasonal_chance` in `game_config.toml`
@@ -303,3 +310,5 @@ A list of possible scars given when the cat gains this condition.
 - [ ] If the condition has risks, add risk strings to `lang/en/conditions/risk_strings`
 - [ ] If the condition can progress, add progression strings to `lang/en/conditions/progression_strings`
 - [ ] If the condition is infectious, add outbreak strings to `lang/en/conditions/outbreak_strings`
+- [ ] Add the condition to relevant documentation:
+    - [ ] [Condition List](../writing/reference/tag-lists.md#__tabbed_1_1) (`docs/dev/writing/reference/tag-lists.md`)
