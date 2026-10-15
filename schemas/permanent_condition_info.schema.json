@@ -356,8 +356,11 @@
         },
         "moons_until_discovery": {
           "description": "ONLY FOR CONGENITAL CONDITIONS. The number of moons a cat can have this condition before it is revealed/discovered.",
+          "items": {
+            "type": "integer"
+          },
           "title": "Moons Until Discovery",
-          "type": "integer"
+          "type": "array"
         }
       },
       "required": [

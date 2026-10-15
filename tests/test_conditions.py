@@ -1,10 +1,13 @@
 import unittest
+from unittest.mock import Mock
 
+from scripts.cat.conditions import gain_conditions
 from scripts.cat.conditions.condition_state import ConditionState
 from scripts.cat.conditions.coverage_check import medicine_cats_can_cover_clan
 from scripts.cat.conditions.gain_conditions import (
     gain_temporary_condition,
     gain_permanent_condition,
+    find_moons_until,
 )
 from scripts.cat.constants import TEMPORARY_CONDITIONS, PERMANENT_CONDITIONS
 from scripts.cat.enums import CatRank
@@ -238,6 +241,40 @@ class TestPermanentCondition(unittest.TestCase):
                         cat1.get_condition(c).is_congenital,
                         msg=f"{c} (acquired) was marked as congenital.",
                     )
+
+    def test_congenital_countdown_adjustment(self):
+        """
+        Tests if the moons_until_discovery countdown is being correctly modified by the cat's age
+        """
+        gain_conditions.randint = Mock()
+        gain_conditions.randint.return_value = 10
+        with self.subTest("Test moon age lowers moons_until_discovery."):
+            cat1 = cat_factory.create_cat(moons=5)
+
+            gain_permanent_condition(
+                cat1,
+                "absent",
+                is_congenital=True,
+            )
+            moons_until = cat1.get_condition("absent").moons_until_discovery
+            self.assertTrue(
+                moons_until == 5,
+                msg=f"Absent moons_until_discovery was incorrectly modified to {moons_until} instead of 5",
+            )
+
+        with self.subTest("Test newborn moons_until_discover does not change."):
+            cat1 = cat_factory.create_cat(moons=0)
+            gain_permanent_condition(
+                cat1,
+                "absent",
+                is_congenital=True,
+            )
+
+            moons_until = cat1.get_condition("absent").moons_until_discovery
+            self.assertTrue(
+                moons_until == 10,
+                msg=f"Absent moons_until_discovery was incorrectly modified to {moons_until} instead of 10",
+            )
 
     def test_state_change(self):
         """

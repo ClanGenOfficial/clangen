@@ -1,5 +1,5 @@
 import itertools
-from random import random, choice
+from random import random, choice, randint
 from typing import Optional, Literal
 
 import i18n
@@ -154,7 +154,9 @@ def gain_permanent_condition(
         removed_on_death=condition.get("removed_on_death", True),
         moons_until_discovery=set_moons_until
         if set_moons_until is not None
-        else condition["moons_until_discovery"],
+        else find_moons_until(
+            cat.moons, condition.get("moons_until_discovery", [0, 0])
+        ),
         moon_gained=game.clan.age if game.clan else 0,
         mortality=condition["mortality"].get(cat.age, 0.0),
         immune_system_effect=condition["immune_system_effect"],
@@ -195,3 +197,20 @@ def add_congenital_condition(cat):
     new_condition = choice(possible_conditions)
 
     gain_permanent_condition(cat, new_condition, is_congenital=True)
+
+
+def find_moons_until(cat_moon_age: int, moons_until: list[int]) -> int:
+    reveal_moon = randint(*moons_until)
+
+    if cat_moon_age == 0:
+        # if the cat is a newborn, any number is fine
+        return reveal_moon
+
+    if reveal_moon <= cat_moon_age:
+        # -2 means the condition is already known to this cat and doesn't need to be revealed
+        return -2
+
+    # otherwise we return the age - the reveal moon we decided on!
+    # this mimics the idea that this cat has had the condition since birth
+    # with the reveal countdown ticking the whole time
+    return reveal_moon - cat_moon_age

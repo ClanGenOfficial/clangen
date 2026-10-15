@@ -27,7 +27,7 @@ class PermanentConditionInfoSchemaItem(BaseConditionInfoSchemaItem):
         MISSING,
         description="If this condition should or should not be removed from the cat when they die.",
     )
-    moons_until_discovery: int | MISSING = Field(
+    moons_until_discovery: list[int] | MISSING = Field(
         MISSING,
         description="ONLY FOR CONGENITAL CONDITIONS. The number of moons a cat can have this condition before it is revealed/discovered.",
     )

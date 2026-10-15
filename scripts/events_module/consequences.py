@@ -751,12 +751,6 @@ def create_new_cat(
                         new_cat,
                         chosen_condition,
                         is_congenital=True,
-                        set_moons_until=-2
-                        if PERMANENT_CONDITIONS[chosen_condition][
-                            "moons_until_discovery"
-                        ]
-                        == 0
-                        else None,
                     )
 
         # KILL >:D only if we're sposed to tho
