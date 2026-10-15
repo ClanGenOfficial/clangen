@@ -1720,8 +1720,6 @@ def check_sinkhole():
 
     # calculate the amount to die
     cats_killed_amount = round(cat_amount * percent_killed)
-    print("DEBUG:", cats_killed_amount, "shall be lost to the sinkhole")
-
     # kill random cats
     while len(dead_kitties) < cats_killed_amount:
         kitty = get_random_player_clan_cat(Cat, not_allowed=dead_kitties)
@@ -1733,10 +1731,6 @@ def check_sinkhole():
             dead_kitties.append(kitty.ID)
             if kitty.ID == game.clan.leader:
                 game.clan.leader_lives -= 1
-
-    print(dead_kitties)
-
-    # special event text
     game.cur_events_list.insert(
         0,
         EventInformation(
@@ -1752,4 +1746,3 @@ def check_sinkhole():
             cats_involved=dead_kitties,
         ),
     )
-    # # something about lucky the clan is if none, less than 25% few, more than 25% more, 40+% broken
