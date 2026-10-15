@@ -151,7 +151,7 @@ def handle_temporary_conditions(cat: Cat):
 
         # PROGRESSION - this can happen during various states, so we check it first
         for progression, info in condition.progression.items():
-            if info["when"] == state.name:
+            if ConditionState[info["when"]] == state:
                 chance = info["chance"]
                 progression_events, conditions_to_remove = _check_progression(
                     cat, condition, progression, chance, conditions_to_remove
@@ -216,12 +216,12 @@ def handle_temporary_conditions(cat: Cat):
                     ),
                 )
 
-                additional_events, conditions_to_remove = _check_risks(
-                    cat, condition, conditions_to_remove
-                )
+            additional_events, conditions_to_remove = _check_risks(
+                cat, condition, conditions_to_remove
+            )
 
-                if additional_events:
-                    event_list.extend(additional_events)
+            if additional_events:
+                event_list.extend(additional_events)
 
     # add progression events to the end of the event_list
     # we want them at the end for continuity purposes,

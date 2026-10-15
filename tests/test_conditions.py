@@ -179,6 +179,7 @@ class TestTemporaryCondition(unittest.TestCase):
                     gain_temporary_condition(cat1, c, allow_side_effects=False)
 
                     cat1.get_condition(c).risks = {r: chance}
+                    cat1.get_condition(c).progression = {}
 
                     handle_existing_conditions.random = Mock(return_value=chance - 0.01)
 
@@ -219,7 +220,7 @@ class TestTemporaryCondition(unittest.TestCase):
                     )
 
                     handle_existing_conditions.update_temporary_condition_state = Mock(
-                        return_value=info["when"]
+                        return_value=ConditionState[info["when"]]
                     )
 
                     handle_temporary_conditions(cat1)
