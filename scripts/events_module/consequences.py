@@ -735,13 +735,6 @@ def create_new_cat(
                     "can_be_congenital"
                 ]:
                     continue
-                # next part ensures that a kit won't get a condition that takes too long to reveal
-                moons = new_cat.moons
-                leeway = 5 - (
-                    PERMANENT_CONDITIONS[condition]["moons_until_discovery"] + 1
-                )
-                if moons > leeway:
-                    continue
                 possible_conditions.append(condition)
 
             if possible_conditions:
