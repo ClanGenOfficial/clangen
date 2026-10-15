@@ -3,6 +3,7 @@ from random import random
 
 from scripts.cat.conditions.permanent_condition import PermanentCondition
 from scripts.cat.conditions.temporary_condition import TemporaryCondition
+from scripts.clan_package.settings import get_clan_setting
 from scripts.config import get_config
 from scripts.game_structure import game
 
@@ -53,7 +54,9 @@ def update_temporary_condition_state(condition: TemporaryCondition):
 
     recovery_buff = get_config("focus.rest_and_recover.moons_earlier_healed")
 
-    condition.duration -= 1 + recovery_buff
+    condition.duration -= 1 + (
+        recovery_buff if get_clan_setting("rest_and_recover") else 0
+    )
 
     if condition.duration <= 0:
         if condition.current_complication:
