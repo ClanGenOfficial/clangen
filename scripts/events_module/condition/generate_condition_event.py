@@ -1,4 +1,4 @@
-from scripts.cat.cats import Cat
+from scripts.cat.cats import Cat, check_starcrossed_lovers
 from scripts.events_module.consequences import check_stolen_vitality
 from scripts.events_module.event_information import EventInformation
 from scripts.events_module.text_adjust import get_leader_life_notice
