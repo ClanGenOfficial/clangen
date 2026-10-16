@@ -522,6 +522,19 @@
                     "comfort"
                 ],
                 "amount": 10
+            },
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust"
+                ],
+                "amount": 10
             }
         ]
     }
