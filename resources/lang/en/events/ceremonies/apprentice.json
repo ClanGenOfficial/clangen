@@ -1148,7 +1148,7 @@
               }
             },
     "strings": [
-        "<i>Immediately</i> upon being made an apprentice, m_c turns to {PRONOUN/m_c/poss} Clanmates, explaining <i>exactly</i> how {PRONOUN/m_c/subject} plan for {PRONOUN/m_c/poss} apprenticehood to play out. Without a mentor, m_c has to have <i>some</i> plan for their training!"
+        "<i>Immediately</i> upon being made an apprentice, m_c turns to {PRONOUN/m_c/poss} Clanmates, explaining <i>exactly</i> how {PRONOUN/m_c/subject} {VERB/m_c/plan/plans} for {PRONOUN/m_c/poss} apprenticehood to play out. Without a mentor, m_c has to have <i>some</i> plan for {PRONOUN/m_c/poss} training!"
     ]
     },
     {
@@ -1272,7 +1272,7 @@
               }
             },
     "strings": [
-        "m_c seems to go missing right before {PRONOUN/m_c/poss} apprentice ceremony, and is eventually found still in the nursery, having completely forgotten about the event. m_c's clanmates worry that {PRONOUN/m_c/poss} distraction will cause problems as {PRONOUN/m_c/subject} take on the territory without a mentor."
+        "m_c seems to go missing right before {PRONOUN/m_c/poss} apprentice ceremony, and is eventually found still in the nursery, having completely forgotten about the event. m_c's Clanmates worry that {PRONOUN/m_c/poss} distraction will cause problems as {PRONOUN/m_c/subject} {VERB/m_c/take/takes} on the territory without a mentor."
     ]
     },
     {
