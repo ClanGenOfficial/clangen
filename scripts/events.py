@@ -1717,6 +1717,8 @@ def check_sinkhole():
     cat_amount = get_living_clan_cat_count(Cat)
 
     dead_kitties = []
+    dead_ID = []
+    dead_names = []
 
     # calculate the amount to die
     cats_killed_amount = round(cat_amount * percent_killed)
@@ -1728,9 +1730,12 @@ def check_sinkhole():
             kitty.history.add_death(
                 i18n.t("cruel_season.special_text.sinkhole_history")
             )
-            dead_kitties.append(kitty.ID)
+            dead_ID.append(kitty.ID)
             if kitty.ID == game.clan.leader:
                 game.clan.leader_lives -= 1
+
+    dead_names = adjust_list_text([str(c.name) for c in dead_kitties])
+
     game.cur_events_list.insert(
         0,
         EventInformation(
@@ -1738,11 +1743,11 @@ def check_sinkhole():
                 Cat,
                 i18n.t(
                     "cruel_season.special_text.sinkhole_base",
-                    dead_name=str(dead_kitties),
+                    dead_name=str(dead_names),
                     clan_name=str(game.clan.name),
                     count=len(dead_kitties),
                 ),
             ),
-            cats_involved=dead_kitties,
+            cats_involved=dead_ID,
         ),
     )
