@@ -463,7 +463,7 @@
                             "some_patrol"
                         ],
                         "condition": [
-                            "heat stroke"
+                            "heat_stroke"
                         ]
                     }
                 ]
@@ -1072,7 +1072,7 @@
                         ],
                         "condition": [
                             "minor_injury",
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "Killing a juvenile coyote and being driven off by its parents left its scars on r_c0.",
                         "death_history": "m_c died to keep coyotes away from c_n's borders."
@@ -1501,7 +1501,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "Mauling a juvenile coyote and being driven off by its parents left its scars on r_c0.",
                         "death_history": "m_c died from injuries sustained keeping coyotes away from c_n's borders."
@@ -1656,7 +1656,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "bite-wound"
+                            "bite_wound"
                         ],
                         "scar_history": "Killing a juvenile coyote and being driven off by its parents left its scars on r_c0.",
                         "death_history": "m_c died from injuries sustained keeping coyotes away from c_n's borders."
@@ -1666,7 +1666,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "blood loss"
+                            "blood_loss"
                         ],
                         "scar_history": "Killing a juvenile coyote and being driven off by its parents left its scars on r_c0.",
                         "death_history": "m_c died from injuries sustained keeping coyotes away from c_n's borders."
@@ -1943,7 +1943,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "A coyote encounter left its scars on r_c0.",
                         "death_history": "m_c died from injuries sustained keeping coyotes away from c_n's borders."
@@ -2066,7 +2066,7 @@
                         ],
                         "condition": [
                             "minor_injury",
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "Killing a juvenile coyote and being driven off by its parents left its scars on r_c0.",
                         "death_history": "m_c died from injuries sustained keeping coyotes away from c_n's borders."
@@ -2836,7 +2836,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "claw-wound",
+                            "claw_wound",
                             "beak_bite"
                         ],
                         "scar_history": "m_c proudly bears scars from defending a friend from an eagle.",
@@ -2931,7 +2931,7 @@
                             "r_c2"
                         ],
                         "condition": [
-                            "claw-wound",
+                            "claw_wound",
                             "beak_bite"
                         ],
                         "scar_history": "m_c bears scars from an eagle that nearly killed {PRONOUN/m_c/object} as an apprentice.",
@@ -3087,7 +3087,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c was scarred up by a fight {PRONOUN/m_c/subject} had as an apprentice with another apprentice of c_n.",
                         "death_history": "The wounds obtained fighting another apprentice eventually killed m_c."
@@ -3097,7 +3097,7 @@
                             "r_c2"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c was scarred up by a fight {PRONOUN/m_c/subject} had as an apprentice with another apprentice of c_n.",
                         "death_history": "The wounds obtained fighting another apprentice eventually killed m_c."

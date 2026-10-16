@@ -230,7 +230,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "claw-wound"
+                            "claw_wound"
                         ],
                         "scar_history": "m_c was scarred by a badger.",
                         "death_history": "m_c died from wounds inflicted by a badger."
@@ -1783,7 +1783,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "constant nightmares"
+                            "constant_nightmares"
                         ]
                     }
                 ]
@@ -2742,7 +2742,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "cat bite"
+                            "cat_bite"
                         ],
                         "scar_pool_override": [
                             "BACK",
@@ -3010,7 +3010,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "constant nightmares"
+                            "constant_nightmares"
                         ]
                     }
                 ]
@@ -3399,7 +3399,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "running nose"
+                            "running_nose"
                         ]
                     }
                 ]

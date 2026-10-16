@@ -84,7 +84,8 @@ When considering patrols, keep in mind challenge vs reward. That isn't to say ce
                     "must_be_congenital": false,
                     "must_be_acquired": false
                 },
-                "backstory": []
+                "backstory": [],
+                "accessory": []
             },
     },
     "relationship_constraint": [

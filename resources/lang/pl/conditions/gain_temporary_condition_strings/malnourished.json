@@ -1,0 +1,12 @@
+[
+    {
+        "event_id": "malnourished0",
+        "strings": [
+            "m_c has become malnourished.",
+            "Lack of fresh-kill has left m_c malnourished."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

@@ -196,7 +196,7 @@
         "strings": [
             "m_c is jealous that r_c got to go to the last Gathering.",
             "r_c was complimented by another Clan during the recent Gathering, but m_c wasn't.",
-            "m_c is jealous that r_c's achievements were recognized at the Gathering but {PRONOUN/m_c/inposs} wasn't.",
+            "m_c is jealous that r_c's achievements were recognized at the Gathering but {PRONOUN/m_c/inposs} weren't.",
             "m_c's jealous at how well r_c gets along with the cats from other Clans.",
             "m_c wonders how r_c carries {PRONOUN/r_c/self} so well during Gatherings."
         ],

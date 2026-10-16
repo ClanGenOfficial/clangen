@@ -1,0 +1,13 @@
+[
+    {
+        "event_id": "bite_wound0",
+        "strings": [
+            "m_c has healed from {PRONOUN/m_c/poss} bite-wound.",
+            "m_c's bite-wound has healed.",
+            "m_c has healed well from {PRONOUN/m_c/poss} bite-wound."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

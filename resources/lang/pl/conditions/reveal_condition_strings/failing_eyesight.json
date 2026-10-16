@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "failing_eyesight0",
+        "strings": [
+            "m_c complains how dark it's been recently. r_c0 checks {PRONOUN/m_c/poss} eyesight over, only to find it near gone."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "failing_eyesight1",
+        "strings": [
+            "m_c doesn't understand how everyone else seems to see so far and is sad to learn {PRONOUN/m_c/poss} eyesight is failing."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

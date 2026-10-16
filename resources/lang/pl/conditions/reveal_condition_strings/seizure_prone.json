@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "seizure_prone0",
+        "strings": [
+            "r_c0 wakes m_c slowly. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} had a seizure and {VERB/m_c/are/is} in the medicine cat den just while {PRONOUN/m_c/subject} {VERB/m_c/recover/recovers}, r_c0 explains. It might happen again in the future... and m_c needs to be prepared."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "seizure_prone1",
+        "strings": [
+            "In the middle of camp, right as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} about to pounce, m_c falls to the ground and begins shaking, a seizure rolling through {PRONOUN/m_c/poss} little body."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
