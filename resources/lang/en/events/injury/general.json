@@ -9872,7 +9872,7 @@
         "location": ["any"],
         "season": ["newleaf"],
         "sub_type": [],
-        "tags": ["nests"],
+        "tags": [],
         "poi": {
         "tags": ["nests"]
         },
@@ -9901,7 +9901,7 @@
         "location": ["any"],
         "season": ["leaf-fall","greenleaf","newleaf"],
         "sub_type": [],
-        "tags": ["high_ground"],
+        "tags": [],
         "poi": {
         "tags": ["high_ground"]
         },
@@ -9929,7 +9929,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["Twolegs:abandoned"],
+        "tags": [],
         "poi": {
         "tags": ["Twolegs:abandoned"]
         },
@@ -9944,12 +9944,6 @@
                 "injuries": ["small_cut"],
                 "scars": []
             }
-        ],
-        "history": [
-            {
-                "cats": ["m_c"],
-                "scar": "m_c's small_cut scarred."
-            }
         ]
     },
     {
@@ -9957,7 +9951,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["prey:bird"],
+        "tags": [],
         "poi": {
         "tags": ["prey:bird"]
         },
@@ -9986,7 +9980,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["prey:bird"],
+        "tags": [],
         "poi": {
         "tags": ["prey:bird"]
         },
@@ -10015,7 +10009,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["prey"],
+        "tags": [],
         "poi": {
         "tags": ["prey"]
         },
@@ -10072,7 +10066,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["rocks"],
+        "tags": [],
         "poi": {
         "tags": ["rocks"]
         },
@@ -10093,7 +10087,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["rocks"],
+        "tags": [],
         "poi": {
         "tags": ["rocks"]
         },
@@ -10114,7 +10108,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["prey:flying"],
+        "tags": [],
         "poi": {
         "tags": ["prey:flying"]
         },
@@ -10135,7 +10129,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["prey:flying"],
+        "tags": [],
         "poi": {
         "tags": ["prey:flying"]
         },
@@ -10156,7 +10150,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["prey:flying"],
+        "tags": [],
         "poi": {
         "tags": ["prey:flying"]
         },
@@ -10185,7 +10179,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["Twolegs:present"],
+        "tags": [],
         "poi": {
         "tags": ["Twolegs:present"]
         },
@@ -10204,7 +10198,8 @@
         "history": [
             {
                 "cats": ["m_c"],
-                "scar": "m_c's ear was torn in a spat with a kittypet."
+                "scar": "m_c's ear was torn in a spat with a kittypet.",
+                "death": "m_c died of {PRONOUN/m_c/poss} injuries after fighting a kittypet."
             }
         ],  
         "new_cat": [
@@ -10232,7 +10227,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["Twolegs:present"],
+        "tags": [],
         "poi": {
         "tags": ["Twolegs:present"]
         },
@@ -10279,7 +10274,7 @@
         "location": ["any"],
         "season": ["newleaf","leaf-fall","greenleaf"],
         "sub_type": [],
-        "tags": ["water:still"],
+        "tags": [],
         "poi": {
         "tags": ["water:still"]
         },
@@ -10307,7 +10302,7 @@
         "location": ["any"],
         "season": ["newleaf","leaf-fall","greenleaf"],
         "sub_type": [],
-        "tags": ["water:still"],
+        "tags": [],
         "poi": {
         "tags": ["water:still"]
         },
@@ -10359,7 +10354,7 @@
         "location": ["any"],
         "season": ["newleaf","leaf-fall","greenleaf"],
         "sub_type": [],
-        "tags": ["water:flowing"],
+        "tags": [],
         "poi": {
         "tags": ["water:flowing"]
         },
@@ -10387,7 +10382,7 @@
         "location": ["any"],
         "season": ["leaf-fall"],
         "sub_type": [],
-        "tags": ["water:flowing"],
+        "tags": [],
         "poi": {
         "tags": ["water:flowing"]
         },
@@ -10415,7 +10410,7 @@
         "location": ["any"],
         "season": ["newleaf"],
         "sub_type": [],
-        "tags": ["water:flowing"],
+        "tags": [],
         "poi": {
         "tags": ["water:flowing"]
         },
@@ -10443,7 +10438,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["maze"],
+        "tags": [],
         "poi": {
         "tags": ["maze"]
         },
@@ -10464,7 +10459,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["maze"],
+        "tags": [],
         "poi": {
         "tags": ["maze"]
         },
@@ -10492,7 +10487,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["maze"],
+        "tags": [],
         "poi": {
         "tags": ["maze"]
         },
@@ -10520,7 +10515,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["danger:fall_risk"],
+        "tags": [],
         "poi": {
             "tags": ["danger:fall_risk"]
         },
@@ -10548,7 +10543,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["danger:fall_risk"],
+        "tags": [],
         "poi": {
             "tags": ["danger:fall_risk"]
         },
@@ -10579,7 +10574,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["danger:fall_risk"],
+        "tags": [],
         "poi": {
             "tags": ["danger:fall_risk"]
         },
@@ -10610,7 +10605,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["danger:fall_risk"],
+        "tags": [],
         "poi": {
             "tags": ["danger:fall_risk"]
         },
@@ -10631,7 +10626,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["danger:fall_risk"],
+        "tags": [],
         "poi": {
             "tags": ["danger:fall_risk"]
         },
@@ -10652,7 +10647,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["danger:fall_risk"],
+        "tags": [],
         "poi": {
             "tags": ["danger:fall_risk"]
         },
@@ -10676,7 +10671,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["danger:fall_risk"],
+        "tags": [],
         "poi": {
             "tags": ["danger:fall_risk"]
         },
@@ -10700,7 +10695,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["danger:fall_risk"],
+        "tags": [],
         "poi": {
             "tags": ["danger:fall_risk"]
         },
@@ -10724,7 +10719,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["danger:fall_risk"],
+        "tags": [],
         "poi": {
             "tags": ["danger:fall_risk"]
         },
@@ -10748,7 +10743,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["trees"],
+        "tags": [],
         "poi": {
             "tags": ["trees"]
         },
@@ -10779,7 +10774,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["danger:tainted"],
+        "tags": [],
         "poi": {
         "tags": ["danger:tainted"]
         },
@@ -10807,7 +10802,7 @@
         "location": ["any"],
         "season": ["newleaf","greenleaf","leaf-fall"],
         "sub_type": [],
-        "tags": ["trees"],
+        "tags": [],
         "poi": {
             "tags": ["trees"]
         },
@@ -10828,7 +10823,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["trees"],
+        "tags": [],
         "poi": {
             "tags": ["trees"]
         },
@@ -10855,7 +10850,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["trees"],
+        "tags": [],
         "poi": {
             "tags": ["trees"]
         },
@@ -10882,7 +10877,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["trees"],
+        "tags": [],
         "poi": {
             "tags": ["trees"]
         },
@@ -10909,7 +10904,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["trees"],
+        "tags": [],
         "poi": {
             "tags": ["trees"]
         },
@@ -10930,7 +10925,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["trees"],
+        "tags": [],
         "poi": {
             "tags": ["trees"]
         },
@@ -10951,7 +10946,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["trees"],
+        "tags": [],
         "poi": {
             "tags": ["trees"]
         },
@@ -10979,7 +10974,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["trees"],
+        "tags": [],
         "poi": {
             "tags": ["trees"]
         },
@@ -11007,7 +11002,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["trees"],
+        "tags": [],
         "poi": {
             "tags": ["trees"]
         },
@@ -11035,7 +11030,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["trees"],
+        "tags": [],
         "poi": {
             "tags": ["trees"]
         },
@@ -11063,7 +11058,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["trees"],
+        "tags": [],
         "poi": {
             "tags": ["trees"]
         },
@@ -11091,7 +11086,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["danger:unstable"],
+        "tags": [],
         "poi": {
         "tags": ["danger:unstable"]
         },
@@ -11120,7 +11115,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["danger:unstable"],
+        "tags": [],
         "poi": {
         "tags": ["danger:unstable"]
         },
@@ -11142,7 +11137,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["danger:unstable"],
+        "tags": [],
         "poi": {
         "tags": ["danger:unstable"]
         },
@@ -11164,7 +11159,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["danger:unstable"],
+        "tags": [],
         "poi": {
         "tags": ["danger:unstable"]
         },
@@ -11186,7 +11181,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["danger:unstable"],
+        "tags": [],
         "poi": {
         "tags": ["danger:unstable"]
         },
@@ -11522,7 +11517,7 @@
         "location": ["any"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["prey:fish"],
+        "tags": [],
         "poi": {
         "tags": ["prey:fish"]
         },
