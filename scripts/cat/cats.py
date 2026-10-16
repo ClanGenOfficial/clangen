@@ -1339,8 +1339,8 @@ class Cat:
             return True
 
         return all(
-            condition.severity == "minor"
-            for condition in self.temporary_conditions)
+            condition.severity == "minor" for condition in self.temporary_conditions
+        )
 
     def retire_cat(self):
         """This is only for cats that retire due to health condition"""
