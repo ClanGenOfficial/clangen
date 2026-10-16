@@ -2,7 +2,12 @@
     {
         "event_id": "elder_default0",
         "involved_cats": {
-            "m_c": {}
+            "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ]
+            }
         },
         "strings": [
             "m_c wished to join the elders. The Clan honored {PRONOUN/m_c/object} and all the service m_c had given to them.",
@@ -17,7 +22,12 @@
             "clan:leader"
         ],
         "involved_cats": {
-            "m_c": {}
+            "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ]
+            }
         },
         "strings": [
             "lead_name proudly called a Clan meeting to honor m_c's service to the Clan. It was time {PRONOUN/m_c/subject} retired peacefully to the elders' den.",
@@ -68,6 +78,10 @@
         "event_id": "elder_secure_fighter0",
         "involved_cats": {
             "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ],
                 "stat": {
                     "trait": [
                         "fierce",
@@ -88,6 +102,10 @@
         "event_id": "elder_unsure0",
         "involved_cats": {
             "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ],
                 "stat": {
                     "trait": [
                         "insecure",
@@ -119,7 +137,12 @@
     {
         "event_id": "elder_POI_tree",
         "involved_cats": {
-            "m_c": {}
+            "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ]
+            }
         },
         "poi": {
             "tags": ["trees"]
@@ -133,6 +156,10 @@
         "event_id": "elder_POI_sunningrocks",
         "involved_cats": {
             "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ],
                 "stat": {
                     "trait": ["-strict", "-ambitious", "-competitive", "-adventurous"]
                 }
@@ -181,7 +208,12 @@
     {
         "event_id": "elder_POI_moonplace",
         "involved_cats": {
-            "m_c": {},
+            "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ]
+            },
             "r_c0": {
                 "stat": {
                     "trait": ["-calm", "-compassionate", "-careful", "-nervous", "-gloomy", "-lonesome", "-playful", "-charismatic"]
@@ -208,6 +240,10 @@
         "event_id": "elder_POI_danger",
         "involved_cats": {
             "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ],
                 "stat": {
                     "trait": ["-adventurous", "-daring", "-fierce", "-bold", "-ambitious", "-arrogant", "-confident", "-bloodthirsty", "-cold"]
                 }
@@ -224,6 +260,10 @@
         "event_id": "elder_former_outsider_proud",
         "involved_cats": {
             "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ],
                 "stat": {
                     "trait": [
                         "adventurous",
@@ -253,6 +293,10 @@
         "event_id": "elder_former_outsider_insecure",
         "involved_cats": {
             "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ],
                 "stat": {
                     "trait": [
                         "gloomy",
@@ -273,7 +317,12 @@
     {
         "event_id": "elder_leaf-fall",
         "involved_cats": {
-            "m_c": {}
+            "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ]
+            }
         },
         "season": ["leaf-fall"],
         "strings": [
@@ -284,7 +333,12 @@
     {
         "event_id": "elder_leaf-bare",
         "involved_cats": {
-            "m_c": {}
+            "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ]
+            }
         },
         "season": ["leaf-bare"],
         "strings": [
@@ -295,7 +349,12 @@
     {
         "event_id": "elder_newleaf",
         "involved_cats": {
-            "m_c": {}
+            "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ]
+            }
         },
         "season": ["newleaf"],
         "strings": [
@@ -306,7 +365,12 @@
     {
         "event_id": "elder_greenleaf",
         "involved_cats": {
-            "m_c": {}
+            "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ]
+            }
         },
         "season": ["greenleaf"],
         "strings": [
@@ -318,6 +382,10 @@
         "event_id": "elder_teacher",
         "involved_cats": {
             "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ],
                 "stat": {
                     "skill": [
                         "STORY,2",
@@ -336,6 +404,10 @@
         "tags": ["clan:kit"],
         "involved_cats": {
             "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ],
                 "stat": {
                     "skill": [
                         "KIT,2"
@@ -351,6 +423,10 @@
         "event_id": "elder_spunky",
         "involved_cats": {
             "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ],
                 "stat": {
                     "skill": [
                         "FIGHTER,1"
@@ -375,7 +451,12 @@
     {
         "event_id": "elder_POI_high_ground",
         "involved_cats": {
-            "m_c": {}
+            "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ]
+            }
         },
         "poi": {
             "tags": ["high_ground"]
@@ -387,7 +468,12 @@
     {
         "event_id": "elder_mates",
         "involved_cats": {
-            "m_c": {},
+            "m_c": {
+                "age": [
+                    "senior",
+                    "senior adult"
+                ]
+            },
             "r_c0": {
                 "status": [
                     "elder"
@@ -418,6 +504,10 @@
         "event_id": "elder_clanborn_sentimental",
         "involved_cats": {
             "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ],
                 "stat": {
                     "trait": [
                         "faithful",
@@ -436,7 +526,12 @@
     {
         "event_id": "elder_mates_sad",
         "involved_cats": {
-            "m_c": {},
+            "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ]
+            },
             "r_c0": {
                 "status": [
                     "warrior",
@@ -468,6 +563,10 @@
         "tags": ["-clan:elder"],
         "involved_cats": {
             "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ],
                 "stat": {
                     "trait": [
                         "childish",
@@ -490,6 +589,10 @@
         "tags": ["-clan:elder"],
         "involved_cats": {
             "m_c": {
+                "age": [
+                    "senior adult",
+                    "senior"
+                ],
                 "stat": {
                     "trait": [
                         "charismatic",
@@ -509,6 +612,10 @@
         "event_id": "elder_no_slacking_off",
         "involved_cats": {
             "m_c": {
+                "age": [
+                    "senior",
+                    "senior adult"
+                ],
                 "stat": {
                     "trait": [
                         "ambitious",
