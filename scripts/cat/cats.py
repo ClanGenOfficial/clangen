@@ -1337,10 +1337,10 @@ class Cat:
         """returns True if the cat can work, False if the cat cannot work"""
         if not self.temporary_conditions and not self.permanent_conditions:
             return True
+
         return all(
             condition.severity == "minor"
-            for condition in self.temporary_conditions + self.permanent_conditions
-        )
+            for condition in self.temporary_conditions)
 
     def retire_cat(self):
         """This is only for cats that retire due to health condition"""
