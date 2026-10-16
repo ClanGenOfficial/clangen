@@ -9,11 +9,9 @@ from scripts.models.common.all_trait import AllTrait
 from scripts.models.common.backstory import Backstory
 from scripts.models.common.gather_cat import GatherCat, GatherCatEnum
 from scripts.models.common.herb import Herb
-from scripts.models.common.illness import Illness
-from scripts.models.common.injury import Injury
+from scripts.models.common.condition import ConditionEnum
 from scripts.models.common.kit_trait import KitTrait
 from scripts.models.common.new_cat import NewCat, NewCatTag
-from scripts.models.common.perm_condition import PermCondition
 from scripts.models.common.relationship_status import RelationshipStatus
 from scripts.models.common.scar import Scar
 from scripts.models.common.season import Season
@@ -30,12 +28,10 @@ class CommonSchema(BaseModel):
     gather_cat: GatherCat
     gather_cat_enum: GatherCatEnum
     herb: Herb
-    illness: Illness
-    injury: Injury
+    condition: ConditionEnum
     kit_trait: KitTrait
     new_cat: NewCat
     new_cat_tag: NewCatTag
-    perm_condition: PermCondition
     relationship_status: RelationshipStatus
     scar: Scar
     season_enum: Season

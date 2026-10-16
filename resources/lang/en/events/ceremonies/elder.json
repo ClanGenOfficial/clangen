@@ -67,7 +67,8 @@
                         "bloodthirsty",
                         "vengeful"
                     ]
-                }
+                },
+                "past_status": ["warrior"]
             }
         },
         "strings": [
@@ -91,7 +92,8 @@
                         "righteous",
                         "vengeful"
                     ]
-                }
+                },
+                "age": ["senior"]
             }
         },
         "strings": [
@@ -121,11 +123,67 @@
         ]
     },
     {
+        "event_id": "elder_adol_retire0",
+        "involved_cats": {
+            "m_c": {
+                "age": ["adolescent"]
+            }
+        },
+        "strings": [
+            "old_name decided {PRONOUN/m_c/subject}'d rather spend {PRONOUN/m_c/poss} time helping around camp and entertaining kits; {PRONOUN/m_c/subject} was warmly welcomed into the elders' den and given the name m_c in honor of {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "elder_adol_retire1",
+        "involved_cats": {
+            "m_c": {
+                "age": ["adolescent"]
+            },
+            "r_c0": {
+                "status": ["leader"],
+                "stat": {
+                    "trait": ["wise", "thoughtful", "calm", "sincere", "responsible"]
+                }
+            }
+        },
+        "strings": [
+            "Seeing old_name struggling the last few moons, r_c0 approached {PRONOUN/m_c/object} and promised that no one would think less of {PRONOUN/m_c/object} for retiring early, and that {PRONOUN/m_c/subject} would still be a valuable member of the Clan as an elder. {PRONOUN/m_c/subject/CAP} agreed; later that day, {PRONOUN/m_c/poss} elder ceremony was held and {PRONOUN/m_c/subject} were given the name m_c."
+        ]
+    },
+    {
+        "event_id": "elder_adult_retire0",
+        "involved_cats": {
+            "m_c": {
+                "age": ["-senior", "-adolescent"]
+            }
+        },
+        "strings": [
+            "m_c decided to retire from normal Clan duty. {PRONOUN/m_c/subject/CAP} just couldn't quite keep up anymore."
+        ]
+    },
+    {
+        "event_id": "elder_adult_retire1",
+        "involved_cats": {
+            "m_c": {
+                "age": ["-senior", "-adolescent"]
+            },
+            "r_c0": {
+                "status": ["leader"],
+                "stat": {
+                    "trait": ["wise", "thoughtful", "calm", "sincere", "responsible"]
+                }
+            }
+        },
+        "strings": [
+            "Seeing m_c struggling the last few moons, r_c0 approached {PRONOUN/m_c/object} and promised that no one would think less of {PRONOUN/m_c/object} for retiring early, and that {PRONOUN/m_c/subject} would still be a valuable member of the Clan as an elder. m_c agreed; later that day, {PRONOUN/m_c/poss} elder ceremony was held."
+        ]
+    },
+    {
         "event_id": "elder_failinghealth",
         "involved_cats": {
             "m_c": {
                 "health": {
-                    "condition": ["-grief stricken", "-deaf", "-blind", "-lasting grief", "-recovering from birth", "-lingering shock", "-allergies", "-persistent headaches", "-seizure prone", "-raspy lungs"],
+                    "condition": ["-grief_stricken", "-deaf", "-blind", "-lasting_grief", "-recovering_from_birth", "-lingering_shock", "-allergies", "-persistent_headaches", "-seizure_prone", "-raspy_lungs"],
                     "working": false
                 }
             }

@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "persistent_headaches_headache0",
+        "strings": [
+            "m_c's headaches have plagued {PRONOUN/m_c/object} particularly badly this moon, so much so that r_c0 is running low on {PRONOUN/r_c0/poss} pain-relieving mixture, having used so much up in keeping m_c feeling able."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "persistent_headaches_headache1",
+        "strings": [
+            "m_c growls as another wave of pain hits {PRONOUN/m_c/object}. It's on-and-off; herbs have been helping, but StarClan help {PRONOUN/m_c/object}, having so many headaches gets annoying."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

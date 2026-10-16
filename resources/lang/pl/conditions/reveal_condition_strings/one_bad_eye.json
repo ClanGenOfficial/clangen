@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "one_bad_eye0",
+        "strings": [
+            "Spotting m_c stumbling over something on {PRONOUN/m_c/poss} right side, r_c0 brings {PRONOUN/m_c/object} to the medicine cat den, where it becomes clear that eye isn't working as normal."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "one_bad_eye1",
+        "strings": [
+            "m_c has become good at not letting things approaching on {PRONOUN/m_c/poss} bad side startle {PRONOUN/m_c/object}, except it turns out that's not a normal universal experience for a kitten to have."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
