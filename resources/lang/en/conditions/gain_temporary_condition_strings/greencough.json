@@ -73,7 +73,6 @@
         "event_id": "med_gain_greencough0",
         "strings": [
             "m_c wakes up feeling awful. {PRONOUN/m_c/subject/CAP} {VERB/m_c/diagnose/diagnoses} {PRONOUN/m_c/self} with greencough.",
-            "Not long after the half-moon meeting, m_c fell ill with greencough.",
             "m_c feverishly searches the herb stores. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} contracted greencough, and catmint is the best treatment.",
             "The greenish phlegm m_c has been hacking up, alongside the fever and chills, makes {PRONOUN/m_c/poss} self-diagnosis of greencough easy.",
             "In constant contact with disease, medicine cats are bound to sometimes get ill. m_c has contracted greencough."
