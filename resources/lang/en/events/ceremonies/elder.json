@@ -288,7 +288,7 @@
         },
         "season": ["leaf-bare"],
         "strings": [
-            "m_c took one look at the snow and promptly decided {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} done; {PRONOUN/m_c/poss} bones were getting too old for the freezing temperatures! {PRONOUN/m_c/subject/CAP} gladly moved to the warm elder's den.",
+            "m_c took one look at the snow and promptly decided {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} done; {PRONOUN/m_c/poss} bones are getting too old for the freezing temperatures! {PRONOUN/m_c/subject/CAP} gladly moved to the warm elder's den.",
             "The cold was taking more and more of a toll on m_c. While {PRONOUN/m_c/subject} served c_n for a long time, it seemed to be time to retire."
         ]
     },
@@ -367,7 +367,7 @@
             }
         },
         "strings": [
-            "m_c was happy to retire, but {PRONOUN/m_c/subject} made sure to let c_n know that {PRONOUN/m_c/subject} would better still be allowed to fight!",
+            "m_c was happy to retire, but {PRONOUN/m_c/subject} made sure to let c_n know that {PRONOUN/m_c/subject} had better still be allowed to fight!",
             "During {PRONOUN/m_c/poss} retirement ceremony, m_c made a point to remind c_n that {PRONOUN/m_c/subject} could still fight whenever it might be needed!",
             "m_c was looking forward to the rest that would come with {PRONOUN/m_c/poss} retirement. Except if there was ever a battle. {PRONOUN/m_c/subject/CAP} {VERB/m_c/weren't/wasn't} done fighting for c_n."
         ]
@@ -381,7 +381,7 @@
             "tags": ["high_ground"]
         },
         "strings": [
-            "Looking over the territory at POI on a patrol one last time, m_c thought about {PRONOUN/m_c/poss} time serving c_n. That time was spent well, m_c decided. {PRONOUN/m_c/subject/CAP} didn't regret retiring later that day."
+            "Looking over the territory at POI one last time, m_c thought about {PRONOUN/m_c/poss} time serving c_n. That time was spent well, m_c decided. {PRONOUN/m_c/subject/CAP} didn't regret retiring later that day."
         ]
     },
     {
@@ -397,7 +397,7 @@
         "strings": [
             "m_c held {PRONOUN/m_c/poss} head high as {PRONOUN/m_c/poss} retirement was announced, but {PRONOUN/m_c/poss} eyes kept drifting to {PRONOUN/m_c/poss} mate, r_c0; they would finally share a den together.",
             "m_c was happy to retire, but {PRONOUN/m_c/subject} {VERB/m_c/were/was} happier to finally join {PRONOUN/m_c/poss} mate in the elders' den.",
-            "The first thing m_c did after {PRONOUN/m_c/poss} retirement was announced, was choosing a nest as close as possible to the nest of {PRONOUN/m_c/poss} mate, r_c0's."
+            "The first thing m_c did after {PRONOUN/m_c/poss} retirement was announced, was choose a nest as close as possible to the nest of {PRONOUN/m_c/poss} mate, r_c0."
         ],
         "relationship_constraint": [
             {
