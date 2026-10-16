@@ -2162,7 +2162,7 @@
             "r_c0": {}
         },
         "strings": [
-            "Some thought {PRONOUN/m_c/subject} was fated for the medicine den, considering {PRONOUN/m_c/poss} knack for herbs and healing, but (old_name) is certain {PRONOUN/m_c/poss} passions lie elsewhere. r_c0 promises to train m_c into a great warrior."
+            "Some thought {PRONOUN/m_c/subject} {VERB/m_c/were/was} fated for the medicine den, considering {PRONOUN/m_c/poss} knack for herbs and healing, but (old_name) is certain {PRONOUN/m_c/poss} passions lie elsewhere. r_c0 promises to train m_c into a great warrior."
         ],
         "relationship_constraint": [
             {
