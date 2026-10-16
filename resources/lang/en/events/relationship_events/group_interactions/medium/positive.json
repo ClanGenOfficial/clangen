@@ -141,7 +141,7 @@
             "m_c overhears r_c1 dispelling a false rumor about r_c2.",
             "m_c wasn't going to help r_c2 but realized that r_c1 would do it in a heartbeat.",
             "m_c hears r_c1 laugh at r_c2's joke even though it was lame.",
-            "m_c was going to help r_c2 but r_c1, who already looked busy, rushed over to help earning m_c's respect."
+            "m_c was going to help r_c2, but r_c1, who already looked busy, rushed over to help; earning m_c's respect."
         ],
         "involved_cats": {
             "m_c": {},
@@ -292,11 +292,11 @@
         "strings": [
             "Both m_c and r_c1 enthusiastically congratulate r_c2 on something.",
             "m_c and r_c1 grow closer through their mutual connection to r_c2.",
-            "m_c and r_c1 knew they both liked r_c2 but they had no idea they'd like each other so much!",
+            "m_c and r_c1 knew they both liked r_c2, but they had no idea they'd like each other so much!",
             "m_c and r_c1 both offered a gift to r_c2 only to realize they had the same thing!,",
             "m_c and r_c1 both ate with r_c2 and bonded over a shared favorite prey.",
-            "m_c and r_c1 talk about how great r_c2 is together.",
-            "m_c and r_c1 both wanted to hang out with r_c2 but {PRONOUN/r_c2/subject} had to rain check, leaving m_c and r_c1 to hang out together."
+            "m_c and r_c1 talked together about how great r_c2.",
+            "m_c and r_c1 both wanted to hang out with r_c2, but {PRONOUN/r_c2/subject} had to rain check, leaving m_c and r_c1 to hang out together."
         ],
         "involved_cats": {
             "m_c": {},
@@ -724,9 +724,9 @@
         "strings": [
             "multi_cat notice that m_c refreshed the nests in the warriors' den without being asked.",
             "multi_cat always know when m_c is assigned to refresh the warriors' nests, because {PRONOUN/m_c/subject} {VERB/m_c/do/does} such a good job.",
-            "multi_cat appreciates how m_c often volunteers to clean out the dens.",
-            "multi_cat knows that when m_c is assigned to cleaning out the warriors' den, their nests are in good paws.",
-            "multi_cat knows when m_c cleans out the warriors' den cause the bedding always seems softer then usual."
+            "multi_cat appreciate how m_c often volunteers to clean out the dens.",
+            "multi_cat know that when m_c is assigned to cleaning out the warriors' den, their nests are in good paws.",
+            "multi_cat know when m_c cleans out the warriors' den, because the bedding always seems softer than usual."
         ],
         "involved_cats": {
             "m_c": {

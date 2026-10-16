@@ -714,10 +714,10 @@
             "m_c scolds r_c1 for doing a poor job of kitsitting r_c2.",
             "m_c regrets letting r_c1 watch r_c2 after catching {PRONOUN/r_c2/object} doing something dangerous while r_c1 was nowhere in sight.",
             "m_c is frustrated with r_c1 for not keeping a better eye on r_c2.",
-            "m_c feels like r_c2 would have been in better hands unattended then with r_c1 watching {PRONOUN/r_c2/object}.",
+            "m_c feels like r_c2 would have been in better hands unattended than with r_c1 watching {PRONOUN/r_c2/object}.",
             "m_c promises to never let r_c1 watch r_c2 again after r_c1 gets hurt under {PRONOUN/r_c1/poss} watch.",
             "m_c can't believe r_c1 thinks {PRONOUN/r_c1/subject} did a good job kitsitting r_c2 after {PRONOUN/r_c2/subject} let r_c1 get in trouble.",
-            "m_c can't believe r_c1 would punish r_c2 for something that was {PRONOUN/r_c1/poss} fault."
+            "m_c can't believe r_c1 would punish r_c2 for something that was {PRONOUN/r_c1/poss} own fault."
         ],
         "involved_cats": {
             "m_c": {},
