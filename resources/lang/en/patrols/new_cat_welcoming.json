@@ -2571,7 +2571,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "cat bite"
+                            "cat_bite"
                         ],
                         "scar_pool_override": [
                             "CATBITETWO"
@@ -3719,7 +3719,7 @@
                             "n_c0"
                         ],
                         "condition": [
-                            "carrionplace disease"
+                            "carrionplace_disease"
                         ],
                         "death_history": "m_c died of carrionplace disease."
                     }
@@ -3792,7 +3792,7 @@
                             "n_c0"
                         ],
                         "condition": [
-                            "carrionplace disease"
+                            "carrionplace_disease"
                         ],
                         "death_history": "m_c died of carrionplace disease."
                     }
@@ -5475,7 +5475,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "claw-wound"
+                            "claw_wound"
                         ],
                         "scar_history": "m_c was scarred when a loner attacked {PRONOUN/m_c/object}.",
                         "death_history": "m_c died after a loner attacked {PRONOUN/m_c/object}."
@@ -5876,7 +5876,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "claw-wound"
+                            "claw_wound"
                         ],
                         "scar_pool_override": [
                             "FACE",
@@ -9581,8 +9581,8 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "torn pelt",
-                            "torn ear",
+                            "torn_pelt",
+                            "torn_ear",
                             "minor_injury"
                         ],
                         "scar_history": "m_c was scarred after being attacked by a startled loner.",
@@ -9620,8 +9620,8 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "torn pelt",
-                            "torn ear",
+                            "torn_pelt",
+                            "torn_ear",
                             "minor_injury"
                         ],
                         "scar_history": "m_c was scarred after being attacked by a startled kittypet.",
@@ -9838,7 +9838,7 @@
                         "condition": [
                             "battle_injury",
                             "minor_injury",
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "no_results": true,
                         "scar_history": "m_c was scarred after fighting with another cat.",
@@ -9852,8 +9852,8 @@
                             "sore",
                             "bruises",
                             "scrapes",
-                            "torn ear",
-                            "torn pelt"
+                            "torn_ear",
+                            "torn_pelt"
                         ],
                         "scar_history": "m_c was scarred after fighting with another cat.",
                         "death_history": "m_c died from injuries sustained after fighting with another cat."
@@ -9904,9 +9904,9 @@
                             "n_c0"
                         ],
                         "condition": [
-                            "claw-wound",
-                            "torn pelt",
-                            "torn ear",
+                            "claw_wound",
+                            "torn_pelt",
+                            "torn_ear",
                             "minor_injury"
                         ],
                         "no_results": true,
@@ -10055,9 +10055,9 @@
                             "p_l"
                         ],
                         "condition": [
-                            "claw-wound",
-                            "torn pelt",
-                            "torn ear",
+                            "claw_wound",
+                            "torn_pelt",
+                            "torn_ear",
                             "minor_injury"
                         ],
                         "scar_history": "m_c was scarred after losing a fight with a loner.",
@@ -10126,9 +10126,9 @@
                             "p_l"
                         ],
                         "condition": [
-                            "claw-wound",
-                            "torn pelt",
-                            "torn ear",
+                            "claw_wound",
+                            "torn_pelt",
+                            "torn_ear",
                             "minor_injury"
                         ],
                         "scar_history": "m_c was scarred after losing a fight with a kittypet.",
@@ -10720,7 +10720,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c was scarred up by a fight {PRONOUN/m_c/subject} had with a treacherous, flirtatious rogue.",
                         "death_history": "m_c died of wounds sustained fighting a treacherous, flirtatious rogue."
@@ -11079,7 +11079,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c was scarred in a fight with another cat.",
                         "death_history": "m_c died of wounds sustained from a fight with another cat."

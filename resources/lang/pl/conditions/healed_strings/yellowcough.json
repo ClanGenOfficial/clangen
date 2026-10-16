@@ -1,0 +1,14 @@
+[
+    {
+        "event_id": "yellowcough0",
+        "strings": [
+            "m_c has survived yellowcough.",
+            "m_c has recovered from yellowcough.",
+            "m_c no longer has yellowcough.",
+            "m_c's yellowcough is gone."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

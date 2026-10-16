@@ -25,7 +25,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "broken bone"
+                    "broken_bone"
                 ]
             }
         ],
@@ -64,7 +64,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "mangled tail"
+                    "mangled_tail"
                 ]
             }
         ],
@@ -109,7 +109,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "broken bone"
+                    "broken_bone"
                 ]
             }
         ],
@@ -148,7 +148,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "broken back"
+                    "broken_back"
                 ]
             }
         ],

@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "weak_leg0",
+        "strings": [
+            "As m_c toddles around the nursery, r_c0 watches and m_c's parent waits in suspense. Finally, r_c0 nods and confirms that one of m_c's legs isn't developing at the same rate as the others."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "weak_leg1",
+        "strings": [
+            "m_c keeps falling to one side. Eventually it's clear that one of the legs on that side just isn't as strong as the others."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "event_id": "stomachache0",
+        "strings": [
+            "m_c has a stomachache.",
+            "m_c's belly has been upset all day."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

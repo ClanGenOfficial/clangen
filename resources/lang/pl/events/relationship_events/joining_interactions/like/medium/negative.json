@@ -2,22 +2,15 @@
     {
         "event_id": "gen_like_med_dec1",
         "strings": [
-            "r_c scoffed when m_c introduced {PRONOUN\/m_c\/self}."
+			"r_c scoffed when m_c introduced {PRONOUN/m_c/self}."
         ],
         "relationship_changes": [
             {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "like"
-                ],
+                "values": ["like"],
                 "amount": -5
-            }
-        ]
+            }]
     }
 ]

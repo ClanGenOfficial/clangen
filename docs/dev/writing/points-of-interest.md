@@ -68,18 +68,18 @@ Points of Interests can use many different tags that denote circumstances around
 |:-----------------:|:-------------------------------------------------------------------------------------------------------------------------------:|
 |       cave        |                                                  a natural underground hollow.                                                  |
 |      covered      |                                       any location that offers shelter from the elements.                                       |
-|       danger        |                     anything that poses a threat to cats, for any reason. Has multiple more specific tags that should not be used together.                      |
-|     danger:fall_risk     |                                                 risk of heights-related injury.                                                 |
-|     danger:unstable      | if there is a potential for the structure to collapse in some way: unstable ceilings, unstable ground, an old tree branch, etc. |
-|      danger:tainted      |                                  carries a risk of injury or illness due to unsafe environmental conditions: pollution, rot, mold, ect.                                   |
+|      danger       |     anything that poses a threat to cats, for any reason. Has multiple more specific tags that should not be used together.     |
+| danger:fall_risk  |                                                 risk of heights-related injury.                                                 |
+|  danger:unstable  | if there is a potential for the structure to collapse in some way: unstable ceilings, unstable ground, an old tree branch, etc. |
+|  danger:tainted   |             carries a risk of injury or illness due to unsafe environmental conditions: pollution, rot, mold, ect.              |
 |       hole        |                                                     a cavity in the earth.                                                      |
 |       nests       |                                                      where birds lay eggs.                                                      |
 |       prey        |                     anything the Clan hunts. Has multiple more specific tags. Should not be used together.                      |
 |    prey:flying    |                                                 any prey that primarily flies.                                                  |
-|    prey:bird    |                                                 birds                                                  |
+|     prey:bird     |                                                              birds                                                              |
 |    prey:water     |                                  prey found in or around water. assume your cats will get wet.                                  |
 |    prey:ground    |                                                      ground-dwelling prey.                                                      |
-|    prey:fish     |                                  fish                                  |
+|     prey:fish     |                                                              fish                                                               |
 |       rocks       |                                   feature that primarily includes rocks, boulders, or stone.                                    |
 |    high_ground    |   could be stood atop, perhaps for safety or intimidation. best used for more singular objects, rather than expansive areas.    |
 |       trees       |                                                       incorporates trees.                                                       |

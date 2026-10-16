@@ -1,0 +1,13 @@
+[
+    {
+        "event_id": "running_nose0",
+        "strings": [
+            "m_c woke up with a running nose.",
+            "m_c has been sniffling constantly.",
+            "m_c has a running nose."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

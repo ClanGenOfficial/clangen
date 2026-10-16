@@ -218,7 +218,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l goes to a known herb patch \u2014 but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} give up, hunting around in the area until {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a smaller overlooked bush that still has leaves on it."
+                    "p_l goes to a known herb patch — but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} give up, hunting around in the area until {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a smaller overlooked bush that still has leaves on it."
                 ],
                 "exp_gained": 10,
                 "supply": [
@@ -233,7 +233,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l goes to a known herb patch \u2014 but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/give/gives} up and {VERB/p_l/return/returns} to camp, {PRONOUN/p_l/poss} tail dragging miserably along the ground."
+                    "p_l goes to a known herb patch — but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/give/gives} up and {VERB/p_l/return/returns} to camp, {PRONOUN/p_l/poss} tail dragging miserably along the ground."
                 ],
                 "exp_gained": 0
             }
@@ -555,7 +555,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 can't help the <i>mrrp</i>s of laughter that escape {PRONOUN/s_c0/object} at the sight. Sweet StarClan, if only r_c0 could see {PRONOUN/r_c0/poss} own face! However, karma quickly comes for s_c0, who is so busy laughing at r_c's misfortune that {PRONOUN/s_c0/subject} completely {VERB/s_c0/miss/misses} and trips over the <i>other</i> tree root that just so happens to be directly in {PRONOUN/s_c0/poss} path. <i>Meowch!</i>"
+                    "s_c0 can't help the <i>mrrp</i>s of laughter that escape {PRONOUN/s_c0/object} at the sight. Sweet StarClan, if only r_c0 could see {PRONOUN/r_c0/poss} own face! However, karma quickly comes for s_c0, who is so busy laughing at r_c0's misfortune that {PRONOUN/s_c0/subject} completely {VERB/s_c0/miss/misses} and trips over the <i>other</i> tree root that just so happens to be directly in {PRONOUN/s_c0/poss} path. <i>Meowch!</i>"
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -935,7 +935,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 can't help the <i>mrrp</i>s of laughter that escape {PRONOUN/s_c0/object} at the sight. Sweet StarClan, if only r_c0 could see {PRONOUN/r_c0/poss} own face! However, karma quickly comes for s_c0, who is so busy laughing at r_c's misfortune that {PRONOUN/s_c0/subject} completely {VERB/s_c0/miss/misses} and trips over the <i>other</i> tree root that just so happens to be directly in {PRONOUN/s_c0/poss} path. <i>Meowch!</i>"
+                    "s_c0 can't help the <i>mrrp</i>s of laughter that escape {PRONOUN/s_c0/object} at the sight. Sweet StarClan, if only r_c0 could see {PRONOUN/r_c0/poss} own face! However, karma quickly comes for s_c0, who is so busy laughing at r_c0's misfortune that {PRONOUN/s_c0/subject} completely {VERB/s_c0/miss/misses} and trips over the <i>other</i> tree root that just so happens to be directly in {PRONOUN/s_c0/poss} path. <i>Meowch!</i>"
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1058,7 +1058,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "Though p_l has no visible injuries, {PRONOUN/p_l/subject} <i>{VERB/p_l/insist/insists}</i> that {PRONOUN/p_l/subject} {VERB/p_l/need/needs} to lean on r_c's shoulder all the way back to camp. r_c0 complies, and p_l purrs the entire way home."
+                    "Though p_l has no visible injuries, {PRONOUN/p_l/subject} <i>{VERB/p_l/insist/insists}</i> that {PRONOUN/p_l/subject} {VERB/p_l/need/needs} to lean on r_c0's shoulder all the way back to camp. r_c0 complies, and p_l purrs the entire way home."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
