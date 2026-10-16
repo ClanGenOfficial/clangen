@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "born_without_a_leg0",
+        "strings": [
+            "m_c mewls, snuggling up to {PRONOUN/m_c/poss} parent as they anxiously await the verdict. r_c0 is confident that m_c's lack of a leg won't slow {PRONOUN/m_c/object} down. The new family is left to bond, relieved and purring."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "born_without_a_leg1",
+        "strings": [
+            "It's immediately clear that m_c might take longer to find {PRONOUN/m_c/poss} feet. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} been born without one of the usual set."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "event_id": "small_cut0",
+        "strings": [
+            "m_c's small cut has healed up nicely.",
+            "m_c's small cut is no longer bothering {PRONOUN/m_c/object}."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

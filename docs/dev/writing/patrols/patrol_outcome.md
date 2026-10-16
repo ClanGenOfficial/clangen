@@ -49,7 +49,8 @@ Outcomes utilize the `TextPoolEvent` format.
                 "must_be_congenital": false,
                 "must_be_acquired": false
             },
-            "backstory": []
+            "backstory": [],
+            "accessory": []
         },
     },
     "required_reputation": {

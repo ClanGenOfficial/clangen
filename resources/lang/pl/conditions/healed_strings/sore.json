@@ -1,0 +1,14 @@
+[
+    {
+        "event_id": "sore0",
+        "strings": [
+            "m_c is no longer sore.",
+            "m_c's soreness has abated.",
+            "m_c feels much better: {PRONOUN/m_c/poss} soreness is gone.",
+            "m_c's soreness is gone."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

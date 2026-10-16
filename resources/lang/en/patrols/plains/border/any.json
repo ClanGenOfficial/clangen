@@ -779,7 +779,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c was injured after disturbing a wrathful prairie dog.",
                         "death_history": "m_c died of injuries inflicted by a prairie dog."
@@ -789,7 +789,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "claw-wound"
+                            "claw_wound"
                         ],
                         "scar_pool_override": [
                             "BRIDGE"
@@ -971,7 +971,7 @@
                         ],
                         "condition": [
                             "shock",
-                            "constant nightmares"
+                            "constant_nightmares"
                         ],
                         "scar_history": "m_c was scarred by a badger as an apprentice, after being dared to leap down into an unknown burrow.",
                         "death_history": "m_c died of injuries inflicted by a badger after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dared to leap into an unknown burrow."
@@ -982,7 +982,7 @@
                         ],
                         "condition": [
                             "big_bite_injury",
-                            "claw-wound"
+                            "claw_wound"
                         ],
                         "scar_history": "m_c was scarred by a badger as an apprentice, after being dared to leap down into an unknown burrow.",
                         "death_history": "m_c died of injuries inflicted by a badger after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dared to leap into an unknown burrow."
@@ -1181,7 +1181,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c was injured after disturbing a wrathful prairie dog.",
                         "death_history": "m_c died of injuries inflicted by a prairie dog."
@@ -1191,7 +1191,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "claw-wound"
+                            "claw_wound"
                         ],
                         "scar_pool_override": [
                             "BRIDGE"
@@ -1273,7 +1273,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c was injured after disturbing a badger in its sett.",
                         "death_history": "m_c died of injuries inflicted by a badger."
@@ -1283,7 +1283,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "claw-wound"
+                            "claw_wound"
                         ],
                         "scar_pool_override": [
                             "BRIDGE"
@@ -1596,7 +1596,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c was injured after disturbing a badger in its sett.",
                         "death_history": "m_c died of an injury inflicted by a badger."
@@ -1606,7 +1606,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "claw-wound"
+                            "claw_wound"
                         ],
                         "scar_pool_override": [
                             "BRIDGE"
@@ -2499,8 +2499,8 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "claw-wound",
-                            "torn ear",
+                            "claw_wound",
+                            "torn_ear",
                             "scrapes",
                             "shock"
                         ],
@@ -3098,7 +3098,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "claw-wound"
+                            "claw_wound"
                         ],
                         "scar_history": "m_c was injured after disturbing a badger in its sett.",
                         "death_history": "m_c died of injuries sustained in a fight with a badger."
@@ -3788,7 +3788,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "water in their lungs"
+                            "water_in_lungs"
                         ],
                         "death_history": "m_c died from complications after falling into a sinkhole and being buried as an apprentice."
                     }
@@ -4998,7 +4998,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "mangled leg"
+                            "mangled_leg"
                         ],
                         "scar_history": "m_c bears a mangled leg after thinking {PRONOUN/m_c/subject} could take on a coyote by {PRONOUN/m_c/self}",
                         "death_history": "m_c died from {PRONOUN/m_c/poss} injuries after trying to take on a coyote alone."

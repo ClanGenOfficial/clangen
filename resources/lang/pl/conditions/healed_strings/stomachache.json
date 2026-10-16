@@ -1,0 +1,13 @@
+[
+    {
+        "event_id": "stomachache0",
+        "strings": [
+            "m_c is glad that {PRONOUN/m_c/poss} stomachache is finally gone.",
+            "m_c no longer has a stomachache.",
+            "m_c's stomachache has left."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

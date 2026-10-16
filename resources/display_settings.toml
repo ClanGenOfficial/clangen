@@ -54,6 +54,7 @@
         fading = true
         save_faded_copy = false
         backgrounds = true
+        thought_tooltips = true
     
     [clan.role]
         deputy = false

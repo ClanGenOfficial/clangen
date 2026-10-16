@@ -1,0 +1,26 @@
+[
+    {
+        "event_id": "damaged_eyes_failing_eyesight0",
+        "strings": [
+            "r_c0 tells m_c that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} lucky to have regained any eyesight at all. Hopefully, {PRONOUN/m_c/poss} sight won't degrade any further."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "damaged_eyes_failing_eyesight1",
+        "strings": [
+            "m_c stalks out of the medicine cat den and nearly runs into another cat, which only increases {PRONOUN/m_c/poss} frustration at the news that {PRONOUN/m_c/poss} eyesight won't be getting better.",
+            "m_c closes {PRONOUN/m_c/poss} eyes and opens them again a few moments later, trying to get a sense of just how bad {PRONOUN/m_c/poss} eyesight is now."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
