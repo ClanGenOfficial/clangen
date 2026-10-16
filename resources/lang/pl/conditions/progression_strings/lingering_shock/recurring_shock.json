@@ -1,0 +1,26 @@
+[
+    {
+        "event_id": "lingering_shock_recurring_shock0",
+        "strings": [
+            "m_c demands to know when {PRONOUN/m_c/subject}'ll stop freezing in fear at what {PRONOUN/m_c/subject} {VERB/m_c/know/knows} are just memories. r_c0 doesn't have answers but {PRONOUN/r_c0/subject} {VERB/r_c0/comfort/comforts} {PRONOUN/r_c0/poss} Clanmate, saying that forcing {PRONOUN/m_c/self} to be okay is just hurting {PRONOUN/m_c/object}.",
+            "r_c0 tells m_c that {PRONOUN/r_c0/subject} {VERB/r_c0/have/has} no way to stop dreams or memories, only poppy seeds to help r_c0 sleep. Perhaps the memories will fade with time."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "lingering_shock_recurring_shock2",
+        "strings": [
+            "m_c jumps, then realizes that it was just a leaf blowing in the wind. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} exhausted, {PRONOUN/m_c/poss} memories like a trap that rears up to bite {PRONOUN/m_c/object} whenever {PRONOUN/m_c/subject} {VERB/m_c/relax/relaxes}."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "event_id": "lost_leg_sore0",
+        "strings": [
+            "While {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} adapted well to life with a missing limb, the strain of walking with only three legs has left m_c feeling sore all over. r_c0 devises a list of exercises that will ease the pain, not helping m_c's mood."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "lost_leg_sore1",
+        "strings": [
+            "m_c hasn't been sleeping right and feels bruised and tender on the side of {PRONOUN/m_c/poss} body where {PRONOUN/m_c/poss} limb used to be.",
+            "The muscles in m_c's stump don't seem to understand they aren't connected to anything anymore. m_c purrs gratefully when a Clanmate helps massage them."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
