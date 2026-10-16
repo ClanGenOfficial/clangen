@@ -1,5 +1,17 @@
 {
   "$defs": {
+    "Accessory": {
+      "enum": [
+        "collar",
+        "-collar",
+        "wild",
+        "-wild",
+        "plant",
+        "-plant"
+      ],
+      "title": "Accessory",
+      "type": "string"
+    },
     "Age": {
       "enum": [
         "newborn",
@@ -367,6 +379,14 @@
           "$ref": "#/$defs/NameCheckDict",
           "description": "Constrain per specific name states",
           "title": "Name"
+        },
+        "accessory": {
+          "description": "Constrains the event to only occur if the cat has a listed accessory category",
+          "items": {
+            "$ref": "#/$defs/Accessory"
+          },
+          "title": "Accessory",
+          "type": "array"
         }
       },
       "title": "CatDict",
