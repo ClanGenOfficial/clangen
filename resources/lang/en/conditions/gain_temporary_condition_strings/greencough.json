@@ -112,8 +112,8 @@
             "-clan:medicine cat apprentice(min:1)"
         ],
         "strings": [
-            "m_c has contracted greencough. Without a medicine cat, Clanmates are lost on how to help {PRONOUN/m_c/object}.",
-            "As if knowing c_n is without a medicine cat, greencough has struck m_c.",
+            "m_c has contracted greencough. Without a medicine cat, Clanmates are unsure how to help {PRONOUN/m_c/object}.",
+            "As if knowing c_n is vulnerable without a medicine cat, greencough has struck m_c.",
             "Clanmates provide comfortable nesting and the plumpest fresh-kill, but without a medicine cat, they are lost on how to truly treat m_c's new greencough."
         ],
         "involved_cats": {
