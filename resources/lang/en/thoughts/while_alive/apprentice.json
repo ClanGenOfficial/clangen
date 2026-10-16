@@ -226,6 +226,11 @@
         "involved_cats": {
             "m_c": {
                 "status": [
+                    "apprentice"
+                ]
+            },
+            "r_c": {
+                "status": [
                     "warrior"
                 ],
                 "past_status": [
@@ -239,11 +244,6 @@
                     "clanborn_backstories",
                     "outsider_roots_backstories",
                     "half_clan_backstories"
-                ]
-            },
-            "r_c": {
-                "status": [
-                    "apprentice"
                 ]
             }
         }
