@@ -111,7 +111,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "water in their lungs",
+                            "water_in_lungs",
                             "bruises"
                         ],
                         "death_history": "m_c died from water in {PRONOUN/p_l/poss} lungs after getting swept into a flood."

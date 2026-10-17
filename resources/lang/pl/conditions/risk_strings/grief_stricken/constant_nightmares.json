@@ -1,0 +1,27 @@
+[
+    {
+        "event_id": "grief_stricken_constant_nightmares0",
+        "strings": [
+            "m_c heads to the medicine cat den, hoping that r_c0 will give {PRONOUN/m_c/object} some poppy seeds to help dampen the nightmares that have been plaguing {PRONOUN/m_c/object}."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "grief_stricken_constant_nightmares1",
+        "strings": [
+            "m_c wakes from yet another nightmare, feeling as though {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} being haunted by the ghost of the one {PRONOUN/m_c/subject} {VERB/m_c/grieve/grieves}.",
+            "m_c wakes and wails, {PRONOUN/m_c/poss} dreams haunted by visions of {PRONOUN/m_c/poss} dead loved one.",
+            "m_c jolts awake and immediately leaves the den to clear {PRONOUN/m_c/poss} head, hoping some fresh night air will help {PRONOUN/m_c/object} cope with the sadness and memories."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "event_id": "diarrhea0",
+        "strings": [
+            "m_c has stopped constantly running to the dirtplace. It seems {PRONOUN/m_c/poss} brush with diarrhea has ended.",
+            "m_c is finally feeling better; {PRONOUN/m_c/poss} experience with diarrhea now over."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
