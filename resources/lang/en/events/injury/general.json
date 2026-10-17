@@ -11379,7 +11379,7 @@
             {
                 "cats": ["m_c"],
                 "injuries": ["small_bite_injury"],
-                "scars": [""]
+                "scars": []
             }
         ],
         "history": [
@@ -11563,7 +11563,7 @@
             {
                 "cats": ["m_c"],
                 "injuries": ["bite_wound"],
-                "scars": [""]
+                "scars": []
             }
         ],
         "history": [
@@ -11648,7 +11648,7 @@
             {
                 "cats": ["m_c"],
                 "injuries": ["small_bite_injury"],
-                "scars": [""]
+                "scars": []
             }
         ],
         "history": [
