@@ -56,7 +56,10 @@
                     "warrior",
                     "deputy",
                     "leader"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             },
             "r_c": {
                 "status": [
@@ -64,7 +67,10 @@
                     "warrior",
                     "deputy",
                     "leader"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             }
         },
         "relationship_changes": [
@@ -293,18 +299,24 @@
             "m_c and r_c volunteer to go on an extra border patrol together.",
             "m_c notices that r_c has finished all {PRONOUN/r_c/poss} tasks without issues lately.",
             "During a patrol, m_c and r_c have a long conversation about their beliefs and agree on many things.",
-            "During the last gathering, m_c and r_c defended their Clan against another Clan's heckling."
+            "During the last Gathering, m_c and r_c defended their Clan against another Clan's heckling."
         ],
         "involved_cats": {
             "m_c": {
                 "status": [
                     "-kitten"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             },
             "r_c": {
                 "status": [
                     "-kitten"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             }
         },
         "relationship_changes": [

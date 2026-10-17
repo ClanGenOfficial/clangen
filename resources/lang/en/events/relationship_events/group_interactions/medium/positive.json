@@ -317,13 +317,22 @@
         ],
         "involved_cats": {
             "m_c": {
-                "status": ["-kitten", "-elder", "-mediator", "-mediator apprentice"]
+                "status": ["-kitten", "-elder", "-mediator", "-mediator apprentice"],
+                "health": {
+                    "working": true
+                }
             },
             "r_c1": {
-                "status": ["-kitten", "-elder", "-mediator", "-mediator apprentice"]
+                "status": ["-kitten", "-elder", "-mediator", "-mediator apprentice"],
+                "health": {
+                    "working": true
+                }
             },
             "r_c2": {
-                "status": ["-kitten", "-elder", "-mediator", "-mediator apprentice"]
+                "status": ["-kitten", "-elder", "-mediator", "-mediator apprentice"],
+                "health": {
+                    "working": true
+                }
             }
         },
         "relationship_changes": [
