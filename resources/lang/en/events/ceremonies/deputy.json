@@ -146,7 +146,7 @@
                     ]
                 }
             },
-            "r_c": {
+            "r_c0": {
                 "status": ["leader"]
             }
         },
@@ -215,7 +215,7 @@
                     ]
                 }
             },
-                "r_c": {
+                "r_c0": {
                     "age": [ "senior adult",
                 "senior"],
                     "status": [ "leader"]
