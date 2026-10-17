@@ -10439,6 +10439,9 @@
                         ]
                     },
                     "n_c1": {
+                        "prior_abbreviation": [
+                            "-n_c0"
+                        ],
                         "can_create_new_cat": {},
                         "status": [
                             "kittypet"
@@ -10535,6 +10538,9 @@
                         "can_create_new_cat": {}
                     },
                     "n_c1": {
+                        "prior_abbreviation": [
+                            "-n_c0"
+                        ],
                         "status": [
                             "kittypet"
                         ],
@@ -10617,6 +10623,9 @@
                         }
                     },
                     "n_c0": {
+                        "prior_abbreviation": [
+                            "-n_c0"
+                        ],
                         "status": [
                             "kittypet"
                         ],
