@@ -493,6 +493,7 @@ def event_for_cat(
         "has_apprentice": _check_cat_apprentice,
         "current_exp": _check_cat_exp,
         "name": _check_cat_name,
+        "accessory": _check_cat_accessory,
     }
 
     for param, func in func_lookup.items():
@@ -524,11 +525,11 @@ def event_for_cat(
 
     # checking injuries
     if injuries:
-        if "mangled tail" in injuries and (
+        if "mangled_tail" in injuries and (
             "NOTAIL" in cat.pelt.scars or "HALFTAIL" in cat.pelt.scars
         ):
             return False
-        if "torn ear" in injuries and "NOEAR" in cat.pelt.scars:
+        if "torn_ear" in injuries and "NOEAR" in cat.pelt.scars:
             return False
 
     # checking relationships
@@ -1052,10 +1053,10 @@ def _check_cat_health(cat, health_constraints: dict) -> bool:
     # so that a missing value and a False value will be treated differently
     if "working" in health_constraints:
         # "working" equals True and cat isn't working
-        if health_constraints["working"] and cat.not_working():
+        if health_constraints["working"] and not cat.can_work():
             return False
         # "working" equals False and cat IS working
-        elif not health_constraints["working"] and not cat.not_working():
+        elif not health_constraints["working"] and cat.can_work():
             return False
 
     if health_constraints.get("condition"):
@@ -1067,9 +1068,9 @@ def _check_cat_health(cat, health_constraints: dict) -> bool:
         if is_exclusionary:
             required_conditions = [x.replace("-", "") for x in required_conditions]
 
-        current_conditions = set(cat.illnesses.keys())
-        current_conditions.update(cat.injuries.keys())
-        current_conditions.update(cat.permanent_condition.keys())
+        current_conditions = set(
+            [con.name for con in cat.temporary_conditions + cat.permanent_conditions]
+        )
 
         if current_conditions.intersection(set(required_conditions)):
             if is_exclusionary:
@@ -1079,34 +1080,52 @@ def _check_cat_health(cat, health_constraints: dict) -> bool:
                 return False
 
         # need to check if the perm conditions were congenital
+        perm_conditions = cat.permanent_conditions
+        # gathering conditions to check
+        if is_exclusionary:
+            matching = perm_conditions
+        else:
+            matching = [con for con in perm_conditions if con in required_conditions]
+
         if health_constraints.get("must_be_congenital", False):
-            perm_conditions = set(cat.permanent_condition.keys())
-            # gathering conditions to check
-            if is_exclusionary:
-                matching = perm_conditions
-            else:
-                matching = perm_conditions.intersection(set(required_conditions))
             # checking if they're congenital
             if matching:
                 for cond in matching:
-                    if not cat.permanent_condition[cond].get("born_with"):
+                    if not cond.is_congenital:
                         return False
 
         # need to check if the perm conditions were NOT congenital
         elif health_constraints.get("must_be_acquired", False):
-            perm_conditions = set(cat.permanent_condition.keys())
-            # gathering conditions to check
-            if is_exclusionary:
-                matching = perm_conditions
-            else:
-                matching = perm_conditions.intersection(set(required_conditions))
             # checking if they're NOT congenital
             if matching:
                 for cond in matching:
-                    if cat.permanent_condition[cond].get("born_with"):
+                    if cond.is_congenital:
                         return False
 
     return True
+
+
+def _check_cat_accessory(cat, accessory: list) -> bool:
+    """
+    Checks if the cat has the required accessories
+    """
+    if not accessory:
+        return True
+
+    is_exclusionary = _check_for_exclusionary_value(accessory)
+
+    if is_exclusionary:
+        accessory = [x.replace("-", "") for x in accessory]
+
+    for acc in cat.pelt.accessory:
+        if "collar" in accessory and acc in Pelt.collar_accessories:
+            return not is_exclusionary
+        if "wild" in accessory and acc in Pelt.wild_accessories:
+            return not is_exclusionary
+        if "plant" in accessory and acc in Pelt.plant_accessories:
+            return not is_exclusionary
+
+    return is_exclusionary
 
 
 def cat_for_event(
@@ -1153,6 +1172,7 @@ def cat_for_event(
         "current_exp": _get_cats_with_exp,
         "name": _get_cats_matching_name_check,
         "health": _get_cats_with_health,
+        "accessory": _get_cats_with_accessory,
     }
 
     # run funcs
@@ -1186,11 +1206,11 @@ def cat_for_event(
     # find cats that can get the injuries that will be given
     if injuries:
         for cat in allowed_cats.copy():
-            if "mangled tail" in injuries and (
+            if "mangled_tail" in injuries and (
                 "NOTAIL" in cat.pelt.scars or "HALFTAIL" in cat.pelt.scars
             ):
                 allowed_cats.remove(cat)
-            if "torn ear" in injuries and "NOEAR" in cat.pelt.scars:
+            if "torn_ear" in injuries and "NOEAR" in cat.pelt.scars:
                 allowed_cats.remove(cat)
 
         # if the list is emptied, return
@@ -1333,6 +1353,13 @@ def _get_cats_with_health(cat_list: list, health_constraints: dict) -> list:
         return cat_list
 
     return [c for c in cat_list if _check_cat_health(c, health_constraints)]
+
+
+def _get_cats_with_accessory(cat_list: list, accessory: str) -> list:
+    if not accessory:
+        return cat_list
+
+    return [c for c in cat_list if _check_cat_accessory(c, accessory)]
 
 
 def _get_cats_matching_name_check(cat_list: list, name_check: dict) -> list:

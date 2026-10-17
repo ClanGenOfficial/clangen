@@ -1,0 +1,12 @@
+[
+    {
+        "event_id": "seizure0",
+        "strings": [
+            "m_c has recovered from {PRONOUN/m_c/poss} seizure.",
+            "m_c is up and moving again after {PRONOUN/m_c/poss} seizure."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

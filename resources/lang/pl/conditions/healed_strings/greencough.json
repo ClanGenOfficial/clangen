@@ -1,0 +1,13 @@
+[
+    {
+        "event_id": "greencough0",
+        "strings": [
+            "m_c has recovered from greencough.",
+            "m_c is no longer coughing and sputtering. {PRONOUN/m_c/poss/CAP} case of greencough is now cured.",
+            "m_c no longer has greencough."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
