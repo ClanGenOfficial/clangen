@@ -10203,7 +10203,7 @@
             }
         ],  
         "new_cat": [
-            ["exists","meeting","kittypet","adult","senior adult","adolescent","senior","young adult"]
+            ["exists","meeting","kittypet","age:adult","age:senior adult","age:adolescent","age:senior","age:young adult"]
         ],
         "outsider": {
             "changed": -1
@@ -10251,7 +10251,7 @@
             }
         ],  
         "new_cat": [
-            ["exists","meeting","kittypet","adult","young adult","senior adult"]
+            ["exists","meeting","kittypet","age:adult","age:young adult","age:senior adult"]
         ],
         "outsider": {
             "changed": -1
@@ -11632,7 +11632,7 @@
     },
     {
         "event_id": "gen_injury_smallbite_POItrees",
-        "location": ["forest","wetland","mountainous"],
+        "location": ["forest","wetlands","mountainous"],
         "season": ["any"],
         "sub_type": [],
         "tags": [],
