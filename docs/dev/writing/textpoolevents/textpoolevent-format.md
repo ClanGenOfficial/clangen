@@ -134,9 +134,9 @@ If looking for a "minimum required" version of this format, check the doc page f
 #### event_id: str
 A unique string used to identify the event block. 
 
-[Ceremony Specific Notes](normal-ceremonies.md#event_id-str)
-[Thought Specific Notes](thoughts.md#event_id-str)
-[Relationship Event Specific Notes](relationship-events.md#event_id-str)
+- [Ceremony Specific Notes](normal-ceremonies.md#event_id-str)
+- [Thought Specific Notes](thoughts.md#event_id-str)
+- [Relationship Event Specific Notes](relationship-events.md#event_id-str)
 
 ***
 
