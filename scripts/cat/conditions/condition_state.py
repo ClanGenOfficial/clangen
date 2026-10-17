@@ -3,6 +3,7 @@ from random import random
 
 from scripts.cat.conditions.permanent_condition import PermanentCondition
 from scripts.cat.conditions.temporary_condition import TemporaryCondition
+from scripts.clan_package.settings import get_clan_setting
 from scripts.config import get_config
 from scripts.game_structure import game
 from scripts.clan_package.settings import get_clan_setting
