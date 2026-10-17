@@ -1,7 +1,12 @@
 {
     "name": "SpeckledRecipe",
-    "layer_order": ["1", "2", "3", "4", ["5", "6"]],
+    "layer_order": ["1", "2", "3", ["4", ["5", "6"], "7"]],
     "layers": {
+        "7": {
+            "group_name": "SPECKLEDPATTERN",
+            "color": "pattern_tint",
+            "blend_mode": "pattern_blend"
+        },
         "6":{
             "group_name": "SPECKLEDPATTERN",
             "blend_mode": "mask"
@@ -61,7 +66,7 @@
         },
         {
             "colors": "BLOSSOM",
-            "layer_order": ["1", "2", "2.5", "3", "4", ["4.5", "5", "6"]],
+            "layer_order": ["1", "2", "2.5", "3", ["4", ["4.5", "5", "6"], "7"]],
             "layers": {
                 "5":
                 {
@@ -81,7 +86,7 @@
     },
         {
             "colors": "RUST",
-            "layer_order": ["1", "2", "3", "4", ["5", "6"]],
+            "layer_order": ["1", "2", "3", ["4", ["5", "6"], "7"]],
             "layers": {
                 "5":
                 {

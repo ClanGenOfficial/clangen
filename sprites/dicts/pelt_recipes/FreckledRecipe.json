@@ -1,7 +1,12 @@
 {
     "name": "FreckledRecipe",
-    "layer_order": ["1", "2", "3", "4", "5", ["6", ["7", "8", "+blend_mode:mask"]]],
+    "layer_order": ["1", "2", "3", ["4", "5", ["6", ["7", "8", "+blend_mode:mask"]],"9"]],
     "layers": {
+        "9": {
+            "group_name": "FRECKLEDPATTERNBODY",
+            "color": "pattern_tint",
+            "blend_mode": "pattern_blend"
+        },
         "8": {
             "group_name": "FRECKLEDPATTERNBACK"
         },
@@ -111,12 +116,12 @@
         },
         {
             "colors": "DAWN",
-            "layer_order": ["1", "2", "3", "4", "5", ["6", "7"], ["8", ["9", "10", "+blend_mode:mask"]]],
+            "layer_order": ["1", "2", "3", ["4", "5", ["6", "7"], ["8", ["11", "12", "+blend_mode:mask"]], "9"]],
             "layers": {
-            "10": {
+            "12": {
                 "group_name": "FRECKLEDPATTERNBACK"
             },
-            "9":{
+            "11":{
                 "group_name": "FRECKLEDPATTERNBODY"
             },
             "8": {
@@ -155,7 +160,7 @@
         },   
         {
             "colors": "BLOSSOM",
-            "layer_order": ["1", "2","1.5", "3", "4", "5", ["5.5", "6", ["7", "8", "+blend_mode:mask"]]],
+            "layer_order": ["1", "2","1.5", "3", ["4", "5", ["5.5", "6", ["7", "8", "+blend_mode:mask"]], "9"]],
             "layers": {
                 "8": {
                     "group_name": "FRECKLEDPATTERNBACK"
@@ -199,7 +204,7 @@
             },
         {
             "colors": "RUST",
-    "layer_order": ["1", "2", "3", "4", "5", ["6", ["7", "8", "+blend_mode:mask"]]],
+    "layer_order": ["1", "2", "3", ["4", "5", ["6", ["7", "8", "+blend_mode:mask"]], "9"]],
     "layers": {
         "6": {
             "group_name": "BACKTAILPATTERNGRAD",
