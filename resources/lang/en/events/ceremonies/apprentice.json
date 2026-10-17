@@ -1777,10 +1777,10 @@
             }
         },
         "strings": [
-            "r_c0, so fierce and brave, feels like m_c’s perfect opposite. The youngster touches {PRONOUN/m_c/poss} new mentor’s nose with a mix of intimidation and admiration.",
-            "m_c tentatively touches r_c0's nose at the end of {PRONOUN/m_c/poss} ceremony. {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} hoping for a mellow mentor, but lead_name believes r_c0 is the perfect cat to instill some ferocity into the timid new apprentice.",
+            "r_c0, so fierce and brave, feels like m_c’s perfect opposite. The youngster touched {PRONOUN/m_c/poss} new mentor’s nose with a mix of intimidation and admiration.",
+            "m_c touched r_c0's nose tentatively at the end of {PRONOUN/m_c/poss} ceremony. {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} hoping for a mellow mentor, but lead_name believes r_c0 is the perfect cat to instill some ferocity into the timid new apprentice.",
             "m_c can't help but feel intimidated standing beside r_c0. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} happy to be an apprentice, but lead_name knows {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} on the reserved side; couldn't {PRONOUN/lead_name/subject} have given m_c an accordingly mellow mentor?",
-            "Before the meeting, r_c0 plainly asks lead_name to mentor (old_name). lead_name is surprised, but agrees; a timid cat like (old_name) could use some of that confidence. Newly named m_c hopes {PRONOUN/m_c/subject}'ll live up to r_c0's expectations."
+            "Before the meeting, r_c0 plainly asked lead_name to mentor (old_name). lead_name was surprised, but agreed; a timid cat like (old_name) could use some of that confidence. Newly named m_c hopes {PRONOUN/m_c/subject}'ll live up to r_c0's expectations."
         ],
         "relationship_constraint": [
             {
