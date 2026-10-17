@@ -1064,6 +1064,9 @@ dev_tools = false
     # how many moons earlier are cats healed
     moons_earlier_healed = 1
 
+    # conditions that are excluded from moons_earlier_healed (they have a fixed duration)
+    excluded_from_moons_earlier_healed = ["pregnant"]
+
     [focus.rest_and_recover.buff]
       [focus.rest_and_recover.buff.HEALER]
         tier = 1
