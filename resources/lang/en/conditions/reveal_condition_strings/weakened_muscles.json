@@ -1,0 +1,29 @@
+[
+    {
+        "event_id": "reveal_condition_weakened_muscles",
+        "strings": [
+            "r_c0 explained to m_c that {PRONOUN/m_c/poss} muscles seemed to be a little weaker than normal. It might mean {PRONOUN/m_c/subject}'ll struggle with certain things more than others, but that isn't a failure."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "kitten"
+                ]
+            },
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "reveal_condition_weakened_muscles1",
+        "strings": [
+            "When m_c learned {PRONOUN/m_c/poss} muscles are just not as strong as they should be, a whole lot of experiences suddenly made sense."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
