@@ -51,6 +51,7 @@ from scripts.config import get_config
 from scripts.events_module.event_filters import get_personality_compatibility
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.text_adjust import (
+    adjust_list_text,
     event_text_adjust,
     leader_ceremony_text_adjust,
 )
@@ -2403,3 +2404,54 @@ load_leader_ceremonies()
 
 with open("resources/dicts/backstories.json", "r", encoding="utf-8") as read_file:
     BACKSTORIES = ujson.loads(read_file.read())
+
+
+def check_starcrossed_lovers(cat, loop_cause=None) -> Optional[str]:
+    """Checks and kills cat mates if starcrossed lovers is active"""
+    # ADD THE CONFIG HERE
+    if not get_config("cruel_season.event.starcrossed_lovers"):
+        return
+
+    if not cat.mate:
+        return
+
+    cat_mates = []
+
+    for c in cat.mate:
+        c = Cat.fetch_cat(c)
+        if not c.dead and c != loop_cause:
+            cat_mates.append(c)
+    cat_names = adjust_list_text([str(c.name) for c in cat_mates])
+
+    # kill cat mates
+
+    # Writing this here cause i cant get to my phone to log into github rn but will convert starcrossed lovers into a draft - unintended behaviour with double death leader lives
+    for c in cat_mates:
+        if not c.dead:
+            if c.status.is_leader:
+                game.clan.leader_lives -= 1
+            c.die()
+            check_starcrossed_lovers(c, loop_cause=cat)
+            c.history.add_death(
+                i18n.t("cruel_season.special_text.starcrossed_lovers_history"),
+                other_cat=cat,
+            )
+    # special txt
+    if cat.status.is_leader and game.clan.leader_lives > 0:
+        text = i18n.t(
+            "cruel_season.special_text.starcrossed_lovers_revived",
+            mate_name=str(cat.name),
+            dead_name=str(cat_names),
+            clan_name=str(game.clan.name),
+            count=len(cat_mates),
+        )
+    else:
+        text = i18n.t(
+            "cruel_season.special_text.starcrossed_lovers_base",
+            mate_name=str(cat.name),
+            dead_name=str(cat_names),
+            clan_name=str(game.clan.name),
+            count=len(cat_mates),
+        )
+    # yuh
+    return text
