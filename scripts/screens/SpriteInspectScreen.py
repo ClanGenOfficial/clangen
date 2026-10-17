@@ -216,6 +216,7 @@ class SpriteInspectScreen(Screens):
         self.elements["life_stages_container"] = pygame_gui.core.UIContainer(
             ui_scale(pygame.Rect((10, 485), (483, 160))),
             anchors={"left_target": self.elements["checkbox_frame"]},
+            starting_height=5,
             manager=MANAGER,
         )
 
@@ -565,11 +566,10 @@ class SpriteInspectScreen(Screens):
         if self.open_tab == self.elements["sprite_details_tab"]:
             self.sprite_detail_elements["textbox"] = UITextBoxTweaked(
                 self.get_sprite_details(),
-                ui_scale(pygame.Rect((8, 5), (480, 150))),
+                ui_scale(pygame.Rect((7, 6), (475, 144))),
                 object_id="#text_box_26_horizleft_pad_10_14",
                 line_spacing=1,
                 manager=MANAGER,
-                starting_height=6,
                 container=self.elements["life_stages_container"],
             )
 
@@ -678,8 +678,9 @@ class SpriteInspectScreen(Screens):
 
         self.sprite_detail_elements["textbox"] = pygame_gui.elements.UITextBox(
             "",
-            ui_scale(pygame.Rect((0, 0), (491, 160))),
+            ui_scale(pygame.Rect((0, 0), (450, 160))),
             manager=MANAGER,
+            starting_height=4,
             container=self.elements["life_stages_container"],
         )
 
