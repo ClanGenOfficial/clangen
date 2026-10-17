@@ -252,7 +252,7 @@ Marks if this condition can be given later in life
 ***
 
 #### requires_scar: bool
-Marks if this condition can only be applied if the cat has a pre-requisite scar. Scars needed *must* be listed in [possible scars](#possible_scars-liststr-1). Defaults to False.
+Marks if this condition can only be applied if the cat has a pre-requisite scar. Scars needed *must* be listed in [possible scars](#possible_scars-liststr). Defaults to False.
 
 ***
 
