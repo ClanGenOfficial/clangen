@@ -11011,7 +11011,7 @@
             "tags": ["trees"]
         },
         "frequency": 1,
-        "event_text": "m_c was climbing by POI when {PRONOUN/m_c/object} startled a sleeping owl, and it lashed out at {PRONOUN/m_c/object} with its talons.",
+        "event_text": "m_c was climbing by POI when {PRONOUN/m_c/subject} startled a sleeping owl, and it lashed out at {PRONOUN/m_c/object} with its talons.",
         "m_c": {
             "status": ["-kitten","-elder"]
         },
