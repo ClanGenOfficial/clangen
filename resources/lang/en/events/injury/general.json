@@ -10203,7 +10203,7 @@
             }
         ],  
         "new_cat": [
-            ["exists","meeting","kittypet","-kitten","-newborn"]
+            ["exists","meeting","kittypet","adult","senior adult","adolescent","senior","young adult"]
         ],
         "outsider": {
             "changed": -1
@@ -10251,7 +10251,7 @@
             }
         ],  
         "new_cat": [
-            ["exists","meeting","kittypet","-senior","-adolescent","-kitten","-newborn"]
+            ["exists","meeting","kittypet","adult","young adult","senior adult"]
         ],
         "outsider": {
             "changed": -1
