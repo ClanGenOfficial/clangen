@@ -10841,7 +10841,9 @@
         "history": [
             {
                 "cats": ["m_c"],
-                "scar": "m_c was scarred when {PRONOUN/m_c/subject} tore {PRONOUN/m_c/poss} pelt falling through a tree."
+                "scar": "m_c was scarred when {PRONOUN/m_c/subject} tore {PRONOUN/m_c/poss} pelt falling through a tree.",
+                "death": "m_c died from complications of {PRONOUN/m_c/poss} torn pelt."
+            
             }
         ]
     },
@@ -10868,7 +10870,8 @@
         "history": [
             {
                 "cats": ["m_c"],
-                "scar": "m_c was scarred when {PRONOUN/m_c/subject} tore {PRONOUN/m_c/poss} pelt squeezing into a hole in a tree."
+                "scar": "m_c was scarred when {PRONOUN/m_c/subject} tore {PRONOUN/m_c/poss} pelt squeezing into a hole in a tree.",
+                 "death": "m_c died from complications of {PRONOUN/m_c/poss} torn pelt."
             }
         ]
     },
@@ -10895,7 +10898,8 @@
         "history": [
             {
                 "cats": ["m_c"],
-                "scar": "m_c was scarred when {PRONOUN/m_c/subject} tore {PRONOUN/m_c/poss} pelt squeezing into a hole in a tree."
+                "scar": "m_c was scarred when {PRONOUN/m_c/subject} tore {PRONOUN/m_c/poss} pelt squeezing into a hole in a tree.",
+                 "death": "m_c died from complications of {PRONOUN/m_c/poss} torn pelt."
             }
         ]
     },
@@ -11200,7 +11204,8 @@
         "history": [
             {
                 "cats": ["m_c"],
-                "scar": "m_c was scarred in a partial collapse."
+                "scar": "m_c was scarred in a partial collapse.",
+                 "death": "m_c died from complications of {PRONOUN/m_c/poss} torn pelt."
             }
         ]
     },
