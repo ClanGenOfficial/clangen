@@ -131,7 +131,7 @@ If looking for a "minimum required" version of this format, check the doc page f
 ```
 ***
 
-### event_id: str
+#### event_id: str
 A unique string used to identify the event block. 
 
 [Ceremony Specific Notes](normal-ceremonies.md#event_id-str)
@@ -140,18 +140,18 @@ A unique string used to identify the event block.
 
 ***
 
-### location:list[str]
+#### location:list[str]
 This controls the biome and camp the event appears in. [Tagging Instructions](../reference/tag-lists.md#locations)
 
 ***
 
-### season: list[str]
+#### season: list[str]
 List of seasons in which the event may occur. You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
 You can tag with a mix of "newleaf", "greenleaf", "leaf-fall", "leaf-bare", or remove the parameter altogether to allow for any season.
 
 ***
 
-### tags: list[str]
+#### tags: list[str]
 Used to dictate some odds-and-ends about event constraints: [General Tags](../reference/tag-lists.md#general-tags).
 
 ***
@@ -188,7 +188,7 @@ Utilizes the same functionality as the greater patrol parameter: [required_cat_t
 
 ***
 
-### involved_cats: dict[str: dict]
+#### involved_cats: dict[str: dict]
 This dictionary holds all constraints for the cats whom we wish to reference in the ceremony.
 
 [Full Involved Cat Dictionary Information](../reference/involved-cat-dict.md)
@@ -197,7 +197,7 @@ This dictionary holds all constraints for the cats whom we wish to reference in 
 
 ***
 
-### required_reputation: dict:
+#### required_reputation: dict:
 Constrains the event to only occur if the player clan has the required reputation.
 ```json
     "required_reputation": {
@@ -213,7 +213,7 @@ Constrains the event to only occur if the player clan has the required reputatio
 
 ***
 
-### relationship_constraint: list[dict]
+#### relationship_constraint: list[dict]
 Constrains the event to only occur if the specified relationships exist. Multiple dictionary blocks can be added to specify multiple required configurations of relationships.
 ```json
         "relationship_constraint": [
@@ -251,7 +251,7 @@ Constrains the event to only occur if the specified relationships exist. Multipl
 
 ***
 
-### patrol_temperament: list[str]
+#### patrol_temperament: list[str]
 List of allowed patrol temperaments. The patrol's temperament is calculated from the personalities of the cats on it, weighted by rank. [Possible Tempers](../reference/tag-lists.md/#clan-temperaments). You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
 
 [Patrol Outcome Specific Notes](../patrols/patrol_outcome.md#patrol_temperament-liststr)
@@ -259,27 +259,27 @@ List of allowed patrol temperaments. The patrol's temperament is calculated from
 
 ***
 
-### other_clan_temperament: list[str]
+#### other_clan_temperament: list[str]
 List of allowed temperaments for the other Clan involved in the event. [Possible Tempers](../reference/tag-lists.md/#clan-temperaments). You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
 
 [Patrol Outcome Specific Notes](../patrols/patrol_outcome.md#other_clan_temperament-liststr)
 
 ***
 
-### outcome_art: str
+#### outcome_art: str
 Optional. Name of outcome-specific art, without file extension (no .png). If no art is specified, the intro art will be used. If you would like this to be art of the POI, you can just enter `"POI"` as the art file.
 
  Example: "outcome_art": "bord_general_intro",
 
 
-### outcome_art_clean: str
+#### outcome_art_clean: str
 Optional. Name of non-gore outcome-specific art, without file extension (no .png). Adding a clean version of the art marks the normal version as containing gore. The game will then use the clean version if the "Allow mild gore and blood in patrol artwork" setting is off, and the explicit version if this setting is on.
 
  Example: "outcome_art_clean": "bord_general_intro",
 
 ***
 
-### strings: list[str]
+#### strings: list[str]
 This is a list of events applicable to the constraints on this events block. You may include as many or as few events here as you wish, but remember that the constraints will apply to *all* of them. 
 
 For example:
@@ -295,12 +295,12 @@ For example:
 
 ***
 
-### exp_gained: int
+#### exp_gained: int
 The amount of exp cats receive (sorta). The exact amount also depends on the number of cats and current EXP levels, but in general, a higher number here means more exp. If exp is 0, no exp will be given. 
 
 ***
 
-### reputation_changes: dict
+#### reputation_changes: dict
 How the player Clan's reputation will change with outsiders or the other_clan. Specify a positive or negative integer.
 
 ```json
@@ -314,12 +314,12 @@ How the player Clan's reputation will change with outsiders or the other_clan. S
 
 ***
 
-### relationship_changes:list[dict[str, various]]
+#### relationship_changes:list[dict[str, various]]
 Indicates effects on cat relationships. Check [Writing Relationship Changes](../reference/common-formats.md#writing-relationship-changes) for full parameters.
 
 ***
 
-### supply:list[dict]
+#### supply:list[dict]
 Indicates changes to the supply of the Clan. Each supply change block is a new change.
 
 Change block:
@@ -346,7 +346,7 @@ Change block:
 
 ***
 
-### death: list[dict]
+#### death: list[dict]
 Indicate which cats should die as a result of this event. You can specify different "types" of death as separate blocks.
 
 Death block:
@@ -372,7 +372,7 @@ Death block:
 
 ***
 
-### condition: list[dict]
+#### condition: list[dict]
 Indicate which cats should receive conditions and what conditions they receive. You can add multiple condition blocks.
 
 Condition block:
@@ -410,7 +410,7 @@ Condition block:
 
 ***
 
-### lost: list[dict]
+#### lost: list[dict]
 Indicate which cats should be lost from their Clan. You can add multiple lost blocks.
 
 Lost block:
@@ -426,7 +426,7 @@ Lost block:
 
 ***
 
-### join: list[dict]
+#### join: list[dict]
 > Indicate which cats will join the player Clan. You can add multiple join blocks.
 
 Join block:
@@ -448,7 +448,7 @@ Join block:
 
 ***
 
-## meet: list[dict]
+#### meet: list[dict]
 > Indicate which cats will meet the player Clan. You can add multiple meet blocks.
 
 meet block:
@@ -462,7 +462,7 @@ meet block:
 
 ***
 
-### future_event:list[dict{str, various}]
+#### future_event:list[dict{str, various}]
 
  [Using Future Events](../future.md)
  

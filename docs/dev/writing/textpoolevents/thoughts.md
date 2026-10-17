@@ -74,6 +74,9 @@ The following parameters from the TextPoolFormat are not used for Thoughts:
 - [required_cat_types](../textpoolevents/textpoolevent-format.md#required_cat_types-dictstr-listint)
 - [patrol_temperament](../textpoolevents/textpoolevent-format.md#patrol_temperament-liststr)
 - [exp_gained](../textpoolevents/textpoolevent-format.md#exp_gained-int)
+- [death](../textpoolevents/textpoolevent-format.md#death-listdict)
+- [lost](../textpoolevents/textpoolevent-format.md#lost-listdict)
+- [join](../textpoolevents/textpoolevent-format.md#join-listdict)
 
 
 ***
