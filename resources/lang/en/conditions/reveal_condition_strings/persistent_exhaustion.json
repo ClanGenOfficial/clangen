@@ -1,0 +1,29 @@
+[
+    {
+        "event_id": "reveal_condition_persistent_exhaustion",
+        "strings": [
+            "r_c0 explained that the fatigue m_c felt wasn't usual for {PRONOUN/m_c/poss} age."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "kitten"
+                ]
+            },
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "reveal_condition_persistent_exhaustion1",
+        "strings": [
+            "m_c's body doesn't quite seem to keep up all the time, and never truly has. {PRONOUN/m_c/subject/CAP} have persistent exhaustion."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

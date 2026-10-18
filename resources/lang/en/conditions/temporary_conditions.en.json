@@ -38,6 +38,8 @@
         "tick_fever_alert": "sick!",
         "dangerously_cold": "dangerously cold",
         "dangerously_cold_alert": "sick!",
+        "exhausted": "exhausted",
+        "exhausted_alert": "sick!",
         "frostbite": "frostbite",
         "frostbite_alert": "sick!",
         "poisoned": "poisoned",

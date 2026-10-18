@@ -1196,5 +1196,24 @@
                 "poppy"
             ]
         }
-    }
+    },
+    "exhausted": {
+        "severity": "major",
+        "duration": 1,
+        "is_complication": false,
+        "mortality": {},
+        "infectiousness": 0.0,
+        "immune_system_effect": 0.1,
+        "side_effect": {},
+        "progression": {},
+        "risks": {},
+        "treatment_strength": {
+            "1": [],
+            "2": [
+                "ragwort",
+                "juniper"
+            ],
+            "3": []
+        }
+    }   
 }

@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "persistent_exhaustion_headache",
+        "strings": [
+            "m_c seemed to have overworked {PRONOUN/m_c/self}, with a headache as consequence."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

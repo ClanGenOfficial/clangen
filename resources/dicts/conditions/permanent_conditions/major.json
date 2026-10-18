@@ -346,5 +346,28 @@
                 "poppy"
             ]
         }
+    },
+    "persistent_exhaustion": {
+        "severity": "major",
+        "can_be_congenital": true,
+        "can_be_acquired": true,
+        "moons_until_discovery": [3,18],
+        "mortality": {},
+        "immune_system_effect": 0.1,
+        "progression": {},
+        "risks": {
+            "sore": 0.2,
+            "headache": 0.2,
+            "exhausted": 0.3
+        },
+        "treatment_strength": {
+            "1": [],
+            "2": [
+                "juniper",
+                "ragwort"
+            ],
+            "3": []
+        }
     }
+    
 }
