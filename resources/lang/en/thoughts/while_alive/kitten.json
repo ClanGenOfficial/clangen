@@ -1631,7 +1631,7 @@
     {
         "event_id": "kit_splashes_in_puddles0",
         "strings": [
-            "Is getting lectured about getting the nursery dirty",
+            "Is being lectured about getting the nursery dirty",
             "Pokes at a puddle with a paw before jumping in, much to r_c's dismay"
         ],
         "involved_cats": {
