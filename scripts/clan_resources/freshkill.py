@@ -246,7 +246,7 @@ class FreshkillPile:
                 event_list.append(i18n.t("hardcoded.expired_prey", count=amount))
         self.total_amount = sum(self.pile.values())
         prey_loss = round(
-            self.total_amount * get_config("prey.prey_loss.loss") / 100, 2
+            self.total_amount * get_config("prey.prey_loss.loss"), 2
         )
         if prey_loss > 0:
             event_list.append(i18n.t("hardcoded.tribute_prey", count=prey_loss))
