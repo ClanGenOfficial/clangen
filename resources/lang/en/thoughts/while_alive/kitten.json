@@ -1566,6 +1566,9 @@
     },
     {
         "event_id": "kit_constantly_climbing",
+        "tags": [
+            "clan:warrior"
+        ],
         "strings": [
             "Has to be pried from the walls... again",
             "Likes seeing the older cats from higher-up"
@@ -1701,6 +1704,9 @@
     },
     {
         "event_id": "kit_story_kitsitter_to_other_kit",
+        "tags": [
+            "clan:kitten"
+        ],
         "strings": [
             "Always has the best games in the nursery!",
             "Leads a fun game about a strange adventure"
@@ -1716,14 +1722,6 @@
                         "KIT,0"
                     ]
                 }
-            },
-            "r_c": {
-                "status": [
-                    "kitten"
-                ],
-                "group": [
-                    "-afterlife"
-                ]
             }
         }
     }
