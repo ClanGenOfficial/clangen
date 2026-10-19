@@ -129,6 +129,10 @@
         "mangled_tail": "mangled tail",
         "mangled_tail_alert": "hurt!",
         "broken_back": "broken back",
-        "broken_back_alert": "hurt!"
+        "broken_back_alert": "hurt!",
+        "amputated_leg": "amputated leg",
+        "amputated_leg_alert": "hurt!",
+        "amputated_tail": "amputated tail",
+        "amputated_tail_alert": "hurt!"
     }
 }

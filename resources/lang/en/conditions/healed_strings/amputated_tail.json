@@ -1,0 +1,24 @@
+[
+    {
+        "event_id": "healed_amputated_tail0",
+        "strings": [
+            "m_c's amputated tail has finally healed enough for {PRONOUN/m_c/object} to return to normal life.",
+            "The stump of m_c's amputated tail has finally healed."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    },
+    {
+        "event_id": "healed_amputated_tail1",
+        "strings": [
+            "m_c has been released from the medicine cat den. It seems the amputation healed well."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": ["medicine cat"]
+            }
+        }
+    }
+]

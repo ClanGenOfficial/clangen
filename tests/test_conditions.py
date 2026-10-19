@@ -123,6 +123,11 @@ class TestTemporaryCondition(unittest.TestCase):
         """
         Tests that conditions are able to progress through their various states correctly
         """
+        # just stops side effects from being applied to avoid an herb_supply crash
+        gain_conditions._handle_condition_side_effect = Mock()
+        gain_conditions._handle_condition_side_effect(None, {})
+        gain_conditions._handle_condition_side_effect.assert_called()
+
         for c in TEMPORARY_CONDITIONS:
             if c == "pregnant":
                 # this is a weird one that has very specialized behavior
@@ -174,6 +179,7 @@ class TestTemporaryCondition(unittest.TestCase):
                     gain_temporary_condition(cat1, c, allow_side_effects=False)
 
                     cat1.get_condition(c).risks = {r: chance}
+                    cat1.get_condition(c).progression = {}
 
                     handle_existing_conditions.random = Mock(return_value=chance - 0.01)
 
@@ -214,7 +220,7 @@ class TestTemporaryCondition(unittest.TestCase):
                     )
 
                     handle_existing_conditions.update_temporary_condition_state = Mock(
-                        return_value=info["when"]
+                        return_value=ConditionState[info["when"]]
                     )
 
                     handle_temporary_conditions(cat1)

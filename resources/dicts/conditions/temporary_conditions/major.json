@@ -1058,13 +1058,7 @@
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
         "side_effect": {},
-        "progression": {
-            "recovering_from_birth": {
-                "chance": 2.0,
-                "when": "HEALED",
-                "allow_scar": false
-            }
-        },
+        "progression": {},
         "risks": {},
         "treatment_strength": {
             "1": [],
