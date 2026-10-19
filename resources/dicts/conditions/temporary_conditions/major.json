@@ -1198,6 +1198,7 @@
         }
     },
     "exhausted": {
+        "tags": [],
         "severity": "major",
         "duration": 1,
         "is_complication": false,
