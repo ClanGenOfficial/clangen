@@ -359,12 +359,18 @@
             "m_c": {
                 "status": [
                     "-kitten"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             },
             "r_c": {
                 "status": [
                     "-kitten"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             }
         },
         "relationship_changes": [
@@ -399,7 +405,10 @@
                     "leader",
                     "medicine cat apprentice",
                     "medicine cat"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             },
             "r_c": {
                 "status": [
@@ -409,7 +418,10 @@
                     "leader",
                     "medicine cat apprentice",
                     "medicine cat"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             }
         },
         "relationship_constraint": [

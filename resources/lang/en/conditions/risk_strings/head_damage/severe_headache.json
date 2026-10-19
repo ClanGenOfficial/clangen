@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "head_damage_severe_headache0",
+        "strings": [
+            "m_c yowls with pain, begging r_c0 for any relief. The damage to {PRONOUN/m_c/poss} head must have been severe to cause such painful headaches."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "head_damage_severe_headache1",
+        "strings": [
+            "m_c can't focus on anything but the searing pain in {PRONOUN/m_c/poss} head. {PRONOUN/m_c/poss/CAP} head injury must have rattled something deep in {PRONOUN/m_c/poss} skull."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

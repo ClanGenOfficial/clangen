@@ -50,7 +50,7 @@ def generate_sprite(
     # sick sprites
     if (
         not disable_sick_sprite
-        and cat.not_working()
+        and not cat.can_work()
         and age != CatAge.NEWBORN
         and constants.CONFIG["cat_sprites"]["sick_sprites"]
     ):

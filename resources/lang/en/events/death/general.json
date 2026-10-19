@@ -2040,8 +2040,11 @@
         "sub_type": [
             "war"
         ],
+        "poi": {
+        	"name": ["terrain_thunderpath"]
+        },
         "frequency": 3,
-        "event_text": "m_c was hit by a monster while escaping across a Thunderpath from o_c_n warriors.",
+        "event_text": "m_c was hit by a monster while escaping across POI from o_c_n warriors.",
         "m_c": {
             "status": [
                 "apprentice",

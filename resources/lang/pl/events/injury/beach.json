@@ -42,7 +42,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "water in their lungs"
+                    "water_in_lungs"
                 ]
             }
         ],
@@ -95,7 +95,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "cracked pads"
+                    "cracked_pads"
                 ]
             }
         ]
@@ -211,7 +211,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "shivering"
+                    "dangerously_cold"
                 ]
             }
         ],
@@ -341,7 +341,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "claw-wound"
+                    "claw_wound"
                 ],
                 "scars": [
                     "BACK", "TWO"
@@ -409,7 +409,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "claw-wound"
+                    "claw_wound"
                 ],
                 "scars": [
                     "BACK", "TWO"
@@ -486,7 +486,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "water in their lungs"
+                    "water_in_lungs"
                 ]
             }
         ],
@@ -573,7 +573,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "shivering"
+                    "dangerously_cold"
                 ]
             }
         ],
@@ -748,7 +748,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "snake bite"
+                    "snake_bite"
                 ]
             }
         ],
@@ -765,8 +765,7 @@
     {
         "event_id": "bch_injury_crackedpads_any1",
         "location": [
-            "any"
-        ],
+            "any"],
         "season": [
             "any"
         ],
@@ -786,7 +785,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "cracked pads"
+                    "cracked_pads"
                 ]
             }
         ]
@@ -816,7 +815,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "water in their lungs"
+                    "water_in_lungs"
                 ]
             }
         ],
@@ -953,7 +952,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "broken bone"
+                    "broken_bone"
                 ]
             }
         ],
@@ -1145,7 +1144,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "small cut"
+                    "small_cut"
                 ]
             }
         ]
@@ -1166,7 +1165,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "small cut"
+                    "small_cut"
                 ]
             },
             {
@@ -1174,7 +1173,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "poisoned"
+                    "venom_sickness"
                 ]
             }
         ],
