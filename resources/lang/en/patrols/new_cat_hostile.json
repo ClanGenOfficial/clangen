@@ -5360,5 +5360,400 @@
                 }
             }
         ]
+    },
+    {
+        "event_id": "gen_bord_fordriver_newborns_hostile",
+        "types": ["border"],
+        "frequency": 1,
+        "poi": {
+            "name": ["terrain_fordriver"]
+        },
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ]
+        },
+        "chance_of_success": 40,
+        "patrol_art": "POI",
+        "intro_strings": [
+            "As the patrol travels along POI, they spot an odd Twoleg thing floating downstream. As it bobs up and down in the water, p_l spots tiny paws pressing up from inside the object!",
+            "While the patrol is carefully crossing POI, a cat lets out a warning yowl as a limp Twoleg thing floats towards them. As it gets closer, the patrol can hear desperate, gasping mewls coming from it!",
+            "While checking prey levels at POI, p_l groans as {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} spot a Twoleg object floating in the water. Can't they pollute their <i>own</i> waterways and leave c_n's alone? They'll have to fish it out..."
+        ],
+        "decline_strings": [
+            "The patrol watches the strange thing float past them. Nobody's sure what it is or if it's safe, and the water's too cold to bother with."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 10,
+                "outcome_art": "cat_sprites/gen_bord_abandonedkit_KtWr",
+                "strings": [
+                    "p_l orders the patrol into the water to grab the Twoleg thing, and the cats work together to pull it out of the water. p_l tears it open and pulls out a newborn kit! p_l explains that kittypet queens will give Twolegs their litters so they can toss the kits into water, just for fun. It's impressive that a litter of kittypets survived the rushing water - perhaps they'll make good warriors."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "gender": ["can_birth"],
+                        "age": [
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": ["kittypet"],
+                        "backstory": ["kittypet_backstories"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {
+                            "become_litter": true,
+                            "assign_blood_parent": [
+                                "n_c0"
+                            ]
+                        },
+                        "age": [
+                            "newborn"
+                        ],
+                        "backstory": [
+                            "abandoned1"
+                        ]
+                    }
+                },
+                "join": [
+                    {
+                        "cats": [
+                            "n_c1"
+                        ],
+                        "new_status": [
+                            "newborn"
+                        ]
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "recovering_from_birth"
+                        ],
+                        "no_results": true,
+                        "death_history": "This cat died after giving birth"
+                    },
+                    {
+                        "cats": [
+                            "n_c1"
+                        ],
+                        "condition": [
+                            "water_in_lungs"
+                        ],
+                        "death_history": "m_c died from water in {PRONOUN/m_c/poss} lungs after {PRONOUN/m_c/poss} mother's Twolegs threw {PRONOUN/m_c/object} into the water."
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c1"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_to saved cat_from from drowning and brought {PRONOUN/cat_from/object} to c_n as a newborn."
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 2
+                }
+            },
+            {
+                "frequency": 4,
+                "exp_gained": 10,
+                "outcome_art": "cat_sprites/gen_bord_abandonedkit_KtWr",
+                "strings": [
+                    "p_l orders the patrol into the water to grab the Twoleg thing. The current is surprisingly fast here, and the thing slips right past r_c0's outstretched claws. s_c0 turns and plunges after it, separating from the rest of the patrol as {PRONOUN/s_c0/subject} {VERB/s_c0/follow/follows} the thing downstream. With the current at {PRONOUN/s_c0/poss} back, s_c0 soon catches up to the object and drags it ashore. Inside is a half-drowned litter of kits, smelling vaguely of Twolegs and milk. s_c0 waits next to the litter for the patrol to catch up and decide what to do with the kittypet newborns."
+                ],
+                "involved_cats": {
+                    "r_c0": {},
+                    "s_c0": {
+                        "prior_abbreviation": ["any"],
+                        "stat": {
+                            "skill": ["SWIMMER,1"]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "gender": ["can_birth"],
+                        "age": [
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": ["kittypet"],
+                        "backstory": ["kittypet_backstories"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {
+                            "become_litter": true,
+                            "assign_blood_parent": [
+                                "n_c0"
+                            ]
+                        },
+                        "age": [
+                            "newborn"
+                        ],
+                        "backstory": [
+                            "abandoned1"
+                        ]
+                    }
+                },
+                "join": [
+                    {
+                        "cats": [
+                            "n_c1"
+                        ],
+                        "new_status": [
+                            "newborn"
+                        ]
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "recovering_from_birth"
+                        ],
+                        "no_results": true,
+                        "death_history": "This cat died after giving birth"
+                    },
+                    {
+                        "cats": [
+                            "n_c1"
+                        ],
+                        "condition": [
+                            "water_in_lungs"
+                        ],
+                        "death_history": "m_c died from water in {PRONOUN/m_c/poss} lungs after {PRONOUN/m_c/poss} mother's Twolegs threw {PRONOUN/m_c/object} into the water."
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c1"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_to saved cat_from from drowning and brought {PRONOUN/cat_from/object} to c_n as a newborn."
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 2
+                }
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_comfort_WrWr",
+                "strings": [
+                    "p_l orders the patrol into the water, but the current is too quick and sweeps the Twoleg thing past the patrol. They try wading after it, but the water moves faster than the cats can, and soon it's out of sight. p_l sighs and tells the patrol to carry on. Later, {PRONOUN/p_l/subject} mentions to r_c0 that that Twoleg thing probably had a litter of kittens in it - poor things. r_c0 reassures p_l that it's not {PRONOUN/p_l/poss} fault that the kits drowned, and it's certainly not c_n's fault that Twolegs are so cruel."
+                ],
+                "involved_cats": {
+                    "r_c0": {},
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "gender": ["can_birth"],
+                        "age": [
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": ["kittypet"],
+                        "backstory": ["kittypet_backstories"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {
+                            "become_litter": true,
+                            "assign_blood_parent": [
+                                "n_c0"
+                            ]
+                        },
+                        "age": [
+                            "newborn"
+                        ],
+                        "backstory": [
+                            "abandoned1"
+                        ]
+                    }
+                },
+                "death": [
+                    {
+                        "cats": [
+                            "n_c1"
+                        ],
+                        "history": "This cat died while wandering.",
+                        "no_results": true
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "recovering_from_birth"
+                        ],
+                        "no_results": true,
+                        "death_history": "This cat died after giving birth"
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from appreciated that cat_to comforted {PRONOUN/cat_from/object} when {PRONOUN/cat_from/subject} felt guilty over the death of some outsider kits."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was moved by cat_to's sadness over the loss of some kits, even though they were outsiders."
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": -1
+                }
+            },
+            {
+                "frequency": 4,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_drowning_Wr",
+                "strings": [
+                    "p_l orders the patrol into the water to grab the Twoleg thing. The current is surprisingly fast here, and the thing slips right past r_c0's outstretched claws. s_c0 turns and plunges after it, separating from the rest of the patrol as {PRONOUN/s_c0/subject} {VERB/s_c0/follow/follows} the thing downstream. But the current is so fast, and try as s_c0 may, {PRONOUN/s_c0/subject} just can't catch up. Before {PRONOUN/s_c0/subject} {VERB/s_c0/know/knows} it, s_c0 has gone too far, and is swept into the rapids. The patrol finds s_c0 on the shore hundreds of tail-lengths downstream, battered, bruised, and hacking up water. s_c0 is scolded for risking {PRONOUN/s_c0/poss} life over a stupid Twoleg thing."
+                ],
+                "involved_cats": {
+                    "r_c0": {},
+                    "s_c0": {
+                        "prior_abbreviation": ["any"],
+                        "stat": {
+                            "skill": ["SWIMMER,0"]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "gender": ["can_birth"],
+                        "age": [
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": ["kittypet"],
+                        "backstory": ["kittypet_backstories"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {
+                            "become_litter": true,
+                            "assign_blood_parent": [
+                                "n_c0"
+                            ]
+                        },
+                        "age": [
+                            "newborn"
+                        ],
+                        "backstory": [
+                            "abandoned1"
+                        ]
+                    }
+                },
+                "death": [
+                    {
+                        "cats": [
+                            "n_c1"
+                        ],
+                        "history": "This cat died while wandering.",
+                        "no_results": true
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "recovering_from_birth"
+                        ],
+                        "no_results": true,
+                        "death_history": "This cat died after giving birth"
+                    },
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "condition": [
+                            "water_in_lungs",
+                            "minor_injury"
+                        ],
+                        "death_history": "m_c died from water in {PRONOUN/m_c/poss} lungs after {PRONOUN/m_c/subject} tried to remove a Twoleg thing from the water."
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to nearly got {PRONOUN/cat_to/self} killed trying to fish out a stupid Twoleg thing from the water"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": -1
+                }
+            }
+        ]
     }
 ]
