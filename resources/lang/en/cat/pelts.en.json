@@ -13,6 +13,10 @@
             "one": "silver",
             "many": "silver"
         },
+        "SOOT": {
+            "one": "gray",
+            "many": "gray"
+        },
         "GREY": {
             "one": "gray",
             "many": "gray"
@@ -48,6 +52,10 @@
         "GOLDEN": {
             "one": "golden",
             "many": "golden"
+        },
+        "SUNSHINE": {
+            "one": "golden",
+            "many": "golden black"
         },
         "GINGER": {
             "one": "ginger",

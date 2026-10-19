@@ -334,5 +334,103 @@
         "strings": [
             "m_c has always longed for adventure and {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} like being a medicine cat apprentice will be the greatest adventure of them all. r_c0 eagerly accepts such an eager and willing apprentice."
         ]
+    },
+    {
+        "event_id": "med_app_POI_moonplace0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": ["STAR,0", "DREAM,0", "CLAIRVOYANT,0"]
+                }
+            }
+        },
+        "poi": {
+            "category": "moonplace"
+        },
+        "strings": [
+            "The night before (old_name)'s apprentice ceremony, {PRONOUN/m_c/subject} {VERB/m_c/have/has} a vivid dream of POI. r_c0 takes it as a sign and takes m_c on as {PRONOUN/r_c0/poss} apprentice."
+        ]
+    },
+    {
+        "event_id": "med_app_POI_moonplace1",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": ["charismatic", "bold", "fierce", "daring", "compassionate", "loving", "arrogant", "ambitious", "competitive", "flamboyant", "cunning", "shameless", "childish", "playful", "sincere"]
+                }
+            }
+        },
+        "poi": {
+            "category": "moonplace"
+        },
+        "strings": [
+            "r_c0 agrees to train m_c to be a medicine cat. m_c can't wait to visit POI and meet the other medicine cats."
+        ]
+    },
+    {
+        "event_id": "med_app_POI_moonplace2",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": ["calm", "thoughtful", "wise", "lonesome", "careful", "gloomy"],
+                    "skill": ["STAR,0", "PROPHET,0", "OMEN,0", "CLAIRVOYANT,0"],
+                    "must_have_both": false
+                }
+            }
+        },
+        "poi": {
+            "category": "moonplace"
+        },
+        "strings": [
+            "r_c0 agrees to train m_c to be a medicine cat. m_c can't wait to visit POI and enter the mysteries of StarClan."
+        ]
+    },
+    {
+        "event_id": "med_app_POI_darkmoonpool",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": ["DARK,0"]
+                }
+            }
+        },
+        "poi": {
+            "name": ["moon_pool"]
+        },
+        "strings": [
+            "(old_name) has {PRONOUN/m_c/poss} heart set on becoming a medicine cat. r_c0 agrees to train {PRONOUN/m_c/object}, trying in vain to forget {PRONOUN/r_c0/poss} dream of m_c washing bloodstained paws in the waters of POI."
+        ]
+    },
+    {
+        "event_id": "med_app_POI_darkwhisperingcave",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": ["DARK,0"]
+                }
+            }
+        },
+        "poi": {
+            "name": ["moon_cave"]
+        },
+        "strings": [
+            "(old_name) has {PRONOUN/m_c/poss} heart set on becoming a medicine cat. r_c0 agrees to train {PRONOUN/m_c/object}, trying in vain to forget {PRONOUN/r_c0/poss} dream of screams drowning out the whispers of POI."
+        ]
+    },
+    {
+        "event_id": "med_app_POI_darkmothermouth",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": ["DARK,0"]
+                }
+            }
+        },
+        "poi": {
+            "name": ["moon_mothermouth"]
+        },
+        "strings": [
+            "(old_name) has {PRONOUN/m_c/poss} heart set on becoming a medicine cat. r_c0 agrees to train {PRONOUN/m_c/object}, trying in vain to forget {PRONOUN/r_c0/poss} dream of bloodred eyes peering out from the shadows of POI."
+        ]
     }
 ]

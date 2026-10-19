@@ -2425,7 +2425,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_solo_Ap",
                 "strings": [
-                    "The apprentices spot a stringy, rangy looking elk calf, busy taking its first independant adventures away from its mother. If they brought an <i>elk calf</i> back to camp, they'd be the talk of the next gathering! Only s_c0 has the bravery to bound up to it, leaping through the grass. The elk calf snuffles and touches noses with {PRONOUN/s_c0/object}."
+                    "The apprentices spot a stringy, rangy looking elk calf, busy taking its first independent adventures away from its mother. If they brought an <i>elk calf</i> back to camp, they'd be the talk of the next gathering! Only s_c0 has the bravery to bound up to it, leaping through the grass. The elk calf snuffles and touches noses with {PRONOUN/s_c0/object}."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -2666,7 +2666,7 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_train_solo_Ap",
                 "strings": [
-                    "The apprentices spot a stringy, rangy looking elk calf, busy taking its first independant adventures away from its mother. If they brought an <i>elk calf</i> back to camp, they'd be the talk of the next gathering! Only s_c0 has the bravery to bound up to it. The calf startles, flinches backwards and stomping with its front hooves."
+                    "The apprentices spot a stringy, rangy looking elk calf, busy taking its first independent adventures away from its mother. If they brought an <i>elk calf</i> back to camp, they'd be the talk of the next gathering! Only s_c0 has the bravery to bound up to it. The calf startles, flinches backwards and stomping with its front hooves."
                 ],
                 "involved_cats": {
                     "s_c0": {

@@ -5,7 +5,11 @@
 		"m_c and r_c have been arguing with each other a lot as of late, making everyone uneasy around them. c_n is secretly relieved when they announce that they're no longer mates.",
 		"m_c and r_c had a huge fight in the middle of the clearing, exchanging hurtful words before calling off their relationship for good.",
 		"When a Clanmate asked m_c about r_c, m_c hissed angrily at them, saying {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} want to hear anything about that fox-heart again, making it clear that they're no longer mates.",
-		"m_c and r_c had enough of each other's fox-dung after arguing about every little thing for the past moon now. They call off their relationship for good."
+		"m_c and r_c had enough of each other's fox-dung after arguing about every little thing for the past moon now. They call off their relationship for good.",
+		"Nobody truly knows who started that intense final fight. All the Clan knows is that it ended with m_c and r_c cursing at each other and ending things once and for all.",
+		"m_c and r_c have been fighting a lot recently. But when m_c says something especially hurtful to r_c, {PRONOUN/r_c/subject} can't take it anymore and {VERB/r_c/break/breaks} up with m_c on the spot.",
+		"Did m_c ever care for r_c at all? That's the last question r_c leaves m_c with after a particularly bad argument. It's clear after this that they're no longer mates.",
+		"m_c and r_c always claimed they would be together 'til death do them part. But one day, when they viciously fight in the clearing, they end their relationship wondering if that parting could've been at each other's claws."
 	],
 	"decided_to_be_friends":[
 		"m_c and r_c realized that they were better off as friends, so they decided to break up.",
@@ -13,7 +17,8 @@
 		"m_c realizes that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have the mentality to keep a romantic relationship right now. After a little talk with r_c, they have decided that they should just be friends, for now at least.",
 		"m_c feels like {PRONOUN/m_c/subject} {VERB/m_c/aren't/isn't} a good fit for r_c anymore. After a talk with {PRONOUN/r_c/object}, they've decided to just be friends.",
 		"m_c isn't so sure about continuing a romantic relationship with r_c anymore. After a little talk, they have decided that they should just be friends.",
-		"m_c and r_c announce their break-up. Before their friends can offer sympathy, m_c and r_c reassure them that they left off on good terms and will still be good friends!"
+		"m_c and r_c announce their break-up. Before their friends can offer sympathy, m_c and r_c reassure them that they left off on good terms and will still be good friends!",
+		"After m_c and r_c's break-up, nothing much seems to change. In fact, the two appear to be much happier as friends than they ever were as mates."
 	],
 	"lost_feelings":[
 		"m_c and r_c lost feelings for each other over time. They broke up this moon.",
@@ -22,23 +27,40 @@
     	"Things sadly just didn't work out the way m_c and r_c thought it would... With heaviness in their hearts, they have decided to break up.",
     	"Sometimes, good things must come to an end, m_c and r_c realize as they announce to the Clan that they’re no longer mates.",
 		"m_c isn't so sure about continuing a romantic relationship with r_c anymore. After talking with {PRONOUN/r_c/object}, they decided to break up.",
-		"m_c realizes that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have the mentality to keep a romantic relationship right now. After a little talk with r_c, they have decided to break up."
+		"m_c realizes that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have the mentality to keep a romantic relationship right now. After a little talk with r_c, they have decided to break up.",
+		"m_c and r_c thought being mates would be a wonderful, magical thing... But over time, that feeling faded. They silently break up.",
+		"Perhaps m_c and r_c imagined something else when they became mates, but whatever it was, it wasn't this. The distance between them only worsens over time, and the message is clear. They're no longer mates."
 	],
 	"bad_breakup":[
 		"Out of the blue, m_c bluntly tells r_c that {PRONOUN/m_c/subject} {VERB/m_c/aren't/isn't} interested in {PRONOUN/r_c/object} anymore, so {PRONOUN/m_c/subject} {VERB/m_c/call/calls} off their relationship. r_c walks away heartbroken and confused.",
     	"Some relationships turn out good, some don't, but for m_c and r_c's relationship, things <i>really</i> didn't turn out so well. They've broken up.", 
     	"Things have become tense and sour in m_c and r_c’s relationship. They decided to break up before any fight breaks out between them.",
-		"r_c broke up with m_c and m_c has taken it very hard. {PRONOUN/m_c/subject/CAP} seem to be avoiding r_c as much as possible."
+		"r_c broke up with m_c and m_c has taken it very hard. {PRONOUN/m_c/subject/CAP} seem to be avoiding r_c as much as possible.",
+		"r_c thought {PRONOUN/r_c/subject} could make things work with m_c. {PRONOUN/r_c/subject/CAP} <i>really</i> did. But {PRONOUN/r_c/subject} can't do it anymore. The pair breaks up, avoiding each other the best they can.",
+		"m_c had always tried to see the good in r_c, excusing even {PRONOUN/r_c/poss} worst actions. But the illusion of {PRONOUN/r_c/object} improving wears off, and m_c realizes {PRONOUN/m_c/subject} can't keep up a relationship with a cat like {PRONOUN/r_c/object}.",
+		"m_c has been growing more and more irritated over the little things when it comes to r_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/chew/chews} with {PRONOUN/r_c/poss} mouth open, {VERB/r_c/snore/snores} too loud... When r_c does something seemingly inconspicuous, m_c snaps and breaks up with {PRONOUN/r_c/object}.",
+		"When r_c asks if they can talk, m_c's fears that {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been harboring are brought to the surface. The clenching feeling in {PRONOUN/m_c/poss} stomach only worsens when r_c breaks up with {PRONOUN/m_c/object}. m_c wonders who will soothe {PRONOUN/m_c/poss} frantic mind now...",
+		"After complaining about yet another thing r_c did to a friend, they ask m_c why {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} still with r_c in the first place. Later that day, the two break up."
 	],
 	"chill_breakup":[
 		"m_c and r_c broke up.", 
         "m_c and r_c have decided that they may not be the right fit for each other after all, they decide leave off on good terms and break up.",
-		"After explaining {PRONOUN/m_c/poss} feelings and thoughts to r_c, m_c broke up with {PRONOUN/r_c/object}, no hard feelings."
+		"After explaining {PRONOUN/m_c/poss} feelings and thoughts to r_c, m_c broke up with {PRONOUN/r_c/object}, no hard feelings.",
+		"m_c and r_c know each other better than most. That's why they know it'd be better off for them both if they ended things now."
 	],
 	"affair_discovery_breakup":[
-		"m_c decides to break up with r_c after discovering that {PRONOUN/r_c/subject} had kits with another cat.",
+		"m_c decides to break up with r_c after discovering that {PRONOUN/r_c/subject} had a litter with another cat.",
 		"Outraged at the fact {PRONOUN/m_c/subject} {VERB/m_c/had/has} been cheated on, m_c breaks up with r_c.",
 		"m_c feels like {PRONOUN/m_c/subject} {VERB/m_c/die/dies} a little every time {PRONOUN/m_c/subject} {VERB/m_c/see/sees} r_c with the litter that isn't m_c's. Unable to bear this burden anymore, m_c breaks up with r_c for good.",
-		"m_c feels betrayed that {PRONOUN/m_c/poss} mate, r_c, had a litter with another cat. m_c breaks up with r_c, leaving {PRONOUN/r_c/object} to raise the litter on {PRONOUN/r_c/poss} own."
+		"m_c feels betrayed that {PRONOUN/m_c/poss} mate, r_c, had a litter with another cat. m_c breaks up with r_c, leaving {PRONOUN/r_c/object} to raise the litter on {PRONOUN/r_c/poss} own.",
+		"While m_c doesn't blame the litter, {PRONOUN/m_c/subject} just can't look at r_c the same way after discovering the affair. m_c and r_c break up.",
+		"m_c can't believe r_c would have a litter with another cat! m_c, knowing {PRONOUN/m_c/poss} worth, breaks up with r_c.",
+		"m_c wanted to pretend everything was fine, but knowing r_c would go behind {PRONOUN/m_c/poss} back and have a litter with another cat is something {PRONOUN/m_c/subject} won't ever recover from. m_c breaks up with r_c.",
+		"Once upon a time, m_c vowed to do anything and everything for r_c. Anything except raising a litter that isn't {PRONOUN/m_c/inposs}. Outraged at the affair, m_c breaks up with r_c.",
+		"m_c just can't understand what {PRONOUN/m_c/subject} could have done wrong. Why would r_c have a litter with someone else? Confused and heartbroken, m_c decides to break up with r_c.",
+		"Filled with rage, m_c tells r_c that if {PRONOUN/r_c/subject} hated {PRONOUN/m_c/object} so much {PRONOUN/r_c/subject}'d rather raise a litter with another cat, then {PRONOUN/r_c/subject} can do so. m_c breaks up with r_c.",
+		"m_c's dream of a perfect life with r_c has been ripped apart by the affair. m_c feels like {PRONOUN/m_c/subject} {VERB/m_c/have/has} no choice but to break up with r_c.",
+		"Maybe m_c would have liked to raise kits with r_c, once. But not like this. Not after r_c betrayed {PRONOUN/m_c/object} with an affair. m_c and r_c end their relationship.",
+		"m_c thought r_c was {PRONOUN/m_c/poss} favorite cat in the world. But ever since {PRONOUN/m_c/subject} discovered the affair, {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} realized {PRONOUN/m_c/subject} {VERB/m_c/were/was} wrong. The two break up."
 	]
 }
