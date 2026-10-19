@@ -697,7 +697,7 @@ dev_tools = false
   classic_illness_chance = 500
 
   # how much the mortality will decrease each moon that the cat has a condition
-  moonskip_mortality_reduction = 0.05
+  moonskip_mortality_reduction = 0.10
   excluded_from_mortality_reduction = ["redcough", "starving", "malnourished"]
 
   # duration of applied conditions is multiplied by this number
