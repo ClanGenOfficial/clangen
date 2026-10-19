@@ -528,8 +528,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Twoleg kits scare the patrol away and they spend what meager time they have left in the day hunting prey in their more typical haunts.",
-                    "Twoleg kits stomp through the trees, scaring away prey and ruining the hunt. The patrol has to spend what meager time they have left in the day hunting prey in their more typical haunts."
+                    "Twoleg kits scare the patrol away, and they spend what meager time they have left in the day hunting prey in their more typical haunts.",
+                    "Twoleg kits stomp through the trees, scaring away prey and ruining the hunt. The patrol spends what meager time they have left in the day hunting prey in their more typical haunts."
                 ],
                 "exp_gained": 0,
                 "supply": [
@@ -637,7 +637,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l is quick on the jump! Though the squirrels notice the cats and begin scampering away, p_l easily cuts them off and kills both squirrels."
+                    "p_l is quick on the jump! Though the squirrels notice the cat and begin scampering away, p_l easily cuts them off and kills both squirrels."
                 ],
                 "exp_gained": 10,
                 "involved_cats": {
@@ -949,8 +949,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of coyote. They quickly scavenge what little is left and leave before the predator can return.",
-                    "The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of wolves. They quickly scavenge what little is left and leave before the predators can return."
+                    "The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of coyote. They quickly scavenge what little is left and leave before the predator returns.",
+                    "The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of wolves. They quickly scavenge what little is left and leave before the predators return."
                 ],
                 "exp_gained": 30,
                 "supply": [
@@ -1189,7 +1189,7 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "The patrol finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cats, prove to be fiercely protective of its meal.  The patrol doesn't move fast enough and s_c0 is killed before {PRONOUN/s_c0/subject} can run."
+                    "The patrol finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cats, prove to be fiercely protective of its meal.  The patrol doesn't move fast enough, and s_c0 is killed before {PRONOUN/s_c0/subject} can run."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1209,7 +1209,7 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "The patrol finds a wolf pack at the source of the noise. The wolves are tearing into a dead deer and upon seeing the cats, prove to be fiercely protective of their meal. The patrol doesn't move fast enough and s_c0 is killed before {PRONOUN/s_c0/subject} can run."
+                    "The patrol finds a wolf pack at the source of the noise. The wolves are tearing into a dead deer and upon seeing the cats, prove to be fiercely protective of their meal. The patrol doesn't move fast enough, and s_c0 is killed before {PRONOUN/s_c0/subject} can run."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1229,7 +1229,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The sound leads them to a coyote, scavenging from a carcass. The coyote notices them before they can hide and lunges, making it clear that this food has been claimed.  s_c0 is momentarily caught in its jaws before the patrol retaliates and drives it off their Clanmate."
+                    "The sound leads them to a coyote, scavenging from a carcass. The coyote notices them before they can hide and lunges, making it clear that this food has been claimed. s_c0 is momentarily caught in its jaws before the patrol retaliates and drives it off their Clanmate."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1311,8 +1311,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l tracks the noise and finds a mostly stripped carcass covered in the scent of coyote. {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/scavenge/scavenges} what little is left and {VERB/p_l/leave/leaves} before the predator can return.",
-                    "p_l tracks the noise and finds a mostly stripped carcass covered in the scent of wolf. {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/scavenge/scavenges} what little is left and {VERB/p_l/leave/leaves} before the predator can return."
+                    "p_l tracks the noise and finds a mostly stripped carcass covered in the scent of coyote. {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/scavenge/scavenges} what little is left and {VERB/p_l/leave/leaves} before the predator returns.",
+                    "p_l tracks the noise and finds a mostly stripped carcass covered in the scent of wolf. {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/scavenge/scavenges} what little is left and {VERB/p_l/leave/leaves} before the predator returns."
                 ],
                 "exp_gained": 30,
                 "supply": [
@@ -1518,7 +1518,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 tells the patrol to roll in a patch of garlic to disguise their scent, which works perfectly. It's a funny taste to wash off their pelts though."
+                    "s_c0 tells the patrol to roll in a patch of garlic to disguise their scent, which works perfectly. It's a funny taste to wash off their pelts, though."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1668,7 +1668,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l rolls in a patch of garlic to disguise {PRONOUN/p_l/poss} scent, which works perfectly. It's a funny taste to wash off {PRONOUN/p_l/poss} pelt though."
+                    "p_l rolls in a patch of garlic to disguise {PRONOUN/p_l/poss} scent, which works perfectly. It's a funny taste to wash off {PRONOUN/p_l/poss} pelt, though."
                 ],
                 "involved_cats": {
                     "p_l": {
@@ -1777,7 +1777,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l gets the chance to try out an idea {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been sitting on for a while. There's a rabbit warren that {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} spotted that's particularly badly built: {PRONOUN/p_l/subject} {VERB/p_l/dig/digs} down into one of the dens, fishing baby rabbits out by the pawful."
+                    "p_l gets the chance to try out an idea {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been sitting on for a while. There's a rabbit warren that {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} spotted that's particularly badly built. {PRONOUN/p_l/subject/CAP} {VERB/p_l/dig/digs} down into one of the dens, fishing baby rabbits out by the pawful."
                 ],
                 "involved_cats": {
                     "p_l": {
