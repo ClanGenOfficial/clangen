@@ -115,7 +115,7 @@ def set_display_mode(
     game_screen_size = (screen_x, screen_y)
 
     if source_screen is None or MANAGER is None:
-        MANAGER = load_manager((screen_x, screen_y), offset, scale=screen_scale)
+        MANAGER = load_manager(game_screen_size, offset, scale=screen_scale)
     else:
         # generate new theme
         origin = "resources/theme/master_screen_scale.json"
