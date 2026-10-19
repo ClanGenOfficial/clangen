@@ -31,13 +31,13 @@
         "is_complication": true,
         "duration": 1,
         "mortality": {
-            "newborn": 0.7,
-            "kitten": 0.5,
-            "adolescent": 0.4,
-            "young adult": 0.3,
-            "adult": 0.3,
-            "senior adult": 0.4,
-            "senior": 0.5
+            "newborn": 0.6,
+            "kitten": 0.4,
+            "adolescent": 0.3,
+            "young adult": 0.2,
+            "adult": 0.2,
+            "senior adult": 0.3,
+            "senior": 0.4
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
@@ -61,13 +61,13 @@
         "is_complication": true,
         "duration": 2,
         "mortality": {
-            "newborn": 0.50,
-            "kitten": 0.33,
-            "adolescent": 0.25,
-            "young adult": 0.2,
+            "newborn": 0.4,
+            "kitten": 0.25,
+            "adolescent": 0.15,
+            "young adult": 0.1,
             "adult": 0.1,
-            "senior adult": 0.2,
-            "senior": 0.5
+            "senior adult": 0.15,
+            "senior": 0.3
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.1,
@@ -98,10 +98,10 @@
         "severity": "major",
         "duration": 3,
         "mortality": {
-            "newborn": 0.7,
-            "kitten": 0.6,
-            "adolescent": 0.2,
-            "young adult": 0.1,
+            "newborn": 0.6,
+            "kitten": 0.5,
+            "adolescent": 0.15,
+            "young adult": 0.05,
             "adult": 0.05,
             "senior adult": 0.1,
             "senior": 0.2
@@ -141,11 +141,11 @@
         "severity": "major",
         "duration": 3,
         "mortality": {
-            "newborn": 0.8,
-            "kitten": 0.7,
-            "adolescent": 0.4,
-            "young adult": 0.3,
-            "adult": 0.25,
+            "newborn": 0.7,
+            "kitten": 0.6,
+            "adolescent": 0.3,
+            "young adult": 0.2,
+            "adult": 0.2,
             "senior adult": 0.3,
             "senior": 0.4
         },
@@ -293,13 +293,13 @@
         "severity": "major",
         "duration": 3,
         "mortality": {
-            "newborn": 0.8,
-            "kitten": 0.5,
-            "adolescent": 0.3,
-            "young adult": 0.2,
-            "adult": 0.2,
-            "senior adult": 0.4,
-            "senior": 0.5
+            "newborn": 0.7,
+            "kitten": 0.4,
+            "adolescent": 0.25,
+            "young adult": 0.15,
+            "adult": 0.15,
+            "senior adult": 0.3,
+            "senior": 0.4
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
@@ -351,13 +351,13 @@
         "severity": "major",
         "duration": 3,
         "mortality": {
-            "newborn": 0.8,
-            "kitten": 0.5,
-            "adolescent": 0.3,
-            "young adult": 0.2,
-            "adult": 0.2,
-            "senior adult": 0.4,
-            "senior": 0.5
+            "newborn": 0.7,
+            "kitten": 0.4,
+            "adolescent": 0.25,
+            "young adult": 0.15,
+            "adult": 0.15,
+            "senior adult": 0.3,
+            "senior": 0.4
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
@@ -398,13 +398,13 @@
         "severity": "major",
         "duration": 2,
         "mortality": {
-            "newborn": 0.7,
-            "kitten": 0.4,
-            "adolescent": 0.2,
+            "newborn": 0.6,
+            "kitten": 0.3,
+            "adolescent": 0.15,
             "young adult": 0.1,
             "adult": 0.1,
-            "senior adult": 0.3,
-            "senior": 0.4
+            "senior adult": 0.15,
+            "senior": 0.3
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
@@ -443,13 +443,13 @@
         "severity": "major",
         "duration": 2,
         "mortality": {
-            "newborn": 0.6,
-            "kitten": 0.3,
+            "newborn": 0.4,
+            "kitten": 0.2,
             "adolescent": 0.1,
             "young adult": 0.05,
             "adult": 0.05,
-            "senior adult": 0.2,
-            "senior": 0.5
+            "senior adult": 0.1,
+            "senior": 0.3
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
@@ -484,13 +484,13 @@
         "severity": "major",
         "duration": 2,
         "mortality": {
-            "newborn": 0.6,
-            "kitten": 0.3,
+            "newborn": 0.4,
+            "kitten": 0.2,
             "adolescent": 0.1,
             "young adult": 0.05,
             "adult": 0.05,
             "senior adult": 0.2,
-            "senior": 0.5
+            "senior": 0.3
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
@@ -529,13 +529,13 @@
         "severity": "major",
         "duration": 2,
         "mortality": {
-            "newborn": 0.6,
-            "kitten": 0.3,
+            "newborn": 0.4,
+            "kitten": 0.2,
             "adolescent": 0.1,
             "young adult": 0.05,
             "adult": 0.05,
             "senior adult": 0.2,
-            "senior": 0.5
+            "senior": 0.3
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.3,
@@ -896,9 +896,9 @@
         "mortality": {
             "newborn": 0.4,
             "kitten": 0.2,
-            "adolescent": 0.05,
-            "young adult": 0.04,
-            "adult": 0.01,
+            "adolescent": 0.1,
+            "young adult": 0.05,
+            "adult": 0.05,
             "senior adult": 0.1,
             "senior": 0.4
         },
@@ -1158,8 +1158,8 @@
             "newborn": 0.6,
             "kitten": 0.5,
             "adolescent": 0.3,
-            "young adult": 0.2,
-            "adult": 0.1,
+            "young adult": 0.3,
+            "adult": 0.2,
             "senior adult": 0.3,
             "senior": 0.4
         },
