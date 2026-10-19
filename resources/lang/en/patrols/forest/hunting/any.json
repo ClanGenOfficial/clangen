@@ -1010,6 +1010,7 @@
                     "The noise leads them to a wolf, eating from its kill. s_c0 instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. When s_c0 deems it safe, the patrol takes their turn stripping the leftover meat from the bones.",
                     "The noise leads them to a coyote, scavenging from a carcass. s_c0 instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the coyote eats its fill and disappears into the forest. When s_c0 deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
                 ],
+                "exp_gained": 30,
                 "involved_cats": {
                     "s_c0": {
                         "prior_abbreviation": [
@@ -1018,60 +1019,18 @@
                         "stat": {
                             "skill": [
                                 "CLEVER,2"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 30,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "mutual": false,
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was impressed by cat_to's cool head while dealing with a scavenging canine."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "The noise leads them to a coyote, scavenging from a carcass. s_c0 instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the coyote eats its fill and disappears into the forest. When s_c0 deems it safe, the patrol takes their turn stripping the leftover meat from the bones.",
-                    "The noise leads them to a wolf, eating from its kill. s_c0 instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. When s_c0 deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
+                            ],
                             "trait": [
                                 "careful",
                                 "calm",
                                 "responsible",
                                 "thoughtful",
                                 "wise"
-                            ]
+                            ],
+                            "must_have_both": false
                         }
                     }
                 },
-                "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_from": [
@@ -1333,34 +1292,15 @@
                         "stat": {
                             "skill": [
                                 "CLEVER,2"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 30,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "The noise leads {PRONOUN/p_l/object} to a coyote, scavenging from a carcass. p_l decides to wait in the brush, downwind from the canine, until it leaves. Eventually the coyote eats its fill and disappears into the forest. p_l waits a while longer, ensuring the coyote has truly left, and takes {PRONOUN/p_l/poss} turn stripping the leftover meat from the bones.",
-                    "The noise leads {PRONOUN/p_l/object} to a wolf, tearing into the carcass of a deer. p_l decides to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. p_l waits a while longer, ensuring the wolf has truly left, and takes {PRONOUN/p_l/poss} turn stripping the leftover meat from the bones."
-                ],
-                "involved_cats": {
-                    "p_l": {
-                        "stat": {
+                            ],
                             "trait": [
                                 "careful",
                                 "calm",
                                 "responsible",
                                 "thoughtful",
                                 "wise"
-                            ]
+                            ],
+                            "must_have_both": false
                         }
                     }
                 },
