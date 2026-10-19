@@ -2,7 +2,7 @@
     {
         "event_id": "amputated_leg_infection0",
         "strings": [
-            "r_c0 has been worried, it seems the stump of m_c's amputated leg has become infected."
+            "r_c0 has been worried. It seems the stump of m_c's amputated leg has become infected."
         ],
         "involved_cats": {
             "m_c": {},

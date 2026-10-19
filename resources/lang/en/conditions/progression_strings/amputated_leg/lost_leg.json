@@ -16,7 +16,7 @@
     {
         "event_id": "amputated_leg_lost_leg1",
         "strings": [
-            "Even with a return to normal life, m_c can't help but miss the leg {PRONOUN/m_c/poss} once had."
+            "Even with a return to normal life, m_c can't help but miss the leg {PRONOUN/m_c/subject} once had."
         ],
         "involved_cats": {
             "m_c": {}
