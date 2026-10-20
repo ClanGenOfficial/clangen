@@ -25,8 +25,7 @@ def generate_condition_event(path: str, involved_cats: dict) -> EventInformation
 
     # we won't use results and rel_results here
     processed_text, results, rel_results = execute_outcome(
-        event=chosen_event,
-        event_involved_cats=involved_cats
+        event=chosen_event, event_involved_cats=involved_cats
     )
 
     types = ["health"]
@@ -36,7 +35,7 @@ def generate_condition_event(path: str, involved_cats: dict) -> EventInformation
 
     # add life loss message
     if main_cat.status.is_leader:
-        processed_text += results["death"]
+        processed_text = " ".join([processed_text, results["death"]])
 
     involved_ids = []
     for c in involved_cats.values():
