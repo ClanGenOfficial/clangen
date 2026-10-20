@@ -17954,6 +17954,152 @@
                 ]
             },
             {
+                "frequency": 3,
+                "location": ["wetlands"],
+                "strings": [
+                    "s_c0 sees a fish {PRONOUN/s_c0/subject}'d like for the fresh-kill pile, but while perched on a rock setting up a good pounce {PRONOUN/s_c0/subject} slip — {PRONOUN/s_c0/subject} {VERB/s_c0/bob/bobs} to the surface and splutter {PRONOUN/s_c0/poss} way to shore, but {PRONOUN/s_c0/poss} breath comes short and wheezing after the dunking. Fleas and ticks!"
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "exp_gained": 0,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "condition": [
+                            "water_in_lungs"
+                        ],
+                        "death_history": "m_c died of the water in {PRONOUN/m_c/poss} lungs after slipping off a rock while fishing."
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": ["forest"],
+                "strings": [
+                    "s_c0 sees a squirrel {PRONOUN/s_c0/subject}'d like for the fresh-kill pile, but the chase goes badly — {PRONOUN/s_c0/subject} {VERB/s_c0/throw/throws} out a front paw to stop {PRONOUN/s_c0/poss} fall, claws digging into bark, and it works, but it wrenches {PRONOUN/s_c0/poss} foreleg out of socket. Fleas and ticks!"
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "exp_gained": 0,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "condition": [
+                            "dislocated_joint"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": ["desert"],
+                "strings": [
+                    "s_c0 sees a d_tp_s {PRONOUN/s_c0/subject}'d like for the fresh-kill pile, but the chase goes badly — {PRONOUN/s_c0/poss} paw slips into an unseen hole in the sand, wrenching {PRONOUN/s_c0/poss} foreleg out of socket. Fleas and ticks!"
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "exp_gained": 0,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "condition": [
+                            "dislocated_joint"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": ["mountainous"],
+                "strings": [
+                    "s_c0 sees a squirrel {PRONOUN/s_c0/subject}'d like for the fresh-kill pile, but the chase goes badly — {PRONOUN/s_c0/subject} {VERB/s_c0/throw/throws} out a front paw to stop {PRONOUN/s_c0/poss} fall, claws scraping off rock, and it works, but it wrenches {PRONOUN/s_c0/poss} foreleg out of socket. Fleas and ticks!"
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "exp_gained": 0,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "condition": [
+                            "dislocated_joint"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "location": ["mountainous"],
+                "strings": [
+                    "s_c0 sees a rabbit {PRONOUN/s_c0/subject}'d like for the fresh-kill pile, but the chase goes badly — {PRONOUN/s_c0/subject} {VERB/s_c0/throw/throws} out {PRONOUN/s_c0/poss} claws to stop {PRONOUN/s_c0/poss} fall, digging into the dirt, and it works, but it wrenches {PRONOUN/s_c0/poss} foreleg out of socket. Fleas and ticks!"
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "exp_gained": 0,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "condition": [
+                            "dislocated_joint"
+                        ]
+                    }
+                ]
+            },
+            {
                 "frequency": 2,
                 "strings": [
                     "s_c0 comes down with a debilitating headache, making {PRONOUN/s_c0/object} stagger, dizzy and weak, as {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} helped back to camp."
