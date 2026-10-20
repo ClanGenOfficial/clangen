@@ -1,7 +1,5 @@
 from scripts.cat.cats import Cat
-from scripts.events_module.consequences import check_stolen_vitality
 from scripts.events_module.event_information import EventInformation
-from scripts.events_module.text_adjust import get_leader_life_notice
 from scripts.events_module.text_pool_event.event_retrieval import (
     load_text_pool_events,
     get_valid_event,
@@ -28,7 +26,7 @@ def generate_condition_event(path: str, involved_cats: dict) -> EventInformation
     # we won't use results and rel_results here
     processed_text, results, rel_results = execute_outcome(
         event=chosen_event,
-        event_involved_cats=involved_cats,
+        event_involved_cats=involved_cats
     )
 
     types = ["health"]
@@ -36,9 +34,9 @@ def generate_condition_event(path: str, involved_cats: dict) -> EventInformation
     if main_cat and main_cat.dead:
         types.append("birth_death")
 
-        # add life loss message
-        if main_cat.status.is_leader:
-            processed_text += results["death"]
+    # add life loss message
+    if main_cat.status.is_leader:
+        processed_text += results["death"]
 
     involved_ids = []
     for c in involved_cats.values():
