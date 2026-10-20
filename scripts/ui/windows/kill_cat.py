@@ -17,6 +17,7 @@ from scripts.ui.windows.window_base_class import GameWindow
 from scripts.cat.sprites.display_sprites import update_sprite
 from scripts.events_module.text_adjust import process_text
 from scripts.ui.scale import ui_scale
+from scripts.cat.cats import check_starcrossed_lovers
 
 
 class KillCat(GameWindow):
@@ -99,6 +100,7 @@ class KillCat(GameWindow):
                 )
                 if not death_message:
                     death_message = self.initial
+
                 if self.the_cat.status.is_leader:
                     if self.take_all:
                         lives_lost = game.clan.leader_lives
@@ -117,6 +119,9 @@ class KillCat(GameWindow):
                     self.the_cat.die()
                 else:
                     self.the_cat.die(grief_allowed=False)
+
+                if extra_text := check_starcrossed_lovers(self.the_cat):
+                    self.result_text = extra_text
 
                 if not self.the_cat.status.is_leader:  # leader already got history
                     self.the_cat.history.add_death(death_message)

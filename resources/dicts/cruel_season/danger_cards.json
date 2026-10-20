@@ -30,6 +30,12 @@
       "death_related.war_death_modifier_leader": 46
     }
   },
+  "starcrossed_lovers": {
+    "card_art": "danger/stolen_vitality.png",
+    "modifiers": {
+      "cruel_season.event.starcrossed_lovers": true
+    }
+  },
   "miasma": {
     "card_art": "danger/miasma.png",
     "modifiers": {
