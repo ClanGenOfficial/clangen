@@ -1335,11 +1335,11 @@ class Cat:
 
     def can_work(self):
         """returns True if the cat can work, False if the cat cannot work"""
-        if not self.temporary_conditions and not self.permanent_conditions:
+        if not self.temporary_conditions:
             return True
+
         return all(
-            condition.severity == "minor"
-            for condition in self.temporary_conditions + self.permanent_conditions
+            condition.severity == "minor" for condition in self.temporary_conditions
         )
 
     def retire_cat(self):

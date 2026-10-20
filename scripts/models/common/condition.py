@@ -184,6 +184,10 @@ class ConditionEnum(Enum):
     not_strange_lump = "-strange_lump"
     damaged_throat = "damaged_throat"
     not_damaged_throat = "-damaged_throat"
+    amputated_leg = "amputated_leg"
+    not_amputated_leg = "-amputated_leg"
+    amputated_tail = "amputated_tail"
+    not_amputated_tail = "-amputated_tail"
 
     battle_injury = "battle_injury"
     minor_injury = "minor_injury"

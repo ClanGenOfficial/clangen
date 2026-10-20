@@ -204,6 +204,10 @@
         "-strange_lump",
         "damaged_throat",
         "-damaged_throat",
+        "amputated_leg",
+        "-amputated_leg",
+        "amputated_tail",
+        "-amputated_tail",
         "battle_injury",
         "minor_injury",
         "blunt_force_injury",
@@ -371,6 +375,11 @@
           },
           "title": "Mortality",
           "type": "object"
+        },
+        "requires_scar": {
+          "description": "If this cat MUST have one of the scars listed in 'possible_scars' in order to have this condition.",
+          "title": "Requires Scar",
+          "type": "boolean"
         },
         "immune_system_effect": {
           "description": "Effect on the percent chance that this cat will be infected by a different condition. This float will be added to the percent chance, thus increasing the cat's likely-hood to contract an infectious condition.",

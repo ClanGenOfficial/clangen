@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "amputated_tail_infection0",
+        "strings": [
+            "r_c0 has been worried. It seems the stump of m_c's amputated tail has become infected."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "amputated_tail_infection1",
+        "strings": [
+            "m_c's amputated tail has become infected."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

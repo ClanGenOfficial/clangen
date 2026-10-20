@@ -503,9 +503,9 @@
             "bruises": 0.2
         },
         "progression": {
-            "lost_leg": {
-                "chance": 0.2,
-                "when": "HEALED",
+            "amputated_leg": {
+                "chance": 0.4,
+                "when": "CONTINUING",
                 "allow_scar": true
             },
             "weak_leg": {
@@ -566,9 +566,9 @@
             "blood_loss": 0.2
         },
         "progression": {
-            "lost_tail": {
-                "chance": 0.3,
-                "when": "HEALED",
+            "amputated_tail": {
+                "chance": 0.5,
+                "when": "CONTINUING",
                 "allow_scar": true
             }
         },
@@ -599,6 +599,90 @@
             "MANTAIL"
         ]
     },
+    "amputated_leg": {
+        "tags": [],
+        "requires_scar": true,
+        "severity": "severe",
+        "duration": 2,
+        "is_complication": false,
+        "mortality": {},
+        "infectiousness": 0.0,
+        "immune_system_effect": 0,
+        "side_effect": {
+            "blood_loss": 0.5
+        },
+        "progression": {
+            "lost_leg": {
+                "chance": 2.0,
+                "when": "HEALED",
+                "allow_scar": false
+            }
+        },
+        "risks": {
+            "infection": 0.2
+        },
+        "treatment_strength": {
+            "1": [
+                "cobwebs",
+                "marigold",
+                "tansy",
+                "mullein"
+            ],
+            "2": [
+                "wild_garlic",
+                "horsetail",
+                "oak_leaves",
+                "moss"
+            ],
+            "3": [
+                "poppy",
+                "goldenrod"
+            ]
+        },
+        "possible_scars": ["NOPAW"]
+    },
+    "amputated_tail": {
+        "tags": [],
+        "requires_scar": true,
+        "severity": "severe",
+        "duration": 2,
+        "is_complication": false,
+        "mortality": {},
+        "infectiousness": 0.0,
+        "immune_system_effect": 0,
+        "side_effect": {
+            "blood_loss": 0.5
+        },
+        "progression": {
+            "lost_tail": {
+                "chance": 2.0,
+                "when": "HEALED",
+                "allow_scar": false
+            }
+        },
+        "risks": {
+            "infection": 0.2
+        },
+        "treatment_strength": {
+            "1": [
+                "cobwebs",
+                "marigold",
+                "tansy",
+                "mullein"
+            ],
+            "2": [
+                "wild_garlic",
+                "horsetail",
+                "oak_leaves",
+                "moss"
+            ],
+            "3": [
+                "poppy",
+                "goldenrod"
+            ]
+        },
+        "possible_scars": ["NOTAIL", "HALFTAIL"]
+    },
     "severe_burn": {
         "tags": [],
         "severity": "severe",
@@ -616,14 +700,14 @@
         "immune_system_effect": 0.0,
         "side_effect": {},
         "progression": {
-            "lost_tail": {
+            "amputated_tail": {
                 "chance": 0.2,
-                "when": "HEALED",
+                "when": "CONTINUING",
                 "allow_scar": true
             },
-            "lost_leg": {
+            "amputated_leg": {
                 "chance": 0.2,
-                "when": "HEALED",
+                "when": "CONTINUING",
                 "allow_scar": true
             }
         },

@@ -19,10 +19,6 @@ class PermanentConditionInfoSchemaItem(BaseConditionInfoSchemaItem):
     can_be_acquired: bool = Field(
         description="If this condition can be acquired later in life."
     )
-    requires_scar: bool | MISSING = Field(
-        MISSING,
-        description="If this cat MUST have one of the scars listed in 'possible_scars' in order to have this condition.",
-    )
     remove_on_death: bool | MISSING = Field(
         MISSING,
         description="If this condition should or should not be removed from the cat when they die.",

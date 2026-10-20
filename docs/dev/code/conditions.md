@@ -7,6 +7,7 @@ New conditions must have their required information format added to either `reso
 ```json
     "name": {
         "tags": [],
+        "requires_scar": false,
         "severity": "",
         "duration": 0,
         "is_complication": false,
@@ -38,7 +39,7 @@ New conditions must have their required information format added to either `reso
             "1": [],
             "2": [],
             "3": []
-        }
+        },
         "possible_scars": []
     },
 ```
@@ -59,6 +60,11 @@ You can check the [Condition List](../writing/reference/tag-lists.md#__tabbed_1_
 
 #### severity: str
 Can be `minor`, `major`, or `severe`. `minor` conditions will not prevent the cat from working. For temporary conditions, the difference between `major` and `severe` is mostly arbitrary and doesn't have gameplay effects beyond a display change in the medicine cat den. `major` or `severe` conditions **will** prevent the cat from working.
+
+***
+
+#### requires_scar: bool
+Marks if this condition can only be applied if the cat has a pre-requisite scar. Scars needed *must* be listed in [possible scars](#possible_scars-liststr-1). Defaults to False.
 
 ***
 
@@ -207,7 +213,7 @@ A list of possible scars that this condition can apply once healed.
         "can_be_acquired": false,
         "requires_scar": false,
         "remove_on_death": true,
-        "moons_until_discovery": 0,
+        "moons_until_discovery": [0,0],
         "mortality": {},
         "immune_system_effect": 0,
         "progression": {
@@ -252,7 +258,8 @@ Marks if this condition can be given later in life
 ***
 
 #### requires_scar: bool
-Marks if this condition can only be applied if the cat has a pre-requisite scar. Scars needed *must* be listed in [possible scars](#possible_scars-liststr-1). Defaults to False.
+Same as [temporary condition requires_scar](#requires_scar-bool) 
+
 
 ***
 
@@ -261,8 +268,8 @@ Marks if this condition will be removed from the cat upon death. Defaults to Tru
 
 ***
 
-#### moons_until_discovery: int
-If this condition is congenital, this dictates how many moons the condition can "hide" before being noticed by the cat.
+#### moons_until_discovery: list[int, int]
+If this condition is congenital, this dictates how many moons the condition can "hide" before being noticed by the cat. This should be two numbers acting as a range. First number is the lowest number of moons_until_discovery and second number is the highest number of moons_until_discovery.
 
 ***
 
