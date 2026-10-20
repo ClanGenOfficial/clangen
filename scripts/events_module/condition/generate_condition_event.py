@@ -31,11 +31,11 @@ def generate_condition_event(path: str, involved_cats: dict) -> EventInformation
     types = ["health"]
     main_cat: Cat | None = involved_cats.get("m_c", None)
     if main_cat:
-        if main_cat.dead:
+        if main_cat.dead or results["death"]:
             types.append("birth_death")
 
         # add life loss message
-        if main_cat.status.is_leader:
+        if main_cat.status.is_leader and results["death"]:
             processed_text = " ".join([processed_text, results["death"]])
 
     involved_ids = []
