@@ -6,7 +6,6 @@ from typing import Union, Literal
 import i18n
 
 from scripts.cat.cats import Cat, check_starcrossed_lovers
-from scripts.cat.constants import PERMANENT, ILLNESSES, INJURIES
 from scripts.cat.conditions.gain_conditions import (
     gain_temporary_condition,
     gain_permanent_condition,
