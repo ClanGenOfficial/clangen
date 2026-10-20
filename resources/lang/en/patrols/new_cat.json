@@ -15486,6 +15486,7 @@
                         "condition": [
                             "big_bite_injury"
                         ],
+                        "scar_history": "This cat was scarred after fighting a coyote to protect {PRONOUN/m_c/poss} kits.",
                         "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after fighting a coyote"
                     }
                 ],
@@ -15686,7 +15687,7 @@
                 "exp_gained": 0,
                 "outcome_art": "cat_sprites/gen_dragging_WrWr",
                 "strings": [
-                    "The patrol launches into battle! The coyote is taken by surprise as it's attacked from the side and behind by the patrol, and by the loner from the front. But it recovers quickly, and when r_c0 snaps at its tendon, the coyote turns and sinks its jaws into {PRONOUN/r_c0/object}, flinging {PRONOUN/r_c0/object} across the clearing, where {PRONOUN/r_c0/subject} lands in a crumpled, unmoving heap. p_l orders a retreat, and as they drag r_c0 away, they can hear the screams of the loner and the kits going silent one by one."
+                    "The patrol launches into battle! The coyote is taken by surprise as it's attacked from the side and behind by the patrol, and by the loner from the front. But it recovers quickly, and when r_c0 snaps at its tendon, the coyote turns and sinks its jaws into {PRONOUN/r_c0/object}. It flings {PRONOUN/r_c0/object} across the clearing, where {PRONOUN/r_c0/subject} lands in a crumpled, unmoving heap. p_l orders a retreat, and as they drag r_c0 away, they can hear the screams of the loner and the kits going silent one by one."
                 ],
                 "involved_cats": {
                     "r_c0": {},
@@ -15715,17 +15716,10 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c0"
-                        ],
-                        "history": "This cat died while protecting {PRONOUN/m_c/poss} kits from a coyote."
-                    }, 
-                    {
-                        "cats": [
-                            "n_c1"
+                            "n_c0", "n_c1"
                         ],
                         "history": "This cat was killed by a coyote."
                     }
-                
                 ],
                 "condition": [
                     {
@@ -15735,7 +15729,7 @@
                         "condition": [
                             "big_bite_injury"
                         ],
-                        "scar_history": "This cat was scarred after fighting a coyote to protect {PRONOUN/m_c/poss} kits.",
+                        "scar_history": "This cat was scarred after fighting a coyote to protect a loner and their kits.",
                         "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after fighting a coyote"
                     }
                 ],
