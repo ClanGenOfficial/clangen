@@ -15406,5 +15406,477 @@
                 }
             }
         ]
+    },
+    {
+        "event_id": "gen_bord_deepforest_lonerfamily",
+        "types": ["border"],
+        "frequency": 1,
+        "poi": {
+            "name": ["terrain_deepforest"]
+        },
+        "required_cat_types": {
+            "patrol_cats": [
+                4,
+                6
+            ]
+        },
+        "chance_of_success": 40,
+        "patrol_art": "POI",
+        "intro_strings": [
+            "While traveling through POI, the patrol suddenly hears the screams of both a coyote and a cat! When the patrol races towards the noise, they find a loner facing off against a huge coyote while a litter of kits cling to the trunk of a tree."
+        ],
+        "decline_strings": [
+            "This is not their fight, and the loner shouldn't be in c_n's territory anyway. The patrol leaves before the loner or the coyote can spot them"
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 20,
+                "outcome_art": "cat_sprites/gen_coyote_Ln",
+                "strings": [
+                    "The patrol launches into battle! The coyote is taken by surprise as it's attacked from the side and behind by the patrol, and the loner from the front. With so many cats swarming it out of the blue, the coyote is spooked and flees. The exhausted, bleeding loner thanks the patrol for their timely intervention, and {PRONOUN/n_c0/poss} kits drop down from the tree to crowd around the patrol's legs, chirping with excitement over the battle. After a discussion with p_l, the loner agrees to come back to camp with {PRONOUN/n_c0/poss} kits.",
+                    "At p_l's signal, the patrol stealthily moves into position around the coyote. p_l makes eye contact with the loner, and can pinpoint {PRONOUN/n_c0/poss} exact moment of shock as {PRONOUN/n_c0/subject} realizes these new cats are there to help. The coyote notices the loner's distraction, lunges forward, and the patrol springs their trap. By the end of the battle, the coyote is gone, the loner is bleeding gratitude, and the kits are staring up at the Clancats with awe."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adult",
+                            "senior adult"
+                        ],
+                        "backstory": ["loner_backstories"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {
+                            "become_litter": true,
+                            "assign_blood_parent": [
+                                "n_c0"
+                            ]
+                        },
+                        "age": [
+                            "kitten"
+                        ],
+                        "backstory": [
+                            "outsider_roots2"
+                        ]
+                    }
+                },
+                "join": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "new_status": []
+                    },
+                    {
+                        "cats": [
+                            "n_c1"
+                        ],
+                        "new_status": [
+                            "kitten"
+                        ]
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "big_bite_injury"
+                        ],
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after fighting a coyote"
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1"
+                        ],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_to saved cat_from from a coyote, and brought {PRONOUN/cat_from/object} back to the Clan"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 1
+                }
+            },
+            {
+                "frequency": 2,
+                "exp_gained": 20,
+                "outcome_art": "cat_sprites/gen_angrycat_Wr",
+                "strings": [
+                    "The moment s_c0 processes the situation, {PRONOUN/s_c0/subject} {VERB/s_c0/lean/leans} against the nearest Clanmate and gives a series of tail signals. The patrol seamlessly moves into support positions, and s_c0 launches from the underbrush with a ferocious yowl. THe coyote turns to face {PRONOUN/s_c0/object}, but isn't fast enough to avoid the claws that rake across its eyes. The rest of the patrol race in and target the limbs while s_c0 takes on those deadly jaws. The battle rages as the loner watches, tucked up against the tree trunk with {PRONOUN/n_c0/poss} kits."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"],
+                        "stat": {
+                            "skill": ["FIGHTER,1"]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adult",
+                            "senior adult"
+                        ],
+                        "backstory": ["loner_backstories"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {
+                            "become_litter": true,
+                            "assign_blood_parent": [
+                                "n_c0"
+                            ]
+                        },
+                        "age": [
+                            "kitten"
+                        ],
+                        "backstory": [
+                            "outsider_roots2"
+                        ]
+                    }
+                },
+                "join": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "new_status": []
+                    },
+                    {
+                        "cats": [
+                            "n_c1"
+                        ],
+                        "new_status": [
+                            "kitten"
+                        ]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1"
+                        ],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_to saved cat_from from a coyote, and brought {PRONOUN/cat_from/object} back to the Clan"
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to lead a patrol in deadly battle against a coyote"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 2
+                }
+            },
+            {
+                // Loner dies, kits rescued and taken in
+                "frequency": 1,
+                "exp_gained": 20,
+                "outcome_art": "cat_sprites/gen_stuckintree_Kt",
+                "strings": [
+                    "The patrol sptings into action! At first, it seems like all is going well - the coyote will be driven away, no one will be hurt, and all will be well. Then, the loner, fighting alongside them, misses a crucial signal and is caught in the coyote's jaws. "
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adult",
+                            "senior adult"
+                        ],
+                        "backstory": ["loner_backstories"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {
+                            "become_litter": true,
+                            "assign_blood_parent": [
+                                "n_c0"
+                            ]
+                        },
+                        "age": [
+                            "kitten"
+                        ],
+                        "backstory": [
+                            "outsider_roots2"
+                        ]
+                    }
+                },
+                "join": [
+                    {
+                        "cats": [
+                            "n_c1"
+                        ],
+                        "new_status": [
+                            "kitten"
+                        ]
+                    }
+                ],
+                "death": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "history": "This cat died while protecting {PRONOUN/m_c/poss} kits from a coyote."
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c1"
+                        ],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_to saved cat_from from a coyote, and brought {PRONOUN/cat_from/object} back to the Clan"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 1
+                }
+            }
+        ],
+        "fail_outcomes": [
+            {
+                // Big injury to cat, cats retreat, loner and kits die
+                "frequency": 4,
+                "exp_gained": 00,
+                "outcome_art": "cat_sprites/gen_dragging_WrWr",
+                "strings": [],
+                "involved_cats": {
+                    "r_c0": {},
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adult",
+                            "senior adult"
+                        ],
+                        "backstory": ["loner_backstories"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {
+                            "become_litter": true,
+                            "assign_blood_parent": [
+                                "n_c0"
+                            ]
+                        },
+                        "age": [
+                            "kitten"
+                        ],
+                        "backstory": [
+                            "outsider_roots2"
+                        ]
+                    }
+                },
+                "death": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "history": "This cat died while protecting {PRONOUN/m_c/poss} kits from a coyote."
+                    },
+                    
+                    {
+                        "cats": [
+                            "n_c1"
+                        ],
+                        "history": "This cat died was killed by a coyote."
+                    }
+                
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "big_bite_injury"
+                        ],
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after fighting a coyote"
+                    }
+                ],
+                "relationship_changes": [],
+                "reputation_changes": {
+                    "outsider": -2
+                }
+            },
+            {
+                // Coyote driven off, loner injured, thanks clan and takes kits away
+                "frequency": 2,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_catwithkits_LnKtKt",
+                "strings": [],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adult",
+                            "senior adult"
+                        ],
+                        "backstory": ["loner_backstories"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {
+                            "become_litter": true,
+                            "assign_blood_parent": [
+                                "n_c0"
+                            ]
+                        },
+                        "age": [
+                            "kitten"
+                        ],
+                        "backstory": [
+                            "outsider_roots2"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1"]
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "big_bite_injury"
+                        ],
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after fighting a coyote"
+                    }
+                ],
+                "relationship_changes": []
+            },
+            {
+                // Fox kills Clancat, loner and kits sprint away, failed FIGHTER skill check?
+                "frequency": 1,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_deadghost_WrSc_EXPLICIT",
+                "outcome_art_clean": "cat_sprites/gen_deadghost_WrSc",
+                "strings": [],
+                "involved_cats": {
+                    "r_c0": {},
+                    "s_c0": {
+                        "stat": {
+                            "skill": ["FIGHTER,1"]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adult",
+                            "senior adult"
+                        ],
+                        "backstory": ["loner_backstories"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {
+                            "become_litter": true,
+                            "assign_blood_parent": [
+                                "n_c0"
+                            ]
+                        },
+                        "age": [
+                            "kitten"
+                        ],
+                        "backstory": [
+                            "outsider_roots2"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1"]
+                    }
+                ],
+                "death": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "history": "This cat was killed by a coyote while trying to rescue a loner and their kits"
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1"
+                        ],
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_to saved cat_from from a coyote"
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from went into battle with a coyote to save cat_to and their kits, and {PRONOUN/cat_to/subject} fled from the battle when a patrol member died for {PRONOUN/cat_to/object}"
+                        }
+                    }
+                ]
+            }
+        ]
     }
 ]
