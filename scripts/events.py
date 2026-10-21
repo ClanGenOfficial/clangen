@@ -1709,25 +1709,18 @@ load_war_resources()
 
 def check_sinkhole():
     """The Sinkhole events for cruel card"""
-    # check if needed to run
     if not get_config("cruel_season.event.sinkhole"):
-        print("DEBUG: not sinkhole! Returning!")
         return
 
     if game.clan.age % 12 != 0:
-        print("DEBUG: clan wrong age!")
         return
 
-    # initialise variables
     percent_killed = random.randint(0, 50) / 100
     cat_amount = get_living_clan_cat_count(Cat)
-    print("DEBUG: variables initalised!")
 
     count_to_kill = round(cat_amount * percent_killed)
     dead_cats = []
     IDs = []
-
-    print("DEBUG: Calculated count!", count_to_kill)
 
     while len(dead_cats) < count_to_kill:
         c = get_random_player_clan_cat(Cat, not_allowed=dead_cats)
@@ -1739,10 +1732,8 @@ def check_sinkhole():
                 game.clan.leader_lives -= 1
             c.history.add_death(i18n.t("cruel_season.special_text.sinkhole_history"))
             IDs.append(c.ID)
-        print("DEBUG:", len(dead_cats), "out of", count_to_kill, "randomised!")
 
     names = adjust_list_text([str(meow.name) for meow in dead_cats])
-    print("DEBUG: got names!", names)
     game.cur_events_list.insert(
         0,
         EventInformation(
