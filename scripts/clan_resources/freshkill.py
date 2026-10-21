@@ -78,12 +78,15 @@ class FreshkillPile:
             self.total_amount = total
         else:
             amount = get_config("prey.start_amount")
+            # initialise pile
             self.pile = {
-                "expires_in_3": amount,
+                "expires_in_3": 0,
                 "expires_in_2": 0,
                 "expires_in_1": 0,
             }
-            self.total_amount = amount
+            self.total_amount = 0
+            # add freshkill
+            self.add_freshkill(amount)
         self.timeskip_feed = False
         self.nutrition_info = {}
         self.living_cats = []
@@ -103,7 +106,8 @@ class FreshkillPile:
             amount : int|float
                 the amount which should be added to the pile
         """
-        self.pile["expires_in_3"] += amount
+        highest_rot = f"expires_in_{get_config('prey.time_to_rot')}"
+        self.pile[highest_rot] += amount
         self.total_amount += amount
         self.total_amount = round(self.total_amount, 2)
 

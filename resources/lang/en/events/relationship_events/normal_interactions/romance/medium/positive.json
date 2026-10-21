@@ -267,13 +267,19 @@
                 "status": [
                     "-elder",
                     "-kitten"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             },
             "r_c": {
                 "status": [
                     "-elder",
                     "-kitten"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             }
         },
         "relationship_changes": [
