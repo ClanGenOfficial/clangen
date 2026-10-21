@@ -80,6 +80,11 @@
         "immune_system_effect": 0.0,
         "side_effect": {},
         "progression": {
+            "temporary_weakness": {
+                "chance": 0.8,
+                "when": "HEALED",
+                "allow_scar": false
+            },
             "redcough": {
                 "chance": 0.1,
                 "when": "CONTINUING",
@@ -119,6 +124,11 @@
         "immune_system_effect": 0.0,
         "side_effect": {},
         "progression": {
+            "temporary_weakness": {
+                "chance": 0.8,
+                "when": "HEALED",
+                "allow_scar": false
+            },
             "whitecough": {
                 "chance": 0.1,
                 "when": "CONTINUING",
@@ -161,7 +171,13 @@
         "infectiousness": 0.0,
         "immune_system_effect": 0.1,
         "side_effect": {},
-        "progression": {},
+        "progression": {
+            "temporary_weakness": {
+                "chance": 0.8,
+                "when": "HEALED",
+                "allow_scar": false
+            }
+        },
         "risks": {},
         "treatment_strength": {
             "1": [
@@ -193,7 +209,13 @@
         "infectiousness": 0.0,
         "immune_system_effect": 0.3,
         "side_effect": {},
-        "progression": {},
+        "progression": {
+            "temporary_weakness": {
+                "chance": 2.0,
+                "when": "HEALED",
+                "allow_scar": false
+            }
+        },
         "risks": {},
         "treatment_strength": {
             "1": [
@@ -229,6 +251,11 @@
         "immune_system_effect": 0.2,
         "side_effect": {},
         "progression": {
+            "temporary_weakness": {
+                "chance": 0.8,
+                "when": "HEALED",
+                "allow_scar": false
+            },
             "strange_lump": {
                 "chance": 0.05,
                 "when": "HEALED",
@@ -290,7 +317,13 @@
         "infectiousness": 0.0,
         "immune_system_effect": 0.1,
         "side_effect": {},
-        "progression": {},
+        "progression": {
+            "temporary_weakness": {
+                "chance": 2.0,
+                "when": "HEALED",
+                "allow_scar": false
+            }
+        },
         "risks": {},
         "treatment_strength": {
             "1": [
@@ -328,6 +361,11 @@
             },
             "damaged_throat": {
                 "chance": 0.2,
+                "when": "HEALED",
+                "allow_scar": false
+            },
+            "temporary_weakness": {
+                "chance": 0.7,
                 "when": "HEALED",
                 "allow_scar": false
             }
@@ -391,6 +429,11 @@
                 "chance": 0.2,
                 "when": "HEALED",
                 "allow_scar": true
+            },
+            "temporary_weakness": {
+                "chance": 0.9,
+                "when": "HEALED",
+                "allow_scar": false
             }
         },
         "risks": {
@@ -616,6 +659,11 @@
                 "chance": 2.0,
                 "when": "HEALED",
                 "allow_scar": false
+            },
+            "temporary_weakness": {
+                "chance": 2.0,
+                "when": "HEALED",
+                "allow_scar": false
             }
         },
         "risks": {
@@ -655,6 +703,11 @@
         },
         "progression": {
             "lost_tail": {
+                "chance": 2.0,
+                "when": "HEALED",
+                "allow_scar": false
+            },
+            "temporary_weakness": {
                 "chance": 2.0,
                 "when": "HEALED",
                 "allow_scar": false
@@ -709,6 +762,11 @@
                 "chance": 0.2,
                 "when": "CONTINUING",
                 "allow_scar": true
+            },
+            "temporary_weakness": {
+                "chance": 0.6,
+                "when": "HEALED",
+                "allow_scar": false
             }
         },
         "risks": {
@@ -757,6 +815,11 @@
         "immune_system_effect": 0.0,
         "side_effect": {},
         "progression": {
+            "temporary_weakness": {
+                "chance": 2.0,
+                "when": "HEALED",
+                "allow_scar": false
+            },
             "paralyzed": {
                 "chance": 0.8,
                 "when": "HEALED",

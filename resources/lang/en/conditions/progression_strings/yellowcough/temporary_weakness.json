@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "yellowcough_temporary_weakness0",
+        "strings": [
+            "m_c's body won't immediately get back to normal after {PRONOUN/m_c/poss} condition, even if {PRONOUN/m_c/subject} {VERB/m_c/have/has} healed."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

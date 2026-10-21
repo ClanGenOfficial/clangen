@@ -152,7 +152,13 @@
         "infectiousness": 0.25,
         "immune_system_effect": 0.0,
         "side_effect": {},
-        "progression": {},
+        "progression": {
+            "temporary_weakness": {
+                "chance": 0.5,
+                "when": "HEALED",
+                "allow_scar": false
+            }
+        },
         "risks": {
             "sore_throat": 0.1
         },
@@ -271,7 +277,13 @@
         "infectiousness": 0.0,
         "immune_system_effect": 0.1,
         "side_effect": {},
-        "progression": {},
+        "progression": {
+            "temporary_weakness": {
+                "chance": 0.6,
+                "when": "HEALED",
+                "allow_scar": false
+            }
+        },
         "risks": {},
         "treatment_strength": {
             "1": [
@@ -663,7 +675,13 @@
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.2,
-        "side_effect": {},
+        "side_effect": {
+            "temporary_weakness": {
+                "chance": 0.3,
+                "when": "HEALED",
+                "allow_scar": false
+            }
+        },
         "progression": {
             "lost_leg": {
                 "chance": 0.2,
@@ -716,7 +734,13 @@
         "side_effect": {
             "blood_loss": 0.2
         },
-        "progression": {},
+        "progression": {
+            "temporary_weakness": {
+                "chance": 0.5,
+                "when": "HEALED",
+                "allow_scar": false
+            }
+        },
         "risks": {
             "infection": 0.1
         },
@@ -753,6 +777,11 @@
         "progression": {
             "raspy_lungs": {
                 "chance": 0.2,
+                "when": "HEALED",
+                "allow_scar": false
+            },
+            "temporary_weakness": {
+                "chance": 0.5,
                 "when": "HEALED",
                 "allow_scar": false
             }
@@ -792,7 +821,13 @@
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
         "side_effect": {},
-        "progression": {},
+        "progression": {
+            "temporary_weakness": {
+                "chance": 0.75,
+                "when": "HEALED",
+                "allow_scar": false
+            }
+        },
         "risks": {
             "infection": 0.3
         },
@@ -972,7 +1007,13 @@
                 "chance": 0.05,
                 "when": "HEALED",
                 "allow_scar": false
+            },
+            "temporary_weakness": {
+                "chance": 0.4,
+                "when": "HEALED",
+                "allow_scar": false
             }
+        
         },
         "risks": {
             "headache": 0.4,
@@ -1014,7 +1055,13 @@
                 "chance": 0.1,
                 "when": "CONTINUING",
                 "allow_scar": false
+            },
+            "temporary_weakness": {
+                "chance": 0.5,
+                "when": "HEALED",
+                "allow_scar": false
             }
+        
         },
         "risks": {},
         "treatment_strength": {
@@ -1170,6 +1217,11 @@
             },
             "constantly_dizzy": {
                 "chance": 0.2,
+                "when": "HEALED",
+                "allow_scar": false
+            },
+            "temporary_weakness": {
+                "chance": 0.5,
                 "when": "HEALED",
                 "allow_scar": false
             }
