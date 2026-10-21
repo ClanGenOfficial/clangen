@@ -1204,6 +1204,9 @@ dev_tools = false
   # the higher this number, the more freshkill is required before the pile is "full/excessive"
   base_event_trigger_factor = 4
 
+  # defines the amount of time it takes for freshkill to rot
+  time_to_rot = 3
+
   # defines the amount of prey a Clan begins with
   start_amount = 60
 
