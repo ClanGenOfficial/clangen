@@ -155,7 +155,7 @@
         "progression": {
             "temporary_weakness": {
                 "chance": 0.5,
-                "when": "HEALED",
+                "when": "CONTINUING",
                 "allow_scar": false
             }
         },
@@ -280,7 +280,7 @@
         "progression": {
             "temporary_weakness": {
                 "chance": 0.6,
-                "when": "HEALED",
+                "when": "CONTINUING",
                 "allow_scar": false
             }
         },
@@ -678,6 +678,11 @@
         "side_effect": {
             "temporary_weakness": {
                 "chance": 0.3,
+                "when": "CONTINUING",
+                "allow_scar": false
+            },
+            "weakened_muscles": {
+                "chance": 0.2,
                 "when": "HEALED",
                 "allow_scar": false
             }
@@ -737,7 +742,7 @@
         "progression": {
             "temporary_weakness": {
                 "chance": 0.5,
-                "when": "HEALED",
+                "when": "CONTINUING",
                 "allow_scar": false
             }
         },
@@ -782,7 +787,7 @@
             },
             "temporary_weakness": {
                 "chance": 0.5,
-                "when": "HEALED",
+                "when": "CONTINUING",
                 "allow_scar": false
             }
         },
@@ -824,7 +829,7 @@
         "progression": {
             "temporary_weakness": {
                 "chance": 0.75,
-                "when": "HEALED",
+                "when": "CONTINUING",
                 "allow_scar": false
             }
         },
@@ -1010,10 +1015,14 @@
             },
             "temporary_weakness": {
                 "chance": 0.4,
+                "when": "CONTINUING",
+                "allow_scar": false
+            },
+            "weakened_muscles": {
+                "chance": 0.15,
                 "when": "HEALED",
                 "allow_scar": false
             }
-        
         },
         "risks": {
             "headache": 0.4,
@@ -1058,7 +1067,7 @@
             },
             "temporary_weakness": {
                 "chance": 0.5,
-                "when": "HEALED",
+                "when": "CONTINUING",
                 "allow_scar": false
             }
         
@@ -1222,7 +1231,7 @@
             },
             "temporary_weakness": {
                 "chance": 0.5,
-                "when": "HEALED",
+                "when": "CONTINUING",
                 "allow_scar": false
             }
         },

@@ -2,7 +2,7 @@
     {
         "event_id": "weakened_muscles_exhausted",
         "strings": [
-            "m_c felt overworked this moon, and needed to take a bit of rest."
+            "m_c was overworked this moon, and needed to take a bit of rest."
         ],
         "involved_cats": {
             "m_c": {}

@@ -40,7 +40,8 @@
         "risks": {
             "joint_pain": 0.05,
             "torn_pelt": 0.1,
-            "selective_mutism": 0.05
+            "selective_mutism": 0.05,
+            "weakened_muscles": 0.05
         },
         "treatment_strength": {
             "1": [

@@ -82,7 +82,7 @@
         "progression": {
             "temporary_weakness": {
                 "chance": 0.8,
-                "when": "HEALED",
+                "when": "CONTINUING",
                 "allow_scar": false
             },
             "redcough": {
@@ -126,7 +126,7 @@
         "progression": {
             "temporary_weakness": {
                 "chance": 0.8,
-                "when": "HEALED",
+                "when": "CONTINUING",
                 "allow_scar": false
             },
             "whitecough": {
@@ -174,7 +174,7 @@
         "progression": {
             "temporary_weakness": {
                 "chance": 0.8,
-                "when": "HEALED",
+                "when": "CONTINUING",
                 "allow_scar": false
             }
         },
@@ -211,7 +211,12 @@
         "side_effect": {},
         "progression": {
             "temporary_weakness": {
-                "chance": 2.0,
+                "chance": 0.8,
+                "when": "CONTINUING",
+                "allow_scar": false
+            },
+            "weakened_muscles": {
+                "chance": 0.6,
                 "when": "HEALED",
                 "allow_scar": false
             }
@@ -253,7 +258,7 @@
         "progression": {
             "temporary_weakness": {
                 "chance": 0.8,
-                "when": "HEALED",
+                "when": "CONTINUING",
                 "allow_scar": false
             },
             "strange_lump": {
@@ -319,7 +324,12 @@
         "side_effect": {},
         "progression": {
             "temporary_weakness": {
-                "chance": 2.0,
+                "chance": 0.9,
+                "when": "CONTINUING",
+                "allow_scar": false
+            },
+            "weakened_muscles": {
+                "chance": 0.3,
                 "when": "HEALED",
                 "allow_scar": false
             }
@@ -366,7 +376,7 @@
             },
             "temporary_weakness": {
                 "chance": 0.7,
-                "when": "HEALED",
+                "when": "CONTINUING",
                 "allow_scar": false
             }
         },
@@ -432,7 +442,7 @@
             },
             "temporary_weakness": {
                 "chance": 0.9,
-                "when": "HEALED",
+                "when": "CONTINUING",
                 "allow_scar": false
             }
         },
@@ -704,7 +714,8 @@
             }
         },
         "risks": {
-            "infection": 0.2
+            "infection": 0.2,
+            "temporary_weakness": 0.4
         },
         "treatment_strength": {
             "1": [
@@ -755,6 +766,11 @@
             },
             "temporary_weakness": {
                 "chance": 0.6,
+                "when": "CONTINUING",
+                "allow_scar": false
+            },
+            "weakened_muscles": {
+                "chance": 0.2,
                 "when": "HEALED",
                 "allow_scar": false
             }
@@ -806,7 +822,17 @@
         "side_effect": {},
         "progression": {
             "temporary_weakness": {
-                "chance": 2.0,
+                "chance": 0.8,
+                "when": "CONTINUING",
+                "allow_scar": false
+            },
+            "paralyzed": {
+                "chance": 0.8,
+                "when": "HEALED",
+                "allow_scar": true
+            },
+            "weakened_muscles": {
+                "chance": 0.4,
                 "when": "HEALED",
                 "allow_scar": false
             }

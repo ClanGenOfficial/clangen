@@ -203,7 +203,6 @@ You can override the default minimums by including `(min:#)` after the status or
     | partial_hearing_loss |
     | deaf                 |
     | constant_joint_pain  |
-    | weakened_muscles     |
     | seizure_prone        |
     | allergies            |
     | constantly_dizzy     |
@@ -211,6 +210,7 @@ You can override the default minimums by including `(min:#)` after the status or
     | lasting_grief        |
     | persistent_headaches |
     | persistent_exhaustion|
+    | weakened_muscles     |
     | selective_mutism |
     | damaged_throat |
     | absent |

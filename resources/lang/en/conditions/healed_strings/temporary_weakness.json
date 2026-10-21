@@ -6,7 +6,14 @@
             "m_c's recovery was a long process, but it's finally over."
         ],
         "involved_cats": {
-            "m_c": {}
+            "m_c": {
+                "health": {
+                    "working": true,
+                    "condition": [],
+                    "must_be_congenital": false,
+                    "must_be_acquired": false
+                }
+            }
         }
     },
     {
@@ -16,7 +23,14 @@
             "r_c0, happy with m_c's recovery, clears {PRONOUN/m_c/object} to go back to {PRONOUN/m_c/poss} full duties."
         ],
         "involved_cats": {
-            "m_c": {},
+            "m_c": {
+                "health": {
+                    "working": true,
+                    "condition": [],
+                    "must_be_congenital": false,
+                    "must_be_acquired": false
+                }
+            },
             "r_c0": {
                 "status": [
                     "medicine cat",
@@ -25,6 +39,22 @@
                 "group": [
                     "player_clan"
                 ]
+            }
+        }
+    },
+    {
+        "event_id": "healed_temporary_weakness3",
+        "strings": [
+            "Injuries and illnesses are hard to deal with to begin with, but this asked even more of m_c's body than usual. Nonetheless, {PRONOUN/m_c/poss} strength is recovering."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "health": {
+                    "working": false,
+                    "condition": [],
+                    "must_be_congenital": false,
+                    "must_be_acquired": false
+                }
             }
         }
     }

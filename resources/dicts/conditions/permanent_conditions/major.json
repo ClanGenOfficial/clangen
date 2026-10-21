@@ -117,7 +117,8 @@
         "progression": {},
         "risks": {
             "running_nose": 0.25,
-            "redcough": 0.05
+            "redcough": 0.05,
+            "weakened_muscles": 0.15
         },
         "treatment_strength": {
             "1": [
@@ -146,7 +147,8 @@
         "risks": {
             "seizure": 0.05,
             "paralyzed": 0.05,
-            "redcough": 0.10
+            "redcough": 0.10,
+            "weakened_muscles": 0.15
         },
         "treatment_strength": {
             "1": [
@@ -368,6 +370,40 @@
             ],
             "3": []
         }
+    },
+    "weakened_muscles": {
+        "severity": "major",
+        "can_be_congenital": true,
+        "can_be_acquired": true,
+        "requires_scar": false,
+        "remove_on_death": true,
+        "moons_until_discovery": [4,145],
+        "mortality": {},
+        "immune_system_effect": 0.0,
+        "risks": {
+            "sore": 0.4,
+            "exhausted": 0.2,
+            "joint_pain": 0.3,
+            "sprain": 0.2,
+            "bruises": 0.3,
+            "scrapes": 0.2,
+            "small_cut": 0.2,
+            "torn_pelt": 0.2,
+            "breathless_fit": 0.05
+        },
+        "treatment_strength": {
+            "1": [
+                "daisy",
+                "ragwort"
+            ],
+            "2": [
+                "betony",
+                "elder leaves"
+            ],
+            "3": [
+                "juniper",
+                "thyme"
+            ]
+        }
     }
-    
 }

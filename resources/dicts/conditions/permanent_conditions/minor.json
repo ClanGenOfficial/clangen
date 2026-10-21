@@ -159,32 +159,6 @@
             ]
         }
     },
-    "weakened_muscles": {
-        "severity": "minor",
-        "can_be_congenital": true,
-        "can_be_acquired": true,
-        "remove_on_death": true,
-        "moons_until_discovery": [4,18],
-        "mortality": {},
-        "immune_system_effect": 0.0,
-        "progression": {},
-        "risks": {
-            "sore": 0.5,
-            "exhausted": 0.3
-        },
-        "treatment_strength": {
-            "1": [
-                "ragwort"
-            ],
-            "2": [
-                "juniper",
-                "dandelion"
-            ],
-            "3": [
-                "elder leaves"
-            ]
-        }
-    },
     "allergies": {
         "severity": "minor",
         "can_be_congenital": true,
