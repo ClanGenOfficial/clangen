@@ -19,6 +19,7 @@ from scripts.events_module.condition.generate_condition_event import (
 from scripts.cat.microservices.add_to_clan import add_dependents_to_clan, add_to_clan
 from scripts.cat_relations.cat_handle_funcs import create_relationships_new_cat
 from scripts.config import get_config
+from scripts.cat.cats import Cat
 
 # pylint: enable=line-too-long
 import traceback
@@ -1724,18 +1725,22 @@ def check_sinkhole():
 
     count_to_kill = round(cat_amount * percent_killed)
     dead_cats = []
+    IDs = []
+
     print("DEBUG: Calculated count!", count_to_kill)
 
     while len(dead_cats) < count_to_kill:
         c = get_random_player_clan_cat(Cat, not_allowed=dead_cats)
-        if c and not c.dead and c not in dead_cats:
+        c = Cat.fetch_cat(c)
+        if c and c not in dead_cats:
             dead_cats.append(c)
             c.die()
             if c.status.is_leader:
                 game.clan.leader_lives -= 1
             c.history.add_death(i18n.t("cruel_season.special_text.sinkhole_history"))
+            IDs.append(c.ID)
         print("DEBUG:", len(dead_cats), "out of", count_to_kill, "randomised!")
-    
+
     names = adjust_list_text([str(meow.name) for meow in dead_cats])
     print("DEBUG: got names!", names)
     game.cur_events_list.insert(
@@ -1750,6 +1755,6 @@ def check_sinkhole():
                     count=len(dead_cats),
                 ),
             ),
-            cats_involved=dead_cats,
+            cats_involved=IDs,
         ),
     )
