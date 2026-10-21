@@ -37,7 +37,7 @@ from ..game_structure.screen_settings import (
     MANAGER,
     set_display_mode,
 )
-from scripts.housekeeping.version import get_version_info
+from scripts.housekeeping.game_version import get_version_info
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.game_structure import constants
 

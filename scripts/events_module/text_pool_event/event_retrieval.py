@@ -17,7 +17,7 @@ loaded_events = {}
 
 
 def get_valid_event(
-    primary_cat: Cat,
+    primary_cat: Cat | None,
     involved_cats: dict,
     interactable_cats: list[Cat],
     possible_events: list[PatrolEvent | TextPoolEvent],

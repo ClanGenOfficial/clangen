@@ -2,12 +2,12 @@
     {
         "event_id": "like_inc_low1",
         "strings": [
-            "m_c thinks r_c was nice to {PRONOUN\/m_c\/object} today.",
+            "m_c thinks r_c was nice to {PRONOUN/m_c/object} today.",
             "m_c thought r_c was polite today.",
             "r_c does something that makes m_c's day a little happier.",
             "m_c wants to be closer to r_c.",
-            "r_c thanked m_c for bringing {PRONOUN\/r_c\/object} food.",
-            "r_c guides m_c to someone {PRONOUN\/m_c\/subject} {VERB\/m_c\/are\/is} looking for.",
+            "r_c thanked m_c for bringing {PRONOUN/r_c/object} food.",
+            "r_c guides m_c to someone {PRONOUN/m_c/subject} {VERB/m_c/are/is} looking for.",
             "m_c sees r_c put something back where it belongs.",
             "m_c hears a nice story about r_c."
         ]
@@ -22,10 +22,10 @@
             "r_c compliments m_c's name.",
             "r_c compliments one of m_c's friends.",
             "r_c mentions that m_c looks good today.",
-            "r_c tells m_c that {PRONOUN\/m_c\/poss} pelt is shiny today.",
+            "r_c tells m_c that {PRONOUN/m_c/poss} pelt is shiny today.",
             "m_c prevents something from falling on r_c.",
-            "m_c warns r_c about something on the ground so {PRONOUN\/r_c\/subject} {VERB\/m_c\/don't\/doesn't} trip.",
-            "m_c asks r_c how {PRONOUN\/r_c\/subject}{VERB\/r_c\/'re\/'s} doing."
+            "m_c warns r_c about something on the ground so {PRONOUN/r_c/subject} {VERB/m_c/don't/doesn't} trip.",
+            "m_c asks r_c how {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing."
         ],
         "relationship_changes": [
             {
@@ -49,9 +49,9 @@
             "m_c is surprised by r_c being thoughtful.",
             "m_c and r_c agree about something trivial.",
             "m_c didn't expect r_c to be so amicable today.",
-            "m_c realizes that {PRONOUN\/m_c\/subject} misunderstood something r_c said.",
+            "m_c realizes that {PRONOUN/m_c/subject} misunderstood something r_c said.",
             "m_c stops and thinks before assuming the worst of r_c.",
-            "When getting something to eat, m_c sees r_c allow someone else to take {PRONOUN\/r_c\/poss} favorite prey.",
+            "When getting something to eat, m_c sees r_c allow someone else to take {PRONOUN/r_c/poss} favorite prey.",
             "m_c sees r_c being gentle with an injured bug.",
             "m_c thinks that r_c looks nice today.",
             "m_c thinks that r_c smells nice today.",
@@ -79,15 +79,15 @@
         "strings": [
             "m_c apologized to r_c for being rude the other day.",
             "m_c and r_c actually get along better today.",
-            "m_c is surprised when r_c compliments {PRONOUN\/m_c\/object}.",
+            "m_c is surprised when r_c compliments {PRONOUN/m_c/object}.",
             "m_c and r_c giggle over something silly.",
-            "m_c jumps in a puddle, splashing r_c. To {PRONOUN\/m_c\/poss} surprise, r_c laughs.",
+            "m_c jumps in a puddle, splashing r_c. To {PRONOUN/m_c/poss} surprise, r_c laughs.",
             "m_c didn't expect an apology from r_c, but accepted it regardless.",
             "m_c has been a little kinder to r_c today.",
             "m_c and r_c bond over something small.",
-            "m_c helps r_c with something {PRONOUN\/r_c\/poss} were struggling with.",
+            "m_c helps r_c with something {PRONOUN/r_c/poss} were struggling with.",
             "m_c clears up a misunderstanding with r_c.",
-            "m_c admits that {PRONOUN\/m_c\/subject} {VERB\/m_c\/have\/has}n't always been patient with r_c."
+            "m_c admits that {PRONOUN/m_c/subject} {VERB/m_c/have/has}n't always been patient with r_c."
         ],
         "relationship_constraint": [
             {

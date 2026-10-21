@@ -428,6 +428,21 @@
             "zero": "colorful belled nylon collar",
             "many": "colorful belled nylon collars",
             "one": "colorful belled nylon collar"
+        },
+        "PUFFBALL": {
+            "zero": "puffball collar",
+            "many": "puffball collars",
+            "one": "puffball collar"
+        },
+        "PUFFBALL_DOUBLECOLOR": {
+            "zero": "two-color puffball collar",
+            "many": "two-color puffball collars",
+            "one": "two-color puffball collar"
+        },
+        "PUFFBALL_GRADIENT": {
+            "zero": "colorful puffball collar",
+            "many": "colorful puffball collars",
+            "one": "colorful puffball collar"
         }
     }
 }

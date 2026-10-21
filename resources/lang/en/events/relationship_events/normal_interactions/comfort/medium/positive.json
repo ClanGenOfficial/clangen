@@ -4,6 +4,10 @@
         "strings": [
             "It seems like there's an unspoken apology between m_c and r_c."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [
@@ -84,20 +88,17 @@
             }
         ]
     },
+
     {
         "event_id": "comfort_inc_med3",
         "strings": [
-            "m_c is sharing the latest gossip {PRONOUN/m_c/subject} heard over the border with r_c.",
-            "m_c tells r_c {PRONOUN/m_c/subject}'ll save {PRONOUN/r_c/object} a piece of fresh-kill.",
             "m_c playfully teases r_c for missing a catch.",
-            "m_c gives r_c some feathers from the bird {PRONOUN/m_c/subject} caught to line {PRONOUN/r_c/poss} nest.",
-            "m_c runs to greet r_c when {PRONOUN/r_c/subject} {VERB/r_c/return/returns} from a patrol.",
             "m_c asks to be on a patrol with r_c.",
             "m_c and r_c saw something hilarious during a patrol and can't stop giggling about it.",
             "The Clan notices m_c and r_c share patrols more often.",
             "During a hunting patrol, m_c and r_c share a piece of prey that is too small to bring back to camp.",
             "m_c and r_c mark the same spot of the border as a sign of friendship. Gross.",
-            "m_c and r_c get a little giggly off of some mysterious herbs they found on a patrol.",
+            "m_c and r_c act a little silly after finding some catnip while on patrol.",
             "m_c is delighted to be working with r_c today."
         ],
         "involved_cats": {
@@ -107,7 +108,107 @@
                     "warrior",
                     "deputy",
                     "leader"
+                ],
+                "health": {
+                    "working": true
+                }
+            },
+            "r_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+
+
+    {
+        "event_id": "comfort_inc_med3b",
+        "strings": [
+            "m_c runs to greet r_c when {PRONOUN/r_c/subject} {VERB/r_c/return/returns} from a patrol.",
+            "r_c is sharing the latest gossip {PRONOUN/r_c/subject} heard over the border with m_c.",
+            "r_c tells m_c {PRONOUN/r_c/subject}'ll save {PRONOUN/m_c/object} a piece of fresh-kill.",
+            "r_c gives m_c some feathers from the bird {PRONOUN/r_c/subject} caught to line {PRONOUN/m_c/poss} nest."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader"
                 ]
+            },
+            "r_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+
+    
+    {
+        "event_id": "comfort_inc_med3c",
+        "strings": [
+            "r_c runs to greet m_c when {PRONOUN/m_c/subject} {VERB/m_c/return/returns} from a patrol.",
+            "m_c is sharing the latest gossip {PRONOUN/m_c/subject} heard over the border with r_c.",
+            "m_c tells r_c {PRONOUN/m_c/subject}'ll save {PRONOUN/r_c/object} a piece of fresh-kill.",
+            "m_c gives r_c some feathers from the bird {PRONOUN/m_c/subject} caught to line {PRONOUN/r_c/poss} nest."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ],
+                "health": {
+                    "working": true
+                }
             },
             "r_c": {
                 "status": [

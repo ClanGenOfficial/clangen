@@ -31,6 +31,24 @@
                     "app/mentor"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
         ]
     },
     {
@@ -78,6 +96,24 @@
                     "app/mentor"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
         ]
     },
     {
@@ -92,7 +128,7 @@
             }
         },
         "strings": [
-            "Watching with pride as m_c is named and given to r_c0 to apprentice under, r_c1 {VERB/r_c1/know/knows} that {PRONOUN/r_c0/subject} {VERB/r_c0/were/was} a good choice.",            "(old_name) loudly complains as r_c1 pulls {PRONOUN/m_c/object} over to quickly groom {PRONOUN/m_c/poss} pelt. {PRONOUN/m_c/subject/CAP} {VERB/m_c/manage/manages} to wriggle away and scurry off to the front of the crowd for {PRONOUN/m_c/poss} ceremony, where {PRONOUN/m_c/subject} {VERB/m_c/are/is} renamed to m_c and apprenticed to r_c0. ",
+            "(old_name) loudly complains as r_c1 pulls {PRONOUN/m_c/object} over to quickly groom {PRONOUN/m_c/poss} pelt. {PRONOUN/m_c/subject/CAP} {VERB/m_c/manage/manages} to wriggle away and scurry off to the front of the crowd for {PRONOUN/m_c/poss} ceremony, where {PRONOUN/m_c/subject} {VERB/m_c/are/is} renamed to m_c and apprenticed to r_c0. ",
             "Even though {PRONOUN/m_c/subject} {VERB/m_c/are/is} excited to finally be made an apprentice, it takes a bit of coaxing by r_c1 for (old_name) to step forward for {PRONOUN/m_c/poss} ceremony. r_c1 watches in pride as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} named m_c and touches noses with r_c0."
 
         ],
@@ -120,6 +156,95 @@
                 "constraints": [
                     "child/parent"
                 ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "app_living_parent1",
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {},
+            "r_c1": {
+                "group": [
+                    "player_clan"
+                ]
+            }
+        },
+        "strings": [
+            "Watching with pride as m_c is named and given to r_c0 to apprentice under, r_c1 {VERB/r_c1/know/knows} that {PRONOUN/r_c0/subject} {VERB/r_c0/were/was} a good choice."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            },
+            {
+                "cats_to": [
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            },
+            {
+                "cats_to": [
+                    "r_c0"
+                ],
+                "cats_from": [
+                    "r_c1"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "trusts"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
             }
         ]
     },
@@ -168,6 +293,24 @@
                     "child/parent"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
         ]
     },
     {
@@ -214,6 +357,40 @@
                     "child/parent"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            },
+            {
+                "cats_from": [
+                    "r_c0", "low_social"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -5,
+                "log": {
+                    "cats_from": "r_c0 didn't appreciate how distracted m_c seemed during {PRONOUN/m_c/poss} apprentice ceremony."
+                }
+            }
         ]
     },
     {
@@ -237,7 +414,7 @@
             }
         },
         "strings": [
-            "As m_c touches noses with {PRONOUN/m_c/poss} new mentor r_c0, {PRONOUN/m_c/subject} {VERB/m_c/make/makes} a silent promise to r_c1 to make {PRONOUN/r_c1/object} proud and to take care of the Clan in {PRONOUN/r_c1/poss} absence."
+            "As m_c touches noses with {PRONOUN/m_c/poss} new mentor r_c0, {PRONOUN/m_c/subject} {VERB/m_c/make/makes} a silent promise to r_c1 and r_c2 to make them proud and to take care of the Clan in their absence."
         ],
         "relationship_constraint": [
             {
@@ -265,6 +442,24 @@
                     "child/parent"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
         ]
     },
     {
@@ -284,6 +479,7 @@
         },
         "strings": [
             "(old_name) runs up to the front of the crowd, eager to get {PRONOUN/m_c/poss} new name. When {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} called m_c for the first time, r_c1 and r_c2's voices can be heard the loudest as the Clan welcomes the new apprentice."
+
         ],
         "relationship_constraint": [
             {
@@ -298,6 +494,25 @@
                 "constraints": [
                     "child/parent"
                 ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c1", "r_c2"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort",
+                    "like"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was glad to hear cat_to cheer so loudly during {PRONOUN/m_c/poss} apprentice ceremony."
+                }
             }
         ]
     },
@@ -353,6 +568,40 @@
                     "child/parent"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            },
+            {
+                "cats_from": [
+                    "r_c0", "low_social"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -5,
+                "log": {
+                    "cats_from": "r_c0 didn't appreciate how distracted m_c seemed during {PRONOUN/m_c/poss} apprentice ceremony."
+                }
+            }
         ]
     },
     {
@@ -405,6 +654,40 @@
                     "child/parent"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            },
+            {
+                "cats_from": [
+                    "r_c0", "low_social"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -5,
+                "log": {
+                    "cats_from": "r_c0 didn't appreciate how distracted m_c seemed during {PRONOUN/m_c/poss} apprentice ceremony."
+                }
+            }
         ]
     },
     {
@@ -431,6 +714,24 @@
                     "app/mentor"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
         ]
     },
     {
@@ -450,9 +751,7 @@
             "r_c0": {}
         },
         "strings": [
-            "m_c carefully touches noses with {PRONOUN/m_c/poss} new mentor r_c0, looking quite intimidated and nervous.",
-            "r_c0 sees how nervous m_c is and whispers a quiet encouragement to {PRONOUN/m_c/object} as they touch noses, promising to be a good mentor to {PRONOUN/m_c/object}."
-
+            "m_c carefully touches noses with {PRONOUN/m_c/poss} new mentor r_c0, looking quite intimidated and nervous."
         ],
         "relationship_constraint": [
             {
@@ -466,6 +765,108 @@
                 "constraints": [
                     "app/mentor"
                 ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            },
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "m_c was intimidated by the prospect of r_c0 as {PRONOUN/m_c/poss} mentor."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "app_unsure0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "nervous",
+                        "gloomy",
+                        "insecure",
+                        "careful",
+                        "thoughtful"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "r_c0 sees how nervous m_c is and whispers a quiet encouragement to {PRONOUN/m_c/object} as they touch noses, promising to be a good mentor to {PRONOUN/m_c/object}."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            },
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c appreciated r_c0's attempt to comfort {PRONOUN/m_c/object} during {PRONOUN/m_c/poss} apprentice ceremony."
+                }
             }
         ]
     },
@@ -503,6 +904,24 @@
                 "constraints": [
                     "app/mentor"
                 ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
             }
         ]
     },
@@ -545,6 +964,40 @@
                     "app/mentor"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            },
+            {
+                "cats_from": [
+                    "r_c0"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "r_c0 appreciated how excited m_c seemed to become {PRONOUN/m_c/poss} apprentice."
+                }
+            }
         ]
     },
     {
@@ -573,7 +1026,8 @@
             "In {PRONOUN/m_c/poss} eagerness, m_c accidentally shoves {PRONOUN/m_c/poss} nose into r_c0's so hard that r_c0 flinches back in surprise. m_c sheepishly apologizes and the two have a good laugh about it.",
             "m_c can't believe {PRONOUN/m_c/poss} apprenticeship is finally here! Nearly tripping over {PRONOUN/m_c/poss} own paws, {PRONOUN/m_c/subject} {VERB/m_c/scurry/scurries} up to r_c0, excitedly touching noses with {PRONOUN/r_c0/object}.",
             "m_c fidgets impatiently beside r_c0 as {PRONOUN/m_c/subject} {VERB/m_c/wait/waits} for the meeting to end. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} finally an apprentice! {PRONOUN/m_c/subject/CAP} {VERB/m_c/want/wants} to hurry up, get out there and go, go, go!",
-            "(old_name) sits in front of the Clan with pride, {PRONOUN/m_c/poss} tiny heart beating so fast {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} it might explode! {PRONOUN/m_c/subject/CAP} very excitedly {VERB/m_c/touch/touches} noses with r_c0, happy to start {PRONOUN/m_c/poss} apprenticeship."
+            "(old_name) sits in front of the Clan with pride, {PRONOUN/m_c/poss} tiny heart beating so fast {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} it might explode! {PRONOUN/m_c/subject/CAP} very excitedly {VERB/m_c/touch/touches} noses with r_c0, happy to start {PRONOUN/m_c/poss} apprenticeship.",
+            "m_c blurts out to r_c0 that {PRONOUN/m_c/subject} {VERB/m_c/are/is} going to catch more prey than any apprentice ever has in the history of the Clan!"
         ],
         "relationship_constraint": [
             {
@@ -587,6 +1041,68 @@
                 "constraints": [
                     "app/mentor"
                 ]
+            }
+        ]
+    },
+    {
+    "event_id": "app_eager2",
+        "involved_cats": {
+            "m_c": {
+                "past_status": [
+                    "-rogue", "-loner", "-kittypet"
+                ],
+                "stat": {
+                    "trait": [
+                        "playful",
+                        "troublesome",
+                        "oblivious",
+                        "fierce",
+                        "flamboyant",
+                        "strange",
+                        "daring",
+                        "bold",
+                        "childish",
+                        "adventurous",
+                        "shameless"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c buzzes with excitement as {PRONOUN/m_c/subject} {VERB/m_c/step/steps} up to meet r_c0. {PRONOUN/m_c/subject/CAP} {VERB/m_c/have/has} spent moons waiting to see the world beyond camp, and now's {PRONOUN/m_c/poss} chance!",
+            "After a life confined to camp, m_c chatters endlessly to r_c0. Can they practice climbing? No, wait, they should swim! Or maybe fight a fox? {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} ready for anything, as long as it's exciting!"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
             }
         ]
     },
@@ -612,7 +1128,9 @@
         "strings": [
             "m_c remains calm as {PRONOUN/m_c/subject} {VERB/m_c/touch/touches} noses with r_c0, but {PRONOUN/m_c/poss} twitching tail gives away how excited {PRONOUN/m_c/subject} truly {VERB/m_c/are/is}.",
             "m_c sits up straighter as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} called forward to be made an apprentice. While {PRONOUN/m_c/subject} {VERB/m_c/try/tries} to look calm and collected, {PRONOUN/m_c/subject} still {VERB/m_c/tremble/trembles} a bit as {PRONOUN/m_c/subject} {VERB/m_c/touch/touches} noses with r_c0.",
-            "m_c touches noses with {PRONOUN/m_c/poss} mentor, r_c0, looking bored and unimpressed. But on the inside, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} bouncing around with euphoria as if {PRONOUN/m_c/subject} {VERB/m_c/were/was} still a kit!"
+            "m_c touches noses with {PRONOUN/m_c/poss} mentor, r_c0, looking bored and unimpressed. But on the inside, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} bouncing around with euphoria as if {PRONOUN/m_c/subject} {VERB/m_c/were/was} still a kit!",
+            "r_c0 worries when m_c barely reacts to being made {PRONOUN/r_c0/poss} apprentice. It isn't until later, when {PRONOUN/r_c0/subject} {VERB/r_c0/see/sees} how attentively m_c listens, that {PRONOUN/r_c0/subject} feels reassured.",
+            "Some new apprentices yowl or squeak, laugh or shout. Not m_c. Instead, {PRONOUN/m_c/subject} silently steps up to greet r_c0, {PRONOUN/m_c/poss} true feelings totally hidden."
         ],
         "relationship_constraint": [
             {
@@ -626,6 +1144,24 @@
                 "constraints": [
                     "app/mentor"
                 ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
             }
         ]
     },
@@ -666,6 +1202,24 @@
                 "constraints": [
                     "app/mentor"
                 ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
             }
         ]
     },
@@ -710,6 +1264,24 @@
                     "app/mentor"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
         ]
     },
     {
@@ -738,6 +1310,24 @@
                     "app/mentor"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
         ]
     },
     {
@@ -765,7 +1355,8 @@
         "strings": [
             "Surprising r_c0, the first thing that m_c does after {PRONOUN/m_c/poss} apprentice ceremony is gather moss, just to make sure everyone has fresh bedding.",
             "m_c touches noses with r_c0 and hopes that {PRONOUN/m_c/subject}'ll get to hunt first, so {PRONOUN/m_c/subject} can make sure the Clan is fed.",
-            "Eager to learn the best ways to help {PRONOUN/m_c/poss} Clan thrive, m_c excitedly touches noses with r_c0."
+            "Eager to learn the best ways to help {PRONOUN/m_c/poss} Clan thrive, m_c excitedly touches noses with r_c0.",
+            "After the ceremony m_c chirps to r_c0 that as an apprentice, {PRONOUN/m_c/subject} can learn all sorts of new ways to care for {PRONOUN/m_c/poss} Clanmates!"
         ],
         "relationship_constraint": [
             {
@@ -779,6 +1370,24 @@
                 "constraints": [
                     "app/mentor"
                 ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
             }
         ]
     },
@@ -816,6 +1425,24 @@
                 "constraints": [
                     "app/mentor"
                 ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
             }
         ]
     },
@@ -857,6 +1484,24 @@
                 "constraints": [
                     "app/mentor"
                 ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
             }
         ]
     },
@@ -903,6 +1548,139 @@
                     "app/mentor"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "app_decisive0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "arrogant",
+                        "ambitious",
+                        "competitive",
+                        "righteous",
+                        "confident",
+                        "strict",
+                        "rebellious",
+                        "bold"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c stands tall as {PRONOUN/m_c/subject} {VERB/m_c/become/becomes} an apprentice. After the ceremony, {PRONOUN/m_c/subject} {VERB/m_c/ask/asks} r_c0 when they'll begin training. This is {PRONOUN/m_c/poss} chance to prove {PRONOUN/m_c/self}.",
+            "m_c loudly boasts to r_c0 that {PRONOUN/m_c/subject} already {VERB/m_c/know/knows} everything about being an apprentice...but {PRONOUN/m_c/subject} {VERB/m_c/suppose/supposes} a bit of training couldn't hurt.",
+            "Halfway through the meeting, m_c marches up to the front of the crowd and announces that {PRONOUN/m_c/subject} {VERB/m_c/are/is} ready to become an apprentice. Nobody can disagree with {PRONOUN/m_c/poss} confidence, least of all {PRONOUN/m_c/poss} new mentor, r_c0."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_duty0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "strict",
+                        "righteous",
+                        "ambitious",
+                        "faithful",
+                        "loyal",
+                        "responsible",
+                        "careful"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c has always wanted to dedicate {PRONOUN/m_c/poss} life to protecting {PRONOUN/m_c/poss} Clan. With r_c0's guidance, {PRONOUN/m_c/subject} {VERB/m_c/know/knows} {PRONOUN/m_c/subject} can fulfill {PRONOUN/m_c/poss} dream."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_safety0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "CAMP,0"
+                    ],
+                    "trait": [
+                        "strict",
+                        "righteous",
+                        "ambitious",
+                        "faithful",
+                        "loyal",
+                        "responsible",
+                        "careful"
+                    ],
+                    "must_have_both": false
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "The first thing m_c asks r_c0 to learn after {PRONOUN/m_c/poss} ceremony ends is how to secure the camp walls. {PRONOUN/m_c/subject/CAP} {VERB/m_c/want/wants} to make absolutely sure camp is safe before {PRONOUN/m_c/subject} even {VERB/m_c/think/thinks} about leaving it!"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
         ]
     },
     {
@@ -927,7 +1705,9 @@
             "r_c0": {}
         },
         "strings": [
-            "m_c sits excitedly beside r_c0 as the meeting ends and hopes {PRONOUN/m_c/subject}'ll be doing something exciting like battle training first. {PRONOUN/m_c/poss/CAP} claws are itching to tear at something."
+            "m_c sits excitedly beside r_c0 as the meeting ends and hopes {PRONOUN/m_c/subject}'ll be doing something exciting like battle training first. {PRONOUN/m_c/poss/CAP} claws are itching to tear at something.",
+            "As soon as the ceremony ends, m_c tells r_c0 that if they come across a threat during their tour of c_n territory, {PRONOUN/m_c/subject}'ll be sure to chase it off!",
+            "The instant {PRONOUN/m_c/poss} ceremony ends, m_c pounces on r_c0 and declares that {PRONOUN/m_c/subject} will be the greatest warrior to ever live!"
         ],
         "relationship_constraint": [
             {
@@ -941,6 +1721,24 @@
                 "constraints": [
                     "app/mentor"
                 ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
             }
         ]
     },
@@ -977,6 +1775,24 @@
                 "constraints": [
                     "app/mentor"
                 ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
             }
         ]
     },
@@ -1018,6 +1834,103 @@
                     "app/mentor"
                 ]
             }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "app_taking_charge1",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "flamboyant",
+                        "charismatic",
+                        "arrogant",
+                        "shameless",
+                        "cunning"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c peers up at the leader and asks in {PRONOUN/m_c/poss} sweetest voice, if {PRONOUN/m_c/subject} could pretty, pretty please have r_c0 as a mentor. Charmed, the leader agrees."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_silly0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "childish",
+                        "strange",
+                        "shameless",
+                        "troublesome",
+                        "oblivious",
+                        "playful",
+                        "rebellious"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "To the horror of m_c's Clanmates, {PRONOUN/m_c/subject} {VERB/m_c/stomp/stomps} up to {PRONOUN/m_c/poss} ceremony covered in mud. r_c0 explains that {PRONOUN/m_c/poss} first apprentice task is to get {PRONOUN/m_c/self} cleaned up.",
+            "m_c interrupts the ceremony to crack a joke. The Clan falls silent before purrs fill the air. The leader manages to quell the laughter by announcing that r_c0 will be {PRONOUN/m_c/poss} mentor, successfully distracting the young jokester.",
+            "The instant {PRONOUN/m_c/poss} ceremony ends, m_c glances over and challenges r_c0 to a race. Last one to the camp entrance is a rotten egg!",
+            "m_c touches noses with r_c0, silently mourning all of the fun and freedom {PRONOUN/m_c/subject} had in the nursery."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
         ]
     },
     {
@@ -1039,7 +1952,8 @@
         "strings": [
             "Newly apprenticed m_c can't help but squeak when {PRONOUN/m_c/poss} mentor's name is announced. {PRONOUN/m_c/subject/CAP} {VERB/m_c/run/runs} with {PRONOUN/m_c/poss} ears lowered in embarrassment to touch noses with r_c0.",
             "(old_name) is so focused on the leader, when r_c1 nudges {PRONOUN/m_c/object} forward, {PRONOUN/m_c/subject} {VERB/m_c/yelp/yelps}. With much embarrassment, the newly-apprenticed m_c touches noses with r_c0.",
-            "(old_name) wants to sob at the thought of being anything but a kit, comforted by r_c1 and the smells of the nursery. Nevertheless, {PRONOUN/m_c/subject} {VERB/m_c/step/steps} up before {PRONOUN/m_c/poss} leader, {VERB/m_c/take/takes} the name m_c, and {VERB/m_c/are/is} apprenticed to r_c0."
+            "(old_name) wants to sob at the thought of being anything but a kit, comforted by r_c1 and the smells of the nursery. Nevertheless, {PRONOUN/m_c/subject} {VERB/m_c/step/steps} up before {PRONOUN/m_c/poss} leader, {VERB/m_c/take/takes} the name m_c, and {VERB/m_c/are/is} apprenticed to r_c0.",
+            "m_c is always worrying. As they touch noses, r_c0 hopes that {PRONOUN/r_c0/subject} might be able to help build up {PRONOUN/m_c/poss} confidence."
         ],
         "relationship_constraint": [
             {
@@ -1053,6 +1967,104 @@
                 "constraints": [
                     "app/mentor"
                 ]
+            },
+            {
+                "cats_to": [
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_skittish1",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "nervous",
+                        "insecure",
+                        "careful"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "After {PRONOUN/m_c/poss} apprentice ceremony, m_c immediately starts asking r_c0 the best way to steer clear of predators out in c_n territory. Just in case."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_preen0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "flamboyant",
+                        "charismatic",
+                        "shameless",
+                        "loving",
+                        "arrogant",
+                        "confident"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c basks in the cheers of the Clan as {PRONOUN/m_c/subject} {VERB/m_c/touch/touches} noses with r_c0. This isn't the first time {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been the center of attention, and it won't be the last.",
+            "(old_name) struts out of the nursery, making sure all eyes are on {PRONOUN/m_c/object}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/purr/purrs} like thunder when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} named m_c and apprenticed to r_c0."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
             }
         ]
     },
@@ -1088,6 +2100,911 @@
                 "constraints": [
                     "app/mentor"
                 ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "app_blunt0",
+        "tags": [
+            "clan:leader", "clan:warrior"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "cold",
+                        "gloomy",
+                        "grumpy",
+                        "arrogant",
+                        "shameless",
+                        "troublesome",
+                        "rebellious",
+                        "strict"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "There isn't a single cat in the Clan who doubts whether or not m_c is ready to become an apprentice. How could they, when {PRONOUN/m_c/subject} {VERB/m_c/walk/walks} right up to lead_name and announces {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} waited long enough?"
+        ]
+    },
+    {
+        "event_id": "app_faith0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": ["STAR,0"],
+                    "trait": ["faithful","strict","righteous"],
+                    "must_have_both": false 
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c bows {PRONOUN/m_c/poss} head and prays silently as {PRONOUN/m_c/subject} {VERB/m_c/touch/touches} noses with r_c0. {PRONOUN/m_c/subject/CAP} {VERB/m_c/ask/asks} StarClan to guide {PRONOUN/m_c/object} in all things."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_glum0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "cold",
+                        "gloomy",
+                        "grumpy",
+                        "insecure",
+                        "lonesome"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c stumbles on {PRONOUN/m_c/poss} way up to r_c0, too busy staring at {PRONOUN/m_c/poss} own paws to pay attention. r_c0 helps {PRONOUN/m_c/object} up and hears {PRONOUN/m_c/subject} muttering that {PRONOUN/m_c/subject} knew something bad would happen.",
+            "After the ceremony m_c trudges over to r_c0 and sighs. {PRONOUN/m_c/subject/CAP} glumly {VERB/m_c/ask/asks} if they'll be starting with something boring, like gathering moss. It would be just {PRONOUN/m_c/poss} luck.",
+            "r_c0 ignores the way m_c mutters under {PRONOUN/m_c/poss} breath as they touch noses. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/hope/hopes} that {PRONOUN/r_c0/subject} can help m_c grow out of {PRONOUN/m_c/poss} attitude.",
+            "m_c grits {PRONOUN/m_c/poss} teeth as {PRONOUN/m_c/subject} {VERB/m_c/slink/slinks} up to the waiting crowd. Too many eyes on {PRONOUN/m_c/object}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/try/tries} to ignore them all as {PRONOUN/m_c/subject}{VERB/m_c/touch/touches} noses with r_c0."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_glum1",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "cold",
+                        "gloomy",
+                        "grumpy",
+                        "insecure",
+                        "lonesome"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "Why did lead_name have to call the meeting so early? No amount of excitement over {PRONOUN/m_c/poss} apprenticeship or getting r_c0 as a mentor can make up for how cranky {PRONOUN/m_c/subject} {VERB/m_c/are/is} in the morning.",
+            "m_c is more withdrawn than most cats {PRONOUN/m_c/poss} age, but lead_name hopes that r_c0 might help {PRONOUN/m_c/object} come out of {PRONOUN/m_c/poss} shell."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_mentor_dislikes0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c is overjoyed to finally be an apprentice. But why, oh why, did lead_name assign r_c0 as {PRONOUN/m_c/poss} mentor? {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/are/is} the worst!",
+             "m_c rolls {PRONOUN/m_c/poss} eyes when {PRONOUN/m_c/subject} {VERB/m_c/hear/hears} that r_c0 will be {PRONOUN/m_c/poss} mentor. Really? It couldn't be anybody else? r_c0 shoots {PRONOUN/m_c/object} a stern glare as m_c sullenly walks over to greet {PRONOUN/r_c0/object}."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor",
+                    "dislikes"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "app_no_mentor_dislikes0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "warrior", 
+                    "leader", 
+                    "deputy"
+                ]
+            }
+        },
+        "strings": [
+            "As m_c receives {PRONOUN/m_c/poss} apprentice name, {PRONOUN/m_c/subject} {VERB/m_c/send/sends} a small prayer to StarClan that r_c0 won't be {PRONOUN/m_c/poss} mentor."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "dislikes"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_no_mentor_likes0",
+        "tags": [
+            "clan:leader",
+            "clan:warrior-like(min:1)"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "has_mentor": {
+                    "current": false
+                }
+            },
+            "r_c0": {
+                "status": [
+                    "warrior", 
+                    "leader", 
+                    "deputy"
+                ]
+            }
+        },
+        "strings": [
+            "As (old_name) prepares for {PRONOUN/m_c/poss} apprentice ceremony, {PRONOUN/m_c/subject} {VERB/m_c/wonder/wonders} who {PRONOUN/m_c/poss} mentor will be. Oh! Maybe it will be r_c0, that would be cool! At the next clan meeting, {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c and welcomed as a new apprentice.",
+            "m_c is finally made an apprentice. {PRONOUN/m_c/subject/CAP} {VERB/m_c/hope/hopes} that r_c0 will be {PRONOUN/m_c/poss} mentor."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "likes",
+                    "-child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_no_mentor_mentor_hoping0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "has_mentor": {
+                    "current": false
+                }
+            },
+            "r_c0": {
+                "has_apprentice": {
+                    "current": false,
+                    "former": false
+                },
+                "age": ["-young adult", "-adolescent"],
+                "status": [
+                    "warrior"
+                ],
+                "group": [
+                    "player_clan"
+                ]
+            }
+        },
+        "strings": [
+            "r_c0 hopes {PRONOUN/r_c0/subject}'ll get to mentor the Clan's newest apprentice, m_c. {PRONOUN/r_c0/subject/CAP}{VERB/r_c0/'ve/'s} been praying for an apprentice for moons now!",
+            "The Clan cheers for their newest apprentice, m_c. r_c0 sits up extra straight; {PRONOUN/r_c0/subject} {VERB/r_c0/know/knows} m_c would be perfect for {PRONOUN/r_c0/poss} first apprentice."
+        ]
+    },
+    {
+        "event_id": "app_no_mentor_mentor_hoping1",
+        "tags": [
+            "clan:leader", "-card:pride_and_joy"
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "has_apprentice": {
+                    "current": false,
+                    "former": false
+                },
+                "age": ["-young adult", "-adolescent"],
+                "status": [
+                    "warrior"
+                ],
+                "group": [
+                    "player_clan"
+                ],
+                "stat": {
+                    "trait": [
+                        "ambitious",
+                        "competitive",
+                        "confident",
+                        "flamboyant",
+                        "charismatic",
+                        "cunning"
+                    ]
+                },
+                "past_status": ["-deputy"]
+            }
+        },
+        "strings": [
+            "At m_c's apprentice ceremony, r_c0 watches lead_name with ambition. If r_c0 has any chance of becoming deputy, {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} an apprentice, and m_c would be perfect."
+        ]
+    },
+    {
+        "event_id": "app_mentor_likes0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c's heart swells with joy when {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} apprenticed to r_c0. {PRONOUN/m_c/subject/CAP} can't wait to learn from the coolest cat in the whole clan."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor",
+                    "likes"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "app_mentor_sibling0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {}
+        },
+        "strings": [
+            "(old_name) is old enough to begin training, and is apprenticed to r_c0, {PRONOUN/m_c/poss} older sibling. lead_name knows m_c's kin will guide them into a fine warrior.",
+            "m_c is apprenticed to {PRONOUN/m_c/poss} older sibling, r_c0. lead_name knows that there will be extra challenges involved with mentoring kin, but r_c0 is willing to take it on. "
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor",
+                    "siblings"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "app_mentor_sibling_parentHappy0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {},
+            "r_c1": {
+                "group": [
+                    "player_clan"
+                ]
+            }
+        },
+        "strings": [
+            "r_c1 is delighted that m_c is apprenticed to r_c0. It will be great to see {PRONOUN/r_c1/poss} kits working so closely.",
+            "When m_c is apprenticed to r_c0, r_c1 mewls in delight. {PRONOUN/r_c1/poss/CAP} kits, training together! How wonderful!"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            },
+            {
+                "cats_from": [
+                    "r_c1"
+                ],
+                "cats_to": [
+                    "m_c",
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "parent/child"
+                ]
+            },
+            {
+                 "cats_from": [
+                    "r_c1"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "likes"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "app_POI_terrain0",
+        "tags": [
+            "clan:leader"
+        ],
+        "poi": {
+            "category": "terrain"
+        },
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {}
+        },
+        "strings": [
+            "When lead_name gives m_c to r_c0 to train, r_c0 leads {PRONOUN/r_c0/poss} new apprentice out of camp to see the sights, starting with POI."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "app_POI_terrain1",
+        "tags": [
+            "clan:leader"
+        ],
+        "poi": {
+            "category": "terrain"
+        },
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": ["STORY,0", "LORE,0"],
+                    "trait": ["adventurous", "daring", "bold", "thoughtful", "playful", "strange", "ambitious", "fierce", "flamboyant"],
+                    "must_have_both": false
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "Once m_c has been apprenticed to r_c0, {PRONOUN/m_c/subject} {VERB/m_c/beg/begs} {PRONOUN/m_c/poss} new mentor to show {PRONOUN/m_c/object} POI! {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} heard so many stories, and {PRONOUN/m_c/subject} can't wait to see it in real life."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "app_POI_covered",
+        "poi": {
+            "tags": ["covered"],
+            "category": "terrain"
+        },
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c is apprenticed to r_c0, who shows {PRONOUN/m_c/object} the territory right away. Under the shade of POI, r_c0 promises to teach m_c everything {PRONOUN/r_c0/subject} {VERB/r_c0/know/knows}."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "app_POI_prey",
+        "tags": [
+            "clan:leader"
+        ],
+        "poi": {
+            "tags": ["prey"]
+        },
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": ["HUNTER,0"]
+                }
+            },
+            "r_c0": {
+                "stat": {
+                    "trait": ["-strict", "-cold", "-grumpy", "-rebellious"]
+                }
+            }
+        },
+        "strings": [
+            "r_c0 has barely touched {PRONOUN/r_c0/poss} nose to m_c's, accepting {PRONOUN/r_c0/poss} role as {PRONOUN/m_c/poss} mentor, before m_c asks to go hunting. r_c0 indulges {PRONOUN/m_c/object}, and later that day m_c makes {PRONOUN/m_c/poss} first catch at POI."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "app_POI_water",
+        "tags": [
+            "clan:leader"
+        ],
+        "poi": {
+            "tags": ["water"]
+        },
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": ["SWIMMER,0"]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "As soon as m_c is apprenticed to r_c0, {PRONOUN/m_c/subject} {VERB/m_c/ask/asks} to go see POI; {PRONOUN/m_c/subject} can't wait to get {PRONOUN/m_c/poss} paws wet!"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "app_POI_moonplace",
+        "tags": [
+            "clan:medicine cat"
+        ],
+        "poi": {
+            "category": "moonplace"
+        },
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": ["STAR,0", "PROPHET,0", "OMEN,0"]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "Standing beside {PRONOUN/m_c/poss} new mentor, r_c0, m_c asks if {PRONOUN/m_c/subject}'ll get the chance to see POI even though {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not a medicine cat apprentice. r_c0 agrees to talk to the medicine cat about a trip."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "app_POI_gathering",
+        "poi": {
+            "category": "gathering"
+        },
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": ["flamboyant", "strange", "thoughtful", "ambitious", "arrogant", "compassionate", "competitive", "loving", "bold", "fierce", "daring", "adventurous", "charismatic", "playful", "childish", "shameless", "troublesome", "confident"]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c listens to {PRONOUN/m_c/poss} new name on the lips of {PRONOUN/m_c/poss} Clanmates, beaming with pride next to {PRONOUN/m_c/poss} mentor, r_c0. {PRONOUN/m_c/subject/CAP} can't wait for a Gathering to meet the other Clans at POI!"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "app_POI_twoleg",
+        "poi": {
+            "tags": ["Twolegs:present"]
+        },
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c begs {PRONOUN/m_c/poss} new mentor, r_c0, to take {PRONOUN/m_c/object} to POI. {PRONOUN/m_c/subject/CAP} {VERB/m_c/want/wants} to see a real-life Twoleg!"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
             }
         ]
     }
