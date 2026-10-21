@@ -3493,8 +3493,8 @@
             "Wants to work hard to impress r_c",
             "Had a pointless, petty argument with r_c",
             "Startles r_c to get back at {PRONOUN/r_c/object} for something or other",
-            "Casually insults r_c in passing",
-            "Leaves r_c's favorite prey on the pile for {PRONOUN/m_c/poss} sibling"
+            "Affectionately insults r_c in passing",
+            "Leaves r_c's favorite prey on the pile for {PRONOUN/m_c/poss} {ADJ/r_c/sibling/brother/sister}"
         ],
         "involved_cats": {
             "r_c": {
@@ -3529,17 +3529,19 @@
             "Reminds r_c of that time {PRONOUN/r_c/subject} wet the bedding in the nursery",
             "Roasts r_c's hunting",
             "Uses a kit-move to beat r_c in a spar, just like old times",
-            "Reminds r_c of something embarrassing"
+            "Reminds r_c of something embarrassing from {PRONOUN/r_c/poss} kithood"
         ],
         "involved_cats": {
             "m_c": {
                 "status": [
-                    "-kitten"
+                    "-kitten",
+                    "-newborn"
                 ]
             },
             "r_c": {
                 "status": [
-                    "-kitten"
+                    "-kitten",
+                    "-newborn"
                 ],
                 "group": [
                     "-afterlife"
@@ -3556,7 +3558,7 @@
                 ],
                 "mutual": false,
                 "constraints": [
-                    "siblings"
+                    "littermates"
                 ]
             }
         ]
@@ -3595,8 +3597,8 @@
     {
         "event_id": "cat_leadership_parent",
         "strings": [
-            "Is proud of {PRONOUN/m_c/poss} parent, r_c",
-            "Wonders if the Clan treats {PRONOUN/m_c/object} any differently because of {PRONOUN/m_c/poss} parent, r_c",
+            "Is proud of {PRONOUN/m_c/poss} {ADJ/r_c/parent/dad/mom}, r_c",
+            "Wonders if the Clan treats {PRONOUN/m_c/object} any differently because of {PRONOUN/m_c/poss} {ADJ/r_c/parent/dad/mom}, r_c",
             "Wonders if {PRONOUN/m_c/subject} should aim for r_c's position"
         ],
         "involved_cats": {
@@ -3628,10 +3630,10 @@
     {
         "event_id": "cat_med_parent",
         "strings": [
-            "Is visiting the medicine cat den to see {PRONOUN/m_c/poss} parent, r_c",
+            "Is visiting the medicine cat den to see {PRONOUN/m_c/poss} {ADJ/r_c/parent/dad/mom}, r_c",
             "Is watching r_c work",
             "Is able to identify herbs better then {PRONOUN/m_c/poss} Clanmates due to {PRONOUN/m_c/poss} upbringing",
-            "Is bringing fresh-kill to {PRONOUN/m_c/poss} parent, r_c",
+            "Is bringing fresh-kill to {PRONOUN/m_c/poss} {ADJ/r_c/parent/dad/mom}, r_c",
             "Is helping r_c out in the medicine cat den"
         ],
         "involved_cats": {
@@ -6570,7 +6572,7 @@
     {
         "event_id": "dead_littermate",
         "strings": [
-            "Never had to imagine life without {PRONOUN/m_c/poss} sibling...",
+            "Never had to imagine life without {PRONOUN/m_c/poss} {ADJ/r_c/sibling/brother/sister}...",
             "Is remembering growing up with r_c",
             "Thinks of being snuggled safe with r_c as kits",
             "Feels something missing without r_c at {PRONOUN/m_c/poss} side",
@@ -6858,7 +6860,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "one bad eye"
+                        "one_bad_eye"
                     ]
                 }
             },
@@ -6881,7 +6883,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "one bad eye"
+                        "one_bad_eye"
                     ]
                 }
             },
@@ -6911,7 +6913,7 @@
                 ],
                 "health": {
                     "condition": [
-                        "one bad eye"
+                        "one_bad_eye"
                     ]
                 }
             },
@@ -6937,7 +6939,7 @@
                 ],
                 "health": {
                     "condition": [
-                        "one bad eye"
+                        "one_bad_eye"
                     ]
                 }
             },
@@ -6960,7 +6962,7 @@
                 ],
                 "health": {
                     "condition": [
-                        "one bad eye"
+                        "one_bad_eye"
                     ]
                 }
             },
@@ -6988,7 +6990,7 @@
                 ],
                 "health": {
                     "condition": [
-                        "one bad eye"
+                        "one_bad_eye"
                     ]
                 }
             },
@@ -7009,7 +7011,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "partial hearing loss"
+                        "partial_hearing_loss"
                     ]
                 }
             }
@@ -7026,7 +7028,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "partial hearing loss"
+                        "partial_hearing_loss"
                     ]
                 }
             },
@@ -7048,7 +7050,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "partial hearing loss"
+                        "partial_hearing_loss"
                     ],
                     "must_be_congenital": true
                 }
@@ -7072,7 +7074,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "partial hearing loss"
+                        "partial_hearing_loss"
                     ]
                 }
             }
@@ -7090,7 +7092,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "partial hearing loss"
+                        "partial_hearing_loss"
                     ]
                 }
             },
@@ -7118,7 +7120,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "partial hearing loss"
+                        "partial_hearing_loss"
                     ]
                 }
             },
@@ -7141,7 +7143,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "partial hearing loss"
+                        "partial_hearing_loss"
                     ]
                 }
             },
@@ -7166,7 +7168,7 @@
                 ],
                 "health": {
                     "condition": [
-                        "partial hearing loss",
+                        "partial_hearing_loss",
                         "deaf"
                     ],
                     "must_be_congenital": true
@@ -7465,7 +7467,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "wasting disease"
+                        "wasting_disease"
                     ]
                 }
             },
@@ -7490,7 +7492,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "wasting disease"
+                        "wasting_disease"
                     ]
                 }
             }
@@ -7511,7 +7513,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "wasting disease"
+                        "wasting_disease"
                     ]
                 }
             }
@@ -7535,7 +7537,7 @@
                 ],
                 "health": {
                     "condition": [
-                        "wasting disease"
+                        "wasting_disease"
                     ]
                 }
             }
@@ -7552,8 +7554,8 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "lost a leg",
-                        "born without a leg"
+                        "lost_leg",
+                        "born_without_leg"
                     ]
                 }
             },
@@ -7580,7 +7582,7 @@
                 ],
                 "health": {
                     "condition": [
-                        "lost a leg"
+                        "lost_leg"
                     ]
                 }
             },
@@ -7604,8 +7606,8 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "lost their tail",
-                        "born without a tail"
+                        "lost_tail",
+                        "born_without_tail"
                     ]
                 }
             },
@@ -7627,7 +7629,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "lost their tail"
+                        "lost_tail"
                     ]
                 }
             },
@@ -7650,8 +7652,8 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "lost their tail",
-                        "born without a tail"
+                        "lost_tail",
+                        "born_without_tail"
                     ]
                 }
             },
@@ -7680,7 +7682,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "constantly dizzy"
+                        "constantly_dizzy"
                     ]
                 }
             },
@@ -7802,7 +7804,7 @@
             "r_c": {
                 "health": {
                     "condition": [
-                        "running nose"
+                        "running_nose"
                     ]
                 }
             }
@@ -8049,7 +8051,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "lasting grief"
+                        "lasting_grief"
                     ]
                 }
             }
@@ -8065,7 +8067,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "lasting grief"
+                        "lasting_grief"
                     ]
                 }
             },
@@ -8093,7 +8095,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "recurring shock"
+                        "recurring_shock"
                     ]
                 }
             },
@@ -8136,7 +8138,7 @@
                 "health": {
                     "condition": [
                         "shock",
-                        "lingering shock"
+                        "lingering_shock"
                     ]
                 }
             }
@@ -8158,7 +8160,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "blood loss"
+                        "blood_loss"
                     ]
                 }
             }
@@ -8178,8 +8180,8 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "broken bone",
-                        "broken jaw"
+                        "broken_bone",
+                        "broken_jaw"
                     ]
                 }
             }
@@ -8197,8 +8199,8 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "mangled tail",
-                        "mangled leg"
+                        "mangled_tail",
+                        "mangled_leg"
                     ]
                 }
             }
@@ -8215,7 +8217,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "phantom pain"
+                        "phantom_pain"
                     ]
                 }
             }
@@ -8234,7 +8236,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "shivering",
+                        "dangerously_cold",
                         "frostbite"
                     ]
                 }
@@ -8254,7 +8256,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "recovering from birth"
+                        "recovering_from_birth"
                     ]
                 }
             }
@@ -8273,7 +8275,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "water in their lungs"
+                        "water_in_lungs"
                     ]
                 }
             }
@@ -8292,7 +8294,7 @@
                 "health": {
                     "condition": [
                         "burn",
-                        "severe burn"
+                        "severe_burn"
                     ]
                 }
             }
@@ -8342,7 +8344,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "head damage"
+                        "head_damage"
                     ]
                 }
             }
@@ -8361,7 +8363,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "damaged eyes"
+                        "damaged_eyes"
                     ]
                 }
             }
@@ -8381,7 +8383,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "broken back"
+                        "broken_back"
                     ]
                 }
             }
@@ -8425,7 +8427,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "bee sting"
+                        "bee_sting"
                     ]
                 }
             }
@@ -8448,7 +8450,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "severe headache"
+                        "severe_headache"
                     ]
                 }
             }
@@ -8494,7 +8496,7 @@
             "Is staring lovingly at {PRONOUN/m_c/poss} flank",
             "Felt {PRONOUN/m_c/poss} kits move!",
             "Is spending extra time tending to {PRONOUN/m_c/poss} nest",
-            "Is stressing over whether {PRONOUN/m_c/subject}'ll be a good parent...",
+            "Is stressing over whether {PRONOUN/m_c/subject}'ll be a good {ADJ/m_c/parent/dad/mom}...",
             "Is purring hard, hoping {PRONOUN/m_c/poss} kits will feel how much {PRONOUN/m_c/object} {VERB/m_c/love/loves} them",
             "Is stressed over finding the right bedding",
             "Would kill for a toad covered in herbs right about now",
@@ -8621,7 +8623,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "an infected wound"
+                        "infection"
                     ]
                 }
             }
@@ -8641,7 +8643,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "carrionplace disease"
+                        "carrionplace_disease"
                     ]
                 }
             }
@@ -8663,7 +8665,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "a festering wound"
+                        "festering_wound"
                     ]
                 }
             }
@@ -8681,7 +8683,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "heat stroke"
+                        "heat_stroke"
                     ]
                 }
             }
@@ -8699,7 +8701,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "heat exhaustion"
+                        "heat_exhaustion"
                     ]
                 }
             }
@@ -8746,7 +8748,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "constant nightmares"
+                        "constant_nightmares"
                     ]
                 }
             }
@@ -8769,7 +8771,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "grief stricken"
+                        "grief_stricken"
                     ]
                 }
             }
@@ -8827,7 +8829,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "running nose"
+                        "running_nose"
                     ]
                 }
             }
@@ -8938,12 +8940,12 @@
                 "health": {
                     "condition": [
                         "bruises",
-                        "cracked pads",
+                        "cracked_pads",
                         "sore",
                         "scrapes",
-                        "small cut",
-                        "tick bites",
-                        "torn ear"
+                        "small_cut",
+                        "tick_bites",
+                        "torn_ear"
                     ]
                 }
             }
@@ -8962,16 +8964,16 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "claw-wound",
-                        "bite-wound",
-                        "cat bite",
-                        "beak bite",
-                        "snake bite",
-                        "rat bite",
-                        "dislocated joint",
+                        "claw_wound",
+                        "bite_wound",
+                        "cat_bite",
+                        "beak_bite",
+                        "snake_bite",
+                        "rat_bite",
+                        "dislocated_joint",
                         "sprain",
-                        "quilled by a porcupine",
-                        "torn pelt"
+                        "porcupine_quilled",
+                        "torn_pelt"
                     ]
                 }
             }
@@ -8999,14 +9001,14 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "broken jaw",
-                        "broken back",
-                        "broken bone",
-                        "mangled leg",
-                        "mangled tail",
-                        "head damage",
-                        "severe burn",
-                        "severe headache"
+                        "broken_jaw",
+                        "broken_back",
+                        "broken_bone",
+                        "mangled_leg",
+                        "mangled_tail",
+                        "head_damage",
+                        "severe_burn",
+                        "severe_headache"
                     ]
                 }
             },
@@ -9031,7 +9033,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "seizure prone"
+                        "seizure_prone"
                     ]
                 }
             },
@@ -9053,7 +9055,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "seizure prone"
+                        "seizure_prone"
                     ]
                 }
             },

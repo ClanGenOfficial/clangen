@@ -78,12 +78,15 @@ class FreshkillPile:
             self.total_amount = total
         else:
             amount = get_config("prey.start_amount")
+            # initialise pile
             self.pile = {
-                "expires_in_3": amount,
+                "expires_in_3": 0,
                 "expires_in_2": 0,
                 "expires_in_1": 0,
             }
-            self.total_amount = amount
+            self.total_amount = 0
+            # add freshkill
+            self.add_freshkill(amount)
         self.timeskip_feed = False
         self.nutrition_info = {}
         self.living_cats = []
@@ -103,7 +106,8 @@ class FreshkillPile:
             amount : int|float
                 the amount which should be added to the pile
         """
-        self.pile["expires_in_3"] += amount
+        highest_rot = f"expires_in_{get_config('prey.time_to_rot')}"
+        self.pile[highest_rot] += amount
         self.total_amount += amount
         self.total_amount = round(self.total_amount, 2)
 
@@ -148,7 +152,7 @@ class FreshkillPile:
         pregnant_cats = [
             cat
             for cat in living_cats
-            if "pregnant" in cat.injuries
+            if "pregnant" in cat.temporary_conditions
             and cat.ID not in queen_dict.keys()
             and cat.status.alive_in_player_clan
         ]
@@ -185,7 +189,7 @@ class FreshkillPile:
                 lambda c: c.status.rank
                 in (CatRank.WARRIOR, CatRank.APPRENTICE, CatRank.LEADER, CatRank.DEPUTY)
                 and c.status.alive_in_player_clan
-                and not c.not_working(),
+                and c.can_work(),
                 Cat.all_cats.values(),
             )
         )
@@ -194,7 +198,7 @@ class FreshkillPile:
         if not possible_hunters:
             possible_hunters = list(
                 filter(
-                    lambda c: c.status.alive_in_player_clan and not c.not_working(),
+                    lambda c: c.status.alive_in_player_clan and c.can_work(),
                     Cat.all_cats.values(),
                 )
             )
@@ -337,7 +341,8 @@ class FreshkillPile:
         pregnant_cats = [
             cat
             for cat in cats_to_feed
-            if "pregnant" in cat.injuries and cat.ID not in queen_dict.keys()
+            if "pregnant" in cat.temporary_conditions
+            and cat.ID not in queen_dict.keys()
         ]
         relevant_queens.extend(pregnant_cats)
         return fed_kits, relevant_queens
@@ -451,7 +456,7 @@ class FreshkillPile:
 
         :param list cats_to_feed: Cats to feed
         """
-        sick_cats = [cat for cat in cats_to_feed if cat.is_ill() or cat.is_injured()]
+        sick_cats = [cat for cat in cats_to_feed if cat.temporary_conditions]
         self._feed_group(sick_cats)
 
     # ---------------------------------------------------------------------------- #
@@ -638,7 +643,10 @@ class FreshkillPile:
                     cat.moons > 114 and str(cat.status.rank) == CatRank.ELDER
                 ):
                     factor = 2
-                if cat.ID in queen_dict.keys() or "pregnant" in cat.injuries:
+                if (
+                    cat.ID in queen_dict.keys()
+                    or "pregnant" in cat.temporary_conditions
+                ):
                     status_ = "queen/pregnant"
 
                 # check if the max_score is correct, otherwise update
@@ -667,7 +675,7 @@ class FreshkillPile:
 
         queen_dict, kits = get_alive_clan_queens(self.living_cats)
         prey_status = cat.status.rank
-        if cat.ID in queen_dict.keys() or "pregnant" in cat.injuries:
+        if cat.ID in queen_dict.keys() or "pregnant" in cat.temporary_conditions:
             prey_status = "queen/pregnant"
         max_score = get_config("prey.prey_requirement")[prey_status] * factor
         nutrition.max_score = max_score

@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "wasting_disease_redcough0",
+        "strings": [
+            "r_c0 has quietly begun making m_c comfortable... or as comfortable as {PRONOUN/m_c/subject} can be while hacking blood."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "wasting_disease_redcough1",
+        "strings": [
+            "m_c has been hacking up blood, {PRONOUN/m_c/poss} body growing weaker and weaker.  {PRONOUN/m_c/subject/CAP} may not last much longer."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
