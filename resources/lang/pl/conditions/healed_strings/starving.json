@@ -1,0 +1,12 @@
+[
+    {
+        "event_id": "starving0",
+        "strings": [
+            "m_c's paws no longer feel quite so heavy. {PRONOUN/m_c/subject/CAP} can tell that {PRONOUN/m_c/subject} still {VERB/m_c/need/needs} to eat more, but the situation isn't as dire.",
+            "m_c still feels the rumbles of hunger in {PRONOUN/m_c/poss} belly, but it's nothing compared to the emptiness {PRONOUN/m_c/subject}'d so recently experienced."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

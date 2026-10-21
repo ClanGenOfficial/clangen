@@ -1,0 +1,19 @@
+[
+    {
+        "event_id": "damaged_eyes0",
+        "strings": [
+            "m_c's eyes were too badly damaged and {PRONOUN/m_c/subject} died."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        },
+        "death": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "history": "m_c's eyes were too badly damaged and {PRONOUN/m_c/subject} died."
+            }
+        ]
+    }
+]

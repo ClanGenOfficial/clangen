@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "born_without_leg_joint_pain0",
+        "strings": [
+            "m_c spends the morning with r_c0, who helps {PRONOUN/m_c/object} with a paste on {PRONOUN/m_c/poss} joints that'll reduce {PRONOUN/m_c/poss} pain."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "born_without_leg_joint_pain1",
+        "strings": [
+            "m_c's joints are feeling the strain of {PRONOUN/m_c/poss} missing leg. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} been moving slower this moon."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

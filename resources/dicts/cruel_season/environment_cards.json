@@ -49,7 +49,14 @@
   "longer_illnesses": {
     "card_art": "environment/tainted.png",
     "modifiers": {
-      "condition_related.duration_modifier": 2
+      "condition_related.duration_modifier": 2,
+      "condition_related.duration_modifier_tags": ["illness"]
+    }
+  },
+  "crowfood": {
+    "card_art": "environment/lean_meat.png",
+    "modifiers": {
+      "prey.time_to_rot": 1
     }
   }
 }
