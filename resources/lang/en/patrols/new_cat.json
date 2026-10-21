@@ -15408,6 +15408,39 @@
         ]
     },
     {
+        "event_id": "gen_bord_carrionplace_youngrogue",
+        "types": ["border"],
+        "frequency": 1,
+        "poi": {
+            "name": ["terrain_carrionplace"]
+        },
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ]
+        },
+        "chance_of_success": 40,
+        "patrol_art": "POI",
+        "intro_strings": [
+            "The patrol heads out to POI to check prey populations. When they arrive, they see the strangest thing - a young cat, backing up in circles, with a shiny silver Twoleg instead of a head!"
+        ],
+        "decline_strings": [
+            "The patrol is spooked by the strange sight. Is that even a real cat? They decide to leave"
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 15,
+                "outcome_art": "cat_sprites/gen_whatthehell_WrWr",
+                "strings": [
+                    "p_l cautiously paces closer and realizes that the shiny Twoleg thing isn't the cat's head, it's <i>on</i> the cat's head, and it's stuck! {PRONOUN/s_c0/subject} {VERB/s_c0/put/puts} a paw on the young cat's back, stopping {PRONOUN/n_c0/poss} panicked circles and alerting {PRONOUN/n_c0/object} that {PRONOUN/n_c0/subject} {VERB/n_c0/aren't/isn't} alone. Would {PRONOUN/n_c0/subject} like some help getting that off?"
+                ]
+            }
+        ],
+        "fail_outcomes": []
+    },
+    {
         "event_id": "gen_bord_deepforest_lonerfamily",
         "types": ["border"],
         "frequency": 1,
