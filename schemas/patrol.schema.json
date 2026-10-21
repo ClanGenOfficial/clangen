@@ -643,6 +643,8 @@
         "-amputated_leg",
         "amputated_tail",
         "-amputated_tail",
+        "stinky",
+        "-stinky",
         "battle_injury",
         "minor_injury",
         "blunt_force_injury",

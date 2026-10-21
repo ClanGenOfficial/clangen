@@ -188,6 +188,8 @@ class ConditionEnum(Enum):
     not_amputated_leg = "-amputated_leg"
     amputated_tail = "amputated_tail"
     not_amputated_tail = "-amputated_tail"
+    stinky = "stinky"
+    not_stinky = "-stinky"
 
     battle_injury = "battle_injury"
     minor_injury = "minor_injury"
