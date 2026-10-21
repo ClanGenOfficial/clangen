@@ -155,7 +155,7 @@
         "progression": {
             "temporary_weakness": {
                 "chance": 0.5,
-                "when": "CONTINUING",
+                "when": "HEALED",
                 "allow_scar": false
             }
         },
@@ -214,7 +214,9 @@
         "immune_system_effect": 0.0,
         "side_effect": {},
         "progression": {},
-        "risks": {},
+        "risks": {
+            "exhausted": 0.25
+        },
         "treatment_strength": {
             "1": [
                 "juniper"
@@ -285,7 +287,7 @@
         "progression": {
             "temporary_weakness": {
                 "chance": 0.6,
-                "when": "CONTINUING",
+                "when": "HEALED",
                 "allow_scar": false
             },
             "persistent_exhaustion": {
@@ -698,8 +700,8 @@
                 "allow_scar": true
             },
             "temporary_weakness": {
-                "chance": 0.3,
-                "when": "CONTINUING",
+                "chance": 0.4,
+                "when": "HEALED",
                 "allow_scar": false
             },
             "weakened_muscles": {
@@ -751,12 +753,13 @@
         "progression": {
             "temporary_weakness": {
                 "chance": 0.5,
-                "when": "CONTINUING",
+                "when": "HEALED",
                 "allow_scar": false
             }
         },
         "risks": {
-            "infection": 0.1
+            "infection": 0.1,
+            "exhausted": 0.15
         },
         "treatment_strength": {
             "1": [
@@ -796,7 +799,7 @@
             },
             "temporary_weakness": {
                 "chance": 0.5,
-                "when": "CONTINUING",
+                "when": "HEALED",
                 "allow_scar": false
             }
         },
@@ -838,7 +841,7 @@
         "progression": {
             "temporary_weakness": {
                 "chance": 0.75,
-                "when": "CONTINUING",
+                "when": "HEALED",
                 "allow_scar": false
             }
         },
@@ -1034,7 +1037,7 @@
             },
             "temporary_weakness": {
                 "chance": 0.4,
-                "when": "CONTINUING",
+                "when": "HEALED",
                 "allow_scar": false
             },
             "weakened_muscles": {
@@ -1086,7 +1089,7 @@
             },
             "temporary_weakness": {
                 "chance": 0.5,
-                "when": "CONTINUING",
+                "when": "HEALED",
                 "allow_scar": false
             },
             "persistent_exhaustion": {
@@ -1138,7 +1141,9 @@
         "immune_system_effect": 0.0,
         "side_effect": {},
         "progression": {},
-        "risks": {},
+        "risks": {
+            "exhausted": 0.05
+        },
         "treatment_strength": {
             "1": [],
             "2": [],
@@ -1259,7 +1264,7 @@
             },
             "temporary_weakness": {
                 "chance": 0.5,
-                "when": "CONTINUING",
+                "when": "HEALED",
                 "allow_scar": false
             }
         },
