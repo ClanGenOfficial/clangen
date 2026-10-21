@@ -5,7 +5,7 @@ import random
 import statistics
 from os.path import exists as path_exists
 from random import choice, randint, choices, sample
-from typing import List, Tuple, Optional, Union, Literal, TypedDict
+from typing import List, Tuple, Optional, Union, TypedDict
 
 import pygame
 
@@ -30,11 +30,10 @@ from scripts.events_module.text_adjust import (
     event_text_adjust,
 )
 from scripts.events_module.text_pool_event import handle_consequences
-from scripts.events_module.text_pool_event.check_general_constraints import (
-    passes_general_constraints,
+from scripts.events_module.text_pool_event.event_retrieval import (
+    get_valid_event,
+    get_valid_event_ignoring_constraints,
 )
-from scripts.events_module.text_pool_event.event_retrieval import get_valid_event
-from scripts.events_module.text_pool_event.find_involved_cats import find_cats
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
 from scripts.game_structure.game.settings import game_setting_get
@@ -397,6 +396,12 @@ class Patrol:
         normal_patrols: list[PatrolEvent] = []
         romantic_patrols: list[PatrolEvent] = []
         for p in possible_patrols:
+            if get_config(
+                "patrol_generation.debug_ensure.override_patrol_stat_requirements"
+            ):
+                normal_patrols.append(p)
+                continue
+
             if "romance" in p.tags:
                 romantic_patrols.append(p)
             else:
@@ -443,18 +448,29 @@ class Patrol:
             not in Patrol.used_patrols["romance" if find_romance else "normal"]
         ]
         involved_cats = self.involved_cats.copy()
+        ignore_constraints = (
+            get_config(
+                "patrol_generation.debug_ensure.override_patrol_stat_requirements"
+            ),
+        )
         while not chosen_patrol:
-            chosen_patrol, involved_cats = get_valid_event(
-                primary_cat=self.involved_cats["p_l"],
-                involved_cats=self.involved_cats,
-                interactable_cats=self.involved_cats["patrol_cats"],
-                possible_events=patrols_to_test,
-                other_clan=self.other_clan,
-                ensured_id=self.debug_patrol_id,
-                ignore_constraints=get_config(
-                    "patrol_generation.debug_ensure.override_patrol_stat_requirements"
-                ),
-            )
+            if ignore_constraints:
+                chosen_patrol, involved_cats = get_valid_event_ignoring_constraints(
+                    involved_cats=self.involved_cats,
+                    interactable_cats=self.involved_cats["patrol_cats"],
+                    possible_events=patrols_to_test,
+                    other_clan=self.other_clan,
+                    ensured_id=self.debug_patrol_id,
+                )
+            else:
+                chosen_patrol, involved_cats = get_valid_event(
+                    primary_cat=self.involved_cats["p_l"],
+                    involved_cats=self.involved_cats,
+                    interactable_cats=self.involved_cats["patrol_cats"],
+                    possible_events=patrols_to_test,
+                    other_clan=self.other_clan,
+                    ensured_id=self.debug_patrol_id,
+                )
             if not chosen_patrol:
                 if not Patrol.used_patrols["romance" if find_romance else "normal"]:
                     # No patrols found even after resetting used patrols.
@@ -480,6 +496,11 @@ class Patrol:
     def _check_patrol_type(
         patrol: PatrolEvent, patrol_type: str, is_debug_patrol: bool
     ) -> bool:
+        if get_config(
+                "patrol_generation.debug_ensure.override_patrol_stat_requirements"
+            ):
+            return True
+        
         # CHECK PATROL TYPE
         if patrol_type not in patrol.types:
             if is_debug_patrol:
@@ -496,6 +517,12 @@ class Patrol:
         :param antagonize: set True if the player chose to antagonize
         :return: success outcome, failure outcome
         """
+
+        ignore_constraints = (
+            get_config(
+                "patrol_generation.debug_ensure.override_patrol_stat_requirements"
+            ),
+        )
 
         # find which set of outcomes we'll be using based on if the player choose to antagonize
         if antagonize:
@@ -515,17 +542,26 @@ class Patrol:
 
         # we'll get an outcome for both success and failure
         # FIND SUCCESS
-        chosen_success, self.outcome_cats["success"] = get_valid_event(
-            primary_cat=self.involved_cats["p_l"],
-            involved_cats=self.involved_cats,
-            interactable_cats=self.involved_cats["patrol_cats"],
-            possible_events=success_outcomes,
-            other_clan=self.other_clan,
-            ensured_id=debug_outcome,
-            ignore_constraints=get_config(
-                "patrol_generation.debug_ensure.override_patrol_stat_requirements"
-            ),
-        )
+        if ignore_constraints:
+            (
+                chosen_success,
+                self.outcome_cats["success"],
+            ) = get_valid_event_ignoring_constraints(
+                involved_cats=self.involved_cats,
+                interactable_cats=self.involved_cats["patrol_cats"],
+                possible_events=success_outcomes,
+                other_clan=self.other_clan,
+                ensured_id=debug_outcome,
+            )
+        else:
+            chosen_success, self.outcome_cats["success"] = get_valid_event(
+                primary_cat=self.involved_cats["p_l"],
+                involved_cats=self.involved_cats,
+                interactable_cats=self.involved_cats["patrol_cats"],
+                possible_events=success_outcomes,
+                other_clan=self.other_clan,
+                ensured_id=debug_outcome,
+            )
 
         if not chosen_success:
             raise Exception(
@@ -533,17 +569,26 @@ class Patrol:
             )
 
         # FIND FAILURE
-        chosen_failure, self.outcome_cats["failure"] = get_valid_event(
-            primary_cat=self.involved_cats["p_l"],
-            involved_cats=self.involved_cats,
-            interactable_cats=self.involved_cats["patrol_cats"],
-            possible_events=fail_outcomes,
-            other_clan=self.other_clan,
-            ensured_id=debug_outcome,
-            ignore_constraints=get_config(
-                "patrol_generation.debug_ensure.override_patrol_stat_requirements"
-            ),
-        )
+        if ignore_constraints:
+            (
+                chosen_failure,
+                self.outcome_cats["failure"],
+            ) = get_valid_event_ignoring_constraints(
+                involved_cats=self.involved_cats,
+                interactable_cats=self.involved_cats["patrol_cats"],
+                possible_events=fail_outcomes,
+                other_clan=self.other_clan,
+                ensured_id=debug_outcome,
+            )
+        else:
+            chosen_failure, self.outcome_cats["failure"] = get_valid_event(
+                primary_cat=self.involved_cats["p_l"],
+                involved_cats=self.involved_cats,
+                interactable_cats=self.involved_cats["patrol_cats"],
+                possible_events=fail_outcomes,
+                other_clan=self.other_clan,
+                ensured_id=debug_outcome,
+            )
         if not chosen_failure:
             raise Exception(
                 f"Valid fail outcome could not be found for {self.patrol_event.event_id}"
