@@ -45,7 +45,7 @@ Visual guide to all pelt parts, located in `sprite/pelt_part_mask.png`. For visi
 |      ![image][LEGBOTTOMGRAD]      |                                               LEGBOTTOMGRAD <br><br>  A bottom gradient that focuses on the legs.  Used for BLOSSOM.                                                |
 |   ![image][BACKTAILPATTERNGRAD]   |                                       BACKTAILPATTERNGRAD <br><br> A varient of the pattern gradient. Used for BLOSSOM, RUST, and CHINCHILLA.                                       |
 |     ![image][LEGPATTERNGRAD]      |                                          LEGPATTERNGRAD <br><br> A varient of the pattern gradient, focused on the legs. Used for BLOSSOM.                                          |
-|     ![image][FRONTPATTERNGRAD]    |                            FRONTPATTERNGRAD <br><br> A variant of the pattern gradient, focused on the face, chest, and front legs. Used for CHINCHILLA                             |
+|    ![image][FRONTPATTERNGRAD]     |                            FRONTPATTERNGRAD <br><br> A variant of the pattern gradient, focused on the face, chest, and front legs. Used for CHINCHILLA                             |
 
 
 
