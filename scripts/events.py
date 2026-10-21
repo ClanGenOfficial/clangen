@@ -1743,7 +1743,7 @@ def check_sinkhole():
                     "cruel_season.special_text.sinkhole_base",
                     dead_name=str(names),
                     clan_name=str(game.clan.name),
-                    count=len(count_to_kill),
+                    count=count_to_kill,
                 ),
             ),
             cats_involved=IDs,
