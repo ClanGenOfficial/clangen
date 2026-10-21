@@ -2,7 +2,7 @@
     {
         "event_id": "broken_back_temporary_weakness0",
         "strings": [
-            "m_c's body won't immediately get back to normal after {PRONOUN/m_c/poss} condition, even if {PRONOUN/m_c/subject} {VERB/m_c/have/has} healed."
+            "m_c healed from {PRONOUN/m_c/poss} broken back, but body won't immediately get back to normal."
         ],
         "involved_cats": {
             "m_c": {}

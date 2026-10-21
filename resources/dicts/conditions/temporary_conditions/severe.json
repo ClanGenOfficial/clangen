@@ -133,6 +133,11 @@
                 "chance": 0.1,
                 "when": "CONTINUING",
                 "allow_scar": false
+            },
+            "weakened_muscles": {
+                "chance": 0.05,
+                "when": "CONTINUING",
+                "allow_scar": false
             }
         },
         "risks": {
