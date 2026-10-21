@@ -188,9 +188,7 @@ def find_cats(
             abbr,
             possible_cats,
             relationship_constraint=relationship_constraints,
-            cat_constraints=constraints,
             temp_involved_cats=temp_involved_cats,
-            other_clan=other_clan,
         )
 
         if not new_involved_cat:
@@ -201,6 +199,9 @@ def find_cats(
                 return empty
 
         temp_involved_cats.update(new_involved_cat)
+
+        if temp_involved_cats.get(abbr) in interactable_cats:
+            interactable_cats.remove(temp_involved_cats[abbr])
 
     return temp_involved_cats, will_create_how_many
 
@@ -302,9 +303,7 @@ def find_cats_ignoring_constraints(
             abbr,
             possible_cats,
             relationship_constraint=[],
-            cat_constraints={},
             temp_involved_cats=temp_involved_cats,
-            other_clan=other_clan,
         )
 
         if not new_involved_cat:
@@ -315,9 +314,6 @@ def find_cats_ignoring_constraints(
                 return empty
 
         temp_involved_cats.update(new_involved_cat)
-
-        if temp_involved_cats.get(abbr) in interactable_cats:
-            interactable_cats.remove(temp_involved_cats[abbr])
 
     return temp_involved_cats, will_create_how_many
 
@@ -380,9 +376,7 @@ def _find_involved_cat(
     abbr: str,
     possible_cats: list[Cat],
     relationship_constraint,
-    cat_constraints,
     temp_involved_cats: dict,
-    other_clan: OtherClan,
 ) -> dict:
     """
     Finds a cat from the available cats that can fill the abbreviation slot. This will check against relationship

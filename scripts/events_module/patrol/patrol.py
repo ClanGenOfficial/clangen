@@ -497,10 +497,10 @@ class Patrol:
         patrol: PatrolEvent, patrol_type: str, is_debug_patrol: bool
     ) -> bool:
         if get_config(
-                "patrol_generation.debug_ensure.override_patrol_stat_requirements"
-            ):
+            "patrol_generation.debug_ensure.override_patrol_stat_requirements"
+        ):
             return True
-        
+
         # CHECK PATROL TYPE
         if patrol_type not in patrol.types:
             if is_debug_patrol:

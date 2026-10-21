@@ -142,7 +142,6 @@ def get_valid_event_ignoring_constraints(
     possible_events: list[PatrolEvent | TextPoolEvent],
     other_clan: Optional[OtherClan] = None,
     ensured_id: Optional[str] = None,
-    frequency_active: bool = True,
 ) -> tuple[Optional[PatrolEvent | TextPoolEvent], dict]:
     """
     Check given possible_events against current game state and involved cats. Returns a valid event,
@@ -152,10 +151,8 @@ def get_valid_event_ignoring_constraints(
     :param possible_events: List of event objects that we should find an event from
     :param other_clan: The other clan involved in this event
     :param ensured_id: ID of the ensured event, if any
-    :param frequency_active: If true, filters by frequency.
     """
     used_frequencies = set()
-    chosen_frequency = get_frequency() if frequency_active else 4
 
     chosen_event: Optional[Union[PatrolEvent, TextPoolEvent]] = None
 
@@ -182,18 +179,10 @@ def get_valid_event_ignoring_constraints(
     while not chosen_event:
         temp_involved_cats = involved_cats.copy()
         if len(possible_events) == len(tested_events):  # try a new frequency if we can
-            if (
-                4 in used_frequencies and chosen_frequency == 4
-            ) or not frequency_active:
-                return (
-                    None,
-                    {},
-                )  # failed to find anything, so we send back and origin handles it
-            else:
-                used_frequencies.add(chosen_frequency)
-                chosen_frequency = find_new_frequency(used_frequencies)
-                tested_events.clear()
-            continue
+            return (
+                None,
+                {},
+            )  # failed to find anything, so we send back and origin handles it
 
         if ensured_event:
             test_event = ensured_event
@@ -205,13 +194,6 @@ def get_valid_event_ignoring_constraints(
                 filter(lambda e: e.event_id not in tested_events, possible_events)
             )
             if not events:
-                if frequency_active:
-                    # no events of this frequency
-                    used_frequencies.add(chosen_frequency)
-                    chosen_frequency = find_new_frequency(used_frequencies)
-                    tested_events.clear()
-                    continue
-
                 # otherwise we've failed to find anything so we send back and origin handles it
                 return None, {}
 
