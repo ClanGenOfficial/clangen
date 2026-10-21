@@ -675,18 +675,7 @@
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.2,
-        "side_effect": {
-            "temporary_weakness": {
-                "chance": 0.3,
-                "when": "CONTINUING",
-                "allow_scar": false
-            },
-            "weakened_muscles": {
-                "chance": 0.2,
-                "when": "HEALED",
-                "allow_scar": false
-            }
-        },
+        "side_effect": {},
         "progression": {
             "lost_leg": {
                 "chance": 0.2,
@@ -697,6 +686,16 @@
                 "chance": 0.2,
                 "when": "CONTINUING",
                 "allow_scar": true
+            },
+            "temporary_weakness": {
+                "chance": 0.3,
+                "when": "CONTINUING",
+                "allow_scar": false
+            },
+            "weakened_muscles": {
+                "chance": 0.2,
+                "when": "HEALED",
+                "allow_scar": false
             }
         },
         "risks": {

@@ -380,6 +380,7 @@
         "moons_until_discovery": [4,145],
         "mortality": {},
         "immune_system_effect": 0.0,
+        "progression": {},
         "risks": {
             "sore": 0.4,
             "exhausted": 0.2,
