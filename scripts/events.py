@@ -321,6 +321,8 @@ def one_moon():
     # Clear the list of cats that died this moon.
     game.just_died.clear()
 
+    check_sinkhole()
+
     # Check for mentorless apprentices
     check_missing_mentors()
 
@@ -344,8 +346,6 @@ def one_moon():
             game.save_events()
         except:
             SaveErrorWindow(traceback.format_exc())
-
-    check_sinkhole()
 
 
 def update_afterlife_temper():
@@ -1708,36 +1708,36 @@ load_war_resources()
 
 def check_sinkhole():
     """The Sinkhole events for cruel card"""
+    # check if needed to run
     if not get_config("cruel_season.event.sinkhole"):
+        print("DEBUG: not sinkhole! Returning!")
         return
 
     if game.clan.age % 12 != 0:
+        print("DEBUG: clan wrong age!")
         return
+
+    # initialise variables
     percent_killed = random.randint(0, 50) / 100
     cat_amount = get_living_clan_cat_count(Cat)
+    print("DEBUG: variables initalised!")
 
-    # rework this lower part puhlease
+    count_to_kill = round(cat_amount * percent_killed)
+    dead_cats = []
+    print("DEBUG: Calculated count!", count_to_kill)
 
-    dead_kitties = []
-    dead_ID = []
-    dead_names = []
-
-    # calculate the amount to die
-    cats_killed_amount = round(cat_amount * percent_killed)
-    # kill random cats
-    while len(dead_kitties) < cats_killed_amount:
-        kitty = get_random_player_clan_cat(Cat, not_allowed=dead_kitties)
-        if kitty and kitty not in dead_kitties:
-            kitty.die()
-            kitty.history.add_death(
-                i18n.t("cruel_season.special_text.sinkhole_history")
-            )
-            dead_ID.append(kitty.ID)
-            if kitty.ID == game.clan.leader:
+    while len(dead_cats) < count_to_kill:
+        c = get_random_player_clan_cat(Cat, not_allowed=dead_cats)
+        if c and not c.dead and c not in dead_cats:
+            dead_cats.append(c)
+            c.die()
+            if c.status.is_leader:
                 game.clan.leader_lives -= 1
-
-    dead_names = adjust_list_text([str(c.name) for c in dead_kitties])
-
+            c.history.add_death(i18n.t("cruel_season.special_text.sinkhole_history"))
+        print("DEBUG:", len(dead_cats), "out of", count_to_kill, "randomised!")
+    
+    names = adjust_list_text([str(meow.name) for meow in dead_cats])
+    print("DEBUG: got names!", names)
     game.cur_events_list.insert(
         0,
         EventInformation(
@@ -1745,11 +1745,11 @@ def check_sinkhole():
                 Cat,
                 i18n.t(
                     "cruel_season.special_text.sinkhole_base",
-                    dead_name=str(dead_names),
+                    dead_name=str(names),
                     clan_name=str(game.clan.name),
-                    count=len(dead_kitties),
+                    count=len(dead_cats),
                 ),
             ),
-            cats_involved=dead_ID,
+            cats_involved=dead_cats,
         ),
     )
