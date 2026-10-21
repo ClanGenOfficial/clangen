@@ -880,7 +880,7 @@ dev_tools = false
       [focus.hunting.buff.HUNTER]
         tier = 1
         prey_increase = 2
-      [focus.hunting.buff.SWIMMER]
+      [focus.hunting.buff.RUNNER]
         tier = 1
         biome = ["plains", "desert"]
         injury_modifier = 2
@@ -888,7 +888,7 @@ dev_tools = false
         tier = 1
         biome = ["forest", "mountainous"]
         injury_modifier = 2
-      [focus.hunting.buff.RUNNER]
+      [focus.hunting.buff.SWIMMER]
         tier = 1
         biome = ["beach", "wetlands"]
         injury_modifier = 2
@@ -1010,7 +1010,6 @@ dev_tools = false
   [focus.hoarding]
     # injury chance of each warrior(leader/deputy to get injured
     injury_chance_warrior = 25
-    injury_chance_medicine_cat = 35
 
     # illness chance of each warrior(leader/deputy) to get sick
     illness_chance = 35
