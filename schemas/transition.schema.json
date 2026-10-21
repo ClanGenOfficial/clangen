@@ -1015,7 +1015,9 @@
         "leader",
         "-leader",
         "past_deputy",
-        "-past_deputy"
+        "-past_deputy",
+        "multi_cat",
+        "-multi_cat"
       ],
       "title": "GatherCatEnum",
       "type": "string"
