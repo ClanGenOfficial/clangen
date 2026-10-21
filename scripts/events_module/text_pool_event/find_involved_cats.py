@@ -252,6 +252,8 @@ def find_cats_ignoring_constraints(
             possible_cats = _check_prior_abbreviation(
                 abbr, constraints, event, interactable_cats, involved_cats
             )
+            if not possible_cats:
+                possible_cats = interactable_cats.copy()
 
         # CHECK NEW CATS
         elif "n_c" in abbr:

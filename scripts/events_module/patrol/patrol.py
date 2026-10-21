@@ -448,10 +448,8 @@ class Patrol:
             not in Patrol.used_patrols["romance" if find_romance else "normal"]
         ]
         involved_cats = self.involved_cats.copy()
-        ignore_constraints = (
-            get_config(
-                "patrol_generation.debug_ensure.override_patrol_stat_requirements"
-            ),
+        ignore_constraints = get_config(
+            "patrol_generation.debug_ensure.override_patrol_stat_requirements"
         )
         while not chosen_patrol:
             if ignore_constraints:
@@ -518,10 +516,8 @@ class Patrol:
         :return: success outcome, failure outcome
         """
 
-        ignore_constraints = (
-            get_config(
-                "patrol_generation.debug_ensure.override_patrol_stat_requirements"
-            ),
+        ignore_constraints = get_config(
+            "patrol_generation.debug_ensure.override_patrol_stat_requirements"
         )
 
         # find which set of outcomes we'll be using based on if the player choose to antagonize
