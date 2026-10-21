@@ -2,7 +2,7 @@
     {
         "event_id": "festering_wound_temporary_weakness0",
         "strings": [
-            "m_c's body won't immediately get back to normal after {PRONOUN/m_c/poss} condition, even if {PRONOUN/m_c/subject} {VERB/m_c/have/has} healed."
+            "While normal injuries are already hard to deal with, m_c needs extra time to recover after {PRONOUN/m_c/poss} festering wound has healed."
         ],
         "involved_cats": {
             "m_c": {}
