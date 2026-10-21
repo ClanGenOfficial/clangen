@@ -244,6 +244,11 @@
                 "chance": 0.02,
                 "when": "CONTINUING",
                 "allow_scar": false
+            },
+            "persistent_exhaustion": {
+                "chance": 0.02,
+                "when": "HEALED",
+                "allow_scar": false
             }
         },
         "risks": {
@@ -281,6 +286,11 @@
             "temporary_weakness": {
                 "chance": 0.6,
                 "when": "CONTINUING",
+                "allow_scar": false
+            },
+            "persistent_exhaustion": {
+                "chance": 0.15,
+                "when": "HEALED",
                 "allow_scar": false
             }
         },
@@ -875,6 +885,11 @@
                 "chance": 0.05,
                 "when": "HEALED",
                 "allow_scar": false
+            },
+            "persistent_exhaustion": {
+                "chance": 0.02,
+                "when": "HEALED",
+                "allow_scar": false
             }
         },
         "risks": {},
@@ -1007,6 +1022,11 @@
                 "when": "HEALED",
                 "allow_scar": false
             },
+            "persistent_exhaustion": {
+                "chance": 0.1,
+                "when": "HEALED",
+                "allow_scar": false
+            },
             "absent": {
                 "chance": 0.05,
                 "when": "HEALED",
@@ -1068,8 +1088,12 @@
                 "chance": 0.5,
                 "when": "CONTINUING",
                 "allow_scar": false
+            },
+            "persistent_exhaustion": {
+                "chance": 0.15,
+                "when": "HEALED",
+                "allow_scar": false
             }
-        
         },
         "risks": {},
         "treatment_strength": {
@@ -1224,6 +1248,11 @@
                 "allow_scar": false
             },
             "constantly_dizzy": {
+                "chance": 0.2,
+                "when": "HEALED",
+                "allow_scar": false
+            },
+            "persistent_exhaustion": {
                 "chance": 0.2,
                 "when": "HEALED",
                 "allow_scar": false

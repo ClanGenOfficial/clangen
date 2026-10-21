@@ -1,8 +1,8 @@
 [
     {
-        "event_id": "reveal_condition_persistent_exhaustion",
+        "event_id": "reveal_condition_persistent_exhaustion_kit0",
         "strings": [
-            "r_c0 explained that the fatigue m_c felt wasn't usual for {PRONOUN/m_c/poss} age."
+            "m_c is tired way more often than kits tend to be. r_c0 diagnoses {PRONOUN/m_c/object} with persistent exhaustion."
         ],
         "involved_cats": {
             "m_c": {
@@ -18,12 +18,57 @@
         }
     },
     {
-        "event_id": "reveal_condition_persistent_exhaustion1",
+        "event_id": "reveal_condition_persistent_exhaustion_kit1",
         "strings": [
-            "m_c's body doesn't quite seem to keep up all the time, and never truly has. {PRONOUN/m_c/subject/CAP} have persistent exhaustion."
+            "For such a young cat, m_c's exhaustion doesn't seem to go away. {PRONOUN/m_c/subject/CAP} have persistent exhaustion."
         ],
         "involved_cats": {
-            "m_c": {}
+            "m_c": {
+                "age": [
+                    "kitten"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "reveal_condition_persistent_exhaustion_young_adult_adol0",
+        "strings": [
+            "m_c is still young, but {PRONOUN/m_c/poss} energy is often lacking. {PRONOUN/m_c/subject/CAP} have persistent exhaustion."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "adolescent",
+                    "young adult"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "reveal_condition_persistent_exhaustion_adult0",
+        "strings": [
+            "m_c used to have more energy and strength than {PRONOUN/m_c/subject} do now. The fatigue doesn't seem like it's going to leave anytime soon."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "-adolescent",
+                    "-kitten"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "reveal_condition_persistent_exhaustion_senior0",
+        "strings": [
+            "m_c is getting old, and a little less energy is to be expected. Not this much fatigue, though."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "senior"
+                ]
+            }
         }
     }
 ]

@@ -93,7 +93,8 @@
         "progression": {},
         "risks": {
             "whitecough": 0.1,
-            "breathless_fit": 0.4
+            "breathless_fit": 0.4,
+            "persistent_exhaustion": 0.02
         },
         "treatment_strength": {
             "1": [
@@ -188,7 +189,8 @@
         "progression": {},
         "risks": {
             "grief_stricken": 0.2,
-            "absent": 0.02
+            "absent": 0.02,
+            "persistent_exhaustion": 0.06
         },
         "treatment_strength": {
             "1": [

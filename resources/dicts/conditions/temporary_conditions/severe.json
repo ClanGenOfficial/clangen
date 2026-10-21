@@ -138,6 +138,11 @@
                 "chance": 0.05,
                 "when": "CONTINUING",
                 "allow_scar": false
+            },
+            "persistent_exhaustion": {
+                "chance": 0.2,
+                "when": "HEALED",
+                "allow_scar": false
             }
         },
         "risks": {
@@ -181,6 +186,11 @@
                 "chance": 0.8,
                 "when": "CONTINUING",
                 "allow_scar": false
+            },
+            "persistent_exhaustion": {
+                "chance": 0.2,
+                "when": "HEALED",
+                "allow_scar": false
             }
         },
         "risks": {},
@@ -221,7 +231,12 @@
                 "allow_scar": false
             },
             "weakened_muscles": {
-                "chance": 0.6,
+                "chance": 0.4,
+                "when": "HEALED",
+                "allow_scar": false
+            },
+            "persistent_exhaustion": {
+                "chance": 0.4,
                 "when": "HEALED",
                 "allow_scar": false
             }
@@ -270,6 +285,11 @@
                 "chance": 0.05,
                 "when": "HEALED",
                 "allow_scar": false
+            },
+            "persistent_exhaustion": {
+                "chance": 0.1,
+                "when": "HEALED",
+                "allow_scar": false
             }
         },
         "risks": {},
@@ -305,7 +325,13 @@
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
         "side_effect": {},
-        "progression": {},
+        "progression": {
+            "persistent_exhaustion": {
+                "chance": 0.1,
+                "when": "HEALED",
+                "allow_scar": false
+            }
+        },
         "risks": {},
         "treatment_strength": {
             "1": [
@@ -334,7 +360,12 @@
                 "allow_scar": false
             },
             "weakened_muscles": {
-                "chance": 0.3,
+                "chance": 0.15,
+                "when": "HEALED",
+                "allow_scar": false
+            },
+            "persistent_exhaustion": {
+                "chance": 0.15,
                 "when": "HEALED",
                 "allow_scar": false
             }

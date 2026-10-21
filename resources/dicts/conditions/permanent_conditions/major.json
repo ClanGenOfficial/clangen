@@ -118,7 +118,8 @@
         "risks": {
             "running_nose": 0.25,
             "redcough": 0.05,
-            "weakened_muscles": 0.15
+            "weakened_muscles": 0.15,
+            "persistent_exhaustion": 0.1
         },
         "treatment_strength": {
             "1": [
@@ -148,7 +149,8 @@
             "seizure": 0.05,
             "paralyzed": 0.05,
             "redcough": 0.10,
-            "weakened_muscles": 0.15
+            "weakened_muscles": 0.15,
+            "persistent_exhaustion": 0.2
         },
         "treatment_strength": {
             "1": [
@@ -269,7 +271,8 @@
         "immune_system_effect": 0.0,
         "progression": {},
         "risks": {
-            "seizure": 0.2
+            "seizure": 0.2,
+            "persistent_exhaustion": 0.01
         },
         "treatment_strength": {
             "1": [
@@ -311,7 +314,8 @@
         "progression": {},
         "risks": {
             "constant_nightmares": 0.3,
-            "selective_mutism": 0.02
+            "selective_mutism": 0.02,
+            "persistent_exhaustion": 0.05
         },
         "treatment_strength": {
             "1": [
@@ -353,22 +357,34 @@
         "severity": "major",
         "can_be_congenital": true,
         "can_be_acquired": true,
-        "moons_until_discovery": [3,18],
+        "moons_until_discovery": [3,145],
         "mortality": {},
         "immune_system_effect": 0.1,
         "progression": {},
         "risks": {
             "sore": 0.2,
-            "headache": 0.2,
-            "exhausted": 0.3
+            "headache": 0.15,
+            "exhausted": 0.3,
+            "joint_pain": 0.15,
+            "severe_headache": 0.75,
+            "stomachache": 0.15,
+            "sore_throat": 0.15,
+            "constantly_dizzy": 0.01,
+            "persistent_headaches": 0.01,
+            "allergies": 0.01
         },
         "treatment_strength": {
-            "1": [],
+            "1": [
+                "daisy"
+            ],
             "2": [
-                "juniper",
+                "betony",
                 "ragwort"
             ],
-            "3": []
+            "3": [
+                "juniper",
+                "thyme"
+            ]
         }
     },
     "weakened_muscles": {

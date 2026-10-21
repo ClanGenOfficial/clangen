@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "persistent_exhaustion_allergies",
+        "strings": [
+            "It's not strange for m_c to feel a bit sick at random, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} starting to feel like this isn't as random anymore."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
