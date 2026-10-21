@@ -86,10 +86,66 @@
         ]
     },
     {
+        "event_id": "healed_stinky_clanavoidance0",
+        "tags": ["clan:warrior"],
+        "strings": [
+            "m_c wasn't very popular around camp for the half-moon it took for the stink to wear off. multi_cat, especially, seemed to disappear the moment {PRONOUN/m_c/subject} showed up.",
+            "multi_cat were quite uninterested in being anywhere near m_c until {PRONOUN/m_c/subject} finally started smelling more normal, it made for a bit of a tense half-moon."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["warrior"]
+            },
+            "multi_cat": {
+                "status": ["-newborn"],
+                "group": ["match:m_c"],
+                "health": {
+                    "working": true,
+                    "condition": ["-stinky"]
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c", "low_social"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -5,
+                "log": {
+                    "cats_from": "cat_from was disappointed that cat_to avoided {PRONOUN/m_c/object} while {PRONOUN/cat_from/subject} smelled bad."
+                }
+            },
+            {
+                "cats_from": [
+                    "m_c", "high_social"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "cat_from couldn't help but be amused by how cat_to avoided {PRONOUN/cat_from/object} while {PRONOUN/cat_from/subject} smelled bad."
+                }
+            }
+        ]
+    },
+    {
         "event_id": "healed_stinky_warrior0",
         "tags": ["clan:warrior"],
         "strings": [
-            "m_c was an unpopular patrol-mate for quite a while, multi_cat especially avoided {PRONOUN/m_c/object}, but thankfully the stench wore off after a half-moon."
+            "m_c was an unpopular patrol-mate for quite a while, multi_cat especially avoided {PRONOUN/m_c/object}, but thankfully the stench wore off after a half-moon.",
+            "m_c couldn't help but notice how multi_cat avoided any sort of patrol assignment with {PRONOUN/m_c/object} until {PRONOUN/m_c/poss} unfortunate smell wore off later in the moon."
         ],
         "involved_cats": {
             "m_c": {
@@ -253,6 +309,18 @@
                 }
             }
         ]
+    },
+    {
+        "event_id": "healed_stinky_leader0",
+        "tags": ["clan:warrior"],
+        "strings": [
+            "Clan announcements were rather awkward for the half-moon it took the smell to wear off of m_c."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["leader"]
+            }
+        }
     },
     {
         "event_id": "healed_stinky_apprentice0",
