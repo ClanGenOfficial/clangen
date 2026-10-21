@@ -1591,15 +1591,17 @@ def attempt_outbreak():
                 continue
 
             if condition.name in possible_infections:
-                possible_infections[condition.name] = min(
-                    0.9,
-                    (possible_infections[condition.name] + condition.infectiousness),
+                possible_infections[condition.name] = (
+                    possible_infections[condition.name] + condition.infectiousness
                 )
+
             else:
                 possible_infections[condition.name] = condition.infectiousness
 
     for infection in possible_infections:
-        possible_infections[infection] -= infection_prevention
+        possible_infections[infection] = min(
+            0.9, max(0.01, possible_infections[infection] - infection_prevention)
+        )
 
     # the cats who are allowed to get sick
     vulnerable_cats = list(filter(lambda _cat: _cat not in infectious_cats, clan_cats))

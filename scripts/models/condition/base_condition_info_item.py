@@ -24,6 +24,10 @@ class BaseConditionInfoSchemaItem(BaseModel):
     mortality: Dict[Age, float] = Field(
         description="Percent chance for this condition to kill the cat. Can be left empty if the condition is not fatal."
     )
+    requires_scar: bool | MISSING = Field(
+        MISSING,
+        description="If this cat MUST have one of the scars listed in 'possible_scars' in order to have this condition.",
+    )
     immune_system_effect: float = Field(
         description="Effect on the percent chance that this cat will be infected by a different condition. This float will be added to the percent chance, thus increasing the cat's likely-hood to contract an infectious condition."
     )
