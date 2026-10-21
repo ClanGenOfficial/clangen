@@ -1707,7 +1707,7 @@ load_war_resources()
 
 
 def check_sinkhole():
-    """The Sinkhole cruel card"""
+    """The Sinkhole events for cruel card"""
     if not get_config("cruel_season.event.sinkhole"):
         return
 
@@ -1715,6 +1715,8 @@ def check_sinkhole():
         return
     percent_killed = random.randint(0, 50) / 100
     cat_amount = get_living_clan_cat_count(Cat)
+
+    # rework this lower part puhlease
 
     dead_kitties = []
     dead_ID = []
