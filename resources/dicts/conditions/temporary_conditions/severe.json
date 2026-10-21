@@ -659,11 +659,6 @@
                 "chance": 2.0,
                 "when": "HEALED",
                 "allow_scar": false
-            },
-            "temporary_weakness": {
-                "chance": 2.0,
-                "when": "HEALED",
-                "allow_scar": false
             }
         },
         "risks": {
@@ -703,11 +698,6 @@
         },
         "progression": {
             "lost_tail": {
-                "chance": 2.0,
-                "when": "HEALED",
-                "allow_scar": false
-            },
-            "temporary_weakness": {
                 "chance": 2.0,
                 "when": "HEALED",
                 "allow_scar": false
@@ -819,11 +809,6 @@
                 "chance": 2.0,
                 "when": "HEALED",
                 "allow_scar": false
-            },
-            "paralyzed": {
-                "chance": 0.8,
-                "when": "HEALED",
-                "allow_scar": true
             }
         },
         "risks": {

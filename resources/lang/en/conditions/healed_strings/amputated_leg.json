@@ -12,7 +12,7 @@
     {
         "event_id": "healed_amputated_leg1",
         "strings": [
-            "m_c has been released from the medicine cat den, with a set of recovery exercises. It seems the amputation healed well."
+            "m_c has been released from the medicine cat den. It seems the amputation healed well."
         ],
         "involved_cats": {
             "m_c": {},
