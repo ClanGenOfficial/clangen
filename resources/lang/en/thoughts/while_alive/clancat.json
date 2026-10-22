@@ -4249,7 +4249,7 @@
             "Catches extra prey for leaf-bare",
             "Is not looking forward to the sparse hunting in leaf-bare",
             "Admires the colorful trees on patrol",
-            "Stepped on a leaf, scaring away the prey {PRONOUN/m)c/subject} {VERB/m_c/were/was} tracking"
+            "Stepped on a leaf, scaring away the prey {PRONOUN/m_c/subject} {VERB/m_c/were/was} tracking"
         ],
         "involved_cats": {
             "m_c": {
