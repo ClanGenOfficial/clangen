@@ -4065,6 +4065,55 @@
         }
     },
     {
+        "event_id": "not_working_cat",
+        "strings": [
+            "Is feeling restless",
+            "Is being forced to rest",
+            "Is resting",
+            "Is missing {PRONOUN/m_c/poss} own nest",
+            "Is feeling better today",
+            "Is feeling worse today",
+            "Feels like {PRONOUN/m_c/subject} got hit by a monster",
+            "Feels like fox-dung",
+            "Promises to never take {PRONOUN/m_c/poss} good health for granted anymore",
+            "Hopes to feel better soon"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "health": {
+                    "working": false
+                }
+            }
+        }
+    },
+    {
+        "event_id": "not_working_to_med",
+        "strings": [
+            "Asks r_c what {PRONOUN/m_c/subject} can do to heal faster",
+            "Is asking r_c what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} using to treat {PRONOUN/m_c/object}",
+            "Hopes r_c's treatment works...",
+            "Trusts in r_c's treatment methods",
+            "Is following what r_c reccoomends to heal faster",
+            "Is getting treated by r_c",
+            "Is thankful for r_c's treatment"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "health": {
+                    "working": false
+                }
+            },
+            "r_c": {
+                "status": [
+                    "medicine cat"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
         "event_id": "working_cat_to_leadership",
         "strings": [
             "Wonders if {PRONOUN/m_c/subject} could handle r_c's position",
