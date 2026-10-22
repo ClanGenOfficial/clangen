@@ -5,7 +5,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatSocial, CatStanding, CatThought
+from scripts.cat.enums import CatSocial, CatStanding, CatThought, CatRank
 from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.ui.elements.checkbox import UICheckbox
@@ -143,7 +143,12 @@ class LeaveClanWindow(GameWindow):
             self.chosen_clan = choice(game.clan.other_clan_IDs)
 
         self.the_cat.assign_thought(CatThought.ON_RANK_CHANGE)
+        if self.the_cat.status.rank in (CatRank.DEPUTY, CatRank.LEADER):
+            self.the_cat.rank_change(CatRank.WARRIOR, resort=True)
+            
         self.the_cat.status.add_to_group(
             new_group_ID=self.chosen_clan,
             standing_with_past_group=CatStanding.LEFT,
         )
+            
+        self.the_cat.assign_thought(CatThought.ON_RANK_CHANGE)
