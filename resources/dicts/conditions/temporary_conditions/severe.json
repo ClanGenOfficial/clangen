@@ -81,7 +81,7 @@
         "side_effect": {},
         "progression": {
             "temporary_weakness": {
-                "chance": 0.8,
+                "chance": 0.75,
                 "when": "HEALED",
                 "allow_scar": false
             },
@@ -125,7 +125,7 @@
         "side_effect": {},
         "progression": {
             "temporary_weakness": {
-                "chance": 0.8,
+                "chance": 0.6,
                 "when": "HEALED",
                 "allow_scar": false
             },
@@ -140,7 +140,7 @@
                 "allow_scar": false
             },
             "persistent_exhaustion": {
-                "chance": 0.2,
+                "chance": 0.15,
                 "when": "HEALED",
                 "allow_scar": false
             }
@@ -188,7 +188,7 @@
                 "allow_scar": false
             },
             "persistent_exhaustion": {
-                "chance": 0.2,
+                "chance": 0.1,
                 "when": "HEALED",
                 "allow_scar": false
             }
@@ -231,12 +231,12 @@
                 "allow_scar": false
             },
             "weakened_muscles": {
-                "chance": 0.4,
+                "chance": 0.1,
                 "when": "HEALED",
                 "allow_scar": false
             },
             "persistent_exhaustion": {
-                "chance": 0.4,
+                "chance": 0.1,
                 "when": "HEALED",
                 "allow_scar": false
             }
@@ -287,7 +287,7 @@
                 "allow_scar": false
             },
             "persistent_exhaustion": {
-                "chance": 0.1,
+                "chance": 0.05,
                 "when": "HEALED",
                 "allow_scar": false
             }
@@ -355,7 +355,7 @@
         "side_effect": {},
         "progression": {
             "temporary_weakness": {
-                "chance": 0.9,
+                "chance": 0.7,
                 "when": "HEALED",
                 "allow_scar": false
             },
