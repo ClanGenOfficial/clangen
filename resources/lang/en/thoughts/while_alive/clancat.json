@@ -259,7 +259,11 @@
             "Is grateful to r_c for {PRONOUN/m_c/poss} treatment",
             "Wonders if StarClan has given r_c any prophecies lately",
             "Chats with r_c about what it's like to be a medicine cat",
-            "Is worrying about asking r_c for help for something minor"
+            "Is worrying about asking r_c for help for something minor",
+            "Brought r_c a berry to identify",
+            "Brought r_c an herb to identify",
+            "Chats with r_c about {PRONOUN/r_c/poss} role as a medicine cat",
+            "\"Organizes\" r_c's herbs, much to r_c's annoyance"
         ],
         "involved_cats": {
             "m_c": {
@@ -4053,7 +4057,10 @@
                     "warrior",
                     "deputy",
                     "leader"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             }
         }
     },
@@ -4075,7 +4082,10 @@
                 "status": [
                     "apprentice",
                     "warrior"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             },
             "r_c": {
                 "status": [
@@ -4099,7 +4109,10 @@
             "m_c": {
                 "status": [
                     "warrior"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             },
             "r_c": {
                 "status": [
@@ -4124,7 +4137,10 @@
                 "status": [
                     "apprentice",
                     "warrior"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             },
             "r_c": {
                 "status": [
@@ -4140,10 +4156,8 @@
         "event_id": "working_to_alive_med_cat",
         "strings": [
             "Recounts the Gathering for r_c and {PRONOUN/r_c/poss} patients",
-            "Brought r_c a berry to identify",
-            "Brought r_c an herb to identify",
-            "Chats with r_c about {PRONOUN/r_c/poss} role as a medicine cat",
-            "\"Organizes\" r_c's herbs, much to r_c's annoyance"
+            "Brought r_c an herb {PRONOUN/m_c/subject} found while on patrol",
+            "Is checking on an herb patch for r_c"
         ],
         "involved_cats": {
             "m_c": {
@@ -4151,7 +4165,10 @@
                     "-medicine cat",
                     "-kitten",
                     "-medicine cat apprentice"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             },
             "r_c": {
                 "status": [
@@ -4205,8 +4222,6 @@
         "strings": [
             "Is looking forward to finding more prey as the snow melts",
             "Enjoys the returning birdsong on patrol",
-            "Scents greenleaf on the breeze",
-            "Jumps a fox-length in the air when melt-water drips on {PRONOUN/m_c/object}",
             "Admires the flowers budding on the territory",
             "Is cautious of animals waking from hibernation"
         ],
@@ -4217,8 +4232,12 @@
                     "warrior",
                     "deputy",
                     "leader"
-                ]
+                ],
+                "health": {
+                    "working": true
+            }  
             }
+            
         }
     },
     {
@@ -4227,12 +4246,10 @@
             "leaf-fall"
         ],
         "strings": [
-            "Worries about the lack of prey leaf-bare will bring",
-            "Cleans the clearing of fallen leaves",
             "Catches extra prey for leaf-bare",
             "Is not looking forward to the sparse hunting in leaf-bare",
-            "Shivers in the chilly breeze",
-            "Admires the colorful trees on patrol"
+            "Admires the colorful trees on patrol",
+            "Stepped on a leaf, scaring away the prey {PRONOUN/m)c/subject} {VERB/m_c/were/was} tracking"
         ],
         "involved_cats": {
             "m_c": {
@@ -4241,7 +4258,10 @@
                     "warrior",
                     "deputy",
                     "leader"
-                ]
+                ],
+                "health": {
+                    "working": true
+            }
             }
         }
     },
