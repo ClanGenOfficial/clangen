@@ -477,7 +477,7 @@
                 "allow_scar": true
             },
             "temporary_weakness": {
-                "chance": 0.9,
+                "chance": 0.6,
                 "when": "HEALED",
                 "allow_scar": true
             }
