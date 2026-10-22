@@ -145,10 +145,10 @@ class LeaveClanWindow(GameWindow):
         self.the_cat.assign_thought(CatThought.ON_RANK_CHANGE)
         if self.the_cat.status.rank in (CatRank.DEPUTY, CatRank.LEADER):
             self.the_cat.rank_change(CatRank.WARRIOR, resort=True)
-            
+
         self.the_cat.status.add_to_group(
             new_group_ID=self.chosen_clan,
             standing_with_past_group=CatStanding.LEFT,
         )
-            
+
         self.the_cat.assign_thought(CatThought.ON_RANK_CHANGE)
