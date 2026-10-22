@@ -347,7 +347,7 @@ def _check_risks(
 
     # CHECK RISKS
     for risk, chance in condition.risks.items():
-        if risk in cat.temporary_conditions:
+        if risk in cat.temporary_conditions + cat.permanent_conditions:
             # don't double up
             continue
 

@@ -458,3 +458,61 @@ class TestPermanentCondition(unittest.TestCase):
                         c in cat1.temporary_conditions + cat1.permanent_conditions,
                         msg=f"{c} was not removed from cat's conditions, even though it progressed into {p}",
                     )
+
+    def test_progression_double_application(self):
+        cat1 = cat_factory.create_cat()
+        gain_conditions._handle_condition_side_effect = Mock(return_value=None)
+
+        gain_temporary_condition(cat1, "broken_back")
+        cat1.get_condition("broken_back").progression["paralyzed"]["chance"] = 2.0
+        cat1.get_condition("broken_back").mortality = 0.0
+        cat1.get_condition("broken_back").duration = 1
+
+        handle_temporary_conditions(cat1)
+
+        self.assertTrue(
+            "paralyzed" in cat1.permanent_conditions, msg="cat should have paralyzed"
+        )
+        self.assertTrue(
+            "broken_back" not in cat1.temporary_conditions,
+            msg="cat should no longer have broken back",
+        )
+
+        # now we apply broken back again
+        gain_temporary_condition(cat1, "broken_back")
+        cat1.get_condition("broken_back").progression["paralyzed"]["chance"] = 2.0
+        cat1.get_condition("broken_back").mortality = 0.0
+        cat1.get_condition("broken_back").duration = 1
+
+        # and attempt to give it to the cat again
+        handle_temporary_conditions(cat1)
+
+        self.assertTrue(
+            len([c for c in cat1.permanent_conditions if c == "paralyzed"]) == 1,
+            msg="cat should only have one paralyzed condition",
+        )
+
+    def test_risk_double_application(self):
+        cat1 = cat_factory.create_cat()
+
+        gain_permanent_condition(cat1, "absent")
+        cat1.get_condition("absent").risks = {"selective_mutism": 2.0}
+        cat1.get_condition("absent").progression = {}
+
+        handle_permanent_conditions(cat1)
+
+        self.assertTrue(
+            "selective_mutism" in cat1.permanent_conditions,
+            msg="cat should have selective_mutism",
+        )
+
+        # reset risk
+        cat1.get_condition("absent").risks = {"selective_mutism": 2.0}
+
+        # and attempt to give it to the cat again
+        handle_permanent_conditions(cat1)
+
+        self.assertTrue(
+            len([c for c in cat1.permanent_conditions if c == "selective_mutism"]) == 1,
+            msg="cat should only have one selective_mutism condition",
+        )
