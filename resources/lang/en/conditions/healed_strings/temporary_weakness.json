@@ -45,7 +45,7 @@
     {
         "event_id": "healed_temporary_weakness3",
         "strings": [
-            "Injuries and illnesses are hard to deal with to begin with, but this asked even more of m_c's body than usual. Nonetheless, {PRONOUN/m_c/poss} strength is recovering."
+            "m_c's strength is recovering, even if {PRONOUN/m_c/poss} injury hasn't healed yet."
         ],
         "involved_cats": {
             "m_c": {
