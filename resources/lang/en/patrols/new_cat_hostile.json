@@ -5757,6 +5757,572 @@
         ]
     },
     {
+        "event_id": "gen_bord_carrionplace_youngrogue_hostile",
+        "types": ["border"],
+        "frequency": 1,
+        "poi": {
+            "name": ["terrain_carrionplace"]
+        },
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ]
+        },
+        "chance_of_success": 40,
+        "patrol_art": "POI",
+        "intro_strings": [
+            "The patrol heads out to POI to check prey populations. When they arrive, they see the strangest thing - a young cat, backing up in circles and caught up in a mess of Twoleg rubbish!"
+        ],
+        "decline_strings": [
+            "The patrol is spooked by the strange sight. Is that even a real cat? They decide to leave"
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 15,
+                "outcome_art": "cat_sprites/gen_whatthehell_WrWr",
+                "strings": [
+                    "The patrol moves in to circle the intruder, closing in tighter and tighter. The young cat blindly backs up into p_l's chest and freezes in place. r_c0 helpfully pulls off the colorful crinkly thing covering the cat's head, purring as {PRONOUN/n_c0/poss} frightened face is revealed. Shakily, the young cat apologizes. {PRONOUN/n_c0/subject/CAP} just wanted to learn to hunt for {PRONOUN/n_c0/self}, since {PRONOUN/n_c0/poss} family group won't teach {PRONOUN/n_c0/object}. An interesting place to choose to do it, p_l mews thoughtfully. The young rogue must be an <i>awfully</i> brave cat to hunt on c_n territory, much less in POI. Perhaps that bravery could be put to good use."
+                ],
+                "involved_cats": {
+                    "r_c0": {},
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adolescent"
+                        ],
+                        "status": ["rogue"],
+                        "backstory": ["rogue1", "rogue2"]
+                    }
+                },
+                "condition": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "minor_injury"
+                        ],
+                        "scar_history": "This cat was scarred after being caught up in Twoleg rubbish"
+                    }
+                ],
+                "join": [
+                    {
+                        "cats": ["n_c0"],
+                        "new_status": ["apprentice", "medicine cat apprentice", "mediator apprentice"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "p_l",
+                            "some_patrol"
+                        ],
+                        "amount": 10,
+                        "values": [
+                            "like",
+                            "respect",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from appreciated cat_to freeing {PRONOUN/cat_from/object} from some Twoleg rubbish and taking {PRONOUN/cat_from/object} back to the Clan"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 1
+                }
+            },
+            {
+                "frequency": 2,
+                "exp_gained": 15,
+                "outcome_art": "cat_sprites/gen_train_talking_RgAp",
+                "strings": [
+                    "r_c0 takes one look at the new cat and starts laughing so hard that {PRONOUN/r_c0/subject} {VERB/r_c0/lose/loses} {PRONOUN/r_c0/poss} balance and {VERB/r_c0/fall/falls} over. It's not funny! <i>It's not!</i> The young intruder wails. {PRONOUN/n_c0/subject/CAP} {VERB/n_c0/were/was} just hungry and now the crazy Clancats are going tear {PRONOUN/n_c0/poss} pelt off! That's exactly right, so this intruder better get running! r_c0 jeers, swiping at the other cat's flank and giving chase when {PRONOUN/n_c0/subject} runs. But in the days that follow, cats notice r_c0's scent at POI more and more often, until one day {PRONOUN/r_c0/subject} returns to camp with n_c0 in tow, vouching for the stranger to join the Clan."
+                ],
+                "involved_cats": {
+                    "r_c0": {
+                        "age": [
+                            "adolescent"
+                        ],
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adolescent"
+                        ],
+                        "status": ["rogue"],
+                        "backstory": ["rogue1", "rogue2"]
+                    }
+                },
+                "condition": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "torn_pelt"
+                        ],
+                        "scar_history": "This cat was scarred after being caught up in Twoleg rubbish"
+                    }
+                ],
+                "join": [
+                    {
+                        "cats": ["n_c0"],
+                        "new_status": ["apprentice", "medicine cat apprentice", "mediator apprentice"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "amount": 10,
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "respect",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_to spent a few days bonding with cat_from after freeing {PRONOUN/cat_from/object} from some Twoleg rubbish, and then vouched for {PRONOUN/cat_from/object} to join c_n",
+                            "cats_to": "cat_from came back to hunt in c_n's territory again, even after cat_to chased {PRONOUN/cat_from/object} away, and cat_to admired {PRONOUN/cat_from/poss} bravery so much that {PRONOUN/cat_to/subject} invited {PRONOUN/cat_from/object} to join c_n"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 1
+                }
+            },
+            {
+                "frequency": 1,
+                "exp_gained": 15,
+                "outcome_art": "cat_sprites/gen_speakingcat_Wr",
+                "strings": [
+                    "The outsider spots the patrol stalking closer and instantly panics harder. {PRONOUN/n_c0/subject/CAP} {VERB/n_c0/try/tries} to sprint away even though {PRONOUN/n_c0/poss} legs and neck are tangled in clear Twoleg rubbish, and {PRONOUN/n_c0/poss} chin slams into the dirt. Somecat snickers, and the cat stands back up with puffed fur, facing the patrol with {PRONOUN/n_c0/poss} claws out. p_l asks {PRONOUN/n_c0/object} what {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} doing in c_n territory. Shaking, the cat replies that it was a test, then seems to realize {PRONOUN/n_c0/subject}{VERB/n_c0/'ve/'s} said too much and clams up. s_c0 takes over and eventually persuades the young cat to explain that the leader of a local rogue group, n_c1, sent {PRONOUN/n_c0/object} to hunt in c_n territory, to prove {PRONOUN/n_c0/poss} loyalty and worth, and that {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} very scared of n_c1. With a growing purr, s_c0 promises n_c0 that c_n is even <i>scarier</i>."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"],
+                        "stat": {
+                            "skill": [
+                                "SPEAKER,1",
+                                "MEDIATOR,1"
+                            ]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adolescent"
+                        ],
+                        "status": ["rogue"],
+                        "backstory": ["refugee4"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": ["rogue"]
+                    }
+                },
+                "condition": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "bruises"
+                        ]
+                    },
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "minor_injury",
+                            "-bruises"
+                        ],
+                        "scar_history": "This cat was scarred after being caught up in Twoleg rubbish"
+                    }
+                ],
+                "join": [
+                    {
+                        "cats": ["n_c0"],
+                        "new_status": ["apprentice", "medicine cat apprentice", "mediator apprentice"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "amount": 10,
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_to promised cat_from protection from a rogue leader, freed {PRONOUN/cat_from/object} from some Twoleg rubbish, and took {PRONOUN/cat_from/object} back to the Clan",
+                            "cats_to": "cat_from gave cat_to valuable information about a nearby rogue group who was hunting inside c_n's borders"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 2
+                }
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_runaway_RgWr",
+                "strings": [
+                    "p_l puts a paw on the young cat's shoulder, intending to stop {PRONOUN/n_c0/poss} panicked circles and question {PRONOUN/n_c0/object} about {PRONOUN/n_c0/poss} purpose and unfortunate situation. Instead, the young cat screams like a kit being chased by a fox and launches {PRONOUN/n_c0/self} at least six tail-lengths into the air. The young cat hits the ground already running. Well, at least their reputation precedes them! p_l and r_c0 laugh and chase after {PRONOUN/n_c0/object}. The noise of the Twoleg things still stuck on {PRONOUN/n_c0/poss} body makes it easy to follow {PRONOUN/n_c0/object} all the way to the border, which the intruder blows past without even slowing down. The patrol pursues for a little while, just to make sure the lesson sticks."
+                ],
+                "involved_cats": {
+                    "r_c0": {},
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adolescent"
+                        ],
+                        "status": ["rogue"]
+                    }
+                },
+                "condition": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "minor_injury"
+                        ],
+                        "scar_history": "This cat was scarred after being caught up in Twoleg rubbish"
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "amount": -10,
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from was terrified when some c_n cats snuck up on {PRONOUN/cat_from/object} and then chased {PRONOUN/cat_from/object} to the border, confirming everything {PRONOUN/cat_from/subject}'d heard about Clancats"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": -1
+                }
+            },
+            {
+                "frequency": 2,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_battle_ApRg",
+                "strings": [
+                    "r_c0 takes one look at the new cat and starts laughing so hard that {PRONOUN/r_c0/subject} {VERB/r_c0/lose/loses} {PRONOUN/r_c0/poss} balance and {VERB/r_c0/fall/falls} over. It's not funny! <i>It's not!</i> The young intruder wails. r_c0 retorts that it's <i>pretty</i> funny, and that angers the young cat so much that {PRONOUN/n_c0/subject} {VERB/n_c0/leap/leaps} at the apprentice. There's a brief scuffle before r_c0 kicks the young rogue off of {PRONOUN/r_c0/self}, and then the patrol descends on the outsider that dared to attack a c_n apprentice. Since the cat is so young, the patrol mercifully allows the rogue to flee once the bloody lesson has been learned."
+                ],
+                "involved_cats": {
+                    "r_c0": {
+                        "age": [
+                            "adolescent"
+                        ],
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adolescent"
+                        ],
+                        "status": ["rogue"]
+                    }
+                },
+                "condition": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "torn_ear",
+                            "torn_pelt"
+                        ],
+                        "scar_history": "This cat was scarred after scrapping with a c_n apprentice."
+                    },
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "battle_injury",
+                            "-torn_ear",
+                            "-torn_pelt"
+                        ],
+                        "scar_history": "This cat was scarred after a c_n patrol took revenge for their apprentice.",
+                        "death_history": "This cat died from their wounds after a c_n patrol took revenge for their apprentice."
+                    },
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "torn_ear",
+                            "torn_pelt"
+                        ],
+                        "scar_history": "This cat was scarred after scrapping with a young rogue."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "amount": -5,
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_to laughed at cat_from when {PRONOUN/cat_from/subject} was caught in some Twoleg rubbish",
+                            "cats_to": "cat_from scuffled with cat_to"
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to dared to attack a c_n apprentice"
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "some_clan",
+                            "high_aggress"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to had the guts to attack a c_n apprentice in front of the apprentice's patrol"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": -2
+                }
+            },
+            {
+                "frequency": 1,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_bigfight_WrWrRg",
+                "strings": [
+                    "The outsider spots the patrol stalking closer and instantly panics harder. {PRONOUN/n_c0/subject/CAP} {VERB/n_c0/try/tries} to sprint away even though {PRONOUN/n_c0/poss} legs and neck are tangled in clear Twoleg rubbish, and {PRONOUN/n_c0/poss} chin slams into the dirt. Somecat snickers, and the cat stands back up with puffed fur, facing the patrol with {PRONOUN/n_c0/poss} claws out. The patrol surrounds the intruder, and s_c0 steps forward. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/try/tries} to begin an interrogation, but the young cat lunges at {PRONOUN/s_c0/object}, screaming for 'n_c1' to help {PRONOUN/n_c0/object}. Suddenly a group of rogues is sprinting into POI, and the patrol turns to meet them. p_l and n_c1, the clear leader of the group, slam into each other with bared teeth and ripping claws. s_c0 goes after the cat that started it all, determined to teach {PRONOUN/n_c0/object} a lesson, but {PRONOUN/s_c0/subject}{VERB/s_c0/'ve/'s} barely sunk {PRONOUN/s_c0/poss} claws in before another rogue grabs {PRONOUN/s_c0/object} and hauls {PRONOUN/s_c0/object} off the young trespasser, throwing {PRONOUN/s_c0/object} to the side. The two rogues sprint away while s_c0 is collecting {PRONOUN/s_c0/self}."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"],
+                        "stat": {
+                            "skill": [
+                                "SPEAKER,0",
+                                "MEDIATOR,0"
+                            ]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adolescent"
+                        ],
+                        "status": ["rogue"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": ["rogue"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": ["rogue"]
+                    },
+                    "n_c3": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": ["rogue"]
+                    }
+                },
+                "condition": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "bruises"
+                        ]
+                    },
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "minor_injury"
+                        ],
+                        "scar_history": "This cat was scarred after being caught up in Twoleg rubbish"
+                    },
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "claw_wound"
+                        ],
+                        "scar_history": "This cat was scarred after being attacked by a c_n cat",
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after being attacked by a c_n cat"
+                    },
+                    {
+                        "cats": [
+                            "n_c1"
+                        ],
+                        "condition": [
+                            "battle_injury"
+                        ],
+                        "scar_history": "This cat was scarred when {PRONOUN/m_c/subject} fought against a patrol of clan cats as a rogue",
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/subject} fought against a patrol of clan cats as a rogue"
+                    },
+                    {
+                        "cats": [
+                            "p_l",
+                            "some_patrol"
+                        ],
+                        "condition": [
+                            "battle_injury"
+                        ],
+                        "scar_history": "This cat was scarred when {PRONOUN/m_c/subject} fought against a group of invading rogues",
+                        "death_history": "This cat died from their wounds after {PRONOUN/m_c/subject} fought against a group of invading rogues"
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0", "n_c1", "n_c2", "n_c3"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2",
+                            "n_c3"
+                        ],
+                        "amount": -15,
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_to trespassed in c_n territory and fought against a patrol",
+                            "cats_to": "cat_from interfered with a rogue loyalty ritual and chased them out of c_n territory"
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "n_c1",
+                            "n_c2",
+                            "n_c3"
+                        ],
+                        "amount": 10,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_to rescued cat_from from a c_n patrol"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": -2
+                }
+            }
+        ]
+    },
+    {
         "event_id": "gen_bord_deepforest_lonerfamily_hostile",
         "types": ["border"],
         "frequency": 1,

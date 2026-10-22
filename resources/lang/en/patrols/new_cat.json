@@ -15434,7 +15434,7 @@
                 "exp_gained": 15,
                 "outcome_art": "cat_sprites/gen_whatthehell_WrWr",
                 "strings": [
-                    "p_l puts a paw on the young cat's back, stopping {PRONOUN/n_c0/poss} panicked circles and alerting {PRONOUN/n_c0/object} that {PRONOUN/n_c0/subject} {VERB/n_c0/aren't/isn't} alone. Would {PRONOUN/n_c0/subject} like some help getting that off? The youngster stands miserably while the patrol works {PRONOUN/n_c0/object} free. {PRONOUN/n_c0/subject/CAP} just wanted to learn to hunt for {PRONOUN/n_c0/self}, since {PRONOUN/n_c0/poss} mother won't teach {PRONOUN/n_c0/object}. Well, there are easier ways to learn and easier places to do it! r_c0 blurts."
+                    "p_l puts a paw on the young cat's shoulder, stopping {PRONOUN/n_c0/poss} panicked circles and alerting {PRONOUN/n_c0/object} that {PRONOUN/n_c0/subject} {VERB/n_c0/aren't/isn't} alone. Would {PRONOUN/n_c0/subject} like some help getting that off? The youngster stands miserably while the patrol works {PRONOUN/n_c0/object} free. {PRONOUN/n_c0/subject/CAP} just wanted to learn to hunt for {PRONOUN/n_c0/self}, since {PRONOUN/n_c0/poss} family group won't teach {PRONOUN/n_c0/object}. Well, there are easier ways to learn and easier places to do it! r_c0 blurts."
                 ],
                 "involved_cats": {
                     "r_c0": {},
@@ -15483,7 +15483,10 @@
                             "cats_from": "cat_from appreciated cat_to freeing {PRONOUN/cat_from/object} from some Twoleg rubbish and taking {PRONOUN/cat_from/object} back to the Clan"
                         }
                     }
-                ]
+                ],
+                "reputation_changes": {
+                    "outsider": 1
+                }
             },
             {
                 "frequency": 2,
@@ -15542,10 +15545,13 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_from appreciated cat_to freeing {PRONOUN/cat_from/object} from some Twoleg rubbish, even if {PRONOUN/cat_to/object} did laugh at {PRONOUN/cat_from/object} first, and taking {PRONOUN/cat_from/object} back to the Clan"
+                            "cats_from": "cat_from appreciated cat_to freeing {PRONOUN/cat_from/object} from some Twoleg rubbish, even if {PRONOUN/cat_to/subject} did laugh at {PRONOUN/cat_from/object} first, and taking {PRONOUN/cat_from/object} back to the Clan"
                         }
                     }
-                ]
+                ],
+                "reputation_changes": {
+                    "outsider": 1
+                }
             },
             {
                 "frequency": 1,
@@ -15628,7 +15634,10 @@
                             "cats_to": "cat_from gave cat_to valuable information about a nearby rogue group who was hunting inside c_n's borders"
                         }
                     }
-                ]
+                ],
+                "reputation_changes": {
+                    "outsider": 2
+                }
             }
         ],
         "fail_outcomes": [
@@ -15637,7 +15646,7 @@
                 "exp_gained": 0,
                 "outcome_art": "cat_sprites/gen_whatthehell_WrWr",
                 "strings": [
-                    "p_l puts a paw on the young cat's back, intending to stop {PRONOUN/n_c0/poss} panicked circles and help {PRONOUN/n_c0/object} out of {PRONOUN/n_c0/poss} unfortunate situation. Instead, the young cat screams like a kit being chased by a fox and launches {PRONOUN/n_c0/self} at least six tail-lengths into the air. The young cat hits the ground already running. p_l and r_c0 exchange bewildered glances and follow {PRONOUN/n_c0/object}. The noise of the Twoleg things still stuck on {PRONOUN/n_c0/poss} body makes it easy to follow {PRONOUN/n_c0/object} all the way to the border, which the intruder blows past without even slowing down."
+                    "p_l puts a paw on the young cat's shoulder, intending to stop {PRONOUN/n_c0/poss} panicked circles and help {PRONOUN/n_c0/object} out of {PRONOUN/n_c0/poss} unfortunate situation. Instead, the young cat screams like a kit being chased by a fox and launches {PRONOUN/n_c0/self} at least six tail-lengths into the air. The young cat hits the ground already running. p_l and r_c0 exchange bewildered glances and follow {PRONOUN/n_c0/object}. The noise of the Twoleg things still stuck on {PRONOUN/n_c0/poss} body makes it easy to follow {PRONOUN/n_c0/object} all the way to the border, which the intruder blows past without even slowing down."
                 ],
                 "involved_cats": {
                     "r_c0": {},
@@ -15671,7 +15680,7 @@
                             "n_c0"
                         ],
                         "cats_to": [
-                            "clan"
+                            "patrol_cats"
                         ],
                         "amount": -5,
                         "values": [
@@ -15682,7 +15691,10 @@
                             "cats_from": "cat_from was terrified when some c_n cats snuck up on {PRONOUN/cat_from/object} and then chased {PRONOUN/cat_from/object} to the border, confirming everything {PRONOUN/cat_from/subject}'d heard about Clancats"
                         }
                     }
-                ]
+                ],
+                "reputation_changes": {
+                    "outsider": -1
+                }
             },
             {
                 "frequency": 2,
@@ -15755,14 +15767,17 @@
                             "cats_to": "cat_from scuffled with cat_to, even though cat_to was going to free {PRONOUN/cat_from/object}, {PRONOUN/cat_to/subject} {VERB/cat_to/swear/swears}!"
                         }
                     }
-                ]
+                ],
+                "reputation_changes": {
+                    "outsider": -1
+                }
             },
             {
                 "frequency": 1,
                 "exp_gained": 0,
                 "outcome_art": "cat_sprites/gen_bigfight_WrWrRg",
                 "strings": [
-                    "The outsider spots the patrol and instantly panics harder. {PRONOUN/n_c0/subject/CAP} {VERB/n_c0/try/tries} to sprint away even though {PRONOUN/n_c0/poss} legs and neck are tangled in clear Twoleg rubbish, and {PRONOUN/n_c0/poss} chin slams into the dirt. s_c0 tries to calm {PRONOUN/n_c0/object} down, but the young cat begins thrashing and screaming for n_c1. The next thing the patrol knows, a group of rogues is sprinting into POI, and the patrol turns to meet them. p_l and n_c1, the clear leader of the group, slam into each other with bared teeth and ripping claws. As s_c0 leaps onto a rogue's back, {PRONOUN/s_c0/subject} {VERB/s_c0/see/sees} another rogue grab the young cat by the Twoleg rubbish surrounding {PRONOUN/n_c0/object} and drag {PRONOUN/n_c0/object} away."
+                    "The outsider spots the patrol and instantly panics harder. {PRONOUN/n_c0/subject/CAP} {VERB/n_c0/try/tries} to sprint away even though {PRONOUN/n_c0/poss} legs and neck are tangled in clear Twoleg rubbish, and {PRONOUN/n_c0/poss} chin slams into the dirt. s_c0 tries to calm {PRONOUN/n_c0/object} down, but the young cat begins thrashing and screaming for 'n_c1' to help {PRONOUN/n_c0/object}. Suddenly a group of rogues is sprinting into POI, and the patrol turns to meet them. p_l and n_c1, the clear leader of the group, slam into each other with bared teeth and ripping claws. As s_c0 leaps onto a rogue's back, {PRONOUN/s_c0/subject} {VERB/s_c0/see/sees} another rogue grab the young cat by the Twoleg rubbish surrounding {PRONOUN/n_c0/object} and drag {PRONOUN/n_c0/object} away."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -15824,7 +15839,7 @@
                             "battle_injury"
                         ],
                         "scar_history": "This cat was scarred when {PRONOUN/m_c/subject} fought against a patrol of clan cats as a rogue",
-                        "death_history": "This cat die from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/subject} fought against a patrol of clan cats as a rogue"
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/subject} fought against a patrol of clan cats as a rogue"
                     },
                     {
                         "cats": [
@@ -15862,7 +15877,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_to trespassed in c_n territory and fought againt a patrol",
+                            "cats_from": "cat_to trespassed in c_n territory and fought against a patrol",
                             "cats_to": "cat_from interfered with a rogue loyalty ritual and chased them out of c_n territory"
                         }
                     },
@@ -15885,7 +15900,10 @@
                             "cats_from": "cat_to rescued cat_from from a c_n patrol"
                         }
                     }
-                ]
+                ],
+                "reputation_changes": {
+                    "outsider": -2
+                }
             }
         ]
     },
