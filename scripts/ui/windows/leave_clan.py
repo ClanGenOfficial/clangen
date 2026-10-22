@@ -142,12 +142,6 @@ class LeaveClanWindow(GameWindow):
         if not self.chosen_clan:
             self.chosen_clan = choice(game.clan.other_clan_IDs)
 
-        self.the_cat.update_mentor()
-        for app in self.the_cat.apprentice.copy():
-            fetched_cat = Cat.fetch_cat(app)
-            if isinstance(fetched_cat, Cat):
-                fetched_cat.update_mentor()
-
         if self.the_cat.status.rank in (CatRank.DEPUTY, CatRank.LEADER):
             self.the_cat.rank_change(CatRank.WARRIOR, resort=True)
 
@@ -155,5 +149,11 @@ class LeaveClanWindow(GameWindow):
             new_group_ID=self.chosen_clan,
             standing_with_past_group=CatStanding.LEFT,
         )
+
+        self.the_cat.update_mentor()
+        for app in self.the_cat.apprentice.copy():
+            fetched_cat = Cat.fetch_cat(app)
+            if isinstance(fetched_cat, Cat):
+                fetched_cat.update_mentor()
 
         self.the_cat.assign_thought(CatThought.ON_RANK_CHANGE)
