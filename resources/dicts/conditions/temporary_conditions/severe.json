@@ -479,7 +479,7 @@
             "temporary_weakness": {
                 "chance": 0.9,
                 "when": "HEALED",
-                "allow_scar": false
+                "allow_scar": true
             }
         },
         "risks": {
@@ -803,12 +803,12 @@
             "temporary_weakness": {
                 "chance": 0.6,
                 "when": "HEALED",
-                "allow_scar": false
+                "allow_scar": true
             },
             "weakened_muscles": {
                 "chance": 0.2,
                 "when": "HEALED",
-                "allow_scar": false
+                "allow_scar": true
             }
         },
         "risks": {
@@ -865,12 +865,12 @@
             "temporary_weakness": {
                 "chance": 0.8,
                 "when": "HEALED",
-                "allow_scar": false
+                "allow_scar": true
             },
             "weakened_muscles": {
                 "chance": 0.4,
                 "when": "HEALED",
-                "allow_scar": false
+                "allow_scar": true
             }
         },
         "risks": {
