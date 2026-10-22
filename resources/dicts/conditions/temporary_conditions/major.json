@@ -291,7 +291,7 @@
                 "allow_scar": false
             },
             "persistent_exhaustion": {
-                "chance": 0.2,
+                "chance": 0.15,
                 "when": "HEALED",
                 "allow_scar": false
             }
@@ -700,7 +700,7 @@
                 "allow_scar": true
             },
             "temporary_weakness": {
-                "chance": 0.3,
+                "chance": 0.4,
                 "when": "HEALED",
                 "allow_scar": true
             },
@@ -759,7 +759,7 @@
         },
         "risks": {
             "infection": 0.1,
-            "exhausted": 0.2
+            "exhausted": 0.15
         },
         "treatment_strength": {
             "1": [
@@ -840,7 +840,7 @@
         "side_effect": {},
         "progression": {
             "temporary_weakness": {
-                "chance": 0.7,
+                "chance": 0.75,
                 "when": "HEALED",
                 "allow_scar": false
             }
@@ -1093,7 +1093,7 @@
                 "allow_scar": false
             },
             "persistent_exhaustion": {
-                "chance": 0.2,
+                "chance": 0.15,
                 "when": "HEALED",
                 "allow_scar": false
             }
@@ -1258,12 +1258,12 @@
                 "allow_scar": false
             },
             "persistent_exhaustion": {
-                "chance": 0.1,
+                "chance": 0.2,
                 "when": "HEALED",
                 "allow_scar": false
             },
             "temporary_weakness": {
-                "chance": 0.35,
+                "chance": 0.5,
                 "when": "HEALED",
                 "allow_scar": false
             }
