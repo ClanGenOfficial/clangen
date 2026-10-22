@@ -693,11 +693,11 @@ dev_tools = false
 
 [condition_related]
   # 10/chance an illness will occur
-  illness_chance = 270
+  illness_chance = 280
   classic_illness_chance = 500
 
   # how much the mortality will decrease each moon that the cat has a condition
-  moonskip_mortality_reduction = 0.05
+  moonskip_mortality_reduction = 0.10
   excluded_from_mortality_reduction = ["redcough", "starving", "malnourished"]
 
   # duration of applied conditions is multiplied by this number
@@ -731,26 +731,26 @@ dev_tools = false
   # dictates the chance for cats to get various diseases in each season
   [condition_related.seasonal_chances]
     [condition_related.seasonal_chances.newleaf]
-      running_nose = 2
-      stomachache = 1
+      running_nose = 3
+      stomachache = 2
       tick_fever = 1
     [condition_related.seasonal_chances.greenleaf]
-      fleas = 2
-      stomachache = 1
+      fleas = 3
+      stomachache = 2
       heat_exhaustion = 3
       heat_stroke = 1
       tick_fever = 1
     [condition_related.seasonal_chances.leaf-fall]
-      stomachache = 1
+      stomachache = 2
       greencough = 1
       kittencough = 1
-      running_nose = 3
+      running_nose = 4
     [condition_related.seasonal_chances.leaf-bare]
-      stomachache = 1
+      stomachache = 2
       greencough = 3
-      running_nose = 1
+      running_nose = 2
       kittencough = 4
-      yellowcough = 3
+      yellowcough = 1
 
 
 [clan_creation]
@@ -880,7 +880,7 @@ dev_tools = false
       [focus.hunting.buff.HUNTER]
         tier = 1
         prey_increase = 2
-      [focus.hunting.buff.SWIMMER]
+      [focus.hunting.buff.RUNNER]
         tier = 1
         biome = ["plains", "desert"]
         injury_modifier = 2
@@ -888,7 +888,7 @@ dev_tools = false
         tier = 1
         biome = ["forest", "mountainous"]
         injury_modifier = 2
-      [focus.hunting.buff.RUNNER]
+      [focus.hunting.buff.SWIMMER]
         tier = 1
         biome = ["beach", "wetlands"]
         injury_modifier = 2
@@ -1010,7 +1010,6 @@ dev_tools = false
   [focus.hoarding]
     # injury chance of each warrior(leader/deputy to get injured
     injury_chance_warrior = 25
-    injury_chance_medicine_cat = 35
 
     # illness chance of each warrior(leader/deputy) to get sick
     illness_chance = 35
@@ -1203,6 +1202,9 @@ dev_tools = false
   # determines when the freshkill pile amount is considered "full" or "excessive" for the purpose of events
   # the higher this number, the more freshkill is required before the pile is "full/excessive"
   base_event_trigger_factor = 4
+
+  # defines the amount of time it takes for freshkill to rot
+  time_to_rot = 3
 
   # defines the amount of prey a Clan begins with
   start_amount = 60
