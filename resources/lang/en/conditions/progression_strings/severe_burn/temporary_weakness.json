@@ -2,7 +2,7 @@
     {
         "event_id": "severe_burn_temporary_weakness0",
         "strings": [
-            "m_c has healed from {PRONOUN/m_c/poss} severe burn, but {PRONOUN/m_c/poss} body won't immediately get back to normal."
+            "m_c's body won't immediately be back to normal after suffering such severe burns."
         ],
         "involved_cats": {
             "m_c": {}

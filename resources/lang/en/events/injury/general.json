@@ -8,7 +8,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c had overworked {PRONOUN/m_c/self} this moon.",
+        "event_text": "m_c overworked {PRONOUN/m_c/self} this moon.",
         "m_c": {
             "status": [
                 "-kitten",

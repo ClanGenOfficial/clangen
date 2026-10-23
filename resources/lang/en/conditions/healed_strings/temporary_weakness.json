@@ -8,10 +8,7 @@
         "involved_cats": {
             "m_c": {
                 "health": {
-                    "working": true,
-                    "condition": [],
-                    "must_be_congenital": false,
-                    "must_be_acquired": false
+                    "working": true
                 }
             }
         }

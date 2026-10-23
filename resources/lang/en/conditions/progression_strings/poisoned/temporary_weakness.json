@@ -2,7 +2,7 @@
     {
         "event_id": "poisoned_temporary_weakness0",
         "strings": [
-            "m_c has healed from the poison in {PRONOUN/m_c/poss} body, but {PRONOUN/m_c/poss} body won't immediately get back to normal."
+            "m_c's body won't immediately be back to normal after suffering from poison."
         ],
         "involved_cats": {
             "m_c": {}

@@ -2,7 +2,7 @@
     {
         "event_id": "wasting_disease_exhausted",
         "strings": [
-            "Fighting {PRONOUN/m_c/poss} illnes has left m_c exhausted."
+            "Fighting {PRONOUN/m_c/poss} illness has left m_c exhausted."
         ],
         "involved_cats": {
             "m_c": {}

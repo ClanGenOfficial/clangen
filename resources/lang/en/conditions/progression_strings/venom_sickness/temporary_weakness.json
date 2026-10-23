@@ -2,7 +2,7 @@
     {
         "event_id": "venom_sickness_temporary_weakness0",
         "strings": [
-            "m_c has healed from the venon im {PRONOUN/m_c/poss} body, but {PRONOUN/m_c/poss} body won't immediately get back to normal."
+            "m_c's body won't immediately be back to normal after suffering from venom sickness."
         ],
         "involved_cats": {
             "m_c": {}
