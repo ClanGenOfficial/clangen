@@ -15,7 +15,7 @@
                     "medicine cat"
                 ],
                 "group": [
-                    "m_c:match"
+                    "player_clan"
                 ]
             }
         }
