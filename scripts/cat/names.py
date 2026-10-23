@@ -264,11 +264,11 @@ class Name:
             else:
                 prefix_category = "other_categories"
             
-            # If chosen category is empty, pick a normal prefix, else pick a category prefix
+            # If chosen category is empty, set chosen category to normal
             if possible_prefix_categories[prefix_category] == []:
-                self.prefix = random.choice(random.choice(possible_prefix_categories["other_categories"]))
-            else:
-                self.prefix = random.choice(random.choice(possible_prefix_categories[prefix_category]))
+                prefix_category = "other_categories"
+            
+            self.prefix = random.choice(random.choice(possible_prefix_categories[prefix_category]))
             
             # prevent prefix duplications from happening
             if self.prefix in self.prefix_history or not self._usable_name(
@@ -343,11 +343,11 @@ class Name:
             else:
                 suffix_category = random.choices(["other_categories", "eye_desc_categories", "fur_desc_categories"], weights = (10, 1, 2))[0]
             
-            # If chosen category is empty, pick a normal prefix, else pick a category prefix
+            # If chosen category is empty, set chosen category to normal
             if possible_suffix_categories[suffix_category] == []:
-                self.suffix = random.choice(random.choice(possible_suffix_categories["other_categories"]))
-            else:
-                self.suffix = random.choice(random.choice(possible_suffix_categories[suffix_category]))
+                suffix_category = "other_categories"
+                
+            self.suffix = random.choice(random.choice(possible_suffix_categories[suffix_category]))
             
             if self._usable_name(self.prefix, self.suffix):
                 return
