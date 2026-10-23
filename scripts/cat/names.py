@@ -230,23 +230,23 @@ class Name:
             "eye_categories" : [],
             "fur_categories": [],
             "biome_categories": [],
-            "other_categories": [["NORMAL1","NORMAL2","NORMAL3","NORMAL4","NORMAL5","NORMAL6","NORMAL7","NORMAL8","NORMAL9","NORMAL10"]]#self.names_dict["normal_prefixes"]
+            "other_categories": [self.names_dict["normal_prefixes"]]
             }
       
         if (
             eyes in self.names_dict["eye_prefixes"]
             and constants.CONFIG["cat_name_controls"]["allow_eye_names"]
         ):
-            possible_prefix_categories["eye_categories"].append(["EYECOLOR1","EYECOLOR2","EYECOLOR3","EYECOLOR4","EYECOLOR5","EYECOLOR6","EYECOLOR7","EYECOLOR8"])#self.names_dict["eye_prefixes"][eyes])
+            possible_prefix_categories["eye_categories"].append(self.names_dict["eye_prefixes"][eyes])
         
         if colour in self.names_dict["colour_prefixes"]:
-            possible_prefix_categories["fur_categories"].append(["COLOR1","COLOR2","COLOR3","COLOR4","COLOR5","COLOR6","COLOR7","COLOR8"])#self.names_dict["colour_prefixes"][colour])
+            possible_prefix_categories["fur_categories"].append(self.names_dict["colour_prefixes"][colour])
         
         if pelt in self.names_dict["pelt_prefixes"]:
-            possible_prefix_categories["fur_categories"].append(["PELT1","PELT2","PELT3","PELT4","PELT5","PELT6","PELT7","PELT8"])#self.names_dict["pelt_prefixes"][pelt])
+            possible_prefix_categories["fur_categories"].append(self.names_dict["pelt_prefixes"][pelt])
             
         if biome is not None and biome in self.names_dict["biome_prefixes"]:
-            possible_prefix_categories["biome_categories"].append(["BIOME1","BIOME2","BIOME3","BIOME4","BIOME5","BIOME6","BIOME7","BIOME8",])#self.names_dict["biome_prefixes"][biome])
+            possible_prefix_categories["biome_categories"].append(self.names_dict["biome_prefixes"][biome])
 
         while True:
             # decided in constants.CONFIG: cat_name_controls
@@ -288,35 +288,31 @@ class Name:
         """Generate possible suffix."""
         self.load_localized_names()
         
-        print(prefix_type)
         
         possible_suffix_categories = {
-            "eye_desc_categories" : [["EYES1","EYES2","EYES3","EYES4","EYES5","EYES6","EYES7","EYES8"]], #!!! change
-            "fur_desc_categories": [["PELTDESC1","PELTDESC2","PELTDESC3","PELTDESC4","PELTDESC5","PELTDESC6","PELTDESC7","PELTDESC8",]], #!!! change
+            "eye_desc_categories" : [self.names_dict["eye_desc_suffixes"]], #!!! change
+            "fur_desc_categories": [self.names_dict["pelt_desc_suffixes"]], #!!! change
             
             "eye_categories" : [],
             "fur_categories": [],
             "biome_categories": [],
-            "other_categories": [["NORMAL1","NORMAL2","NORMAL3","NORMAL4","NORMAL5","NORMAL6","NORMAL7","NORMAL8","NORMAL9","NORMAL10"]]#self.names_dict["normal_suffixes"]
+            "other_categories": [self.names_dict["normal_suffixes"]]
             }
-
-
-
-            
+  
         if (constants.CONFIG["cat_name_controls"]["allow_eye_names"] and eyes in self.names_dict["eye_suffixes"]):
-            possible_suffix_categories["eye_categories"].append(["EYECOLOR1","EYECOLOR2","EYECOLOR3","EYECOLOR4","EYECOLOR5","EYECOLOR6","EYECOLOR7","EYECOLOR8"])#self.names_dict["eye_suffixes"][eyes])
+            possible_suffix_categories["eye_categories"].append(self.names_dict["eye_suffixes"][eyes])
             
         if (colour in self.names_dict["colour_suffixes"]):
-            possible_suffix_categories["fur_categories"].append(["COLOR1","COLOR2","COLOR3","COLOR4","COLOR5","COLOR6","COLOR7","COLOR8"])#self.names_dict["colour_prefixes"][colour])
+            possible_suffix_categories["fur_categories"].append(self.names_dict["colour_suffixes"][colour])
             
         if (pelt in self.names_dict["pelt_suffixes"]):
-            possible_suffix_categories["fur_categories"].append(["PELT1","PELT2","PELT3","PELT4","PELT5","PELT6","PELT7","PELT8"])#self.names_dict["pelt_prefixes"][pelt])
+            possible_suffix_categories["fur_categories"].append(self.names_dict["pelt_suffixes"][pelt])
             
         if (pelt in ("Tortie", "Calico") and tortie_pattern in self.names_dict["tortie_pelt_suffixes"]):
-            possible_suffix_categories["fur_categories"].append(["TORTIEPELT1","TORTIEPELT2","TORTIEPELT3","TORTIEPELT4","TORTIEPELT5","TORTIEPELT6","TORTIEPELT7","TORTIEPELT8"])#self.names_dict["pelt_prefixes"][pelt])
+            possible_suffix_categories["fur_categories"].append(self.names_dict["tortie_pelt_suffixes"][tortie_pattern])
             
         if biome in self.names_dict["biome_suffixes"]:
-            possible_suffix_categories["biome_categories"].append(["BIOME1","BIOME2","BIOME3","BIOME4","BIOME5","BIOME6","BIOME7","BIOME8",])#self.names_dict["biome_prefixes"][biome])
+            possible_suffix_categories["biome_categories"].append(self.names_dict["biome_suffixes"][biome])
 
 
         # If prefix describes fur color/pattern, limit suffixes to non-appearance and fur desc

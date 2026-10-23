@@ -8,17 +8,6 @@
         "leader": "star"
     },
     "normal_suffixes": [
-        "fur",
-        "fur",
-        "fur",
-        "fur",
-        "fur",
-        "fur",
-        "fur",
-        "fur",
-        "fur",
-        "fur",
-        "fur",
         "tuft",
         "tuft",
         "tuft",
@@ -29,17 +18,6 @@
         "tooth",
         "tooth",
         "tooth",
-        "pelt",
-        "pelt",
-        "pelt",
-        "pelt",
-        "pelt",
-        "pelt",
-        "pelt",
-        "pelt",
-        "pelt",
-        "pelt",
-        "pelt",
         "tail",
         "tail",
         "tail",
@@ -400,6 +378,13 @@
         "wisp",
         "zoom"
     ],
+  "pelt_desc_suffixes" : [
+    "fur","fur","fur","fur", "pelt", "pelt","pelt","pelt",
+    "back", "belly", "ear", "ears", "tuft", "tail", "foot", "whisker"
+  ],
+  "eye_desc_suffixes" : [
+    "eye", "eyes", "gaze", "glare", "sight"
+  ],
     "pelt_suffixes": {
         "TwoColour": [
             "patch",
