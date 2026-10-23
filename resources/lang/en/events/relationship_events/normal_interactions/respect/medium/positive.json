@@ -156,14 +156,135 @@
     {
         "event_id": "respect_med_inc_med3",
         "strings": [
-            "m_c escorted r_c so {PRONOUN/r_c/subject} could gather herbs.",
+            "m_c escorted r_c so {PRONOUN/r_c/subject} could gather herbs."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ],
+                "health": {
+                    "working": true
+                }
+            },
+            "r_c": {
+                "status": [
+                    "medicine cat apprentice",
+                    "medicine cat"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+    
+    {
+        "event_id": "respect_med_inc_med3b",
+        "strings": [
             "m_c thought of r_c on the last patrol and brought an herb back with {PRONOUN/m_c/object}.",
-            "m_c notices that r_c is trying really hard to be a great medicine cat.",
-            "m_c is suddenly struck by the thought of how much r_c does to keep the Clan healthy.",
-            "m_c thanks r_c for keeping the Clan healthy.",
-            "m_c watches r_c sort herbs as {PRONOUN/m_c/subject} {VERB/m_c/chat/chats} about how {PRONOUN/r_c/poss} day has gone.",
             "m_c lets r_c know that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} about to go out and asks if {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to watch for any herbs.",
             "m_c asks r_c if there's any herbs {PRONOUN/m_c/subject} should look out for while {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} out on patrol later."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ],
+                "health": {
+                    "working": true
+                }
+            },
+            "r_c": {
+                "status": [
+                    "medicine cat apprentice",
+                    "medicine cat"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "respect_med_inc_med3c",
+        "strings": [
+            "m_c watches r_c sort herbs as {PRONOUN/m_c/subject} {VERB/m_c/chat/chats} about how {PRONOUN/r_c/poss} day has gone."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "medicine cat apprentice",
+                    "medicine cat"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "respect_med_inc_med3d",
+        "strings": [
+            "m_c notices that r_c is trying really hard to be a great medicine cat.",
+            "m_c is suddenly struck by the thought of how much r_c does to keep the Clan healthy.",
+            "m_c thanks r_c for keeping the Clan healthy."
         ],
         "involved_cats": {
             "m_c": {
@@ -200,11 +321,7 @@
     {
         "event_id": "respect_app_inc_med1",
         "strings": [
-            "m_c has been listening to r_c talk about how hard training has been.",
-            "m_c comforts r_c after a hard day's training.",
             "m_c and r_c exchange stories about their mentors.",
-            "After going on a patrol together, m_c and r_c excitedly gush about how cool it is to be an apprentice.",
-            "r_c messes something up during training, so m_c reassures {PRONOUN/r_c/object} that it's okay to make mistakes.",
             "m_c and r_c have a long conversation about what they want their full names to be."
         ],
         "involved_cats": {
@@ -221,6 +338,94 @@
                     "apprentice",
                     "mediator apprentice"
                 ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort",
+                    "like"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "respect_app_inc_med1b",
+        "strings": [
+            "m_c has been listening to r_c talk about how hard training has been.",
+            "m_c comforts r_c after a hard day's training.",
+            "r_c messes something up during training, so m_c reassures {PRONOUN/r_c/object} that it's okay to make mistakes."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "mediator apprentice",
+                    "medicine cat apprentice"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "medicine cat apprentice",
+                    "apprentice",
+                    "mediator apprentice"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort",
+                    "like"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+
+    {
+        "event_id": "respect_app_inc_med1c",
+        "strings": [
+            "After going on a patrol together, m_c and r_c excitedly gush about how cool it is to be an apprentice."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "mediator apprentice",
+                    "medicine cat apprentice"
+                ],
+                "health": {
+                    "working": true
+                }
+            },
+            "r_c": {
+                "status": [
+                    "medicine cat apprentice",
+                    "apprentice",
+                    "mediator apprentice"
+                ],
+                "health": {
+                    "working": true
+                }
             }
         },
         "relationship_changes": [

@@ -27,6 +27,7 @@ nav:
         - dev/art/cat-sprites/adding-new-sprites.md
         - dev/code/content-adding.md
         - dev/code/localization.md
+        - dev/code/conditions.md
     - Writing:
         - dev/writing/index.md
         - Reference:

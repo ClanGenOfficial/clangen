@@ -20,8 +20,7 @@
             "m_c is impressed by r_c helping others today.",
             "m_c notices that r_c is fixing a damaged part of the camp without being asked.",
             "When tucking in for the night, m_c saw that r_c fixed {PRONOUN/m_c/poss} nest.",
-            "r_c motivated m_c to get out of {PRONOUN/m_c/poss} nest this morning.",
-            "After the Gathering, m_c notices that r_c is making sure everyone got home."
+            "r_c motivated m_c to get out of {PRONOUN/m_c/poss} nest this morning."
         ],
         "involved_cats": {
             "m_c": {
@@ -33,6 +32,30 @@
                 "status": [
                     "-kitten"
                 ]
+            }
+        }
+    },
+    {
+        "event_id": "respect_inc_low2b",
+        "strings": [
+            "After the Gathering, m_c notices that r_c is making sure everyone got home."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-kitten"
+                ],
+                "health": {
+                    "working": true
+                }
+            },
+            "r_c": {
+                "status": [
+                    "-kitten"
+                ],
+                "health": {
+                    "working": true
+                }
             }
         }
     },

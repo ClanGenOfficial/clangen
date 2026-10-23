@@ -18,6 +18,12 @@
       }
     }
   },
+  "hunters_tribute": {
+    "card_art": "environment/tainted.png",
+    "modifiers": {
+      "prey.prey_loss.loss": 0.2
+    }
+  },
   "always_newleaf": {
     "card_art": "environment/always_newleaf.png",
     "modifiers": {
@@ -49,7 +55,14 @@
   "longer_illnesses": {
     "card_art": "environment/tainted.png",
     "modifiers": {
-      "condition_related.duration_modifier": 2
+      "condition_related.duration_modifier": 2,
+      "condition_related.duration_modifier_tags": ["illness"]
+    }
+  },
+  "crowfood": {
+    "card_art": "environment/lean_meat.png",
+    "modifiers": {
+      "prey.time_to_rot": 1
     }
   }
 }
