@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "weakened_muscles_sprain",
+        "strings": [
+            "m_c isn't necessarily the most elegant of cats. Sometimes just walking results in a sprain."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

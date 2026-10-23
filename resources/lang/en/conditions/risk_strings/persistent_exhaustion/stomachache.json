@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "persistent_exhaustion_stomachache",
+        "strings": [
+            "m_c is feeling slightly sick in {PRONOUN/m_c/poss} stomach today."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

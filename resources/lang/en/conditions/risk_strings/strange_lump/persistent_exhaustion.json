@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "strange_lump_persistent_exhaustion",
+        "strings": [
+            "m_c's lump appears to wear {PRONOUN/m_c/poss} body down and, with it, m_c's energy."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

@@ -1,0 +1,29 @@
+[
+    {
+        "event_id": "temporary_weakness_sore0",
+        "strings": [
+            "r_c0 is sympathetic, but doesn't change m_c's described exercises. Recovery can be a painful process, and feeling extremely sore is an expected part of it."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat",
+                    "medicine cat apprentice"
+                ],
+                "group": [
+                    "player_clan"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "temporary_weakness_sore1",
+        "strings": [
+            "m_c is overjoyed to get to {PRONOUN/m_c/poss} nest at the end of the day. {PRONOUN/m_c/poss/CAP} muscles have been so sore and uncomfortable."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
