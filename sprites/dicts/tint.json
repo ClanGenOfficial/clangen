@@ -48,7 +48,7 @@
     "mediumbrown": ["yellow", "purple", "black", "dilute", "cooldilute",  "earthydilute", "gloaming", "quartz", "lilacdilute", "densedust", "denseamber", "patina", "pink", "gray", "red", "pinkdilute", "tawny"],
     "darkbrown": ["yellow", "purple", "black", "dilute", "cooldilute", "gloaming", "quartz", "pink", "gray", "red", "pinkdilute", "tawny"],
     "chocolate": ["yellow", "purple", "black", "dilute", "cooldilute",  "earthydilute", "gloaming", "pink", "gray", "red", "tawny"],
-    "rust": ["yellow", "purple", "black", "dilute", "cooldilute",  "earthydilute", "gloaming", "quartz", "night", "pink", "gray", "red", "pinkdilute", "tawny"]
+    "rust": ["yellow", "dilute", "cooldilute",  "earthydilute", "pink", "red"]
   },
   "tint_colours":
   {
