@@ -2738,7 +2738,7 @@
             }
         },
         "strings": [
-            "The vision struck r_c0 only a day before the ceremony: m_c was supposed to be {PRONOUN/r_c0/poss} apprentice. Knowing r_c0's spirituality, r_c1 agreed, and tomorrow m_c wondered what the stars had planned for {PRONOUN/m_c/object} as {PRONOUN/m_c/subject} strode to touch r_c's nose."
+            "The vision struck r_c0 only a day before the ceremony: m_c was supposed to be {PRONOUN/r_c0/poss} apprentice. Knowing r_c0's spirituality, r_c1 agreed, and m_c wondered what the stars had planned for {PRONOUN/m_c/object} as {PRONOUN/m_c/subject} strode to touch r_c0's nose."
         ],
         "relationship_constraint": [
             {
