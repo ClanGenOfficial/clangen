@@ -317,17 +317,17 @@ class RoleScreen(Screens):
 
         main_dir = "resources/images/"
         paths = {
-            CatRank.LEADER: "icon_leader.png",
-            CatRank.DEPUTY: "icon_deputy.png",
-            CatRank.MEDICINE_CAT: "icon_medic.png",
-            CatRank.MEDICINE_APPRENTICE: "icon_medic_app.png",
-            CatRank.MEDIATOR: "icon_mediator.png",
-            CatRank.MEDIATOR_APPRENTICE: "icon_mediator_app.png",
-            CatRank.WARRIOR: "icon_warrior.png",
-            CatRank.APPRENTICE: "icon_warrior_app.png",
-            CatRank.KITTEN: "icon_kit.png",
-            CatRank.NEWBORN: "icon_kit.png",
-            CatRank.ELDER: "icon_elder.png",
+            CatRank.LEADER: "icon_rank_leader.png",
+            CatRank.DEPUTY: "icon_rank_deputy.png",
+            CatRank.MEDICINE_CAT: "icon_rank_medic.png",
+            CatRank.MEDICINE_APPRENTICE: "icon_rank_medic_app.png",
+            CatRank.MEDIATOR: "icon_rank_mediator.png",
+            CatRank.MEDIATOR_APPRENTICE: "icon_rank_mediator_app.png",
+            CatRank.WARRIOR: "icon_rank_warrior.png",
+            CatRank.APPRENTICE: "icon_rank_warrior_app.png",
+            CatRank.KITTEN: "icon_rank_kit.png",
+            CatRank.NEWBORN: "icon_rank_kit.png",
+            CatRank.ELDER: "icon_rank_elder.png",
         }
 
         if self.the_cat.status.rank in paths:
