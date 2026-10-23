@@ -2618,7 +2618,7 @@
             "r_c0": {}
         },
         "strings": [
-            "Some thought {PRONOUN/m_c/subject} {VERB/m_c/were/was} fated for the medicine den, considering {PRONOUN/m_c/poss} knack for herbs and healing, but (old_name) is certain {PRONOUN/m_c/poss} passions lie elsewhere. r_c0 promises to train m_c into a great warrior."
+            "With m_c’s inborn knack for herbs and healing, some thought {PRONOUN/m_c/subject} {VERB/m_c/were/was} fated for the medicine den, but m_c was certain {PRONOUN/m_c/poss} passions lied elsewhere. r_c0 promised to train m_c into a great warrior."
         ],
         "relationship_constraint": [
             {
@@ -2670,8 +2670,8 @@
             }
         },
         "strings": [
-            "(old_name) has always been spiritual, but r_c2 is surprised when {PRONOUN/m_c/subject} {VERB/m_c/announce/announces} StarClan wants r_c0 to be {PRONOUN/m_c/poss} mentor. After a few days of consulting with r_c1, r_c0 touches noses with m_c, wondering what the stars have planned.",
-            "(old_name) announces to r_c2 that StarClan wants r_c0 to be {PRONOUN/m_c/poss} mentor. r_c2 is skeptical, but (old_name) has always been spiritual, and {PRONOUN/m_c/subject} {VERB/m_c/speak/speaks} with no hint of mischief. After consulting r_c1, m_c is apprenticed to r_c0."
+            "(old_name) has always been spiritual, but r_c2 was surprised when {PRONOUN/m_c/subject} announced StarClan wants r_c0 to be {PRONOUN/m_c/poss} mentor. After a few days of consulting with r_c1, r_c0 touched noses with m_c, wondering what the stars have planned.",
+            "(old_name) announced to r_c2 that StarClan wants r_c0 to be {PRONOUN/m_c/poss} mentor. r_c2 was skeptical, but (old_name) has always been spiritual, and {PRONOUN/m_c/subject} spoke with no hint of mischief. After consulting r_c1, m_c was apprenticed to r_c0."
         ],
         "relationship_constraint": [
             {
@@ -2738,7 +2738,7 @@
             }
         },
         "strings": [
-            "The vision strikes r_c0 only a day before the ceremony: m_c is supposed to be {PRONOUN/r_c0/poss} apprentice. Knowing r_c0's spirituality, r_c1 agrees, and tomorrow m_c wonders what the stars have planned for {PRONOUN/m_c/object} as {PRONOUN/m_c/subject} {VERB/m_c/stride/strides} to touch r_c0's nose."
+            "The vision struck r_c0 only a day before the ceremony: m_c is supposed to be {PRONOUN/r_c0/poss} apprentice. Knowing r_c0's spirituality, r_c1 agreed, and tomorrow m_c wondered what the stars had planned for {PRONOUN/m_c/object} as {PRONOUN/m_c/subject} strode to touch r_c's nose."
         ],
         "relationship_constraint": [
             {
