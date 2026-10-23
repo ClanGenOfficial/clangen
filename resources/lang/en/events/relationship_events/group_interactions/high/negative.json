@@ -185,6 +185,16 @@
                 "status": [
                     "kitten"
                 ]
+            },
+            "r_c1": {
+                "status": [
+                    "any"
+                ]
+            },
+            "r_c2": {
+                "status": [
+                    "any"
+                ]
             }
         },
         "relationship_constraint": [
