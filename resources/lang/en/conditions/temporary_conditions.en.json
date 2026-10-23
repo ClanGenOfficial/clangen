@@ -133,6 +133,8 @@
         "amputated_leg": "amputated leg",
         "amputated_leg_alert": "hurt!",
         "amputated_tail": "amputated tail",
-        "amputated_tail_alert": "hurt!"
+        "amputated_tail_alert": "hurt!",
+        "stinky": "stinky",
+        "stinky_alert": "stinky!"
     }
 }
