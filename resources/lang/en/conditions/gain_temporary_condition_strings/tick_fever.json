@@ -39,6 +39,9 @@
                 "status": [
                     "medicine cat",
                     "medicine cat apprentice"
+                ],
+                "group": [
+                    "match:m_c"
                 ]
             }
         }
