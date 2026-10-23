@@ -11968,6 +11968,231 @@
         ]
     },
     {
+        "event_id": "gen_bord_horseplace_tnrloner_welcoming",
+        "types": ["border"],
+        "frequency": 1,
+        "poi": {
+            "name": ["terrain_horseplace"]
+        },
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ]
+        },
+        "chance_of_success": 40,
+        "patrol_art": "POI",
+        "intro_strings": [
+            "As the patrol passes by POI on their way to the border, they spot a cat sitting on the horses' fence and pause. Huh, interesting. That's not one of the kittypets they've seen before. The cat sees them stop and hops down, trotting closer with a high, confident tail."
+        ],
+        "decline_strings": [
+            "p_l doesn't like this. {PRONOUN/p_l/subject/CAP} {VERB/p_l/give/gives} a tail signal and the patrol melts back into the tall grass without a sound."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 15,
+                "outcome_art": "cat_sprites/gen_sitting_WrLn",
+                "strings": [
+                    "The new cat offers a nose touch as a greeting, and p_l meets {PRONOUN/n_c0/object} halfway. The loner introduces {PRONOUN/n_c0/self} as n_c0. n_c0 explains that {PRONOUN/n_c0/subject} used to live in a huge colony in an enormous gray Twolegplace, but the Twolegs started catching cats in metal boxes and taking them away. {PRONOUN/n_c0/subject/CAP} got caught a half-moon ago and just arrived here, but would prefer not to keep living so close to Twolegs. Would p_l happen to know a good colony to join? p_l invites them back to c_n, which is even <i>better</i> than a colony!"
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": ["loner"],
+                        "backstory": ["loner1", "loner2", "tragedy_survivor4"]
+                    }
+                },
+                "join": [
+                    {
+                        "cats": ["n_c0"],
+                        "new_status": ["warrior", "mediator"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "amount": 10,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from is grateful to cat_to for giving {PRONOUN/cat_from/object} a chance and allowing {PRONOUN/cat_from/object} to join c_n"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 1
+                }
+            },
+            {
+                "frequency": 4,
+                "exp_gained": 15,
+                "outcome_art": "cat_sprites/gen_bord_story_WrWrWr",
+                "strings": [
+                    "The cat greets them politely, explaining that {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} looking for a group to join. The kittypets who live at POI have told {PRONOUN/n_c0/object} good things about warrior life, but {PRONOUN/n_c0/subject}'d like to hear about it from Clancats themselves, if that's alright? s_c0's eyes light up, and the patrol wisely lets {PRONOUN/s_c0/object} take center-clearing. s_c0 launches into an explanation of c_n's culture, founding, and history. The loner's eyes are wide as {PRONOUN/s_c0/subject} {VERB/s_c0/tell/tells} the histories of c_n's greatest triumphs and greatest challenges, of their outstretched paws and their bared fangs, of their beloved myths and legends and ancestors. n_c0 is inspired by a hero's story and uses it to rename {PRONOUN/n_c0/self} as {PRONOUN/n_c0/subject} {VERB/n_c0/join/joins} the Clan."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": ["loner"],
+                        "backstory": ["loner1", "loner2", "tragedy_survivor4"]
+                    },
+                    "s_c0": {
+                        "stat": {
+                            "skill": ["LORE,1"]
+                        }
+                    }
+                },
+                "join": [
+                    {
+                        "cats": ["n_c0"],
+                        "new_status": ["warrior", "mediator", "medicine cat"],
+                        "change_name": true
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "amount": 10,
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from was starstruck by cat_to's retelling of c_n's culture and history",
+                            "cats_to": "cat_to enjoyed getting to share {PRONOUN/cat_to/poss} knowledge about c_n and liked how much cat_from obviously enjoyed listening"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 2
+                }
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_embarrassed_LnWr",
+                "strings": [
+                    "The new cat offers a nose touch as a greeting, and p_l meets {PRONOUN/n_c0/object} halfway. The loner introduces {PRONOUN/n_c0/self} as n_c0 and explains how {PRONOUN/n_c0/subject} {VERB/n_c0/were/was} taken from {PRONOUN/n_c0/poss} colony and- Wait, what's a colony? It's kind of like a rogue group, p_l explains. No no, it's like a Clan, but worse. Are they sure it isn't just a group of loners? An argument breaks out, and n_c0 can't get a word in edgewise. Exasperated, {PRONOUN/n_c0/subject} {VERB/n_c0/leave/leaves} the patrol behind for POI."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": ["loner"]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "amount": -5,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from found cat_to to be rather rude"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": -1
+                }
+            },
+            {
+                "frequency": 4,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_embarrassed_LnWr",
+                "strings": [
+                    "The cat greets them politely, explaining that {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} looking for a group to join. The kittypets who live at POI have told {PRONOUN/n_c0/object} good things about warrior life, but {PRONOUN/n_c0/subject}'d like to hear about it from Clancats themselves, if that's alright? s_c0's eyes light up, and the patrol lets {PRONOUN/s_c0/object} take center-clearing. s_c0 launches into an explanation of c_n's culture, founding, and history. But as {PRONOUN/s_c0/subject} {VERB/s_c0/go/goes} on, and on, and <i>on</i>, the loner just looks more and more lost. Eventually {PRONOUN/n_c0/subject} {VERB/n_c0/interrupt/interrupts} s_c0, thanks {PRONOUN/s_c0/object} for the stories, and makes a hasty exit. s_c0 looks confused and disappointed."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": ["loner"]
+                    },
+                    "s_c0": {
+                        "stat": {
+                            "skill": ["LORE,0"]
+                        }
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "amount": -10,
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from was bored and confused by cat_to's long-winded retelling of c_n's culture and history.",
+                            "cats_to": "cat_from didn't stick around for all of cat_to's extensive knowledge about c_n."
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": -1
+                }
+            }
+        ]
+    },
+    {
         "event_id": "gen_bord_deepforest_lonerfamily_welcoming",
         "types": ["border"],
         "frequency": 1,
