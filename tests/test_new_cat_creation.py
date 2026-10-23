@@ -515,7 +515,7 @@ class TestNewCatCreation(unittest.TestCase):
 
             self.assertIn(
                 "sore",
-                test_cat.injuries,
+                test_cat.temporary_conditions,
                 msg=f"Sore was not assigned correctly as an injury.",
             )
 
@@ -532,7 +532,7 @@ class TestNewCatCreation(unittest.TestCase):
 
             self.assertIn(
                 "greencough",
-                test_cat.illnesses,
+                test_cat.temporary_conditions,
                 msg=f"Greencough was not assigned correctly as an illness.",
             )
 
@@ -540,7 +540,7 @@ class TestNewCatCreation(unittest.TestCase):
         with self.subTest("Testing non-congenital perm condition application"):
             option_dict = InvolvedCatDict(
                 can_create_new_cat={},
-                health=HealthDict(condition=["crooked jaw"], must_be_congenital=False),
+                health=HealthDict(condition=["crooked_jaw"], must_be_congenital=False),
             )
 
             cat_list = updated_create_new_cat(
@@ -549,18 +549,18 @@ class TestNewCatCreation(unittest.TestCase):
             test_cat: Cat = cat_list[0]
 
             self.assertIn(
-                "crooked jaw",
-                test_cat.permanent_condition,
-                msg=f"crooked jaw was not assigned correctly as a perm condition.",
+                "crooked_jaw",
+                test_cat.permanent_conditions,
+                msg=f"crooked_jaw was not assigned correctly as a perm condition.",
             )
             self.assertFalse(
-                test_cat.permanent_condition["crooked jaw"]["born_with"],
-                msg=f"crooked jaw was not assigned correctly as non-congenital.",
+                test_cat.get_condition("crooked_jaw").is_congenital,
+                msg=f"crooked_jaw was not assigned correctly as non-congenital.",
             )
         with self.subTest("Testing congenital perm condition application"):
             option_dict = InvolvedCatDict(
                 can_create_new_cat={},
-                health=HealthDict(condition=["crooked jaw"], must_be_congenital=True),
+                health=HealthDict(condition=["crooked_jaw"], must_be_congenital=True),
             )
 
             cat_list = updated_create_new_cat(
@@ -569,12 +569,12 @@ class TestNewCatCreation(unittest.TestCase):
             test_cat: Cat = cat_list[0]
 
             self.assertIn(
-                "crooked jaw",
-                test_cat.permanent_condition,
+                "crooked_jaw",
+                test_cat.permanent_conditions,
                 msg=f"crooked jaw was not assigned correctly as a perm condition.",
             )
             self.assertTrue(
-                test_cat.permanent_condition["crooked jaw"]["born_with"],
+                test_cat.get_condition("crooked_jaw").is_congenital,
                 msg=f"crooked jaw was not assigned correctly as non-congenital.",
             )
         # test scar application for missing limbs
@@ -583,7 +583,7 @@ class TestNewCatCreation(unittest.TestCase):
         ):
             option_dict = InvolvedCatDict(
                 can_create_new_cat={},
-                health=HealthDict(condition=["lost a leg"]),
+                health=HealthDict(condition=["lost_leg"]),
             )
 
             cat_list = updated_create_new_cat(
@@ -594,7 +594,7 @@ class TestNewCatCreation(unittest.TestCase):
             self.assertIn(
                 "NOPAW",
                 test_cat.pelt.scars,
-                msg=f"NOPAW was not assigned correctly as a scar for lost a leg.",
+                msg=f"NOPAW was not assigned correctly as a scar for lost_a_leg.",
             )
 
     def test_backstory_assignment(self):

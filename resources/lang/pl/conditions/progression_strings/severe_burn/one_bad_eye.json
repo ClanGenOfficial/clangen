@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "severe_burn_one_bad_eye0",
+        "strings": [
+            "r_c0 peels the cobwebs away from m_c's face and holds back a wince. The eye is unsalvageable... and the rest of the skin will likely never grow fur again."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "severe_burn_one_bad_eye1",
+        "strings": [
+            "m_c can only be glad {PRONOUN/m_c/subject} {VERB/m_c/were/was} able to heal from the devastating burn, though {PRONOUN/m_c/subject} can't help but feel angry at {PRONOUN/m_c/poss} now vastly-limited vision."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

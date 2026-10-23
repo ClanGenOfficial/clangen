@@ -1,0 +1,15 @@
+[
+    {
+        "event_id": "joint_pain0",
+        "strings": [
+            "m_c is no longer suffering from joint pain.",
+            "The joint pain m_c was experiencing has abated.",
+            "m_c's joint pain is feeling much better.",
+            "m_c's joint pain is gone.",
+            "m_c has recovered from {PRONOUN/m_c/poss} joint pain and is happy to be moving around pain-free."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

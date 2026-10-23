@@ -2,7 +2,15 @@ from itertools import combinations
 from random import choice, randint, getrandbits, choices, random
 
 from scripts.cat.cats import Cat
-from scripts.cat.constants import INJURIES, ILLNESSES, PERMANENT, BACKSTORIES
+from scripts.cat.conditions.gain_conditions import (
+    gain_temporary_condition,
+    gain_permanent_condition,
+)
+from scripts.cat.constants import (
+    TEMPORARY_CONDITIONS,
+    PERMANENT_CONDITIONS,
+    BACKSTORIES,
+)
 from scripts.cat.enums import CatRank, CatAge, CatGroup, CatStanding, CatSocial
 from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.names import Name
@@ -15,11 +23,6 @@ from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan import OtherClan
 from scripts.clan_package.settings import get_clan_setting
-from scripts.cat.microservices.conditions import (
-    get_ill,
-    get_injured,
-    get_permanent_condition,
-)
 from scripts.config import get_config
 from scripts.events_module.consequences import change_relationship_values
 from scripts.events_module.parameter_dicts import InvolvedCatDict
@@ -91,6 +94,12 @@ def updated_create_new_cat(
             option_dict["group"], involved_cats, other_clan
         )
 
+    # handle applying an age for litters if one wasn't specified
+    is_litter = option_dict["can_create_new_cat"].get("become_litter")
+    if is_litter:
+        if not status.get("age") or not status["age"].is_baby():
+            status["age"] = choice((CatAge.NEWBORN, CatAge.KITTEN))
+
     if not status.get("rank") and not status.get("age"):
         # if no group was given either, then we just pick either no group or other clan
         if not option_dict.get("group"):
@@ -101,16 +110,22 @@ def updated_create_new_cat(
         # then we find an appropriate rank for that group
         if status["group_ID"] == "no_group":
             status["rank"] = choice(
-                [r for r in [*CatRank] if not r.is_any_clancat_rank()]
+                [
+                    r
+                    for r in [*CatRank]
+                    if not r.is_any_clancat_rank()
+                    and r not in (CatRank.LEADER, CatRank.DEPUTY)
+                ]
             )
         else:
-            status["rank"] = choice([r for r in [*CatRank] if r.is_any_clancat_rank()])
-
-    # handle applying an age for litters if one wasn't specified
-    is_litter = option_dict["can_create_new_cat"].get("become_litter")
-    if is_litter:
-        if not status.get("age") or not status["age"].is_baby():
-            status["age"] = choice((CatAge.NEWBORN, CatAge.KITTEN))
+            status["rank"] = choice(
+                [
+                    r
+                    for r in [*CatRank]
+                    if r.is_any_clancat_rank()
+                    and r not in (CatRank.LEADER, CatRank.DEPUTY)
+                ]
+            )
 
     # MOONS OLD
     moons = None
@@ -159,12 +174,6 @@ def updated_create_new_cat(
             if adoptive_parents
             else None,
         )
-        # check if kittypets get collar
-        if created_cat.status.social == CatSocial.KITTYPET and bool(getrandbits(1)):
-            created_cat.pelt.accessory = (
-                *created_cat.pelt.accessory,
-                choice(created_cat.pelt.collar_accessories),
-            )
 
         # MATES
         _assign_mates(created_cat, involved_cats, option_dict)
@@ -274,7 +283,7 @@ def _assign_name(created_cat: Cat):
         # give kittypets a kittypet name
         if created_cat.status.social == CatSocial.KITTYPET:
             weights = constants.CONFIG["cat_name_controls"]["kittypet"]
-            # check if the kittypets come with a pretty acc
+            # check if the kittypets come with a collar
             if bool(getrandbits(1)):
                 created_cat.pelt.accessory = (
                     *created_cat.pelt.accessory,
@@ -363,20 +372,14 @@ def _assign_health(created_cat, option_dict):
     # now see if any new conditions should be applied
     if option_dict.get("health", {}).get("condition"):
         condition = choice(option_dict["health"]["condition"])
-        if condition in INJURIES:
-            get_injured(created_cat, name=condition)
-        elif condition in ILLNESSES:
-            get_ill(created_cat, illness_name=condition)
-        elif condition in PERMANENT:
-            get_permanent_condition(
+        if condition in TEMPORARY_CONDITIONS:
+            gain_temporary_condition(created_cat, condition)
+        elif condition in PERMANENT_CONDITIONS:
+            gain_permanent_condition(
                 created_cat,
-                name=condition,
-                born_with=option_dict["health"].get("must_be_congenital", False),
+                condition,
+                is_congenital=option_dict["health"].get("must_be_congenital", False),
             )
-            if condition in ("lost a leg", "born without a leg"):
-                created_cat.pelt.scars = (*created_cat.pelt.scars, "NOPAW")
-            elif condition in ("lost their tail", "born without a tail"):
-                created_cat.pelt.scars = (*created_cat.pelt.scars, "NOTAIL")
 
     # RANDOM PERM CONDITION ASSIGNMENT
     # chance to give the new cat a permanent condition, higher chance for found kits and litters
@@ -388,39 +391,18 @@ def _assign_health(created_cat, option_dict):
         chance = constants.CONFIG["cat_generation"]["base_permanent_condition"] + 10
     if not int(random() * chance):
         possible_conditions = []
-        for condition in PERMANENT:
-            if created_cat.age.is_baby() and PERMANENT[condition]["congenital"] not in [
-                "always",
-                "sometimes",
-            ]:
-                continue
-            # next part ensures that a kit won't get a condition that takes too long to reveal
-            moons = created_cat.moons
-            leeway = 5 - (PERMANENT[condition]["moons_until"] + 1)
-            if moons > leeway:
+        for condition in PERMANENT_CONDITIONS:
+            if (
+                created_cat.age.is_baby()
+                and not PERMANENT_CONDITIONS[condition]["can_be_congenital"]
+            ):
                 continue
             possible_conditions.append(condition)
 
         if possible_conditions:
             chosen_condition = choice(possible_conditions)
-            if PERMANENT[chosen_condition]["congenital"] in [
-                "always",
-                "sometimes",
-            ]:
-                get_permanent_condition(created_cat, chosen_condition, True)
-                if (
-                    created_cat.permanent_condition[chosen_condition]["moons_until"]
-                    == 0
-                ):
-                    created_cat.permanent_condition[chosen_condition][
-                        "moons_until"
-                    ] = -2
-
-            # assign scars
-            if chosen_condition in ("lost a leg", "born without a leg"):
-                created_cat.pelt.scars = (*created_cat.pelt.scars, "NOPAW")
-            elif chosen_condition in ("lost their tail", "born without a tail"):
-                created_cat.pelt.scars = (*created_cat.pelt.scars, "NOTAIL")
+            if PERMANENT_CONDITIONS[chosen_condition]["can_be_congenital"]:
+                gain_permanent_condition(created_cat, chosen_condition, True)
 
 
 def _assign_stats(created_cat, option_dict):

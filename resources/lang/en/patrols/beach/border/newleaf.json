@@ -66,7 +66,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "condition": [
                             "bruises"
@@ -204,7 +204,7 @@
                             "skill": [
                                 "OMEN,0",
                                 "CLAIRVOYANT,0",
-                                "PROPHET,2"
+                                "PROPHET,0"
                             ]
                         }
                     }

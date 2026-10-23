@@ -9,6 +9,9 @@ def add_to_clan(cat):
     """Makes an "outside cat" a Clan cat. Returns a list of IDs for any additional cats that
     are coming with them.
     """
+    if cat.status.alive_in_player_clan:
+        # already in clan
+        return
 
     if not cat.status.is_exiled(CatGroup.PLAYER_CLAN_ID):
         cat.history.add_beginning()

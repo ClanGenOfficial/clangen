@@ -86,11 +86,11 @@ class SpawnColoursCommand(Command):
             add_output_line_to_log(f"Added {cat.name} with ID {cat.ID}")
 
 
-class SpawnColoursTintsCommand(Command):
-    name = "tint colours"
+class SpawnTintColoursCommand(Command):
+    name = "tint_colours"
     description = "Spawn a cat of each colour for a given pelt and tint."
     usage = "<pelt_name: str> <tint: str>"
-    aliases = ["tc"]
+    aliases = ["tc", "t_c", "tint_colors", "tint_colour", "tint_color"]
 
     def callback(self, args: List[str]):
         possible_pelts_str = ", ".join(
@@ -117,9 +117,7 @@ class SpawnColoursTintsCommand(Command):
 
         tint_name = args[1]
         if not (
-            tint_name in tint_colours
-            or tint_name in dilute_tint_colours
-            or tint_name in remove_tone_tint_colours
+            tint_name in tint_colours + dilute_tint_colours + remove_tone_tint_colours
         ):
             add_output_line_to_log(
                 f"Tint {tint_name} does not seem to exist! Possible tints are {possible_tints_str}."
@@ -200,7 +198,7 @@ class SpawnCommand(Command):
         SpawnPeltsCommand(),
         SpawnColoursCommand(),
         SpawnTintsCommand(),
-        SpawnColoursTintsCommand(),
+        SpawnTintColoursCommand(),
     ]
 
     def callback(self, args: List[str]):

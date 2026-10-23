@@ -286,5 +286,63 @@
         "ONE",
         "TWO",
         "THREE"
+    ],
+    "BLAZING_FIRE": [
+        "BRIE",
+        "OREO",
+        "STREAMSTRIKE"
+    ],
+    "ROSE-FOUR": [
+        "ROSETAIL",
+        "FOUR"
+    ],
+    "UNDERFULL": [
+        "UNDERPAWS_T",
+        "UNDERTAIL_T",
+        "BIBFULL_T",
+        "BELLY_T",
+        "MASK"
+    ],
+    "WILDFIRE": [
+        "EMBER",
+        "SMOKE",
+        "DAPPLENIGHT",
+        "BRINDLE"
+    ],
+    "MULLETED": [
+        "EYELINER_T",
+        "BOTHEARS_T",
+        "STREAMSTRIKE",
+        "CHERRYTAIL"
+    ],
+    "STARRYNIGHT": [
+        "ROSETAIL",
+        "PAW_FL_CLOVERTAIL",
+        "PAW_BL_SPLOTCH",
+        "PAW_FR_T",
+        "PAW_BR_WING",
+        "FRECKLED"
+    ],
+    "FRECKLE_LINER": [
+        "EYELINER_T",
+        "FRECKLED"
+    ],
+    "SMALL_LINED": [
+        "EYELINER_T",
+        "MINIMALTHREE",
+        "MINIMALTWO",
+        "TAILTIP_T",
+        "UNDERPAWS_T"
+    ],
+    "PHANTOM_MASK": [
+        "TAILTIPREVERSE_T",
+        "BELOVED",
+        "POWDERSNOW",
+        "EYEDOT",
+        "REDTAIL"
+    ],
+    "VALENTINES": [
+        "HEARTBEAT",
+        "FRECKLED"
     ]
 }

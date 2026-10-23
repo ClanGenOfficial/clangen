@@ -8898,7 +8898,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "snake bite"
+                            "snake_bite"
                         ],
                         "scar_history": "m_c was scarred after being bitten by a snake on patrol",
                         "death_history": "m_c died after being bitten by a snake on patrol."
@@ -8972,7 +8972,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "snake bite"
+                            "snake_bite"
                         ],
                         "scar_history": "m_c was scarred after being bitten by a snake on patrol",
                         "death_history": "m_c died from a snake bite while gathering herbs."
@@ -12488,7 +12488,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "torn pelt"
+                            "torn_pelt"
                         ]
                     }
                 ]
@@ -14293,7 +14293,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "small cut"
+                            "small_cut"
                         ]
                     }
                 ]
@@ -14378,7 +14378,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "small cut"
+                            "small_cut"
                         ]
                     }
                 ]
@@ -16567,7 +16567,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The betony shrubs are in full bloom, with bees buzzing busily around them, and p_l directs {PRONOUN/p_l/poss} patrol to follow their industrious example as they gather. {PRONOUN/p_l/subject/CAP} prune back enough betony to find a surprisingly intact goldenrod plant hidden under it, also ready for harvest."
+                    "The betony shrubs are in full bloom, with bees buzzing busily around them, and p_l directs {PRONOUN/p_l/poss} patrol to follow their industrious example as they gather. {PRONOUN/p_l/subject/CAP} {VERB/p_l/prune/prunes} back enough betony to find a surprisingly intact goldenrod plant hidden under it, also ready for harvest."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [
@@ -50958,7 +50958,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "small cut"
+                            "small_cut"
                         ],
                         "scar_pool_override": [
                             "SCRATCHSIDE"
