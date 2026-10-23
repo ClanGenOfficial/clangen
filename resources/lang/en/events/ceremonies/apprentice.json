@@ -2618,7 +2618,7 @@
             "r_c0": {}
         },
         "strings": [
-            "With m_c’s inborn knack for herbs and healing, some thought {PRONOUN/m_c/subject} {VERB/m_c/were/was} fated for the medicine den, but m_c was certain {PRONOUN/m_c/poss} passions lied elsewhere. r_c0 promised to train m_c into a great warrior."
+            "With m_c’s inborn knack for herbs and healing, some thought {PRONOUN/m_c/subject} {VERB/m_c/were/was} fated for the medicine den, but m_c was certain {PRONOUN/m_c/poss} passions lied elsewhere. r_c0 promises to train m_c into a great warrior."
         ],
         "relationship_constraint": [
             {
