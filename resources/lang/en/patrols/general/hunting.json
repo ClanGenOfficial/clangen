@@ -15448,7 +15448,7 @@
                     "outsider": ["welcoming"]
                 },
                 "strings": [
-                    "s_c0 takes the lead in checking the noise and a hiding loner and {PRONOUN/n_c0/poss} litter! The kits are freshly born, new to the world, and s_c0 is quick to sit and talk quietly with the new parent. After some coaxing, s_c0 convinces {PRONOUN/n_c0/object} to come stay with the Clan for a while, maybe even to join permanently."
+                    "s_c0 takes the lead in checking the noise and finds a hiding loner and {PRONOUN/n_c0/poss} litter! The kits are freshly born, new to the world, and s_c0 is quick to sit and talk quietly with the new parent. After some coaxing, s_c0 convinces {PRONOUN/n_c0/object} to come stay with the Clan for a while, maybe even to join permanently."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -16382,7 +16382,7 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "p_l pads forward to check the source of the noise and comes face-to-face with a snarling wolverine! p_l yowls for help, but {PRONOUN/p_l/subject} {VERB/p_l/are/is} alone on this patrol and {PRONOUN/p_l/subject} {VERB/p_l/have/has} the sudden realization that no one can help {PRONOUN/p_l/object} now.  The wolverine kills the lone cat with little trouble."
+                    "p_l pads forward to check the source of the noise and comes face-to-face with a snarling wolverine! p_l yowls for help, but {PRONOUN/p_l/subject} {VERB/p_l/are/is} alone on this patrol and {PRONOUN/p_l/subject} {VERB/p_l/have/has} the sudden realization that no one can help {PRONOUN/p_l/object} now. The wolverine kills the lone cat with little trouble."
                 ],
                 "exp_gained": 0,
                 "death": [
