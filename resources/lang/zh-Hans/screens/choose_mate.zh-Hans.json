@@ -1,5 +1,5 @@
 {
-    "zh": {
+    "zh-Hans": {
         "heading": "Choose a mate for %{name}",
         "info": "If a cat has mates, then they will be loyal and only have kittens with their mates (unless affairs are toggled on). Potential mates are listed below! The lines connecting the two cats may give a hint on their compatibility with one another, and any existing romantic feelings will be shown with small hearts.",
         "potential": "Potential Mates",

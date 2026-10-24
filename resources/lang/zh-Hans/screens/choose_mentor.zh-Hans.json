@@ -1,5 +1,5 @@
 {
-    "zh": {
+    "zh-Hans": {
         "heading": "Choose a new mentor for m_c",
         "info": "If an apprentice is 6 moons old and their mentor is changed, they will not be listed as a former apprentice on their old mentor's profile. Apprentices without a mentor will have one automatically assigned next moon. An apprentice's mentor can have an influence on their trait and skill later in life.\nChoose your mentors wisely.",
         "current_mentor": {

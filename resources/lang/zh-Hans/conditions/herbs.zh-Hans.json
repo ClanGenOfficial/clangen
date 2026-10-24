@@ -1,5 +1,5 @@
 {
-    "zh": {
+    "zh-Hans": {
         "herb_used": {
             "one": "m_c was given a %{herb} as treatment for: %{condition}. %{effect}",
             "many": "m_c was given %{herb} as treatment for: %{condition}. %{effect}"

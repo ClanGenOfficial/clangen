@@ -1,5 +1,5 @@
 {
-    "zh": {
+    "zh-Hans": {
         "heading": "<b>%{clan_name} Allegiances<\/b>",
         "caring_for": {
             "one": "<i>(caring for %{kitten})<\/i>",

@@ -1,5 +1,5 @@
 {
-    "zh": {
+    "zh-Hans": {
         "kit_amount": {
             "one": "single kitten",
             "many": "litter of %{count} kits"

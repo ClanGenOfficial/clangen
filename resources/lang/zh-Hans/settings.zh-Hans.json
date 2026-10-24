@@ -1,5 +1,5 @@
 {
-    "zh": {
+    "zh-Hans": {
         "dark mode": "Dark mode",
         "dark mode_tooltip": "Camp backgrounds will match with the mode: nighttime for dark mode and daytime for light mode.",
         "fullscreen scaling": "Ignore fullscreen scaling rules",

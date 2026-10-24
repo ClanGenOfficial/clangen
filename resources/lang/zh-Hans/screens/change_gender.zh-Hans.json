@@ -1,5 +1,5 @@
 {
-    "zh": {
+    "zh-Hans": {
         "heading": "Change %{name}'s Gender",
         "description": "<br>You can set this to anything! Gender identity does not affect gameplay.",
         "add_pronouns": "Add New Pronouns",

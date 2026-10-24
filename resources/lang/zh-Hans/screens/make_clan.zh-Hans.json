@@ -1,5 +1,5 @@
 {
-    "zh": {
+    "zh-Hans": {
         "classic_label": "Classic Mode",
         "classic_info": "This mode is Clan Generator at its most basic. The player will not be expected to manage the minutiae of Clan life. <br><br>Perfect for a relaxing game session or for focusing on storytelling.<br><br>This mode features:<br>  - Lower injury\/death rates<br>  - Simplified herb system with a randomly generated herb supply that isn't affected by events. All conditions are treated regardless of herb supply. Lack of medicine cats doesn't apply a debuff.<br>  - No fresh-kill management system.",
         "expanded_label": "Expanded Mode",

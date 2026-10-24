@@ -1,5 +1,5 @@
 {
-    "zh": {
+    "zh-Hans": {
         "stolen_vitality_base": {
             "one": "With %{lead_name}'s single revival, %{dead_name} dropped dead.",
             "many": "With %{lead_name}'s repeated revivals, %{dead_name} dropped dead."

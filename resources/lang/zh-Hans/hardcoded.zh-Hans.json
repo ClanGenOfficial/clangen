@@ -1,5 +1,5 @@
 {
-    "zh": {
+    "zh-Hans": {
         "comment": "at some point, this file should become empty and unnecessary.",
         "event_deaths": {
             "one": "This past moon, m_c has taken {PRONOUN\/m_c\/poss} place in StarClan. c_n mourns the loss of their Clanmate, and {PRONOUN\/m_c\/poss} Clanmates will miss where {PRONOUN\/m_c\/subject} had been in their lives. Moments of {PRONOUN\/m_c\/poss} life are shared in stories around the circle of mourners as those that were closest to {PRONOUN\/m_c\/object} take {PRONOUN\/m_c\/object} to {PRONOUN\/m_c\/poss} final resting place.",

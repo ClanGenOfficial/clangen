@@ -4,7 +4,7 @@ import ujson
 
 
 # CHANGE THIS TO MAKE NEW LANGUAGE
-lang = "debug"
+lang = "zh-Hans"
 
 
 def process_json_file(input_path, output_path, lang):
