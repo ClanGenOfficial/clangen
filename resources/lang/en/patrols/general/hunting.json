@@ -15572,9 +15572,9 @@
                             "p_l"
                         ],
                         "condition": [
-                            "blood loss",
+                            "blood_loss",
                             "scrapes",
-                            "small cut"
+                            "small_cut"
                         ],
                         "scar_history": "m_c was scarred after being scraped by broken glass in a Twoleg den.",
                         "death_history": "m_c bled out after escaping from a Twoleg den."
