@@ -188,9 +188,7 @@ def find_cats(
             abbr,
             possible_cats,
             relationship_constraint=relationship_constraints,
-            cat_constraints=constraints,
             temp_involved_cats=temp_involved_cats,
-            other_clan=other_clan,
         )
 
         if not new_involved_cat:
@@ -204,6 +202,120 @@ def find_cats(
 
         if temp_involved_cats.get(abbr) in interactable_cats:
             interactable_cats.remove(temp_involved_cats[abbr])
+
+    return temp_involved_cats, will_create_how_many
+
+
+def find_cats_ignoring_constraints(
+    interactable_cats: list,
+    involved_cats: dict,
+    outside_cats: list,
+    event: Union[PatrolEvent, TextPoolEvent],
+    other_clan: OtherClan,
+) -> tuple[dict, int]:
+    """
+    Finds and returns cats for a PatrolEvent or TextPoolEvent.
+    :param interactable_cats: A list of cats within the Clan eligible to appear in the event.
+    :param involved_cats: Dict of cats already involved. Key is abbreviation, value is cat object
+    :param outside_cats: A list of cats outside the Clan eligible to appear in the event.
+    :param event: The PatrolEvent or TextPoolEvent that needs involved cats
+    :param other_clan: The OtherClan object involved in the event
+    :return: (involved_cats, will_create_how_many). Involved_cats is an updated version of the input
+        (of the same name) with valid cats. Also returns the number of new cats that will need to be
+        created.  If an involved_cats is empty AND will_create_how_many is 0, then necessary valid cats
+        were not found.
+    """
+
+    empty = ({}, 0)
+
+    temp_involved_cats = involved_cats.copy()
+    interactable_cats = interactable_cats.copy()
+
+    will_create_how_many = 0
+
+    for abbr, constraints in event.involved_cats.items():
+        possible_cats = []
+        can_create_new_cat = False
+
+        # CHECK ALREADY ASSIGNED CAT
+        if abbr in involved_cats:
+            if involved_cats[abbr] is None and abbr in event.involved_cats:
+                # sometimes a specific abbr may be "preset" as None
+                # which indicates that events requiring that abbr should be avoided
+                return empty
+            possible_cats = (
+                involved_cats[abbr] if isinstance(abbr, list) else [involved_cats[abbr]]
+            )
+
+        # CHECK PRIOR ABBREVIATIONS
+        elif constraints.get("prior_abbreviation"):
+            possible_cats = _check_prior_abbreviation(
+                abbr, constraints, event, interactable_cats, involved_cats
+            )
+            if not possible_cats:
+                possible_cats = interactable_cats.copy()
+
+        # CHECK NEW CATS
+        elif "n_c" in abbr:
+            possible_cats = [
+                c for c in outside_cats if c not in temp_involved_cats.values()
+            ]
+
+            # since we're just trying to fill spots, we'll always let it make someone new if it needs to
+            can_create_new_cat = True
+
+        # CHECK MULTI_CAT
+        elif abbr == "multi_cat":
+            # just pick two, doesn't rly matter who
+            temp_involved_cats["multi_cat"] = random.choices(interactable_cats, k=2)
+            # if we found no one, then this event isn't possible, and we should try a different one
+            if not temp_involved_cats["multi_cat"]:
+                print(
+                    "ERROR: Attempted to ignore cat constraints, but there wasn't enough cats to fill all multi_cat spots."
+                )
+                return empty
+
+        # CHECK ALL UN-USED CATS
+        else:
+            possible_cats = interactable_cats
+
+        if not possible_cats:
+            # uh oh, we're out of options!
+            if can_create_new_cat:
+                will_create_how_many += 1
+                continue
+            else:
+                return empty
+
+        # random shuffle to ensure we aren't picking the same cats all the time
+        random.shuffle(possible_cats)
+
+        # initial filter of the entire list of cats for the more general constraints
+        possible_cats = possible_cats
+        if not possible_cats:
+            if can_create_new_cat:
+                will_create_how_many += 1
+                continue
+            else:
+                return empty
+
+        # now choose a cat to fill the role, checking for relationship constraints
+        # emptying params to allow any cat
+        new_involved_cat = _find_involved_cat(
+            abbr,
+            possible_cats,
+            relationship_constraint=[],
+            temp_involved_cats=temp_involved_cats,
+        )
+
+        if not new_involved_cat:
+            if can_create_new_cat:
+                will_create_how_many += 1
+                continue
+            else:
+                return empty
+
+        temp_involved_cats.update(new_involved_cat)
 
     return temp_involved_cats, will_create_how_many
 
@@ -266,9 +378,7 @@ def _find_involved_cat(
     abbr: str,
     possible_cats: list[Cat],
     relationship_constraint,
-    cat_constraints,
     temp_involved_cats: dict,
-    other_clan: OtherClan,
 ) -> dict:
     """
     Finds a cat from the available cats that can fill the abbreviation slot. This will check against relationship
