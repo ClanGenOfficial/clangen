@@ -1,5 +1,7 @@
 {
     "en": {
+        "title": "ClanGen",
+        "subtitle": "clan generator",
         "moons_age": {
             "one": "1 moon",
             "many": "%{count} moons"
