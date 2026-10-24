@@ -1,13 +1,10 @@
 import unittest
-from random import Random
 
 from scripts.cat.factories.test_cat_factory import TestCatFactory
+from scripts.cat.pelts import Pelt
 from scripts.events_module.short.short_event import ShortEvent
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.events_module.transition.generate_transition_event import _handle_event
-
-
-from scripts.cat.pelts import Pelt
 
 cat_factory = TestCatFactory()
 
@@ -179,22 +176,22 @@ class TestHandleInjury(unittest.TestCase):
     def test_mc_injured(self):
         self.chosen_event.execute_event()
 
-        self.assertTrue("scrapes" in self.chosen_event.main_cat.injuries)
-        self.assertFalse("scrapes" in self.chosen_event.random_cat.injuries)
+        self.assertTrue("scrapes" in self.chosen_event.main_cat.temporary_conditions)
+        self.assertFalse("scrapes" in self.chosen_event.random_cat.temporary_conditions)
 
     def test_rc_injured(self):
         self.chosen_event.injury[0]["cats"] = ["r_c"]
         self.chosen_event.execute_event()
 
-        self.assertTrue("scrapes" in self.chosen_event.random_cat.injuries)
-        self.assertFalse("scrapes" in self.chosen_event.main_cat.injuries)
+        self.assertTrue("scrapes" in self.chosen_event.random_cat.temporary_conditions)
+        self.assertFalse("scrapes" in self.chosen_event.main_cat.temporary_conditions)
 
     def test_both_injured(self):
         self.chosen_event.injury[0]["cats"].append("r_c")
         self.chosen_event.execute_event()
 
-        self.assertTrue("scrapes" in self.chosen_event.random_cat.injuries)
-        self.assertTrue("scrapes" in self.chosen_event.main_cat.injuries)
+        self.assertTrue("scrapes" in self.chosen_event.random_cat.temporary_conditions)
+        self.assertTrue("scrapes" in self.chosen_event.main_cat.temporary_conditions)
 
 
 class TestHandleInjuryHistory(unittest.TestCase):

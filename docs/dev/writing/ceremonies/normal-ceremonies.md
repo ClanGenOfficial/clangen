@@ -72,7 +72,8 @@ Within this folder are multiple files:
                 "must_be_congenital": false,
                 "must_be_acquired": false
             },
-            "backstory": []
+            "backstory": [],
+            "accessory": []
         }
     },
     "strings": [

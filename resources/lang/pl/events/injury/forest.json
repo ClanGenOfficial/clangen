@@ -55,9 +55,9 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "claw-wound",
-                    "mangled leg",
-                    "mangled tail"
+                    "claw_wound",
+                    "mangled_leg",
+                    "mangled_tail"
                 ]
             }
         ],
@@ -193,9 +193,9 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "torn pelt",
+                    "torn_pelt",
                     "scrapes",
-                    "small cut"
+                    "small_cut"
                 ],
                 "scars": [
                     "QUILLSIDE", "SCRATCHSIDE"
@@ -228,7 +228,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "mangled tail"
+                    "mangled_tail"
                 ],
                 "scars": [
                     "HALFTAIL", "MANTAIL", "NOTAIL", "TAILSCAR"
@@ -271,7 +271,7 @@
                 ],
                 "injuries": [
                     "burn",
-                    "severe burn"
+                    "severe_burn"
                 ]
             }
         ],
@@ -336,7 +336,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "severe burn"
+                    "severe_burn"
                 ]
             }
         ],
@@ -530,9 +530,9 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "torn pelt",
+                    "torn_pelt",
                     "scrapes",
-                    "small cut"
+                    "small_cut"
                 ],
                 "scars": [
                     "QUILLSIDE", "SCRATCHSIDE"
@@ -541,37 +541,37 @@
         ]
     },
     {
-        "event_id": "fst_injury_fireflies",
-        "location": [
-            "forest:camp1"
-        ],
-        "season": [
-            "-leaf-bare"
-        ],
-        "sub_type": [],
-        "tags": [],
-        "frequency": 2,
-        "event_text": "m_c got hurt while chasing fireflies through camp.",
-        "new_accessory": [],
-        "m_c": {
-            "age": [
-                "kitten",
-                "adolescent"
-            ]
-        },
-        "injury": [
-            {
-                "cats": ["m_c"],
-                "injuries": ["minor_injury"]
-            }
+    "event_id": "fst_injury_fireflies",
+    "location": [
+        "forest:camp1"
+    ],
+    "season": [
+        "-leaf-bare"
+    ],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 2,
+    "event_text": "m_c got hurt while chasing fireflies through camp.",
+    "new_accessory": [],
+    "m_c": {
+        "age": [
+            "kitten",
+            "adolescent"
         ]
     },
+    "injury": [
+        {
+            "cats": ["m_c"],
+            "injuries": ["minor_injury"]
+        }
+    ]
+},
     {
-        "event_id": "fst_mushroom_injury",
-        "location": ["forest:camp1"],
-        "season": ["newleaf", "greenleaf"],
-        "frequency": 1,
-        "event_text": "m_c finds a curious azure mushroom. Surely one bite wouldn't hurt... {PRONOUN/m_c/subject/CAP} {VERB/m_c/fall/falls} ill later that evening.",
+    "event_id": "fst_mushroom_injury",
+    "location": ["forest:camp1"],
+    "season": ["newleaf", "greenleaf"],
+    "frequency": 1,
+    "event_text": "m_c finds a curious azure mushroom. Surely one bite wouldn't hurt... {PRONOUN/m_c/subject/CAP} {VERB/m_c/fall/falls} ill later that evening.",
         "m_c": {
             "age": [
                 "any"
@@ -582,7 +582,7 @@
                 "-HEALER,1"
             ],
             "trait": [
-                "-nervous",
+               "-nervous",
                 "-strict",
                 "-thoughtful",
                 "-calm",
@@ -601,13 +601,13 @@
                 "death": "m_c was poisoned by a beautiful but deadly mushroom."
             }
         ],
-        "injury": [
-            {
-                "cats": ["m_c"],
-                "injuries": ["poisoned"],
-                "scars": []
-            }
-        ]
+          "injury": [
+        {
+            "cats": ["m_c"],
+            "injuries": ["poisoned"],
+            "scars": []
+        }
+    ]
     },
     {
         "event_id": "fst_injury_waterinthelungs_lake1",
@@ -638,7 +638,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "water in their lungs"
+                    "water_in_lungs"
                 ]
             }
         ],
@@ -677,7 +677,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "water in their lungs"
+                    "water_in_lungs"
                 ]
             }
         ],
@@ -729,7 +729,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "water in their lungs"
+                    "water_in_lungs"
                 ]
             },
             {
@@ -738,7 +738,7 @@
                     "r_c"
                 ],
                 "injuries": [
-                    "shivering"
+                    "dangerously_cold"
                 ]
             }
         ],
@@ -787,8 +787,8 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "mangled leg",
-                    "bite-wound"
+                    "mangled_leg",
+                    "bite_wound"
                 ]
             }
         ],
@@ -842,95 +842,98 @@
         ]
     },
     {
-        "event_id": "fst_injury_sprain_camp1",
-        "location": ["forest:camp1"],
-        "season": ["leaf-bare"],
-        "frequency": 2,
-        "event_text": "m_c stumbles and trips over a root in camp, creating a perfectly m_c-shaped imprint in the snow.",
-        "m_c": {
-            "age": ["-newborn"]
-        },
-        "injury": [
-            {
-                "cats": ["m_c"],
-                "injuries": ["bruises", "sprain"]
-            }
+    "event_id": "fst_injury_sprain_camp1",
+    "location": ["forest:camp1"],
+    "season": ["leaf-bare"],
+    "frequency": 2,
+    "event_text": "m_c stumbles and trips over a root in camp, creating a perfectly m_c-shaped imprint in the snow.",
+    "m_c": {
+        "age": ["-newborn"]
+    },
+    "injury": [
+        {
+            "cats": ["m_c"],
+            "injuries": ["bruises", "sprain"]
+        }
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["some_clan"],
+            "mutual": false,
+            "values": ["like"],
+            "amount": -5,
+            "log": {
+                "cats_from": "cat_from was hurt that cat_to laughed when {PRONOUN/cat_from/subject} tripped over a root in camp.",
+                "cats_to": "cat_to thought it was funny that cat_from tripped over a snowy root in camp."
+          }
+        }
+    ]
+},
+{
+    "event_id": "fst_injury_brokenleg",
+    "location": [
+        "forest:camp2"
+    ],
+    "season": [
+        "leaf-bare"
+    ],
+    "frequency": 1,
+    "event_text": "m_c misjudges how deep the snow is and jumps in. {PRONOUN/m_c/subject/CAP} {VERB/m_c/land/lands} wrong, breaking {PRONOUN/m_c/poss} leg.",
+    "m_c": {
+        "age": [
+            "-newborn",
+            "-kitten"
         ],
-        "relationships": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["some_clan"],
-                "mutual": false,
-                "values": ["like"],
-                "amount": -5,
-                "log": {
-                    "cats_from": "cat_from was hurt that cat_to laughed when {PRONOUN/cat_from/subject} tripped over a root in camp.",
-                    "cats_to": "cat_to thought it was funny that cat_from tripped over a snowy root in camp."
-                }
-            }
+        "status": []
+
+    },
+    "injury": [
+        {
+            "cats": ["m_c"],
+            "injuries": ["broken_bone"],
+            "scars": []
+        }
+    ],
+    "history": [
+        {
+            "cats": ["m_c"],
+            "scar": "m_c was scarred after breaking {PRONOUN/m_c/poss} leg.",
+            "death": "m_c died from complications caused by {PRONOUN/m_c/poss} broken leg."
+        }
+    ]
+   
+},
+{
+    "event_id": "fst_injury_headdamage",
+    "location": [
+        "forest:camp2"
+    ],
+    "season": [
+        "-leaf-bare"
+    ],
+    "frequency": 1,
+    "event_text": "m_c stumbles while playing outside and falls into camp, later complaining about head pain.",
+    "m_c": {
+        "age": [
+            "-newborn",
+            "-kitten"
         ]
     },
-    {
-        "event_id": "fst_injury_brokenleg",
-        "location": [
-            "forest:camp2"
-        ],
-        "season": [
-            "leaf-bare"
-        ],
-        "frequency": 1,
-        "event_text": "m_c misjudges how deep the snow is and jumps in. {PRONOUN/m_c/subject/CAP} {VERB/m_c/land/lands} wrong, breaking {PRONOUN/m_c/poss} leg.",
-        "m_c": {
-            "age": [
-                "-newborn",
-                "-kitten"
-            ],
-            "status": []
-        },
-        "injury": [
-            {
-                "cats": ["m_c"],
-                "injuries": ["broken bone"],
-                "scars": []
-            }
-        ],
-        "history": [
-            {
-                "cats": ["m_c"],
-                "scar": "m_c was scarred after breaking {PRONOUN/m_c/poss} leg.",
-                "death": "m_c died from complications caused by {PRONOUN/m_c/poss} broken leg."
-            }
-        ]
-    },
-    {
-        "event_id": "fst_injury_headdamage",
-        "location": [
-            "forest:camp2"
-        ],
-        "season": [
-            "-leaf-bare"
-        ],
-        "frequency": 1,
-        "event_text": "m_c stumbles while playing outside and falls into camp, later complaining about head pain.",
-        "m_c": {
-            "age": [
-                "-newborn",
-                "-kitten"
-            ]
-        },
-        "injury": [
-            {
-                "cats": ["m_c"],
-                "injuries": ["head damage"],
-                "scars": []
-            }
-        ],
-        "history": [
-            {
-                "cats": ["m_c"],
-                "scar": "",
-                "death": "m_c died from complications caused by falling into the gully."
-            }
-        ]
-    }
+    "injury": [
+        {
+            "cats": ["m_c"],
+            "injuries": ["head_damage"],
+            "scars": []
+        }
+    ],
+    "history": [
+        {
+            "cats": ["m_c"],
+            "scar": "",
+            "death": "m_c died from complications caused by falling into the gully."
+        }
+    ]
+   
+}
 ]

@@ -3428,7 +3428,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "bite-wound"
+                            "bite_wound"
                         ],
                         "scar_history": "m_c carries a scar from a fight with a gray fox.",
                         "death_history": "m_c died from a gray fox bite."
@@ -4887,8 +4887,8 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "small cut",
-                            "venom sickness"
+                            "small_cut",
+                            "venom_sickness"
                         ],
                         "scar_pool_override": [
                             "QUILLSIDE"
@@ -6714,7 +6714,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "water in their lungs"
+                            "water_in_lungs"
                         ],
                         "death_history": "m_c died from the water in {PRONOUN/m_c/poss} lungs after a rogue wave struck {PRONOUN/m_c/object} during a hunt."
                     }
@@ -6761,7 +6761,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "severe headache"
+                            "severe_headache"
                         ]
                     }
                 ]
@@ -7221,7 +7221,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "water in their lungs"
+                            "water_in_lungs"
                         ],
                         "death_history": "m_c died from the water in {PRONOUN/m_c/poss} lungs after being chased off a cliff into the ocean by a gannet parent whose nest {PRONOUN/m_c/subject} tried to raid."
                     }
@@ -7307,7 +7307,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "water in their lungs"
+                            "water_in_lungs"
                         ],
                         "death_history": "m_c died from the water in {PRONOUN/m_c/poss} lungs after overestimating {PRONOUN/m_c/self} and falling off a cliff."
                     }
@@ -7372,7 +7372,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "broken bone"
+                            "broken_bone"
                         ],
                         "scar_history": "m_c was scarred after breaking {PRONOUN/m_c/poss} bone falling off a cliff.",
                         "death_history": "m_c died from {PRONOUN/m_c/poss} broken bone after overestimating {PRONOUN/m_c/self} and falling off a cliff."

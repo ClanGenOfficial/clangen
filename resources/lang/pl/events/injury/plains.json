@@ -11,8 +11,8 @@
         },
         "injury": [
             {
-                "cats": ["m_c"],
-                "injuries": ["bruises", "sprain"]
+             "cats": ["m_c"],
+             "injuries": ["bruises", "sprain"]
             }
         ]
     },
@@ -28,8 +28,8 @@
         },
         "injury": [
             {
-                "cats": ["m_c"],
-                "injuries": ["sprain"]
+             "cats": ["m_c"],
+             "injuries": ["sprain"]
             }
         ]
     },
@@ -50,11 +50,11 @@
         },
         "injury": [
             {
-                "cats": ["m_c"],
-                "injuries": ["sore"]
+             "cats": ["m_c"],
+             "injuries": ["sore"]
             }
         ]
-    },
+    },  
     {
         "event_id": "pln_injury_mangledleg_multimultitraitany1",
         "location": ["plains"],
@@ -70,8 +70,8 @@
         },
         "injury": [
             {
-                "cats": ["m_c"],
-                "injuries": ["mangled leg"]
+             "cats": ["m_c"],
+             "injuries": ["mangled_leg"]
             }
         ],
         "history": [
@@ -95,40 +95,40 @@
         },
         "injury": [
             {
-                "cats": ["m_c"],
-                "injuries": ["sprain"]
+             "cats": ["m_c"],
+             "injuries": ["sprain"]
             }
         ]
     },
     {
-        "event_id": "plns_injury_fireflies",
-        "location": [
-            "plains:camp4"
-        ],
-        "season": [
-            "greenleaf",
-            "leaf-fall"
-        ],
-        "sub_type": [],
-        "tags": [],
-        "frequency": 2,
-        "event_text": "m_c got hurt while chasing fireflies through camp.",
-        "new_accessory": [],
-        "m_c": {
-            "age": [
-                "kitten",
-                "adolescent"
-            ]
-        },
-        "injury": [
-            {
-                "cats": [
-                    "m_c"
-                ],
-                "injuries": [
-                    "minor_injury"
-                ]
-            }
-        ]
+    "event_id": "plns_injury_fireflies",
+  "location": [
+    "plains:camp4"
+  ],
+  "season": [
+    "greenleaf",
+    "leaf-fall"
+  ],
+  "sub_type": [],
+  "tags": [],
+  "frequency": 2,
+  "event_text": "m_c got hurt while chasing fireflies through camp.",
+  "new_accessory": [],
+  "m_c": {
+    "age": [
+      "kitten",
+      "adolescent"
+    ]
+  },
+  "injury": [
+    {
+      "cats": [
+        "m_c"
+      ],
+      "injuries": [
+        "minor_injury"
+      ]
     }
+  ]
+}
 ]

@@ -2,10 +2,12 @@ import os
 import shutil
 import unittest
 from pathlib import Path
+from unittest.mock import Mock
 from uuid import uuid4
 
 from scripts.cat import save_load
 from scripts.cat.cats import Cat
+from scripts.cat.conditions import gain_conditions
 from scripts.cat.enums import CatRank
 from scripts.cat.skills import Skill, CatSkills, SkillPath
 from scripts.cat.sprites.load_sprites import sprites
@@ -105,6 +107,28 @@ class TestFocus(unittest.TestCase):
         # there's 2 cats who will hunt, so 2 * prey gathered is what we expect
         amount_should_gather = 2 * warrior_prey[1]
 
+        focus.get_config = Mock(
+            return_value={
+                "injury_chance": 1,
+                "injuries": {"bruises": 1},
+                "buff": {
+                    "HUNTER": {"tier": 1, "prey_increase": 1},
+                    "CLIMBER": {"tier": 1, "biome": ["forest"], "injury_modifier": 2},
+                },
+                "warrior": {
+                    "newleaf": {
+                        "prey_amounts": [2],
+                        "prey_weights": [1],
+                    }
+                },
+                "apprentice": {
+                    "newleaf": {
+                        "prey_amounts": [1],
+                        "prey_weights": [1],
+                    }
+                },
+            }
+        )
         focus.handle_focus()
 
         self.assertEqual(
@@ -114,8 +138,8 @@ class TestFocus(unittest.TestCase):
         self.assertTrue(
             all(
                 [
-                    self.leader.is_injured(),
-                    self.deputy.is_injured(),
+                    self.leader.temporary_conditions,
+                    self.deputy.temporary_conditions,
                 ]
             )
         )
@@ -133,7 +157,28 @@ class TestFocus(unittest.TestCase):
         amount_should_gather = 2 * (
             warrior_prey[1] + get_config(f"focus.hunting.buff.HUNTER.prey_increase")
         )
-
+        focus.get_config = Mock(
+            return_value={
+                "injury_chance": 1,
+                "injuries": {"bruises": 1},
+                "buff": {
+                    "HUNTER": {"tier": 1, "prey_increase": 2},
+                    "CLIMBER": {"tier": 1, "biome": ["forest"], "injury_modifier": 2},
+                },
+                "warrior": {
+                    "newleaf": {
+                        "prey_amounts": [2],
+                        "prey_weights": [1],
+                    }
+                },
+                "apprentice": {
+                    "newleaf": {
+                        "prey_amounts": [1],
+                        "prey_weights": [1],
+                    }
+                },
+            }
+        )
         focus.handle_focus()
 
         self.assertEqual(
@@ -190,13 +235,30 @@ class TestFocus(unittest.TestCase):
         starting_relation = game.clan.reputation
         amount = get_config("focus.threaten_outsiders.reputation")
 
+        focus.get_config = Mock(
+            return_value={
+                "reputation": -5,
+                "buff": {
+                    "FIGHTER": {"tier": 1, "reputation_modifier": 1.5},
+                    "SPEAKER": {"tier": 1, "reputation_modifier": 1.5},
+                },
+            }
+        )
         focus.handle_focus()
 
         self.assertEqual(starting_relation + amount, game.clan.reputation)
 
     def test_threaten_outsiders_buff_modifier(self):
         self.change_setting("threaten_outsiders")
-
+        focus.get_config = Mock(
+            return_value={
+                "reputation": -5,
+                "buff": {
+                    "FIGHTER": {"tier": 1, "reputation_modifier": 1.5},
+                    "SPEAKER": {"tier": 1, "reputation_modifier": 1.5},
+                },
+            }
+        )
         for skill in list(get_config("focus.threaten_outsiders.buff").keys()):
             game.clan.deputy.skills.primary = Skill(SkillPath[skill], 10)
 
@@ -217,7 +279,15 @@ class TestFocus(unittest.TestCase):
 
         starting_relation = game.clan.reputation
         amount = get_config("focus.seek_outsiders.reputation")
-
+        focus.get_config = Mock(
+            return_value={
+                "reputation": 5,
+                "buff": {
+                    "SPEAKER": {"tier": 1, "relation_modifier": 1.5},
+                    "SENSE": {"tier": 1, "relation_modifier": 1.5},
+                },
+            }
+        )
         focus.handle_focus()
 
         self.assertEqual(starting_relation + amount, game.clan.reputation)
@@ -225,6 +295,15 @@ class TestFocus(unittest.TestCase):
     def test_seek_outsiders_buff_modifier(self):
         self.change_setting("seek_outsiders")
 
+        focus.get_config = Mock(
+            return_value={
+                "reputation": 5,
+                "buff": {
+                    "SPEAKER": {"tier": 1, "reputation_modifier": 1.5},
+                    "SENSE": {"tier": 1, "reputation_modifier": 1.5},
+                },
+            }
+        )
         for skill in list(get_config("focus.seek_outsiders.buff").keys()):
             game.clan.deputy.skills.primary = Skill(SkillPath[skill], 10)
             starting_relation = game.clan.reputation
@@ -243,6 +322,16 @@ class TestFocus(unittest.TestCase):
         game.clan.clans_in_focus = [game.clan.all_other_clans[0].name]
         starting_relation = game.clan.all_other_clans[0].relations
         amount = get_config("focus.sabotage_other_clans.relation")
+
+        focus.get_config = Mock(
+            return_value={
+                "relation": 2,
+                "buff": {
+                    "STEALTH": {"tier": 1, "relation_modifier": 1.5},
+                    "MEDIATOR": {"tier": 1, "relation_modifier": 1.5},
+                },
+            }
+        )
         focus.handle_focus()
 
         self.assertEqual(
@@ -262,6 +351,15 @@ class TestFocus(unittest.TestCase):
                 * get_config(
                     f"focus.sabotage_other_clans.buff.{skill}.relation_modifier"
                 )
+            )
+            focus.get_config = Mock(
+                return_value={
+                    "relation": 2,
+                    "buff": {
+                        "STEALTH": {"tier": 1, "relation_modifier": 1.5},
+                        "MEDIATOR": {"tier": 1, "relation_modifier": 1.5},
+                    },
+                }
             )
             focus.handle_focus()
 
@@ -311,6 +409,22 @@ class TestFocus(unittest.TestCase):
         beginning_prey = game.clan.freshkill_pile.total_amount
         amount_prey = 2
 
+        gain_conditions._handle_condition_side_effect = Mock(return_value=None)
+
+        focus.get_config = Mock(
+            return_value={
+                "prey_amounts": [1],
+                "prey_weights": [1],
+                "herb_amounts": [1],
+                "herb_weights": [1],
+                "injury_chance": 1,
+                "chance_increase_per_clan": 0,
+                "relation": -3,
+                "injuries": {"bruises": 1},
+                "buff": {"STEALTH": {"tier": 1, "supply_amount_buff": 1}},
+            }
+        )
+
         focus.handle_focus()
 
         self.assertEqual(
@@ -328,8 +442,8 @@ class TestFocus(unittest.TestCase):
             game.clan.freshkill_pile.total_amount,
             msg=f"Prey supply did not change as expected.",
         )
-        self.assertTrue(self.leader.is_injured())
-        self.assertTrue(self.deputy.is_injured())
+        self.assertTrue(self.leader.temporary_conditions)
+        self.assertTrue(self.deputy.temporary_conditions)
 
     def test_raid_other_clans_buff_supply(self):
         self.change_setting("raid_other_clans")
@@ -347,6 +461,21 @@ class TestFocus(unittest.TestCase):
             cat_amount
             * get_config("focus.raid_other_clans.buff.STEALTH.supply_amount_buff")
         )
+
+        focus.get_config = Mock(
+            return_value={
+                "prey_amounts": [1],
+                "prey_weights": [1],
+                "herb_amounts": [1],
+                "herb_weights": [1],
+                "injury_chance": 1,
+                "chance_increase_per_clan": 0,
+                "relation": -3,
+                "injuries": {"bruises": 1},
+                "buff": {"STEALTH": {"tier": 1, "supply_amount_buff": 1}},
+            }
+        )
+        gain_conditions._handle_condition_side_effect = Mock(return_value=None)
 
         focus.handle_focus()
 
@@ -376,6 +505,33 @@ class TestFocus(unittest.TestCase):
         # there's 2 cats who will hunt, so 2 * prey gathered is what we expect
         amount_prey = 2 * warrior_prey[1]
 
+        focus.get_config = Mock(
+            return_value={
+                "injury_chance_warrior": 1,
+                "illness_chance": 1,
+                "injuries": {"bruises": 1},
+                "illnesses": {"running_nose": 1},
+                "buff": {
+                    "CAMP": {"tier": 1, "gather_max_increase": 1, "prey_increase": 1},
+                    "CLEVER": {"tier": 1, "condition_chance_modifier": 2},
+                },
+                "med_gather_max": 5,
+                "assistant_gather_max": 2.5,
+                "warrior": {
+                    "newleaf": {
+                        "prey_amounts": [2],
+                        "prey_weights": [1],
+                    }
+                },
+                "apprentice": {
+                    "newleaf": {
+                        "prey_amounts": [1],
+                        "prey_weights": [1],
+                    }
+                },
+            }
+        )
+
         focus.handle_focus()
 
         self.assertEqual(
@@ -389,14 +545,7 @@ class TestFocus(unittest.TestCase):
             msg=f"Prey supply did not change as expected.",
         )
         self.assertTrue(
-            all(
-                [
-                    self.leader.is_injured(),
-                    self.deputy.is_injured(),
-                    self.leader.is_ill(),
-                    self.deputy.is_ill(),
-                ]
-            )
+            all([self.leader.temporary_conditions, self.deputy.temporary_conditions])
         )
         game.clan.herb_supply.disable_random = False
 
@@ -423,6 +572,33 @@ class TestFocus(unittest.TestCase):
             warrior_prey[1] + get_config("focus.hoarding.buff.CAMP.prey_increase")
         )
 
+        focus.get_config = Mock(
+            return_value={
+                "injury_chance_warrior": 1,
+                "illness_chance": 1,
+                "injuries": {"bruises": 1},
+                "illnesses": {"running_nose": 1},
+                "buff": {
+                    "CAMP": {"tier": 1, "gather_max_increase": 1, "prey_increase": 1},
+                    "CLEVER": {"tier": 1, "condition_chance_modifier": 2},
+                },
+                "med_gather_max": 5,
+                "assistant_gather_max": 2.5,
+                "warrior": {
+                    "newleaf": {
+                        "prey_amounts": [2],
+                        "prey_weights": [1],
+                    }
+                },
+                "apprentice": {
+                    "newleaf": {
+                        "prey_amounts": [1],
+                        "prey_weights": [1],
+                    }
+                },
+            }
+        )
+
         focus.handle_focus()
 
         self.assertEqual(
@@ -436,13 +612,6 @@ class TestFocus(unittest.TestCase):
             msg=f"Prey supply did not change as expected.",
         )
         self.assertTrue(
-            all(
-                [
-                    self.leader.is_injured(),
-                    self.deputy.is_injured(),
-                    self.leader.is_ill(),
-                    self.deputy.is_ill(),
-                ]
-            )
+            all([self.leader.temporary_conditions, self.deputy.temporary_conditions])
         )
         game.clan.herb_supply.disable_random = False
