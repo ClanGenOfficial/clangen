@@ -308,6 +308,11 @@ class Clan:
                 the_cat.backstory = "clan_founder"
             if the_cat.status.rank == CatRank.APPRENTICE:
                 the_cat.rank_change(CatRank.APPRENTICE, new_thought=False)
+            if not get_config("clan_creation.keep_starting_skills"):
+                if the_cat.skills.primary: 
+                    the_cat.skills.primary.points = 0
+                if the_cat.skills.secondary: 
+                    the_cat.skills.secondary.points = 0
 
         # find non-selected cats from the 12 generated starters
         for c in switch_get_value(Switch.possible_cats):
