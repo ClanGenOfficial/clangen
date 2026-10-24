@@ -268,6 +268,7 @@ class LoadCatFactory(BaseCatFactory):
                 "tortie_marking": kwargs["tortie_marking"],
                 "skin": kwargs.get("skin"),
                 "tint": kwargs.get("tint"),
+                "pattern_tint": kwargs.get("pattern_tint"),
                 "scars": kwargs["scars"],
                 "accessory": kwargs.get("accessory", []),
                 "opacity": kwargs.get("opacity", 100),

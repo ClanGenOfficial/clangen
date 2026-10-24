@@ -1,6 +1,6 @@
 {
     "name": "MarbledRecipe",
-    "layer_order": ["1", "2", "3", "4", ["5", "6"], "7", ["8", "9"], "10", "11"],
+    "layer_order": ["1", "2", "3", ["4", ["5", "6"], "7", ["8", "9"], "9.1"], "10", "11"],
     "layers": {
         "11": {
             "group_name": "EXOTICMUZZLE",
@@ -14,6 +14,11 @@
         },
 
 
+        "9.1":{
+            "group_name": "MARBLEDPATTERN",
+            "color": "pattern_tint",
+            "blend_mode": "pattern_blend"
+        },
         "9": {
             "group_name": "MARBLEDPATTERN",
             "blend_mode": "mask"
@@ -101,7 +106,7 @@
         },
         {
             "colors": "BLOSSOM",
-            "layer_order": ["1", "2","1.5", "3", "4", ["5", "6"], "7", ["7.5","8", "9"], "10", "11"],
+            "layer_order": ["1", "2","1.5", "3", ["4", ["5", "6"], "7", ["7.5","8", "9"],"9.1"], "10", "11"],
             "layers": {
                 "11": {
                     "group_name": "EXOTICMUZZLE",
@@ -168,7 +173,7 @@
         },
         {
             "colors": "RUST",
-            "layer_order": ["1", "2", "3", "4", ["5", "6"], "7", ["8", "9"], "10", "11"],
+            "layer_order": ["1", "2", "3", ["4", ["5", "6"], "7", ["8", "9"], "9.1"], "10", "11"],
             "layers": {
                 "8": {
                     "group_name": "BACKTAILPATTERNGRAD",
