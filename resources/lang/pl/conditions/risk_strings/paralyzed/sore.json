@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "paralyzed_sore0",
+        "strings": [
+            "m_c stares, curious. {PRONOUN/m_c/subject/CAP} can't feel the spasms wracking {PRONOUN/m_c/poss} paralyzed half, but r_c0 seems worried anyway, completely focused on massaging them out."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "paralyzed_sore1",
+        "strings": [
+            "Despite all the work {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} put into strengthening {PRONOUN/m_c/poss} front half, today m_c is sore and uncomfortable from the effort it takes to get anywhere."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "event_id": "tick_fever0",
+        "strings": [
+            "m_c died of tick fever.",
+            "m_c couldn't pull through, and the Clan is harshly reminded how important it is to get every tick."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        },
+        "death": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "history": "m_c died of tick fever."
+            }
+        ]
+    }
+]

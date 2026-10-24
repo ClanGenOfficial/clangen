@@ -40,11 +40,11 @@
             }
         ]
     },
+    
     {
         "event_id": "like_inc_med3",
         "strings": [
             "m_c waves to r_c with {PRONOUN/m_c/poss} tail as their patrols cross paths on the territory.",
-            "m_c calls to r_c to catch {PRONOUN/m_c/object} a fat mouse on {PRONOUN/r_c/poss} next hunting patrol.",
             "m_c and r_c have a fun patrol and plan to tell stories about it later to their Clanmates.",
             "m_c stands up for r_c on a border patrol when confronted by another Clan.",
             "m_c got into an unexpectedly in-depth conversation while on a patrol with r_c.",
@@ -52,6 +52,51 @@
             "m_c and r_c challenge one another during a hunting patrol.",
             "m_c hopes {PRONOUN/m_c/subject} {VERB/m_c/are/is} assigned to patrol with r_c tomorrow."
         ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "deputy",
+                    "leader",
+                    "warrior"
+                ],
+                "health": {
+                    "working": true
+                }
+            },
+            "r_c": {
+                "status": [
+                    "apprentice",
+                    "deputy",
+                    "leader",
+                    "warrior"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "like_inc_med3b",
+        "strings": [
+            "m_c calls to r_c to catch {PRONOUN/m_c/object} a fat mouse on {PRONOUN/r_c/poss} next hunting patrol."
+            ],
         "involved_cats": {
             "m_c": {
                 "status": [
@@ -67,7 +112,10 @@
                     "deputy",
                     "leader",
                     "warrior"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             }
         },
         "relationship_changes": [
@@ -742,10 +790,48 @@
     {
         "event_id": "like_warrior_inc_med1",
         "strings": [
-            "m_c greets r_c as {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} exiting the warriors' den.",
             "m_c chats quietly with r_c while they're both on camp guard duty.",
             "m_c thanks r_c for covering for {PRONOUN/m_c/object} during a patrol earlier."
         ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "warrior"
+                ],
+                "health": {
+                    "working": true
+                }
+            },
+            "r_c": {
+                "status": [
+                    "warrior"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "like_warrior_inc_med1b",
+        "strings": [
+            "m_c greets r_c as {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} exiting the warriors' den."
+            ],
         "involved_cats": {
             "m_c": {
                 "status": [

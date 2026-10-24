@@ -835,7 +835,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "persistent headaches"
+                            "persistent_headaches"
                         ]
                     }
                 ]
@@ -882,7 +882,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "seizure prone"
+                            "seizure_prone"
                         ]
                     }
                 ]
@@ -1551,7 +1551,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "small cut"
+                            "small_cut"
                         ],
                         "scar_pool_override": [
                             "BRIDGE",
@@ -4671,7 +4671,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "dislocated joint"
+                            "dislocated_joint"
                         ]
                     }
                 ]
@@ -4842,7 +4842,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "severe headache"
+                            "severe_headache"
                         ]
                     }
                 ]
@@ -5499,7 +5499,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "dislocated joint"
+                            "dislocated_joint"
                         ]
                     }
                 ]

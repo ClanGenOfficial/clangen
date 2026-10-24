@@ -1,0 +1,13 @@
+[
+    {
+        "event_id": "infection0",
+        "strings": [
+            "The infection in m_c's wound has abated.",
+            "m_c's wound is no longer infected.",
+            "m_c's infection is gone."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

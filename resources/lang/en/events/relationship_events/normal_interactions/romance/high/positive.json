@@ -226,9 +226,66 @@
     },
     {
         "event_id": "rom_inc_high_warrior7",
-        "strings": [
+        "strings":[
             "m_c came back to camp sulking after failing to catch r_c's favorite prey for {PRONOUN/r_c/object} but {PRONOUN/r_c/subject} {VERB/r_c/doesn't/didn't} seem to care, nuzzling into m_c's neck.",
-            "m_c goes out of {PRONOUN/m_c/poss} way to catch r_c's favorite prey.",
+            "m_c goes out of {PRONOUN/m_c/poss} way to catch r_c's favorite prey."
+            ],
+            
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "deputy",
+                    "leader",
+                    "warrior"
+                ],
+                "health": {
+                    "working": true
+                }
+            },
+            "r_c": {
+                "status": [
+                    "apprentice",
+                    "deputy",
+                    "leader",
+                    "warrior"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "adores"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "romance",
+                    "comfort"
+                ],
+                "amount": 15
+            }
+        ]
+    },
+    {
+        "event_id": "rom_inc_high_warrior7b",
+        "strings": [
             "m_c asks r_c to help {PRONOUN/m_c/object} freshen up on some battle moves, complimenting {PRONOUN/r_c/object} constantly throughout.",
             "m_c compliments r_c on {PRONOUN/r_c/poss} catch during a hunting patrol, which causes {PRONOUN/r_c/object} to purr."
         ],
@@ -239,7 +296,10 @@
                     "deputy",
                     "leader",
                     "warrior"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             },
             "r_c": {
                 "status": [
@@ -247,7 +307,10 @@
                     "deputy",
                     "leader",
                     "warrior"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             }
         },
         "relationship_constraint": [
