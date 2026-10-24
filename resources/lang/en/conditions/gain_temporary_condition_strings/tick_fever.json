@@ -47,7 +47,7 @@
         "event_id": "med_gain_tick_fever0",
         "strings": [
             "m_c feverishly searches the herb stores. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} gotten tick fever, and goldenrod or mullein are best at hastening recovery.",
-            "Tick fever is almost never fatal. But even a medicine cat like m_c finds that a bit hard to believe, shivering miserably with fever and headache in the medicine den's most secluded nest.",
+            "Tick fever is almost never fatal. But even a medicine cat like m_c can't help but find that a bit hard to believe, shivering miserably with fever and headache in the medicine den's most secluded nest.",
             "Fever, rash, bad headache, all following a tick bite? m_c's self diagnosis of tick fever is easy, not that that makes {PRONOUN/m_c/object} feel any better.",
             "A tick latched onto m_c while {PRONOUN/m_c/subject} {VERB/m_c/were/was} gathering herbs. m_c found and plucked it off that night, but in few days {PRONOUN/m_c/subject} {VERB/m_c/develop/develops} a rash and fever."
         ],
@@ -61,7 +61,7 @@
         }
     },
     {
-        "event_id": "only_med_gain_greencough0",
+        "event_id": "only_med_gain_tick_fever0",
         "tags": [
             "-clan:medicine cat",
             "-clan:medicine cat apprentice"
