@@ -19,6 +19,7 @@ from scripts.events_module.condition.generate_condition_event import (
 from scripts.cat.microservices.add_to_clan import add_dependents_to_clan, add_to_clan
 from scripts.cat_relations.cat_handle_funcs import create_relationships_new_cat
 from scripts.config import get_config
+from scripts.cat.cats import Cat
 
 # pylint: enable=line-too-long
 import traceback
@@ -88,6 +89,7 @@ from scripts.clan_package.cotc import (
 from scripts.clan_package.get_clan_cats import (
     find_alive_cats_with_rank,
     get_living_clan_cat_count,
+    get_random_player_clan_cat,
 )
 
 logger = logging.getLogger(__name__)
@@ -319,6 +321,8 @@ def one_moon():
 
     # Clear the list of cats that died this moon.
     game.just_died.clear()
+
+    check_sinkhole()
 
     # Check for mentorless apprentices
     check_missing_mentors()
@@ -1703,3 +1707,47 @@ def check_missing_mentors():
 
 
 load_war_resources()
+
+
+def check_sinkhole():
+    """The Sinkhole events for cruel card"""
+    if not get_config("cruel_season.event.sinkhole"):
+        return
+
+    if game.clan.age % 12 != 0:
+        return
+
+    percent_killed = random.randint(0, 50) / 100
+    cat_amount = get_living_clan_cat_count(Cat)
+
+    count_to_kill = round(cat_amount * percent_killed)
+    dead_cats = []
+    IDs = []
+
+    while len(dead_cats) < count_to_kill:
+        c = get_random_player_clan_cat(Cat, not_allowed=dead_cats)
+        c = Cat.fetch_cat(c)
+        if c and c not in dead_cats:
+            dead_cats.append(c)
+            c.die()
+            if c.status.is_leader:
+                game.clan.leader_lives -= 1
+            c.history.add_death(i18n.t("cruel_season.special_text.sinkhole_history"))
+            IDs.append(c.ID)
+
+    names = adjust_list_text([str(meow.name) for meow in dead_cats])
+    game.cur_events_list.insert(
+        0,
+        EventInformation(
+            event_text_adjust(
+                Cat,
+                i18n.t(
+                    "cruel_season.special_text.sinkhole_base",
+                    dead_name=str(names),
+                    clan_name=str(game.clan.name),
+                    count=count_to_kill,
+                ),
+            ),
+            cats_involved=IDs,
+        ),
+    )
