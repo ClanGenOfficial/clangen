@@ -21,7 +21,7 @@ Within this folder are multiple files:
 | `apprentice.json`              | Ceremonies for cats becoming warrior apprentices.                                                                                                                           |
 | `deputy.json`                  | Ceremonies for cats becoming deputies.                                                                                                                                      |
 | `elder.json`                   | Ceremonies for cats retiring to become elders.                                                                                                                              |
-| `leader.json`                  | Ceremonies for cats becoming leader (this does not include the life-receiving ceremony)                                                                                     |
+| `leader.json`                  | Ceremonies for cats becoming leader (this does not include the life-receiving ceremony).                                                                                     |
 | `mediator.json`                | Ceremonies for cats becoming mediators.                                                                                                                                     |
 | `mediator_apprentice.json`     | Ceremonies for cats becoming mediator apprentices.                                                                                                                          |
 | `medicine_cat.json`            | Ceremonies for cats becoming medicine cats.                                                                                                                                 |

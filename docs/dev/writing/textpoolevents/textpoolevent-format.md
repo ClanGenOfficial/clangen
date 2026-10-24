@@ -167,7 +167,7 @@ Used to dictate some odds-and-ends about event constraints: [General Tags](../re
 | 4   | Common      |
 
 !!! tip
-    It's good to consider frequency as relative to that event's set up.  While players likely aren't sending out a patrol of 2 apprentices every moon, that doesn't mean a 2-app patrol event should be marked as Rare frequency. Rather, consider it in terms of "in 10 *instances* of this patrol set up, how often should this specific patrol appear?". Seeing this sort of patrol in 4/10 instances would mean it's a common event! Seeing it just once within those 10 instances would mean it's a very rare event.
+    It's good to consider frequency as relative to that event's set up. While players likely aren't sending out a patrol of 2 apprentices every moon, that doesn't mean a 2-app patrol event should be marked as Rare frequency. Rather, consider it in terms of "in 10 *instances* of this patrol set up, how often should this specific patrol appear?". Seeing this sort of patrol in 4/10 instances would mean it's a common event! Seeing it just once within those 10 instances would mean it's a very rare event.
 
 !!! warning
     Don't try to boost an event's frequency to make up for it being heavily constrained! While we used to do that with our old system, the new code automatically decides how to weight an event according to its constraints in a way that is completely divorced from the frequency. We decide event rarities and the code decides if events should be prioritized in specific instances.
@@ -291,7 +291,7 @@ For example:
 ```
 
 !!! caution
-    Be careful about referencing actions only specific types of cats take! For example, if an event refers to patrolling, consider if you've adequately constrained the event to only allow cats who *can* go on a patrol (of course, that isn't necessary for patrol outcome events! those cats will always be patrol-worthy.) We don't want kittens talking about their trip to the Gathering!
+    Be careful about referencing actions only specific types of cats take! For example, if an event refers to patrolling, consider if you've adequately constrained the event to only allow cats who *can* go on a patrol (of course, that isn't necessary for patrol outcome events! Those cats will always be patrol-worthy.) We don't want kittens talking about their trip to the Gathering!
 
 ***
 
