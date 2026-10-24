@@ -331,19 +331,23 @@ def _check_risks(
     :param conditions_to_remove: The current list of conditions being removed. This will be modified within this function and returned.
     :return: A tuple of two lists: A list of new events created, and a list of conditions to remove
     """
+    event_list = []
+    if condition.current_complication:
+        # early return if there's already a complication on the condition
+        return event_list, conditions_to_remove
+
     current_conditions = {
         c.name
         for c in cat.temporary_conditions + cat.permanent_conditions
         if c != condition
     }
-    event_list = []
 
     full_condition_dict = TEMPORARY_CONDITIONS.copy()
     full_condition_dict.update(PERMANENT_CONDITIONS)
 
     # CHECK RISKS
     for risk, chance in condition.risks.items():
-        if risk in cat.temporary_conditions:
+        if risk in cat.temporary_conditions + cat.permanent_conditions:
             # don't double up
             continue
 
