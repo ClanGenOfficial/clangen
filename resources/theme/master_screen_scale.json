@@ -1445,19 +1445,19 @@
             }
         }
     },
-    "#english_lang_button": {
+    "#first_lang_button": {
         "images": {
             "normal_image": {
-                "path": "resources\/images\/buttons\/english.png"
+                "path": "resources\/images\/buttons\/first_lang.png"
             },
             "hovered_image": {
-                "path": "resources\/images\/buttons\/english_hover.png"
+                "path": "resources\/images\/buttons\/first_lang_hover.png"
             },
             "selected_image": {
-                "path": "resources\/images\/buttons\/english_hover.png"
+                "path": "resources\/images\/buttons\/first_lang_hover.png"
             },
             "disabled_image": {
-                "path": "resources\/images\/buttons\/english_unavailable.png"
+                "path": "resources\/images\/buttons\/first_lang_unavailable.png"
             }
         }
     },
