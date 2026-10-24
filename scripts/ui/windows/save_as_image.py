@@ -9,6 +9,7 @@ from scripts.housekeeping.datadir import get_saved_images_dir, open_data_dir
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.windows.window_base_class import GameWindow
 from scripts.ui.scale import ui_scale
+from scripts.ui.icon import Icon
 
 
 class SaveAsImageWindow(GameWindow):
@@ -42,28 +43,41 @@ class SaveAsImageWindow(GameWindow):
             anchors={"centerx": "centerx"},
         )
 
-        self.small_size_button = UIImageButton(
+        self.small_size_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((54, 50), (97, 30))),
-            "",
-            object_id="#image_small_button",
+            "windows.small_image_button",
+            get_button_dict(ButtonStyles.PROFILE_LEFT, (97, 30)),
+            object_id="@buttonstyles_profile_left",
             container=self,
             starting_height=2,
         )
         self.small_size_button.disable()
 
-        self.medium_size_button = UIImageButton(
-            ui_scale(pygame.Rect((151, 50), (97, 30))),
-            "",
-            object_id="#image_medium_button",
+        self.medium_size_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((0, 0), (97, 30))),
+            "windows.medium_image_button",
+            get_button_dict(ButtonStyles.PROFILE_MIDDLE, (97, 30)),
+            object_id="@buttonstyles_profile_middle",
             container=self,
+            anchors={
+                "left_target": self.small_size_button,
+                "centery": "centery",
+                "centery_target": self.small_size_button,
+            },
             starting_height=2,
         )
 
-        self.large_size_button = UIImageButton(
-            ui_scale(pygame.Rect((248, 50), (97, 30))),
-            "",
-            object_id="#image_large_button",
+        self.large_size_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((0, 0), (97, 30))),
+            "windows.large_image_button",
+            get_button_dict(ButtonStyles.PROFILE_RIGHT, (97, 30)),
+            object_id="@buttonstyles_profile_middle",
             container=self,
+            anchors={
+                "left_target": self.medium_size_button,
+                "centery": "centery",
+                "centery_target": self.medium_size_button,
+            },
             starting_height=2,
         )
 
