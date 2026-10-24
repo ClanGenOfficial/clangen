@@ -1,9 +1,6 @@
 {
     "zh-Hans": {
-        "moons_age": {
-            "one": "1 moon",
-            "many": "%{count} moons"
-        },
+        "moons_age": "%{count}个月",
         "moons_age_in_death": {
             "one": "dead for 1 moon",
             "many": "dead for %{count} moons"
@@ -164,12 +161,12 @@
         "cousin_male": "cousin",
         "cousin_female": "cousin",
         "cousin_nb": "cousin",
-        "clan": "%{name}Clan",
-        "starclan": "StarClan",
+        "clan": "%{name}族",
+        "starclan": "星族",
         "dark_forest": "Dark Forest",
         "the_dark_forest": "The Dark Forest",
         "unknown_residence": "Unknown Residence",
-        "your_clan": "Your Clan",
+        "your_clan": "您的族",
         "cotc": "Cats Outside the Clan",
         "empty": "empty",
         "none": "none",
