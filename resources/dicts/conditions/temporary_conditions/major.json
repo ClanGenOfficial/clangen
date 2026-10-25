@@ -212,11 +212,11 @@
         "mortality": {},
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
-        "side_effect": {},
-        "progression": {},
-        "risks": {
+        "side_effect": {
             "exhausted": 0.25
         },
+        "progression": {},
+        "risks": {},
         "treatment_strength": {
             "1": [
                 "juniper"
@@ -248,7 +248,7 @@
                 "allow_scar": false
             },
             "persistent_exhaustion": {
-                "chance": 0.02,
+                "chance": 0.05,
                 "when": "HEALED",
                 "allow_scar": false
             }

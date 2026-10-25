@@ -193,7 +193,7 @@
             "grief_stricken": 0.2,
             "absent": 0.02,
             "persistent_exhaustion": 0.06,
-            "exhausted": 0.1
+            "exhausted": 0.2
         },
         "treatment_strength": {
             "1": [

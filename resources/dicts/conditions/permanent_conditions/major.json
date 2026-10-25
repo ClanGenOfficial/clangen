@@ -121,7 +121,7 @@
             "running_nose": 0.25,
             "redcough": 0.05,
             "weakened_muscles": 0.15,
-            "persistent_exhaustion": 0.1,
+            "persistent_exhaustion": 0.05,
             "exhausted": 0.2
         },
         "treatment_strength": {
