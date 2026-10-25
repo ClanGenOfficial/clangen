@@ -525,6 +525,7 @@ class Patrol:
             interactable_cats=self.involved_cats["patrol_cats"],
             possible_events=success_outcomes,
             other_clan=self.other_clan,
+            chosen_poi=self.chosen_poi if self.chosen_poi else None,
             ensured_id=debug_outcome,
         )
 
@@ -540,6 +541,7 @@ class Patrol:
             interactable_cats=self.involved_cats["patrol_cats"],
             possible_events=fail_outcomes,
             other_clan=self.other_clan,
+            chosen_poi=self.chosen_poi if self.chosen_poi else None,
             ensured_id=debug_outcome,
         )
         if not chosen_failure:

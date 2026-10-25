@@ -7,11 +7,16 @@
         ],
         "involved_cats": {
             "m_c": {
-                "age": ["senior"]
+                "age": [
+                    "senior"
+                ]
             },
             "r_c0": {
                 "status": [
                     "medicine cat"
+                ],
+                "group": [
+                    "match:m_c"
                 ]
             }
         }
@@ -23,7 +28,9 @@
         ],
         "involved_cats": {
             "m_c": {
-                "age": ["senior"]
+                "age": [
+                    "senior"
+                ]
             }
         }
     },
@@ -34,7 +41,9 @@
         ],
         "involved_cats": {
             "m_c": {
-                "age": ["-senior"]
+                "age": [
+                    "-senior"
+                ]
             }
         }
     }
