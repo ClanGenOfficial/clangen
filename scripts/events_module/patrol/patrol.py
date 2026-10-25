@@ -57,8 +57,6 @@ def get_patrol_temperament(patrol_cats: list, patrol_leader=None) -> tuple[str, 
             weight = 2
         else:  # medicine cat and all others
             weight = 1
-        if patrol_leader is not None and cat == patrol_leader:
-            weight += 1
 
         sociability += [cat.personality.sociability] * weight
         aggression += [cat.personality.aggression] * weight
