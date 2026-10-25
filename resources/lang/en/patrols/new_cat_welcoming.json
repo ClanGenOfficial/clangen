@@ -12703,5 +12703,337 @@
                 ]
             }
         ]
+    },
+    {
+        "event_id": "gen_border_carrionbeach_kit_welcoming",
+        "types": ["border"],
+        "frequency": 1,
+        "poi": {
+            "name": ["terrain_carrionbeach"]
+        },
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ]
+        },
+        "chance_of_success": 40,
+        "patrol_art": "POI",
+        "intro_strings": [
+            "The patrol decides to take a shortcut through POI on their way to the border. Part way through, they're alerted to another cat's presence by tiny, squealing cries. There's a kit in the surf's edge, wrapped up in the faux spider silk that Twolegs use for fishing!"
+        ],
+        "decline_strings": [
+            "The patrol frantically glances around, expecting to see more kits. When they glance back, a wave is receding, and the kit is gone."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 15,
+                "outcome_art": "cat_sprites/bch_bord_foundkits_Kt",
+                "strings": [
+                    "p_l carefully finds the kit's scruff under all the Twoleg silk and carries {PRONOUN/n_c0/object} away from the ocean, just for safety's sake. The patrol crowds around and yanks at the silk while p_l asks what happened. The kit explains that {PRONOUN/n_c0/subject}{VERB/n_c0/'ve/'s} been stuck at POI ever since a really big monster brought {PRONOUN/n_c0/object} here. {PRONOUN/n_c0/subject/CAP} smelled fish inside this silky stuff, and {PRONOUN/n_c0/subject} {VERB/n_c0/were/was} hungry, so {PRONOUN/n_c0/subject} crawled in. Oh, <i>kit.</i> Bet {PRONOUN/n_c0/subject} won't do that again, will {PRONOUN/n_c0/subject}? p_l says, grooming between the kit's ears."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "kitten"
+                        ],
+                        "status": ["kittypet"],
+                        "backstory": ["abandoned1", "abandoned2", "kittypet1"]
+                    }
+                },
+                "join": [
+                    {
+                        "cats": ["n_c0"],
+                        "new_status": ["kitten"],
+                        "change_name": true
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": ["n_c0"],
+                        "condition": ["sprain"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "amount": 10,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from was grateful to cat_to for rescuing {PRONOUN/cat_from/object} and bringing {PRONOUN/cat_from/object} to c_n"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 1
+                }
+            },
+            {
+                "frequency": 2,
+                "exp_gained": 20,
+                "outcome_art": "cat_sprites/gen_catwithkit_WrKt",
+                "strings": [
+                    "The patrol examines the poor kit - {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} tangled up worse than a sleeping otter in the kelp. p_l starts asking the kit where {PRONOUN/n_c0/poss} parents are, and s_c0 tunes their voices out as {PRONOUN/s_c0/subject} {VERB/s_c0/study/studies} the Twoleg silk. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/feel/feels} like {PRONOUN/s_c0/subject} can almost see a pattern... {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/give/gives} a bite here, a bite there.... one more bite in <i>that</i> spot right there... The kit gives {PRONOUN/n_c0/self} a good shake, stands up, and is free! The patrol cheers and gives {PRONOUN/n_c0/object} a dolphin-ride back to camp."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "kitten"
+                        ],
+                        "status": ["kittypet"],
+                        "backstory": ["abandoned1", "abandoned2", "kittypet1"]
+                    },
+                    "s_c0": {
+                        "stat": {
+                            "skill": ["CLEVER,1"]
+                        }
+                    }
+                },
+                "join": [
+                    {
+                        "cats": ["n_c0"],
+                        "new_status": ["kitten"],
+                        "change_name": true
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "amount": 15,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from was grateful to cat_to for rescuing {PRONOUN/cat_from/object} and bringing {PRONOUN/cat_from/object} to c_n"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 1
+                }
+            },
+            {
+                "frequency": 2,
+                "exp_gained": 20,
+                "outcome_art": "cat_sprites/gen_catwithkit_WrKt",
+                "strings": [
+                    "The patrol tugs at the silk, but it only makes the kit yelp in pain. They stop, but the kit begins crying, asking if {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} going to be stuck like this forever. Of course not! s_c0 settles down on {PRONOUN/s_c0/poss} belly as p_l asks the kit {PRONOUN/n_c0/poss} story. Well, {PRONOUN/n_c0/subject} crawled into {PRONOUN/n_c0/poss} housefolk's bag to play with a shiny, and then it got dark, and <i>then</i>... s_c0 listens as {PRONOUN/s_c0/subject} {VERB/s_c0/let/lets} {PRONOUN/s_c0/poss} whiskers trail over the mess of silk. That thread goes there, under this other one, and wraps around a paw... It takes a quarter-day, but s_c0 unwinds the entire mess of silken threads."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "kitten"
+                        ],
+                        "status": ["kittypet"],
+                        "backstory": ["abandoned1", "abandoned2", "kittypet1"]
+                    },
+                    "s_c0": {
+                        "stat": {
+                            "skill": ["SENSE,1"]
+                        }
+                    }
+                },
+                "join": [
+                    {
+                        "cats": ["n_c0"],
+                        "new_status": ["kitten"],
+                        "change_name": true
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "amount": 15,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from was grateful to cat_to for rescuing {PRONOUN/cat_from/object} and bringing {PRONOUN/cat_from/object} to c_n"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 1
+                }
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_drowning_Wr",
+                "strings": [
+                    "The patrol crowds around and yanks at the silk while p_l asks what happened. The kit explains that {PRONOUN/n_c0/subject}{VERB/n_c0/'ve/'s} been stuck at POI ever since a really big monster- suddenly a sneaker wave crashes down onto the cats! r_c0 grabs for the kit, but misses as a flood of seawater and sand obscures {PRONOUN/r_c0/poss} vision. All of the cats are knocked over, and some are dragged out by the water before they can get their paws back under them. r_c0 comes back up hacking up water, and the kit is gone without a trace."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "kitten"
+                        ],
+                        "status": ["kittypet"]
+                    },
+                    "r_c0": {}
+                },
+                "death": [
+                    {
+                        "cats": ["n_c0"],
+                        "history": "This cat drowned when {PRONOUN/m_c/subject} {VERB/m_c/were/was} swept away from a c_n patrol and out to sea."
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": ["r_c0"],
+                        "condition": ["water_in_lungs"],
+                        "death_history": "This cat died from water in {PRONOUN/m_c/poss} lungs after a sneaker wave overwhelmed {PRONOUN/m_c/object} while rescuing a kit."
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "some_clan",
+                            "high_lawful"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "amount": -10,
+                        "values": [
+                            "respect"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to neglected the basic safety step of moving a trapped kit away from the ocean, and the kit drowned as a result."
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": -1
+                }
+            },
+            {
+                "frequency": 2,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_bord_scaredkit_Kt",
+                "strings": [
+                    "The patrol examines the poor kit - {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} tangled up worse than a sleeping otter in the kelp. p_l starts asking the kit where {PRONOUN/n_c0/poss} parents are, and s_c0 tunes their voices out as {PRONOUN/s_c0/subject} {VERB/s_c0/study/studies} the Twoleg silk. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/think/thinks} {PRONOUN/s_c0/subject} could bite through it. On the second bite, the kit <i>screams.</i> {PRONOUN/n_c0/subject/CAP} thrashes loose and sprints away into POI. No matter how the patrol tries, they can't find the kit. There's just too many tiny places for {PRONOUN/n_c0/object} to hide."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "kitten"
+                        ],
+                        "status": ["kittypet"]
+                    },
+                    "s_c0": {
+                        "stat": {
+                            "skill": ["CLEVER,0"]
+                        }
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": ["n_c0"],
+                        "condition": ["small_cut"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "amount": -15,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_to BIT cat_from, really hard, and cat_from had to run away and hide in POI!"
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "amount": -10,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "log": {
+                            "cats_from": "cat_to was careless when freeing a trapped kit and accidentally bit the poor thing."
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": -1
+                }
+            },
+            {
+                "frequency": 2,
+                "exp_gained": 0,
+                "strings": [
+                    "The patrol tugs at the silk, but it only makes the kit yelp in pain. They stop, but the kit begins crying, asking if {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} going to be stuck like this forever. Of course not! s_c0 settles down on {PRONOUN/s_c0/poss} belly as p_l asks the kit {PRONOUN/n_c0/poss} story. Well, {PRONOUN/n_c0/subject} crawled into {PRONOUN/n_c0/poss} housefolk's bag to play with a shiny, and then it got dark, and <i>then</i>... s_c0 listens as {PRONOUN/s_c0/subject} {VERB/s_c0/let/lets} {PRONOUN/s_c0/poss} whiskers trail over the mess of silk. That thread goes there, under this other one... Wait, no, does it? Is it this thread or that thread? s_c0 gets confused and takes so long that the local Twolegs come back with another batch of carrion. The Clancats scatter, but the kit wriggles up to the Twolegs and lets them lift {PRONOUN/n_c0/object} up into their weird paws. At least the little kittypet isn't trapped anymore..."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "kitten"
+                        ],
+                        "status": ["kittypet"]
+                    },
+                    "s_c0": {
+                        "stat": {
+                            "skill": ["SENSE,0"]
+                        }
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ]
+            }
+        ]
     }
 ]
