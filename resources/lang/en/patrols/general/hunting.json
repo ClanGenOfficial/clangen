@@ -4187,37 +4187,6 @@
         ],
         "success_outcomes": [
             {
-                "frequency": 3,
-                "outcome_art": "hunt_general_intro",
-                "strings": [
-                    "Intrigued, the patrol agrees to the competition, everyone splitting up and catching as much prey as they can find. It makes for a fun afternoon, and every cat brings back an impressive haul."
-                ],
-                "exp_gained": 10,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to had a successful hunt together."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
                 "frequency": 4,
                 "outcome_art": "hunt_general_intro",
                 "strings": [
@@ -4318,7 +4287,7 @@
                 "frequency": 4,
                 "outcome_art": "hunt_general_intro",
                 "strings": [
-                    "The competition goes great, with every cat enjoying the friendly rivalry... until s_c2 and s_c1 take that rivalry a little too far, getting into an argument on what prey is worth more. Luckily, s_c1 is there to smooth things over, coming up with a compromise that both cats grudgingly admit is fair."
+                    "The competition goes great, with every cat enjoying the friendly rivalry... until s_c2 and s_c3 take that rivalry a little too far, getting into an argument on what prey is worth more. Luckily, s_c1 is there to smooth things over, coming up with a compromise that both cats grudgingly admit is fair."
                 ],
                 "involved_cats": {
                     "s_c1": {
@@ -4437,6 +4406,37 @@
                         "amount": -5,
                         "log": {
                             "cats_from": "cat_from wasn't happy that the whole patrol let cat_to win a competition just to appease {PRONOUN/cat_to/object} ego."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "outcome_art": "hunt_general_intro",
+                "strings": [
+                    "Intrigued, the patrol agrees to the competition, everyone splitting up and catching as much prey as they can find. It makes for a fun afternoon, and every cat brings back an impressive haul."
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had a successful hunt together."
                         }
                     }
                 ],
