@@ -592,9 +592,6 @@
         "event_id": "med_app_POI_moonplace1",
         "involved_cats": {
             "m_c": {
-                "has_mentor": {
-                    "current": true
-                },
                 "stat": {
                     "trait": [
                         "charismatic",
@@ -660,9 +657,6 @@
         "event_id": "med_app_POI_moonplace2",
         "involved_cats": {
             "m_c": {
-                "has_mentor": {
-                    "current": true
-                },
                 "stat": {
                     "trait": ["calm", "thoughtful", "wise", "lonesome", "careful", "gloomy"],
                     "skill": ["STAR,0", "PROPHET,0", "OMEN,0", "CLAIRVOYANT,0"],
