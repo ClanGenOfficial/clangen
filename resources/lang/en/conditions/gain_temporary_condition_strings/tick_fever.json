@@ -16,6 +16,9 @@
     },
     {
         "event_id": "with_med_gain_tick_fever0",
+        "tags": [
+            "clan:warrior"
+        ],
         "strings": [
             "After a tick bite becomes a fever and rash, m_c goes to the medicine den, where r_c0 diagnoses {PRONOUN/m_c/object} with tick fever.",
             "After diagnosing m_c with tick fever, r_c0 instructs every Clanmate to check themselves for bites. One infected bug often means more.",
@@ -85,7 +88,8 @@
         "event_id": "no_med_gain_tick_fever0",
         "tags": [
             "-clan:medicine cat(min:1)",
-            "-clan:medicine cat apprentice(min:1)"
+            "-clan:medicine cat apprentice(min:1)",
+            "clan:warrior"
         ],
         "strings": [
             "Nature doesn't care if c_n is without a medicine cat. It's tick season, and one of the horrible little parasites has given m_c tick fever.",
