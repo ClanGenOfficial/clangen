@@ -251,17 +251,12 @@
                     "r_c1 explodes out of the leaf drift, bowling over r_c2! Laughing, p_l bats at r_c0, claws sheathed, and skids off the path into the leaves as the patrol devolves into rustling, raucous, riotous fun."
                 ],
                 "involved_cats": {
-                    "r_c0": {},
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "r_c2": {
                         "status": [
                             "apprentice"
                         ]
-                    }
+                    },
+                    "r_c0": {}
                 },
                 "exp_gained": 10,
                 "relationship_changes": [
