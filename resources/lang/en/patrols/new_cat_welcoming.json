@@ -2571,7 +2571,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "cat bite"
+                            "cat_bite"
                         ],
                         "scar_pool_override": [
                             "CATBITETWO"
@@ -3719,7 +3719,7 @@
                             "n_c0"
                         ],
                         "condition": [
-                            "carrionplace disease"
+                            "carrionplace_disease"
                         ],
                         "death_history": "m_c died of carrionplace disease."
                     }
@@ -3792,7 +3792,7 @@
                             "n_c0"
                         ],
                         "condition": [
-                            "carrionplace disease"
+                            "carrionplace_disease"
                         ],
                         "death_history": "m_c died of carrionplace disease."
                     }
@@ -5475,7 +5475,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "claw-wound"
+                            "claw_wound"
                         ],
                         "scar_history": "m_c was scarred when a loner attacked {PRONOUN/m_c/object}.",
                         "death_history": "m_c died after a loner attacked {PRONOUN/m_c/object}."
@@ -5543,443 +5543,6 @@
                         "amount": -20,
                         "log": {
                             "cats_from": "cat_to was part of the patrol that watched n_c0 get chased by a dog instead of helping {PRONOUN/n_c0/object}."
-                        }
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "fst_bord_noise1",
-        "types": [
-            "border"
-        ],
-        "frequency": 2,
-        "location": [
-            "forest"
-        ],
-        "tags": [],
-        "required_cat_types": {
-            "patrol_cats": [
-                2,
-                6
-            ]
-        },
-        "chance_of_success": 60,
-        "patrol_art": "bord_general_intro",
-        "intro_strings": [
-            "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush."
-        ],
-        "decline_strings": [
-            "It's probably nothing. The patrol leaves the noise alone and continues on their way."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "Before p_l can move to check the bush, a loner emerges with {PRONOUN/n_c0/poss} newborn kits. The cat explains that {PRONOUN/n_c0/subject} would like to join the Clan and after a short conversation with p_l, the loner and {PRONOUN/n_c0/poss} family join the patrol on the journey back to camp."
-                ],
-                "involved_cats": {
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "age": [
-                            "adult",
-                            "senior adult"
-                        ],
-                        "status": [
-                            "loner"
-                        ],
-                        "gender": ["can_birth"]
-                    },
-                    "n_c1": {
-                        "can_create_new_cat": {
-                            "become_litter": true,
-                            "assign_blood_parent": [
-                                "n_c0"
-                            ]
-                        },
-                        "age": [
-                            "newborn"
-                        ],
-                        "backstory": [
-                            "outsider_roots2"
-                        ]
-                    }
-                },
-                "exp_gained": 10,
-                "reputation_changes": {
-                    "outsider": 1
-                },
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c0"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "values": [
-                            "like",
-                            "trust",
-                            "comfort"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_to was part of the patrol that invited cat_from to c_n."
-                        }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    },
-                    {
-                        "cats": [
-                            "n_c1"
-                        ],
-                        "new_status": [
-                            "newborn"
-                        ]
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "p_l pads towards the bush to check on the noise when a rabbit bursts out, a loner following it! The loner speaks to p_l about Clan life, and how safe it would be for {PRONOUN/n_c0/poss} newborn kits. p_l convinces the family to join the Clan."
-                ],
-                "involved_cats": {
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "age": [
-                            "adult",
-                            "senior adult"
-                        ],
-                        "status": [
-                            "loner"
-                        ],
-                        "gender": ["can_birth"]
-                    },
-                    "n_c1": {
-                        "can_create_new_cat": {
-                            "become_litter": true,
-                            "assign_blood_parent": [
-                                "n_c0"
-                            ]
-                        },
-                        "age": [
-                            "newborn"
-                        ],
-                        "backstory": [
-                            "outsider_roots2"
-                        ]
-                    }
-                },
-                "exp_gained": 10,
-                "reputation_changes": {
-                    "outsider": 1
-                },
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c0"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "values": [
-                            "like",
-                            "trust",
-                            "comfort"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_to was part of the patrol that invited cat_from and {PRONOUN/cat_from/poss} kits to c_n."
-                        }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    },
-                    {
-                        "cats": [
-                            "n_c1"
-                        ],
-                        "new_status": [
-                            "newborn"
-                        ]
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 takes the lead in checking the noise and finds that the bush is hiding a loner and {PRONOUN/n_c0/poss} litter! The kits are freshly born, new to the world, and s_c0 is quick to sit and talk quietly with the new parent. After some coaxing, s_c0 convinces {PRONOUN/n_c0/object} to come stay with the Clan for a while, maybe even to join permanently."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "compassionate",
-                                "loving",
-                                "calm"
-                            ]
-                        }
-                    },
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "age": [
-                            "adult",
-                            "senior adult"
-                        ],
-                        "status": [
-                            "loner"
-                        ],
-                        "gender": ["can_birth"]
-                    },
-                    "n_c1": {
-                        "can_create_new_cat": {
-                            "become_litter": true,
-                            "assign_blood_parent": [
-                                "n_c0"
-                            ]
-                        },
-                        "age": [
-                            "newborn"
-                        ],
-                        "backstory": [
-                            "outsider_roots2"
-                        ]
-                    }
-                },
-                "exp_gained": 10,
-                "reputation_changes": {
-                    "outsider": 1
-                },
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c0"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "values": [
-                            "like",
-                            "trust",
-                            "comfort"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_to was part of the patrol that invited cat_from and {PRONOUN/cat_from/poss} kits to c_n."
-                        }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    },
-                    {
-                        "cats": [
-                            "n_c1"
-                        ],
-                        "new_status": [
-                            "newborn"
-                        ]
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l pads closer to the bush, intent on finding the source of the noise, only to come face-to-face with a skunk! The poor cat ends up stinking for days after the unfortunate incident."
-                ],
-                "exp_gained": 0,
-                "reputation_changes": {
-                    "outsider": -1
-                }
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 doesn't even hesitate before splitting from the patrol to check on the source of the noise. {PRONOUN/s_c0/subject/CAP} quickly {VERB/s_c0/regret/regrets} {PRONOUN/s_c0/poss} impulsivity, however, when an angry raccoon bursts from the bush! s_c0 gets quite the scare, but thankfully the raccoon only wanted to get away from {PRONOUN/s_c0/object} and quickly runs off back into the undergrowth."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "daring",
-                                "bold",
-                                "ambitious"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 0,
-                "reputation_changes": {
-                    "outsider": -1
-                }
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "p_l takes the lead in checking the source of the noise and comes face-to-face with a rogue hiding in the bush! The rogue takes a swipe at p_l but doesn't get much damage in before p_l retaliates and chases the intruder out c_n territory."
-                ],
-                "involved_cats": {
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "status": [
-                            "rogue"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "reputation_changes": {
-                    "outsider": -1
-                },
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c0"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -50,
-                        "log": {
-                            "cats_from": "cat_from was driven out of c_n territory by cat_to's patrol after {PRONOUN/cat_from/subject} attacked p_l."
-                        }
-                    }
-                ],
-                "condition": [
-                    {
-                        "cats": [
-                            "p_l"
-                        ],
-                        "condition": [
-                            "claw-wound"
-                        ],
-                        "scar_pool_override": [
-                            "FACE",
-                            "SNOUT",
-                            "BRIDGE",
-                            "CHEEK"
-                        ],
-                        "scar_history": "m_c gained a scar after tussling with a rogue.",
-                        "death_history": "m_c died from injuries sustained in a fight with a rogue."
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
-                ]
-            }
-        ],
-        "antag_success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "A loner and their kits emerge from the bush, but p_l shakes {PRONOUN/p_l/poss} head, and {VERB/p_l/inform/informs} them there's no room in c_n."
-                ],
-                "involved_cats": {
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "status": [
-                            "loner"
-                        ],
-                        "age": [
-                            "adult",
-                            "senior adult"
-                        ]
-                    },
-                    "n_c1": {
-                        "can_create_new_cat": {
-                            "become_litter": true,
-                            "assign_blood_parent": [
-                                "n_c0"
-                            ]
-                        },
-                        "status": [
-                            "loner"
-                        ]
-                    }
-                },
-                "exp_gained": 10,
-                "reputation_changes": {
-                    "outsider": -2
-                }
-            }
-        ],
-        "antag_fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "A loner and their kits emerge from the bush, but p_l shakes {PRONOUN/p_l/poss} head, and {VERB/p_l/tell/tells} the loner {PRONOUN/p_l/subject} meant it when {PRONOUN/p_l/subject} said {PRONOUN/p_l/subject} didn't want to see them again. The loner hisses and scratches at p_l. Rumors start at camp over what p_l said to the loner."
-                ],
-                "involved_cats": {
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "status": [
-                            "loner"
-                        ],
-                        "age": [
-                            "adult",
-                            "senior adult"
-                        ]
-                    },
-                    "n_c1": {
-                        "can_create_new_cat": {
-                            "become_litter": true,
-                            "assign_blood_parent": [
-                                "n_c0"
-                            ]
-                        },
-                        "status": [
-                            "loner"
-                        ]
-                    }
-                },
-                "exp_gained": 0,
-                "reputation_changes": {
-                    "outsider": -1
-                },
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c0"
-                        ],
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -20,
-                        "log": {
-                            "cats_from": "cat_from met an old friend, cat_to, at the border even though cat_to said {PRONOUN/cat_to/subject} didn't want to see {PRONOUN/cat_from/object} again."
                         }
                     }
                 ]
@@ -9581,8 +9144,8 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "torn pelt",
-                            "torn ear",
+                            "torn_pelt",
+                            "torn_ear",
                             "minor_injury"
                         ],
                         "scar_history": "m_c was scarred after being attacked by a startled loner.",
@@ -9620,8 +9183,8 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "torn pelt",
-                            "torn ear",
+                            "torn_pelt",
+                            "torn_ear",
                             "minor_injury"
                         ],
                         "scar_history": "m_c was scarred after being attacked by a startled kittypet.",
@@ -9838,7 +9401,7 @@
                         "condition": [
                             "battle_injury",
                             "minor_injury",
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "no_results": true,
                         "scar_history": "m_c was scarred after fighting with another cat.",
@@ -9852,8 +9415,8 @@
                             "sore",
                             "bruises",
                             "scrapes",
-                            "torn ear",
-                            "torn pelt"
+                            "torn_ear",
+                            "torn_pelt"
                         ],
                         "scar_history": "m_c was scarred after fighting with another cat.",
                         "death_history": "m_c died from injuries sustained after fighting with another cat."
@@ -9904,9 +9467,9 @@
                             "n_c0"
                         ],
                         "condition": [
-                            "claw-wound",
-                            "torn pelt",
-                            "torn ear",
+                            "claw_wound",
+                            "torn_pelt",
+                            "torn_ear",
                             "minor_injury"
                         ],
                         "no_results": true,
@@ -10055,9 +9618,9 @@
                             "p_l"
                         ],
                         "condition": [
-                            "claw-wound",
-                            "torn pelt",
-                            "torn ear",
+                            "claw_wound",
+                            "torn_pelt",
+                            "torn_ear",
                             "minor_injury"
                         ],
                         "scar_history": "m_c was scarred after losing a fight with a loner.",
@@ -10126,9 +9689,9 @@
                             "p_l"
                         ],
                         "condition": [
-                            "claw-wound",
-                            "torn pelt",
-                            "torn ear",
+                            "claw_wound",
+                            "torn_pelt",
+                            "torn_ear",
                             "minor_injury"
                         ],
                         "scar_history": "m_c was scarred after losing a fight with a kittypet.",
@@ -10720,7 +10283,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c was scarred up by a fight {PRONOUN/m_c/subject} had with a treacherous, flirtatious rogue.",
                         "death_history": "m_c died of wounds sustained fighting a treacherous, flirtatious rogue."
@@ -11079,7 +10642,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "torn ear"
+                            "torn_ear"
                         ],
                         "scar_history": "m_c was scarred in a fight with another cat.",
                         "death_history": "m_c died of wounds sustained from a fight with another cat."

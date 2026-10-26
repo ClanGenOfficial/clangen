@@ -103,7 +103,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "broken bone"
+                            "broken_bone"
                         ],
                         "scar_history": "m_c's bone was broken by a coconut crab.",
                         "death_history": "m_c couldn't recover from {PRONOUN/m_c/poss} broken bone after being pinched by a coconut crab."

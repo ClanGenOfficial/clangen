@@ -1,5 +1,5 @@
 [
-    {
+  {
         "event_id": "dst_new_cat_loner1",
         "location": [
             "desert"
@@ -17,28 +17,28 @@
                 "senior"
             ],
             "status": ["any"]
-        },
+          },
         "new_cat": [
-            ["loner"]
+          ["loner"]
         ],
         "relationships": [
             {
-                "cats_from": ["m_c"],
-                "cats_to": ["n_c:0"],
-                "mutual": true,
-                "values": ["comfort", "like"],
-                "amount": 5,
-                "log": {
-                    "cats_from": "cat_from offered cat_to the protection of the Clan when {PRONOUN/cat_from/subject} found {PRONOUN/cat_to/object} wandering the desert."
-                }
+              "cats_from": ["m_c"],
+              "cats_to": ["n_c:0"],
+              "mutual": true,
+              "values": ["comfort", "like"],
+              "amount": 5,
+              "log": {
+                "cats_from": "cat_from offered cat_to the protection of the Clan when {PRONOUN/cat_from/subject} found {PRONOUN/cat_to/object} wandering the desert."
+              }
             }
-        ],
-        "outsider": {
-            "current_rep": [
-                "welcoming"
-            ],
-            "changed": 1
-        }
+          ],
+          "outsider": {
+              "current_rep": [
+                  "welcoming"
+              ],
+              "changed": 1
+          }
     },
     {
         "event_id": "dst_new_cat_loner2",
@@ -58,16 +58,16 @@
                 "senior"
             ],
             "status": ["leader", "deputy", "medicine cat", "warrior"]
-        },
+          },
         "new_cat": [
-            ["loner"]
+          ["loner"]
         ],
-        "outsider": {
-            "current_rep": [
-                "hostile"
-            ],
-            "changed": 1
-        }
+          "outsider": {
+              "current_rep": [
+                  "hostile"
+              ],
+              "changed": 1
+          }
     },
     {
         "event_id": "dst_new_cat_loner3",
@@ -87,16 +87,16 @@
                 "senior"
             ],
             "status": ["leader", "deputy", "medicine cat", "warrior"]
-        },
+          },
         "new_cat": [
-            ["loner"]
+          ["loner"]
         ],
-        "outsider": {
-            "current_rep": [
-                "neutral", "welcoming"
-            ],
-            "changed": 1
-        }
+          "outsider": {
+              "current_rep": [
+                  "neutral", "welcoming"
+              ],
+              "changed": 1
+          }
     },
     {
         "event_id": "dst_new_cat_abandoned_litter",
@@ -116,7 +116,7 @@
                 "senior"
             ],
             "status": ["leader", "deputy", "medicine cat", "warrior"]
-        },
+          },
         "new_cat": [
             ["age:has_kits", "meeting", "loner", "can_birth"],
             [
@@ -127,10 +127,10 @@
             ]
         ],
         "outsider": {
-            "current_rep": [
-                "neutral", "welcoming"
-            ],
-            "changed": 1
-        }
+              "current_rep": [
+                  "neutral", "welcoming"
+              ],
+              "changed": 1
+          }
     }
 ]

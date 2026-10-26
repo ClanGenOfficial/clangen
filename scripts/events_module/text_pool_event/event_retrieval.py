@@ -17,11 +17,12 @@ loaded_events = {}
 
 
 def get_valid_event(
-    primary_cat: Cat,
+    primary_cat: Cat | None,
     involved_cats: dict,
     interactable_cats: list[Cat],
     possible_events: list[PatrolEvent | TextPoolEvent],
     other_clan: Optional[OtherClan] = None,
+    chosen_poi: Optional[str] = None,
     ensured_id: Optional[str] = None,
     general_constraints_active: bool = True,
     cat_constraints_active: bool = True,
@@ -35,6 +36,7 @@ def get_valid_event(
     :param interactable_cats: List of cat objects who can participate in this event
     :param possible_events: List of event objects that we should find an event from
     :param other_clan: The other clan involved in this event
+    :param chosen_poi: If a POI has been pre-chosen for this event, include it here
     :param ensured_id: ID of the ensured event, if any
     :param general_constraints_active: If true, filters by general constraints
     :param cat_constraints_active: If true, filters by cat constraints
@@ -44,7 +46,7 @@ def get_valid_event(
     chosen_frequency = get_frequency() if frequency_active else 4
 
     chosen_event: Optional[Union[PatrolEvent, TextPoolEvent]] = None
-    temp_involved_cats = {}
+
     tested_events = set()
 
     # retrieve the ensured event from the list
@@ -116,6 +118,7 @@ def get_valid_event(
                 primary_cat=primary_cat,
                 involved_cats=involved_cats,
                 other_clan=other_clan,
+                chosen_poi=chosen_poi,
                 is_debug_event=bool(ensured_event),
             ):
                 tested_events.add(test_event.event_id)

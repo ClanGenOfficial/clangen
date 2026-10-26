@@ -1,9 +1,9 @@
 import unittest
-from random import Random
 
 from scripts.cat.enums import CatRank
 from scripts.cat.factories.test_cat_factory import TestCatFactory
 from scripts.cat.factories.typed_dicts import StatusDict
+from scripts.cat_relations.relationship import Relationship
 from scripts.clan import Clan
 from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
@@ -12,9 +12,6 @@ from scripts.events_module.parameter_dicts import (
 from scripts.events_module.relationship import generate_group_event
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
-
-
-from scripts.cat.cats import Relationship
 
 cat_factory = TestCatFactory()
 
