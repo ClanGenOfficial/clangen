@@ -17,11 +17,6 @@ from scripts.cat.constants import (
 )
 from scripts.cat.enums import CatRank, CatThought, CatStanding, CatGroup
 from scripts.cat.microservices.add_to_clan import add_to_clan, add_dependents_to_clan
-from scripts.cat.microservices.conditions import (
-    get_ill,
-    get_injured,
-    get_permanent_condition,
-)
 from scripts.cat.pelts import Pelt
 from scripts.cat.skills import SkillPath
 from scripts.clan import OtherClan
@@ -45,7 +40,7 @@ from scripts.events_module.text_adjust import (
     accessory_text_adjust,
 )
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
-from scripts.game_structure import game, constants
+from scripts.game_structure import game
 
 disable_random: bool = False
 logger = logging.getLogger(__name__)
