@@ -15081,5 +15081,897 @@
                 ]
             }
         ]
+    },
+    {
+        "event_id": "gen_hunt_groundpreypoi_group",
+        "types": ["hunting"],
+        "frequency": 4,
+        "patrol_art": "cat_sprites/gen_hunt_funrun_WrWr",
+        "poi": {
+            "tags": ["prey:ground"]
+        },
+        "required_cat_types": {
+            "patrol_cats": [2, 6]
+        },
+        "chance_of_success": 55,
+        "intro_strings": [
+            "p_l leads a hunting patrol to POI.",
+            "The patrol sets forth to POI with only thoughts of prey on their minds.",
+            "The hunting patrol eagerly approaches POI in search of prey."
+        ],
+        "decline_strings": [
+            "Unfortunately, hunting seems poor today.",
+            "On second thought, p_l heard of good hunting in another area of the territory.",
+            "The clouds darken overhead. Perhaps this hunt were best postponed."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 1,
+                "strings": [
+                    "The patrol has tremendous success and brings home a bounty of mice and rats!",
+                    "The patrol makes the most of the unique terrain around POI and can barely drag their catch home."
+                ],
+                "exp_gained": 20,
+                "outcome_art": "POI",
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_huge"
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": ["patrol_cats"],
+                        "cats_to": ["patrol_cats"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": 7,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had a highly successful hunt."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "strings": [
+                    "The patrol hunts well and returns with plenty of prey.",
+                    "The patrol has a great hunt and roots out several shrews."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 15,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": ["patrol_cats"],
+                        "cats_to": ["patrol_cats"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": 4,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had a successful hunt."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "The patrol is successful. p_l is satisfied with the catch they bring back to camp.",
+                    "The patrol catches a respectable amount of prey."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "strings": [
+                    "The patrol only manages to catch a pawful of prey.",
+                    "Hunting could've gone better, but the patrol can do little else except carry their meager score home."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 5,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": ["patrol_cats"],
+                        "cats_to": ["patrol_cats"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": -4,
+                        "log": {
+                            "cats_from": "cat_from and cat_to's hunt went poorly."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "Prey is scant and the patrol only brings home a few morsels.",
+                    "The patrol only manages to scrounge up a pair of scrawny rats."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 0,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": ["patrol_cats"],
+                        "cats_to": ["patrol_cats"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": -7,
+                        "log": {
+                            "cats_from": "cat_from and cat_to's patrol barely caught any prey"
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["Twolegs:present"]
+                },
+                "strings": [
+                    "The patrol evades the attention of Twolegs in POI and brings home both plump mice and healthy rats.",
+                    "Rats and mice dangle by their tails from the patrol members' jaws. They saunter home from POI after a successful hunt."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 15,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": ["patrol_cats"],
+                        "cats_to": ["patrol_cats"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": 7,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had a successful hunt around POI."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "name": ["terrain_carrionplace", "terrain_twolegplace", "terrain_horseplace"]
+                },
+                "strings": [
+                    "The patrol navigates the strange, sharp-cornered terrain of POI and has a successful hunt.",
+                    "The terrain of POI is foreign and unnatural, but the patrol weaves through its pathways with ease, catching a bounty of mice."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 15,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": ["patrol_cats"],
+                        "cats_to": ["patrol_cats"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": 7,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had a successful hunt around POI."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["Twolegs"]
+                },
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {
+                        },
+                        "status": ["kittypet", "loner", "rogue"],
+                        "age": ["-newborn", "-kitten"],
+                        "stat": {
+                            "trait": ["-bloodthirsty", "-vengeful"],
+                            "must_have_both": false
+                        }
+                    }
+                },
+                "strings": [
+                    "The patrol encounters another cat in POI. n_c:0 surprises the Clan cats by showing them some clever hunting techniques.",
+                    "The patrol meets n_c:0, who lives around POI and offers to show them some hunting techniques perfect for the area."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ],
+                "required_reputation": {
+                    "outsider": ["welcoming"]
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c:0"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": ["patrol_cats"],
+                        "cats_to": ["n_c:0"],
+                        "mutual": true,
+                        "values": ["like", "trust"],
+                        "amount": 7,
+                        "log": {
+                            "cats_from": "cat_from was pleasantly surprised that cat_to showed them hunting techniques."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["trees"]
+                },
+                "strings": [
+                    "The patrol digs out shrews nestled in the roots of POI and returns to camp proud of their persistence.",
+                    "The patrol sniffs out the opening of a mouse nest, concealed among the roots of POI. The cats delight at the prey trapped within."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 15,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": ["patrol_cats"],
+                        "cats_to": ["patrol_cats"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": 7,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had a successful hunt around POI."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["high_ground"]
+                },
+                "strings": [
+                    "The patrol stalks mice by perching on POI, waiting until the small creatures slink out of their hideaways before picking them off one by one.",
+                    "The patrol lies in wait atop POI, watching for mice to emerge from their hiding places before pouncing."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 15,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": ["patrol_cats"],
+                        "cats_to": ["patrol_cats"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": 7,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had a successful hunt around POI."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 3,
+                "strings": [
+                    "The patrol returns to camp with empty paws.",
+                    "There's nothing to rustle up around POI. The patrol slinks back to camp ashamed."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": ["patrol_cats"],
+                        "cats_to": ["patrol_cats"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": -7,
+                        "log": {
+                            "cats_from": "cat_from and cat_to don't catch any prey on patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["Twolegs"]
+                },
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {
+                        },
+                        "status": ["kittypet", "loner", "rogue"],
+                        "age": ["-newborn", "-kitten"]
+                    }
+                },
+                "strings": [
+                    "The patrol encounters another cat in POI. n_c:0 snarls and demands the patrol leave. The patrol does; {PRONOUN/n_c:0/poss} angry yowls drove away all the prey anyway."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 0,
+                "required_reputation": {
+                    "outsider": ["hostile"]
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c:0"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": ["patrol_cats"],
+                        "cats_to": ["n_c:0"],
+                        "mutual": true,
+                        "values": ["like", "trust"],
+                        "amount": -7,
+                        "log": {
+                            "cats_from": "cat_from was driven away from a hunt by cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "poi": {
+                    "tags": ["Twolegs:present"]
+                },
+                "strings": [
+                    "The patrol is spotted by Twolegs, and r_c0 is taken.",
+                    "While isolated from the patrol, r_c:0 is taken by Twolegs and vanishes within POI."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "outcome_art": "POI",
+                "exp_gained": 0,
+                "lost": [
+                    {
+                        "cats": ["r_c0"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["Twolegs:present"]
+                },
+                "strings": [
+                    "The patrol is spotted by Twolegs and unable to catch any prey with their meddling.",
+                    "Twolegs approach the patrol and scare off any prey."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 0
+            },
+            {
+                "frequency": 2,
+                "poi": {
+                    "tags": ["danger:tainted"]
+                },
+                "strings": [
+                    "The patrol comes back to camp from POI, each carrying a fat rat. The Clan celebrates this good fortune with a feast, but later on, many grow ill. The Clan must sort through their fresh-kill for contamination."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 0,
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to was the one who caught the rat that made the Clan sick."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0",
+                            "some_clan"
+                        ],
+                        "condition": [
+                            "poisoned"
+                        ],
+                        "death_history": "m_c died after eating tainted prey."
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["high_ground"]
+                },
+                "strings": [
+                    "The patrol perches on POI waiting for prey that never emerges from their burrows."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": ["patrol_cats"],
+                        "cats_to": ["patrol_cats"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": -7,
+                        "log": {
+                            "cats_from": "cat_from and cat_to didn't catch any prey on patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "required_cat_types": {
+                    "patrol_cats": [5, 6]
+                },
+                "poi": {
+                    "tags": ["high_ground"]
+                },
+                "strings": [
+                    "The patrol crowds on POI to wait for their prey, but their murmuring, shuffling paws, and scrabbling claws when p_l nearly falls give away their position and any hope of stealth."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": ["patrol_cats"],
+                        "cats_to": ["patrol_cats"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to couldn't share space on patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["trees"]
+                },
+                "strings": [
+                    "The patrol searches for any openings among the roots of POI and is unable to sniff out any prey."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": ["patrol_cats"],
+                        "cats_to": ["patrol_cats"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": -7,
+                        "log": {
+                            "cats_from": "cat_from and cat_to didn't catch any prey on patrol."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_hunt_groundpreypoi_solo",
+        "types": ["hunting"],
+        "frequency": 4,
+        "patrol_art": "cat_sprites/gen_hunt_funrun_WrWr",
+        "poi": {
+            "tags": ["prey:ground"]
+        },
+        "required_cat_types": {
+            "patrol_cats": [2, 6]
+        },
+        "chance_of_success": 55,
+        "intro_strings": [
+            "p_l sets forth to POI with only thoughts of prey on {PRONOUN/p_l/poss} mind.",
+            "p_l eagerly approaches POI in search of prey."
+        ],
+        "decline_strings": [
+            "Unfortunately, hunting seems poor today.",
+            "On second thought, p_l heard of good hunting in another area of the territory.",
+            "The clouds darken overhead. Perhaps this hunt were best postponed."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 1,
+                "strings": [
+                    "p_l has tremendous success and brings home a bounty of mice and rats!",
+                    "p_l makes the most of the unique terrain around POI and can barely drag {PRONOUN/p_l/poss} catch home."
+                ],
+                "exp_gained": 20,
+                "outcome_art": "POI",
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_huge"
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "strings": [
+                    "p_l hunts well and returns with plenty of prey.",
+                    "p_l has a great hunt and roots out several shrews."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 15,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "p_l is successful and satisfied with the catch {PRONOUN/p_l/subject} {VERB/p_l/bring/brings} back to camp.",
+                    "p_l catches a respectable amount of prey."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "strings": [
+                    "p_l only manages to catch a pawful of prey.",
+                    "Hunting could've gone better, but p_l can do little else except carry {PRONOUN/p_l/poss} meager score home."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 5,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "Prey is scant and p_l only brings home a few morsels.",
+                    "p_l only manages to scrounge up a scrawny mouse."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 0,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["Twolegs:present"]
+                },
+                "strings": [
+                    "p_l evades the attention of Twolegs in POI and brings home both plump mice and healthy rats.",
+                    "Mice dangle by their tails, caught in p_l's jaw as {PRONOUN/p_l/subject} {VERB/p_l/saunter/saunters} home from POI after a successful hunt."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 15,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "name": ["terrain_carrionplace", "terrain_twolegplace", "terrain_horseplace"]
+                },
+                "strings": [
+                    "p_l navigates the strange, sharp-cornered terrain of POI and has a successful hunt.",
+                    "The terrain of POI is foreign and unnatural, but p_l weaves through its pathways with ease, catching a bounty of mice."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 15,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["Twolegs"]
+                },
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {
+                        },
+                        "status": ["kittypet", "loner", "rogue"],
+                        "age": ["-newborn", "-kitten"],
+                        "stat": {
+                            "trait": ["-bloodthirsty", "-vengeful"],
+                            "must_have_both": false
+                        }
+                    }
+                },
+                "strings": [
+                    "p_l encounters another cat in POI. n_c:0 surprises {PRONOUN/p_l/object} by showing {PRONOUN/p_l/object} some clever hunting techniques.",
+                    "p_l meets n_c:0, who lives around POI and offers to show {PRONOUN/p_l/object} some hunting techniques perfect for the area."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ],
+                "required_reputation": {
+                    "outsider": ["welcoming"]
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c:0"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["n_c:0"],
+                        "mutual": true,
+                        "values": ["like", "trust"],
+                        "amount": 7,
+                        "log": {
+                            "cats_from": "cat_from was pleasantly surprised that cat_to showed them hunting techniques."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["trees"]
+                },
+                "strings": [
+                    "p_l digs out shrews nestled in the roots of POI and returns to camp proud of {PRONOUN/p_l/poss} persistence.",
+                    "p_l sniffs out the opening of a mouse nest, concealed among the roots of POI. {PRONOUN/p_l/subject/CAP} {VERB/p_l/delight/delights} at the prey trapped within."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 15,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["high_ground"]
+                },
+                "strings": [
+                    "p_l stalks mice by perching on POI, waiting until the small creatures slink out of their hideaways before picking them off one by one.",
+                    "p_l lies in wait atop POI, watching for mice to emerge from their hiding places before pouncing."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 15,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 3,
+                "strings": [
+                    "p_l returns to camp with empty paws.",
+                    "There's nothing to rustle up around POI. p_l slinks back to camp ashamed."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["Twolegs"]
+                },
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {
+                        },
+                        "status": ["kittypet", "loner", "rogue"],
+                        "age": ["-newborn", "-kitten"]
+                    }
+                },
+                "strings": [
+                    "p_l encounters another cat in POI. n_c:0 snarls and demands the patrol leaves. p_l does; the outsider's angry yowls drove away all the prey anyway."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 0,
+                "required_reputation": {
+                    "outsider": ["hostile"]
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c:0"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["n_c:0"],
+                        "mutual": true,
+                        "values": ["like", "trust"],
+                        "amount": -7,
+                        "log": {
+                            "cats_from": "cat_from was driven away from a hunt by cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "poi": {
+                    "tags": ["Twolegs:present"]
+                },
+                "strings": [
+                    "p_l is spotted and taken by Twolegs."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 0,
+                "lost": [
+                    {
+                        "cats": ["p_l"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["Twolegs:present"]
+                },
+                "strings": [
+                    "p_l is spotted by Twolegs and unable to catch any prey with their meddling.",
+                    "Twolegs approach p_l and scare off any prey."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 0
+            },
+            {
+                "frequency": 2,
+                "poi": {
+                    "tags": ["danger:tainted"]
+                },
+                "strings": [
+                    "p_l comes back to camp from POI, carrying a fat rat. The Clan celebrates this good fortune with a feast, but later on, many grow ill. The Clan must sort through their fresh-kill for contamination."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from heard cat_to was the one who caught the rat that made the Clan sick."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l",
+                            "some_clan"
+                        ],
+                        "condition": [
+                            "poisoned"
+                        ],
+                        "death_history": "m_c died after eating tainted prey."
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["high_ground"]
+                },
+                "strings": [
+                    "p_l perches on POI waiting for prey that never emerges from their burrows."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "poi": {
+                    "tags": ["high_ground"]
+                },
+                "strings": [
+                    "p_l searches for any openings among the roots of POI and is unable to sniff out any prey."
+                ],
+                "outcome_art": "POI",
+                "exp_gained": 0
+            }
+        ]
     }
 ]
