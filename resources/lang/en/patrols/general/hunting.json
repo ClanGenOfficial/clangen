@@ -4626,7 +4626,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The <i>point</i> of the competition, an irritated s_c0 explains to s_c1, was to have a fun afternoon hunting and showing off your catches. It was <i>not</i> to sabotage every other cat's hunts in order to win! Well, s_c1 grumbles, no cat made those rules clear to {PRONOUN/s_c1/object}."
+                    "s_c1 takes the competition to a level s_c0 didn't expect; sabotaging {PRONOUN/s_c1/poss} competitors. Of course, this doesn't go over well with the rest of the patrol, despite s_c1's insistence that none of the rules said {PRONOUN/s_c1/subject} <i>couldn't</i> win in a craftier fashion."
                 ],
                 "involved_cats": {
                     "s_c1": {
