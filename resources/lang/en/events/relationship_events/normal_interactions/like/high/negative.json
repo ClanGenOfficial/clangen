@@ -473,7 +473,6 @@
         "event_id": "dislike_inc_high7",
         "strings": [
             "m_c thinks {PRONOUN/m_c/subject} should be deputy instead of r_c.",
-            "m_c is tired from r_c putting {PRONOUN/m_c/object} on so many patrols.",
             "m_c rolls {PRONOUN/m_c/poss} eyes whenever r_c assigns patrols.",
             "m_c tries to convince other cats that r_c should step down from being deputy."
         ],
@@ -488,6 +487,45 @@
                 "status": [
                     "deputy"
                 ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "hates"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dislike_inc_high7b",
+        "strings": [
+            "m_c is tired from r_c putting {PRONOUN/m_c/object} on so many patrols."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "warrior"
+                ],
+                "health": {
+                    "working": true
+                }
+            },
+            "r_c": {
+                "status": [
+                    "deputy"
+                ],
+                "health": {
+                    "working": true
+                }
             }
         },
         "relationship_constraint": [

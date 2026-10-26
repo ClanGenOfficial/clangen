@@ -5,15 +5,15 @@
             "m_c thinks the Clan's ancestors smile upon r_c.",
             "m_c is proud to be in the same Clan as r_c.",
             "m_c can't believe how talented r_c is!",
-            "m_c believes r_c has endless potential {PRONOUN\/r_c\/subject} {VERB\/r_c\/keep\/keeps} surpassing every day.",
-            "m_c is deeply touched hearing just how much r_c remembers about {PRONOUN\/m_c\/object}.",
-            "m_c asked r_c for {PRONOUN\/r_c\/poss} opinion on a topic and had a surprisingly insightful conversation."
+            "m_c believes r_c has endless potential {PRONOUN/r_c/subject} {VERB/r_c/keep/keeps} surpassing every day.",
+            "m_c is deeply touched hearing just how much r_c remembers about {PRONOUN/m_c/object}.",
+            "m_c asked r_c for {PRONOUN/r_c/poss} opinion on a topic and had a surprisingly insightful conversation."
         ]
     },
     {
         "event_id": "respect_inc_high1",
         "strings": [
-            "m_c saw r_c show off a skill {PRONOUN\/m_c\/subject} never knew {PRONOUN\/r_c\/subject} had.",
+            "m_c saw r_c show off a skill {PRONOUN/m_c/subject} never knew {PRONOUN/r_c/subject} had.",
             "m_c is impressed by r_c's competence in any situation.",
             "m_c is amazed at how skilled r_c really is.",
             "m_c overhears r_c educating Clanmates about their fallen ancestors."
@@ -94,7 +94,7 @@
         "event_id": "respect_inc_high3",
         "strings": [
             "m_c defends r_c from a Clanmate's rude remarks.",
-            "r_c's name comes up in a heated conversation, and m_c is the first to stand up for {PRONOUN\/r_c\/object}.",
+            "r_c's name comes up in a heated conversation, and m_c is the first to stand up for {PRONOUN/r_c/object}.",
             "In the middle of an argument, m_c tells r_c that they'll still always be friends.",
             "m_c calls out a Clanmate for spreading a rumor about r_c.",
             "m_c and r_c agree with each other when no one else does."
@@ -133,7 +133,7 @@
     {
         "event_id": "respect_kit_inc_high1",
         "strings": [
-            "m_c asks r_c if {PRONOUN\/r_c\/subject}{VERB\/r_c\/'re\/'s} really going to be the leader someday."
+            "m_c asks r_c if {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} really going to be the leader someday."
         ],
         "involved_cats": {
             "m_c": {
@@ -166,15 +166,15 @@
     {
         "event_id": "respect_incfromneg_high1",
         "strings": [
-            "m_c is really surprised that r_c's life isn't as easy as {PRONOUN\/m_c\/subject} thought it was.",
-            "m_c realizes that {PRONOUN\/m_c\/subject} and r_c have had a lot of the same hardships.",
-            "m_c learns about r_c's struggles and is surprised how well {PRONOUN\/r_c\/subject} {VERB\/r_c\/carry\/carries} {PRONOUN\/r_c\/self}.",
-            "m_c notices that r_c is never congratulated for {PRONOUN\/r_c\/poss} accomplishments as much as everyone else.",
+            "m_c is really surprised that r_c's life isn't as easy as {PRONOUN/m_c/subject} thought it was.",
+            "m_c realizes that {PRONOUN/m_c/subject} and r_c have had a lot of the same hardships.",
+            "m_c learns about r_c's struggles and is surprised how well {PRONOUN/r_c/subject} {VERB/r_c/carry/carries} {PRONOUN/r_c/self}.",
+            "m_c notices that r_c is never congratulated for {PRONOUN/r_c/poss} accomplishments as much as everyone else.",
             "m_c hears r_c crying over something everyone downplayed the severity of.",
-            "m_c realizes that r_c would put {PRONOUN\/r_c\/poss} life on the line for a Clanmate.",
+            "m_c realizes that r_c would put {PRONOUN/r_c/poss} life on the line for a Clanmate.",
             "m_c learns how much effort r_c put into learning something.",
-            "m_c can hear the truth in r_c's words when {PRONOUN\/r_c\/subject} {VERB\/r_c\/talk\/talks} about protecting others.",
-            "m_c reconsiders {PRONOUN\/m_c\/poss} jealousy of r_c."
+            "m_c can hear the truth in r_c's words when {PRONOUN/r_c/subject} {VERB/r_c/talk/talks} about protecting others.",
+            "m_c reconsiders {PRONOUN/m_c/poss} jealousy of r_c."
         ],
         "relationship_constraint": [
             {
@@ -233,7 +233,7 @@
         "strings": [
             "The intensity of m_c's resentment toward r_c has waned.",
             "m_c flinches less in r_c's presence than usual.",
-            "Though m_c isn't sure {PRONOUN\/m_c\/subject}'ll ever respect r_c, {PRONOUN\/m_c\/subject} {VERB\/m_c\/decide\/decides} to try to lay some of {PRONOUN\/m_c\/poss} resentment to rest."
+            "Though m_c isn't sure {PRONOUN/m_c/subject}'ll ever respect r_c, {PRONOUN/m_c/subject} {VERB/m_c/decide/decides} to try to lay some of {PRONOUN/m_c/poss} resentment to rest."
         ],
         "relationship_constraint": [
             {

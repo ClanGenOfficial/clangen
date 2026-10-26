@@ -8,42 +8,42 @@ import pygame_gui
 import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
+from scripts.cat.constants import (
+    TEMPORARY_CONDITIONS,
+    CONDITION_GROUPS,
+    PERMANENT_CONDITIONS,
+)
 from scripts.cat.factories.create_example_cat import create_option_preview_cat
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
-from scripts.cat.skills import SkillPath
-from scripts.cat_relations.enums import rel_type_tiers
-from scripts.events_module.short.condition_events import Condition_Events
-
-from scripts.events_module.short.scar_events import Scar_Events
-from scripts.events_module.short.short_event import ShortEvent
-from scripts.game_structure import image_cache, constants
-from scripts.game_structure import game
 from scripts.cat.pronouns import get_default_pronouns
+from scripts.cat.skills import SkillPath
+from scripts.cat.sprites.display_sprites import generate_sprite
+from scripts.cat_relations.enums import rel_type_tiers
+from scripts.events_module.text_adjust import process_text
+from scripts.game_structure import game
+from scripts.game_structure import image_cache, constants
 from scripts.game_structure.screen_settings import MANAGER
+from scripts.screens.Screens import Screens
+from scripts.screens.enums import GameScreen
+from scripts.ui.elements.checkbox import UICheckbox
 from scripts.ui.elements.collapsible_container import UICollapsibleContainer
 from scripts.ui.elements.dropdown import UIDropDown
 from scripts.ui.elements.modified_image import UIModifiedImage
-from scripts.ui.elements.checkbox import UICheckbox
-from scripts.ui.elements.scrolling_button_list import UIScrollingButtonList
-from scripts.ui.elements.scrolling_dropdown import UIScrollingDropDown
 from scripts.ui.elements.modified_scrolling_container import (
     UIModifiedScrollingContainer,
 )
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
+from scripts.ui.elements.scrolling_button_list import UIScrollingButtonList
+from scripts.ui.elements.scrolling_dropdown import UIScrollingDropDown
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
-from scripts.ui.windows.editor_save_check import EditorSaveCheck
-from scripts.ui.windows.editor_missing_info import EditorMissingInfoWindow
-from scripts.screens.RelationshipScreen import RelationshipScreen
-from scripts.screens.Screens import Screens
-from scripts.screens.enums import GameScreen
+from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
-from scripts.ui.theme import get_text_box_theme
-from scripts.cat.sprites.display_sprites import generate_sprite
-from scripts.events_module.text_adjust import process_text
 from scripts.ui.scale import ui_scale, ui_scale_dimensions
+from scripts.ui.theme import get_text_box_theme
+from scripts.ui.windows.editor_missing_info import EditorMissingInfoWindow
+from scripts.ui.windows.editor_save_check import EditorSaveCheck
 
 
 class EventEditScreen(Screens):
@@ -149,23 +149,18 @@ class EventEditScreen(Screens):
     new_cat_genders: list = TAGS["new_cat"]["genders"]
     """List of all gender tags available to new cats"""
 
-    all_injury_pools: dict = constants.INJURY_GROUPS
+    all_injury_pools: dict = CONDITION_GROUPS
     """Dict of all injury pools. Key is pool name, value is the injuries within the pool."""
-    all_possible_injuries: list = constants.EVENT_ALLOWED_CONDITIONS
+    all_possible_injuries: list = list(TEMPORARY_CONDITIONS.keys()) + list(
+        PERMANENT_CONDITIONS.keys()
+    )
     """List of all possible injuries/conditions."""
     fatal_conditions: list = []
     """We need this for death history validity checking. This is a list of all conditions that can kill."""
     for condition in all_possible_injuries:
-        if Condition_Events.INJURIES.get(condition):
-            for age in Condition_Events.INJURIES[condition]["mortality"]:
-                if Condition_Events.INJURIES[condition]["mortality"][age]:
-                    fatal_conditions.append(condition)
-                    break
-                else:
-                    break
-        elif Condition_Events.ILLNESSES.get(condition):
-            for age in Condition_Events.ILLNESSES[condition]["mortality"]:
-                if Condition_Events.ILLNESSES[condition]["mortality"][age]:
+        if TEMPORARY_CONDITIONS.get(condition):
+            for age in TEMPORARY_CONDITIONS[condition]["mortality"]:
+                if TEMPORARY_CONDITIONS[condition]["mortality"][age]:
                     fatal_conditions.append(condition)
                     break
                 else:
@@ -2238,16 +2233,7 @@ class EventEditScreen(Screens):
                 dead_cats.append(cat)
 
         for block in self.injury_block_list:
-            if (
-                set(block["injuries"]).intersection(set(Scar_Events.scar_allowed))
-                or block["scars"]
-            ):
-                injured_cats.extend(block["cats"])
-                # scar-able injuries are generally also possibly fatal, so plop them in dead
-                dead_cats.extend(block["cats"])
-            # injuries that don't scar but DO kill
-            elif set(block["injuries"]).intersection(set(self.fatal_conditions)):
-                dead_cats.extend(block["cats"])
+            pass
 
         death_histories = []
         injury_histories = []
