@@ -409,6 +409,12 @@
         "-strange_lump",
         "damaged_throat",
         "-damaged_throat",
+        "amputated_leg",
+        "-amputated_leg",
+        "amputated_tail",
+        "-amputated_tail",
+        "stinky",
+        "-stinky",
         "battle_injury",
         "minor_injury",
         "blunt_force_injury",
@@ -717,7 +723,9 @@
         "leader",
         "-leader",
         "past_deputy",
-        "-past_deputy"
+        "-past_deputy",
+        "multi_cat",
+        "-multi_cat"
       ],
       "title": "GatherCatEnum",
       "type": "string"

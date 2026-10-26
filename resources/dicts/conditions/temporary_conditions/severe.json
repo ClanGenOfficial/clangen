@@ -68,15 +68,15 @@
         "severity": "severe",
         "duration": 3,
         "mortality": {
-            "newborn": 0.9,
-            "kitten": 0.8,
-            "adolescent": 0.6,
-            "young adult": 0.5,
+            "newborn": 0.8,
+            "kitten": 0.7,
+            "adolescent": 0.5,
+            "young adult": 0.4,
             "adult": 0.4,
-            "senior adult": 0.5,
-            "senior": 0.6
+            "senior adult": 0.4,
+            "senior": 0.5
         },
-        "infectiousness": 0.6,
+        "infectiousness": 0.4,
         "immune_system_effect": 0.0,
         "side_effect": {},
         "progression": {
@@ -107,15 +107,15 @@
         "severity": "severe",
         "duration": 3,
         "mortality": {
-            "newborn": 0.7,
-            "kitten": 0.6,
+            "newborn": 0.6,
+            "kitten": 0.5,
             "adolescent": 0.0,
             "young adult": 0.0,
             "adult": 0.0,
             "senior adult": 0.0,
             "senior": 0.0
         },
-        "infectiousness": 0.4,
+        "infectiousness": 0.25,
         "immune_system_effect": 0.0,
         "side_effect": {},
         "progression": {
@@ -150,13 +150,13 @@
         "severity": "severe",
         "duration": 3,
         "mortality": {
-            "newborn": 0.9,
-            "kitten": 0.8,
-            "adolescent": 0.5,
-            "young adult": 0.5,
-            "adult": 0.5,
-            "senior adult": 0.5,
-            "senior": 0.9
+            "newborn": 0.8,
+            "kitten": 0.7,
+            "adolescent": 0.4,
+            "young adult": 0.3,
+            "adult": 0.3,
+            "senior adult": 0.4,
+            "senior": 0.5
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.1,
@@ -185,8 +185,8 @@
             "newborn": 1.0,
             "kitten": 1.0,
             "adolescent": 0.8,
-            "young adult": 0.5,
-            "adult": 0.5,
+            "young adult": 0.7,
+            "adult": 0.7,
             "senior adult": 0.8,
             "senior": 1.0
         },
@@ -217,8 +217,8 @@
         "is_complication": true,
         "duration": 2,
         "mortality": {
-            "newborn": 0.9,
-            "kitten": 0.8,
+            "newborn": 0.7,
+            "kitten": 0.6,
             "adolescent": 0.4,
             "young adult": 0.3,
             "adult": 0.2,
@@ -366,11 +366,11 @@
         "mortality": {
             "newborn": 0.5,
             "kitten": 0.4,
-            "adolescent": 0.2,
+            "adolescent": 0.15,
             "young adult": 0.1,
-            "adult": 0.2,
-            "senior adult": 0.3,
-            "senior": 0.4
+            "adult": 0.1,
+            "senior adult": 0.2,
+            "senior": 0.3
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
@@ -503,9 +503,9 @@
             "bruises": 0.2
         },
         "progression": {
-            "lost_leg": {
-                "chance": 0.2,
-                "when": "HEALED",
+            "amputated_leg": {
+                "chance": 0.4,
+                "when": "CONTINUING",
                 "allow_scar": true
             },
             "weak_leg": {
@@ -566,9 +566,9 @@
             "blood_loss": 0.2
         },
         "progression": {
-            "lost_tail": {
-                "chance": 0.3,
-                "when": "HEALED",
+            "amputated_tail": {
+                "chance": 0.5,
+                "when": "CONTINUING",
                 "allow_scar": true
             }
         },
@@ -599,6 +599,90 @@
             "MANTAIL"
         ]
     },
+    "amputated_leg": {
+        "tags": [],
+        "requires_scar": true,
+        "severity": "severe",
+        "duration": 2,
+        "is_complication": false,
+        "mortality": {},
+        "infectiousness": 0.0,
+        "immune_system_effect": 0,
+        "side_effect": {
+            "blood_loss": 0.5
+        },
+        "progression": {
+            "lost_leg": {
+                "chance": 2.0,
+                "when": "HEALED",
+                "allow_scar": false
+            }
+        },
+        "risks": {
+            "infection": 0.2
+        },
+        "treatment_strength": {
+            "1": [
+                "cobwebs",
+                "marigold",
+                "tansy",
+                "mullein"
+            ],
+            "2": [
+                "wild_garlic",
+                "horsetail",
+                "oak_leaves",
+                "moss"
+            ],
+            "3": [
+                "poppy",
+                "goldenrod"
+            ]
+        },
+        "possible_scars": ["NOPAW"]
+    },
+    "amputated_tail": {
+        "tags": [],
+        "requires_scar": true,
+        "severity": "severe",
+        "duration": 2,
+        "is_complication": false,
+        "mortality": {},
+        "infectiousness": 0.0,
+        "immune_system_effect": 0,
+        "side_effect": {
+            "blood_loss": 0.5
+        },
+        "progression": {
+            "lost_tail": {
+                "chance": 2.0,
+                "when": "HEALED",
+                "allow_scar": false
+            }
+        },
+        "risks": {
+            "infection": 0.2
+        },
+        "treatment_strength": {
+            "1": [
+                "cobwebs",
+                "marigold",
+                "tansy",
+                "mullein"
+            ],
+            "2": [
+                "wild_garlic",
+                "horsetail",
+                "oak_leaves",
+                "moss"
+            ],
+            "3": [
+                "poppy",
+                "goldenrod"
+            ]
+        },
+        "possible_scars": ["NOTAIL", "HALFTAIL"]
+    },
     "severe_burn": {
         "tags": [],
         "severity": "severe",
@@ -616,14 +700,14 @@
         "immune_system_effect": 0.0,
         "side_effect": {},
         "progression": {
-            "lost_tail": {
+            "amputated_tail": {
                 "chance": 0.2,
-                "when": "HEALED",
+                "when": "CONTINUING",
                 "allow_scar": true
             },
-            "lost_leg": {
+            "amputated_leg": {
                 "chance": 0.2,
-                "when": "HEALED",
+                "when": "CONTINUING",
                 "allow_scar": true
             }
         },

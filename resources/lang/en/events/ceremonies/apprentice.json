@@ -2607,6 +2607,190 @@
         ]
     },
     {
+        "event_id": "app_healer1",
+        "tags": [],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": ["HEALER,0"]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "With m_c’s inborn knack for herbs and healing, some thought {PRONOUN/m_c/subject} {VERB/m_c/were/was} fated for the medicine den, but m_c was certain {PRONOUN/m_c/poss} passions lied elsewhere. r_c0 promises to train m_c into a great warrior."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was made r_c0's apprentice."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "app_spiritual1",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": ["STAR,0", "DARK,0", "OMEN,0", "PROPHET,0"]
+                }
+            },
+            "r_c0": {},
+            "r_c1": {
+                "status": ["medicine cat"]
+            },
+            "r_c2": {
+                "status": ["leader"]
+            }
+        },
+        "strings": [
+            "(old_name) has always been spiritual, but r_c2 was surprised when {PRONOUN/m_c/subject} announced StarClan wants r_c0 to be {PRONOUN/m_c/poss} mentor. After a few days of consulting with r_c1, r_c0 touched noses with m_c, wondering what the stars have planned.",
+            "(old_name) announced to r_c2 that StarClan wants r_c0 to be {PRONOUN/m_c/poss} mentor. r_c2 was skeptical, but (old_name) has always been spiritual, and {PRONOUN/m_c/subject} spoke with no hint of mischief. After consulting r_c1, m_c was apprenticed to r_c0."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 13,
+                "log": {
+                    "cats_from": "m_c was spiritually guided to train under r_c0."
+                }
+            },
+            {
+                "cats_from": [
+                    "r_c2",
+                    "r_c1"
+                ],
+                "cats_to": [
+                    "r_c0",
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect"
+                ],
+                "amount": 7,
+                "log": {
+                    "cats_from": "cat_from saw m_c and r_c0 with new expectations after m_c announced StarClan wanted r_c0 to be {PRONOUN/m_c/poss} mentor."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "mentor_spiritual1",
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "stat": {
+                    "skill": ["PROPHET,1"]
+                }
+            },
+            "r_c1": {
+                "status": ["leader"]
+            }
+        },
+        "strings": [
+            "The vision struck r_c0 only a day before the ceremony: m_c was supposed to be {PRONOUN/r_c0/poss} apprentice. Knowing r_c0's spirituality, r_c1 agreed, and m_c wondered what the stars had planned for {PRONOUN/m_c/object} as {PRONOUN/m_c/subject} strode to touch r_c0's nose."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 13,
+                "log": {
+                    "cats_from": "r_c0 was commanded by a vision to take m_c as {PRONOUN/r_c0/poss} apprentice."
+                }
+            },
+            {
+                "cats_from": [
+                    "r_c1"
+                ],
+                "cats_to": [
+                    "r_c0",
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect"
+                ],
+                "amount": 7,
+                "log": {
+                    "cats_from": "After a vision commanded r_c0 to take m_c as {PRONOUN/r_c0/poss} apprentice, cat_from saw the pair with different expectations."
+                }
+            }
+        ]
+    },
+    {
         "event_id": "app_POI_terrain0",
         "tags": [
             "clan:leader"

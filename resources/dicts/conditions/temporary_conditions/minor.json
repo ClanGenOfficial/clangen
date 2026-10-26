@@ -358,13 +358,13 @@
         "severity": "minor",
         "duration": 1,
         "mortality": {
-            "newborn": 0.2,
-            "kitten": 0.1,
+            "newborn": 0.05,
+            "kitten": 0.05,
             "adolescent": 0.05,
             "young adult": 0.05,
             "adult": 0.05,
             "senior adult": 0.05,
-            "senior": 0.1
+            "senior": 0.05
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
@@ -431,5 +431,17 @@
                 "honey"
             ]
         }
+    },
+    "stinky": {
+        "tags": [],
+        "severity": "minor",
+        "duration": 1,
+        "mortality": {},
+        "infectiousness": 0.0,
+        "immune_system_effect": 0.0,
+        "side_effect": {},
+        "progression": {},
+        "risks": {},
+        "treatment_strength": {}
     }
 }
