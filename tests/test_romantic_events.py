@@ -1,19 +1,15 @@
 import unittest
-from random import Random
 
-from scripts.cat.factories.test_cat_factory import TestCatFactory
-
+from scripts.cat.conditions.gain_conditions import gain_temporary_condition
 from scripts.cat.enums import CatRank, CatSocial, CatGroup
+from scripts.cat.factories.test_cat_factory import TestCatFactory
 from scripts.cat.factories.typed_dicts import StatusDict
-from scripts.cat.microservices.conditions import get_ill
+from scripts.cat_relations.relationship import Relationship
 from scripts.clan import Clan
+from scripts.events_module.relationship import romantic_events
 from scripts.game_structure import game
 from scripts.game_structure.game import Switch
 from scripts.game_structure.game.switches import switch_set_value
-
-from scripts.cat.cats import Relationship
-from scripts.events_module.relationship import romantic_events
-
 
 cat_factory = TestCatFactory()
 
@@ -57,7 +53,7 @@ class MovingOn(unittest.TestCase):
         Check if the cat will move on while grieving
         """
         self.cat2.die()
-        get_ill(cat=self.cat1, illness_name="grief stricken")
+        gain_temporary_condition(self.cat1, "grief_stricken")
         romantic_events._handle_moving_on(self.cat1, disable_random=True)
 
         self.assertIn(

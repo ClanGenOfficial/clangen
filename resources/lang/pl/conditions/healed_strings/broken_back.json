@@ -1,0 +1,12 @@
+[
+    {
+        "event_id": "broken_back0",
+        "strings": [
+            "m_c's broken back has healed. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} made a full recovery against all odds.",
+            "m_c is ecstatic to be walking around freely again, {PRONOUN/m_c/poss} broken back finally healed."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

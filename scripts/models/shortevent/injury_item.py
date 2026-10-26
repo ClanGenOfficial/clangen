@@ -5,9 +5,9 @@ from typing import List, Union
 from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
-from scripts.models.common.injury import Injury
-from scripts.models.common.scar import Scar
 from scripts.models.common.cat import Cat
+from scripts.models.common.condition import ConditionEnum
+from scripts.models.common.scar import Scar
 
 
 class InjuryItem(BaseModel):
@@ -16,8 +16,8 @@ class InjuryItem(BaseModel):
         List[Cat],
         MISSING,
     ] = Field(MISSING, description="Which cats are injured.")
-    injuries: Union[List[Injury], MISSING] = Field(
-        MISSING, description="Pool of injuries to draw from."
+    injuries: Union[List[ConditionEnum], MISSING] = Field(
+        MISSING, description="Pool of conditions to draw from."
     )
     scars: Union[List[Scar], MISSING] = Field(
         MISSING,

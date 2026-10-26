@@ -252,7 +252,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "running nose"
+                            "running_nose"
                         ]
                     }
                 ]
@@ -856,7 +856,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "A dead warrior woke in StarClan, business unfinished and hate for the living in their heart. They brought ruin and destruction upon the living Clan \u2014 but c_n was not without allies. The other cats of StarClan leapt to battle and tore a hole in Silverpelt, casting out the traitor, condemning them to walk a path of decay and cruelty."
+                    "A dead warrior woke in StarClan, business unfinished and hate for the living in their heart. They brought ruin and destruction upon the living Clan — but c_n was not without allies. The other cats of StarClan leapt to battle and tore a hole in Silverpelt, casting out the traitor, condemning them to walk a path of decay and cruelty."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -1066,7 +1066,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "constant nightmares"
+                            "constant_nightmares"
                         ]
                     }
                 ]
@@ -1277,7 +1277,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "shivering"
+                            "dangerously_cold"
                         ],
                         "scar_history": "m_c got frostbite while repairing some dens.",
                         "death_history": "m_c died after getting too cold while repairing some dens."
@@ -1332,7 +1332,7 @@
             "Many seasons ago, p_l begins, there was born a powerful, StarClan-gifted apprentice, one coveted by the Clans around them. Pulled in many directions, they could not keep the peace, as all demanded their time and skill."
         ],
         "decline_strings": [
-            "r_c0 doesn't have time to listen to p_l's story \u2014 {PRONOUN/r_c0/subject} {VERB/r_c0/apologize/apologizes}, but {PRONOUN/r_c0/subject} rather {VERB/r_c0/feel/feels} like that long dead overworked apprentice {PRONOUN/r_c0/self}, right now!"
+            "r_c0 doesn't have time to listen to p_l's story — {PRONOUN/r_c0/subject} {VERB/r_c0/apologize/apologizes}, but {PRONOUN/r_c0/subject} rather {VERB/r_c0/feel/feels} like that long dead overworked apprentice {PRONOUN/r_c0/self}, right now!"
         ],
         "success_outcomes": [
             {
@@ -1487,7 +1487,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_ghost_WrWrWr",
                 "strings": [
-                    "The Mountain's Roar is not rage of blood and sinew, no anger of tooth or claw. It's unfeeling, unthinking, and uncaring, the deep rumble of the snowcaps themselves falling to their doom, p_l tells them. If they ever, <i>ever</i> feel their whiskers tremble with the noise, the only solution is to run \u2014 not down, but to the side, away from where the snow will flow. Do they understand?"
+                    "The Mountain's Roar is not rage of blood and sinew, no anger of tooth or claw. It's unfeeling, unthinking, and uncaring, the deep rumble of the snowcaps themselves falling to their doom, p_l tells them. If they ever, <i>ever</i> feel their whiskers tremble with the noise, the only solution is to run — not down, but to the side, away from where the snow will flow. Do they understand?"
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -1607,7 +1607,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_ghost_WrWrWr",
                 "strings": [
-                    "There are tricks to it, p_l explains. Avalanches fall like sudden floods of water or mud, but with unimaginable force. Survival is a matter of luck if they get caught. So don't get caught \u2014 run to the side of the slope, out of the path of the flow, horizontal. Climb, climb anything. The tree will get swept away, but they might float."
+                    "There are tricks to it, p_l explains. Avalanches fall like sudden floods of water or mud, but with unimaginable force. Survival is a matter of luck if they get caught. So don't get caught — run to the side of the slope, out of the path of the flow, horizontal. Climb, climb anything. The tree will get swept away, but they might float."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -1810,7 +1810,7 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "shivering"
+                            "dangerously_cold"
                         ],
                         "scar_history": "m_c was scarred from the bite of the cold of an avalanche, though {PRONOUN/m_c/subject} escaped with {PRONOUN/m_c/poss} life.",
                         "death_history": "The view point c_n thought was safe from avalanches... was not."

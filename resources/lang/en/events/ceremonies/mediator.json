@@ -37,7 +37,32 @@
         },
         "strings": [
             "Although (old_name) is still not ready to become a full mediator, {PRONOUN/m_c/subject} {VERB/m_c/are/is} too old to remain in the apprentices' den. A meeting is called, and {PRONOUN/m_c/subject} {VERB/m_c/are/is} given the name m_c. The mood is tense and pitying. ",
-            "Although some Clan members have doubts of (old_name)'s abilities, lead_name gives {PRONOUN/m_c/object} the name m_c and welcomes {PRONOUN/m_c/object} as the Clan's new mediator."
+            "Although some Clan members have doubts of (old_name)'s abilities, lead_name gives {PRONOUN/m_c/object} the name m_c and welcomes {PRONOUN/m_c/object} as the Clan's new mediator.",
+            "(old_name) seems to have a talent for making arguments <i>worse</> rather than resolving them. Despite this, {PRONOUN/m_c/subject} {VERB/m_c/are/is} far too old to remain an apprentice; {PRONOUN/m_c/subject} {VERB/m_c/are/is} given the name m_c and honored for {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "mediator_unprepared_trustlower",
+        "involved_cats": {
+            "m_c": {
+                "past_status": ["mediator apprentice"],
+                "current_exp": ["untrained", "learning"]
+            }
+        },
+        "strings": [
+            "(old_name) has spent moons falling just shy of the tasks set before {PRONOUN/m_c/object}. When {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c and honored for {PRONOUN/m_c/poss} r_h, many question whether they truly can properly mediate for the Clan."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["some_clan", "high_lawful"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["trust"],
+                "amount": -5,
+                "log": {
+                    "cats_from": "cat_from felt like cat_to was ill-equipped to be a mediator."
+                }
+            }
         ]
     },
     {
