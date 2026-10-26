@@ -177,6 +177,7 @@ You can override the default minimums by including `(min:#)` after the status or
     | `starving`             | :x:                    |
     | `amputated_tail`             | :fontawesome-solid-check:                    |
     | `amputated_leg`             | :fontawesome-solid-check:                    |
+    | `stinky`             | :fontawesome-solid-check:                    |
 
 ===  "Permanent Conditions"
 

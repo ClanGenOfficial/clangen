@@ -8184,6 +8184,7 @@
         "frequency": 2,
         "location": [
             "forest",
+            "mountainous",
             "plains"
         ],
         "required_cat_types": {
@@ -8304,6 +8305,12 @@
                         "type": "freshkill",
                         "adjust": "increase_tiny"
                     }
+                ],
+                "condition": [
+                    {
+                        "cats": ["patrol_cats"],
+                        "condition": ["stinky"]
+                    }
                 ]
             },
             {
@@ -8401,6 +8408,7 @@
                 "strings": [
                     "s_c0 sticks {PRONOUN/s_c0/poss} nose into the hole, only to come face-to-face with a skunk! {PRONOUN/s_c0/subject/CAP} is sprayed!"
                 ],
+                "exp_gained": 0,
                 "involved_cats": {
                     "s_c0": {
                         "prior_abbreviation": [
@@ -8415,7 +8423,6 @@
                         }
                     }
                 },
-                "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_from": [
@@ -8433,6 +8440,12 @@
                         "log": {
                             "cats_from": "cat_to came back to camp empty-pawed and stinking of skunk. cat_from got an unfortunate noseful."
                         }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": ["s_c0"],
+                        "condition": ["stinky"]
                     }
                 ]
             },
