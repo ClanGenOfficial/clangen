@@ -12,7 +12,13 @@ class EventInformation:
         text: str,
         types: list[
             Literal[
-                "relation", "ceremony", "birth_death", "health", "other_clans", "misc"
+                "relation",
+                "interaction",
+                "ceremony",
+                "birth_death",
+                "health",
+                "other_clans",
+                "misc",
             ]
         ] = None,
         cats_involved: list | tuple = None,

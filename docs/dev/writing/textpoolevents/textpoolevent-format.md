@@ -1,49 +1,10 @@
-# Normal Ceremonies
-
-Ceremonies utilize the `TextPoolEvent` format.
-
-## Usable Cat References
-
-| abbreviation  | use                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `m_c`         | The main cat. This is the cat undergoing the ceremony. You can always assume that this cat is appropriate for a given ceremony (i.e. that the `m_c` for an apprentice ceremony is of an appropriate age and rank for that ceremony). This means that you do not need to specify constraints to ensure that they are appropriate (i.e. the `m_c` of our apprentice ceremony needs no `"age": ["adolescent"]` constraint). |                                                                                                 |
-| `r_c#`        | A random cat: this cat is chosen at complete random and will not be m_c. You can specify constraints on this cat to require it to have certain attributes rather than being entirely random. The `#` is replaced with a number: 0-5. It's recommended to begin at 0 and increment as needed.                                                                                                                             | |      
-| `past_deputy` | This is a ceremony-unique abbreviation and can only be used within *deputy* ceremonies. The cat who held the deputy position immediately prior to `m_c` will be this cat, even if dead or outside of the Clan (however, you can apply constraints as typical to ensure a certain sort of `past_deputy`.) If there is no past deputy to be used, then any ceremony requiring one will not be chosen.                      |                                                                                                                                                                                                                                                                                 |
-| `n_c#`        | A newly generated or existing outsider/other clan cat: The `#` is replaced with a number: 0-6. It's recommended to begin at 0 and increment as needed. Generating new cats is not necessarily typical for ceremony events, however it is possible.                                                                                                                                                                       |
-
-## Directory Structure
-The relationship event directory is found in `resources/lang/en/events/ceremonies`.
-
-Within this folder are multiple files:
-
-| name                           | use                                                                                                                                                                         |
-|--------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `apprentice.json`              | Ceremonies for cats becoming warrior apprentices.                                                                                                                           |
-| `deputy.json`                  | Ceremonies for cats becoming deputies.                                                                                                                                      |
-| `elder.json`                   | Ceremonies for cats retiring to become elders.                                                                                                                              |
-| `leader.json`                  | Ceremonies for cats becoming leader (this does not include the life-receiving ceremony)                                                                                     |
-| `mediator.json`                | Ceremonies for cats becoming mediators.                                                                                                                                     |
-| `mediator_apprentice.json`     | Ceremonies for cats becoming mediator apprentices.                                                                                                                          |
-| `medicine_cat.json`            | Ceremonies for cats becoming medicine cats.                                                                                                                                 |
-| `medicine_cat_apprentice.json` | Ceremonies for cats becoming medicine cat apprentices.                                                                                                                      |
-| `warrior.json`                 | Ceremonies for cats becoming warriors.                                                                                                                                      |
-| `ceremony_traits.json`         | This does not include any ceremonies! Rather this holds the "honors" that replace the `r_h` text within a ceremony string. Each cat trait has a list of potential "honors". |
-
-## Ceremony Event Format
-
-### Minimum Required
-> The smallest amount of information you're required to include in this format.
-
-```json
-{
-    "event_id": "",
-    "strings": [
-        "m_c was promoted to deputy."
-    ],
-}
-```
+# TextPoolEvent Format
 
 ### Full Format
+If looking for a "minimum required" version of this format, check the doc page for the event type you are writing for. Different event types have different requirements.
+
+!!! important
+    Remember that some parameters are only used for specific types of events. The doc page for that event type will specify any parameters that cannot be used.
 
 ```json
 {
@@ -51,6 +12,10 @@ Within this folder are multiple files:
     "location": [],
     "season": [],
     "tags": [],
+    "frequency": 4,
+    "outcome_art": "",
+    "outcome_art_clean": "",
+    "required_cat_types": {},
     "involved_cats": {
         "m_c": {
             "status": [],
@@ -76,9 +41,6 @@ Within this folder are multiple files:
             "accessory": []
         }
     },
-    "strings": [
-        "m_c was promoted to deputy."
-    ],
     "required_reputation": {
         "outsider": [],
         "other_clan": []
@@ -91,7 +53,12 @@ Within this folder are multiple files:
             "constraints": []
         }
     ],
+    "patrol_temperament": [],
     "other_clan_temperament": [],
+    "strings": [
+        "m_c was promoted to deputy."
+    ],
+    "exp_gained": 0,
     "reputation_changes": {
         "other_clan": 0,
         "outsider": 0
@@ -147,6 +114,11 @@ Within this folder are multiple files:
             "new_status": []
         }
     ],
+    "meet": [
+        {
+            "cats": []
+        }
+    ],
     "future_event": [
         {
             "event_type": "",
@@ -159,56 +131,73 @@ Within this folder are multiple files:
 ```
 ***
 
-### event_id: str
-A unique string used to identify the event block. Generally, the ID tries to specify specific circumstances or themes of the ceremony. The rank of the ceremony is typically used as a prefix for this id.
+#### event_id: str
+A unique string used to identify the event block. 
 
-* `app_no_mentor0`
-* `warrior_unsure0`
-* `deputy_clan_chosen1`
+- [Ceremony Specific Notes](normal-ceremonies.md#event_id-str)
+- [Thought Specific Notes](thoughts.md#event_id-str)
+- [Relationship Event Specific Notes](relationship-events.md#event_id-str)
 
 ***
 
-### location:list[str]
+#### location:list[str]
 This controls the biome and camp the event appears in. [Tagging Instructions](../reference/tag-lists.md#locations)
 
 ***
 
-### season: list[str]
+#### season: list[str]
 List of seasons in which the event may occur. You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
 You can tag with a mix of "newleaf", "greenleaf", "leaf-fall", "leaf-bare", or remove the parameter altogether to allow for any season.
+
+***
+
+#### tags: list[str]
+Used to dictate some odds-and-ends about event constraints: [General Tags](../reference/tag-lists.md#general-tags).
+
+***
+
+#### frequency: int
+>Controls how common an event is. This works on a 1-4 scale. 
+
+| int | commonality |
+|-----|-------------|
+| 1   | Very Rare   |
+| 2   | Rare        |
+| 3   | Uncommon    |
+| 4   | Common      |
+
+!!! tip
+    It's good to consider frequency as relative to that event's set up. While players likely aren't sending out a patrol of 2 apprentices every moon, that doesn't mean a 2-app patrol event should be marked as Rare frequency. Rather, consider it in terms of "in 10 *instances* of this patrol set up, how often should this specific patrol appear?". Seeing this sort of patrol in 4/10 instances would mean it's a common event! Seeing it just once within those 10 instances would mean it's a very rare event.
+
+!!! warning
+    Don't try to boost an event's frequency to make up for it being heavily constrained! While we used to do that with our old system, the new code automatically decides how to weight an event according to its constraints in a way that is completely divorced from the frequency. We decide event rarities and the code decides if events should be prioritized in specific instances.
 
 ***
 
 #### poi: Dict
 > Used to specify which POI (Point Of Interest) a Clan must have access to in order for this event to trigger. [POI Constraint Tagging](../points-of-interest.md/#using-points-of-interest)
 
+[Patrol Outcome Specific Notes](../patrols/patrol_outcome.md#poi-dict)
 
 ***
 
-### tags: list[str]
-Used to dictate some odds-and-ends about event constraints: [General Tags](../reference/tag-lists.md#general-tags).
+#### required_cat_types: Dict[str, List[int]]
+Utilizes the same functionality as the greater patrol parameter: [required_cat_types](../patrols/patrols.md/#required_cat_types-dictstr-listint)
+
+[Patrol Outcome Specific Notes](../patrols/patrol_outcome.md#required_cat_types-dictstr-listint)
 
 ***
 
-### strings: list[str]
-This is a list of events applicable to the constraints on this events block. You may include as many or as few events here as you wish, but remember that the constraints will apply to *all* of them. 
-
-For example:
-```json
-"strings": [
-    "m_c has reached the age of six moons and has been made an apprentice, with r_c0 as {PRONOUN/m_c/poss} mentor.",
-    "Newly-made apprentice m_c touches noses with {PRONOUN/m_c/poss} new mentor, r_c0."
-],
-```
-
-### involved_cats: dict[str: dict]
+#### involved_cats: dict[str: dict]
 This dictionary holds all constraints for the cats whom we wish to reference in the ceremony.
 
 [Full Involved Cat Dictionary Information](../reference/involved-cat-dict.md)
 
+[Patrol Outcome Specific Notes](../patrols/patrol_outcome.md#involved_cats-dictstr-dict)
+
 ***
 
-### required_reputation: dict:
+#### required_reputation: dict:
 Constrains the event to only occur if the player clan has the required reputation.
 ```json
     "required_reputation": {
@@ -224,7 +213,7 @@ Constrains the event to only occur if the player clan has the required reputatio
 
 ***
 
-### relationship_constraint: list[dict]
+#### relationship_constraint: list[dict]
 Constrains the event to only occur if the specified relationships exist. Multiple dictionary blocks can be added to specify multiple required configurations of relationships.
 ```json
         "relationship_constraint": [
@@ -262,12 +251,56 @@ Constrains the event to only occur if the specified relationships exist. Multipl
 
 ***
 
-### other_clan_temperament: list[str]
-List of allowed temperaments for the other Clan involved in the event. [Possible Tempers](../reference/tag-lists.md/#clan-temperaments). You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
+#### patrol_temperament: list[str]
+List of allowed patrol temperaments. The patrol's temperament is calculated from the personalities of the cats on it, weighted by rank. [Possible Tempers](../reference/tag-lists.md/#clan-temperaments). You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
+
+[Patrol Outcome Specific Notes](../patrols/patrol_outcome.md#patrol_temperament-liststr)
+
 
 ***
 
-### reputation_changes: dict
+#### other_clan_temperament: list[str]
+List of allowed temperaments for the other Clan involved in the event. [Possible Tempers](../reference/tag-lists.md/#clan-temperaments). You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
+
+[Patrol Outcome Specific Notes](../patrols/patrol_outcome.md#other_clan_temperament-liststr)
+
+***
+
+#### outcome_art: str
+Optional. Name of outcome-specific art, without file extension (no .png). If no art is specified, the intro art will be used. If you would like this to be art of the POI, you can just enter `"POI"` as the art file.
+
+ Example: "outcome_art": "bord_general_intro",
+
+
+#### outcome_art_clean: str
+Optional. Name of non-gore outcome-specific art, without file extension (no .png). Adding a clean version of the art marks the normal version as containing gore. The game will then use the clean version if the "Allow mild gore and blood in patrol artwork" setting is off, and the explicit version if this setting is on.
+
+ Example: "outcome_art_clean": "bord_general_intro",
+
+***
+
+#### strings: list[str]
+This is a list of events applicable to the constraints on this events block. You may include as many or as few events here as you wish, but remember that the constraints will apply to *all* of them. 
+
+For example:
+```json
+"strings": [
+    "m_c has reached the age of six moons and has been made an apprentice, with r_c0 as {PRONOUN/m_c/poss} mentor.",
+    "Newly-made apprentice m_c touches noses with {PRONOUN/m_c/poss} new mentor, r_c0."
+],
+```
+
+!!! caution
+    Be careful about referencing actions only specific types of cats take! For example, if an event refers to patrolling, consider if you've adequately constrained the event to only allow cats who *can* go on a patrol (of course, that isn't necessary for patrol outcome events! Those cats will always be patrol-worthy.) We don't want kittens talking about their trip to the Gathering!
+
+***
+
+#### exp_gained: int
+The amount of exp cats receive (sorta). The exact amount also depends on the number of cats and current EXP levels, but in general, a higher number here means more exp. If exp is 0, no exp will be given. 
+
+***
+
+#### reputation_changes: dict
 How the player Clan's reputation will change with outsiders or the other_clan. Specify a positive or negative integer.
 
 ```json
@@ -277,23 +310,16 @@ How the player Clan's reputation will change with outsiders or the other_clan. S
     }
 ```
 
-> Defaults:
->
-> | Outcome type          | Change                  |
-> |-----------------------|-------------------------|
-> | Success               | 2                       |
-> | Failure               | 0 or -1                 |
-> | Antagonize success    | -2                      |
-> | Antagonize failure    | -1 or 0                 |
+[Patrol Outcome Specific Notes](../patrols/patrol_outcome.md#reputation_changes-dict)
 
 ***
 
-### relationship_changes:list[dict[str, various]]
+#### relationship_changes:list[dict[str, various]]
 Indicates effects on cat relationships. Check [Writing Relationship Changes](../reference/common-formats.md#writing-relationship-changes) for full parameters.
 
 ***
 
-### supply:list[dict]
+#### supply:list[dict]
 Indicates changes to the supply of the Clan. Each supply change block is a new change.
 
 Change block:
@@ -320,8 +346,8 @@ Change block:
 
 ***
 
-### death: list[dict]
-Indicate which cats should die as a result of this outcome. You can specify different "types" of death as separate blocks.
+#### death: list[dict]
+Indicate which cats should die as a result of this event. You can specify different "types" of death as separate blocks.
 
 Death block:
 ```json
@@ -329,6 +355,7 @@ Death block:
             "cats": [],
             "body": true,
             "history": "",
+            "no_results": false
         }
 ```
 **cats**
@@ -340,9 +367,12 @@ Death block:
 **history**
 > String to add to the cat's death history.  Use `m_c` in place of the dead cat's name and pronoun.
 
+**no_results**
+> Not required. Set to True to prevent the result text for this death from appearing on the patrol screen. Defaults to False.
+
 ***
 
-### condition: list[dict]
+#### condition: list[dict]
 Indicate which cats should receive conditions and what conditions they receive. You can add multiple condition blocks.
 
 Condition block:
@@ -380,7 +410,7 @@ Condition block:
 
 ***
 
-### lost: list[dict]
+#### lost: list[dict]
 Indicate which cats should be lost from their Clan. You can add multiple lost blocks.
 
 Lost block:
@@ -392,9 +422,11 @@ Lost block:
 **cats**
 > List of cats who will be lost. 
 
+[Patrol Outcome Specific Notes](../patrols/patrol_outcome.md#reputation_changes-dict)
+
 ***
 
-### join: list[dict]
+#### join: list[dict]
 > Indicate which cats will join the player Clan. You can add multiple join blocks.
 
 Join block:
@@ -416,7 +448,21 @@ Join block:
 
 ***
 
-### future_event:list[dict{str, various}]
+#### meet: list[dict]
+> Indicate which cats will meet the player Clan. You can add multiple meet blocks.
+
+meet block:
+```json
+        {
+            "cats": []
+        }
+```
+**cats**
+> List of cats who will meet the Clan.
+
+***
+
+#### future_event:list[dict{str, various}]
 
  [Using Future Events](../future.md)
  

@@ -869,15 +869,22 @@ class ShortEvent:
                 if "scar" not in block:
                     return
                 elif cat_abbr in block["cats"]:
-                    possible_scar = history_text_adjust(
-                        block["scar"], self.other_clan_name, game.clan, self.random_cat
-                    )
-                    possible_death = history_text_adjust(
-                        block["death"],
-                        self.other_clan_name,
-                        game.clan,
-                        self.random_cat,
-                    )
+                    possible_scar = ""
+                    possible_death = ""
+                    if "scar" in block:
+                        possible_scar = history_text_adjust(
+                            block["scar"],
+                            self.other_clan_name,
+                            game.clan,
+                            self.random_cat,
+                        )
+                    if "death" in block:
+                        possible_death = history_text_adjust(
+                            block["death"],
+                            self.other_clan_name,
+                            game.clan,
+                            self.random_cat,
+                        )
                     if possible_scar or possible_death:
                         cat.history.add_possible_history(
                             injury,

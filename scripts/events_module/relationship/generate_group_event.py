@@ -1,3 +1,4 @@
+from copy import deepcopy
 from random import choice, choices
 from typing import Union
 
@@ -5,13 +6,14 @@ import i18n
 
 from scripts.cat.cats import Cat
 from scripts.config import get_config
-from scripts.events_module.event_information import EventInformation
 from scripts.events_module.consequences import change_relationship_values
-from scripts.events_module.text_adjust import process_text, adjust_list_text
+from scripts.events_module.event_information import EventInformation
+from scripts.events_module.parameter_dicts import RelationshipChangeDict
 from scripts.events_module.text_pool_event.event_retrieval import (
     get_valid_event,
     load_text_pool_events,
 )
+from scripts.events_module.text_pool_event.handle_consequences import execute_outcome
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
 
@@ -70,23 +72,18 @@ def _get_event(
 def _resolve_event(
     chosen_event, chosen_intensity, involved_cats, type_of_change
 ) -> list[str]:
-    # now format up the string
-    event_string = choice(chosen_event.strings)
+    # separate the rel changes out of the event so that we can handle them in a special way
+    # rather than handling them in execute_outcome
+    relationship_changes = chosen_event.relationship_changes
+    event_to_execute = deepcopy(chosen_event)
+    event_to_execute.relationship_changes = []
 
-    # handle replacing the multi_cat string
-    if "multi_cat" in involved_cats:
-        event_string = event_string.replace(
-            "multi_cat",
-            adjust_list_text([str(c.name) for c in involved_cats["multi_cat"]]),
-        )
-    # collect all the names and pronouns for the other cats
-    replace_dict = {
-        abbr: (str(c.name), choice(c.pronouns))
-        for abbr, c in involved_cats.items()
-        if abbr != "multi_cat"
-    }
-    # replace their abbreviations
-    event_string = process_text(event_string, replace_dict)
+    # we won't use results and rel_results here
+    event_string, results, rel_results = execute_outcome(
+        event=event_to_execute,
+        event_involved_cats=involved_cats,
+        other_clan=None,
+    )
 
     # add the postscript text
     event_string = i18n.t(
@@ -106,13 +103,17 @@ def _resolve_event(
     )
 
     # influence relationships
-    _influence_relationships(involved_cats, chosen_event, event_string)
+    _influence_relationships(involved_cats, relationship_changes, event_string)
 
     return cat_ids
 
 
-def _influence_relationships(involved_cats, event: TextPoolEvent, chosen_string: str):
-    for change in event.relationship_changes:
+def _influence_relationships(
+    involved_cats,
+    relationship_changes: list[RelationshipChangeDict],
+    chosen_string: str,
+):
+    for change in relationship_changes:
         # get the cats_from
         cats_from = [
             involved_cats[c]
