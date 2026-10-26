@@ -3823,9 +3823,9 @@
                     "p_l"
                 ],
                 "cats_to": [
-                    "patrol_cats"
+                    "r_c0"
                 ],
-                "mutual": false,
+                "mutual": true,
                 "constraints": [
                     "dislikes"
                 ]
@@ -3844,7 +3844,7 @@
         ],
         "success_outcomes": [
             {
-                "frequency": 1,
+                "frequency": 4,
                 "strings": [
                     "Impressively, the pair manage to stop bickering long enough for r_c0 to make an impressive catch. Perhaps even more shockingly, though, p_l congratulates {PRONOUN/r_c0/object}, and the two actually work together for the rest of the patrol."
                 ],
@@ -3877,56 +3877,6 @@
             },
             {
                 "frequency": 4,
-                "strings": [
-                    "However much s_c0 dislikes r_c0, feeding the Clan is more important. They manage to get through the patrol without any major disputes — and catch a decent amount of prey, too."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "calm",
-                                "compassionate",
-                                "faithful",
-                                "loyal",
-                                "righteous",
-                                "responsible",
-                                "thoughtful",
-                                "wise"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 10,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "s_c0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_to and cat_from managed to work together well enough while on a hunting patrol."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
                 "outcome_art": "cat_sprites/gen_hunt_rabbit_Wr",
                 "strings": [
                     "Spotting a rabbit, the bickering duo glance at each other, realizing they'll need to work together to catch it. Feeding the Clan comes before rivalries. Putting their differences aside, r_c0 chases the rabbit while p_l gets into position, catching the rabbit when r_c0 drives it into {PRONOUN/r_c0/poss} paws."
@@ -3957,16 +3907,74 @@
                         "adjust": "increase_medium"
                     }
                 ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "However much s_c0 dislikes s_c1, feeding the Clan is more important. They manage to get through the patrol without any major disputes — and catch a decent amount of prey, too."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "calm",
+                                "compassionate",
+                                "faithful",
+                                "loyal",
+                                "righteous",
+                                "responsible",
+                                "thoughtful",
+                                "wise"
+                            ]
+                        }
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": [
+                            "-s_c0"
+                        ]
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c1"
+                        ],
+                        "cats_from": [
+                            "s_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_to and cat_from managed to work together well enough while on a hunting patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "The pair manage to keep the hunting patrol relatively on track, until r_c0 bursts into laughter after p_l slips and falls during a catch. Furious and <i>very</i> close to clawing r_c0's obnoxious face off, p_l storms off back to camp."
+                    "The pair manage to keep the hunting patrol relatively on track, until s_c0 bursts into laughter after s_c1 slips and falls during a catch. Furious and <i>very</i> close to clawing r_c0's obnoxious face off, s_c1 storms off back to camp."
                 ],
                 "involved_cats": {
-                    "r_c0": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
                         "stat": {
                             "trait": [
                                 "childish",
@@ -3975,16 +3983,21 @@
                                 "troublesome"
                             ]
                         }
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": [
+                            "-s_c0"
+                        ]
                     }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c1"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -4053,7 +4066,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Already on edge from the constant bickering, when r_c0 makes a particularly hurtful remark, s_c0 retaliates, {PRONOUN/s_c0/poss} claws scratching r_c0's cheek. The pair silently return to camp — each cat seething — and refuse to tell any cat what happened."
+                    "Already on edge from the constant bickering, when s_c1 makes a particularly hurtful remark, s_c0 retaliates, {PRONOUN/s_c0/poss} claws scratching s_c1's cheek. The pair silently return to camp — each cat seething — and refuse to tell any cat what happened."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -4067,6 +4080,11 @@
                                 "vengeful"
                             ]
                         }
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": [
+                            "-s_c0"
+                        ]
                     }
                 },
                 "exp_gained": 0,
@@ -4076,7 +4094,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -4092,7 +4110,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -4108,7 +4126,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c1"
                         ],
                         "condition": [
                             "torn_pelt"
