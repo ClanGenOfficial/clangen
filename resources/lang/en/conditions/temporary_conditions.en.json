@@ -138,5 +138,7 @@
         "amputated_tail_alert": "hurt!",
         "temporary_weakness": "temporary weakness",
         "temporary_weakness_alert": "hurt!"
+        "stinky": "stinky",
+        "stinky_alert": "stinky!"
     }
 }

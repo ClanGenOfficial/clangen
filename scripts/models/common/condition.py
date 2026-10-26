@@ -196,6 +196,8 @@ class ConditionEnum(Enum):
     not_amputated_tail = "-amputated_tail"
     temporary_weakness = "temporary_weakness"
     not_temporary_weakness = "-temporary_weakness"
+    stinky = "stinky"
+    not_stinky = "-stinky"
 
     battle_injury = "battle_injury"
     minor_injury = "minor_injury"

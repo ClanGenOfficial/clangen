@@ -216,6 +216,8 @@
         "-amputated_tail",
         "temporary_weakness",
         "-temporary_weakness",
+        "stinky",
+        "-stinky",
         "battle_injury",
         "minor_injury",
         "blunt_force_injury",

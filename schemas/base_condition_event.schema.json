@@ -820,6 +820,8 @@
         "-amputated_tail",
         "temporary_weakness",
         "-temporary_weakness",
+        "stinky",
+        "-stinky",
         "battle_injury",
         "minor_injury",
         "blunt_force_injury",
@@ -1190,7 +1192,9 @@
         "leader",
         "-leader",
         "past_deputy",
-        "-past_deputy"
+        "-past_deputy",
+        "multi_cat",
+        "-multi_cat"
       ],
       "title": "GatherCatEnum",
       "type": "string"
