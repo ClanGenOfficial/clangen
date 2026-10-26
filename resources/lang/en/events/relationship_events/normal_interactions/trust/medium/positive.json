@@ -56,7 +56,10 @@
                     "warrior",
                     "deputy",
                     "leader"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             },
             "r_c": {
                 "status": [
@@ -64,7 +67,10 @@
                     "warrior",
                     "deputy",
                     "leader"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             }
         },
         "relationship_changes": [
@@ -293,18 +299,24 @@
             "m_c and r_c volunteer to go on an extra border patrol together.",
             "m_c notices that r_c has finished all {PRONOUN/r_c/poss} tasks without issues lately.",
             "During a patrol, m_c and r_c have a long conversation about their beliefs and agree on many things.",
-            "During the last gathering, m_c and r_c defended their Clan against another Clan's heckling."
+            "During the last Gathering, m_c and r_c defended their Clan against another Clan's heckling."
         ],
         "involved_cats": {
             "m_c": {
                 "status": [
                     "-kitten"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             },
             "r_c": {
                 "status": [
                     "-kitten"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             }
         },
         "relationship_changes": [
@@ -479,5 +491,63 @@
                 ]
             }
         }
+    },
+    {
+        "event_id": "trust_inc_highplotting",
+        "strings": [
+            "m_c feels an odd sense of kinship with r_c.",
+            "m_c is plotting something with r_c.",
+            "m_c and r_c are practicing forbidden moves while training together.",
+            "m_c and r_c are discussing the most brutal ways to kill their \"prey.\"",
+            "m_c and r_c are laughing sinisterly together.",
+            "m_c and r_c are training with their claws unsheathed.",
+            "m_c and r_c are discussing where to find deathberries."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "bloodthirsty",
+                        "vengeful"
+                    ]
+                }
+            },
+            "r_c": {
+                "stat": {
+                    "trait": [
+                        "bloodthirsty",
+                        "vengeful"
+                    ]
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "comfort"
+                ],
+                "amount": 10
+            },
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust"
+                ],
+                "amount": 10
+            }
+        ]
     }
 ]

@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "mangled_leg_infection0",
+        "strings": [
+            "r_c0 wonders if {PRONOUN/r_c0/subject} might need to consult with a medicine cat from another Clan. m_c's mangled leg has become infected and swollen, and {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} more ideas."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "mangled_leg_infection1",
+        "strings": [
+            "As if the injury wasn't bad enough, the skin around m_c's mangled leg has started to swell and feel feverish."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
