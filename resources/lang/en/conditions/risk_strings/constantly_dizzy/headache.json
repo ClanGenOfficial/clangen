@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "constantly_dizzy_headache0",
+        "strings": [
+            "The dizziness that plagues m_c has left {PRONOUN/m_c/object} with a headache."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

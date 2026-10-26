@@ -72,22 +72,77 @@
         "event_id": "respect_adult_de_med1",
         "strings": [
             "m_c saw r_c miss an easy catch today.",
-            "m_c is disappointed in r_c's subpar work lately.",
             "m_c is let down by r_c's sloppy performance during a sparring session.",
             "r_c was supposed to be showing m_c a cool battle move but messed up so badly it made m_c cringe.",
             "m_c noticed that r_c ignored an easy hunting opportunity on a recent patrol.",
             "r_c froze up during a hunting patrol with m_c.",
             "When m_c's border patrol encountered another Clan, r_c acted like a fool.",
+            "m_c thinks that r_c acted disrespectfully during a patrol."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ],
+                "health": {
+                    "working": true
+                }
+            },
+            "r_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "respect_adult_de_med1b",
+        "strings": [
+            "m_c is disappointed in r_c's subpar work lately.",
+            "m_c refuses to believe r_c can catch anything with a crouch like <i>that</i>.",
+            "After r_c returned to camp with a big catch, m_c scoffed and asked if that was it.",
+            "m_c adamantly refuses to eat any prey r_c caught.",
+            "m_c is upset that r_c slept through patrol assignments."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "respect_adult_de_med1c",
+        "strings": [
             "m_c is frustrated after finishing a task that r_c was supposed to do.",
             "m_c calls out r_c for sleeping through a meeting.",
-            "m_c is upset that r_c slept through patrol assignments.",
-            "m_c thinks that r_c acted disrespectfully during a patrol.",
             "m_c notices that r_c seems to disappear whenever difficult tasks are being discussed.",
             "r_c was meant to take a piece of prey to a Clanmate, but m_c saw {PRONOUN/r_c/object} eat it.",
-            "r_c didn't finish a chore that m_c asked {PRONOUN/r_c/object} to do.",
-            "After r_c returned to camp with a big catch, m_c scoffed and asked if that was it.",
-            "m_c refuses to believe r_c can catch anything with a crouch like <i>that</i>.",
-            "m_c adamantly refuses to eat any prey r_c caught."
+            "r_c didn't finish a chore that m_c asked {PRONOUN/r_c/object} to do."
         ],
         "involved_cats": {
             "m_c": {
@@ -141,7 +196,7 @@
         "strings": [
             "m_c is jealous that r_c got to go to the last Gathering.",
             "r_c was complimented by another Clan during the recent Gathering, but m_c wasn't.",
-            "m_c is jealous that r_c 's achievements were recognized at the Gathering but {PRONOUN/m_c/inposs} wasn't.",
+            "m_c is jealous that r_c's achievements were recognized at the Gathering but {PRONOUN/m_c/inposs} weren't.",
             "m_c's jealous at how well r_c gets along with the cats from other Clans.",
             "m_c wonders how r_c carries {PRONOUN/r_c/self} so well during Gatherings."
         ],
@@ -151,7 +206,10 @@
                     "mediator apprentice",
                     "apprentice",
                     "warrior"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             },
             "r_c": {
                 "status": [
@@ -162,19 +220,48 @@
                     "warrior",
                     "mediator",
                     "deputy"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             }
         }
     },
     {
         "event_id": "respect_patrol_de_med",
         "strings": [
-            "m_c is jealous that r_c got to go on border patrol this morning.",
-            "r_c caught a giant piece of prey that m_c wishes {PRONOUN/m_c/subject} did.",
             "m_c tried to show off on a hunting patrol, but r_c got all the attention instead.",
+            "m_c had a plan during a patrol, but r_c's was a lot better."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "warrior"
+                ],
+                "health":{
+                    "working": true
+                }
+            },
+            "r_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy"
+                ],
+                "health":{
+                    "working": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "respect_patrol_de_med_b",
+        "strings": [
+            "r_c caught a giant piece of prey that m_c wishes {PRONOUN/m_c/subject} did.",
+            "m_c is jealous that r_c got to go on border patrol this morning.",
             "m_c wishes {PRONOUN/m_c/subject} could be as good a fighter as r_c.",
             "m_c tries not to get envious hearing one of r_c's crazy patrol stories.",
-            "m_c had a plan during a patrol, but r_c's was a lot better.",
             "m_c is jealous that r_c went on patrol without {PRONOUN/m_c/object}.",
             "m_c doesn't understand how r_c got so good at hunting."
         ],
@@ -190,7 +277,10 @@
                     "apprentice",
                     "warrior",
                     "deputy"
-                ]
+                ],
+                "health":{
+                    "working": true
+                }
             }
         }
     },
@@ -211,7 +301,10 @@
                     "warrior",
                     "deputy",
                     "leader"
-                ]
+                ],
+                "health":{
+                    "working": true
+                }
             },
             "r_c": {
                 "status": [
@@ -219,7 +312,10 @@
                     "warrior",
                     "deputy",
                     "leader"
-                ]
+                ],
+                "health":{
+                    "working": true
+                }
             }
         },
         "relationship_constraint": [

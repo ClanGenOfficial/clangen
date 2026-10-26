@@ -1,0 +1,12 @@
+[
+    {
+        "event_id": "carrionplace_disease0",
+        "strings": [
+            "The stench coming from m_c is finally fading. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} recovered from carrionplace disease.",
+            "Against all odds, m_c has recovered from carrionplace disease."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
