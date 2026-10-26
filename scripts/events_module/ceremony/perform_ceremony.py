@@ -9,10 +9,6 @@ from scripts.cat.conditions.coverage_check import medicine_cats_can_cover_clan
 from scripts.cat.enums import CatRank, CatAge
 from scripts.cat.skills import SkillPath
 from scripts.clan_package.settings import get_clan_setting
-from scripts.conditions import (
-    medicine_cats_can_cover_clan,
-    get_amount_cat_for_one_medic,
-)
 from scripts.config import get_config
 from scripts.events_module.ceremony.generate_normal_ceremony import create_ceremony
 from scripts.events_module.event_information import EventInformation

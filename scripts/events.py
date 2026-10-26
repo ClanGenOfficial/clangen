@@ -8,24 +8,16 @@ TODO: Docs
 import logging
 import random
 
-from scripts.events_module.condition.handle_existing_conditions import (
-    handle_temporary_conditions,
-    handle_permanent_conditions,
-    handle_nutrition,
-)
-from scripts.events_module.condition.generate_condition_event import (
-    generate_condition_event,
-)
-from scripts.cat.microservices.add_to_clan import add_dependents_to_clan, add_to_clan
-from scripts.cat_relations.cat_handle_funcs import create_relationships_new_cat
-from scripts.config import get_config
-
 # pylint: enable=line-too-long
 import traceback
 
 import i18n
 
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
+from scripts.cat.conditions.coverage_check import (
+    medicine_cats_can_cover_clan,
+)
+from scripts.cat.conditions.gain_conditions import gain_temporary_condition
 from scripts.cat.enums import (
     CatAge,
     CatRank,
@@ -34,7 +26,6 @@ from scripts.cat.enums import (
     CatSocial,
 )
 from scripts.cat.microservices.add_to_clan import add_dependents_to_clan, add_to_clan
-from scripts.cat.microservices.conditions import get_ill, get_injured
 from scripts.cat.names import Name
 from scripts.cat.save_load import save_cats, add_cat_to_fade_id
 from scripts.cat_relations.cat_handle_funcs import create_relationships_new_cat
@@ -47,20 +38,23 @@ from scripts.clan_package.get_clan_cats import (
 )
 from scripts.clan_package.settings import get_clan_setting, set_clan_setting
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
-from scripts.cat.conditions.coverage_check import (
-    medicine_cats_can_cover_clan,
-    get_amount_cat_for_one_medic,
-)
-from scripts.cat.conditions.gain_conditions import gain_temporary_condition
-from scripts.events_module.condition.handle_new_conditions import (
-    attempt_give_injuries,
-    attempt_give_illness,
-)
-from scripts.events_module.event_information import EventInformation
+from scripts.config import get_config
 from scripts.events_module.ceremony.perform_ceremony import (
     check_for_ceremony,
     trigger_ceremony,
     check_and_promote_deputy,
+)
+from scripts.events_module.condition.generate_condition_event import (
+    generate_condition_event,
+)
+from scripts.events_module.condition.handle_existing_conditions import (
+    handle_temporary_conditions,
+    handle_permanent_conditions,
+    handle_nutrition,
+)
+from scripts.events_module.condition.handle_new_conditions import (
+    attempt_give_injuries,
+    attempt_give_illness,
 )
 from scripts.events_module.consequences import unpack_rel_block
 from scripts.events_module.event_information import EventInformation
@@ -69,6 +63,7 @@ from scripts.events_module.generate_events import GenerateEvents, generate_event
 from scripts.events_module.outsider import outsider_events
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.events_module.pregnancy import pregnancy_events
+from scripts.events_module.relationship import relation_events
 from scripts.events_module.short.short_event_generation import create_short_event
 from scripts.events_module.text_adjust import (
     ongoing_event_text_adjust,
