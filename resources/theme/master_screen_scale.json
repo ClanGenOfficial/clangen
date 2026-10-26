@@ -1031,54 +1031,6 @@
             }
         }
     },
-    "#image_small_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/image_small.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/image_small_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/image_small_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/image_small_unavailable.png"
-            }
-        }
-    },
-    "#image_medium_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/image_medium.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/image_medium_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/image_medium_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/image_medium_unavailable.png"
-            }
-        }
-    },
-    "#image_large_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/image_large.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/image_large_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/image_large_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/image_large_unavailable.png"
-            }
-        }
-    },
     "#fav_star": {
         "prototype": "@image_button",
         "images": {
@@ -1156,22 +1108,6 @@
             },
             "disabled_image": {
                 "path": "resources\/images\/buttons\/help_hover.png"
-            }
-        }
-    },
-    "#leader_ceremony_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/leader_ceremony.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/leader_ceremony_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/leader_ceremony_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/leader_ceremony_unavailable.png"
             }
         }
     },
