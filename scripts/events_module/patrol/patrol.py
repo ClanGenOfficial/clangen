@@ -428,7 +428,7 @@ class Patrol:
             )
             if not chosen_patrol:
                 raise Exception(
-                    "ERROR: No patrols could be found, even after resetting the used patrol list."
+                    f"ERROR: No patrols could be found for type: {patrol_type}, even after resetting the used patrol list."
                 )
 
         return chosen_patrol
@@ -714,38 +714,28 @@ class Patrol:
             if not game.clan.override_biome
             else game.clan.override_biome
         )
-        prey_sizes = ["tiny", "small", "medium", "large", "huge"]
+        outcome_prey_sizes = ["tiny", "small", "medium", "large", "huge"]
         prey_size_random_weights = get_config(
             f"prey.patrol_balance.{biome}.{game.clan.current_season}"
         )
 
-        chosen_prey_size = choices(prey_sizes, weights=prey_size_random_weights)[0]
+        chosen_prey_size = choices(
+            outcome_prey_sizes, weights=prey_size_random_weights
+        )[0]
         print(f"chosen filter prey size: {chosen_prey_size}")
 
         # filter all possible patrols depending on the needed prey size
         for patrol in possible_patrols:
-            # count how many outcomes award each prey size
-            prey_size_to_outcome_amounts = {}
+            outcome_prey_sizes = set()
             for outcome in patrol.success_outcomes:
                 if outcome.supply:
                     for block in outcome.supply:
                         if block["type"] != "freshkill":
                             continue
                         outcome_prey_size = block["adjust"].replace("increase_", "")
-                        if outcome_prey_size not in prey_size_to_outcome_amounts:
-                            prey_size_to_outcome_amounts[outcome_prey_size] = 0
-                        prey_size_to_outcome_amounts[outcome_prey_size] += 1
+                        outcome_prey_sizes.add(outcome_prey_size)
 
-            # get the prey size with the most outcomes
-            most_prey_size = ""
-            max_occurrences = 0
-            for size, amount in prey_size_to_outcome_amounts.items():
-                if amount >= max_occurrences:
-                    most_prey_size = size
-                    max_occurrences = amount
-
-            # if the most often awarded prey size matches the one we want, then we allow this patrol through
-            if chosen_prey_size == most_prey_size:
+            if chosen_prey_size in outcome_prey_sizes:
                 filtered_patrols.append(patrol)
             elif self.debug_patrol_id and self.debug_patrol_id == patrol.event_id:
                 print(
