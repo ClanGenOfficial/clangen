@@ -277,7 +277,7 @@ class Name:
                 return
 
     # Generate possible suffix
-    def give_suffix(self, eyes, colour, pelt, biome, tortie_pattern):
+    def give_suffix(self, eyes, colour, pelt, biome, tortie_pattern, skills):
         """Generate possible suffix."""
         self.load_localized_names()
 
