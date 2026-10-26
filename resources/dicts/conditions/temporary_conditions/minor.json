@@ -437,7 +437,11 @@
         "requires_scar": false,
         "severity": "minor",
         "duration": 2,
-        "is_complication": false,
+        "mortality": {},
+        "infectiousness": 0.0,
+        "immune_system_effect": 0.0,
+        "side_effect": {},
+        "progression": {},
         "risks": {
             "sore": 0.3,
             "joint_pain": 0.3,
