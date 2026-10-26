@@ -3879,7 +3879,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_hunt_rabbit_Wr",
                 "strings": [
-                    "Spotting a rabbit, the bickering duo glance at each other, realizing they'll need to work together to catch it. Feeding the Clan comes before rivalries. Putting their differences aside, r_c0 chases the rabbit while p_l gets into position, catching the rabbit when r_c0 drives it into {PRONOUN/r_c0/poss} paws."
+                    "Spotting a rabbit, the bickering duo glance at each other, realizing they'll need to work together to catch it. Feeding the Clan comes before rivalries. Putting their differences aside, r_c0 chases the rabbit while p_l gets into position, making the catch when r_c0 drives it into {PRONOUN/r_c0/poss} paws."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -3968,7 +3968,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The pair manage to keep the hunting patrol relatively on track, until s_c0 bursts into laughter after s_c1 slips and falls during a catch. Furious and <i>very</i> close to clawing r_c0's obnoxious face off, s_c1 storms off back to camp."
+                    "The pair manage to keep the hunting patrol relatively on track, until s_c0 bursts into laughter after s_c1 slips and falls during a catch. Furious and <i>very</i> close to clawing s_c0's obnoxious face off, s_c1 storms off back to camp."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -4355,7 +4355,7 @@
                 "frequency": 4,
                 "outcome_art": "hunt_general_intro",
                 "strings": [
-                    "A friendly competition is just what the patrol needed, every cat enjoying the opportunity to show-off their skills! Well, except s_c1, who was taking the entire competition <i>very</i> seriously. Luckily, the other warriors were kind — and smart — enough to just give {PRONOUN/s_c1/object} the win."
+                    "A friendly competition is just what the patrol needs, every cat enjoying the opportunity to show off their skills! Well, except s_c1, who takes the entire competition <i>very</i> seriously. Luckily, the other warriors are kind - and smart - enough to just give {PRONOUN/s_c1/object} the win."
                 ],
                 "exp_gained": 10,
                 "involved_cats": {
@@ -16192,7 +16192,7 @@
                         "mutual": false,
                         "amount": -5,
                         "log": {
-                            "cats_from": "However, that technique involved rolling in old seaweed, so cat_from was not keen to hunt with cat_to again."
+                            "cats_from": "cat_to's hunting technique, while effective, involved rolling in old seaweed; cat_from was not keen to hunt with cat_to again."
                         }
                     },
                     {
