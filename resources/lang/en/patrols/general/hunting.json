@@ -14110,6 +14110,12 @@
                             "cats_from": "cat_to reeked of skunk after a hunting patrol, and cat_from avoided {PRONOUN/cat_to/object} for a few days."
                         }
                     }
+                ],
+                "condition": [
+                    {
+                        "cats": ["s_c0"],
+                        "condition": ["stinky"]
+                    }
                 ]
             },
             {
@@ -14743,6 +14749,12 @@
                         "log": {
                             "cats_from": "cat_to reeked of skunk after a hunting patrol, and cat_from avoided {PRONOUN/cat_to/object} for a few days."
                         }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": ["p_l"],
+                        "condition": ["stinky"]
                     }
                 ]
             },
@@ -15971,6 +15983,830 @@
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 0
+            }
+        ]
+    },
+    {
+        "event_id": "gen_hunt_strange_group1",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 2,
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
+        "intro_strings": [
+            "The patrol looks around for something to disguise their scent while hunting."
+        ],
+        "decline_strings": [
+            "On second thought, maybe not."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "They can't think of anything that would work, but their hunt goes well regardless.",
+                    "A strong-smelling bush will do! The plan works, and their hunt goes well."
+                ],
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "season": ["leaf-bare"],
+                "strings": [
+                    "A snowy patch will do to wash away their scent! The plan works, and their hunt goes well."
+                ],
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["beach"],
+                "strings": [
+                    "A quick dip in seawater will do! The plan works, and their hunt goes well."
+                ],
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["desert"],
+                "strings": [
+                    "A sand bath will do to remove their scent! The plan works, and their hunt goes well."
+                ],
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["beach"],
+                "strings": [
+                    "s_c0 leads them to some seaweed on the beach. It's not very clean, but it's extremely effective, and the patrol hunts well."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "mutual": false,
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "However, that technique involved rolling in old seaweed, so cat_from was not keen to hunt with cat_to again."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's clever technique for disguising scents during a hunting patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["wetlands"],
+                "strings": [
+                    "A quick dip in a stagnant pond will do! The plan works, and their hunt goes well."
+                ],
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["wetlands"],
+                "strings": [
+                    "s_c0 leads them to some rotting muddy grass. It's not very clean, but it's extremely effective, and the patrol hunts well."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "mutual": false,
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "However, that technique involved rolling in rotting grass, so cat_from was not keen to hunt with cat_to again."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's clever technique for disguising scents during a hunting patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["forest"],
+                "strings": [
+                    "s_c0 leads them to some deer droppings in the forest. It's not very clean, but it's extremely effective, and the patrol hunts well."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "mutual": false,
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "However, that technique involved rolling in deer droppings, so cat_from was not keen to hunt with cat_to again."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's clever technique for disguising scents during a hunting patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": ["patrol_cats"],
+                        "condition": ["stinky"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 leads them to some rabbit droppings. It's not very clean, but it's extremely effective, and the patrol hunts well."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "mutual": false,
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "However, that technique involved rolling in rabbit droppings, so cat_from was not keen to hunt with cat_to again."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's clever technique for disguising scents during a hunting patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": ["patrol_cats"],
+                        "condition": ["stinky"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["mountainous"],
+                "strings": [
+                    "s_c0 leads them to some moose dung on the slopes. It's not very clean, but it's extremely effective, and the patrol hunts well."
+                ],
+                "exp_gained": 20,
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "mutual": false,
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "However, that technique involved rolling in moose droppings, so cat_from was not keen to hunt with cat_to again."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's clever technique for disguising scents during a hunting patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": ["patrol_cats"],
+                        "condition": ["stinky"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 tells the patrol to roll in a patch of garlic to disguise their scent, which works perfectly. It's a funny taste to wash off their pelts, though."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "strange"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's clever technique for disguising one's scent during a hunting patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol finds nothing to disguise their scent, and no prey either.",
+                    "A strong-smelling bush will do! The patrol finds no prey; it seems like all the prey was scared off because of their stench!"
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to tried to cover their scent on a hunting patrol, but it backfired and scared off the prey."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_hunt_strange_solo1",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 3,
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
+        "intro_strings": [
+            "p_l looks around for something to disguise {PRONOUN/p_l/poss} scent while hunting."
+        ],
+        "decline_strings": [
+            "On second thought, maybe not."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "{PRONOUN/p_l/subject/CAP} can't think of anything that would work, but {PRONOUN/p_l/poss} hunt goes well regardless.",
+                    "A strong-smelling bush will do! The plan works, and {PRONOUN/p_l/poss} hunt goes well."
+                ],
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["wetlands"],
+                "strings": [
+                    "p_l finds some rotting muddy grass. It's not very clean, but it's extremely effective, and the hunt goes well."
+                ],
+                "exp_gained": 20,
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "clan",
+                            "high_stable"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "mutual": false,
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "cat_from wondered why cat_to stank of deer droppings after returning from a hunt."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by how much prey cat_to brought back after a solo-hunt."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["forest"],
+                "strings": [
+                    "p_l finds some deer droppings in the forest. It's not very clean, but it's extremely effective, and the hunt goes well."
+                ],
+                "exp_gained": 20,
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "clan",
+                            "high_stable"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "mutual": false,
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "cat_from wondered why cat_to stank of deer droppings after returning from a hunt."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by how much prey cat_to brought back after a solo-hunt."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": ["p_l"],
+                        "condition": ["stinky"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l finds some rabbit droppings. It's not very clean, but it's extremely effective, and the hunt goes well."
+                ],
+                "exp_gained": 20,
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "clan",
+                            "high_stable"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "mutual": false,
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "cat_from wondered why cat_to stank of rabbit droppings after returning from a hunt."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by how much prey cat_to brought back after a solo-hunt."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": ["p_l"],
+                        "condition": ["stinky"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["mountainous"],
+                "strings": [
+                    "p_l finds some moose dung on the slopes. It's not very clean, but it's extremely effective, and the hunt goes well."
+                ],
+                "exp_gained": 20,
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "clan",
+                            "high_stable"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "mutual": false,
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "cat_from wondered why cat_to stank of moose droppings after returning from a hunt."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by how much prey cat_to brought back after a solo-hunt."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": ["p_l"],
+                        "condition": ["stinky"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l rolls in a patch of garlic to disguise {PRONOUN/p_l/poss} scent, which works perfectly. It's a funny taste to wash off {PRONOUN/p_l/poss} pelt, though."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": [
+                                "strange"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l finds nothing to disguise {PRONOUN/p_l/poss} scent, and no prey either."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "A strong-smelling bush will do! p_l finds no prey; it seems like all the prey was scared off because of {PRONOUN/p_l/poss} stench!"
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "comfort"
+                        ],
+                        "mutual": false,
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "cat_to returned from a hunt empty-pawed and smelly. cat_from got an unfortunate noseful."
+                        }
+                    }
+                ]
             }
         ]
     }
