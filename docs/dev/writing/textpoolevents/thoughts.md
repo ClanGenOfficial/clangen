@@ -1,4 +1,5 @@
 # Thoughts
+Thoughts utilize the `TextPoolEvent` format.
 
 "Thoughts" are the line of text below a cat's name on their profile. They're meant to signify a current action or line of thinking that the cat is "currently" taking, essentially a snapshot into a cat's day-to-day life.
 
@@ -44,8 +45,6 @@ Within the game, all cats take a new thought each timeskip. However, there are a
     Within `while_alive` and `while_dead`, thoughts should be placed in `general.json` if they apply to multiple statuses.
 
 ## Thought Format
-!!! note "Important"
-    If you do not use a constraint, you can remove it from the thought to make the JSONS less hefty and more readable. Check out the below "Minimum Required" to see what parameters are always required.
 
 ### Minimum Required
 >The smallest amount of information you're required to include in this format. 
@@ -60,56 +59,32 @@ Within the game, all cats take a new thought each timeskip. However, there are a
 ```
 
 ### Full Format
-```json
-    {
-        "event_id": "test",
-        "location": [],
-        "season": [],
-        "tags": [],
-        "strings": [
-            "Is thinking"
-        ],
-        "involved_cats": {
-            "m_c": {
-                "status": [],
-                "past_status": [],
-                "age": [],
-                "group": [],
-                "standing": {
-                    "group": [],
-                    "currently": [],
-                    "past": []
-                  },
-                "stat": {
-                    "skill": [],
-                    "trait": [],
-                    "must_have_both": false
-                },
-                "health": {
-                    "working": true,
-                    "condition": [],
-                    "must_be_congenital": false,
-                    "must_be_acquired": false
-                },
-                "backstory": []
-            }
-        },
-        "relationship_constraint": [
-            {
-                "cats_from": [],
-                "cats_to": [],
-                "mutual": false,
-                "constraints": []
-            }
-        ]
-    }
-```
+
+This event type uses the [TextPoolEvent Format](../textpoolevents/textpoolevent-format.md)
+
+Any parameters with thought-specific notes are explained below.
+
+### Disallowed Parameters
+
+The following parameters from the TextPoolFormat are not used for Thoughts:
+
+- [frequency](../textpoolevents/textpoolevent-format.md#frequency-int)
+- [outcome_art](../textpoolevents/textpoolevent-format.md#outcome_art-str)
+- [outcome_art_clean](../textpoolevents/textpoolevent-format.md#outcome_art_clean-str)
+- [required_cat_types](../textpoolevents/textpoolevent-format.md#required_cat_types-dictstr-listint)
+- [patrol_temperament](../textpoolevents/textpoolevent-format.md#patrol_temperament-liststr)
+- [exp_gained](../textpoolevents/textpoolevent-format.md#exp_gained-int)
+- [death](../textpoolevents/textpoolevent-format.md#death-listdict)
+- [lost](../textpoolevents/textpoolevent-format.md#lost-listdict)
+- [join](../textpoolevents/textpoolevent-format.md#join-listdict)
 
 
 ***
 
-### id: str
-A unique string used to identify the thought block. Generally, the ID includes the condition, personality, age, and status of the main_cat, as well as the condition, personality, age, and status of any other cat mentioned.
+### event_id: str
+[Main event_id Notes](../textpoolevents/textpoolevent-format.md#event_id-str)
+
+Generally, the ID includes the condition, personality, age, and status of the main_cat, as well as the condition, personality, age, and status of any other cat mentioned.
 
 * `paralyzed_gen_to_alive_gen`
 * `insecure_apprentice`
@@ -117,83 +92,9 @@ A unique string used to identify the thought block. Generally, the ID includes t
 
 ***
 
-### location:list[str]
-This controls the biome and camp the event appears in. [Tagging Instructions](reference/tag-lists.md#locations)
-
-***
-
-### season: list[str]
-List of seasons in which the event may occur. You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
-You can tag with a mix of "newleaf", "greenleaf", "leaf-fall", "leaf-bare", or remove the parameter altogether to allow for any season.
-
-***
-
-#### poi: Dict
-> Used to specify which POI (Point Of Interest) a Clan must have access to in order for this event to trigger. [POI Constraint Tagging](../points-of-interest.md/#using-points-of-interest)
-
-
-***
-
-### tags: list[str]
-Used to dictate some odds-and-ends about thought constraints: [General Tags](reference/tag-lists.md#general-tags).
-
-***
-
-### strings: list[str]
-This is a list of thoughts applicable to the constraints on this thought block. You may include as many or as few thoughts here as you wish, but remember that the constraints will apply to *all* of them. 
-
-For example:
-```json
-"strings": [
-        "Is wondering what r_c would think of current conflicts in the Clan",
-        "Wishes r_c was alive to solve {PRONOUN/m_c/poss} problems",
-        "Wonders if r_c is ending arguments in StarClan"
-]
-```
-
-!!! caution
-    Be careful about referencing actions only specific types of cats take! For example, if a thought refers to patrolling, consider if you've adequately constrained the thought to only allow cats who *can* go on a patrol. We don't want kittens talking about their trip to the Gathering!
-
-***
-
 ### involved_cats: dict[str: dict]
-This dictionary holds all constraints for the cats whom we wish to reference in the thought, including the thinking cat!
+[Main involved_cats Notes](../textpoolevents/textpoolevent-format.md#involved_cats-dictstr-dict)
 
-Each entry is an individual cat, with the key being their event designation (`r_c`, `m_c`, etc.) and the value being their personal constraints. In thoughts, you are allowed to reference `m_c`, who is the "owner" of the thoughts, and `r_c`, who is a cat being referenced by the thought. Allowed constraints are as follows:
+In thoughts, you are allowed to reference `m_c`, who is the "owner" of the thoughts, and `r_c`, who is a cat being referenced by the thought. 
 
-[Full Involved Cat Dictionary Information](reference/involved-cat-dict.md)
-
-
-### relationship_constraint: list[dict]
-Constrains the thought to only occur is the specified relationships exist. Multiple dictionary blocks can be added to specify multiple required configurations of relationships.
-```json
-        "relationship_constraint": [
-            {
-                "cats_from": [],
-                "cats_to": [],
-                "mutual": false,
-                "constraints": []
-            }
-        ]
-```
-**cats_from:list**
->The cats from whom the relationship originates. Use the designations (`m_c`, `r_c`, etc.) of cats listed in `involved_cats`.
-
-**cats_to:list**
->The cats who are the target of the relationship. Use the designations (`m_c`, `r_c`, etc.) of cats listed in `involved_cats`.
-
-!!! caution "For example"
-    If we want to ensure that `m_c` trusts `r_c`, we would put `m_c` in the `cats_from` list and `r_c` in the `cats_to` list. The feeling of trust is going *from* `m_c` *to* `r_c`.
-
-**mutual:bool**
->Defaults to `false`. Set this to `true` if the constraints should be mutual between the `cats_from` and `cats_to` groups.
-
-!!! caution "For example"
-    To work off of our earlier example: if we want `r_c` to *also* trust `m_c`, then we would set `mutual` to `true`.
-
-**constraints:list**
->The list of required relationships. You can include any tags in [Relationship Tiers](reference/tag-lists.md#relationship-tiers) and [Interpersonal Relationships](reference/tag-lists.md#interpersonal-relationships). For the purposes of tag use explanations in those references: `cats_from` is considered "cat1" and `cats_to` is considered "cat2".
-
-!!! caution "For example"
-    To work off of our earlier example: we would list `trusts` in our `constraints`
-
+***
