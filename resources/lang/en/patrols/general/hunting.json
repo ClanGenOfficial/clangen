@@ -4158,12 +4158,29 @@
             ]
         },
         "involved_cats": {
-            "r_c0": {}
+            "s_c0": {
+                "prior_abbreviation": ["any"],
+                "stat": {
+                    "trait": [
+                        "competitive",
+                        "childish",
+                        "playful",
+                        "charismatic",
+                        "bold",
+                        "daring",
+                        "thoughtful",
+                        "confident",
+                        "adventurous",
+                        "wise",
+                        "sincere"
+                    ]
+                }
+            }
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_speakingcat_Wr",
         "intro_strings": [
-            "Noticing how bored the patrol seems, r_c0 brightly suggests a hunting competition to add a bit of friendly rivalry to the outing."
+            "Noticing how bored the patrol seems, s_c0 brightly suggests a hunting competition to add a bit of friendly rivalry to the outing."
         ],
         "decline_strings": [
             "The rest of the patrol dismisses the idea. Eventually, they give up on hunting as a group and head off to perform other tasks."
@@ -4204,10 +4221,10 @@
                 "frequency": 4,
                 "outcome_art": "hunt_general_intro",
                 "strings": [
-                    "While every cat brings back impressive catches, s_c0's massive haul really leaves every cat gaping. It's not exactly hard to decide the winner."
+                    "While every cat brings back impressive catches, s_c1's massive haul really leaves every cat gaping. It's not exactly hard to decide the winner."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "s_c1": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -4222,7 +4239,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "s_c1"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -4247,16 +4264,26 @@
                 "frequency": 4,
                 "outcome_art": "hunt_general_intro",
                 "strings": [
-                    "Every cat seems a little hesitant, until s_c0 agrees that it's a great idea, encouraging the other warriors to join in. Giving s_c0 a grateful look, r_c0 organises the competition, and the patrol have a fun — and productive — afternoon!"
+                    "Every cat seems a little hesitant, until s_c1 agrees that it's a great idea, encouraging the other warriors to join in. Giving s_c1 a grateful look, s_c0 organises the competition, and the patrol have a fun — and productive — afternoon!"
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "s_c1": {
                         "prior_abbreviation": [
-                            "any"
+                            "-s_c0"
                         ],
                         "stat": {
                             "trait": [
-                                "charismatic"
+                                "competitive",
+                                "childish",
+                                "playful",
+                                "charismatic",
+                                "bold",
+                                "daring",
+                                "thoughtful",
+                                "confident",
+                                "adventurous",
+                                "wise",
+                                "sincere"
                             ]
                         }
                     }
@@ -4265,7 +4292,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "s_c1"
                         ],
                         "cats_from": [
                             "s_c0"
@@ -4276,7 +4303,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "cat_from and cat_to worked together well on a hunting patrol."
+                            "cats_from": "cat_from and cat_to worked together to convince a patrol to hold a little hunting competition."
                         }
                     }
                 ],
@@ -4291,10 +4318,10 @@
                 "frequency": 4,
                 "outcome_art": "hunt_general_intro",
                 "strings": [
-                    "The competition goes great, with every cat enjoying the friendly rivalry... until two cats take that rivalry a little too far, getting into an argument on what prey is worth more. Luckily, s_c0 is there to smooth things over, coming up with a compromise that both cats grudgingly admit is fair."
+                    "The competition goes great, with every cat enjoying the friendly rivalry... until s_c2 and s_c1 take that rivalry a little too far, getting into an argument on what prey is worth more. Luckily, s_c1 is there to smooth things over, coming up with a compromise that both cats grudgingly admit is fair."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "s_c1": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -4303,13 +4330,23 @@
                                 "MEDIATOR,1"
                             ]
                         }
+                    },
+                    "s_c2": {
+                        "prior_abbreviation": [
+                            "-s_c1"
+                        ]
+                    },
+                    "s_c3": {
+                        "prior_abbreviation": [
+                            "-s_c2", "-s_c1"
+                        ]
                     }
                 },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "s_c1"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -4321,6 +4358,21 @@
                         "log": {
                             "cats_from": "cat_to proved {PRONOUN/cat_to/self} an adept mediator during a hunting patrol."
                         }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c2"
+                        ],
+                        "cats_from": [
+                            "s_c3"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "While patrolling, cat_to and cat_from got into an argument over a hunting competition."
+                        }
                     }
                 ],
                 "supply": [
@@ -4334,21 +4386,27 @@
                 "frequency": 4,
                 "outcome_art": "hunt_general_intro",
                 "strings": [
-                    "A friendly competition is just what the patrol needed, every cat enjoying the opportunity to show-off their skills! Well, except s_c0, who was taking the entire competition <i>very</i> seriously. Luckily, the other warriors were kind — and smart — enough to just give {PRONOUN/s_c0/object} the win."
+                    "A friendly competition is just what the patrol needed, every cat enjoying the opportunity to show-off their skills! Well, except s_c1, who was taking the entire competition <i>very</i> seriously. Luckily, the other warriors were kind — and smart — enough to just give {PRONOUN/s_c1/object} the win."
                 ],
+                "exp_gained": 10,
                 "involved_cats": {
-                    "s_c0": {
+                    "s_c1": {
                         "prior_abbreviation": [
                             "any"
                         ],
                         "stat": {
                             "trait": [
-                                "competitive"
+                                "competitive",
+                                "arrogant",
+                                "grumpy",
+                                "bloodthirsty",
+                                "fierce",
+                                "cold",
+                                "vengeful"
                             ]
                         }
                     }
                 },
-                "exp_gained": 10,
                 "relationship_changes": [
                     {
                         "cats_to": [
@@ -4364,6 +4422,22 @@
                         "log": {
                             "cats_from": "cat_to and cat_from enjoyed some friendly competition while hunting."
                         }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c1"
+                        ],
+                        "cats_from": [
+                            "patrol_cats", "high_aggress", "low_social"
+                        ],
+                        "values": [
+                            "respect",
+                            "comfort"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from wasn't happy that the whole patrol let cat_to win a competition just to appease {PRONOUN/cat_to/object} ego."
+                        }
                     }
                 ],
                 "supply": [
@@ -4378,12 +4452,12 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 rolls {PRONOUN/s_c0/poss} eyes, callously dismissing the idea as a game for immature apprentices. Cheeks burning, r_c0 ducks {PRONOUN/r_c0/poss} head, continuing the patrol in silence."
+                    "s_c1 rolls {PRONOUN/s_c1/poss} eyes, callously dismissing the idea as a game for immature apprentices. Cheeks burning, s_c0 ducks {PRONOUN/s_c0/poss} head, continuing the patrol in silence."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "s_c1": {
                         "prior_abbreviation": [
-                            "any"
+                            "-s_c0"
                         ],
                         "stat": {
                             "trait": [
@@ -4391,7 +4465,9 @@
                                 "bloodthirsty",
                                 "cold",
                                 "grumpy",
-                                "strict"
+                                "strict",
+                                "responsible",
+                                "righteous"
                             ]
                         }
                     }
@@ -4400,7 +4476,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -4416,10 +4492,10 @@
                     },
                     {
                         "cats_to": [
-                            "s_c0"
+                            "s_c1"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -4439,40 +4515,9 @@
                 ]
             },
             {
-                "frequency": 3,
-                "strings": [
-                    "Realising the patrol's reluctance, r_c0 hastily dismisses the idea, and they continue the hunt in awkward silence."
-                ],
-                "exp_gained": 5,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c0"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_to suggested a childish competition while on a hunting patrol with cat_from."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_small"
-                    }
-                ]
-            },
-            {
                 "frequency": 4,
                 "strings": [
-                    "Though the patrol is initially open to the idea, they quickly devolve into an argument on how prey should be scored, whether teams were allowed, and other details r_c0 really hadn't thought were that important. Who knew warriors could get so competitive?"
+                    "Though the patrol is initially open to the idea, they quickly devolve into an argument on how prey should be scored, whether teams were allowed, and other details s_c0 really hadn't thought were that important. Who knew warriors could get so competitive?"
                 ],
                 "exp_gained": 5,
                 "relationship_changes": [
@@ -4502,12 +4547,43 @@
                 ]
             },
             {
+                "frequency": 3,
+                "strings": [
+                    "Realising the patrol's reluctance, s_c0 hastily dismisses the idea, and they continue the hunt in awkward silence."
+                ],
+                "exp_gained": 5,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to suggested a childish competition while on a hunting patrol with cat_from."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
+                ]
+            },
+            {
                 "frequency": 4,
                 "strings": [
-                    "The competition is going great, every cat enjoying their respective hunts, until s_c0 gets just a <i>little</i> too excited chasing a rabbit through the territory, blundering into everyone else's hunts and scaring away all nearby prey. Thanks a lot, s_c0."
+                    "The competition is going great, every cat enjoying their respective hunts, until s_c1 gets just a <i>little</i> too excited chasing a rabbit through the territory, blundering into everyone else's hunts and scaring away all nearby prey. Thanks a lot, s_c1."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "s_c1": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -4515,7 +4591,9 @@
                             "trait": [
                                 "childish",
                                 "oblivious",
-                                "troublesome"
+                                "troublesome",
+                                "shameless",
+                                "playful"
                             ]
                         }
                     }
@@ -4524,7 +4602,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "s_c1"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -4548,12 +4626,12 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The <i>point</i> of the competition, an irritated r_c0 explains to s_c0, was to have a fun afternoon hunting and showing off your catches. It was <i>not</i> to sabotage every other cat's hunts in order to win! Well, s_c0 grumbles, no cat made those rules clear to {PRONOUN/s_c0/object}."
+                    "The <i>point</i> of the competition, an irritated s_c0 explains to s_c1, was to have a fun afternoon hunting and showing off your catches. It was <i>not</i> to sabotage every other cat's hunts in order to win! Well, s_c1 grumbles, no cat made those rules clear to {PRONOUN/s_c1/object}."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "s_c1": {
                         "prior_abbreviation": [
-                            "any"
+                            "-s_c0"
                         ],
                         "stat": {
                             "trait": [
@@ -4567,7 +4645,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "s_c1"
                         ],
                         "cats_from": [
                             "patrol_cats"
