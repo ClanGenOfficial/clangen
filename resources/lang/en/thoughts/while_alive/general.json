@@ -403,6 +403,27 @@
         }
     },
     {
+        "event_id": "trait_fight1",
+        "strings": [
+            "Wishes {PRONOUN/m_c/subject} could train using {PRONOUN/m_c/poss} claws",
+            "Is daydreaming of fighting a whole Clan of cats single-pawed"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "FIGHTER,1"
+                    ],
+                    "trait": [
+                        "bloodthirsty",
+                        "daring"
+                    ],
+                "must_have_both": true
+                }
+            }
+        }
+    },
+    {
         "event_id": "bold_gen",
         "strings": [
             "Prances around with {PRONOUN/m_c/poss} tail up high, ready for anything",
@@ -482,6 +503,57 @@
                     "trait": [
                         "calm"
                     ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "trait_clairvoyant_omen_prophet1",
+        "strings": [
+            "Always seems prepared for any situation",
+            "Seems wise beyond {PRONOUN/m_c/poss} years"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "CLAIRVOYANT,1",
+                        "OMEN,1",
+                        "PROPHET,1"
+                    ],
+                    "trait": [
+                        "calm",
+                        "cold",
+                        "wise",
+                        "bold",
+                        "responsible",
+                        "careful"
+                    ],
+                "must_have_both": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "trait_clairvoyant_neg1",
+        "strings": [
+            "Acts on the signs {PRONOUN/m_c/subject} recieve without caring to explain {PRONOUN/m_c/self}"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "CLAIRVOYANT,1",
+                        "OMEN,1",
+                        "PROPHET,1"
+                    ],
+                    "trait": [
+                        "calm",
+                        "cold",
+                        "wise",
+                        "bold"
+                    ],
+                "must_have_both": true
                 }
             }
         }
@@ -590,6 +662,31 @@
                     "trait": [
                         "charismatic"
                     ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "trait_speak1",
+        "strings": [
+            "Is able to convince any cat to do whatever {PRONOUN/m_c/object} {VERB/m_c/want/wants}",
+            "Has every cat {PRONOUN/m_c/subject} {VERB/m_c/meet/meets} swooning",
+            "Smoothed over an argument with ease",
+            "Knows exactly what to say in any situation",
+            "Never needs to raise {PRONOUN/m_c/poss} voice in an argument"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "SPEAKER,1"
+                    ],
+                    "trait": [
+                        "charismatic",
+                        "confident",
+                        "cunning"
+                    ],
+                "must_have_both": true
                 }
             }
         }

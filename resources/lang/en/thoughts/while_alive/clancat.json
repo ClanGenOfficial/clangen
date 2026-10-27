@@ -573,13 +573,55 @@
         }
     },
     {
+        "event_id": "trait_dark_ambitious1",
+        "strings": [
+            "Wants to train in the Dark Forest",
+            "Wishes {PRONOUN/m_c/subject} could train using {PRONOUN/m_c/poss} claws",
+            "Will use any method to get ahead, even if it means training in the Dark Forest"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "DARK,1"
+                    ],
+                    "trait": [
+                        "ambitious"
+                    ],
+                "must_have_both": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "trait_dark_ambitious3",
+        "strings": [
+            "Is training in the Dark Forest",
+            "Is proud of {PRONOUN/m_c/poss} training"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "DARK,3"
+                    ],
+                    "trait": [
+                        "ambitious"
+                    ],
+                "must_have_both": true
+                }
+            }
+        }
+    },
+    {
         "event_id": "arrogant_clan_gen",
         "strings": [
             "Is lecturing about something someone said wrong offpawedly",
             "Is certain {PRONOUN/m_c/subject} {VERB/m_c/look/looks} better than any other cat in the Clan",
             "Took the lead during a patrol even though nobody wanted {PRONOUN/m_c/object} to",
             "Thinks {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} the cleverest in the Clan",
-            "Is pretty sure {PRONOUN/m_c/subject} could take on a patrol full of rogues"
+            "Is pretty sure {PRONOUN/m_c/subject} could take on a patrol full of rogues",
+            "Views {PRONOUN/m_c/self as better then {PRONOUN/m_c/poss} Clanmates"
         ],
         "involved_cats": {
             "m_c": {
@@ -588,6 +630,36 @@
                         "arrogant"
                     ]
                 }
+            }
+        }
+    },
+    {
+        "event_id": "ambitious_skills1",
+        "strings": [
+            "Is bragging about {PRONOUN/m_c/poss} abilities",
+            "Is challenging {PRONOUN/m_c/poss} Clanmates to do better then {PRONOUN/m_c/object}"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "HUNTER,1",
+                        "FIGHTER,1",
+                        "RUNNER,1",
+                        "CLIMBER,1",
+                        "SWIMMER,1"
+                    ],
+                    "trait": [
+                        "arrogant",
+                        "competitive"
+                    ],
+                "must_have_both": true
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
             }
         }
     },
@@ -610,6 +682,106 @@
                         "bloodthirsty"
                     ]
                 }
+            }
+        }
+    },
+    {
+        "event_id": "trait_dark_evil1",
+        "strings": [
+            "Wants to train in the Dark Forest",
+            "Wishes {PRONOUN/m_c/subject} could train using {PRONOUN/m_c/poss} claws",
+            "Scoffs at the mention of StarClan",
+            "Scowls inwardly at the mention of StarClan"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "DARK,1"
+                    ],
+                    "trait": [
+                        "bloodthirsty",
+                        "cold",
+                        "competitive",
+                        "daring",
+                        "insecure",
+                        "lonesome",
+                        "faithful",
+                        "loyal",
+                        "rebellious",
+                        "shameless",
+                        "strict",
+                        "vengeful"
+                    ],
+                "must_have_both": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "trait_dark_evil3",
+        "strings": [
+            "Dispatched a Dark Forest cat with ease",
+            "Is training a young o_c_n cat",
+            "Doesn't need StarClan",
+            "Is training in the Dark Forest",
+            "Is proud of {PRONOUN/m_c/poss} training",
+            "Is itching for a fight"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "DARK,3"
+                    ],
+                    "trait": [
+                        "bloodthirsty",
+                        "cold",
+                        "daring",
+                        "insecure",
+                        "lonesome",
+                        "faithful",
+                        "loyal",
+                        "rebellious",
+                        "shameless",
+                        "strict",
+                        "vengeful"
+                    ],
+                "must_have_both": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "bloodthirsty_ghost3",
+        "strings": [
+            "Is asking a ghostly figure how they died"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "GHOST,3"
+                    ],
+                    "trait": [
+                        "bloodthirsty",
+                        "bold",
+                        "childish",
+                        "cold",
+                        "compassionate",
+                        "loving",
+                        "oblivious",
+                        "shameless",
+                        "sincere",
+                        "strange"
+                    ],
+                "must_have_both": true
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
             }
         }
     },
@@ -702,6 +874,35 @@
                         "bold"
                     ]
                 }
+            }
+        }
+    },
+    {
+        "event_id": "bold_skills1",
+        "strings": [
+            "Acts before thinking",
+            "Shows off {PRONOUN/m_c/poss} skills",
+            "Is rushing into things just to show off"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "FIGHTER,1",
+                        "RUNNER,1",
+                        "CLIMBER,1",
+                        "SWIMMER,1"
+                    ],
+                    "trait": [
+                        "bold"
+                    ],
+                "must_have_both": true
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
             }
         }
     },
@@ -999,6 +1200,37 @@
         }
     },
     {
+        "event_id": "trait_healer1",
+        "strings": [
+            "Tells r_c {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} overreacting to a minor injury",
+            "Tells r_c to just rub some dirt in a minor injury",
+            "Tells r_c to walk off a minor injury"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "HEALER,1"
+                    ],
+                    "trait": [
+                        "cold",
+                        "grumpy",
+                        "insecure",
+                        "rebellious",
+                        "shameless",
+                        "strict"
+                    ],
+                "must_have_both": true
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
         "event_id": "compassionate_clan_gen",
         "strings": [
             "Spends time with a grieving Clanmate today",
@@ -1021,7 +1253,8 @@
             "Is keeping the injured cats company",
             "Can't stop smiling because of another Clanmate's good mood",
             "Purrs contently at the thought of {PRONOUN/m_c/poss} Clanmates being happy",
-            "Believes in {PRONOUN/m_c/poss} Clanmates"
+            "Believes in {PRONOUN/m_c/poss} Clanmates",
+            "Explains that {PRONOUN/m_c/subject} may be kind but {PRONOUN/m_c/subject} has {PRONOUN/m_c/poss} limits"
         ],
         "involved_cats": {
             "m_c": {
@@ -1029,6 +1262,71 @@
                     "trait": [
                         "compassionate"
                     ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "trait_dark_kind1",
+        "strings": [
+            "Explains with a dark look in {PRONOUN/m_c/poss} eyes that {PRONOUN/m_c/subject} may be kind but {PRONOUN/m_c/subject} has {PRONUN/m_c/poss} limits",
+            "Wants to train to protect the cats {PRONOUN/m_c/subject} {VERB/m_c/care/cares} about"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "DARK,1"
+                    ],
+                    "trait": [
+                        "compassionate",
+                        "faithful",
+                        "loving",
+                        "loyal",
+                        "responsible",
+                        "sincere",
+                        "thoughtful"
+                    ],
+                "must_have_both": true
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "trait_dark_kind3",
+        "strings": [
+            "Refuses to use {PRONOUN/m_c/poss} claws while training in the Dark Forest",
+            "Beat a Dark Forest cat but refuses to kill them",
+            "Is convincing a young trainee to stop coming to the Dark Forest",
+            "Is hiding from Dark Forest cats",
+            "Refuses to go to the Dark Forest",
+            "Wonders what {PRONOUN/m_c/subject} did to deserve the connection {PRONOUN/m_c/subject} {VERB/m_c/have/has}"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "DARK,3"
+                    ],
+                    "trait": [
+                        "compassionate",
+                        "gloomy",
+                        "loving",
+                        "insecure",
+                        "responsible",
+                        "thoughtful"
+                    ],
+                "must_have_both": true
                 }
             },
             "r_c": {
@@ -1331,6 +1629,64 @@
                         "gloomy"
                     ]
                 }
+            }
+        }
+    },
+    {
+        "event_id": "trait_star_fear1",
+        "strings": [
+            "Shrinks into {PRONOUN/m_c/self} as {PRONOUN/m_c/sunbect} {VERB/m_c/feel/feels} countless eyes on {PRONOUN/m_c/object}",
+            "Doesn't see what StarClan sees in {PRONOUN/m_c/object}"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "STAR,1"
+                    ],
+                    "trait": [
+                        "gloomy",
+                        "insecure",
+                        "nervous"
+                    ],
+                "must_have_both": true
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "trait_dark_fear1",
+        "strings": [
+            "Is too scared to tell anyone of {PRONOUN/m_c/poss} Dark Forest connection",
+            "Doesn't see why the Dark Forest chose to reach out to {PRONOUN/m_c/object}",
+            "Doesn't want to fight in the Dark Forest",
+            "Is trying to decline the invitation to the Dark Forest"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "DARK,1"
+                    ],
+                    "trait": [
+                        "gloomy",
+                        "insecure",
+                        "loving",
+                        "compassionate",
+                        "nervous"
+                    ],
+                "must_have_both": true
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
             }
         }
     },
@@ -1728,6 +2084,34 @@
                     "trait": [
                         "oblivious"
                     ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "trait_clairvoyant_prophet1",
+        "strings": [
+            "Says the most cryptic things at random times",
+            "Is staring off into the distance",
+            "Didn't act on a sign {PRONOUN/m_c/subject} recieved, unaware it was a sign"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "CLAIRVOYANT,1",
+                        "PROPHET,1"
+                    ],
+                    "trait": [
+                        "oblivious",
+                        "strange"
+                    ],
+                "must_have_both": true
                 }
             },
             "r_c": {
@@ -2611,8 +2995,7 @@
         "strings": [
             "Offers to collect oak leaves for the herb stocks",
             "Is climbing to the highest point in the Camp",
-            "Instructs a Clanmate on how to climb a steep cliff",
-            ""
+            "Instructs a Clanmate on how to climb a steep cliff"
         ],
         "involved_cats": {
             "m_c": {
