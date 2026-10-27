@@ -1,6 +1,9 @@
 {
-    "spritesheet": "patches_tortie",
-    "sprite_list": [
+    "spritesheet": ["patches_tortie0", "patches_tortie1"],
+    "sprite_lists_differ": true,
+    "common_sheet_name": "patches_tortie",
+    "sprite_list": {
+        "patches_tortie0": [
             [
                 "ONE",
                 "TWO",
@@ -48,7 +51,9 @@
                 "BLANKET",
                 "BELOVED",
                 "BODY"
-            ],
+            ]
+        ],
+        "patches_tortie1": [
             [
                 "SHILOH",
                 "FRECKLED",
@@ -74,4 +79,5 @@
                 "EYELINER_T"
             ]
         ]
+    }
 }
