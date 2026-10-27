@@ -2013,7 +2013,7 @@
             "Is offering to go easy on r_c before a race",
             "Won a race against r_c",
             "Offers to deliver something for r_c",
-            "Is looking to stretch {PRONOU/m_c/poss} legs",
+            "Is looking to stretch {PRONOUN/m_c/poss} legs",
             "Is running for no reason",
             "Is running to show off {PRONOUN/m_c/poss} speed",
             "Is running so fast {PRONOUN/m_c/subject} could fly",
@@ -2397,7 +2397,7 @@
             "Is telling a story of a vicious battle",
             "Is telling a story of an evil cat",
             "Is telling a story about an evil Clan",
-            "Is explaining that {PRONOUN/m_c/pos} stories are just stories, nothing more",
+            "Is explaining that {PRONOUN/m_c/poss} stories are just stories, nothing more",
             "Is telling a story of a mythical beast known as a rat king",
             "Can't explain {PRONOUN/m_c/poss} day without trying to make a story of it"
         ],
@@ -2534,7 +2534,7 @@
             "Is tired of all these strange dreams and hallucionations",
             "Is lying about the strange dream {PRONOUN/m_c/subject} had last night",
             "Wonders why others cant see the starry cats...",
-            "Wonders why StarClan watches over {PRONOUN/m_c/object} when {PRONUN/m_c/subject} {VERB/m_c/aren't/isn/t} even in a Clan"
+            "Wonders why StarClan watches over {PRONOUN/m_c/object} when {PRONOUN/m_c/subject} {VERB/m_c/aren't/isn/t} even in a Clan"
         ],
         "involved_cats": {
             "m_c": {
@@ -2634,7 +2634,7 @@
             "Is tired of all these strange dreams and hallucionations",
             "Is lying about the strange dream {PRONOUN/m_c/subject} had last night",
             "Wonders why others cant see the shadowy cats...",
-            "Wonders why the Dark Forest watches over {PRONOUN/m_c/object} when {PRONUN/m_c/subject} {VERB/m_c/aren't/isn/t} even in a Clan"
+            "Wonders why the Dark Forest watches over {PRONOUN/m_c/object} when {PRONOUN/m_c/subject} {VERB/m_c/aren't/isn/t} even in a Clan"
         ],
         "involved_cats": {
             "m_c": {

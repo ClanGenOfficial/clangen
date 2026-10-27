@@ -621,7 +621,7 @@
             "Took the lead during a patrol even though nobody wanted {PRONOUN/m_c/object} to",
             "Thinks {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} the cleverest in the Clan",
             "Is pretty sure {PRONOUN/m_c/subject} could take on a patrol full of rogues",
-            "Views {PRONOUN/m_c/self as better then {PRONOUN/m_c/poss} Clanmates"
+            "Views {PRONOUN/m_c/self} as better then {PRONOUN/m_c/poss} Clanmates"
         ],
         "involved_cats": {
             "m_c": {
@@ -1274,7 +1274,7 @@
     {
         "event_id": "trait_dark_kind1",
         "strings": [
-            "Explains with a dark look in {PRONOUN/m_c/poss} eyes that {PRONOUN/m_c/subject} may be kind but {PRONOUN/m_c/subject} has {PRONUN/m_c/poss} limits",
+            "Explains with a dark look in {PRONOUN/m_c/poss} eyes that {PRONOUN/m_c/subject} may be kind but {PRONOUN/m_c/subject} has {PRONOUN/m_c/poss} limits",
             "Wants to train to protect the cats {PRONOUN/m_c/subject} {VERB/m_c/care/cares} about"
         ],
         "involved_cats": {
@@ -2882,7 +2882,7 @@
         "strings": [
             "Is helping a Clanmate learn how to do a hard battle move",
             "Is teaching a Clanmate the proper way to do a task",
-            "Has to remind {PRONUN/m_c/self} not to act like every Clanmates' mentor",
+            "Has to remind {PRONOUN/m_c/self} not to act like every Clanmates' mentor",
             "Is pondering how best to instill responsibility in the apprentices",
             "Is thinking of new ways to train an unuly apprentice"
         ],
