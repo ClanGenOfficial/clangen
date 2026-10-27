@@ -372,11 +372,8 @@
             "exhausted": 0.2,
             "joint_pain": 0.1,
             "severe_headache": 0.05,
-            "stomachache": 0.15,
-            "sore_throat": 0.15,
             "constantly_dizzy": 0.01,
-            "persistent_headaches": 0.01,
-            "allergies": 0.01
+            "persistent_headaches": 0.01
         },
         "treatment_strength": {
             "1": [

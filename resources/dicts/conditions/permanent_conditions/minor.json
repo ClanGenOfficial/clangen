@@ -165,7 +165,7 @@
     "allergies": {
         "severity": "minor",
         "can_be_congenital": true,
-        "can_be_acquired": true,
+        "can_be_acquired": false,
         "moons_until_discovery": [2,5],
         "mortality": {},
         "immune_system_effect": 0.0,
