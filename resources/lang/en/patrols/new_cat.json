@@ -16652,6 +16652,356 @@
         ]
     },
     {
+        "event_id": "gen_border_eaglenest_catrescue",
+        "types": ["border"],
+        "frequency": 1,
+        "poi": {
+            "name": [
+                "terrain_eaglenest"
+            ]
+        },
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ]
+        },
+        "chance_of_success": 30,
+        "patrol_art": "POI",
+        "intro_strings": [
+            "The patrol is hunting near POI when they hear a faint cat's cry. Then they hear it again, louder. p_l screeches a warning as {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} it - an eagle flying overhead with a young cat in its talons, still alive!"
+        ],
+        "decline_strings": [
+            "The patrol immediately takes cover. If the eagles have developed more of a taste for cat blood than usual, the nqueens will need to be notified and extra defenses built around camp. When the eagle's shadow has passed, they return to camp."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 1,
+                "exp_gained": 20,
+                "outcome_art": "cat_sprites/mnt_hunt_followingeagle_WrWr",
+                "strings": [
+                    "The patrol follows along in the eagle's shadow, calling back at the cat. {PRONOUN/n_c0/subject/CAP} {VERB/n_c0/scream/screams} back, begging for help, and r_c0 yowls out a suggestion to bite a talon off. That starts a cascade of cats yowling up the advice they were all taught in training to deal with an eagle attack. It works well enough that the eagle falters in its flying, trying to get the meal in its talons back under control. It doesn't notice that it's drifted low enough for the cats to start making leaps from the trees, and the battle is on."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adolescent",
+                            "young adult"
+                        ],
+                        "status": ["kittypet", "loner", "rogue"]
+                    },
+                    "r_c0": {}
+                },
+                "join": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "some_patrol"
+                        ],
+                        "condition": [
+                            "beak_bite",
+                            "claw_wound",
+                            "small_cut",
+                            "torn_ear",
+                            "torn_pelt"
+                        ],
+                        "scar_history": "This cat was scarred after fighting off an eagle to rescue an outsider",
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after fighting off an eagle to rescue an outsider"
+                    },
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "claw_wound"
+                        ],
+                        "scar_history": "This cat was scarred after being caught by an eagle",
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after being caught by an eagle"
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "amount": 10,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from was grateful to cat_to for rescuing {PRONOUN/cat_from/object} and bringing {PRONOUN/cat_from/object} to c_n"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 1
+                }
+            },
+            {
+                "frequency": 2,
+                "exp_gained": 30,
+                "outcome_art": "cat_sprites/mnt_hunt_followingeagle_Wr",
+                "strings": [
+                    "s_c0 races ahead of the rest of the patrol. They're near the base of the cliffs that make up POI, and maybe s_c0 can intercept it! {PRONOUN/s_c0/subject/CAP} quickly {VERB/s_c0/scale/scales} the cliffs and settles into position. When the eagle approaches the outcrop, s_c0 wiggles {PRONOUN/s_c0/poss} haunches and <i>leaps</i>. The eagle is thrown off balance by the new weight on its wing and careens into the cliffside. s_c0 rides the eagle down the slope until they reach a dropoff. When {PRONOUN/s_c0/subject} {VERB/s_c0/bail/bails}, {PRONOUN/s_c0/subject} {VERB/s_c0/look/looks} to the side and finds that the new cat is clinging to the cliffside as well."
+                ],
+                 "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adolescent",
+                            "young adult"
+                        ],
+                        "status": ["kittypet", "loner", "rogue"]
+                    },
+                    "s_c0": {
+                        "stat": {
+                            "skill": ["CLIMBER,1"],
+                            "trait": ["adventurous", "bold", "bloodthirsty", "daring", "fierce", "rebellious", "vengeful"],
+                            "must_have_both": true
+                        }
+                    }
+                },
+                "join": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "claw_wound"
+                        ],
+                        "scar_history": "This cat was scarred after being caught by an eagle",
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after being caught by an eagle"
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "amount": 15,
+                        "values": [
+                            "like",
+                            "respect",
+                            "comfort",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from was grateful to cat_to for rescuing {PRONOUN/cat_from/object} from an eagle"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 1
+                }
+            },
+            {
+                "frequency": 2,
+                "exp_gained": 20,
+                "outcome_art": "cat_sprites/mnt_hunt_followingeagle_Wr",
+                "strings": [
+                    "The patrol is on the mountainside above POI. They can't reach the nest in the middle of the cliff, but the eagle will take the cat to a feeding post to eat. s_c0 urges the patrol to keep up, and they beat the eagle to the feeding post. Following s_c0's instructions, the patrol conceals themselves around the outcrop of rock. When the eagle goes in to land, the patrol pounces. They return to camp with a grateful cat and the carcass of the eagle."   
+                ],
+                 "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adolescent",
+                            "young adult"
+                        ],
+                        "status": ["kittypet", "loner", "rogue"]
+                    },
+                    "s_c0": {
+                        "stat": {
+                            "skill": ["STEALTH,1"]
+                        }
+                    }
+                },
+                "join": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "claw_wound"
+                        ],
+                        "scar_history": "This cat was scarred after being caught by an eagle",
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after being caught by an eagle"
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "amount": 10,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from was grateful to cat_to for rescuing {PRONOUN/cat_from/object} from an eagle and bringing {PRONOUN/cat_from/object} to c_n"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 1
+                }
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 1,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/mnt_hunt_followingeagle_WrWr",
+                "strings": [
+                    "The patrol follows along in the eagle's shadow, calling back at the cat. {PRONOUN/n_c0/subject/CAP} {VERB/n_c0/scream/screams} back, begging for help, and r_c0 yowls out a suggestion to bite a talon off. That starts a cascade of cats yowling up the advice they were all taught in training to deal with an eagle attack. But the cat isn't trained like Clancats are, and the eagle simply clenches its talons mid-flight. The cat goes limp, and the patrol goes home."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adolescent",
+                            "young adult"
+                        ],
+                        "status": ["kittypet", "loner", "rogue"]
+                    },
+                    "r_c0": {}
+                },
+                "death": [
+                    {
+                        "cats": ["n_c0"],
+                        "history": "This cat was killed and eaten by an eagle"
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": -1
+                }
+            },
+            {
+                "frequency": 2,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/mnt_hunt_followingeagle_Wr",
+                "strings": [
+                    "s_c0 races ahead of the rest of the patrol. They're near the base of the cliffs that make up POI, and maybe s_c0 can intercept it! {PRONOUN/s_c0/subject/CAP} quickly {VERB/s_c0/scale/scales} the cliffs and settles into position. When the eagle approaches the outcrop, s_c0 wiggles {PRONOUN/s_c0/poss} haunches and <i>leaps</i>. The eagle is thrown off balance by the new weight on its wing and careens into the cliffside. s_c0 is thrown off the eagle and slides down the cliffside, hitting hard stone in multiple spots before {PRONOUN/s_c0/subject} {VERB/s_c0/flop/flops} limply into the soft mud at the base."                
+                ],
+                 "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adolescent",
+                            "young adult"
+                        ],
+                        "status": ["kittypet", "loner", "rogue"]
+                    },
+                    "s_c0": {
+                        "stat": {
+                            "skill": ["CLIMBER,0"],
+                            "trait": ["adventurous", "bold", "bloodthirsty", "daring", "fierce", "rebellious", "vengeful"],
+                            "must_have_both": true
+                        }
+                    }
+                },
+                "death": [
+                    {
+                        "cats": ["n_c0"],
+                        "history": "This cat was dropped off a cliff by a struggling eagle."
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "condition": [
+                            "broken_bone"
+                        ],
+                        "scar_history": "This cat was scarred after falling off a cliff while fighting an eagle",
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after falling off a cliff while fighting an eagle"
+                    },
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "condition": [
+                            "blunt_force_injury",
+                            "-broken_bone"
+                        ],
+                        "scar_history": "This cat was scarred after falling off a cliff while fighting an eagle",
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after falling off a cliff while fighting an eagle"
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": -1
+                }
+            },
+            {
+                "frequency": 2,
+                "exp_gained": 20,
+                "outcome_art": "cat_sprites/mnt_hunt_followingeagle_Wr",
+                "strings": [
+                    "The patrol is on the mountainside above POI. They can't reach the nest in the middle of the cliff, but the eagle will take the cat to a feeding post to eat. s_c0 urges the patrol to keep up, and they beat the eagle to the feeding post. Following s_c0's instructions, the patrol attempts to conceal themselves around the outcrop of rock. However, the eagle spots the cats, and simply chooses to fly to an outcrop that's much farther away to begin its meal."   
+                ],
+                 "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adolescent",
+                            "young adult"
+                        ],
+                        "status": ["kittypet", "loner", "rogue"]
+                    },
+                    "s_c0": {
+                        "stat": {
+                            "skill": ["STEALTH,0"]
+                        }
+                    }
+                },
+                "death": [
+                    {
+                        "cats": ["n_c0"],
+                        "history": "This cat was killed and eaten by an eagle"
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": -1
+                }
+            }
+        ]
+    },
+    {
         "event_id": "gen_border_carrionbeach_kit",
         "types": ["border"],
         "frequency": 1,
