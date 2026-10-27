@@ -20,7 +20,8 @@
             "Is tidying up camp",
             "Is looking around camp",
             "Just can't find anything appetizing on the fresh-kill pile",
-            "Is watching the breeze blow around the camp"
+            "Is watching the breeze blow around the camp",
+            "Saw a tasty looking piece of fresh-kill on the fresh-kill pile... only to notice it'd just gone bad"
         ]
     },
     {
@@ -4447,7 +4448,7 @@
             "Thought {PRONOUN/m_c/subject} heard a scary noise by POI and has been puffed up ever since",
             "Keeps a healthy distance from POI while on patrol",
             "Groans when {PRONOUN/m_c/subject} {VERB/m_c/have/has} to patrol near POI",
-            "Spends as little time at POI as {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to be",
+            "Spends as little time at POI as {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to",
             "Is extra jumpy when {PRONOUN/m_c/subject}{VERB/m_c/'re/s} at POI"
         ],
         "involved_cats": {
@@ -4510,33 +4511,23 @@
         }
     },
     {
-        "event_id": "poi_prey_gen",
-        "poi": {
-            "tags": ["prey"]
-        },
-        "strings": [
-            "Licks {PRONOUN/m_c/poss} lips at the thought of POI",
-            "Really wants to eat POI",
-            "Hopes the next patrol brings back a nice fat POI",
-            "Is sick of eating POI",
-            "Is savoring the taste of a nice POI",
-            "Saw a tasty looking POI on the fresh-kill pile... only to notice it'd just gone bad",
-            "Is bummed after finding no POI on the fresh-kill pile"
-        ]
-    },
-    {
         "event_id": "poi_prey_working",
         "poi": {
             "tags": ["prey"]
         },
         "strings": [
-            "Hopes to find more POI today",
-            "Wonders if the POI is better on the other end of the territory",
-            "Is bummed after finding no POI while hunting",
-            "Heard a rumor that POI was plentiful this moon",
-            "Caught a lot of POI today and is very happy about it",
-            "Went out of {PRONOUN/m_c/poss} way to catch a lot of POI this moon",
-            "Can't believe theres no POI anywhere in the territory"
+            "Hopes to find more prey at POI today",
+            "Wonders if the hunting would be better at POI",
+            "Is bummed after finding no prey at POI while hunting",
+            "Heard a rumor that prey was plentiful at POI",
+            "Caught a lot of prey at POI today and is very happy about it",
+            "Went out of {PRONOUN/m_c/poss} way to hunt at POI this moon",
+            "Can't believe there's no prey anywhere at POI",
+            "Wants to hunt at POI",
+            "Saw a nice fat mouse at POI",
+            "Wonders if the Clan may be overhunting at POI",
+            "Notes an abundance of prey at POI",
+            "Avoids hunting at POI"
         ],
         "involved_cats": {
             "m_c": {
