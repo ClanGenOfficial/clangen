@@ -4403,7 +4403,7 @@
             "category": "terrain"
         },
         "strings": [
-            "Is begging r_c to bring {PRONOUN/m_cobject} to POI",
+            "Is begging r_c to bring {PRONOUN/m_c/object} to POI",
             "Is asking what it's like at POI"
         ],
         "involved_cats": {
