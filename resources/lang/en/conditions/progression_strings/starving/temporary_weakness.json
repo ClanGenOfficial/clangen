@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "starving_temporary_weakness0",
+        "strings": [
+            "m_c has managed to feed {PRONOUN/m_c/self} again, but {PRONOUN/m_c/poss} body won't immediately be back to normal."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

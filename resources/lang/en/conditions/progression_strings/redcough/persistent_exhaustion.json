@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "redcough_persistent_exhaustion0",
+        "strings": [
+            "It's a miracle m_c survived redcough to begin with. {PRONOUN/m_c/subject/CAP} won't complain if {PRONOUN/m_c/poss} body feels a bit more tired now."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

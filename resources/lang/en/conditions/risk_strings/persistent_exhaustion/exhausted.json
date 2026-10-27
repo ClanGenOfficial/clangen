@@ -1,0 +1,12 @@
+[
+    {
+        "event_id": "persistent_exhaustion_exhausted",
+        "strings": [
+            "m_c is feeling even more tired than usual this moon.",
+            "m_c is unable to get out of {PRONOUN/m_c/poss} nest, overcome by exhaustion."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
