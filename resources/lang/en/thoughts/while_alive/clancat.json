@@ -101,7 +101,12 @@
             "Saw a Twoleg kit playing with a dog",
             "Saw a Twoleg kit playing with a kittypet",
             "Saw a kittypet rolling around a Twoleg garden",
-            "Is assigned the same task as r_c"
+            "Is assigned the same task as r_c",
+            "Scents prey-blood and loner scent",
+            "Scents prey-blood and rogue scent",
+            "Scents prey-blood and kittypet scent",
+            "Noticed signs of a predator hunting in the territory",
+            "Caught the stale scent of a cat {PRONOUN/m_c/subject} can't quite identify"
         ],
         "involved_cats": {
             "m_c": {
@@ -4311,6 +4316,239 @@
                 "health": {
                     "working": true
             }
+            }
+        }
+    },
+    {
+        "event_id": "poi_terrain_gen",
+        "poi": {
+            "category": "terrain"
+        },
+        "strings": [
+            "Wants to visit POI",
+            "Is daydreaming about POI",
+            "Daydreams of defending POI from invaders"
+        ]
+    },
+    {
+        "event_id": "poi_terrain_not_kit",
+        "poi": {
+            "category": "terrain"
+        },
+        "strings": [
+            "Found an herb growing at POI",
+            "Snuck out to relax at POI",
+            "Loves visiting POI at this time of year",
+            "Heard a loud noise coming from the direction of POI"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-kitten"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "poi_terrain_working",
+        "poi": {
+            "category": "terrain"
+        },
+        "strings": [
+            "Is patrolling near POI",
+            "Successfully defended POI from a loner",
+            "Successfully defended POI from a rogue",
+            "Is extra thorough while patrolling POI"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "poi_terrain_kit",
+        "poi": {
+            "category": "terrain"
+        },
+        "strings": [
+            "Is pretending to defend POI from invading cats",
+            "Wonders what POI is like",
+            "Can't wait to become an apprentice and go see POI for {PRONOUN/m_c/self}",
+            "Is trying to sneak out to go visit POI"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "poi_terrain_kit_to_working",
+        "poi": {
+            "category": "terrain"
+        },
+        "strings": [
+            "Is begging r_c to bring {PRONOUN/m_cobject} to POI",
+            "Is asking what it's like at POI"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "-kitten"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "poi_danger_gen",
+        "poi": {
+            "tags": ["danger"]
+        },
+        "strings": [
+            "Wonders just how many lives POI has claimed...",
+            "Is intimidated at the thought of POI",
+            "Wonders why c_n decided to set up so close to POI",
+            "Is having a bad dream about POI",
+            "Wonders if POI is haunted"
+        ]
+    },
+    {
+        "event_id": "poi_danger_working",
+        "poi": {
+            "tags": ["danger"]
+        },
+        "strings": [
+            "Had a close call by POI",
+            "Shudders at the idea of going near POI",
+            "Is extra wary while patrolling POI",
+            "Hopes POI doesn't claim {PRONOUN/m_c/poss} life...",
+            "Thought {PRONOUN/m_c/subject} heard a scary noise by POI and has been puffed up ever since",
+            "Keeps a healthy distance from POI while on patrol",
+            "Groans when {PRONOUN/m_c/subject} {VERB/m_c/have/has} to patrol near POI",
+            "Spends as little time at POI as {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to be",
+            "Is extra jumpy when {PRONOUN/m_c/subject}{VERB/m_c/'re/s} at POI"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "poi_danger_kit",
+        "poi": {
+            "tags": ["danger"]
+        },
+        "strings": [
+            "Doesn't believe POI is as scary as everyone says it is",
+            "Had a nightmare about POI after hearing of something that happened there",
+            "Doesn't want to be an apprentice anymore after hearing about how scary POI is"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "poi_danger_kit_to_working",
+        "poi": {
+            "tags": ["danger"]
+        },
+        "strings": [
+            "Is demanding that r_c to come back from POI safe",
+            "Is worried when r_c goes out to POI",
+            "Thinks r_c is so cool for going to POI and coming back alive",
+            "Wonders why r_c doesn't like going to POI"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "-kitten"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "poi_prey_gen",
+        "poi": {
+            "tags": ["prey"]
+        },
+        "strings": [
+            "Licks {PRONOUN/m_c/poss} lips at the thought of POI",
+            "Really wants to eat POI",
+            "Hopes the next patrol brings back a nice fat POI",
+            "Is sick of eating POI",
+            "Is savoring the taste of a nice POI",
+            "Saw a tasty looking POI on the fresh-kill pile... only to notice it'd just gone bad",
+            "Is bummed after finding no POI on the fresh-kill pile"
+        ]
+    },
+    {
+        "event_id": "poi_prey_working",
+        "poi": {
+            "tags": ["prey"]
+        },
+        "strings": [
+            "Hopes to find more POI today",
+            "Wonders if the POI is better on the other end of the territory",
+            "Is bummed after finding no POI while hunting",
+            "Heard a rumor that POI was plentiful this moon",
+            "Caught a lot of POI today and is very happy about it",
+            "Went out of {PRONOUN/m_c/poss} way to catch a lot of POI this moon",
+            "Can't believe theres no POI anywhere in the territory"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ],
+                "health": {
+                    "working": true
+                }
             }
         }
     },
