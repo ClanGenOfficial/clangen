@@ -4449,7 +4449,7 @@
             "Keeps a healthy distance from POI while on patrol",
             "Groans when {PRONOUN/m_c/subject} {VERB/m_c/have/has} to patrol near POI",
             "Spends as little time at POI as {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to",
-            "Is extra jumpy when {PRONOUN/m_c/subject}{VERB/m_c/'re/s} at POI"
+            "Is extra jumpy when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} at POI"
         ],
         "involved_cats": {
             "m_c": {
@@ -4536,6 +4536,32 @@
                     "warrior",
                     "deputy",
                     "leader"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "poi_moonplace",
+        "poi": {
+            "category": "moonplace"
+        },
+        "strings": [
+            "Is attending the half-moon meeting at POI",
+            "Is tidying up POI in preparation for the half-moon meeting",
+            "Is conversing with StarClan at POI",
+            "Is thinking of what to bring up at POI next meeting",
+            "Is in awe at POI",
+            "Is visiting POI for advice from StarClan",
+            "Is meeting with an o_c_n medicine cat at POI"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "medicine cat apprentice",
+                    "medicine cat"
                 ],
                 "health": {
                     "working": true
