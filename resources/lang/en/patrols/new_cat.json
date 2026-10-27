@@ -16652,7 +16652,7 @@
         ]
     },
     {
-        "event_id": "gen_border_eaglenest_catrescue",
+        "event_id": "gen_bord_eaglenest_catrescue",
         "types": ["border"],
         "frequency": 1,
         "poi": {
@@ -17002,7 +17002,7 @@
         ]
     },
     {
-        "event_id": "gen_border_carrionbeach_kit",
+        "event_id": "gen_bord_carrionbeach_kit",
         "types": ["border"],
         "frequency": 1,
         "poi": {

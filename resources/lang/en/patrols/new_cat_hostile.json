@@ -7084,7 +7084,7 @@
         ]
     },
     {
-        "event_id": "gen_border_eaglenest_catrescue_hostile",
+        "event_id": "gen_bord_eaglenest_catrescue_hostile",
         "types": ["border"],
         "frequency": 1,
         "poi": {
@@ -7452,7 +7452,7 @@
         ]
     },
     {
-        "event_id": "gen_border_carrionbeach_kit_hostile",
+        "event_id": "gen_bord_carrionbeach_kit_hostile",
         "types": ["border"],
         "frequency": 1,
         "poi": {
