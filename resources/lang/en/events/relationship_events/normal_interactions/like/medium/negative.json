@@ -635,6 +635,17 @@
         ],
         "involved_cats": {
             "m_c": {
+                "stat": {
+                "trait": [
+                    "cold",
+                    "bloodthirsty",
+                    "fierce",
+                    "insecure",
+                    "grumpy",
+                    "gloomy",
+                    "arrogant"
+                ]
+            },
                 "health": {
                 "condition": [
                     "-exhausted",

@@ -9148,7 +9148,8 @@
             "Is napping",
             "Is struggling to stay awake",
             "Is out of breath",
-            "Is saving {PRONOUN/m_c/poss} strength"
+            "Is saving {PRONOUN/m_c/poss} strength",
+            "Is so tired {PRONOUN/m_c/subject} can't even think"
         ],
         "involved_cats": {
             "m_c": {
@@ -9164,17 +9165,20 @@
     {
         "event_id": "weakened_and_muscles_gen",
         "strings": [
-            "Is feeling sore",
+            "Is feeling extra sore",
             "Is stretching {PRONOUN/m_c/poss} muscles",
             "Is trying to strengthen {PRONOUN/m_c/poss} muscles",
-            "Feels {PRONOUN/m_c/poss} muscles cramping up"
+            "Feels {PRONOUN/m_c/poss} muscles cramping up",
+            "Is feeling extra uncomfortable",
+            "Can't sleep due to {PRONOUN/m_c/poss} sore body"
         ],
         "involved_cats": {
             "m_c": {
                 "health": {
                     "condition": [
                         "weakened_muscles",
-                        "temporary_weakness"
+                        "temporary_weakness",
+                        "sore"
                     ]
                 }
             }
@@ -9188,11 +9192,13 @@
             "Can't stand for long",
             "Is resting",
             "Wonders if {PRONOUN/m_c/poss} Clanmates think {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} just being lazy",
-            "Wonders if {PRONOUN/m_c/poss} Clanmates think {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} just faking {PRONOUN/m_c/poss} exhaustion",
-            "Feels bad for not being able to do as much as {PRONOUN/m_c/poss} Clanmates",
-            "Is trying to do work but struggling with the smallest of chores",
+            "Wonders if {PRONOUN/m_c/poss} Clanmates think {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} just faking {PRONOUN/m_c/poss} struggle",
+            "Feels bad for not being able to do as much as {PRONOUN/m_c/poss} Clanmates due to {PRONOUN/m_c/poss} condition",
+            "Is trying to do some work but is struggling with the smallest of chores",
             "Is feeling weak",
-            "Is retiring to {PRONOUN/m_c/poss} nest early"
+            "Is retiring to {PRONOUN/m_c/poss} nest early",
+            "Is just so tired",
+            "Needs to rest but can't"
         ],
         "involved_cats": {
             "m_c": {
@@ -9201,7 +9207,8 @@
                         "weakened_muscles",
                         "temporary_weakness",
                         "persistent_exhaustion",
-                        "exhausted"
+                        "exhausted",
+                        "sore"
                     ]
                 }
             }
