@@ -1071,5 +1071,76 @@
                 }
             }
         }
+    },
+    {
+        "event_id": "assist_weak_exhausted_cat",
+        "strings": [
+            "m_c is helping r_c with a task {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} struggling with.",
+            "m_c fetched some fresh-kill for r_c when {PRONOUN/r_c/subject} couldn't go get it {PRONOUN/r_c/self}.",
+            "m_c let r_c lean against {PRONOUN/m_c/subject} when {PRONOUN/_c/subject} {VERB/r_c/were/was} losing {PRONOUN/r_c/poss} strength."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "health": {
+                "condition": [
+                    "exhausted",
+                    "persistent_exhaustion",
+                    "weakened_muscles",
+                    "temporary_weakness"
+                ]
+            }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "assist_sore_cat",
+        "strings": [
+            "m_c helped massage r_c's sore muscles.",
+            "m_c brought r_c some herbs to soothe {PRONOUN/r_c/poss} uncomfortable muscles.",
+            "m_c ensured r_c got extra comfortable bedding so {PRONOUN/r_c/subject} could actually get some rest.",
+            "helped r_c move something {PRONOUN/r_c/subject} {VERB/r_c/were/was} struggling with."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "health": {
+                "condition": [
+                    "sore",
+                    "weakened_muscles"
+                ]
+            }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": 10
+            }
+        ]
     }
 ]
