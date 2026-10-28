@@ -35,7 +35,7 @@
     "soot": ["purple", "black", "dilute", "night", "gloaming", "lilacdilute"],
     "darkgrey": ["blue", "black", "dilute", "cooldilute", "gloaming", "quartz", "lilacdilute", "densecocoa", "densedust", "denseamber", "patina", "pink", "gray", "red", "pinkdilute", "tawny"],
     "ghost": ["blue", "black", "dilute", "cooldilute", "night", "pink", "gray", "red", "tawny"],
-    "black": ["blue", "black", "gloaming", "night", "dilute", "cooldilute", "patina", "pink", "gray", "red", "pinkdilute", "tawny"],
+    "black": ["blue", "black", "gloaming", "night", "patina", "pink", "gray", "red", "tawny"],
     "blossom": ["yellow", "dilute", "cooldilute", "denseamber"],
     "lightginger": ["yellow", "dilute", "cooldilute",  "lilacdilute", "pinkdilute"],
     "paleginger": ["yellow", "purple", "dilute", "cooldilute",  "earthydilute", "lilacdilute","pink", "red", "pinkdilute"],
