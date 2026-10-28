@@ -39,7 +39,7 @@
     }
   },
   "one_cat": {
-    "card_art": "origin/kitten.png",
+    "card_art": "origin/one_cat.png",
     "modifiers": {
       "clan_creation.minimum_membership": 1,
       "clan_creation.maximum_membership": 1,
