@@ -137,6 +137,7 @@ You can override the default minimums by including `(min:#)` after the status or
     | `torn_pelt`              | :fontawesome-solid-check:     |
     | `torn_ear`               | :fontawesome-solid-check:     |
     | `venom_sickness`               | :fontawesome-solid-check:     |
+    | `exhausted`              | :fontawesome-solid-check:     |
     | `water_in_lungs`   | :fontawesome-solid-check:     |
     | `dangerously_cold`              | :fontawesome-solid-check:     |
     | `frostbite`              | :fontawesome-solid-check:     |
@@ -177,6 +178,7 @@ You can override the default minimums by including `(min:#)` after the status or
     | `starving`             | :x:                    |
     | `amputated_tail`             | :fontawesome-solid-check:                    |
     | `amputated_leg`             | :fontawesome-solid-check:                    |
+    | `temporary_weakness`   | :fontawesome-solid-check:     |
     | `stinky`             | :fontawesome-solid-check:                    |
 
 ===  "Permanent Conditions"
@@ -208,6 +210,8 @@ You can override the default minimums by including `(min:#)` after the status or
     | recurring_shock      |
     | lasting_grief        |
     | persistent_headaches |
+    | persistent_exhaustion|
+    | weakened_muscles     |
     | selective_mutism |
     | damaged_throat |
     | absent |

@@ -166,7 +166,7 @@ class TestTemporaryCondition(unittest.TestCase):
                     cat1.dead, msg=f"cat died to {c} when they should have healed"
                 )
                 self.assertTrue(
-                    not cat1.temporary_conditions,
+                    c not in cat1.temporary_conditions,
                     msg=f"cat's healed condition: {c}, was not removed",
                 )
 
@@ -232,6 +232,73 @@ class TestTemporaryCondition(unittest.TestCase):
                         c in cat1.temporary_conditions + cat1.permanent_conditions,
                         msg=f"{c} was not removed from cat's conditions, even though it progressed into {p}",
                     )
+
+    def test_complications(self):
+        cat1 = cat_factory.create_cat()
+
+        # CAT GETS MANGLED LEG
+        gain_conditions._handle_condition_side_effect = Mock(return_value=None)
+        gain_temporary_condition(cat1, "mangled_leg")
+
+        # setting the infection risk to be guaranteed
+        cat1.get_condition("mangled_leg").risks = {"infection": 2.0}
+        cat1.get_condition("mangled_leg").progression = {}
+        # setting mortality to zero, we aren't testing for death right now
+        cat1.get_condition("mangled_leg").mortality = 0.0
+
+        # CAT GETS INFECTION FROM MANGLED LEG
+        handle_temporary_conditions(cat1)
+
+        self.assertTrue(
+            "infection" in cat1.temporary_conditions,
+            msg="cat should have received infection",
+        )
+        self.assertTrue(
+            cat1.get_condition("infection").is_complication,
+            msg="cat's infection should have been marked as complication",
+        )
+        self.assertTrue(
+            cat1.get_condition("mangled_leg").current_complication == "infection",
+            msg="cat's mangled leg should have listed infection as a the current complication",
+        )
+
+        # let's try to make this heal after a single handle call. the expectation is that it can't, since a complication is attached
+        cat1.get_condition("mangled_leg").duration = 1
+
+        # setting mortality to zero, we aren't testing for death right now
+        cat1.get_condition("infection").mortality = 0.0
+        # we'll expect this to go away after 2 handle calls
+        cat1.get_condition("infection").duration = 2
+        # don't want progressions to be added right now
+        cat1.get_condition("infection").progression = {}
+
+        # CAT CANNOT HEAL MANGLED LEG DUE TO INFECTION
+        handle_temporary_conditions(cat1)
+
+        self.assertTrue(
+            "mangled_leg" in cat1.temporary_conditions,
+            msg="cat should not have removed their mangled leg",
+        )
+
+        # INFECTION HEALS, MANGLED LEG NO LONGER HAS COMPLICATION TAG
+        handle_temporary_conditions(cat1)
+
+        self.assertTrue(
+            "infection" not in cat1.temporary_conditions,
+            msg="cat should have healed the infection",
+        )
+        self.assertTrue(
+            cat1.get_condition("mangled_leg").current_complication is None,
+            msg="cat's mangled leg should no longer have a complication",
+        )
+
+        # MANGLED LEG HEALS
+        handle_temporary_conditions(cat1)
+
+        self.assertTrue(
+            "mangled_leg" not in cat1.temporary_conditions,
+            msg="cat should no longer have mangled leg",
+        )
 
 
 class TestPermanentCondition(unittest.TestCase):
@@ -391,3 +458,61 @@ class TestPermanentCondition(unittest.TestCase):
                         c in cat1.temporary_conditions + cat1.permanent_conditions,
                         msg=f"{c} was not removed from cat's conditions, even though it progressed into {p}",
                     )
+
+    def test_progression_double_application(self):
+        cat1 = cat_factory.create_cat()
+        gain_conditions._handle_condition_side_effect = Mock(return_value=None)
+
+        gain_temporary_condition(cat1, "broken_back")
+        cat1.get_condition("broken_back").progression["paralyzed"]["chance"] = 2.0
+        cat1.get_condition("broken_back").mortality = 0.0
+        cat1.get_condition("broken_back").duration = 1
+
+        handle_temporary_conditions(cat1)
+
+        self.assertTrue(
+            "paralyzed" in cat1.permanent_conditions, msg="cat should have paralyzed"
+        )
+        self.assertTrue(
+            "broken_back" not in cat1.temporary_conditions,
+            msg="cat should no longer have broken back",
+        )
+
+        # now we apply broken back again
+        gain_temporary_condition(cat1, "broken_back")
+        cat1.get_condition("broken_back").progression["paralyzed"]["chance"] = 2.0
+        cat1.get_condition("broken_back").mortality = 0.0
+        cat1.get_condition("broken_back").duration = 1
+
+        # and attempt to give it to the cat again
+        handle_temporary_conditions(cat1)
+
+        self.assertTrue(
+            len([c for c in cat1.permanent_conditions if c == "paralyzed"]) == 1,
+            msg="cat should only have one paralyzed condition",
+        )
+
+    def test_risk_double_application(self):
+        cat1 = cat_factory.create_cat()
+
+        gain_permanent_condition(cat1, "absent")
+        cat1.get_condition("absent").risks = {"selective_mutism": 2.0}
+        cat1.get_condition("absent").progression = {}
+
+        handle_permanent_conditions(cat1)
+
+        self.assertTrue(
+            "selective_mutism" in cat1.permanent_conditions,
+            msg="cat should have selective_mutism",
+        )
+
+        # reset risk
+        cat1.get_condition("absent").risks = {"selective_mutism": 2.0}
+
+        # and attempt to give it to the cat again
+        handle_permanent_conditions(cat1)
+
+        self.assertTrue(
+            len([c for c in cat1.permanent_conditions if c == "selective_mutism"]) == 1,
+            msg="cat should only have one selective_mutism condition",
+        )

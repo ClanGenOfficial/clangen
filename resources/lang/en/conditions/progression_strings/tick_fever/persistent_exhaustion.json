@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "tick_fever_persistent_exhaustion0",
+        "strings": [
+            "m_c is lucky to have survived tick fever, even if {PRONOUN/m_c/poss} body seems to not be fully keeping up anymore."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

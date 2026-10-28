@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "weakened_muscles_exhausted",
+        "strings": [
+            "m_c was overworked this moon and needs to take a bit of a rest."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

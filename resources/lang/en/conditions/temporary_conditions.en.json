@@ -38,6 +38,8 @@
         "tick_fever_alert": "sick!",
         "dangerously_cold": "dangerously cold",
         "dangerously_cold_alert": "sick!",
+        "exhausted": "exhausted",
+        "exhausted_alert": "exhausted!",
         "frostbite": "frostbite",
         "frostbite_alert": "sick!",
         "poisoned": "poisoned",
@@ -134,6 +136,8 @@
         "amputated_leg_alert": "hurt!",
         "amputated_tail": "amputated tail",
         "amputated_tail_alert": "hurt!",
+        "temporary_weakness": "temporary weakness",
+        "temporary_weakness_alert": "hurt!",
         "stinky": "stinky",
         "stinky_alert": "stinky!"
     }

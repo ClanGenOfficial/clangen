@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "amputated_tail_temporary_weakness0",
+        "strings": [
+            "m_c's body is struggling to keep up with {PRONOUN/m_c/poss} injury as {PRONOUN/m_c/subject} {VERB/m_c/heal/heals} from the amputation."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
