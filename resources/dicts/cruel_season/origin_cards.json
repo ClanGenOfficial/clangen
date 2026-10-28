@@ -49,7 +49,7 @@
     }
   },
   "young_old": {
-    "card_art": "origin/kitten.png",
+    "card_art": "origin/young_old.png",
     "modifiers": {
       "clan_creation.majority_rank": "elder",
       "clan_creation.rank_weights": {
