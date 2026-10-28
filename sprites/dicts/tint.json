@@ -37,7 +37,7 @@
     "ghost": ["blue", "black", "dilute", "cooldilute", "night", "pink", "gray", "red", "tawny"],
     "black": ["blue", "black", "gloaming", "night", "patina", "pink", "gray", "red", "tawny"],
     "blossom": ["yellow", "dilute", "cooldilute", "denseamber"],
-    "lightginger": ["yellow", "dilute", "cooldilute",  "lilacdilute", "pinkdilute"],
+    "lightginger": ["yellow", "dilute", "cooldilute", "pinkdilute"],
     "paleginger": ["yellow", "purple", "dilute", "cooldilute",  "earthydilute", "lilacdilute","pink", "red", "pinkdilute"],
     "goldginger": ["yellow", "purple", "dilute", "cooldilute",  "lilacdilute", "densecocoa", "denseamber", "pink", "gray", "red", "pinkdilute", "tawny"],
     "sunshine": ["yellow", "dilute", "cooldilute", "pink"],
