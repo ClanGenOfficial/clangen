@@ -31,7 +31,7 @@
   "possible_tints": {
     "basic": ["orange", "warmdilute"],
     "white": ["lilacdilute", "cooldilute"],
-    "lightgrey": ["purple", "dilute", "densecocoa", "pink", "gray", "red", "pinkdilute"],
+    "lightgrey": ["purple", "dilute", "pink", "gray", "red", "pinkdilute"],
     "soot": ["purple", "black", "dilute", "gloaming", "lilacdilute"],
     "darkgrey": ["blue", "black", "dilute", "cooldilute", "gloaming", "quartz", "lilacdilute", "densecocoa", "densedust", "denseamber", "patina", "pink", "gray", "red", "pinkdilute", "tawny"],
     "ghost": ["blue", "black", "dilute", "cooldilute", "night", "pink", "gray", "red", "tawny"],
