@@ -3823,9 +3823,9 @@
                     "p_l"
                 ],
                 "cats_to": [
-                    "patrol_cats"
+                    "r_c0"
                 ],
-                "mutual": false,
+                "mutual": true,
                 "constraints": [
                     "dislikes"
                 ]
@@ -3844,7 +3844,7 @@
         ],
         "success_outcomes": [
             {
-                "frequency": 1,
+                "frequency": 4,
                 "strings": [
                     "Impressively, the pair manage to stop bickering long enough for r_c0 to make an impressive catch. Perhaps even more shockingly, though, p_l congratulates {PRONOUN/r_c0/object}, and the two actually work together for the rest of the patrol."
                 ],
@@ -3877,59 +3877,9 @@
             },
             {
                 "frequency": 4,
-                "strings": [
-                    "However much s_c0 dislikes r_c0, feeding the Clan is more important. They manage to get through the patrol without any major disputes — and catch a decent amount of prey, too."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "calm",
-                                "compassionate",
-                                "faithful",
-                                "loyal",
-                                "righteous",
-                                "responsible",
-                                "thoughtful",
-                                "wise"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 10,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "s_c0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_to and cat_from managed to work together well enough while on a hunting patrol."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
                 "outcome_art": "cat_sprites/gen_hunt_rabbit_Wr",
                 "strings": [
-                    "Spotting a rabbit, the bickering duo glance at each other, realizing they'll need to work together to catch it. Feeding the Clan comes before rivalries. Putting their differences aside, r_c0 chases the rabbit while p_l gets into position, catching the rabbit when r_c0 drives it into {PRONOUN/r_c0/poss} paws."
+                    "Spotting a rabbit, the bickering duo glance at each other, realizing they'll need to work together to catch it. Feeding the Clan comes before rivalries. Putting their differences aside, r_c0 chases the rabbit while p_l gets into position, making the catch when r_c0 drives it into {PRONOUN/r_c0/poss} paws."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -3957,16 +3907,74 @@
                         "adjust": "increase_medium"
                     }
                 ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "However much s_c0 dislikes s_c1, feeding the Clan is more important. They manage to get through the patrol without any major disputes — and catch a decent amount of prey, too."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "calm",
+                                "compassionate",
+                                "faithful",
+                                "loyal",
+                                "righteous",
+                                "responsible",
+                                "thoughtful",
+                                "wise"
+                            ]
+                        }
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": [
+                            "-s_c0"
+                        ]
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c1"
+                        ],
+                        "cats_from": [
+                            "s_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_to and cat_from managed to work together well enough while on a hunting patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "The pair manage to keep the hunting patrol relatively on track, until r_c0 bursts into laughter after p_l slips and falls during a catch. Furious and <i>very</i> close to clawing r_c0's obnoxious face off, p_l storms off back to camp."
+                    "The pair manage to keep the hunting patrol relatively on track, until s_c0 bursts into laughter after s_c1 slips and falls during a catch. Furious and <i>very</i> close to clawing s_c0's obnoxious face off, s_c1 storms off back to camp."
                 ],
                 "involved_cats": {
-                    "r_c0": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
                         "stat": {
                             "trait": [
                                 "childish",
@@ -3975,16 +3983,21 @@
                                 "troublesome"
                             ]
                         }
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": [
+                            "-s_c0"
+                        ]
                     }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c1"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -4053,7 +4066,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Already on edge from the constant bickering, when r_c0 makes a particularly hurtful remark, s_c0 retaliates, {PRONOUN/s_c0/poss} claws scratching r_c0's cheek. The pair silently return to camp — each cat seething — and refuse to tell any cat what happened."
+                    "Already on edge from the constant bickering, when s_c1 makes a particularly hurtful remark, s_c0 retaliates, {PRONOUN/s_c0/poss} claws scratching s_c1's cheek. The pair silently return to camp — each cat seething — and refuse to tell any cat what happened."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -4067,6 +4080,11 @@
                                 "vengeful"
                             ]
                         }
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": [
+                            "-s_c0"
+                        ]
                     }
                 },
                 "exp_gained": 0,
@@ -4076,7 +4094,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -4092,7 +4110,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -4108,7 +4126,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c1"
                         ],
                         "condition": [
                             "torn_pelt"
@@ -4140,17 +4158,264 @@
             ]
         },
         "involved_cats": {
-            "r_c0": {}
+            "s_c0": {
+                "prior_abbreviation": ["any"],
+                "stat": {
+                    "trait": [
+                        "competitive",
+                        "childish",
+                        "playful",
+                        "charismatic",
+                        "bold",
+                        "daring",
+                        "thoughtful",
+                        "confident",
+                        "adventurous",
+                        "wise",
+                        "sincere"
+                    ]
+                }
+            }
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_speakingcat_Wr",
         "intro_strings": [
-            "Noticing how bored the patrol seems, r_c0 brightly suggests a hunting competition to add a bit of friendly rivalry to the outing."
+            "Noticing how bored the patrol seems, s_c0 brightly suggests a hunting competition to add a bit of friendly rivalry to the outing."
         ],
         "decline_strings": [
             "The rest of the patrol dismisses the idea. Eventually, they give up on hunting as a group and head off to perform other tasks."
         ],
         "success_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "hunt_general_intro",
+                "strings": [
+                    "While every cat brings back impressive catches, s_c1's massive haul really leaves every cat gaping. It's not exactly hard to decide the winner."
+                ],
+                "involved_cats": {
+                    "s_c1": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "HUNTER,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c1"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's hunting prowess."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "hunt_general_intro",
+                "strings": [
+                    "Every cat seems a little hesitant, until s_c1 agrees that it's a great idea, encouraging the other warriors to join in. Giving s_c1 a grateful look, s_c0 organises the competition, and the patrol have a fun — and productive — afternoon!"
+                ],
+                "involved_cats": {
+                    "s_c1": {
+                        "prior_abbreviation": [
+                            "-s_c0"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "competitive",
+                                "childish",
+                                "playful",
+                                "charismatic",
+                                "bold",
+                                "daring",
+                                "thoughtful",
+                                "confident",
+                                "adventurous",
+                                "wise",
+                                "sincere"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c1"
+                        ],
+                        "cats_from": [
+                            "s_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to worked together to convince a patrol to hold a little hunting competition."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "hunt_general_intro",
+                "strings": [
+                    "The competition goes great, with every cat enjoying the friendly rivalry... until s_c2 and s_c3 take that rivalry a little too far, getting into an argument on what prey is worth more. Luckily, s_c1 is there to smooth things over, coming up with a compromise that both cats grudgingly admit is fair."
+                ],
+                "involved_cats": {
+                    "s_c1": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "MEDIATOR,1"
+                            ]
+                        }
+                    },
+                    "s_c2": {
+                        "prior_abbreviation": [
+                            "-s_c1"
+                        ]
+                    },
+                    "s_c3": {
+                        "prior_abbreviation": [
+                            "-s_c2", "-s_c1"
+                        ]
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c1"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_to proved {PRONOUN/cat_to/self} an adept mediator during a hunting patrol."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c2"
+                        ],
+                        "cats_from": [
+                            "s_c3"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "While patrolling, cat_to and cat_from got into an argument over a hunting competition."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "hunt_general_intro",
+                "strings": [
+                    "A friendly competition is just what the patrol needs, every cat enjoying the opportunity to show off their skills! Well, except s_c1, who takes the entire competition <i>very</i> seriously. Luckily, the other warriors are kind - and smart - enough to just give {PRONOUN/s_c1/object} the win."
+                ],
+                "exp_gained": 10,
+                "involved_cats": {
+                    "s_c1": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "competitive",
+                                "arrogant",
+                                "grumpy",
+                                "bloodthirsty",
+                                "fierce",
+                                "cold",
+                                "vengeful"
+                            ]
+                        }
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_to and cat_from enjoyed some friendly competition while hunting."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c1"
+                        ],
+                        "cats_from": [
+                            "patrol_cats", "high_aggress", "low_social"
+                        ],
+                        "values": [
+                            "respect",
+                            "comfort"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from wasn't happy that the whole patrol let cat_to win a competition just to appease {PRONOUN/cat_to/object} ego."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
             {
                 "frequency": 3,
                 "outcome_art": "hunt_general_intro",
@@ -4181,191 +4446,18 @@
                         "adjust": "increase_large"
                     }
                 ]
-            },
-            {
-                "frequency": 4,
-                "outcome_art": "hunt_general_intro",
-                "strings": [
-                    "While every cat brings back impressive catches, s_c0's massive haul really leaves every cat gaping. It's not exactly hard to decide the winner."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "skill": [
-                                "HUNTER,2"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 10,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was impressed by cat_to's hunting prowess."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "outcome_art": "hunt_general_intro",
-                "strings": [
-                    "Every cat seems a little hesitant, until s_c0 agrees that it's a great idea, encouraging the other warriors to join in. Giving s_c0 a grateful look, r_c0 organises the competition, and the patrol have a fun — and productive — afternoon!"
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "charismatic"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 10,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c0"
-                        ],
-                        "cats_from": [
-                            "s_c0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to worked together well on a hunting patrol."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "outcome_art": "hunt_general_intro",
-                "strings": [
-                    "The competition goes great, with every cat enjoying the friendly rivalry... until two cats take that rivalry a little too far, getting into an argument on what prey is worth more. Luckily, s_c0 is there to smooth things over, coming up with a compromise that both cats grudgingly admit is fair."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "skill": [
-                                "MEDIATOR,1"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 10,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_to proved {PRONOUN/cat_to/self} an adept mediator during a hunting patrol."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "outcome_art": "hunt_general_intro",
-                "strings": [
-                    "A friendly competition is just what the patrol needed, every cat enjoying the opportunity to show-off their skills! Well, except s_c0, who was taking the entire competition <i>very</i> seriously. Luckily, the other warriors were kind — and smart — enough to just give {PRONOUN/s_c0/object} the win."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "competitive"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 10,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_to and cat_from enjoyed some friendly competition while hunting."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
             }
         ],
         "fail_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 rolls {PRONOUN/s_c0/poss} eyes, callously dismissing the idea as a game for immature apprentices. Cheeks burning, r_c0 ducks {PRONOUN/r_c0/poss} head, continuing the patrol in silence."
+                    "s_c1 rolls {PRONOUN/s_c1/poss} eyes, callously dismissing the idea as a game for immature apprentices. Cheeks burning, s_c0 ducks {PRONOUN/s_c0/poss} head, continuing the patrol in silence."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "s_c1": {
                         "prior_abbreviation": [
-                            "any"
+                            "-s_c0"
                         ],
                         "stat": {
                             "trait": [
@@ -4373,7 +4465,9 @@
                                 "bloodthirsty",
                                 "cold",
                                 "grumpy",
-                                "strict"
+                                "strict",
+                                "responsible",
+                                "righteous"
                             ]
                         }
                     }
@@ -4382,7 +4476,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -4398,10 +4492,10 @@
                     },
                     {
                         "cats_to": [
-                            "s_c0"
+                            "s_c1"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -4421,40 +4515,9 @@
                 ]
             },
             {
-                "frequency": 3,
-                "strings": [
-                    "Realising the patrol's reluctance, r_c0 hastily dismisses the idea, and they continue the hunt in awkward silence."
-                ],
-                "exp_gained": 5,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c0"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_to suggested a childish competition while on a hunting patrol with cat_from."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_small"
-                    }
-                ]
-            },
-            {
                 "frequency": 4,
                 "strings": [
-                    "Though the patrol is initially open to the idea, they quickly devolve into an argument on how prey should be scored, whether teams were allowed, and other details r_c0 really hadn't thought were that important. Who knew warriors could get so competitive?"
+                    "Though the patrol is initially open to the idea, they quickly devolve into an argument on how prey should be scored, whether teams were allowed, and other details s_c0 really hadn't thought were that important. Who knew warriors could get so competitive?"
                 ],
                 "exp_gained": 5,
                 "relationship_changes": [
@@ -4484,12 +4547,43 @@
                 ]
             },
             {
+                "frequency": 3,
+                "strings": [
+                    "Realising the patrol's reluctance, s_c0 hastily dismisses the idea, and they continue the hunt in awkward silence."
+                ],
+                "exp_gained": 5,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to suggested a childish competition while on a hunting patrol with cat_from."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
+                ]
+            },
+            {
                 "frequency": 4,
                 "strings": [
-                    "The competition is going great, every cat enjoying their respective hunts, until s_c0 gets just a <i>little</i> too excited chasing a rabbit through the territory, blundering into everyone else's hunts and scaring away all nearby prey. Thanks a lot, s_c0."
+                    "The competition is going great, every cat enjoying their respective hunts, until s_c1 gets just a <i>little</i> too excited chasing a rabbit through the territory, blundering into everyone else's hunts and scaring away all nearby prey. Thanks a lot, s_c1."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "s_c1": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -4497,7 +4591,9 @@
                             "trait": [
                                 "childish",
                                 "oblivious",
-                                "troublesome"
+                                "troublesome",
+                                "shameless",
+                                "playful"
                             ]
                         }
                     }
@@ -4506,7 +4602,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "s_c1"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -4530,12 +4626,12 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The <i>point</i> of the competition, an irritated r_c0 explains to s_c0, was to have a fun afternoon hunting and showing off your catches. It was <i>not</i> to sabotage every other cat's hunts in order to win! Well, s_c0 grumbles, no cat made those rules clear to {PRONOUN/s_c0/object}."
+                    "s_c1 takes the competition to a level s_c0 didn't expect; sabotaging {PRONOUN/s_c1/poss} competitors. Of course, this doesn't go over well with the rest of the patrol, despite s_c1's insistence that none of the rules said {PRONOUN/s_c1/subject} <i>couldn't</i> win in a craftier fashion."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "s_c1": {
                         "prior_abbreviation": [
-                            "any"
+                            "-s_c0"
                         ],
                         "stat": {
                             "trait": [
@@ -4549,7 +4645,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "s_c1"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -14110,6 +14206,12 @@
                             "cats_from": "cat_to reeked of skunk after a hunting patrol, and cat_from avoided {PRONOUN/cat_to/object} for a few days."
                         }
                     }
+                ],
+                "condition": [
+                    {
+                        "cats": ["s_c0"],
+                        "condition": ["stinky"]
+                    }
                 ]
             },
             {
@@ -14744,6 +14846,12 @@
                             "cats_from": "cat_to reeked of skunk after a hunting patrol, and cat_from avoided {PRONOUN/cat_to/object} for a few days."
                         }
                     }
+                ],
+                "condition": [
+                    {
+                        "cats": ["p_l"],
+                        "condition": ["stinky"]
+                    }
                 ]
             },
             {
@@ -15306,8 +15414,8 @@
                     }
                 },
                 "strings": [
-                    "The patrol encounters another cat in POI. n_c:0 surprises the Clan cats by showing them some clever hunting techniques.",
-                    "The patrol meets n_c:0, who lives around POI and offers to show them some hunting techniques perfect for the area."
+                    "The patrol encounters another cat in POI. n_c0 surprises the Clan cats by showing them some clever hunting techniques.",
+                    "The patrol meets n_c0, who lives around POI and offers to show them some hunting techniques perfect for the area."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 20,
@@ -15322,13 +15430,13 @@
                 },
                 "meet": [
                     {
-                        "cats": ["n_c:0"]
+                        "cats": ["n_c0"]
                     }
                 ],
                 "relationship_changes": [
                     {
                         "cats_from": ["patrol_cats"],
-                        "cats_to": ["n_c:0"],
+                        "cats_to": ["n_c0"],
                         "mutual": true,
                         "values": ["like", "trust"],
                         "amount": 7,
@@ -15435,7 +15543,7 @@
                     }
                 },
                 "strings": [
-                    "The patrol encounters another cat in POI. n_c:0 snarls and demands the patrol leave. The patrol does; {PRONOUN/n_c:0/poss} angry yowls drove away all the prey anyway."
+                    "The patrol encounters another cat in POI. n_c0 snarls and demands the patrol leave. The patrol does; {PRONOUN/n_c0/poss} angry yowls drove away all the prey anyway."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 0,
@@ -15444,13 +15552,13 @@
                 },
                 "meet": [
                     {
-                        "cats": ["n_c:0"]
+                        "cats": ["n_c0"]
                     }
                 ],
                 "relationship_changes": [
                     {
                         "cats_from": ["patrol_cats"],
-                        "cats_to": ["n_c:0"],
+                        "cats_to": ["n_c0"],
                         "mutual": true,
                         "values": ["like", "trust"],
                         "amount": -7,
@@ -15467,7 +15575,7 @@
                 },
                 "strings": [
                     "The patrol is spotted by Twolegs, and r_c0 is taken.",
-                    "While isolated from the patrol, r_c:0 is taken by Twolegs and vanishes within POI."
+                    "While isolated from the patrol, r_c0 is taken by Twolegs and vanishes within POI."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -15762,8 +15870,8 @@
                     }
                 },
                 "strings": [
-                    "p_l encounters another cat in POI. n_c:0 surprises {PRONOUN/p_l/object} by showing {PRONOUN/p_l/object} some clever hunting techniques.",
-                    "p_l meets n_c:0, who lives around POI and offers to show {PRONOUN/p_l/object} some hunting techniques perfect for the area."
+                    "p_l encounters another cat in POI. n_c0 surprises {PRONOUN/p_l/object} by showing {PRONOUN/p_l/object} some clever hunting techniques.",
+                    "p_l meets n_c0, who lives around POI and offers to show {PRONOUN/p_l/object} some hunting techniques perfect for the area."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 20,
@@ -15778,13 +15886,13 @@
                 },
                 "meet": [
                     {
-                        "cats": ["n_c:0"]
+                        "cats": ["n_c0"]
                     }
                 ],
                 "relationship_changes": [
                     {
                         "cats_from": ["p_l"],
-                        "cats_to": ["n_c:0"],
+                        "cats_to": ["n_c0"],
                         "mutual": true,
                         "values": ["like", "trust"],
                         "amount": 7,
@@ -15855,7 +15963,7 @@
                     }
                 },
                 "strings": [
-                    "p_l encounters another cat in POI. n_c:0 snarls and demands the patrol leaves. p_l does; the outsider's angry yowls drove away all the prey anyway."
+                    "p_l encounters another cat in POI. n_c0 snarls and demands the patrol leaves. p_l does; the outsider's angry yowls drove away all the prey anyway."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 0,
@@ -15864,13 +15972,13 @@
                 },
                 "meet": [
                     {
-                        "cats": ["n_c:0"]
+                        "cats": ["n_c0"]
                     }
                 ],
                 "relationship_changes": [
                     {
                         "cats_from": ["p_l"],
-                        "cats_to": ["n_c:0"],
+                        "cats_to": ["n_c0"],
                         "mutual": true,
                         "values": ["like", "trust"],
                         "amount": -7,
@@ -15971,6 +16079,830 @@
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 0
+            }
+        ]
+    },
+    {
+        "event_id": "gen_hunt_strange_group1",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 2,
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
+        "intro_strings": [
+            "The patrol looks around for something to disguise their scent while hunting."
+        ],
+        "decline_strings": [
+            "On second thought, maybe not."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "They can't think of anything that would work, but their hunt goes well regardless.",
+                    "A strong-smelling bush will do! The plan works, and their hunt goes well."
+                ],
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "season": ["leaf-bare"],
+                "strings": [
+                    "A snowy patch will do to wash away their scent! The plan works, and their hunt goes well."
+                ],
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["beach"],
+                "strings": [
+                    "A quick dip in seawater will do! The plan works, and their hunt goes well."
+                ],
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["desert"],
+                "strings": [
+                    "A sand bath will do to remove their scent! The plan works, and their hunt goes well."
+                ],
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["beach"],
+                "strings": [
+                    "s_c0 leads them to some seaweed on the beach. It's not very clean, but it's extremely effective, and the patrol hunts well."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "mutual": false,
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to's hunting technique, while effective, involved rolling in old seaweed; cat_from was not keen to hunt with cat_to again."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's clever technique for disguising scents during a hunting patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["wetlands"],
+                "strings": [
+                    "A quick dip in a stagnant pond will do! The plan works, and their hunt goes well."
+                ],
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["wetlands"],
+                "strings": [
+                    "s_c0 leads them to some rotting muddy grass. It's not very clean, but it's extremely effective, and the patrol hunts well."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "mutual": false,
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to's hunting technique, while effective, involved rolling in rotting grass, so cat_from was not keen to hunt with cat_to again."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's clever technique for disguising scents during a hunting patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["forest"],
+                "strings": [
+                    "s_c0 leads them to some deer droppings in the forest. It's not very clean, but it's extremely effective, and the patrol hunts well."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "mutual": false,
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to's hunting technique, while effective, involved rolling in deer droppings, so cat_from was not keen to hunt with cat_to again."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's clever technique for disguising scents during a hunting patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": ["patrol_cats"],
+                        "condition": ["stinky"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 leads them to some rabbit droppings. It's not very clean, but it's extremely effective, and the patrol hunts well."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "mutual": false,
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to's hunting technique, while effective, involved rolling in rabbit droppings, so cat_from was not keen to hunt with cat_to again."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's clever technique for disguising scents during a hunting patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": ["patrol_cats"],
+                        "condition": ["stinky"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["mountainous"],
+                "strings": [
+                    "s_c0 leads them to some moose dung on the slopes. It's not very clean, but it's extremely effective, and the patrol hunts well."
+                ],
+                "exp_gained": 20,
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "mutual": false,
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to's hunting technique, while effective, involved rolling in moose droppings, so cat_from was not keen to hunt with cat_to again."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's clever technique for disguising scents during a hunting patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": ["patrol_cats"],
+                        "condition": ["stinky"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 tells the patrol to roll in a patch of garlic to disguise their scent, which works perfectly. It's a funny taste to wash off their pelts, though."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "strange"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's clever technique for disguising one's scent during a hunting patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol finds nothing to disguise their scent, and no prey either.",
+                    "A strong-smelling bush will do! The patrol finds no prey; it seems like all the prey was scared off because of their stench!"
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to tried to cover their scent on a hunting patrol, but it backfired and scared off the prey."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_hunt_strange_solo1",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 3,
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
+        "intro_strings": [
+            "p_l looks around for something to disguise {PRONOUN/p_l/poss} scent while hunting."
+        ],
+        "decline_strings": [
+            "On second thought, maybe not."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "{PRONOUN/p_l/subject/CAP} can't think of anything that would work, but {PRONOUN/p_l/poss} hunt goes well regardless.",
+                    "A strong-smelling bush will do! The plan works, and {PRONOUN/p_l/poss} hunt goes well."
+                ],
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["wetlands"],
+                "strings": [
+                    "p_l finds some rotting muddy grass. It's not very clean, but it's extremely effective, and the hunt goes well."
+                ],
+                "exp_gained": 20,
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "clan",
+                            "high_stable"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "mutual": false,
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "cat_from wondered why cat_to stank of deer droppings after returning from a hunt."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by how much prey cat_to brought back after a solo-hunt."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["forest"],
+                "strings": [
+                    "p_l finds some deer droppings in the forest. It's not very clean, but it's extremely effective, and the hunt goes well."
+                ],
+                "exp_gained": 20,
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "clan",
+                            "high_stable"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "mutual": false,
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "cat_from wondered why cat_to stank of deer droppings after returning from a hunt."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by how much prey cat_to brought back after a solo-hunt."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": ["p_l"],
+                        "condition": ["stinky"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l finds some rabbit droppings. It's not very clean, but it's extremely effective, and the hunt goes well."
+                ],
+                "exp_gained": 20,
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "clan",
+                            "high_stable"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "mutual": false,
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "cat_from wondered why cat_to stank of rabbit droppings after returning from a hunt."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by how much prey cat_to brought back after a solo-hunt."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": ["p_l"],
+                        "condition": ["stinky"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "location": ["mountainous"],
+                "strings": [
+                    "p_l finds some moose dung on the slopes. It's not very clean, but it's extremely effective, and the hunt goes well."
+                ],
+                "exp_gained": 20,
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "clan",
+                            "high_stable"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "comfort"
+                        ],
+                        "mutual": false,
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "cat_from wondered why cat_to stank of moose droppings after returning from a hunt."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by how much prey cat_to brought back after a solo-hunt."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": ["p_l"],
+                        "condition": ["stinky"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l rolls in a patch of garlic to disguise {PRONOUN/p_l/poss} scent, which works perfectly. It's a funny taste to wash off {PRONOUN/p_l/poss} pelt, though."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": [
+                                "strange"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l finds nothing to disguise {PRONOUN/p_l/poss} scent, and no prey either."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "A strong-smelling bush will do! p_l finds no prey; it seems like all the prey was scared off because of {PRONOUN/p_l/poss} stench!"
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect",
+                            "comfort"
+                        ],
+                        "mutual": false,
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "cat_to returned from a hunt empty-pawed and smelly. cat_from got an unfortunate noseful."
+                        }
+                    }
+                ]
             }
         ]
     }
