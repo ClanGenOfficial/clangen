@@ -41,7 +41,7 @@
     "paleginger": ["yellow", "purple", "dilute", "cooldilute",  "earthydilute", "lilacdilute","pink", "red", "pinkdilute"],
     "goldginger": ["yellow", "purple", "dilute", "cooldilute",  "lilacdilute", "densecocoa", "denseamber", "pink", "gray", "red", "pinkdilute", "tawny"],
     "sunshine": ["yellow", "dilute", "cooldilute", "pink"],
-    "deepginger": ["yellow", "purple", "dilute", "cooldilute",  "pink", "gray", "red", "tawny"],
+    "deepginger": ["yellow", "purple", "dilute", "cooldilute",  "pink", "gray", "red"],
     "sienna": ["yellow", "purple", "black", "dilute", "cooldilute",  "gloaming", "quartz", "pink", "gray", "red", "tawny"],
     "lightbrown": ["yellow", "purple", "dilute", "cooldilute",  "lilacdilute", "densedust","denseamber", "pink", "gray", "red", "tawny"],
     "lilac": ["yellow", "purple", "black", "dilute", "cooldilute", "pink", "gray", "red"],
