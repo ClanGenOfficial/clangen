@@ -1077,7 +1077,7 @@
         "strings": [
             "m_c is helping r_c with a task {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} struggling with.",
             "m_c fetched some fresh-kill for r_c when {PRONOUN/r_c/subject} couldn't go get it {PRONOUN/r_c/self}.",
-            "m_c let r_c lean against {PRONOUN/m_c/subject} when {PRONOUN/_c/subject} {VERB/r_c/were/was} losing {PRONOUN/r_c/poss} strength."
+            "m_c let r_c lean against {PRONOUN/m_c/subject} when {PRONOUN/m_c/subject} {VERB/r_c/were/was} losing {PRONOUN/r_c/poss} strength."
         ],
         "involved_cats": {
             "m_c": {},
