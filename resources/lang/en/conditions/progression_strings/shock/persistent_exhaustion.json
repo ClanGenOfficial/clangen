@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "shock_persistent_exhaustion0",
+        "strings": [
+            "m_c doesn't quite feel like {PRONOUN/m_c/self}, even if {PRONOUN/m_c/poss} shock is gone. {PRONOUN/m_c/subject/CAP} {VERB/m_c/struggle/struggles} regaining any energy."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
