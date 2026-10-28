@@ -32,7 +32,7 @@
     "basic": ["orange", "warmdilute"],
     "white": ["earthydilute", "lilacdilute", "cooldilute"],
     "lightgrey": ["purple", "dilute", "densecocoa", "pink", "gray", "red", "pinkdilute"],
-    "soot": ["purple", "black", "dilute", "night", "gloaming", "lilacdilute"],
+    "soot": ["purple", "black", "dilute", "gloaming", "lilacdilute"],
     "darkgrey": ["blue", "black", "dilute", "cooldilute", "gloaming", "quartz", "lilacdilute", "densecocoa", "densedust", "denseamber", "patina", "pink", "gray", "red", "pinkdilute", "tawny"],
     "ghost": ["blue", "black", "dilute", "cooldilute", "night", "pink", "gray", "red", "tawny"],
     "black": ["blue", "black", "gloaming", "night", "patina", "pink", "gray", "red", "tawny"],
