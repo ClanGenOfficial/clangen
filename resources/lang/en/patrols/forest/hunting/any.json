@@ -3347,6 +3347,9 @@
                 "strings": [
                     "The rat rears up and hisses at r_c0, but while it's distracted, p_l takes it out with a quick strike."
                 ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -3354,7 +3357,7 @@
                             "p_l"
                         ],
                         "cats_to": [
-                            "p_l"
+                            "r_c0"
                         ],
                         "values": [
                             "trust",
