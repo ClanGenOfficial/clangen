@@ -1095,9 +1095,7 @@ class ProfileScreen(Screens):
 
     def handle_history_tab_checkbox_tooltip(self):
         if self.open_sub_tab == "life events":
-            self.history_tab_checkbox.set_tooltip(
-                "screens.profile.show_moons_tooltip"
-            )
+            self.history_tab_checkbox.set_tooltip("screens.profile.show_moons_tooltip")
         if self.open_sub_tab == "user notes":
             if self.history_tab_checkbox.checked:
                 self.history_tab_checkbox.set_tooltip(
