@@ -6054,6 +6054,456 @@
         ]
     },
     {
+        "event_id": "gen_bord_gatheringplace_otherclanapp_hostile",
+        "types": ["border"],
+        "frequency": 1,
+        "poi": {
+            "category": "gathering"
+        },
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ],
+            "apprentice": [
+                1,
+                1
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
+        },
+        "involved_cats": {
+            "p_l": {
+                "status": [
+                    "apprentice"
+                ],
+                "age": [
+                    "adolescent"
+                ]
+            }
+        },
+        "chance_of_success": 40,
+        "patrol_art": "POI",
+        "intro_strings": [
+            "It's the dead of night as p_l approaches POI under the faintest light of the new moon. It doesn't look like anyone is here, but {PRONOUN/p_l/poss} mentor will <i>kill</i> {PRONOUN/p_l/object} if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} caught... p_l creeps into the foliage surrounding POI, then hesitates before stepping into the open space."
+        ],
+        "decline_strings": [
+            "{PRONOUN/p_l/subject/CAP} {VERB/p_l/hear/hears} unfamiliar voices! There's at least one warrior from another Clan nearby. p_l slinks away as quickly and silently as {PRONOUN/p_l/subject} can."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 10,
+                "outcome_art": "cat_sprites/gen_bumpheads_ApAp",
+                "strings": [
+                    "p_l lets out a gentle <i>mrow</i>, and is heartened to hear another <i>mrow</i> come from the other side of POI. p_l and n_c0 rush to each other, rubbing faces frantically and purring as hard as they can. The two apprentices spend the night catching up, cuddled close together, and talking about their dreams. p_l gazes at n_c0's fur under the dim starlight, awed by how lovely {PRONOUN/n_c0/subject} {VERB/n_c0/are/is}. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been in love with {PRONOUN/n_c0/object} practically since they met, but how does {PRONOUN/p_l/subject} tell {PRONOUN/n_c0/object} that, especially when they're from different Clans?"
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "apprentice",
+                            "mediator apprentice",
+                            "medicine cat apprentice"
+                        ],
+                        "group": [
+                            "other_clan"
+                        ],
+                        "age": [
+                            "adolescent"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "amount": 15,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust",
+                            "romance"
+                        ],
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_from has a huge crush on cat_to, despite being from different Clans",
+                            "cats_to": "cat_to has a huge crush on cat_from, despite being from different Clans"
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "exp_gained": 10,
+                "outcome_art": "cat_sprites/gen_supportive_ApOa",
+                "strings": [
+                    "n_c0 trots into sight, calling for s_c0, who runs out to meet {PRONOUN/n_c0/object}. n_c0 breathes a heavy sigh as their foreheads press together. Under s_c0's gentle encouragement, {PRONOUN/n_c0/subject} {VERB/n_c0/vent/vents} about all the troubles {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} having with {PRONOUN/n_c0/poss} Clan and Clanmates, and how much {PRONOUN/n_c0/subject} {VERB/n_c0/feel/feels} like {PRONOUN/n_c0/subject} just {VERB/n_c0/don't/doesn't} fit in in o_c_n. s_c0 tilts {PRONOUN/s_c0/poss} head. It sounds like n_c0 would be happier in another Clan. Maybe... Well, {PRONOUN/s_c0/subject}'d have to convince lead_name to allow it... But... Maybe {PRONOUN/n_c0/subject} could come to c_n?"
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["p_l"],
+                        "stat": {
+                            "skill": ["INSIGHTFUL,0"]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "apprentice",
+                            "mediator apprentice",
+                            "medicine cat apprentice"
+                        ],
+                        "group": [
+                            "other_clan"
+                        ],
+                        "age": [
+                            "adolescent"
+                        ],
+                        "current_exp": ["learning"],
+                        "backstory": [
+                            "otherclan2"
+                        ]
+                    }
+                },
+                "join": [
+                    {
+                        "cats": ["n_c0"],
+                        "new_status": [
+                            "apprentice",
+                            "mediator apprentice",
+                            "medicine cat apprentice"
+                        ]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "amount": 15,
+                        "values": [
+                            "romance"
+                        ],
+                        "mutual": true,
+                        "log": {}
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "amount": 20,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_to followed cat_from's advice, and decided to join c_n!",
+                            "cats_to": "cat_to got good advice from cat_from, and decided to join {PRONOUN/cat_from/poss} Clan"
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "exp_gained": 10,
+                "outcome_art": "cat_sprites/gen_matesheadbump_ApAp",
+                "strings": [
+                    "p_l calls for n_c0, who calls back, and the two meet in the middle, twining their tails together. It's been way too long since n_c0 has seen {PRONOUN/p_l/object}! p_l agrees - n_c0 is {PRONOUN/p_l/poss} best friend, {PRONOUN/p_l/poss} most important cat, {PRONOUN/p_l/poss}... well, it would just be wonderful if they could always be together! n_c0 looks considering. Maybe they <i>could</i> always be together... It takes a lot of discussion and rehearsal of what they're going to say, but at dawnbreak, p_l leaves POI for c_n territory, with n_c0 in tow."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "apprentice",
+                            "mediator apprentice",
+                            "medicine cat apprentice"
+                        ],
+                        "group": [
+                            "other_clan"
+                        ],
+                        "age": [
+                            "adolescent"
+                        ],
+                        "current_exp": ["learning"],
+                        "backstory": [
+                            "otherclan1",
+                            "otherclan4"
+                        ]
+                    }
+                },
+                "join": [
+                    {
+                        "cats": ["n_c0"],
+                        "new_status": [
+                            "apprentice",
+                            "mediator apprentice",
+                            "medicine cat apprentice"
+                        ]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "amount": 15,
+                        "values": [
+                            "romance"
+                        ],
+                        "mutual": true,
+                        "log": {}
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "amount": 20,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_from likes cat_to so, so much, and cat_to joined c_n so they could be together!",
+                            "cats_to": "cat_to really likes cat_from, so much that {PRONOUN/cat_to/subject} joined c_n so they could always be together"
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 10,
+                "outcome_art": "cat_sprites/gen_bord_borderchatneg_ApOa",
+                "strings": [
+                    "p_l lets out a gentle <i>mrow</i>, and is heartened to hear another <i>mrow</i> come from the other side of POI. p_l rushes to n_c0, but {PRONOUN/n_c0/subject} {VERB/n_c0/don't/doesn't} greet {PRONOUN/p_l/object} back like {PRONOUN/n_c0/subject} normally would. In quiet mews, not looking at p_l, n_c0 explains that {PRONOUN/n_c0/subject} {VERB/n_c0/think/thinks} that they should stop meeting up like this. It's been <i>wonderful</i>, so, so wonderful, knowing p_l... but {PRONOUN/n_c0/subject} {VERB/n_c0/have/has} to focus on {PRONOUN/n_c0/poss} Clan. p_l feels heartbroken watching n_c0 walk away from {PRONOUN/p_l/object}, but {PRONOUN/p_l/subject} {VERB/p_l/understand/understands}. Their Clans would never let them be together."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "apprentice",
+                            "mediator apprentice",
+                            "medicine cat apprentice"
+                        ],
+                        "group": [
+                            "other_clan"
+                        ],
+                        "age": [
+                            "adolescent"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "amount": 15,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust",
+                            "romance"
+                        ],
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_from has a huge crush on cat_to, despite being from different Clans",
+                            "cats_to": "cat_to has a huge crush on cat_from, and wants {PRONOUN/cat_from/object} to have the best life, even if it isn't with cat_to."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "amount": -10,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_to wants to stop meeting with cat_from"
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_supportive_ApOa",
+                "strings": [
+                    "n_c0 trots into sight, calling for s_c0, who runs out to meet {PRONOUN/n_c0/object}. n_c0 breathes a heavy sigh as their foreheads press together. Under s_c0's gentle encouragement, {PRONOUN/n_c0/subject} {VERB/n_c0/vent/vents} about all the troubles {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} having with {PRONOUN/n_c0/poss} Clan and Clanmates, and how much {PRONOUN/n_c0/subject} {VERB/n_c0/feel/feels} like {PRONOUN/n_c0/subject} just {VERB/n_c0/don't/doesn't} fit in in o_c_n. s_c0 tilts {PRONOUN/s_c0/poss} head. It sounds like n_c0 would be happier without {PRONOUN/n_c0/poss} Clan, but... that's impossible, isn't it? Where would {PRONOUN/n_c0/subject} go? But then, anywhere is better than somewhere you're unhappy."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["p_l"],
+                        "stat": {
+                            "skill": ["INSIGHTFUL,0"]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "past_status": [
+                            "apprentice",
+                            "mediator apprentice",
+                            "medicine cat apprentice"
+                        ],
+                        "group": [
+                            "other_clan"
+                        ],
+                        "age": [
+                            "adolescent"
+                        ],
+                        "current_exp": ["learning"],
+                        "backstory": [
+                            "otherclan2"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "lost": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "amount": 15,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust",
+                            "romance"
+                        ],
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_to followed cat_from's advice, which made cat_from feel pretty good!",
+                            "cats_to": "cat_to got good advice from cat_from, and decided to leave {PRONOUN/cat_to/poss} Clan"
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_bord_abandonclan_OaAp",
+                "strings": [
+                    "p_l calls for n_c0, who calls back, and the two meet in the middle, twining their tails together. It's been way too long since n_c0 has seen {PRONOUN/p_l/object}! p_l agrees - n_c0 is {PRONOUN/p_l/poss} best friend, {PRONOUN/p_l/poss} most important cat, {PRONOUN/p_l/poss}... well, it would just be wonderful if they could always be together! n_c0 looks considering. Maybe they <i>could</i> always be together... p_l disagrees. There's no way, not while they're Clancats. <i>Exactly</i> - at dawnbreak, n_c0 leads p_l away from POI and out of Clancat lands."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "past_status": [
+                            "apprentice",
+                            "mediator apprentice",
+                            "medicine cat apprentice"
+                        ],
+                        "group": [
+                            "other_clan"
+                        ],
+                        "age": [
+                            "adolescent"
+                        ],
+                        "current_exp": ["learning"],
+                        "backstory": [
+                            "otherclan1",
+                            "otherclan4"
+                        ]
+                    }
+                },
+                "lost": [
+                    {
+                        "cats": ["n_c0", "p_l"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "amount": 15,
+                        "values": [
+                            "romance"
+                        ],
+                        "mutual": true,
+                        "log": {}
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "amount": 20,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_from likes cat_to so much that they left their Clans so they could always be together",
+                            "cats_to": "cat_to likes cat_from so much that they left their Clans so they could always be together"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "event_id": "gen_bord_fordriver_newborns_hostile",
         "types": ["border"],
         "frequency": 1,
