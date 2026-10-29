@@ -797,8 +797,15 @@ class HerbSupply:
 
         elif chosen_effect == HerbEffect.RISKS:
             effect_message = i18n.t("screens.med_den.risks_down")
+
         elif chosen_effect == HerbEffect.PROGRESSION:
             effect_message = i18n.t("screens.med_den.progression_down")
+
+        elif chosen_effect == HerbEffect.IMMUNE_SYSTEM_EFFECT:
+            effect_message = i18n.t("screens.med_den.immune_system_effect_down")
+
+        elif chosen_effect == HerbEffect.INFECTIOUSNESS:
+            effect_message = i18n.t("screens.med_den.infectiousness_down")
 
         if game.clan.game_mode == "classic":
             # classic doesn't get logs
