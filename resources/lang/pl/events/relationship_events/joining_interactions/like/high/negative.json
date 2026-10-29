@@ -1,0 +1,16 @@
+[
+    {
+        "event_id": "gen_like_high_dec1",
+        "strings": [
+			"r_c made a rude comment while m_c was getting acquainted with the camp."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": -10
+            }]
+    }
+]

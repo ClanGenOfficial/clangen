@@ -3,13 +3,12 @@ import os.path
 from typing import TYPE_CHECKING
 
 import ujson
-
 from scripts.game_structure.game.settings import (
-    game_settings_save,
     game_setting_get,
     game_setting_set,
+    game_settings_save,
 )
-from scripts.game_structure.game.switches import switch_get_value, Switch
+from scripts.game_structure.game.switches import Switch, switch_get_value
 from scripts.housekeeping.datadir import get_save_dir
 
 if TYPE_CHECKING:
@@ -20,7 +19,6 @@ from typing import Optional, Tuple
 
 import pygame
 import pygame_gui
-
 from scripts.game_structure.ui_manager import UIManager
 from scripts.ui.generate_screen_scale_json import generate_screen_scale
 
@@ -120,16 +118,17 @@ def set_display_mode(
         MANAGER.set_offset(offset)
         scripts.screens.screens_core.screens_core.rebuild_bgs()
         if old_scale != screen_scale:
-            from scripts.screens import all_screens
             import scripts.screens.screens_core.screens_core
+            from scripts.screens import all_screens
 
             game_settings_save(currentscreen=source_screen)
             source_screen.exit_screen()
 
             if fullscreen:
-                mouse_pos = (mouse_pos[0] * screen_scale) + offset[0], mouse_pos[
-                    1
-                ] * screen_scale + offset[1]
+                mouse_pos = (
+                    (mouse_pos[0] * screen_scale) + offset[0],
+                    mouse_pos[1] * screen_scale + offset[1],
+                )
             else:
                 mouse_pos = (
                     (mouse_pos[0] - old_offset[0]) / old_scale,
@@ -328,6 +327,14 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
     )
     manager.add_font_paths(
         font_name="clangen", regular_path="resources/fonts/clangen.ttf"
+    )
+
+    manager.add_font_paths(
+        font_name="JetBrainsMono",
+        regular_path="resources/fonts/JetBrainsMono/fonts/ttf/JetBrainsMono-Regular.ttf",
+        bold_path="resources/fonts/JetBrainsMono/fonts/ttf/JetBrainsMono-Bold.ttf",
+        italic_path="resources/fonts/JetBrainsMono/fonts/ttf/JetBrainsMono-Italic.ttf",
+        bold_italic_path="resources/fonts/JetBrainsMono/fonts/ttf/JetBrainsMono-BoldItalic.ttf",
     )
 
     generate_screen_scale(

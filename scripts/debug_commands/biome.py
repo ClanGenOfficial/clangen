@@ -8,17 +8,15 @@ from scripts.game_structure import game
 
 class SetBiomeCommand(Command):
     name = "set"
-    description = "Set player biome"
+    description = "Set the current clan's biome"
+    usage = "<biome: str>"
 
     def callback(self, args: List[str]):
         if len(args) == 0:
             add_output_line_to_log("Specify a biome.")
             return
-        if len(args) > 1:
-            add_output_line_to_log("Too many arguments: 1 expected.")
-            return
         if not game.clan:
-            add_output_line_to_log("No Clan loaded. Cannot set biome.")
+            add_output_line_to_log("No clan loaded. Cannot set biome.")
             return
 
         biome = args[0].casefold()
@@ -35,7 +33,7 @@ class SetBiomeCommand(Command):
 
 class BiomeCommand(Command):
     name = "biome"
-    description = "Get biome currently in use"
+    description = "Get the current clan's biome"
 
     sub_commands = [SetBiomeCommand()]
 
@@ -49,4 +47,4 @@ class BiomeCommand(Command):
                 add_output_line_to_log(f"Current biome: {game.clan.biome}")
             add_output_line_to_log("To change the biome, use 'biome set [biome]'.")
         else:
-            add_output_line_to_log("No game currently loaded.")
+            add_output_line_to_log("No clan currently loaded.")

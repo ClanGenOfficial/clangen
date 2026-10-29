@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_guide_sc",
+        "event_id": "gen_guide_sc",
         "strings": [
             "Hello. I am here to guide the dead cats of c_n into StarClan."
         ]

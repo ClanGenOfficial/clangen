@@ -1,6 +1,6 @@
 [
     {
-        "id": "becoming_apprentice",
+        "event_id": "becoming_apprentice",
         "strings": [
             "Looks forward to {PRONOUN/m_c/poss} apprenticeship",
             "Wants to see the whole territory",
@@ -17,7 +17,7 @@
         }
     },
     {
-        "id": "becoming_warrior_apprentice",
+        "event_id": "becoming_warrior_apprentice",
         "strings": [
             "Wants to go see the borders",
             "Wants to learn to hunt right away",
@@ -33,7 +33,7 @@
         }
     },
     {
-        "id": "becoming_medicine_apprentice",
+        "event_id": "becoming_medicine_apprentice",
         "strings": [
             "Wants to go see where all the herbs grow",
             "Wants to pick catmint right away",
@@ -49,7 +49,7 @@
         }
     },
     {
-        "id": "becoming_mediator_apprentice",
+        "event_id": "becoming_mediator_apprentice",
         "strings": [
             "Can't wait to start helping {PRONOUN/m_c/poss} Clanmates",
             "Wants to learn how to solve every argument"
@@ -63,7 +63,7 @@
         }
     },
     {
-        "id": "becoming_apprentice_to_mentor",
+        "event_id": "becoming_apprentice_to_mentor",
         "strings": [
             "Wants to learn everything r_c knows",
             "Can't wait to start training with r_c",
@@ -90,7 +90,7 @@
         }
     },
     {
-        "id": "becoming_nervous_apprentice_to_parent",
+        "event_id": "becoming_nervous_apprentice_to_parent",
         "strings": [
             "Runs back to the nursery for a last cuddle with r_c"
         ],
@@ -121,7 +121,7 @@
         }
     },
     {
-        "id": "becoming_keen_apprentice",
+        "event_id": "becoming_keen_apprentice",
         "strings": [
             "Can't wait to learn <i>everything</i>",
             "Wants {PRONOUN/m_c/poss} full name as soon as possible",
@@ -141,7 +141,7 @@
         }
     },
     {
-        "id": "becoming_outsider_apprentice",
+        "event_id": "becoming_outsider_apprentice",
         "strings": [
             "Is so glad {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} part of c_n now",
             "Can't wait to learn more about c_n as an apprentice",
@@ -162,7 +162,7 @@
         }
     },
     {
-        "id": "becoming_adult_rank",
+        "event_id": "becoming_adult_rank",
         "strings": [
             "Hopes {PRONOUN/m_c/subject} can serve the Clan well"
         ],
@@ -179,7 +179,7 @@
         }
     },
     {
-        "id": "becoming_newwarrior_rank",
+        "event_id": "becoming_newwarrior_rank",
         "strings": [
             "Enjoys {PRONOUN/m_c/poss} Clanmates chanting {PRONOUN/m_c/poss} name",
             "Looks ahead to a long night's vigil",
@@ -196,7 +196,7 @@
         }
     },
     {
-        "id": "becoming_highrank_rank",
+        "event_id": "becoming_highrank_rank",
         "strings": [
             "Feels the weight of {PRONOUN/m_c/poss} Clanmates' expectations",
             "Knows {PRONOUN/m_c/poss} work is only just beginning",
@@ -214,7 +214,7 @@
         }
     },
     {
-        "id": "becoming_leader_rank",
+        "event_id": "becoming_leader_rank",
         "strings": [
             "Is ready for the challenges that lie ahead"
         ],
@@ -227,7 +227,7 @@
         }
     },
     {
-        "id": "becoming_leader_rank_withwarriors",
+        "event_id": "becoming_leader_rank_withwarriors",
         "tags": [
             "clan:warrior"
         ],
@@ -245,7 +245,7 @@
         }
     },
     {
-        "id": "becoming_deputy_rank",
+        "event_id": "becoming_deputy_rank",
         "strings": [
             "Is learning how to organize patrols",
             "Looks to r_c for advice on {PRONOUN/m_c/poss} new role",
@@ -267,7 +267,7 @@
         }
     },
     {
-        "id": "becoming_deputy_rank_withwarriors",
+        "event_id": "becoming_deputy_rank_withwarriors",
         "tags": [
             "clan:warrior"
         ],
@@ -288,7 +288,7 @@
         }
     },
     {
-        "id": "becoming_medicinecat_rank",
+        "event_id": "becoming_medicinecat_rank",
         "strings": [
             "Feels the gaze of starry cats clinging to {PRONOUN/m_c/poss} fur",
             "Hopes to prove {PRONOUN/m_c/poss} competency as a medicine cat"
@@ -302,7 +302,7 @@
         }
     },
     {
-        "id": "becoming_mediator_rank_withwarriors",
+        "event_id": "becoming_mediator_rank_withwarriors",
         "tags": [
             "clan:warrior"
         ],
@@ -319,7 +319,7 @@
         }
     },
     {
-        "id": "becoming_demoted_rank",
+        "event_id": "becoming_demoted_rank",
         "strings": [
             "Is resigned to {PRONOUN/m_c/poss} new role",
             "Understands why {PRONOUN/m_c/subject} {VERB/m_c/were/was} demoted",

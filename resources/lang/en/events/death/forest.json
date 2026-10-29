@@ -350,5 +350,54 @@
                 "death": "m_c drowned while trying to swim in the lake."
             }
         ]
+    },
+    {
+        "event_id": "fst_death_wolf",
+        "location": [
+            "forest"
+        ],
+        "season": [],
+        "frequency": 1,
+        "event_text": "m_c is torn apart by wolves.",
+        "m_c": {
+            "age": [
+                "-newborn",
+                "-kitten"
+            ],
+
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": ["m_c"],
+                "death": "m_c was torn apart by wolves."
+            }
+        ]
+        
+    },
+    {
+        "event_id": "fst_death_wolf_kitten",
+        "location": [
+            "forest"
+        ],
+        "season": [],
+        "frequency": 1,
+        "event_text": "m_c wanders out of camp alone. When c_n finds {PRONOUN/m_c/object}, even r_c can't recognize {PRONOUN/m_c/object}.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "relationship_status": [
+                "child/parent"
+            ],
+            "dies": true
+        },
+        "r_c": {},
+        "history": [
+            {
+                "cats": ["m_c"],
+                "death": "m_c was torn apart by wolves."
+            }
+        ]
     }
 ]

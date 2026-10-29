@@ -8,3 +8,5 @@ uv run dump_model_schemas
 ```
 
 If adding a new schema entirely, add reference to the new schema to `dump_model_schemas.py`.  Then link it to its associated files in `.vscode/settings.json`.
+
+To hook up the model test for a new json file, modify `test_json_model_compliance.py`.

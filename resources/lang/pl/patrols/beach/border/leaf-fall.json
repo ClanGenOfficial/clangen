@@ -1,0 +1,137 @@
+[
+    {
+        "event_id": "bch_bord_coconutcrab1",
+        "types": [
+            "border"
+        ],
+        "frequency": 3,
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ]
+        },
+        "chance_of_success": 40,
+        "patrol_art": "cat_sprites/gen_groupwalk_WrWrWr",
+        "intro_strings": [
+            "Trekking near a copse of trees where the waves swish at their paws, the patrol notices a huge blue crab picking at a coconut."
+        ],
+        "decline_strings": [
+            "Deciding that it looks too dangerous to approach, the patrol leaves the crab alone."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_crouchingperplexed_WrWr",
+                "strings": [
+                    "The patrol watches as the crab hauls a coconut up the tree, only to drop it with a heavy crack before scrambling down to retrieve it and start again. The strange routine leaves the cats puzzled, but they can't help admiring its determination."
+                ],
+                "exp_gained": 10
+            },
+            {
+                "frequency": 3,
+                "outcome_art": "cat_sprites/gen_speakingcat_Wr",
+                "strings": [
+                    "The crab is huge, but surely it can't be <i>that</i> dangerous. However, when p_l describes a story {PRONOUN/p_l/subject} once heard about this giant creature killing a fully-grown cat, the group decides to steer clear. Maybe it's best to continue on with their patrol instead."
+                ],
+                "exp_gained": 10
+            },
+            {
+                "frequency": 2,
+                "outcome_art": "cat_sprites/gen_happycat_Wr",
+                "strings": [
+                    "Watching the crab attempt to crack open a coconut, the patrol proposes a plan that's inspired by its technique. While they don't have scuttling legs or strong pinchers, the cats are able to gather rocks into a palm tree and send them crashing down onto the coconut below. A sharp crack of the shell indicates their success, and they happily feast on the fruity, fleshy innards."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "mutual": false,
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from had fun cracking open a coconut with cat_to."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_running_Wr",
+                "strings": [
+                    "s_c0 ventures too near, and the crab's massive claw snaps shut just short of {PRONOUN/s_c0/poss} face. Startled, {PRONOUN/s_c0/subject} {VERB/s_c0/leap/leaps} back into the sand, fur bristling and claws unsheathed. That was far too close! Maybe this is one border threat better left alone."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "exp_gained": 0
+            },
+            {
+                "frequency": 3,
+                "outcome_art": "cat_sprites/gen_dragging_WrWr",
+                "strings": [
+                    "s_c0 approaches the crab, but it lashes out with terrifying speed. Its crushing pincers clamp down, leaving {PRONOUN/s_c0/object} badly injured before {PRONOUN/s_c0/subject} can fully retreat."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "exp_gained": 0,
+                "condition": [
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "condition": [
+                            "broken_bone"
+                        ],
+                        "scar_history": "m_c's bone was broken by a coconut crab.",
+                        "death_history": "m_c couldn't recover from {PRONOUN/m_c/poss} broken bone after being pinched by a coconut crab."
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "outcome_art": "cat_sprites/gen_deadghost_WrSc_EXPLICIT",
+                "outcome_art_clean": "cat_sprites/gen_deadghost_WrSc",
+                "strings": [
+                    "s_c0 lunges to drive the crab off, but its pincers strike {PRONOUN/s_c0/object} with a brutal force {PRONOUN/s_c0/subject} can't escape from. The patrol can only watch in horror as the attack proves fatal."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "exp_gained": 0,
+                "death": [
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "history": "m_c was pinched to death by a coconut crab."
+                    }
+                ]
+            }
+        ]
+    }
+]

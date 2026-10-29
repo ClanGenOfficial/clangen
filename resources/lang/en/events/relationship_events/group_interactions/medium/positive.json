@@ -1,6 +1,6 @@
 [
     {
-        "id": "group_multicat_pos_hunterbrag",
+        "event_id": "group_multicat_pos_hunterbrag",
         "strings": [
             "multi_cat are impressed by m_c's recent catch.",
             "m_c offers multi_cat hunting tips.",
@@ -32,7 +32,7 @@
         ]
     },
     {
-        "id": "group_multicat_pos_fighterbrag",
+        "event_id": "group_multicat_pos_fighterbrag",
         "strings": [
             "multi_cat talk about m_c's combat prowess during a skirmish.",
             "m_c regales multi_cat with stories about {PRONOUN/m_c/poss} latest fight.",
@@ -64,7 +64,7 @@
         ]
     },
     {
-        "id": "group_multicat_pos_speakerbrag",
+        "event_id": "group_multicat_pos_speakerbrag",
         "strings": [
             "m_c has a way with words that impresses multi_cat.",
             "multi_cat are enthralled by m_c's eloquence.",
@@ -96,13 +96,17 @@
         ]
     },
     {
-        "id": "group_multicat_pos_medcathealerbrag",
+        "event_id": "group_multicat_pos_medcathealerbrag",
         "strings": [
             "m_c's knowledge surrounding herbs impresses multi_cat.",
             "multi_cat are amazed when m_c teaches them about the intricacies of herbs.",
             "m_c's vast knowledge of the territory and how plants grow astounds multi_cat.",
             "m_c warns multi_cat about a plant they were discussing and teaches them about its dangers.",
-            "multi_cat listen to m_c explain the process of storing herbs and gain a newfound respect for m_c's craft."
+            "multi_cat listen to m_c explain the process of storing herbs and gain a newfound respect for m_c's craft.",
+            "multi_cat are impressed at how easily m_c identifies herbs.",
+            "multi_cat are impressed at m_c's ability to tell herbs from random leaves.",
+            "multi_cat are impressed by the way m_c draws out the effects of the herbs to heal others faster,",
+            "m_c teaches multi_cat how to tell when an herb is at its most effective."
         ],
         "involved_cats": {
             "m_c": {
@@ -131,7 +135,243 @@
         ]
     },
     {
-        "id": "group_multicat_pos_kit_kitsitting",
+        "event_id": "group_3_helpfulrespect",
+        "strings": [
+            "m_c sees r_c1 help r_c2 get unstuck from some brambles.",
+            "m_c overhears r_c1 dispelling a false rumor about r_c2.",
+            "m_c wasn't going to help r_c2 but realized that r_c1 would do it in a heartbeat.",
+            "m_c hears r_c1 laugh at r_c2's joke even though it was lame.",
+            "m_c was going to help r_c2, but r_c1, who already looked busy, rushed over to help; earning m_c's respect."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["knows_of", "likes"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": 10
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "group_3_pos_helpful",
+        "strings": [
+            "r_c1 sends r_c2 to help m_c with something {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} struggling with.",
+            "r_c1 includes m_c in a conversation with r_c2 that m_c struggled to join.",
+            "r_c1 and r_c2 pitch in to help m_c with a task."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["r_c1", "r_c2"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "constraints": ["likes", "knows_of", "considers", "relates_to"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1", "r_c2"],
+                "mutual": false,
+                "values": ["respect", "trust"],
+                "amount": 7
+            }   
+        ]
+    },
+    {
+        "event_id": "group_3_pos_defensivefriend",
+        "strings": [
+            "r_c1 snaps at r_c2 for disagreeing with m_c.",
+            "r_c1 won't hear a bad word about m_c from r_c2.",
+            "r_c1 jumps to m_c's defense when {PRONOUN/m_c/subject} {VERB/m_c/argue/argues} with r_c2."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {
+                "stat": {
+                    "trait": ["fierce", "loyal", "faithful"]
+                }
+            },
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "constraints": ["trusts", "respects"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
+                "values": ["trust", "like"],
+                "mutual": true,
+                "amount": 8
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["m_c", "r_c1"],
+                "values": ["trust", "like"],
+                "mutual": false,
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "event_id": "group_3_pos_enemyofmyenemy",
+        "strings": [
+            "r_c1 helps m_c hide from r_c2.",
+            "r_c1 lets m_c know that r_c2 was talking badly about {PRONOUN/m_c/object}.",
+            "r_c1 stands up for m_c against r_c2, despite not liking {PRONOUN/m_c/object}."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["r_c1", "m_c"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["dislikes"]
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "constraints": ["dislikes"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["like", "trust"],
+                "amount": 7
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "event_id": "group_3_pos_friendofmyfriend",
+        "strings": [
+            "Both m_c and r_c1 enthusiastically congratulate r_c2 on something.",
+            "m_c and r_c1 grow closer through their mutual connection to r_c2.",
+            "m_c and r_c1 knew they both liked r_c2, but they had no idea they'd like each other so much!",
+            "m_c and r_c1 both offered a gift to r_c2 only to realize they had the same thing!,",
+            "m_c and r_c1 both ate with r_c2 and bonded over a shared favorite prey.",
+            "m_c and r_c1 talked together about how great r_c2.",
+            "m_c and r_c1 both wanted to hang out with r_c2, but {PRONOUN/r_c2/subject} had to rain check, leaving m_c and r_c1 to hang out together."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c", "r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["praises", "likes"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": true,
+                "values": ["like", "comfort"],
+                "amount": 7
+            },
+            {
+                "cats_from": ["m_c", "r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": 7
+            }
+        ]
+    },
+    {
+        "event_id": "group_3_pos_thirdwheel",
+        "strings": [
+            "m_c went on patrol with r_c1 and r_c2 and says they talked the entire time and almost left {PRONOUN/m_c/object} behind."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["-kitten", "-elder", "-mediator", "-mediator apprentice"],
+                "health": {
+                    "working": true
+                }
+            },
+            "r_c1": {
+                "status": ["-kitten", "-elder", "-mediator", "-mediator apprentice"],
+                "health": {
+                    "working": true
+                }
+            },
+            "r_c2": {
+                "status": ["-kitten", "-elder", "-mediator", "-mediator apprentice"],
+                "health": {
+                    "working": true
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": true,
+                "values": ["like", "comfort"],
+                "amount": 7
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1", "r_c2"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "event_id": "group_multicat_pos_kit_kitsitting",
         "strings": [
             "multi_cat are on their best behavior around m_c.",
             "After kitsitting multi_cat, m_c gushes about their perfect behavior.",
@@ -171,7 +411,7 @@
         ]
     },
     {
-        "id": "group_multicat_pos_teacherwithkits",
+        "event_id": "group_multicat_pos_teacherwithkits",
         "strings": [
             "m_c teaches multi_cat the fundamentals of stretching to help them burn off energy.",
             "After multi_cat get in trouble, m_c helps them understand what they did wrong through a lesson.",
@@ -201,7 +441,7 @@
         ]
     },
     {
-        "id": "group_multicat_pos_mediatorteachingkits",
+        "event_id": "group_multicat_pos_mediatorteachingkits",
         "strings": [
             "After multi_cat are caught in a lie, m_c teaches them the importance of honesty.",
             "m_c explains the importance of being honest but tactful to multi_cat.",
@@ -235,7 +475,7 @@
         ]
     },
     {
-        "id": "group_multicat_pos_notkit_kitsitting",
+        "event_id": "group_multicat_pos_notkit_kitsitting",
         "strings": [
             "At first, m_c wasn't certain about watching multi_cat. However, the kits surprise {PRONOUN/m_c/object} by being on their best behavior.",
             "m_c doesn't think it's usually this easy to convince multi_cat to settle down, but it is today.",
@@ -273,7 +513,7 @@
         ]
     },
     {
-        "id": "group_multicat_pos_medteachingapps",
+        "event_id": "group_multicat_pos_medteachingapps",
         "strings": [
             "m_c is proud of how productive and attentive multi_cat are during a lesson about poisonous plants.",
             "multi_cat listen intently to m_c's lecture about basic first aid.",
@@ -308,7 +548,7 @@
         ]
     },
     {
-        "id": "group_multicat_pos_mediatorcommunity",
+        "event_id": "group_multicat_pos_mediatorcommunity",
         "strings": [
             "m_c beckons multi_cat to relax with {PRONOUN/m_c/object} and chat.",
             "At first, multi_cat are unsure about m_c's bonding exercise, but it goes wonderfully.",
@@ -335,7 +575,7 @@
         ]
     },
     {
-        "id": "group_multicat_pos_elderstory",
+        "event_id": "group_multicat_pos_elderstory",
         "strings": [
             "m_c tells multi_cat about days long past.",
             "m_c recalls {PRONOUN/m_c/poss} kithood to multi_cat.",
@@ -370,7 +610,7 @@
         ]
     },
     {
-        "id": "group_multicat_pos_leaderdecision",
+        "event_id": "group_multicat_pos_leaderdecision",
         "strings": [
             "multi_cat approve of a recent decision m_c made.",
             "multi_cat discuss their approval of a recent change m_c made.",
@@ -402,7 +642,7 @@
         ]
     },
     {
-        "id": "group_multicat_pos_leaderlistens",
+        "event_id": "group_multicat_pos_leaderlistens",
         "strings": [
             "m_c listens to multi_cat's feedback regarding a recent change.",
             "m_c understands multi_cat's concern about a decision and explains {PRONOUN/m_c/poss} reasoning behind it.",
@@ -453,7 +693,7 @@
         ]
     },
     {
-        "id": "group_multicat_pos_polymatesmid",
+        "event_id": "group_multicat_pos_polymatesmid",
         "strings": [
             "m_c, multi_cat went out to gather flowers for the nest together.",
             "m_c, multi_cat found some pretty pebbles for each other.",
@@ -496,10 +736,13 @@
         ]
     },
     {
-        "id": "group_multicat_newnestsCAMP",
+        "event_id": "group_multicat_newnestsCAMP",
         "strings": [
             "multi_cat notice that m_c refreshed the nests in the warriors' den without being asked.",
-            "multi_cat always know when m_c is assigned to refresh the warriors' nests, because {PRONOUN/m_c/subject} {VERB/m_c/do/does} such a good job."
+            "multi_cat always know when m_c is assigned to refresh the warriors' nests, because {PRONOUN/m_c/subject} {VERB/m_c/do/does} such a good job.",
+            "multi_cat appreciate how m_c often volunteers to clean out the dens.",
+            "multi_cat know that when m_c is assigned to cleaning out the warriors' den, their nests are in good paws.",
+            "multi_cat know when m_c cleans out the warriors' den, because the bedding always seems softer than usual."
         ],
         "involved_cats": {
             "m_c": {
@@ -523,7 +766,7 @@
         ]
     },
     {
-        "id": "group_multicat_newnestsCAMPfstpln",
+        "event_id": "group_multicat_newnestsCAMPfstpln",
         "strings": [
             "multi_cat are delighted that m_c lined their nests with soft down and seed-fluff when {PRONOUN/m_c/subject} refreshed the warriors' nests.",
             "multi_cat notice that m_c wove some sprigs of lavender and basil into the walls of the warriors' den when {PRONOUN/m_c/subject} cleaned it earlier."
@@ -553,7 +796,7 @@
         ]
     },
     {
-        "id": "group_multicat_newnestsCAMPtunnels",
+        "event_id": "group_multicat_newnestsCAMPtunnels",
         "strings": [
             "multi_cat are delighted that m_c lined their nests with rabbit fur and seed-fluff when {PRONOUN/m_c/subject} refreshed the warriors' nests.",
             "multi_cat notice that m_c embedded some sweet-scented roots into the earthen walls of the warriors' den when {PRONOUN/m_c/subject} cleaned it earlier."
@@ -583,7 +826,7 @@
         ]
     },
     {
-        "id": "group_multicat_newnestsCAMPmtn",
+        "event_id": "group_multicat_newnestsCAMPmtn",
         "strings": [
             "multi_cat are delighted that m_c lined their nests with downy feathers when {PRONOUN/m_c/subject} refreshed the warriors' nests.",
             "multi_cat notice that m_c wedged some sprigs of edelweiss and jasmine into the crevices of the warriors' den when {PRONOUN/m_c/subject} cleaned it earlier."
@@ -613,7 +856,7 @@
         ]
     },
     {
-        "id": "group_multicat_newnestsCAMPbch",
+        "event_id": "group_multicat_newnestsCAMPbch",
         "strings": [
             "multi_cat are delighted that m_c lined their nests with duck down and seagull feathers when {PRONOUN/m_c/subject} refreshed the warriors' nests.",
             "multi_cat notice that m_c decorated into the walls of the warriors' den with seaglass and small shells when {PRONOUN/m_c/subject} cleaned it earlier."
@@ -641,7 +884,7 @@
         ]
     },
     {
-        "id": "group_multicat_discussrespect",
+        "event_id": "group_multicat_discussrespect",
         "strings": [
             "m_c, multi_cat discuss whether they think c_n is headed in a good direction, and the others appreciate m_c's insights.",
             "m_c, multi_cat discuss whether c_n is doing better or worse than it was last season, and the others appreciate m_c's insights.",
@@ -674,6 +917,66 @@
                 "mutual": false,
                 "values": ["like", "trust"],
                 "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "group_3_pos_plotting",
+        "strings": [
+            "m_c admits to wanting to kill r_c2, to which r_c1 admits the same!",
+            "m_c and r_c1 are plotting something against r_c2.",
+            "m_c and r_c1 talk about how much they want r_c2 dead.",
+            "m_c and r_c1 are discussing when r_c2 is most often alone...",
+            "m_c is helping r_c1 plan how to get back at r_c2.",
+            "m_c and r_c1 are discussing ways an \"accident\" could befall r_c2."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "bloodthirsty",
+                        "vengeful"
+                    ]
+                }
+            },
+            "r_c1": {
+                "stat": {
+                    "trait": [
+                        "bloodthirsty",
+                        "vengeful"
+                    ]
+                }
+            }
+        },
+            "relationship_constraint": [
+            {
+                "cats_from": ["m_c", "r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["dislikes"]
+            }
+        ],
+            "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["like", "trust", "respect"],
+                "amount": 5
+            },
+            {
+                "cats_from": ["m_c", "r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": -10
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["m_c", "r_c1"],
+                "mutual": false,
+                "values": ["trust"],
+                "amount": -10
             }
         ]
     }

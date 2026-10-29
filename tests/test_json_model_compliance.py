@@ -1,20 +1,25 @@
-import os
-
 from itertools import chain
 
 from pathlib import Path
 
 import pytest
 
+from scripts.models.ceremony.ceremony_schema import CeremonySchema
+from scripts.models.condition.base_condition_schema import BaseConditionSchema
+from scripts.models.condition.death_condition_schema import DeathConditionSchema
+from scripts.models.condition.permanent_condition_info_schema import (
+    PermanentConditionInfoSchema,
+)
+from scripts.models.condition.temporary_condition_info_schema import (
+    TemporaryConditionInfoSchema,
+)
 from scripts.models.relationship_group_event.relationship_group_schema import (
     RelationshipGroupEvent,
 )
 from scripts.models.relationship_pair_event.relationship_pair_schema import (
     RelationshipPairEvent,
 )
-
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
+from scripts.models.transition.transition_schema import TransitionSchema
 
 from scripts.models.patrol.patrol_schema import PatrolSchema
 from scripts.models.shortevent.short_event_schema import ShortEventSchema
@@ -22,6 +27,7 @@ from scripts.models.thought.thought_schema import ThoughtSchema
 from scripts.models.points_of_interest.points_of_interest_schema import (
     PointsOfInterestSchema,
 )
+from scripts.models.pelt_recipe.pelt_recipe_schema import PeltRecipe
 
 
 ROOT_DIR = Path(__file__).parent.parent
@@ -30,6 +36,13 @@ RESOURCES_DIR = ROOT_DIR / "resources"
 
 def format_file_context_string(path: Path) -> str:
     return f'"{path.relative_to(Path.cwd())}"'
+
+
+def all_pelt_recipe_files():
+    """
+    Iterator for Paths for all pelt recipe files
+    """
+    yield from ROOT_DIR.glob("sprites/dicts/pelt_recipes/*.json")
 
 
 def all_thought_files():
@@ -92,6 +105,76 @@ def group_relationship_files():
     )
 
 
+def ceremony_files():
+    """
+    Iterator for Paths for all ceremony files
+    """
+    EXCLUSIONS = [
+        "ceremony_traits.json",
+    ]
+
+    yield from (
+        file
+        for file in RESOURCES_DIR.glob("lang/*/events/ceremonies/*.json")
+        if file.name not in EXCLUSIONS
+    )
+
+
+def transition_files():
+    """
+    Iterator for Paths for all transition files
+    """
+    yield from RESOURCES_DIR.glob("lang/*/events/transition.json")
+
+
+def base_condition_event_files():
+    """
+    Iterator for Paths for all base condition events (death not included) files
+    """
+
+    INCLUSION_GLOBS = [
+        "gain_temporary_condition_strings/*.json",
+        "healed_strings/*.json",
+        "outbreak_strings/*.json",
+        "reveal_condition_strings/*.json",
+        "progression_strings/*/*.json",
+        "risk_strings/*/*.json",
+    ]
+
+    yield from chain.from_iterable(
+        RESOURCES_DIR.glob("lang/*/conditions/" + glob) for glob in INCLUSION_GLOBS
+    )
+
+
+def death_condition_event_files():
+    """
+    Iterator for Paths for all death condition events files
+    """
+    INCLUSION_GLOBS = [
+        "death_strings/*.json",
+    ]
+
+    yield from chain.from_iterable(
+        RESOURCES_DIR.glob("lang/*/conditions/" + glob) for glob in INCLUSION_GLOBS
+    )
+
+
+def temporary_condition_info_files():
+    """
+    Iterator for Paths for all temporary condition info files
+    """
+
+    yield from RESOURCES_DIR.glob("dicts/conditions/temporary_conditions/*.json")
+
+
+def permanent_condition_info_files():
+    """
+    Iterator for Paths for all permanent condition info files
+    """
+
+    yield from RESOURCES_DIR.glob("dicts/conditions/permanent_conditions/*.json")
+
+
 @pytest.mark.parametrize(
     "thought_file",
     all_thought_files(),
@@ -146,3 +229,77 @@ def test_points_of_interest():
     """Test that the Points of Interest JSON is correct according to the Pydantic models"""
     poi_file = RESOURCES_DIR / "dicts/points_of_interest.json"
     PointsOfInterestSchema.model_validate_json(poi_file.read_text())
+
+
+@pytest.mark.parametrize(
+    "pelt_recipe_file",
+    all_pelt_recipe_files(),
+    ids=format_file_context_string,
+)
+def test_pelt_recipes(pelt_recipe_file: Path):
+    """Test that all pelt recipe JSONs are correct according to the Pydantic models"""
+    PeltRecipe.model_validate_json(pelt_recipe_file.read_text())
+
+
+@pytest.mark.parametrize(
+    "ceremony_file",
+    ceremony_files(),
+    ids=format_file_context_string,
+)
+def test_ceremony_file_events(ceremony_file: Path):
+    """Test that all ceremony JSONs are correct according to the Pydantic models"""
+    CeremonySchema.model_validate_json(ceremony_file.read_text())
+
+
+@pytest.mark.parametrize(
+    "transition_file",
+    transition_files(),
+    ids=format_file_context_string,
+)
+def test_transition_events(transition_file: Path):
+    """Test that all transition_file JSONs are correct according to the Pydantic models"""
+    TransitionSchema.model_validate_json(transition_file.read_text())
+
+
+@pytest.mark.parametrize(
+    "base_condition_file",
+    base_condition_event_files(),
+    ids=format_file_context_string,
+)
+def test_base_condition_events(base_condition_file: Path):
+    """Test that all base_condition_file JSONs are correct according to the Pydantic models"""
+    BaseConditionSchema.model_validate_json(base_condition_file.read_text())
+
+
+@pytest.mark.parametrize(
+    "death_condition_file",
+    death_condition_event_files(),
+    ids=format_file_context_string,
+)
+def test_death_condition_events(death_condition_file: Path):
+    """Test that all death_condition_file JSONs are correct according to the Pydantic models"""
+    DeathConditionSchema.model_validate_json(death_condition_file.read_text())
+
+
+@pytest.mark.parametrize(
+    "temporary_condition_file",
+    temporary_condition_info_files(),
+    ids=format_file_context_string,
+)
+def test_temporary_condition_info(temporary_condition_file: Path):
+    """Test that all temporary_condition_file JSONs are correct according to the Pydantic models"""
+    TemporaryConditionInfoSchema.model_validate_json(
+        temporary_condition_file.read_text()
+    )
+
+
+@pytest.mark.parametrize(
+    "permanent_condition_file",
+    permanent_condition_info_files(),
+    ids=format_file_context_string,
+)
+def test_permanent_condition_info(permanent_condition_file: Path):
+    """Test that all permanent_condition_file JSONs are correct according to the Pydantic models"""
+    PermanentConditionInfoSchema.model_validate_json(
+        permanent_condition_file.read_text()
+    )

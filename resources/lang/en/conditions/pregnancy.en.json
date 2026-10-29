@@ -14,6 +14,11 @@
             "many": "Is glad that {PRONOUN/m_c/poss} kits are safe"
         },
         "keep_clan_tradition": "%{name} decided to name the litter according to Clan tradition.",
-        "reject_clan_tradition": "%{name} decided not to name the litter according to Clan tradition."
+        "reject_clan_tradition": "%{name} decided not to name the litter according to Clan tradition.",
+        "affair_rel_log": "m_c found out that r_c cheated on {PRONOUN/m_c/object} and had kits with another cat.",
+        "coparenting_rel_log_neg": "m_c and r_c had a litter together and couldn't agree on co-parenting.",
+        "coparenting_rel_log_pos": "m_c and r_c became closer after agreeing to co-parent their new litter together.",
+        "mate_claims_kits": "Despite being heartbroken over m_c's affair, r_c still loves m_c too much to leave {PRONOUN/m_c/object}. r_c decides to help {PRONOUN/m_c/object} raise the %{insert}.",
+        "mate_disowns_kits": "Heartbroken, angry, and confused, r_c decides that {PRONOUN/r_c/subject} won't help m_c raise this %{insert}; they're not {PRONOUN/r_c/inposs} after all."
     }
 }

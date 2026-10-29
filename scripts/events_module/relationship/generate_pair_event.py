@@ -1,3 +1,4 @@
+from copy import deepcopy
 from random import choice, choices
 from typing import Optional, Literal
 
@@ -8,22 +9,19 @@ from scripts.cat.enums import CatCompatibility, CatRank
 from scripts.cat_relations.enums import RelType
 from scripts.cat_relations.relationship import Relationship
 from scripts.config import get_config
-from scripts.event_class import Single_Event
 from scripts.events_module.consequences import change_relationship_values
 from scripts.events_module.event_filters import (
     get_personality_compatibility,
-    event_for_cat,
-    check_rel_constraint_groups,
-    event_for_location,
-    event_for_season,
-    event_for_tags,
 )
-from scripts.events_module.text_adjust import process_text
-from scripts.events_module.text_pool_event import TextPoolEvent
+from scripts.events_module.event_information import EventInformation
+from scripts.events_module.parameter_dicts import RelationshipChangeDict
+from scripts.events_module.text_pool_event.event_retrieval import (
+    get_valid_event,
+    load_text_pool_events,
+)
+from scripts.events_module.text_pool_event.handle_consequences import execute_outcome
+from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
-from scripts.game_structure.localization import load_lang_resource
-
-loaded_events = {}
 
 
 # TRIGGER
@@ -73,7 +71,7 @@ def trigger_interaction(
     )[0]
 
     path = f"events/relationship_events/{'joining_interactions' if is_joining else 'normal_interactions'}/{type_of_interaction}/{chosen_intensity}/{type_of_change}.json"
-    events = _load_file(path)
+    events = load_text_pool_events(path)
 
     # find valid event
     chosen_event = _get_event(events, main_cat, other_cat)
@@ -232,43 +230,24 @@ def _get_event(
     :param other_cat: The other cat involved in the event
     :return: A TextPoolEvent valid for both cats and current game state
     """
-    final_events = []
 
-    possible_events = []
-    for e in events:
-        if not event_for_location(e.location):
-            continue
-        if not event_for_season(e.season):
-            continue
-        if not event_for_tags(e.tags, main_cat, other_cat):
-            continue
-        possible_events.append(e)
+    # this is its own function so that we can test
+    # attempt to find a valid event where we can fill the other roles
+    other_clan = (
+        (choice(game.clan.all_other_clans) if game.clan.all_other_clans else None)
+        if game.clan
+        else None
+    )
+    chosen_event, involved_cats = get_valid_event(
+        primary_cat=main_cat,
+        involved_cats={"m_c": main_cat, "r_c": other_cat},
+        interactable_cats=[other_cat],
+        possible_events=events,
+        other_clan=other_clan,
+        frequency_active=False,
+    )
 
-    possible_events = [
-        e
-        for e in possible_events
-        if event_for_cat(e.involved_cats.get("m_c", {}), main_cat, event_id=e.id)
-    ]
-
-    possible_events = [
-        e
-        for e in possible_events
-        if event_for_cat(
-            e.involved_cats.get("r_c", {}),
-            other_cat,
-            involved_cat_dict={"m_c": main_cat},
-            event_id=e.id,
-        )
-    ]
-
-    for e in possible_events:
-        if all(
-            check_rel_constraint_groups(constraint, {"m_c": main_cat, "r_c": other_cat})
-            for constraint in e.relationship_constraint
-        ):
-            final_events.append(e)
-
-    return choice(final_events)
+    return chosen_event
 
 
 def _get_change_amount(
@@ -322,14 +301,20 @@ def _resolve_event(
     :param type_of_interaction: The main RelType that is being affected
     :param relationship: Main cat's relationship object for other_cat
     """
-    event_string = choice(event.strings)
 
-    # FORMATTING
-    replace_dict = {
-        abbr: (str(c.name), choice(c.pronouns)) for abbr, c in involved_cats.items()
-    }
-    # replace their abbreviations
-    event_string = process_text(event_string, replace_dict)
+    # separate the rel changes out of the event so that we can handle them in a special way
+    # rather than handling them in execute_outcome
+    relationship_changes = event.relationship_changes
+    event_to_execute = deepcopy(event)
+    event_to_execute.relationship_changes = []
+
+    # we won't use results and rel_results here
+    event_string, results, rel_results = execute_outcome(
+        event=event_to_execute,
+        event_involved_cats=involved_cats,
+        other_clan=None,
+    )
+
     # add the postscript text
     event_string = i18n.t(
         f"relationships.{type_of_change}_postscript_{intensity}",
@@ -341,32 +326,34 @@ def _resolve_event(
     cat_ids = [c.ID for c in involved_cats.values()]
     # append the event to the events list!
     game.cur_events_list.append(
-        Single_Event(event_string, ["relation", "interaction"], cat_ids)
+        EventInformation(event_string, ["relation", "interaction"], cat_ids)
     )
 
     # APPLY INFLUENCE ON RELATIONSHIPS
     _apply_base_influence(
         intensity, relationship, type_of_change, type_of_interaction, event_string
     )
-    _apply_extra_influence(event, involved_cats, relationship, event_string)
+    _apply_extra_influence(
+        relationship_changes, involved_cats, relationship, event_string
+    )
 
 
 def _apply_extra_influence(
-    event: TextPoolEvent,
+    relationship_changes: list[RelationshipChangeDict],
     involved_cats: dict[str, Cat],
     relationship: Relationship,
     chosen_string: str,
 ):
     """
     Applies any additional relationship influence that was specified by the event
-    :param event: the object for the event
+    :param relationship_changes: the object for the event
     :param involved_cats: The dictionary of involved cats. Key is the string abbreviation for the cat and value is the cat object
     :param relationship: Main cat's relationship object for other_cat
     :param chosen_string: The string that was chosen for this event
     """
     if relationship.opposite_relationship is None:
         relationship.link_relationship()
-    for change in event.relationship_changes:
+    for change in relationship_changes:
         # get the cats_from
         cats_from = [involved_cats[c] for c in change["cats_from"]]
 
@@ -422,28 +409,3 @@ def _apply_base_influence(
             count=relationship.cat_from.moons,
         )
     )
-
-
-# LOAD
-def _load_file(path) -> list[TextPoolEvent]:
-    """
-    Loads and returns the events file
-    """
-    # check if we've already loaded these events and then load them if need be
-    if path not in loaded_events.keys():
-        loaded_events[path] = []
-        for t in load_lang_resource(path):
-            loaded_events[path].append(
-                TextPoolEvent(
-                    id=t.get("id"),
-                    location=t.get("location", []),
-                    season=t.get("season", []),
-                    tags=t.get("tags", []),
-                    strings=t.get("strings", []),
-                    involved_cats=t.get("involved_cats", {}),
-                    relationship_constraint=t.get("relationship_constraint", []),
-                    relationship_changes=t.get("relationship_changes", []),
-                )
-            )
-
-    return loaded_events[path]

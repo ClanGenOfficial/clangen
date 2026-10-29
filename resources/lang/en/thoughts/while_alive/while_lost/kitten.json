@@ -1,6 +1,6 @@
 [
     {
-        "id": "lost_kitten_thoughts",
+        "event_id": "lost_kitten_thoughts",
         "strings": [
             "Is wandering around aimlessly",
             "Is attempting to catch a bird",
@@ -16,7 +16,7 @@
         ]
     },
     {
-        "id": "lost_clan_kitten_thoughts",
+        "event_id": "lost_clan_kitten_thoughts",
         "strings": [
             "Misses playing moss ball",
             "Is looking desperately for {PRONOUN/m_c/poss} parent",
@@ -54,7 +54,7 @@
         }
     },
     {
-        "id": "lost_new_kitten_thoughts",
+        "event_id": "lost_new_kitten_thoughts",
         "strings": [
             "Wonders about {PRONOUN/m_c/poss} true home",
             "Doesn't understand why cats live in Clans",

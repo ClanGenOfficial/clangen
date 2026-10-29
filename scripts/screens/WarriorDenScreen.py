@@ -5,6 +5,7 @@ import ujson
 from pygame_gui.core import ObjectID
 
 from scripts.cat.cats import Cat
+from scripts.cat.skills import CatSkills, SkillPath
 from scripts.clan_package.settings.clan_settings import (
     set_clan_setting,
     get_clan_setting,
@@ -58,6 +59,9 @@ class WarriorDenScreen(Screens):
 
         self.has_mediators = True
         self.has_meddies = True
+        self.has_deputy = True
+
+        self.deputy_buff = None
 
     def handle_event(self, event):
         """
@@ -122,6 +126,7 @@ class WarriorDenScreen(Screens):
             )
             > 0
         )
+        self.has_deputy = find_alive_cats_with_rank(Cat, [CatRank.DEPUTY], working=True)
 
         self.hide_menu_buttons()
         self.back_button = UISurfaceImageButton(
@@ -243,6 +248,9 @@ class WarriorDenScreen(Screens):
             ):
                 self.focus_buttons[name].disable()
                 self.focus_buttons[name].set_text(f"settings.requires_medicine_cat")
+            # check if theres a deputy
+            elif not self.has_deputy:
+                self.focus_buttons[name].disable()
             # check chosen button
             elif self.active_code == name:
                 self.focus_buttons[name].disable()
@@ -267,9 +275,29 @@ class WarriorDenScreen(Screens):
             ):
                 continue
 
+            setting_text = i18n.t(f"settings.{name}")
+            if game.clan.deputy and name != "business_as_usual":
+                buffs = get_config(f"focus.{name}.buff")
+                for skill, tier in game.clan.deputy.skills.get_all().items():
+                    skill = skill.name
+                    if skill not in buffs.keys():
+                        continue
+                    if buffs[skill]["tier"] > tier:
+                        continue
+
+                    if (
+                        "biome" in buffs[skill]
+                        and game.clan.biome.casefold() not in buffs[skill]["biome"]
+                    ):
+                        continue
+                    setting_text = i18n.t(
+                        "screens.warrior_den.buffed_setting", name=setting_text
+                    )
+                    self.deputy_buff = skill.casefold()
+
             self.focus_buttons[name] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((0, 2), (250, 28))),
-                f"settings.{name}",
+                setting_text,
                 get_button_dict(ButtonStyles.ROUNDED_RECT, (250, 28)),
                 object_id=ObjectID(None, "@buttonstyles_rounded_rect"),
                 container=self.focus["button_container"],
@@ -348,13 +376,22 @@ class WarriorDenScreen(Screens):
             manager=MANAGER,
         )
         del focus
-        self.focus_text = pygame_gui.elements.UITextBox(
-            "screens.warrior_den.what_to_focus",
-            ui_scale(pygame.Rect((92, 214), (272, 15))),
-            wrap_to_height=True,
-            object_id="#text_box_30_horizcenter_vertcenter_spacing_95",
-            manager=MANAGER,
-        )
+        if not self.has_deputy:
+            self.focus_text = pygame_gui.elements.UITextBox(
+                "screens.warrior_den.no_deputy",
+                ui_scale(pygame.Rect((92, 204), (272, 15))),
+                wrap_to_height=True,
+                object_id="#text_box_30_horizcenter_vertcenter_spacing_95",
+                manager=MANAGER,
+            )
+        else:
+            self.focus_text = pygame_gui.elements.UITextBox(
+                "screens.warrior_den.what_to_focus",
+                ui_scale(pygame.Rect((92, 214), (272, 15))),
+                wrap_to_height=True,
+                object_id="#text_box_30_horizcenter_vertcenter_spacing_95",
+                manager=MANAGER,
+            )
 
     def create_side_info(self):
         """
@@ -364,14 +401,36 @@ class WarriorDenScreen(Screens):
         if "side_text" in self.focus_information:
             self.focus_information["side_text"].kill()
 
+        text = i18n.t(f"settings.{self.active_code}_tooltip")
+
+        if game.clan.deputy and self.active_code != "business_as_usual":
+            buffs = get_config(f"focus.{self.active_code}.buff")
+            for skill, tier in game.clan.deputy.skills.get_all().items():
+                skill = skill.name
+                if skill not in buffs.keys():
+                    continue
+                if buffs[skill]["tier"] > tier:
+                    continue
+
+                if (
+                    "biome" in buffs[skill]
+                    and game.clan.biome.casefold() not in buffs[skill]["biome"]
+                ):
+                    continue
+                text = i18n.t(
+                    "screens.warrior_den.info_with_buff",
+                    info=text,
+                    buff=i18n.t(
+                        f"screens.warrior_den.{self.active_code}_buff_{skill.casefold()}"
+                    ),
+                )
+
         # create the new info text
         self.focus_information["side_text"] = pygame_gui.elements.UITextBox(
-            "screens.warrior_den.selected_info",
-            ui_scale(pygame.Rect((415, 466), (318, 130))),
-            wrap_to_height=True,
+            text,
+            ui_scale(pygame.Rect((405, 466), (335, 160))),
             object_id="#text_box_30_horizcenter_vertcenter_spacing_95",
             manager=MANAGER,
-            text_kwargs={"info": i18n.t(f"settings.{self.active_code}_tooltip")},
         )
 
     def change_setting(self):

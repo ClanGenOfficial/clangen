@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_like_high_inc1",
+        "event_id": "gen_like_high_inc1",
         "strings": [
 			"r_c and m_c became fast friends."
         ],

@@ -1,0 +1,178 @@
+{
+  "$defs": {
+    "Layer": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/NormalLayer"
+        },
+        {
+          "$ref": "#/$defs/ReferenceLayer"
+        }
+      ],
+      "title": "Layer"
+    },
+    "LayerOrder": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "items": {
+            "$ref": "#/$defs/LayerOrder"
+          },
+          "type": "array"
+        }
+      ]
+    },
+    "NormalLayer": {
+      "additionalProperties": false,
+      "properties": {
+        "group_name": {
+          "description": "Specifies which pelt-part will be used.",
+          "title": "Group Name",
+          "type": "string"
+        },
+        "color": {
+          "description": "Color name as defined in the color palettes. This group will be recolored to this color.",
+          "title": "Color",
+          "type": "string"
+        },
+        "blend_mode": {
+          "description": "Refers to the blending mode in which the flat is applied",
+          "enum": [
+            "normal",
+            "multiply",
+            "mask"
+          ],
+          "title": "Blend Mode",
+          "type": "string"
+        },
+        "opacity": {
+          "default": 100,
+          "description": "Defines opacity of the layer. 0-100.",
+          "title": "Opacity",
+          "type": "integer"
+        },
+        "spritesheet": {
+          "description": "This is the spritesheet to look for group_name in. Most helpful for tortie patches, which are in \"patches_tortie\".",
+          "title": "Spritesheet",
+          "type": "string"
+        }
+      },
+      "required": [
+        "group_name"
+      ],
+      "title": "NormalLayer",
+      "type": "object"
+    },
+    "RecipeException": {
+      "additionalProperties": false,
+      "properties": {
+        "poses": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "description": "Poses that this exception applies to.",
+          "title": "Poses"
+        },
+        "colors": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "description": "Colours that this exception applies to.",
+          "title": "Colors"
+        },
+        "layer_order": {
+          "description": "Layer order of this exception.",
+          "items": {
+            "$ref": "#/$defs/LayerOrder"
+          },
+          "title": "Layer Order",
+          "type": "array"
+        },
+        "layers": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Layer"
+          },
+          "description": "Layer data of this exception.",
+          "title": "Layers",
+          "type": "object"
+        }
+      },
+      "title": "RecipeException",
+      "type": "object"
+    },
+    "ReferenceLayer": {
+      "additionalProperties": false,
+      "properties": {
+        "pelt_name": {
+          "description": "Refers to another pelt recipe.",
+          "title": "Pelt Name",
+          "type": "string"
+        },
+        "palette": {
+          "description": "Refers to a colour in another pelt recipe",
+          "title": "Palette",
+          "type": "string"
+        }
+      },
+      "title": "ReferenceLayer",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "description": "Name of the recipe. Should be unique for each recipe.",
+      "title": "Name",
+      "type": "string"
+    },
+    "layer_order": {
+      "description": "Order the layers of the pelt will be built. The first entry is the bottom layer, and it builds up from there.  You can also have compound layers.  They will be constructed first, then layered.",
+      "items": {
+        "$ref": "#/$defs/LayerOrder"
+      },
+      "title": "Layer Order",
+      "type": "array"
+    },
+    "layers": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Layer"
+      },
+      "description": "Layers for the recipe.",
+      "title": "Layers",
+      "type": "object"
+    },
+    "exceptions": {
+      "items": {
+        "$ref": "#/$defs/RecipeException"
+      },
+      "title": "Exceptions",
+      "type": "array"
+    }
+  },
+  "required": [
+    "name",
+    "layer_order",
+    "layers",
+    "exceptions"
+  ],
+  "title": "PeltRecipe",
+  "type": "object"
+}

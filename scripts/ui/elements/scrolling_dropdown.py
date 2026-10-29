@@ -55,7 +55,7 @@ class UIScrollingDropDown(UIDropDownContainer):
         """
 
         super().__init__(
-            relative_rect=ui_scale(relative_rect.copy()),
+            relative_rect=relative_rect.copy(),
             container=container,
             manager=manager,
             starting_height=starting_height,
@@ -68,13 +68,12 @@ class UIScrollingDropDown(UIDropDownContainer):
 
         # create parent button
         self.parent_button = UISurfaceImageButton(
-            ui_scale(relative_rect.copy()),
+            pygame.Rect((0, 0), relative_rect.size),
             parent_text,
             get_button_dict(parent_style, relative_rect.size),
             manager=manager,
             object_id=f"@buttonstyles_{parent_style.value}",
             container=self,
-            anchors=anchors,
         )
 
         # create child buttons
@@ -83,27 +82,21 @@ class UIScrollingDropDown(UIDropDownContainer):
         else:
             dimensions = relative_rect.size
 
-        dropdown_rect = ((relative_rect.x, 0), dropdown_dimensions)
+        dropdown_rect = ((0, 0), dropdown_dimensions)
         self.child_button_container = UIScrollingButtonList(
             pygame.Rect(dropdown_rect),
             button_dimensions=dimensions,
             item_list=item_list,
             manager=manager,
             container=self,
-            anchors=(
-                {
-                    "top_target": self.parent_button,
-                    "left_target": self.parent_button.anchors.get("left_target"),
-                }
-                if self.parent_button.anchors.get("left_target")
-                else {"top_target": self.parent_button}
-            ),
+            anchors=({"top_target": self.parent_button}),
             offset_scroll=offset_scroll,
             button_style=child_style,
             multiple_choice=multiple_choice,
             disable_selection=disable_selection,
             starting_selection=starting_selection,
         )
+        self.item_list = item_list
         self.child_buttons = self.child_button_container.buttons.values()
         self.child_button_dicts = self.child_button_container.buttons
 
@@ -121,6 +114,7 @@ class UIScrollingDropDown(UIDropDownContainer):
 
     def set_selected_list(self, new_list):
         self.child_button_container.set_selected_list(new_list)
+        self.selected_list = self.child_button_container.selected_list
 
     def new_item_list(self, item_list):
         """

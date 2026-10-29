@@ -3,6 +3,7 @@ from random import choice
 from typing import Optional
 
 from scripts.cat_relations.enums import RelType
+from scripts.cat_relations.relationship import create_one_relationship
 from scripts.config import get_config
 from scripts.game_structure import constants
 from scripts.events_module.relationship import (
@@ -40,7 +41,7 @@ def handle_relationships(cat: Cat):
     if not random.getrandbits(4):
         _trigger_romantic_event(cat)
 
-        romantic_events.handle_mates_and_breakup(cat)
+    romantic_events.handle_mates_and_breakup(cat)
 
 
 # ---------------------------------------------------------------------------- #
@@ -109,9 +110,9 @@ def _trigger_romantic_event(cat: Cat):
             continue
 
         if inter_cat.ID not in cat.relationships:
-            cat.create_one_relationship(inter_cat)
+            create_one_relationship(cat, inter_cat)
         if cat.ID not in inter_cat.relationships:
-            inter_cat.create_one_relationship(cat)
+            create_one_relationship(inter_cat, cat)
 
         cat_to_inter = (
             cat.relationships[inter_cat.ID].like > 10
@@ -204,11 +205,6 @@ def _trigger_pair_event(
     if not successful:
         return
 
-    # handle contact with ill cat if
-    if cat.is_ill():
-        other_cat.contact_with_ill_cat(cat)
-    if other_cat.is_ill():
-        cat.contact_with_ill_cat(other_cat)
     update_events_triggered_count(cat)
     update_events_triggered_count(other_cat)
 

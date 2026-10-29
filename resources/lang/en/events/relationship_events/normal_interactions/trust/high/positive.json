@@ -1,6 +1,6 @@
 [
     {
-        "id": "trust_inc_high1",
+        "event_id": "trust_inc_high1",
         "strings": [
             "m_c thinks {PRONOUN/m_c/subject} can tell r_c something important.",
             "m_c feels safe with r_c around.",
@@ -13,7 +13,7 @@
         ]
     },
     {
-        "id": "trust_inc_high2",
+        "event_id": "trust_inc_high2",
         "strings": [
             "m_c is letting r_c share {PRONOUN/r_c/poss} troubles with {PRONOUN/m_c/object}, hoping {PRONOUN/r_c/subject}'ll feel better afterward.",
             "m_c promises to always look out for r_c.",
@@ -54,13 +54,17 @@
         ]
     },
     {
-        "id": "trust_inc_high3",
+        "event_id": "trust_inc_high3",
         "strings": [
             "m_c tells r_c a deep, dark secret.",
             "m_c confesses something to r_c.",
             "m_c depends on r_c to back {PRONOUN/m_c/object} up during a debate.",
             "m_c and r_c swap secrets with each other."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [
@@ -92,11 +96,9 @@
         ]
     },
     {
-        "id": "trust_inc_high4",
+        "event_id": "trust_inc_high4",
         "strings": [
-            "m_c goes to r_c for advice about some recent troubles.",
-            "m_c asks r_c to help {PRONOUN/m_c/object} find the right words to say to a Clanmate.",
-            "m_c asks r_c for help resolving an argument with a friend."
+            "m_c goes to r_c for advice about some recent troubles."
         ],
         "involved_cats": {
             "r_c": {
@@ -123,7 +125,7 @@
         ]
     },
     {
-        "id": "trust_star_inc_high1",
+        "event_id": "trust_star_inc_high1",
         "strings": [
             "m_c tells r_c about {PRONOUN/m_c/poss} last encounter with StarClan.",
             "m_c debates the meaning of a prophetic dream with r_c.",

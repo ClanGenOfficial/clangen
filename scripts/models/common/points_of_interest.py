@@ -8,21 +8,22 @@ from pydantic_core import MISSING
 class PointsOfInterestTagEnum(Enum):
     CAVE = "cave"
     COVERED = "covered"
-    FALL_RISK = "fall_risk"
+    DANGER = "danger"
+    DANGER_FALL_RISK = "danger:fall_risk"
+    DANGER_UNSTABLE = "danger:unstable"
+    DANGER_TAINTED = "danger:tainted"
     HOLE = "hole"
     PREY = "prey"
     PREY_FLYING = "prey:flying"
+    PREY_BIRD = "prey:bird"
     PREY_WATER = "prey:water"
     PREY_GROUND = "prey:ground"
-    PREY_EGGS = "prey:eggs"
     PREY_FISH = "prey:fish"
     ROCKS = "rocks"
-    TAINTED = "tainted"
     TREES = "trees"
     TWOLEGS = "Twolegs"
     TWOLEGS_ABANDONED = "Twolegs:abandoned"
     TWOLEGS_PRESENT = "Twolegs:present"
-    UNSTABLE = "unstable"
     WATER = "water"
     WATER_STILL = "water:still"
     WATER_FLOWING = "water:flowing"
@@ -40,33 +41,15 @@ class PointsOfInterestTag(RootModel):
     root: Union[str, PointsOfInterestTagEnum]
 
 
-class PointsOfInterestGroupByName(BaseModel):
+class PointsOfInterestGroup(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    name: List[str] = Field(
-        ..., description="Points of Interest with these specific IDs will be allowed."
+    name: Union[MISSING, List[str]] = Field(
+        MISSING,
+        description="Points of Interest with these specific IDs will be allowed.",
     )
-
-
-class PointsOfInterestGroupByTags(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-    tags: List[PointsOfInterestTag] = Field(
-        ..., description="Points of Interest with these tags will be allowed."
+    tags: Union[MISSING, List[PointsOfInterestTag]] = Field(
+        MISSING, description="Points of Interest with these tags will be allowed."
     )
-
-
-class PointsOfInterestGroupByCategory(BaseModel):
-    model_config = ConfigDict(extra="forbid")
     category: Union[PointsOfInterestCategoryEnum, MISSING] = Field(
-        ..., description="The category this POI belongs to."
-    )
-
-
-class PointsOfInterestGroup(RootModel):
-    root: Union[
-        PointsOfInterestGroupByName,
-        PointsOfInterestGroupByTags,
-        PointsOfInterestGroupByCategory,
-    ] = Field(
-        ...,
-        description="Specifies Points of Interest constraints. Must use names OR tags OR category (not multiple at once).",
+        MISSING, description="The category this POI belongs to."
     )

@@ -35,20 +35,35 @@ Please have a look at the [full biome differences list](biomes.md) when thinking
 ## General Tags
 These tags are used for more general filtering purposes.
 
-| string    | use                                                                                                                      |
-|-----------|--------------------------------------------------------------------------------------------------------------------------|
-| classic   | event only occurs in classic mode                                                                                        |
-| no_body   | use for death events only, this indicates that the dead body is not retrievable and cannot be referenced in grief events |
-| clan_wide | if this is a murder reveal, use this tag to denote this event as informing the ENTIRE Clan of the murder.                |
-| romance   | marks event as being between two cats who are allowed romantic relations                                                 |
-| adoption  | marks event as being an adoption                                                                                         |
+| string        | use                                                                                                                      |
+|---------------|--------------------------------------------------------------------------------------------------------------------------|
+| classic       | event only occurs in classic mode                                                                                        |
+| no_body       | use for death events only, this indicates that the dead body is not retrievable and cannot be referenced in grief events |
+| clan_wide     | if this is a murder reveal, use this tag to denote this event as informing the ENTIRE Clan of the murder.                |
+| romance       | marks event as being between two cats who are allowed romantic relations                                                 |
+| adoption      | marks event as being an adoption                                                                                         |
+| "halloween"   | Used to mark events that should only occur around halloween                                                              |
+| "april_fools" | Used to mark events that should only occur on april fools                                                                |
+| "new_years"   | Used to mark events that should only occur on new years.                                                                 |
 
 > **Tags To Indicate Present Statuses** - Sometimes you may want to indicate in event text that other cats of a certain status as present in addition to m_c and r_c (perhaps m_c and r_c are watching kits play, or discussing the progress of apprentices, or complaining about tending to elders.) These tags can be used to ensure that there are cats of the mentioned status currently living within the Clan, this helps prevent situation where cats are watching nonexistent kits or other such impossibilities. Keep in mind that all of these tags check for the presence of *at least* 2 cats of the indicated status.
+> These can utilize [exclusionary tags](tag-lists.md#exclusionary-tags).
 
-| string        | use                                                                                                                                                            |
-|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| clan:{status} | event only occurs if the clan has at least 2 cats with the given status (do not include curly brackets in tag, tag should look something like: "clan:newborn") |
-| clan:apps     | event only occurs if the clan has living apps, this includes ALL types of apps (medicine, mediator, and warrior)                                               |
+| string            | use                                                                                                                                                            |
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| clan:{status}     | event only occurs if the clan has at least 2 cats with the given status (do not include curly brackets in tag, tag should look something like: `clan:newborn`) |
+| clan:apps         | event only occurs if the clan has at least one living apprentice, this includes ALL types of apps (medicine, mediator, and warrior)                            |
+| clan:warrior-like | event only occurs if the clan has at least one warrior-like role (leader, warrior or deputy)                                                                   |
+
+You can override the default minimums by including `(min:#)` after the status or status group. For example, `"clan:warrior(min:5)"` would require at least 5 warriors. 
+
+
+> **Tags To Indicate Present Cruel Cards** - Sometimes an event will be incongruous with certain cruel cards, or certain cruel cards may "unlock" new events! For these cases, events can be tagged with the appropriate cards.
+> These can utilize [exclusionary tags](tag-lists.md#exclusionary-tags).
+
+| string           | use                                                                                                                                                                                                                                             |
+|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| card:{card_name} | event only occurs if the save file has the listed card (or, in the case of utilizing an exclusionary tag, *doesn't* have the listed card). Curly brackets are not to be included, a proper tag should look something like `card:pride_and_joy`. |
 
 
 > **Leader Specific Tags** - since leaders can have 9 lives, it's helpful to have tags that indicate how an event is influenced by those lives.
@@ -67,135 +82,139 @@ These tags are used for more general filtering purposes.
 
 > **Patrol Specific Tags**
 > 
-| tag                   | use                                                                                                                                                                                                                                                                                                                   |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| "romance"             | Marks the patrol as a romance patrol. Romance patrols are special, and are filtered to require patrol leader (p_l) and random cat (r_c) to to be potential mates or current mates. If any outcomes have effects on romantic-like, make sure this tag has been added, and the romantic-like is applied to p_l and r_c. |
-| "rom_two_apps"        | Does nothing on its own. When "romance" present, check for potential mate or current mate between app1 and app2, rather than p_l and r_c                                                                                                                                                                              |
-| "all_mentored"        | Checks if all apprentices (no matter if medicine cat or warrior) within a patrol has a mentor.                                                                                                                                                                                                                        |
-| "app{index}_mentored" | First checks if the app number (IE: app1, app2, app3, and so forth) is mentioned in patrol text, then checks if the specific apprentice assigned to the abbreviation has a mentor.                                                                                                                                    |
-| "disaster"            | These patrols are only possible when mass extinction is turned ON. Used to mark patrols where the entire patrol can die or become lost.                                                                                                                                                                               |
-| "new_cat"             | Used to mark when a new cat can join during this patrol. Marking these patrols allows for better balancing.                                                                                                                                                                                                           |
-| "halloween"           | Used to mark patrols that should only occur around halloween                                                                                                                                                                                                                                                          |
-| "april_fools"         | Used to mark patrols that should only occur on april fools                                                                                                                                                                                                                                                            |
-| "new_years"           | Used to mark patrols that should only occur on new years.                                                                                                                                                                                                                                                             |
+| tag           | use                                                                                                                                     |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| "romance"     | Marks the patrol or outcome as influencing romance between some cats.                                                                   |
+                                                                                                                                 |
+| "disaster"    | These patrols are only possible when mass extinction is turned ON. Used to mark patrols where the entire patrol can die or become lost. |                                                                                                                                                           |
 
 
 ## Conditions and Scars
 
-=== "Taggable Injury Pools"
+=== "Taggable Condition Pools"
 
-    > | **INJURY POOL NAME** | **INJURIES**                                                            |
-    |----------------------|-------------------------------------------------------------------------|
-    | `battle_injury`      | `claw-wound`, `cat bite`, `mangled leg`, `mangled tail`, `torn pelt`    |
-    | `minor_injury`       | `sprain`, `sore`, `bruises`, `scrapes`                                  |
-    | `blunt_force_injury` | `broken bone`, `broken back`, `head damage`, `broken jaw`               |
-    | `hot_injury`         | `heat exhaustion`, `heat stroke`, `dehydrated`                          |
-    | `cold_injury`        | `shivering`, `"frostbite" `                                               |
-    | `big_bite_injury`    | `bite-wound`, `broken bone`, `torn pelt`, `mangled leg`, `mangled tail` |
-    | `small_bite_injury`  | `bite-wound`, `torn ear`, `torn pelt`, `scrapes`                        |
-    | `beak_bite`          | `beak bite`, `torn ear`, `scrapes`                                      |
-    | `rat_bite`           | `rat bite`, `torn ear`, `torn pelt`                                     |
+    > | **CONDITION POOL NAME** | **CONDITIONS**                                                                                                                                                        | **USAGE**                                                                                                                                                                                                                   |
+    |-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+    | `battle_injury`         | `claw_wound`, `cat_bite`, `mangled_leg`, `mangled_tail`, `torn_pelt`, `torn_ear`                                                                                       | Used for injuries given in battle by other cats                                                                                                                                                                             |
+    | `minor_injury`          | `sprain`, `sore`, `bruises`, `scrapes` , `small_cut`                                                                                                                  | Used for small scrapes and bumps                                                                                                                                                                                            |
+    | `blunt_force_injury`    | `broken_bone`, `broken_back`, `broken_jaw` `head_damage`, `severe_headache`                                                                                           | Something heavy hit the cat!                                                                                                                                                                                                |
+    | `hot_injury`            | `heat_exhaustion`, `heat_stroke`, `dehydrated`                                                                                                                        | The cat got too hot                                                                                                                                                                                                         |
+    | `cold_injury`           | `dangerously_cold`, `frostbite`                                                                                                                                    | The cat got too cold                                                                                                                                                                                                        |
+    | `big_bite_injury`       | `bite_wound`, `broken_bone`, `mangled_leg`, `mangled_tail`                                                                                                            | The cat encountered something large that bit them (like a wolf or bear)                                                                                                                                                     |
+    | `small_bite_injury`     | `bite_wound`, `torn_ear`, `torn_pelt`                                                                                                                                 | The cat encountered something small that bit them (NOT a cat, but a ferret or terrier.) Don't use this for an animal we have a specific wound for, such as rats (`rat_bite`), snakes (`snake_bite`), or birds (`beak_bite`) |
+    | `illness`               | `diarrhea`, `whitecough`, `green_cough`, `tick_fever`, `running_nose`, `stomachache`, `sore_throat`, `yellowcough`, `kittencough`, `redcough`, `carrionplace_disease` | The cat got sick with some sort of illness                                                                                                                                                                                  |                      |
 
-    > If you’d like a patrol to have an injury from one of the injury pools above, use the pool name (i.e. "battle_injury" for injuries from other cats) instead of the injury.  Think we need another pool? Let the senior developers know in the discord developer areas and let's talk.  We can have many pools, there's no limit!
+    > If you’d like a patrol to have an condition from one of the condition pools above, use the pool name (i.e. "battle_injury" for injuries from other cats) instead of the condition.  Think we need another pool? Let the senior developers know in the discord developer areas and let's talk.  We can have many pools, there's no limit!
 
 
-===  "Injuries"
+===  "Conditions"
 
-     > | Injuries                 | Allowed within events? | Capable of scarring? |
-    |--------------------------|:------------------------:|:----------------------:|
-    | `blood loss`             | :x:                    | :x:                  |
-    | `tick bites`             | :fontawesome-solid-check:     | :x:                  |
-    | `claw-wound`             | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `bite-wound`             | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `cat bite`               | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `beak bite`              | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `snake bite`             | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `quilled by a porcupine` | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `rat bite`               | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `mangled leg`            | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `mangled tail`           | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `broken jaw`             | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `broken bone`            | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `sore`                   | :fontawesome-solid-check:     | :x:                  |
-    | `phantom pain`           | :x:                    | :x:                  |
-    | `bruises`                | :fontawesome-solid-check:     | :x:                  |
-    | `scrapes`                | :fontawesome-solid-check:     | :x:                  |
-    | `cracked pads`           | :fontawesome-solid-check:     | :x:                  |
-    | `small cut`              | :fontawesome-solid-check:     | :x:                  |
-    | `sprain`                 | :fontawesome-solid-check:     | :x:                  |
-    | `bee sting`              | :fontawesome-solid-check:     | :x:                  |
-    | `joint pain`             | :fontawesome-solid-check:     | :x:                  |
-    | `dislocated joint`       | :fontawesome-solid-check:     | :x:                  |
-    | `torn pelt`              | :fontawesome-solid-check:     | :x:                  |
-    | `torn ear`               | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `water in their lungs`   | :fontawesome-solid-check:     | :x:                  |
-    | `shivering`              | :fontawesome-solid-check:     | :x:                  |
-    | `frostbite`              | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `burn`                   | :fontawesome-solid-check:     | :x:                  |
-    | `severe burn`            | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `shock`                  | :fontawesome-solid-check:     | :x:                  |
-    | `lingering shock`        | :fontawesome-solid-check:     | :x:                  |
-    | `dehydrated`             | :fontawesome-solid-check:     | :x:                  |
-    | `head damage`            | :fontawesome-solid-check:     | :x:                  |
-    | `damaged eyes`           | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `broken back`            | :fontawesome-solid-check:     | :fontawesome-solid-check:   |
-    | `poisoned`               | :fontawesome-solid-check:     | :x:                  |
-    | `headache`               | :fontawesome-solid-check:     | :x:                  |
-    | `severe headache`        | :fontawesome-solid-check:     | :x:                  |
-    | `pregnant`               | :x:                    | :x:                  |
-    | `recovering from birth`  | :x:                    | :x:                  |
-
-===  "Illnesses"
-
-    > | Illness                | Allowed within events? |
-    |------------------------|:------------------------:|
+     > | Conditions                 | Allowed within events? |
+    |--------------------------|:------------------------:|
+    | `blood_loss`             | :x:                    |
+    | `tick_bites`             | :fontawesome-solid-check:     |
+    | `claw_wound`             | :fontawesome-solid-check:     |
+    | `bite_wound`             | :fontawesome-solid-check:     |
+    | `cat_bite`               | :fontawesome-solid-check:     |
+    | `beak_bite`              | :fontawesome-solid-check:     |
+    | `snake_bite`             | :fontawesome-solid-check:     |
+    | `porcupine_quilled`      | :fontawesome-solid-check:     |
+    | `rat_bite`               | :fontawesome-solid-check:     |
+    | `mangled_leg`            | :fontawesome-solid-check:     |
+    | `mangled_tail`           | :fontawesome-solid-check:     |
+    | `broken_jaw`             | :fontawesome-solid-check:     |
+    | `broken_bone`            | :fontawesome-solid-check:     |
+    | `sore`                   | :fontawesome-solid-check:     |
+    | `phantom_pain`           | :x:                    |
+    | `bruises`                | :fontawesome-solid-check:     |
+    | `scrapes`                | :fontawesome-solid-check:     |
+    | `cracked_pads`           | :fontawesome-solid-check:     |
+    | `small_cut`              | :fontawesome-solid-check:     |
+    | `sprain`                 | :fontawesome-solid-check:     |
+    | `bee_sting`              | :fontawesome-solid-check:     |
+    | `joint_pain`             | :fontawesome-solid-check:     |
+    | `dislocated_joint`       | :fontawesome-solid-check:     |
+    | `torn_pelt`              | :fontawesome-solid-check:     |
+    | `torn_ear`               | :fontawesome-solid-check:     |
+    | `venom_sickness`               | :fontawesome-solid-check:     |
+    | `exhausted`              | :fontawesome-solid-check:     |
+    | `water_in_lungs`   | :fontawesome-solid-check:     |
+    | `dangerously_cold`              | :fontawesome-solid-check:     |
+    | `frostbite`              | :fontawesome-solid-check:     |
+    | `burn`                   | :fontawesome-solid-check:     |
+    | `severe_burn`            | :fontawesome-solid-check:     |
+    | `shock`                  | :fontawesome-solid-check:     |
+    | `lingering_shock`        | :fontawesome-solid-check:     |
+    | `dehydrated`             | :fontawesome-solid-check:     |
+    | `head_damage`            | :fontawesome-solid-check:     |
+    | `damaged_eyes`           | :fontawesome-solid-check:     |
+    | `broken_back`            | :fontawesome-solid-check:     |
+    | `poisoned`               | :fontawesome-solid-check:     |
+    | `headache`               | :fontawesome-solid-check:     |
+    | `severe_headache`        | :fontawesome-solid-check:     |
+    | `pregnant`               | :x:                    |
+    | `recovering_from_birth`  | :x:                    |
     | `fleas`                | :fontawesome-solid-check:     |
+    | `tick_fever`                | :fontawesome-solid-check:     |
     | `seizure`              | :fontawesome-solid-check:     |
     | `diarrhea`             | :fontawesome-solid-check:     |
-    | `running nose`         | :fontawesome-solid-check:     |
+    | `diarrhea_dehydratian`             | :x:     |
+    | `running_nose`         | :fontawesome-solid-check:     |
     | `kittencough`          | :fontawesome-solid-check:     |
     | `whitecough`           | :fontawesome-solid-check:     |
     | `greencough`           | :fontawesome-solid-check:     |
     | `yellowcough`          | :fontawesome-solid-check:     |
     | `redcough`             | :fontawesome-solid-check:     |
-    | `an infected wound`    | :x:                    |
-    | `a festering wound`    | :x:                    |
-    | `carrionplace disease` | :fontawesome-solid-check:     |
-    | `heat stroke`          | :fontawesome-solid-check:     |
-    | `heat exhaustion`      | :fontawesome-solid-check:     |
+    | `infection`            | :x:                    |
+    | `festering_wound`      | :x:                    |
+    | `carrionplace_disease` | :fontawesome-solid-check:     |
+    | `heat_stroke`          | :fontawesome-solid-check:     |
+    | `heat_exhaustion`      | :fontawesome-solid-check:     |
     | `stomachache`          | :fontawesome-solid-check:     |
-    | `constant nightmares`  | :fontawesome-solid-check:     |
-    | `grief stricken`       | :x:                    |
+    | `sore_throat`          | :fontawesome-solid-check:     |
+    | `constant_nightmares`  | :fontawesome-solid-check:     |
+    | `grief_stricken`       | :fontawesome-solid-check:                    |
     | `malnourished`         | :x:                    |
     | `starving`             | :x:                    |
+    | `amputated_tail`             | :fontawesome-solid-check:                    |
+    | `amputated_leg`             | :fontawesome-solid-check:                    |
+    | `temporary_weakness`   | :fontawesome-solid-check:     |
+    | `stinky`             | :fontawesome-solid-check:                    |
 
 ===  "Permanent Conditions"
 
     > !!! important
         Generally we want to avoid giving a permanent condition to a cat. Instead, you should give them a condition that can lead to permanence (e.g. give 'broken back' instead of 'paralyzed')
-    > | crooked jaw          |
+
+    > | CONDITIONS         |
     |----------------------|
-    | lost a leg           |
-    | born without a leg   |
-    | weak leg             |
-    | twisted leg          |
-    | lost their tail      |
-    | born without a tail  |
+    | crooked_jaw           |
+    | lost_leg           |
+    | born_without_leg   |
+    | weak_leg             |
+    | twisted_leg          |
+    | lost_tail      |
+    | born_without_tail  |
     | paralyzed            |
-    | raspy lungs          |
-    | wasting disease      |
+    | raspy_lungs          |
+    | wasting_disease      |
     | blind                |
-    | one bad eye          |
-    | failing eyesight     |
-    | partial hearing loss |
+    | one_bad_eye          |
+    | failing_eyesight     |
+    | partial_hearing_loss |
     | deaf                 |
-    | constant joint pain  |
-    | seizure prone        |
+    | constant_joint_pain  |
+    | seizure_prone        |
     | allergies            |
-    | constantly dizzy     |
-    | recurring shock      |
-    | lasting grief        |
-    | persistent headaches |
+    | constantly_dizzy     |
+    | recurring_shock      |
+    | lasting_grief        |
+    | persistent_headaches |
+    | persistent_exhaustion|
+    | weakened_muscles     |
+    | selective_mutism |
+    | damaged_throat |
+    | absent |
     
 
 === "Scars"
@@ -308,6 +327,7 @@ You can utilize [#exclusionary tags](#exclusionary-tags).
     * `leader`
     * `elder`
     * `any`
+    * `guide`
 
     > You can utilize [#exclusionary tags](#exclusionary-tags).
 
@@ -522,15 +542,18 @@ You can utilize [#exclusionary tags](#exclusionary-tags). They function the same
 ## Interpersonal Relationships
 > These tags are used to indicate a type of Interpersonal relationship involved cats should have. These are meant for use as m_c's relationship with r_c's, or, in the case of patrols, p_l's relationship toward the other cat. 
 
-| string            |                                    | Patrol Use Specifics                   |
-|-------------------|------------------------------------|----------------------------------------|
-| `siblings`        | cat1 and cat2 are siblings         | all cats are siblings                  |
-| `littermates`     | cat1 and cat2 are littermates      | all cats are littermates               |
-| `mates`           | cat1 and cat2 are mates            | all cats are mates                     |
-| `parent/child`    | cat1 is the parent of cat2         | only for use in 2-cat patrols          |
-| `child/parent`    | cat1 is the child of cat2          | only for use in 2-cat patrols          |
-| `app/mentor`      | cat1 is the apprentice of cat2     | only for use in 2-cat patrols          |
-| `mentor/app`      | cat1 is the mentor of cat2         | only for use in 2-cat patrols          |
+| string            |                                       | Patrol Use Specifics                   |
+|-------------------|---------------------------------------|----------------------------------------|
+| `siblings`        | cat1 and cat2 are siblings            | all cats are siblings                  |
+| `littermates`     | cat1 and cat2 are littermates         | all cats are littermates               |
+| `mates`           | cat1 and cat2 are mates               | all cats are mates                     |
+| `parent/child`    | cat1 is the parent of cat2            | only for use in 2-cat patrols          |
+| `child/parent`    | cat1 is the child of cat2             | only for use in 2-cat patrols          |
+| `app/mentor`      | cat1 is the apprentice of cat2        | only for use in 2-cat patrols          |
+| `mentor/app`      | cat1 is the mentor of cat2            | only for use in 2-cat patrols          |
+| `past_app/mentor` | cat1 is the former apprentice of cat2 | only for use in 2-cat patrols          |
+| `past_mentor/app` | cat1 is the former mentor of cat2     | only for use in 2-cat patrols          |
+
 
 You can utilize [#exclusionary tags](#exclusionary-tags).
 
@@ -543,7 +566,11 @@ You can utilize [#exclusionary tags](#exclusionary-tags).
 ***
 
 ## Clan Temperaments
-> These tags are used to indicate what type of Clan can receive an event.
+> These tags are used to indicate what type of Clan can receive an event. Patrols also use them to indicate what sort of patrol can receive an event, which uses the personalities of the cats on the patrol rather than from a Clan.
+
+> Every temperament is a pairing of one tag from each table below, so a Clan or patrol always holds two of them at once. Tagging a single temperament constrains only that half of the pairing.
+
+> Use `"any"` if any temperament is allowed. Not every parameter that links here accepts [exclusionary tags](#exclusionary-tags), so check the parameter itself.
 
 |                 | low aggression | mid aggression | high aggression  |
 |-----------------|----------------|----------------|------------------|
@@ -557,3 +584,17 @@ You can utilize [#exclusionary tags](#exclusionary-tags).
 | **low lawful**  | chaotic       | mercurial     | calculating    |
 | **mid lawful**  | eager         | observant     | adaptable      |
 | **high lawful** | decisive      | methodical    | steadfast      |
+
+***
+
+## Accessories
+> Accessory tags can be used to constrain an event/outcome to only occur if a cat has/does not have an accessory type. These options are based on the three accessory categories, rather than a specific location on a cat's body or a specific accessory. 
+
+    > !!! tip 
+    Full lists of the acessories in each category can be found in the following files: collar_sprite_data.json, wild_sprite_data.json, plant_sprite_data.json
+
+|    category     |    description    |                  examples                   |
+|-----------------|-------------------|---------------------------------------------|
+|   **"collar"**  |      collars      |            BOW, PUFFBALL, NYLON             |
+|   **"wild"**    | animal acessories | RED FEATHERS, BLACK CICADA, ROSY MOTH WINGS |
+|   **"plant"**   | plant accessories |        MAPLE LEAF, VINE BRACELET, HERBS     |

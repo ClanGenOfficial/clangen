@@ -42,6 +42,7 @@
           "type": "array"
         },
         "tags": {
+          "description": "Points of Interests can use many different tags that denote circumstances around them to help specify how it can be used and what events/patrols it would fit with",
           "items": {
             "$ref": "#/$defs/PointsOfInterestTag"
           },
@@ -72,21 +73,22 @@
       "enum": [
         "cave",
         "covered",
-        "fall_risk",
+        "danger",
+        "danger:fall_risk",
+        "danger:unstable",
+        "danger:tainted",
         "hole",
         "prey",
         "prey:flying",
+        "prey:bird",
         "prey:water",
         "prey:ground",
-        "prey:eggs",
         "prey:fish",
         "rocks",
-        "tainted",
         "trees",
         "Twolegs",
         "Twolegs:abandoned",
         "Twolegs:present",
-        "unstable",
         "water",
         "water:still",
         "water:flowing",

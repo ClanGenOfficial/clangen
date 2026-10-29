@@ -4,7 +4,16 @@ from typing import List, Union
 
 from pydantic import BaseModel
 
+from scripts.models.ceremony.ceremony_schema import CeremonySchema
 from scripts.models.common.common_schema import CommonSchema
+from scripts.models.condition.base_condition_schema import BaseConditionSchema
+from scripts.models.condition.death_condition_schema import DeathConditionSchema
+from scripts.models.condition.permanent_condition_info_schema import (
+    PermanentConditionInfoSchema,
+)
+from scripts.models.condition.temporary_condition_info_schema import (
+    TemporaryConditionInfoSchema,
+)
 from scripts.models.patrol.patrol_schema import PatrolSchema
 from scripts.models.relationship_group_event.relationship_group_schema import (
     RelationshipGroupEvent,
@@ -17,6 +26,8 @@ from scripts.models.thought.thought_schema import ThoughtSchema
 from scripts.models.points_of_interest.points_of_interest_schema import (
     PointsOfInterestSchema,
 )
+from scripts.models.pelt_recipe.pelt_recipe_schema import PeltRecipe
+from scripts.models.transition.transition_schema import TransitionSchema
 from scripts.models.util import (
     create_generate_json_schema_with_externals,
     get_defs_from_pydantic_model,
@@ -86,6 +97,17 @@ def main():
         RelationshipPairEvent, "schemas/relationship_pair_event.schema.json"
     )
     dump_model_schema(PointsOfInterestSchema, "schemas/poi.schema.json")
+    dump_model_schema(PeltRecipe, "schemas/pelt_recipe.schema.json")
+    dump_model_schema(CeremonySchema, "schemas/ceremony.schema.json")
+    dump_model_schema(TransitionSchema, "schemas/transition.schema.json")
+    dump_model_schema(BaseConditionSchema, "schemas/base_condition_event.schema.json")
+    dump_model_schema(DeathConditionSchema, "schemas/death_condition_event.schema.json")
+    dump_model_schema(
+        PermanentConditionInfoSchema, "schemas/permanent_condition_info.schema.json"
+    )
+    dump_model_schema(
+        TemporaryConditionInfoSchema, "schemas/temporary_condition_info.schema.json"
+    )
 
 
 if __name__ == "__main__":

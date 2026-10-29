@@ -1,8 +1,12 @@
 import unittest
-import os
 from copy import deepcopy
 from itertools import permutations
 
+from scripts.cat.conditions.gain_conditions import (
+    gain_temporary_condition,
+    gain_permanent_condition,
+)
+from scripts.cat.microservices.add_to_clan import add_to_clan, add_dependents_to_clan
 from scripts.cat.personality import Personality
 from scripts.cat.skills import Skill, SkillPath
 from scripts.clan_resources.point_of_interest import (
@@ -19,12 +23,7 @@ try:
 except ImportError:
     import tomli as tomllib
 
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
-from random import Random
-
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatRank
 from scripts.cat.factories.test_cat_factory import TestCatFactory
 from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.cat.enums import CatRank, CatAge, CatSocial, CatGroup, CatStanding
@@ -208,7 +207,7 @@ class TestPointsOfInterest(unittest.TestCase):
         prior_clan = game.clan
         self.addCleanup(setattr, game, "clan", prior_clan)
 
-        game.clan = Clan()
+        game.clan = Clan(save_id="test")
         game.clan.biome = "Forest"
         game.clan.override_biome = False
         game.clan.camp_bg = "camp1"
@@ -372,6 +371,7 @@ class TestPointsOfInterest(unittest.TestCase):
             "empty name": {"name": [], "tags": ["water"]},
             "empty tags": {"name": ["test_name"], "tags": []},
             "None category": {"name": ["test_name"], "category": None},
+            "category and tag": {"tags": ["prey"], "category": "gathering"},
         }
 
         for title, event_poi in combinations.items():
@@ -384,6 +384,14 @@ class TestPointsOfInterest(unittest.TestCase):
             "no tag": {"tags": ["Twolegs", "cave"]},
             "match generic tag but not exact": {"tags": ["prey:bird"]},
             "invalid category": {"category": "not found"},
+            "invalid category with valid tag": {
+                "tags": ["prey"],
+                "category": "not found",
+            },
+            "invalid tag with valid category": {
+                "tags": ["prey:bird"],
+                "category": "gathering",
+            },
         }
 
         for title, event_poi in bad_combinations.items():
@@ -2366,7 +2374,8 @@ class TestCatConstraint(unittest.TestCase):
             elif old_rank.is_any_clancat_rank():
                 cat.leave_clan(new_social_status=CatSocial(new_rank.value))
             elif new_rank.is_any_clancat_rank():
-                cat.add_to_clan()
+                add_to_clan(cat)
+                add_dependents_to_clan(cat)
                 cat.rank_change(new_rank=new_rank)
             else:
                 raise Exception(
@@ -2788,13 +2797,13 @@ class TestCatConstraint(unittest.TestCase):
         working_cat = cat_factory.create_cat()
         broken_cat = cat_factory.create_cat()
 
-        broken_cat.get_injured(name="broken bone")
+        gain_temporary_condition(broken_cat, "broken_bone")
         ill_cat = cat_factory.create_cat()
-        ill_cat.get_ill(name="greencough")
+        gain_temporary_condition(ill_cat, "greencough")
         born_para_cat = cat_factory.create_cat()
-        born_para_cat.get_permanent_condition(name="paralyzed", born_with=True)
+        gain_permanent_condition(born_para_cat, "paralyzed", is_congenital=True)
         acquired_para_cat = cat_factory.create_cat()
-        acquired_para_cat.get_permanent_condition(name="paralyzed", born_with=False)
+        gain_permanent_condition(acquired_para_cat, "paralyzed", is_congenital=False)
 
         # cat must be working and is
         with self.subTest("must work and is working"):
@@ -2822,7 +2831,7 @@ class TestCatConstraint(unittest.TestCase):
 
         # cat should have a condition and does
         test_dict = {
-            broken_cat: ["broken bone"],
+            broken_cat: ["broken_bone"],
             ill_cat: ["greencough"],
             born_para_cat: ["paralyzed"],
         }

@@ -1,6 +1,6 @@
 [
     {
-        "id": "rom_dec_low3",
+        "event_id": "rom_dec_low3",
         "strings": [
             "m_c feels ignored by r_c.",
             "m_c didn't get the joke r_c was telling.",

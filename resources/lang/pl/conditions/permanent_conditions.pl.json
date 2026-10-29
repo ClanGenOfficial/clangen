@@ -1,0 +1,32 @@
+{
+    "en": {
+        "permanent condition": "permanent condition",
+        "unknown_condition_risk_given": "m_c's condition has gotten worse.",
+        "crooked_jaw": "crooked jaw",
+        "lost_leg": "lost a leg",
+        "born_without_leg": "born without a leg",
+        "twisted_leg": "twisted leg",
+        "wasting_disease": "wasting disease",
+        "strange_lump": "strange lump",
+        "blind": "blind",
+        "one_bad_eye": "one bad eye",
+        "failing_eyesight": "failing eyesight",
+        "deaf": "deaf",
+        "seizure_prone": "seizure prone",
+        "constantly_dizzy": "constantly dizzy",
+        "recurring_shock": "recurring shock",
+        "persistent_headaches": "persistent headaches",
+        "weak_leg": "weak leg",
+        "lost_tail": "lost their tail",
+        "born_without_tail": "born without a tail",
+        "raspy_lungs": "raspy lungs",
+        "partial_hearing_loss": "partial hearing loss",
+        "constant_joint_pain": "constant joint pain",
+        "allergies": "allergies",
+        "lasting_grief": "lasting grief",
+        "selective_mutism": "selective mutism",
+        "damaged_throat": "damaged throat",
+        "paralyzed": "paralyzed",
+        "absent": "absent"
+    }
+}

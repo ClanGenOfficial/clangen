@@ -1,9 +1,13 @@
 [
     {
-        "id": "comfort_inc_med_avoids",
+        "event_id": "comfort_inc_med_avoids",
         "strings": [
             "It seems like there's an unspoken apology between m_c and r_c."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [
@@ -35,7 +39,7 @@
         ]
     },
     {
-        "id": "comfort_inc_med1",
+        "event_id": "comfort_inc_med1",
         "strings": [
             "r_c helps m_c pick burrs out of {PRONOUN/m_c/poss} fur.",
             "m_c notices that r_c brought {PRONOUN/m_c/object} a big piece of prey.",
@@ -51,7 +55,7 @@
         ]
     },
     {
-        "id": "comfort_inc_med2",
+        "event_id": "comfort_inc_med2",
         "strings": [
             "m_c has snuggled up against r_c.",
             "m_c chats with r_c about {PRONOUN/r_c/poss} day.",
@@ -84,20 +88,17 @@
             }
         ]
     },
+
     {
-        "id": "comfort_inc_med3",
+        "event_id": "comfort_inc_med3",
         "strings": [
-            "m_c is sharing the latest gossip {PRONOUN/m_c/subject} heard over the border with r_c.",
-            "m_c tells r_c {PRONOUN/m_c/subject}'ll save {PRONOUN/r_c/object} a piece of fresh-kill.",
             "m_c playfully teases r_c for missing a catch.",
-            "m_c gives r_c some feathers from the bird {PRONOUN/m_c/subject} caught to line {PRONOUN/r_c/poss} nest.",
-            "m_c runs to greet r_c when {PRONOUN/r_c/subject} {VERB/r_c/return/returns} from a patrol.",
             "m_c asks to be on a patrol with r_c.",
             "m_c and r_c saw something hilarious during a patrol and can't stop giggling about it.",
             "The Clan notices m_c and r_c share patrols more often.",
             "During a hunting patrol, m_c and r_c share a piece of prey that is too small to bring back to camp.",
             "m_c and r_c mark the same spot of the border as a sign of friendship. Gross.",
-            "m_c and r_c get a little giggly off of some mysterious herbs they found on a patrol.",
+            "m_c and r_c act a little silly after finding some catnip while on patrol.",
             "m_c is delighted to be working with r_c today."
         ],
         "involved_cats": {
@@ -107,7 +108,107 @@
                     "warrior",
                     "deputy",
                     "leader"
+                ],
+                "health": {
+                    "working": true
+                }
+            },
+            "r_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+
+
+    {
+        "event_id": "comfort_inc_med3b",
+        "strings": [
+            "m_c runs to greet r_c when {PRONOUN/r_c/subject} {VERB/r_c/return/returns} from a patrol.",
+            "r_c is sharing the latest gossip {PRONOUN/r_c/subject} heard over the border with m_c.",
+            "r_c tells m_c {PRONOUN/r_c/subject}'ll save {PRONOUN/m_c/object} a piece of fresh-kill.",
+            "r_c gives m_c some feathers from the bird {PRONOUN/r_c/subject} caught to line {PRONOUN/m_c/poss} nest."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader"
                 ]
+            },
+            "r_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+
+    
+    {
+        "event_id": "comfort_inc_med3c",
+        "strings": [
+            "r_c runs to greet m_c when {PRONOUN/m_c/subject} {VERB/m_c/return/returns} from a patrol.",
+            "m_c is sharing the latest gossip {PRONOUN/m_c/subject} heard over the border with r_c.",
+            "m_c tells r_c {PRONOUN/m_c/subject}'ll save {PRONOUN/r_c/object} a piece of fresh-kill.",
+            "m_c gives r_c some feathers from the bird {PRONOUN/m_c/subject} caught to line {PRONOUN/r_c/poss} nest."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ],
+                "health": {
+                    "working": true
+                }
             },
             "r_c": {
                 "status": [
@@ -135,7 +236,7 @@
         ]
     },
     {
-        "id": "comfort_inc_med4",
+        "event_id": "comfort_inc_med4",
         "strings": [
             "r_c is listening to m_c's woes.",
             "r_c is listening to m_c's troubles.",
@@ -157,7 +258,7 @@
         }
     },
     {
-        "id": "comfort_inc_med5",
+        "event_id": "comfort_inc_med5",
         "strings": [
             "r_c gave m_c {PRONOUN/m_c/poss} favorite piece of prey.",
             "r_c is being quite considerate with m_c.",
@@ -186,7 +287,7 @@
         }
     },
     {
-        "id": "comfort_inc_med6",
+        "event_id": "comfort_inc_med6",
         "strings": [
             "r_c curled around m_c to share warmth.",
             "r_c lets m_c have the last piece of fresh-kill.",
@@ -207,7 +308,7 @@
         }
     },
     {
-        "id": "comfort_inc_med7",
+        "event_id": "comfort_inc_med7",
         "strings": [
             "m_c is watching the shooting stars with r_c.",
             "r_c lets m_c cry on {PRONOUN/r_c/object} for a while.",
@@ -225,7 +326,7 @@
         }
     },
     {
-        "id": "comfort_inc_med8",
+        "event_id": "comfort_inc_med8",
         "strings": [
             "r_c calmly explains hunting techniques to m_c again for the fourth time today.",
             "r_c helps m_c with a tedious task and it makes the whole day a lot easier."
@@ -257,7 +358,7 @@
         }
     },
     {
-        "id": "comfortable_kit_inc_med1",
+        "event_id": "comfortable_kit_inc_med1",
         "strings": [
             "m_c wants to snuggle with r_c.",
             "m_c lets r_c groom {PRONOUN/m_c/object} messy fur.",
@@ -277,7 +378,7 @@
         }
     },
     {
-        "id": "comfortable_kit_inc_med2",
+        "event_id": "comfortable_kit_inc_med2",
         "strings": [
             "m_c wants to snuggle with r_c.",
             "m_c hides somewhere with r_c, giggling together about something.",
@@ -314,7 +415,7 @@
         ]
     },
     {
-        "id": "comfortable_kit_inc_med3",
+        "event_id": "comfortable_kit_inc_med3",
         "strings": [
             "m_c spent the whole day playing {PRONOUN/m_c/poss} favorite games with r_c.",
             "m_c had a friendly argument with r_c about which prey tastes the best.",
@@ -355,7 +456,7 @@
         ]
     },
     {
-        "id": "comfortable_kit_odd1",
+        "event_id": "comfortable_kit_odd1",
         "strings": [
             "m_c chomps on r_c's ear.",
             "m_c won't stop copying everything r_c does.",
@@ -388,7 +489,7 @@
         ]
     },
     {
-        "id": "comfortable_kit_parent_inc_med_dec_trust",
+        "event_id": "comfortable_kit_parent_inc_med_dec_trust",
         "strings": [
             "m_c realizes even though r_c is {PRONOUN/m_c/poss} parent, {PRONOUN/r_c/subject} {VERB/r_c/have/has} some of the same problems.",
             "m_c tells r_c all {PRONOUN/m_c/poss} problems, even though r_c never knows how to help.",
@@ -417,7 +518,7 @@
         ]
     },
     {
-        "id": "comfort_med_inc_medium1",
+        "event_id": "comfort_med_inc_medium1",
         "strings": [
             "m_c thanks r_c for checking when {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} feeling alright.",
             "m_c drops into the medicine den to ask r_c if {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} eaten yet.",

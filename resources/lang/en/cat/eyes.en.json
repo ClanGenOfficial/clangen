@@ -43,6 +43,11 @@
         "LIME": "lime green",
         "SAND": "sand brown",
         "PERIWINKLE": "periwinkle blue",
-        "WILDFIRE": "wildfire orange"
+        "WILDFIRE": "wildfire orange",
+		"WALNUT": "walnut brown",
+		"SWAMP": "swampy green",
+		"ALGAE": "algae green",
+		"STORM": "stormy gray",
+		"PERIDOT": "peridot green"
     }
 }

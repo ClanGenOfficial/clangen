@@ -27,6 +27,7 @@ from scripts.game_structure.game.switches import (
 from scripts.game_structure.load_cat import load_cats, version_convert
 from scripts.game_structure.screen_settings import MANAGER, screen, screen_scale
 from scripts.game_input import controller_manager, keyboard_manager
+from scripts.housekeeping.save_version_retrieval import get_version
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
 from scripts.screens import all_screens
@@ -75,8 +76,9 @@ def load_data():
         try:
             game.starclan = Afterlife()
             game.dark_forest = Afterlife()
-            load_cats()
-            version_info = clan_class.load_clan()
+            version_info = get_version()
+            load_cats(version_info)
+            clan_class.load_clan()
             version_convert(version_info)
             game.load_events()
         except Exception as e:
@@ -250,7 +252,6 @@ while 1:
                 MANAGER.print_layer_debug()
             elif event.key == pygame.K_F3:
                 debug_mode.toggle_debug_mode()
-                # debugmode.toggle_console()
             elif event.key == pygame.K_F11:
                 scripts.game_structure.screen_settings.toggle_fullscreen(
                     source_screen=all_screens.screen_dict[

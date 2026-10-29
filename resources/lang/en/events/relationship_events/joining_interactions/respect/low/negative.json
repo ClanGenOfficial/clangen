@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_respect_low_neg1",
+        "event_id": "gen_respect_low_neg1",
         "strings": [
 			"m_c began to feel excluded when r_c interrupted {PRONOUN/m_c/object}."
         ]

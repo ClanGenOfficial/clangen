@@ -2,18 +2,29 @@ from itertools import combinations
 from random import choice, randint, getrandbits, choices, random
 
 from scripts.cat.cats import Cat
-from scripts.cat.constants import INJURIES, ILLNESSES, PERMANENT, BACKSTORIES
+from scripts.cat.conditions.gain_conditions import (
+    gain_temporary_condition,
+    gain_permanent_condition,
+)
+from scripts.cat.constants import (
+    TEMPORARY_CONDITIONS,
+    PERMANENT_CONDITIONS,
+    BACKSTORIES,
+)
 from scripts.cat.enums import CatRank, CatAge, CatGroup, CatStanding, CatSocial
 from scripts.cat.factories.new_cat_factory import NewCatFactory
-from scripts.cat.names import names
+from scripts.cat.names import Name
 from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath, Skill
 from scripts.cat.factories.typed_dicts import StatusDict
+from scripts.cat.status import Status
+from scripts.cat_relations.cat_handle_funcs import create_relationships_new_cat
 from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan import OtherClan
 from scripts.clan_package.settings import get_clan_setting
 from scripts.config import get_config
+from scripts.events_module.consequences import change_relationship_values
 from scripts.events_module.parameter_dicts import InvolvedCatDict
 from scripts.game_structure import game, constants
 
@@ -30,21 +41,64 @@ def updated_create_new_cat(
     :param other_clan: the other clan involved in this event
     :return: list of created cats
     """
+    option_dict = option_dict.copy()
+
     # STATUS
     status = StatusDict()
+
+    # check if we need to match age to an assigned mate
+    if option_dict.get("can_create_new_cat", {}).get("assign_mate"):
+        possible_ages = []
+        for m in option_dict["can_create_new_cat"].get("assign_mate", []):
+            if m in involved_cats:
+                possible_ages.append(involved_cats[m].age)
+        # this takes priority over any age specified in option_dict
+        # since we need to ensure cats are appropriate ages
+        status["age"] = choice(possible_ages)
+
+    if option_dict.get("age") and not status.get("age"):
+        status["age"] = CatAge(choice(option_dict["age"]))
+
     if option_dict.get("status"):
-        status["rank"] = CatRank(choice(option_dict["status"]))
-        # if no group given and the rank is a clancat, then assign to other clan
-        if not option_dict.get("group") and status["rank"].is_any_clancat_rank():
+        # check for "clancat" first since it's not really a rank
+        if "clancat" in option_dict["status"]:
+            if status.get("age"):
+                # ensure rank matches any already assigned age
+                possible_ranks = [Status.get_rank_from_age(status["age"])]
+            else:
+                status["social"] = CatSocial.CLANCAT
+                possible_ranks = [r for r in option_dict["status"] if r != "clancat"]
+                possible_ranks.extend(
+                    [
+                        r
+                        for r in [*CatRank]
+                        if r.is_any_clancat_rank()
+                        and r not in (CatRank.LEADER, CatRank.DEPUTY)
+                    ]
+                )
+        else:
+            possible_ranks = option_dict["status"]
+
+        status["rank"] = CatRank(choice(possible_ranks))
+        # if no group given and the rank/social is a clancat, then assign to other clan
+        if not option_dict.get("group") and (
+            status["rank"].is_any_clancat_rank()
+            or status.get("social") == CatSocial.CLANCAT
+        ):
             status["group_ID"] = _get_id_for_group(
                 [CatGroup.OTHER_CLAN], involved_cats, other_clan
             )
-    if option_dict.get("age"):
-        status["age"] = CatAge(choice(option_dict["age"]))
+
     if option_dict.get("group"):
         status["group_ID"] = _get_id_for_group(
             option_dict["group"], involved_cats, other_clan
         )
+
+    # handle applying an age for litters if one wasn't specified
+    is_litter = option_dict["can_create_new_cat"].get("become_litter")
+    if is_litter:
+        if not status.get("age") or not status["age"].is_baby():
+            status["age"] = choice((CatAge.NEWBORN, CatAge.KITTEN))
 
     if not status.get("rank") and not status.get("age"):
         # if no group was given either, then we just pick either no group or other clan
@@ -56,16 +110,22 @@ def updated_create_new_cat(
         # then we find an appropriate rank for that group
         if status["group_ID"] == "no_group":
             status["rank"] = choice(
-                [r for r in [*CatRank] if not r.is_any_clancat_rank()]
+                [
+                    r
+                    for r in [*CatRank]
+                    if not r.is_any_clancat_rank()
+                    and r not in (CatRank.LEADER, CatRank.DEPUTY)
+                ]
             )
         else:
-            status["rank"] = choice([r for r in [*CatRank] if r.is_any_clancat_rank()])
-
-    # handle applying an age for litters if one wasn't specified
-    is_litter = option_dict["can_create_new_cat"].get("become_litter")
-    if is_litter:
-        if not status.get("age") or not status["age"].is_baby():
-            status["age"] = choice((CatAge.NEWBORN, CatAge.KITTEN))
+            status["rank"] = choice(
+                [
+                    r
+                    for r in [*CatRank]
+                    if r.is_any_clancat_rank()
+                    and r not in (CatRank.LEADER, CatRank.DEPUTY)
+                ]
+            )
 
     # MOONS OLD
     moons = None
@@ -80,14 +140,20 @@ def updated_create_new_cat(
 
     for p in option_dict["can_create_new_cat"].get("assign_blood_parent", []):
         if p in involved_cats:
-            blood_parents.append(involved_cats[p])
+            if isinstance(involved_cats[p], list):
+                blood_parents.extend(involved_cats[p])
+            else:
+                blood_parents.append(involved_cats[p])
     for p in option_dict["can_create_new_cat"].get("assign_adoptive_parent", []):
         if p in involved_cats:
-            adoptive_parents.append(involved_cats[p])
+            if isinstance(involved_cats[p], list):
+                adoptive_parents.extend(involved_cats[p])
+            else:
+                adoptive_parents.append(involved_cats[p])
 
     # GENDER
-    gender = option_dict.get("gender", None)
-    if gender == "can_birth":
+    gender = choice(option_dict.get("gender")) if option_dict.get("gender") else None
+    if gender and "can_birth" in gender:
         if not get_clan_setting("same sex birth"):
             gender = "female"
         else:
@@ -132,7 +198,8 @@ def updated_create_new_cat(
         # NAME
         _assign_name(created_cat)
 
-        created_cat.create_relationships_new_cat()
+        create_relationships_new_cat(created_cat)
+        game.clan.add_cat(created_cat)
         new_cats.append(created_cat)
 
     # ESTABLISH FAMILY RELATIONSHIPS
@@ -149,12 +216,17 @@ def updated_create_new_cat(
                         cat_from=c, cat_to=p, family=True
                     )
 
-                p.relationships[c.ID].change_according_dictionary(
-                    get_config("new_cat.parent_buff.parent_to_kit")
-                )
-                c.relationships[p.ID].change_according_dictionary(
-                    get_config("new_cat.parent_buff.kit_to_parent")
-                )
+        change_relationship_values(
+            cats_to=new_cats,
+            cats_from=blood_parents + adoptive_parents,
+            **get_config("new_cat.parent_buff.parent_to_kit"),
+        )
+        change_relationship_values(
+            cats_to=blood_parents + adoptive_parents,
+            cats_from=new_cats,
+            **get_config("new_cat.parent_buff.kit_to_parent"),
+        )
+
     # littermate to littermate
     if is_litter:
         for pair in combinations(new_cats, 2):
@@ -167,12 +239,11 @@ def updated_create_new_cat(
                     cat_from=pair[0], cat_to=pair[1], family=True
                 )
 
-            pair[0].relationships[pair[1].ID].change_according_dictionary(
-                get_config("new_cat.sib_buff.cat1_to_cat2")
-            )
-            pair[1].relationships[pair[0].ID].change_according_dictionary(
-                get_config("new_cat.sib_buff.cat2_to_cat1")
-            )
+        change_relationship_values(
+            cats_to=new_cats,
+            cats_from=new_cats,
+            **get_config("new_cat.sib_buff.cat1_to_cat2"),
+        )
 
         pass
 
@@ -212,7 +283,7 @@ def _assign_name(created_cat: Cat):
         # give kittypets a kittypet name
         if created_cat.status.social == CatSocial.KITTYPET:
             weights = constants.CONFIG["cat_name_controls"]["kittypet"]
-            # check if the kittypets come with a pretty acc
+            # check if the kittypets come with a collar
             if bool(getrandbits(1)):
                 created_cat.pelt.accessory = (
                     *created_cat.pelt.accessory,
@@ -225,7 +296,7 @@ def _assign_name(created_cat: Cat):
             weights = constants.CONFIG["cat_name_controls"]["rogue"]
 
         selected_category = choices(name_categories, weights, k=1)[0]
-        name = choice(names.names_dict[selected_category])
+        name = choice(Name.names_dict[selected_category])
         created_cat.change_name(new_prefix=name, new_suffix="")
 
 
@@ -301,19 +372,14 @@ def _assign_health(created_cat, option_dict):
     # now see if any new conditions should be applied
     if option_dict.get("health", {}).get("condition"):
         condition = choice(option_dict["health"]["condition"])
-        if condition in INJURIES:
-            created_cat.get_injured(name=condition)
-        elif condition in ILLNESSES:
-            created_cat.get_ill(name=condition)
-        elif condition in PERMANENT:
-            created_cat.get_permanent_condition(
-                name=condition,
-                born_with=option_dict["health"].get("must_be_congenital", False),
+        if condition in TEMPORARY_CONDITIONS:
+            gain_temporary_condition(created_cat, condition)
+        elif condition in PERMANENT_CONDITIONS:
+            gain_permanent_condition(
+                created_cat,
+                condition,
+                is_congenital=option_dict["health"].get("must_be_congenital", False),
             )
-            if condition in ("lost a leg", "born without a leg"):
-                created_cat.pelt.scars = (*created_cat.pelt.scars, "NOPAW")
-            elif condition in ("lost their tail", "born without a tail"):
-                created_cat.pelt.scars = (*created_cat.pelt.scars, "NOTAIL")
 
     # RANDOM PERM CONDITION ASSIGNMENT
     # chance to give the new cat a permanent condition, higher chance for found kits and litters
@@ -325,39 +391,18 @@ def _assign_health(created_cat, option_dict):
         chance = constants.CONFIG["cat_generation"]["base_permanent_condition"] + 10
     if not int(random() * chance):
         possible_conditions = []
-        for condition in PERMANENT:
-            if created_cat.age.is_baby() and PERMANENT[condition]["congenital"] not in [
-                "always",
-                "sometimes",
-            ]:
-                continue
-            # next part ensures that a kit won't get a condition that takes too long to reveal
-            moons = created_cat.moons
-            leeway = 5 - (PERMANENT[condition]["moons_until"] + 1)
-            if moons > leeway:
+        for condition in PERMANENT_CONDITIONS:
+            if (
+                created_cat.age.is_baby()
+                and not PERMANENT_CONDITIONS[condition]["can_be_congenital"]
+            ):
                 continue
             possible_conditions.append(condition)
 
         if possible_conditions:
             chosen_condition = choice(possible_conditions)
-            if PERMANENT[chosen_condition]["congenital"] in [
-                "always",
-                "sometimes",
-            ]:
-                created_cat.get_permanent_condition(chosen_condition, True)
-                if (
-                    created_cat.permanent_condition[chosen_condition]["moons_until"]
-                    == 0
-                ):
-                    created_cat.permanent_condition[chosen_condition][
-                        "moons_until"
-                    ] = -2
-
-            # assign scars
-            if chosen_condition in ("lost a leg", "born without a leg"):
-                created_cat.pelt.scars = (*created_cat.pelt.scars, "NOPAW")
-            elif chosen_condition in ("lost their tail", "born without a tail"):
-                created_cat.pelt.scars = (*created_cat.pelt.scars, "NOTAIL")
+            if PERMANENT_CONDITIONS[chosen_condition]["can_be_congenital"]:
+                gain_permanent_condition(created_cat, chosen_condition, True)
 
 
 def _assign_stats(created_cat, option_dict):
@@ -408,10 +453,27 @@ def _assign_current_standing(
 def _assign_past_status_and_standing(
     created_cat, option_dict, involved_cats, other_clan: OtherClan
 ):
-    chosen_past_status = None
+    status = StatusDict()
     if option_dict.get("past_status"):
-        chosen_past_status = CatRank(choice(option_dict["past_status"]))
-        created_cat.status.generate_new_status(rank=chosen_past_status)
+        # check for "clancat" first since it's not really a rank
+        if "clancat" in option_dict["past_status"]:
+            status["social"] = CatSocial.CLANCAT
+            possible_ranks = [r for r in option_dict["past_status"] if r != "clancat"]
+            possible_ranks.extend([r for r in [*CatRank] if r.is_any_clancat_rank()])
+        else:
+            possible_ranks = option_dict["past_status"]
+
+        status["rank"] = CatRank(choice(possible_ranks))
+        # if no group given and the rank/social is a clancat, then assign to other clan
+        if not option_dict.get("group") and (
+            status["rank"].is_any_clancat_rank()
+            or status.get("social") == CatSocial.CLANCAT
+        ):
+            status["group_ID"] = _get_id_for_group(
+                [CatGroup.OTHER_CLAN], involved_cats, other_clan
+            )
+
+        created_cat.status.generate_new_status(**status)
     if option_dict.get("standing", {}).get("past"):
         group = _get_id_for_group(
             option_dict["standing"]["group"], involved_cats, other_clan
@@ -438,7 +500,7 @@ def _assign_past_status_and_standing(
                 if option_dict.get("status")
                 else None,
             )
-        if option_dict.get("status") and created_cat.status.rank == chosen_past_status:
+        if option_dict.get("status") and created_cat.status.rank == status["rank"]:
             created_cat.status._change_rank(CatRank(choice(option_dict["status"])))
 
     # this simulates a "history" as whomever they used to be

@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "recurring_shock_persistent_exhaustion",
+        "strings": [
+            "m_c struggles to find rest at all lately. {PRONOUN/m_c/subject/CAP} {VERB/m_c/question/questions} if the exhaustion will ever leave."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

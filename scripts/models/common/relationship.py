@@ -6,7 +6,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
 from scripts.models.common.gather_cat import GatherCat
-from scripts.models.patrol.value import Value
+from scripts.models.common.value import Value
 
 
 class Log(BaseModel):

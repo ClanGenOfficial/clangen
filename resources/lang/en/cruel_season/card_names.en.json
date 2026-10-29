@@ -1,6 +1,7 @@
 {
   "en": {
     "lean_meat": "Lean Meat",
+    "hunters_tribute": "Hunter's Tribute",
     "forsaken": "Forsaken",
     "for_the_throne": "Anything For The Throne",
     "fated_paths": "Fated Paths",
@@ -11,6 +12,7 @@
     "all_elders": "Old Bones",
     "enmity": "Enmity",
     "stolen_vitality": "Stolen Vitality",
+    "tooth_and_claw": "Tooth and Claw",
     "survival_of_fittest": "Survival Of The Fittest",
     "kit_season": "Kit Season",
     "mouths_to_feed": "Mouths To Feed",
@@ -24,8 +26,18 @@
     "always_leaf-bare": "Neverending Frost",
     "underpopulated": "Underpopulated",
     "heartless": "Heartless",
+    "malicious_aura": "Malicious Aura",
+    "longer_illnesses": "Tainted Territory",
+    "weak_stars": "Weakened Stars",
     "clumsy_paws": "Clumsy Paws",
     "malicious_aura": "Malicious Aura",
     "dwindling_members": "Dwindling Members"
+    "meagre_stocks": "Meagre Stockpiles",
+    "mate_breakup": "Not Made To Last",
+    "prideful": "Prideful",
+    "burnout": "Burnout",
+    "pride_and_joy": "Pride And Joy",
+    "miasma": "Miasma",
+    "crowfood": "Crowfood Chaos"
   }
 }

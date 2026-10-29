@@ -1,0 +1,225 @@
+[
+    {
+        "event_id": "bch_hunt_leaf-fall_poisonrain1",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 3,
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ],
+            "apprentice": [
+                1,
+                5
+            ],
+            "normal adult": [
+                1,
+                5
+            ]
+        },
+        "chance_of_success": 30,
+        "patrol_art": "hunt_general_intro",
+        "intro_strings": [
+            "A sudden gust of wind and rain hits the patrol. They were wrong about the weather and are now soaking wet."
+        ],
+        "decline_strings": [
+            "The patrol decides to make a run back to camp. They can go hunting another time."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l and {PRONOUN/p_l/poss} patrol decide to leave the beach behind and find some trees under which to shelter. It turns out to be a stroke of luck, as many of the prey have also decided to seek shelter from the pouring rain. They catch many small prey, and they end up going back to camp soaked, but successful."
+                ],
+                "exp_gained": 15,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to persevered on a rainy hunting patrol and found success."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l knows of a spot where they can shelter in between some bushes and wait out the rain. s_c0 notices a small nest full of baby birds who have fallen from a tree because of the wind. The cats are wet but happy; now they can return to camp with their heads held high and rest happily and hopefully warm in their nests later that day, knowing they have fed their Clan."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "exp_gained": 15,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to sheltered from the rain on a hunting patrol and found a nest of hatchlings for the Clan to enjoy."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l and r_c0 end up arguing about whether or not to continue the patrol. Nobody is happy after they decide to go back to camp after already being soaked to the bone."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from and cat_to argued about whether to cancel a patrol because of the rain and ended up going back to camp with no prey and soaked fur."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "The patrol decides to take shelter. r_c1 sees a large tree and makes a run for it, not hearing p_l's scream of warning. {PRONOUN/r_c1/poss/CAP} mistake dawns on {PRONOUN/r_c1/object} the moment {PRONOUN/r_c1/subject} {VERB/r_c1/take/takes} shelter underneath what {PRONOUN/r_c1/subject} now {VERB/r_c1/realize/realizes} is the tree that bleeds poison when it rains. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/are/is} too late to escape the poisoned rain now pouring down on {PRONOUN/r_c1/poss} body, letting out a scream, spasming, then falling still. The patrol returns to c_n both eyes and fur wet."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_to was too slow to save r_c1 from being killed by a poisonous tree's run-off."
+                        }
+                    }
+                ],
+                "death": [
+                    {
+                        "cats": [
+                            "r_c1"
+                        ],
+                        "history": "m_c was killed by the poison of a death tree raining down on {PRONOUN/m_c/object}."
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "r_c1 decided to have some fun by splashing into large puddles. {PRONOUN/r_c1/subject/CAP} only {VERB/r_c1/realize/realizes} when {PRONOUN/r_c1/poss} skin starts to burn that {PRONOUN/r_c1/subject}{VERB/r_c1/'ve/'s} wandered too close to the death tree. The patrol goes back to c_n in a hurry to give r_c1 immediate medical attention."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from blamed cat_to for not warning r_c1 of a poisonous tree."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c1"
+                        ],
+                        "condition": [
+                            "burn"
+                        ],
+                        "scar_pool_override": [
+                            "BURNBELLY",
+                            "BURNPAWS"
+                        ],
+                        "scar_history": "m_c was scarred by the poison of the death tree.",
+                        "death_history": "m_c died from burns caused by the poison of the death tree."
+                    }
+                ]
+            }
+        ]
+    }
+]

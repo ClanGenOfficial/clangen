@@ -1,11 +1,10 @@
 [
     {
-        "id": "comfort_de_med1",
+        "event_id": "comfort_de_med1",
         "strings": [
             "m_c finds the way r_c acts increasingly uncomfortable.",
             "m_c swears that r_c's fangs are longer than usual.",
             "m_c's hackles raise when r_c passes by.",
-            "m_c and r_c talk about a Clanmate and realize they have very different opinions on them.",
             "m_c had a terrible dream about r_c.",
             "m_c worries about r_c's mental stability.",
             "m_c can't stop thinking about the strange joke r_c told the other day.",
@@ -14,11 +13,13 @@
             "m_c realizes that a strange smell in camp is coming from r_c.",
             "m_c tells {PRONOUN/m_c/poss} Clanmates that something's off about r_c.",
             "The moon casts a shadow on r_c's face in a way that makes m_c uneasy.",
-            "For a moment, m_c thought r_c sounded like someone else."
+            "For a moment, m_c thought r_c sounded like someone else.",
+            "m_c feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} walking on eggshells when around r_c.",
+            "m_c yelled at r_c for seemingly no reason."
         ]
     },
     {
-        "id": "comfort_kit_de_med1",
+        "event_id": "comfort_kit_de_med1",
         "strings": [
             "m_c feels like r_c was too rough while playing.",
             "m_c doesn't think r_c was playing fair.",
@@ -39,14 +40,15 @@
         }
     },
     {
-        "id": "comfort_de_kit_parent_inc_med_respect_inc",
+        "event_id": "comfort_de_kit_parent_inc_med_respect_inc",
         "strings": [
             "r_c scolds m_c for doing something dangerous.",
-            "r_c scolds m_c for being rude to a Clanmate.",
             "r_c enforces m_c's bedtime.",
             "r_c won't let m_c have an extra piece of prey today.",
             "m_c thinks r_c is the strictest parent in the Clan.",
-            "m_c sulks after r_c prohibits a dangerous game."
+            "m_c sulks after r_c prohibits a dangerous game.",
+            "r_c put m_c in timeout.",
+            "r_c doesn't trust m_c not to sneak off."
         ],
         "involved_cats": {
             "m_c": {
@@ -71,7 +73,7 @@
         ]
     },
     {
-        "id": "comfort_de_med2",
+        "event_id": "comfort_de_med2",
         "strings": [
             "m_c called r_c the wrong name.",
             "r_c squashes a bug that m_c was watching.",
@@ -102,7 +104,7 @@
         ]
     },
     {
-        "id": "comfort_de_med3",
+        "event_id": "comfort_de_med3",
         "strings": [
             "r_c is following m_c around.",
             "r_c tells m_c that {PRONOUN/m_c/poss} pelt looks like a different color today.",
@@ -110,7 +112,9 @@
             "r_c giggles beneath {PRONOUN/r_c/poss} breath every time m_c walks by.",
             "m_c is put off by r_c's big, toothy grin.",
             "m_c swears that r_c hasn't blinked today.",
-            "m_c notices that r_c looks a little too entertained by a Clanmate's unsettling story."
+            "m_c notices that r_c looks a little too entertained by a Clanmate's unsettling story.",
+            "m_c was unsettled after watching r_c dissect a bug with {PRONOUN/r_c/poss} sharp claws.",
+            "r_c invited {PRONOUN/r_c/self} to share tongues with m_c without even asking."
         ],
         "involved_cats": {
             "r_c": {
@@ -123,19 +127,16 @@
         }
     },
     {
-        "id": "comfort_de_med4",
+        "event_id": "comfort_de_med4",
         "strings": [
             "r_c talks to m_c a bit too enthusiastically about how best to kill prey.",
             "r_c started a fight with m_c.",
             "m_c notices that r_c hasn't groomed fresh-kill blood off {PRONOUN/r_c/poss} paw.",
             "m_c notices that r_c is playing with {PRONOUN/r_c/poss} fresh-kill.",
-            "m_c notices that r_c looks a little too entertained by a Clanmate's unsettling story."
+            "m_c was unsettled after watching r_c dissect a bug with their sharp claws."
         ],
         "involved_cats": {
             "r_c": {
-                "status": [
-                    "-kitten"
-                ],
                 "stat": {
                     "trait": [
                         "bloodthirsty"
@@ -145,7 +146,7 @@
         }
     },
     {
-        "id": "comfort_de_med5",
+        "event_id": "comfort_de_med5",
         "strings": [
             "r_c hissed at m_c.",
             "r_c tells m_c to leave {PRONOUN/r_c/object} alone.",
@@ -166,7 +167,7 @@
         }
     },
     {
-        "id": "comfort_de_med6",
+        "event_id": "comfort_de_med6",
         "strings": [
             "r_c crashes into m_c while eager for the new day.",
             "r_c rejects m_c's advice without letting {PRONOUN/m_c/object} finish.",

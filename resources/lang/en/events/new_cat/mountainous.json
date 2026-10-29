@@ -239,5 +239,61 @@
     ],
     "changed": 1
   }
+},
+{
+"event_id": "mtn_new_cat_ruinsguided_welcoming",
+        "location": [
+            "mountainous:camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 1,
+        "event_text": "While on patrol, m_c finds a strange cat, claiming the ghosts of the ruins led {PRONOUN/n_c:0/object} here. m_c takes {PRONOUN/n_c:0/object} back to camp, where {PRONOUN/n_c:0/subject} {VERB/n_c:0/decide/decides} to join the Clan and is renamed n_c:0.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "new_cat": [
+            [
+            	"new_name",
+		    	"backstory:guided2,guided4"
+            ]
+        ],
+        "relationships": [
+            {
+              "cats_from": ["m_c"],
+              "cats_to": ["n_c:0"],
+              "mutual": false,
+              "values": ["trust", "respect"],
+              "amount": 5,
+                "log": {
+                    "cats_from": "m_c found n_c:0 searching for the Clan, where StarClan was trying to lead {PRONOUN/n_c:0/object}."
+                }
+            },
+            {
+              "cats_from": ["n_c:0"],
+              "cats_to": ["m_c"],
+              "values": ["trust", "respect"],
+              "amount": 10,
+              "log": {
+                "cats_from": "n_c:0 was grateful m_c led {PRONOUN/n_c:0/object} to c_n when StarClan tried to guide {PRONOUN/n_c:0/object} there."
+            	}
+            }
+        ],
+        "outsider": {
+            "current_rep": [
+                "welcoming"
+            ],
+            "changed": 1
+        }
 }
+    
 ]

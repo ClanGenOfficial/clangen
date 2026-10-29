@@ -1,23 +1,18 @@
-import os
 import unittest
-from random import Random
 
-from scripts.cat.factories.typed_dicts import StatusDict
-from scripts.cat_relations.enums import rel_type_tiers, RelType
-
+from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank
+from scripts.cat.factories.test_cat_factory import TestCatFactory
+from scripts.cat.factories.typed_dicts import StatusDict
+from scripts.cat.skills import SkillPath, Skill
+from scripts.cat_relations.enums import RelType
+from scripts.cat_relations.enums import rel_type_tiers
+from scripts.cat_relations.inheritance2 import inheritance_db
+from scripts.cat_relations.relationship import Relationship
 from scripts.events_module.event_filters import filter_relationship_type
 from scripts.events_module.parameter_dicts import InvolvedCatDict, StatDict
 from scripts.events_module.relationship import generate_pair_event
-from scripts.events_module.text_pool_event import TextPoolEvent
-from scripts.cat.factories.test_cat_factory import TestCatFactory
-from scripts.cat_relations.enums import rel_type_tiers
-
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
-
-from scripts.cat.cats import Relationship
-from scripts.cat.skills import SkillPath, Skill
+from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 
 cat_factory = TestCatFactory()
 
@@ -48,6 +43,8 @@ class RelationshipConstraints(unittest.TestCase):
         # given
         parent = cat_factory.create_cat()
         child = cat_factory.create_cat(parent1=parent.ID)
+
+        inheritance_db.load_inheritances(Cat)
 
         # then
         self.assertTrue(filter_relationship_type([child, parent], ["child/parent"]))
@@ -345,7 +342,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
 
         # when
         warrior_to_all = TextPoolEvent(
-            id="test",
+            event_id="warrior_to_all",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(status=[CatRank.WARRIOR]),
@@ -354,7 +351,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         warrior_to_warrior = TextPoolEvent(
-            id="test",
+            event_id="warrior_to_warrior",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(status=[CatRank.WARRIOR]),
@@ -363,7 +360,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         medicine_to_warrior = TextPoolEvent(
-            id="test",
+            event_id="medicine_to_warrior",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(status=[CatRank.MEDICINE_CAT]),
@@ -444,7 +441,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
 
         # when
         calm_to_all = TextPoolEvent(
-            id="test",
+            event_id="calm_to_all",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(stat=StatDict(trait=["calm"])),
@@ -452,7 +449,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         all_to_calm = TextPoolEvent(
-            id="test",
+            event_id="all_to_calm",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(stat=StatDict(trait=["calm", "troublesome"])),
@@ -461,7 +458,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         rebels = TextPoolEvent(
-            id="test",
+            event_id="rebels",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(stat=StatDict(trait=["rebellious"])),
@@ -523,7 +520,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
 
         # when
         hunter_to_all = TextPoolEvent(
-            id="test",
+            event_id="hunter_to_all",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(stat=StatDict(skill=["HUNTER,1"])),
@@ -531,7 +528,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         all_to_hunter = TextPoolEvent(
-            id="test",
+            event_id="all_to_hunter",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(stat=StatDict(skill=["FIGHTER,1", "HUNTER,1"])),
@@ -540,7 +537,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         storytellers = TextPoolEvent(
-            id="test",
+            event_id="storytellers",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(stat=StatDict(skill=["STORY,1"])),
@@ -586,7 +583,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
 
         # when
         clan_to_all = TextPoolEvent(
-            id="test",
+            event_id="clan_to_all",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(backstory=["clanborn"]),
@@ -594,7 +591,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         all_to_clan = TextPoolEvent(
-            id="test",
+            event_id="all_to_clan",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(backstory=["clanborn", "halfclan1"]),
@@ -602,7 +599,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
             },
         )
         all_half2 = TextPoolEvent(
-            id="test",
+            event_id="all_half2",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(backstory=["halfclan2"]),
