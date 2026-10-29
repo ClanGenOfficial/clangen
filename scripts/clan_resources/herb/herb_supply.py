@@ -3,7 +3,9 @@ from typing import Optional
 
 import i18n
 
+from scripts.cat.conditions.base_condition_class import BaseCondition
 from scripts.cat.conditions.permanent_condition import PermanentCondition
+from scripts.cat.conditions.temporary_condition import TemporaryCondition
 from scripts.cat.skills import SkillPath
 from scripts.clan_resources.herb.herb import Herb
 from scripts.game_structure.constants import HERBS
@@ -587,24 +589,26 @@ class HerbSupply:
         for condition in (
             treatment_cat.permanent_conditions + treatment_cat.temporary_conditions
         ):
-            name = condition.name
-            # get the herbs that the condition allows as treatment
+            con_name = condition.name
+
+            # GET REQUIRED HERBS
             try:
                 required_herbs = []
-                for level in source_dict[name]["treatment_strength"].values():
+                for level in source_dict[con_name]["treatment_strength"].values():
                     required_herbs.extend(level)
             except KeyError:
                 print(
-                    f"WARNING: {name} does not exist in it's condition dict! That condition may have been removed "
+                    f"WARNING: {con_name} does not exist in it's condition dict! That condition may have been removed "
                     f"from the game. If not intentional, check that your condition is in the correct dict or report "
                     f"this as a bug. "
                 )
-                return
+                continue
 
-            # if condition has no herbs listed, return
+            # if condition has no herbs listed, continue
             if not required_herbs:
-                return
+                continue
 
+            # UPDATED IN NEED LIST
             self.in_need_of.extend(
                 [
                     x
@@ -614,31 +618,9 @@ class HerbSupply:
                 ]
             )
 
-            # find the possible effects of herb for the condition
-            possible_effects = []
-
-            # effects are weighted mortality most likely, then risks, then duration
-            if condition.mortality:
-                possible_effects.extend(
-                    [HerbEffect.MORTALITY, HerbEffect.MORTALITY, HerbEffect.MORTALITY]
-                )
-            if condition.risks:
-                possible_effects.extend([HerbEffect.RISK, HerbEffect.RISK])
-            if condition.progression:
-                possible_effects.extend(
-                    [HerbEffect.PROGRESSION, HerbEffect.PROGRESSION]
-                )
-            if hasattr(condition, "duration") and condition.duration > 1:
-                possible_effects.append(HerbEffect.DURATION)
-
-            if not possible_effects:
-                return
-
-            chosen_effect = choice(possible_effects)
-
-            # check if perm condition gets treatment
-            if name in treatment_cat.permanent_conditions:
-                condition_default = source_dict[name]
+            # CHECK PERM CONDITION TREATMENT
+            if con_name in treatment_cat.permanent_conditions:
+                condition_default = source_dict[con_name]
                 will_not_treat = False
                 # only treat if mortality is worse than 0.1 or the condition's default mortality (whichever is lower)
                 if condition.mortality < min(
@@ -657,46 +639,87 @@ class HerbSupply:
                         break
 
                 if will_not_treat:
-                    self._apply_lack_of_herb(treatment_cat, name, chosen_effect)
-                    return
+                    self._apply_lack_of_herb(treatment_cat, con_name)
+                    continue
 
+            # CHECK CLASSIC TREATMENT
             if game.clan.game_mode == "classic":
+                # find the possible effects of herb for the condition
+                possible_effects = []
+
+                # effects are weighted mortality most likely, then risks, then duration
+                if condition.mortality:
+                    possible_effects.extend(
+                        [
+                            HerbEffect.MORTALITY,
+                            HerbEffect.MORTALITY,
+                            HerbEffect.MORTALITY,
+                        ]
+                    )
+                if condition.risks:
+                    possible_effects.extend([HerbEffect.RISKS, HerbEffect.RISKS])
+                if condition.progression:
+                    possible_effects.extend(
+                        [HerbEffect.PROGRESSION, HerbEffect.PROGRESSION]
+                    )
+                if hasattr(condition, "duration") and condition.duration > 1:
+                    possible_effects.append(HerbEffect.DURATION)
+
+                if not possible_effects:
+                    continue
+
+                chosen_effect = choice(possible_effects)
+
                 # classic always applies basic treatment, regardless of herb supply
                 self._apply_herb_effect(
                     treatment_cat,
-                    name,
+                    con_name,
                     "cobwebs",
                     chosen_effect,
-                    amount_used=1,
-                    strength=1,
                 )
-                return
+                continue
 
+            # HANDLE EXPANDED/CRUEL SEASON TREATMENT
             # find which required herbs the clan currently has
             herbs_available = [
                 herb for herb in required_herbs if self.get_single_herb_total(herb) > 0
             ]
 
             if herbs_available:
-                herb_used = self.get_highest_herb_in_group(herbs_available)
-                total_herb_amount = self.get_single_herb_total(herb_used)
-
-                amount_used = randint(
-                    1, total_herb_amount if total_herb_amount < 3 else 3
-                )
-                strength = 1
-                for level, herb_list in source_dict[name]["treatment_strength"].items():
-                    if herb_used in herb_list:
-                        strength = int(level)
-
-                self.remove_herb(herb_used, amount_used)
-
-                self._apply_herb_effect(
-                    treatment_cat, name, herb_used, chosen_effect, amount_used, strength
+                herb_used, strength = self.get_strongest_herb_in_group(
+                    herbs_available, source_dict[con_name]["treatment_strength"]
                 )
 
-            elif random() > 0.30:  # 70% chance that lack of treatment is detrimental
-                self._apply_lack_of_herb(treatment_cat, name, chosen_effect)
+                self.remove_herb(herb_used, 1)
+
+                self._apply_herb_effect(treatment_cat, con_name, herb_used, strength)
+
+            elif random() < 0.30:  # 30% chance that lack of treatment is detrimental
+                self._apply_lack_of_herb(treatment_cat, con_name)
+
+    def get_strongest_herb_in_group(
+        self, herbs_available: list, treatment_dict: dict
+    ) -> tuple[str, int]:
+        """
+        Finds the strongest and most plentiful herb of the herbs_available based on the given treatment_dict
+        """
+
+        # find all the available herbs by strength
+        available_strengths = {
+            "1": [h for h in herbs_available if h in treatment_dict["1"]],
+            "2": [h for h in herbs_available if h in treatment_dict["2"]],
+            "3": [h for h in herbs_available if h in treatment_dict["3"]],
+        }
+
+        # use whatever has the highest strength and greatest supply
+        if available_strengths["3"]:
+            return self.get_highest_herb_in_group(available_strengths["3"]), 3
+        if available_strengths["2"]:
+            return self.get_highest_herb_in_group(available_strengths["2"]), 2
+        if available_strengths["1"]:
+            return self.get_highest_herb_in_group(available_strengths["1"]), 1
+
+        return "", 0
 
     def _gather_herbs(self, med_cat):
         """
@@ -730,6 +753,8 @@ class HerbSupply:
             if self.storage[herb][-1] < 0:
                 needed_num = abs(self.storage[herb][-1])
                 self.storage[herb].pop(-1)
+            else:
+                needed_num = 0
 
         return needed_num
 
@@ -738,8 +763,6 @@ class HerbSupply:
         treated_cat,
         condition: str,
         herb_used: str,
-        effect: HerbEffect,
-        amount_used: int,
         strength: int,
     ):
         """
@@ -755,20 +778,26 @@ class HerbSupply:
         ):
             return
 
+        possible_effects = []
+        for effect in get_config(f"clan_resources.herbs.herb_effects.{str(strength)}"):
+            if getattr(con_info, effect, None):
+                possible_effects.append(HerbEffect[effect.upper()])
+
         # apply effect
-        con_info.apply_herb_effect(effect, strength, amount_used * 0.01)
+        chosen_effect = choice(possible_effects)
+        con_info.apply_herb_effect(chosen_effect)
 
         # get log message
         effect_message = ""
-        if effect == HerbEffect.MORTALITY:
+        if chosen_effect == HerbEffect.MORTALITY:
             effect_message = i18n.t("screens.med_den.mortality_down")
 
-        elif effect == HerbEffect.DURATION:
+        elif chosen_effect == HerbEffect.DURATION:
             effect_message = i18n.t("screens.med_den.duration_down")
 
-        elif effect == HerbEffect.RISK:
+        elif chosen_effect == HerbEffect.RISKS:
             effect_message = i18n.t("screens.med_den.risks_down")
-        elif effect == HerbEffect.PROGRESSION:
+        elif chosen_effect == HerbEffect.PROGRESSION:
             effect_message = i18n.t("screens.med_den.progression_down")
 
         if game.clan.game_mode == "classic":
@@ -786,8 +815,8 @@ class HerbSupply:
 
         message = i18n.t(
             "conditions.herbs.herb_used",
-            herb=i18n.t(f"conditions.herbs.{herb.name}", count=amount_used),
-            count=amount_used,
+            herb=i18n.t(f"conditions.herbs.{herb.name}", count=1),
+            count=1,
             condition=condition_name,
             effect=effect_message,
         )
@@ -798,19 +827,31 @@ class HerbSupply:
         self.log.append(message)
 
     @staticmethod
-    def _apply_lack_of_herb(treatment_cat, condition: str, effect):
+    def _apply_lack_of_herb(
+        treatment_cat, condition: TemporaryCondition | PermanentCondition
+    ):
         """
         if the condition is a perm condition or redcough, give some consequence for not treated it
         """
+        # find the possible effects of herb for the condition
+        possible_effects = []
 
-        # only perm conditions and redcough can degenerate
-        if (
-            condition not in treatment_cat.permanent_conditions
-            or condition != "redcough"
-        ):
+        # effects are weighted mortality most likely, then risks, then duration
+        if condition.risks:
+            possible_effects.append(HerbEffect.RISKS)
+        if condition.progression:
+            possible_effects.append(HerbEffect.PROGRESSION)
+        if hasattr(condition, "duration") and condition.duration > 1:
+            possible_effects.append(HerbEffect.DURATION)
+        if hasattr(condition, "mortality") and condition.mortality:
+            possible_effects.append(HerbEffect.MORTALITY)
+
+        if not possible_effects:
             return
 
-        treatment_cat.get_condition(condition).apply_lack_of_herb(effect)
+        chosen_effect = choice(possible_effects)
+
+        treatment_cat.get_condition(condition).apply_lack_of_herb(chosen_effect)
 
 
 MESSAGES: Optional[dict] = None

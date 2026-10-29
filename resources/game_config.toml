@@ -752,7 +752,6 @@ dev_tools = false
       kittencough = 4
       yellowcough = 1
 
-
 [clan_creation]
   # Set this to -1 for it to be infinite
   rerolls = 3
@@ -1144,6 +1143,8 @@ dev_tools = false
     base_duration_effect = 1
     base_risk_effect = 0.05
     base_progression_effect = 0.05
+    base_immune_system_effect = 0.05
+    base_infectiousness_effect = 0.05
 
     # herb bonus applied when cats should gather a boosted number of herbs
     general_amount_bonus = 2
@@ -1155,6 +1156,11 @@ dev_tools = false
       increase_medium = 4
       increase_large = 6
       increase_huge = 8
+
+    [clan_resources.herbs.herb_effects]
+      "1" = ["infectiousness", "immune_system_effect"]
+      "2" = ["risks", "progression"]
+      "3" = ["duration", "mortality"]
 
     # adjust weights for finding [1 herb type, 2 herb types, 3 herb types] for each season
     [clan_resources.herbs.forest]

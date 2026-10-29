@@ -18,16 +18,18 @@ class TemporaryCondition(BaseCondition):
     def __repr__(self):
         return self.name
 
-    def apply_herb_effect(
-        self, effect: HerbEffect, strength: int, amount_modifier: float
-    ):
+    def apply_herb_effect(self, effect: HerbEffect):
         # have to use a funky "old style" super since this is a slotted dataclass
-        super(TemporaryCondition, self).apply_herb_effect(
-            effect, strength, amount_modifier
-        )
+        super(TemporaryCondition, self).apply_herb_effect(effect)
 
         if effect == HerbEffect.DURATION:
             amount = get_config("clan_resources.herbs.base_duration_effect")
-            if strength == 3:
-                amount += 1  # max duration effect is 2
             self.duration -= amount
+
+        elif effect == HerbEffect.INFECTIOUSNESS:
+            if self.infectiousness:
+                self.infectiousness = max(
+                    0.01,
+                    self.infectiousness
+                    + (get_config("clan_resources.herbs.base_infectiousness_effect")),
+                )
