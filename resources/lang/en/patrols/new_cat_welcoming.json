@@ -13553,7 +13553,11 @@
                     },
                     "s_c0": {
                         "stat": {
-                            "skill": ["LORE,1"]
+                            "skill": [
+                                "LORE,1",
+                                "STORY,1",
+                                "TEACHER,1"
+                            ]
                         }
                     }
                 },
@@ -13654,7 +13658,11 @@
                     },
                     "s_c0": {
                         "stat": {
-                            "skill": ["LORE,0"]
+                            "skill": [
+                                "LORE,0",
+                                "STORY,0",
+                                "TEACHER,0"
+                            ]
                         }
                     }
                 },
