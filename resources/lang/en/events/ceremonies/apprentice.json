@@ -53,7 +53,7 @@
     },
     {
         "event_id": "app_no_mentors_available0",
-        "tags": ["-clan:warrior-like(min:1)"],
+        "tags": ["-clan:warrior-like(min:1)", "-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "has_mentor": {
@@ -2254,7 +2254,7 @@
     {
     "event_id": "app_nevermentor_plan",
     "tags": [
-        "never_mentor"
+        "card:on_their_own"
     ],
     "involved_cats": {
         "m_c": {
@@ -2278,7 +2278,7 @@
     {
     "event_id": "app_nevermentor_prove",
     "tags": [
-        "never_mentor"
+        "card:on_their_own"
     ],
     "involved_cats": {
         "m_c": {
@@ -2305,7 +2305,7 @@
     {
     "event_id": "app_nevermentor_buzzkill",
     "tags": [
-        "never_mentor"
+        "card:on_their_own"
     ],
     "involved_cats": {
         "m_c": {
@@ -2325,7 +2325,7 @@
     },
     {
     "event_id": "app_nevermentor_fight",
-    "tags": ["never_mentor"],
+    "tags": ["card:on_their_own"],
     "involved_cats": {
         "m_c": {
             "stat": {
@@ -2345,7 +2345,7 @@
     },
     {
     "event_id": "app_nevermentor_nervous",
-    "tags": ["never_mentor"],
+    "tags": ["card:on_their_own"],
     "involved_cats": {
         "m_c": {
             "stat": {
@@ -2364,7 +2364,7 @@
     },
     {
     "event_id": "app_nevermentor_assist",
-    "tags": ["never_mentor"],
+    "tags": ["card:on_their_own"],
     "involved_cats": {
         "m_c": {
             "stat": {
@@ -2386,7 +2386,7 @@
     },
     {
     "event_id": "app_nevermentor_play",
-    "tags": ["never_mentor"],
+    "tags": ["card:on_their_own"],
     "involved_cats": {
         "m_c": {
             "stat": {
@@ -2404,7 +2404,7 @@
     },
     {
     "event_id": "app_nevermentor_default",
-    "tags": ["never_mentor"],
+    "tags": ["card:on_their_own"],
     "strings": [
         "As per clan tradition, m_c now must face the world alone as an apprentice."
     ]
@@ -2493,7 +2493,8 @@
         "event_id": "app_no_mentor_likes0",
         "tags": [
             "clan:leader",
-            "clan:warrior-like(min:1)"
+            "clan:warrior-like(min:1)",
+            "-card:on_their_own"
         ],
         "involved_cats": {
             "m_c": {
@@ -2532,7 +2533,8 @@
     {
         "event_id": "app_no_mentor_mentor_hoping0",
         "tags": [
-            "clan:leader"
+            "clan:leader",
+            "-card:on_their_own"
         ],
         "involved_cats": {
             "m_c": {

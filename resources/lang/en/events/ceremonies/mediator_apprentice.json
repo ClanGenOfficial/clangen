@@ -63,7 +63,7 @@
     },
     {
         "event_id": "mediator_app_no_mentor0",
-        "tags": ["-clan:mediator(min:1)"],
+        "tags": ["-clan:mediator(min:1)", "-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "has_mentor": {
@@ -127,7 +127,7 @@
     },
     {
     "event_id": "mediator_app_nevermentor_default",
-    "tags": ["never_mentor"],
+    "tags": ["card:on_their_own"],
     "strings": [
         "The trial and error of being a warrior apprentice holds no appeal to m_c, nor does the concept of becoming a healer. Instead, {PRONOUN/m_c/subject} {VERB/m_c/have/has} decided to take on the role of a mediator apprentice, hoping to help the Clan through words and influence rather than claw or fang."
     ]
