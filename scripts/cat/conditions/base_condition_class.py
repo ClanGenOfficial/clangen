@@ -60,6 +60,9 @@ class BaseCondition:
 
         elif effect == HerbEffect.PROGRESSION:
             for progression in self.progression:
+                if self.progression[progression]["chance"] == 2.0:
+                    continue
+
                 self.progression[progression]["chance"] = max(
                     0.01,
                     self.progression[progression]["chance"]

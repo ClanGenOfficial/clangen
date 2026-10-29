@@ -1139,7 +1139,7 @@ dev_tools = false
     excess = 2
 
     # base effects for herbs that have specified effects
-    base_mortality_effect = 0.05
+    base_mortality_effect = 0.10
     base_duration_effect = 1
     base_risk_effect = 0.05
     base_progression_effect = 0.05
