@@ -415,6 +415,9 @@ class EventsScreen(Screens):
         self.update_heading_text(game.clan.name)
         self.show_menu_buttons()
 
+        if game.clan.age == 0:
+            self.timeskip_done()
+
     def reset_page_buttons(self, is_page_update=False):
         """
         Resets page button and page counter states
@@ -786,9 +789,6 @@ class EventsScreen(Screens):
             ele.kill()
         self.involved_cat_buttons = []
 
-        # Stop if Clan is new, so that events from previously loaded Clan don't show up
-        if game.clan.age == 0:
-            return
         # if no events, return early
         if not self.display_events:
             return
@@ -954,7 +954,7 @@ class EventsScreen(Screens):
                 self.event_buttons[tab].enable()
 
         if not self.all_events:
-            self.all_events.append(EventInformation(i18n.t("screens.events.no_events")))
+            self.all_events.append(EventInformation(i18n.t("screens.events.no_events", count=game.clan.age)))
 
         self.display_events = self.all_events
 
