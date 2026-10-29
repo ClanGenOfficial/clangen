@@ -845,11 +845,9 @@ class HerbSupply:
 
         # effects are weighted mortality most likely, then risks, then duration
         if condition.risks:
-            possible_effects.append(HerbEffect.RISKS)
+            possible_effects.extend([HerbEffect.RISKS, HerbEffect.RISKS])
         if condition.progression:
-            possible_effects.append(HerbEffect.PROGRESSION)
-        if hasattr(condition, "duration") and condition.duration > 1:
-            possible_effects.append(HerbEffect.DURATION)
+            possible_effects.extend([HerbEffect.PROGRESSION, HerbEffect.PROGRESSION])
         if hasattr(condition, "mortality") and condition.mortality:
             possible_effects.append(HerbEffect.MORTALITY)
 
