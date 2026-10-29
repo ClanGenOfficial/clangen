@@ -563,7 +563,7 @@ def handle_lead_den_event():
                         # if cat is an apprentice, make sure they get a mentor!
                         if (
                             invited_cat.status.rank
-                            and not get_config("roles.app_never_mentor")
+                            and get_config("roles.receive_mentor")
                             == CatRank.APPRENTICE
                         ):
                             invited_cat.update_mentor()
@@ -1682,7 +1682,7 @@ def check_missing_mentors():
 
     # Only do the check if mentors aren't being assigned randomly
 
-    if get_clan_setting("assign_mentors") or get_config("roles.app_never_mentor"):
+    if get_clan_setting("assign_mentors") or not get_config("roles.receive_mentor"):
         return
 
     mentorless = []

@@ -258,7 +258,7 @@ class ProfileScreen(Screens):
             if event.ui_element == self.manage_roles:
                 self.change_screen(GameScreen.CHANGE_ROLE)
             elif event.ui_element == self.change_mentor_button:
-                if get_config("roles.app_never_mentor"):
+                if not get_config("roles.receive_mentor"):
                     CruelLockedAction()
                 else:
                     self.change_screen(GameScreen.CHOOSE_MENTOR)

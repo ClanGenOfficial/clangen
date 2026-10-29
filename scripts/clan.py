@@ -427,7 +427,7 @@ class Clan:
             set_clan_setting(setting, True if starting_priority == setting else False)
 
         # mentorship
-        if get_config("roles.app_never_mentor"):
+        if not get_config("roles.receive_mentor"):
             set_clan_setting("assign_mentors", False)
             save_clan_settings()
 

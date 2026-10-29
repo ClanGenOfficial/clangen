@@ -1391,7 +1391,7 @@ class Cat:
             return False
 
         # if not going to have a mentor
-        if get_config("roles.app_never_mentor"):
+        if not get_config("roles.receive_mentor"):
             return False
 
         # App and mentor must be members of the same clan

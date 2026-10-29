@@ -125,7 +125,7 @@ class ClanSettingsScreen(Screens):
                 return
             elif event.ui_element == self.checkboxes.get(
                 "assign_mentors"
-            ) and get_config("roles.app_never_mentor"):
+            ) and not get_config("roles.receive_mentor"):
                 set_clan_setting("assign_mentors", False)
                 self.checkboxes["assign_mentors"].uncheck()
                 CruelLockedAction()

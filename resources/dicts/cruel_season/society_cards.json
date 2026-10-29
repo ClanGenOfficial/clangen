@@ -55,7 +55,7 @@
   "on_their_own": {
     "card_art": "society/on_their_own.png",
     "modifiers": {
-      "roles.app_never_mentor": true
+      "roles.receive_mentor": false
     }
   }
 }
