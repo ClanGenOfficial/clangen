@@ -639,7 +639,7 @@ class HerbSupply:
                         break
 
                 if will_not_treat:
-                    self._apply_lack_of_herb(treatment_cat, con_name)
+                    self._apply_lack_of_herb(treatment_cat, condition)
                     continue
 
             # CHECK CLASSIC TREATMENT
@@ -695,7 +695,7 @@ class HerbSupply:
                 self._apply_herb_effect(treatment_cat, con_name, herb_used, strength)
 
             elif random() < 0.30:  # 30% chance that lack of treatment is detrimental
-                self._apply_lack_of_herb(treatment_cat, con_name)
+                self._apply_lack_of_herb(treatment_cat, condition)
 
     def get_strongest_herb_in_group(
         self, herbs_available: list, treatment_dict: dict
