@@ -26,7 +26,8 @@
         "risks": {
             "infection": 0.05,
             "phantom_pain": 0.1,
-            "sore": 0.15
+            "sore": 0.15,
+            "exhausted": 0.1
         },
         "treatment_strength": {
             "1": [
@@ -57,7 +58,8 @@
         "progression": {},
         "risks": {
             "sore": 0.15,
-            "joint_pain": 0.15
+            "joint_pain": 0.15,
+            "exhausted": 0.06
         },
         "treatment_strength": {
             "1": [
@@ -117,7 +119,10 @@
         "progression": {},
         "risks": {
             "running_nose": 0.25,
-            "redcough": 0.05
+            "redcough": 0.05,
+            "weakened_muscles": 0.15,
+            "persistent_exhaustion": 0.05,
+            "exhausted": 0.2
         },
         "treatment_strength": {
             "1": [
@@ -146,7 +151,9 @@
         "risks": {
             "seizure": 0.05,
             "paralyzed": 0.05,
-            "redcough": 0.10
+            "redcough": 0.10,
+            "weakened_muscles": 0.15,
+            "persistent_exhaustion": 0.2
         },
         "treatment_strength": {
             "1": [
@@ -267,7 +274,8 @@
         "immune_system_effect": 0.0,
         "progression": {},
         "risks": {
-            "seizure": 0.2
+            "seizure": 0.2,
+            "persistent_exhaustion": 0.01
         },
         "treatment_strength": {
             "1": [
@@ -291,7 +299,8 @@
         "immune_system_effect": 0.0,
         "progression": {},
         "risks": {
-            "headache": 0.1
+            "headache": 0.1,
+            "exhausted": 0.08
         },
         "treatment_strength": {
             "1": [],
@@ -309,7 +318,9 @@
         "progression": {},
         "risks": {
             "constant_nightmares": 0.3,
-            "selective_mutism": 0.02
+            "selective_mutism": 0.02,
+            "persistent_exhaustion": 0.05,
+            "exhausted": 0.1
         },
         "treatment_strength": {
             "1": [
@@ -344,6 +355,73 @@
             ],
             "3": [
                 "poppy"
+            ]
+        }
+    },
+    "persistent_exhaustion": {
+        "severity": "major",
+        "can_be_congenital": true,
+        "can_be_acquired": true,
+        "moons_until_discovery": [3,145],
+        "mortality": {},
+        "immune_system_effect": 0.1,
+        "progression": {},
+        "risks": {
+            "sore": 0.1,
+            "headache": 0.15,
+            "exhausted": 0.2,
+            "joint_pain": 0.1,
+            "severe_headache": 0.05,
+            "constantly_dizzy": 0.01,
+            "persistent_headaches": 0.01
+        },
+        "treatment_strength": {
+            "1": [
+                "daisy"
+            ],
+            "2": [
+                "betony",
+                "ragwort"
+            ],
+            "3": [
+                "juniper",
+                "thyme"
+            ]
+        }
+    },
+    "weakened_muscles": {
+        "severity": "major",
+        "can_be_congenital": true,
+        "can_be_acquired": true,
+        "requires_scar": false,
+        "remove_on_death": true,
+        "moons_until_discovery": [4,145],
+        "mortality": {},
+        "immune_system_effect": 0.0,
+        "progression": {},
+        "risks": {
+            "sore": 0.25,
+            "exhausted": 0.1,
+            "joint_pain": 0.15,
+            "sprain": 0.1,
+            "bruises": 0.15,
+            "scrapes": 0.15,
+            "small_cut": 0.15,
+            "torn_pelt": 0.15,
+            "breathless_fit": 0.05
+        },
+        "treatment_strength": {
+            "1": [
+                "daisy",
+                "ragwort"
+            ],
+            "2": [
+                "betony",
+                "elder_leaves"
+            ],
+            "3": [
+                "juniper",
+                "thyme"
             ]
         }
     }

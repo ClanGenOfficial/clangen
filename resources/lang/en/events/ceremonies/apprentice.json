@@ -130,7 +130,6 @@
         "strings": [
             "(old_name) loudly complains as r_c1 pulls {PRONOUN/m_c/object} over to quickly groom {PRONOUN/m_c/poss} pelt. {PRONOUN/m_c/subject/CAP} {VERB/m_c/manage/manages} to wriggle away and scurry off to the front of the crowd for {PRONOUN/m_c/poss} ceremony, where {PRONOUN/m_c/subject} {VERB/m_c/are/is} renamed to m_c and apprenticed to r_c0. ",
             "Even though {PRONOUN/m_c/subject} {VERB/m_c/are/is} excited to finally be made an apprentice, it takes a bit of coaxing by r_c1 for (old_name) to step forward for {PRONOUN/m_c/poss} ceremony. r_c1 watches in pride as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} named m_c and touches noses with r_c0."
-
         ],
         "relationship_constraint": [
             {
@@ -479,7 +478,6 @@
         },
         "strings": [
             "(old_name) runs up to the front of the crowd, eager to get {PRONOUN/m_c/poss} new name. When {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} called m_c for the first time, r_c1 and r_c2's voices can be heard the loudest as the Clan welcomes the new apprentice."
-
         ],
         "relationship_constraint": [
             {
@@ -1045,7 +1043,7 @@
         ]
     },
     {
-    "event_id": "app_eager2",
+        "event_id": "app_eager2",
         "involved_cats": {
             "m_c": {
                 "past_status": [
@@ -2069,6 +2067,78 @@
         ]
     },
     {
+        "event_id": "app_skittish_mentor_bold0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "nervous",
+                        "insecure",
+                        "lonesome",
+                        "gloomy",
+                        "careful"
+                    ]
+                }
+            },
+            "r_c0": {
+                "stat": {
+                    "trait": [
+                        "bold",
+                        "daring",
+                        "bloodthirsty",
+                        "fierce",
+                        "cold",
+                        "competitive",
+                        "vengeful",
+                        "arrogant",
+                        "rebellious"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "r_c0, so fierce and brave, feels like m_c’s perfect opposite. The youngster touched {PRONOUN/m_c/poss} new mentor’s nose with a mix of intimidation and admiration.",
+            "m_c touched r_c0's nose tentatively at the end of {PRONOUN/m_c/poss} ceremony. {PRONOUN/m_c/subject/CAP} had hoped for a mellow mentor, but lead_name believed r_c0 was the perfect cat to instill some ferocity into the timid new apprentice.",
+            "m_c couldn't help but feel intimidated standing beside r_c0. {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} happy to be an apprentice, but lead_name knew that {PRONOUN/m_c/subject} {VERB/m_c/were/was} on the reserved side; couldn't {PRONOUN/lead_name/subject} have given m_c an accordingly mellow mentor?",
+            "Before the meeting, r_c0 plainly asked lead_name to mentor (old_name). lead_name was surprised, but agreed; a timid cat like (old_name) could use some of that confidence. Newly named m_c hopes {PRONOUN/m_c/subject}'ll live up to r_c0's expectations."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c was apprenticed to r_c0."
+                }
+            }
+        ]
+    },
+    {
         "event_id": "app_pawful0",
         "tags": [
             "clan:leader"
@@ -2152,8 +2222,8 @@
             "m_c": {
                 "stat": {
                     "skill": ["STAR,0"],
-                    "trait": ["faithful","strict","righteous"],
-                    "must_have_both": false 
+                    "trait": ["faithful", "strict", "righteous"],
+                    "must_have_both": false
                 }
             },
             "r_c0": {}
@@ -2262,7 +2332,7 @@
         },
         "strings": [
             "m_c is overjoyed to finally be an apprentice. But why, oh why, did lead_name assign r_c0 as {PRONOUN/m_c/poss} mentor? {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/are/is} the worst!",
-             "m_c rolls {PRONOUN/m_c/poss} eyes when {PRONOUN/m_c/subject} {VERB/m_c/hear/hears} that r_c0 will be {PRONOUN/m_c/poss} mentor. Really? It couldn't be anybody else? r_c0 shoots {PRONOUN/m_c/object} a stern glare as m_c sullenly walks over to greet {PRONOUN/r_c0/object}."
+            "m_c rolls {PRONOUN/m_c/poss} eyes when {PRONOUN/m_c/subject} {VERB/m_c/hear/hears} that r_c0 will be {PRONOUN/m_c/poss} mentor. Really? It couldn't be anybody else? r_c0 shoots {PRONOUN/m_c/object} a stern glare as m_c sullenly walks over to greet {PRONOUN/r_c0/object}."
         ],
         "relationship_constraint": [
             {
@@ -2304,11 +2374,15 @@
             "clan:leader"
         ],
         "involved_cats": {
-            "m_c": {},
+            "m_c": {
+                "has_mentor": {
+                    "current": false
+                }
+            },
             "r_c0": {
                 "status": [
-                    "warrior", 
-                    "leader", 
+                    "warrior",
+                    "leader",
                     "deputy"
                 ]
             }
@@ -2345,8 +2419,8 @@
             },
             "r_c0": {
                 "status": [
-                    "warrior", 
-                    "leader", 
+                    "warrior",
+                    "leader",
                     "deputy"
                 ]
             }
@@ -2407,7 +2481,11 @@
             "clan:leader", "-card:pride_and_joy"
         ],
         "involved_cats": {
-            "m_c": {},
+            "m_c": {
+                "has_mentor": {
+                    "current": false
+                }
+            },
             "r_c0": {
                 "has_apprentice": {
                     "current": false,
@@ -2575,7 +2653,7 @@
                 ]
             },
             {
-                 "cats_from": [
+                "cats_from": [
                     "r_c1"
                 ],
                 "cats_to": [
@@ -2800,7 +2878,11 @@
         },
         "involved_cats": {
             "m_c": {},
-            "r_c0": {}
+            "r_c0": {
+                "status": [
+                    "-leader"
+                ]
+            }
         },
         "strings": [
             "When lead_name gives m_c to r_c0 to train, r_c0 leads {PRONOUN/r_c0/poss} new apprentice out of camp to see the sights, starting with POI."
@@ -3106,7 +3188,26 @@
         "involved_cats": {
             "m_c": {
                 "stat": {
-                    "trait": ["flamboyant", "strange", "thoughtful", "ambitious", "arrogant", "compassionate", "competitive", "loving", "bold", "fierce", "daring", "adventurous", "charismatic", "playful", "childish", "shameless", "troublesome", "confident"]
+                    "trait": [
+                        "flamboyant",
+                        "strange",
+                        "thoughtful",
+                        "ambitious",
+                        "arrogant",
+                        "compassionate",
+                        "competitive",
+                        "loving",
+                        "bold",
+                        "fierce",
+                        "daring",
+                        "adventurous",
+                        "charismatic",
+                        "playful",
+                        "childish",
+                        "shameless",
+                        "troublesome",
+                        "confident"
+                    ]
                 }
             },
             "r_c0": {}

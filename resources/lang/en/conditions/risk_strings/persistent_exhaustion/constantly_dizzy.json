@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "persistent_exhaustion_constantly_dizzy",
+        "strings": [
+            "m_c's exhaustion leaves {PRONOUN/m_c/object} dizzy all the time."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

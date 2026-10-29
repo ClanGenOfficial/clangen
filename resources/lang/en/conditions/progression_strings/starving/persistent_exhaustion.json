@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "starving_persistent_exhaustion0",
+        "strings": [
+            "While m_c managed to gather {PRONOUN/m_c/poss} strength again, it seems {PRONOUN/m_c/subject} permanently damaged something. {PRONOUN/m_c/poss/CAP} energy isn't returning."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

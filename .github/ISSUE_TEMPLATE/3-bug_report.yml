@@ -70,7 +70,7 @@ body:
     id: patrol
     attributes:
       label: Patrol ID + Outcome Print (if applicable)
-      description: See [what's a patrol ID and do I need it?](https://www.clangen.io/docs/report-a-bug#whats-a-patrol-id-do-i-need-it) and [how do I find the patrol ID?](https://www.clangen.io/docs/report-a-bug#how-do-i-find-the-patrol-id)
+      description: See [what's a patrol ID and do I need it?](https://www.clangen.io/docs/report-a-bug/#whats-a-patrol-id-do-i-need-it) and [how do I find the patrol ID?](https://www.clangen.io/docs/report-a-bug/#how-do-i-find-the-patrol-id)
   - type: input
     id: version
     attributes:
@@ -83,7 +83,7 @@ body:
     id: errormsg
     attributes:
       label: Error log
-      description: Attach the full error log here. Details on how to find the error log are given [here](https://www.clangen.io/docs/report-a-bug#how-do-i-find-the-error-log
+      description: Attach the full error log here. Details on how to find the error log are given [here](https://www.clangen.io/docs/report-a-bug/#how-do-i-find-the-error-log
   - type: textarea
     id: additional_context
     attributes:
