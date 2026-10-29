@@ -435,7 +435,7 @@
         "required_cat_types": {
             "patrol_cats": [
                 1,
-                3
+                6
             ]
         },
         "chance_of_success": 40,
@@ -449,10 +449,16 @@
         "success_outcomes": [
             {
                 "frequency": 4,
+                "required_cat_types": {
+                    "patrol_cats": [
+                        1,
+                        3
+                    ]
+                },
                 "strings": [
-                    "The patrol has a successful hunt, avoiding any Twolegs."
+                    "The patrol has a successful hunt around the nest, avoiding any Twolegs."
                 ],
-                "exp_gained": 10,
+                "exp_gained": 20,
                 "supply": [
                     {
                         "type": "freshkill",
@@ -461,9 +467,53 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 4,
+                "required_cat_types": {
+                    "patrol_cats": [
+                        4,
+                        6
+                    ]
+                },
+                "strings": [
+                    "The patrol cats split up, using sentries to ensure that the Twolegs don't disturb their hunts."
+                ],
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "required_cat_types": {
+                    "patrol_cats": [
+                        1,
+                        3
+                    ]
+                },
                 "strings": [
                     "The patrol finds some astonishingly fat chickens running around the Twoleg nest and help themselves to one."
+                ],
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "required_cat_types": {
+                    "patrol_cats": [
+                        4,
+                        6
+                    ]
+                },
+                "strings": [
+                    "The patrol finds some astonishingly fat chickens running around the Twoleg nest and help themselves to as many as they can carry."
                 ],
                 "exp_gained": 10,
                 "supply": [
@@ -478,7 +528,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Twoleg kits scare the patrol away."
+                    "Twoleg kits scare the patrol away, and they spend what meager time they have left in the day hunting prey in their more typical haunts.",
+                    "Twoleg kits stomp through the trees, scaring away prey and ruining the hunt. The patrol spends what meager time they have left in the day hunting prey in their more typical haunts."
                 ],
                 "exp_gained": 0,
                 "supply": [
@@ -546,54 +597,36 @@
         ]
     },
     {
-        "event_id": "fst_hunt_twolegplace2",
+        "event_id": "fst_hunt_squirrelchase_solo1",
         "types": [
             "hunting"
         ],
-        "frequency": 2,
+        "frequency": 3,
         "location": [
             "forest"
         ],
         "required_cat_types": {
             "patrol_cats": [
-                4,
-                6
+                1,
+                1
             ]
         },
-        "chance_of_success": 10,
-        "patrol_art": "backgrounds/fst_twolegplace",
+        "chance_of_success": 50,
+        "patrol_art": "animals/fst_squirrelchase",
         "intro_strings": [
-            "The patrol approaches a Twoleg nest in the woods while hunting."
+            "p_l notices a commotion and finds two squirrels chasing each other across the forest floor."
         ],
         "decline_strings": [
-            "The patrol decides to hunt elsewhere."
+            "p_l decides there's probably easier prey to find elsewhere."
         ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol cats split up, using sentries to ensure that the Twolegs don't disturb their hunts."
+                    "The squirrels are so distracted that p_l is able to quickly catch them both.",
+                    "p_l springs onto the squirrels without a second thought, easily dispatching them."
                 ],
                 "exp_gained": 10,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "mutual": false,
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_to led cat_from on a successful hunting patrol near a Twoleg nest."
-                        }
-                    }
-                ],
                 "supply": [
                     {
                         "type": "freshkill",
@@ -602,11 +635,20 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 4,
                 "strings": [
-                    "The patrol finds some astonishingly fat chickens running around the Twoleg nest and help themselves to as many as they can carry."
+                    "p_l is quick on the jump! Though the squirrels notice the cat and begin scampering away, p_l easily cuts them off and kills both squirrels."
                 ],
                 "exp_gained": 10,
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "skill": [
+                                "HUNTER,1"
+                            ]
+                        }
+                    }
+                },
                 "supply": [
                     {
                         "type": "freshkill",
@@ -619,7 +661,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Twoleg kits stomp through the woods, scaring away prey and ruining the hunt."
+                    "The squirrels are far too excited and quick — they slip right out from between p_l's claws."
                 ],
                 "exp_gained": 0,
                 "supply": [
@@ -628,66 +670,58 @@
                         "adjust": "increase_tiny"
                     }
                 ]
-            }
-        ],
-        "antag_success_outcomes": [
+            },
             {
                 "frequency": 4,
                 "strings": [
-                    "Finding a Twoleg kit wandering alone, the cats harass it until it flees squawking, its blood on their claws."
+                    "p_l runs at the squirrels, laughing at the prey's antics and playfully jumping into the middle of their game.  The squirrels scatter away at the disturbance and disappear into the canopy. p_l doesn't find much prey after that."
                 ],
-                "exp_gained": 10,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "values": [
-                            "like"
-                        ],
-                        "mutual": false,
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from had fun antagonizing Twoleg kits on a hunting patrol with cat_to."
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": [
+                                "troublesome",
+                                "childish",
+                                "playful"
+                            ]
                         }
                     }
+                },
+                "exp_gained": 0,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
                 ]
-            }
-        ],
-        "antag_fail_outcomes": [
+            },
             {
-                "frequency": 4,
+                "frequency": 3,
                 "strings": [
-                    "The Twoleg kits wandering around are unimpressed by the patrol and chase the cats for fun."
+                    "The squirrels dart up a tree, and p_l tries to climb up after them but slips and falls, twisting {PRONOUN/p_l/poss} paw."
                 ],
                 "exp_gained": 0,
-                "relationship_changes": [
+                "supply": [
                     {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
                             "p_l"
                         ],
-                        "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "mutual": false,
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from was not pleased that cat_to told {PRONOUN/cat_to/poss} patrol to attack Twoleg kits."
-                        }
+                        "condition": [
+                            "sprain"
+                        ]
                     }
                 ]
             }
         ]
     },
     {
-        "event_id": "fst_hunt_squirrelchase1",
+        "event_id": "fst_hunt_squirrelchase_group1",
         "types": [
             "hunting"
         ],
@@ -697,7 +731,7 @@
         ],
         "required_cat_types": {
             "patrol_cats": [
-                1,
+                2,
                 6
             ]
         },
@@ -713,38 +747,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The squirrels are so distracted that the patrol is able to quickly catch them both."
-                ],
-                "exp_gained": 10,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "mutual": false,
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to had a pleasant time hunting squirrels together."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
+                    "The squirrels are so distracted that the patrol is able to quickly catch them both.",
                     "The patrol springs onto the squirrels without a second thought, easily dispatching them."
                 ],
                 "exp_gained": 10,
@@ -779,6 +782,7 @@
                 "strings": [
                     "s_c0 is quick on the jump! Though the squirrels notice the cats and begin scampering away, s_c0 easily cuts them off and kills both squirrels."
                 ],
+                "exp_gained": 10,
                 "involved_cats": {
                     "s_c0": {
                         "prior_abbreviation": [
@@ -791,7 +795,6 @@
                         }
                     }
                 },
-                "exp_gained": 10,
                 "relationship_changes": [
                     {
                         "cats_from": [
@@ -836,7 +839,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 runs at the squirrels before anyone else can pounce, laughing at the prey's antics and playfully jumping into the middle of their game.  The squirrels scatter away at the disturbance and disappear into the canopy."
+                    "s_c0 runs at the squirrels before anyone else can pounce, laughing at the prey's antics and playfully jumping into the middle of their game.  The squirrels scatter away at the disturbance and disappear into the canopy. They can't find much prey afterwards."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -882,9 +885,16 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The squirrels dart up a tree, and r_c0 tries to climb up after them but slips and falls, twisting {PRONOUN/p_l/poss} paw."
+                    "The squirrels dart up a tree, and s_c0 tries to climb up after them but slips and falls, twisting {PRONOUN/s_c0/poss} paw."
                 ],
                 "exp_gained": 0,
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ]
+                    }
+                },
                 "supply": [
                     {
                         "type": "freshkill",
@@ -894,7 +904,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "condition": [
                             "sprain"
@@ -905,7 +915,7 @@
         ]
     },
     {
-        "event_id": "fst_hunt_howl1",
+        "event_id": "fst_hunt_howl_group1",
         "types": [
             "hunting"
         ],
@@ -915,15 +925,11 @@
         ],
         "required_cat_types": {
             "patrol_cats": [
-                4,
+                2,
                 6
-            ],
-            "leader": [
-                -1,
-                -1
             ]
         },
-        "chance_of_success": 10,
+        "chance_of_success": 40,
         "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
         "intro_strings": [
             "The patrol hears distant howling and wonders whether to investigate the noise."
@@ -935,14 +941,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol tracks the noise and discovers a coyote scavenging off a carcass. This is a predator they cannot fight. The patrol decides to return to camp and report the intruder to the leader instead. Perhaps they can return later to take what the coyote leaves behind."
+                    "The patrol tracks the noise and discovers a coyote scavenging off a carcass. This is a predator they cannot fight. The patrol decides to return to camp and report the intruder instead. Perhaps they can return later to take what the coyote leaves behind.",
+                    "The patrol tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight, and there may be more wolves nearby, so the patrol decides to return to camp and report the intruder. Perhaps they can return later to take what fresh-kill is left behind."
                 ],
                 "exp_gained": 30
             },
             {
                 "frequency": 1,
                 "strings": [
-                    "The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of coyote. They quickly scavenge what little is left and leave before the predator can return."
+                    "The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of coyote. They quickly scavenge what little is left and leave before the predator returns.",
+                    "The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of wolves. They quickly scavenge what little is left and leave before the predators return."
                 ],
                 "exp_gained": 30,
                 "supply": [
@@ -999,56 +1007,10 @@
             {
                 "frequency": 4,
                 "strings": [
+                    "The noise leads them to a wolf, eating from its kill. s_c0 instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. When s_c0 deems it safe, the patrol takes their turn stripping the leftover meat from the bones.",
                     "The noise leads them to a coyote, scavenging from a carcass. s_c0 instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the coyote eats its fill and disappears into the forest. When s_c0 deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
                 ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "careful",
-                                "calm",
-                                "responsible",
-                                "thoughtful",
-                                "wise"
-                            ]
-                        }
-                    }
-                },
                 "exp_gained": 30,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "mutual": false,
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was impressed by cat_to's cool head while dealing with a scavenging coyote."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "The noise leads them to a coyote, scavenging from a carcass. s_c0 instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the coyote eats its fill and disappears into the forest. When s_c0 deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
-                ],
                 "involved_cats": {
                     "s_c0": {
                         "prior_abbreviation": [
@@ -1057,11 +1019,18 @@
                         "stat": {
                             "skill": [
                                 "CLEVER,2"
-                            ]
+                            ],
+                            "trait": [
+                                "careful",
+                                "calm",
+                                "responsible",
+                                "thoughtful",
+                                "wise"
+                            ],
+                            "must_have_both": false
                         }
                     }
                 },
-                "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_from": [
@@ -1077,7 +1046,7 @@
                         "mutual": false,
                         "amount": 5,
                         "log": {
-                            "cats_from": "cat_from was impressed by cat_to's cool head while dealing with a scavenging coyote."
+                            "cats_from": "cat_from was impressed by cat_to's cool head while dealing with a scavenging canine."
                         }
                     }
                 ],
@@ -1093,617 +1062,49 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The noise leads them to a coyote that's busy stripping the last of the meat from a carcass. The patrol waits till the coyote leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned."
-                ],
-                "exp_gained": 0
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "They track the noise to a coyote. Before the patrol can investigate further, s_c0 whimpers in terror at the sight of the beast and dashes away.  The patrol follows anxiously, not wanting to lose sight of their Clanmate while a coyote is about."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "nervous",
-                                "insecure"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "mutual": false,
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from felt irritated with cat_to after {PRONOUN/cat_to/subject} ran off in fear at the sight of a coyote."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "The patrol finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cats, prove to be fiercely protective of its meal.  The patrol doesn't move fast enough and r_c0 is killed before {PRONOUN/r_c0/subject} can run."
-                ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 0,
-                "death": [
-                    {
-                        "cats": [
-                            "r_c0"
-                        ],
-                        "history": "m_c was killed by a coyote protecting its scavenged meal."
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "The sound leads them to a coyote, scavenging from a carcass. The coyote notices them before they can hide and lunges, making it clear that this food has been claimed.  r_c0 is momentarily caught in its jaws before the patrol retaliates and drives it off their Clanmate."
-                ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 0,
-                "condition": [
-                    {
-                        "cats": [
-                            "r_c0"
-                        ],
-                        "condition": [
-                            "big_bite_injury"
-                        ],
-                        "scar_history": "m_c was scarred by a coyote protecting its scavenged meal.",
-                        "death_history": "m_c died from injuries inflicted by a coyote protecting its scavenged meal."
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "fst_hunt_howl2",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 2,
-        "location": [
-            "forest"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                2,
-                4
-            ],
-            "leader": [
-                -1,
-                -1
-            ]
-        },
-        "chance_of_success": 30,
-        "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
-        "intro_strings": [
-            "The patrol hears distant howling and wonders whether to investigate the noise."
-        ],
-        "decline_strings": [
-            "The patrol decides not to investigate the source of the noise. Whatever is making it will not be friendly to them."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "The patrol tracks the noise and discovers a coyote scavenging off a carcass. This is a predator they cannot fight. The patrol decides to return to camp and report the intruder to the leader instead. Perhaps they can return later to take what the coyote leaves behind."
-                ],
-                "exp_gained": 30
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of coyote. They quickly scavenge what little is left and leave before the predator can return."
-                ],
-                "exp_gained": 30,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "The noise leads them to a coyote, scavenging from a carcass. s_c0 instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the coyote eats its fill and disappears into the forest. When s_c0 deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "skill": [
-                                "CLEVER,2"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 30,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "mutual": false,
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was impressed by cat_to's cool head while dealing with a scavenging coyote."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "The noise leads them to a coyote, scavenging from a carcass. s_c0 instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the coyote eats its fill and disappears into the forest. When s_c0 deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "careful",
-                                "calm",
-                                "responsible",
-                                "thoughtful",
-                                "wise"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 30,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "mutual": false,
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was impressed by cat_to's cool head while dealing with a scavenging coyote."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "The noise leads them to a coyote that's busy stripping the last of the meat from a carcass. The patrol waits till the coyote leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned."
-                ],
-                "exp_gained": 0
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "They track the noise to a coyote. Before the patrol can investigate further, s_c0 whimpers in terror at the sight of the beast and dashes away.  The patrol follows anxiously, not wanting to lose sight of their Clanmate while a coyote is about."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "nervous",
-                                "insecure"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "mutual": false,
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from felt irritated with cat_to after {PRONOUN/cat_to/subject} ran off in fear at the sight of a coyote."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "The patrol finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cats, proves to be fiercely protective of its meal. The patrol doesn't move fast enough and r_c0 is killed before {PRONOUN/r_c0/subject} can run."
-                ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 0,
-                "death": [
-                    {
-                        "cats": [
-                            "r_c0"
-                        ],
-                        "history": "m_c was killed by a coyote protecting its scavenged meal."
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "The sound leads them to a coyote, scavenging from a carcass. The coyote notices them before they can hide and lunges, making it clear that this food has been claimed.  r_c0 is momentarily caught in its jaws before the patrol retaliates and drives it off their Clanmate."
-                ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 0,
-                "condition": [
-                    {
-                        "cats": [
-                            "r_c0"
-                        ],
-                        "condition": [
-                            "big_bite_injury"
-                        ],
-                        "scar_history": "m_c was scarred by a coyote protecting its scavenged meal.",
-                        "death_history": "m_c died from injuries inflicted by a coyote protecting its scavenged meal."
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "fst_hunt_howl3",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 2,
-        "location": [
-            "forest"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                1,
-                1
-            ],
-            "leader": [
-                -1,
-                -1
-            ]
-        },
-        "chance_of_success": 10,
-        "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
-        "intro_strings": [
-            "p_l hears distant howling and wonders whether to investigate the noise."
-        ],
-        "decline_strings": [
-            "p_l decides not to investigate the source of the noise. Whatever is making it will not be friendly to {PRONOUN/p_l/object} and {PRONOUN/p_l/subject} {VERB/p_l/are/is} only one cat."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l tracks the noise and discovers a coyote scavenging off a carcass. This is a predator {PRONOUN/p_l/subject} cannot fight. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to return to camp and report the intruder to the leader. Perhaps a patrol can return later to take what the coyote leaves behind."
-                ],
-                "exp_gained": 30
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "p_l tracks the noise and finds a mostly stripped carcass covered in the scent of coyote. {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/scavenge/scavenges} what little is left and {VERB/p_l/leave/leaves} before the predator can return."
-                ],
-                "exp_gained": 30,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "The noise leads {PRONOUN/s_c0/object} to a coyote, scavenging from a carcass. s_c0 decides to wait in the brush, downwind from the canine, until it leaves. Eventually the coyote eats its fill and disappears into the forest. s_c0 waits a while longer, ensuring the coyote has truly left, and takes {PRONOUN/s_c0/poss} turn stripping the leftover meat from the bones."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "skill": [
-                                "CLEVER,2"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 30,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "The noise leads {PRONOUN/s_c0/object} to a coyote, scavenging from a carcass. s_c0 decides to wait in the brush, downwind from the canine, until it leaves. Eventually the coyote eats its fill and disappears into the forest. s_c0 waits a while longer, ensuring the coyote has truly left, and takes {PRONOUN/s_c0/poss} turn stripping the leftover meat from the bones."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "careful",
-                                "calm",
-                                "responsible",
-                                "thoughtful",
-                                "wise"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 30,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "The noise leads {PRONOUN/p_l/object} to a coyote that's busy stripping the last of the meat from a carcass. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wait/waits} till the coyote leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned."
-                ],
-                "exp_gained": 0
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "{PRONOUN/s_c0/subject/CAP} {VERB/s_c0/track/tracks} the noise to a coyote. s_c0 whimpers in terror at the sight of the beast and dashes away, running straight back to camp..."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "nervous",
-                                "insecure"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 0
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "p_l finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and, upon seeing the cat, proves to be fiercely protective of its meal. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} move fast enough and with no Clanmates to save {PRONOUN/p_l/object}, p_l is quickly killed."
-                ],
-                "exp_gained": 0,
-                "death": [
-                    {
-                        "cats": [
-                            "r_c0"
-                        ],
-                        "history": "m_c was killed by a coyote protecting its scavenged meal."
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "fst_hunt_howl4",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 2,
-        "location": [
-            "forest"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                5,
-                6
-            ],
-            "leader": [
-                -1,
-                -1
-            ]
-        },
-        "chance_of_success": 10,
-        "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
-        "intro_strings": [
-            "The patrol hears distant howling and wonders whether to investigate the noise."
-        ],
-        "decline_strings": [
-            "The patrol decides not to investigate the source of the noise. Whatever is making it will not be friendly to them."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "The patrol tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight, and there may be more wolves nearby, so the patrol decides to return to camp and report the intruder to the leader. Perhaps they can return later to take what fresh-kill is left behind."
-                ],
-                "exp_gained": 30
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of wolves. They quickly scavenge what little is left and leave before the predators can return."
-                ],
-                "exp_gained": 30,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "The noise leads them to a wolf, eating from its kill. s_c0 instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. When s_c0 deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "skill": [
-                                "CLEVER,2"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 30,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "mutual": false,
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was impressed by cat_to's cool head while dealing with a scavenging wolf."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "The noise leads them to a wolf, eating from its kill. s_c0 instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. When s_c0 deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "careful",
-                                "calm",
-                                "responsible",
-                                "thoughtful",
-                                "wise"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 30,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "mutual": false,
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was impressed by cat_to's cool head while dealing with a scavenging wolf."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
+                    "The noise leads them to a coyote that's busy stripping the last of the meat from a carcass. The patrol waits till the coyote leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
                     "The noise leads them to a wolf that's busy stripping the last of the meat from a carcass. The patrol waits till the wolf leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned."
                 ],
                 "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "They track the noise to a coyote. Before the patrol can investigate further, s_c0 whimpers in terror at the sight of the beast and dashes away.  The patrol follows anxiously, not wanting to lose sight of their Clanmate while a coyote is about."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "nervous",
+                                "insecure"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "mutual": false,
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from felt irritated with cat_to after {PRONOUN/cat_to/subject} ran off in fear at the sight of a coyote."
+                        }
+                    }
+                ]
             },
             {
                 "frequency": 4,
@@ -1745,18 +1146,40 @@
                 ]
             },
             {
-                "frequency": 3,
+                "frequency": 2,
                 "strings": [
-                    "The patrol finds a wolf pack at the source of the noise. The wolves are tearing into a dead deer and upon seeing the cats, prove to be fiercely protective of their meal. The patrol doesn't move fast enough and r_c0 is killed before {PRONOUN/r_c0/subject} can run."
+                    "The patrol finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cats, prove to be fiercely protective of its meal.  The patrol doesn't move fast enough, and s_c0 is killed before {PRONOUN/s_c0/subject} can run."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
                 "exp_gained": 0,
                 "death": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
+                        ],
+                        "history": "m_c was killed by a coyote protecting its scavenged meal."
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "strings": [
+                    "The patrol finds a wolf pack at the source of the noise. The wolves are tearing into a dead deer and upon seeing the cats, prove to be fiercely protective of their meal. The patrol doesn't move fast enough, and s_c0 is killed before {PRONOUN/s_c0/subject} can run."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "exp_gained": 0,
+                "death": [
+                    {
+                        "cats": [
+                            "s_c0"
                         ],
                         "history": "m_c was killed by a wolf pack protecting its meal."
                     }
@@ -1765,16 +1188,42 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The sound leads them to a wolf, scavenging from a carcass. The wolf notices them before they can hide and lunges, making it clear that this food has been claimed. r_c0 is momentarily caught in its jaws before the patrol retaliates and drives it off their Clanmate."
+                    "The sound leads them to a coyote, scavenging from a carcass. The coyote notices them before they can hide and lunges, making it clear that this food has been claimed. s_c0 is momentarily caught in its jaws before the patrol retaliates and drives it off their Clanmate."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
                 "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
+                        ],
+                        "condition": [
+                            "big_bite_injury"
+                        ],
+                        "scar_history": "m_c was scarred by a coyote protecting its scavenged meal.",
+                        "death_history": "m_c died from injuries inflicted by a coyote protecting its scavenged meal."
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "The sound leads them to a wolf, scavenging from a carcass. The wolf notices them before they can hide and lunges, making it clear that this food has been claimed. s_c0 is momentarily caught in its jaws before the patrol retaliates and drives it off their Clanmate."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "exp_gained": 0,
+                "condition": [
+                    {
+                        "cats": [
+                            "s_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -1787,215 +1236,7 @@
         ]
     },
     {
-        "event_id": "fst_hunt_howl5",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 2,
-        "location": [
-            "forest"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                2,
-                4
-            ],
-            "leader": [
-                -1,
-                -1
-            ]
-        },
-        "chance_of_success": 20,
-        "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
-        "intro_strings": [
-            "The patrol hears distant howling and wonders whether to investigate the noise."
-        ],
-        "decline_strings": [
-            "The patrol decides not to investigate the source of the noise. Whatever is making it will not be friendly to them."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "The patrol tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight and there may be more wolves nearby. The patrol decides to return to camp and report the intruder to the leader. Perhaps they can return later to take what little fresh-kill is left behind."
-                ],
-                "exp_gained": 30
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of wolves. They quickly scavenge what little is left and leave before the predators can return."
-                ],
-                "exp_gained": 30,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "The noise leads them to a wolf, scavenging from a carcass. s_c0 instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. When s_c0 deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "skill": [
-                                "CLEVER,2"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 30,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "mutual": false,
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was impressed by cat_to's cool head while dealing with a scavenging wolf."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "The noise leads them to a wolf, scavenging from a carcass. s_c0 instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. When s_c0 deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "careful",
-                                "calm",
-                                "responsible",
-                                "thoughtful",
-                                "wise"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 30,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "mutual": false,
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was impressed by cat_to's cool head while dealing with a scavenging wolf."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "The noise leads them to a wolf that's busy stripping the last of the meat from a carcass. The patrol waits till the wolf leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned."
-                ],
-                "exp_gained": 0
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "They track the noise to a wolf. Before the patrol can investigate further, s_c0 whimpers in terror at the sight of the beast and dashes away.  The patrol follows anxiously, not wanting to lose sight of their Clanmate while a wolf is about."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "nervous",
-                                "insecure"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "values": [
-                            "respect",
-                            "like"
-                        ],
-                        "mutual": false,
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from felt irritated with cat_to after {PRONOUN/cat_to/subject} ran off in fear at the sight of a wolf."
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "The patrol finds a wolf pack at the source of the noise. The wolves are busy eating from the carcass of a deer, and upon seeing the cats, prove to be fiercely protective of their meal.  The patrol doesn't move fast enough and r_c0 is killed before {PRONOUN/r_c0/subject} can run."
-                ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 0,
-                "death": [
-                    {
-                        "cats": [
-                            "r_c0"
-                        ],
-                        "history": "m_c was killed by a wolf pack protecting its meal."
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "fst_hunt_howl6",
+        "event_id": "fst_hunt_howl_solo1",
         "types": [
             "hunting"
         ],
@@ -2007,13 +1248,9 @@
             "patrol_cats": [
                 1,
                 1
-            ],
-            "leader": [
-                -1,
-                -1
             ]
         },
-        "chance_of_success": 10,
+        "chance_of_success": 20,
         "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
         "intro_strings": [
             "p_l hears distant howling and wonders whether to investigate the noise."
@@ -2025,16 +1262,18 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l tracks the noise and discovers a wolf eating from its kill. This is a predator {PRONOUN/p_l/subject} cannot fight. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to return to camp and report the intruder to the leader instead. Perhaps a patrol can return later to take what the wolf leaves behind."
+                    "p_l tracks the noise and discovers a coyote scavenging off a carcass. This is a predator {PRONOUN/p_l/subject} cannot fight. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to return to camp and report the intruder. Perhaps a patrol can return later to take what the coyote leaves behind.",
+                    "p_l tracks the noise and discovers a wolf eating from its kill. This is a predator {PRONOUN/p_l/subject} cannot fight. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to return to camp and report the intruder instead. Perhaps a patrol can return later to take what the wolf leaves behind."
                 ],
-                "exp_gained": 40
+                "exp_gained": 30
             },
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l tracks the noise and finds a mostly stripped carcass covered in the scent of wolf. {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/scavenge/scavenges} what little is left and {VERB/p_l/leave/leaves} before the predator can return."
+                    "p_l tracks the noise and finds a mostly stripped carcass covered in the scent of coyote. {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/scavenge/scavenges} what little is left and {VERB/p_l/leave/leaves} before the predator returns.",
+                    "p_l tracks the noise and finds a mostly stripped carcass covered in the scent of wolf. {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/scavenge/scavenges} what little is left and {VERB/p_l/leave/leaves} before the predator returns."
                 ],
-                "exp_gained": 40,
+                "exp_gained": 30,
                 "supply": [
                     {
                         "type": "freshkill",
@@ -2045,50 +1284,27 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The noise leads {PRONOUN/s_c0/object} to a wolf, tearing into the carcass of a deer. s_c0 decides to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. s_c0 waits a while longer, ensuring the wolf has truly left, and takes {PRONOUN/s_c0/poss} turn stripping the leftover meat from the bones."
+                    "The noise leads {PRONOUN/p_l/object} to a coyote, scavenging from a carcass. p_l decides to wait in the brush, downwind from the canine, until it leaves. Eventually the coyote eats its fill and disappears into the forest. p_l waits a while longer, ensuring the coyote has truly left, and takes {PRONOUN/p_l/poss} turn stripping the leftover meat from the bones.",
+                    "The noise leads {PRONOUN/p_l/object} to a wolf, tearing into the carcass of a deer. p_l decides to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. p_l waits a while longer, ensuring the wolf has truly left, and takes {PRONOUN/p_l/poss} turn stripping the leftover meat from the bones."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "CLEVER,2"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 40,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "The noise leads {PRONOUN/s_c0/object} to a wolf, tearing into the carcass of a deer. s_c0 decides to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. s_c0 waits a while longer, ensuring the wolf has truly left, and takes {PRONOUN/s_c0/poss} turn stripping the leftover meat from the bones."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
+                            ],
                             "trait": [
                                 "careful",
                                 "calm",
                                 "responsible",
                                 "thoughtful",
                                 "wise"
-                            ]
+                            ],
+                            "must_have_both": false
                         }
                     }
                 },
-                "exp_gained": 40,
+                "exp_gained": 30,
                 "supply": [
                     {
                         "type": "freshkill",
@@ -2101,6 +1317,7 @@
             {
                 "frequency": 4,
                 "strings": [
+                    "The noise leads {PRONOUN/p_l/object} to a coyote that's busy stripping the last of the meat from a carcass. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wait/waits} till the coyote leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
                     "The noise leads {PRONOUN/p_l/object} to a wolf that's busy stripping the last of the meat from a carcass. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wait/waits} till the wolf leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned."
                 ],
                 "exp_gained": 0
@@ -2108,13 +1325,11 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "{PRONOUN/s_c0/subject/CAP} {VERB/s_c0/track/tracks} the noise to a wolf. s_c0 whimpers in terror at the sight of the beast and dashes away, running straight back to camp..."
+                    "{PRONOUN/p_l/subject/CAP} {VERB/p_l/track/tracks} the noise to a coyote. p_l whimpers in terror at the sight of the beast and dashes away, running straight back to camp...",
+                    "{PRONOUN/p_l/subject/CAP} {VERB/p_l/track/tracks} the noise to a wolf. p_l whimpers in terror at the sight of the beast and dashes away, running straight back to camp..."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "nervous",
@@ -2128,351 +1343,23 @@
             {
                 "frequency": 3,
                 "strings": [
+                    "p_l finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and, upon seeing the cat, proves to be fiercely protective of its meal. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} move fast enough and with no Clanmates to save {PRONOUN/p_l/object}, p_l is quickly killed.",
                     "p_l finds a wolf pack at the source of the noise. The pack is tearing into a deer carcass and, upon seeing the cat, prove to be fiercely protective of their meal. p_l doesn't move fast enough and is quickly killed with no Clanmates to save {PRONOUN/p_l/object}."
                 ],
                 "exp_gained": 0,
                 "death": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
-                        "history": "m_c was killed by a wolf pack protecting its meal."
+                        "history": "m_c was killed by a coyote protecting its scavenged meal."
                     }
                 ]
             }
         ]
     },
     {
-        "event_id": "fst_hunt_strange1",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 2,
-        "location": [
-            "forest"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                2,
-                6
-            ]
-        },
-        "chance_of_success": 50,
-        "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
-        "intro_strings": [
-            "The patrol looks around for something to disguise their scent while hunting."
-        ],
-        "decline_strings": [
-            "On second thought, maybe not."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "They can't think of anything that would work, but their hunt goes well regardless."
-                ],
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "A stinky bush will do! The plan works, and their hunt goes well."
-                ],
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 leads them to some deer droppings in the forest — it's not clean, but it's extremely effective, and the patrol hunts well."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "skill": [
-                                "CLEVER,2"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "values": [
-                            "comfort"
-                        ],
-                        "mutual": false,
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "However, that technique involved rolling in deer droppings, so cat_from was not keen to hunt with cat_to again."
-                        }
-                    },
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "values": [
-                            "respect"
-                        ],
-                        "mutual": false,
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was impressed by cat_to's clever technique for disguising scents during a hunting patrol."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 tells the patrol to roll in a patch of garlic to disguise their scent, which works perfectly. It's a funny taste to wash off their pelts though."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "strange"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "values": [
-                            "respect"
-                        ],
-                        "mutual": false,
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was impressed by cat_to's clever technique for disguising one's scent during a hunting patrol."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "The patrol finds nothing to disguise their scent, and no prey either."
-                ],
-                "exp_gained": 0
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "The patrol finds no prey; it seems like all the prey was scared off because of their stench!"
-                ],
-                "exp_gained": 0
-            }
-        ]
-    },
-    {
-        "event_id": "fst_hunt_strange2",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 3,
-        "location": [
-            "forest"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                1,
-                1
-            ]
-        },
-        "chance_of_success": 50,
-        "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
-        "intro_strings": [
-            "p_l looks around for something to disguise their scent while hunting."
-        ],
-        "decline_strings": [
-            "On second thought, maybe not."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "{PRONOUN/p_l/subject/CAP} can't think of anything that would work, but {PRONOUN/p_l/poss} hunt goes well regardless."
-                ],
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 finds some deer droppings in the forest — it's not clean, but it's extremely effective, and the hunt goes well."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "skill": [
-                                "CLEVER,2"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "clan",
-                            "high_stable"
-                        ],
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "values": [
-                            "comfort"
-                        ],
-                        "mutual": false,
-                        "amount": -3,
-                        "log": {
-                            "cats_from": "cat_from wondered why cat_to stank of deer droppings after returning from a hunt."
-                        }
-                    },
-                    {
-                        "cats_from": [
-                            "some_clan"
-                        ],
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "values": [
-                            "respect"
-                        ],
-                        "mutual": false,
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from was impressed by how much prey cat_to brought back after a solo-hunt."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 rolls in a patch of garlic to disguise {PRONOUN/p_l/poss} scent, which works perfectly. It's a funny taste to wash off {PRONOUN/p_l/poss} pelt though."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "strange"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l finds nothing to disguise {PRONOUN/p_l/poss} scent, and no prey either."
-                ],
-                "exp_gained": 0
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l finds no prey; it seems like all the prey was scared off because of {PRONOUN/p_l/poss} stench!"
-                ],
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "some_clan"
-                        ],
-                        "cats_to": [
-                            "r_c0"
-                        ],
-                        "values": [
-                            "respect",
-                            "comfort"
-                        ],
-                        "mutual": false,
-                        "amount": -3,
-                        "log": {
-                            "cats_from": "cat_to returned from a hunt empty-pawed and stinky. cat_from got an unfortunate noseful."
-                        }
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "fst_hunt_solo2",
+        "event_id": "fst_hunt_solo1",
         "types": [
             "hunting"
         ],
@@ -2509,7 +1396,7 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 2,
                 "strings": [
                     "p_l finds a fat, dumb, slow rabbit. {PRONOUN/p_l/subject/CAP} can barely drag the thing back to camp, but great StarClan it's juicy when {PRONOUN/p_l/subject} {VERB/p_l/sit/sits} down to eat it with {PRONOUN/p_l/poss} Clanmates."
                 ],
@@ -2524,17 +1411,20 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 gets the chance to try out an idea {PRONOUN/s_c0/subject}{VERB/s_c0/'ve/'s} been sitting on for a while. There's a rabbit warren that {PRONOUN/s_c0/subject}{VERB/s_c0/'ve/'s} spotted that's particularly badly built: {PRONOUN/s_c0/subject} {VERB/s_c0/dig/digs} down into one of the dens, fishing baby rabbits out by the pawful."
+                    "p_l gets the chance to try out an idea {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been sitting on for a while. There's a rabbit warren that {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} spotted that's particularly badly built. {PRONOUN/p_l/subject/CAP} {VERB/p_l/dig/digs} down into one of the dens, fishing baby rabbits out by the pawful."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "CLEVER,1"
-                            ]
+                            ],
+                            "trait": [
+                                "wise",
+                                "thoughtful",
+                                "cunning"
+                            ],
+                            "must_have_both": false
                         }
                     }
                 },
@@ -2549,13 +1439,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The prey is running terribly today. But, s_c0 has patience and wisely waits for the perfect opportunity instead of getting frustrated. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/come/comes} back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with {PRONOUN/s_c0/poss} thoughts while waiting for the prey to come to {PRONOUN/s_c0/object}."
+                    "The prey is running terribly today. But, p_l has patience and wisely waits for the perfect opportunity instead of getting frustrated. {PRONOUN/p_l/subject/CAP} {VERB/p_l/come/comes} back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with {PRONOUN/p_l/poss} thoughts while waiting for the prey to come to {PRONOUN/p_l/object}."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "calm",
@@ -2584,20 +1471,18 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "You can't catch what isn't there, and the prey today is very much not there."
+                    "You can't catch what isn't there, and the prey today is very much not there.",
+                    "All alone, {PRONOUN/p_l/subject} find {PRONOUN/p_l/self} occupied by {PRONOUN/p_l/poss} thoughts, rather than being occupied by hunting."
                 ],
                 "exp_gained": 0
             },
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/come/comes} back to camp, empty-pawed and prickling with frustration."
+                    "p_l starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. {PRONOUN/p_l/subject/CAP} {VERB/p_l/come/comes} back to camp, empty-pawed and prickling with frustration."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "bold",
@@ -2610,286 +1495,15 @@
                     }
                 },
                 "exp_gained": 0
-            }
-        ]
-    },
-    {
-        "event_id": "fst_hunt_solo_deputy",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 4,
-        "location": [
-            "forest"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                1,
-                1
-            ],
-            "deputy": [
-                1,
-                1
-            ]
-        },
-        "chance_of_success": 40,
-        "patrol_art": "backgrounds/fst_canopy",
-        "intro_strings": [
-            "p_l heads out into the forest alone, wanting to sink {PRONOUN/p_l/poss} teeth into some prey and have some time to {PRONOUN/p_l/self}."
-        ],
-        "decline_strings": [
-            "p_l turns back to camp, deciding that a group hunt would be more effective."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l heads off to one of {PRONOUN/p_l/poss} favorite spots in the forest, a grove of spread-out trees with thick underbrush providing excellent ambush chances. And what do you know, {PRONOUN/p_l/subject} {VERB/p_l/are/is} bush! Or {PRONOUN/p_l/subject} {VERB/p_l/were/was} as that squirrel was concerned. {PRONOUN/p_l/subject/CAP} {VERB/p_l/snicker/snickers} to {PRONOUN/p_l/self} as {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} back to camp."
-                ],
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "p_l finds a fat, dumb, slow rabbit. {PRONOUN/p_l/subject/CAP} can barely drag the thing back to camp, but great StarClan it's juicy when {PRONOUN/p_l/subject} {VERB/p_l/sit/sits} down to eat it with {PRONOUN/p_l/poss} Clanmates. Purring, {PRONOUN/p_l/subject} {VERB/p_l/take/takes} the opportunity for a moment of peace, relaxing with {PRONOUN/p_l/poss} friends."
-                ],
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
             },
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 gets the chance to try out an idea {PRONOUN/s_c0/subject}{VERB/s_c0/'ve/'s} been sitting on for a while. There's a rabbit warren that {PRONOUN/s_c0/subject}{VERB/s_c0/'ve/'s} spotted that's particularly badly built: {PRONOUN/s_c0/subject} {VERB/s_c0/dig/digs} down into one of the dens, fishing a couple baby rabbits out. This is a good spot to remember if c_n hits hard times."
+                    "p_l starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. {PRONOUN/p_l/subject/CAP} {VERB/p_l/give/gives} up and {VERB/p_l/return/returns} to camp, to try and at least make progress on all the work piling up there."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "skill": [
-                                "CLEVER,1"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "The prey is running terribly today. But s_c0 has patience and wisely waits for the perfect opportunity instead of getting frustrated. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/come/comes} back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with {PRONOUN/s_c0/poss} thoughts while waiting for the prey to come to {PRONOUN/s_c0/object}."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "calm",
-                                "careful",
-                                "insecure",
-                                "lonesome",
-                                "loyal",
-                                "nervous",
-                                "strange",
-                                "thoughtful",
-                                "wise"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "You can't catch what isn't there, and the prey today is very not there."
-                ],
-                "exp_gained": 0
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/give/gives} up and {VERB/s_c0/return/returns} to camp, to try and at least make progress on all the work piling up there."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "bold",
-                                "childish",
-                                "confident",
-                                "daring",
-                                "playful"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 0
-            }
-        ]
-    },
-    {
-        "event_id": "fst_hunt_solo_leader",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 4,
-        "location": [
-            "forest"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                1,
-                1
-            ],
-            "leader": [
-                1,
-                1
-            ]
-        },
-        "chance_of_success": 40,
-        "patrol_art": "backgrounds/fst_canopy",
-        "intro_strings": [
-            "p_l heads out into the forest alone, wanting to sink {PRONOUN/p_l/poss} teeth into some prey and have some time to {PRONOUN/p_l/self}."
-        ],
-        "decline_strings": [
-            "p_l turns back to camp, deciding that a group hunt would be more effective."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l heads off to one of {PRONOUN/p_l/poss} favorite spots in the forest, a grove of spread-out trees with thick underbrush providing excellent ambush chances. And what do you know, {PRONOUN/p_l/subject} {VERB/p_l/are/is} bush! Or {PRONOUN/p_l/subject} {VERB/p_l/were/was} as far as that squirrel was concerned. {PRONOUN/p_l/subject/CAP} {VERB/p_l/snicker/snickers} to {PRONOUN/p_l/self} as {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} back to camp."
-                ],
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "p_l finds a fat, dumb, slow rabbit. {PRONOUN/p_l/subject/CAP} can barely drag the thing back to camp, but great StarClan it's juicy when {PRONOUN/p_l/subject} {VERB/p_l/sit/sits} down to eat it with {PRONOUN/p_l/poss} Clanmates. Purring, {PRONOUN/p_l/subject} {VERB/p_l/take/takes} the opportunity for a moment of peace, relaxing with {PRONOUN/p_l/poss} friends."
-                ],
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 gets the chance to try out an idea {PRONOUN/s_c0/subject}{VERB/s_c0/'ve/'s} been sitting on for a while. There's a rabbit warren that {PRONOUN/s_c0/subject}{VERB/s_c0/'ve/'s} spotted that's particularly badly built: {PRONOUN/s_c0/subject} {VERB/s_c0/dig/digs} down into one of the dens, fishing a couple baby rabbits out. This is a good spot to remember if c_n hits hard times."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "skill": [
-                                "CLEVER,1"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "The prey is running terribly today. But, s_c0 has patience and wisely waits for the perfect opportunity instead of getting frustrated. {PRONOUN/s_c0/subject/CAP} come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with {PRONOUN/s_c0/poss} thoughts while waiting for the prey to come to {PRONOUN/p_l/object}."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "calm",
-                                "careful",
-                                "insecure",
-                                "lonesome",
-                                "loyal",
-                                "nervous",
-                                "strange",
-                                "thoughtful",
-                                "wise"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "You can't catch what isn't there, and the prey today is very not there."
-                ],
-                "exp_gained": 0
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/give/gives} up and {VERB/s_c0/return/returns} to camp, to try and at least make progress on all the work piling up there."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
+                        "status": ["deputy", "leader"],
                         "stat": {
                             "trait": [
                                 "bold",
@@ -4427,6 +3041,9 @@
                 "strings": [
                     "The rat rears up and hisses at r_c0, but while it's distracted, p_l takes it out with a quick strike."
                 ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -4434,7 +3051,7 @@
                             "p_l"
                         ],
                         "cats_to": [
-                            "p_l"
+                            "r_c0"
                         ],
                         "values": [
                             "trust",

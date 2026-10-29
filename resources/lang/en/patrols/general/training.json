@@ -21,7 +21,7 @@
                     "p_l"
                 ],
                 "cats_to": [
-                    "patrol_cats"
+                    "r_c0"
                 ],
                 "mutual": false,
                 "constraints": [
@@ -32873,13 +32873,13 @@
                             "p_l"
                         ],
                         "values": [
-                            "respect",
                             "like"
                         ],
-                        "amount": 10,
-                        "mutual": false,
+                        "amount": -10,
+                        "mutual": true,
                         "log": {
-                            "cats_from": "cat_from enjoyed learning about the history of the territory from cat_to."
+                            "cats_from": "cat_from was easily bored when cat_to kept prattling on about the history of the territory.",
+                            "cats_to": "cat_to was disappointed that cat_from paid little attention to {PRONOUN/cat_to/poss} lesson about the territory's history."
                         }
                     }
                 ]

@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "persistent_exhaustion_severe_headache",
+        "strings": [
+            "m_c curls up in {PRONOUN/m_c/poss} nest, trying to ignore a new, awful headache. Resting doesn't always fix it, but it's better than nothing."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
