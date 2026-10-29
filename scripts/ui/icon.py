@@ -17,6 +17,8 @@ class Icon(StrEnum):
     CLAN_OTHER = "\U0001f3f0"
     CLAN_UNKNOWN = "\U0001f3da"
 
+    STAR_SPARKLE = "\u2728"
+
     PAW = "\U0001f43e"
     MOUSE = "\U0001f401"
     SCRATCHES = "\U0001f485"
@@ -44,6 +46,7 @@ class Icon(StrEnum):
 
     MAGNIFY = "\U0001f50d"
     NOTEPAD = "\U0001f5c9"
+    X = "\u274c"
 
     MOON_PHASE0 = "\U0001f315"
     MOON_PHASE1 = "\U0001f316"
@@ -53,3 +56,7 @@ class Icon(StrEnum):
     MOON_PHASE5 = "\U0001f312"
     MOON_PHASE6 = "\U0001f313"
     MOON_PHASE7 = "\U0001f314"
+
+    LARGE_SQUARE = "\u25fe"
+    MEDIUM_SQUARE = "\u25fd"
+    SMALL_SQUARE = "\u25ab"

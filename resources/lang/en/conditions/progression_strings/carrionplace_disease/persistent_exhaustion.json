@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "carrionplace_disease_persistent_exhaustion0",
+        "strings": [
+            "m_c has survived carrionplace disease, but the illness has done a number on {PRONOUN/m_c/poss} body."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "grief_stricken_persistent_exhaustion0",
+        "strings": [
+            "Grief does funny things. Ever since {PRONOUN/m_c/poss} loved one died, m_c struggled to gain any energy, and it doesn't seem to be getting better."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

@@ -39,7 +39,7 @@
     }
   },
   "one_cat": {
-    "card_art": "origin/kitten.png",
+    "card_art": "origin/one_cat.png",
     "modifiers": {
       "clan_creation.minimum_membership": 1,
       "clan_creation.maximum_membership": 1,
@@ -49,7 +49,7 @@
     }
   },
   "young_old": {
-    "card_art": "origin/kitten.png",
+    "card_art": "origin/young_old.png",
     "modifiers": {
       "clan_creation.majority_rank": "elder",
       "clan_creation.rank_weights": {
@@ -64,14 +64,14 @@
     }
   },
   "barren_stocks": {
-    "card_art": "origin/public_enemy.png",
+    "card_art": "origin/barren_stocks.png",
     "modifiers": {
       "prey.start_amount": 0,
       "clan_resources.herbs.empty_starting_storage": true
     }
   },
   "meagre_stocks": {
-    "card_art": "origin/public_enemy.png",
+    "card_art": "origin/meagre_stocks.png",
     "modifiers": {
       "prey.start_amount": 30,
       "clan_resources.herbs.half_starting_storage": true

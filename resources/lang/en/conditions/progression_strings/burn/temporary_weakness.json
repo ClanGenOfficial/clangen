@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "burn_temporary_weakness0",
+        "strings": [
+            "After suffering burns, m_c's body won't immediately be back to normal."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

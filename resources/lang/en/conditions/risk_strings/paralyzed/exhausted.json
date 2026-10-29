@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "paralyzed_exhausted",
+        "strings": [
+            "m_c is a little extra tired from getting around this moon."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

@@ -699,7 +699,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "cat bite"
+                            "cat_bite"
                         ],
                         "scar_pool_override": [
                             "LEGBITE"
@@ -756,14 +756,12 @@
         ]
     },
     {
-        "event_id": "cat_sprites/gen_med_borderherb_Mc2",
+        "event_id": "gen_otherclan_raspberrymed_solo",
         "types": [
             "herb_gathering"
         ],
         "frequency": 2,
-        "season": [
-            "leaf-bare"
-        ],
+        "season": [],
         "required_cat_types": {
             "patrol_cats": [
                 1,
@@ -855,7 +853,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "condition": [
                             "battle_injury"
@@ -1092,8 +1090,8 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "bite-wound",
-                            "torn pelt"
+                            "bite_wound",
+                            "torn_pelt"
                         ],
                         "scar_history": "m_c followed the scent of a trespassing cat and {VERB/m_c/were/was} scarred by a dog.",
                         "death_history": "m_c died of injuries inflicted by a dog."
@@ -1311,8 +1309,8 @@
                             "p_l"
                         ],
                         "condition": [
-                            "bite-wound",
-                            "mangled tail"
+                            "bite_wound",
+                            "mangled_tail"
                         ],
                         "scar_history": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
                         "death_history": "m_c died from injuries inflicted by a dog."

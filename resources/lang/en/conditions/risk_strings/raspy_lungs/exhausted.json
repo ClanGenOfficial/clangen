@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "raspy_lungs_exhausted",
+        "strings": [
+            "Living with raspy lungs can be absolutely exhausting, as m_c is proving against {PRONOUN/m_c/poss} will."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

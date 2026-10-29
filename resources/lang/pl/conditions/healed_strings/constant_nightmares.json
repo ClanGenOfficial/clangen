@@ -1,0 +1,14 @@
+[
+    {
+        "event_id": "constant_nightmares0",
+        "strings": [
+            "m_c's constant nightmares have finally calmed.",
+            "m_c was struggling with a recent flood of nightmares, but thankfully they seem to have stopped.",
+            "m_c's nightmares have stopped.",
+            "m_c is no longer having constant nightmares."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

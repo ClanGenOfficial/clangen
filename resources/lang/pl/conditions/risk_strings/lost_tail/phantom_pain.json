@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "lost_tail_phantom_pain0",
+        "strings": [
+            "r_c0 can't give m_c answers; {PRONOUN/m_c/poss} tail is gone, and yet the pain in it remains."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "lost_tail_phantom_pain1",
+        "strings": [
+            "m_c can't understand how an appendage that isn't there can possibly itch so badly, but it's driving {PRONOUN/m_c/object} insane."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
