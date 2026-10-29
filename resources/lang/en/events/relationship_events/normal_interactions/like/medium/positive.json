@@ -1114,7 +1114,7 @@
             "m_c helped massage r_c's sore muscles.",
             "m_c brought r_c some herbs to soothe {PRONOUN/r_c/poss} uncomfortable muscles.",
             "m_c ensured r_c got extra comfortable bedding so {PRONOUN/r_c/subject} could actually get some rest.",
-            "helped r_c move something {PRONOUN/r_c/subject} {VERB/r_c/were/was} struggling with."
+            "m_c helped r_c move something {PRONOUN/r_c/subject} {VERB/r_c/were/was} struggling with."
         ],
         "involved_cats": {
             "m_c": {},
