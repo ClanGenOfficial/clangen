@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "weakened_muscles_small_cut",
+        "strings": [
+            "m_c managed to accidentally cut {PRONOUN/m_c/self} while taking a walk on flat ground. Ouch."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
