@@ -64,5 +64,11 @@
     "modifiers": {
       "prey.time_to_rot": 1
     }
+  },
+  "hostile_environs": {
+    "card_art": "environment/hostile_environs.png",
+    "modifiers": {
+      "patrol_generation.difficulty_modifier": 3.5
+    }
   }
 }
