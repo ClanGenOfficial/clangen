@@ -9191,9 +9191,6 @@
             "Can't bring {PRONOUN/m_c/self} to even stand up",
             "Can't stand for long",
             "Is resting",
-            "Wonders if {PRONOUN/m_c/poss} Clanmates think {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} just being lazy",
-            "Wonders if {PRONOUN/m_c/poss} Clanmates think {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} just faking {PRONOUN/m_c/poss} struggle",
-            "Feels bad for not being able to do as much as {PRONOUN/m_c/poss} Clanmates due to {PRONOUN/m_c/poss} condition",
             "Is trying to do some work but is struggling with the smallest of chores",
             "Is feeling weak",
             "Is retiring to {PRONOUN/m_c/poss} nest early",
@@ -9202,6 +9199,36 @@
         ],
         "involved_cats": {
             "m_c": {
+                "health": {
+                    "condition": [
+                        "weakened_muscles",
+                        "temporary_weakness",
+                        "persistent_exhaustion",
+                        "exhausted",
+                        "sore"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "weakened_and_exhaustion_gen",
+        "strings": [
+            "Wonders if {PRONOUN/m_c/poss} Clanmates think {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} just being lazy",
+            "Wonders if {PRONOUN/m_c/poss} Clanmates think {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} just faking {PRONOUN/m_c/poss} struggle",
+            "Feels bad for not being able to do as much as {PRONOUN/m_c/poss} Clanmates due to {PRONOUN/m_c/poss} condition"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "gloomy",
+                        "insecure",
+                        "lonesome",
+                        "nervous",
+                        "thoughtful"
+                    ]
+                },
                 "health": {
                     "condition": [
                         "weakened_muscles",
