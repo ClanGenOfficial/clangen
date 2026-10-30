@@ -1,15 +1,15 @@
 {
     "pl": {
-        "current_mate": "current mate",
-        "prev_mate": "previous mate",
-        "parent_of_inter": "parent of %{name}",
-        "second_parent": "second parent: %{name}",
+        "current_mate": "obecny partner",
+        "prev_mate": "poprzedni partner",
+        "parent_of_inter": "rodzic %{name}",
+        "second_parent": "drugi rodzic: %{name}",
         "blood_parent": {
-            "one": "blood parent: %{name}",
-            "many": "blood parents: %{name}"
+            "one": "biologiczny rodzic: %{name}",
+            "many": "biologiczni rodzice: %{name}"
         },
-        "mate_of_inter": "mate of %{name}",
-        "littermates": "litter mates",
-        "child_of_inter": "child of %{name}"
+        "mate_of_inter": "partner %{name}",
+        "littermates": "rodzeństwo jednego miotu",
+        "child_of_inter": "dziecko %{name}"
     }
 }
