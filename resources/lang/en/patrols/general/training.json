@@ -5710,7 +5710,9 @@
                 "status": [
                     "apprentice"
                 ],
-                "has_mentor": {"current": true}
+                "has_mentor": {
+                    "current": true
+                }
             }
         },
         "chance_of_success": 70,
@@ -5757,7 +5759,9 @@
                 ],
                 "involved_cats": {
                     "r_c2": {
-                        "has_mentor": {"current": true}
+                        "has_mentor": {
+                            "current": true
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -6694,7 +6698,9 @@
                                 "wise"
                             ]
                         },
-                        "has_mentor": {"current": true}
+                        "has_mentor": {
+                            "current": true
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -6845,7 +6851,9 @@
                                 "wise"
                             ]
                         },
-                        "has_mentor": {"current": true}
+                        "has_mentor": {
+                            "current": true
+                        }
                     }
                 },
                 "exp_gained": 0
@@ -32702,7 +32710,7 @@
             },
             {
                 "frequency": 4,
-                "outcome_art":"gen_train_argue_WrWr",
+                "outcome_art": "gen_train_argue_WrWr",
                 "strings": [
                     "s_c0 keeps distracting the patrol by goofing off, and p_l bites off a hiss of annoyance. {PRONOUN/p_l/subject/CAP} {VERB/p_l/weren't/wasn't} expecting a warrior to be the one acting like an apprentice during this exercise."
                 ],
@@ -34422,6 +34430,766 @@
                         "amount": 8,
                         "log": {
                             "cats_from": "cat_from indulged cat_to and let {PRONOUN/cat_to/object} run off during training."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_train_deputy_assess1",
+        "types": ["training"],
+        "frequency": 4,
+        "chance_of_success": 60,
+        "required_cat_types": {
+            "patrol_cats": [3, 6],
+            "deputy": [1, 1]
+        },
+        "involved_cats": {
+            "s_c0": {
+                "prior_abbreviation": ["any"],
+                "status": ["deputy"]
+            }
+        },
+        "intro_strings": [
+            "As s_c0 and the patrol head out to train, {PRONOUN/s_c0/subject} {VERB/s_c0/decide/decides} to assess the other members of the patrol, hoping to get a feel for how each cat works with others.",
+            "s_c0 decides that today's training session will be a good one to help {PRONOUN/s_c0/object} get a feel for how all these cats work together. After all, it's important to make sure patrols are made up of cats who get along.",
+            "s_c0 had planned to come along on this training patrol specifically so {PRONOUN/s_c0/subject} could get a feel for who here works well with whom. Organizing patrols is an important job, and understanding the dynamics between all these cats is an essential part of it.",
+            "This patrol would be best spent observing the dynamics between the cats within it, s_c0 decides. After all, if s_c0 doesn't know how well {PRONOUN/s_c0/poss} Clanmates get along, how can {PRONOUN/s_c0/subject} organize efficient patrols?"
+        ],
+        "decline_strings": [
+            "On second thought, it would probably be better to just train as normal."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 2,
+                "strings": [
+                    "s_c0 has no trouble getting a good read on who works well with whom. This will be valuable information for the next time that s_c0 is splitting them up for patrols."
+                ],
+                "exp_gained": 30
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "s_c0 splits up the patrol into smaller groups in the hopes of better understanding how certain pairings work together. The training session goes well, with everyone getting along, and s_c0 is proud of {PRONOUN/s_c0/poss} intuition.",
+                    "s_c0 splits up the patrol into smaller groups in the hopes of better understanding how certain pairings work together. Training goes well enough, with most of the cats getting along. s_c0 takes notes on how to better pair each cat in the future.",
+                    "s_c0 splits up the patrol into smaller groups in the hopes of better understanding how certain pairings work together. {PRONOUN/s_c0/subject/CAP} definitely {VERB/s_c0/do/does} get a better understanding, though it's really just about who <i>doesn't</i> get along with whom. s_c0 takes notes on how to better pair each cat in the future."
+                ],
+                "exp_gained": 30
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 keeps a close eye on r_c0, noting how aggressively {PRONOUN/r_c0/subject} {VERB/r_c0/approach/approaches} a problem. {PRONOUN/s_c0/subject/CAP} certainly {VERB/s_c0/seem/seems} to solve problems in an efficient manner, but s_c0 considers if {PRONOUN/s_c0/subject} should try to pair r_c0 with more mellow cats, just to balance things out."
+                ],
+                "exp_gained": 30,
+                "involved_cats": {
+                    "r_c0": {
+                        "stat": {
+                            "trait": ["ambitious", "arrogant", "bloodthirsty", "bold", "competitive", "confident", "daring", "fierce",
+                                "rebellious", "righteous", "strict", "troublesome", "vengeful", "insecure"]
+                        }
+                    }
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 watches as r_c0 takes {PRONOUN/r_c0/poss} time explaining how r_c1 incorrectly approached a pounce. The instructions are clear, though not particularly concise, and s_c0 can see how r_c1's eyes are beginning to glaze over. s_c0 takes note of r_c0's particular teaching style. It might not work for everyone, but surely {PRONOUN/s_c0/subject} can think of someone who would benefit from careful directions."
+                ],
+                "exp_gained": 30,
+                "involved_cats": {
+                    "r_c0": {
+                        "stat": {
+                            "trait": ["calm", "careful", "compassionate", "lonesome", "nervous", "responsible", "sincere", "strange", "thoughtful",
+                                "wise"]
+                        },
+                        "status": ["-apprentice"]
+                    },
+                    "r_c1": {}
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": ["r_c1"],
+                        "cats_to": ["r_c0"],
+                        "mutual": false,
+                        "values": ["like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from did not enjoy listening to cat_to drone on and on about hunting pounces."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c0 is so distractible. s_c0 has no idea how that cat manages to get anything done and laments that {PRONOUN/s_c0/subject}'ll have to make sure any patrol r_c0 is on also has someone who can keep {PRONOUN/r_c0/object} in line.",
+                    "s_c0 can appreciate how much curiosity r_c0 seems to have for the world. However, that curiousity doesn't really help get work done. s_c0 will have to make sure r_c0 has a partner who will focus {PRONOUN/r_c0/object}."
+                ],
+                "exp_gained": 30,
+                "involved_cats": {
+                    "r_c0": {
+                        "stat": {
+                            "trait": ["adventurous", "childish", "playful", "strange", "oblivious"]
+                        }
+                    }
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c0's chill demeanor certainly makes {PRONOUN/r_c0/object} an efficient instructor, but s_c0 will have to be sure that {PRONOUN/r_c0/subject} don't end up grouped with the... Less confident cats. {PRONOUN/r_c0/poss/CAP} sharp words can cut a little deep at times."
+                ],
+                "exp_gained": 30,
+                "involved_cats": {
+                    "r_c0": {
+                        "stat": {
+                            "trait": ["cold", "cunning", "grumpy", "strict", "vengeful"]
+                        },
+                        "status": ["-apprentice"]
+                    }
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 winces as r_c0 timidly attempts a battle move against r_c1. Perhaps the more assertive cat can help r_c0 gain more confidence, but s_c0 considers if it would be better to pair the nervous cat with someone more mellow. These two certainly don't work well together."
+                ],
+                "exp_gained": 30,
+                "involved_cats": {
+                    "r_c0": {
+                        "stat": {
+                            "trait": ["nervous"]
+                        }
+                    },
+                    "r_c1": {
+                        "stat": {
+                            "trait": ["ambitious", "arrogant", "bloodthirsty", "bold", "competitive", "confident", "daring", "fierce",
+                                "rebellious", "righteous", "strict", "troublesome", "vengeful", "insecure"]
+                        }
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": ["r_c1"],
+                        "cats_to": ["r_c0"],
+                        "mutual": false,
+                        "values": ["like", "trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from wasn't impressed by cat_to's timid battle moves."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 decides to see how r_c0 and r_c1 work together. The two work on new fighting techniques and s_c0 is glad to see that the pair make a good team.",
+                    "r_c0 starts giving r_c1 hunting tips and s_c0 notes that the two make a great pair."
+                ],
+                "exp_gained": 30,
+                "involved_cats": {
+                    "r_c0": {},
+                    "r_c1": {}
+                },
+                "relationship_constraint": [
+                    {
+                        "cats_from": ["r_c0"],
+                        "cats_to": ["r_c1"],
+                        "mutual": false,
+                        "constraints": ["mentor/app"]
+                    },
+                    {
+                        "cats_from": ["r_c0"],
+                        "cats_to": ["r_c1"],
+                        "mutual": true,
+                        "constraints": ["relates_to"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "tags": ["clan:leader"],
+                "strings": [
+                    "r_c0 and r_c1 don't really seem to make a great pair. It's clear, from s_c0's observations, that the apprentice is terrified of {PRONOUN/r_c1/poss} own mentor. Perhaps s_c0 needs to speak to lead_name about this and have r_c1 moved to a different mentor."
+                ],
+                "exp_gained": 30,
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": ["wise", "thoughtful", "calm", "careful", "compassionate", "cunning", "responsible"]
+                        }
+                    },
+                    "r_c0": {},
+                    "r_c1": {}
+                },
+                "relationship_constraint": [
+                    {
+                        "cats_from": ["r_c0"],
+                        "cats_to": ["r_c1"],
+                        "mutual": false,
+                        "constraints": ["mentor/app"]
+                    },
+                    {
+                        "cats_from": ["r_c1"],
+                        "cats_to": ["r_c0"],
+                        "mutual": false,
+                        "constraints": ["fears"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 watches as r_c0 and r_c1 bicker and hiss over who should be the attacker and who should be the defender in their spar. Clearly s_c0 shouldn't put these two on the same patrol in the future. The training session may have been disrupted, but at least s_c0 learned some good information."
+                ],
+                "exp_gained": 30,
+                "involved_cats": {
+                    "r_c0": {
+                        "status": ["warrior"]
+                    },
+                    "r_c1": {
+                        "status": ["warrior"]
+                    }
+                },
+                "relationship_constraint": [
+                    {
+                        "cats_from": ["r_c0"],
+                        "cats_to": ["r_c1"],
+                        "mutual": true,
+                        "constraints": ["dislikes"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": ["r_c0"],
+                        "cats_to": ["r_c1"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to bickered over who would take what role in a spar."
+                        }
+                    },
+                    {
+                        "cats_from": ["patrol_cats", "-r_c0", "-r_c1"],
+                        "cats_to": ["r_c0", "r_c1"],
+                        "mutual": false,
+                        "values": ["like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from felt like r_c0 and r_c1 disrupted the training patrol with their bickering."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "Despite {PRONOUN/s_c0/poss} dislike of r_c0, s_c0 does {PRONOUN/s_c0/poss} best to be impartial. In the end, s_c0 has a new appreciation for how well r_c0 seems to work with the other members of the patrol."
+                ],
+                "exp_gained": 30,
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": ["wise", "responsible", "compassionate", "thoughtful"]
+                        }
+                    },
+                    "r_c0": {}
+                },
+                "relationship_constraint": [
+                    {
+                        "cats_from": ["s_c0"],
+                        "cats_to": ["r_c0"],
+                        "mutual": false,
+                        "constraints": ["dislikes"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": ["s_c0"],
+                        "cats_to": ["r_c0"],
+                        "mutual": false,
+                        "values": ["comfort", "like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from's feelings about cat_to were swayed during a pleasant training patrol."
+                        }
+                    },
+                    {
+                        "cats_from": ["patrol_cats", "-s_c0", "-r_c0"],
+                        "cats_to": ["r_c0"],
+                        "mutual": false,
+                        "values": ["like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from enjoyed a pleasant training patrol with cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 watches with amusement as r_c0 and r_c1 put on a great show of working well together. It's clear that the two are hoping s_c0 will keep putting them on patrols with one another. Perhaps they'll just get up to mischief if s_c0 does, but their good teamwork does seem at least a little bit genuine.",
+                    "s_c0 watches as r_c0 and r_c1 trip over each other for the whole training session. Though, they seem to be trying really hard to work together. s_c0 ends up calling off the patrol early, but still praises them for trying their best."
+                ],
+                "exp_gained": 30,
+                "involved_cats": {
+                    "r_c0": {
+                        "status": ["apprentice"]
+                    },
+                    "r_c1": {
+                        "status": ["apprentice"]
+                    }
+                },
+                "relationship_constraint": [
+                    {
+                        "cats_from": ["r_c0"],
+                        "cats_to": ["r_c1"],
+                        "mutual": true,
+                        "constraints": ["likes"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 notes, with mild frustration, that r_c0 and r_c1 should <i>not</i> be on a patrol together in the future. {PRONOUN/s_c0/poss/CAP} children spend the whole training session bickering nonstop. Perhaps s_c0 should have expected this behavior, but at least {PRONOUN/s_c0/subject} {VERB/s_c0/know/knows} about it now, despite the headache it has caused."
+                ],
+                "exp_gained": 30,
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": ["-oblivious", "-ambitious", "-arrogant", "-childish", "-lonesome", "-troublesome"]
+                        }
+                    },
+                    "r_c0": {},
+                    "r_c1": {}
+                },
+                "relationship_constraint": [
+                    {
+                        "cats_from": ["s_c0"],
+                        "cats_to": ["r_c1", "r_c0"],
+                        "mutual": false,
+                        "constraints": ["parent/child"]
+                    },
+                    {
+                        "cats_from": ["r_c0"],
+                        "cats_to": ["r_c1"],
+                        "mutual": false,
+                        "constraints": ["littermates"]
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": ["s_c0"],
+                        "condition": ["headache"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 realizes, with immense frustration, that r_c0 and r_c1 should <i>not</i> be on a patrol together in the future. {PRONOUN/s_c0/poss/CAP} children spend the whole training session bickering nonstop. Perhaps s_c0 should have noticed this behavior sooner, but at least {PRONOUN/s_c0/subject} {VERB/s_c0/know/knows} about it now, despite the headache it has caused."
+                ],
+                "exp_gained": 30,
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": ["oblivious", "ambitious", "arrogant", "childish", "lonesome", "troublesome"]
+                        }
+                    },
+                    "r_c0": {},
+                    "r_c1": {}
+                },
+                "relationship_constraint": [
+                    {
+                        "cats_from": ["s_c0"],
+                        "cats_to": ["r_c1", "r_c0"],
+                        "mutual": false,
+                        "constraints": ["parent/child"]
+                    },
+                    {
+                        "cats_from": ["r_c0"],
+                        "cats_to": ["r_c1"],
+                        "mutual": false,
+                        "constraints": ["littermates"]
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": ["s_c0"],
+                        "condition": ["headache"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 notices, as the training session goes on, that r_c0 and r_c1 seems to work especially well together. They have good instincts for each other's fighting style, s_c0 wonders if this might be due to their shared history as rogues."
+                ],
+                "exp_gained": 30,
+                "involved_cats": {
+                    "r_c0": {
+                        "past_status": [
+                            "rogue",
+                            "-kitten",
+                            "-apprentice",
+                            "-medicine cat apprentice",
+                            "-mediator apprentice"
+                        ]
+                    },
+                    "r_c1": {
+                        "past_status": [
+                            "rogue",
+                            "-kitten",
+                            "-apprentice",
+                            "-medicine cat apprentice",
+                            "-mediator apprentice"
+                        ]
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": ["r_c0"],
+                        "cats_to": ["r_c1"],
+                        "mutual": false,
+                        "values": ["comfort", "like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had a good time trading battle knowledge from their old lives as rogues."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "required_cat_types": {
+                    "patrol_cats": [5, 6]
+                },
+                "strings": [
+                    "p_l ends up joining s_c0 in {PRONOUN/s_c0/poss} observations, remarking every so often on the behavior of certain cats. It's a pleasant way to spend the day and s_c0 feels even more confident in {PRONOUN/s_c0/poss} knowledge by the time the patrol returns to camp."
+                ],
+                "exp_gained": 30,
+                "involved_cats": {
+                    "p_l": {
+                        "status": ["leader"]
+                    }
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "If s_c0 feels a tad awkward including p_l in {PRONOUN/s_c0/poss} observations, {PRONOUN/s_c0/subject} {VERB/s_c0/don't/doesn't} show it. It's important to assess everyone, even the leader. s_c0 hopes {PRONOUN/s_c0/poss} own deputy will do the same someday."
+                ],
+                "exp_gained": 30,
+                "involved_cats": {
+                    "p_l": {
+                        "status": ["leader"]
+                    },
+                    "s_c0": {
+                        "stat": {
+                            "trait": ["-nervous"]
+                        }
+                    }
+                }
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 2,
+                "strings": [
+                    "s_c0 tries to keep an eye on every cat in the patrol, but they all decide to split up and train separately. It becomes far too difficult to assess anything when no one is really working together at all."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "s_c0 splits up the patrol into smaller groups in the hopes of better understanding how certain pairings work together. Nothing goes well, it seems s_c0 didn't set up very cohesive groups. s_c0 is frustrated with everyone's performance and ends things early, {PRONOUN/s_c0/poss} dour mood souring the patrol."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": ["patrol_cats"],
+                        "cats_to": ["s_c0"],
+                        "mutual": false,
+                        "values": ["comfort", "like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from felt wary around cat_to after a training session went sour."
+                        }
+                    },
+                    {
+                        "cats_from": ["patrol_cats", "high_lawful", "high_social"],
+                        "cats_to": ["s_c0"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from felt like s_c0 didn't do a great job grouping cats together for training."
+                        }
+                    },
+                    {
+                        "cats_from": ["s_c0"],
+                        "cats_to": ["patrol_cats"],
+                        "mutual": false,
+                        "values": ["like", "trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from was frustrated with cat_to's performance during a training session."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 can't decide if r_c0 will have to be the leader of every patrol {PRONOUN/s_c0/subject} go on, or if it would be better to always pair {PRONOUN/s_c0/object} up with someone s_c0 knows the cat will respect. r_c0 is just so controlling, always insisting that other cats follow {PRONOUN/r_c0/poss} lead. It's an attitude that could easily tear a patrol apart. The conundrum follows s_c0 back to camp."
+                ],
+                "exp_gained": 0,
+                "involved_cats": {
+                    "r_c0": {
+                        "stat": {
+                            "trait": ["ambitious", "arrogant", "bloodthirsty", "bold", "competitive", "confident", "daring", "fierce",
+                                "rebellious", "righteous", "strict", "troublesome", "vengeful"]
+                        },
+                        "status": ["-apprentice"]
+                    }
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "All throughout the training session s_c0 can't manage to put {PRONOUN/s_c0/poss} of r_c0 aside. No real assessing gets done due to the distraction."
+                ],
+                "exp_gained": 0,
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": ["-wise", "-responsible", "-compassionate", "-thoughtful"]
+                        }
+                    },
+                    "r_c0": {}
+                },
+                "relationship_constraint": [
+                    {
+                        "cats_from": ["s_c0"],
+                        "cats_to": ["r_c0"],
+                        "mutual": false,
+                        "constraints": ["dislikes"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 spends the training session being overly harsh to r_c0, rather than doing any assessing of teamwork. Nothing productive really gets done, and it seems this patrol was a waste of everyone's time."
+                ],
+                "exp_gained": 0,
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": ["-wise", "-responsible", "-compassionate", "-thoughtful"]
+                        }
+                    },
+                    "r_c0": {}
+                },
+                "relationship_constraint": [
+                    {
+                        "cats_from": ["s_c0"],
+                        "cats_to": ["r_c0"],
+                        "mutual": false,
+                        "constraints": ["dislikes"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": ["r_c0"],
+                        "cats_to": ["s_c0"],
+                        "mutual": false,
+                        "values": ["comfort", "like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to spent a whole training patrol berating cat_from."
+                        }
+                    },
+                    {
+                        "cats_from": ["patrol_cats", "-s_c0", "-r_c0", "low_aggress"],
+                        "cats_to": ["s_c0"],
+                        "mutual": false,
+                        "values": ["like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from was shocked to see how harshly cat_to critiqued r_c0 during a training patrol."
+                        }
+                    },
+                    {
+                        "cats_from": ["patrol_cats", "-s_c0", "-r_c0", "high_aggress"],
+                        "cats_to": ["s_c0"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "During a training patrol, cat_from was pleased by the high standards s_c0 keeps."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "required_cat_types": {
+                    "patrol_cats": [5, 6]
+                },
+                "strings": [
+                    "r_c0 and r_c1 seem to be bickering throughout the whole training session; it sounds like they can't quite decide who should be doing what. Their whispering ends up distracting s_c0 so much that {PRONOUN/s_c0/subject} can't focus at all on assessing the other cats."
+                ],
+                "exp_gained": 0,
+                "involved_cats": {
+                    "r_c0": {
+                        "status": ["apprentice"]
+                    },
+                    "r_c1": {
+                        "status": ["apprentice"]
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": ["r_c0"],
+                        "cats_to": ["r_c1"],
+                        "mutual": true,
+                        "values": ["like"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to couldn't figure out how to work together during a training patrol."
+                        }
+                    },
+                    {
+                        "cats_from": ["s_c0"],
+                        "cats_to": ["r_c0", "r_c1"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from was frustrated at how much r_c0 and r_c1 bickered during a training patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 spends the whole training session observing the other cats, but by the end, still isn't really sure if {PRONOUN/s_c0/subject} {VERB/s_c0/understand/understands} all the dynamics going on under the surface. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/wonder/wonders} if perhaps {PRONOUN/s_c0/subject} {VERB/s_c0/aren't/isn't} cut out for deputy."
+                ],
+                "exp_gained": 0,
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": ["nervous", "insecure", "gloomy", "grumpy"]
+                        }
+                    }
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "It's clear that s_c0 isn't quite confident about including p_l in this assessment. The odd energy {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} putting off affects the whole patrol. After a while, p_l calls it off and just has them return home"
+                ],
+                "exp_gained": 10,
+                "involved_cats": {
+                    "p_l": {
+                        "status": ["leader"]
+                    },
+                    "s_c0": {
+                        "stat": {
+                            "trait": ["nervous"]
+                        }
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": ["p_l"],
+                        "cats_to": ["s_c0"],
+                        "mutual": true,
+                        "values": ["like", "trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from was confused by cat_to's strange energy during a training patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "This... Isn't working. s_c0 will have to find someone else to pair r_c0 with other than r_c1. It's clear that r_c0 is greatly intimidated by the other cat, and the two can't get anything done because of it."
+                ],
+                "exp_gained": 0,
+                "involved_cats": {
+                    "r_c0": {},
+                    "r_c1": {}
+                },
+                "relationship_constraint": [
+                    {
+                        "cats_from": ["r_c0"],
+                        "cats_to": ["r_c1"],
+                        "mutual": false,
+                        "constraints": ["fears"]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "tags": ["clan:leader"],
+                "strings": [
+                    "s_c0 is frustrated to see how r_c0 and r_c1 struggle with training. r_c1 seems to be far too meek and, later, s_c0 has a stern discussion with the apprentice about appropriate conduct for a warrior."
+                ],
+                "exp_gained": 0,
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": ["arrogant", "strict", "cold", "grumpy", "vengeful", "insecure", "fierce"]
+                        }
+                    },
+                    "r_c0": {},
+                    "r_c1": {}
+                },
+                "relationship_constraint": [
+                    {
+                        "cats_from": ["r_c0"],
+                        "cats_to": ["r_c1"],
+                        "mutual": false,
+                        "constraints": ["mentor/app"]
+                    },
+                    {
+                        "cats_from": ["r_c1"],
+                        "cats_to": ["r_c0"],
+                        "mutual": false,
+                        "constraints": ["fears"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": ["r_c1"],
+                        "cats_to": ["s_c0"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_to gave cat_from a stern scolding about not acting aggressive enough for a warrior-in-training."
+                        }
+                    },
+                    {
+                        "cats_from": ["s_c0"],
+                        "cats_to": ["r_c1"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to was disappointed in cat_from's meek behavior."
                         }
                     }
                 ]
