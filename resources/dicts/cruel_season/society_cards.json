@@ -55,7 +55,7 @@
   "disorganized": {
     "card_art": "society/resolute.png",
     "modifiers": {
-      "patrol_related.allow_nonrandom_selection.all": false
+      "patrol_related.allow_player_selection.all": false
     }
   }
 }

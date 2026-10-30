@@ -430,7 +430,7 @@ class PatrolScreen(Screens):
 
             self.elements["info"].kill()  # clearing the text before displaying new text
 
-            if not get_config("patrol_related.allow_nonrandom_selection.all"):
+            if not get_config("patrol_related.allow_player_selection.all"):
                 self.elements["paw"].disable()
                 self.elements["mouse"].disable()
                 self.elements["claws"].disable()
