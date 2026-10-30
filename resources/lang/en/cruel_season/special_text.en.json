@@ -6,6 +6,13 @@
     },
     "stolen_vitality_failed": "The price could not be paid in full; %{lead_name} pays the rest.",
     "stolen_vitality_sacrifice_history": "m_c paid the price for r_c's revival.",
-    "stolen_vitality_lead_history": "No cat remained to give their life for m_c's."
+    "stolen_vitality_lead_history": "No cat remained to give their life for m_c's.",
+    "sinkhole_base": {
+      "zero": "As the recent 12 moons come to an end, %{clan_name} breathes a sigh of relief. The force eating away at their numbers was merciful this time, allowing %{clan_name} to go another moon without extended sorrow.",
+      "one": "Though %{clan_name} would've preffered to have all it's members living, the Clan counts themselves lucky. Only %{dead_name}'s life was lost.",
+      "some": "%{dead_name} lost their lives this moon to a mysterious force.",
+      "many": "The cats of %{clan_name} stare to the stars, wondering what they possibly did to warrant such a cruel fate. %{dead_name} have all lost their lives, leaving the clan feeling broken."
+    },  
+    "sinkhole_history": "A mysterious force took the life of m_c."
   }
 }
