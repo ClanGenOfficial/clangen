@@ -7,7 +7,7 @@ from scripts.events_module.event_information import EventInformation
 from scripts.housekeeping.datadir import get_save_dir
 
 from scripts.game_structure import constants
-from scripts.game_structure.screen_settings import toggle_fullscreen
+from scripts.game_structure.screen_settings import toggle_fullscreen, set_display_mode
 
 from . import save_load, settings, switches
 
@@ -224,7 +224,7 @@ def reset_used_group_IDs():
 
 pygame.display.set_caption("Clan Generator")
 
-toggle_fullscreen(
+set_display_mode(
     fullscreen=game_setting_get("fullscreen"),
     show_confirm_dialog=False,
     ingame_switch=False,

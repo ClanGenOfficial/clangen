@@ -117,7 +117,9 @@ def adjust_row(
             None
             for x in range(
                 int(
-                    ui_scale_value(display.get_surface().get_width())
+                    ui_scale_value(
+                        scripts.game_structure.screen_settings.window.get_surface().get_width()
+                    )
                     / ui_scale_value(10)
                 )
                 + 1
