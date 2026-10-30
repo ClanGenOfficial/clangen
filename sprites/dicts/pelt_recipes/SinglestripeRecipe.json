@@ -76,34 +76,17 @@
         },
         {
             "colors": "BLOSSOM",
-            "layer_order": ["1", "2", "3", "4", "5", "6", ["7", "8",["9", "10", "+blend_mode:mask"]]],
+            "layer_order": ["1", "2", "2.5", "3", "4", "5", ["4.5", "6", ["7", "8", "+blend_mode:mask"]]],
             "layers": {
-                "10":
+                "6":
                 {
-                    "group_name": "SINGLESTRIPEPATTERN"
-                },
-                "9":{
-                    "group_name": "SINGLESTRIPEPATTERNFADE",
-                    "opacity": 40
-                },
-                "8":
-                {
-                    "group_name": "BASICPATTERNGRAD",
+                    "group_name": "BACKTAILPATTERNGRAD",
                     "color": "pattern_gradient_top"
                 },
-                "7":
+                "4.5":
                 {
                     "group_name": "LEGBOTTOMGRAD",
                     "color": "pattern_gradient_bottom"
-                },
-                "6":{
-                    "group_name": "SINGLESTRIPEPATTERN",
-                    "color": "pattern"
-                },
-                "5":{
-                    "group_name": "SINGLESTRIPEPATTERNFADE",
-                    "opacity": 40,
-                    "color": "pattern"
                 },
                 "4":
                 {
@@ -111,21 +94,24 @@
                     "color": "singlecolour_blossom_base_gradient_top",
                     "opacity": 100
                 },
-                "3": {
+                "2.5": {
                     "group_name": "LEGBOTTOMGRAD",
                     "color": "base_gradient_legs_tail"
-                },
-                "2":
-                {
-                    "group_name": "SIMPLEBOTTOMGRAD",
-                    "color": "base_gradient_bottom"
-                },
-                "1":
-                {
-                    "group_name": "BASEMASK",
-                    "color": "base"
                 }
             }
-    }
+    },
+        {
+            "layer_order": ["1", "2", "3", "4", "5", ["6", ["7", "8", "+blend_mode:mask"]]],
+            "layers": {
+                "6": {
+                    "group_name": "BACKTAILPATTERNGRAD",
+                    "color": "pattern_gradient_top"
+                },
+                "3": {
+                    "group_name": "BACKTAILPATTERNGRAD",
+                    "color": "base_gradient_top"
+                }
+            }
+        }
     ]
 }

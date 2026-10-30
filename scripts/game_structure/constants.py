@@ -4,7 +4,6 @@ from pygame import Cursor, image, SYSTEM_CURSOR_ARROW
 import ujson
 
 # these scripts don't import any clangen scripts into themselves, so it's okay for them to be imported here
-from scripts.clan_resources.herb.herb import HERBS
 from scripts.clan_resources.supply import Supply
 
 from scripts.screens.enums import GameScreen
@@ -69,86 +68,12 @@ facet_range = [0, 16]
 OUTSIDER_REPS = ("welcoming", "neutral", "hostile")
 OTHER_CLAN_REPS = ("ally", "neutral", "hostile")
 
-INJURY_GROUPS = {
-    "battle_injury": [
-        "claw-wound",
-        "mangled leg",
-        "mangled tail",
-        "torn pelt",
-        "cat bite",
-    ],
-    "minor_injury": ["sprain", "sore", "bruises", "scrapes"],
-    "blunt_force_injury": ["broken bone", "broken back", "head damage", "broken jaw"],
-    "hot_injury": ["heat exhaustion", "heat stroke", "dehydrated"],
-    "cold_injury": ["shivering", "frostbite"],
-    "big_bite_injury": [
-        "bite-wound",
-        "broken bone",
-        "torn pelt",
-        "mangled leg",
-        "mangled tail",
-    ],
-    "small_bite_injury": ["bite-wound", "torn ear", "torn pelt", "scrapes"],
-    "beak_bite": ["beak bite", "torn ear", "scrapes"],
-    "rat_bite": ["rat bite", "torn ear", "torn pelt"],
-    "sickness": ["greencough", "redcough", "whitecough", "yellowcough"],
-}
-
-EVENT_ALLOWED_CONDITIONS = [
-    "tick bites",
-    "claw-wound",
-    "bite-wound",
-    "cat bite",
-    "beak bite",
-    "snake bite",
-    "quilled by a porcupine",
-    "rat bite",
-    "mangled leg",
-    "mangled tail",
-    "broken jaw",
-    "broken bone",
-    "sore",
-    "bruises",
-    "scrapes",
-    "cracked pads",
-    "small cut",
-    "sprain",
-    "bee sting",
-    "joint pain",
-    "dislocated joint",
-    "torn pelt",
-    "torn ear",
-    "water in their lungs",
-    "shivering",
-    "frostbite",
-    "burn",
-    "severe burn",
-    "shock",
-    "dehydrated",
-    "head damage",
-    "damaged eyes",
-    "broken back",
-    "poisoned",
-    "venom sickness",
-    "headache",
-    "severe headache",
-    "fleas",
-    "seizure",
-    "diarrhea",
-    "running nose",
-    "kittencough",
-    "whitecough",
-    "greencough",
-    "yellowcough",
-    "redcough",
-    "carrionplace disease",
-    "heat stroke",
-    "heat exhaustion",
-    "stomachache",
-    "constant nightmares",
-]
+HERBS: dict = {}
+with open("resources/dicts/herb_info.json", "r", encoding="utf-8") as read_file:
+    HERBS.update(ujson.loads(read_file.read()))
 
 SUPPLY_TYPES = ["fresh_kill", "all_herb", "any_herb"]
+
 SUPPLY_TYPES.extend(HERBS)
 
 SUPPLY_TRIGGERS = ["always", *Supply]
@@ -163,10 +88,22 @@ SUPPLY_ADJUSTMENTS = [
 
 CRUEL_CARDS_ALL: dict = {}
 with open(
+    "resources/dicts/cruel_season/origin_cards.json", "r", encoding="utf-8"
+) as read_file:
+    CRUEL_CARDS_ORIGIN: dict = ujson.loads(read_file.read())
+CRUEL_CARDS_ALL.update(CRUEL_CARDS_ORIGIN)
+
+with open(
     "resources/dicts/cruel_season/behavior_cards.json", "r", encoding="utf-8"
 ) as read_file:
     CRUEL_CARDS_BEHAVIOR: dict = ujson.loads(read_file.read())
 CRUEL_CARDS_ALL.update(CRUEL_CARDS_BEHAVIOR)
+
+with open(
+    "resources/dicts/cruel_season/society_cards.json", "r", encoding="utf-8"
+) as read_file:
+    CRUEL_CARDS_SOCIETY: dict = ujson.loads(read_file.read())
+CRUEL_CARDS_ALL.update(CRUEL_CARDS_SOCIETY)
 
 with open(
     "resources/dicts/cruel_season/danger_cards.json", "r", encoding="utf-8"
@@ -180,11 +117,6 @@ with open(
     CRUEL_CARDS_ENVIRONMENT: dict = ujson.loads(read_file.read())
 CRUEL_CARDS_ALL.update(CRUEL_CARDS_ENVIRONMENT)
 
-with open(
-    "resources/dicts/cruel_season/origin_cards.json", "r", encoding="utf-8"
-) as read_file:
-    CRUEL_CARDS_ORIGIN: dict = ujson.loads(read_file.read())
-CRUEL_CARDS_ALL.update(CRUEL_CARDS_ORIGIN)
 
 with open(
     "resources/dicts/cruel_season/card_conflicts.json", "r", encoding="utf-8"

@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "paralyzed0",
+        "strings": [
+            "r_c0 soothes m_c's frantically worried parent. The kit will never walk, but it's still possible for {PRONOUN/m_c/object} to have a happy, healthy life."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "paralyzed1",
+        "strings": [
+            "It's immediately clear that m_c can't feel {PRONOUN/m_c/poss} hindlegs as soon as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} born, but {PRONOUN/m_c/subject} {VERB/m_c/seem/seems} like a happy bundle of newborn fluff anyway."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

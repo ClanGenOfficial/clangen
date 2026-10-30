@@ -5,6 +5,7 @@ from typing import Optional
 import i18n
 
 from scripts.cat.cats import Cat
+from scripts.cat.conditions.gain_conditions import add_congenital_condition
 from scripts.cat.enums import CatAge, CatSocial, CatGroup, CatThought, CatCompatibility
 from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.factories.typed_dicts import StatusDict
@@ -13,20 +14,19 @@ from scripts.cat_relations.enums import RelType
 from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.cat_relations.relationship import Relationship, create_one_relationship
 from scripts.clan_package.settings import get_clan_setting
-from scripts.cat.microservices.conditions import add_congenital_condition
 from scripts.config import get_config
-from scripts.events_module.event_information import EventInformation
 from scripts.events_module.consequences import (
     create_new_cat,
     change_relationship_values,
 )
 from scripts.events_module.event_filters import get_personality_compatibility
+from scripts.events_module.event_information import EventInformation
 from scripts.events_module.pregnancy.build_strings import get_newborn_strings
 from scripts.events_module.pregnancy.check_family_size import (
     biggest_family_is_big,
     get_biggest_family,
 )
-from scripts.events_module.short.condition_events import Condition_Events
+from scripts.events_module.pregnancy.check_parents import check_parent_rank
 from scripts.events_module.text_adjust import event_text_adjust, adjust_list_text
 from scripts.game_structure import game
 
@@ -57,7 +57,7 @@ def get_kits(
     blood_parent = None
 
     ##### SELECT BACKSTORY #####
-    if cat and "pregnant" in cat.injuries:
+    if cat and "pregnant" in cat.temporary_conditions:
         backstory = choice(["halfclan1", "outsider_roots1"])
     elif cat:
         backstory = choice(["halfclan2", "outsider_roots2"])
@@ -208,12 +208,6 @@ def get_kits(
             random() * get_config("cat_generation.base_permanent_condition")
         ):
             add_congenital_condition(kit)
-            for condition in kit.permanent_condition:
-                if kit.permanent_condition[condition] == "born without a leg":
-                    cat.pelt.scars = (*cat.pelt.scars, "NOPAW")
-                elif kit.permanent_condition[condition] == "born without a tail":
-                    cat.pelt.scars = (*cat.pelt.scars, "NOTAIL")
-            Condition_Events.handle_already_disabled(kit)
 
         # create and update relationships
         relationships_to_update = []
@@ -424,6 +418,10 @@ def handle_adoption(cat: Cat, other_cat: Optional[Cat] = None):
     if (cat.ID in game.clan.pregnancy_data) or (
         other_cat and other_cat.ID in game.clan.pregnancy_data
     ):
+        return
+
+    # account for role limits
+    if not check_parent_rank(cat):
         return
 
     # Gather adoptive parents, to feed into the

@@ -86,7 +86,6 @@
             "m_c stiffens up a little whenever someone mentions r_c.",
             "m_c is tired of interacting with r_c lately.",
             "After sharing tongues, m_c washed off r_c's scent from {PRONOUN/m_c/poss} pelt.",
-            "A Clanmate notices m_c mocking r_c behind {PRONOUN/r_c/poss} back.",
             "When m_c needs someone to do {PRONOUN/m_c/object} a favor, {PRONOUN/m_c/subject} never {VERB/m_c/ask/asks} r_c first."
         ]
     },
@@ -142,7 +141,10 @@
                     "warrior",
                     "deputy",
                     "leader"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             },
             "r_c": {
                 "status": [
@@ -150,7 +152,10 @@
                     "warrior",
                     "deputy",
                     "leader"
-                ]
+                ],
+                "health": {
+                    "working": true
+                }
             }
         },
         "relationship_changes": [
@@ -249,6 +254,10 @@
             "r_c is telling others about how terrible m_c can really be.",
             "r_c leaves as soon as m_c arrives and refuses to be nearby."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [
@@ -302,13 +311,52 @@
             }
         ]
     },
-    {
+{
         "event_id": "dislike_dep_leader_inc_med1",
         "strings": [
             "m_c punishes r_c with extra work.",
             "m_c divides r_c into extra patrols.",
             "m_c gives r_c a particularly hard task, expecting {PRONOUN/r_c/object} to fail.",
-            "m_c always tries to avoid making r_c the leader of a patrol.",
+            "m_c always tries to avoid making r_c the leader of a patrol."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "deputy",
+                    "leader"
+                ],
+                "health": {
+                    "working": true
+                }
+            },
+            "r_c": {
+                "status": [
+                    "warrior"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "event_id": "dislike_dep_leader_inc_med1b",
+        "strings": [
             "m_c scolds r_c like a kit for something trivial.",
             "m_c says r_c sets a bad example of a warrior."
         ],
@@ -341,12 +389,50 @@
             }
         ]
     },
+    
     {
         "event_id": "dislike_dep_leader_inc_med2",
         "strings": [
             "m_c punishes r_c with extra work.",
             "m_c divides r_c into extra patrols.",
-            "m_c gives r_c a particularly hard task, expecting {PRONOUN/r_c/object} to fail.",
+            "m_c gives r_c a particularly hard task, expecting {PRONOUN/r_c/object} to fail."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "deputy",
+                    "leader"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "apprentice"
+                ],
+                "health":{
+                    "working": true
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "comfort"
+                ],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "event_id": "dislike_dep_leader_inc_med2b",
+        "strings": [
             "m_c threatens r_c with never passing {PRONOUN/r_c/poss} assessment!",
             "m_c tells other cats that r_c is not doing well in {PRONOUN/r_c/poss} training.",
             "m_c scolds r_c like a kit for something trivial.",
@@ -454,8 +540,6 @@
         "strings": [
             "m_c tried to have a friendly discussion with r_c about what prey tastes best, but it turned into an argument.",
             "m_c and r_c always end up arguing over what games to play.",
-            "m_c tells an older Clanmate that r_c did something bad.",
-            "m_c snitches on r_c to an older Clanmate.",
             "m_c cries that r_c hurt {PRONOUN/m_c/object}, but is lying.",
             "m_c is not playing fairly with r_c!"
         ],

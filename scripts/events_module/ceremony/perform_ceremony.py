@@ -5,13 +5,10 @@ from math import floor
 import i18n
 
 from scripts.cat.cats import cat_class, Cat
+from scripts.cat.conditions.coverage_check import medicine_cats_can_cover_clan
 from scripts.cat.enums import CatRank, CatAge
 from scripts.cat.skills import SkillPath
 from scripts.clan_package.settings import get_clan_setting
-from scripts.conditions import (
-    medicine_cats_can_cover_clan,
-    get_amount_cat_for_one_medic,
-)
 from scripts.config import get_config
 from scripts.events_module.ceremony.generate_normal_ceremony import create_ceremony
 from scripts.events_module.event_information import EventInformation
@@ -133,6 +130,11 @@ def check_for_ceremony(main_cat: Cat):
                 trigger_ceremony(main_cat, CatRank.MEDIATOR)
 
 
+def get_leaders_kits():
+    leaders_kits = game.clan.leader.get_children()
+    return leaders_kits
+
+
 def check_and_promote_deputy():
     """
     Checks if a new deputy needs to be appointed, and appoints them if necessary.
@@ -160,6 +162,13 @@ def check_and_promote_deputy():
         )
     )
 
+    if (
+        get_config("ranks.only_leader_kits_deputy")
+        and game.clan.leader
+        and game.clan.leader.status.alive_in_player_clan
+    ):
+        possible_deputies = [c for c in possible_deputies if c.ID in get_leaders_kits()]
+
     if possible_deputies:
         # from here we must have appropriate deputy choices
         main_cat = random.choice(possible_deputies)
@@ -172,9 +181,12 @@ def check_and_promote_deputy():
                 Cat.all_cats_list,
             )
         )
+
+        if get_config("ranks.only_leader_kits_deputy") and game.clan.leader is not None:
+            # If none of the leader's kits meet all the requirements for deputy, choose one randomly, with special text.
+            all_warriors = [c for c in all_warriors if c.ID in get_leaders_kits()]
         if all_warriors:
             main_cat = random.choice(all_warriors)
-
         else:
             # If there are no warriors at all, no one is named deputy.
             game.cur_events_list.append(
@@ -207,7 +219,7 @@ def _handle_leader_ceremony(main_cat):
     """
     Handles everything pertaining to a leader ceremony.
     """
-    game.clan.leader_lives = 9
+    game.clan.reset_leader_lives()
     trigger_ceremony(main_cat, CatRank.LEADER)
     main_cat.generate_lead_ceremony()
     game.clan.deputy = None
@@ -243,7 +255,7 @@ def _is_suitable_mediator_app(main_cat: Cat) -> bool:
         "thoughtful",
     ]:
         chance = int(chance / 1.5)
-    if main_cat.is_disabled():
+    if main_cat.permanent_conditions:
         chance = int(chance / 2)
     if chance == 0:
         chance = 1
@@ -283,10 +295,7 @@ def _is_suitable_medcat_app(cat) -> bool:
     logger.debug("Current number of medcat apps: %d", num_med_apps)
 
     # check if the Clan has sufficient med cats
-    enough_working_meds = medicine_cats_can_cover_clan(
-        Cat.all_cats.values(),
-        amount_per_med=get_amount_cat_for_one_medic(game.clan),
-    )
+    enough_working_meds = medicine_cats_can_cover_clan(Cat.all_cats.values())
 
     if (
         floor(num_med_apps / max(1, (len(med_cat_list) - num_med_apps)))
@@ -407,7 +416,7 @@ def _is_suitable_medcat_app(cat) -> bool:
         chance = chance / 4
         logger.info("beneficial secondary skill, chance updated to %d", round(chance))
 
-    if cat.is_disabled():
+    if cat.permanent_conditions:
         chance = chance / 2
 
     if num_med_apps == 0:

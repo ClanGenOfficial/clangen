@@ -1,0 +1,28 @@
+[
+    {
+        "event_id": "amputated_leg_infection0",
+        "strings": [
+            "r_c0 has been worried. It seems the stump of m_c's amputated leg has become infected."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ],
+                "group": [
+                    "match:m_c"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "amputated_leg_infection1",
+        "strings": [
+            "m_c's amputated leg has become infected."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

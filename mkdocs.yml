@@ -11,8 +11,11 @@ nav:
     - dev/index.md
     - Project Basics:
         - dev/project-basics/index.md
-        - dev/project-basics/development-team-roles.md
-        - dev/project-basics/getting-started-with-github-and-clangen.md
+        - dev/project-basics/joining-the-team.md
+        - dev/project-basics/team-roles.md
+        - dev/project-basics/team-culture.md
+        - dev/project-basics/code-and-github-basics.md
+        - dev/project-basics/dev-specific-guides.md
         - Senior Developer Guides:
             - dev/senior/index.md
     - Code:
@@ -24,6 +27,7 @@ nav:
         - dev/art/cat-sprites/adding-new-sprites.md
         - dev/code/content-adding.md
         - dev/code/localization.md
+        - dev/code/conditions.md
     - Writing:
         - dev/writing/index.md
         - Reference:
@@ -35,6 +39,7 @@ nav:
           - dev/writing/reference/involved-cat-dict.md
           - dev/writing/reference/pronoun-tags.md
           - dev/writing/reference/trait-dictionary.md
+          - dev/writing/reference/skill-dictionary.md
           - dev/writing/reference/biomes.md
           - dev/writing/reference/animals.md
           - dev/writing/reference/herbs.md
@@ -42,14 +47,16 @@ nav:
         - Patrols:
           - dev/writing/patrols/patrols.md
           - dev/writing/patrols/patrol_outcome.md
-        - Ceremonies:
-            - dev/writing/ceremonies/leader-ceremonies.md
-            - dev/writing/ceremonies/normal-ceremonies.md
+        - TextPoolEvents:
+          - dev/writing/textpoolevents/textpoolevent-format.md
+          - dev/writing/textpoolevents/normal-ceremonies.md
+          - dev/writing/textpoolevents/thoughts.md
+          - dev/writing/textpoolevents/relationship-events.md
+          - dev/writing/patrols/patrol_outcome.md
+        - dev/writing/leader-ceremonies.md
         - dev/writing/shortevents.md
         - dev/writing/future.md
         - dev/writing/leaders-den-events.md
-        - dev/writing/thoughts.md
-        - dev/writing/relationship-events.md
         - dev/writing/points-of-interest.md
         - dev/writing/localization.md
         - dev/writing/advanced-documentation.md

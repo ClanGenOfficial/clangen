@@ -57,8 +57,6 @@ def get_patrol_temperament(patrol_cats: list, patrol_leader=None) -> tuple[str, 
             weight = 2
         else:  # medicine cat and all others
             weight = 1
-        if patrol_leader is not None and cat == patrol_leader:
-            weight += 1
 
         sociability += [cat.personality.sociability] * weight
         aggression += [cat.personality.aggression] * weight
@@ -320,7 +318,9 @@ class Patrol:
 
         self.patrol_event = chosen_patrol
 
-    def _decide_if_romantic(self, romantic_event: Optional[PatrolEvent]) -> bool:
+    def _decide_if_romantic(
+        self, romantic_event: Optional[PatrolEvent], involved_cats: dict
+    ) -> bool:
         """
         Finds the chance of this patrol being romantic based on the cats involved and their current relationship with each other
         :return: True if patrol should be romantic, False otherwise
@@ -344,10 +344,10 @@ class Patrol:
                     Cat,
                     block["cats_from"],
                     event=self,
-                    involved_cats=self.involved_cats,
+                    involved_cats=involved_cats,
                 )
                 cats_to = gather_cat_objects(
-                    Cat, block["cats_to"], event=self, involved_cats=self.involved_cats
+                    Cat, block["cats_to"], event=self, involved_cats=involved_cats
                 )
                 # now affect the chance depending on the compatibility
                 for c in cats_from:
@@ -428,20 +428,10 @@ class Patrol:
             )
             if not chosen_patrol:
                 raise Exception(
-                    "ERROR: No patrols could be found, even after resetting the used patrol list."
+                    f"ERROR: No patrols could be found for type: {patrol_type}, even after resetting the used patrol list."
                 )
 
         return chosen_patrol
-
-    def _clear_used_and_retry(
-        self, possible_patrols: List[PatrolEvent], find_romance: bool = False
-    ):
-        """
-        Clears used patrols and attempts to get a new valid patrol
-        """
-        Patrol.used_patrols["romance" if find_romance else "normal"].clear()
-
-        return self._set_valid_patrol(possible_patrols, find_romance)
 
     def _set_valid_patrol(
         self, possible_patrols: List[PatrolEvent], find_romance: bool = False
@@ -474,21 +464,18 @@ class Patrol:
                     return None
 
                 # if we couldn't find a patrol, then we need to clear the used_patrols and try again
-                chosen_patrol = self._clear_used_and_retry(
-                    possible_patrols, find_romance=find_romance
-                )
-            else:
-                # otherwise, let's set our involved cats and move on with this patrol!
-                self.involved_cats = involved_cats
-                self.patrol_event = chosen_patrol
+                Patrol.used_patrols["romance" if find_romance else "normal"].clear()
+                patrols_to_test = possible_patrols.copy()
 
         if find_romance:
-            if not self._decide_if_romantic(chosen_patrol):
+            if not self._decide_if_romantic(chosen_patrol, involved_cats):
                 return None
             Patrol.used_patrols["romance"].append(chosen_patrol.event_id)
         else:
             Patrol.used_patrols["normal"].append(chosen_patrol.event_id)
 
+        self.patrol_event = chosen_patrol
+        self.involved_cats = involved_cats
         return chosen_patrol
 
     @staticmethod
@@ -533,9 +520,10 @@ class Patrol:
         chosen_success, self.outcome_cats["success"] = get_valid_event(
             primary_cat=self.involved_cats["p_l"],
             involved_cats=self.involved_cats,
-            interactable_cats=[c for c in self.involved_cats["patrol_cats"]],
+            interactable_cats=self.involved_cats["patrol_cats"],
             possible_events=success_outcomes,
             other_clan=self.other_clan,
+            chosen_poi=self.chosen_poi if self.chosen_poi else None,
             ensured_id=debug_outcome,
         )
 
@@ -548,13 +536,10 @@ class Patrol:
         chosen_failure, self.outcome_cats["failure"] = get_valid_event(
             primary_cat=self.involved_cats["p_l"],
             involved_cats=self.involved_cats,
-            interactable_cats=[
-                c
-                for c in self.involved_cats["patrol_cats"]
-                if c != self.involved_cats["p_l"]
-            ],
+            interactable_cats=self.involved_cats["patrol_cats"],
             possible_events=fail_outcomes,
             other_clan=self.other_clan,
+            chosen_poi=self.chosen_poi if self.chosen_poi else None,
             ensured_id=debug_outcome,
         )
         if not chosen_failure:
@@ -628,13 +613,25 @@ class Patrol:
             f"Outcome Frequency: {chosen_outcome.frequency} | Outcome Weight: {chosen_outcome.weight}"
         )
 
-        # Run the chosen outcome
-        return handle_consequences.execute_outcome(
+        processed_text, results, rel_results = handle_consequences.execute_outcome(
             chosen_outcome,
             self.outcome_cats["success" if success else "failure"],
             self.other_clan,
             self.chosen_poi,
-        ) + (self.get_patrol_art(chosen_outcome),)
+        )
+        final_results = []
+        for r in results.values():
+            # filter out the "empty" values
+            if r:
+                final_results.append(r)
+
+        # Run the chosen outcome
+        return (
+            processed_text,
+            "\n".join(final_results),
+            rel_results,
+            self.get_patrol_art(chosen_outcome),
+        )
 
     def calculate_success(
         self, success_outcome: TextPoolEvent, fail_outcome: TextPoolEvent
@@ -717,38 +714,28 @@ class Patrol:
             if not game.clan.override_biome
             else game.clan.override_biome
         )
-        prey_sizes = ["tiny", "small", "medium", "large", "huge"]
+        outcome_prey_sizes = ["tiny", "small", "medium", "large", "huge"]
         prey_size_random_weights = get_config(
             f"prey.patrol_balance.{biome}.{game.clan.current_season}"
         )
 
-        chosen_prey_size = choices(prey_sizes, weights=prey_size_random_weights)[0]
+        chosen_prey_size = choices(
+            outcome_prey_sizes, weights=prey_size_random_weights
+        )[0]
         print(f"chosen filter prey size: {chosen_prey_size}")
 
         # filter all possible patrols depending on the needed prey size
         for patrol in possible_patrols:
-            # count how many outcomes award each prey size
-            prey_size_to_outcome_amounts = {}
+            outcome_prey_sizes = set()
             for outcome in patrol.success_outcomes:
                 if outcome.supply:
                     for block in outcome.supply:
                         if block["type"] != "freshkill":
                             continue
                         outcome_prey_size = block["adjust"].replace("increase_", "")
-                        if outcome_prey_size not in prey_size_to_outcome_amounts:
-                            prey_size_to_outcome_amounts[outcome_prey_size] = 0
-                        prey_size_to_outcome_amounts[outcome_prey_size] += 1
+                        outcome_prey_sizes.add(outcome_prey_size)
 
-            # get the prey size with the most outcomes
-            most_prey_size = ""
-            max_occurrences = 0
-            for size, amount in prey_size_to_outcome_amounts.items():
-                if amount >= max_occurrences:
-                    most_prey_size = size
-                    max_occurrences = amount
-
-            # if the most often awarded prey size matches the one we want, then we allow this patrol through
-            if chosen_prey_size == most_prey_size:
+            if chosen_prey_size in outcome_prey_sizes:
                 filtered_patrols.append(patrol)
             elif self.debug_patrol_id and self.debug_patrol_id == patrol.event_id:
                 print(
