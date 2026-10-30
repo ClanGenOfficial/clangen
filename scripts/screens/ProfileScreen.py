@@ -44,7 +44,6 @@ from scripts.ui.elements.checkbox import UICheckbox
 from scripts.ui.elements.image_button import UIImageButton
 from scripts.ui.elements.modified_image import UIModifiedImage
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.generate_box import BoxStyles, get_box
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
@@ -618,18 +617,16 @@ class ProfileScreen(Screens):
             anchors={"centerx": "centerx"},
         )
 
-        self.profile_elements["cat_info_column1"] = UITextBoxTweaked(
+        self.profile_elements["cat_info_column1"] = pygame_gui.elements.UITextBox(
             self.generate_column1(self.the_cat),
             ui_scale(pygame.Rect((300, 220), (180, 200))),
             object_id=get_text_box_theme("#text_box_22_horizleft"),
-            line_spacing=1,
             manager=MANAGER,
         )
-        self.profile_elements["cat_info_column2"] = UITextBoxTweaked(
+        self.profile_elements["cat_info_column2"] = pygame_gui.elements.UITextBox(
             self.generate_column2(self.the_cat),
             ui_scale(pygame.Rect((490, 220), (250, 200))),
             object_id=get_text_box_theme("#text_box_22_horizleft"),
-            line_spacing=1,
             manager=MANAGER,
         )
 
@@ -1207,11 +1204,10 @@ class ProfileScreen(Screens):
             manager=MANAGER,
         )
 
-        self.display_notes = UITextBoxTweaked(
+        self.display_notes = pygame_gui.elements.UITextBox(
             self.user_notes,
             ui_scale(pygame.Rect((100, 473), (60, 149))),
             object_id="#text_box_26_horizleft_pad_10_14",
-            line_spacing=1,
             manager=MANAGER,
         )
 
@@ -1841,10 +1837,10 @@ class ProfileScreen(Screens):
                 margins={"left": 0, "right": 0, "top": 0, "bottom": 0},
             )
 
-            self.condition_data[f"name_{con}"] = UITextBoxTweaked(
-                con["name"],
+            self.condition_data[f"name_{con}"] = pygame_gui.elements.UITextBox(
+                con[0],
                 ui_scale(pygame.Rect((0, 0), (120, -1))),
-                line_spacing=0.90,
+                # line_spacing=0.90,
                 object_id="#text_box_30_horizcenter",
                 container=self.condition_data[f"bg_{con}"],
                 manager=MANAGER,
@@ -1855,10 +1851,10 @@ class ProfileScreen(Screens):
             details_rect = ui_scale(pygame.Rect((0, 0), (142, 100)))
             details_rect.bottomleft = (0, 0)
 
-            self.condition_data[f"desc_{con}"] = UITextBoxTweaked(
-                con["details"],
+            self.condition_data[f"desc_{con}"] = pygame_gui.elements.UITextBox(
+                con[1],
                 details_rect,
-                line_spacing=0.75,
+                # line_spacing=0.75,
                 object_id="#text_box_22_horizcenter",
                 container=self.condition_data[f"bg_{con}"],
                 manager=MANAGER,
@@ -2316,11 +2312,10 @@ class ProfileScreen(Screens):
                 self.sub_tab_1.disable()
                 self.sub_tab_2.enable()
                 self.history_text_box.kill()
-                self.history_text_box = UITextBoxTweaked(
+                self.history_text_box = pygame_gui.elements.UITextBox(
                     self.get_all_history_text(),
                     ui_scale(pygame.Rect((100, 473), (600, 149))),
                     object_id="#text_box_26_horizleft_pad_10_14",
-                    line_spacing=1,
                     manager=MANAGER,
                 )
 
@@ -2354,11 +2349,10 @@ class ProfileScreen(Screens):
                         manager=MANAGER,
                     )
                 else:
-                    self.display_notes = UITextBoxTweaked(
+                    self.display_notes = pygame_gui.elements.UITextBox(
                         self.user_notes,
                         ui_scale(pygame.Rect((100, 473), (600, 149))),
                         object_id="#text_box_26_horizleft_pad_10_14",
-                        line_spacing=1,
                         manager=MANAGER,
                     )
 
