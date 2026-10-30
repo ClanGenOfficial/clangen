@@ -34463,14 +34463,14 @@
         ],
         "success_outcomes": [
             {
-                "frequency": 2,
+                "frequency": 1,
                 "strings": [
                     "s_c0 has no trouble getting a good read on who works well with whom. This will be valuable information for the next time that s_c0 is splitting them up for patrols."
                 ],
                 "exp_gained": 30
             },
             {
-                "frequency": 3,
+                "frequency": 2,
                 "strings": [
                     "s_c0 splits up the patrol into smaller groups in the hopes of better understanding how certain pairings work together. The training session goes well, with everyone getting along, and s_c0 is proud of {PRONOUN/s_c0/poss} intuition.",
                     "s_c0 splits up the patrol into smaller groups in the hopes of better understanding how certain pairings work together. Training goes well enough, with most of the cats getting along. s_c0 takes notes on how to better pair each cat in the future.",
@@ -34911,14 +34911,14 @@
         ],
         "fail_outcomes": [
             {
-                "frequency": 2,
+                "frequency": 1,
                 "strings": [
                     "s_c0 tries to keep an eye on every cat in the patrol, but they all decide to split up and train separately. It becomes far too difficult to assess anything when no one is really working together at all."
                 ],
                 "exp_gained": 0
             },
             {
-                "frequency": 3,
+                "frequency": 2,
                 "outcome_art": "cat_sprites/gen_judging_Wr",
                 "strings": [
                     "s_c0 splits up the patrol into smaller groups in the hopes of better understanding how certain pairings work together. Nothing goes well, it seems s_c0 didn't set up very cohesive groups. s_c0 is frustrated with everyone's performance and ends things early, {PRONOUN/s_c0/poss} dour mood souring the patrol."
