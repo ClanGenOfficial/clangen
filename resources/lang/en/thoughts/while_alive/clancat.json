@@ -4387,7 +4387,7 @@
             "Is pretending to defend POI from invading cats",
             "Wonders what POI is like",
             "Can't wait to become an apprentice and go see POI for {PRONOUN/m_c/self}",
-            "Is trying to sneak out to go visit POI"
+            "Is trying to sneak out to visit POI"
         ],
         "involved_cats": {
             "m_c": {
@@ -4414,7 +4414,8 @@
             },
             "r_c": {
                 "status": [
-                    "-kitten"
+                    "-kitten",
+                    "-newborn"
                 ],
                 "health": {
                     "working": true
@@ -4489,7 +4490,7 @@
             "tags": ["danger"]
         },
         "strings": [
-            "Is demanding that r_c to come back from POI safe",
+            "Is demanding that r_c come back from POI safe",
             "Is worried when r_c goes out to POI",
             "Thinks r_c is so cool for going to POI and coming back alive",
             "Wonders why r_c doesn't like going to POI"
@@ -4517,7 +4518,7 @@
         },
         "strings": [
             "Scrunches {PRONOUN/m_c/poss} nose up at POI",
-            "Gags at an especially rancid smell eminating from POI",
+            "Gags at an especially rancid smell emanating from POI",
             "Refuses to eat any prey caught at POI",
             "Can smell POI long before {PRONOUN/m_c/subject} can see it",
             "The stench of POI makes m_c' eyes water every time {PRONOUN/m_c/subject} {VERB/m_c/pass/passes} it"
@@ -4711,10 +4712,10 @@
             "Is attending the half-moon meeting at POI",
             "Is tidying up POI in preparation for the half-moon meeting",
             "Is conversing with StarClan at POI",
-            "Is thinking of what to bring up at POI next meeting",
+            "Is thinking of what to bring up during the next half-moon meeting at POI",
             "Is in awe at POI",
             "Is visiting POI for advice from StarClan",
-            "Is meeting with an o_c_n medicine cat at POI"
+            "Is meeting with a o_c_n medicine cat at POI"
         ],
         "involved_cats": {
             "m_c": {
@@ -4734,15 +4735,15 @@
             "category": "gathering"
         },
         "strings": [
-            "Is attending the gathering at POI",
-            "Is tidying up POI in preparation for the gathering",
+            "Is attending the Gathering at POI",
+            "Is tidying up POI in preparation for the Gathering",
             "Is having a nice chat with an o_c_n cat at POI",
-            "Is thinking of what the other leaders will have to say at POI next gathering",
+            "Is thinking of what the other leaders will have to say during the next Gathering at POI",
             "Is in awe at POI",
-            "Keeps to the edge of POI during the gathering",
-            "Is meeting with an o_c_n cat at POI",
-            "hopes to be chosen to go to POI",
-            "Wonders if {PRONOUN/m_c/subject}'ll see any new faces at POI next gathering",
+            "Keeps to the edge of POI during the Gathering",
+            "Is meeting with a o_c_n cat at POI",
+            "Hopes to be chosen to go to POI",
+            "Wonders if {PRONOUN/m_c/subject}'ll see any new faces at POI during the next Gathering",
             "Stopped by POI while on a walk"
         ],
         "involved_cats": {
