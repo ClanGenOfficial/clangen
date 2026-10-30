@@ -1092,21 +1092,6 @@
             }
             }
         },
-        "relationship_changes": [
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "mutual": false,
-                "values": [
-                    "like"
-                ],
-                "amount": 10
-            }
-        ]
     },
     {
         "event_id": "assist_sore_cat",
