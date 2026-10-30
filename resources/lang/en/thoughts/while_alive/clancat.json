@@ -9185,7 +9185,7 @@
         }
     },
     {
-        "event_id": "weakened_and_exhaustion_gen",
+        "event_id": "weakened_and_exhaustion_worry_gen",
         "strings": [
             "Is feeling sore",
             "Can't bring {PRONOUN/m_c/self} to even stand up",
