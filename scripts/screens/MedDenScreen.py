@@ -1,3 +1,4 @@
+import itertools
 from random import choice
 
 import i18n
@@ -72,9 +73,11 @@ class MedDenScreen(Screens):
         self.tab_showing = self.in_den_tab
         self.tab_list = self.in_den_cats
 
-        self.herbs = {}
+        self.den_image = {}
 
         self.open_tab = None
+
+        self.den_image = {}
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -561,75 +564,54 @@ class MedDenScreen(Screens):
         herb_list = []
         herb_supply = game.clan.herb_supply
 
+        # BASE IMAGE
+        self.den_image["base"] = UIImageButton(
+            ui_scale(pygame.Rect((108, 95), (396, 224))),
+            "",
+            object_id="#med_cat_den_hover_big",
+            manager=MANAGER,
+        )
+
+        # GET LIST OF HERB COUNTS TO DISPLAY
         if herb_supply.total <= 0:
+            # TODO: localize
             herb_list = ["Empty"]
 
         elif game.clan.game_mode != "classic":
-            for herb, count in herb_supply.entire_supply.items():
-                if count <= 0:
-                    continue
-                display = (
-                    herb_supply.herb[herb].plural_display
-                    if count > 1
-                    else herb_supply.herb[herb].singular_display
-                )
-                herb_list.append(f"{count} {display}")
+            herb_list.extend(
+                [
+                    f"{count} {i18n.t(f'conditions.herbs.{herb}', count=count)}"
+                    for herb, count in herb_supply.entire_supply.items()
+                    if count > 0
+                ]
+            )
 
-        if len(herb_list) <= 10:
-            # classic doesn't display herbs
-            if game.clan.game_mode == "classic":
-                herb_display = None
-            else:
+        # CREATE TOOLTIP OF HERB COUNTS - classic does not do this
+        if not game.clan.game_mode == "classic":
+            # 10 OR LESS DISPLAY AS SINGLE COLUMN
+            if len(herb_list) <= 10:
                 herb_display = "<br>".join(sorted(herb_list))
 
-            self.den_base = UIImageButton(
-                ui_scale(pygame.Rect((108, 95), (396, 224))),
-                "",
-                object_id="#med_cat_den_hover",
-                tool_tip_text=herb_display,
-                manager=MANAGER,
-            )
-        else:
-            count = 1
-            holding_pairs = []
-            pair = []
-            added = False
-            for y in range(len(herb_list)):
-                if (count % 2) == 0:  # checking if count is an even number
-                    count += 1
-                    pair.append(herb_list[y])
-                    holding_pairs.append("   -   ".join(pair))
-                    pair.clear()
-                    added = True
-                    continue
-                else:
-                    pair.append(herb_list[y])
-                    count += 1
-                    added = False
-            if added is False:
-                holding_pairs.extend(pair)
-
-            # classic doesn't display herbs
-            if game.clan.game_mode == "classic":
-                herb_display = None
+            # OVER 10 DISPLAYS AS TWO COLUMNS
             else:
-                herb_display = "<br>".join(holding_pairs)
-            self.den_base = UIImageButton(
-                ui_scale(pygame.Rect((108, 95), (396, 224))),
-                "",
-                object_id="#med_cat_den_hover_big",
-                tool_tip_text=herb_display,
-                manager=MANAGER,
-            )
+                herb_display = "<br>".join(
+                    [
+                        f"{a}       -      {b}" if b else a
+                        for a, b in itertools.zip_longest(
+                            herb_list[0::2], herb_list[1::2]
+                        )
+                    ]
+                )
 
-        # otherwise draw the herbs you have
-        herbs = game.clan.herb_supply.entire_supply
+            self.den_image["base"].set_tooltip(herb_display)
 
-        for herb, count in herbs.items():
+        # draw the herbs onto the base
+        for herb, count in game.clan.herb_supply.entire_supply.items():
             if count <= 0:
                 continue
+            # cobwebs get two bc they're special little meowmeows
             if herb == "cobwebs":
-                self.herbs["cobweb1"] = UIModifiedImage(
+                self.den_image["cobweb1"] = UIModifiedImage(
                     ui_scale(pygame.Rect((108, 95), (396, 224))),
                     pygame.transform.scale(
                         pygame.image.load(
@@ -639,9 +621,9 @@ class MedDenScreen(Screens):
                     ),
                     manager=MANAGER,
                 )
-                self.herbs["cobweb1"].disable()
+                self.den_image["cobweb1"].disable()
                 if count > 1:
-                    self.herbs["cobweb2"] = UIModifiedImage(
+                    self.den_image["cobweb2"] = UIModifiedImage(
                         ui_scale(pygame.Rect((108, 95), (396, 224))),
                         pygame.transform.scale(
                             pygame.image.load(
@@ -651,9 +633,10 @@ class MedDenScreen(Screens):
                         ),
                         manager=MANAGER,
                     )
-                    self.herbs["cobweb2"].disable()
+                    self.den_image["cobweb2"].disable()
                 continue
-            self.herbs[herb] = UIModifiedImage(
+
+            self.den_image[herb] = UIModifiedImage(
                 ui_scale(pygame.Rect((108, 95), (396, 224))),
                 pygame.transform.scale(
                     pygame.image.load(
@@ -663,16 +646,16 @@ class MedDenScreen(Screens):
                 ),
                 manager=MANAGER,
             )
-            self.herbs[herb].disable()
+            self.den_image[herb].disable()
 
     def exit_screen(self):
         self.meds_messages.kill()
         self.last_med.kill()
         self.next_med.kill()
         self.den_base.kill()
-        for herb in self.herbs:
-            self.herbs[herb].kill()
-        self.herbs = {}
+        for herb in self.den_image:
+            self.den_image[herb].kill()
+        self.den_image = {}
         if self.med_info:
             self.med_info.kill()
         if self.med_name:

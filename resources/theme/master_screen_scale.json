@@ -106,7 +106,7 @@
     "#help_button.tool_tip": {"misc": {"rect_width": "400"}},
     "#leader_ceremony_button.tool_tip": {"misc": {"rect_width": "150"}},
     "#med_cat_den_hover.tool_tip": {"misc": {"rect_width": "160"}},
-    "#med_cat_den_hover_big.tool_tip": {"misc": {"rect_width": "280"}},
+    "#med_cat_den_hover_big.tool_tip": {"misc": {"rect_width": "310"}},
     "#blank_button.tool_tip": {"misc": {"rect_width": "350"}},
     "#blank_button_dark.tool_tip": {"misc": {"rect_width": "350"}},
     "#blank_button_small.tool_tip": {"misc": {"rect_width": "250"}},
