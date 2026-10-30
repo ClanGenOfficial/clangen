@@ -16,13 +16,8 @@
         "better_storage": "%{name} did an excellent job storing herbs this moon, %{herbs} will expire slower.",
         "gather_success": "%{name} collected %{herbs} during this moon.",
         "gather_fail": "%{name} didn't collect any herbs this moon.",
-        "herb_used": "m_c was given %{herb} as treatment for: %{condition}. %{effect}",
-        "mortality_down": "{PRONOUN/m_c/subject/CAP} will be less likely to die.",
-        "duration_down": "{PRONOUN/m_c/subject/CAP} will heal sooner.",
-        "risks_down": "The risks associated with {PRONOUN/m_c/poss} condition are lowered.",
-        "progression_down": "{PRONOUN/m_c/poss} condition will be less likely to progress to something greater.",
         "focus": "With the additional focus of the Clan, the following herbs were gathered: %{herbs}.",
-        "blood_loss": "Herbs were used to stop blood loss for %{name}.",
+        "blood_loss": "Swift application of %{herb} prevented blood loss for %{name}.",
         "loss_event": "The Clan lost %{herbs}.",
         "gain_event": "The Clan gained %{herbs}."
     }
