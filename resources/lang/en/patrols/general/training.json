@@ -34486,8 +34486,10 @@
                 "involved_cats": {
                     "r_c0": {
                         "stat": {
-                            "trait": ["ambitious", "arrogant", "bloodthirsty", "bold", "competitive", "confident", "daring", "fierce",
-                                "rebellious", "righteous", "strict", "troublesome", "vengeful", "insecure"]
+                            "trait": [
+                                "ambitious", "arrogant", "bloodthirsty", "bold", "competitive", "confident", "daring", "fierce",
+                                "rebellious", "righteous", "strict", "troublesome", "vengeful", "insecure"
+                            ]
                         }
                     }
                 }
@@ -34501,8 +34503,10 @@
                 "involved_cats": {
                     "r_c0": {
                         "stat": {
-                            "trait": ["calm", "careful", "compassionate", "lonesome", "nervous", "responsible", "sincere", "strange", "thoughtful",
-                                "wise"]
+                            "trait": [
+                                "calm", "careful", "compassionate", "lonesome", "nervous", "responsible", "sincere", "strange", "thoughtful",
+                                "wise"
+                            ]
                         },
                         "status": ["-apprentice"]
                     },
@@ -34565,8 +34569,10 @@
                     },
                     "r_c1": {
                         "stat": {
-                            "trait": ["ambitious", "arrogant", "bloodthirsty", "bold", "competitive", "confident", "daring", "fierce",
-                                "rebellious", "righteous", "strict", "troublesome", "vengeful", "insecure"]
+                            "trait": [
+                                "ambitious", "arrogant", "bloodthirsty", "bold", "competitive", "confident", "daring", "fierce",
+                                "rebellious", "righteous", "strict", "troublesome", "vengeful", "insecure"
+                            ]
                         }
                     }
                 },
@@ -34954,8 +34960,10 @@
                 "involved_cats": {
                     "r_c0": {
                         "stat": {
-                            "trait": ["ambitious", "arrogant", "bloodthirsty", "bold", "competitive", "confident", "daring", "fierce",
-                                "rebellious", "righteous", "strict", "troublesome", "vengeful"]
+                            "trait": [
+                                "ambitious", "arrogant", "bloodthirsty", "bold", "competitive", "confident", "daring", "fierce",
+                                "rebellious", "righteous", "strict", "troublesome", "vengeful"
+                            ]
                         },
                         "status": ["-apprentice"]
                     }
