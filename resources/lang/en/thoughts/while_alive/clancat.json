@@ -4511,6 +4511,165 @@
         }
     },
     {
+        "event_id": "poi_covered_gen",
+        "poi": {
+            "tags": ["danger:tainted"]
+        },
+        "strings": [
+            "Scrunches {PRONOUN/m_c/poss} nose up at POI",
+            "Gags at an especially rancid smell eminating from POI",
+            "Refuses to eat any prey caught at POI",
+            "Can smell POI long before {PRONOUN/m_c/subject} can see it",
+            "The stench of POI makes m_c' eyes water every time {PRONOUN/m_c/subject} {VERB/m_c/pass/passes} it"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-kitten"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "poi_maze_gen",
+        "poi": {
+            "tags": ["maze"]
+        },
+        "strings": [
+            "Nearly got lost at POI",
+            "Ran into a dead end at POI",
+            "Hates how confusing POI is to navigate",
+            "Knows POI like the tip of {PRONOUN/m_c/poss} tail",
+            "Is exploring POI"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-kitten"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "poi_nests_gen",
+        "poi": {
+            "tags": ["nests"]
+        },
+        "strings": [
+            "Licks {PRONOUN/m_c/poss} lips at the thought of tasty eggs from POI",
+            "Is practicing {PRONOUN/m_c/poss} bird calls at POI",
+            "Is listening to new chicks chirping at POI",
+            "Snacks on an egg that fell out of a nest at POI"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-kitten"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "poi_covered_gen",
+        "poi": {
+            "tags": ["covered"]
+        },
+        "strings": [
+            "Is taking shelter from harsh winds at POI",
+            "Is hiding at POI from a predator",
+            "Is using POI to hide {PRONOUN/m_c/self} while hunting"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-kitten"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "poi_covered_3season",
+        "season": [
+            "newleaf", "greenleaf", "leaf-fall"
+        ],
+        "poi": {
+            "tags": ["covered"]
+        },
+        "strings": [
+            "Is taking shelter from the rain at POI"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-kitten"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "poi_covered_leafbare",
+        "season": [
+            "greenleaf"
+        ],
+        "poi": {
+            "tags": ["covered"]
+        },
+        "strings": [
+            "Is trying to stay cool under POI",
+            "Is using POI to hide from the sweltering heat",
+            "Appreciates how cool POI is in this heat"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-kitten"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "poi_covered_leafbare",
+        "season": [
+            "leaf-bare"
+        ],
+        "poi": {
+            "tags": ["covered"]
+        },
+        "strings": [
+            "Is taking shelter from the snow at POI",
+            "Is sheltering from the cold at POI",
+            "Nearly got snowed in at POI"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-kitten"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        }
+    },
+    {
         "event_id": "poi_prey_working",
         "poi": {
             "tags": ["prey"]
@@ -4562,6 +4721,35 @@
                 "status": [
                     "medicine cat apprentice",
                     "medicine cat"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "poi_moonplace",
+        "poi": {
+            "category": "gathering"
+        },
+        "strings": [
+            "Is attending the gathering at POI",
+            "Is tidying up POI in preparation for the gathering",
+            "Is having a nice chat with an o_c_n cat at POI",
+            "Is thinking of what the other leaders will have to say at POI next gathering",
+            "Is in awe at POI",
+            "Keeps to the edge of POI during the gathering",
+            "Is meeting with an o_c_n cat at POI",
+            "hopes to be chosen to go to POI",
+            "Wonders if {PRONOUN/m_c/subject}'ll see any new faces at POI next gathering",
+            "Stopped by POI while on a walk"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-medicine cat apprentice",
+                    "-medicine cat"
                 ],
                 "health": {
                     "working": true
