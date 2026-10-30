@@ -1,0 +1,26 @@
+[
+    {
+        "event_id": "rat_bite_weak_leg0",
+        "strings": [
+            "The rat bite m_c suffered has healed, but r_c0 informs {PRONOUN/m_c/object} that permanent damage was still done and that the injured leg will never be quite the same.",
+            "m_c complains to r_c0 that {PRONOUN/m_c/poss} leg seems weaker now than it used to be after being savaged by a rat. r_c0 tells {PRONOUN/m_c/object} that it's probably a permanent consequence of the injury."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "rat_bite_weak_leg2",
+        "strings": [
+            "Ever since {PRONOUN/m_c/subject} {VERB/m_c/were/was} bitten by that rat, m_c's injured leg has felt weaker than the rest. The wound may have healed, but it seems something deeper beneath the skin never will."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "event_id": "sprain0",
+        "strings": [
+            "m_c's sprain has healed.",
+            "m_c's sprain is feeling much better.",
+            "m_c can walk and move without pain. {PRONOUN/m_c/poss/CAP} sprain must have healed.",
+            "m_c has recovered from {PRONOUN/m_c/poss} sprain."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

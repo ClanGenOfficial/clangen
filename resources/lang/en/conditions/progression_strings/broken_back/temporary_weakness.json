@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "broken_back_temporary_weakness0",
+        "strings": [
+            "After the broken back {PRONOUN/m_c/subject} suffered, m_c's body won't immediately be back to normal."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

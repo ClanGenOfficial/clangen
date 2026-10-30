@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "water_in_lungs_running_nose0",
+        "strings": [
+            "Some of the water m_c inhaled appears to be draining from {PRONOUN/m_c/poss} nose as well as coming up in those hacking coughs. r_c0 puts {PRONOUN/m_c/object} on nest rest to help {PRONOUN/m_c/object} recover."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "water_in_lungs_running_nose1",
+        "strings": [
+            "Along with a bit of coughing, m_c has developed a runny nose from the water in {PRONOUN/m_c/poss} lungs."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

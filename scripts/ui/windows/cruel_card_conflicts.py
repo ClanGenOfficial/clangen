@@ -34,7 +34,7 @@ class CruelCardConflicts(GameWindow):
 
         self.conflict_message = pygame_gui.elements.UITextBox(
             i18n.t(
-                "windows.cruel_cards_conflict",
+                "windows.cruel_card_conflict",
                 new_card=i18n.t(f"cruel_season.card_names.{new_card}"),
                 conflicting_cards_list=adjust_list_text(
                     [

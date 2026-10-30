@@ -597,9 +597,7 @@
             "herb_gathering"
         ],
         "frequency": 2,
-        "season": [
-            "leaf-bare"
-        ],
+        "season": [],
         "required_cat_types": {
             "patrol_cats": [
                 1,
@@ -900,8 +898,8 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "bite-wound",
-                            "torn pelt"
+                            "bite_wound",
+                            "torn_pelt"
                         ],
                         "scar_history": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
                         "death_history": "m_c died from injuries inflicted by a dog."
@@ -1114,8 +1112,8 @@
                             "p_l"
                         ],
                         "condition": [
-                            "bite-wound",
-                            "mangled tail"
+                            "bite_wound",
+                            "mangled_tail"
                         ],
                         "scar_history": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
                         "death_history": "m_c died of injuries sustained in a fight with a dog."

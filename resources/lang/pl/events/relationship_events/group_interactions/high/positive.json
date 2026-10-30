@@ -2,17 +2,13 @@
     {
         "event_id": "group_3_positive_meditate",
         "strings": [
-            "m_c is convincing r_c1 that r_c2 isn't so bad once you get to know {PRONOUN\/r_c2\/object}.",
+            "m_c is convincing r_c1 that r_c2 isn't so bad once you get to know {PRONOUN/r_c2/object}.",
             "m_c chats with r_c1 about how r_c2 is a nice cat."
         ],
         "involved_cats": {
             "m_c": {
                 "stat": {
-                    "trait": [
-                        "charismatic",
-                        "loyal",
-                        "charming"
-                    ]
+                    "trait": ["charismatic", "loyal", "charming"]
                 }
             },
             "r_c1": {},
@@ -20,57 +16,31 @@
         },
         "relationship_constraint": [
             {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c2"
-                ],
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c2"],
                 "mutual": false,
-                "constraints": [
-                    "likes"
-                ]
+                "constraints": ["likes"]
             },
             {
-                "cats_from": [
-                    "r_c1"
-                ],
-                "cats_to": [
-                    "r_c2"
-                ],
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
                 "mutual": false,
-                "constraints": [
-                    "dislikes"
-                ]
+                "constraints": ["dislikes"]
             }
         ],
         "relationship_changes": [
             {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c1",
-                    "r_c2"
-                ],
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1", "r_c2"],
                 "mutual": false,
-                "values": [
-                    "comfort"
-                ],
+                "values": ["comfort"],
                 "amount": 5
             },
             {
-                "cats_from": [
-                    "r_c1"
-                ],
-                "cats_to": [
-                    "r_c2"
-                ],
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
                 "mutual": false,
-                "values": [
-                    "like",
-                    "trust"
-                ],
+                "values": ["like", "trust"],
                 "amount": 10
             }
         ]
@@ -82,84 +52,42 @@
         ],
         "involved_cats": {
             "m_c": {
-                "age": [
-                    "young adult",
-                    "adult",
-                    "senior adult",
-                    "senior"
-                ]
+                "age": ["young adult", "adult", "senior adult", "senior"]
             },
             "r_c1": {
-                "age": [
-                    "young adult",
-                    "adult",
-                    "senior adult",
-                    "senior"
-                ]
+                "age": ["young adult", "adult", "senior adult", "senior"]
             },
             "multi_cat": {
-                "age": [
-                    "young adult",
-                    "adult",
-                    "senior adult",
-                    "senior"
-                ]
+                "age": ["young adult", "adult", "senior adult", "senior"]
             }
         },
         "relationship_constraint": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c",
-                    "r_c1"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c", "r_c1"],
                 "mutual": false,
-                "constraints": [
-                    "likes"
-                ]
+                "constraints": ["likes"]
             },
             {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c1"
-                ],
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
                 "mutual": false,
-                "constraints": [
-                    "fancies",
-                    "-mates"
-                ]
+                "constraints": ["fancies", "-mates"]
             }
         ],
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "multi_cat"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["multi_cat"],
                 "mutual": false,
-                "values": [
-                    "comfort"
-                ],
+                "values": ["comfort"],
                 "amount": 5
             },
             {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c1"
-                ],
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
                 "mutual": true,
-                "values": [
-                    "romance",
-                    "comfort"
-                ],
+                "values": ["romance", "comfort"],
                 "amount": 10
             }
         ]
@@ -175,12 +103,8 @@
         },
         "relationship_constraint": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
                 "mutual": false,
                 "constraints": [
                     "hates"
@@ -197,8 +121,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "trust",
-                    "comfort"
+                    "trust", "comfort"
                 ],
                 "amount": 10
             }
@@ -215,12 +138,8 @@
         },
         "relationship_constraint": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
                 "mutual": false,
                 "constraints": [
                     "fears"
@@ -237,8 +156,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "trust",
-                    "comfort"
+                    "trust", "comfort"
                 ],
                 "amount": 10
             }
@@ -247,8 +165,8 @@
     {
         "event_id": "group_multicat_pos_polymateshigh",
         "strings": [
-            "m_c gave multi_cat presents to show {PRONOUN\/m_c\/poss} affection.",
-            "m_c declared {PRONOUN\/m_c\/poss} love for multi_cat in the middle of camp.",
+            "m_c gave multi_cat presents to show {PRONOUN/m_c/poss} affection.",
+            "m_c declared {PRONOUN/m_c/poss} love for multi_cat in the middle of camp.",
             "m_c, multi_cat talked about having kits."
         ],
         "involved_cats": {
@@ -295,48 +213,51 @@
         ],
         "involved_cats": {
             "m_c": {
-                "past_status": [
-                    "loner",
-                    "rogue",
-                    "kittypet"
-                ],
-                "backstory": [
-                    "-abandoned_backstories",
-                    "-baby_loner_backstories",
-                    "-baby_kittypet_backstories",
-                    "-orphaned_backstories"
+                "past_status": ["loner", "rogue", "kittypet"],
+                "backstory": ["-abandoned_backstories", "-baby_loner_backstories", "-baby_kittypet_backstories", "-orphaned_backstories"]
+            },
+            "multi_cat": {
+                "past_status": ["loner", "rogue", "kittypet"],
+                "backstory": ["-abandoned_backstories", "-baby_loner_backstories", "-baby_kittypet_backstories", "-orphaned_backstories"]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat", "m_c"],
+                "cats_to": ["multi_cat", "m_c"],
+                "mutual": false,
+                "values": ["like", "comfort"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "group_pos_medicinecatbonding",
+        "strings": [
+            "m_c, multi_cat discussed their favorite herbs and places to gather them in the territory.",
+            "m_c, multi_cat bonded over the unique privilege of communing with their ancestors.",
+            "m_c, multi_cat worked together to treat an injured Clanmate.",
+            "m_c, multi_cat are grateful for each other's specialties in healing."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "medicine cat"
                 ]
             },
             "multi_cat": {
-                "past_status": [
-                    "loner",
-                    "rogue",
-                    "kittypet"
-                ],
-                "backstory": [
-                    "-abandoned_backstories",
-                    "-baby_loner_backstories",
-                    "-baby_kittypet_backstories",
-                    "-orphaned_backstories"
+                "status": [
+                    "medicine cat"
                 ]
             }
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat",
-                    "m_c"
-                ],
-                "cats_to": [
-                    "multi_cat",
-                    "m_c"
-                ],
+                "cats_from": ["m_c", "multi_cat"],
+                "cats_to": ["multi_cat", "m_c"],
                 "mutual": false,
-                "values": [
-                    "like",
-                    "comfort"
-                ],
-                "amount": 10
+                "values": ["like", "comfort", "respect"],
+                "amount": 5
             }
         ]
     }
