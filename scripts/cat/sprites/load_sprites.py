@@ -1,6 +1,7 @@
 import logging
 import os
 from copy import copy
+from typing import Optional
 
 import pygame
 import ujson
@@ -390,8 +391,20 @@ class Sprites:
 
             # these have multiple sprite sheets, so are handled differently from the others
             elif data in multi_sheet_data:
-                for spritesheet in data["spritesheet"]:
-                    self.load_sheet(spritesheet, data["sprite_list"])
+                if data.get("sprite_lists_differ", False):
+                    for spritesheet in data["spritesheet"]:
+                        self.load_sheet(
+                            spritesheet,
+                            data["sprite_list"][spritesheet],
+                            alternate_sheet_name=data.get("common_sheet_name", None),
+                        )
+                else:
+                    for spritesheet in data["spritesheet"]:
+                        self.load_sheet(
+                            spritesheet,
+                            data["sprite_list"],
+                            alternate_sheet_name=data.get("common_sheet_name", None),
+                        )
 
             # everything else
             else:
@@ -438,18 +451,24 @@ class Sprites:
                     self.sprites[f"{sheet_name}{white_category}{name}_{i}"] = new_patch
                     i += 1
 
-    def load_sheet(self, spritesheet: str, sprite_names: list[list[str]]):
+    def load_sheet(
+        self,
+        spritesheet: str,
+        sprite_names: list[list[str]],
+        alternate_sheet_name: Optional[str] = None,
+    ):
         """
         Loads sheet data and creates sprite groups.
         :param spritesheet: name of the spritesheet
         :param sprite_names: list containing lists of sprite names for this spritesheet, each list is a single row of the sheet
+        :param alternate_sheet_name: If specified, takes the place of the spritesheet within the sprite name
         """
         for row, sprite_names in enumerate(sprite_names):
             for col, sprite in enumerate(sprite_names):
                 self.make_group(
                     spritesheet=spritesheet,
                     pos=(col, row),
-                    name=f"{spritesheet}{sprite}",
+                    name=f"{alternate_sheet_name if alternate_sheet_name else spritesheet}{sprite}",
                 )
 
     def load_symbols(self):
