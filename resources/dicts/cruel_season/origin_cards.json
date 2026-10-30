@@ -76,5 +76,11 @@
       "prey.start_amount": 30,
       "clan_resources.herbs.half_starting_storage": true
     }
+  },
+  "no_prior_knowledge": {
+    "card_art": "origin/public_enemy.png",
+    "modifiers": {
+      "clan_creation.reset_all_starting_skills": true
+    }
   }
 }
