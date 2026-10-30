@@ -34451,6 +34451,7 @@
                 "status": ["deputy"]
             }
         },
+        "patrol_art": "train_general_intro",
         "intro_strings": [
             "As s_c0 and the patrol head out to train, {PRONOUN/s_c0/subject} {VERB/s_c0/decide/decides} to assess the other members of the patrol, hoping to get a feel for how each cat works with others.",
             "s_c0 decides that today's training session will be a good one to help {PRONOUN/s_c0/object} get a feel for how all these cats work together. After all, it's important to make sure patrols are made up of cats who get along.",
@@ -34618,6 +34619,7 @@
             {
                 "frequency": 4,
                 "tags": ["clan:leader"],
+                "outcome_art": "cat_sprites/gen_bord_begging_Ap",
                 "strings": [
                     "r_c0 and r_c1 don't really seem to make a great pair. It's clear, from s_c0's observations, that the apprentice is terrified of {PRONOUN/r_c1/poss} own mentor. Perhaps s_c0 needs to speak to lead_name about this and have r_c1 moved to a different mentor."
                 ],
@@ -34648,6 +34650,7 @@
             },
             {
                 "frequency": 4,
+                "outcome_art": "cat_sprites/gen_judging_Wr",
                 "strings": [
                     "s_c0 watches as r_c0 and r_c1 bicker and hiss over who should be the attacker and who should be the defender in their spar. Clearly s_c0 shouldn't put these two on the same patrol in the future. The training session may have been disrupted, but at least s_c0 learned some good information."
                 ],
@@ -34762,6 +34765,7 @@
             },
             {
                 "frequency": 4,
+                "outcome_art": "cat_sprites/gen_catlookingup_Wr",
                 "strings": [
                     "s_c0 notes, with mild frustration, that r_c0 and r_c1 should <i>not</i> be on a patrol together in the future. {PRONOUN/s_c0/poss/CAP} children spend the whole training session bickering nonstop. Perhaps s_c0 should have expected this behavior, but at least {PRONOUN/s_c0/subject} {VERB/s_c0/know/knows} about it now, despite the headache it has caused."
                 ],
@@ -34798,6 +34802,7 @@
             },
             {
                 "frequency": 4,
+                "outcome_art": "cat_sprites/gen_catlookingup_Wr",
                 "strings": [
                     "s_c0 realizes, with immense frustration, that r_c0 and r_c1 should <i>not</i> be on a patrol together in the future. {PRONOUN/s_c0/poss/CAP} children spend the whole training session bickering nonstop. Perhaps s_c0 should have noticed this behavior sooner, but at least {PRONOUN/s_c0/subject} {VERB/s_c0/know/knows} about it now, despite the headache it has caused."
                 ],
@@ -34914,6 +34919,7 @@
             },
             {
                 "frequency": 3,
+                "outcome_art": "cat_sprites/gen_judging_Wr",
                 "strings": [
                     "s_c0 splits up the patrol into smaller groups in the hopes of better understanding how certain pairings work together. Nothing goes well, it seems s_c0 didn't set up very cohesive groups. s_c0 is frustrated with everyone's performance and ends things early, {PRONOUN/s_c0/poss} dour mood souring the patrol."
                 ],
@@ -34994,6 +35000,7 @@
             },
             {
                 "frequency": 4,
+                "outcome_art": "cat_sprites/gen_judging_Wr",
                 "strings": [
                     "s_c0 spends the training session being overly harsh to r_c0, rather than doing any assessing of teamwork. Nothing productive really gets done, and it seems this patrol was a waste of everyone's time."
                 ],
@@ -35152,6 +35159,7 @@
             {
                 "frequency": 4,
                 "tags": ["clan:leader"],
+                "outcome_art": "cat_sprites/gen_bord_begging_Ap",
                 "strings": [
                     "s_c0 is frustrated to see how r_c0 and r_c1 struggle with training. r_c1 seems to be far too meek and, later, s_c0 has a stern discussion with the apprentice about appropriate conduct for a warrior."
                 ],
