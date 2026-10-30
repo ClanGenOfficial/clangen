@@ -576,6 +576,8 @@ class RelationshipScreen(Screens):
                 },
                 tool_tip_text="screens.relationship.switch_cat",
             )
+            if relationship.cat_to.dead:
+                self.switch_buttons[f"rel{i}_main_cat_switch"].disable()
             self.log_buttons[f"rel{i}_open_log"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((-6, 5), (36, 36))),
                 Icon.NOTEPAD,
