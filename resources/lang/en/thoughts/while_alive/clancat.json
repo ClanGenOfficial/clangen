@@ -9185,7 +9185,7 @@
         }
     },
     {
-        "event_id": "weakened_and_exhaustion_worry_gen",
+        "event_id": "weakened_and_exhaustion_gen",
         "strings": [
             "Is feeling sore",
             "Can't bring {PRONOUN/m_c/self} to even stand up",
@@ -9212,7 +9212,7 @@
         }
     },
     {
-        "event_id": "weakened_and_exhaustion_gen",
+        "event_id": "weakened_and_exhaustion_worried_gen",
         "strings": [
             "Wonders if {PRONOUN/m_c/poss} Clanmates think {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} just being lazy",
             "Wonders if {PRONOUN/m_c/poss} Clanmates think {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} just faking {PRONOUN/m_c/poss} struggle",
