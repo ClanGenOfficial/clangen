@@ -132,7 +132,7 @@
             "littleMUZZLE",
             "littleTEARDROP"
         ],
-	    "MINTOESTAIL": [
+        "MINTOESTAIL": [
             "littleTAIL_MIN",
             "littleLEG_FRONT_RIGHT_MIN",
             "littleLEG_FRONT_LEFT_MIN",
@@ -162,7 +162,7 @@
             "littleLEG_BACK_RIGHT_MIN",
             "littleLEG_BACK_LEFT_MIN_LOW",
             "littleLEG_BACK_LEFT_MIN"
-	    ],
+        ],
         "CHOSEN_ONE": [
             "littleESTRELLA",
             "littleSPARKLE",
@@ -492,7 +492,7 @@
             "littleTAIL_SMALL_LOW",
             "midFADEBELLY"
         ],
-	    "SKUNKTWO": [
+        "SKUNKTWO": [
             "littleLEFTEAR_TIP",
             "littleLEG_BACK_LEFT_UNDER",
             "littleLEG_BACK_RIGHT_UNDER",
@@ -532,7 +532,7 @@
             "littleLEG_FRONT_LEFT_HIGH",
             "midBIB_FULL",
             "midCHEST_FULL"
-	    ],
+        ],
         "SHORELINE": [
             "midFCTWO_REDUCED",
             "midMITAINE",
@@ -739,11 +739,11 @@
             "littleUNDER_SMALL",
             "midWOODPECKER"
         ],
-	    "WOODFRECKLES": [
+        "WOODFRECKLES": [
             "littleTAIL_UNDER",
             "midWOODPECKER",
             "highFRECKLES"
-	    ],
+        ],
         "OVERCOAT": [
             "midFLANK_FULL",
             "midLEG_FRONT_RIGHT_REVERSE",
@@ -790,6 +790,19 @@
             "littleUNDEREYE_MIN_L",
             "littleUNDEREYE_MIN_R",
             "highPAINTED_REDUCED"
+        ],
+        "FRONT_SHIRT": [
+            "littleLEG_BACK_LEFT_UNDER",
+            "littleLEG_BACK_RIGHT_UNDER",
+            "littleTAILTIP",
+            "midSHIRT",
+            "highFRONT"
+        ],
+        "THREE_SPOT": [
+            "littleTAIL_REVERSE_HALF",
+            "midCHEST_HIGH",
+            "midSADDLE_MIN_REVERSE",
+            "highRINGTAIL_REDUCED"
         ]
     },
     "mostly": {
@@ -942,6 +955,17 @@
             "midBIB_FULL",
             "midBELLY_FULL",
             "midFLANK_MID"
+        ],
+        "MOORISH_ROSINA": [
+            "littleBEARD_SMALL",
+            "littleROSINA_REDUCED",
+            "littleNECKBEARD",
+            "mostlyMOORISH"
+        ],
+        "CAKE_FRECKLES": [
+            "midTAIL_REVERSE_HIGH",
+            "highCAKE_REDUCED",
+            "highFRECKLES"
         ]
     }
 }
