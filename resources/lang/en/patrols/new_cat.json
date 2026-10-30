@@ -16597,7 +16597,7 @@
         "chance_of_success": 30,
         "patrol_art": "POI",
         "intro_strings": [
-            "p_l wakes with a start. Another sleep, another dream. So many dreams - dreams of dream_list -  every time {PRONOUN/p_l/subject} {VERB/p_l/fall/falls} asleep. And that <i>cat</i>, the one whose face {PRONOUN/p_l/subject} can never see... And the sight of POI lit up like the sun, viewed from a distance, but getting closer and closer each dream..."
+            "p_l wakes with a start. Another sleep, another dream. So many dreams - dreams of dream_list/p_l -  every time {PRONOUN/p_l/subject} {VERB/p_l/fall/falls} asleep. And that <i>cat</i>, the one whose face {PRONOUN/p_l/subject} can never see... And the sight of POI lit up like the sun, viewed from a distance, but getting closer and closer each dream..."
         ],
         "decline_strings": [
             "p_l gets up and goes to the dirtplace. {PRONOUN/p_l/subject/CAP} {VERB/p_l/start/starts} digging a new trench. p_l just needs to occupy {PRONOUN/p_l/poss} paws, occupy {PRONOUN/p_l/poss} mind. Then the dreams will stop, surely..."
@@ -17064,6 +17064,493 @@
                         }
                     }
                 ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_bord_moonplace_clair_newhealer",
+        "types": ["border"],
+        "frequency": 1,
+        "poi": {
+            "category": "moonplace"
+        },
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ]
+        },
+        "involved_cats": {
+            "p_l": {
+                "stat": {
+                    "skill": ["CLAIRVOYANT,0"]
+                }
+            }
+        },
+        "chance_of_success": 30,
+        "patrol_art": "POI",
+        "intro_strings": [
+            "p_l is out on a walk near the border when {PRONOUN/p_l/poss} body seizes, and {PRONOUN/p_l/subject} {VERB/p_l/stumble/stumbles}. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} struck by clair_list_taste_smell_emotional/p_l. {PRONOUN/p_l/subject/CAP} {VERB/p_l/find/finds} {PRONOUN/p_l/self} trembling and panting when the vision passes. Somecat is nearby, somecat important... {PRONOUN/p_l/subject/CAP} {VERB/p_l/turn/turns} {PRONOUN/p_l/poss} gaze towards POI."
+        ],
+        "decline_strings": [
+            "p_l has been left too weak by the intensity of {PRONOUN/p_l/poss} clairvoyant vision. {PRONOUN/p_l/subject/CAP} {VERB/p_l/return/returns} to camp, and luckily {PRONOUN/p_l/poss} legs have stopped trembling by the time {PRONOUN/p_l/subject} {VERB/p_l/get/gets} there."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 10,
+                "outcome_art": "cat_sprites/gen_foundscent_ApLn",
+                "strings": [
+                    "When p_l hasn't known how to interpret {PRONOUN/p_l/poss} visions before, going to POI has always been helpful. {PRONOUN/p_l/subject/CAP} {VERB/p_l/set/sets} out on the journey, experiencing clair_list_sound_taste_emotional/p_l more than once on the way. When {PRONOUN/p_l/subject} {VERB/p_l/arrive/arrives}, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} met with the strong scent of an unfamiliar cat, and {VERB/p_l/stagger/staggers} again with another vision - prophecy_list_smell/p_l. {PRONOUN/p_l/subject/CAP} {VERB/p_l/follow/follows} the scent, and quickly {VERB/p_l/catch/catches} up with the cat. When the cat glances at {PRONOUN/p_l/object}, {PRONOUN/p_l/subject} {VERB/p_l/see/sees} {PRONOUN/n_c0/object} stagger just like p_l does when {PRONOUN/p_l/subject} {VERB/p_l/receive/receives} a vision. The two cats' eyes meet with the recognition of two kindred spirits."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "young adult",
+                            "adult"
+                        ],
+                        "status": [
+                            "loner",
+                            "kittypet"
+                        ],
+                        "backstory": [
+                            "wandering_healer1",
+                            "wandering_healer2",
+                            "guided1",
+                            "guided3"
+                        ],
+                        "stat": {
+                            "must_have_both": true,
+                            "skill": [
+                                "CLAIRVOYANT,2"
+                            ],
+                            "trait": [
+                                "adventurous",
+                                "bold",
+                                "charismatic",
+                                "compassionate",
+                                "confident",
+                                "daring",
+                                "flamboyant",
+                                "loyal",
+                                "playful",
+                                "rebellious",
+                                "shameless",
+                                "strange",
+                                "troublesome"
+                            ]
+                        }
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "amount": 10,
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_from and cat_to share the same supernatural powers",
+                            "cats_to": "cat_from and cat_to share the same supernatural powers"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 1
+                }
+            },
+            {
+                "frequency": 4,
+                "exp_gained": 10,
+                "outcome_art": "cat_sprites/gen_foundscent_WrLn",
+                "strings": [
+                    "p_l feels like these visions have <i>something</i> to do with POI, so {PRONOUN/p_l/subject} {VERB/p_l/set/sets} out on the journey. Along the way, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} hit by clair_list_sound_taste_emotional/p_l. When {PRONOUN/p_l/subject} {VERB/p_l/arrive/arrives}, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} met with the strong scent of an unfamiliar cat, and {VERB/p_l/stagger/staggers} again with another vision - prophecy_list_smell/p_l. {PRONOUN/p_l/subject/CAP} {VERB/p_l/follow/follows} the scent, and quickly {VERB/p_l/catch/catches} up with the cat. When the cat glances at {PRONOUN/p_l/object}, {PRONOUN/p_l/subject} {VERB/p_l/see/sees} {PRONOUN/n_c0/object} stagger just like p_l does when {PRONOUN/p_l/subject} {VERB/p_l/receive/receives} a vision. The two cats' eyes meet with the recognition of two kindred spirits."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "status": [
+                            "warrior",
+                            "deputy",
+                            "leader"
+                        ]
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "young adult",
+                            "adult"
+                        ],
+                        "status": [
+                            "loner",
+                            "kittypet"
+                        ],
+                        "backstory": [
+                            "wandering_healer1",
+                            "wandering_healer2",
+                            "guided1",
+                            "guided3"
+                        ],
+                        "stat": {
+                            "must_have_both": true,
+                            "skill": [
+                                "CLAIRVOYANT,2"
+                            ],
+                            "trait": [
+                                "adventurous",
+                                "bold",
+                                "charismatic",
+                                "compassionate",
+                                "confident",
+                                "daring",
+                                "flamboyant",
+                                "loyal",
+                                "playful",
+                                "rebellious",
+                                "shameless",
+                                "strange",
+                                "troublesome"
+                            ]
+                        }
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "amount": 10,
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_from and cat_to share the same supernatural powers",
+                            "cats_to": "cat_from and cat_to share the same supernatural powers"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 1
+                }
+            },
+            {
+                "frequency": 4,
+                "exp_gained": 15,
+                "outcome_art": "cat_sprites/gen_vision_Wr",
+                "strings": [
+                    "s_c0 gives {PRONOUN/s_c0/self} a shake and sets out to find this cat. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/use/uses} {PRONOUN/s_c0/poss} visions as a bat uses its chirps to find bugs, using the strength of the visions to pinpoint the cat causing them. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/find/finds} the cat just outside of POI, and the moment their eyes meet, {PRONOUN/s_c0/subject} can see the cat shake with a vision of {PRONOUN/n_c0/poss} own. {PRONOUN/n_c0/subject/CAP} {VERB/n_c0/seem/seems} impressed that s_c0 tracked {PRONOUN/n_c0/object} down using clairvoyance, and after some talking, {PRONOUN/n_c0/subject} {VERB/n_c0/agree/agrees} to join c_n."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["p_l"],
+                        "stat": {
+                            "skill": ["CLAIRVOYANT,1"]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "young adult",
+                            "adult"
+                        ],
+                        "status": [
+                            "loner",
+                            "kittypet"
+                        ],
+                        "backstory": [
+                            "wandering_healer1",
+                            "wandering_healer2",
+                            "guided1",
+                            "guided3"
+                        ],
+                        "stat": {
+                            "must_have_both": true,
+                            "skill": [
+                                "CLAIRVOYANT,2"
+                            ],
+                            "trait": [
+                                "adventurous",
+                                "bold",
+                                "charismatic",
+                                "compassionate",
+                                "confident",
+                                "daring",
+                                "flamboyant",
+                                "loyal",
+                                "playful",
+                                "rebellious",
+                                "shameless",
+                                "strange",
+                                "troublesome"
+                            ]
+                        }
+                    }
+                },
+                "join": [
+                    {
+                        "cats": ["n_c0"],
+                        "new_status": ["medicine cat"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "amount": 15,
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_from and cat_to share the same supernatural powers, and cat_to agreed to join c_n.",
+                            "cats_to": "cat_from and cat_to share the same supernatural powers, and cat_from convinced {PRONOUN/cat_to/object} to join c_n."
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 2
+                }
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_solo_Wr",
+                "strings": [
+                    "p_l heads out for POI, but {PRONOUN/p_l/subject} never {VERB/p_l/experience/experiences} any more visions. When {PRONOUN/p_l/subject} {VERB/p_l/get/gets} to the moonplace, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} nothing at all out of the norm. Not even {PRONOUN/p_l/poss} ancestors speak to {PRONOUN/p_l/object}. Frustrated, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} home, where {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} immediately scolded for disappearing for so long without telling anyone, and assigned extra patrols to make up for the ones {PRONOUN/p_l/subject} missed."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "status": [
+                            "-leader"
+                        ]
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "some_clan",
+                            "high_lawful"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "amount": -5,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to disappeared for a long time without telling anyone where {PRONOUN/cat_to/subject} went, and missed several patrols {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} assigned to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_battle_ApRg",
+                "strings": [
+                    "p_l begins the journey to POI, expecting to receive more visions along the way. But {PRONOUN/p_l/subject} never {VERB/p_l/do/does}, and POI is unremarkable. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to expand {PRONOUN/p_l/poss} search, and when {PRONOUN/p_l/subject} {VERB/p_l/do/does}, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a cat in the distance. p_l calls out a greeting, and the cat begins racing towards {PRONOUN/p_l/object}, faster and faster. p_l realizes too late that that's not the cat causing {PRONOUN/p_l/poss} visions."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "health": {
+                            "working": true
+                        }
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "battle_injury"
+                        ],
+                        "scar_history": "m_c was scarred after being attacked by a rogue that {PRONOUN/m_c/subject} mistook for the cat from {PRONOUN/m_c/poss} visions.",
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after being attacked by a rogue that {PRONOUN/m_c/subject} mistook for the cat from {PRONOUN/m_c/poss} visions."
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "some_clan",
+                            "high_lawful"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "amount": -10,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from disapproves of how cat_to disappeared for days without telling anyone, then showed back up at camp injured from {PRONOUN/cat_to/poss} misadventure"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": -1
+                }
+            },
+            {
+                "frequency": 2,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_battle_WrRg",
+                "strings": [
+                    "p_l begins the journey to POI, expecting to receive more visions along the way. But {PRONOUN/p_l/subject} never {VERB/p_l/do/does}, and POI is unremarkable. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to expand {PRONOUN/p_l/poss} search, and when {PRONOUN/p_l/subject} {VERB/p_l/do/does}, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a cat in the distance. p_l calls out a greeting, and the cat begins racing towards {PRONOUN/p_l/object}, faster and faster. This clearly isn't who p_l is looking for, and {PRONOUN/p_l/subject} {VERB/p_l/meet/meets} {PRONOUN/n_c0/object} halfway, claws bared."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "status": [
+                            "warrior",
+                            "deputy",
+                            "leader"
+                        ]
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "health": {
+                            "working": true
+                        }
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "battle_injury"
+                        ],
+                        "scar_history": "m_c was scarred after being attacked by a rogue that {PRONOUN/m_c/subject} mistook for the cat from {PRONOUN/m_c/poss} visions.",
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after being attacked by a rogue that {PRONOUN/m_c/subject} mistook for the cat from {PRONOUN/m_c/poss} visions."
+                    },
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "battle_injury"
+                        ],
+                        "scar_history": "This cat was scarred after attacking a Clancat that {PRONOUN/m_c/subject} caught outside of Clan territory.",
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after attacking a Clancat that {PRONOUN/m_c/subject} caught outside of Clan territory."
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "some_clan",
+                            "high_lawful"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "amount": -10,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from disapproves of how cat_to disappeared for days without telling anyone, then showed back up at camp injured from {PRONOUN/cat_to/poss} misadventure"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": -1
+                }
+            },
+            {
+                "frequency": 1,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_burial_WrWrWrMcAp",
+                "strings": [
+                    "p_l begins the journey to POI, expecting to receive more visions along the way. But {PRONOUN/p_l/subject} never {VERB/p_l/do/does}, and POI is unremarkable. Suddenly, a heavy weight lands on {PRONOUN/p_l/poss} back, and {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} teeth piercing {PRONOUN/p_l/poss} spine. {PRONOUN/p_l/poss/CAP} last thought is gratitude that the half-moon meeting is tomorrow, so at least {PRONOUN/p_l/poss} body will be found quickly. Sure enough, the next night, the medicine cats from all the Clans hold a funeral, and med_name brings the news back to c_n."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "health": {
+                            "working": true
+                        }
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ],
+                "death": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "body": false,
+                        "history": "This cat died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} ambushed by a rogue while searching for the cat causing {PRONOUN/m_c/poss} clairvoyant visions"
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": -2
+                }
             }
         ]
     },
