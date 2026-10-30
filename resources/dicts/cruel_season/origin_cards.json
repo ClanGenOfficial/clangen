@@ -80,7 +80,7 @@
   "no_prior_knowledge": {
     "card_art": "origin/public_enemy.png",
     "modifiers": {
-      "clan_creation.keep_starting_skills": false
+      "clan_creation.reset_all_starting_skills": true
     }
   }
 }

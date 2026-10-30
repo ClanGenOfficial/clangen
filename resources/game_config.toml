@@ -766,7 +766,7 @@ dev_tools = false
   minimum_membership = 7
   maximum_membership = 10
 
-  keep_starting_skills = true
+  reset_all_starting_skills = false
 
   [clan_creation.ranks_needed]
     leader = true
