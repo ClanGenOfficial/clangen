@@ -36,7 +36,6 @@ from scripts.ui.elements.modified_scrolling_container import (
 from scripts.ui.elements.scrolling_button_list import UIScrollingButtonList
 from scripts.ui.elements.scrolling_dropdown import UIScrollingDropDown
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon

@@ -44,7 +44,6 @@ from scripts.ui.elements.checkbox import UICheckbox
 from scripts.ui.elements.image_button import UIImageButton
 from scripts.ui.elements.modified_image import UIModifiedImage
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.generate_box import BoxStyles, get_box
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
