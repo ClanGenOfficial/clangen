@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "recurring_shock_exhausted",
+        "strings": [
+            "m_c is left exhausted from {PRONOUN/m_c/poss} recurring shock."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

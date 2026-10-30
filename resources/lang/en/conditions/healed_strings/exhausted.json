@@ -1,0 +1,12 @@
+[
+    {
+        "event_id": "healed_exhausted0",
+        "strings": [
+            "m_c is feeling less fatigued.",
+            "m_c has regained {PRONOUN/m_c/poss} energy."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

@@ -93,7 +93,9 @@
         "progression": {},
         "risks": {
             "whitecough": 0.1,
-            "breathless_fit": 0.4
+            "breathless_fit": 0.4,
+            "persistent_exhaustion": 0.02,
+            "exhausted": 0.1
         },
         "treatment_strength": {
             "1": [
@@ -143,7 +145,8 @@
         "immune_system_effect": 0.0,
         "progression": {},
         "risks": {
-            "joint_pain": 0.4
+            "joint_pain": 0.4,
+            "exhausted": 0.2
         },
         "treatment_strength": {
             "1": [
@@ -188,7 +191,9 @@
         "progression": {},
         "risks": {
             "grief_stricken": 0.2,
-            "absent": 0.02
+            "absent": 0.02,
+            "persistent_exhaustion": 0.06,
+            "exhausted": 0.2
         },
         "treatment_strength": {
             "1": [

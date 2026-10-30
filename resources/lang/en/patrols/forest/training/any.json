@@ -2564,19 +2564,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Scrambling up the hill, r_c1 shoves r_c2 up a slightly too big step, both of them panting as they run. Strange-smelling mist swirls around them as they search for the StarClan cat, until r_c2 bumps into a huge, tall pillar — one that blinks down with slow, glowing red eyes."
+                    "Scrambling up the hill, r_c1 shoves p_l up a slightly too big step, both of them panting as they run. Strange-smelling mist swirls around them as they search for the StarClan cat, until p_l bumps into a huge, tall pillar — one that blinks down with slow, glowing red eyes."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
+                    "r_c1": {}
                 },
                 "exp_gained": 0
             }
@@ -2585,15 +2576,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c2 gets stuck on a big stone step as the apprentices try to scramble uphill — and by the time they climb up, only the dissipating, strangely scented mist says that anything magical passed through here at all."
+                    "p_l gets stuck on a big stone step as the apprentices try to scramble uphill — and by the time they climb up, only the dissipating, strangely scented mist says that anything magical passed through here at all."
                 ],
-                "involved_cats": {
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             }
         ]

@@ -33,19 +33,19 @@ Thank you for your interest in contributing to the written content within ClanGe
 
     Guidelines on adding new events triggered by leader's den actions.
 
-- __[Thoughts](thoughts.md)__
+- __[Thoughts](textpoolevents/thoughts.md)__
 
     ---
 
     Guidelines on adding new thoughts.
 
-- __[Relationship Events](relationship-events.md)__
+- __[Relationship Events](textpoolevents/relationship-events.md)__
 
     ---
 
     Guidelines on adding new relationship events.
 
-- __[Leader Ceremonies](ceremonies/leader-ceremonies.md)__
+- __[Leader Ceremonies](leader-ceremonies.md)__
 
     ---
 

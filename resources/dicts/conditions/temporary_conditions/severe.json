@@ -68,18 +68,23 @@
         "severity": "severe",
         "duration": 3,
         "mortality": {
-            "newborn": 0.9,
-            "kitten": 0.8,
-            "adolescent": 0.6,
-            "young adult": 0.5,
+            "newborn": 0.8,
+            "kitten": 0.7,
+            "adolescent": 0.5,
+            "young adult": 0.4,
             "adult": 0.4,
-            "senior adult": 0.5,
-            "senior": 0.6
+            "senior adult": 0.4,
+            "senior": 0.5
         },
-        "infectiousness": 0.6,
+        "infectiousness": 0.4,
         "immune_system_effect": 0.0,
         "side_effect": {},
         "progression": {
+            "temporary_weakness": {
+                "chance": 0.8,
+                "when": "HEALED",
+                "allow_scar": false
+            },
             "redcough": {
                 "chance": 0.1,
                 "when": "CONTINUING",
@@ -107,21 +112,36 @@
         "severity": "severe",
         "duration": 3,
         "mortality": {
-            "newborn": 0.7,
-            "kitten": 0.6,
+            "newborn": 0.6,
+            "kitten": 0.5,
             "adolescent": 0.0,
             "young adult": 0.0,
             "adult": 0.0,
             "senior adult": 0.0,
             "senior": 0.0
         },
-        "infectiousness": 0.4,
+        "infectiousness": 0.25,
         "immune_system_effect": 0.0,
         "side_effect": {},
         "progression": {
+            "temporary_weakness": {
+                "chance": 0.8,
+                "when": "HEALED",
+                "allow_scar": false
+            },
             "whitecough": {
                 "chance": 0.1,
                 "when": "CONTINUING",
+                "allow_scar": false
+            },
+            "weakened_muscles": {
+                "chance": 0.05,
+                "when": "HEALED",
+                "allow_scar": false
+            },
+            "persistent_exhaustion": {
+                "chance": 0.2,
+                "when": "HEALED",
                 "allow_scar": false
             }
         },
@@ -150,18 +170,29 @@
         "severity": "severe",
         "duration": 3,
         "mortality": {
-            "newborn": 0.9,
-            "kitten": 0.8,
-            "adolescent": 0.5,
-            "young adult": 0.5,
-            "adult": 0.5,
-            "senior adult": 0.5,
-            "senior": 0.9
+            "newborn": 0.8,
+            "kitten": 0.7,
+            "adolescent": 0.4,
+            "young adult": 0.3,
+            "adult": 0.3,
+            "senior adult": 0.4,
+            "senior": 0.5
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.1,
         "side_effect": {},
-        "progression": {},
+        "progression": {
+            "temporary_weakness": {
+                "chance": 0.8,
+                "when": "HEALED",
+                "allow_scar": false
+            },
+            "persistent_exhaustion": {
+                "chance": 0.2,
+                "when": "HEALED",
+                "allow_scar": false
+            }
+        },
         "risks": {},
         "treatment_strength": {
             "1": [
@@ -185,15 +216,31 @@
             "newborn": 1.0,
             "kitten": 1.0,
             "adolescent": 0.8,
-            "young adult": 0.5,
-            "adult": 0.5,
+            "young adult": 0.7,
+            "adult": 0.7,
             "senior adult": 0.8,
             "senior": 1.0
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.3,
         "side_effect": {},
-        "progression": {},
+        "progression": {
+            "temporary_weakness": {
+                "chance": 0.8,
+                "when": "HEALED",
+                "allow_scar": false
+            },
+            "weakened_muscles": {
+                "chance": 0.4,
+                "when": "HEALED",
+                "allow_scar": false
+            },
+            "persistent_exhaustion": {
+                "chance": 0.4,
+                "when": "HEALED",
+                "allow_scar": false
+            }
+        },
         "risks": {},
         "treatment_strength": {
             "1": [
@@ -217,8 +264,8 @@
         "is_complication": true,
         "duration": 2,
         "mortality": {
-            "newborn": 0.9,
-            "kitten": 0.8,
+            "newborn": 0.7,
+            "kitten": 0.6,
             "adolescent": 0.4,
             "young adult": 0.3,
             "adult": 0.2,
@@ -229,8 +276,18 @@
         "immune_system_effect": 0.2,
         "side_effect": {},
         "progression": {
+            "temporary_weakness": {
+                "chance": 0.8,
+                "when": "HEALED",
+                "allow_scar": false
+            },
             "strange_lump": {
                 "chance": 0.05,
+                "when": "HEALED",
+                "allow_scar": false
+            },
+            "persistent_exhaustion": {
+                "chance": 0.1,
                 "when": "HEALED",
                 "allow_scar": false
             }
@@ -268,7 +325,13 @@
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
         "side_effect": {},
-        "progression": {},
+        "progression": {
+            "persistent_exhaustion": {
+                "chance": 0.1,
+                "when": "HEALED",
+                "allow_scar": false
+            }
+        },
         "risks": {},
         "treatment_strength": {
             "1": [
@@ -290,7 +353,23 @@
         "infectiousness": 0.0,
         "immune_system_effect": 0.1,
         "side_effect": {},
-        "progression": {},
+        "progression": {
+            "temporary_weakness": {
+                "chance": 0.9,
+                "when": "HEALED",
+                "allow_scar": false
+            },
+            "weakened_muscles": {
+                "chance": 0.15,
+                "when": "HEALED",
+                "allow_scar": false
+            },
+            "persistent_exhaustion": {
+                "chance": 0.15,
+                "when": "HEALED",
+                "allow_scar": false
+            }
+        },
         "risks": {},
         "treatment_strength": {
             "1": [
@@ -330,6 +409,11 @@
                 "chance": 0.2,
                 "when": "HEALED",
                 "allow_scar": false
+            },
+            "temporary_weakness": {
+                "chance": 0.7,
+                "when": "HEALED",
+                "allow_scar": false
             }
         },
         "risks": {
@@ -366,11 +450,11 @@
         "mortality": {
             "newborn": 0.5,
             "kitten": 0.4,
-            "adolescent": 0.2,
+            "adolescent": 0.15,
             "young adult": 0.1,
-            "adult": 0.2,
-            "senior adult": 0.3,
-            "senior": 0.4
+            "adult": 0.1,
+            "senior adult": 0.2,
+            "senior": 0.3
         },
         "infectiousness": 0.0,
         "immune_system_effect": 0.0,
@@ -389,6 +473,11 @@
             },
             "twisted_leg": {
                 "chance": 0.2,
+                "when": "HEALED",
+                "allow_scar": true
+            },
+            "temporary_weakness": {
+                "chance": 0.6,
                 "when": "HEALED",
                 "allow_scar": true
             }
@@ -661,7 +750,8 @@
             }
         },
         "risks": {
-            "infection": 0.2
+            "infection": 0.2,
+            "temporary_weakness": 0.4
         },
         "treatment_strength": {
             "1": [
@@ -708,6 +798,16 @@
             "amputated_leg": {
                 "chance": 0.2,
                 "when": "CONTINUING",
+                "allow_scar": true
+            },
+            "temporary_weakness": {
+                "chance": 0.6,
+                "when": "HEALED",
+                "allow_scar": true
+            },
+            "weakened_muscles": {
+                "chance": 0.2,
+                "when": "HEALED",
                 "allow_scar": true
             }
         },
@@ -759,6 +859,16 @@
         "progression": {
             "paralyzed": {
                 "chance": 0.8,
+                "when": "HEALED",
+                "allow_scar": true
+            },
+            "temporary_weakness": {
+                "chance": 0.8,
+                "when": "HEALED",
+                "allow_scar": true
+            },
+            "weakened_muscles": {
+                "chance": 0.4,
                 "when": "HEALED",
                 "allow_scar": true
             }

@@ -162,7 +162,11 @@ def check_and_promote_deputy():
         )
     )
 
-    if get_config("ranks.only_leader_kits_deputy") and game.clan.leader is not None:
+    if (
+        get_config("ranks.only_leader_kits_deputy")
+        and game.clan.leader
+        and game.clan.leader.status.alive_in_player_clan
+    ):
         possible_deputies = [c for c in possible_deputies if c.ID in get_leaders_kits()]
 
     if possible_deputies:

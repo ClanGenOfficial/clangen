@@ -178,7 +178,9 @@
         "strings": [
             "Enjoys the warmth of newleaf",
             "Is relieved leaf-bare is finally over",
-            "Is soaking in the newleaf warmth"
+            "Is soaking in the newleaf warmth",
+            "Scents greenleaf on the breeze",
+            "Jumps a fox-length in the air when melt-water drips on {PRONOUN/m_c/object}"
         ]
     },
     {
@@ -220,7 +222,10 @@
             "Is crushing leaves under {PRONOUN/m_c/poss} paws",
             "Is glad it's not so hot out anymore",
             "Is not looking forward to leafbare",
-            "Hopes {PRONOUN/m_c/subject} will make it through leaf-bare"
+            "Hopes {PRONOUN/m_c/subject} will make it through leaf-bare",
+            "Worries about the lack of prey leaf-bare will bring",
+            "Cleans the clearing of fallen leaves",
+            "Shivers in the chilly breeze"
         ]
     },
     {
