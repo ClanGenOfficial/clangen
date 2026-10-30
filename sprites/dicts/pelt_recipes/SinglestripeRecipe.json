@@ -1,7 +1,12 @@
 {
     "name": "SinglestripeRecipe",
-    "layer_order": ["1", "2", "3", "4", "5", ["6", ["7", "8", "+blend_mode:mask"]]],
+    "layer_order": ["1", "2", "3", ["4", "5", ["6", ["7", "8", "+blend_mode:mask"]],"9"]],
     "layers": {
+        "9":{
+            "group_name": "SINGLESTRIPEPATTERN",
+            "color": "pattern_tint",
+            "blend_mode": "pattern_blend"
+        },
         "8":{
             "group_name": "SINGLESTRIPEPATTERN"
         },
@@ -76,7 +81,7 @@
         },
         {
             "colors": "BLOSSOM",
-            "layer_order": ["1", "2", "2.5", "3", "4", "5", ["4.5", "6", ["7", "8", "+blend_mode:mask"]]],
+            "layer_order": ["1", "2", "2.5", "3", ["4", "5", ["4.5", "6", ["7", "8", "+blend_mode:mask"]], "9"]],
             "layers": {
                 "6":
                 {
@@ -101,7 +106,8 @@
             }
     },
         {
-            "layer_order": ["1", "2", "3", "4", "5", ["6", ["7", "8", "+blend_mode:mask"]]],
+            "colors": "RUST",
+            "layer_order": ["1", "2", "3", ["4", "5", ["6", ["7", "8", "+blend_mode:mask"]], "9"]],
             "layers": {
                 "6": {
                     "group_name": "BACKTAILPATTERNGRAD",

@@ -16,6 +16,7 @@ logger = logging.getLogger(__name__)
 class Sprites:
     cat_tints = {}
     white_patches_tints = {}
+    pattern_tints = {}
     clan_symbols = []
     empty_indexes = []
 
@@ -167,6 +168,14 @@ class Sprites:
                 self.white_patches_tints = ujson.loads(read_file.read())
         except IOError:
             print("ERROR: Reading White Patches Tints")
+
+        try:
+            with open(
+                "sprites/dicts/pattern_tint.json", "r", encoding="utf-8"
+            ) as read_file:
+                self.pattern_tints = ujson.loads(read_file.read())
+        except IOError:
+            print("ERROR: Reading Pattern Tints")
 
     def spritesheet(self, a_file, name):
         """
