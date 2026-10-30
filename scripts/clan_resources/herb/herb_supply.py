@@ -848,8 +848,12 @@ class HerbSupply:
             possible_effects.extend([HerbEffect.RISKS, HerbEffect.RISKS])
         if condition.progression:
             possible_effects.extend([HerbEffect.PROGRESSION, HerbEffect.PROGRESSION])
+        if condition.immune_system_effect:
+            possible_effects.append(HerbEffect.IMMUNE_SYSTEM_EFFECT)
         if hasattr(condition, "mortality") and condition.mortality:
             possible_effects.append(HerbEffect.MORTALITY)
+        if hasattr(condition, "infectiousness") and condition.infectiousness:
+            possible_effects.append(HerbEffect.INFECTIOUSNESS)
 
         if not possible_effects:
             return

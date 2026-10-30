@@ -49,6 +49,14 @@ class BaseCondition:
                     + get_config("clan_resources.herbs.base_mortality_effect"),
                 )
 
+        if effect == HerbEffect.IMMUNE_SYSTEM_EFFECT:
+            if self.immune_system_effect:
+                self.immune_system_effect = min(
+                    0.99,
+                    self.immune_system_effect
+                    + get_config("clan_resources.herbs.base_immune_system_effect"),
+                )
+
     def apply_herb_effect(self, effect: HerbEffect):
         if effect == HerbEffect.RISKS:
             for risk in self.risks:

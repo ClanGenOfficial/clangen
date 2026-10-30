@@ -18,6 +18,18 @@ class TemporaryCondition(BaseCondition):
     def __repr__(self):
         return self.name
 
+    def apply_lack_of_herb(self, effect: HerbEffect):
+        # have to use a funky "old style" super since this is a slotted dataclass
+        super(TemporaryCondition, self).apply_lack_of_herb(effect)
+
+        if effect == HerbEffect.INFECTIOUSNESS:
+            if self.infectiousness:
+                self.infectiousness = min(
+                    0.99,
+                    self.infectiousness
+                    + get_config("clan_resources.herbs.base_infectiousness_effect"),
+                )
+
     def apply_herb_effect(self, effect: HerbEffect):
         # have to use a funky "old style" super since this is a slotted dataclass
         super(TemporaryCondition, self).apply_herb_effect(effect)
