@@ -4,8 +4,97 @@
         "strings": [
             "m_c missed a tick while grooming, and is now suffering the consequences. {PRONOUN/m_c/subject/CAP} {VERB/m_c/have/has} tick fever.",
             "Even if {PRONOUN/m_c/subject} can't find the exact bug responsible, m_c's new rash and fever clearly point to tick-borne illness.",
-            "m_c has tick fever.",
+            "Rash, fever, bad headache, all following a tick bite? It looks like m_c has tick fever.",
+            "Most tick bites are harmless. Most. m_c has tick fever.",
+            "It's tick season! c_n is fastidious in removing any parasites, but these bugs are sneaky, and it only takes one bad tick to infect m_c with tick fever.",
+            "Tick fever is almost never fatal. But m_c can't help but find that a bit hard to believe, shivering miserably with fever and headache in the most secluded corner of camp.",
             "m_c is sick with tick fever."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    },
+    {
+        "event_id": "with_med_gain_tick_fever0",
+        "tags": [
+            "clan:warrior"
+        ],
+        "strings": [
+            "After a tick bite becomes a fever and rash, m_c goes to the medicine den, where r_c0 diagnoses {PRONOUN/m_c/object} with tick fever.",
+            "After diagnosing m_c with tick fever, r_c0 instructs every Clanmate to check themselves for bites. One infected bug often means more.",
+            "High fever, pounding headache, full-body rash; though r_c0 insists tick fever is rarely fatal, m_c <i>feels</i> about halfway dead.",
+            "r_c0 searches the herb stores. m_c's newly diagnosed tick fever is rarely serious, but goldenrod and mullein are best for hastening recovery.",
+            "Shivering with fever and headache as {PRONOUN/m_c/subject} {VERB/m_c/choke/chokes} down r_c0's foul herb paste, m_c marvels at how a tiny tick bite could cause such awful sickness.",
+            "Aha! r_c0 plucks the tick from m_c's skin with a triumphant mrrow. Unfortunately, neither cat would have thought to look for the sneaky bug if m_c didn't already have a fever and rash.",
+            "Most tick bites are harmless. Most. r_c0 assures m_c tick fever is a very mild disease, but it's cold comfort.",
+            "Though m_c plucked the parasite off at first sight, tick-borne illness can be transmitted in only an hour of feeding. In a few days, r_c0 diagnoses m_c with tick fever.",
+            "Horrible little parasite... r_c0 extracts and crushes the tick with satisfaction, completing the first step in treating m_c’s new tick fever.",
+            "It's tick season! And m_c's got tick fever. Though r_c0 is grateful tick fever is so much milder than any –cough, it's still not fun watching every bug-bitten cat for rashes or headaches."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-medicine cat",
+                    "-medicine cat apprentice"
+                ]
+            },
+            "r_c0": {
+                "status": [
+                    "medicine cat",
+                    "medicine cat apprentice"
+                ],
+                "group": [
+                    "match:m_c"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "med_gain_tick_fever0",
+        "strings": [
+            "m_c feverishly searches the herb stores. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} gotten tick fever, and goldenrod or mullein are best at hastening recovery.",
+            "Tick fever is almost never fatal. But even a medicine cat like m_c can't help but find that a bit hard to believe, shivering miserably with fever and headache in the medicine den's most secluded nest.",
+            "Fever, rash, bad headache, all following a tick bite? m_c's self diagnosis of tick fever is easy, not that that makes {PRONOUN/m_c/object} feel any better.",
+            "A tick latched onto m_c while {PRONOUN/m_c/subject} {VERB/m_c/were/was} gathering herbs. m_c found and plucked it off that night, but in few days {PRONOUN/m_c/subject} {VERB/m_c/develop/develops} a rash and fever."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "medicine cat",
+                    "medicine cat apprentice"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "only_med_gain_tick_fever0",
+        "tags": [
+            "-clan:medicine cat",
+            "-clan:medicine cat apprentice"
+        ],
+        "strings": [
+            "An infected tick has given m_c tick fever. As the only medicine cat, Clanmates worry what might happen while m_c is too sick to work.",
+            "m_c feverishly searches the herb stores. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} gotten tick fever, and as the only medicine cat, must treat {PRONOUN/m_c/self}."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "no_med_gain_tick_fever0",
+        "tags": [
+            "-clan:medicine cat(min:1)",
+            "-clan:medicine cat apprentice(min:1)",
+            "clan:warrior"
+        ],
+        "strings": [
+            "Nature doesn't care if c_n is without a medicine cat. It's tick season, and one of the horrible little parasites has given m_c tick fever.",
+            "Tick fever is a mild disease... but will it stay that way for m_c, without a medicine cat's treatment?",
+            "Clanmates provide the plumpest fresh-kill and a quiet den for the headache, but without a medicine cat, they are lost on how to truly treat m_c's new tick fever."
         ],
         "involved_cats": {
             "m_c": {}
