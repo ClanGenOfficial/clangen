@@ -12392,13 +12392,10 @@
                 "exp_gained": 0,
                 "outcome_art": "cat_sprites/gen_angrycat_Ap",
                 "strings": [
-                    "s_c0 <i>has</i> to go to POI. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/sneak/sneaks} out of camp and begins the journey. When s_c0 arrives, the cat from {PRONOUN/s_c0/poss} dreams is sitting at the very center of the holy place. The cat purrs that it's good to meet s_c0, but {PRONOUN/s_c0/subject} {VERB/s_c0/raise/raises} {PRONOUN/s_c0/poss} hackles in fear. What does this cat want?! Why {VERB/n_c0/have/has} {PRONOUN/n_c0/subject} been sending dreams to s_c0?! The stranger's purr stops, and {PRONOUN/n_c0/subject} silently {VERB/n_c0/walk/walks} away from POI, brushing {PRONOUN/n_c0/poss} pelt against s_c0's as {PRONOUN/n_c0/subject} {VERB/n_c0/go/goes}. s_c0 has a sinking feeling that {PRONOUN/s_c0/subject} ruined something important."
+                    "p_l <i>has</i> to go to POI. {PRONOUN/p_l/subject/CAP} {VERB/p_l/sneak/sneaks} out of camp and begins the journey. When p_l arrives, the cat from {PRONOUN/p_l/poss} dreams is sitting at the very center of the holy place. The cat purrs that it's good to meet p_l, but {PRONOUN/p_l/subject} {VERB/p_l/raise/raises} {PRONOUN/p_l/poss} hackles in fear. What does this cat want?! Why {VERB/n_c0/have/has} {PRONOUN/n_c0/subject} been sending dreams to p_l?! The stranger's purr stops, and {PRONOUN/n_c0/subject} silently {VERB/n_c0/walk/walks} away from POI, brushing {PRONOUN/n_c0/poss} pelt against p_l's as {PRONOUN/n_c0/subject} {VERB/n_c0/go/goes}. p_l has a sinking feeling that {PRONOUN/p_l/subject} ruined something important."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "p_l"
-                        ],
+                    "p_l": {
                         "status": [
                             "apprentice"
                         ]
@@ -12447,7 +12444,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_to": [
                             "n_c0"
@@ -12467,7 +12464,7 @@
                             "n_c0"
                         ],
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "amount": 20,
                         "values": [
@@ -12489,13 +12486,10 @@
                 "exp_gained": 0,
                 "outcome_art": "cat_sprites/gen_angrycat_Wr",
                 "strings": [
-                    "s_c0 <i>has</i> to go to POI. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/sneak/sneaks} out of camp and begins the journey. When s_c0 arrives, the cat from {PRONOUN/s_c0/poss} dreams is sitting at the very center of the holy place. The cat purrs that it's good to meet s_c0, but {PRONOUN/s_c0/subject} {VERB/s_c0/raise/raises} {PRONOUN/s_c0/poss} hackles in fear. What does this cat want?! Why {VERB/n_c0/have/has} {PRONOUN/n_c0/subject} been sending dreams to s_c0?! The stranger's purr stops, and {PRONOUN/n_c0/subject} silently {VERB/n_c0/walk/walks} away from POI, brushing {PRONOUN/n_c0/poss} pelt against s_c0's as {PRONOUN/n_c0/subject} {VERB/n_c0/go/goes}. s_c0 has a sinking feeling that {PRONOUN/s_c0/subject} ruined something important."
+                    "p_l <i>has</i> to go to POI. {PRONOUN/p_l/subject/CAP} {VERB/p_l/sneak/sneaks} out of camp and begins the journey. When p_l arrives, the cat from {PRONOUN/p_l/poss} dreams is sitting at the very center of the holy place. The cat purrs that it's good to meet p_l, but {PRONOUN/p_l/subject} {VERB/p_l/raise/raises} {PRONOUN/p_l/poss} hackles in fear. What does this cat want?! Why {VERB/n_c0/have/has} {PRONOUN/n_c0/subject} been sending dreams to p_l?! The stranger's purr stops, and {PRONOUN/n_c0/subject} silently {VERB/n_c0/walk/walks} away from POI, brushing {PRONOUN/n_c0/poss} pelt against p_l's as {PRONOUN/n_c0/subject} {VERB/n_c0/go/goes}. p_l has a sinking feeling that {PRONOUN/p_l/subject} ruined something important."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "p_l"
-                        ],
+                    "p_l": {
                         "status": [
                             "warrior",
                             "deputy"
@@ -12545,7 +12539,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_to": [
                             "n_c0"
@@ -12565,7 +12559,7 @@
                             "n_c0"
                         ],
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "amount": 20,
                         "values": [
@@ -12587,13 +12581,10 @@
                 "exp_gained": 0,
                 "outcome_art": "cat_sprites/gen_bord_abandonclan_LnAp",
                 "strings": [
-                    "s_c0 <i>has</i> to go to POI. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/sneak/sneaks} out of camp and begins the journey. When s_c0 arrives, the cat from {PRONOUN/s_c0/poss} dreams is sitting at the very center of the holy place. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/recognize/recognizes} the cat's paws - {PRONOUN/s_c0/subject}{VERB/s_c0/'ve/'s} dreamed of using them as {PRONOUN/s_c0/poss} own. The cat purrs at s_c0 as they touch noses. It's nice to finally meet - is s_c0 ready to go? s_c0's own purr fades. Do they really have to leave? Can't they go back to c_n? The dream-cat gently shakes {PRONOUN/n_c0/poss} head, and s_c0 follows {PRONOUN/n_c0/object} away from all {PRONOUN/s_c0/subject}{VERB/s_c0/'ve/'s} ever known."
+                    "p_l <i>has</i> to go to POI. {PRONOUN/p_l/subject/CAP} {VERB/p_l/sneak/sneaks} out of camp and begins the journey. When p_l arrives, the cat from {PRONOUN/p_l/poss} dreams is sitting at the very center of the holy place. {PRONOUN/p_l/subject/CAP} {VERB/p_l/recognize/recognizes} the cat's paws - {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} dreamed of using them as {PRONOUN/p_l/poss} own. The cat purrs at p_l as they touch noses. It's nice to finally meet - is p_l ready to go? p_l's own purr fades. Do they really have to leave? Can't they go back to c_n? The dream-cat gently shakes {PRONOUN/n_c0/poss} head, and p_l follows {PRONOUN/n_c0/object} away from all {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} ever known."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "p_l"
-                        ],
+                    "p_l": {
                         "status": [
                             "apprentice"
                         ]
@@ -12642,14 +12633,14 @@
                 "lost": [
                     {
                         "cats": [
-                            "s_c0"
+                            "p_l"
                         ]
                     }
                 ],
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_to": [
                             "n_c0"
@@ -12669,7 +12660,7 @@
                             "n_c0"
                         ],
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "amount": 20,
                         "values": [
@@ -12688,13 +12679,10 @@
                 "exp_gained": 0,
                 "outcome_art": "cat_sprites/gen_bord_abandonclan_LnWr",
                 "strings": [
-                    "s_c0 <i>has</i> to go to POI. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/sneak/sneaks} out of camp and begins the journey. When s_c0 arrives, the cat from {PRONOUN/s_c0/poss} dreams is sitting at the very center of the holy place. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/recognize/recognizes} the cat's paws - {PRONOUN/s_c0/subject}{VERB/s_c0/'ve/'s} dreamed of using them as {PRONOUN/s_c0/poss} own. The cat purrs at s_c0 as they touch noses. It's nice to finally meet - they've been walking together for at least a moon now, haven't they? Is s_c0 ready to go? s_c0's own purr fades. It's not a choice, is it? They have to. The dream-cat gives a gentle nod, and s_c0 follows {PRONOUN/n_c0/object} away from {PRONOUN/s_c0/poss} Clan."
+                    "p_l <i>has</i> to go to POI. {PRONOUN/p_l/subject/CAP} {VERB/p_l/sneak/sneaks} out of camp and begins the journey. When p_l arrives, the cat from {PRONOUN/p_l/poss} dreams is sitting at the very center of the holy place. {PRONOUN/p_l/subject/CAP} {VERB/p_l/recognize/recognizes} the cat's paws - {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} dreamed of using them as {PRONOUN/p_l/poss} own. The cat purrs at p_l as they touch noses. It's nice to finally meet - they've been walking together for at least a moon now, haven't they? Is p_l ready to go? p_l's own purr fades. It's not a choice, is it? They have to. The dream-cat gives a gentle nod, and p_l follows {PRONOUN/n_c0/object} away from {PRONOUN/p_l/poss} Clan."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "p_l"
-                        ],
+                    "p_l": {
                         "status": [
                             "warrior",
                             "deputy"
@@ -12744,14 +12732,14 @@
                 "lost": [
                     {
                         "cats": [
-                            "s_c0"
+                            "p_l"
                         ]
                     }
                 ],
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_to": [
                             "n_c0"
@@ -12771,7 +12759,7 @@
                             "n_c0"
                         ],
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "amount": 20,
                         "values": [
