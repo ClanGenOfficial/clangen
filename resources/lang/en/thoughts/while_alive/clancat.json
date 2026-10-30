@@ -4729,7 +4729,7 @@
         }
     },
     {
-        "event_id": "poi_moonplace",
+        "event_id": "poi_gathering",
         "poi": {
             "category": "gathering"
         },
