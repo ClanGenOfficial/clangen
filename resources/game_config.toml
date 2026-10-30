@@ -795,7 +795,7 @@ dev_tools = false
     deputy = true
 
 [patrol_related]
-[patrol_related.allow_nonrandom_selection]
+[patrol_related.allow_player_selection]
   all = true
   training = true
   hunting = true
