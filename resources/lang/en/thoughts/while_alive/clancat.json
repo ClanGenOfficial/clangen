@@ -4360,8 +4360,6 @@
         },
         "strings": [
             "Is patrolling near POI",
-            "Successfully defended POI from a loner",
-            "Successfully defended POI from a rogue",
             "Is extra thorough while patrolling POI"
         ],
         "involved_cats": {
@@ -4444,13 +4442,36 @@
         "strings": [
             "Had a close call by POI",
             "Shudders at the idea of going near POI",
-            "Is extra wary while patrolling POI",
             "Hopes POI doesn't claim {PRONOUN/m_c/poss} life...",
             "Thought {PRONOUN/m_c/subject} heard a scary noise by POI and has been puffed up ever since",
-            "Keeps a healthy distance from POI while on patrol",
-            "Groans when {PRONOUN/m_c/subject} {VERB/m_c/have/has} to patrol near POI",
             "Spends as little time at POI as {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to",
             "Is extra jumpy when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} at POI"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader",
+                    "medicine cat",
+                    "medicine cat apprentice"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "poi_danger_patrolling",
+        "poi": {
+            "tags": ["danger"]
+        },
+        "strings": [
+            "Is extra wary while patrolling POI",
+            "Keeps a healthy distance from POI while on patrol",
+            "Groans when {PRONOUN/m_c/subject} {VERB/m_c/have/has} to patrol near POI"
         ],
         "involved_cats": {
             "m_c": {
@@ -4586,7 +4607,6 @@
         },
         "strings": [
             "Is taking shelter from harsh winds at POI",
-            "Is hiding at POI from a predator",
             "Is using POI to hide {PRONOUN/m_c/self} while hunting"
         ],
         "involved_cats": {
