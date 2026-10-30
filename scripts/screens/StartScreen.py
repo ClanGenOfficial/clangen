@@ -366,10 +366,11 @@ class StartScreen(Screens):
         self.closebtn.hide()
 
         self.update_button = UISurfaceImageButton(
-            ui_scale(pygame.Rect((577, 25), (153, 30))),
+            ui_scale(pygame.Rect((-190, 25), (185, 30))),
             "buttons.update_available",
-            get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
-            object_id="@buttonstyles_squoval",
+            get_button_dict(ButtonStyles.MAINMENU, (185, 30)),
+            object_id="@buttonstyles_mainmenu",
+            anchors={"right": "right", "right_target": self.elements["bug_report"]},
             manager=MANAGER,
             visible=False,
         )
