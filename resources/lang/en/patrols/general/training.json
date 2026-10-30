@@ -34481,7 +34481,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 keeps a close eye on r_c0, noting how aggressively {PRONOUN/r_c0/subject} {VERB/r_c0/approach/approaches} a problem. {PRONOUN/s_c0/subject/CAP} certainly {VERB/s_c0/seem/seems} to solve problems in an efficient manner, but s_c0 considers if {PRONOUN/s_c0/subject} should try to pair r_c0 with more mellow cats, just to balance things out."
+                    "s_c0 keeps a close eye on r_c0, noting how aggressively {PRONOUN/r_c0/subject} {VERB/r_c0/approach/approaches} a problem. {PRONOUN/r_c0/subject/CAP} certainly {VERB/r_c0/seem/seems} to solve problems in an efficient manner, but s_c0 considers if {PRONOUN/s_c0/subject} should try to pair r_c0 with more mellow cats, just to balance things out."
                 ],
                 "exp_gained": 30,
                 "involved_cats": {
@@ -34921,7 +34921,7 @@
                 "frequency": 2,
                 "outcome_art": "cat_sprites/gen_judging_Wr",
                 "strings": [
-                    "s_c0 splits up the patrol into smaller groups in the hopes of better understanding how certain pairings work together. Nothing goes well, it seems s_c0 didn't set up very cohesive groups. s_c0 is frustrated with everyone's performance and ends things early, {PRONOUN/s_c0/poss} dour mood souring the patrol."
+                    "s_c0 splits up the patrol into smaller groups in the hopes of better understanding how certain pairings work together. Nothing goes well, it seems {PRONOUN/s_c0/subject} didn't set up very cohesive groups. s_c0 is frustrated with everyone's performance and ends things early, {PRONOUN/s_c0/poss} dour mood souring the patrol."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
