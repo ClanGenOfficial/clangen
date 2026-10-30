@@ -578,13 +578,55 @@
         }
     },
     {
+        "event_id": "trait_dark_ambitious1",
+        "strings": [
+            "Wants to train in the Dark Forest",
+            "Wishes {PRONOUN/m_c/subject} could train using {PRONOUN/m_c/poss} claws",
+            "Will use any method to get ahead, even if it means training in the Dark Forest"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "DARK,1"
+                    ],
+                    "trait": [
+                        "ambitious"
+                    ],
+                "must_have_both": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "trait_dark_ambitious3",
+        "strings": [
+            "Is training in the Dark Forest",
+            "Is proud of {PRONOUN/m_c/poss} training"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "DARK,3"
+                    ],
+                    "trait": [
+                        "ambitious"
+                    ],
+                "must_have_both": true
+                }
+            }
+        }
+    },
+    {
         "event_id": "arrogant_clan_gen",
         "strings": [
             "Is lecturing about something someone said wrong offpawedly",
             "Is certain {PRONOUN/m_c/subject} {VERB/m_c/look/looks} better than any other cat in the Clan",
             "Took the lead during a patrol even though nobody wanted {PRONOUN/m_c/object} to",
             "Thinks {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} the cleverest in the Clan",
-            "Is pretty sure {PRONOUN/m_c/subject} could take on a patrol full of rogues"
+            "Is pretty sure {PRONOUN/m_c/subject} could take on a patrol full of rogues",
+            "Views {PRONOUN/m_c/self} as better then {PRONOUN/m_c/poss} Clanmates"
         ],
         "involved_cats": {
             "m_c": {
@@ -593,6 +635,36 @@
                         "arrogant"
                     ]
                 }
+            }
+        }
+    },
+    {
+        "event_id": "ambitious_skills1",
+        "strings": [
+            "Is bragging about {PRONOUN/m_c/poss} abilities",
+            "Is challenging {PRONOUN/m_c/poss} Clanmates to do better then {PRONOUN/m_c/object}"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "HUNTER,1",
+                        "FIGHTER,1",
+                        "RUNNER,1",
+                        "CLIMBER,1",
+                        "SWIMMER,1"
+                    ],
+                    "trait": [
+                        "arrogant",
+                        "competitive"
+                    ],
+                "must_have_both": true
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
             }
         }
     },
@@ -615,6 +687,106 @@
                         "bloodthirsty"
                     ]
                 }
+            }
+        }
+    },
+    {
+        "event_id": "trait_dark_evil1",
+        "strings": [
+            "Wants to train in the Dark Forest",
+            "Wishes {PRONOUN/m_c/subject} could train using {PRONOUN/m_c/poss} claws",
+            "Scoffs at the mention of StarClan",
+            "Scowls inwardly at the mention of StarClan"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "DARK,1"
+                    ],
+                    "trait": [
+                        "bloodthirsty",
+                        "cold",
+                        "competitive",
+                        "daring",
+                        "insecure",
+                        "lonesome",
+                        "faithful",
+                        "loyal",
+                        "rebellious",
+                        "shameless",
+                        "strict",
+                        "vengeful"
+                    ],
+                "must_have_both": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "trait_dark_evil3",
+        "strings": [
+            "Dispatched a Dark Forest cat with ease",
+            "Is training a young o_c_n cat",
+            "Doesn't need StarClan",
+            "Is training in the Dark Forest",
+            "Is proud of {PRONOUN/m_c/poss} training",
+            "Is itching for a fight"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "DARK,3"
+                    ],
+                    "trait": [
+                        "bloodthirsty",
+                        "cold",
+                        "daring",
+                        "insecure",
+                        "lonesome",
+                        "faithful",
+                        "loyal",
+                        "rebellious",
+                        "shameless",
+                        "strict",
+                        "vengeful"
+                    ],
+                "must_have_both": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "bloodthirsty_ghost3",
+        "strings": [
+            "Is asking a ghostly figure how they died"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "GHOST,3"
+                    ],
+                    "trait": [
+                        "bloodthirsty",
+                        "bold",
+                        "childish",
+                        "cold",
+                        "compassionate",
+                        "loving",
+                        "oblivious",
+                        "shameless",
+                        "sincere",
+                        "strange"
+                    ],
+                "must_have_both": true
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
             }
         }
     },
@@ -707,6 +879,35 @@
                         "bold"
                     ]
                 }
+            }
+        }
+    },
+    {
+        "event_id": "bold_skills1",
+        "strings": [
+            "Acts before thinking",
+            "Shows off {PRONOUN/m_c/poss} skills",
+            "Is rushing into things just to show off"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "FIGHTER,1",
+                        "RUNNER,1",
+                        "CLIMBER,1",
+                        "SWIMMER,1"
+                    ],
+                    "trait": [
+                        "bold"
+                    ],
+                "must_have_both": true
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
             }
         }
     },
@@ -1004,6 +1205,37 @@
         }
     },
     {
+        "event_id": "trait_healer1",
+        "strings": [
+            "Tells r_c {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} overreacting to a minor injury",
+            "Tells r_c to just rub some dirt in a minor injury",
+            "Tells r_c to walk off a minor injury"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "HEALER,1"
+                    ],
+                    "trait": [
+                        "cold",
+                        "grumpy",
+                        "insecure",
+                        "rebellious",
+                        "shameless",
+                        "strict"
+                    ],
+                "must_have_both": true
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
         "event_id": "compassionate_clan_gen",
         "strings": [
             "Spends time with a grieving Clanmate today",
@@ -1026,7 +1258,8 @@
             "Is keeping the injured cats company",
             "Can't stop smiling because of another Clanmate's good mood",
             "Purrs contently at the thought of {PRONOUN/m_c/poss} Clanmates being happy",
-            "Believes in {PRONOUN/m_c/poss} Clanmates"
+            "Believes in {PRONOUN/m_c/poss} Clanmates",
+            "Explains that {PRONOUN/m_c/subject} may be kind but {PRONOUN/m_c/subject} has {PRONOUN/m_c/poss} limits"
         ],
         "involved_cats": {
             "m_c": {
@@ -1034,6 +1267,71 @@
                     "trait": [
                         "compassionate"
                     ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "trait_dark_kind1",
+        "strings": [
+            "Explains with a dark look in {PRONOUN/m_c/poss} eyes that {PRONOUN/m_c/subject} may be kind but {PRONOUN/m_c/subject} has {PRONOUN/m_c/poss} limits",
+            "Wants to train to protect the cats {PRONOUN/m_c/subject} {VERB/m_c/care/cares} about"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "DARK,1"
+                    ],
+                    "trait": [
+                        "compassionate",
+                        "faithful",
+                        "loving",
+                        "loyal",
+                        "responsible",
+                        "sincere",
+                        "thoughtful"
+                    ],
+                "must_have_both": true
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "trait_dark_kind3",
+        "strings": [
+            "Refuses to use {PRONOUN/m_c/poss} claws while training in the Dark Forest",
+            "Beat a Dark Forest cat but refuses to kill them",
+            "Is convincing a young trainee to stop coming to the Dark Forest",
+            "Is hiding from Dark Forest cats",
+            "Refuses to go to the Dark Forest",
+            "Wonders what {PRONOUN/m_c/subject} did to deserve the connection {PRONOUN/m_c/subject} {VERB/m_c/have/has}"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "DARK,3"
+                    ],
+                    "trait": [
+                        "compassionate",
+                        "gloomy",
+                        "loving",
+                        "insecure",
+                        "responsible",
+                        "thoughtful"
+                    ],
+                "must_have_both": true
                 }
             },
             "r_c": {
@@ -1336,6 +1634,64 @@
                         "gloomy"
                     ]
                 }
+            }
+        }
+    },
+    {
+        "event_id": "trait_star_fear1",
+        "strings": [
+            "Shrinks into {PRONOUN/m_c/self} as {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} countless eyes on {PRONOUN/m_c/object}",
+            "Doesn't see what StarClan sees in {PRONOUN/m_c/object}"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "STAR,1"
+                    ],
+                    "trait": [
+                        "gloomy",
+                        "insecure",
+                        "nervous"
+                    ],
+                "must_have_both": true
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "trait_dark_fear1",
+        "strings": [
+            "Is too scared to tell anyone of {PRONOUN/m_c/poss} Dark Forest connection",
+            "Doesn't see why the Dark Forest chose to reach out to {PRONOUN/m_c/object}",
+            "Doesn't want to fight in the Dark Forest",
+            "Is trying to decline the invitation to the Dark Forest"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "DARK,1"
+                    ],
+                    "trait": [
+                        "gloomy",
+                        "insecure",
+                        "loving",
+                        "compassionate",
+                        "nervous"
+                    ],
+                "must_have_both": true
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
             }
         }
     },
@@ -1733,6 +2089,34 @@
                     "trait": [
                         "oblivious"
                     ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "trait_clairvoyant_prophet1",
+        "strings": [
+            "Says the most cryptic things at random times",
+            "Is staring off into the distance",
+            "Didn't act on a sign {PRONOUN/m_c/subject} recieved, unaware it was a sign"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "CLAIRVOYANT,1",
+                        "PROPHET,1"
+                    ],
+                    "trait": [
+                        "oblivious",
+                        "strange"
+                    ],
+                "must_have_both": true
                 }
             },
             "r_c": {
@@ -2501,11 +2885,11 @@
     {
         "event_id": "teacher_skill_gen",
         "strings": [
-            "Breaks something complicated down into easy steps",
-            "Shares {PRONOUN/m_c/poss} secret tips with r_c",
-            "Helps r_c understand something confusing",
-            "Helps r_c work on something",
-            "Offers {PRONOUN/m_c/poss} advice to r_c for working on a particular skill"
+            "Is helping a Clanmate learn how to do a hard battle move",
+            "Is teaching a Clanmate the proper way to do a task",
+            "Has to remind {PRONOUN/m_c/self} not to act like every Clanmates' mentor",
+            "Is pondering how best to instill responsibility in the apprentices",
+            "Is thinking of new ways to train an unuly apprentice"
         ],
         "involved_cats": {
             "m_c": {
@@ -2573,18 +2957,10 @@
     {
         "event_id": "fighter_skill_gen",
         "strings": [
-            "Keeps {PRONOUN/m_c/poss} claws sharp",
             "Enjoys sparring with any Clanmate",
-            "Practices a complicated battle move until {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} perfected it",
             "Hopes {PRONOUN/m_c/poss} Clanmates can count on {PRONOUN/m_c/object} in battle",
-            "Can't find a partner for sparring",
-            "Stretches before and after sparring",
-            "Appreciates the simplicity of a leap-and-hold in battle",
             "Thinks {PRONOUN/m_c/poss} belly-rake is one of the best in the Clan",
-            "Worries about future border scraps, despite {PRONOUN/m_c/poss} skill",
-            "Wishes {PRONOUN/m_c/subject} {VERB/m_c/were/was} better at solving problems with words instead of claws",
-            "Wonders if others are intimidated by {PRONOUN/m_c/poss} fighting abilities",
-            "Invents a new battle move"
+            "Worries about future border scraps, despite {PRONOUN/m_c/poss} skill"
         ],
         "involved_cats": {
             "m_c": {
@@ -2604,12 +2980,10 @@
     {
         "event_id": "runner_skill_gen",
         "strings": [
-            "Stretches before and after a run",
-            "Runs sprints, counting heartbeats in {PRONOUN/m_c/poss} head",
-            "Secretly hopes some cat will challenge {PRONOUN/m_c/object} to a race",
             "Estimates how long it would take {PRONOUN/m_c/object} to run from one border to the other",
             "Gets up early to run across the territory before the sun is up",
-            "Enjoys the wind whistling through {PRONOUN/m_c/poss} whiskers"
+            "Offers to pass a message to a Clanmate",
+            "Nearly bowled over a Clanmate"
         ],
         "involved_cats": {
             "m_c": {
@@ -2624,13 +2998,9 @@
     {
         "event_id": "climber_skill_gen",
         "strings": [
-            "Finds a perch high up in camp",
-            "Leaps from log to log",
-            "Loves the view from high above",
-            "Doesn't understand other cats' fear of heights",
-            "Knows {PRONOUN/m_c/subject}'ll always land on {PRONOUN/m_c/poss} feet",
-            "Always finds it easier getting up high than getting back down...",
-            "Knows all the best views in the territory"
+            "Offers to collect oak leaves for the herb stocks",
+            "Is climbing to the highest point in the Camp",
+            "Instructs a Clanmate on how to climb a steep cliff"
         ],
         "involved_cats": {
             "m_c": {
@@ -2645,13 +3015,10 @@
     {
         "event_id": "swimmer_skill_gen",
         "strings": [
-            "Eats fish to keep {PRONOUN/m_c/poss} pelt sleek",
-            "Stretches on land before a swim",
-            "Offers to help r_c learn to get {PRONOUN/r_c/poss} paws wet",
-            "Thinks rinsing off in running water is much more efficient than grooming",
-            "Doesn't understand other cats' aversion to water",
-            "Shakes {PRONOUN/m_c/poss} pelt out after a swim and sprays r_c by accident",
-            "Imagines how much faster {PRONOUN/m_c/subject} would be with fins"
+            "Patrols the rivers",
+            "Accidentially startled a patrol by jumping out of the river",
+            "Left camp to swim",
+            "Lays in the center of camp when it rains"
         ],
         "involved_cats": {
             "m_c": {
@@ -2673,10 +3040,8 @@
         "strings": [
             "Was scolded for sneaking away",
             "Was caught lying to r_c",
-            "Practices walking silently over dead leaves",
             "Took an extra piece of fresh-kill from the pile without anyone noticing",
             "Sits quietly on the far side of camp",
-            "Startled r_c by accidentally sneaking up on {PRONOUN/r_c/object}",
             "Is trying to find the smallest hiding spot in camp",
             "Is asking cats to play hide and seek"
         ],
@@ -2710,12 +3075,7 @@
             "Left camp without a word to anyone",
             "Obscures {PRONOUN/m_c/poss} scent trail as {PRONOUN/m_c/subject} {VERB/m_c/leave/leaves} camp",
             "Stirs up trouble between two Clanmates",
-            "Startled r_c by accidentally sneaking up on {PRONOUN/r_c/object}",
-            "Is startling cats by appearing suddenly",
-            "Hasn't been seen in a while",
-            "Practices walking silently over dead leaves",
-            "Lies easily and confidently to r_c",
-            "Rolls around in wild garlic to mask {PRONOUN/m_c/poss} scent"
+            "Lies easily and confidently to r_c"
         ],
         "involved_cats": {
             "m_c": {
@@ -2745,12 +3105,14 @@
     {
         "event_id": "speaker_skill_gen",
         "strings": [
-            "Uses a word that r_c has never heard of",
-            "Practices giving a speech in a puddle",
-            "Prides {PRONOUN/m_c/self} on being easy to talk to",
-            "Likes sharing tongues and hearing gossip",
             "Finds it easy to talk to other Clans' warriors",
-            "Worries about losing {PRONOUN/m_c/poss} voice one day"
+            "Solves a border dispute with words rather then claws",
+            "Wonders if {PRONOUN/m_c/subject} should become a mediator",
+            "Tricked r_c into wanting to do m_c's chores for {PRONOUN/m_c/object}",
+            "Is being sent to o_c_n to resolve a dispute",
+            "Convinced a loner to leave the territory without raising so much as a hair",
+            "Convinced a rogue to leave the territory without raising so much as a hair",
+            "Is able to communicate wordlessly to {PRONOUN/m_c/poss} Clanmates when needed"
         ],
         "involved_cats": {
             "m_c": {
@@ -2770,16 +3132,14 @@
     {
         "event_id": "mediator_skill_gen",
         "strings": [
-            "Reminds r_c to think before acting",
-            "Considers r_c's perspective",
-            "Admits to r_c something that's been bothering {PRONOUN/m_c/object}",
             "Stops to chat with a Clanmate {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} always get along with",
             "Realizes two Clanmates are having a misunderstanding",
             "Reminds r_c not to think the worst of a Clanmate",
             "Intervenes in an argument between Clanmates",
             "Smooths over a spat between Clanmates",
-            "Advises r_c on {PRONOUN/r_c/poss} love life",
-            "Tries to give {PRONOUN/m_c/self} the same advice {PRONOUN/m_c/subject}'d give a friend"
+            "Solves a border dispute with words rather then claws",
+            "Is being sent to o_c_n to resolve a dispute",
+            "Convinced r_c to speak to a cat {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} like"
         ],
         "involved_cats": {
             "m_c": {
@@ -2801,7 +3161,9 @@
         "strings": [
             "Wonders if it's too late to become a mediator",
             "Wonders if {PRONOUN/m_c/subject} would be better as a mediator instead",
-            "Wouldn't give up {PRONOUN/m_c/poss} role to be a mediator"
+            "Wouldn't give up {PRONOUN/m_c/poss} role to be a mediator",
+            "Is tired of Clanmates asking when {PRONOUN/m_c/subject}'ll become a mediator",
+            "Is asking a Clanmate to stop treating {PRONOUN/m_c/object} as if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a mediator when {PRONOUN/m_c/subject} {VERB/m_c/aren't/isn't} one"
         ],
         "involved_cats": {
             "m_c": {
@@ -2821,15 +3183,12 @@
     {
         "event_id": "clever_skill_gen",
         "strings": [
-            "Studies r_c intently",
-            "Listens much more than {PRONOUN/m_c/subject} {VERB/m_c/talk/talks}",
-            "Surprises r_c with a sharp observation",
-            "Always has a witty remark ready",
-            "Remembers something that r_c thought {PRONOUN/m_c/subject} had forgotten",
-            "Thinks about why trees shed their leaves in leaf-fall",
-            "Wonders how bumblebees' wings are strong enough to lift their bodies",
-            "Uses a small stick as a tool",
-            "Draws designs in some sand with {PRONOUN/m_c/poss} claw"
+            "Outsmarted a Clanmate",
+            "Came up with a way to do a boring task easier",
+            "Is thinking of ways to make life easier for {PRONOUN/m_c/poss} Clanmates",
+            "Is studying a twoleg trap, just in case {PRONOUN/m_c/poss} Clanmates get stuck in one",
+            "Is able to predict {PRONOUN/m_c/poss} Clanmates next moves most of the time",
+            "Has {PRONOUN/m_c/poss} Clanmates' schedules memorized"
         ],
         "involved_cats": {
             "m_c": {
@@ -2849,14 +3208,10 @@
     {
         "event_id": "insight_skill_gen",
         "strings": [
-            "Notes the underlying causes behind r_c's behavior",
             "Considers the future of the Clan",
-            "Games out future scenarios in {PRONOUN/m_c/poss} head",
-            "Offers a helpful word of advice to r_c",
-            "Realizes how much something from kithood still influences {PRONOUN/m_c/object}",
             "Soaks up the day-to-day happenings of the Clan",
             "Wonders what is at the root of current Clan drama",
-            "Considers explanations for r_c's recent strange behavior"
+            "Understands {PRONOUN/m_c/poss} Clanmates better then they understand themselves sometimes"
         ],
         "involved_cats": {
             "m_c": {
@@ -2876,11 +3231,14 @@
     {
         "event_id": "sense_skill_gen",
         "strings": [
-            "Turns {PRONOUN/m_c/poss} head sharply at a flit of movement",
             "Practices navigating the camp without one of {PRONOUN/m_c/poss} senses",
             "Volunteers to guard the camp, knowing {PRONOUN/m_c/subject}'ll sense any threats",
-            "Keeps getting woken up in the middle of the night",
-            "Follows {PRONOUN/m_c/poss} nose"
+            "Savors {PRONOUN/m_c/poss} prey more then any of {PRONOUN/m_c/poss} Clanmates",
+            "Smells crowfood somewhere in the fresh-kill pile",
+            "Knows more about {PRONOUN/m_c/poss} Clanmates medical troubles then {PRONOUN/m_c/subject} would like to",
+            "Knows all the Clan gossip against {PRONOUN/m_c/poss} will",
+            "Hears a predator somewhere in the territory",
+            "Is annoyed by how loud r_c is breathing from across the clearing"
         ],
         "involved_cats": {
             "m_c": {
@@ -2911,8 +3269,14 @@
         "event_id": "kitsitter_skill_gen",
         "strings": [
             "Brings fresh moss to the nursery in anticipation of new kits",
-            "Converses easily with younger cats",
-            "Appreciates the perspective of young cats"
+            "Spends the day tidying up the nursery",
+            "Enjoys the smell of the nursery",
+            "Wants to take care of all the Clan kits and elders",
+            "Wonders if any Clanmates might have kits any time soon",
+            "Has to remind {PRONOUN/m_c/self} not to talk to Clanmates in the kit voice",
+            "Is advocating for more kits to be born",
+            "Is talking to a Clanmate in the kit voice without even realizing",
+            "Is imagining the next generation of kits, the future of the Clan"
         ],
         "involved_cats": {
             "m_c": {
@@ -2927,22 +3291,12 @@
     {
         "event_id": "kitsitter_to_kit",
         "strings": [
-            "Rolls up moss-balls for kits to play with",
-            "Brings r_c a cool feather to play with",
-            "Makes r_c purr by pulling silly faces",
-            "Helps r_c express {PRONOUN/r_c/poss} feelings",
-            "Does crafts with r_c using twigs and moss",
             "Catches r_c trying to sneak out and distracts {PRONOUN/r_c/object} with a game",
-            "Consoles r_c when {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} upset",
-            "Calms r_c down during a tantrum",
             "Buries seeds with r_c to start a little garden by the nursery",
-            "Takes r_c seriously in conversation",
             "Is in charge of the nursery today",
             "Takes r_c out of camp on a small supervised excursion",
-            "Teaches r_c a valuable lesson about using {PRONOUN/r_c/poss} words",
-            "Offers the best badger rides to the kits",
-            "Helps r_c catch a butterfly",
-            "Learns about r_c's interests"
+            "Volunteers to kitsit r_c",
+            "Is helping r_c understand what {PRONOUN/r_c/subject} {VERB/r_c/want/wants} to do when {PRONOUN/m_c/subject} become an apprentice"
         ],
         "involved_cats": {
             "m_c": {
@@ -2965,12 +3319,14 @@
     {
         "event_id": "story_skill_gen",
         "strings": [
-            "Thinks of the perfect ending to a story",
-            "Revises old elements of a myth",
-            "Tells r_c about an ancestor",
-            "Wonders what mysteries could be explained by forgotten myths",
-            "Comes up with a fanciful explanation for something simple",
-            "Explains that it's not <i>lying</i>, it's <i>storytelling</i>"
+            "Weaves a tale so fantastical it has the whole Clan begging for more",
+            "Tells a story of a totally real ancestor of {PRONOUN/m_c/poss} who did something amazing",
+            "Makes up stories about {PRONOUN/m_c/poss} Clanmates",
+            "Has several stories about the foundation of c_n",
+            "Is taking story requests from {PRONOUN/m_c/poss} Clanmates",
+            "Is telling a story of a trio of blessed cats",
+            "Is telling a story of mythical Clan of cats",
+            "Is telling a story of an evil cat who tried to take over the Clans"
         ],
         "involved_cats": {
             "m_c": {
@@ -2990,13 +3346,10 @@
     {
         "event_id": "lore_skill_gen",
         "strings": [
-            "Lists the constellations to r_c",
-            "Remembers old names for prey that no cat uses anymore",
-            "Thinks of old remedies and purrs at their senselessness",
-            "Imparts an old bit of wisdom to r_c",
             "Recalls a shameful piece of c_n history",
             "Recalls an inspiring piece of c_n history",
-            "Tries to bring back an old c_n tradition"
+            "Tries to bring back an old c_n tradition",
+            "Knows the entire history of c_n"
         ],
         "involved_cats": {
             "m_c": {
@@ -3023,12 +3376,12 @@
             "Is helping to reinforce the walls of the elders' den",
             "Is tidying up some stray moss that blew into the clearing",
             "Is repairing one of the camp walls",
-            "Weaves a few spare nests",
             "Considers how to expand the nursery",
             "Patches a draft in the warriors' den",
             "Adds thorns and thistles to the camp wall",
-            "Molds a bird out of moss for fun",
-            "Decorates the camp wall with twigs and berries"
+            "Decorates the camp wall with twigs and berries",
+            "Is being asked by half the Clan to expand all the dens",
+            "Knows the strengths and weaknesses of all the dens"
         ],
         "involved_cats": {
             "m_c": {
@@ -3043,12 +3396,11 @@
     {
         "event_id": "healer_skill_gen",
         "strings": [
-            "Pulls a thorn out of r_c's paw",
-            "Keeps an eye out for cobwebs",
             "Brings a spider back to camp in hopes it'll spin a web",
-            "Finds the scent of bitter herbs strangely comforting",
-            "Encourages r_c not to dismiss a health concern",
-            "Reminds r_c to drink water"
+            "Is assessing whether r_c's wound is concerning enough for medical care",
+            "Is advising Clanmates to get their regular checkups at the medicine cat den",
+            "Spends {PRONOUN/m_c/poss} free time in the medicine cat den",
+            "Understands herbs better then {PRONOUN/m_c/poss} Clanmates"
         ],
         "involved_cats": {
             "m_c": {
@@ -3080,13 +3432,34 @@
             "Prays to StarClan that next season will be a good one",
             "Never forgets to thank StarClan for the fresh-kill",
             "Calms {PRONOUN/m_c/self} down by thinking about how StarClan will see to things",
-            "Imagines where {PRONOUN/m_c/poss} own star will shine in Silverpelt"
+            "Imagines where {PRONOUN/m_c/poss} own star will shine in Silverpelt",
+            "Dreamed of a StarClan cat"
         ],
         "involved_cats": {
             "m_c": {
                 "stat": {
                     "skill": [
                         "STAR,1"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "star_skill_gen3",
+        "strings": [
+            "Is passing a message from a dead Clanmate to a living one",
+            "Is learning ancient Clan history from a StarClan cat",
+            "Is lost in StarClan",
+            "Is meeting with a legendary StarClan cat",
+            "Is having a tearful reunion with an old friend",
+            "Feels at home among the stars"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "STAR,3"
                     ]
                 }
             }
@@ -3148,17 +3521,11 @@
     {
         "event_id": "dark_skill_gen",
         "strings": [
-            "Feels an ominous presence behind {PRONOUN/m_c/object}",
-            "Notices r_c casts more than one shadow",
-            "Catches the scent of crowfood",
-            "Senses something watching from the darkness",
-            "Tastes blood for a heartbeat",
-            "Remembers stories of {PRONOUN/m_c/poss} most frightening ancestors",
-            "Wakes from a dream in a cold sweat",
-            "Seems to be avoiding {PRONOUN/m_c/poss} nest",
-            "Turns around suddenly, but no cat is there",
-            "Dreams of teeth",
-            "Remembers disturbing things that never happened to {PRONOUN/m_c/object}"
+            "Wonders why {PRONOUN/m_c/subject} {VERB/r_c/were/was} chosen by the Dark Forest",
+            "Can't tell a single Clanmate about the Dark Forest",
+            "Wonders how the Clan would look at {PRONOUN/m_c/object} if they knew of {PRONOUN/m_c/poss} Dark Forest connection...",
+            "Wonders if StarClan has abandoned {PRONOUN/m_c/object}",
+            "Wonders if StarClan would even want {PRONOUN/m_c/object} with {PronOUN/m_c/poss} connections with the Dark Forest"
         ],
         "involved_cats": {
             "m_c": {
@@ -3176,11 +3543,35 @@
         }
     },
     {
+        "event_id": "dark_skill_gen3",
+        "strings": [
+            "Is avoiding explaining {PRONOUN/m_c/poss} wounds",
+            "Is hiding a wound from {PRONOUN/m_c/poss} Clanmates",
+            "Nearly used {PRONOUN/m_c/poss} claws on a Clanmate on accident",
+            "Recognizes a living o_c_n cat in the Dark Forest"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "DARK,3"
+                    ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
         "event_id": "rc_dark_skill_gen",
         "strings": [
             "Notices r_c casts more than one shadow",
             "Feels uneasy around r_c",
-            "Wonders how r_c learned a particular battle move"
+            "Wonders how r_c learned a particular battle move",
+            "Is concerned when r_c wakes up with more wounds then {PRONOUN/r_c/subject} went to sleep with"
         ],
         "involved_cats": {
             "r_c": {
@@ -3189,7 +3580,7 @@
                 ],
                 "stat": {
                     "skill": [
-                        "DARK,1"
+                        "DARK,2"
                     ]
                 }
             }
@@ -3198,16 +3589,12 @@
     {
         "event_id": "omen_skill_gen",
         "strings": [
+            "Had an omen about a Clanmate",
             "Finds a strange piece of prey",
-            "Finds a fasciated flower and wonders what it might mean",
-            "Suspects there is a deeper meaning to the weather today",
-            "Looks for answers in the breeze and soil",
-            "Spends the day in a clover patch, looking for something",
-            "Wonders if omen_list_sight/m_c {PRONOUN/m_c/subject} saw is an omen",
-            "Wonders if omen_list_sound/m_c {PRONOUN/m_c/subject} heard is an omen",
-            "Wonders if omen_list_smell/m_c {PRONOUN/m_c/subject} scented is an omen",
-            "Wonders if omen_list_emotional/m_c {PRONOUN/m_c/subject} felt is an omen",
-            "Wonders if omen_list_touch/m_c {PRONOUN/m_c/subject} felt is an omen"
+            "Is warning a Clanmate about an omen",
+            "Is keeping an omen to {PRONOUN/m_c/self} as not to scare {PRONOUN/m_c/poss} Clanmates",
+            "Was able to predict the weather",
+            "Hopes to use {PRONOUN/m_c/poss} gift to help the Clan"
         ],
         "involved_cats": {
             "m_c": {
@@ -3220,20 +3607,42 @@
         }
     },
     {
+    "event_id": "omen_skill_to_leadership",
+    "strings": [
+        "Is sharing an omen with r_c in hopes {PRONOUN/r_c/subject} {VERB/r_c/know/knows} what to do",
+        "Is hiding an omen from r_c",
+        "Is sharing an omen with r_c that may effect the entire Clan"
+    ],
+    "involved_cats": {
+        "m_c": {
+            "status": [
+                "-leader",
+                "-medicine cat",
+                "-deputy"
+            ],
+            "stat": {
+                "skill": [
+                    "OMEN,1"
+                ]
+            }
+        },
+        "r_c": {
+            "status": [
+                "leader",
+                "medicine cat",
+                "deputy"
+            ]
+        }
+    }
+},
+    {
         "event_id": "dream_skill_gen",
         "strings": [
-            "Feels a strange chill in {PRONOUN/m_c/poss} dream",
-            "Feels a comforting warmth in {PRONOUN/m_c/poss} dream",
-            "Has a dream full of dream_list",
-            "Wonders what all the dream_list in {PRONOUN/m_c/poss} dreams lately means",
-            "Has a dream full of strange shapes and colors",
-            "Wakes with a lingering bitter taste on {PRONOUN/m_c/poss} tongue",
-            "Wakes with a lingering acrid smell in {PRONOUN/m_c/poss} nose",
-            "Wakes with a lingering sweet smell in {PRONOUN/m_c/poss} nose",
-            "Wakes with the feeling of dream_list in {PRONOUN/m_c/poss} heart",
-            "Remembers a dream so clearly it feels real",
-            "Has a strange dream but forgets it immediately upon waking",
-            "Feels tired even after a full night's sleep"
+            "Dreamed of being on a patrol",
+            "Dreamed of being surrounded by herbs",
+            "Dreamed of a Clanmate",
+            "Dreamed of being a Clanmate",
+            "Sleeps outside of camp to avoid {PRONOUN/m_c/poss} Clanmates' dreams"
         ],
         "involved_cats": {
             "m_c": {
@@ -3248,12 +3657,12 @@
     {
         "event_id": "dream2_skill_gen",
         "strings": [
-            "Sleeps outside of camp to avoid {PRONOUN/m_c/poss} Clanmates' dreams",
             "Keeps stumbling into r_c's recurring dream and is bored of it",
             "Loves wandering into r_c's dreams in particular",
             "Realizes something about r_c when {PRONOUN/m_c/subject} {VERB/m_c/walk/walks} in {PRONOUN/r_c/poss} dream",
             "Wonders why r_c's dreams are full of dream_list",
-            "Wakes {PRONOUN/m_c/self} up after intruding on r_c's embarrassing dream"
+            "Wakes {PRONOUN/m_c/self} up after intruding on r_c's embarrassing dream",
+            "Tried to enter r_c's dream and actually succeeded"
         ],
         "involved_cats": {
             "m_c": {
@@ -3273,15 +3682,9 @@
     {
         "event_id": "clairvoyant_gen",
         "strings": [
-            "Feels a tingle of premonition",
-            "Gets a wave of deja vu",
-            "Preempts r_c when {PRONOUN/r_c/subject} {VERB/r_c/approach/approaches} {PRONOUN/m_c/object}",
-            "Guesses what r_c has planned today",
-            "Suddenly thinks of clair_list_emotional/m_c",
-            "Suddenly scents clair_list_smell/m_c",
-            "Suddenly hears clair_list_sound/m_c",
-            "Has the sudden sensation of clair_list_touch/m_c",
-            "Suddenly tastes clair_list_taste/m_c"
+            "Refuses to go on a patrol for some reason",
+            "Rushes across Camp to stop something {PRONOUN/m_c/subject} saw",
+            "Is having a vision of r_c"
         ],
         "involved_cats": {
             "m_c": {
@@ -3315,6 +3718,9 @@
                     "skill": [
                         "CLAIRVOYANT,1"
                     ]
+                },
+                "health": {
+                "working": true
                 }
             }
         }
@@ -3322,17 +3728,9 @@
     {
         "event_id": "prophet_skill_gen",
         "strings": [
-            "Hears a strange string of words echo in {PRONOUN/m_c/poss} ears",
-            "Keeps having the same dream and is starting to worry",
-            "Notices a pattern of events beginning to emerge",
-            "Feels the burden of the gift of prophecy",
-            "Wonders if r_c is involved in a prophecy",
-            "Hopes r_c isn't involved in a prophecy",
-            "Closes {PRONOUN/m_c/poss} eyes and sees prophecy_list_sight/m_c",
-            "Suddenly hears prophecy_list_sound/m_c",
-            "Suddenly scents prophecy_list_smell/m_c",
-            "Suddenly feels prophecy_list_emotional/m_c",
-            "Suddenly feels prophecy_list_touch/m_c"
+            "Wonders what StarClan is trying to tell {PRONOUN/m_c/object}",
+            "Trusts in what StarClan tries to tell {PRONOUN/m_c/object}",
+            "Wished StarClan could just say what they mean rather then giving {PRONOUN/m_c/object} all these riddles"
         ],
         "involved_cats": {
             "m_c": {
@@ -3341,6 +3739,11 @@
                         "PROPHET,1"
                     ]
                 }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
             }
         }
     },
@@ -3348,9 +3751,7 @@
         "event_id": "ghost_skill_gen",
         "strings": [
             "Notes a cold spot in camp",
-            "Hears an unearthly humming",
-            "Never feels completely alone",
-            "Feels a strange tickle run over {PRONOUN/m_c/poss} spine"
+            "Thought {PRONOUN/m_c/subject} saw a haze hovering around the coner of camp"
         ],
         "involved_cats": {
             "m_c": {
@@ -3366,12 +3767,11 @@
         "event_id": "ghost2_skill_gen",
         "strings": [
             "Notices a white blur at the edge of camp... but it's just cotton fluff",
-            "Spots a silhouette in the distance",
-            "Has seen the same strange pair of green eyes many times",
-            "Has seen the same strange pair of blue eyes many times",
-            "Has seen the same strange pair of amber eyes many times",
-            "Feels a shadow fall across {PRONOUN/m_c/object}, cast by nothing",
-            "Glimpses a specter in the territory"
+            "Felt a presence of a long dead Clanmate",
+            "Felt the presence of a ghost in the medicine cat den",
+            "Just saw a faint figure watching {PRONOUN/m_c/object}",
+            "Heard the ghostly voice of an apprentice excitedly ask when they'd get their warrior name",
+            "Heard the ghostly sound of a cat cooing over their kittens"
         ],
         "involved_cats": {
             "m_c": {
@@ -3386,14 +3786,16 @@
     {
         "event_id": "ghost3_skill_gen",
         "strings": [
-            "Hears a cat crying for help, but finds no cat there",
-            "Exchanges pleasantries with a long-dead cat",
             "Discusses the Clan's past with a long-dead ancestor",
             "Spends time with the ghosts hanging around camp",
-            "Feels sad {PRONOUN/m_c/subject} can't introduce {PRONOUN/m_c/poss} live friends to {PRONOUN/m_c/poss} dead ones",
-            "Feels unsettled by a ghost's description of dying",
             "Stops to chat with a kittypet on the border, then realizes they died long ago",
-            "Has to apologize to a loner after incorrectly assuming they were a ghost"
+            "Has to apologize to a loner after incorrectly assuming they were a ghost",
+            "Saw a StarClan cat",
+            "Saw a cat from the Dark Forest",
+            "Saw a cat not from StarClan or the Dark Forest",
+            "Saw a spirit in the medicine cat den",
+            "Noticed a presence watching over the Clan",
+            "Saw a spirit of a cat watching a Clan meeting with the rest of the Clan"
         ],
         "involved_cats": {
             "m_c": {
