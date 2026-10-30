@@ -513,7 +513,8 @@ class Patrol:
             # it looks like {patrol_id}_{type of outcome}{index}
             outcome_index = get_config("patrol_generation.debug_ensure.outcome_index")
             outcome_type = get_config("patrol_generation.debug_ensure.outcome_type")
-            debug_outcome = f"{self.debug_patrol_id}{'_antag' if antagonize else ''}{'_success' if outcome_type else '_fail'}{outcome_index}"
+            if outcome_type:
+                debug_outcome = f"{self.debug_patrol_id}{'_antag' if antagonize else ''}{'_success' if outcome_type else '_fail'}{outcome_index}"
 
         # we'll get an outcome for both success and failure
         # FIND SUCCESS
