@@ -12776,6 +12776,332 @@
         ]
     },
     {
+        "event_id": "gen_med_moonplace_omen_newhealer_welcoming",
+        "types": ["herb_gathering"],
+        "frequency": 1,
+        "poi": {
+            "category": "moonplace"
+        },
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ],
+            "healer cats": [
+                1,
+                1
+            ]
+        },
+        "involved_cats": {
+            "p_l": {
+                "status": [
+                    "medicine cat",
+                    "medicine cat apprentice"
+                ],
+                "stat": {
+                    "skill": [
+                        "OMEN,0"
+                    ]
+                }
+            }
+        },
+        "chance_of_success": 40,
+        "patrol_art": "POI",
+        "intro_strings": [
+            "As p_l is gathering herbs, {PRONOUN/p_l/subject} {VERB/p_l/pause/pauses}. Before {PRONOUN/p_l/object} is omen_list_sight/p_l. {PRONOUN/p_l/subject/CAP} examine {PRONOUN/p_l/poss} findings, and as {PRONOUN/p_l/subject} lift {PRONOUN/p_l/poss} head, a breeze blows by, bringing with it clair_list_sound/p_l. If {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} reading all this right, there's something very important happening at POI."
+        ],
+        "decline_strings": [
+            "p_l decides that that is absolutely none of {PRONOUN/p_l/poss} business. {PRONOUN/p_l/subject/CAP} {VERB/p_l/hasten/hastens} back to camp/"
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 10,
+                "strings": [
+                    "p_l races to POI, perhaps not pacing {PRONOUN/p_l/self} as well as {PRONOUN/p_l/subject} should. When {PRONOUN/p_l/subject} {VERB/p_l/arrive/arrives}, exhausted, {PRONOUN/p_l/subject} {VERB/p_l/see/sees} an older cat, with herbs and feathers in {PRONOUN/n_c0/poss} fur, taking a feather from {PRONOUN/n_c0/poss} tail and laying it at the center of the holy site. Without turning around, the cat snorts. Well, it's about time somecat arrived! n_c0 thought that Clancats were supposed to be better than this! Why, {PRONOUN/n_c0/subject} expected to be met with a gift of prey! The signs led <i>{PRONOUN/n_c0/object}</i> here ages ago! Did {PRONOUN/p_l/subject} think {PRONOUN/n_c0/subject} would wait forever? When {PRONOUN/n_c0/subject} {VERB/n_c0/turn/turns} around, the strange cat pauses, then offers to find p_l some water. {PRONOUN/n_c0/subject/CAP} should have realized from the wait that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just a youngling."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "status": [
+                            "medicine cat apprentice"
+                        ]
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "senior adult",
+                            "senior"
+                        ],
+                        "status": [
+                            "loner"
+                        ],
+                        "stat": {
+                            "must_have_both": true,
+                            "skill": [
+                                "OMEN,2"
+                            ],
+                            "trait": [
+                                "bold",
+                                "compassionate",
+                                "cunning",
+                                "fierce",
+                                "gloomy",
+                                "grumpy",
+                                "loyal",
+                                "rebellious",
+                                "shameless",
+                                "strange",
+                                "strict",
+                                "vengeful",
+                                "wise"
+                            ]
+                        },
+                        "backstory": [
+                            "wandering_healer2"
+                        ],
+                        "accessory": [
+                            "plant"
+                        ]
+                    }
+                },
+                "join": [
+                    {
+                        "cats": ["n_c0"],
+                        "new_status": ["medicine cat"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_to is the scariest medicine cat that cat_from has ever met, but {PRONOUN/cat_from/subject} can tell that {PRONOUN/cat_to/subject} really {VERB/cat_to/know/knows} {PRONOUN/cat_to/poss} stuff!",
+                            "cats_to": "cat_to thinks that cat_from is a good youngster with a lot of potential and just needs a bit of training up."
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 1
+                },
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_small"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "exp_gained": 10,
+                "strings": [
+                    "p_l travels to POI, making sure to keep a slow and steady pace through the long journey. When {PRONOUN/p_l/subject} {VERB/p_l/arrive/arrives}, {PRONOUN/p_l/subject} {VERB/p_l/see/sees} an older cat, with herbs and feathers in {PRONOUN/n_c0/poss} fur, taking a feather from {PRONOUN/n_c0/poss} tail and laying it at the center of the holy site. Without turning around, the cat snorts. Well, it's about time somecat arrived! n_c0 thought that Clancats were supposed to be better than this! The signs led <i>{PRONOUN/n_c0/object}</i> here ages ago! Why, {PRONOUN/n_c0/subject} expected to be met with a gift of prey! Did {PRONOUN/p_l/subject} think {PRONOUN/n_c0/subject} would wait forever? When {PRONOUN/n_c0/subject} {VERB/n_c0/turn/turns} around, the strange cat stares expectantly. Well? It's time to go to WhateverClan, isn't it?!"
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "status": [
+                            "medicine cat"
+                        ]
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "senior adult",
+                            "senior"
+                        ],
+                        "status": [
+                            "loner"
+                        ],
+                        "stat": {
+                            "must_have_both": true,
+                            "skill": [
+                                "OMEN,2"
+                            ],
+                            "trait": [
+                                "bold",
+                                "compassionate",
+                                "cunning",
+                                "fierce",
+                                "gloomy",
+                                "grumpy",
+                                "loyal",
+                                "rebellious",
+                                "shameless",
+                                "strange",
+                                "strict",
+                                "vengeful",
+                                "wise"
+                            ]
+                        },
+                        "backstory": [
+                            "wandering_healer2"
+                        ],
+                        "accessory": [
+                            "plant"
+                        ]
+                    }
+                },
+                "join": [
+                    {
+                        "cats": ["n_c0"],
+                        "new_status": ["medicine cat"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "values": [
+                            "like",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_to is pretty intimidating, but cat_from can tell that {PRONOUN/cat_to/subject} really {VERB/cat_to/know/knows} {PRONOUN/cat_to/poss} stuff.",
+                            "cats_to": "cat_from isn't the worst healer that cat_to has ever met."
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 1
+                },
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_small"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_train_trainingfail_Ap",
+                "strings": [
+                    "p_l decides that this situation requires back up, and heads back to camp to get {PRONOUN/p_l/poss} mentor. By the time the situation is explained and the two cats make it to POI, there's nothing there but a faint, strange scent that <i>could</i> be cat scent, possibly, and a feather at the center of POI. p_l's mentor chides {PRONOUN/p_l/object} for misinterpreting the omens and wasting their time. p_l protests that a cat could have needed help, though!"
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "status": [
+                            "medicine cat apprentice"
+                        ],
+                        "has_mentor": {
+                            "current": true
+                        }
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from heard that p_l misinterpreted some omens and wasted {PRONOUN/cat_from/poss} mentor's time"
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_tiny"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_train_trainingfail_Ap",
+                "strings": [
+                    "p_l decides that this situation requires back up, and heads to o_c_n to get help from their most experienced medicine cat. By the time the situation is explained and the two cats make it to POI, there's nothing there but a faint, strange scent that <i>could</i> be cat scent, possibly, and a feather at the center of POI. The other Clan's medicine cat gently suggests that even if {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} have a mentor, p_l doesn't need to make things up for attention - the other medicine cats are always happy to talk at the half-moon meetings. p_l complains to the warrior apprentices that {PRONOUN/p_l/subject} {VERB/p_l/were/was} sure a cat needing help was there, all the signs said so!"
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "status": [
+                            "medicine cat apprentice"
+                        ],
+                        "has_mentor": {
+                            "current": false
+                        }
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from heard that p_l made up some omens for attention."
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "other_clan": -1
+                },
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_tiny"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_med_argue_McMc",
+                "strings": [
+                    "p_l decides that this situation requires back up, and heads to o_c_n to get help from their most experienced medicine cat. By the time that the two cats get there, there's nothing there but a faint, strange scent that <i>might</i> be a cat, maybe, and a feather at the center of POI. The o_c_n medicine cat growls at p_l for wasting their time. p_l replies it was better to make sure that nobody needed their help."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "status": [
+                            "medicine cat"
+                        ]
+                    }
+                },
+                "reputation_changes": {
+                    "other_clan": -1
+                },
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_tiny"
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "event_id": "gen_bord_high_ground_poi_loner_welcoming",
         "types": ["border"],
         "frequency": 1,
