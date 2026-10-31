@@ -188,7 +188,7 @@ class UICatListDisplay(UIContainer):
         self.first_button = None
         self.last_button = None
 
-    def update_display(self, current_page: int, cat_list: list):
+    def update_display(self, current_page: int, cat_list: list = None):
         """
         updates current_page and refreshes the cat display
         :param current_page: the currently displayed page
@@ -196,7 +196,7 @@ class UICatListDisplay(UIContainer):
         """
 
         self.current_page = current_page
-        if cat_list != self.cat_list:
+        if cat_list and cat_list != self.cat_list:
             self.cat_list = cat_list
             self._chunk()
         self._display_cats()
@@ -312,7 +312,7 @@ class UICatListDisplay(UIContainer):
     def create_name(self, i, kitty, container):
         self.cat_names[f"name{i}"] = pygame_gui.elements.UILabel(
             pygame.Rect((0, 0), (container.rect[2], ui_scale_value(30))),
-            shorten_text_to_fit(str(kitty.name), 220, 30),
+            shorten_text_to_fit(str(kitty.name), ui_scale_value(170), 30),
             container=container,
             object_id=self.text_theme,
             anchors={

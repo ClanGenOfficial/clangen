@@ -473,6 +473,10 @@
         "prototype": "#text_box_40",
         "misc": {"text_horiz_alignment": "center"}
     },
+    "#text_box_40_horizleft": {
+        "prototype": "#text_box_40",
+        "misc": {"text_horiz_alignment": "left"}
+    },
     "vertical_scroll_bar": {
         "misc": {"border_width": "2", "enable_arrow_buttons": "1"},
         "colours": {
