@@ -4564,15 +4564,11 @@
                     "player_clan"
                 ],
                 "stat": {
-                "skill": [
-                    "GHOST,1"
-                ],
                 "trait": [
                     "nervous",
                     "insecure"
-                ],
-                "must_have_both": false
-            }
+                ]
+                },
                 "health": {
                     "working": true
                 }
@@ -4735,7 +4731,7 @@
                     "-arrogant",
                     "-adventurous"
                 ]
-            }
+            },
                 "health": {
                     "working": true
                 }
