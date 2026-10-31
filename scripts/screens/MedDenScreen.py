@@ -51,7 +51,6 @@ class MedDenScreen(Screens):
         self.cats_tab = None
         self.hurt_sick_title = None
         self.display_med = None
-        self.med_cat = None
         self.minor_tab = None
         self.out_den_tab = None
         self.in_den_tab = None
@@ -64,23 +63,18 @@ class MedDenScreen(Screens):
         self.cat_bg = None
         self.last_page = None
         self.next_page = None
-        self.last_med = None
-        self.next_med = None
         self.den_base = None
-        self.med_info = None
-        self.med_name = None
         self.current_page = None
-        self.meds = None
+        self.meds: deque | None = None
         self.back_button = None
 
         self.tab_showing = self.in_den_tab
         self.tab_list = self.in_den_cats
 
-        self.den_image = {}
-
         self.open_tab = None
 
         self.den_image = {}
+        self.elements = {}
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -88,11 +82,11 @@ class MedDenScreen(Screens):
 
             if event.ui_element == self.back_button:
                 self.change_screen(game.last_screen_forupdate)
-            elif event.ui_element == self.next_med:
-                self.current_med += 1
+            elif event.ui_element == self.elements["next_med_arrow"]:
+                self.meds.rotate(-1)
                 self.update_med_cat()
-            elif event.ui_element == self.last_med:
-                self.current_med -= 1
+            elif event.ui_element == self.elements["prior_med_arrow"]:
+                self.meds.rotate(1)
                 self.update_med_cat()
             elif event.ui_element == self.next_page:
                 self.current_page += 1
@@ -122,7 +116,7 @@ class MedDenScreen(Screens):
                 cat = event.ui_element.return_cat_object()
                 switch_set_value(Switch.cat, cat.ID)
                 self.change_screen(GameScreen.PROFILE)
-            elif event.ui_element == self.med_cat:
+            elif event.ui_element == self.elements["med_image"]:
                 cat = event.ui_element.return_cat_object()
                 switch_set_value(Switch.cat, cat.ID)
                 self.change_screen(GameScreen.PROFILE)
@@ -147,22 +141,6 @@ class MedDenScreen(Screens):
             get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
-        )
-        self.next_med = UISurfaceImageButton(
-            ui_scale(pygame.Rect((645, 278), (34, 34))),
-            Icon.ARROW_RIGHT,
-            get_button_dict(ButtonStyles.ICON, (34, 34)),
-            object_id="@buttonstyles_icon",
-            manager=MANAGER,
-            starting_height=2,
-        )
-        self.last_med = UISurfaceImageButton(
-            ui_scale(pygame.Rect((600, 278), (34, 34))),
-            Icon.ARROW_LEFT,
-            get_button_dict(ButtonStyles.ICON, (34, 34)),
-            object_id="@buttonstyles_icon",
-            manager=MANAGER,
-            starting_height=2,
         )
 
         if game.clan.game_mode != "classic":
@@ -313,7 +291,11 @@ class MedDenScreen(Screens):
             self.update_sick_cats()
 
         self.current_med = 1
-
+        self.meds = deque(
+            find_alive_cats_with_rank(
+                Cat, [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE], sort=True
+            )
+        )
         self.draw_med_den()
         self.update_med_cat()
 
@@ -363,6 +345,32 @@ class MedDenScreen(Screens):
         else:
             self.meds_messages.set_text(choice(MESSAGES["no_meds_warning"]))
 
+    def new_screen_switches(self):
+        super().screen_switches()
+        self.show_mute_buttons()
+        self.hide_mute_buttons()
+
+        self.back_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((25, 25), (105, 30))),
+            "buttons.back",
+            get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
+            object_id="@buttonstyles_squoval",
+            manager=MANAGER,
+        )
+
+        if game.clan.game_mode != "classic":
+            # send to func
+            pass
+
+        self.draw_med_den()
+
+        self.meds = deque(
+            find_alive_cats_with_rank(
+                Cat, [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE], sort=True
+            )
+        )
+        self.update_med_cat()
+
     def handle_tab_toggles(self):
         if self.open_tab == "cats":
             self.log_title.hide()
@@ -398,78 +406,85 @@ class MedDenScreen(Screens):
             self.log_box.show()
 
     def update_med_cat(self):
-        if self.med_cat:
-            self.med_cat.kill()
-        if self.med_info:
-            self.med_info.kill()
-        if self.med_name:
-            self.med_name.kill()
+        """
+        Updates the med cat display
+        """
+        displayed_med_cat = self.meds[0]
 
-        # get the med cats
-        self.meds = find_alive_cats_with_rank(
-            Cat, [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE], sort=True
+        # create cat image
+        if self.elements.get("med_image"):
+            self.elements["med_image"].kill()
+
+        self.elements["med_image"] = UISpriteButton(
+            ui_scale(pygame.Rect((435, 165), (150, 150))),
+            displayed_med_cat.sprite,
+            cat_object=displayed_med_cat,
+            manager=MANAGER,
         )
 
-        if not self.meds:
-            all_pages = []
-        else:
-            all_pages = self.get_list_chunks(self.meds, 1)
-
-        if self.current_med > len(all_pages):
-            if len(all_pages) == 0:
-                self.current_med = 1
-            else:
-                self.current_med = len(all_pages)
-
-        if all_pages:
-            self.display_med = all_pages[self.current_med - 1]
-        else:
-            self.display_med = []
-
-        if len(all_pages) <= 1:
-            self.next_med.disable()
-            self.last_med.disable()
-        else:
-            if self.current_med >= len(all_pages):
-                self.next_med.disable()
-            else:
-                self.next_med.enable()
-
-            if self.current_med <= 1:
-                self.last_med.disable()
-            else:
-                self.last_med.enable()
-
-        for cat in self.display_med:
-            self.med_cat = UISpriteButton(
-                ui_scale(pygame.Rect((435, 165), (150, 150))),
-                cat.sprite,
-                cat_object=cat,
-                manager=MANAGER,
-            )
-            name = str(cat.name)
-            short_name = shorten_text_to_fit(name, 137, 15)
-            self.med_name = pygame_gui.elements.ui_label.UILabel(
-                ui_scale(pygame.Rect((525, 155), (225, 30))),
-                short_name,
+        # display name
+        if not self.elements.get("med_name"):
+            self.elements["med_name"] = pygame_gui.elements.ui_label.UILabel(
+                ui_scale(pygame.Rect((-60, 155), (225, 30))),
+                shorten_text_to_fit(str(displayed_med_cat.name), 137, 15),
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 manager=MANAGER,
+                anchors={"left_target": self.elements["med_image"]},
             )
-            self.med_info = pygame_gui.elements.UITextBox(
-                "",
-                ui_scale(pygame.Rect((580, 185), (120, 90))),
+        else:
+            self.elements["med_name"].set_text(
+                shorten_text_to_fit(str(displayed_med_cat.name), 137, 15)
+            )
+
+        # display info
+        med_skill = displayed_med_cat.skills.skill_string(short=True)
+        med_exp = i18n.t("general.exp_label", exp=displayed_med_cat.experience_level_string)
+        work_status = (
+            i18n.t("general.can_work")
+            if displayed_med_cat.can_work()
+            else i18n.t("general.cant_work")
+        )
+        info_text = "<br>".join([med_skill, med_exp, work_status])
+        if not self.elements.get("med_info"):
+            self.elements["med_info"] = pygame_gui.elements.UITextBox(
+                info_text,
+                ui_scale(pygame.Rect((0, 0), (120, 90))),
                 object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 manager=MANAGER,
+                anchors={
+                    "top_target": self.elements["med_name"],
+                    "left_target": self.elements["med_image"],
+                },
             )
-            med_skill = cat.skills.skill_string(short=True)
-            med_exp = i18n.t("general.exp_label", exp=cat.experience_level_string)
-            med_working = cat.can_work()
-            if med_working is True:
-                work_status = i18n.t("general.can_work")
-            else:
-                work_status = i18n.t("general.cant_work")
-            info_list = [med_skill, med_exp, work_status]
-            self.med_info.set_text("<br>".join(info_list))
+        else:
+            self.elements["med_info"].set_text(info_text)
+
+        # arrows for switching to other med cats
+        if not self.elements.get("prior_med_arrow"):
+            self.elements["prior_med_arrow"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((20, 0), (34, 34))),
+                Icon.ARROW_LEFT,
+                get_button_dict(ButtonStyles.ICON, (34, 34)),
+                object_id="@buttonstyles_icon",
+                manager=MANAGER,
+                starting_height=2,
+                anchors={
+                    "top_target": self.elements["med_info"],
+                    "left_target": self.elements["med_image"],
+                },
+            )
+            self.elements["next_med_arrow"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((11, 0), (34, 34))),
+                Icon.ARROW_RIGHT,
+                get_button_dict(ButtonStyles.ICON, (34, 34)),
+                object_id="@buttonstyles_icon",
+                manager=MANAGER,
+                starting_height=2,
+                anchors={
+                    "top_target": self.elements["med_info"],
+                    "left_target": self.elements["prior_med_arrow"],
+                },
+            )
 
     def update_sick_cats(self):
         """
@@ -670,16 +685,16 @@ class MedDenScreen(Screens):
 
     def exit_screen(self):
         self.meds_messages.kill()
-        self.last_med.kill()
-        self.next_med.kill()
+        self.elements["prior_med_arrow"].kill()
+        self.elements["next_med_arrow"].kill()
         self.den_base.kill()
         for herb in self.den_image:
             self.den_image[herb].kill()
         self.den_image = {}
-        if self.med_info:
-            self.med_info.kill()
-        if self.med_name:
-            self.med_name.kill()
+        if self.elements["med_info"]:
+            self.elements["med_info"].kill()
+        if self.elements["med_name"]:
+            self.elements["med_name"].kill()
         self.back_button.kill()
         if game.clan.game_mode != "classic":
             self.help_button.kill()
@@ -695,8 +710,8 @@ class MedDenScreen(Screens):
             self.log_tab.kill()
             self.log_title.kill()
             self.log_box.kill()
-        if self.med_cat:
-            self.med_cat.kill()
+        if self.elements["med_image"]:
+            self.elements["med_image"].kill()
 
     def clear_cat_buttons(self):
         for cat in self.cat_buttons:
