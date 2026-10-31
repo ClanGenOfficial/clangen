@@ -4,7 +4,6 @@ from scripts.game_structure import game
 from scripts.screens.enums import GameScreen
 from scripts.ui.elements.cat_list_display import UICatListDisplay
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 
 from scripts.ui.windows.window_base_class import GameWindow
 from scripts.ui.scale import ui_scale, ui_scale_offset, ui_scale_value
@@ -61,7 +60,7 @@ class RelChangeDetailWindow(GameWindow):
         self.update_cats_list()
 
         if self.clan_reaction:
-            self.window_element["clan_reaction"] = UITextBoxTweaked(
+            self.window_element["clan_reaction"] = pygame_gui.elements.UITextBox(
                 self.clan_reaction,
                 ui_scale(pygame.Rect((0, 0), (600, 100))),
                 object_id="#text_box_30_horizcenter",

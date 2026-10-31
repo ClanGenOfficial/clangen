@@ -432,6 +432,36 @@
             ]
         }
     },
+    "temporary_weakness": {
+        "tags": [],
+        "requires_scar": false,
+        "severity": "minor",
+        "duration": 2,
+        "mortality": {},
+        "infectiousness": 0.0,
+        "immune_system_effect": 0.0,
+        "side_effect": {},
+        "progression": {},
+        "risks": {
+            "sore": 0.3,
+            "joint_pain": 0.3,
+            "bruises": 0.2,
+            "sprain": 0.1
+        },
+        "treatment_strength": {
+            "1": [
+                "poppy"
+            ],
+            "2": [
+                "betony",
+                "juniper"
+            ],
+            "3": [
+                "elder_leaves",
+                "thyme"
+            ]
+        }
+    },
     "stinky": {
         "tags": [],
         "severity": "minor",

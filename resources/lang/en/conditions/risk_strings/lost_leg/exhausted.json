@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "lost_leg_exhausted",
+        "strings": [
+            "Living with a missing limb is exhausting m_c."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

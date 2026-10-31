@@ -166,7 +166,7 @@ class TestTemporaryCondition(unittest.TestCase):
                     cat1.dead, msg=f"cat died to {c} when they should have healed"
                 )
                 self.assertTrue(
-                    not cat1.temporary_conditions,
+                    c not in cat1.temporary_conditions,
                     msg=f"cat's healed condition: {c}, was not removed",
                 )
 

@@ -1,0 +1,30 @@
+[
+    {
+        "event_id": "temporary_weakness_sprain0",
+        "strings": [
+            "m_c limps to the medicine den. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} {PRONOUN/m_c/poss} body is still recovering, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} fairly sure this pain is a little more than that.",
+            "r_c0 confirms m_c sprained a paw. {PRONOUN/r_c0/subject/CAP} {VERB/m_c/chide/chides} m_c for not being careful enough during {PRONOUN/m_c/poss} recovery exercises."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat",
+                    "medicine cat apprentice"
+                ],
+                "group": [
+                    "player_clan"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "temporary_weakness_sprain1",
+        "strings": [
+            "m_c tries to not see {PRONOUN/m_c/poss} sprain as a major setback. {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} so close to a smooth recovery..."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

@@ -175,7 +175,7 @@ class SpawnTintsCommand(Command):
             colour_tints = sprites.cat_tints["possible_tints"][color_group]
         else:
             colour_tints = []
-        possible_tints = base_tints + colour_tints
+        possible_tints = [None] + base_tints + colour_tints
 
         for tint in possible_tints:
             cat = NewCatFactory.create_cat(

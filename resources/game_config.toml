@@ -766,6 +766,8 @@ dev_tools = false
   minimum_membership = 7
   maximum_membership = 10
 
+  reset_all_starting_skills = false
+
   [clan_creation.ranks_needed]
     leader = true
     deputy = true
@@ -793,6 +795,14 @@ dev_tools = false
   # permit player to change cat ranks
     all = true
     deputy = true
+
+[patrol_related]
+[patrol_related.allow_player_selection]
+  all = true
+  training = true
+  hunting = true
+  border = true
+  med = true
 
 
 [graduation]

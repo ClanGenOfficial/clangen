@@ -172,7 +172,6 @@ def rebuild_top_menu_buttons():
         parent_style=ButtonStyles.MENU_MIDDLE,
         visible=False,
         manager=MANAGER,
-        object_id="@buttonstyles_menu_middle",
         starting_height=6,
         anchors={"left": "left", "left_target": menu_buttons["cats"]},
         disable_selection=False,

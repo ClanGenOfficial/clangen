@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "festering_wound_persistent_exhaustion0",
+        "strings": [
+            "m_c's wound is no longer festering, but {PRONOUN/m_c/poss} energy doesn't seem to return."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
