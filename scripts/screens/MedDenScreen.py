@@ -219,8 +219,17 @@ class MedDenScreen(Screens):
     def create_quarantine_view(self):
         # container for quarantine view, this will let us hide and show easily
         self.elements["quarantine_view_container"] = UIContainer(
-            ui_scale(pygame.Rect((100, 85), (650, 324))),
+            ui_scale(pygame.Rect((50, 75), (700, 324))),
             manager=MANAGER,
+        )
+
+        # INFO
+        self.elements["quarantine_info"] = pygame_gui.elements.UITextBox(
+            "screens.med_den.quarantine_info",
+            ui_scale(pygame.Rect((0, 220), (300, 100))),
+            object_id=get_text_box_theme("#text_box_22_horizleft"),
+            manager=MANAGER,
+            container=self.elements["quarantine_view_container"],
         )
 
     def draw_med_den(self):
