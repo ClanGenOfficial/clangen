@@ -59,6 +59,8 @@ class MedDenScreen(Screens):
         """Dict of supply message attached to each cat. Key is cat, value is message."""
         self.coverage_message: str = ""
 
+        self.open_view: Literal["supply", "quarantine"] = "supply"
+
     def handle_event(self, event):
         super().handle_event(event)
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -97,6 +99,8 @@ class MedDenScreen(Screens):
                 self.change_screen(GameScreen.PROFILE)
             elif event.ui_element == self.elements["open_log"]:
                 HerbManagementWindow(den_button=False)
+            elif event.ui_element == self.elements["open_quarantine"]:
+                self.elements["supply_view_container"].hide()
 
     def screen_switches(self):
         super().screen_switches()
@@ -107,6 +111,12 @@ class MedDenScreen(Screens):
             "buttons.back",
             get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
             object_id="@buttonstyles_squoval",
+            manager=MANAGER,
+        )
+
+        # container for supply view, this will let us hide and show easily
+        self.elements["supply_view_container"] = UIContainer(
+            ui_scale(pygame.Rect((100, 85), (650, 324))),
             manager=MANAGER,
         )
 
@@ -154,7 +164,7 @@ class MedDenScreen(Screens):
 
             self.create_cat_display()
 
-            # ADDITION BUTTONS
+            # ADDITIONAL BUTTONS
             self.elements["open_log"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((25, 60), (140, 30))),
                 "screens.med_den.log_title",
@@ -163,8 +173,22 @@ class MedDenScreen(Screens):
                 manager=MANAGER,
                 anchors={"top_target": self.elements["med_message"]},
             )
+            self.elements["open_quarantine"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((25, 15), (140, 30))),
+                "screens.med_den.quarantine_title",
+                get_button_dict(ButtonStyles.SQUOVAL, (140, 30)),
+                object_id="@buttonstyles_squoval",
+                manager=MANAGER,
+                anchors={"top_target": self.elements["open_log"]},
+            )
 
-            self.add_to_map([self.help_button, self.elements["open_log"]])
+            self.add_to_map(
+                [
+                    self.help_button,
+                    self.elements["open_log"],
+                    self.elements["open_quarantine"],
+                ]
+            )
 
         self.current_focus = self.back_button
 
@@ -174,10 +198,11 @@ class MedDenScreen(Screens):
 
         # BASE IMAGE
         self.den_image["base"] = UIImageButton(
-            ui_scale(pygame.Rect((108, 85), (396, 224))),
+            ui_scale(pygame.Rect((0, 0), (396, 224))),
             "",
             object_id="#med_cat_den_hover_big",
             manager=MANAGER,
+            container=self.elements["supply_view_container"],
         )
         self.add_to_map([self.den_image["base"]])
 
@@ -238,7 +263,7 @@ class MedDenScreen(Screens):
             # cobwebs get two bc they're special little meowmeows
             if herb == "cobwebs":
                 self.den_image["cobweb1"] = UIModifiedImage(
-                    ui_scale(pygame.Rect((108, 95), (396, 224))),
+                    ui_scale(pygame.Rect((0, 0), (396, 224))),
                     pygame.transform.scale(
                         pygame.image.load(
                             "resources/images/med_cat_den/cobweb1.png"
@@ -246,11 +271,12 @@ class MedDenScreen(Screens):
                         (792, 448),
                     ),
                     manager=MANAGER,
+                    container=self.elements["supply_view_container"],
                 )
                 self.den_image["cobweb1"].disable()
                 if count > 1:
                     self.den_image["cobweb2"] = UIModifiedImage(
-                        ui_scale(pygame.Rect((108, 95), (396, 224))),
+                        ui_scale(pygame.Rect((0, 0), (396, 224))),
                         pygame.transform.scale(
                             pygame.image.load(
                                 "resources/images/med_cat_den/cobweb2.png"
@@ -258,12 +284,13 @@ class MedDenScreen(Screens):
                             (792, 448),
                         ),
                         manager=MANAGER,
+                        container=self.elements["supply_view_container"],
                     )
                     self.den_image["cobweb2"].disable()
                 continue
 
             self.den_image[herb] = UIModifiedImage(
-                ui_scale(pygame.Rect((108, 95), (396, 224))),
+                ui_scale(pygame.Rect((0, 0), (396, 224))),
                 pygame.transform.scale(
                     pygame.image.load(
                         f"resources/images/med_cat_den/{herb}.png"
@@ -271,6 +298,7 @@ class MedDenScreen(Screens):
                     (792, 448),
                 ),
                 manager=MANAGER,
+                container=self.elements["supply_view_container"],
             )
             self.den_image[herb].disable()
 
@@ -417,21 +445,23 @@ class MedDenScreen(Screens):
             self.elements["med_image"].kill()
 
         self.elements["med_image"] = UISpriteButton(
-            ui_scale(pygame.Rect((435, 150), (150, 150))),
+            ui_scale(pygame.Rect((335, 65), (150, 150))),
             displayed_med_cat.sprite,
             cat_object=displayed_med_cat,
             manager=MANAGER,
+            container=self.elements["supply_view_container"],
         )
         self.add_to_map([self.elements["med_image"]])
 
         # display name
         if not self.elements.get("med_name"):
             self.elements["med_name"] = pygame_gui.elements.ui_label.UILabel(
-                ui_scale(pygame.Rect((-60, 140), (225, 30))),
+                ui_scale(pygame.Rect((-60, 55), (225, 30))),
                 shorten_text_to_fit(str(displayed_med_cat.name), 137, 15),
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 manager=MANAGER,
                 anchors={"left_target": self.elements["med_image"]},
+                container=self.elements["supply_view_container"],
             )
         else:
             self.elements["med_name"].set_text(
@@ -460,6 +490,7 @@ class MedDenScreen(Screens):
                     "top_target": self.elements["med_name"],
                     "left_target": self.elements["med_image"],
                 },
+                container=self.elements["supply_view_container"],
             )
         else:
             self.elements["med_info"].set_text(info_text)
@@ -477,6 +508,7 @@ class MedDenScreen(Screens):
                     "top_target": self.elements["med_info"],
                     "left_target": self.elements["med_image"],
                 },
+                container=self.elements["supply_view_container"],
             )
             self.elements["next_med_arrow"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((11, 0), (34, 34))),
@@ -489,6 +521,7 @@ class MedDenScreen(Screens):
                     "top_target": self.elements["med_info"],
                     "left_target": self.elements["prior_med_arrow"],
                 },
+                container=self.elements["supply_view_container"],
             )
             self.add_to_map(
                 [self.elements["next_med_arrow"], self.elements["prior_med_arrow"]]
@@ -497,11 +530,13 @@ class MedDenScreen(Screens):
         if not self.elements.get("med_message"):
             self.elements["med_message"] = pygame_gui.elements.UITextBox(
                 "",
-                ui_scale(pygame.Rect((108, 0), (600, 100))),
+                ui_scale(pygame.Rect((0, 0), (600, 100))),
                 object_id=get_text_box_theme("#text_box_30_horizcenter_vertcenter"),
                 anchors={
                     "top_target": self.elements["med_image"],
+                    "centerx": "centerx",
                 },
+                container=self.elements["supply_view_container"],
             )
 
             # message on size of clan that can be cared for
