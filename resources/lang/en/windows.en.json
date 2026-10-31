@@ -110,6 +110,20 @@
         "freshkill_pile_tooltip": "<b>Current amount:</b> %{current_prey_amount} pieces  -  <b>Needed amount:</b> %{needed_amount} pieces<br><b>Expiring soon:</b> %{expiring_amount} pieces  -  <b>Estimated catch per moon:</b> %{expected_amount} pieces",
         "no_hungry_cats": "No cats are in need of food.",
         "herb_help_tooltip": "The medicine cats will gather herbs each timeskip and treat their patients. Older herbs may expire during timeskip and will be cleared out of the supply. <br><br>Gathered, used, and expired herbs will be reported in this log. To see more information about the Clan's herb supply and sick/injured cats, check the medicine cat den.",
+        "build_nest_help": "More quarantine nests can be built by the medicine cats. Each nest costs 5 moss clumps to build and each medicine cat will only have enough time this moon to build a certain number of nests. A cat's skills and experience might increase the number of nests they can build.",
+        "build_nest_limit": {
+            "one": "%{cat} can build %{count} nest this moon.",
+            "many": "%{cat} can build %{count} nests this moon."
+        },
+        "build_nest_moss": {
+            "one": "There is %{count} moss clump available.",
+            "many": "There are %{count} moss clumps available."
+        },
+        "build_nest": "build nest",
+        "built_count": {
+            "one": "%{count} nest built",
+            "many": "%{count} nests built"
+        },
         "no_mediators": "The Clan has no mediators!",
         "leave_clan": "What should this cat become?",
         "pos_clan_rel_log": "The Clan gained %{value_list} towards %{name_list}.",

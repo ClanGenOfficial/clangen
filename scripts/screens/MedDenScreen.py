@@ -38,6 +38,7 @@ from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
 from scripts.ui.scale import ui_scale, ui_scale_value, ui_scale_dimensions
 from scripts.ui.theme import get_text_box_theme
+from scripts.ui.windows.build_nests import BuildNestWindow
 from scripts.ui.windows.herbs import HerbManagementWindow
 
 
@@ -140,6 +141,9 @@ class MedDenScreen(Screens):
                 self.update_potential_quarantine_display(
                     event.ui_element.return_cat_object()
                 )
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.elements["build_nest"]:
+                BuildNestWindow()
 
     def screen_switches(self):
         super().screen_switches()
