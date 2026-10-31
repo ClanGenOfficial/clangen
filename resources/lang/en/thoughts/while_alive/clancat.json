@@ -4421,7 +4421,7 @@
                 "group": [
                     "player_clan"
                 ]
-                },
+                }
             }
         }
     },
@@ -4443,7 +4443,7 @@
                 "group": [
                     "player_clan"
                 ]
-                },
+                }
             },
             "r_c": {
                 "status": [
@@ -4675,7 +4675,7 @@
                 "group": [
                     "player_clan"
                 ]
-                },
+                }
             },
             "r_c": {
                 "status": [
@@ -4749,7 +4749,7 @@
                 "group": [
                     "player_clan"
                 ]
-                },
+                }
             },
             "r_c": {
                 "status": [
