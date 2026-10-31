@@ -101,6 +101,12 @@ class MedDenScreen(Screens):
                 HerbManagementWindow(den_button=False)
             elif event.ui_element == self.elements["open_quarantine"]:
                 self.elements["supply_view_container"].hide()
+                self.elements["open_quarantine"].disable()
+                self.elements["open_supply"].enable()
+            elif event.ui_element == self.elements["open_supply"]:
+                self.elements["supply_view_container"].show()
+                self.elements["open_quarantine"].enable()
+                self.elements["open_supply"].disable()
 
     def screen_switches(self):
         super().screen_switches()
@@ -173,19 +179,29 @@ class MedDenScreen(Screens):
                 manager=MANAGER,
                 anchors={"top_target": self.elements["med_message"]},
             )
+            self.elements["open_supply"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((25, 15), (140, 30))),
+                "screens.med_den.supply_title",
+                get_button_dict(ButtonStyles.SQUOVAL, (140, 30)),
+                object_id="@buttonstyles_squoval",
+                manager=MANAGER,
+                anchors={"top_target": self.elements["open_log"]},
+            )
+            self.elements["open_supply"].disable()
             self.elements["open_quarantine"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((25, 15), (140, 30))),
                 "screens.med_den.quarantine_title",
                 get_button_dict(ButtonStyles.SQUOVAL, (140, 30)),
                 object_id="@buttonstyles_squoval",
                 manager=MANAGER,
-                anchors={"top_target": self.elements["open_log"]},
+                anchors={"top_target": self.elements["open_supply"]},
             )
 
             self.add_to_map(
                 [
                     self.help_button,
                     self.elements["open_log"],
+                    self.elements["open_supply"],
                     self.elements["open_quarantine"],
                 ]
             )
@@ -534,7 +550,6 @@ class MedDenScreen(Screens):
                 object_id=get_text_box_theme("#text_box_30_horizcenter_vertcenter"),
                 anchors={
                     "top_target": self.elements["med_image"],
-                    "centerx": "centerx",
                 },
                 container=self.elements["supply_view_container"],
             )
