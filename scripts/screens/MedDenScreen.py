@@ -42,10 +42,6 @@ from scripts.ui.theme import get_text_box_theme
 
 
 class MedDenScreen(Screens):
-    cat_buttons = {}
-    conditions_hover = {}
-    cat_names = []
-
     def __init__(self, name=None):
         super().__init__(name)
         self.help_button = None
