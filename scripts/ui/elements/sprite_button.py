@@ -63,12 +63,12 @@ class UISpriteButton(CatButton):
                 (relative_rect.x, relative_rect.y),
                 (relative_rect.width, relative_rect.height),
             ),
-            get_box(BoxStyles.TARGET_BOX, (60, 60)),
+            get_box(BoxStyles.TARGET_BOX, (relative_rect.width, relative_rect.height)),
             container=container,
             starting_height=1,
             manager=MANAGER,
             visible=False,
-            anchors={"centerx": "centerx"},
+            anchors={"centerx": "centerx"} if container else None,
         )
 
         # The transparent button. This a subclass of UIButton that also holds the cat_id.

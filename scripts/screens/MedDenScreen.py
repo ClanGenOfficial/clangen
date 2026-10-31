@@ -60,6 +60,7 @@ class MedDenScreen(Screens):
         self.coverage_message: str = ""
 
     def handle_event(self, event):
+        super().handle_event(event)
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             self.mute_button_pressed(event)
 
@@ -117,6 +118,8 @@ class MedDenScreen(Screens):
         self.draw_med_den()
         self.update_med_cat()
 
+        self.add_to_map([self.back_button])
+
         if game.clan.game_mode != "classic":
             self.help_button = UIImageButton(
                 ui_scale(pygame.Rect((725, 25), (34, 34))),
@@ -161,6 +164,10 @@ class MedDenScreen(Screens):
                 anchors={"top_target": self.elements["med_message"]},
             )
 
+            self.add_to_map([self.help_button, self.elements["open_log"]])
+
+        self.current_focus = self.back_button
+
     def draw_med_den(self):
         herb_list = []
         herb_supply = game.clan.herb_supply
@@ -172,6 +179,7 @@ class MedDenScreen(Screens):
             object_id="#med_cat_den_hover_big",
             manager=MANAGER,
         )
+        self.add_to_map([self.den_image["base"]])
 
         # GET LIST OF HERB COUNTS TO DISPLAY
         if herb_supply.total <= 0:
@@ -345,6 +353,15 @@ class MedDenScreen(Screens):
             container=self.elements["cat_arrow_container"],
             starting_height=-1,
         )
+        self.add_to_map(
+            [
+                self.elements["severe_tab"],
+                self.elements["major_tab"],
+                self.elements["minor_tab"],
+                self.elements["prior_cat_page_arrow"],
+                self.elements["next_cat_page_arrow"],
+            ]
+        )
 
         self.current_page = 1
         self.update_cat_display()
@@ -387,6 +404,8 @@ class MedDenScreen(Screens):
             container=self.elements["cat_list_container"],
         )
 
+        self.add_to_map(self.elements["cat_list"].cat_sprites.values())
+
     def update_med_cat(self):
         """
         Updates the med cat display
@@ -403,6 +422,7 @@ class MedDenScreen(Screens):
             cat_object=displayed_med_cat,
             manager=MANAGER,
         )
+        self.add_to_map([self.elements["med_image"]])
 
         # display name
         if not self.elements.get("med_name"):
@@ -470,6 +490,9 @@ class MedDenScreen(Screens):
                     "left_target": self.elements["prior_med_arrow"],
                 },
             )
+            self.add_to_map(
+                [self.elements["next_med_arrow"], self.elements["prior_med_arrow"]]
+            )
 
         if not self.elements.get("med_message"):
             self.elements["med_message"] = pygame_gui.elements.UITextBox(
@@ -532,11 +555,14 @@ class MedDenScreen(Screens):
                 self.elements[tab].enable()
             self.elements[f"{self.tab_showing}_tab"].disable()
 
+            self.remove_from_map(self.elements["cat_list"].cat_sprites.values())
             self.elements["cat_list"].kill()
             self.update_cat_display()
 
         else:
+            self.remove_from_map(self.elements["cat_list"].cat_sprites.values())
             self.elements["cat_list"].update_display(current_page=self.current_page)
+            self.add_to_map(self.elements["cat_list"].cat_sprites.values())
 
     def exit_screen(self):
         for herb in self.den_image:
