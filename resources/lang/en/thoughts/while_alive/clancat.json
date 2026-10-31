@@ -4328,8 +4328,19 @@
         "strings": [
             "Wants to visit POI",
             "Is daydreaming about POI",
-            "Daydreams of defending POI from invaders"
-        ]
+            "Daydreams of defending POI from invaders",
+            "Is discussing POI with r_c"
+        ],
+        "m_c": {
+                "group": [
+                    "player_clan"
+                ]
+        },
+        "r_c": {
+                "group": [
+                    "player_clan"
+                ]
+        }
     },
     {
         "event_id": "poi_terrain_not_kit",
@@ -4346,6 +4357,9 @@
             "m_c": {
                 "status": [
                     "-kitten"
+                ],
+                "group": [
+                    "player_clan"
                 ],
                 "health": {
                     "working": true
@@ -4370,6 +4384,9 @@
                     "deputy",
                     "leader"
                 ],
+                "group": [
+                    "player_clan"
+                ],
                 "health": {
                     "working": true
                 }
@@ -4391,6 +4408,9 @@
             "m_c": {
                 "status": [
                     "kitten"
+                ],
+                "group": [
+                    "player_clan"
                 ]
             }
         }
@@ -4408,12 +4428,18 @@
             "m_c": {
                 "status": [
                     "kitten"
+                ],
+                "group": [
+                    "player_clan"
                 ]
             },
             "r_c": {
                 "status": [
                     "-kitten",
                     "-newborn"
+                ],
+                "group": [
+                    "player_clan"
                 ],
                 "health": {
                     "working": true
@@ -4430,9 +4456,39 @@
             "Wonders just how many lives POI has claimed...",
             "Is intimidated at the thought of POI",
             "Wonders why c_n decided to set up so close to POI",
-            "Is having a bad dream about POI",
+            "Is having a bad dream about POI"
+        ],
+        "m_c": {
+                "group": [
+                    "player_clan"
+                ]
+        }
+    },
+    {
+        "event_id": "poi_danger_gen1",
+        "poi": {
+            "tags": ["danger"]
+        },
+        "strings": [
             "Wonders if POI is haunted"
-        ]
+        ],
+        "m_c": {
+                "group": [
+                    "player_clan"
+                ],
+            "stat": {
+                "skill": [
+                    "GHOST,1"
+                ],
+                "trait": [
+                    "skittish",
+                    "shy",
+                    "nervous",
+                    "strange"
+                ],
+                "must_have_both": false
+            }
+        }
     },
     {
         "event_id": "poi_danger_working",
@@ -4444,7 +4500,33 @@
             "Shudders at the idea of going near POI",
             "Hopes POI doesn't claim {PRONOUN/m_c/poss} life...",
             "Thought {PRONOUN/m_c/subject} heard a scary noise by POI and has been puffed up ever since",
-            "Spends as little time at POI as {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to",
+            "Spends as little time at POI as {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader",
+                    "medicine cat",
+                    "medicine cat apprentice"
+                ],
+                "group": [
+                    "player_clan"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "poi_danger_working",
+        "poi": {
+            "tags": ["danger"]
+        },
+        "strings": [
             "Is extra jumpy when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} at POI"
         ],
         "involved_cats": {
@@ -4457,6 +4539,19 @@
                     "medicine cat",
                     "medicine cat apprentice"
                 ],
+                "group": [
+                    "player_clan"
+                ],
+                "stat": {
+                "skill": [
+                    "GHOST,1"
+                ],
+                "trait": [
+                    "nervous",
+                    "insecure"
+                ],
+                "must_have_both": false
+            }
                 "health": {
                     "working": true
                 }
@@ -4481,6 +4576,9 @@
                     "deputy",
                     "leader"
                 ],
+                "group": [
+                    "player_clan"
+                ],
                 "health": {
                     "working": true
                 }
@@ -4502,6 +4600,9 @@
                 "status": [
                     "kitten"
                 ],
+                "group": [
+                    "player_clan"
+                ],
                 "stat": {
                 "trait": [
                     "skittish",
@@ -4518,20 +4619,102 @@
         },
         "strings": [
             "Is demanding that r_c come back from POI safe",
-            "Is worried when r_c goes out to POI",
-            "Thinks r_c is so cool for going to POI and coming back alive",
-            "Wonders why r_c doesn't like going to POI"
+            "Thinks r_c is so cool for going to POI and coming back alive"
         ],
         "involved_cats": {
             "m_c": {
                 "status": [
                     "kitten"
+                ],
+                "group": [
+                    "player_clan"
                 ]
             },
             "r_c": {
                 "status": [
                     "-kitten"
                 ],
+                "group": [
+                    "player_clan"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "poi_danger_kit_to_working1",
+        "poi": {
+            "tags": ["danger"]
+        },
+        "strings": [
+            "Is worried when r_c goes out to POI"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "group": [
+                    "player_clan"
+                ],
+                "stat": {
+                "trait": [
+                    "skittish",
+                    "shy"
+                ]
+            }
+            },
+            "r_c": {
+                "status": [
+                    "-kitten"
+                ],
+                "group": [
+                    "player_clan"
+                ],
+                "health": {
+                    "working": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "poi_danger_kit_to_working2",
+        "poi": {
+            "tags": ["danger"]
+        },
+        "strings": [
+            "Wonders why r_c doesn't like going to POI"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "group": [
+                    "player_clan"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "-kitten"
+                ],
+                "group": [
+                    "player_clan"
+                ],
+                "stat": {
+                "trait": [
+                    "-bold",
+                    "-oblivious",
+                    "-daring",
+                    "-rebellious",
+                    "-confident",
+                    "-ambitious",
+                    "-arrogant",
+                    "-adventurous"
+                ]
+            }
                 "health": {
                     "working": true
                 }
@@ -4554,6 +4737,9 @@
             "m_c": {
                 "status": [
                     "-kitten"
+                ],
+                "group": [
+                    "player_clan"
                 ],
                 "health": {
                     "working": true
@@ -4578,6 +4764,9 @@
                 "status": [
                     "-kitten"
                 ],
+                "group": [
+                    "player_clan"
+                ],
                 "health": {
                     "working": true
                 }
@@ -4600,6 +4789,9 @@
                 "status": [
                     "-kitten"
                 ],
+                "group": [
+                    "player_clan"
+                ],
                 "health": {
                     "working": true
                 }
@@ -4619,6 +4811,9 @@
             "m_c": {
                 "status": [
                     "-kitten"
+                ],
+                "group": [
+                    "player_clan"
                 ],
                 "health": {
                     "working": true
@@ -4641,6 +4836,9 @@
             "m_c": {
                 "status": [
                     "-kitten"
+                ],
+                "group": [
+                    "player_clan"
                 ],
                 "health": {
                     "working": true
@@ -4666,6 +4864,9 @@
                 "status": [
                     "-kitten"
                 ],
+                "group": [
+                    "player_clan"
+                ],
                 "health": {
                     "working": true
                 }
@@ -4689,6 +4890,9 @@
             "m_c": {
                 "status": [
                     "-kitten"
+                ],
+                "group": [
+                    "player_clan"
                 ],
                 "health": {
                     "working": true
@@ -4723,6 +4927,9 @@
                     "deputy",
                     "leader"
                 ],
+                "group": [
+                    "player_clan"
+                ],
                 "health": {
                     "working": true
                 }
@@ -4748,6 +4955,9 @@
                 "status": [
                     "medicine cat apprentice",
                     "medicine cat"
+                ],
+                "group": [
+                    "player_clan"
                 ],
                 "health": {
                     "working": true
@@ -4777,6 +4987,9 @@
                 "status": [
                     "-medicine cat apprentice",
                     "-medicine cat"
+                ],
+                "group": [
+                    "player_clan"
                 ],
                 "health": {
                     "working": true
