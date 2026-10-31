@@ -4453,10 +4453,7 @@
             "tags": ["danger"]
         },
         "strings": [
-            "Wonders just how many lives POI has claimed...",
-            "Is intimidated at the thought of POI",
-            "Wonders why c_n decided to set up so close to POI",
-            "Is having a bad dream about POI"
+            "Wonders why c_n decided to set up so close to POI"
         ],
         "m_c": {
                 "group": [
@@ -4466,6 +4463,30 @@
     },
     {
         "event_id": "poi_danger_gen1",
+        "poi": {
+            "tags": ["danger"]
+        },
+        "strings": [
+            "Wonders just how many lives POI has claimed...",
+            "Is intimidated at the thought of POI",
+            "Is having a bad dream about POI"
+        ],
+        "m_c": {
+                "group": [
+                    "player_clan"
+                ],
+            "stat": {
+                "trait": [
+                    "skittish",
+                    "shy",
+                    "nervous",
+                    "strange"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "poi_danger_gen2",
         "poi": {
             "tags": ["danger"]
         },
