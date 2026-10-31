@@ -63,23 +63,12 @@ class MedDenScreen(Screens):
 
     def handle_event(self, event):
         super().handle_event(event)
-        if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
-            if event.ui_element in self.elements["cat_list"].cat_sprites.values():
-                self.update_potential_quarantine_display(
-                    event.ui_element.return_cat_object()
-                )
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             self.mute_button_pressed(event)
 
             if event.ui_element == self.back_button:
                 self.change_screen(game.last_screen_forupdate)
-            elif event.ui_element == self.elements["next_med_arrow"]:
-                self.meds.rotate(-1)
-                self.update_med_cat()
-            elif event.ui_element == self.elements["prior_med_arrow"]:
-                self.meds.rotate(1)
-                self.update_med_cat()
             elif event.ui_element == self.elements["next_cat_page_arrow"]:
                 self.current_page += 1
                 self.update_tab_and_page()
@@ -95,14 +84,6 @@ class MedDenScreen(Screens):
             elif event.ui_element == self.elements["minor_tab"]:
                 self.tab_showing = "minor"
                 self.update_tab_and_page(changed_tab=True)
-            elif event.ui_element in self.elements["cat_list"].cat_sprites.values():
-                cat = event.ui_element.return_cat_object()
-                switch_set_value(Switch.cat, cat.ID)
-                self.change_screen(GameScreen.PROFILE)
-            elif event.ui_element == self.elements["med_image"]:
-                cat = event.ui_element.return_cat_object()
-                switch_set_value(Switch.cat, cat.ID)
-                self.change_screen(GameScreen.PROFILE)
             elif event.ui_element == self.elements["open_log"]:
                 HerbManagementWindow(den_button=False)
             elif event.ui_element == self.elements["open_quarantine"]:
@@ -130,6 +111,35 @@ class MedDenScreen(Screens):
                 )
                 self.find_display_cats()
                 self.update_tab_and_page(changed_tab=True)
+
+        if self.open_view == "supply":
+            self.handle_supply_event(event)
+        elif self.open_view == "quarantine":
+            self.handle_quarantine_event(event)
+
+    def handle_supply_event(self, event):
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element in self.elements["cat_list"].cat_sprites.values():
+                cat = event.ui_element.return_cat_object()
+                switch_set_value(Switch.cat, cat.ID)
+                self.change_screen(GameScreen.PROFILE)
+            elif event.ui_element == self.elements["next_med_arrow"]:
+                self.meds.rotate(-1)
+                self.update_med_cat()
+            elif event.ui_element == self.elements["prior_med_arrow"]:
+                self.meds.rotate(1)
+                self.update_med_cat()
+            elif event.ui_element == self.elements["med_image"]:
+                cat = event.ui_element.return_cat_object()
+                switch_set_value(Switch.cat, cat.ID)
+                self.change_screen(GameScreen.PROFILE)
+
+    def handle_quarantine_event(self, event):
+        if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
+            if event.ui_element in self.elements["cat_list"].cat_sprites.values():
+                self.update_potential_quarantine_display(
+                    event.ui_element.return_cat_object()
+                )
 
     def screen_switches(self):
         super().screen_switches()
@@ -196,33 +206,6 @@ class MedDenScreen(Screens):
             )
 
         self.current_focus = self.back_button
-
-    def find_display_cats(self, only_show_infectious=False):
-        self.condition_cats.clear()
-        for cat in Cat.all_cats_list:
-            if not cat.status.alive_in_player_clan:
-                continue
-
-            all_cons = cat.temporary_conditions + cat.permanent_conditions
-            if not all_cons:
-                continue
-
-            if only_show_infectious:
-                if not any([con.infectiousness for con in cat.temporary_conditions]):
-                    continue
-
-            if any([condition.severity == "severe" for condition in all_cons]):
-                self.condition_cats["severe"].append(cat)
-            elif any([condition.severity == "major" for condition in all_cons]):
-                self.condition_cats["major"].append(cat)
-            else:
-                self.condition_cats["minor"].append(cat)
-        if self.condition_cats["severe"]:
-            self.tab_showing = "severe"
-        elif self.condition_cats["major"]:
-            self.tab_showing = "major"
-        else:
-            self.tab_showing = "minor"
 
     def create_supply_view(self):
         # container for supply view, this will let us hide and show easily
@@ -339,7 +322,7 @@ class MedDenScreen(Screens):
                 "potential_quarantine_cat_info"
             ] = pygame_gui.elements.UITextBox(
                 "<br>".join([conditions, infection_level]),
-                ui_scale(pygame.Rect((75, 0), (150, 90))),
+                ui_scale(pygame.Rect((75, 0), (150, 45))),
                 object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 manager=MANAGER,
                 anchors={
@@ -461,138 +444,6 @@ class MedDenScreen(Screens):
                 container=self.elements["supply_view_container"],
             )
             self.den_image[herb].disable()
-
-    def create_cat_display(self):
-        self.elements["cat_list_container"] = UIContainer(
-            ui_scale(pygame.Rect((180, 410), (570, 260))),
-            manager=MANAGER,
-        )
-
-        # TITLE
-        self.elements["hurt_sick_title"] = pygame_gui.elements.UITextBox(
-            "screens.med_den.hurt_sick_title",
-            ui_scale(pygame.Rect((0, 0), (280, 30))),
-            object_id=get_text_box_theme("#text_box_40_horizleft"),
-            manager=MANAGER,
-            container=self.elements["cat_list_container"],
-        )
-        # BACKGROUND BOX
-        self.elements["cat_list_bg"] = UIModifiedImage(
-            ui_scale(pygame.Rect((0, 0), (570, 200))),
-            get_box(BoxStyles.ROUNDED_BOX, (560, 200)),
-            manager=MANAGER,
-            container=self.elements["cat_list_container"],
-            anchors={"top_target": self.elements["hurt_sick_title"]},
-        )
-        self.elements["cat_list_bg"].disable()
-
-        # TABS
-        self.elements["severe_tab"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((15, 0), (75, 35))),
-            "screens.med_den.in_den",
-            get_button_dict(ButtonStyles.HORIZONTAL_TAB, (75, 35)),
-            object_id="@buttonstyles_horizontal_tab",
-            manager=MANAGER,
-            container=self.elements["cat_list_container"],
-            anchors={"left_target": self.elements["hurt_sick_title"]},
-        )
-        self.elements["major_tab"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((15, 0), (75, 35))),
-            "screens.med_den.out_den",
-            get_button_dict(ButtonStyles.HORIZONTAL_TAB, (75, 35)),
-            object_id="@buttonstyles_horizontal_tab",
-            manager=MANAGER,
-            container=self.elements["cat_list_container"],
-            anchors={"left_target": self.elements["severe_tab"]},
-        )
-        self.elements["minor_tab"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((15, 0), (75, 35))),
-            "screens.med_den.minor",
-            get_button_dict(ButtonStyles.HORIZONTAL_TAB, (75, 35)),
-            object_id="@buttonstyles_horizontal_tab",
-            manager=MANAGER,
-            container=self.elements["cat_list_container"],
-            anchors={"left_target": self.elements["major_tab"]},
-        )
-
-        self.elements[f"{self.tab_showing}_tab"].disable()
-
-        # PAGE ARROWS
-        self.elements["cat_arrow_container"] = UIContainer(
-            ui_scale(pygame.Rect((0, -6), (150, 35))),
-            container=self.elements["cat_list_container"],
-            manager=MANAGER,
-            anchors={"top_target": self.elements["cat_list_bg"], "centerx": "centerx"},
-        )
-        self.elements["prior_cat_page_arrow"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((0, 0), (34, 34))),
-            Icon.ARROW_LEFT,
-            get_button_dict(ButtonStyles.ICON, (34, 34)),
-            object_id="@buttonstyles_icon",
-            container=self.elements["cat_arrow_container"],
-            starting_height=-1,
-        )
-        self.elements["next_cat_page_arrow"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((115, 0), (34, 34))),
-            Icon.ARROW_RIGHT,
-            get_button_dict(ButtonStyles.ICON, (34, 34)),
-            object_id="@buttonstyles_icon",
-            manager=MANAGER,
-            container=self.elements["cat_arrow_container"],
-            starting_height=-1,
-        )
-        self.add_to_map(
-            [
-                self.elements["severe_tab"],
-                self.elements["major_tab"],
-                self.elements["minor_tab"],
-                self.elements["prior_cat_page_arrow"],
-                self.elements["next_cat_page_arrow"],
-            ]
-        )
-
-        self.current_page = 1
-        self.update_cat_display()
-
-    def update_cat_display(self):
-        """
-        Creates the actual cat list
-        """
-
-        tooltip_text = [
-            adjust_list_text(
-                (
-                    [
-                        i18n.t(
-                            f"conditions.{'temporary_conditions' if con in cat.temporary_conditions else 'permanent_conditions'}.{con.name}"
-                        )
-                        for con in cat.temporary_conditions + cat.permanent_conditions
-                    ]
-                )
-            )
-            for cat in self.condition_cats[self.tab_showing]
-        ]
-
-        self.elements["cat_list"] = UICatListDisplay(
-            ui_scale(pygame.Rect((8, 25), (560, 200))),
-            manager=MANAGER,
-            cat_list=self.condition_cats[self.tab_showing],
-            cats_displayed=12,
-            x_px_between=ui_scale_value(5),
-            y_px_between=ui_scale_value(5),
-            columns=6,
-            rows=2,
-            show_names=True,
-            tool_tip_text_list=tooltip_text,
-            current_page=self.current_page,
-            next_button=self.elements["next_cat_page_arrow"],
-            prev_button=self.elements["prior_cat_page_arrow"],
-            text_theme="#text_box_30_horizcenter",
-            starting_height=1,
-            container=self.elements["cat_list_container"],
-        )
-
-        self.add_to_map(self.elements["cat_list"].cat_sprites.values())
 
     def update_med_cat(self):
         """
@@ -738,6 +589,165 @@ class MedDenScreen(Screens):
         self.elements["med_message"].set_text(
             f"{self.coverage_message}<br>{self.med_messages[displayed_med_cat.ID]}"
         )
+
+    def find_display_cats(self, only_show_infectious=False):
+        self.condition_cats.clear()
+        for cat in Cat.all_cats_list:
+            if not cat.status.alive_in_player_clan:
+                continue
+
+            all_cons = cat.temporary_conditions + cat.permanent_conditions
+            if not all_cons:
+                continue
+
+            if only_show_infectious:
+                if not any([con.infectiousness for con in cat.temporary_conditions]):
+                    continue
+
+            if any([condition.severity == "severe" for condition in all_cons]):
+                self.condition_cats["severe"].append(cat)
+            elif any([condition.severity == "major" for condition in all_cons]):
+                self.condition_cats["major"].append(cat)
+            else:
+                self.condition_cats["minor"].append(cat)
+        if self.condition_cats["severe"]:
+            self.tab_showing = "severe"
+        elif self.condition_cats["major"]:
+            self.tab_showing = "major"
+        else:
+            self.tab_showing = "minor"
+
+    def create_cat_display(self):
+        self.elements["cat_list_container"] = UIContainer(
+            ui_scale(pygame.Rect((180, 410), (570, 260))),
+            manager=MANAGER,
+        )
+
+        # TITLE
+        self.elements["hurt_sick_title"] = pygame_gui.elements.UITextBox(
+            "screens.med_den.hurt_sick_title",
+            ui_scale(pygame.Rect((0, 0), (280, 30))),
+            object_id=get_text_box_theme("#text_box_40_horizleft"),
+            manager=MANAGER,
+            container=self.elements["cat_list_container"],
+        )
+        # BACKGROUND BOX
+        self.elements["cat_list_bg"] = UIModifiedImage(
+            ui_scale(pygame.Rect((0, 0), (570, 200))),
+            get_box(BoxStyles.ROUNDED_BOX, (560, 200)),
+            manager=MANAGER,
+            container=self.elements["cat_list_container"],
+            anchors={"top_target": self.elements["hurt_sick_title"]},
+        )
+        self.elements["cat_list_bg"].disable()
+
+        # TABS
+        self.elements["severe_tab"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((15, 0), (75, 35))),
+            "screens.med_den.in_den",
+            get_button_dict(ButtonStyles.HORIZONTAL_TAB, (75, 35)),
+            object_id="@buttonstyles_horizontal_tab",
+            manager=MANAGER,
+            container=self.elements["cat_list_container"],
+            anchors={"left_target": self.elements["hurt_sick_title"]},
+        )
+        self.elements["major_tab"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((15, 0), (75, 35))),
+            "screens.med_den.out_den",
+            get_button_dict(ButtonStyles.HORIZONTAL_TAB, (75, 35)),
+            object_id="@buttonstyles_horizontal_tab",
+            manager=MANAGER,
+            container=self.elements["cat_list_container"],
+            anchors={"left_target": self.elements["severe_tab"]},
+        )
+        self.elements["minor_tab"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((15, 0), (75, 35))),
+            "screens.med_den.minor",
+            get_button_dict(ButtonStyles.HORIZONTAL_TAB, (75, 35)),
+            object_id="@buttonstyles_horizontal_tab",
+            manager=MANAGER,
+            container=self.elements["cat_list_container"],
+            anchors={"left_target": self.elements["major_tab"]},
+        )
+
+        self.elements[f"{self.tab_showing}_tab"].disable()
+
+        # PAGE ARROWS
+        self.elements["cat_arrow_container"] = UIContainer(
+            ui_scale(pygame.Rect((0, -6), (150, 35))),
+            container=self.elements["cat_list_container"],
+            manager=MANAGER,
+            anchors={"top_target": self.elements["cat_list_bg"], "centerx": "centerx"},
+        )
+        self.elements["prior_cat_page_arrow"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((0, 0), (34, 34))),
+            Icon.ARROW_LEFT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
+            container=self.elements["cat_arrow_container"],
+            starting_height=-1,
+        )
+        self.elements["next_cat_page_arrow"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((115, 0), (34, 34))),
+            Icon.ARROW_RIGHT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
+            manager=MANAGER,
+            container=self.elements["cat_arrow_container"],
+            starting_height=-1,
+        )
+        self.add_to_map(
+            [
+                self.elements["severe_tab"],
+                self.elements["major_tab"],
+                self.elements["minor_tab"],
+                self.elements["prior_cat_page_arrow"],
+                self.elements["next_cat_page_arrow"],
+            ]
+        )
+
+        self.current_page = 1
+        self.update_cat_display()
+
+    def update_cat_display(self):
+        """
+        Creates the actual cat list
+        """
+
+        tooltip_text = [
+            adjust_list_text(
+                (
+                    [
+                        i18n.t(
+                            f"conditions.{'temporary_conditions' if con in cat.temporary_conditions else 'permanent_conditions'}.{con.name}"
+                        )
+                        for con in cat.temporary_conditions + cat.permanent_conditions
+                    ]
+                )
+            )
+            for cat in self.condition_cats[self.tab_showing]
+        ]
+
+        self.elements["cat_list"] = UICatListDisplay(
+            ui_scale(pygame.Rect((8, 25), (560, 200))),
+            manager=MANAGER,
+            cat_list=self.condition_cats[self.tab_showing],
+            cats_displayed=12,
+            x_px_between=ui_scale_value(5),
+            y_px_between=ui_scale_value(5),
+            columns=6,
+            rows=2,
+            show_names=True,
+            tool_tip_text_list=tooltip_text,
+            current_page=self.current_page,
+            next_button=self.elements["next_cat_page_arrow"],
+            prev_button=self.elements["prior_cat_page_arrow"],
+            text_theme="#text_box_30_horizcenter",
+            starting_height=1,
+            container=self.elements["cat_list_container"],
+        )
+
+        self.add_to_map(self.elements["cat_list"].cat_sprites.values())
 
     def update_tab_and_page(self, changed_tab=False):
         """
