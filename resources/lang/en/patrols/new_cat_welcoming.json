@@ -11099,7 +11099,7 @@
         ]
     },
     {
-        "event_id": "gen_bord_gatheringplace_otherclanapp_welcoming",
+        "event_id": "gen_bord_gatheringplace_poi_otherclanapp_welcoming",
         "types": ["border"],
         "frequency": 1,
         "poi": {
@@ -11564,7 +11564,7 @@
         ]
     },
     {
-        "event_id": "gen_bord_moonplace_dream_newhealer_welcoming",
+        "event_id": "gen_bord_moonplace_poi_dream_newhealer_welcoming",
         "types": ["border"],
         "frequency": 1,
         "poi": {
@@ -12060,7 +12060,7 @@
         ]
     },
     {
-        "event_id": "gen_bord_moonplace_clair_newhealer_welcoming",
+        "event_id": "gen_bord_moonplace_poi_clair_newhealer_welcoming",
         "types": ["border"],
         "frequency": 1,
         "poi": {
@@ -12547,7 +12547,7 @@
         ]
     },
     {
-        "event_id": "gen_med_moonplace_omen_newhealer_welcoming",
+        "event_id": "gen_med_moonplace_poi_omen_newhealer_welcoming",
         "types": ["herb_gathering"],
         "frequency": 1,
         "poi": {
@@ -12873,7 +12873,7 @@
         ]
     },
     {
-        "event_id": "gen_med_moonplace_prophet_newhealer_welcoming",
+        "event_id": "gen_med_moonplace_poi_prophet_newhealer_welcoming",
         "types": ["herb_gathering"],
         "frequency": 1,
         "poi": {
