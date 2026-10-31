@@ -226,9 +226,42 @@ class MedDenScreen(Screens):
         # INFO
         self.elements["quarantine_info"] = pygame_gui.elements.UITextBox(
             "screens.med_den.quarantine_info",
-            ui_scale(pygame.Rect((0, 220), (300, 100))),
-            object_id=get_text_box_theme("#text_box_22_horizleft"),
+            ui_scale(pygame.Rect((0, 200), (315, 120))),
+            object_id=get_text_box_theme("#text_box_22_horizcenter"),
             manager=MANAGER,
+            container=self.elements["quarantine_view_container"],
+        )
+
+        # NEST FRAME
+        self.elements["quarantine_nest_frame"] = UIModifiedImage(
+            ui_scale(pygame.Rect((330, 0), (350, 300))),
+            get_box(BoxStyles.FRAME, (350, 300)),
+            manager=MANAGER,
+            container=self.elements["quarantine_view_container"],
+        )
+        self.elements["quarantine_nest_frame"].disable()
+
+        # ARROWS
+        self.elements["nest_page_arrow"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((313, 133), (34, 34))),
+            Icon.ARROW_LEFT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
+            container=self.elements["quarantine_view_container"],
+        )
+        self.elements["nest_page_arrow"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((663, 133), (34, 34))),
+            Icon.ARROW_RIGHT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
+            manager=MANAGER,
+            container=self.elements["quarantine_view_container"],
+        )
+        self.elements["build_nest"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((445, 278), (120, 30))),
+            "screens.med_den.build_nest",
+            get_button_dict(ButtonStyles.SQUOVAL, (120, 30)),
+            object_id="@buttonstyles_squoval",
             container=self.elements["quarantine_view_container"],
         )
 
