@@ -1,4 +1,6 @@
 import itertools
+from collections import deque
+from math import ceil
 from random import choice
 
 import i18n
@@ -16,6 +18,7 @@ from scripts.events_module.text_adjust import (
     event_text_adjust,
     shorten_text_to_fit,
     process_text,
+    find_text_width,
 )
 from scripts.game_structure import game
 from scripts.game_structure.game import Switch
@@ -594,11 +597,28 @@ class MedDenScreen(Screens):
 
             # OVER 10 DISPLAYS AS TWO COLUMNS
             else:
+                herb_list = sorted(
+                    herb_list, key=lambda k: find_text_width(k, 13), reverse=True
+                )
+                midway = ceil(len(herb_list) / 2)
                 herb_display = "<br>".join(
                     [
-                        f"{a}       -      {b}" if b else a
+                        (
+                            a
+                            + " "
+                            * (
+                                (237 - find_text_width(f"{a}{b}", 13))
+                                // find_text_width(" ", 13)
+                            )
+                            + b
+                        )
+                        if b
+                        else a
                         for a, b in itertools.zip_longest(
-                            herb_list[0::2], herb_list[1::2]
+                            herb_list[0:midway],
+                            sorted(
+                                herb_list[midway:], key=lambda k: find_text_width(k, 13)
+                            ),
                         )
                     ]
                 )
