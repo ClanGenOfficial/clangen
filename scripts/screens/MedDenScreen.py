@@ -100,10 +100,12 @@ class MedDenScreen(Screens):
             elif event.ui_element == self.elements["open_log"]:
                 HerbManagementWindow(den_button=False)
             elif event.ui_element == self.elements["open_quarantine"]:
+                self.open_view = "quarantine"
                 self.elements["supply_view_container"].hide()
                 self.elements["open_quarantine"].disable()
                 self.elements["open_supply"].enable()
             elif event.ui_element == self.elements["open_supply"]:
+                self.open_view = "supply"
                 self.elements["supply_view_container"].show()
                 self.elements["open_quarantine"].enable()
                 self.elements["open_supply"].disable()
