@@ -4,7 +4,7 @@ from pygame_gui.core import ObjectID
 from pygame_gui.core.interfaces import IUIManagerInterface
 
 from scripts.game_input import INPUT_ACTION_PRESSED, INPUT_ACTION_RELEASED, Action
-from scripts.game_structure.game import game_setting_get
+from scripts.game_structure.game import game_setting_get, switch_get_value, Switch
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.ui.elements.cat_button import CatButton
 from scripts.ui.generate_box import get_box, BoxStyles
@@ -95,7 +95,8 @@ class UISpriteButton(CatButton):
 
     def focus(self):
         super().focus()
-        self.target_indicator.show()
+        if switch_get_value(Switch.keybinds_live):
+            self.target_indicator.show()
 
     def unfocus(self):
         super().unfocus()
