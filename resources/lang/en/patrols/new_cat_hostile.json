@@ -5096,698 +5096,6 @@
         ]
     },
     {
-        "event_id": "gen_med_twolegplace_cloudkit_hostile",
-        "types": [
-            "herb_gathering"
-        ],
-        "frequency": 1,
-        "poi": {
-            "name": ["terrain_twolegplace"]
-        },
-        "season": [
-            "-leaf-bare"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                2,
-                6
-            ],
-            "medicine cat": [
-                1,
-                5
-            ],
-            "medicine cat apprentice": [
-                1,
-                5
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ],
-            "apprentice": [
-                -1,
-                -1
-            ]
-        },
-        "chance_of_success": 50,
-        "patrol_art": "POI",
-        "intro_strings": [
-            "p_l heads deep into POI. {PRONOUN/p_l/subject/CAP} {VERB/p_l/explain/explains} to the apprentice, who is carrying freshkill, that the Clan has a nice deal with a pair of kittypets whose Twoleg keeps its territory stocked with abundant, healthy herbs. In exchange for bringing the kittypets freshkill every time they harvest, c_n has exclusive gathering rights of the rare herbs."
-        ],
-        "decline_strings": [
-            "The cats are forced to turn back. The Twolegs are doing some sort of ceremony that brings countless numbers of them onto their stone paths, and p_l isn't willing to risk trying to get by them."
-        ],
-        "success_outcomes": [
-             {
-                "frequency": 4,
-                "exp_gained": 10,
-                "outcome_art": "cat_sprites/gen_med_bumpheads_McLn",
-                "strings": [
-                    "When the cats arrive, they are greeted by the pair of kittypets, along with an entire litter of kits. n_c0 purrs that {PRONOUN/n_c0/subject} and n_c1 wanted to introduce their kits to the Clancats before they went to their new homes. The healers agree to take the time before gathering, and sit to explain to the kits how dangerous Clancats can be, and how they should make sure to <i>never, ever</i> trespass in any Clan's territory. The cats leave with their herbs, feeling good about having educated the kits."
-                ],
-                "supply": [
-                    {
-                        "type": "catmint",
-                        "adjust": "increase_large"
-                    },
-                    {
-                        "type": "daisy",
-                        "adjust": "increase_medium"
-                    },
-                    {
-                        "type": "goldenrod",
-                        "adjust": "increase_medium"
-                    },
-                    {
-                        "type": "marigold",
-                        "adjust": "increase_medium"
-                    },
-                    {
-                        "type": "poppy",
-                        "adjust": "increase_medium"
-                    },
-                    {
-                        "type": "rosemary",
-                        "adjust": "increase_medium"
-                    },
-                    {
-                        "type": "thyme",
-                        "adjust": "increase_medium"
-                    }
-                ],
-                "involved_cats": {
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "age": [
-                            "young adult",
-                            "adult",
-                            "senior adult"
-                        ],
-                        "gender": [
-                            "female"
-                        ],
-                        "status": ["kittypet"]
-                    },
-                    "n_c1": {
-                        "can_create_new_cat": {
-                            "assign_mate": ["n_c0"]
-                        },
-                        "age": [
-                            "young adult",
-                            "adult",
-                            "senior adult"
-                        ],
-                        "gender": [
-                            "male"
-                        ],
-                        "status": ["kittypet"]
-                    },
-                    "n_c2": {
-                        "can_create_new_cat": {
-                            "assign_blood_parent": [
-                                "n_c0",
-                                "n_c1"
-                            ],
-                            "become_litter": true
-                        },
-                        "age": [
-                            "kitten"
-                        ],
-                        "status": [
-                            "kittypet"
-                        ]
-                    }
-                },
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0",
-                            "n_c1",
-                            "n_c2"
-                        ]
-                    }
-                ],
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c0",
-                            "n_c1",
-                            "n_c2"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "amount": 5,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "log": {
-                            "cats_from": "cat_from appreciated that cat_to took the time to tell {PRONOUN/cat_from/object} a little about Clan life, but did the stories have to be so scary?"
-                        }
-                    }
-                ]
-            },
-            {
-                "frequency": 2,
-                "exp_gained": 10,
-                "outcome_art": "cat_sprites/gen_catwithkit_LnKt",
-                "strings": [
-                    "When the cats arrive, they are greeted by the kittypets of the den, who ask to speak with p_l. n_c0 explains that {PRONOUN/n_c0/subject} and {PRONOUN/n_c0/poss} mate, n_c1, are a special type of kittypet that Twolegs value greatly. Every time the pair has a litter, their housefolk take them and trade them away for Twoleg things. n_c0 asks p_l to please take one kitten - just one - back to the Clan. {PRONOUN/n_c0/subject/CAP} wants at least one kitten to be free to live their own life. p_l explains that {PRONOUN/p_l/subject}'ll have to check with lead_name, and the two Clancats gather their herbs. A few days later, the cats come back for the kit."
-                ],
-                "supply": [
-                    {
-                        "type": "catmint",
-                        "adjust": "increase_medium"
-                    },
-                    {
-                        "type": "daisy",
-                        "adjust": "increase_small"
-                    },
-                    {
-                        "type": "goldenrod",
-                        "adjust": "increase_small"
-                    },
-                    {
-                        "type": "marigold",
-                        "adjust": "increase_small"
-                    },
-                    {
-                        "type": "poppy",
-                        "adjust": "increase_small"
-                    },
-                    {
-                        "type": "rosemary",
-                        "adjust": "increase_small"
-                    },
-                    {
-                        "type": "thyme",
-                        "adjust": "increase_small"
-                    }
-                ],
-                "involved_cats": {
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "age": [
-                            "young adult",
-                            "adult",
-                            "senior adult"
-                        ],
-                        "gender": [
-                            "female"
-                        ],
-                        "status": ["kittypet"]
-                    },
-                    "n_c1": {
-                        "can_create_new_cat": {
-                            "assign_mate": ["n_c0"]
-                        },
-                        "age": [
-                            "young adult",
-                            "adult",
-                            "senior adult"
-                        ],
-                        "gender": [
-                            "male"
-                        ],
-                        "status": ["kittypet"]
-                    },
-                    "n_c2": {
-                        "can_create_new_cat": {
-                            "assign_blood_parent": [
-                                "n_c0",
-                                "n_c1"
-                            ]
-                        },
-                        "age": [
-                            "newborn"
-                        ],
-                        "backstory": [
-                            "abandoned2"
-                        ]
-                    }
-                },
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0",
-                            "n_c1"
-                        ]
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": ["n_c2"],
-                        "change_name": true
-                    }
-                ],
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c2"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "amount": 10,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "log": {
-                            "cats_from": "cat_to brought cat_from to c_n"
-                        }
-                    },
-                    {
-                       "cats_from": [
-                            "n_c2"
-                        ],
-                        "cats_to": [
-                            "n_c0",
-                            "n_c1"
-                        ],
-                        "amount": 10,
-                        "values": [
-                            "respect"
-                        ],
-                        "log": {
-                            "cats_from": "cat_from is grateful that cat_to sent {PRONOUN/cat_from/object} to have a good life in the Clan rather than raising {PRONOUN/cat_from/object} as a kittypet"
-                        } 
-                    },
-                    {
-                        "cats_from": [
-                            "n_c0",
-                            "n_c1"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "amount": 15,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "log": {
-                            "cats_from": "cat_from is grateful that cat_to agreed to take {PRONOUN/cat_from/poss} kit to c_n to raise"
-                        }
-                    }
-                ],
-                "reputation_changes": {
-                    "outsider": 2
-                }
-            },
-            {
-                "frequency": 2,
-                "exp_gained": 10,
-                "outcome_art": "cat_sprites/gen_med_catwithkits_McKtKt",
-                "strings": [
-                    "When the patrol arrives at the den, well past sundown, they're greeted by the sight of n_c1 dragging a kittypet nest, full of newborn kits, out of the den. Through sobs, {PRONOUN/n_c1/subject} {VERB/n_c1/explain/explains} that {PRONOUN/n_c1/poss} mate died while kitting, and {PRONOUN/n_c1/subject} can't bear to look at the kits another heartbeat. n_c1 drops the kittypet nest at s_c0's paws and returns to {PRONOUN/n_c1/poss} den. s_c0 instantly climbs into the nest, wrapping {PRONOUN/s_c0/self} around the newborns and grooming them to warm them. r_c0 races back to the Clan to ask permission to bring the kits back."
-                ],
-                "supply": [
-                    {
-                        "type": "catmint",
-                        "adjust": "increase_small"
-                    },
-                    {
-                        "type": "daisy",
-                        "adjust": "increase_tiny"
-                    },
-                    {
-                        "type": "goldenrod",
-                        "adjust": "increase_tiny"
-                    },
-                    {
-                        "type": "marigold",
-                        "adjust": "increase_tiny"
-                    },
-                    {
-                        "type": "poppy",
-                        "adjust": "increase_tiny"
-                    },
-                    {
-                        "type": "rosemary",
-                        "adjust": "increase_tiny"
-                    },
-                    {
-                        "type": "thyme",
-                        "adjust": "increase_tiny"
-                    }
-                ],
-                "involved_cats": {
-                    "r_c0": {
-                        "prior_abbreviation": ["any"]
-                    },
-                    "s_c0": {
-                        "prior_abbreviation": ["any"],
-                        "stat": {
-                            "skill": ["KIT,1"]
-                        }
-                    },
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "age": [
-                            "young adult",
-                            "adult",
-                            "senior adult"
-                        ],
-                        "gender": [
-                            "female"
-                        ],
-                        "status": ["kittypet"]
-                    },
-                    "n_c1": {
-                        "can_create_new_cat": {
-                            "assign_mate": ["n_c0"]
-                        },
-                        "age": [
-                            "young adult",
-                            "adult",
-                            "senior adult"
-                        ],
-                        "gender": [
-                            "male"
-                        ],
-                        "status": ["kittypet"]
-                    },
-                    "n_c2": {
-                        "can_create_new_cat": {
-                            "assign_blood_parent": [
-                                "n_c0",
-                                "n_c1"
-                            ],
-                            "become_litter": true
-                        },
-                        "age": [
-                            "newborn"
-                        ],
-                        "backstory": [
-                            "abandoned2"
-                        ]
-                    }
-                },
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c1"
-                        ]
-                    }
-                ],
-                "death": [
-                    {
-                        "cats": ["n_c0"],
-                        "history": "This cat died while kitting"
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": ["n_c2"],
-                        "change_name": true
-                    }
-                ],
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c2"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "amount": 10,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "trust"
-                        ],
-                        "log": {
-                            "cats_from": "cat_to brought cat_from to c_n"
-                        }
-                    }
-                ],
-                "reputation_changes": {
-                    "outsider": 1
-                }
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "exp_gained": 0,
-                "outcome_art": "cat_sprites/gen_judging_Ln",
-                "strings": [
-                    "When the cats arrive, they are greeted by the pair of kittypets, along with an entire litter of kits. n_c0 purrs that {PRONOUN/n_c0/subject} and n_c1 wanted to introduce their kits to the Clancats before they went to their new homes. The healers agree to take the time before gathering, and r_c0 demonstrates a basic self-defense battle move that all medicine cats are taught. This proves to be a mistake, as the kittens immediately start using it on each other, leading to squeals of pain, complaints, and tattling. The patrol is asked to leave."
-                ],
-                "involved_cats": {
-                    "r_c0": {
-                        "status": [
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "age": [
-                            "young adult",
-                            "adult",
-                            "senior adult"
-                        ],
-                        "gender": [
-                            "female"
-                        ],
-                        "status": ["kittypet"]
-                    },
-                    "n_c1": {
-                        "can_create_new_cat": {
-                            "assign_mate": ["n_c0"]
-                        },
-                        "age": [
-                            "young adult",
-                            "adult",
-                            "senior adult"
-                        ],
-                        "gender": [
-                            "male"
-                        ],
-                        "status": ["kittypet"]
-                    },
-                    "n_c2": {
-                        "can_create_new_cat": {
-                            "assign_blood_parent": [
-                                "n_c0",
-                                "n_c1"
-                            ],
-                            "become_litter": true
-                        },
-                        "age": [
-                            "kitten"
-                        ],
-                        "status": [
-                            "kittypet"
-                        ]
-                    }
-                },
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0",
-                            "n_c1",
-                            "n_c2"
-                        ]
-                    }
-                ],
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c0",
-                            "n_c1"
-                        ],
-                        "cats_to": [
-                            "r_c0"
-                        ],
-                        "amount": -10,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "log": {
-                            "cats_from": "cat_to taught cat_from's kits a battle move."
-                        }
-                    },
-                    {
-                        "cats_from": [
-                            "n_c2"
-                        ],
-                        "cats_to": [
-                            "r_c0"
-                        ],
-                        "amount": 10,
-                        "values": [
-                            "like",
-                            "respect",
-                            "trust"
-                        ],
-                        "log": {
-                            "cats_from": "cat_to taught cat_from the coolest battle move ever!"
-                        }
-                    }
-                ],
-                "reputation_changes": {
-                    "outsider": -1
-                }
-            },
-            {
-                "frequency": 2,
-                "exp_gained": 0,
-                "outcome_art": "cat_sprites/gen_catwithkit_LnKt",
-                "strings": [
-                    "When the cats arrive, they are greeted by the kittypets of the den, who ask to speak with p_l. n_c0 explains that the Twolegs are going to take their latest litter away, just like all the others. n_c0 wants them to take a kit back to the Clan with them. p_l declines, stepping around them to begin gathering herbs, but n_c1 steps into p_l's space. {PRONOUN/n_c1/subject/CAP} {VERB/n_c1/begin/begins} begging, then pleading, then arguing, and p_l argues right back. {PRONOUN/p_l/subject/CAP} won't be talked to like this by a <i>kittypet!</i>. The medicine cats go home with n_c1 screaming after them that the deal is off."
-                ],
-                "supply": [
-                    {
-                        "type": "catmint",
-                        "adjust": "increase_tiny"
-                    }
-                ],
-                "involved_cats": {
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "age": [
-                            "young adult",
-                            "adult",
-                            "senior adult"
-                        ],
-                        "gender": [
-                            "female"
-                        ],
-                        "status": ["kittypet"]
-                    },
-                    "n_c1": {
-                        "can_create_new_cat": {
-                            "assign_mate": ["n_c0"]
-                        },
-                        "age": [
-                            "young adult",
-                            "adult",
-                            "senior adult"
-                        ],
-                        "gender": [
-                            "male"
-                        ],
-                        "status": ["kittypet"]
-                    },
-                    "n_c2": {
-                        "can_create_new_cat": {
-                            "assign_blood_parent": [
-                                "n_c0",
-                                "n_c1"
-                            ]
-                        },
-                        "age": [
-                            "newborn"
-                        ],
-                        "status": [
-                            "kittypet"
-                        ]
-                    }
-                },
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0",
-                            "n_c1",
-                            "n_c2"
-                        ]
-                    }
-                ],
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "n_c0",
-                            "n_c1"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "amount": -15,
-                        "values": [
-                            "like",
-                            "comfort",
-                            "respect",
-                            "trust"
-                        ],
-                        "log": {
-                            "cats_from": "cat_from is angry that cat_to refused to take {PRONOUN/cat_from/poss} kit to c_n to raise"
-                        }
-                    }
-                ],
-                "reputation_changes": {
-                    "outsider": -1
-                }
-            },
-            {
-                "frequency": 2,
-                "exp_gained": 0,
-                "outcome_art": "cat_sprites/gen_med_running2_Mc",
-                "strings": [
-                    "When the patrol arrives at the den, well past sundown, they're greeted by the sight of n_c1 dragging a kittypet nest, full of newborn kits, out of the den. Through sobs, {PRONOUN/n_c1/subject} {VERB/n_c1/explain/explains} that {PRONOUN/n_c1/poss} mate died while kitting, and {PRONOUN/n_c1/subject} can't bear to look at the kits another heartbeat. n_c1 drops the kittypet nest at s_c0's paws and returns to {PRONOUN/n_c1/poss} den. s_c0 instantly climbs into the nest, wrapping {PRONOUN/s_c0/self} around the newborns and grooming them to warm them. r_c0 races back to ask for permission to bring the kits back, but without night feedings, the kits simply grow weaker and weaker, and never recover."
-                ],
-                "involved_cats": {
-                    "r_c0": {
-                        "prior_abbreviation": ["any"]
-                    },
-                    "s_c0": {
-                        "prior_abbreviation": ["any"],
-                        "stat": {
-                            "skill": ["KIT,0"]
-                        }
-                    },
-                    "n_c0": {
-                        "can_create_new_cat": {},
-                        "age": [
-                            "young adult",
-                            "adult",
-                            "senior adult"
-                        ],
-                        "gender": [
-                            "female"
-                        ],
-                        "status": ["kittypet"]
-                    },
-                    "n_c1": {
-                        "can_create_new_cat": {
-                            "assign_mate": ["n_c0"]
-                        },
-                        "age": [
-                            "young adult",
-                            "adult",
-                            "senior adult"
-                        ],
-                        "gender": [
-                            "male"
-                        ],
-                        "status": ["kittypet"]
-                    }
-                },
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c1"
-                        ]
-                    }
-                ],
-                "death": [
-                    {
-                        "cats": ["n_c0"],
-                        "history": "This cat died while kitting",
-                        "no_results": true
-                    }
-                ],
-                "reputation_changes": {
-                    "outsider": -1
-                }
-            }
-        ]
-    },
-    {
         "event_id": "mnt_hunt_newcat_leaf-barecatcryhostile1",
         "types": [
             "hunting"
@@ -8653,6 +7961,698 @@
                         "log": {
                             "cats_from": "cat_from heard that cat_to nearly got {PRONOUN/cat_to/self} killed trying to fish out a stupid Twoleg thing from the water"
                         }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": -1
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_med_twolegplace_cloudkit_hostile",
+        "types": [
+            "herb_gathering"
+        ],
+        "frequency": 1,
+        "poi": {
+            "name": ["terrain_twolegplace"]
+        },
+        "season": [
+            "-leaf-bare"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ],
+            "medicine cat": [
+                1,
+                5
+            ],
+            "medicine cat apprentice": [
+                1,
+                5
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ],
+            "apprentice": [
+                -1,
+                -1
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "POI",
+        "intro_strings": [
+            "p_l heads deep into POI. {PRONOUN/p_l/subject/CAP} {VERB/p_l/explain/explains} to the apprentice, who is carrying freshkill, that the Clan has a nice deal with a pair of kittypets whose Twoleg keeps its territory stocked with abundant, healthy herbs. In exchange for bringing the kittypets freshkill every time they harvest, c_n has exclusive gathering rights of the rare herbs."
+        ],
+        "decline_strings": [
+            "The cats are forced to turn back. The Twolegs are doing some sort of ceremony that brings countless numbers of them onto their stone paths, and p_l isn't willing to risk trying to get by them."
+        ],
+        "success_outcomes": [
+             {
+                "frequency": 4,
+                "exp_gained": 10,
+                "outcome_art": "cat_sprites/gen_med_bumpheads_McLn",
+                "strings": [
+                    "When the cats arrive, they are greeted by the pair of kittypets, along with an entire litter of kits. n_c0 purrs that {PRONOUN/n_c0/subject} and n_c1 wanted to introduce their kits to the Clancats before they went to their new homes. The healers agree to take the time before gathering, and sit to explain to the kits how dangerous Clancats can be, and how they should make sure to <i>never, ever</i> trespass in any Clan's territory. The cats leave with their herbs, feeling good about having educated the kits."
+                ],
+                "supply": [
+                    {
+                        "type": "catmint",
+                        "adjust": "increase_large"
+                    },
+                    {
+                        "type": "daisy",
+                        "adjust": "increase_medium"
+                    },
+                    {
+                        "type": "goldenrod",
+                        "adjust": "increase_medium"
+                    },
+                    {
+                        "type": "marigold",
+                        "adjust": "increase_medium"
+                    },
+                    {
+                        "type": "poppy",
+                        "adjust": "increase_medium"
+                    },
+                    {
+                        "type": "rosemary",
+                        "adjust": "increase_medium"
+                    },
+                    {
+                        "type": "thyme",
+                        "adjust": "increase_medium"
+                    }
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "gender": [
+                            "female"
+                        ],
+                        "status": ["kittypet"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {
+                            "assign_mate": ["n_c0"]
+                        },
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "gender": [
+                            "male"
+                        ],
+                        "status": ["kittypet"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {
+                            "assign_blood_parent": [
+                                "n_c0",
+                                "n_c1"
+                            ],
+                            "become_litter": true
+                        },
+                        "age": [
+                            "kitten"
+                        ],
+                        "status": [
+                            "kittypet"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
+                        ]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "amount": 5,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from appreciated that cat_to took the time to tell {PRONOUN/cat_from/object} a little about Clan life, but did the stories have to be so scary?"
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "exp_gained": 10,
+                "outcome_art": "cat_sprites/gen_catwithkit_LnKt",
+                "strings": [
+                    "When the cats arrive, they are greeted by the kittypets of the den, who ask to speak with p_l. n_c0 explains that {PRONOUN/n_c0/subject} and {PRONOUN/n_c0/poss} mate, n_c1, are a special type of kittypet that Twolegs value greatly. Every time the pair has a litter, their housefolk take them and trade them away for Twoleg things. n_c0 asks p_l to please take one kitten - just one - back to the Clan. {PRONOUN/n_c0/subject/CAP} wants at least one kitten to be free to live their own life. p_l explains that {PRONOUN/p_l/subject}'ll have to check with lead_name, and the two Clancats gather their herbs. A few days later, the cats come back for the kit."
+                ],
+                "supply": [
+                    {
+                        "type": "catmint",
+                        "adjust": "increase_medium"
+                    },
+                    {
+                        "type": "daisy",
+                        "adjust": "increase_small"
+                    },
+                    {
+                        "type": "goldenrod",
+                        "adjust": "increase_small"
+                    },
+                    {
+                        "type": "marigold",
+                        "adjust": "increase_small"
+                    },
+                    {
+                        "type": "poppy",
+                        "adjust": "increase_small"
+                    },
+                    {
+                        "type": "rosemary",
+                        "adjust": "increase_small"
+                    },
+                    {
+                        "type": "thyme",
+                        "adjust": "increase_small"
+                    }
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "gender": [
+                            "female"
+                        ],
+                        "status": ["kittypet"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {
+                            "assign_mate": ["n_c0"]
+                        },
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "gender": [
+                            "male"
+                        ],
+                        "status": ["kittypet"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {
+                            "assign_blood_parent": [
+                                "n_c0",
+                                "n_c1"
+                            ]
+                        },
+                        "age": [
+                            "newborn"
+                        ],
+                        "backstory": [
+                            "abandoned2"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0",
+                            "n_c1"
+                        ]
+                    }
+                ],
+                "join": [
+                    {
+                        "cats": ["n_c2"],
+                        "change_name": true
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c2"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "amount": 10,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_to brought cat_from to c_n"
+                        }
+                    },
+                    {
+                       "cats_from": [
+                            "n_c2"
+                        ],
+                        "cats_to": [
+                            "n_c0",
+                            "n_c1"
+                        ],
+                        "amount": 10,
+                        "values": [
+                            "respect"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from is grateful that cat_to sent {PRONOUN/cat_from/object} to have a good life in the Clan rather than raising {PRONOUN/cat_from/object} as a kittypet"
+                        } 
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "amount": 15,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from is grateful that cat_to agreed to take {PRONOUN/cat_from/poss} kit to c_n to raise"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 2
+                }
+            },
+            {
+                "frequency": 2,
+                "exp_gained": 10,
+                "outcome_art": "cat_sprites/gen_med_catwithkits_McKtKt",
+                "strings": [
+                    "When the patrol arrives at the den, well past sundown, they're greeted by the sight of n_c1 dragging a kittypet nest, full of newborn kits, out of the den. Through sobs, {PRONOUN/n_c1/subject} {VERB/n_c1/explain/explains} that {PRONOUN/n_c1/poss} mate died while kitting, and {PRONOUN/n_c1/subject} can't bear to look at the kits another heartbeat. n_c1 drops the kittypet nest at s_c0's paws and returns to {PRONOUN/n_c1/poss} den. s_c0 instantly climbs into the nest, wrapping {PRONOUN/s_c0/self} around the newborns and grooming them to warm them. r_c0 races back to the Clan to ask permission to bring the kits back."
+                ],
+                "supply": [
+                    {
+                        "type": "catmint",
+                        "adjust": "increase_small"
+                    },
+                    {
+                        "type": "daisy",
+                        "adjust": "increase_tiny"
+                    },
+                    {
+                        "type": "goldenrod",
+                        "adjust": "increase_tiny"
+                    },
+                    {
+                        "type": "marigold",
+                        "adjust": "increase_tiny"
+                    },
+                    {
+                        "type": "poppy",
+                        "adjust": "increase_tiny"
+                    },
+                    {
+                        "type": "rosemary",
+                        "adjust": "increase_tiny"
+                    },
+                    {
+                        "type": "thyme",
+                        "adjust": "increase_tiny"
+                    }
+                ],
+                "involved_cats": {
+                    "r_c0": {
+                        "prior_abbreviation": ["any"]
+                    },
+                    "s_c0": {
+                        "prior_abbreviation": ["any"],
+                        "stat": {
+                            "skill": ["KIT,1"]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "gender": [
+                            "female"
+                        ],
+                        "status": ["kittypet"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {
+                            "assign_mate": ["n_c0"]
+                        },
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "gender": [
+                            "male"
+                        ],
+                        "status": ["kittypet"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {
+                            "assign_blood_parent": [
+                                "n_c0",
+                                "n_c1"
+                            ],
+                            "become_litter": true
+                        },
+                        "age": [
+                            "newborn"
+                        ],
+                        "backstory": [
+                            "abandoned2"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c1"
+                        ]
+                    }
+                ],
+                "death": [
+                    {
+                        "cats": ["n_c0"],
+                        "history": "This cat died while kitting"
+                    }
+                ],
+                "join": [
+                    {
+                        "cats": ["n_c2"],
+                        "change_name": true
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c2"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "amount": 10,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_to brought cat_from to c_n"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 1
+                }
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_judging_Ln",
+                "strings": [
+                    "When the cats arrive, they are greeted by the pair of kittypets, along with an entire litter of kits. n_c0 purrs that {PRONOUN/n_c0/subject} and n_c1 wanted to introduce their kits to the Clancats before they went to their new homes. The healers agree to take the time before gathering, and r_c0 demonstrates a basic self-defense battle move that all medicine cats are taught. This proves to be a mistake, as the kittens immediately start using it on each other, leading to squeals of pain, complaints, and tattling. The patrol is asked to leave."
+                ],
+                "involved_cats": {
+                    "r_c0": {
+                        "status": [
+                            "medicine cat apprentice"
+                        ]
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "gender": [
+                            "female"
+                        ],
+                        "status": ["kittypet"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {
+                            "assign_mate": ["n_c0"]
+                        },
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "gender": [
+                            "male"
+                        ],
+                        "status": ["kittypet"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {
+                            "assign_blood_parent": [
+                                "n_c0",
+                                "n_c1"
+                            ],
+                            "become_litter": true
+                        },
+                        "age": [
+                            "kitten"
+                        ],
+                        "status": [
+                            "kittypet"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
+                        ]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "amount": -10,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "log": {
+                            "cats_from": "cat_to taught cat_from's kits a battle move."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c2"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "amount": 10,
+                        "values": [
+                            "like",
+                            "respect",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_to taught cat_from the coolest battle move ever!"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": -1
+                }
+            },
+            {
+                "frequency": 2,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_catwithkit_LnKt",
+                "strings": [
+                    "When the cats arrive, they are greeted by the kittypets of the den, who ask to speak with p_l. n_c0 explains that the Twolegs are going to take their latest litter away, just like all the others. n_c0 wants them to take a kit back to the Clan with them. p_l declines, stepping around them to begin gathering herbs, but n_c1 steps into p_l's space. {PRONOUN/n_c1/subject/CAP} {VERB/n_c1/begin/begins} begging, then pleading, then arguing, and p_l argues right back. {PRONOUN/p_l/subject/CAP} won't be talked to like this by a <i>kittypet!</i>. The medicine cats go home with n_c1 screaming after them that the deal is off."
+                ],
+                "supply": [
+                    {
+                        "type": "catmint",
+                        "adjust": "increase_tiny"
+                    }
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "gender": [
+                            "female"
+                        ],
+                        "status": ["kittypet"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {
+                            "assign_mate": ["n_c0"]
+                        },
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "gender": [
+                            "male"
+                        ],
+                        "status": ["kittypet"]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {
+                            "assign_blood_parent": [
+                                "n_c0",
+                                "n_c1"
+                            ]
+                        },
+                        "age": [
+                            "newborn"
+                        ],
+                        "status": [
+                            "kittypet"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
+                        ]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0",
+                            "n_c1"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "amount": -15,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "respect",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from is angry that cat_to refused to take {PRONOUN/cat_from/poss} kit to c_n to raise"
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": -1
+                }
+            },
+            {
+                "frequency": 2,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_med_running2_Mc",
+                "strings": [
+                    "When the patrol arrives at the den, well past sundown, they're greeted by the sight of n_c1 dragging a kittypet nest, full of newborn kits, out of the den. Through sobs, {PRONOUN/n_c1/subject} {VERB/n_c1/explain/explains} that {PRONOUN/n_c1/poss} mate died while kitting, and {PRONOUN/n_c1/subject} can't bear to look at the kits another heartbeat. n_c1 drops the kittypet nest at s_c0's paws and returns to {PRONOUN/n_c1/poss} den. s_c0 instantly climbs into the nest, wrapping {PRONOUN/s_c0/self} around the newborns and grooming them to warm them. r_c0 races back to ask for permission to bring the kits back, but without night feedings, the kits simply grow weaker and weaker, and never recover."
+                ],
+                "involved_cats": {
+                    "r_c0": {
+                        "prior_abbreviation": ["any"]
+                    },
+                    "s_c0": {
+                        "prior_abbreviation": ["any"],
+                        "stat": {
+                            "skill": ["KIT,0"]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "gender": [
+                            "female"
+                        ],
+                        "status": ["kittypet"]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {
+                            "assign_mate": ["n_c0"]
+                        },
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "gender": [
+                            "male"
+                        ],
+                        "status": ["kittypet"]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c1"
+                        ]
+                    }
+                ],
+                "death": [
+                    {
+                        "cats": ["n_c0"],
+                        "history": "This cat died while kitting",
+                        "no_results": true
                     }
                 ],
                 "reputation_changes": {
