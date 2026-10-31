@@ -36,7 +36,7 @@ from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.generate_box import BoxStyles, get_box
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
-from scripts.ui.scale import ui_scale, ui_scale_value
+from scripts.ui.scale import ui_scale, ui_scale_value, ui_scale_dimensions
 from scripts.ui.theme import get_text_box_theme
 from scripts.ui.windows.herbs import HerbManagementWindow
 
@@ -63,6 +63,12 @@ class MedDenScreen(Screens):
 
     def handle_event(self, event):
         super().handle_event(event)
+        if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
+            if event.ui_element in self.elements["cat_list"].cat_sprites.values():
+                self.update_potential_quarantine_display(
+                    event.ui_element.return_cat_object()
+                )
+
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             self.mute_button_pressed(event)
 
@@ -108,12 +114,22 @@ class MedDenScreen(Screens):
                 self.elements["supply_view_container"].hide()
                 self.elements["open_quarantine"].disable()
                 self.elements["open_supply"].enable()
+                self.elements["hurt_sick_title"].set_text(
+                    "screens.med_den.infectious_cats_title"
+                )
+                self.find_display_cats(only_show_infectious=True)
+                self.update_tab_and_page(changed_tab=True)
             elif event.ui_element == self.elements["open_supply"]:
                 self.open_view = "supply"
                 self.elements["supply_view_container"].show()
                 self.elements["quarantine_view_container"].hide()
                 self.elements["open_quarantine"].enable()
                 self.elements["open_supply"].disable()
+                self.elements["hurt_sick_title"].set_text(
+                    "screens.med_den.hurt_sick_title"
+                )
+                self.find_display_cats()
+                self.update_tab_and_page(changed_tab=True)
 
     def screen_switches(self):
         super().screen_switches()
@@ -139,27 +155,7 @@ class MedDenScreen(Screens):
             )
 
             # find cats who will be displayed
-            for cat in Cat.all_cats_list:
-                if not cat.status.alive_in_player_clan:
-                    continue
-
-                all_cons = cat.temporary_conditions + cat.permanent_conditions
-                if not all_cons:
-                    continue
-
-                if any([condition.severity == "severe" for condition in all_cons]):
-                    self.condition_cats["severe"].append(cat)
-                elif any([condition.severity == "major" for condition in all_cons]):
-                    self.condition_cats["major"].append(cat)
-                else:
-                    self.condition_cats["minor"].append(cat)
-
-            if self.condition_cats["severe"]:
-                self.tab_showing = "severe"
-            elif self.condition_cats["major"]:
-                self.tab_showing = "major"
-            else:
-                self.tab_showing = "minor"
+            self.find_display_cats()
 
             self.create_cat_display()
 
@@ -200,6 +196,33 @@ class MedDenScreen(Screens):
             )
 
         self.current_focus = self.back_button
+
+    def find_display_cats(self, only_show_infectious=False):
+        self.condition_cats.clear()
+        for cat in Cat.all_cats_list:
+            if not cat.status.alive_in_player_clan:
+                continue
+
+            all_cons = cat.temporary_conditions + cat.permanent_conditions
+            if not all_cons:
+                continue
+
+            if only_show_infectious:
+                if not any([con.infectiousness for con in cat.temporary_conditions]):
+                    continue
+
+            if any([condition.severity == "severe" for condition in all_cons]):
+                self.condition_cats["severe"].append(cat)
+            elif any([condition.severity == "major" for condition in all_cons]):
+                self.condition_cats["major"].append(cat)
+            else:
+                self.condition_cats["minor"].append(cat)
+        if self.condition_cats["severe"]:
+            self.tab_showing = "severe"
+        elif self.condition_cats["major"]:
+            self.tab_showing = "major"
+        else:
+            self.tab_showing = "minor"
 
     def create_supply_view(self):
         # container for supply view, this will let us hide and show easily
@@ -264,6 +287,70 @@ class MedDenScreen(Screens):
             object_id="@buttonstyles_squoval",
             container=self.elements["quarantine_view_container"],
         )
+
+    def update_potential_quarantine_display(self, cat: Cat):
+        if self.elements.get("potential_quarantine_cat_image"):
+            self.elements["potential_quarantine_cat_image"].kill()
+
+        self.elements["potential_quarantine_cat_image"] = pygame_gui.elements.UIImage(
+            ui_scale(pygame.Rect((75, -40), (150, 150))),
+            pygame.transform.scale(cat.sprite, ui_scale_dimensions((150, 150))),
+            container=self.elements["quarantine_view_container"],
+        )
+
+        if not self.elements.get("potential_quarantine_cat_name"):
+            self.elements[
+                "potential_quarantine_cat_name"
+            ] = pygame_gui.elements.ui_label.UILabel(
+                ui_scale(pygame.Rect((75, 10), (150, 30))),
+                shorten_text_to_fit(str(cat.name), 130, 15),
+                object_id=get_text_box_theme("#text_box_30_horizcenter"),
+                manager=MANAGER,
+                anchors={"top_target": self.elements["potential_quarantine_cat_image"]},
+                container=self.elements["quarantine_view_container"],
+            )
+        else:
+            self.elements["potential_quarantine_cat_name"].set_text(
+                shorten_text_to_fit(str(cat.name), 130, 15)
+            )
+
+        conditions = adjust_list_text(
+            [
+                i18n.t(f"conditions.temporary_conditions.{c.name}")
+                for c in cat.temporary_conditions
+                if c.infectiousness
+            ]
+        )
+        full_infectiousness = 0
+        for c in cat.temporary_conditions:
+            full_infectiousness += c.infectiousness
+
+        if full_infectiousness > 0.7:
+            infection_level = "highly_infectious"
+        elif full_infectiousness > 0.4:
+            infection_level = "very_infectious"
+        else:
+            infection_level = "somewhat_infectious"
+
+        infection_level = i18n.t(f"screens.med_den.{infection_level}")
+
+        if not self.elements.get("potential_quarantine_cat_info"):
+            self.elements[
+                "potential_quarantine_cat_info"
+            ] = pygame_gui.elements.UITextBox(
+                "<br>".join([conditions, infection_level]),
+                ui_scale(pygame.Rect((75, 0), (150, 90))),
+                object_id=get_text_box_theme("#text_box_22_horizcenter"),
+                manager=MANAGER,
+                anchors={
+                    "top_target": self.elements["potential_quarantine_cat_name"],
+                },
+                container=self.elements["quarantine_view_container"],
+            )
+        else:
+            self.elements["potential_quarantine_cat_info"].set_text(
+                "<br>".join([conditions, infection_level])
+            )
 
     def draw_med_den(self):
         herb_list = []
