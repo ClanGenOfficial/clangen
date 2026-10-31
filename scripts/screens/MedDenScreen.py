@@ -101,12 +101,17 @@ class MedDenScreen(Screens):
                 HerbManagementWindow(den_button=False)
             elif event.ui_element == self.elements["open_quarantine"]:
                 self.open_view = "quarantine"
+                if not self.elements.get("quarantine_view_container"):
+                    self.create_quarantine_view()
+                else:
+                    self.elements["quarantine_view_container"].show()
                 self.elements["supply_view_container"].hide()
                 self.elements["open_quarantine"].disable()
                 self.elements["open_supply"].enable()
             elif event.ui_element == self.elements["open_supply"]:
                 self.open_view = "supply"
                 self.elements["supply_view_container"].show()
+                self.elements["quarantine_view_container"].hide()
                 self.elements["open_quarantine"].enable()
                 self.elements["open_supply"].disable()
 
@@ -122,21 +127,7 @@ class MedDenScreen(Screens):
             manager=MANAGER,
         )
 
-        # container for supply view, this will let us hide and show easily
-        self.elements["supply_view_container"] = UIContainer(
-            ui_scale(pygame.Rect((100, 85), (650, 324))),
-            manager=MANAGER,
-        )
-
-        self.meds = deque(
-            find_alive_cats_with_rank(
-                Cat, [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE], sort=True
-            )
-        )
-        self.draw_med_den()
-        self.update_med_cat()
-
-        self.add_to_map([self.back_button])
+        self.create_supply_view()
 
         if game.clan.game_mode != "classic":
             self.help_button = UIImageButton(
@@ -209,6 +200,28 @@ class MedDenScreen(Screens):
             )
 
         self.current_focus = self.back_button
+
+    def create_supply_view(self):
+        # container for supply view, this will let us hide and show easily
+        self.elements["supply_view_container"] = UIContainer(
+            ui_scale(pygame.Rect((100, 85), (650, 324))),
+            manager=MANAGER,
+        )
+        self.meds = deque(
+            find_alive_cats_with_rank(
+                Cat, [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE], sort=True
+            )
+        )
+        self.draw_med_den()
+        self.update_med_cat()
+        self.add_to_map([self.back_button])
+
+    def create_quarantine_view(self):
+        # container for quarantine view, this will let us hide and show easily
+        self.elements["quarantine_view_container"] = UIContainer(
+            ui_scale(pygame.Rect((100, 85), (650, 324))),
+            manager=MANAGER,
+        )
 
     def draw_med_den(self):
         herb_list = []
