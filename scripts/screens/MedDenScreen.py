@@ -156,9 +156,9 @@ class MedDenScreen(Screens):
 
             # ADDITION BUTTONS
             self.elements["open_log"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((25, 50), (140, 34))),
+                ui_scale(pygame.Rect((25, 60), (140, 30))),
                 "screens.med_den.log_title",
-                get_button_dict(ButtonStyles.SQUOVAL, (140, 34)),
+                get_button_dict(ButtonStyles.SQUOVAL, (140, 30)),
                 object_id="@buttonstyles_squoval",
                 manager=MANAGER,
                 anchors={"top_target": self.elements["med_message"]},
@@ -174,7 +174,7 @@ class MedDenScreen(Screens):
 
         # BASE IMAGE
         self.den_image["base"] = UIImageButton(
-            ui_scale(pygame.Rect((108, 95), (396, 224))),
+            ui_scale(pygame.Rect((108, 85), (396, 224))),
             "",
             object_id="#med_cat_den_hover_big",
             manager=MANAGER,
@@ -417,7 +417,7 @@ class MedDenScreen(Screens):
             self.elements["med_image"].kill()
 
         self.elements["med_image"] = UISpriteButton(
-            ui_scale(pygame.Rect((435, 160), (150, 150))),
+            ui_scale(pygame.Rect((435, 150), (150, 150))),
             displayed_med_cat.sprite,
             cat_object=displayed_med_cat,
             manager=MANAGER,
@@ -427,7 +427,7 @@ class MedDenScreen(Screens):
         # display name
         if not self.elements.get("med_name"):
             self.elements["med_name"] = pygame_gui.elements.ui_label.UILabel(
-                ui_scale(pygame.Rect((-60, 150), (225, 30))),
+                ui_scale(pygame.Rect((-60, 140), (225, 30))),
                 shorten_text_to_fit(str(displayed_med_cat.name), 137, 15),
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 manager=MANAGER,
@@ -576,3 +576,4 @@ class MedDenScreen(Screens):
             self.help_button.kill()
 
         self.condition_cats.clear()
+        self.med_messages.clear()
