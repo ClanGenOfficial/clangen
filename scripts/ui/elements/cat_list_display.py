@@ -198,7 +198,7 @@ class UICatListDisplay(UIContainer):
         """
 
         self.current_page = current_page
-        if cat_list and cat_list != self.cat_list:
+        if cat_list != self.cat_list:
             self.cat_list = cat_list
             self._chunk()
         self._display_cats()
