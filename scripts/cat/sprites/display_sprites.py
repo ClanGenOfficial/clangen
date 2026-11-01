@@ -7,7 +7,7 @@ from copy import deepcopy
 from scripts.cat.enums import CatAge, CatGroup
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan_package.settings import get_clan_setting
-from scripts.game_structure import constants, image_cache, game
+from scripts.game_structure import constants, image_cache
 from scripts.game_structure.game import game_setting_get
 from scripts.ui.scale import ui_scale_dimensions
 
@@ -50,7 +50,7 @@ def generate_sprite(
     # sick sprites
     if (
         not disable_sick_sprite
-        and (not cat.can_work() or cat.ID in game.clan.quarantined_cats)
+        and not cat.can_work()
         and age != CatAge.NEWBORN
         and constants.CONFIG["cat_sprites"]["sick_sprites"]
     ):
