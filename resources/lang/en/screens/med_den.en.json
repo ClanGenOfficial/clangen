@@ -25,6 +25,11 @@
             "many": "c_n's medicine cats can care for a Clan of up to %{clansize} members, including themselves."
         },
         "expiration": "It was discovered that some stores of %{herbs} were too old to be of use anymore.",
+        "nest_expiration": {
+            "one": "Fortunately for the Clan, though unfortunate for the supplies spent on it, %{count} quarantine nest has become too dusty and dry to be used. It's cleared out of the den.",
+            "many": "Fortunately for the Clan, though unfortunate for the supplies spent on them, %{count} quarantine nests have become too dusty and dry to be used. They've been cleared out of the den."
+        },
+        "nest_removed": "Now that %{name} no longer needs it, the used quarantine nest is carefully cleaned from the den to prevent further spread.",
         "better_storage": "%{name} did an excellent job storing herbs this moon, %{herbs} will expire slower.",
         "gather_success": "%{name} collected %{herbs} during this moon.",
         "gather_fail": "%{name} didn't collect any herbs this moon.",

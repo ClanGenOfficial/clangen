@@ -1,5 +1,9 @@
+import i18n
+
+from scripts.cat.cats import Cat
 from scripts.config import get_config
 from scripts.game_structure import game
+from scripts.game_structure.game.settings.settings import cat
 
 
 def handle_moonskip():
@@ -14,6 +18,8 @@ def _check_expiration():
         for moon_created in game.clan.quarantine_nests
         if int(moon_created.replace("moon_", "")) + expiration <= game.clan.age
     ]
+    if not expired_entries:
+        return
 
     # now make sure we don't expire a nest in use
     current_count = get_current_nest_count()
@@ -23,10 +29,15 @@ def _check_expiration():
         if not expired_entries:
             break
 
+    amount_expiring = 0
+
     for entry in expired_entries:
+        amount_expiring += game.clan.quarantine_nests[entry]
         game.clan.quarantine_nests.pop(entry)
 
-    # TODO: add to log
+    game.herb_events_list.append(
+        i18n.t("screens.med_den.nest_expiration", count=amount_expiring)
+    )
 
 
 def get_current_nest_count():
@@ -49,10 +60,8 @@ def add_nest(building_cat_ID: str):
     ).items():
         game.clan.herb_supply.remove_herb(herb, amount)
 
-    # TODO: add to log
 
-
-def remove_nest():
+def remove_nest(occupying_cat: Cat = None):
     remove_entry = None
     for moon in game.clan.quarantine_nests:
         game.clan.quarantine_nests[moon] -= 1
@@ -63,4 +72,6 @@ def remove_nest():
     if remove_entry:
         game.clan.quarantine_nests.pop(remove_entry)
 
-    # TODO: add to log
+    game.herb_events_list.append(
+        i18n.t("screens.med_den.nest_removed", name=str(occupying_cat.name))
+    )

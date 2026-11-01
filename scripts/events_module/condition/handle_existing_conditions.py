@@ -240,7 +240,7 @@ def handle_temporary_conditions(cat: Cat):
     if cat.ID in game.clan.quarantined_cats:
         if not any([con.infectiousness for con in cat.temporary_conditions]):
             game.clan.quarantined_cats.remove(cat.ID)
-            remove_nest()
+            remove_nest(occupying_cat=cat)
 
     if event_list:
         game.cur_events_list.extend(event_list)
