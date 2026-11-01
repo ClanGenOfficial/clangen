@@ -731,21 +731,24 @@ dev_tools = false
   # dictates the chance for cats to get various diseases in each season
   [condition_related.seasonal_chances]
     [condition_related.seasonal_chances.newleaf]
+      fleas = 2
       running_nose = 3
       stomachache = 2
       tick_fever = 1
     [condition_related.seasonal_chances.greenleaf]
-      fleas = 3
+      fleas = 6
       stomachache = 2
       heat_exhaustion = 3
       heat_stroke = 1
       tick_fever = 1
     [condition_related.seasonal_chances.leaf-fall]
+      fleas = 3
       stomachache = 2
       greencough = 1
       kittencough = 1
       running_nose = 4
     [condition_related.seasonal_chances.leaf-bare]
+      fleas = 2
       stomachache = 2
       greencough = 3
       running_nose = 2
