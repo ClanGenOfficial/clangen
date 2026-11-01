@@ -71,7 +71,7 @@ class BuildNestWindow(GameWindow):
             },
         )
         if (
-            not moss_supply
+            not self._moss_available()
             or not self.build_limits[self.meds[0].ID]
             or not self.meds[0].can_work()
         ):

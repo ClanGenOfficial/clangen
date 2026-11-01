@@ -5,7 +5,7 @@ from typing import Optional, List
 import i18n
 import pygame
 import pygame_gui
-from pygame_gui.core import UIContainer
+from pygame_gui.core import UIContainer, IContainerLikeInterface
 from pygame_gui.core.gui_type_hints import RectLike
 
 from scripts.clan_package.settings import get_clan_setting
@@ -13,6 +13,7 @@ from scripts.events_module.text_adjust import shorten_text_to_fit
 from scripts.game_structure import game
 from scripts.game_structure.game import game_setting_get
 from scripts.game_structure.screen_settings import MANAGER
+from scripts.ui.elements.cat_list_grid_box import UICatListGridBox
 from scripts.ui.elements.image_button import UIImageButton
 from scripts.ui.elements.sprite_button import UISpriteButton
 from scripts.ui.generate_box import get_box, BoxStyles
@@ -169,7 +170,7 @@ class UICatListDisplay(UIContainer):
                     "top_target": boxes[i - columns],
                 }
 
-            boxes[i] = UIContainer(
+            boxes[i] = UICatListGridBox(
                 pygame.Rect(
                     0,
                     0,
@@ -405,3 +406,8 @@ class UICatListDisplay(UIContainer):
                 cat_id = button.return_cat_id()
                 if cat_id not in self.selected:
                     self.selection_boxes[sprite].hide()
+
+    def check_hover(self, time_delta: float, hovered_higher_element: bool) -> bool:
+        # this is literally JUST so that the container won't block hover detection on lower elements
+
+        return False

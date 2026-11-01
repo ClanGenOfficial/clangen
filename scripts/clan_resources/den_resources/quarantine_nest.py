@@ -16,7 +16,7 @@ def _check_expiration():
     expired_entries = [
         moon_created
         for moon_created in game.clan.quarantine_nests
-        if int(moon_created.replace("moon_", "")) + expiration <= game.clan.age
+        if _get_date_created(moon_created) + expiration <= game.clan.age
     ]
     if not expired_entries:
         return
@@ -46,6 +46,25 @@ def get_current_nest_count():
         count += entry
 
     return count
+
+
+def get_nests_expirations():
+    """
+    Returns expiration times for each created nest as a list. Each entry is the expiration for a single created nest.
+    """
+    entries = []
+    expiration = get_config("clan_resources.herbs.quarantine_nest_expiration")
+    for moon, amount in game.clan.quarantine_nests.items():
+        date_created = _get_date_created(moon)
+        expiration_date = date_created + expiration
+        expiring_in = expiration_date - game.clan.age
+        entries.extend([expiring_in] * amount)
+
+    return entries
+
+
+def _get_date_created(entry: str):
+    return int(entry.replace("moon_", ""))
 
 
 def add_nest(building_cat_ID: str):

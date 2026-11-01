@@ -13,6 +13,10 @@
             "one": "%{count} nest built.",
             "many": "%{count} nests built."
         },
+        "expires_in": {
+            "one": "expires in %{count} moon",
+            "many": "expires in %{count} moons"
+        },
         "somewhat_infectious": "somewhat infectious",
         "very_infectious": "very infectious",
         "highly_infectious": "highly infectious",

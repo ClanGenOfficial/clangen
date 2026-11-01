@@ -16,7 +16,10 @@ from scripts.cat.conditions.coverage_check import (
 from scripts.cat.enums import CatRank, CatGroup
 from scripts.cat.sprites.load_sprites import Sprites
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
-from scripts.clan_resources.den_resources.quarantine_nest import get_current_nest_count
+from scripts.clan_resources.den_resources.quarantine_nest import (
+    get_current_nest_count,
+    get_nests_expirations,
+)
 from scripts.clan_resources.herb.herb_supply import MESSAGES
 from scripts.events_module.text_adjust import (
     event_text_adjust,
@@ -337,7 +340,7 @@ class MedDenScreen(Screens):
         )
 
         if get_current_nest_count():
-            nest_chunks = self.get_list_chunks(list(range(get_current_nest_count())), 9)
+            nest_chunks = self.get_list_chunks(list(get_nests_expirations()), 9)
 
             current_chunk = nest_chunks[self.current_quarantine_page - 1]
 
@@ -365,6 +368,10 @@ class MedDenScreen(Screens):
                         manager=MANAGER,
                         container=self.elements["quarantine_view_container"],
                     )
+                    self.nest_images[f"nest{i}"].set_tooltip(
+                        i18n.t("screens.med_den.expires_in", count=current_chunk[i])
+                    )
+                    self.nest_images[f"nest{i}"].tool_tip_delay = 0
                     i += 1
 
             # this is a really weird thing to have to do for the cat list display
@@ -396,6 +403,8 @@ class MedDenScreen(Screens):
                 self.add_to_map(
                     self.elements["quarantine_cat_list"].cat_sprites.values()
                 )
+                for i, cat in enumerate(current_cat_chunk):
+                    self.nest_images[f"nest{i}"].tool_tip_text = None
 
             if self.current_quarantine_page == 1:
                 self.elements["prior_nest_page_arrow"].disable()

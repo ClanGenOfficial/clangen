@@ -1644,7 +1644,9 @@ def attempt_outbreak():
     # now try to infect medicine cats who are caring for quarantined cats
     if max_infected_allowed:
         for condition, infectiousness in possible_quarantine_infections.items():
-            for _cat in meds:
+            for _cat in [
+                c for c in vulnerable_cats if c.status.rank.is_any_medicine_rank()
+            ]:
                 # collect immune system debuffs
                 immune_system_effect = 0.0
                 for _con in _cat.temporary_conditions + _cat.permanent_conditions:
@@ -1659,7 +1661,8 @@ def attempt_outbreak():
                     break
 
             for c in created_infections[condition]:
-                vulnerable_cats.remove(c)
+                if c in vulnerable_cats:
+                    vulnerable_cats.remove(c)
 
             if max_infected_allowed <= 0:
                 break
