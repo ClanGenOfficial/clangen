@@ -252,6 +252,13 @@ class MedDenScreen(Screens):
             manager=MANAGER,
         )
 
+        self.elements["potential_cat_frame"] = UIModifiedImage(
+            ui_scale(pygame.Rect((10, 0), (295, 200))),
+            get_box(BoxStyles.NAMEPLATE, (295, 200)),
+            manager=MANAGER,
+            container=self.elements["quarantine_view_container"],
+        )
+
         # INFO
         self.elements["quarantine_info"] = pygame_gui.elements.UITextBox(
             "screens.med_den.quarantine_info",
@@ -404,7 +411,7 @@ class MedDenScreen(Screens):
             self.elements["potential_quarantine_cat_image"].kill()
 
         self.elements["potential_quarantine_cat_image"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((75, -40), (150, 150))),
+            ui_scale(pygame.Rect((15, 25), (150, 150))),
             pygame.transform.scale(cat.sprite, ui_scale_dimensions((150, 150))),
             container=self.elements["quarantine_view_container"],
         )
@@ -413,11 +420,13 @@ class MedDenScreen(Screens):
             self.elements[
                 "potential_quarantine_cat_name"
             ] = pygame_gui.elements.ui_label.UILabel(
-                ui_scale(pygame.Rect((75, 10), (150, 30))),
-                shorten_text_to_fit(str(cat.name), 130, 15),
+                ui_scale(pygame.Rect((0, 60), (140, 30))),
+                shorten_text_to_fit(str(cat.name), 120, 15),
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 manager=MANAGER,
-                anchors={"top_target": self.elements["potential_quarantine_cat_image"]},
+                anchors={
+                    "left_target": self.elements["potential_quarantine_cat_image"]
+                },
                 container=self.elements["quarantine_view_container"],
             )
         else:
@@ -452,11 +461,12 @@ class MedDenScreen(Screens):
                 "potential_quarantine_cat_info"
             ] = pygame_gui.elements.UITextBox(
                 "<br>".join([conditions, infection_level]),
-                ui_scale(pygame.Rect((75, 0), (150, 45))),
+                ui_scale(pygame.Rect((0, 0), (140, 45))),
                 object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 manager=MANAGER,
                 anchors={
                     "top_target": self.elements["potential_quarantine_cat_name"],
+                    "left_target": self.elements["potential_quarantine_cat_image"],
                 },
                 container=self.elements["quarantine_view_container"],
             )
