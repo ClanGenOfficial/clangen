@@ -10,6 +10,7 @@ TODO: Docs
 
 import os
 import statistics
+from collections import defaultdict
 from random import choice, choices, randint, getrandbits
 from typing import Literal, Optional
 
@@ -168,6 +169,11 @@ class Clan:
         self.future_events = []
         self.last_focus_change = None
         self.clans_in_focus = []
+
+        self.quarantine_nests = 0
+        self.current_nest_build_count: dict[str, int] = defaultdict(int)
+        """Num of nests built by each med cat for the current moon. Key is cat ID, value is nest number."""
+        self.quarantined_cats = []
 
         if self_run_init_functions:
             self.post_initialization_functions()
@@ -1183,6 +1189,44 @@ class Clan:
             }
 
         safe_save(f"{get_save_dir()}/{game.clan.save_id}/nutrition_info.json", data)
+
+    def load_den_resources(self, clan):
+        if not game.clan.save_id or clan.game_mode == "classic":
+            return
+
+        file_path = get_save_dir() + f"/{game.clan.save_id}/den_resources.json"
+        try:
+            if os.path.exists(file_path):
+                with open(
+                    file_path, "r", encoding="utf-8"
+                ) as read_file:  # pylint: disable=redefined-outer-name
+                    resources = ujson.load(read_file)
+                    clan.quarantine_nests = resources.get("quarantine_nests", 0)
+                    clan.current_nest_build_count = resources.get(
+                        "current_nest_build_count", 0
+                    )
+                    clan.quarantined_cats = resources.get("quarantined_cats", [])
+            else:
+                clan.quarantine_nests = 0
+                clan.current_nest_build_count = {}
+                clan.quarantined_cats = []
+        except:
+            clan.quarantine_nests = 0
+            clan.current_nest_build_count = {}
+            clan.quarantined_cats = []
+
+    def save_den_resources(self, clan):
+        if clan.game_mode == "classic":
+            return
+
+        safe_save(
+            f"{get_save_dir()}/{game.clan.save_id}/den_resources.json",
+            {
+                "quarantine_nests": clan.quarantine_nests,
+                "current_nest_build_count": clan.current_nest_build_count,
+                "quarantined_cats": clan.quarantined_cats,
+            },
+        )
 
     ## Properties
 

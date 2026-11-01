@@ -123,6 +123,9 @@ def one_moon():
     # age up the clan, set current season
     game.clan.age += 1
 
+    # reset nest builds
+    game.clan.current_nest_build_count.clear()
+
     update_afterlife_temper()
     pregnancy_events.increment_pregnancy_age()
     check_war()
@@ -1527,7 +1530,11 @@ def attempt_outbreak():
     infectious_cats = list(
         filter(
             lambda _cat: any(
-                [condition.infectiousness for condition in _cat.temporary_conditions]
+                [
+                    condition.infectiousness
+                    for condition in _cat.temporary_conditions
+                    if _cat.ID not in game.clan.quarantined_cats
+                ]
             ),
             clan_cats,
         )

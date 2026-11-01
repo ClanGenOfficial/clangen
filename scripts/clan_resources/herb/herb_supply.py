@@ -730,6 +730,8 @@ class HerbSupply:
             if self.storage[herb][-1] < 0:
                 needed_num = abs(self.storage[herb][-1])
                 self.storage[herb].pop(-1)
+            else:
+                needed_num = 0
 
         return needed_num
 

@@ -1,40 +1,41 @@
-from collections import deque
-from random import choice
+from collections import deque, defaultdict
 
 import i18n
 import pygame
 import pygame_gui.elements
 
-from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
-from scripts.events_module.text_adjust import shorten_text_to_fit
-from scripts.game_structure import game
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank
-from scripts.game_structure.game.switches import (
-    switch_get_value,
-    Switch,
-    switch_set_value,
-)
+from scripts.cat.skills import SkillPath
+from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
+from scripts.config import get_config
+from scripts.events_module.text_adjust import shorten_text_to_fit
+from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.ui.elements.image_button import UIImageButton
-from scripts.ui.elements.sprite_button import UISpriteButton
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
-from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
+from scripts.ui.scale import ui_scale, ui_scale_dimensions
 from scripts.ui.theme import get_text_box_theme
 from scripts.ui.windows.window_base_class import GameWindow
-from scripts.ui.scale import ui_scale, ui_scale_offset, ui_scale_dimensions
 
 
 class BuildNestWindow(GameWindow):
-    def __init__(self):
+    def __init__(self, med_den_screen):
         super().__init__(
             ui_scale(pygame.Rect((125, 150), (550, 400))),
             window_display_title="Herb Management",
         )
+        self.med_den_screen = med_den_screen
         self.elements = {}
+        self.meds = deque(
+            find_alive_cats_with_rank(
+                Cat, [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE], sort=True
+            )
+        )
         self.nests_built = 0
+        self.build_limits: dict[str, int] = defaultdict(int)
+        self.determine_build_limits()
 
         self.elements["build_info"] = pygame_gui.elements.UITextBox(
             "windows.build_nest_help",
@@ -43,11 +44,7 @@ class BuildNestWindow(GameWindow):
             manager=MANAGER,
             container=self,
         )
-        self.meds = deque(
-            find_alive_cats_with_rank(
-                Cat, [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE], sort=True
-            )
-        )
+
         self.update_med_cat()
 
         moss_supply = game.clan.herb_supply.get_single_herb_total("moss")
@@ -73,8 +70,8 @@ class BuildNestWindow(GameWindow):
                 "top_target": self.elements["moss_limit"],
             },
         )
-        # if not moss_supply:
-        #     self.elements["build_nest"].disable()
+        if not moss_supply or not self.build_limits[self.meds[0].ID]:
+            self.elements["build_nest"].disable()
 
         self.elements["built_count"] = pygame_gui.elements.UITextBox(
             "windows.built_count",
@@ -88,6 +85,19 @@ class BuildNestWindow(GameWindow):
             },
             visible=False,
         )
+
+    def determine_build_limits(self):
+        for c in self.meds:
+            self.build_limits[c.ID] = 1
+
+            # add tier level to limit
+            skill_info = c.skills.get_all()
+            self.build_limits[c.ID] += skill_info.get(SkillPath.CAMP, 0)
+
+            exp_addition = round(c.experience * 0.01)
+            self.build_limits[c.ID] += exp_addition
+
+            self.build_limits[c.ID] -= game.clan.current_nest_build_count[c.ID]
 
     def update_med_cat(self):
         displayed_med_cat = self.meds[0]
@@ -177,7 +187,10 @@ class BuildNestWindow(GameWindow):
             self.elements["cat_limit"] = pygame_gui.elements.UITextBox(
                 "windows.build_nest_limit",
                 ui_scale(pygame.Rect((180, 0), (340, 50))),
-                text_kwargs={"cat": str(displayed_med_cat.name), "count": 2},
+                text_kwargs={
+                    "cat": str(displayed_med_cat.name),
+                    "count": self.build_limits[displayed_med_cat.ID],
+                },
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 manager=MANAGER,
                 container=self,
@@ -188,8 +201,17 @@ class BuildNestWindow(GameWindow):
         else:
             self.elements["cat_limit"].set_text(
                 "windows.build_nest_limit",
-                text_kwargs={"cat": str(displayed_med_cat.name), "count": 2},
+                text_kwargs={
+                    "cat": str(displayed_med_cat.name),
+                    "count": self.build_limits[displayed_med_cat.ID],
+                },
             )
+
+        if self.elements.get("build_nest"):
+            if not self._moss_available() or not self.build_limits[self.meds[0].ID]:
+                self.elements["build_nest"].disable()
+            else:
+                self.elements["build_nest"].enable()
 
     def process_event(self, event) -> bool:
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
@@ -201,9 +223,37 @@ class BuildNestWindow(GameWindow):
                 self.update_med_cat()
             if event.ui_element == self.elements["build_nest"]:
                 self.nests_built += 1
+                game.clan.quarantine_nests += 1
+                game.clan.current_nest_build_count[self.meds[0].ID] = (
+                    game.clan.current_nest_build_count[self.meds[0].ID] + 1
+                )
+                self.build_limits[self.meds[0].ID] -= 1
                 self.elements["built_count"].set_text(
                     "windows.built_count", text_kwargs={"count": self.nests_built}
                 )
                 self.elements["built_count"].show()
+                game.clan.herb_supply.remove_herb(
+                    "moss", get_config("clan_resources.herbs.moss_per_quarantine_nest")
+                )
+                self.elements["moss_limit"].set_text(
+                    "windows.build_nest_moss",
+                    text_kwargs={
+                        "count": game.clan.herb_supply.get_single_herb_total("moss")
+                    },
+                )
+                self.update_med_cat()
+                if not self._moss_available() or not self.build_limits[self.meds[0].ID]:
+                    self.elements["build_nest"].disable()
 
         return super().process_event(event)
+
+    @staticmethod
+    def _moss_available():
+        return game.clan.herb_supply.get_single_herb_total("moss") >= get_config(
+            "clan_resources.herbs.moss_per_quarantine_nest"
+        )
+
+    def kill(self):
+        # TODO: set nest amount
+        self.med_den_screen.update_nest_display()
+        super().kill()

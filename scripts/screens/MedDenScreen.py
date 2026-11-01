@@ -13,7 +13,8 @@ from scripts.cat.cats import Cat
 from scripts.cat.conditions.coverage_check import (
     amount_of_clan_covered_total,
 )
-from scripts.cat.enums import CatRank
+from scripts.cat.enums import CatRank, CatGroup
+from scripts.cat.sprites.load_sprites import Sprites
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.clan_resources.herb.herb_supply import MESSAGES
 from scripts.events_module.text_adjust import (
@@ -47,12 +48,14 @@ class MedDenScreen(Screens):
         super().__init__(name)
         self.help_button = None
         self.back_button = None
-        self.current_page = None
+        self.current_main_display_page = 1
+        self.current_quarantine_page = 1
 
         self.tab_showing: Literal["minor", "major", "severe"] = "severe"
 
         self.den_image = {}
         self.elements = {}
+        self.nest_images = {}
 
         self.condition_cats = defaultdict(list)
         self.meds: deque | None = None
@@ -71,10 +74,10 @@ class MedDenScreen(Screens):
             if event.ui_element == self.back_button:
                 self.change_screen(game.last_screen_forupdate)
             elif event.ui_element == self.elements["next_cat_page_arrow"]:
-                self.current_page += 1
+                self.current_main_display_page += 1
                 self.update_tab_and_page()
             elif event.ui_element == self.elements["prior_cat_page_arrow"]:
-                self.current_page -= 1
+                self.current_main_display_page -= 1
                 self.update_tab_and_page()
             elif event.ui_element == self.elements["severe_tab"]:
                 self.tab_showing = "severe"
@@ -143,7 +146,15 @@ class MedDenScreen(Screens):
                 )
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.elements["build_nest"]:
-                BuildNestWindow()
+                BuildNestWindow(self)
+            if event.ui_element in self.elements["cat_list"].cat_sprites.values():
+                cat = event.ui_element.return_cat_object().ID
+                if (
+                    len(game.clan.quarantined_cats) < game.clan.quarantine_nests
+                    and cat not in game.clan.quarantined_cats
+                ):
+                    game.clan.quarantined_cats.append(cat)
+                    self.update_nest_display()
 
     def screen_switches(self):
         super().screen_switches()
@@ -157,6 +168,7 @@ class MedDenScreen(Screens):
             manager=MANAGER,
         )
 
+        self.open_view = "supply"
         self.create_supply_view()
 
         if game.clan.game_mode != "classic":
@@ -252,14 +264,14 @@ class MedDenScreen(Screens):
         self.elements["quarantine_nest_frame"].disable()
 
         # ARROWS
-        self.elements["nest_page_arrow"] = UISurfaceImageButton(
+        self.elements["prior_nest_page_arrow"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((313, 133), (34, 34))),
             Icon.ARROW_LEFT,
             get_button_dict(ButtonStyles.ICON, (34, 34)),
             object_id="@buttonstyles_icon",
             container=self.elements["quarantine_view_container"],
         )
-        self.elements["nest_page_arrow"] = UISurfaceImageButton(
+        self.elements["next_nest_page_arrow"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((663, 133), (34, 34))),
             Icon.ARROW_RIGHT,
             get_button_dict(ButtonStyles.ICON, (34, 34)),
@@ -274,6 +286,70 @@ class MedDenScreen(Screens):
             object_id="@buttonstyles_squoval",
             container=self.elements["quarantine_view_container"],
         )
+
+        self.update_nest_display()
+
+    def update_nest_display(self):
+        """
+        Displays the nests and the quarantined cats
+        """
+        for ele in self.nest_images.values():
+            ele.kill()
+
+        nest_sprite = Sprites.get_platform(
+            biome=game.clan.biome,
+            season=game.clan.current_season,
+            show_nest=True,
+            group=CatGroup.PLAYER_CLAN,
+        )
+
+        # I apologize for my sins
+        row_gap = 86
+        column_gap = 103
+        i = 0
+        for row in range(3):
+            if i >= game.clan.quarantine_nests:
+                break
+            for column in range(3):
+                if i >= game.clan.quarantine_nests:
+                    break
+                self.nest_images[f"nest{i}"] = pygame_gui.elements.UIImage(
+                    ui_scale(
+                        pygame.Rect(
+                            (361 + (column_gap * column), 35 + (row_gap * row)),
+                            (80, 70),
+                        )
+                    ),
+                    pygame.transform.scale(
+                        nest_sprite,
+                        ui_scale_dimensions((80, 70)),
+                    ),
+                    manager=MANAGER,
+                    container=self.elements["quarantine_view_container"],
+                )
+                i += 1
+
+        if self.elements.get("quarantine_cat_list"):
+            self.remove_from_map(self.elements["cat_list"].cat_sprites.values())
+            self.elements["quarantine_cat_list"].kill()
+
+        self.elements["quarantine_cat_list"] = UICatListDisplay(
+            ui_scale(pygame.Rect((350, 20), (310, 260))),
+            manager=MANAGER,
+            cat_list=[Cat.fetch_cat(c) for c in game.clan.quarantined_cats],
+            cats_displayed=9,
+            x_px_between=ui_scale_value(5),
+            y_px_between=ui_scale_value(5),
+            columns=3,
+            rows=3,
+            tool_tip_name=True,
+            current_page=self.current_quarantine_page,
+            next_button=self.elements["next_nest_page_arrow"],
+            prev_button=self.elements["prior_nest_page_arrow"],
+            starting_height=1,
+            container=self.elements["quarantine_view_container"],
+        )
+        self.add_to_map(self.elements["cat_list"].cat_sprites.values())
 
     def update_potential_quarantine_display(self, cat: Cat):
         if self.elements.get("potential_quarantine_cat_image"):
@@ -312,7 +388,9 @@ class MedDenScreen(Screens):
         for c in cat.temporary_conditions:
             full_infectiousness += c.infectiousness
 
-        if full_infectiousness > 0.7:
+        if cat.ID in game.clan.quarantined_cats:
+            infection_level = "quarantined"
+        elif full_infectiousness > 0.7:
             infection_level = "highly_infectious"
         elif full_infectiousness > 0.4:
             infection_level = "very_infectious"
@@ -710,7 +788,7 @@ class MedDenScreen(Screens):
             ]
         )
 
-        self.current_page = 1
+        self.current_main_display_page = 1
         self.update_cat_display()
 
     def update_cat_display(self):
@@ -743,7 +821,7 @@ class MedDenScreen(Screens):
             rows=2,
             show_names=True,
             tool_tip_text_list=tooltip_text,
-            current_page=self.current_page,
+            current_page=self.current_main_display_page,
             next_button=self.elements["next_cat_page_arrow"],
             prev_button=self.elements["prior_cat_page_arrow"],
             text_theme="#text_box_30_horizcenter",
@@ -758,7 +836,7 @@ class MedDenScreen(Screens):
         Updates the cat display to a new tab, if changed_tab, else updates to self.current_page.
         """
         if changed_tab:
-            self.current_page = 1
+            self.current_main_display_page = 1
             for tab in ("minor_tab", "major_tab", "severe_tab"):
                 self.elements[tab].enable()
             self.elements[f"{self.tab_showing}_tab"].disable()
@@ -769,7 +847,9 @@ class MedDenScreen(Screens):
 
         else:
             self.remove_from_map(self.elements["cat_list"].cat_sprites.values())
-            self.elements["cat_list"].update_display(current_page=self.current_page)
+            self.elements["cat_list"].update_display(
+                current_page=self.current_main_display_page
+            )
             self.add_to_map(self.elements["cat_list"].cat_sprites.values())
 
     def exit_screen(self):

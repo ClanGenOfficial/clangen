@@ -1157,6 +1157,8 @@ dev_tools = false
 
     # herb bonus applied when cats should gather a boosted number of herbs
     general_amount_bonus = 2
+    
+    moss_per_quarantine_nest = 5
 
     gathering_variance = [-1, 1]
     [clan_resources.herbs.increase_amounts]
