@@ -183,6 +183,10 @@ class BuildNestWindow(GameWindow):
                 container=self,
             )
 
+        if len(self.meds) >= 1:
+            self.elements["prior_med_arrow"].hide()
+            self.elements["next_med_arrow"].hide()
+
         if not self.elements.get("cat_limit"):
             self.elements["cat_limit"] = pygame_gui.elements.UITextBox(
                 "windows.build_nest_limit",

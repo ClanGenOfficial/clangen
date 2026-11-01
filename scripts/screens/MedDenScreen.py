@@ -620,6 +620,10 @@ class MedDenScreen(Screens):
                 [self.elements["next_med_arrow"], self.elements["prior_med_arrow"]]
             )
 
+        if len(self.meds) >= 1:
+            self.elements["prior_med_arrow"].hide()
+            self.elements["next_med_arrow"].hide()
+
         if not self.elements.get("med_message"):
             self.elements["med_message"] = pygame_gui.elements.UITextBox(
                 "",
