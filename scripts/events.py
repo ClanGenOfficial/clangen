@@ -37,6 +37,7 @@ from scripts.clan_package.get_clan_cats import (
     get_living_clan_cat_count,
 )
 from scripts.clan_package.settings import get_clan_setting, set_clan_setting
+from scripts.clan_resources.den_resources import quarantine_nest
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
 from scripts.config import get_config
 from scripts.events_module.ceremony.perform_ceremony import (
@@ -123,8 +124,8 @@ def one_moon():
     # age up the clan, set current season
     game.clan.age += 1
 
-    # reset nest builds
-    game.clan.current_nest_build_count.clear()
+    # handle the nests moonskip
+    quarantine_nest.handle_moonskip()
 
     update_afterlife_temper()
     pregnancy_events.increment_pregnancy_age()

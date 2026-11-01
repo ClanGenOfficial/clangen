@@ -170,7 +170,7 @@ class Clan:
         self.last_focus_change = None
         self.clans_in_focus = []
 
-        self.quarantine_nests = 0
+        self.quarantine_nests: dict[str, int] = defaultdict(int)
         self.current_nest_build_count: dict[str, int] = defaultdict(int)
         """Num of nests built by each med cat for the current moon. Key is cat ID, value is nest number."""
         self.quarantined_cats = []
@@ -1203,18 +1203,20 @@ class Clan:
                     file_path, "r", encoding="utf-8"
                 ) as read_file:  # pylint: disable=redefined-outer-name
                     resources = ujson.load(read_file)
-                    clan.quarantine_nests = resources.get("quarantine_nests", 0)
-                    clan.current_nest_build_count = resources.get(
-                        "current_nest_build_count", 0
+                    clan.quarantine_nests = defaultdict(int)
+                    clan.quarantine_nests.update(resources.get("quarantine_nests", {}))
+                    clan.current_nest_build_count = defaultdict(int)
+                    clan.current_nest_build_count.update(
+                        resources.get("current_nest_build_count", {})
                     )
                     clan.quarantined_cats = resources.get("quarantined_cats", [])
             else:
-                clan.quarantine_nests = 0
-                clan.current_nest_build_count = {}
+                clan.quarantine_nests = defaultdict(int)
+                clan.current_nest_build_count = defaultdict(int)
                 clan.quarantined_cats = []
         except:
-            clan.quarantine_nests = 0
-            clan.current_nest_build_count = {}
+            clan.quarantine_nests = defaultdict(int)
+            clan.current_nest_build_count = defaultdict(int)
             clan.quarantined_cats = []
 
     def save_den_resources(self, clan):

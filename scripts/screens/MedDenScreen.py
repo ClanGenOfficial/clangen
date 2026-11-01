@@ -16,6 +16,7 @@ from scripts.cat.conditions.coverage_check import (
 from scripts.cat.enums import CatRank, CatGroup
 from scripts.cat.sprites.load_sprites import Sprites
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
+from scripts.clan_resources.den_resources.quarantine_nest import get_current_nest_count
 from scripts.clan_resources.herb.herb_supply import MESSAGES
 from scripts.events_module.text_adjust import (
     event_text_adjust,
@@ -150,7 +151,7 @@ class MedDenScreen(Screens):
             if event.ui_element in self.elements["cat_list"].cat_sprites.values():
                 cat = event.ui_element.return_cat_object().ID
                 if (
-                    len(game.clan.quarantined_cats) < game.clan.quarantine_nests
+                    len(game.clan.quarantined_cats) < get_current_nest_count()
                     and cat not in game.clan.quarantined_cats
                 ):
                     game.clan.quarantined_cats.append(cat)
@@ -264,7 +265,7 @@ class MedDenScreen(Screens):
         self.elements["quarantine_nest_count"] = pygame_gui.elements.UITextBox(
             "screens.med_den.nest_count",
             ui_scale(pygame.Rect((330, 10), (350, 120))),
-            text_kwargs={"count": game.clan.quarantine_nests},
+            text_kwargs={"count": get_current_nest_count()},
             object_id=get_text_box_theme("#text_box_22_horizcenter"),
             manager=MANAGER,
             container=self.elements["quarantine_view_container"],
@@ -318,7 +319,7 @@ class MedDenScreen(Screens):
 
         self.elements["quarantine_nest_count"].set_text(
             "screens.med_den.nest_count",
-            text_kwargs={"count": game.clan.quarantine_nests},
+            text_kwargs={"count": get_current_nest_count()},
         )
 
         nest_sprite = Sprites.get_platform(
@@ -328,10 +329,8 @@ class MedDenScreen(Screens):
             group=CatGroup.PLAYER_CLAN,
         )
 
-        if game.clan.quarantine_nests:
-            nest_chunks = self.get_list_chunks(
-                list(range(game.clan.quarantine_nests)), 9
-            )
+        if get_current_nest_count():
+            nest_chunks = self.get_list_chunks(list(range(get_current_nest_count())), 9)
 
             current_chunk = nest_chunks[self.current_quarantine_page - 1]
 

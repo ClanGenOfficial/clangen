@@ -8,6 +8,7 @@ from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank
 from scripts.cat.skills import SkillPath
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
+from scripts.clan_resources.den_resources.quarantine_nest import add_nest
 from scripts.config import get_config
 from scripts.events_module.text_adjust import shorten_text_to_fit
 from scripts.game_structure import game
@@ -225,19 +226,13 @@ class BuildNestWindow(GameWindow):
                 self.meds.rotate(1)
                 self.update_med_cat()
             if event.ui_element == self.elements["build_nest"]:
+                add_nest(self.meds[0].ID)
                 self.nests_built += 1
-                game.clan.quarantine_nests += 1
-                game.clan.current_nest_build_count[self.meds[0].ID] = (
-                    game.clan.current_nest_build_count.get(self.meds[0].ID, 0) + 1
-                )
                 self.build_limits[self.meds[0].ID] -= 1
                 self.elements["built_count"].set_text(
                     "windows.built_count", text_kwargs={"count": self.nests_built}
                 )
                 self.elements["built_count"].show()
-                game.clan.herb_supply.remove_herb(
-                    "moss", get_config("clan_resources.herbs.moss_per_quarantine_nest")
-                )
                 self.elements["moss_limit"].set_text(
                     "windows.build_nest_moss",
                     text_kwargs={
@@ -253,10 +248,9 @@ class BuildNestWindow(GameWindow):
     @staticmethod
     def _moss_available():
         return game.clan.herb_supply.get_single_herb_total("moss") >= get_config(
-            "clan_resources.herbs.moss_per_quarantine_nest"
+            "clan_resources.herbs.quarantine_nest_recipe.moss"
         )
 
     def kill(self):
-        # TODO: set nest amount
         self.med_den_screen.update_nest_display()
         super().kill()
