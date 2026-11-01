@@ -422,7 +422,7 @@ class MedDenScreen(Screens):
             ] = pygame_gui.elements.ui_label.UILabel(
                 ui_scale(pygame.Rect((0, 60), (140, 30))),
                 shorten_text_to_fit(str(cat.name), 120, 15),
-                object_id=get_text_box_theme("#text_box_30_horizcenter"),
+                object_id="#text_box_30_horizcenter",
                 manager=MANAGER,
                 anchors={
                     "left_target": self.elements["potential_quarantine_cat_image"]
@@ -462,7 +462,7 @@ class MedDenScreen(Screens):
             ] = pygame_gui.elements.UITextBox(
                 "<br>".join([conditions, infection_level]),
                 ui_scale(pygame.Rect((0, 0), (140, 45))),
-                object_id=get_text_box_theme("#text_box_22_horizcenter"),
+                object_id="#text_box_22_horizcenter",
                 manager=MANAGER,
                 anchors={
                     "top_target": self.elements["potential_quarantine_cat_name"],
