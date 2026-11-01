@@ -16,7 +16,6 @@ from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
 from scripts.ui.scale import ui_scale, ui_scale_dimensions
-from scripts.ui.theme import get_text_box_theme
 from scripts.ui.windows.window_base_class import GameWindow
 
 
@@ -40,7 +39,7 @@ class BuildNestWindow(GameWindow):
         self.elements["build_info"] = pygame_gui.elements.UITextBox(
             "windows.build_nest_help",
             ui_scale(pygame.Rect((180, 30), (340, 170))),
-            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            object_id="#text_box_30_horizcenter",
             manager=MANAGER,
             container=self,
         )
@@ -52,7 +51,7 @@ class BuildNestWindow(GameWindow):
             "windows.build_nest_moss",
             ui_scale(pygame.Rect((180, 0), (340, 50))),
             text_kwargs={"count": moss_supply},
-            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            object_id="#text_box_30_horizcenter",
             manager=MANAGER,
             container=self,
             anchors={
@@ -77,7 +76,7 @@ class BuildNestWindow(GameWindow):
             "windows.built_count",
             ui_scale(pygame.Rect((180, 0), (340, 50))),
             text_kwargs={"count": self.nests_built},
-            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            object_id="#text_box_30_horizcenter",
             manager=MANAGER,
             container=self,
             anchors={
@@ -195,7 +194,7 @@ class BuildNestWindow(GameWindow):
                     "cat": str(displayed_med_cat.name),
                     "count": self.build_limits[displayed_med_cat.ID],
                 },
-                object_id=get_text_box_theme("#text_box_30_horizcenter"),
+                object_id="#text_box_30_horizcenter",
                 manager=MANAGER,
                 container=self,
                 anchors={
