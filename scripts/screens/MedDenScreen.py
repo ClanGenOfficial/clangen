@@ -657,10 +657,15 @@ class MedDenScreen(Screens):
                     amount_of_clan_covered = amount_of_clan_covered_total(
                         Cat.all_cats.values()
                     )
-                    self.coverage_message = i18n.t(
-                        "screens.med_den.meds_cover",
-                        clansize=amount_of_clan_covered,
-                        count=len(self.meds),
+                    self.coverage_message = event_text_adjust(
+                        Cat=Cat,
+                        text=i18n.t(
+                            "screens.med_den.meds_cover",
+                            clansize=amount_of_clan_covered,
+                            count=len(self.meds),
+                        ),
+                        main_cat=self.meds[0],
+                        clan=game.clan,
                     )
 
         if not self.med_messages.get(displayed_med_cat.ID):

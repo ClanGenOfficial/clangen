@@ -613,6 +613,7 @@ class Clan:
         save_clan_settings()
         if game.clan.game_mode in ("expanded", "cruel_season"):
             self.save_freshkill_pile(game.clan)
+            self.save_den_resources(game.clan)
 
         safe_save(f"{get_save_dir()}/{self.save_id}/clan.json", clan_data)
 
@@ -889,6 +890,7 @@ class Clan:
         self.load_disaster(game.clan)
         if game.clan.game_mode != "classic":
             self.load_freshkill_pile(game.clan)
+            self.load_den_resources(game.clan)
         switch_set_value(Switch.error_message, "")
 
     def load_pregnancy(self, clan):

@@ -97,7 +97,7 @@ class BuildNestWindow(GameWindow):
             exp_addition = round(c.experience * 0.01)
             self.build_limits[c.ID] += exp_addition
 
-            self.build_limits[c.ID] -= game.clan.current_nest_build_count[c.ID]
+            self.build_limits[c.ID] -= game.clan.current_nest_build_count.get(c.ID, 0)
 
     def update_med_cat(self):
         displayed_med_cat = self.meds[0]
@@ -225,7 +225,7 @@ class BuildNestWindow(GameWindow):
                 self.nests_built += 1
                 game.clan.quarantine_nests += 1
                 game.clan.current_nest_build_count[self.meds[0].ID] = (
-                    game.clan.current_nest_build_count[self.meds[0].ID] + 1
+                    game.clan.current_nest_build_count.get(self.meds[0].ID, 0) + 1
                 )
                 self.build_limits[self.meds[0].ID] -= 1
                 self.elements["built_count"].set_text(
