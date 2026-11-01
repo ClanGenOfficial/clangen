@@ -405,6 +405,9 @@ class MedDenScreen(Screens):
                 self.elements["prior_nest_page_arrow"].enable()
             if self.current_quarantine_page < len(nest_chunks):
                 self.elements["next_nest_page_arrow"].enable()
+        else:
+            self.elements["prior_nest_page_arrow"].disable()
+            self.elements["next_nest_page_arrow"].disable()
 
     def update_potential_quarantine_display(self, cat: Cat):
         if self.elements.get("potential_quarantine_cat_image"):
