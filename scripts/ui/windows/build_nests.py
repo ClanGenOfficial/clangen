@@ -39,7 +39,7 @@ class BuildNestWindow(GameWindow):
 
         self.elements["build_info"] = pygame_gui.elements.UITextBox(
             "windows.build_nest_help",
-            ui_scale(pygame.Rect((180, 30), (340, 170))),
+            ui_scale(pygame.Rect((180, 30), (340, 190))),
             object_id="#text_box_30_horizcenter",
             manager=MANAGER,
             container=self,
@@ -70,7 +70,11 @@ class BuildNestWindow(GameWindow):
                 "top_target": self.elements["moss_limit"],
             },
         )
-        if not moss_supply or not self.build_limits[self.meds[0].ID]:
+        if (
+            not moss_supply
+            or not self.build_limits[self.meds[0].ID]
+            or not self.meds[0].can_work()
+        ):
             self.elements["build_nest"].disable()
 
         self.elements["built_count"] = pygame_gui.elements.UITextBox(
@@ -183,7 +187,7 @@ class BuildNestWindow(GameWindow):
                 container=self,
             )
 
-        if len(self.meds) >= 1:
+        if len(self.meds) <= 1:
             self.elements["prior_med_arrow"].hide()
             self.elements["next_med_arrow"].hide()
 
@@ -193,7 +197,9 @@ class BuildNestWindow(GameWindow):
                 ui_scale(pygame.Rect((180, 0), (340, 50))),
                 text_kwargs={
                     "cat": str(displayed_med_cat.name),
-                    "count": self.build_limits[displayed_med_cat.ID],
+                    "count": self.build_limits[displayed_med_cat.ID]
+                    if displayed_med_cat.can_work()
+                    else 0,
                 },
                 object_id="#text_box_30_horizcenter",
                 manager=MANAGER,
@@ -207,12 +213,18 @@ class BuildNestWindow(GameWindow):
                 "windows.build_nest_limit",
                 text_kwargs={
                     "cat": str(displayed_med_cat.name),
-                    "count": self.build_limits[displayed_med_cat.ID],
+                    "count": self.build_limits[displayed_med_cat.ID]
+                    if displayed_med_cat.can_work()
+                    else 0,
                 },
             )
 
         if self.elements.get("build_nest"):
-            if not self._moss_available() or not self.build_limits[self.meds[0].ID]:
+            if (
+                not self._moss_available()
+                or not self.build_limits[self.meds[0].ID]
+                or not self.meds[0].can_work()
+            ):
                 self.elements["build_nest"].disable()
             else:
                 self.elements["build_nest"].enable()

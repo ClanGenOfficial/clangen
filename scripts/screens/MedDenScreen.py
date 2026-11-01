@@ -597,7 +597,7 @@ class MedDenScreen(Screens):
         # display name
         if not self.elements.get("med_name"):
             self.elements["med_name"] = pygame_gui.elements.ui_label.UILabel(
-                ui_scale(pygame.Rect((-60, 55), (225, 30))),
+                ui_scale(pygame.Rect((-44, 55), (225, 30))),
                 shorten_text_to_fit(str(displayed_med_cat.name), 137, 15),
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 manager=MANAGER,
@@ -624,7 +624,7 @@ class MedDenScreen(Screens):
         if not self.elements.get("med_info"):
             self.elements["med_info"] = pygame_gui.elements.UITextBox(
                 info_text,
-                ui_scale(pygame.Rect((0, 0), (120, 90))),
+                ui_scale(pygame.Rect((0, 0), (140, 100))),
                 object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 manager=MANAGER,
                 anchors={
@@ -639,7 +639,7 @@ class MedDenScreen(Screens):
         # arrows for switching to other med cats
         if not self.elements.get("prior_med_arrow"):
             self.elements["prior_med_arrow"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((20, 0), (34, 34))),
+                ui_scale(pygame.Rect((30, 0), (34, 34))),
                 Icon.ARROW_LEFT,
                 get_button_dict(ButtonStyles.ICON, (34, 34)),
                 object_id="@buttonstyles_icon",
@@ -668,7 +668,7 @@ class MedDenScreen(Screens):
                 [self.elements["next_med_arrow"], self.elements["prior_med_arrow"]]
             )
 
-        if len(self.meds) >= 1:
+        if len(self.meds) <= 1:
             self.elements["prior_med_arrow"].hide()
             self.elements["next_med_arrow"].hide()
 
