@@ -8139,6 +8139,397 @@
         ]
     },
     {
+        "event_id": "gen_bord_maze_poi_kittypet_hostile",
+        "types": ["border"],
+        "frequency": 1,
+        "poi": {
+            "category": "terrain",
+            "tags": ["maze"]
+        },
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ]
+        },
+        "chance_of_success": 40,
+        "patrol_art": "POI",
+        "intro_strings": [
+            "The patrol is near POI when they catch an unfamiliar scent - not a Clancat scent, either. It leads into POI, and smells as though the cat that left it came through fairly recently. The patrol looks at each other with surprised, flicking tails. Unusual that an outsider would be in their territory, much less in POI."
+        ],
+        "decline_strings": [
+            "The patrol decides against investigating the scent. It's not a big deal - everycat is interested in exploring POI at some point."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 20,
+                "outcome_art": "cat_sprites/gen_bord_begging_Kp",
+                "strings": [
+                    "The patrol follows the scent into the maze of POI. After a long time, they track down a quivering kittypet. The poor cat sobs that {PRONOUN/n_c0/poss} housefolk abandoned {PRONOUN/n_c0/object}, and {PRONOUN/n_c0/subject} tried looking for food and shelter here, but it's so scary and confusing. The patrol escorts {PRONOUN/n_c0/object} out of the maze of POI and marches {PRONOUN/n_c0/object} to the closest friendly kittypet nest."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adolescent",
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": [
+                            "kittypet"
+                        ],
+                        "backstory": [
+                            "kittypet3",
+                            "kittypet4",
+                            "refugee3",
+                            "tragedy_survivor3"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "amount": 1,
+                        "values": [
+                            "like",
+                            "respect",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from became lost in POI, and cat_to showed {PRONOUN/cat_from/object} the way out and sent {PRONOUN/cat_from/object} to friendly housefolk."
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 1
+                }
+            },
+            {
+                "frequency": 3,
+                "exp_gained": 20,
+                "outcome_art": "cat_sprites/gen_hunt_strange_Wr",
+                "strings": [
+                    "The patrol follows the scent into the maze of POI, but they're never able to track down the scent's source. Over the next half-moon or so, c_n cats encounter the scent inside POI again and again. Eventually, they find a skinny kittypet, weak with hunger. The kittypet tearfully explains that {PRONOUN/n_c0/poss} housefolk abandoned {PRONOUN/n_c0/object}, and {PRONOUN/n_c0/subject} came here looking for food and shelter, but {PRONOUN/n_c0/subject} {VERB/n_c0/don't/doesn't} know how to hunt. p_l feels so bad for the kittypet that {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to bring {PRONOUN/n_c0/object} back to camp so {PRONOUN/n_c0/subject} can at least be taught to hunt."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adolescent",
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": [
+                            "kittypet"
+                        ],
+                        "backstory": [
+                            "kittypet3",
+                            "kittypet4",
+                            "refugee3",
+                            "tragedy_survivor3"
+                        ]
+                    }
+                },
+                "condition": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "malnourished"
+                        ],
+                        "death_history": "This cat was lost in POI and became malnourished, and died from complications of malnourishment."
+                    }
+                ],
+                "join": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "amount": 15,
+                        "values": [
+                            "like",
+                            "respect",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from became lost in POI, and cat_to rescued them."
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 1
+                }
+            },
+            {
+                "frequency": 3,
+                "exp_gained": 20,
+                "outcome_art": "cat_sprites/gen_hunt_funrun_Wr",
+                "strings": [
+                    "The patrol follows the scent into the maze of POI, and s_c0 takes the lead, tracking the scent through piles of muck that would have had the other cats completely losing the scent and their sense of smell. {PRONOUN/s_c0/subject/CAP} quickly {VERB/s_c0/track/tracks} the scent to an utterly lost, terrified kittypet. {PRONOUN/n_c0/subject/CAP} tearfully explains that {PRONOUN/n_c0/poss} housefolk abandoned {PRONOUN/n_c0/object} and {PRONOUN/n_c0/subject} {VERB/n_c0/don't/doesn't} know what to do. The patrol takes pity on {PRONOUN/n_c0/object} and brings {PRONOUN/n_c0/object} back to c_n."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "HUNTER,1"
+                            ]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adolescent",
+                            "young adult",
+                            "adult",
+
+                            "senior adult"
+                        ],
+                        "status": [
+                            "kittypet"
+                        ],
+                        "backstory": [
+                            "kittypet3",
+                            "kittypet4",
+                            "refugee3",
+                            "tragedy_survivor3"
+                        ]
+                    }
+                },
+                "join": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "amount": 15,
+                        "values": [
+                            "like",
+                            "respect",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from became lost in POI, and cat_to rescued them."
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 2
+                }
+            },
+            {
+                "frequency": 3,
+                "exp_gained": 20,
+                "outcome_art": "cat_sprites/gen_foundscent_WrLn",
+                "strings": [
+                    "The patrol follows the scent into the maze of POI, but they can't track the scent, so they check all the known exits and entrances. But the cat's scent never leads out, only in and around, and around, and around. s_c0 thinks that the cat is likely lost, and decides to try to lure {PRONOUN/n_c0/object} in. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/set/sets} up a cozy, protected nest along the strongest scent trail, and {VERB/s_c0/leave/leaves} a piece of prey, then {VERB/s_c0/set/sets} up some debris to trap the cat once they enter the nest. When {PRONOUN/s_c0/subject} {VERB/s_c0/come/comes} back in a day or so, {PRONOUN/s_c0/subject} {VERB/s_c0/find/finds} a bedraggled kittypet curled up in the nest. s_c0 takes the poor thing back to camp."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CAMP,1"
+                            ]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adolescent",
+                            "young adult",
+                            "adult",
+
+                            "senior adult"
+                        ],
+                        "status": [
+                            "kittypet"
+                        ],
+                        "backstory": [
+                            "kittypet3",
+                            "kittypet4",
+                            "refugee3",
+                            "tragedy_survivor3"
+                        ]
+                    }
+                },
+                "join": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "amount": 15,
+                        "values": [
+                            "like",
+                            "respect",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from became lost in POI, and cat_to rescued them."
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 2
+                }
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_hunt_strange_Wr",
+                "strings": [
+                    "The patrol follows the scent into the maze of POI, but they're never able to track down the scent's source. Over the next half-moon or so, c_n cats encounter the scent inside POI again and again. Eventually, they find the body of a kittypet, who looks to have starved to death."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "adolescent",
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": [
+                            "kittypet"
+                        ],
+                        "backstory": [
+                            "kittypet3",
+                            "kittypet4",
+                            "refugee3",
+                            "tragedy_survivor3"
+                        ]
+                    }
+                },
+                "death": [
+                    {
+                        "cats": ["n_c0"],
+                        "history": "This cat became lost in Clancat territory and starved to death"
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": -1
+                }
+            },
+            {
+                "frequency": 3,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_hunt_funrun_Wr",
+                "strings": [
+                    "The patrol follows the scent into the maze of POI, and s_c0 takes the lead. But {PRONOUN/s_c0/subject} almost immediately {VERB/s_c0/lose/loses} the scent in the piles of muck and debris that fill POI."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "HUNTER,0"
+                            ]
+                        }
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "amount": -5,
+                        "values": [
+                            "respect"
+                        ],
+                        "log": {
+                            "cats_from": "cat_to is supposed to be a great tracker, but couldn't track a foreign scent in POI."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/ggen_pawsdiggingdirt_Wr",
+                "strings": [
+                    "The patrol follows the scent into the maze of POI, but they can't track the scent, so they check all the known exits and entrances. But the cat's scent never leads out, only in and around, and around, and around. s_c0 thinks that the cat is likely lost, and decides to try to lure them in. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/set/sets} up a nest near one entrance, and {VERB/s_c0/leave/leaves} a piece of prey. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/come/comes} back several times to check, but the scent fades, the prey rots, and no cat ever turns up."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CAMP,0"
+                            ]
+                        }
+                    }
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "amount": -5,
+                        "values": [
+                            "respect"
+                        ],
+                        "log": {
+                            "cats_from": "cat_to had some rabbit-brained idea about catching a trespassing cat by making them a place to sleep."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "event_id": "gen_bord_fordriver_newborns_hostile",
         "types": ["border"],
         "frequency": 1,
