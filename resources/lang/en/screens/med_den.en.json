@@ -6,7 +6,7 @@
         "log_title": "Den Log",
         "supply_title": "Supply",
         "quarantine_title": "Quarantine",
-        "quarantine_info": "Click on a cat below to quarantine them. While quarantined, their condition will not spread to others. Cats will only leave quarantine when they recover or die.<br><br>After the cat leaves quarantine, their quarantine nest will be discarded to prevent sickness from lingering. ",
+        "quarantine_info": "Click on a cat below to quarantine them. While quarantined, their condition will not spread through the Clan, though the medicine cats caring for them will still be vulnerable. Cats will only leave quarantine when they recover or die.<br><br>After the cat leaves quarantine, their quarantine nest will be discarded to prevent sickness from lingering. ",
         "build_nest": "build nest",
         "nest_count": {
             "zero": "%{count} nests built. A nest must be built before a cat can be quarantined.",

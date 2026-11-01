@@ -253,8 +253,8 @@ class MedDenScreen(Screens):
         )
 
         self.elements["potential_cat_frame"] = UIModifiedImage(
-            ui_scale(pygame.Rect((10, 0), (295, 200))),
-            get_box(BoxStyles.NAMEPLATE, (295, 200)),
+            ui_scale(pygame.Rect((10, 0), (295, 170))),
+            get_box(BoxStyles.NAMEPLATE, (295, 170)),
             manager=MANAGER,
             container=self.elements["quarantine_view_container"],
         )
@@ -262,7 +262,7 @@ class MedDenScreen(Screens):
         # INFO
         self.elements["quarantine_info"] = pygame_gui.elements.UITextBox(
             "screens.med_den.quarantine_info",
-            ui_scale(pygame.Rect((0, 200), (315, 120))),
+            ui_scale(pygame.Rect((0, 180), (315, 140))),
             object_id=get_text_box_theme("#text_box_22_horizcenter"),
             manager=MANAGER,
             container=self.elements["quarantine_view_container"],
@@ -414,7 +414,7 @@ class MedDenScreen(Screens):
             self.elements["potential_quarantine_cat_image"].kill()
 
         self.elements["potential_quarantine_cat_image"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((15, 25), (150, 150))),
+            ui_scale(pygame.Rect((15, 5), (150, 150))),
             pygame.transform.scale(cat.sprite, ui_scale_dimensions((150, 150))),
             container=self.elements["quarantine_view_container"],
         )
@@ -423,7 +423,7 @@ class MedDenScreen(Screens):
             self.elements[
                 "potential_quarantine_cat_name"
             ] = pygame_gui.elements.ui_label.UILabel(
-                ui_scale(pygame.Rect((0, 60), (140, 30))),
+                ui_scale(pygame.Rect((0, 40), (140, 30))),
                 shorten_text_to_fit(str(cat.name), 120, 15),
                 object_id="#text_box_30_horizcenter",
                 manager=MANAGER,
