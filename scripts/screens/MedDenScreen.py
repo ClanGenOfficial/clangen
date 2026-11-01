@@ -330,7 +330,9 @@ class MedDenScreen(Screens):
                 i += 1
 
         if self.elements.get("quarantine_cat_list"):
-            self.remove_from_map(self.elements["cat_list"].cat_sprites.values())
+            self.remove_from_map(
+                self.elements["quarantine_cat_list"].cat_sprites.values()
+            )
             self.elements["quarantine_cat_list"].kill()
 
         self.elements["quarantine_cat_list"] = UICatListDisplay(
@@ -349,7 +351,7 @@ class MedDenScreen(Screens):
             starting_height=1,
             container=self.elements["quarantine_view_container"],
         )
-        self.add_to_map(self.elements["cat_list"].cat_sprites.values())
+        self.add_to_map(self.elements["quarantine_cat_list"].cat_sprites.values())
 
     def update_potential_quarantine_display(self, cat: Cat):
         if self.elements.get("potential_quarantine_cat_image"):
@@ -868,6 +870,9 @@ class MedDenScreen(Screens):
         for ele in self.elements.values():
             ele.kill()
         self.elements = {}
+        for ele in self.nest_images.values():
+            ele.kill()
+        self.nest_images = {}
         self.back_button.kill()
         if game.clan.game_mode != "classic":
             self.help_button.kill()

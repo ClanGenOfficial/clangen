@@ -139,6 +139,8 @@ class UICatListDisplay(UIContainer):
         for box in self.boxes:
             box.set_container(self)
             box.rebuild()
+            if self.visible:
+                box.show()
 
     def cache_clear(self):
         """
@@ -307,6 +309,7 @@ class UICatListDisplay(UIContainer):
             tool_tip_text=tooltip_text,
             starting_height=1,
             anchors={"centerx": "centerx"},
+            visible=self.visible,
         )
 
     def create_name(self, i, kitty, container):
