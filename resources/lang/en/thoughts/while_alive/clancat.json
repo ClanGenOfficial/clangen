@@ -2960,7 +2960,10 @@
             "Enjoys sparring with any Clanmate",
             "Hopes {PRONOUN/m_c/poss} Clanmates can count on {PRONOUN/m_c/object} in battle",
             "Thinks {PRONOUN/m_c/poss} belly-rake is one of the best in the Clan",
-            "Worries about future border scraps, despite {PRONOUN/m_c/poss} skill"
+            "Worries about future border scraps, despite {PRONOUN/m_c/poss} skill",
+            "Easily beat a Clanmate in a spar",
+            "Is itching for a spar",
+            "Is flexing {PRONOUN/m_c/poss} claws"
         ],
         "involved_cats": {
             "m_c": {
@@ -2983,7 +2986,8 @@
             "Estimates how long it would take {PRONOUN/m_c/object} to run from one border to the other",
             "Gets up early to run across the territory before the sun is up",
             "Offers to pass a message to a Clanmate",
-            "Nearly bowled over a Clanmate"
+            "Nearly bowled over a Clanmate",
+            "Never walks, only runs"
         ],
         "involved_cats": {
             "m_c": {
@@ -3018,7 +3022,8 @@
             "Patrols the rivers",
             "Accidentially startled a patrol by jumping out of the river",
             "Left camp to swim",
-            "Lays in the center of camp when it rains"
+            "Lays in the center of camp when it rains",
+            "Is loafing in a rain puddle"
         ],
         "involved_cats": {
             "m_c": {
@@ -3232,13 +3237,15 @@
         "event_id": "sense_skill_gen",
         "strings": [
             "Practices navigating the camp without one of {PRONOUN/m_c/poss} senses",
-            "Volunteers to guard the camp, knowing {PRONOUN/m_c/subject}'ll sense any threats",
             "Savors {PRONOUN/m_c/poss} prey more then any of {PRONOUN/m_c/poss} Clanmates",
             "Smells crowfood somewhere in the fresh-kill pile",
             "Knows more about {PRONOUN/m_c/poss} Clanmates medical troubles then {PRONOUN/m_c/subject} would like to",
             "Knows all the Clan gossip against {PRONOUN/m_c/poss} will",
             "Hears a predator somewhere in the territory",
-            "Is annoyed by how loud r_c is breathing from across the clearing"
+            "Is annoyed by how loud r_c is breathing from across the clearing",
+            "Leaves camp, overwhelmed by the sounds and smells of other cats",
+            "Finds the sounds and smells of all {PRONOUN/m_c/poss} Clanmates overwhelming",
+            "Overheard a Clanmates secret on accident"
         ],
         "involved_cats": {
             "m_c": {
@@ -3253,7 +3260,15 @@
     {
         "event_id": "sense3_skill_gen",
         "strings": [
-            "Leaves camp, overwhelmed by the sounds and smells of other cats"
+            "Pinpointed exactly where a Clanmate was using nothing but {PRONOUN/m_c/poss} heightened senses",
+            "Can tell which Clanmate is approaching without even seeing them",
+            "Is narrowing {PRONOUN/m_c/poss} senses on something, tuning everything else out",
+            "Overheard a Clanmate talking about {PRONOUN/m_c/object} in hushed tones from across the Camp",
+            "Notices that Clanmates don't like saying certain things when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} around",
+            "Volunteers to guard the camp, knowing {PRONOUN/m_c/subject}'ll sense any threats",
+            "Heard a Clanmate catch some prey all the way from Camp",
+            "Is testing how far {PRONOUN/m_c/poss} senses can notice things"
+            
         ],
         "involved_cats": {
             "m_c": {
@@ -3349,7 +3364,9 @@
             "Recalls a shameful piece of c_n history",
             "Recalls an inspiring piece of c_n history",
             "Tries to bring back an old c_n tradition",
-            "Knows the entire history of c_n"
+            "Knows the entire history of c_n",
+            "Is sharing old c_n lore with a Clanmate",
+            "Worries that the history of c_n will vanish once {PRONOUN/m_c/subject} {VERB/m_c/die/dies}"
         ],
         "involved_cats": {
             "m_c": {
@@ -3623,7 +3640,8 @@
             "Is warning a Clanmate about an omen",
             "Is keeping an omen to {PRONOUN/m_c/self} as not to scare {PRONOUN/m_c/poss} Clanmates",
             "Was able to predict the weather",
-            "Hopes to use {PRONOUN/m_c/poss} gift to help the Clan"
+            "Hopes to use {PRONOUN/m_c/poss} gift to help the Clan",
+            "Is dwelling on an omen..."
         ],
         "involved_cats": {
             "m_c": {
@@ -3671,7 +3689,9 @@
             "Dreamed of being surrounded by herbs",
             "Dreamed of a Clanmate",
             "Dreamed of being a Clanmate",
-            "Sleeps outside of camp to avoid {PRONOUN/m_c/poss} Clanmates' dreams"
+            "Sleeps outside of camp to avoid {PRONOUN/m_c/poss} Clanmates' dreams",
+            "Dreamed about something {PRONOUN/m_c/subject}'d never usually dream of",
+            "Dreamed of a life {PRONOUN/m_c/subject} {VERB/m_c/know/knows} nothing about"
         ],
         "involved_cats": {
             "m_c": {
@@ -3691,7 +3711,8 @@
             "Realizes something about r_c when {PRONOUN/m_c/subject} {VERB/m_c/walk/walks} in {PRONOUN/r_c/poss} dream",
             "Wonders why r_c's dreams are full of dream_list",
             "Wakes {PRONOUN/m_c/self} up after intruding on r_c's embarrassing dream",
-            "Tried to enter r_c's dream and actually succeeded"
+            "Tried to enter r_c's dream and actually succeeded",
+            "Learned r_c's deepest secret after wandering into {PRONOUN/r_c/poss} dream"
         ],
         "involved_cats": {
             "m_c": {
@@ -3713,7 +3734,11 @@
         "strings": [
             "Rushes across Camp to stop something {PRONOUN/m_c/subject} saw",
             "Is having a vision of r_c",
-            "Is clearly trying to get something to happen but refuses to explain what"
+            "Is clearly trying to get something to happen but refuses to explain what",
+            "Is busy recieving a vision",
+            "Is dwelling on a vision {PRONOUN/m_c/subject} saw",
+            "Is telling r_c about a vision {PRONOUN/r_c/subject} {VERB/r_c/was/were} in",
+            "Can't make any sense of a vision {PRONOUN/m_c/subject} saw"
         ],
         "involved_cats": {
             "m_c": {
@@ -3735,7 +3760,8 @@
         "strings": [
             "Refuses to go on a patrol for some reason",
             "Already knows which patrol {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} on today",
-            "Anticipates the best hunting ground for today's patrol"
+            "Anticipates the best hunting ground for today's patrol",
+            "Uses {PRONOUN/m_c/poss} skill to see how a patrol will go before setting out"
         ],
         "involved_cats": {
             "m_c": {
@@ -3760,7 +3786,9 @@
         "strings": [
             "Wonders what StarClan is trying to tell {PRONOUN/m_c/object}",
             "Trusts in what StarClan tries to tell {PRONOUN/m_c/object}",
-            "Wished StarClan could just say what they mean rather then giving {PRONOUN/m_c/object} all these riddles"
+            "Wished StarClan could just say what they mean rather then giving {PRONOUN/m_c/object} all these riddles",
+            "Is dweling on a prophecy",
+            "Can't tell if something is a prophecy or not..."
         ],
         "involved_cats": {
             "m_c": {
@@ -3781,7 +3809,9 @@
         "event_id": "ghost_skill_gen",
         "strings": [
             "Notes a cold spot in camp",
-            "Thought {PRONOUN/m_c/subject} saw a haze hovering around the corner of camp"
+            "Thought {PRONOUN/m_c/subject} saw a haze hovering around the corner of camp",
+            "Is telling a ghost story",
+            "Admits to believing in ghosts, not just StarClan"
         ],
         "involved_cats": {
             "m_c": {
