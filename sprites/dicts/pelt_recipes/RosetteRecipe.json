@@ -1,7 +1,12 @@
 {
     "name": "RosetteRecipe",
-    "layer_order": ["1", "2", "3", "4", "5", ["6", "7"]],
+    "layer_order": ["1", "2", "3", ["4", "5", ["6", "7"], "8"]],
     "layers": {
+        "8": {
+            "group_name": "ROSETTEPATTERN",
+            "color": "pattern_tint",
+            "blend_mode": "pattern_blend"
+        },
         "7":{
             "group_name": "ROSETTEPATTERN",
             "blend_mode": "mask"
@@ -73,7 +78,7 @@
         },
         {
             "colors": "BLOSSOM",
-            "layer_order": ["1", "2", "3", "4", "5", "6", ["6", "8", "9", "10"]],
+            "layer_order": ["1", "2", "3", ["4", "5", "6", ["6", "7.1", "9", "10"], "8"]],
             "layers": {
                 "10": {
                     "group_name": "ROSETTEPATTERN",
@@ -83,7 +88,7 @@
                     "group_name": "BACKTAILPATTERNGRAD",
                     "color": "pattern_gradient_top"
                 },
-                "8": {
+                "7.1": {
                     "group_name": "LEGBOTTOMGRAD",
                     "color": "pattern_gradient_bottom"
                 },
@@ -115,7 +120,7 @@
         },
         {
             "colors": "RUST",
-            "layer_order": ["1", "2", "3", "4", "5", ["6", "7"]],
+            "layer_order": ["1", "2", "3", ["4", "5", ["6", "7"], "8"]],
             "layers": {
                 "6":{
                     "group_name": "BACKTAILPATTERNGRAD",

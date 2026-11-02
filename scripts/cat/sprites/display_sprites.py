@@ -508,7 +508,7 @@ def _build_layers(
                 cat, subLayer, layer_dict, colour, sprite
             )
             blit_with_opacity(
-                layer_surface, temp, opacity, special_flags=_get_blend_flags(blend_mode)
+                layer_surface, temp, opacity, special_flags=_get_blend_flags(cat, blend_mode)
             )
 
         return (layer_surface, group_blendmode, group_opacity)
@@ -546,7 +546,15 @@ def _build_single_layer(
 
     palette_dict = sprites.PELT_COLOR_PALETTES[colour]
     if recolour:
-        new_colour = palette_dict[recolour]
+        if recolour == "pattern_tint":
+            if cat.pelt.pattern_tint is not None and cat.pelt.pattern_tint in sprites.pattern_tints["tint_colours"]:
+                new_colour = tuple(sprites.pattern_tints["tint_colours"][cat.pelt.pattern_tint])
+            elif cat.pelt.pattern_tint is not None and cat.pelt.pattern_tint in sprites.pattern_tints["dilute_tint_colours"]:
+                new_colour = tuple(sprites.pattern_tints["dilute_tint_colours"][cat.pelt.pattern_tint])
+            else:
+                new_colour = "#FFFFFF" #If the cat has no tint, the blend mode for the tint defaults to multiply. White does not show up in a multiply blend mode.
+        else:
+            new_colour = palette_dict[recolour]
         recolour_surface = layer_surface = pygame.Surface(
             (sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA
         )
@@ -577,13 +585,21 @@ def blit_with_opacity(
     target.blit(temp, special_flags=special_flags)
 
 
-def _get_blend_flags(mode: str):
+def _get_blend_flags(cat, mode: str):
     """Translate the blend_mode string, as used in the pelt recipes, to the pygame blend flag."""
+
+    if cat.pelt.pattern_tint in sprites.pattern_tints["tint_colours"]:
+        pattern_blend = pygame.BLEND_RGB_MULT
+    elif cat.pelt.pattern_tint in sprites.pattern_tints["dilute_tint_colours"]:
+        pattern_blend = pygame.BLEND_RGB_ADD
+    else:
+        pattern_blend = pygame.BLEND_RGB_MULT
 
     blend_modes = {
         "mask": pygame.BLEND_RGBA_MULT,
         "multiply": pygame.BLEND_RGB_MULT,
         "normal": 0,
+        "pattern_blend": pattern_blend,
     }
 
     return blend_modes.get(mode, 0)

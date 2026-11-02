@@ -1,12 +1,17 @@
 {
     "name": "MaskedRecipe",
-    "layer_order": ["1", "2", "3", "4", ["5", "6"], "7"],
+    "layer_order": ["1", "2", "3", ["4", ["5", "6"], "6.1"], "7"],
     "layers": {
         "7": {
             "group_name": "MASKEDPATTERNLIGHT",
             "color": "masked_light_pattern"
         },
         
+        "6.1":{
+            "group_name": "MACKERELPATTERN",
+            "color": "pattern_tint",
+            "blend_mode": "pattern_blend"
+        },
         "6": {
             "group_name": "MASKEDPATTERN",
             "blend_mode":"mask"
@@ -36,7 +41,7 @@
     "exceptions": [
         {
             "colors": "GHOST",
-            "layer_order": ["1", "2", "3", "4", ["5", "6"], "7", "8"],
+            "layer_order": ["1", "2", "3", ["4", ["5", "6"], "6.1"], "7", "8"],
             "layers":
             {
                 "8":
@@ -79,7 +84,7 @@
         },
         {
             "colors": "BLOSSOM",
-            "layer_order": ["1", "2", "3", "4", "5", ["5", "7", "8", "9"], "10"],
+            "layer_order": ["1", "2", "3", ["4", "5", ["5", "7", "8", "9"], "6.1"], "10"],
             "layers": {
                 "10":
                 {
@@ -129,7 +134,7 @@
     },
         {
             "colors": "RUST",
-            "layer_order": ["1", "2", "3", "4", ["5", "6"], "7", "8", "9"],
+            "layer_order": ["1", "2", "3", ["4", ["5", "6"], "6.1"], "7", "8", "9"],
             "layers": {
                 "9":
                 {

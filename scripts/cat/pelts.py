@@ -247,6 +247,7 @@ class Pelt:
         opacity: int = 100,
         scars: list = None,
         tint: str | None = None,
+        pattern_tint: str | None = None,
         skin: str = "BLACK",
         white_patches_tint: str | None = None,
         newborn_sprite: str = None,
@@ -282,6 +283,7 @@ class Pelt:
         )
         self.tint = tint
         self.white_patches_tint = white_patches_tint
+        self.pattern_tint = pattern_tint
         self.screen_scale = scripts.game_structure.screen_settings.screen_scale
 
         # converting old pose numbers into names
@@ -468,7 +470,7 @@ class Pelt:
         new_pelt.init_accessories(age)
         new_pelt.init_eyes(parents)
         new_pelt.init_pattern()
-        new_pelt.init_tint()
+        new_pelt.init_tint() 
 
         return new_pelt
 
@@ -1248,6 +1250,22 @@ class Pelt:
                 self.white_patches_tint = None
         else:
             self.white_patches_tint = None
+
+        # PATTERN TINT
+        if self.name not in ("TwoColour", "SingleColour"):
+            base_tints = sprites.pattern_tints["possible_tints"]["basic"]
+            if self.colour in sprites.pattern_tints["colour_groups"]:
+                color_group = sprites.pattern_tints["colour_groups"].get(self.colour, "warm")
+                color_tints = sprites.pattern_tints["possible_tints"][color_group]
+            else:
+                color_tints = []
+
+            if base_tints or color_tints:
+                self.pattern_tint = choice(base_tints + color_tints)
+            else:
+                self.pattern_tint = None
+        else:
+            self.pattern_tint = None
 
     @property
     def white(self):

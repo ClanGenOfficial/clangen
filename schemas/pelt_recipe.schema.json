@@ -42,7 +42,8 @@
           "enum": [
             "normal",
             "multiply",
-            "mask"
+            "mask",
+            "pattern_blend"
           ],
           "title": "Blend Mode",
           "type": "string"
