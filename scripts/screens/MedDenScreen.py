@@ -69,6 +69,7 @@ class MedDenScreen(Screens):
 
         self.open_view: Literal["supply", "quarantine"] = "supply"
 
+    # EVENT HANDLING
     def handle_event(self, event):
         super().handle_event(event)
 
@@ -166,6 +167,7 @@ class MedDenScreen(Screens):
                 self.current_quarantine_page -= 1
                 self.update_nest_display()
 
+    # SWITCH AND EXIT
     def screen_switches(self):
         super().screen_switches()
         self.show_mute_buttons()
@@ -233,6 +235,24 @@ class MedDenScreen(Screens):
 
         self.current_focus = self.back_button
 
+    def exit_screen(self):
+        for herb in self.den_image:
+            self.den_image[herb].kill()
+        self.den_image = {}
+        for ele in self.elements.values():
+            ele.kill()
+        self.elements = {}
+        for ele in self.nest_images.values():
+            ele.kill()
+        self.nest_images = {}
+        self.back_button.kill()
+        if game.clan.game_mode != "classic":
+            self.help_button.kill()
+
+        self.condition_cats.clear()
+        self.med_messages.clear()
+
+    # SUPPLY VIEW
     def create_supply_view(self):
         # container for supply view, this will let us hide and show easily
         self.elements["supply_view_container"] = UIContainer(
@@ -247,245 +267,6 @@ class MedDenScreen(Screens):
         self.draw_med_den()
         self.update_med_cat()
         self.add_to_map([self.back_button])
-
-    def create_quarantine_view(self):
-        # container for quarantine view, this will let us hide and show easily
-        self.elements["quarantine_view_container"] = UIContainer(
-            ui_scale(pygame.Rect((50, 75), (700, 324))),
-            manager=MANAGER,
-        )
-
-        self.elements["potential_cat_frame"] = UIModifiedImage(
-            ui_scale(pygame.Rect((10, 0), (295, 170))),
-            get_box(BoxStyles.NAMEPLATE, (295, 170)),
-            manager=MANAGER,
-            container=self.elements["quarantine_view_container"],
-        )
-
-        # INFO
-        self.elements["quarantine_info"] = pygame_gui.elements.UITextBox(
-            "screens.med_den.quarantine_info",
-            ui_scale(pygame.Rect((0, 180), (315, 140))),
-            object_id=get_text_box_theme("#text_box_22_horizcenter"),
-            manager=MANAGER,
-            container=self.elements["quarantine_view_container"],
-        )
-
-        # NEST AMOUNT
-        self.elements["quarantine_nest_count"] = pygame_gui.elements.UITextBox(
-            "screens.med_den.nest_count",
-            ui_scale(pygame.Rect((330, 10), (350, 120))),
-            text_kwargs={"count": get_current_nest_count()},
-            object_id=get_text_box_theme("#text_box_22_horizcenter"),
-            manager=MANAGER,
-            container=self.elements["quarantine_view_container"],
-        )
-        # NEST FRAME
-        self.elements["quarantine_nest_frame"] = UIModifiedImage(
-            ui_scale(pygame.Rect((330, 0), (350, 300))),
-            get_box(BoxStyles.FRAME, (350, 300)),
-            manager=MANAGER,
-            container=self.elements["quarantine_view_container"],
-        )
-        self.elements["quarantine_nest_frame"].disable()
-
-        # ARROWS
-        self.elements["prior_nest_page_arrow"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((313, 133), (34, 34))),
-            Icon.ARROW_LEFT,
-            get_button_dict(ButtonStyles.ICON, (34, 34)),
-            object_id="@buttonstyles_icon",
-            container=self.elements["quarantine_view_container"],
-        )
-        self.elements["next_nest_page_arrow"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((663, 133), (34, 34))),
-            Icon.ARROW_RIGHT,
-            get_button_dict(ButtonStyles.ICON, (34, 34)),
-            object_id="@buttonstyles_icon",
-            manager=MANAGER,
-            container=self.elements["quarantine_view_container"],
-        )
-        self.elements["build_nest"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((445, 278), (120, 30))),
-            "screens.med_den.build_nest",
-            get_button_dict(ButtonStyles.SQUOVAL, (120, 30)),
-            object_id="@buttonstyles_squoval",
-            container=self.elements["quarantine_view_container"],
-        )
-
-        self.update_nest_display()
-
-    def update_nest_display(self):
-        """
-        Displays the nests and the quarantined cats
-        """
-        for ele in self.nest_images.values():
-            ele.kill()
-        if self.elements.get("quarantine_cat_list"):
-            self.remove_from_map(
-                self.elements["quarantine_cat_list"].cat_sprites.values()
-            )
-            self.elements["quarantine_cat_list"].kill()
-
-        self.elements["quarantine_nest_count"].set_text(
-            "screens.med_den.nest_count",
-            text_kwargs={"count": get_current_nest_count()},
-        )
-
-        nest_sprite = Sprites.get_platform(
-            biome=game.clan.biome,
-            season=game.clan.current_season,
-            show_nest=True,
-            group=CatGroup.PLAYER_CLAN,
-        )
-
-        if get_current_nest_count():
-            nest_chunks = self.get_list_chunks(list(get_nests_expirations()), 9)
-
-            current_chunk = nest_chunks[self.current_quarantine_page - 1]
-
-            # I apologize for my sins
-            row_gap = 86
-            column_gap = 103
-            i = 0
-            for row in range(3):
-                if i >= len(current_chunk):
-                    break
-                for column in range(3):
-                    if i >= len(current_chunk):
-                        break
-                    self.nest_images[f"nest{i}"] = pygame_gui.elements.UIImage(
-                        ui_scale(
-                            pygame.Rect(
-                                (361 + (column_gap * column), 35 + (row_gap * row)),
-                                (80, 70),
-                            )
-                        ),
-                        pygame.transform.scale(
-                            nest_sprite,
-                            ui_scale_dimensions((80, 70)),
-                        ),
-                        manager=MANAGER,
-                        container=self.elements["quarantine_view_container"],
-                    )
-                    self.nest_images[f"nest{i}"].set_tooltip(
-                        i18n.t("screens.med_den.expires_in", count=current_chunk[i])
-                    )
-                    self.nest_images[f"nest{i}"].tool_tip_delay = 0
-                    i += 1
-
-            # this is a really weird thing to have to do for the cat list display
-            # but, it's necessary since we're doing weird stuff by displaying the nests separate from the cats
-            # while also having the arrows control both the nest display and the cat display at once
-
-            cat_chunks = self.get_list_chunks(
-                [Cat.fetch_cat(c) for c in game.clan.quarantined_cats], 9
-            )
-            if self.current_quarantine_page <= len(cat_chunks):
-                current_cat_chunk = cat_chunks[self.current_quarantine_page - 1]
-
-                self.elements["quarantine_cat_list"] = UICatListDisplay(
-                    ui_scale(pygame.Rect((350, 20), (310, 260))),
-                    manager=MANAGER,
-                    cat_list=current_cat_chunk,
-                    cats_displayed=9,
-                    x_px_between=ui_scale_value(5),
-                    y_px_between=ui_scale_value(5),
-                    columns=3,
-                    rows=3,
-                    tool_tip_name=True,
-                    current_page=self.current_quarantine_page,
-                    next_button=self.elements["next_nest_page_arrow"],
-                    prev_button=self.elements["prior_nest_page_arrow"],
-                    starting_height=1,
-                    container=self.elements["quarantine_view_container"],
-                )
-                self.add_to_map(
-                    self.elements["quarantine_cat_list"].cat_sprites.values()
-                )
-                for i, cat in enumerate(current_cat_chunk):
-                    self.nest_images[f"nest{i}"].tool_tip_text = None
-
-            if self.current_quarantine_page == 1:
-                self.elements["prior_nest_page_arrow"].disable()
-            if self.current_quarantine_page == len(nest_chunks):
-                self.elements["next_nest_page_arrow"].disable()
-            if self.current_quarantine_page > 1 and len(nest_chunks) > 1:
-                self.elements["prior_nest_page_arrow"].enable()
-            if self.current_quarantine_page < len(nest_chunks):
-                self.elements["next_nest_page_arrow"].enable()
-        else:
-            self.elements["prior_nest_page_arrow"].disable()
-            self.elements["next_nest_page_arrow"].disable()
-
-    def update_potential_quarantine_display(self, cat: Cat):
-        if self.elements.get("potential_quarantine_cat_image"):
-            self.elements["potential_quarantine_cat_image"].kill()
-
-        self.elements["potential_quarantine_cat_image"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((15, 5), (150, 150))),
-            pygame.transform.scale(cat.sprite, ui_scale_dimensions((150, 150))),
-            container=self.elements["quarantine_view_container"],
-        )
-
-        if not self.elements.get("potential_quarantine_cat_name"):
-            self.elements[
-                "potential_quarantine_cat_name"
-            ] = pygame_gui.elements.ui_label.UILabel(
-                ui_scale(pygame.Rect((0, 40), (140, 30))),
-                shorten_text_to_fit(str(cat.name), 120, 15),
-                object_id="#text_box_30_horizcenter",
-                manager=MANAGER,
-                anchors={
-                    "left_target": self.elements["potential_quarantine_cat_image"]
-                },
-                container=self.elements["quarantine_view_container"],
-            )
-        else:
-            self.elements["potential_quarantine_cat_name"].set_text(
-                shorten_text_to_fit(str(cat.name), 130, 15)
-            )
-
-        conditions = adjust_list_text(
-            [
-                i18n.t(f"conditions.temporary_conditions.{c.name}")
-                for c in cat.temporary_conditions
-                if c.infectiousness
-            ]
-        )
-        full_infectiousness = 0
-        for c in cat.temporary_conditions:
-            full_infectiousness += c.infectiousness
-
-        if cat.ID in game.clan.quarantined_cats:
-            infection_level = "quarantined"
-        elif full_infectiousness > 0.7:
-            infection_level = "highly_infectious"
-        elif full_infectiousness > 0.4:
-            infection_level = "very_infectious"
-        else:
-            infection_level = "somewhat_infectious"
-
-        infection_level = i18n.t(f"screens.med_den.{infection_level}")
-
-        if not self.elements.get("potential_quarantine_cat_info"):
-            self.elements[
-                "potential_quarantine_cat_info"
-            ] = pygame_gui.elements.UITextBox(
-                "<br>".join([conditions, infection_level]),
-                ui_scale(pygame.Rect((0, 0), (140, 45))),
-                object_id="#text_box_22_horizcenter",
-                manager=MANAGER,
-                anchors={
-                    "top_target": self.elements["potential_quarantine_cat_name"],
-                    "left_target": self.elements["potential_quarantine_cat_image"],
-                },
-                container=self.elements["quarantine_view_container"],
-            )
-        else:
-            self.elements["potential_quarantine_cat_info"].set_text(
-                "<br>".join([conditions, infection_level])
-            )
 
     def draw_med_den(self):
         herb_list = []
@@ -751,6 +532,247 @@ class MedDenScreen(Screens):
             f"{self.coverage_message}<br>{self.med_messages[displayed_med_cat.ID]}"
         )
 
+    # QUARANTINE VIEW
+    def create_quarantine_view(self):
+        # container for quarantine view, this will let us hide and show easily
+        self.elements["quarantine_view_container"] = UIContainer(
+            ui_scale(pygame.Rect((50, 75), (700, 324))),
+            manager=MANAGER,
+        )
+
+        self.elements["potential_cat_frame"] = UIModifiedImage(
+            ui_scale(pygame.Rect((10, 0), (295, 170))),
+            get_box(BoxStyles.NAMEPLATE, (295, 170)),
+            manager=MANAGER,
+            container=self.elements["quarantine_view_container"],
+        )
+
+        # INFO
+        self.elements["quarantine_info"] = pygame_gui.elements.UITextBox(
+            "screens.med_den.quarantine_info",
+            ui_scale(pygame.Rect((0, 180), (315, 140))),
+            object_id=get_text_box_theme("#text_box_22_horizcenter"),
+            manager=MANAGER,
+            container=self.elements["quarantine_view_container"],
+        )
+
+        # NEST AMOUNT
+        self.elements["quarantine_nest_count"] = pygame_gui.elements.UITextBox(
+            "screens.med_den.nest_count",
+            ui_scale(pygame.Rect((330, 10), (350, 120))),
+            text_kwargs={"count": get_current_nest_count()},
+            object_id=get_text_box_theme("#text_box_22_horizcenter"),
+            manager=MANAGER,
+            container=self.elements["quarantine_view_container"],
+        )
+        # NEST FRAME
+        self.elements["quarantine_nest_frame"] = UIModifiedImage(
+            ui_scale(pygame.Rect((330, 0), (350, 300))),
+            get_box(BoxStyles.FRAME, (350, 300)),
+            manager=MANAGER,
+            container=self.elements["quarantine_view_container"],
+        )
+        self.elements["quarantine_nest_frame"].disable()
+
+        # ARROWS
+        self.elements["prior_nest_page_arrow"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((313, 133), (34, 34))),
+            Icon.ARROW_LEFT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
+            container=self.elements["quarantine_view_container"],
+        )
+        self.elements["next_nest_page_arrow"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((663, 133), (34, 34))),
+            Icon.ARROW_RIGHT,
+            get_button_dict(ButtonStyles.ICON, (34, 34)),
+            object_id="@buttonstyles_icon",
+            manager=MANAGER,
+            container=self.elements["quarantine_view_container"],
+        )
+        self.elements["build_nest"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((445, 278), (120, 30))),
+            "screens.med_den.build_nest",
+            get_button_dict(ButtonStyles.SQUOVAL, (120, 30)),
+            object_id="@buttonstyles_squoval",
+            container=self.elements["quarantine_view_container"],
+        )
+
+        self.update_nest_display()
+
+    def update_nest_display(self):
+        """
+        Displays the nests and the quarantined cats
+        """
+        for ele in self.nest_images.values():
+            ele.kill()
+        if self.elements.get("quarantine_cat_list"):
+            self.remove_from_map(
+                self.elements["quarantine_cat_list"].cat_sprites.values()
+            )
+            self.elements["quarantine_cat_list"].kill()
+
+        self.elements["quarantine_nest_count"].set_text(
+            "screens.med_den.nest_count",
+            text_kwargs={"count": get_current_nest_count()},
+        )
+
+        nest_sprite = Sprites.get_platform(
+            biome=game.clan.biome,
+            season=game.clan.current_season,
+            show_nest=True,
+            group=CatGroup.PLAYER_CLAN,
+        )
+
+        if get_current_nest_count():
+            nest_chunks = self.get_list_chunks(list(get_nests_expirations()), 9)
+
+            current_chunk = nest_chunks[self.current_quarantine_page - 1]
+
+            # I apologize for my sins
+            row_gap = 86
+            column_gap = 103
+            i = 0
+            for row in range(3):
+                if i >= len(current_chunk):
+                    break
+                for column in range(3):
+                    if i >= len(current_chunk):
+                        break
+                    self.nest_images[f"nest{i}"] = pygame_gui.elements.UIImage(
+                        ui_scale(
+                            pygame.Rect(
+                                (361 + (column_gap * column), 35 + (row_gap * row)),
+                                (80, 70),
+                            )
+                        ),
+                        pygame.transform.scale(
+                            nest_sprite,
+                            ui_scale_dimensions((80, 70)),
+                        ),
+                        manager=MANAGER,
+                        container=self.elements["quarantine_view_container"],
+                    )
+                    self.nest_images[f"nest{i}"].set_tooltip(
+                        i18n.t("screens.med_den.expires_in", count=current_chunk[i])
+                    )
+                    self.nest_images[f"nest{i}"].tool_tip_delay = 0
+                    i += 1
+
+            # this is a really weird thing to have to do for the cat list display
+            # but, it's necessary since we're doing weird stuff by displaying the nests separate from the cats
+            # while also having the arrows control both the nest display and the cat display at once
+
+            cat_chunks = self.get_list_chunks(
+                [Cat.fetch_cat(c) for c in game.clan.quarantined_cats], 9
+            )
+            if self.current_quarantine_page <= len(cat_chunks):
+                current_cat_chunk = cat_chunks[self.current_quarantine_page - 1]
+
+                self.elements["quarantine_cat_list"] = UICatListDisplay(
+                    ui_scale(pygame.Rect((350, 20), (310, 260))),
+                    manager=MANAGER,
+                    cat_list=current_cat_chunk,
+                    cats_displayed=9,
+                    x_px_between=ui_scale_value(5),
+                    y_px_between=ui_scale_value(5),
+                    columns=3,
+                    rows=3,
+                    tool_tip_name=True,
+                    current_page=self.current_quarantine_page,
+                    next_button=self.elements["next_nest_page_arrow"],
+                    prev_button=self.elements["prior_nest_page_arrow"],
+                    starting_height=1,
+                    container=self.elements["quarantine_view_container"],
+                )
+                self.add_to_map(
+                    self.elements["quarantine_cat_list"].cat_sprites.values()
+                )
+                for i, cat in enumerate(current_cat_chunk):
+                    self.nest_images[f"nest{i}"].tool_tip_text = None
+
+            if self.current_quarantine_page == 1:
+                self.elements["prior_nest_page_arrow"].disable()
+            if self.current_quarantine_page == len(nest_chunks):
+                self.elements["next_nest_page_arrow"].disable()
+            if self.current_quarantine_page > 1 and len(nest_chunks) > 1:
+                self.elements["prior_nest_page_arrow"].enable()
+            if self.current_quarantine_page < len(nest_chunks):
+                self.elements["next_nest_page_arrow"].enable()
+        else:
+            self.elements["prior_nest_page_arrow"].disable()
+            self.elements["next_nest_page_arrow"].disable()
+
+    def update_potential_quarantine_display(self, cat: Cat):
+        if self.elements.get("potential_quarantine_cat_image"):
+            self.elements["potential_quarantine_cat_image"].kill()
+
+        self.elements["potential_quarantine_cat_image"] = pygame_gui.elements.UIImage(
+            ui_scale(pygame.Rect((15, 5), (150, 150))),
+            pygame.transform.scale(cat.sprite, ui_scale_dimensions((150, 150))),
+            container=self.elements["quarantine_view_container"],
+        )
+
+        if not self.elements.get("potential_quarantine_cat_name"):
+            self.elements[
+                "potential_quarantine_cat_name"
+            ] = pygame_gui.elements.ui_label.UILabel(
+                ui_scale(pygame.Rect((0, 40), (140, 30))),
+                shorten_text_to_fit(str(cat.name), 120, 15),
+                object_id="#text_box_30_horizcenter",
+                manager=MANAGER,
+                anchors={
+                    "left_target": self.elements["potential_quarantine_cat_image"]
+                },
+                container=self.elements["quarantine_view_container"],
+            )
+        else:
+            self.elements["potential_quarantine_cat_name"].set_text(
+                shorten_text_to_fit(str(cat.name), 130, 15)
+            )
+
+        conditions = adjust_list_text(
+            [
+                i18n.t(f"conditions.temporary_conditions.{c.name}")
+                for c in cat.temporary_conditions
+                if c.infectiousness
+            ]
+        )
+        full_infectiousness = 0
+        for c in cat.temporary_conditions:
+            full_infectiousness += c.infectiousness
+
+        if cat.ID in game.clan.quarantined_cats:
+            infection_level = "quarantined"
+        elif full_infectiousness > 0.7:
+            infection_level = "highly_infectious"
+        elif full_infectiousness > 0.4:
+            infection_level = "very_infectious"
+        else:
+            infection_level = "somewhat_infectious"
+
+        infection_level = i18n.t(f"screens.med_den.{infection_level}")
+
+        if not self.elements.get("potential_quarantine_cat_info"):
+            self.elements[
+                "potential_quarantine_cat_info"
+            ] = pygame_gui.elements.UITextBox(
+                "<br>".join([conditions, infection_level]),
+                ui_scale(pygame.Rect((0, 0), (140, 45))),
+                object_id="#text_box_22_horizcenter",
+                manager=MANAGER,
+                anchors={
+                    "top_target": self.elements["potential_quarantine_cat_name"],
+                    "left_target": self.elements["potential_quarantine_cat_image"],
+                },
+                container=self.elements["quarantine_view_container"],
+            )
+        else:
+            self.elements["potential_quarantine_cat_info"].set_text(
+                "<br>".join([conditions, infection_level])
+            )
+
+    # CAT DISPLAY
     def find_display_cats(self, only_show_infectious=False):
         self.condition_cats.clear()
         for cat in Cat.all_cats_list:
@@ -930,20 +952,3 @@ class MedDenScreen(Screens):
                 current_page=self.current_main_display_page
             )
             self.add_to_map(self.elements["cat_list"].cat_sprites.values())
-
-    def exit_screen(self):
-        for herb in self.den_image:
-            self.den_image[herb].kill()
-        self.den_image = {}
-        for ele in self.elements.values():
-            ele.kill()
-        self.elements = {}
-        for ele in self.nest_images.values():
-            ele.kill()
-        self.nest_images = {}
-        self.back_button.kill()
-        if game.clan.game_mode != "classic":
-            self.help_button.kill()
-
-        self.condition_cats.clear()
-        self.med_messages.clear()
