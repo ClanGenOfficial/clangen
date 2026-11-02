@@ -76,14 +76,19 @@ class MedDenScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             self.mute_button_pressed(event)
 
+            # BACK
             if event.ui_element == self.back_button:
                 self.change_screen(game.last_screen_forupdate)
+
+            # CAT DISPLAY ARROWS
             elif event.ui_element == self.elements["next_cat_page_arrow"]:
                 self.current_main_display_page += 1
                 self.update_tab_and_page()
             elif event.ui_element == self.elements["prior_cat_page_arrow"]:
                 self.current_main_display_page -= 1
                 self.update_tab_and_page()
+
+            # TAB ARROWS
             elif event.ui_element == self.elements["severe_tab"]:
                 self.tab_showing = "severe"
                 self.update_tab_and_page(changed_tab=True)
@@ -93,34 +98,25 @@ class MedDenScreen(Screens):
             elif event.ui_element == self.elements["minor_tab"]:
                 self.tab_showing = "minor"
                 self.update_tab_and_page(changed_tab=True)
+
+            # VIEW BUTTONS
+            # log
             elif event.ui_element == self.elements["open_log"]:
                 HerbManagementWindow(den_button=False)
+            # quarantine
             elif event.ui_element == self.elements["open_quarantine"]:
                 self.open_view = "quarantine"
                 if not self.elements.get("quarantine_view_container"):
                     self.create_quarantine_view()
-                else:
-                    self.elements["quarantine_view_container"].show()
-                self.elements["supply_view_container"].hide()
-                self.elements["open_quarantine"].disable()
-                self.elements["open_supply"].enable()
-                self.elements["hurt_sick_title"].set_text(
-                    "screens.med_den.infectious_cats_title"
-                )
-                self.find_display_cats(only_show_infectious=True)
-                self.update_tab_and_page(changed_tab=True)
+                self._update_view_state()
+            # supply
             elif event.ui_element == self.elements["open_supply"]:
                 self.open_view = "supply"
-                self.elements["supply_view_container"].show()
-                self.elements["quarantine_view_container"].hide()
-                self.elements["open_quarantine"].enable()
-                self.elements["open_supply"].disable()
-                self.elements["hurt_sick_title"].set_text(
-                    "screens.med_den.hurt_sick_title"
-                )
-                self.find_display_cats()
-                self.update_tab_and_page(changed_tab=True)
+                if not self.elements.get("supply_view_container"):
+                    self.create_supply_view()
+                self._update_view_state()
 
+        # VIEW EVENTS
         if self.open_view == "supply":
             self.handle_supply_event(event)
         elif self.open_view == "quarantine":
@@ -180,8 +176,11 @@ class MedDenScreen(Screens):
             manager=MANAGER,
         )
 
-        self.open_view = "supply"
-        self.create_supply_view()
+        # we start in supply view
+        if self.open_view == "supply":
+            self.create_supply_view()
+        elif self.open_view == "quarantine":
+            self.create_quarantine_view()
 
         if game.clan.game_mode != "classic":
             self.help_button = UIImageButton(
@@ -199,12 +198,11 @@ class MedDenScreen(Screens):
 
             # ADDITIONAL BUTTONS
             self.elements["open_log"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((25, 60), (140, 30))),
+                ui_scale(pygame.Rect((25, 460), (140, 30))),
                 "screens.med_den.log_title",
                 get_button_dict(ButtonStyles.SQUOVAL, (140, 30)),
                 object_id="@buttonstyles_squoval",
                 manager=MANAGER,
-                anchors={"top_target": self.elements["med_message"]},
             )
             self.elements["open_supply"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((25, 15), (140, 30))),
@@ -234,6 +232,7 @@ class MedDenScreen(Screens):
             )
 
         self.current_focus = self.back_button
+        self._update_view_state()
 
     def exit_screen(self):
         for herb in self.den_image:
@@ -949,6 +948,30 @@ class MedDenScreen(Screens):
         else:
             self.remove_from_map(self.elements["cat_list"].cat_sprites.values())
             self.elements["cat_list"].update_display(
-                current_page=self.current_main_display_page
+                current_page=self.current_main_display_page,
+                cat_list=self.condition_cats[self.tab_showing],
             )
             self.add_to_map(self.elements["cat_list"].cat_sprites.values())
+
+    # HELPERS
+    def _update_view_state(self):
+        for view in ("supply", "quarantine"):
+            if view == self.open_view:
+                self.elements[f"{view}_view_container"].show()
+                self.elements[f"open_{view}"].disable()
+            else:
+                if f"{view}_view_container" in self.elements:
+                    self.elements[f"{view}_view_container"].hide()
+
+                self.elements[f"open_{view}"].enable()
+
+        if self.open_view == "supply":
+            self.elements["hurt_sick_title"].set_text("screens.med_den.hurt_sick_title")
+            self.find_display_cats()
+            self.update_tab_and_page(changed_tab=True)
+        elif self.open_view == "quarantine":
+            self.elements["hurt_sick_title"].set_text(
+                "screens.med_den.infectious_cats_title"
+            )
+            self.find_display_cats(only_show_infectious=True)
+            self.update_tab_and_page(changed_tab=True)

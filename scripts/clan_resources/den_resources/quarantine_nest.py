@@ -12,7 +12,7 @@ def handle_moonskip():
 
 
 def _check_expiration():
-    expiration = get_config("clan_resources.herbs.quarantine_nest_expiration")
+    expiration = get_config("clan_resources.den.medicine.quarantine_nest_expiration")
     expired_entries = [
         moon_created
         for moon_created in game.clan.quarantine_nests
@@ -53,7 +53,7 @@ def get_nests_expirations():
     Returns expiration times for each created nest as a list. Each entry is the expiration for a single created nest.
     """
     entries = []
-    expiration = get_config("clan_resources.herbs.quarantine_nest_expiration")
+    expiration = get_config("clan_resources.den.medicine.quarantine_nest_expiration")
     for moon, amount in game.clan.quarantine_nests.items():
         date_created = _get_date_created(moon)
         expiration_date = date_created + expiration
@@ -75,7 +75,7 @@ def add_nest(building_cat_ID: str):
     )
 
     for herb, amount in get_config(
-        "clan_resources.herbs.quarantine_nest_recipe"
+        "clan_resources.den.medicine.quarantine_nest_recipe"
     ).items():
         game.clan.herb_supply.remove_herb(herb, amount)
 
