@@ -7,11 +7,17 @@ from scripts.game_structure.game.settings.settings import cat
 
 
 def handle_moonskip():
+    """
+    Takes care of any changes or checks that should occur upon moonskip
+    """
     _check_expiration()
     game.clan.current_nest_build_count.clear()
 
 
 def _check_expiration():
+    """
+    Checks if any nests have expired, and removes them if so
+    """
     expiration = get_config("clan_resources.den.medicine.quarantine_nest_expiration")
     expired_entries = [
         moon_created
@@ -41,6 +47,9 @@ def _check_expiration():
 
 
 def get_current_nest_count():
+    """
+    Returns the current total nests
+    """
     count = 0
     for entry in game.clan.quarantine_nests.values():
         count += entry
@@ -64,10 +73,17 @@ def get_nests_expirations():
 
 
 def _get_date_created(entry: str):
+    """
+    Returns the moon on which the nest entry created
+    """
     return int(entry.replace("moon_", ""))
 
 
 def add_nest(building_cat_ID: str):
+    """
+    Adds a nest to the current nest count
+    :param building_cat_ID: The ID of the cat who built the nest, used to update that cat's build limit tracker
+    """
     game.clan.quarantine_nests[f"moon_{game.clan.age}"] += 1
 
     game.clan.current_nest_build_count[building_cat_ID] = (
@@ -81,6 +97,10 @@ def add_nest(building_cat_ID: str):
 
 
 def remove_nest(occupying_cat: Cat = None):
+    """
+    Removes the oldest possible nest.
+    :param occupying_cat: The object for the cat who occupied the nest. Used for the log entry about nest removal.
+    """
     remove_entry = None
     for moon in game.clan.quarantine_nests:
         game.clan.quarantine_nests[moon] -= 1
