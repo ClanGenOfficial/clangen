@@ -3400,10 +3400,39 @@
             "Is assessing whether r_c's wound is concerning enough for medical care",
             "Is advising Clanmates to get their regular checkups at the medicine cat den",
             "Spends {PRONOUN/m_c/poss} free time in the medicine cat den",
-            "Understands herbs better then {PRONOUN/m_c/poss} Clanmates"
+            "Understands herbs better then {PRONOUN/m_c/poss} Clanmates",
+            "Wants nothing more then to protect {PRONOUN/m_c/poss} Clanmates",
+            "Wants nothing more then to keep {PRONOUN/m_c/poss} Clanmates healthy and happy"
         ],
         "involved_cats": {
             "m_c": {
+                "stat": {
+                    "skill": [
+                        "HEALER,1"
+                    ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "healer_skill_not_med_gen",
+        "strings": [
+            "Wonders if {PRONOUN/m_c/subject} should have become a medicine cat",
+            "Is helping out in the medicine cat den",
+            "Feels drawn to the medicine cat den",
+            "Spends more time in the medicine cat den then in {PRONOUN/m_c/poss} own"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-medicine cat",
+                    "-medicine cat apprentice"
+                ],
                 "stat": {
                     "skill": [
                         "HEALER,1"
@@ -3524,7 +3553,7 @@
             "Wonders why {PRONOUN/m_c/subject} {VERB/r_c/were/was} chosen by the Dark Forest",
             "Can't tell a single Clanmate about the Dark Forest",
             "Wonders how the Clan would look at {PRONOUN/m_c/object} if they knew of {PRONOUN/m_c/poss} Dark Forest connection...",
-            "Wonders if StarClan has abandoned {PRONOUN/m_c/object}",
+            "Wonders if StarClan looks down on {PRONOUN/m_c/object}",
             "Wonders if StarClan would even want {PRONOUN/m_c/object} with {PronOUN/m_c/poss} connections with the Dark Forest"
         ],
         "involved_cats": {
@@ -3682,9 +3711,9 @@
     {
         "event_id": "clairvoyant_gen",
         "strings": [
-            "Refuses to go on a patrol for some reason",
             "Rushes across Camp to stop something {PRONOUN/m_c/subject} saw",
-            "Is having a vision of r_c"
+            "Is having a vision of r_c",
+            "Is clearly trying to get something to happen but refuses to explain what"
         ],
         "involved_cats": {
             "m_c": {
@@ -3704,6 +3733,7 @@
     {
         "event_id": "clairvoyant_skill_working_gen",
         "strings": [
+            "Refuses to go on a patrol for some reason",
             "Already knows which patrol {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} on today",
             "Anticipates the best hunting ground for today's patrol"
         ],
@@ -3751,7 +3781,7 @@
         "event_id": "ghost_skill_gen",
         "strings": [
             "Notes a cold spot in camp",
-            "Thought {PRONOUN/m_c/subject} saw a haze hovering around the coner of camp"
+            "Thought {PRONOUN/m_c/subject} saw a haze hovering around the corner of camp"
         ],
         "involved_cats": {
             "m_c": {
@@ -3803,6 +3833,30 @@
                     "skill": [
                         "GHOST,3"
                     ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "ghost_prankster_gen",
+        "strings": [
+            "Is using {PRONOUN/m_c/poss} gift to prank a Clanmate"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "GHOST,2"
+                    ],
+                    "trait": [
+                        "childish",
+                        "cunning",
+                        "flamboyant",
+                        "playful",
+                        "shameless",
+                        "troublesome"
+                    ],
+                "must_have_both": true
                 }
             }
         }
