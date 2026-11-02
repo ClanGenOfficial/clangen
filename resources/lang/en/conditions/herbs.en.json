@@ -76,8 +76,8 @@
             "many": "mullein"
         },
         "rosemary": {
-            "one": "rosemary clump",
-            "many": "rosemary clumps"
+            "one": "rosemary sprig",
+            "many": "rosemary sprigs"
         },
         "burdock": {
             "one": "burdock root",
