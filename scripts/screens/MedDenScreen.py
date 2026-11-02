@@ -27,7 +27,7 @@ from scripts.events_module.text_adjust import (
     find_text_width,
     adjust_list_text,
 )
-from scripts.game_structure import game
+from scripts.game_structure import game, image_cache
 from scripts.game_structure.game import Switch
 from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.screen_settings import MANAGER
@@ -743,9 +743,9 @@ class MedDenScreen(Screens):
 
         if cat.ID in game.clan.quarantined_cats:
             infection_level = "quarantined"
-        elif full_infectiousness > 0.7:
+        elif full_infectiousness > 0.2:
             infection_level = "highly_infectious"
-        elif full_infectiousness > 0.4:
+        elif full_infectiousness > 0.1:
             infection_level = "very_infectious"
         else:
             infection_level = "somewhat_infectious"
@@ -773,7 +773,7 @@ class MedDenScreen(Screens):
 
     # CAT DISPLAY
     def find_display_cats(self, only_show_infectious=False):
-        self.condition_cats.clear()
+        self.condition_cats = {"severe": [], "major": [], "minor": []}
         for cat in Cat.all_cats_list:
             if not cat.status.alive_in_player_clan:
                 continue
@@ -851,6 +851,18 @@ class MedDenScreen(Screens):
             container=self.elements["cat_list_container"],
             anchors={"left_target": self.elements["major_tab"]},
         )
+        for tab in ("severe", "major", "minor"):
+            self.elements[f"alert_{tab}"] = pygame_gui.elements.UIImage(
+                ui_scale(pygame.Rect((5, 0), (4, 22))),
+                pygame.transform.scale(
+                    image_cache.load_image("resources/images/alert_mark.png"),
+                    ui_scale_dimensions((4, 22)),
+                ),
+                container=self.elements["cat_list_container"],
+                anchors={"left_target": self.elements[f"{tab}_tab"]},
+                manager=MANAGER,
+                visible=False,
+            )
 
         self.elements[f"{self.tab_showing}_tab"].disable()
 
@@ -952,6 +964,12 @@ class MedDenScreen(Screens):
                 cat_list=self.condition_cats[self.tab_showing],
             )
             self.add_to_map(self.elements["cat_list"].cat_sprites.values())
+
+        for tab, cats in self.condition_cats.items():
+            if cats:
+                self.elements[f"alert_{tab}"].show()
+            else:
+                self.elements[f"alert_{tab}"].hide()
 
     # HELPERS
     def _update_view_state(self):
