@@ -37,7 +37,9 @@ class BuildNestWindow(GameWindow):
         self.build_limits: dict[str, int] = defaultdict(int)
         self._determine_build_limits()
 
-        ingredient_list = get_config("clan_resources.herbs.quarantine_nest_recipe")
+        ingredient_list = get_config(
+            "clan_resources.den.medicine.quarantine_nest_recipe"
+        )
 
         recipe = adjust_list_text(
             [
@@ -53,7 +55,9 @@ class BuildNestWindow(GameWindow):
                 "recipe": recipe,
                 "moon_count": i18n.t(
                     "general.moons_age",
-                    count=get_config("clan_resources.herbs.quarantine_nest_expiration"),
+                    count=get_config(
+                        "clan_resources.den.medicine.quarantine_nest_expiration"
+                    ),
                 ),
             },
             object_id="#text_box_30_horizcenter",
@@ -260,7 +264,7 @@ class BuildNestWindow(GameWindow):
 
     @staticmethod
     def _ingredients_available():
-        recipe = get_config(f"clan_resources.herbs.quarantine_nest_recipe")
+        recipe = get_config(f"clan_resources.den.medicine.quarantine_nest_recipe")
         return all(
             game.clan.herb_supply.get_single_herb_total(herb) >= count
             for herb, count in recipe.items()
@@ -268,11 +272,16 @@ class BuildNestWindow(GameWindow):
 
     def _determine_build_limits(self):
         for c in self.meds:
-            self.build_limits[c.ID] = 1
+            self.build_limits[c.ID] = get_config(
+                "clan_resources.den.medicine.base_build_limit"
+            )
 
             # add tier level to limit
             skill_info = c.skills.get_all()
-            self.build_limits[c.ID] += skill_info.get(SkillPath.CAMP, 0)
+            for skill in get_config(
+                "clan_resources.den.medicine.build_limit_bonus_skills"
+            ):
+                self.build_limits[c.ID] += skill_info.get(SkillPath[skill], 0)
 
             exp_addition = round(c.experience * 0.01)
             self.build_limits[c.ID] += exp_addition
@@ -291,7 +300,9 @@ class BuildNestWindow(GameWindow):
                 self.elements["build_nest"].enable()
 
     def _set_available_ingredient_list(self):
-        ingredient_list = get_config("clan_resources.herbs.quarantine_nest_recipe")
+        ingredient_list = get_config(
+            "clan_resources.den.medicine.quarantine_nest_recipe"
+        )
 
         available_ingredients = {
             herb: game.clan.herb_supply.get_single_herb_total(herb)
