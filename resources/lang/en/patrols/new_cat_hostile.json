@@ -8568,7 +8568,7 @@
                 "exp_gained": 10,
                 "outcome_art": "cat_sprites/gen_burial_WrWrWrMcAp",
                 "strings": [
-                    "p_l growls and follows the spirit. It leads {PRONOUN/p_l/object} to a half-hidden cat corpse - it looks like somecat perished to the dangers of POI. The spirit paws at the ground, making it pretty obvious what it wants. p_l calls over the rest of the patrol. They all work together to get the body out of c_n territory and bury it, the spirit following behind them thw whole way. When it's done, the spirit touches its nose to his gratefully, and vanishes."
+                    "p_l growls and follows the spirit. It leads {PRONOUN/p_l/object} to a half-hidden cat corpse - it looks like somecat perished to the dangers of POI. The spirit paws at the ground, making it pretty obvious what it wants. p_l calls over the rest of the patrol. They all work together to get the body out of c_n territory and bury it, the spirit following behind them the whole way. When it's done, the spirit touches its nose to {PRONOUN/p_l/poss} gratefully, and vanishes."
                 ],
                 "reputation_changes": {
                     "outsider": 1
@@ -9309,7 +9309,7 @@
                 "exp_gained": 10,
                 "outcome_art": "cat_sprites/gen_burial_WrWrWrMcAp",
                 "strings": [
-                    "p_l growls and follows the spirit. It leads {PRONOUN/p_l/object} to a half-hidden cat corpse - it looks like somecat perished to the dangers of POI. The spirit paws at the ground, making it pretty obvious what it wants. p_l calls over the rest of the patrol. They all work together to get the body out of c_n territory and bury it, the spirit following behind them thw whole way. When it's done, the spirit touches its nose to his gratefully, and vanishes."
+                    "p_l growls and follows the spirit. It leads {PRONOUN/p_l/object} to a half-hidden cat corpse - it looks like somecat perished to the dangers of POI. The spirit paws at the ground, making it pretty obvious what it wants. p_l calls over the rest of the patrol. They all work together to get the body out of c_n territory and bury it, the spirit following behind them the whole way. When it's done, the spirit touches its nose to {PRONOUN/p_l/poss} gratefully, and vanishes."
                 ],
                 "reputation_changes": {
                     "outsider": 1

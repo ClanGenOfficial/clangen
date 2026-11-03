@@ -14182,7 +14182,7 @@
                 "exp_gained": 10,
                 "outcome_art": "cat_sprites/gen_burial_WrWrWrMcAp",
                 "strings": [
-                    "p_l sighs and follows the spirit. It leads {PRONOUN/p_l/object} to a half-hidden cat corpse - it looks like somecat perished to the dangers of POI. The spirit paws at the ground, making it pretty obvious what it wants. p_l calls over the rest of the patrol so they can give the body a proper burial and a vigil. When it's done, the spirit touches its nose to his gratefully, and vanishes."
+                    "p_l sighs and follows the spirit. It leads {PRONOUN/p_l/object} to a half-hidden cat corpse - it looks like somecat perished to the dangers of POI. The spirit paws at the ground, making it pretty obvious what it wants. p_l calls over the rest of the patrol so they can give the body a proper burial and a vigil. When it's done, the spirit touches its nose to {PRONOUN/p_l/poss} gratefully, and vanishes."
                 ],
                 "reputation_changes": {
                     "outsider": 1
@@ -14921,7 +14921,7 @@
                 "exp_gained": 10,
                 "outcome_art": "cat_sprites/gen_burial_WrWrWrMcAp",
                 "strings": [
-                    "p_l sighs and follows the spirit. It leads {PRONOUN/p_l/object} to a half-hidden cat corpse - it looks like somecat perished to the dangers of POI. The spirit paws at the ground, making it pretty obvious what it wants. p_l calls over the rest of the patrol so they can give the body a proper burial and a vigil. When it's done, the spirit touches its nose to his gratefully, and vanishes."
+                    "p_l sighs and follows the spirit. It leads {PRONOUN/p_l/object} to a half-hidden cat corpse - it looks like somecat perished to the dangers of POI. The spirit paws at the ground, making it pretty obvious what it wants. p_l calls over the rest of the patrol so they can give the body a proper burial and a vigil. When it's done, the spirit touches its nose to {PRONOUN/p_l/poss} gratefully, and vanishes."
                 ],
                 "reputation_changes": {
                     "outsider": 1
