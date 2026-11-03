@@ -15723,7 +15723,7 @@
         "event_id": "gen_hunt_groundpreypoi_solo",
         "types": ["hunting"],
         "frequency": 4,
-        "patrol_art": "cat_sprites/gen_hunt_funrun_WrWr",
+        "patrol_art": "cat_sprites/gen_hunt_funrun_Wr",
         "poi": {
             "tags": ["prey:ground"]
         },
