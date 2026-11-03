@@ -128,13 +128,13 @@ class MedDenScreen(Screens):
                 cat = event.ui_element.return_cat_object()
                 switch_set_value(Switch.cat, cat.ID)
                 self.change_screen(GameScreen.PROFILE)
-            elif event.ui_element == self.elements["next_med_arrow"]:
+            elif event.ui_element == self.elements.get("next_med_arrow"):
                 self.meds.rotate(-1)
                 self.update_med_cat()
-            elif event.ui_element == self.elements["prior_med_arrow"]:
+            elif event.ui_element == self.elements.get("prior_med_arrow"):
                 self.meds.rotate(1)
                 self.update_med_cat()
-            elif event.ui_element == self.elements["med_image"]:
+            elif event.ui_element == self.elements.get("med_image"):
                 cat = event.ui_element.return_cat_object()
                 switch_set_value(Switch.cat, cat.ID)
                 self.change_screen(GameScreen.PROFILE)
@@ -381,98 +381,101 @@ class MedDenScreen(Screens):
         """
         Updates the med cat display
         """
-        displayed_med_cat = self.meds[0]
+        displayed_med_cat = None
 
-        # create cat image
-        if self.elements.get("med_image"):
-            self.elements["med_image"].kill()
+        if self.meds:
+            displayed_med_cat = self.meds[0]
 
-        self.elements["med_image"] = UISpriteButton(
-            ui_scale(pygame.Rect((335, 65), (150, 150))),
-            displayed_med_cat.sprite,
-            cat_object=displayed_med_cat,
-            manager=MANAGER,
-            container=self.elements["supply_view_container"],
-        )
-        self.add_to_map([self.elements["med_image"]])
+            # create cat image
+            if self.elements.get("med_image"):
+                self.elements["med_image"].kill()
 
-        # display name
-        if not self.elements.get("med_name"):
-            self.elements["med_name"] = pygame_gui.elements.ui_label.UILabel(
-                ui_scale(pygame.Rect((-44, 55), (225, 30))),
-                shorten_text_to_fit(str(displayed_med_cat.name), 137, 15),
-                object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            self.elements["med_image"] = UISpriteButton(
+                ui_scale(pygame.Rect((335, 65), (150, 150))),
+                displayed_med_cat.sprite,
+                cat_object=displayed_med_cat,
                 manager=MANAGER,
-                anchors={"left_target": self.elements["med_image"]},
                 container=self.elements["supply_view_container"],
             )
-        else:
-            self.elements["med_name"].set_text(
-                shorten_text_to_fit(str(displayed_med_cat.name), 137, 15)
-            )
+            self.add_to_map([self.elements["med_image"]])
 
-        # display info
-        med_trait = i18n.t(f"cat.personality.{displayed_med_cat.personality.trait}")
-        med_skill = displayed_med_cat.skills.skill_string(short=True)
-        med_exp = i18n.t(
-            "general.exp_label", exp=displayed_med_cat.experience_level_string
-        )
-        work_status = (
-            i18n.t("general.can_work")
-            if displayed_med_cat.can_work()
-            else i18n.t("general.cant_work")
-        )
-        info_text = "<br>".join([med_trait, med_skill, med_exp, work_status])
-        if not self.elements.get("med_info"):
-            self.elements["med_info"] = pygame_gui.elements.UITextBox(
-                info_text,
-                ui_scale(pygame.Rect((0, 0), (140, 100))),
-                object_id=get_text_box_theme("#text_box_22_horizcenter"),
-                manager=MANAGER,
-                anchors={
-                    "top_target": self.elements["med_name"],
-                    "left_target": self.elements["med_image"],
-                },
-                container=self.elements["supply_view_container"],
-            )
-        else:
-            self.elements["med_info"].set_text(info_text)
+            # display name
+            if not self.elements.get("med_name"):
+                self.elements["med_name"] = pygame_gui.elements.ui_label.UILabel(
+                    ui_scale(pygame.Rect((-44, 55), (225, 30))),
+                    shorten_text_to_fit(str(displayed_med_cat.name), 137, 15),
+                    object_id=get_text_box_theme("#text_box_30_horizcenter"),
+                    manager=MANAGER,
+                    anchors={"left_target": self.elements["med_image"]},
+                    container=self.elements["supply_view_container"],
+                )
+            else:
+                self.elements["med_name"].set_text(
+                    shorten_text_to_fit(str(displayed_med_cat.name), 137, 15)
+                )
 
-        # arrows for switching to other med cats
-        if not self.elements.get("prior_med_arrow"):
-            self.elements["prior_med_arrow"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((30, 0), (34, 34))),
-                Icon.ARROW_LEFT,
-                get_button_dict(ButtonStyles.ICON, (34, 34)),
-                object_id="@buttonstyles_icon",
-                manager=MANAGER,
-                starting_height=2,
-                anchors={
-                    "top_target": self.elements["med_info"],
-                    "left_target": self.elements["med_image"],
-                },
-                container=self.elements["supply_view_container"],
+            # display info
+            med_trait = i18n.t(f"cat.personality.{displayed_med_cat.personality.trait}")
+            med_skill = displayed_med_cat.skills.skill_string(short=True)
+            med_exp = i18n.t(
+                "general.exp_label", exp=displayed_med_cat.experience_level_string
             )
-            self.elements["next_med_arrow"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((11, 0), (34, 34))),
-                Icon.ARROW_RIGHT,
-                get_button_dict(ButtonStyles.ICON, (34, 34)),
-                object_id="@buttonstyles_icon",
-                manager=MANAGER,
-                starting_height=2,
-                anchors={
-                    "top_target": self.elements["med_info"],
-                    "left_target": self.elements["prior_med_arrow"],
-                },
-                container=self.elements["supply_view_container"],
+            work_status = (
+                i18n.t("general.can_work")
+                if displayed_med_cat.can_work()
+                else i18n.t("general.cant_work")
             )
-            self.add_to_map(
-                [self.elements["next_med_arrow"], self.elements["prior_med_arrow"]]
-            )
+            info_text = "<br>".join([med_trait, med_skill, med_exp, work_status])
+            if not self.elements.get("med_info"):
+                self.elements["med_info"] = pygame_gui.elements.UITextBox(
+                    info_text,
+                    ui_scale(pygame.Rect((0, 0), (140, 100))),
+                    object_id=get_text_box_theme("#text_box_22_horizcenter"),
+                    manager=MANAGER,
+                    anchors={
+                        "top_target": self.elements["med_name"],
+                        "left_target": self.elements["med_image"],
+                    },
+                    container=self.elements["supply_view_container"],
+                )
+            else:
+                self.elements["med_info"].set_text(info_text)
 
-        if len(self.meds) <= 1:
-            self.elements["prior_med_arrow"].hide()
-            self.elements["next_med_arrow"].hide()
+            # arrows for switching to other med cats
+            if not self.elements.get("prior_med_arrow"):
+                self.elements["prior_med_arrow"] = UISurfaceImageButton(
+                    ui_scale(pygame.Rect((30, 0), (34, 34))),
+                    Icon.ARROW_LEFT,
+                    get_button_dict(ButtonStyles.ICON, (34, 34)),
+                    object_id="@buttonstyles_icon",
+                    manager=MANAGER,
+                    starting_height=2,
+                    anchors={
+                        "top_target": self.elements["med_info"],
+                        "left_target": self.elements["med_image"],
+                    },
+                    container=self.elements["supply_view_container"],
+                )
+                self.elements["next_med_arrow"] = UISurfaceImageButton(
+                    ui_scale(pygame.Rect((11, 0), (34, 34))),
+                    Icon.ARROW_RIGHT,
+                    get_button_dict(ButtonStyles.ICON, (34, 34)),
+                    object_id="@buttonstyles_icon",
+                    manager=MANAGER,
+                    starting_height=2,
+                    anchors={
+                        "top_target": self.elements["med_info"],
+                        "left_target": self.elements["prior_med_arrow"],
+                    },
+                    container=self.elements["supply_view_container"],
+                )
+                self.add_to_map(
+                    [self.elements["next_med_arrow"], self.elements["prior_med_arrow"]]
+                )
+
+            if len(self.meds) <= 1:
+                self.elements["prior_med_arrow"].hide()
+                self.elements["next_med_arrow"].hide()
 
         if not self.elements.get("med_message"):
             self.elements["med_message"] = pygame_gui.elements.UITextBox(
@@ -480,7 +483,7 @@ class MedDenScreen(Screens):
                 ui_scale(pygame.Rect((0, 0), (600, 100))),
                 object_id=get_text_box_theme("#text_box_30_horizcenter_vertcenter"),
                 anchors={
-                    "top_target": self.elements["med_image"],
+                    "top_target": self.den_image["base"],
                 },
                 container=self.elements["supply_view_container"],
             )
@@ -522,14 +525,16 @@ class MedDenScreen(Screens):
                         clan=game.clan,
                     )
 
-        if not self.med_messages.get(displayed_med_cat.ID):
+        if displayed_med_cat and not self.med_messages.get(displayed_med_cat.ID):
             self.med_messages[
                 displayed_med_cat.ID
             ] = game.clan.herb_supply.get_status_message(displayed_med_cat)
 
-        self.elements["med_message"].set_text(
-            f"{self.coverage_message}<br>{self.med_messages[displayed_med_cat.ID]}"
-        )
+            self.elements["med_message"].set_text(
+                f"{self.coverage_message}<br>{self.med_messages[displayed_med_cat.ID]}"
+            )
+        elif not displayed_med_cat:
+            self.elements["med_message"].set_text(f"{self.coverage_message}")
 
     # QUARANTINE VIEW
     def create_quarantine_view(self):
@@ -987,6 +992,7 @@ class MedDenScreen(Screens):
             self.elements["hurt_sick_title"].set_text("screens.med_den.hurt_sick_title")
             self.find_display_cats()
             self.update_tab_and_page(changed_tab=True)
+            self.update_med_cat()
         elif self.open_view == "quarantine":
             self.elements["hurt_sick_title"].set_text(
                 "screens.med_den.infectious_cats_title"
