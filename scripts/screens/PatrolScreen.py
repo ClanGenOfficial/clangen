@@ -1005,7 +1005,6 @@ class PatrolScreen(Screens):
         previous page buttons."""
         self.clear_cat_buttons()  # Clear all the cat buttons
 
-        self.patrolling_cats = []
         self.able_cats = []
 
         # ASSIGN TO ABLE CATS
@@ -1026,30 +1025,38 @@ class PatrolScreen(Screens):
                 else:
                     self.able_cats.append(the_cat)
 
-        total_cats = len(self.able_cats) + len(game.patrolled)
-        percent = round(
-            get_config("patrol_generation.patrolling_percent") * total_cats
-        ) - len(game.patrolled)
+        if self.patrolling_cats:
+            for c in game.patrolled:
+                if c in self.patrolling_cats:
+                    self.patrolling_cats.remove(c)
+                else: 
+                    continue
+        else:
+            self.patrolling_cats = []
+            total_cats = len(self.able_cats) + len(game.patrolled)
+            percent = round(
+                get_config("patrol_generation.patrolling_percent") * total_cats
+            ) - len(game.patrolled)
 
-        for the_cat in self.able_cats:
-            if len(self.patrolling_cats) < percent:
-                if (
-                    the_cat.ID not in game.patrolled
-                    and the_cat.status.rank.is_allowed_to_patrol()
-                    and the_cat.status.alive_in_player_clan
-                    and the_cat not in self.current_patrol
-                    and the_cat.can_work()
-                ):
+            for the_cat in self.able_cats:
+                if len(self.patrolling_cats) < percent:
                     if (
-                        the_cat.status.rank == CatRank.NEWBORN
-                        or constants.CONFIG["fun"]["all_cats_are_newborn"]
+                        the_cat.ID not in game.patrolled
+                        and the_cat.status.rank.is_allowed_to_patrol()
+                        and the_cat.status.alive_in_player_clan
+                        and the_cat not in self.current_patrol
+                        and the_cat.can_work()
                     ):
-                        if constants.CONFIG["fun"]["newborns_can_patrol"]:
+                        if (
+                            the_cat.status.rank == CatRank.NEWBORN
+                            or constants.CONFIG["fun"]["all_cats_are_newborn"]
+                        ):
+                            if constants.CONFIG["fun"]["newborns_can_patrol"]:
+                                self.patrolling_cats.append(the_cat)
+                        else:
                             self.patrolling_cats.append(the_cat)
-                    else:
-                        self.patrolling_cats.append(the_cat)
-            else:
-                break
+                else:
+                    break
 
         if not self.patrolling_cats:
             all_pages = []
