@@ -293,11 +293,9 @@ def handle_permanent_conditions(cat: Cat):
                 )
             )
 
-        elif state == ConditionState.CONTINUING:
-            if condition in conditions_to_remove:
-                # we don't want to give a risk if the condition was removed
-                continue
-
+        elif (
+            state == ConditionState.CONTINUING and condition not in conditions_to_remove
+        ):
             additional_events, conditions_to_remove = _check_risks(
                 cat, condition, conditions_to_remove
             )
@@ -318,7 +316,7 @@ def handle_permanent_conditions(cat: Cat):
                 full_event.cats_involved.extend(
                     [c for c in e.cats_involved if c not in full_event.cats_involved]
                 )
-                
+
             event_list.append(full_event)
 
     for c in conditions_to_remove:
