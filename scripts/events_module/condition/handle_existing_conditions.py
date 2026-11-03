@@ -234,6 +234,10 @@ def handle_temporary_conditions(cat: Cat):
         if condition_events:
             full_event = condition_events[0]
             full_event.text = " ".join([e.text for e in condition_events])
+            for e in condition_events:
+                full_event.cats_involved.extend(
+                    [c for c in e.cats_involved if c not in full_event.cats_involved]
+                )
 
             event_list.append(full_event)
 
@@ -310,7 +314,11 @@ def handle_permanent_conditions(cat: Cat):
         if condition_events:
             full_event = condition_events[0]
             full_event.text = " ".join([e.text for e in condition_events])
-
+            for e in condition_events:
+                full_event.cats_involved.extend(
+                    [c for c in e.cats_involved if c not in full_event.cats_involved]
+                )
+                
             event_list.append(full_event)
 
     for c in conditions_to_remove:
