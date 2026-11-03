@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "strange_lump_weakened_muscles0",
+        "strings": [
+            "m_c's lump seems to be having an effect on {PRONOUN/m_c/poss} strength."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

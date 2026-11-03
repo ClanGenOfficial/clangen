@@ -7,7 +7,6 @@ from pygame_gui.core.gui_type_hints import RectLike
 from pygame_gui.core.interfaces import IUIManagerInterface
 
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
 from scripts.ui.scale import ui_scale
@@ -90,11 +89,10 @@ class UICollapsibleContainer(
         )
 
         if title_text:
-            self.title_text = UITextBoxTweaked(
+            self.title_text = pygame_gui.elements.UITextBox(
                 title_text,
                 ui_scale(pygame.Rect((0, 10), (-1, -1))),
                 object_id=title_object_id,
-                line_spacing=1,
                 manager=manager,
                 container=self,
                 anchors=(

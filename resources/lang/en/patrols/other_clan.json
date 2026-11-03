@@ -756,14 +756,12 @@
         ]
     },
     {
-        "event_id": "cat_sprites/gen_med_borderherb_Mc2",
+        "event_id": "gen_otherclan_raspberrymed_solo",
         "types": [
             "herb_gathering"
         ],
         "frequency": 2,
-        "season": [
-            "leaf-bare"
-        ],
+        "season": [],
         "required_cat_types": {
             "patrol_cats": [
                 1,
@@ -855,7 +853,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "condition": [
                             "battle_injury"

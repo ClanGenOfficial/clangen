@@ -1,0 +1,52 @@
+[
+    {
+        "event_id": "healed_temporary_weakness0",
+        "strings": [
+            "m_c is finally back to {PRONOUN/m_c/poss} old self; {PRONOUN/m_c/subject} {VERB/m_c/have/has} fully recovered from the after-effects of {PRONOUN/m_c/poss} injury.",
+            "m_c's recovery was a long process, but it's finally over."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "health": {
+                    "working": true
+                }
+            }
+        }
+    },
+    {
+        "event_id": "healed_temporary_weakness1",
+        "strings": [
+            "r_c0 clears m_c from {PRONOUN/m_c/poss} regular check-ups; m_c has kept up with the rehabilitation process after {PRONOUN/m_c/poss} injury.",
+            "r_c0, happy with m_c's recovery, clears {PRONOUN/m_c/object} to go back to {PRONOUN/m_c/poss} full duties."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "health": {
+                    "working": true
+                }
+            },
+            "r_c0": {
+                "status": [
+                    "medicine cat",
+                    "medicine cat apprentice"
+                ],
+                "group": [
+                    "player_clan"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "healed_temporary_weakness3",
+        "strings": [
+            "m_c's strength is recovering, even if {PRONOUN/m_c/poss} injury hasn't healed yet."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "health": {
+                    "working": false
+                }
+            }
+        }
+    }
+]

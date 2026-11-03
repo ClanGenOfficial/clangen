@@ -1,10 +1,9 @@
 import os
-
 import shutil
-from typing import List
 import unittest
 from pathlib import Path
-from random import choice, shuffle, randint, Random
+from random import choice, shuffle, randint
+from typing import List
 from uuid import uuid4
 
 from scripts import events

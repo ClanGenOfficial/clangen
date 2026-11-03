@@ -124,6 +124,9 @@
         "deck_list_conflict": "Error: Adding these cards would cause a card conflict.",
         "deck_list_limit": "Error: This deck would put you over the %{amount} card limit.",
         "randomize_prefix_tooltip": "Randomize the prefix",
-        "randomize_suffix_tooltip": "Randomize the suffix"
+        "randomize_suffix_tooltip": "Randomize the suffix",
+        "small_image_button": "\u25ab   small",
+        "medium_image_button": "\u25fd   medium",
+        "large_image_button": "\u25fe  large"
     }
 }

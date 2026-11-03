@@ -17,7 +17,12 @@
         "involved_cats": {
             "m_c": {},
             "r_c0": {
-                "status": ["medicine cat"]
+                "status": [
+                    "medicine cat"
+                ],
+                "group": [
+                    "match:m_c"
+                ]
             }
         }
     }

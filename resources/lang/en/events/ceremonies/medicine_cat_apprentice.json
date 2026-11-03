@@ -593,7 +593,23 @@
         "involved_cats": {
             "m_c": {
                 "stat": {
-                    "trait": ["charismatic", "bold", "fierce", "daring", "compassionate", "loving", "arrogant", "ambitious", "competitive", "flamboyant", "cunning", "shameless", "childish", "playful", "sincere"]
+                    "trait": [
+                        "charismatic",
+                        "bold",
+                        "fierce",
+                        "daring",
+                        "compassionate",
+                        "loving",
+                        "arrogant",
+                        "ambitious",
+                        "competitive",
+                        "flamboyant",
+                        "cunning",
+                        "shameless",
+                        "childish",
+                        "playful",
+                        "sincere"
+                    ]
                 }
             },
             "r_c0": {}

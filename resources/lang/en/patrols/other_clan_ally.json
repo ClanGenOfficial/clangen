@@ -597,9 +597,7 @@
             "herb_gathering"
         ],
         "frequency": 2,
-        "season": [
-            "leaf-bare"
-        ],
+        "season": [],
         "required_cat_types": {
             "patrol_cats": [
                 1,

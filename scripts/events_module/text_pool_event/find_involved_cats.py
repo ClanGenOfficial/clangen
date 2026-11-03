@@ -76,7 +76,7 @@ def find_cats(
         # CHECK PRIOR ABBREVIATIONS
         elif constraints.get("prior_abbreviation"):
             possible_cats = _check_prior_abbreviation(
-                abbr, constraints, event, interactable_cats, involved_cats
+                abbr, constraints, event, interactable_cats, temp_involved_cats
             )
 
         # CHECK NEW CATS
@@ -148,7 +148,7 @@ def find_cats(
         else:
             possible_cats = interactable_cats
 
-            for cat in involved_cats.values():
+            for cat in temp_involved_cats.values():
                 # this will only remove non-list values
                 if cat in interactable_cats:
                     possible_cats.remove(cat)
@@ -168,7 +168,7 @@ def find_cats(
         possible_cats = cat_for_event(
             constraint_dict=constraints,
             possible_cats=possible_cats,
-            involved_cat_dict=involved_cats,
+            involved_cat_dict=temp_involved_cats,
             tags=event.tags,
             injuries=possible_injuries,
             new_accessories=possible_accessories,

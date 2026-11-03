@@ -1549,6 +1549,7 @@
                 "strings": [
                     "As soon as the doe departs, the cats descend on the fawn. When they attack, however, a skunk appears in the tall grass and sprays them! The patrol scatters. As {PRONOUN/s_c0/subject} {VERB/s_c0/retreat/retreats}, s_c0 spots a rabbit hovering near the fawn and skunk, too. What a strange little trio they make."
                 ],
+                "exp_gained": 0,
                 "involved_cats": {
                     "s_c0": {
                         "prior_abbreviation": [
@@ -1561,7 +1562,12 @@
                         }
                     }
                 },
-                "exp_gained": 0
+                "condition": [
+                    {
+                        "cats": ["patrol_cats"],
+                        "condition": ["stinky"]
+                    }
+                ]
             }
         ]
     }

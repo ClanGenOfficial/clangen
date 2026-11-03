@@ -1,4 +1,5 @@
 import traceback
+from copy import deepcopy
 from random import choice, getrandbits
 from typing import Optional
 
@@ -6,11 +7,12 @@ import i18n
 
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatGroup, CatThought, CatAge
-from scripts.events_module.text_adjust import event_text_adjust
 from scripts.events_module.text_pool_event.event_retrieval import (
     get_valid_event,
     load_text_pool_events,
 )
+from scripts.events_module.text_pool_event.handle_consequences import execute_outcome
+from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game, constants
 
 used_thoughts = set()
@@ -55,12 +57,11 @@ def get_new_thought(
         thought_type, main_cat, other_cat, other_clan_id=other_clan_id
     )
 
-    chosen_thought = event_text_adjust(
-        Cat,
-        chosen_thought,
-        main_cat=main_cat,
-        random_cat=other_cat,
-        clan=game.clan,
+    # we won't use results and rel_results here
+    chosen_thought, results, rel_results = execute_outcome(
+        event=chosen_thought,
+        event_involved_cats={"m_c": main_cat, "r_c": other_cat},
+        other_clan=game.used_group_IDs[other_clan_id] if other_clan_id else None,
     )
 
     # insert thought
@@ -69,7 +70,7 @@ def get_new_thought(
 
 def _new_thought(
     thought_type: CatThought, main_cat: Cat, other_cat: Cat, other_clan_id: str
-):
+) -> TextPoolEvent:
     """
     Finds a thought appropriate for the given args.
     :param thought_type: An enum determining what kind of thought is required
@@ -82,8 +83,8 @@ def _new_thought(
         # checks if the cat is Rick Astley to give the rickroll thought, otherwise proceed as usual
         if (main_cat.name.prefix + main_cat.name.suffix).replace(
             " ", ""
-        ).lower() == "rickastley":
-            return i18n.t("defaults.rickroll")
+        ).lower() == "rickastley" and other_cat:
+            return TextPoolEvent(strings=[i18n.t("defaults.rickroll")])
         else:
             ensured_id = constants.CONFIG["thought_generation"][
                 "debug_ensure_thought_id"
@@ -139,18 +140,21 @@ def _new_thought(
             if not ensured_id:
                 used_thoughts.add(chosen_thought_group.event_id)
 
+            chosen_thought_group = deepcopy(chosen_thought_group)
             # specifically "is not None" so that index 0 isn't picked up as a NoneType
-            chosen_thought = (
+            chosen_thought_group.strings = [
                 chosen_thought_group.strings[ensured_index]
                 if ensured_index is not None
                 else choice(chosen_thought_group.strings)
-            )
+            ]
+            # we're picking a string ahead of time so that we can utilize the ensure index
+            # but still preserving it within the event object so that it works with other shared textpool functions
 
     except ValueError:
         traceback.print_exc()
-        chosen_thought = i18n.t("defaults.thought")
+        chosen_thought_group = TextPoolEvent(strings=[i18n.t("defaults.thought")])
 
-    return chosen_thought
+    return chosen_thought_group
 
 
 def _get_other_cat_for_thought(
