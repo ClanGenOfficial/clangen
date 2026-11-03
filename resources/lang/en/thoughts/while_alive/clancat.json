@@ -4337,18 +4337,14 @@
             "Is discussing POI with r_c"
         ],
         "m_c": {
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
                 ]
-                }
         },
         "r_c": {
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
                 ]
-                }
         }
     },
     {
@@ -4367,11 +4363,9 @@
                 "status": [
                     "-kitten"
                 ], 
-                "standing": {
                 "group": [
                     "player_clan"
                 ]
-                },
                 "health": {
                     "working": true
                 }
@@ -4395,11 +4389,9 @@
                     "deputy",
                     "leader"
                 ],
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
-                ]
-                },
+                ],
                 "health": {
                     "working": true
                 }
@@ -4422,11 +4414,9 @@
                 "status": [
                     "kitten"
                 ],
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
                 ]
-                }
             }
         }
     },
@@ -4444,22 +4434,18 @@
                 "status": [
                     "kitten"
                 ],
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
                 ]
-                }
             },
             "r_c": {
                 "status": [
                     "-kitten",
                     "-newborn"
                 ],
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
-                ]
-                },
+                ],
                 "health": {
                     "working": true
                 }
@@ -4475,11 +4461,9 @@
             "Wonders why c_n decided to set up so close to POI"
         ],
         "m_c": {
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
                 ]
-                }
         }
     },
     {
@@ -4493,11 +4477,9 @@
             "Is having a bad dream about POI"
         ],
         "m_c": {
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
-                ]
-                },
+                ],
             "stat": {
                 "trait": [
                     "skittish",
@@ -4517,11 +4499,9 @@
             "Wonders if POI is haunted"
         ],
         "m_c": {
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
-                ]
-                },
+                ],
             "stat": {
                 "skill": [
                     "GHOST,1"
@@ -4558,11 +4538,9 @@
                     "medicine cat",
                     "medicine cat apprentice"
                 ],
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
-                ]
-                },
+                ],
                 "health": {
                     "working": true
                 }
@@ -4587,11 +4565,9 @@
                     "medicine cat",
                     "medicine cat apprentice"
                 ],
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
-                ]
-                },
+                ],
                 "stat": {
                 "trait": [
                     "nervous",
@@ -4622,11 +4598,9 @@
                     "deputy",
                     "leader"
                 ],
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
-                ]
-                },
+                ],
                 "health": {
                     "working": true
                 }
@@ -4676,21 +4650,17 @@
                 "status": [
                     "kitten"
                 ],
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
                 ]
-                }
             },
             "r_c": {
                 "status": [
                     "-kitten"
                 ],
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
-                ]
-                },
+                ],
                 "health": {
                     "working": true
                 }
@@ -4710,11 +4680,9 @@
                 "status": [
                     "kitten"
                 ],
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
-                ]
-                },
+                ],
                 "stat": {
                 "trait": [
                     "skittish",
@@ -4726,11 +4694,9 @@
                 "status": [
                     "-kitten"
                 ],
-                 "standing": {
-                "group": [
+               "group": [
                     "player_clan"
-                ]
-                },
+                ],
                 "health": {
                     "working": true
                 }
@@ -4750,21 +4716,17 @@
                 "status": [
                     "kitten"
                 ],
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
                 ]
-                }
             },
             "r_c": {
                 "status": [
                     "-kitten"
                 ],
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
-                ]
-                },
+                ],
                 "stat": {
                 "trait": [
                     "-bold",
@@ -4800,11 +4762,9 @@
                 "status": [
                     "-kitten"
                 ],
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
-                ]
-                },
+                ],
                 "health": {
                     "working": true
                 }
@@ -4828,11 +4788,9 @@
                 "status": [
                     "-kitten"
                 ],
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
-                ]
-                },
+                ],
                 "health": {
                     "working": true
                 }
@@ -4855,11 +4813,9 @@
                 "status": [
                     "-kitten"
                 ],
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
-                ]
-                },
+                ],
                 "health": {
                     "working": true
                 }
@@ -4880,11 +4836,9 @@
                 "status": [
                     "-kitten"
                 ],
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
-                ]
-                },
+                ],
                 "health": {
                     "working": true
                 }
@@ -4907,11 +4861,9 @@
                 "status": [
                     "-kitten"
                 ],
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
-                ]
-                },
+                ],
                 "health": {
                     "working": true
                 }
@@ -4936,11 +4888,9 @@
                 "status": [
                     "-kitten"
                 ],
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
-                ]
-                },
+                ],
                 "health": {
                     "working": true
                 }
@@ -4965,11 +4915,9 @@
                 "status": [
                     "-kitten"
                 ],
-                "standing": {
                 "group": [
                     "player_clan"
-                ]
-                },
+                ],
                 "health": {
                     "working": true
                 }
@@ -5003,11 +4951,9 @@
                     "deputy",
                     "leader"
                 ],
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
-                ]
-                },
+                ],
                 "health": {
                     "working": true
                 }
@@ -5034,11 +4980,9 @@
                     "medicine cat apprentice",
                     "medicine cat"
                 ],
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
-                ]
-                },
+                ],
                 "health": {
                     "working": true
                 }
@@ -5068,11 +5012,9 @@
                     "-medicine cat apprentice",
                     "-medicine cat"
                 ],
-                 "standing": {
-                "group": [
+                 "group": [
                     "player_clan"
-                ]
-                },
+                ],
                 "health": {
                     "working": true
                 }
