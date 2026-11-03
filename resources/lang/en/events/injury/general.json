@@ -9906,7 +9906,7 @@
         "tags": ["high_ground"]
         },
         "frequency": 2,
-        "event_text": "During a flood, m_c barely found refuge on POI in time, coughing up water.",
+        "event_text": "During a flood, m_c fought through the water to find refuge on POI, but not before getting water in {PRONOUN/m_c/poss} lungs.",
         "m_c": {
             "status": ["-kitten"]
         },
@@ -10134,7 +10134,7 @@
         "tags": ["prey:flying"]
         },
         "frequency": 4,
-        "event_text": " m_c tried to leap into the air for prey at POI, but came down awkwardly and tumbled down a slope, landing in a heap.",
+        "event_text": " m_c tried to leap into the air for prey at POI, but fell awkwardly and tumbled down a slope, landing in a heap.",
         "m_c": {
             "status": ["warrior","leader","apprentice","deputy"]
         },
@@ -10155,7 +10155,7 @@
         "tags": ["prey:flying"]
         },
         "frequency": 2,
-        "event_text": "m_c tried to leap into the air for prey at POI, but came down awkwardly and tumbled down an incline, hitting hard against a rock.",
+        "event_text": "m_c tried to leap into the air for prey at POI, but fell awkwardly and tumbled down an incline, hitting a rock hard.",
         "m_c": {
             "status": ["warrior","leader","apprentice","deputy"]
         },
@@ -10272,14 +10272,14 @@
     {
         "event_id": "gen_injury_waterinlungs_POIwater:still1",
         "location": ["any"],
-        "season": ["newleaf","leaf-fall","greenleaf"],
+        "season": ["-leaf-bare"],
         "sub_type": [],
         "tags": [],
         "poi": {
         "tags": ["water:still"]
         },
         "frequency": 3,
-        "event_text": "m_c went to practice swimming in POI. It's a little deeper than {PRONOUN/m_c/subject} anticipated, and {PRONOUN/m_c/subject} swallowed some water before scrambling back ashore.",
+        "event_text": "m_c went to practice swimming in POI. It was a little deeper than {PRONOUN/m_c/subject} anticipated, and {PRONOUN/m_c/subject} swallowed some water before scrambling back ashore.",
         "m_c": {
             "status": ["-kitten","-elder"],
             "skill": ["-SWIMMER,1"]
@@ -10300,14 +10300,14 @@
     {
         "event_id": "gen_injury_waterinlungs_POIwater:still2",
         "location": ["any"],
-        "season": ["newleaf","leaf-fall","greenleaf"],
+        "season": ["-leaf-bare"],
         "sub_type": [],
         "tags": [],
         "poi": {
         "tags": ["water:still"]
         },
         "frequency": 1,
-        "event_text": "m_c and r_c splashed each other in the waters of POI. Caught in the game, m_c didn't notice the ground under {PRONOUN/m_c/poss} paws dropping away, and stepped into deep water. r_c rescued a flailing m_c, but {PRONOUN/m_c/subject} {VERB/m_c/were/was} left coughing up water.",
+        "event_text": "m_c and r_c were playing in the waters of POI when m_c accidentally slipped into the deeper end. r_c rescued a flailing m_c, but {PRONOUN/m_c/subject} {VERB/m_c/were/was} left coughing up water.",
         "m_c": {
             "status": ["apprentice","mediator apprentice","medicine cat apprentice"]
         },
@@ -10344,7 +10344,7 @@
                 "values": ["trust"],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cat_from felt grateful to cat_to for {PRONOUN/cat_to/poss} rescue when {PRONOUN/cat_from/subject} stepped into deep water."
+                    "cats_from": "cat_from felt grateful to cat_to for {PRONOUN/cat_to/poss} rescue when {PRONOUN/cat_from/subject} slipped into deep water."
                 }
             }
         ]
@@ -10352,7 +10352,7 @@
     {
         "event_id": "gen_injury_waterinlungs_POIwater:flowing1",
         "location": ["any"],
-        "season": ["newleaf","leaf-fall","greenleaf"],
+        "season": ["-leaf-bare"],
         "sub_type": [],
         "tags": [],
         "poi": {
@@ -10386,8 +10386,8 @@
         "poi": {
         "tags": ["water:flowing"]
         },
-        "frequency": 3,
-        "event_text": "Recent rain swelled POI's banks. m_c still tried to cross, but had to admit afterwards, through coughs of water, that {PRONOUN/m_c/poss} skill was not sufficient to ignore the raw power of the elements today.",
+        "frequency": 2,
+        "event_text": "Recent rain swelled POI's banks. m_c still tried to cross, but had to admit afterwards, through coughs of water, that {PRONOUN/m_c/poss} skill was not sufficient to ignore the raw power of the elements.",
         "m_c": {
             "status": ["-kitten","-elder"],
             "skill": ["SWIMMER,1"]
@@ -10414,8 +10414,8 @@
         "poi": {
         "tags": ["water:flowing"]
         },
-        "frequency": 3,
-        "event_text": "Recent snowmelt swelled POI's banks. m_c still tried to cross, but had to admit afterwards, through coughs of water, that {PRONOUN/m_c/poss} skill was not sufficient to ignore the raw power of the elements today.",
+        "frequency": 2,
+        "event_text": "Recent snowmelt swelled POI's banks. m_c still tried to cross, but had to admit afterwards, through coughs of water, that {PRONOUN/m_c/poss} skill was not sufficient to ignore the raw power of the elements.",
         "m_c": {
             "status": ["-kitten","-elder"],
             "skill": ["SWIMMER,1"]
@@ -10464,7 +10464,7 @@
         "tags": ["maze"]
         },
         "frequency": 2,
-        "event_text": "m_c padded along the confusing paths of POI, and suddenly came face to face with a predator! Through the flash of pain, {PRONOUN/m_c/subject} whirled around and fled, trailing blood.",
+        "event_text": "m_c padded along the confusing paths of POI, and suddenly came face to face with a predator! Through a flash of pain, {PRONOUN/m_c/subject} whirled around and fled, trailing blood.",
         "m_c": {
             "status": ["-kitten","-elder"]
         },
@@ -10520,7 +10520,7 @@
             "tags": ["danger:fall_risk"]
         },
         "frequency": 3,
-        "event_text": "m_c slipped and fell at POI, impacting hard.",
+        "event_text": "m_c slipped and fell at POI, impacting hard enough to hurt.",
         "m_c": {
             "status": ["-kitten","-elder"]
         },
@@ -10548,7 +10548,7 @@
             "tags": ["danger:fall_risk"]
         },
         "frequency": 1,
-        "event_text": "m_c and r_c snuck out of camp to see POI. m_c fell, and r_c ran back for help to carry {PRONOUN/m_c/object} back.",
+        "event_text": "m_c and r_c snuck out of camp to see POI. m_c fell, and r_c ran for help with carrying {PRONOUN/m_c/object} back.",
         "m_c": {
             "status": ["kitten","apprentice","mediator apprentice","medicine cat apprentice"]
         },
@@ -10565,7 +10565,7 @@
             {
                 "cats": ["m_c"],
                 "scar": "m_c was scarred when {PRONOUN/m_c/subject} had a bad fall after sneaking out of camp.",
-                "death": "m_c died from {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/subject} had a bad fall after sneaking out of camp."
+                "death": "m_c died from {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/subject} had a bad fall while sneaking out of camp."
             }
         ]
     },
@@ -10579,7 +10579,7 @@
             "tags": ["danger:fall_risk"]
         },
         "frequency": 1,
-        "event_text": "r_c dared m_c to take a dangerous leap by POI. m_c did it and fell, impacting hard.",
+        "event_text": "r_c dared m_c to take a dangerous leap by POI. m_c did and fell, impacting hard enough to hurt.",
         "m_c": {
             "status": ["apprentice","mediator apprentice","medicine cat apprentice"]
         },
@@ -10596,7 +10596,7 @@
             {
                 "cats": ["m_c"],
                 "scar": "m_c was scarred when {PRONOUN/m_c/subject} had a bad fall after taking a dare.",
-                "death": "m_c died from {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/subject} had a bad fall after taking a dare."
+                "death": "m_c died from {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/subject} had a bad fall while attempting a dare."
             }
         ]
     },
@@ -10631,7 +10631,7 @@
             "tags": ["danger:fall_risk"]
         },
         "frequency": 4,
-        "event_text": "m_c slipped and fell at POI, dislocating a joint on landing.",
+        "event_text": "m_c slipped and fell at POI, dislocating a joint on the landing.",
         "m_c": {
             "status": ["-kitten","-elder"]
         },
@@ -10652,7 +10652,7 @@
             "tags": ["danger:fall_risk"]
         },
         "frequency": 2,
-        "event_text": "r_c dared m_c to take a dangerous leap by POI. m_c did it and fell, landing awkwardly, but fortunately not far down.",
+        "event_text": "r_c dared m_c to take a dangerous leap by POI. m_c did and fell, landing awkwardly, but fortunately not far down.",
         "m_c": {
             "status": ["apprentice","mediator apprentice","medicine cat apprentice"]
         },
@@ -10676,7 +10676,7 @@
             "tags": ["danger:fall_risk"]
         },
         "frequency": 2,
-        "event_text": "r_c dared m_c to take a dangerous leap by POI. m_c did it and fell, fortunately only dislocating a joint on landing.",
+        "event_text": "r_c dared m_c to take a dangerous leap by POI. m_c did and fell, fortunately only dislocating a joint on landing.",
         "m_c": {
             "status": ["apprentice","mediator apprentice","medicine cat apprentice"]
         },
@@ -10748,7 +10748,7 @@
             "tags": ["trees"]
         },
         "frequency": 1,
-        "event_text": "r_c dared m_c to climb by POI. m_c did and fell out of the tree, hitting the ground hard.",
+        "event_text": "r_c dared m_c to climb in POI. m_c did and fell, hitting the ground hard enough to hurt.",
         "m_c": {
             "status": ["apprentice","mediator apprentice","medicine cat apprentice"]
         },
@@ -10765,7 +10765,7 @@
             {
                 "cats": ["m_c"],
                 "scar": "m_c was scarred when {PRONOUN/m_c/subject} had a bad fall out of a tree after taking a dare.",
-                "death": "m_c died from {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/subject} had a bad fall out of a tree after taking a dare."
+                "death": "m_c died from {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/subject} had a bad fall out of a tree while attempting a dare."
             }
         ]
     },
@@ -10779,7 +10779,7 @@
         "tags": ["danger:tainted"]
         },
         "frequency": 3,
-        "event_text": "m_c drank the water near POI, and later complained about a terrible bellyache.",
+        "event_text": "m_c drank the water near POI and later complained about a terrible bellyache.",
         "m_c": {
             "status": ["-kitten","-elder"]
         },
@@ -10800,14 +10800,14 @@
     {
         "event_id": "gen_injury_scrapes_POItrees",
         "location": ["any"],
-        "season": ["newleaf","greenleaf","leaf-fall"],
+        "season": ["-leaf-bare"],
         "sub_type": [],
         "tags": [],
         "poi": {
             "tags": ["trees"]
         },
         "frequency": 4,
-        "event_text": "m_c pushed through a dense patch of canopy while climbing by POI, collecting some scrapes.",
+        "event_text": "m_c pushed through a dense patch of canopy while climbing in POI, collecting some scrapes.",
         "m_c": {
             "status": ["-kitten","-elder"]
         },
@@ -10828,7 +10828,7 @@
             "tags": ["trees"]
         },
         "frequency": 2,
-        "event_text": "m_c was climbing by POI when {PRONOUN/m_c/subject} fell, tearing {PRONOUN/m_c/poss} pelt on the way down to catch a lower branch.",
+        "event_text": "m_c was climbing in POI when {PRONOUN/m_c/subject} fell, tearing {PRONOUN/m_c/poss} pelt on the way down.",
         "m_c": {
             "status": ["-kitten","-elder"]
         },
@@ -10885,7 +10885,7 @@
             "tags": ["trees"]
         },
         "frequency": 2,
-        "event_text": "Hiding from bad weather by POI, m_c squeezed into a hole in a tree, tearing {PRONOUN/m_c/poss} pelt from the tight fit.",
+        "event_text": "Hiding from bad weather in POI, m_c squeezed into a hole, tearing {PRONOUN/m_c/poss} pelt from the tight fit.",
         "m_c": {
             "status": ["-kitten","-elder","-apprentice","-medicine cat apprentice","-mediator apprentice"]
         },
@@ -10913,7 +10913,7 @@
             "tags": ["trees"]
         },
         "frequency": 4,
-        "event_text": "m_c fell out of a tree by POI, but only collected some bruises.",
+        "event_text": "m_c fell while climbing in POI, but only collected some bruises.",
         "m_c": {
             "status": ["-kitten","-elder"]
         },
@@ -10934,7 +10934,7 @@
             "tags": ["trees"]
         },
         "frequency": 3,
-        "event_text": "m_c got a splinter from climbing a tree by POI.",
+        "event_text": "m_c got a splinter from climbing in POI.",
         "m_c": {
             "status": ["-kitten","-elder"]
         },
@@ -10955,7 +10955,7 @@
             "tags": ["trees"]
         },
         "frequency": 2,
-        "event_text": "m_c was walking beneath a tree by POI when a big branch fell on {PRONOUN/m_c/poss} tail.",
+        "event_text": "m_c was walking by POI when a big branch fell on {PRONOUN/m_c/poss} tail.",
         "m_c": {
             "status": ["-kitten","-elder"]
         },
@@ -10983,14 +10983,14 @@
             "tags": ["trees"]
         },
         "frequency": 1,
-        "event_text": "m_c was climbing by POI when a branch broke beneath {PRONOUN/m_c/object}, sending {PRONOUN/m_c/object} tumbling out of the tree and hitting the ground hard.",
+        "event_text": "m_c was climbing in POI when a branch broke beneath {PRONOUN/m_c/object}, sending {PRONOUN/m_c/object} tumbling out of the tree.",
         "m_c": {
             "status": ["-kitten","-elder"]
         },
         "injury": [
             {
                 "cats": ["m_c"],
-                "injuries": ["broken_bone"]
+                "injuries": ["blunt_force_injury"]
             }
         ],
         "history": [
@@ -11011,7 +11011,7 @@
             "tags": ["trees"]
         },
         "frequency": 1,
-        "event_text": "m_c was climbing by POI when {PRONOUN/m_c/subject} startled a sleeping owl, and it lashed out at {PRONOUN/m_c/object} with its talons.",
+        "event_text": "m_c was climbing in POI when {PRONOUN/m_c/subject} startled a sleeping owl, and it lashed out at {PRONOUN/m_c/object} with its talons.",
         "m_c": {
             "status": ["-kitten","-elder"]
         },
@@ -11039,7 +11039,7 @@
             "tags": ["trees"]
         },
         "frequency": 1,
-        "event_text": "m_c tried to squeeze into a hole in a tree by POI. The bird already within pecked m_c.",
+        "event_text": "m_c tried to squeeze into a knothole in POI. The bird already within pecked m_c.",
         "m_c": {
             "status": ["-kitten","-elder"]
         },
@@ -11067,7 +11067,7 @@
             "tags": ["trees"]
         },
         "frequency": 2,
-        "event_text": "m_c startled a bird while climbing by POI. It pecked m_c before fleeing in a flurry of feathers.",
+        "event_text": "m_c startled a bird while climbing in POI. It pecked m_c before fleeing in a flurry of feathers.",
         "m_c": {
             "status": ["-kitten","-elder"]
         },
@@ -11219,7 +11219,7 @@
         "name": ["terrain_eaglenest"]
         },
         "frequency": 1,
-        "event_text": "r_c dared m_c to steal a feather from POI. An eagle spotted {PRONOUN/m_c/object} and dove for {PRONOUN/m_c/object}, grabbing and dropping m_c, then left r_c to drag m_c back to camp.",
+        "event_text": "r_c dared m_c to steal a feather from POI. An eagle spotted {PRONOUN/m_c/object} and dove for {PRONOUN/m_c/object}, grabbing and dropping m_c. r_c had to drag m_c back to camp.",
         "m_c": {
             "status": ["-kitten","-elder"], 
             "trait": ["adventurous", "ambitious", "arrogant", "bloodthirsty", "bold", "charismatic", "childish", "competitive", "confident", "daring", "fierce", "flamboyant", "insecure", "rebellious", "shameless", "troublesome", "vengeful"]
@@ -11291,8 +11291,7 @@
         "injury": [
             {
                 "cats": ["m_c"],
-                "injuries": ["beak_bite"],
-                "scars": ["BEAKCHEEK"]
+                "injuries": ["beak_bite"]
             }
         ],
         "history": [
@@ -11320,8 +11319,7 @@
         "injury": [
             {
                 "cats": ["m_c"],
-                "injuries": ["beak_bite"],
-                "scars": ["BEAKSIDE"]
+                "injuries": ["beak_bite"]
             }
         ],
         "history": [
@@ -11371,7 +11369,7 @@
         "tags": ["water:flowing","water:still"]
         },
         "frequency": 2,
-        "event_text": "m_c fought an otter by POI and got bitten.",
+        "event_text": "m_c fought an otter by POI and was bitten.",
         "m_c": {
             "status": ["-kitten","-elder"]
         },
@@ -11457,7 +11455,7 @@
         "tags": ["water:flowing","water:still"]
         },
         "frequency": 4,
-        "event_text": "m_c fell into the water at POI and swallowed some before making it back out.",
+        "event_text": "m_c fell into the water at POI and inhaled some before making it back out.",
         "m_c": {
             "status": ["-kitten","-elder"]
         },
@@ -11471,7 +11469,7 @@
         "history": [
             {
                 "cats": ["m_c"],
-                "death": "m_c died after swallowing too much water."
+                "death": "m_c died after inhaling too much water."
             }
         ]
     },
@@ -11527,7 +11525,7 @@
         "tags": ["prey:fish"]
         },
         "frequency": 1,
-        "event_text": "m_c was stung by a venomous fish {PRONOUN/m_c/subject} fished up at POI.",
+        "event_text": "m_c was stung by a venomous fish {PRONOUN/m_c/subject} caught at POI.",
         "m_c": {
             "status": ["warrior","apprentice","deputy","leader"]
         },
@@ -11612,7 +11610,7 @@
         "tags": ["prey:water"]
         },
         "frequency": 4,
-        "event_text": "While hunting at POI, m_c fell into the water and swallowed some before making it back out.",
+        "event_text": "While hunting at POI, m_c fell into the water and inhaled some before making it back out.",
         "m_c": {
             "status": ["warrior","deputy","leader","apprentice"]
         },
@@ -11626,7 +11624,7 @@
         "history": [
             {
                 "cats": ["m_c"],
-                "death": "m_c died after swallowing too much water."
+                "death": "m_c died after inhaling too much water."
             }
         ]
     },
@@ -11640,7 +11638,7 @@
         "tags": ["trees"]
         },
         "frequency": 2,
-        "event_text": "m_c was climbing by POI when {PRONOUN/m_c/subject} a pine marten bit {PRONOUN/m_c/object}.",
+        "event_text": "m_c was climbing in POI when {PRONOUN/m_c/subject} a pine marten bit {PRONOUN/m_c/object}.",
         "m_c": {
             "status": ["-kitten","-elder"]
         },
