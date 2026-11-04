@@ -2117,8 +2117,7 @@
         "halloween",
         "april_fools",
         "new_years",
-        "disaster",
-        "never_mentor"
+        "disaster"
       ],
       "title": "TagEnum",
       "type": "string"
