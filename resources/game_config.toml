@@ -1158,8 +1158,8 @@ dev_tools = false
     # herb bonus applied when cats should gather a boosted number of herbs
     general_amount_bonus = 2
   
-    # the amount of herbs lost per moon
-    herb_loss = 0
+    # the percentage of herbs lost per moon
+    herb_loss = 0.0
 
     gathering_variance = [-1, 1]
     [clan_resources.herbs.increase_amounts]
