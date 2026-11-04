@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "wasting_disease_persistent_exhaustion",
+        "strings": [
+            "Wasting disease has its name for a reason. Right now, it's wearing m_c's energy reserves down."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

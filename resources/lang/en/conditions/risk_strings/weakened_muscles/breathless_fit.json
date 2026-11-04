@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "weakened_muscles_breathless_fit",
+        "strings": [
+            "Sometimes everything is just frustratingly exhausting, leaving m_c out of breath. This is one of those times."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

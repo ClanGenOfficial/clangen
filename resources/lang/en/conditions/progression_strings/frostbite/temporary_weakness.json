@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "frostbite_temporary_weakness0",
+        "strings": [
+            "m_c no longer suffers frostbite, but {PRONOUN/m_c/poss} body won't immediately be back to normal."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

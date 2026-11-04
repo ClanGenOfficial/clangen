@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "heat_stroke_persistent_exhaustion0",
+        "strings": [
+            "Heat stroke is no joke and, even if m_c recovered, the exhaustion {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} feeling will likely never leave."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

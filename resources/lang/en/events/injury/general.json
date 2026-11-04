@@ -1,5 +1,33 @@
 [
     {
+        "event_id": "gen_injury_exhausted_adult",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "event_text": "m_c overworked {PRONOUN/m_c/self} this moon.",
+        "m_c": {
+            "status": [
+                "-kitten",
+                "-apprentice",
+                "-elder"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "injuries": [
+                    "exhausted"
+                ]
+            }
+        ]
+    },
+    {
         "event_id": "gen_injury_bruises_anykitten1",
         "location": [
             "any"

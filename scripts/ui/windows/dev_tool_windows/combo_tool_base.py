@@ -13,7 +13,6 @@ from scripts.game_structure.screen_settings import MANAGER
 from scripts.ui.elements.scrolling_button_list import SELECTION_CHANGED
 from scripts.ui.elements.scrolling_dropdown import UIScrollingDropDown
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.scale import ui_scale, ui_scale_dimensions
 from scripts.ui.windows.window_base_class import GameWindow
@@ -36,13 +35,13 @@ class ComboToolWindow(GameWindow):
             ),
             container=self,
         )
-        self.elements["chosen_patches"] = UITextBoxTweaked(
+        self.elements["chosen_patches"] = pygame_gui.elements.UITextBox(
             relative_rect=ui_scale(pygame.Rect((10, 0), (200, 100))),
             html_text="",
             container=self,
             anchors={"top_target": self.elements["example_cat"]},
         )
-        self.elements["warning"] = UITextBoxTweaked(
+        self.elements["warning"] = pygame_gui.elements.UITextBox(
             relative_rect=ui_scale(pygame.Rect((10, 0), (200, -1))),
             html_text="",
             container=self,
@@ -123,7 +122,7 @@ class ComboToolWindow(GameWindow):
             container=self.elements["saving_container"],
             anchors={"left_target": self.elements["name_entry"], "centery": "centery"},
         )
-        self.elements["save_text"] = UITextBoxTweaked(
+        self.elements["save_text"] = pygame_gui.elements.UITextBox(
             relative_rect=ui_scale(pygame.Rect((10, 0), (200, -1))),
             html_text="",
             container=self.elements["saving_container"],

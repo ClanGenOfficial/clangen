@@ -314,9 +314,16 @@
         "relationship_changes": [
             {
                 "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
+                "cats_to": ["r_c1"],
                 "mutual": true,
                 "values": ["like", "comfort"],
+                "amount": 7
+            },
+            {
+                "cats_from": ["m_c", "r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "values": ["comfort"],
                 "amount": 7
             }
         ]

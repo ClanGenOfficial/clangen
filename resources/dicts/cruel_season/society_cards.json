@@ -57,5 +57,11 @@
     "modifiers": {
       "roles.receive_mentor": false
     }
+  },
+  "disorganized": {
+    "card_art": "society/resolute.png",
+    "modifiers": {
+      "patrol_related.allow_player_selection.all": false
+    }
   }
 }

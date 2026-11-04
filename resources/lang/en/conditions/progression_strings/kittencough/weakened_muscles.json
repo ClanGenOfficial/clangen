@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "kittencough_weakened_muscles0",
+        "strings": [
+            "Being so young, the effects of kittencough were heavy on m_c's body; {PRONOUN/m_c/subject}'ll never fully recover."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
