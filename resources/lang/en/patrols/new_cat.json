@@ -20358,7 +20358,7 @@
                             "recovering_from_birth"
                         ],
                         "no_results": true,
-                        "death_history": "This cat died after giving birth"
+                        "death_history": "This cat died after giving birth."
                     },
                     {
                         "cats": [
@@ -20401,7 +20401,9 @@
                     "p_l orders the patrol into the water to grab the Twoleg thing. The current is surprisingly fast here, and the thing slips right past r_c0's outstretched claws. s_c0 turns and plunges after it, separating from the rest of the patrol as {PRONOUN/s_c0/subject} {VERB/s_c0/follow/follows} the thing downstream. With the current at {PRONOUN/s_c0/poss} back, s_c0 soon catches up to the object and drags it ashore. Inside is a half-drowned litter of kits, and s_c0 curls up around them as {PRONOUN/s_c0/subject} {VERB/s_c0/wait/waits} for the patrol to catch up."
                 ],
                 "involved_cats": {
-                    "r_c0": {},
+                    "r_c0": {
+                        "prior_abbreviation": ["-p_l"]
+                    },
                     "s_c0": {
                         "prior_abbreviation": ["any"],
                         "stat": {
@@ -20452,7 +20454,7 @@
                             "recovering_from_birth"
                         ],
                         "no_results": true,
-                        "death_history": "This cat died after giving birth"
+                        "death_history": "This cat died after giving birth."
                     },
                     {
                         "cats": [
@@ -20497,7 +20499,9 @@
                     "p_l orders the patrol into the water, but the current is too quick and sweeps the Twoleg thing past the patrol. They try wading after it, but the water moves faster than the cats can, and soon it's out of sight. When r_c0 asks p_l why {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} so upset, p_l explains that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} sure that Twoleg thing had a litter of kittens in it. The patrol continues on with heavy hearts."
                 ],
                 "involved_cats": {
-                    "r_c0": {},
+                    "r_c0": {
+                        "prior_abbreviation": ["-p_l"]
+                    },
                     "n_c0": {
                         "can_create_new_cat": {},
                         "gender": ["can_birth"],
@@ -20541,7 +20545,7 @@
                             "recovering_from_birth"
                         ],
                         "no_results": true,
-                        "death_history": "This cat died after giving birth"
+                        "death_history": "This cat died after giving birth."
                     }
                 ],
                 "reputation_changes": {
@@ -20556,7 +20560,9 @@
                     "p_l orders the patrol into the water to grab the Twoleg thing. The current is surprisingly fast here, and the thing slips right past r_c0's outstretched claws. s_c0 turns and plunges after it, separating from the rest of the patrol as {PRONOUN/s_c0/subject} {VERB/s_c0/follow/follows} the thing downstream. But the current is so fast, and try as s_c0 may, {PRONOUN/s_c0/subject} just can't catch up. Before {PRONOUN/s_c0/subject} {VERB/s_c0/know/knows} it, s_c0 has gone too far, and is swept into the rapids. The patrol finds s_c0 on the shore hundreds of tail-lengths downstream, battered, bruised, and hacking up water."
                 ],
                 "involved_cats": {
-                    "r_c0": {},
+                    "r_c0": {
+                        "prior_abbreviation": ["-p_l"]
+                    },
                     "s_c0": {
                         "prior_abbreviation": ["any"],
                         "stat": {
@@ -20606,7 +20612,7 @@
                             "recovering_from_birth"
                         ],
                         "no_results": true,
-                        "death_history": "This cat died after giving birth"
+                        "death_history": "This cat died after giving birth."
                     },
                     {
                         "cats": [
@@ -20616,7 +20622,7 @@
                             "water_in_lungs",
                             "minor_injury"
                         ],
-                        "death_history": "m_c died from water in {PRONOUN/m_c/poss} lungs after {PRONOUN/m_c/subject} tried to rescue a litter of drowning kits"
+                        "death_history": "m_c died from water in {PRONOUN/m_c/poss} lungs after {PRONOUN/m_c/subject} tried to rescue a litter of drowning kits."
                     }
                 ],
                 "reputation_changes": {
