@@ -52,7 +52,7 @@ class AllegiancesScreen(Screens):
         allegiance_list = self.get_allegiances_text()
 
         self.scroll_container = UIModifiedScrollingContainer(
-            ui_scale(pygame.Rect((50, 165), (715, 470))),
+            ui_scale(pygame.Rect((40, 165), (730, 470))),
             allow_scroll_x=False,
             allow_scroll_y=True,
             manager=MANAGER,

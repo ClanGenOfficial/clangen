@@ -57,5 +57,11 @@
     "modifiers": {
       "patrol_generation.patrolling_percent": 0.5
     }
+  },
+  "disorganized": {
+    "card_art": "society/resolute.png",
+    "modifiers": {
+      "patrol_related.allow_player_selection.all": false
+    }
   }
 }
