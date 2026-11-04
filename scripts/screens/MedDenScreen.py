@@ -601,6 +601,8 @@ class MedDenScreen(Screens):
             object_id="@buttonstyles_squoval",
             container=self.elements["quarantine_view_container"],
         )
+        if not self.meds:
+            self.elements["build_nest"].disable()
 
         self.update_nest_display()
 
