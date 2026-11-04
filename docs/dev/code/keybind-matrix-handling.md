@@ -17,3 +17,40 @@ However, if elements are being added or removed, then you'll need to be updating
 
 !!! tip
     You don't have to worry about adding and removing elements if they're being temporarily disabled or hidden. The map automatically skips over "invalid" elements when searching for a new element to focus on.
+
+## Fine Control
+If you feel that the auto-generated map isn't lining up with intuitive navigation, you can determine finer control via `focus_map` attributes.
+
+!!! note
+    This only works for our custom elements. pygame-gui base element classes will not be capable of this functionality.
+
+    Likewise, not all custom element classes may feature this functionality. Always check if the class has a `focus_map` parameter.
+
+On applicable events, you can pass the `focus_map` argument or access the instance attribute `focus_map` to adjust it. `focus_map` takes an `ElementFocusMap` `TypedDict`. This means you can either pass an `ElementFocusMap` object like so:
+
+```python
+element.focus_map = ElementFocusMap(focus_down: other_element)
+```
+
+Or you can pass it as a normal dictionary:
+
+```python
+element.focus_map = {"focus_down": other_element}
+```
+
+Allowed dictionary keys are:
+
+```python
+focus_map_dictionary = {
+    "focus_down": element,
+    "focus_up": element,
+    "focus_right": element,
+    "focus_left": element
+}
+```
+
+Each key corresponds to an `Action` direction. When a player presses a key linked to `Action.UP`, the focus will move from the current element to the element above it **OR**, if a `focus_up` value was given, it will move to that value.
+
+In this fashion, we can have finer control over which elements lead to which. However, take care, you can only indicate one element for each focus direction. If elements are being hidden, disabled, or killed during the usage of the screen, you may need to change the focus map accordingly.
+
+
