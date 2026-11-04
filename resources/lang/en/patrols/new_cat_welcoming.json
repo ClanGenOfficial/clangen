@@ -16973,6 +16973,14 @@
                             "minor_injury"
                         ],
                         "scar_history": "This cat was scarred after being caught up in Twoleg rubbish"
+                    },
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "stinky"
+                        ]
                     }
                 ],
                 "join": [
@@ -17039,6 +17047,14 @@
                             "minor_injury"
                         ],
                         "scar_history": "This cat was scarred after being caught up in Twoleg rubbish"
+                    },
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "stinky"
+                        ]
                     }
                 ],
                 "join": [
@@ -17122,6 +17138,14 @@
                             "-bruises"
                         ],
                         "scar_history": "This cat was scarred after being caught up in Twoleg rubbish"
+                    },
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "stinky"
+                        ]
                     }
                 ],
                 "join": [
@@ -17183,6 +17207,14 @@
                             "minor_injury"
                         ],
                         "scar_history": "This cat was scarred after being caught up in Twoleg rubbish"
+                    },
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "stinky"
+                        ]
                     }
                 ],
                 "meet": [
@@ -17246,6 +17278,14 @@
                             "torn_pelt"
                         ],
                         "scar_history": "This cat was scarred after scrapping with a c_n apprentice."
+                    },
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "stinky"
+                        ]
                     },
                     {
                         "cats": [
@@ -17346,6 +17386,14 @@
                             "minor_injury"
                         ],
                         "scar_history": "This cat was scarred after being caught up in Twoleg rubbish"
+                    },
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "stinky"
+                        ]
                     },
                     {
                         "cats": [
