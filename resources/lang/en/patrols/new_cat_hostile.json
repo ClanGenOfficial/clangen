@@ -6463,8 +6463,7 @@
                         ],
                         "mutual": true,
                         "log": {
-                            "cats_from": "cat_from and cat_to share the same supernatural powers",
-                            "cats_to": "cat_from and cat_to share the same supernatural powers"
+                            "cats_from": "cat_from and cat_to found that they share the same supernatural powers."
                         }
                     }
                 ],
@@ -6547,8 +6546,7 @@
                         ],
                         "mutual": true,
                         "log": {
-                            "cats_from": "cat_from and cat_to share the same supernatural powers",
-                            "cats_to": "cat_from and cat_to share the same supernatural powers"
+                            "cats_from": "cat_from and cat_to found that they share the same supernatural powers."
                         }
                     }
                 ],
@@ -6561,10 +6559,10 @@
                 "exp_gained": 15,
                 "outcome_art": "cat_sprites/gen_vision_Wr",
                 "strings": [
-                    "s_c0 gives {PRONOUN/s_c0/self} a shake and sets out to find this cat. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/use/uses} {PRONOUN/s_c0/poss} visions as a bat uses its chirps to find bugs, using the strength of the visions to pinpoint the cat causing them. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/find/finds} the cat just outside of POI, and the moment their eyes meet, {PRONOUN/s_c0/subject} can see the cat shake with a vision of {PRONOUN/n_c0/poss} own. {PRONOUN/n_c0/subject/CAP} {VERB/n_c0/seem/seems} impressed that s_c0 tracked {PRONOUN/n_c0/object} down using clairvoyance, and they discuss how they each use their powers. s_c0 asks if n_c0 could try and join the Clan - {PRONOUN/s_c0/subject}'ll vouch for {PRONOUN/n_c0/object}!"
+                    "p_l gives {PRONOUN/p_l/self} a shake and sets out to find this cat. {PRONOUN/p_l/subject/CAP} {VERB/p_l/use/uses} {PRONOUN/p_l/poss} visions as a bat uses its chirps to find bugs, using the strength of the visions to pinpoint the cat causing them. {PRONOUN/p_l/subject/CAP} {VERB/p_l/find/finds} the cat just outside of POI, and the moment their eyes meet, {PRONOUN/p_l/subject} can see the cat shake with a vision of {PRONOUN/n_c0/poss} own. {PRONOUN/n_c0/subject/CAP} {VERB/n_c0/seem/seems} impressed that p_l tracked {PRONOUN/n_c0/object} down using clairvoyance, and they discuss how they each use their powers. p_l asks if n_c0 could try and join the Clan - {PRONOUN/p_l/subject}'ll vouch for {PRONOUN/n_c0/object}!"
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "prior_abbreviation": ["p_l"],
                         "stat": {
                             "skill": ["CLAIRVOYANT,1"]
@@ -6631,8 +6629,8 @@
                         ],
                         "mutual": true,
                         "log": {
-                            "cats_from": "cat_from and cat_to share the same supernatural powers, and cat_to agreed to join c_n.",
-                            "cats_to": "cat_from and cat_to share the same supernatural powers, and cat_from convinced {PRONOUN/cat_to/object} to join c_n."
+                            "cats_from": "cat_from and cat_to found that they share the same supernatural powers, and cat_to agreed to join c_n.",
+                            "cats_to": "cat_from and cat_to found that they share the same supernatural powers, and cat_from convinced {PRONOUN/cat_to/object} to join c_n."
                         }
                     }
                 ],
@@ -6729,7 +6727,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_from disapproves of how cat_to disappeared for days without telling anyone, then showed back up at camp injured from {PRONOUN/cat_to/poss} misadventure"
+                            "cats_from": "cat_from disapproved of how cat_to disappeared for days without telling anyone, then showed back up at camp injured from {PRONOUN/cat_to/poss} misadventure."
                         }
                     }
                 ],
@@ -6802,7 +6800,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_from disapproves of how cat_to disappeared for days without telling anyone, then showed back up at camp injured from {PRONOUN/cat_to/poss} misadventure"
+                            "cats_from": "cat_from disapproved of how cat_to disappeared for days without telling anyone, then showed back up at camp injured from {PRONOUN/cat_to/poss} misadventure."
                         }
                     }
                 ],
@@ -6839,7 +6837,7 @@
                             "p_l"
                         ],
                         "body": false,
-                        "history": "This cat died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} ambushed by a rogue while searching for the cat causing {PRONOUN/m_c/poss} clairvoyant visions"
+                        "history": "This cat died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} ambushed by a rogue while searching for the cat causing {PRONOUN/m_c/poss} clairvoyant visions."
                     }
                 ],
                 "reputation_changes": {
