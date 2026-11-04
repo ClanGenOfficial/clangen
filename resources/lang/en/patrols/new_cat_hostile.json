@@ -8664,7 +8664,7 @@
                 "death": [
                     {
                         "cats": ["n_c0"],
-                        "history": "This cat died while wandering",
+                        "history": "This cat died while wandering.",
                         "no_results": true
                     }
                 ],
@@ -8766,7 +8766,7 @@
                             "poisoned",
                             "carrionplace_disease"
                         ],
-                        "death_history": "m_c died after ingesting something tainted at POI"
+                        "death_history": "m_c died after ingesting something tainted at POI."
                     }
                 ],
                 "relationship_changes": [
@@ -8784,7 +8784,7 @@
                             "comfort"
                         ],
                         "log": {
-                            "cats_from": "cat_to found cat_from when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} injured at POI, and brought {PRONOUN/cat_from/object} back to c_n"
+                            "cats_from": "cat_to found cat_from when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} injured at POI, and brought {PRONOUN/cat_from/object} back to c_n."
                         }
                     },
                     {
@@ -8878,7 +8878,7 @@
                             "poisoned",
                             "carrionplace_disease"
                         ],
-                        "death_history": "m_c died after ingesting something tainted at POI"
+                        "death_history": "m_c died after ingesting something tainted at POI."
                     }
                 ],
                 "relationship_changes": [
@@ -8896,7 +8896,7 @@
                             "comfort"
                         ],
                         "log": {
-                            "cats_from": "cat_to found cat_from when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} injured at POI, and brought {PRONOUN/cat_from/object} back to c_n"
+                            "cats_from": "cat_to found cat_from when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} injured at POI, and brought {PRONOUN/cat_from/object} back to c_n."
                         }
                     },
                     {
@@ -8912,7 +8912,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "A Dark Forest spirit led cat_from to cat_to, and said {PRONOUN/cat_to/subject}'d be a great asset to c_n, but cat_from doesn't trust the spirit's intentions"
+                            "cats_from": "A Dark Forest spirit led cat_from to cat_to, and said {PRONOUN/cat_to/subject}'d be a great asset to c_n, but cat_from didn't trust the spirit's intentions."
                         }
                     }
                 ],
@@ -9006,7 +9006,7 @@
                             "poisoned",
                             "carrionplace_disease"
                         ],
-                        "death_history": "m_c died after ingesting something tainted at POI"
+                        "death_history": "m_c died after ingesting something tainted at POI."
                     }
                 ],
                 "death": [
@@ -9035,8 +9035,7 @@
                             "romance"
                         ],
                         "log": {
-                            "cats_from": "cat_from and cat_to were deeply in love.",
-                            "cats_to": "cat_to and cat_from were deeply in love."
+                            "cats_from": "cat_from and cat_to were deeply in love."
                         }
                     },
                     {
@@ -9053,7 +9052,7 @@
                             "comfort"
                         ],
                         "log": {
-                            "cats_from": "cat_from is grateful to cat_to for rescuing {PRONOUN/cat_from/object} at POI, and bringing {PRONOUN/cat_from/object} to c_n"
+                            "cats_from": "cat_from was grateful to cat_to for rescuing {PRONOUN/cat_from/object} at POI, and bringing {PRONOUN/cat_from/object} to c_n."
                         }
                     }
                 ],
@@ -9173,7 +9172,7 @@
                             "n_c0"
                         ],
                         "no_results": true,
-                        "history": "m_c died after ingesting something tainted at POI"
+                        "history": "m_c died after ingesting something tainted at POI."
                     }
                 ],
                 "reputation_changes": {
@@ -9238,7 +9237,7 @@
                             "n_c0"
                         ],
                         "no_results": true,
-                        "history": "m_c died after ingesting something tainted at POI"
+                        "history": "m_c died after ingesting something tainted at POI."
                     }
                 ],
                 "reputation_changes": {
@@ -9405,7 +9404,7 @@
                 "death": [
                     {
                         "cats": ["n_c0"],
-                        "history": "This cat died while wandering",
+                        "history": "This cat died while wandering.",
                         "no_results": true
                     }
                 ],
@@ -9525,7 +9524,7 @@
                             "comfort"
                         ],
                         "log": {
-                            "cats_from": "cat_to found cat_from when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} injured at POI, and brought {PRONOUN/cat_from/object} back to c_n"
+                            "cats_from": "cat_to found cat_from when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} injured at POI, and brought {PRONOUN/cat_from/object} back to c_n."
                         }
                     },
                     {
@@ -9637,7 +9636,7 @@
                             "comfort"
                         ],
                         "log": {
-                            "cats_from": "cat_to found cat_from when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} injured at POI, and brought {PRONOUN/cat_from/object} back to c_n"
+                            "cats_from": "cat_to found cat_from when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} injured at POI, and brought {PRONOUN/cat_from/object} back to c_n."
                         }
                     },
                     {
@@ -9653,7 +9652,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "A Dark Forest spirit led cat_from to cat_to, and said {PRONOUN/cat_to/subject}'d be a great asset to c_n, but cat_from doesn't trust the spirit's intentions"
+                            "cats_from": "A Dark Forest spirit led cat_from to cat_to, and said {PRONOUN/cat_to/subject}'d be a great asset to c_n, but cat_from didn't trust the spirit's intentions."
                         }
                     }
                 ],
@@ -9776,8 +9775,7 @@
                             "romance"
                         ],
                         "log": {
-                            "cats_from": "cat_from and cat_to were deeply in love.",
-                            "cats_to": "cat_to and cat_from were deeply in love."
+                            "cats_from": "cat_from and cat_to were deeply in love."
                         }
                     },
                     {
@@ -9794,7 +9792,7 @@
                             "comfort"
                         ],
                         "log": {
-                            "cats_from": "cat_from is grateful to cat_to for rescuing {PRONOUN/cat_from/object} at POI, and bringing {PRONOUN/cat_from/object} to c_n"
+                            "cats_from": "cat_from was grateful to cat_to for rescuing {PRONOUN/cat_from/object} at POI, and bringing {PRONOUN/cat_from/object} to c_n."
                         }
                     }
                 ],
@@ -9917,7 +9915,6 @@
                 }
             },
             {
-                
                 "frequency": 4,
                 "exp_gained": 0,
                 "outcome_art": "halloween/hal_scaryghost_Df",
