@@ -1,4 +1,6 @@
 # Keybind Matrix Map
+
+## Overview
 Our UI can create matrix maps of the interactable elements on the screen through a universal `Screens` function. This map then allows the player to utilize the arrow keys of their keyboard to move through the screen's elements fluidly, with the enter key allowing them to interact with a selected element.
 
 Screens need to be set up with this matrix map in order for the keybinding to work. 
@@ -53,4 +55,58 @@ Each key corresponds to an `Action` direction. When a player presses a key linke
 
 In this fashion, we can have finer control over which elements lead to which. However, take care, you can only indicate one element for each focus direction. If elements are being hidden, disabled, or killed during the usage of the screen, you may need to change the focus map accordingly.
 
+### Detailed Example
 
+**Utilizing Class Argument**
+```python
+self.elements["sabotage_rel"] = UISurfaceImageButton( # (1)!
+    ui_scale(pygame.Rect((20, 0), (105, 30))),
+    "screens.mediation.sabotage",
+    get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
+    object_id="@buttonstyles_squoval",
+    manager=MANAGER,
+)
+
+self.elements["remove_cat1"] = UISurfaceImageButton( # (2)!
+    ui_scale(pygame.Rect((605, 434), (127, 30))),
+    "buttons.remove_cat",
+    get_button_dict(ButtonStyles.SQUOVAL, (127, 30)),
+    object_id="@buttonstyles_squoval",
+    manager=MANAGER,
+    focus_map=ElementFocusMap(  # (3)!
+        focus_up=self.elements["sabotage_rel"] # (4)!
+    ),
+)
+```
+
+1. Creation of our first element
+2. Creation of our second element
+3. Here, we are passing an `ElementFocusMap()` object as our `focus_map` argument
+4. This `focus_map` now has `focus_up` marked as our first element: `self.elements["sabotage_rel"]`. When `self.elements["remove_cat1"]` is focused and the player presses an `Action.UP` key, focus will move to `self.elements["sabotage_rel"]`.
+
+**Adding Focus Map After Element Creation**
+```python
+self.elements["romance_checkbox"] = UICheckbox( # (1)!
+    position=(70, 0),
+    manager=MANAGER,
+    check=self.allow_romance,
+)
+
+self.elements["improve_rel"] = UISurfaceImageButton( # (2)!
+    ui_scale(pygame.Rect((20, 0), (105, 30))),
+    "screens.mediation.improve",
+    get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
+    object_id="@buttonstyles_squoval",
+    manager=MANAGER,
+)
+
+self.elements["romance_checkbox"].focus_map = { # (3)!
+    "focus_down": self.elements["improve_rel"] # (4)!
+}
+
+```
+
+1. Creation of our first element
+2. Creation of our second element
+3. Our first element wanted to include the second element in its focus map, but could not do so until the second element was created. Now, it must add the element to its focus map via modifying the instance attribute: `focus_map`.
+4. `self.elements["improve_rel"]` is indicated as the `focus_down`. When `self.elements["romance_checkbox"]` is focused and the player presses an `Action.DOWN` key, focus will move to `self.elements["improve_rel"]`.
