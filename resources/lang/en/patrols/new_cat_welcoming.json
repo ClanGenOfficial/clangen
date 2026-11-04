@@ -13115,7 +13115,7 @@
                             "respect"
                         ],
                         "log": {
-                            "cats_from": "cat_from is grateful that cat_to was welcoming to {PRONOUN/cat_from/object} and happily gave {PRONOUN/cat_from/object} shelter at POI."
+                            "cats_from": "cat_from was grateful that cat_to was welcoming to {PRONOUN/cat_from/object} and happily gave {PRONOUN/cat_from/object} shelter at POI."
                         }
                     }
                 ],
@@ -13202,8 +13202,8 @@
                         "condition": [
                             "dangerously_cold"
                         ],
-                        "scar_history": "This cat was caught out in a downpour for too long, and was scarred as a result of {PRONOUN/m_c/poss} cold, soaked fur",
-                        "death_history": "This cat died after being caught out in a downpour for too long and becoming too cold"
+                        "scar_history": "This cat was caught out in a downpour for too long, and was scarred as a result of {PRONOUN/m_c/poss} cold, soaked fur.",
+                        "death_history": "This cat died after being caught out in a downpour for too long and becoming too cold."
                     }
                 ],
                 "join": [
@@ -13227,7 +13227,7 @@
                             "comfort"
                         ],
                         "log": {
-                            "cats_from": "cat_from is grateful that cat_to was willing to give {PRONOUN/cat_from/object} shelter first at POI, and then at the Clan"
+                            "cats_from": "cat_from was grateful that cat_to was willing to give {PRONOUN/cat_from/object} shelter first at POI, and then at the Clan."
                         }
                     }
                 ],
@@ -13264,8 +13264,8 @@
                         "condition": [
                             "dangerously_cold"
                         ],
-                        "scar_history": "This cat was caught out in a downpour for too long, and was scarred as a result of {PRONOUN/m_c/poss} cold, soaked fur",
-                        "death_history": "This cat died after being caught out in a downpour for too long and becoming too cold"
+                        "scar_history": "This cat was caught out in a downpour for too long, and was scarred as a result of {PRONOUN/m_c/poss} cold, soaked fur.",
+                        "death_history": "This cat died after being caught out in a downpour for too long and becoming too cold."
                     }
                 ],
                 "meet": [
@@ -13325,7 +13325,7 @@
                 "death": [
                     {
                         "cats": ["n_c0"],
-                        "history": "This cat died from the effects of the freezing floodwaters {PRONOUN/m_c/subject} {VERB/m_c/were/was} caught in"
+                        "history": "This cat died from the effects of the freezing floodwaters {PRONOUN/m_c/subject} {VERB/m_c/were/was} caught in."
                     }
                 ],
                 "reputation_changes": {
@@ -13357,7 +13357,7 @@
                         "cats": [
                             "n_c0"
                         ],
-                        "history": "This cat died in a torrent of floodwaters"
+                        "history": "This cat died in a torrent of floodwaters."
                     }
                 ],
                 "reputation_changes": {
