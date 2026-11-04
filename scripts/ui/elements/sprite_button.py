@@ -91,7 +91,7 @@ class UISpriteButton(CatButton):
             anchors=anchors,
             mask=mask,
             mask_padding=mask_padding,
-            focus_map=focus_map
+            focus_map=focus_map,
         )
 
         self.join_focus_sets(self.cat_image)
