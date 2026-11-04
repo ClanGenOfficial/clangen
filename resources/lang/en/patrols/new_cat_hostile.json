@@ -10000,6 +10000,669 @@
         ]
     },
     {
+        "event_id": "gen_bord_danger_unstable_poi_poacher_hostile",
+        "types": ["border"],
+        "frequency": 1,
+        "poi": {
+            "category": "terrain",
+            "tags": [
+                "danger:unstable"
+            ]
+        },
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                2
+            ],
+            "normal adult": [
+                1,
+                1
+            ],
+            "apprentice": [
+                1,
+                1
+            ]
+        },
+        "involved_cats": {
+            "r_c0": {
+                "group": [
+                    "player_clan"
+                ],
+                "status": [
+                    "apprentice"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "p_l"
+                ],
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "mentor/app"
+                ]
+            }
+        ],
+        "chance_of_success": 40,
+        "patrol_art": "POI",
+        "intro_strings": [
+            "p_l and {PRONOUN/p_l/poss} apprentice, r_c0, are working on r_c0's hunting at POI when they spot an outsider poaching in c_n territory! The pair ferociously chase the cat, and the pursuit climbs higher and higher up POI. Suddenly there's a rumble, and all three cats' eyes widen as they realize that the part of POI beneath them is collapsing!"
+        ],
+        "decline_strings": [
+            "<i>Go, go, go!</i> p_l shoves r_c0's shoulder with {PRONOUN/p_l/poss} head, pushing the apprentice towards a safe route. The young cat races towards safety, p_l following behind {PRONOUN/r_c0/object} and making sure {PRONOUN/r_c0/subject} {VERB/r_c0/make/makes} it. When the dust from the collapse settles, the poacher is nowhere to be seen."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 20,
+                "outcome_art": "cat_sprites/gen_supportive_WrAp",
+                "strings": [
+                    "p_l's world tilts sideways as the surface underneath {PRONOUN/p_l/object} breaks away from the rest and starts falling. {PRONOUN/p_l/subject/CAP} {VERB/p_l/scramble/scrambles} to leap back up, but only {VERB/p_l/manage/manages} to cling to more sliding debris. {PRONOUN/p_l/subject/CAP} {VERB/p_l/yowl/yowls} in pain - r_c0 has sunk {PRONOUN/r_c0/poss} teeth into {PRONOUN/p_l/poss} paw, trying to yank {PRONOUN/p_l/object} up! But the weight is too much and the apprentice starts sliding too. Then, they suddenly stop. The poacher has bit into r_c0's scruff, and helps pull them both to safety! Astonished by the outsider's altruistic behavior, they promise not to tell anycat about the poaching, and their rescuer leaves with a bit of prey."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": [
+                            "rogue"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "scrapes", 
+                            "bruises"
+                        ]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c0",
+                            "n_c0"
+                        ],
+                        "amount": 15,
+                        "values": [
+                            "like",
+                            "respect",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_to almost certainly saved cat_from's life when part of POI collapsed under {PRONOUN/cat_from/object}."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "amount": 10,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "log": {
+                            "cats_from": "cat_to helped cat_from save {PRONOUN/cat_from/poss} mentor when part of POI collapsed, even though {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} an outsider."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "amount": 5,
+                        "values": [
+                            "like",
+                            "trust",
+                            "respect"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from appreciated that cat_to forgave {PRONOUN/cat_from/poss} poaching and gifted {PRONOUN/cat_from/object} prey after {PRONOUN/cat_from/subject} helped save cat_to when POI collapsed."
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 1
+                }
+            },
+            {
+                "frequency": 4,
+                "exp_gained": 20,
+                "outcome_art": "cat_sprites/gen_hunt_funrun_Wr",
+                "strings": [
+                    "s_c0 sends r_c0 ahead of {PRONOUN/s_c0/object} on a safe route. {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} about to follow {PRONOUN/r_c0/object} when {PRONOUN/s_c0/subject} {VERB/s_c0/look/looks} back and {VERB/s_c0/see/sees} that the poacher is trapped. s_c0 hesitates, then turns and races towards the poacher. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/cross/crosses} the distance quickly, leaping over gaps and launching {PRONOUN/s_c0/self} up from falling platforms. s_c0 <i>slams</i> into {PRONOUN/n_c0/object} just before a huge piece of debris crashes down. The two cats tumble down a short, jagged slope before sliding to a stop. After the dust settles, s_c0 and the poacher help each other to the ground, and, grateful for {PRONOUN/n_c0/poss} life, n_c0 asks to join the Clan."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["p_l"],
+                        "stat": {
+                            "skill": [
+                                "RUNNER,1"
+                            ]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": [
+                            "rogue"
+                        ],
+                        "backstory": [
+                            "rogue1",
+                            "rogue2",
+                            "rogue3"
+                        ]
+                    }
+                },
+                "join": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "amount": 15,
+                        "values": [
+                            "like",
+                            "respect",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_to almost certainly saved cat_from's life when part of POI collapsed under {PRONOUN/cat_from/object}."
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 2
+                }
+            },
+            {
+                "frequency": 2,
+                "exp_gained": 20,
+                "outcome_art": "cat_sprites/gen_bumpheads_WrLn",
+                "strings": [
+                    "p_l's world tilts sideways as the surface underneath {PRONOUN/p_l/object} breaks away from the rest and starts falling. {PRONOUN/p_l/subject/CAP} {VERB/p_l/scramble/scrambles} to leap back up, but only {VERB/p_l/manage/manages} to cling to more sliding debris. {PRONOUN/p_l/subject/CAP} {VERB/p_l/yowl/yowls} in pain - r_c0 has sunk {PRONOUN/r_c0/poss} teeth into {PRONOUN/p_l/poss} paw, trying to yank {PRONOUN/p_l/object} up! But the weight is too much and the apprentice starts sliding too. Then, they suddenly stop. The poacher has bit into r_c0's scruff, and helps pull them both to safety! The astonished and grateful patrol invites n_c0 to join the Clan, and {PRONOUN/n_c0/subject} {VERB/n_c0/agree/agrees}, intrigued by the devotion between Clancats."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": [
+                            "rogue"
+                        ],
+                        "backstory": [
+                            "rogue1",
+                            "rogue2",
+                            "rogue3"
+                        ]
+                    }
+                },
+                "join": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "scrapes", 
+                            "bruises"
+                        ]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c0",
+                            "n_c0"
+                        ],
+                        "amount": 15,
+                        "values": [
+                            "like",
+                            "respect",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_to almost certainly saved cat_from's life when part of POI collapsed under {PRONOUN/cat_from/object}."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "amount": 15,
+                        "values": [
+                            "like",
+                            "respect",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_to helped cat_from save {PRONOUN/cat_from/poss} mentor when part of POI collapsed."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "amount": 10,
+                        "values": [
+                            "like",
+                            "trust",
+                            "respect"
+                        ],
+                        "log": {
+                            "cats_from": "cat_from appreciated that cat_to forgave {PRONOUN/cat_from/poss} poaching and invited {PRONOUN/cat_from/object} to {PRONOUN/cat_to/poss} Clan."
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 2
+                }
+            },
+            {
+                "frequency": 1,
+                "exp_gained": 20,
+                "outcome_art": "cat_sprites/gen_train_talking_RgWr",
+                "strings": [
+                    "The cats barely have time to dig their claws in before a huge chunk of POI breaks away and starts falling. The cats are alternately thrown into the air and then slammed down on their falling chunk. Part way down, it breaks into many pieces, scattering the three cats, and an enormous cloud of dust rises as everything hits the ground. For a moment all is still. Then, r_c0's head pops up from the debris; p_l calls out; and the poacher climbs up out of the dust. The three cats gather together in astonishment, and one by one start hysterically purring. They're alive! They're all alive! None of them are even hurt! They ask n_c0 to come back to camp with them - no cat will believe them otherwise!"
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": [
+                            "rogue"
+                        ],
+                        "backstory": [
+                            "rogue1",
+                            "rogue2",
+                            "rogue3"
+                        ]
+                    }
+                },
+                "join": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "patrol_cats",
+                            "n_c0"
+                        ],
+                        "condition": [
+                            "scrapes", 
+                            "bruises"
+                        ]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats",
+                            "n_c0"
+                        ],
+                        "cats_to": [
+                            "patrol_cats",
+                            "n_c0"
+                        ],
+                        "amount": 15,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_from and cat_to went through a terrifying event together when POI collapsed underneath them, and they feel closer because of that."
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": 2
+                }
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_injuredfall_Wr",
+                "strings": [
+                    "p_l's world tilts sideways as the surface underneath {PRONOUN/p_l/object} breaks away from the rest and starts falling. {PRONOUN/p_l/subject/CAP} {VERB/p_l/scramble/scrambles} to leap back up, but only {VERB/p_l/manage/manages} to cling to more sliding debris. {PRONOUN/p_l/subject/CAP} {VERB/p_l/yowl/yowls} in pain - r_c0 has sunk {PRONOUN/r_c0/poss} teeth into {PRONOUN/p_l/poss} paw, trying to yank {PRONOUN/p_l/object} up! But the apprentice just starts sliding too. p_l screams for {PRONOUN/p_l/poss} apprentice to let go and save {PRONOUN/r_c0/self}. The brave young cat refuses, still futilely trying to pull {PRONOUN/r_c0/poss} heavier mentor up. A search patrol finds them half-buried by debris at the base of POI, r_c0 still biting into p_l's paw."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": [
+                            "rogue"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "patrol_cats"
+                        ],
+                        "condition": [
+                            "broken_bone"
+                        ],
+                        "scar_history": "m_c was scarred when POI collapsed underneath {PRONOUN/m_c/object}.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} injuries after POI collapsed underneath {PRONOUN/m_c/object}."
+                    },
+                    {
+                        "cats": [
+                            "patrol_cats"
+                        ],
+                        "condition": [
+                            "blunt_force_injury",
+                            "-broken_bone"
+                        ],
+                        "scar_history": "m_c was scarred when POI collapsed underneath {PRONOUN/m_c/object}.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} injuries after POI collapsed underneath {PRONOUN/m_c/object}."
+                    },
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "cat_bite"
+                        ],
+                        "scar_history": "m_c was scarred by {PRONOUN/m_c/poss} apprentice trying to rescue {PRONOUN/m_c/object} when POI collapsed underneath them.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} injuries after {PRONOUN/m_c/poss} apprentice tried to rescue {PRONOUN/m_c/object} when POI collapsed underneath them.",
+                        "scar_pool_override": [
+                            "TOE",
+                            "TOETRAP"
+                        ]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "amount": 15,
+                        "values": [
+                            "like",
+                            "respect",
+                            "trust"
+                        ],
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_to wouldn't give up on rescuing cat_from, even when {PRONOUN/cat_from/subject} told {PRONOUN/cat_to/object} to.",
+                            "cats_to": "cat_from tried to get cat_to to save {PRONOUN/cat_to/self} at cat_from's expense, but if they're going down, they're going down together."
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": -1
+                }
+            },
+            {
+                "frequency": 4,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_runaway_Ap",
+                "strings": [
+                    "s_c0 sends r_c0 ahead of {PRONOUN/s_c0/object} on a safe route. {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} about to follow {PRONOUN/r_c0/object} when {PRONOUN/s_c0/subject} {VERB/s_c0/look/looks} back and {VERB/s_c0/see/sees} that the poacher is trapped. s_c0 hesitates, then turns and races towards the poacher. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/cross/crosses} the distance quickly, leaping over gaps and launching {PRONOUN/s_c0/self} up from falling debris. But {PRONOUN/s_c0/poss} heart isn't in it, and that hesitation costs {PRONOUN/s_c0/object}. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/don't/doesn't} quite make one leap, and is left clinging to an edge. By the time {PRONOUN/s_c0/subject} {VERB/s_c0/haul/hauls} {PRONOUN/s_c0/self} up, the poacher has been crushed by falling debris."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["p_l"],
+                        "stat": {
+                            "skill": [
+                                "RUNNER,0"
+                            ]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": [
+                            "rogue"
+                        ],
+                        "backstory": [
+                            "rogue1",
+                            "rogue2",
+                            "rogue3"
+                        ]
+                    }
+                },
+                "death": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "history": "m_c was crushed by falling debris."
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "scrapes"
+                        ]
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "amount": -5,
+                        "values": [
+                            "respect"
+                        ],
+                        "log": {
+                            "cats_from": "cat_to was kinda lame when {PRONOUN/cat_to/subject} tried to save an outsider."
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": -1
+                }
+            },
+            {
+                "frequency": 2,
+                "exp_gained": 0,
+                "outcome_art": "cat_sprites/gen_angrycat_Ap",
+                "strings": [
+                    "p_l's world tilts sideways as the surface underneath {PRONOUN/p_l/object} breaks away from the rest and starts falling. {PRONOUN/p_l/subject/CAP} {VERB/p_l/scramble/scrambles} to leap back up, but only {VERB/p_l/manage/manages} to cling to more sliding debris. {PRONOUN/p_l/subject/CAP} {VERB/p_l/yowl/yowls} in pain - r_c0 has sunk {PRONOUN/r_c0/poss} teeth into {PRONOUN/p_l/poss} paw, trying to yank {PRONOUN/p_l/object} up! It's working, too - until claws grip r_c0's pelt, and suddenly both cats are in freefall. The poacher has thrown them off! As expected of an outsider! When r_c0 wakes many hours later, half-buried in debris, {PRONOUN/r_c0/subject} {VERB/r_c0/drag/drags} {PRONOUN/r_c0/poss} broken body to {PRONOUN/r_c0/poss} mentor's side. p_l? p_l? p_l, wake up. Wake up! <i>p_l, you have to wake up!</i>"
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": [
+                            "rogue"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ],
+                "death": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "body": true,
+                        "history": "m_c was murdered by a poacher who threw {PRONOUN/m_c/object} off of POI."
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "broken_bone"
+                        ],
+                        "scar_history": "m_c was scarred when a poacher threw {PRONOUN/m_c/object} from POI as it collapsed.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} injuries after a poacher threw {PRONOUN/m_c/object} from POI as it collapsed."
+                    },
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "blunt_force_injury",
+                            "-broken_bone"
+                        ],
+                        "scar_history": "m_c was scarred when a poacher threw {PRONOUN/m_c/object} from POI as it collapsed.",
+                        "death_history": "m_c died from {PRONOUN/m_c/poss} injuries after a poacher threw {PRONOUN/m_c/object} from POI as it collapsed."
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "n_c0"
+                        ],
+                        "amount": -50,
+                        "values": [
+                            "like",
+                            "respect",
+                            "trust"
+                        ],
+                        "log": {
+                            "cats_from": "cat_to threw cat_from and {PRONOUN/cat_from/poss} mentor from POI, gravely injuring {PRONOUN/cat_from/object} and murdering {PRONOUN/cat_from/poss} mentor."
+                        }
+                    }
+                ],
+                "reputation_changes": {
+                    "outsider": -2
+                }
+            },
+            {
+                "frequency": 1,
+                "exp_gained": 0,
+                "strings": [
+                    "The cats barely have time to dig their claws in before a huge chunk of POI breaks away and starts falling. The cats are alternately thrown into the air and then slammed down on their falling chunk. Part way down, it breaks into many pieces, scattering the three cats, and an enormous cloud of dust rises as everything hits the ground. p_l groans and lifts {PRONOUN/p_l/poss} head. {PRONOUN/p_l/subject/CAP} {VERB/p_l/meet/meets} r_c0's vacant eyes right before more of POI comes down on top of them, burying all three cats into a shared tomb."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ],
+                        "status": [
+                            "rogue"
+                        ]
+                    }
+                },
+                "death": [
+                    {
+                        "cats": [
+                            "patrol_cats",
+                            "n_c0"
+                        ],
+                        "body": false,
+                        "history": "m_c died when POI collapsed underneath {PRONOUN/m_c/object}, sending {PRONOUN/m_c/object} to the bottom before more debris fell and entombed {PRONOUN/m_c/object}."
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "event_id": "gen_bord_fordriver_newborns_hostile",
         "types": ["border"],
         "frequency": 1,
