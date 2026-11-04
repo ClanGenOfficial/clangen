@@ -34,7 +34,7 @@ class UICruelCardIcon(UIImageButton):
             object_id=object_id,
             anchors=anchors,
             visible=visible,
-            focus_map=focus_map
+            focus_map=focus_map,
         )
 
         self.name = name

@@ -152,16 +152,27 @@ def find_next_focus(
     :param prev_focus_element: The element currently in focus that should lose focus
     :return: UIElement that has received focus
     """
-    if hasattr(prev_focus_element, "focus_map"):
+    if hasattr(prev_focus_element, "focus_map") and prev_focus_element.focus_map:
+        new_element = None
         if direction == Action.UP and prev_focus_element.focus_map.get("focus_up"):
-            return prev_focus_element.focus_map["focus_up"]
-        elif direction == Action.DOWN and prev_focus_element.focus_map.get("focus_down"):
-            return prev_focus_element.focus_map["focus_down"]
-        elif direction == Action.LEFT and prev_focus_element.focus_map.get("focus_left"):
-            return prev_focus_element.focus_map["focus_left"]
-        elif direction == Action.RIGHT and prev_focus_element.focus_map.get("focus_right"):
-            return prev_focus_element.focus_map["focus_right"]
+            new_element = prev_focus_element.focus_map["focus_up"]
+        elif direction == Action.DOWN and prev_focus_element.focus_map.get(
+            "focus_down"
+        ):
+            new_element = prev_focus_element.focus_map["focus_down"]
+        elif direction == Action.LEFT and prev_focus_element.focus_map.get(
+            "focus_left"
+        ):
+            new_element = prev_focus_element.focus_map["focus_left"]
+        elif direction == Action.RIGHT and prev_focus_element.focus_map.get(
+            "focus_right"
+        ):
+            new_element = prev_focus_element.focus_map["focus_right"]
 
+        if new_element:
+            if new_element.is_enabled and new_element.visible:
+                _set_focus(new_focus=new_element, old_focus=prev_focus_element)
+                return new_element
 
     new_row = None
     new_col = None

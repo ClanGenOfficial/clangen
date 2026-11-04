@@ -52,7 +52,7 @@ class CatButton(UIImageButton):
             mask=mask,
             mask_padding=mask_padding,
             tool_tip_object_id=tool_tip_object_id,
-            focus_map=focus_map
+            focus_map=focus_map,
         )
         if auto_disable_if_no_data and cat_id is None and cat_object is None:
             self.disable()

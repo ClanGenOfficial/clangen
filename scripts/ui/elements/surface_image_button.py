@@ -42,7 +42,7 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
         tab_movement: Dict[str, bool] = None,
         focus_map: ElementFocusMap = None,
     ):
-        self.focus_map = focus_map
+        self.focus_map = focus_map if focus_map else {}
         self.sound_id = sound_id
         if object_id is None:
             ids = None

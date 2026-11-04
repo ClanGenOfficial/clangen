@@ -41,7 +41,7 @@ class UIImageButton(pygame_gui.elements.UIButton):
         max_dynamic_width: Optional[int] = None,
         focus_map: ElementFocusMap = None,
     ):
-        self.focus_map = focus_map
+        self.focus_map = focus_map if focus_map else {}
         self.sound_id = sound_id
         self.mask_padding = mask_padding if mask_padding is not None else 2
         self.mask_info = [relative_rect[0:2], []]
@@ -169,3 +169,18 @@ class UIImageButton(pygame_gui.elements.UIButton):
 
     def return_sound_id(self):
         return self.sound_id
+
+    def focus(self):
+        if not self.is_enabled or not self.visible:
+            return  # early return to prevent focusing of disabled buttons
+        super().focus()
+        self.drawable_shape.set_active_state("hovered")
+
+    def unfocus(self):
+        if not self.is_enabled:
+            self.drawable_shape.set_active_state("disabled")
+        elif self.hovered:
+            self.drawable_shape.set_active_state("hovered")
+        else:
+            self.drawable_shape.set_active_state("normal")
+        super().unfocus()
