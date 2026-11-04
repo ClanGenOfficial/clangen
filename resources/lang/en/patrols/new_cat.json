@@ -17024,7 +17024,7 @@
                             "comfort"
                         ],
                         "log": {
-                            "cats_from": "cat_from received a prophecy that {PRONOUN/cat_from/subject} {VERB/cat_from/believe/believes} is about cat_to"
+                            "cats_from": "cat_from received a prophecy that {PRONOUN/cat_from/subject} believed was about cat_to."
                         }
                     },
                     {
@@ -17052,7 +17052,7 @@
                 "exp_gained": 15,
                 "outcome_art": "cat_sprites/gen_sitting_ApLn",
                 "strings": [
-                    "s_c0 goes home, stopping to gather herbs along the way and using the time to think over what this prophecy could mean. {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} sure that it foretells a cat coming, and {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} sure that the cat will come at the next quarter-moon. When that time comes, {PRONOUN/s_c0/subject} {VERB/s_c0/make/makes} the journey back to POI, and are met with an unfamiliar loner, who asks curiously if the prophecy drew {PRONOUN/s_c0/object} here too? The two cats gather herbs together on the way back to c_n."
+                    "p_l goes home, stopping to gather herbs along the way and using the time to think over what this prophecy could mean. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} sure that it foretells a cat coming, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} sure that the cat will come at the next quarter-moon. When that time comes, {PRONOUN/p_l/subject} {VERB/p_l/make/makes} the journey back to POI, and are met with an unfamiliar loner, who asks curiously if the prophecy drew {PRONOUN/p_l/object} here too? The two cats gather herbs together on the way back to c_n."
                 ],
                 "supply": [
                     {
@@ -17089,10 +17089,7 @@
                     }
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "p_l"
-                        ],
+                    "p_l": {
                         "status": [
                             "medicine cat apprentice"
                         ],
@@ -17151,7 +17148,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_to": [
                             "n_c0"
@@ -17164,8 +17161,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_from and cat_to have the same supernatural gift of prophecy, and it led them to each other",
-                            "cats_to": "cat_to and cat_from have the same supernatural gift of prophecy, and it led them to each other"
+                            "cats_from": "cat_from and cat_to have the same supernatural gift of prophecy, and it led them to each other."
                         }
                     },
                     {
@@ -17173,7 +17169,7 @@
                             "clan"
                         ],
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "amount": 15,
                         "values": [
@@ -17193,7 +17189,7 @@
                 "exp_gained": 15,
                 "outcome_art": "cat_sprites/gen_med_sitting_McLn",
                 "strings": [
-                    "s_c0 goes home, stopping to gather herbs along the way and using the time to think over what this prophecy could mean. {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} sure that it foretells a cat coming, and {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} sure that the cat will come at the next quarter-moon. When that time comes, {PRONOUN/s_c0/subject} {VERB/s_c0/make/makes} the journey back to POI, and are met with an unfamiliar loner, who asks curiously if the prophecy drew {PRONOUN/s_c0/object} here too? The two cats gather herbs together on the way back to c_n."
+                    "p_l goes home, stopping to gather herbs along the way and using the time to think over what this prophecy could mean. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} sure that it foretells a cat coming, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} sure that the cat will come at the next quarter-moon. When that time comes, {PRONOUN/p_l/subject} {VERB/p_l/make/makes} the journey back to POI, and are met with an unfamiliar loner, who asks curiously if the prophecy drew {PRONOUN/p_l/object} here too? The two cats gather herbs together on the way back to c_n."
                 ],
                 "supply": [
                     {
@@ -17230,10 +17226,7 @@
                     }
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "p_l"
-                        ],
+                    "p_l": {
                         "status": [
                             "medicine cat"
                         ],
@@ -17292,7 +17285,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_to": [
                             "n_c0"
@@ -17305,8 +17298,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_from and cat_to have the same supernatural gift of prophecy, and it led them to each other",
-                            "cats_to": "cat_to and cat_from have the same supernatural gift of prophecy, and it led them to each other"
+                            "cats_from": "cat_from and cat_to have the same supernatural gift of prophecy, and it led them to each other."
                         }
                     },
                     {
@@ -17314,7 +17306,7 @@
                             "clan"
                         ],
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "amount": 15,
                         "values": [
@@ -17351,7 +17343,7 @@
                             "respect"
                         ],
                         "log": {
-                            "cats_from": "cat_to couldn't understand a prophecy given to {PRONOUN/cat_to/object} during the half-moon meeting at POI"
+                            "cats_from": "cat_to couldn't understand a prophecy given to {PRONOUN/cat_to/object} during the half-moon meeting at POI."
                         }
                     }
                 ]
