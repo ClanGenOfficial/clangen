@@ -1141,6 +1141,7 @@ dev_tools = false
 [clan_resources]
   [clan_resources.den]
     [clan_resources.den.medicine]
+      allow_quarantine = true
       base_build_limit = 1
       build_limit_bonus_skills = ["CAMP"]
       

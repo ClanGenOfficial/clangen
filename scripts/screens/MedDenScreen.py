@@ -21,6 +21,7 @@ from scripts.clan_resources.den_resources.quarantine_nest import (
     get_nests_expirations,
 )
 from scripts.clan_resources.herb.herb_supply import MESSAGES
+from scripts.config import get_config
 from scripts.events_module.text_adjust import (
     event_text_adjust,
     shorten_text_to_fit,
@@ -44,6 +45,7 @@ from scripts.ui.icon import Icon
 from scripts.ui.scale import ui_scale, ui_scale_value, ui_scale_dimensions
 from scripts.ui.theme import get_text_box_theme
 from scripts.ui.windows.build_nests import BuildNestWindow
+from scripts.ui.windows.cruel_locked_action import CruelLockedAction
 from scripts.ui.windows.herbs import HerbManagementWindow
 
 
@@ -105,10 +107,13 @@ class MedDenScreen(Screens):
                 HerbManagementWindow(den_button=False)
             # quarantine
             elif event.ui_element == self.elements["open_quarantine"]:
-                self.open_view = "quarantine"
-                if not self.elements.get("quarantine_view_container"):
-                    self.create_quarantine_view()
-                self._update_view_state()
+                if not get_config("clan_resources.den.medicine.allow_quarantine"):
+                    CruelLockedAction()
+                else:
+                    self.open_view = "quarantine"
+                    if not self.elements.get("quarantine_view_container"):
+                        self.create_quarantine_view()
+                    self._update_view_state()
             # supply
             elif event.ui_element == self.elements["open_supply"]:
                 self.open_view = "supply"
