@@ -290,7 +290,7 @@ class HerbSupply:
         if taken_herbs:
             self.log.append(
                 i18n.t(
-                    "screens.med_den.herb_loss",
+                    "cruel_season.special_text.herb_loss",
                     herbs=adjust_list_text(taken_herbs),
                 )
             )
