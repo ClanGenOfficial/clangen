@@ -15604,13 +15604,14 @@
             "patrol_cats": [
                 1,
                 1
+            ],
+            "leader": [
+                -1,
+                -1
             ]
         },
         "involved_cats": {
             "p_l": {
-                "status": [
-                    "-leader"
-                ],
                 "stat": {
                     "skill": ["DREAM,0"]
                 }
