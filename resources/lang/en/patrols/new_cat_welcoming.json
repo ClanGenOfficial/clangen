@@ -12279,8 +12279,8 @@
                         "amount": 10,
                         "mutual": true,
                         "log": {
-                            "cats_from": "cat_to is the scariest medicine cat that cat_from has ever met, but {PRONOUN/cat_from/subject} can tell that {PRONOUN/cat_to/subject} really {VERB/cat_to/know/knows} {PRONOUN/cat_to/poss} stuff!",
-                            "cats_to": "cat_to thinks that cat_from is a good youngster with a lot of potential and just needs a bit of training up."
+                            "cats_from": "cat_to was the scariest medicine cat that cat_from had ever met, but {PRONOUN/cat_from/subject} could tell that {PRONOUN/cat_to/subject} really knew {PRONOUN/cat_to/poss} stuff!",
+                            "cats_to": "cat_to thought that cat_from was a good youngster with a lot of potential and just needed a bit of training up."
                         }
                     }
                 ],
@@ -12366,8 +12366,8 @@
                         "amount": 10,
                         "mutual": true,
                         "log": {
-                            "cats_from": "cat_to is pretty intimidating, but cat_from can tell that {PRONOUN/cat_to/subject} really {VERB/cat_to/know/knows} {PRONOUN/cat_to/poss} stuff.",
-                            "cats_to": "cat_from isn't the worst healer that cat_to has ever met."
+                            "cats_from": "cat_to was pretty intimidating, but cat_from could tell that {PRONOUN/cat_to/subject} really knew {PRONOUN/cat_to/poss} stuff.",
+                            "cats_to": "cat_from wasn't the worst healer that cat_to had ever met."
                         }
                     }
                 ],
@@ -12413,7 +12413,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from heard that p_l misinterpreted some omens and wasted {PRONOUN/cat_from/poss} mentor's time"
+                            "cats_from": "cat_from heard that p_l misinterpreted some omens and wasted {PRONOUN/cat_from/poss} mentor's time."
                         }
                     }
                 ],
