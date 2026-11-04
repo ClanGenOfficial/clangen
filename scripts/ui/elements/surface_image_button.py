@@ -7,6 +7,7 @@ from pygame_gui.core.gui_type_hints import RectLike, Coordinate
 from pygame_gui.core.interfaces import IUIManagerInterface
 
 from scripts.game_input import INPUT_ACTION_PRESSED, Action, INPUT_ACTION_RELEASED
+from scripts.ui.focus_matrix import ElementFocusMap
 from scripts.ui.icon import Icon
 from scripts.ui.scale import ui_scale_value
 
@@ -39,7 +40,9 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
         text_is_multiline: bool = False,
         text_layer_object_id: Optional[Union[ObjectID, str]] = None,
         tab_movement: Dict[str, bool] = None,
+        focus_map: ElementFocusMap = None,
     ):
+        self.focus_map = focus_map
         self.sound_id = sound_id
         if object_id is None:
             ids = None

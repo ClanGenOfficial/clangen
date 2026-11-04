@@ -3,6 +3,7 @@ import pygame_gui
 
 from scripts.game_input import INPUT_ACTION_PRESSED, Action, INPUT_ACTION_RELEASED
 from scripts.ui.elements.image_button import UIImageButton
+from scripts.ui.focus_matrix import ElementFocusMap
 
 
 class CatButton(UIImageButton):
@@ -29,6 +30,7 @@ class CatButton(UIImageButton):
         mask_padding=None,
         auto_disable_if_no_data=False,
         tool_tip_object_id=None,
+        focus_map: ElementFocusMap = None,
     ):
         self.cat_id = cat_id
         self.cat_object = cat_object
@@ -50,6 +52,7 @@ class CatButton(UIImageButton):
             mask=mask,
             mask_padding=mask_padding,
             tool_tip_object_id=tool_tip_object_id,
+            focus_map=focus_map
         )
         if auto_disable_if_no_data and cat_id is None and cat_object is None:
             self.disable()

@@ -12,6 +12,7 @@ from pygame_gui.elements import UIImage
 
 from scripts.game_input import INPUT_ACTION_PRESSED, Action, INPUT_ACTION_RELEASED
 from scripts.game_structure import image_cache, game
+from scripts.ui.focus_matrix import ElementFocusMap
 from scripts.ui.scale import ui_scale, ui_scale_dimensions, ui_scale_value
 
 
@@ -31,7 +32,9 @@ class UICruelCardLarge(UIImage):
         container=None,
         starting_height: int = 1,
         anchors: dict = None,
+        focus_map: ElementFocusMap = None,
     ):
+        self.focus_map = focus_map
         super().__init__(
             ui_scale(pygame.Rect(unscaled_position, (230, 360))),
             pygame.transform.scale(

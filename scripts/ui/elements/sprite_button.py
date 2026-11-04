@@ -7,6 +7,7 @@ from scripts.game_input import INPUT_ACTION_PRESSED, INPUT_ACTION_RELEASED, Acti
 from scripts.game_structure.game import game_setting_get
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.ui.elements.cat_button import CatButton
+from scripts.ui.focus_matrix import ElementFocusMap
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.scale import ui_scale_value, ui_scale
 
@@ -33,6 +34,7 @@ class UISpriteButton(CatButton):
         anchors=None,
         mask=None,
         mask_padding=None,
+        focus_map: ElementFocusMap = None,
     ):
         input_sprite = sprite.premul_alpha()
         # if it's going to be small on the screen, smoothscale out the crunch
@@ -89,6 +91,7 @@ class UISpriteButton(CatButton):
             anchors=anchors,
             mask=mask,
             mask_padding=mask_padding,
+            focus_map=focus_map
         )
 
         self.join_focus_sets(self.cat_image)

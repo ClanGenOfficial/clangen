@@ -9,6 +9,7 @@ from pygame_gui.core.interfaces import IUIManagerInterface, IUIElementInterface
 from scripts.game_input import INPUT_ACTION_PRESSED, Action, INPUT_ACTION_RELEASED
 from scripts.game_structure import game
 from scripts.game_structure.screen_settings import screen
+from scripts.ui.focus_matrix import ElementFocusMap
 
 
 class UIImageButton(pygame_gui.elements.UIButton):
@@ -38,7 +39,9 @@ class UIImageButton(pygame_gui.elements.UIButton):
         text_kwargs: Optional[Dict[str, str]] = None,
         tool_tip_text_kwargs: Optional[Dict[str, str]] = None,
         max_dynamic_width: Optional[int] = None,
+        focus_map: ElementFocusMap = None,
     ):
+        self.focus_map = focus_map
         self.sound_id = sound_id
         self.mask_padding = mask_padding if mask_padding is not None else 2
         self.mask_info = [relative_rect[0:2], []]
