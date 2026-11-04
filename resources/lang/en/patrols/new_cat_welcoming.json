@@ -16118,7 +16118,7 @@
                 "exp_gained": 0,
                 "outcome_art": "cat_sprites/gen_drowning_Wr",
                 "strings": [
-                    "p_l orders the patrol into the water to grab the Twoleg thing. The current is surprisingly fast here, and the thing slips right past r_c0's outstretched claws. s_c0 turns and plunges after it, separating from the rest of the patrol as {PRONOUN/s_c0/subject} {VERB/s_c0/follow/follows} the thing downstream. But the current is so fast, and it takes too long for s_c0 to catch up. Right as {PRONOUN/s_c0/subject} {PRONOUN/s_c0/grab/grabs} the thing in {PRONOUN/s_c0/poss} teeth, they hit the rapids. The patrol finds s_c0 on the shore hundreds of tail-lengths downstream, battered, bruised, and hacking up water - but still clutching the torn remains of the Twoleg thing. At least the tiny, still bodies resting inside will have a proper burial."
+                    "p_l orders the patrol into the water to grab the Twoleg thing. The current is surprisingly fast here, and the thing slips right past r_c0's outstretched claws. s_c0 turns and plunges after it, separating from the rest of the patrol as {PRONOUN/s_c0/subject} {VERB/s_c0/follow/follows} the thing downstream. But the current is so fast, and it takes too long for s_c0 to catch up. Right as {PRONOUN/s_c0/subject} {VERB/s_c0/grab/grabs} the thing in {PRONOUN/s_c0/poss} teeth, they hit the rapids. The patrol finds s_c0 on the shore hundreds of tail-lengths downstream, battered, bruised, and hacking up water - but still clutching the torn remains of the Twoleg thing. At least the tiny, still bodies resting inside will have a proper burial."
                 ],
                 "involved_cats": {
                     "r_c0": {},
