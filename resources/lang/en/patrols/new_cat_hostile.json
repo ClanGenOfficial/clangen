@@ -5891,10 +5891,10 @@
         "chance_of_success": 30,
         "patrol_art": "POI",
         "intro_strings": [
-            "p_l wakes with a start. Another sleep, another dream. So many dreams - dreams of dream_list/p_l -  every time {PRONOUN/p_l/subject} {VERB/p_l/fall/falls} asleep. And that <i>cat</i>, the one whose face {PRONOUN/p_l/subject} can never see... And the sight of POI lit up like the sun, viewed from a distance, but getting closer and closer each dream..."
+            "p_l moves carefully through the neutral ground that leads to POI. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} come to find out why it's plaguing {PRONOUN/p_l/poss} dreams lately. {PRONOUN/p_l/poss/CAP} dreams have been screaming out dream_list/p_l. They show POI shining with bright white light, pulsing in time with the heartbeat of an unseen cat that {PRONOUN/p_l/subject} can feel walking beside {PRONOUN/p_l/object}. With each dream, POI gets closer and closer, and last sleep, it was just a pawstep away."
         ],
         "decline_strings": [
-            "p_l gets up and goes to the dirtplace. {PRONOUN/p_l/subject/CAP} {VERB/p_l/start/starts} digging a new trench. p_l just needs to occupy {PRONOUN/p_l/poss} paws, occupy {PRONOUN/p_l/poss} mind. Then the dreams will stop, surely..."
+            "p_l is forced to turn back when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} across a patrol from o_c_n, made up of warriors bringing their new apprentices to see the holy place for the first time. {PRONOUN/p_l/subject/CAP} {VERB/p_l/slip/slips} away before they can notice {PRONOUN/p_l/object} and ask any questions."
         ],
         "success_outcomes": [
             {
@@ -5902,7 +5902,7 @@
                 "exp_gained": 10,
                 "outcome_art": "cat_sprites/gen_stargazing_WrWr",
                 "strings": [
-                    "p_l goes to the medicine den to consult with med_name. It's a long discussion that soon involves lead_name too, but p_l is given approval to go to POI with a patrol of warriors. {PRONOUN/p_l/subject/CAP} {VERB/p_l/arrive/arrives} just before moonhigh, and sitting at the very center of the holy place is the cat from {PRONOUN/p_l/poss} dreams. {PRONOUN/p_l/subject/CAP} {VERB/p_l/recognize/recognizes} the cat's paws - {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} dreamed of using them as {PRONOUN/p_l/poss} own. The cat purrs at p_l. It's nice to finally meet - they've been walking together for at least a moon now, haven't they? Shall they go back to c_n now? The strange cat merely purrs harder as the pair meets the patrol waiting outside."
+                    "p_l glances back at the warriors behind {PRONOUN/p_l/object}. Before, {PRONOUN/p_l/subject} had gone to the medicine den to consult with med_name. It was a long discussion that soon involved lead_name too, but p_l was given approval to go to POI with an escort for safety. {PRONOUN/p_l/subject/CAP} {VERB/p_l/arrive/arrives} just before moonhigh, and sitting at the very center of the holy place is the cat from {PRONOUN/p_l/poss} dreams. {PRONOUN/p_l/subject/CAP} {VERB/p_l/recognize/recognizes} the cat's paws - {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} dreamed of using them as {PRONOUN/p_l/poss} own. The cat purrs at p_l. It's nice to finally meet - they've been walking together for at least a moon now, haven't they? Shall they go back to c_n now? The strange cat merely purrs harder as the pair meets the patrol waiting outside."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -5962,8 +5962,8 @@
                         ],
                         "mutual": true,
                         "log": {
-                            "cats_from": "cat_to's supernatural powers led cat_from to {PRONOUN/cat_to/object}",
-                            "cats_to": "cat_from's supernatural powers allowed {PRONOUN/cat_from/object} to find cat_to"
+                            "cats_from": "cat_to's supernatural powers led cat_from to {PRONOUN/cat_to/object}.",
+                            "cats_to": "cat_from's supernatural powers allowed {PRONOUN/cat_from/object} to find cat_to."
                         }
                     }
                 ],
@@ -5978,7 +5978,7 @@
                 "exp_gained": 0,
                 "outcome_art": "cat_sprites/gen_angrycat_Ap",
                 "strings": [
-                    "p_l <i>has</i> to go to POI. {PRONOUN/p_l/subject/CAP} {VERB/p_l/sneak/sneaks} out of camp and begins the journey. When p_l arrives, the cat from {PRONOUN/p_l/poss} dreams is sitting at the very center of the holy place. The cat starts to say something, but p_l cuts {PRONOUN/n_c0/object} off, raising {PRONOUN/p_l/poss} hackles in fear. What does this cat want?! Why {VERB/n_c0/have/has} {PRONOUN/n_c0/subject} been sending dreams to p_l?! The stranger's purr stops, and {PRONOUN/n_c0/subject} silently {VERB/n_c0/walk/walks} away from POI, brushing {PRONOUN/n_c0/poss} pelt against p_l's as {PRONOUN/n_c0/subject} {VERB/n_c0/go/goes}. p_l races after {PRONOUN/n_c0/object}, fangs bared, but the strange outsider is gone."
+                    "p_l arrives just before moonhigh, and finds the cat from {PRONOUN/p_l/poss} dreams sitting at the very center of the holy place. The cat starts to say something, but p_l cuts {PRONOUN/n_c0/object} off, raising {PRONOUN/p_l/poss} hackles in fear. What does this cat want?! Why {VERB/n_c0/have/has} {PRONOUN/n_c0/subject} been sending dreams to p_l?! The stranger's purr stops, and {PRONOUN/n_c0/subject} silently {VERB/n_c0/walk/walks} away from POI, brushing {PRONOUN/n_c0/poss} pelt against p_l's as {PRONOUN/n_c0/subject} {VERB/n_c0/go/goes}. p_l races after {PRONOUN/n_c0/object}, fangs bared, but the strange outsider is gone."
                 ],
                 "involved_cats": {
                     "p_l": {
@@ -6042,7 +6042,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_to's supernatural powers led cat_from to {PRONOUN/cat_to/object}, but cat_from is suspicious of {PRONOUN/cat_to/poss} intentions."
+                            "cats_from": "cat_to's supernatural powers led cat_from to {PRONOUN/cat_to/object}, but cat_from was suspicious of {PRONOUN/cat_to/poss} intentions."
                         }
                     },
                     {
@@ -6059,7 +6059,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_from believes that {PRONOUN/cat_from/subject} and cat_to have a special connection through their supernatural gifts."
+                            "cats_from": "cat_from believed that {PRONOUN/cat_from/subject} and cat_to had a special connection through their shared supernatural gift."
                         }
                     }
                 ],
@@ -6072,7 +6072,7 @@
                 "exp_gained": 0,
                 "outcome_art": "cat_sprites/gen_angrycat_Wr",
                 "strings": [
-                    "p_l <i>has</i> to go to POI. {PRONOUN/p_l/subject/CAP} {VERB/p_l/sneak/sneaks} out of camp and begins the journey. When p_l arrives, the cat from {PRONOUN/p_l/poss} dreams is sitting at the very center of the holy place. The cat starts to say something, but p_l cuts {PRONOUN/n_c0/object} off, raising {PRONOUN/p_l/poss} hackles in challenge. What does this cat want?! Why {VERB/n_c0/have/has} {PRONOUN/n_c0/subject} been sending dreams to p_l?! The stranger's purr stops, and {PRONOUN/n_c0/subject} silently {VERB/n_c0/walk/walks} away from POI, brushing {PRONOUN/n_c0/poss} pelt against p_l's as {PRONOUN/n_c0/subject} {VERB/n_c0/go/goes}. p_l races after {PRONOUN/n_c0/object}, fangs bared, but the strange outsider is gone."
+                    "p_l arrives just before moonhigh, and finds the cat from {PRONOUN/p_l/poss} dreams sitting at the very center of the holy place. The cat starts to say something, but p_l cuts {PRONOUN/n_c0/object} off, raising {PRONOUN/p_l/poss} hackles in challenge. What does this cat want?! Why {VERB/n_c0/have/has} {PRONOUN/n_c0/subject} been sending dreams to p_l?! The stranger's purr stops, and {PRONOUN/n_c0/subject} silently {VERB/n_c0/walk/walks} away from POI, brushing {PRONOUN/n_c0/poss} pelt against p_l's as {PRONOUN/n_c0/subject} {VERB/n_c0/go/goes}. p_l races after {PRONOUN/n_c0/object}, fangs bared, but the strange outsider is gone."
                 ],
                 "involved_cats": {
                     "p_l": {
@@ -6137,7 +6137,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_to's supernatural powers led cat_from to {PRONOUN/cat_to/object}, but cat_from is suspicious of {PRONOUN/cat_to/poss} intentions."
+                            "cats_from": "cat_to's supernatural powers led cat_from to {PRONOUN/cat_to/object}, but cat_from was suspicious of {PRONOUN/cat_to/poss} intentions."
                         }
                     },
                     {
@@ -6154,7 +6154,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_from believes that {PRONOUN/cat_from/subject} and cat_to have a special connection through their supernatural gifts."
+                            "cats_from": "cat_from believed that {PRONOUN/cat_from/subject} and cat_to had a special connection through their shared supernatural gift."
                         }
                     }
                 ],
@@ -6167,7 +6167,7 @@
                 "exp_gained": 0,
                 "outcome_art": "cat_sprites/gen_bord_abandonclan_LnAp",
                 "strings": [
-                    "p_l <i>has</i> to go to POI. {PRONOUN/p_l/subject/CAP} {VERB/p_l/sneak/sneaks} out of camp and begins the journey. When p_l arrives, the cat from {PRONOUN/p_l/poss} dreams is sitting at the very center of the holy place. {PRONOUN/p_l/subject/CAP} {VERB/p_l/recognize/recognizes} the cat's paws - {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} dreamed of using them as {PRONOUN/p_l/poss} own. The cat purrs at p_l. It's nice to finally meet - is p_l ready to go? p_l's own purr fades. Do they really have to leave? Can't they go back to c_n? The dream-cat gently shakes {PRONOUN/n_c0/poss} head, and p_l follows {PRONOUN/n_c0/object} away from all {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} ever known."
+                    "p_l arrives just before moonhigh, and finds the cat from {PRONOUN/p_l/poss} dreams sitting at the very center of the holy place. {PRONOUN/p_l/subject/CAP} {VERB/p_l/recognize/recognizes} the cat's paws - {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} dreamed of using them as {PRONOUN/p_l/poss} own. The cat purrs at p_l. It's nice to finally meet - is p_l ready to go? p_l's own purr fades. Do they really have to leave? Can't they go back to c_n? The dream-cat gently shakes {PRONOUN/n_c0/poss} head, and p_l follows {PRONOUN/n_c0/object} away from all {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} ever known."
                 ],
                 "involved_cats": {
                     "p_l": {
@@ -6238,7 +6238,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_to's supernatural powers led cat_from to {PRONOUN/cat_to/object}, but {PRONOUN/cat_to/subject} did take cat_from away from c_n"
+                            "cats_from": "cat_to's supernatural powers led cat_from to {PRONOUN/cat_to/object}, but {PRONOUN/cat_to/subject} did take cat_from away from c_n."
                         }
                     },
                     {
@@ -6255,7 +6255,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_to's supernatural powers allowed {PRONOUN/cat_to/object} to find cat_from"
+                            "cats_from": "cat_to's supernatural powers allowed {PRONOUN/cat_to/object} to find cat_from."
                         }
                     }
                 ]
@@ -6265,7 +6265,7 @@
                 "exp_gained": 0,
                 "outcome_art": "cat_sprites/gen_bord_abandonclan_LnWr",
                 "strings": [
-                    "p_l <i>has</i> to go to POI. {PRONOUN/p_l/subject/CAP} {VERB/p_l/sneak/sneaks} out of camp and begins the journey. When p_l arrives, the cat from {PRONOUN/p_l/poss} dreams is sitting at the very center of the holy place. {PRONOUN/p_l/subject/CAP} {VERB/p_l/recognize/recognizes} the cat's paws - {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} dreamed of using them as {PRONOUN/p_l/poss} own. The cat purrs at p_l. It's nice to finally meet - they've been walking together for at least a moon now, haven't they? Is p_l ready to go? p_l's own purr fades. It's not a choice, is it? They have to. The dream-cat gives a gentle nod, and p_l follows {PRONOUN/n_c0/object} away from {PRONOUN/p_l/poss} Clan."
+                    "p_l arrives just before moonhigh, and finds the cat from {PRONOUN/p_l/poss} dreams sitting at the very center of the holy place. {PRONOUN/p_l/subject/CAP} {VERB/p_l/recognize/recognizes} the cat's paws - {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} dreamed of using them as {PRONOUN/p_l/poss} own. The cat purrs at p_l. It's nice to finally meet - they've been walking together for at least a moon now, haven't they? Is p_l ready to go? p_l's own purr fades. It's not a choice, is it? They have to. The dream-cat gives a gentle nod, and p_l follows {PRONOUN/n_c0/object} away from {PRONOUN/p_l/poss} Clan."
                 ],
                 "involved_cats": {
                     "p_l": {
@@ -6337,7 +6337,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_to's supernatural powers led cat_from to {PRONOUN/cat_to/object}, but {PRONOUN/cat_to/subject} did take cat_from away from c_n"
+                            "cats_from": "cat_to's supernatural powers led cat_from to {PRONOUN/cat_to/object}, but {PRONOUN/cat_to/subject} did take cat_from away from c_n."
                         }
                     },
                     {
@@ -6354,7 +6354,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_to's supernatural powers allowed {PRONOUN/cat_to/object} to find cat_from"
+                            "cats_from": "cat_to's supernatural powers allowed {PRONOUN/cat_to/object} to find cat_fro."
                         }
                     }
                 ]
