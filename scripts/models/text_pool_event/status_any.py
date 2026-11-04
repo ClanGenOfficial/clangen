@@ -8,4 +8,4 @@ from scripts.models.common.status import Status
 
 
 class StatusAny(RootModel):
-    root: Union[Status, Literal["any"]]
+    root: Union[Status]
