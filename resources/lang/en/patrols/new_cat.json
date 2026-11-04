@@ -17869,7 +17869,7 @@
                         "condition": [
                             "malnourished"
                         ],
-                        "death_history": "This cat was lost in POI and became malnourished, and died from complications of malnourishment"
+                        "death_history": "This cat was lost in POI and died from complications of malnourishment."
                     }
                 ],
                 "join": [
@@ -17892,7 +17892,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_from became lost in POI, and cat_to rescued them."
+                            "cats_from": "cat_from became lost in POI, and cat_to rescued {PRONOUN/cat_from/object}."
                         }
                     }
                 ],
@@ -17958,7 +17958,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_from became lost in POI, and cat_to rescued them."
+                            "cats_from": "cat_from became lost in POI, and cat_to rescued {PRONOUN/cat_from/object}."
                         }
                     }
                 ],
@@ -18024,7 +18024,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_from became lost in POI, and cat_to rescued them."
+                            "cats_from": "cat_from became lost in POI, and cat_to rescued {PRONOUN/cat_from/object}."
                         }
                     }
                 ],
@@ -18064,7 +18064,7 @@
                 "death": [
                     {
                         "cats": ["n_c0"],
-                        "history": "This cat became lost in Clancat territory and starved to death"
+                        "history": "This cat became lost in Clancat territory and starved to death."
                     }
                 ],
                 "reputation_changes": {
@@ -18103,7 +18103,7 @@
                             "respect"
                         ],
                         "log": {
-                            "cats_from": "cat_to is supposed to be a great tracker, but couldn't track a foreign scent in POI."
+                            "cats_from": "cat_to was supposed to be a great tracker, but couldn't track a foreign scent in POI."
                         }
                     }
                 ]
@@ -18111,7 +18111,7 @@
             {
                 "frequency": 3,
                 "exp_gained": 0,
-                "outcome_art": "cat_sprites/ggen_pawsdiggingdirt_Wr",
+                "outcome_art": "cat_sprites/gen_pawsdiggingdirt_Wr",
                 "strings": [
                     "The patrol follows the scent into the maze of POI, but they can't track the scent, so they check all the known exits and entrances. But the cat's scent never leads out, only in and around, and around, and around. s_c0 thinks that the cat is likely lost, and decides to try to lure them in. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/set/sets} up a nest near one entrance, and {VERB/s_c0/leave/leaves} a piece of prey. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/come/comes} back several times to check, but the scent fades, the prey rots, and no cat ever turns up."
                 ],
