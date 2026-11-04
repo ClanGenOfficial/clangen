@@ -15416,7 +15416,7 @@
                             "n_c0"
                         ],
                         "cats_to": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "amount": 15,
                         "values": [
@@ -15596,7 +15596,7 @@
                         ],
                         "mutual": true,
                         "log": {
-                            "cats_from": "cat_from and cat_to went through a terrifying event together when POI collapsed underneath them, and they feel closer because of that."
+                            "cats_from": "cat_from and cat_to went through a terrifying event together when POI collapsed underneath them, and felt closer afterwards."
                         }
                     }
                 ],
@@ -15751,7 +15751,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "cats_to": [
                             "n_c0"
