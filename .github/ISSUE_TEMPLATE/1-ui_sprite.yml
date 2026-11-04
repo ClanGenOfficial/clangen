@@ -52,7 +52,7 @@ body:
     id: patrol
     attributes:
       label: Patrol ID + Outcome Print (if applicable)
-      description: For assistance, see [\"what's a patrol ID and do I need it?\"](https://www.clangen.io/docs/report-a-bug#whats-a-patrol-id-do-i-need-it) and [\"how do I find the patrol ID?\"](https://www.clangen.io/docs/report-a-bug#how-do-i-find-the-patrol-id)
+      description: For assistance, see [\"what's a patrol ID and do I need it?\"](https://www.clangen.io/docs/report-a-bug/#whats-a-patrol-id-do-i-need-it) and [\"how do I find the patrol ID?\"](https://www.clangen.io/docs/report-a-bug/#how-do-i-find-the-patrol-id)
   - type: input
     id: version
     attributes:

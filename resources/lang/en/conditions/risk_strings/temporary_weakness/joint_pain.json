@@ -1,0 +1,30 @@
+[
+    {
+        "event_id": "temporary_weakness_joint_pain0",
+        "strings": [
+            "m_c is having a hard time doing {PRONOUN/m_c/poss} prescribed exercises, with how swollen {PRONOUN/m_c/poss} joints are feeling.",
+            "r_c0 doesn't budge on m_c's recovery exercises, even when {PRONOUN/m_c/subject} {VERB/m_c/complain/complains} about {PRONOUN/m_c/poss} painful joints."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat",
+                    "medicine cat apprentice"
+                ],
+                "group": [
+                    "player_clan"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "temporary_weakness_joint_pain1",
+        "strings": [
+            "Recovering from a serious affliction isn't exactly sunshine and daisies, but m_c is still frustrated by how sore {PRONOUN/m_c/poss} joints are feeling."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

@@ -218,7 +218,7 @@ class Sprites:
                         i += 1
                         continue
 
-                    full_name = f"{name}{i}"
+                    full_name = f"{name}_{i}"
 
                 try:
                     new_sprite = pygame.Surface.subsurface(
@@ -282,7 +282,7 @@ class Sprites:
             # convert back into a surface
             _sprite = recolor_sprite.make_surface()
             # add it to our sprite dict!
-            self.sprites[f"{name}_{color_name}{sprite_index}"] = _sprite
+            self.sprites[f"{name}_{color_name}_{sprite_index}"] = _sprite
             # close the pixel array now that we're done
             recolor_sprite.close()
 
@@ -429,13 +429,13 @@ class Sprites:
                     )
 
                     for patch in patches:
-                        addition = self.sprites[f"{sheet_name}{patch}{i}"]
+                        addition = self.sprites[f"{sheet_name}{patch}_{i}"]
                         new_patch.blit(
                             addition,
                             (0, 0),
                         )
 
-                    self.sprites[f"{sheet_name}{white_category}{name}{i}"] = new_patch
+                    self.sprites[f"{sheet_name}{white_category}{name}_{i}"] = new_patch
                     i += 1
 
     def load_sheet(self, spritesheet: str, sprite_names: list[list[str]]):

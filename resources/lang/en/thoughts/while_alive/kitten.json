@@ -1284,5 +1284,437 @@
             "backstory": ["stolenkit3"]
         }
         }
+    },
+    {
+        "event_id": "kit_picks_flowers_to_med",
+        "strings": [
+            "Is gathering flowers to give to r_c",
+            "Asks r_c why sick cats have to eat flowers",
+            "Likes the scent of the medicine den"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "skill": [
+                        "HEALER,0"
+                    ]
+                }
+            },
+            "r_c": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "kit_picks_flowers",
+        "strings": [
+            "Is gathering pretty flowers",
+            "Is playing with a bunch of flowers",
+            "Puts flowers in {PRONOUN/m_c/poss} pelt"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "skill": [
+                        "HEALER,0"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "kit_likes_stargazing",
+        "strings": [
+            "Is up past {PRONOUN/m_c/poss} bedtime, looking at the stars",
+            "Can point out a few constellations",
+            "Wonders about the night sky",
+            "Thinks the stars are very, very pretty",
+            "Falls asleep while stargazing"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "skill": [
+                        "STAR,0"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "kit_likes_riddles",
+        "strings": [
+            "Keeps telling wordplays to r_c",
+            "Is confusing r_c with silly puzzles"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "skill": [
+                        "PROPHET,0"
+                    ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "kit_good_at_sharing_to_kit",
+        "strings": [
+            "Is telling r_c about the importance of sharing",
+            "Explains the rules of a confusing game to r_c"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "skill": [
+                        "TEACHER,0"
+                    ]
+                }
+            },
+            "r_c": {
+                "status": [
+                    "kitten"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "kit_mossball_hunter_other_kit",
+        "strings": [
+            "Is always the best at moss-ball",
+            "Carefully hunts r_c's tail",
+            "Tried to hunt r_c's tail, but was caught…"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "skill": [
+                        "HUNTER,0"
+                    ]
+                }
+            },
+            "r_c": {
+                "status": [
+                    "kitten"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "kit_mossball_hunter",
+        "strings": [
+            "Catches a stray feather in the nursery",
+            "Is very seriously stalking a pebble"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "skill": [
+                        "HUNTER,0"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "kit_avid_playfighter0",
+        "strings": [
+            "Fiercely fights a ball of moss",
+            "Is winning a fight with a feather"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "skill": [
+                        "FIGHTER,0"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "kit_avid_playfighter1",
+        "strings": [
+            "Fights r_c's tail",
+            "Is showing off battle moves to r_c",
+            "Amuses r_c as {PRONOUN/m_c/subject} {VERB/m_c/fight/fights} a shadow"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "skill": [
+                        "FIGHTER,0"
+                    ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "kit_never_sits_still0",
+        "strings": [
+            "Is zooming around the nursery",
+            "Trips over {PRONOUN/m_c/poss} own paws while running"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "skill": [
+                        "RUNNER,0"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "kit_never_sits_still_other_kit",
+        "strings": [
+            "Is winning at tag",
+            "Is sad no one wants to race them"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "skill": [
+                        "RUNNER,0"
+                    ]
+                }
+            },
+            "r_c": {
+                "status": [
+                    "kitten"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "kit_never_sits_still1",
+        "strings": [
+            "Claims {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} the fastest EVER",
+            "Is seen chasing {PRONOUN/m_c/poss} own tail for a long time"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "skill": [
+                        "RUNNER,0"
+                    ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "kit_constantly_climbing",
+        "tags": [
+            "clan:warrior"
+        ],
+        "strings": [
+            "Has to be pried from the walls... again",
+            "Likes seeing the older cats from higher-up"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "skill": [
+                        "CLIMBER,0"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "kit_constantly_climbing_obiwan_kenobi",
+        "strings": [
+            "Yells at r_c that {PRONOUN/m_c/subject} {VERB/m_c/have/has} the high ground",
+            "Has the high ground"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "trait": [
+                        "attention-seeker",
+                        "bossy",
+                        "bullying",
+                        "fearless",
+                        "impulsive",
+                        "noisy",
+                        "unruly"
+                    ],
+                    "skill": [
+                        "CLIMBER,0"
+                    ],
+                    "must_have_both": true
+                }
+            },
+            "r_c": {
+                "status": [
+                    "kitten"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "kit_splashes_in_puddles0",
+        "strings": [
+            "Is being lectured about getting the nursery dirty",
+            "Pokes at a puddle with a paw before jumping in, much to r_c's dismay"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "skill": [
+                        "SWIMMER,0"
+                    ]
+                }
+            },
+            "r_c": {
+                "status": [
+                    "-kitten"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "kit_splashes_in_puddles1",
+        "strings": [
+            "Likes the rain because there'll be more puddles after",
+            "Pretends to be a fish"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "skill": [
+                        "SWIMMER,0"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "event_id": "kit_stares_intently",
+        "strings": [
+            "Is scowling at a random spot in the clearing for no clear reason",
+            "Doesn't like how much noise there is in camp",
+            "Is making intense eye contact with r_c"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "skill": [
+                        "SENSE,0"
+                    ]
+                }
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "kit_story_kitsitter_to_other_kit",
+        "tags": [
+            "clan:kitten"
+        ],
+        "strings": [
+            "Always has the best games in the nursery!",
+            "Leads a fun game about a strange adventure"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "skill": [
+                        "STORY,0",
+                        "KIT,0"
+                    ]
+                }
+            }
+        }
     }
 ]

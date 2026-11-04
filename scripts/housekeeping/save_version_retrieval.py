@@ -10,14 +10,15 @@ from scripts.housekeeping.datadir import get_save_dir
 
 def get_version() -> dict:
     version_info = None
-    if os.path.exists(
-        get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "clan.json"
-    ) or os.path.exists(
-        get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "/clan.json"
+    filename = None
+    for filename_check in (
+        get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "clan.json",
+        get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "/clan.json",
     ):
-        filename = (
-            get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "/clan.json"
-        )
+        if os.path.exists(filename_check):
+            filename = filename_check
+
+    if filename:
         with open(
             filename,
             "r",

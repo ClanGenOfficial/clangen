@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "weakened_muscles_scrapes",
+        "strings": [
+            "m_c has been bumping into things this moon. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} a little scraped up."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
