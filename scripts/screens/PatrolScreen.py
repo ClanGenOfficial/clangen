@@ -1026,10 +1026,13 @@ class PatrolScreen(Screens):
                 else:
                     self.able_cats.append(the_cat)
 
-        total_cats = len(self.able_cats) + len(game.patrolled)
-        percent = round(
+        total_cats = len(self.able_cats) + len(game.patrolled) + len(self.current_patrol)
+        total_percent = round(
             get_config("patrol_generation.patrolling_percent") * total_cats
         ) - len(game.patrolled)
+        print("DEBUG", total_percent, "-", len(self.current_patrol))
+        percent = total_percent - len(self.current_patrol)
+        print("DEBUG", percent)
 
         for the_cat in self.able_cats:
             if len(self.patrolling_cats) < percent:
