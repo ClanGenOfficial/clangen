@@ -15167,7 +15167,7 @@
                 "exp_gained": 10,
                 "outcome_art": "cat_sprites/gen_supportive_ApOa",
                 "strings": [
-                    "n_c0 trots into sight, calling for p_l, who runs out to meet {PRONOUN/n_c0/object}. n_c0 breathes a heavy sigh as their foreheads press together. Under p_l's encouragement, {PRONOUN/n_c0/subject} {VERB/n_c0/vent/vents} about all the troubles {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} having with {PRONOUN/n_c0/poss} Clan and Clanmates, and how much {PRONOUN/n_c0/subject} {VERB/n_c0/feel/feels} like {PRONOUN/n_c0/subject} just {VERB/n_c0/don't/doesn't} fit in in o_c_n. p_l tilts {PRONOUN/p_l/poss} head. It sounds like n_c0 would be happier in another Clan. Maybe... Maybe {PRONOUN/n_c0/subject} could come to c_n?"
+                    "n_c0 trots into sight, calling for p_l, who runs out to meet {PRONOUN/n_c0/object}. n_c0 breathes a heavy sigh as their foreheads press together. Under p_l's encouragement, {PRONOUN/n_c0/subject} {VERB/n_c0/vent/vents} about all the troubles {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} having with {PRONOUN/n_c0/poss} Clan and Clanmates, and how much {PRONOUN/n_c0/subject} {VERB/n_c0/feel/feels} like {PRONOUN/n_c0/subject} just {VERB/n_c0/don't/doesn't} fit in in o_c_n. p_l tilts {PRONOUN/p_l/poss} head. It sounds like n_c0 would be happier elsewhere. Maybe {PRONOUN/n_c0/subject} could come to c_n?"
                 ],
                 "involved_cats": {
                     "p_l": {
