@@ -508,8 +508,8 @@ class MediationScreen(Screens):
             if self.selected_cat1:  # move other cat over
                 self.selected_cat0 = self.selected_cat1
                 self.selected_cat1 = None
-            self.update_selected_cats()
-        if mediator == self.selected_cat1:
+                self.update_selected_cats()
+        elif mediator == self.selected_cat1:
             self.selected_cat1 = None
             self.update_selected_cats()
 
@@ -619,16 +619,21 @@ class MediationScreen(Screens):
         self.update_search_cats(self.elements["search_bar"].text_entry.get_text())
 
         if self.elements["cat_list"].cat_sprites:
-            ending_cat_sprite = self.elements["cat_list"].cat_sprites[
+            ending_cat_sprite = self.elements["cat_list"].cat_sprites.get(
                 "sprite9"
                 if len(self.all_cats_list) >= 10
                 else f"sprite{len(self.all_cats_list) - 1}"
-            ]
-            ending_cat_sprite.focus_map = {"focus_right": self.elements["next_page"]}
+            )
+            if ending_cat_sprite:
+                ending_cat_sprite.focus_map = {
+                    "focus_right": self.elements["next_page"]
+                }
             self.elements["cat_list"].cat_sprites["sprite0"].focus_map = {
                 "focus_left": self.elements["prev_page"]
             }
             self.elements["next_page"].focus_map = {"focus_up": ending_cat_sprite}
+
+        self.update_selected_cats()
 
     def _set_cat_list(self):
         """
@@ -676,9 +681,33 @@ class MediationScreen(Screens):
         if self.selected_cat0:
             self.elements["neg_tab"].show()
             self.elements["pos_tab"].show()
+            self.elements["random_cat0"].focus_map["focus_down"] = self.elements[
+                "pos_tab"
+            ]
+            if self.all_cats_list:
+                for i, sprite in enumerate(self.elements["cat_list"].cat_sprites):
+                    if i <= 2:
+                        self.elements["cat_list"].cat_sprites[sprite].focus_map[
+                            "focus_up"
+                        ] = self.elements["pos_tab"]
+                    elif 3 <= i <= 4:
+                        self.elements["cat_list"].cat_sprites[sprite].focus_map[
+                            "focus_up"
+                        ] = self.elements["neg_tab"]
+
         else:
             self.elements["neg_tab"].hide()
             self.elements["pos_tab"].hide()
+            if self.all_cats_list:
+                self.elements["random_cat0"].focus_map["focus_down"] = self.elements[
+                    "cat_list"
+                ].cat_sprites["sprite0"]
+                for i, sprite in enumerate(self.elements["cat_list"].cat_sprites):
+                    if i <= 4:
+                        self.elements["cat_list"].cat_sprites[sprite].focus_map[
+                            "focus_up"
+                        ] = self.elements["random_cat0"]
+
             self.elements["remove_cat0"].disable()
             self.elements["random_cat1"].disable()
 
