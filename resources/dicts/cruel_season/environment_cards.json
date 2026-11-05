@@ -19,7 +19,7 @@
     }
   },
   "hunters_tribute": {
-    "card_art": "environment/tainted.png",
+    "card_art": "environment/hunters_tribute.png",
     "modifiers": {
       "prey.prey_loss.loss": 0.2
     }
