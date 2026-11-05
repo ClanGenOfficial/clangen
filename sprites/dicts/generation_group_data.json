@@ -2,6 +2,7 @@
     "pelts": {
         "colors": {
             "WHITE": "white",
+            "CHINCHILLA": "white",
             "PALEGREY": "white",
             "SILVER": "white",
             "SOOT": "black",
@@ -9,6 +10,7 @@
             "DARKGREY": "black",
             "GHOST": "black",
             "BLACK": "black",
+            "MALLOW": "brown",
             "DAWN": "ginger",
             "BLOSSOM": "ginger",
             "CREAM": "ginger",
@@ -23,7 +25,6 @@
             "LILAC": "brown",
             "BROWN": "brown",
             "GOLDEN-BROWN": "brown",
-            "MALLOW": "brown",
             "DARKBROWN": "brown",
             "CHOCOLATE": "brown",
             "RUST": "brown"

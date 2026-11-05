@@ -52,6 +52,12 @@
       "ranks.only_leader_kits_deputy": true
     }
   },
+  "on_their_own": {
+    "card_art": "society/on_their_own.png",
+    "modifiers": {
+      "roles.receive_mentor": false
+    }
+  },
   "disorganized": {
     "card_art": "society/resolute.png",
     "modifiers": {
