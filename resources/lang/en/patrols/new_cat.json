@@ -16539,6 +16539,9 @@
             {
                 "frequency": 1,
                 "exp_gained": 0,
+                "tags": [
+                    "clan:medicine cat(min:1)"
+                ],
                 "outcome_art": "cat_sprites/gen_burial_WrWrWrMcAp",
                 "strings": [
                     "p_l begins the journey to POI, expecting to receive more visions along the way. But {PRONOUN/p_l/subject} never {VERB/p_l/do/does}, and POI is unremarkable. Suddenly, a heavy weight lands on {PRONOUN/p_l/poss} back, and {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} teeth piercing {PRONOUN/p_l/poss} spine. {PRONOUN/p_l/poss/CAP} last thought is gratitude that the half-moon meeting is tomorrow, so at least {PRONOUN/p_l/poss} body will be found quickly. Sure enough, the next night, the medicine cats from all the Clans hold a funeral, and med_name brings the news back to c_n."
@@ -18498,6 +18501,7 @@
                 "frequency": 4,
                 "exp_gained": 15,
                 "outcome_art": "cat_sprites/gen_sitting_WrSc",
+                "tags": ["clan:medicine cat(min:1)"],
                 "strings": [
                     "The spirit's pawprints glitter with frost and starlight. s_c0, always awed by a StarClan cat, follows after it. It leads {PRONOUN/s_c0/object} deep into POI, to a hidden nest with two cats curled up in it. One is obviously dead; the other is barely breathing and coated in bloody vomit. s_c0 recognizes the live cat from Gatherings - {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} a o_c_n cat. What {VERB/n_c0/are/is} {PRONOUN/n_c0/subject} doing in c_n lands? The spirit bends over {PRONOUN/n_c0/object}, whispering <i>my love, my love...</i> It looks up at s_c0 and pleads <i>help {PRONOUN/n_c0/object}!</i> s_c0 races back to the rest of the patrol to get med_name."
                 ],
@@ -19239,6 +19243,7 @@
                 "frequency": 4,
                 "exp_gained": 15,
                 "outcome_art": "cat_sprites/gen_sitting_WrSc",
+                "tags": ["clan:medicine cat(min:1)"],
                 "strings": [
                     "The spirit's pawprints glitter with frost and starlight. s_c0, always awed by a StarClan cat, follows after it. It leads {PRONOUN/s_c0/object} to the bottom of POI, where two cats are collapsed nearby each other. One is obviously dead; the other is misshapen and bloody. s_c0 recognizes the live cat from Gatherings - {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} a o_c_n cat. What {VERB/n_c0/are/is} {PRONOUN/n_c0/subject} doing in c_n lands? The spirit bends over {PRONOUN/n_c0/object}, whispering <i>my love, my love...</i> It looks up at s_c0 and pleads <i>help {PRONOUN/n_c0/object}!</i> s_c0 races back to the rest of the patrol to get med_name."
                 ],
