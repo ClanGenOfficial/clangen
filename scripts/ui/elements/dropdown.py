@@ -89,7 +89,6 @@ class UIDropDown(UIDropDownContainer):
                 manager=manager,
                 object_id=f"@buttonstyles_{parent_style.value}",
                 container=self,
-                anchors=anchors,
             )
         else:
             self.parent_button = parent_override
@@ -189,6 +188,13 @@ class UIDropDown(UIDropDownContainer):
                 self.child_button_dicts[item].disable()
         if self.parent_reflect_selection and new_list:
             self.parent_button.set_text(new_list[0])
+
+    def show(self):
+        super().show()
+        if self.open:
+            self.open()
+        else:
+            self.close()
 
     def update(self, time_delta: float):
         # updates our selection list

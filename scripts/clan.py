@@ -308,6 +308,11 @@ class Clan:
                 the_cat.backstory = "clan_founder"
             if the_cat.status.rank == CatRank.APPRENTICE:
                 the_cat.rank_change(CatRank.APPRENTICE, new_thought=False)
+            if get_config("clan_creation.reset_all_starting_skills"):
+                if the_cat.skills.primary:
+                    the_cat.skills.primary.points = 0
+                if the_cat.skills.secondary:
+                    the_cat.skills.secondary.points = 0
 
         # find non-selected cats from the 12 generated starters
         for c in switch_get_value(Switch.possible_cats):
@@ -425,6 +430,11 @@ class Clan:
         starting_priority = get_config("prey.feeding.starting_priority")
         for setting in ["hunter_first", "sick_injured_first"]:
             set_clan_setting(setting, True if starting_priority == setting else False)
+
+        # mentorship
+        if not get_config("roles.receive_mentor"):
+            set_clan_setting("assign_mentors", False)
+            save_clan_settings()
 
     def add_cat(self, cat):  # cat is a 'Cat' object
         """Adds cat into the list of clan cats"""
