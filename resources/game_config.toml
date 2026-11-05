@@ -1313,7 +1313,7 @@ dev_tools = false
   
   # the percentage of freshkill that is lost per moon, after the decay formula has run
   [prey.prey_loss]
-    loss = 0
+    loss = 0.0
 
   # the bonus prey a hunter skill cat will catch according to exp rank
   [prey.hunter_exp_bonus]
