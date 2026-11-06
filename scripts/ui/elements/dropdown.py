@@ -6,6 +6,7 @@ from pygame_gui.elements import UIAutoResizingContainer
 
 from scripts.ui.elements.dropdown_container import UIDropDownContainer
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
+from scripts.ui.focus_matrix import ElementFocusMap
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
 from scripts.ui.scale import ui_scale
 
@@ -33,6 +34,7 @@ class UIDropDown(UIDropDownContainer):
         child_trigger_close: bool = True,
         starting_selection: list = None,
         open_on_hover: bool = False,
+        focus_map: ElementFocusMap = None,
     ):
         """
         Class to handle the creation and management of non-scrolling dropdowns. It's recommended to use the on_use()
@@ -76,6 +78,7 @@ class UIDropDown(UIDropDownContainer):
             child_trigger_close=child_trigger_close,
             starting_selection=starting_selection,
             open_on_hover=open_on_hover,
+            focus_map=focus_map,
         )
 
         rect = pygame.Rect((0, 0), (relative_rect.width, relative_rect.height))

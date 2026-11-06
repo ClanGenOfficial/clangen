@@ -16,6 +16,7 @@ from ..ui.elements.modified_image import UIModifiedImage
 from ..ui.elements.relation_display import UIRelationDisplay
 from ..ui.elements.search_bar import UISearchBar
 from ..ui.elements.surface_image_button import UISurfaceImageButton
+from ..ui.focus_matrix import ElementFocusMap
 from ..ui.theme import get_text_box_theme
 from ..events_module.text_adjust import shorten_text_to_fit
 from ..ui.scale import ui_scale, ui_scale_dimensions
@@ -361,6 +362,9 @@ class MediationScreen(Screens):
             anchors={"left_target": self.elements["improve_rel"]},
             manager=MANAGER,
         )
+        self.elements["romance_checkbox"].focus_map = {
+            "focus_up": self.elements["improve_rel"]
+        }
         interactable_elements.extend(
             [self.elements["improve_rel"], self.elements["sabotage_rel"]]
         )
@@ -380,12 +384,14 @@ class MediationScreen(Screens):
             Icon.ARROW_LEFT,
             get_button_dict(ButtonStyles.ICON, (34, 34)),
             object_id="@buttonstyles_icon",
+            focus_map=ElementFocusMap(focus_down=self.elements["improve_rel"]),
         )
         self.elements["next_mediator"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((476, 150), (34, 34))),
             Icon.ARROW_RIGHT,
             get_button_dict(ButtonStyles.ICON, (34, 34)),
             object_id="@buttonstyles_icon",
+            focus_map=ElementFocusMap(focus_down=self.elements["sabotage_rel"]),
         )
         interactable_elements.extend(
             [self.elements["last_mediator"], self.elements["next_mediator"]]
@@ -420,6 +426,10 @@ class MediationScreen(Screens):
             get_button_dict(ButtonStyles.SQUOVAL, (127, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
+            focus_map=ElementFocusMap(
+                focus_up=self.elements["sabotage_rel"],
+                focus_down=self.elements["search_bar"].text_entry,
+            ),
         )
         self.elements["remove_cat1"].disable()
         self.elements["random_cat0"] = UISurfaceImageButton(
@@ -430,6 +440,9 @@ class MediationScreen(Screens):
             manager=MANAGER,
             sound_id="dice_roll",
         )
+        self.elements["improve_rel"].focus_map["focus_down"] = self.elements[
+            "random_cat0"
+        ]
         self.elements["random_cat1"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((568, 432), (34, 34))),
             Icon.DICE,
@@ -437,6 +450,10 @@ class MediationScreen(Screens):
             object_id="@buttonstyles_icon",
             manager=MANAGER,
             sound_id="dice_roll",
+            focus_map=ElementFocusMap(
+                focus_up=self.elements["sabotage_rel"],
+                focus_down=self.elements["search_bar"].text_entry,
+            ),
         )
         self.elements["random_cat1"].disable()
 
@@ -491,8 +508,8 @@ class MediationScreen(Screens):
             if self.selected_cat1:  # move other cat over
                 self.selected_cat0 = self.selected_cat1
                 self.selected_cat1 = None
-            self.update_selected_cats()
-        if mediator == self.selected_cat1:
+                self.update_selected_cats()
+        elif mediator == self.selected_cat1:
             self.selected_cat1 = None
             self.update_selected_cats()
 
@@ -601,6 +618,23 @@ class MediationScreen(Screens):
 
         self.update_search_cats(self.elements["search_bar"].text_entry.get_text())
 
+        if self.elements["cat_list"].cat_sprites:
+            ending_cat_sprite = self.elements["cat_list"].cat_sprites.get(
+                "sprite9"
+                if len(self.all_cats_list) >= 10
+                else f"sprite{len(self.all_cats_list) - 1}"
+            )
+            if ending_cat_sprite:
+                ending_cat_sprite.focus_map = {
+                    "focus_right": self.elements["next_page"]
+                }
+            self.elements["cat_list"].cat_sprites["sprite0"].focus_map = {
+                "focus_left": self.elements["prev_page"]
+            }
+            self.elements["next_page"].focus_map = {"focus_up": ending_cat_sprite}
+
+        self.update_selected_cats()
+
     def _set_cat_list(self):
         """
         Updates self.all_cats_list according to chosen tab
@@ -647,9 +681,33 @@ class MediationScreen(Screens):
         if self.selected_cat0:
             self.elements["neg_tab"].show()
             self.elements["pos_tab"].show()
+            self.elements["random_cat0"].focus_map["focus_down"] = self.elements[
+                "pos_tab"
+            ]
+            if self.all_cats_list:
+                for i, sprite in enumerate(self.elements["cat_list"].cat_sprites):
+                    if i <= 2:
+                        self.elements["cat_list"].cat_sprites[sprite].focus_map[
+                            "focus_up"
+                        ] = self.elements["pos_tab"]
+                    elif 3 <= i <= 4:
+                        self.elements["cat_list"].cat_sprites[sprite].focus_map[
+                            "focus_up"
+                        ] = self.elements["neg_tab"]
+
         else:
             self.elements["neg_tab"].hide()
             self.elements["pos_tab"].hide()
+            if self.all_cats_list:
+                self.elements["random_cat0"].focus_map["focus_down"] = self.elements[
+                    "cat_list"
+                ].cat_sprites["sprite0"]
+                for i, sprite in enumerate(self.elements["cat_list"].cat_sprites):
+                    if i <= 4:
+                        self.elements["cat_list"].cat_sprites[sprite].focus_map[
+                            "focus_up"
+                        ] = self.elements["random_cat0"]
+
             self.elements["remove_cat0"].disable()
             self.elements["random_cat1"].disable()
 
