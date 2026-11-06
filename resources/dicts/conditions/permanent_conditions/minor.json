@@ -13,17 +13,15 @@
             "joint_pain": 0.05
         },
         "treatment_strength": {
-            "1": [
-                "marigold",
-                "ragwort"
-            ],
+            "1": [],
             "2": [
+                "marigold",
+                "ragwort",
                 "daisy",
-                "juniper"
-            ],
-            "3": [
+                "juniper",
                 "thyme"
-            ]
+            ],
+            "3": []
         },
         "possible_scars": [
             "FOUR",
@@ -47,15 +45,13 @@
             "phantom_pain": 0.1
         },
         "treatment_strength": {
-            "1": [
-                "juniper"
-            ],
+            "1": [],
             "2": [
-                "ragwort"
-            ],
-            "3": [
+                "juniper",
+                "ragwort",
                 "poppy"
-            ]
+            ],
+            "3": []
         },
         "possible_scars": [
             "NOTAIL",
@@ -98,16 +94,14 @@
             "exhausted": 0.1
         },
         "treatment_strength": {
-            "1": [
-                "betony"
-            ],
+            "1": [],
             "2": [
+                "betony",
                 "rosemary",
-                "juniper"
-            ],
-            "3": [
+                "juniper",
                 "mullein"
-            ]
+            ],
+            "3": []
         }
     },
     "partial_hearing_loss": {
@@ -149,17 +143,15 @@
             "exhausted": 0.2
         },
         "treatment_strength": {
-            "1": [
-                "marigold"
-            ],
+            "1": [],
             "2": [
+                "marigold",
                 "daisy",
                 "ragwort",
-                "juniper"
-            ],
-            "3": [
+                "juniper",
                 "poppy"
-            ]
+            ],
+            "3": []
         }
     },
     "allergies": {
@@ -174,10 +166,10 @@
             "running_nose": 0.1
         },
         "treatment_strength": {
-            "1": [
+            "1": [],
+            "2": [
                 "juniper"
             ],
-            "2": [],
             "3": []
         }
     },
@@ -196,16 +188,14 @@
             "exhausted": 0.2
         },
         "treatment_strength": {
-            "1": [
-                "poppy"
-            ],
+            "1": [],
             "2": [
+                "poppy",
                 "juniper",
-                "ragwort"
-            ],
-            "3": [
+                "ragwort",
                 "thyme"
-            ]
+            ],
+            "3": []
         }
     },
     "selective_mutism": {
@@ -218,10 +208,7 @@
         "progression": {},
         "risks": {},
         "treatment_strength": {
-            "1": [
-                "poppy",
-                "juniper"
-            ],
+            "1": [],
             "2": [],
             "3": []
         }
@@ -239,11 +226,11 @@
             "sore_throat": 0.4
         },
         "treatment_strength": {
-            "1": [
+            "1": [],
+            "2": [
                 "poppy",
                 "honey"
             ],
-            "2": [],
             "3": []
         },
         "possible_scars": [
