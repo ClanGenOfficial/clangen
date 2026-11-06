@@ -156,4 +156,4 @@ class LeaveClanWindow(GameWindow):
             if isinstance(fetched_cat, Cat):
                 fetched_cat.update_mentor()
 
-        self.the_cat.assign_thought(CatThought.ON_RANK_CHANGE)
+        self.the_cat.assign_thought()
