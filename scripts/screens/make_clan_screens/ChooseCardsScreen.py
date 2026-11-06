@@ -190,9 +190,9 @@ class ChooseCardsScreen(MakeClanScreenBase):
 
         # RANDOM CARD
         self.elements["random_card"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((92, -10), (34, 34))),
+            ui_scale(pygame.Rect((92, -10), (37, 37))),
             Icon.DICE,
-            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (34, 34)),
+            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (37, 37)),
             object_id="@buttonstyles_icon_tab_right",
             manager=MANAGER,
             sound_id="dice_roll",
@@ -203,9 +203,9 @@ class ChooseCardsScreen(MakeClanScreenBase):
             tool_tip_text="screens.make_clan.random_card",
         )
         self.elements["decklist"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((92, 10), (34, 34))),
+            ui_scale(pygame.Rect((92, 10), (37, 37))),
             Icon.NOTEPAD,
-            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (34, 34)),
+            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (37, 37)),
             object_id="@buttonstyles_icon_tab_right",
             manager=MANAGER,
             anchors={
