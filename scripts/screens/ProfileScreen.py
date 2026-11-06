@@ -1855,7 +1855,7 @@ class ProfileScreen(Screens):
             details_rect = ui_scale(pygame.Rect((0, 0), (142, 100)))
             details_rect.bottomleft = (0, 0)
 
-            self.condition_data[f"desc_{con}"] = UITextBoxTweaked(
+            self.condition_data[f"desc_{con}"] = pygame_gui.elements.UITextBox(
                 con["details"],
                 details_rect,
                 # line_spacing=0.75,
