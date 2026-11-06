@@ -1,0 +1,13 @@
+[
+    {
+        "event_id": "heat_exhaustion0",
+        "strings": [
+            "m_c has recovered from the heat exhaustion.",
+            "m_c's heat exhaustion has abated.",
+            "m_c managed to recover from {PRONOUN/m_c/poss} heat exhaustion."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

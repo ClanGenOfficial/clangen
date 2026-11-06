@@ -1,5 +1,8 @@
 {
-    "spritesheet": "scars",
+    "spritesheet": [
+        "scars",
+        "scars_masks"
+    ],
     "sprite_list": [
         [
             "ONE",
@@ -53,6 +56,16 @@
             "CATBITETWO",
             "SNAKETWO",
             "FOUR"
+        ],
+        [
+            "LEFTEAR",
+            "RIGHTEAR",
+            "NOTAIL",
+            "NOLEFTEAR",
+            "NORIGHTEAR",
+            "NOEAR",
+            "HALFTAIL",
+            "NOPAW"
         ]
     ]
 }

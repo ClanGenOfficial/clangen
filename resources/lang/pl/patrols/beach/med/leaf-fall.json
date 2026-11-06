@@ -4,7 +4,7 @@
         "types": [
             "herb_gathering"
         ],
-        "frequency": 3,
+        "frequency": 4,
         "location": [
             "beach"
         ],
@@ -16,21 +16,9 @@
                 1,
                 1
             ],
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 1,
                 1
-            ],
-            "normal adult": [
-                -1,
-                -1
             ]
         },
         "chance_of_success": 50,
@@ -73,7 +61,7 @@
         "types": [
             "herb_gathering"
         ],
-        "frequency": 3,
+        "frequency": 4,
         "location": [
             "beach"
         ],
@@ -85,10 +73,6 @@
                 2,
                 2
             ],
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat apprentice": [
                 1,
                 1
@@ -96,43 +80,26 @@
             "medicine cat": [
                 1,
                 1
-            ],
-            "normal adult": [
-                -1,
-                -1
             ]
         },
         "involved_cats": {
-            "r_c1": {
-                "status": [
-                    "apprentice",
-                    "medicine cat apprentice"
-                ]
-            }
+            "r_c0": {}
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_med_talking_ApMc",
         "intro_strings": [
-            "Dark clouds gather on the seaward horizon. p_l walks through the sand, weaving from dune to dune, eager to be back before the storm hits. r_c1 tails {PRONOUN/p_l/object} attentively, and p_l quizzes {PRONOUN/r_c1/object} on the identification and notable properties of ragwort."
+            "Dark clouds gather on the seaward horizon. p_l walks through the sand, weaving from dune to dune, eager to be back before the storm hits. r_c0 tails {PRONOUN/p_l/object} attentively, and p_l quizzes {PRONOUN/r_c0/object} on the identification and notable properties of ragwort."
         ],
         "decline_strings": [
-            "Actually, ragwort can wait, because the storm won't. p_l leads r_c1 back to camp."
+            "Actually, ragwort can wait, because the storm won't. p_l leads r_c0 back to camp."
         ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_med_running_McApmed_app",
                 "strings": [
-                    "It still flowers late into the season, when most trees have already shed their leaves. Tall and bright yellow, it's also easy to identify by its unpleasant scent. Ragwort is a vital herb for joint pain and general strength, r_c1 concludes. p_l purrs and directs {PRONOUN/r_c1/object} on its harvest. Ignoring the noxious taste, they have it safely stored away by the time the thunder growls overhead."
+                    "It still flowers late into the season, when most trees have already shed their leaves. Tall and bright yellow, it's also easy to identify by its unpleasant scent. Ragwort is a vital herb for joint pain and general strength, r_c0 concludes. p_l purrs and directs {PRONOUN/r_c0/object} on its harvest. Ignoring the noxious taste, they have it safely stored away by the time the thunder growls overhead."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 25,
                 "relationship_changes": [
                     {
@@ -140,7 +107,7 @@
                             "p_l"
                         ],
                         "cats_to": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -166,16 +133,8 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_med_rainygathering_Mc",
                 "strings": [
-                    "It should be here, its bright yellow flowers like little suns brightening the gloom. But p_l can't seem to find any ragwort, and the gusts of wind whip away any scent {PRONOUN/p_l/subject} could follow. Thunder growls, and the first scattering of raindrops hits r_c1's coat. p_l's eyes widen. Lightning flashes behind the two cats as they sprint for camp, returning half-drenched and ragwortless."
+                    "It should be here, its bright yellow flowers like little suns brightening the gloom. But p_l can't seem to find any ragwort, and the gusts of wind whip away any scent {PRONOUN/p_l/subject} could follow. Thunder growls, and the first scattering of raindrops hits r_c0's coat. p_l's eyes widen. Lightning flashes behind the two cats as they sprint for camp, returning half-drenched and ragwortless."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             }
         ]
@@ -185,7 +144,7 @@
         "types": [
             "herb_gathering"
         ],
-        "frequency": 3,
+        "frequency": 4,
         "location": [
             "beach"
         ],
@@ -196,14 +155,6 @@
             "patrol_cats": [
                 2,
                 2
-            ],
-            "apprentice": [
-                -1,
-                -1
-            ],
-            "medicine cat apprentice": [
-                -1,
-                -1
             ],
             "medicine cat": [
                 1,

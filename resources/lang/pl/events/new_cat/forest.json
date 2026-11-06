@@ -132,7 +132,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cats_from": "m_c interrupted n_c:0 while {PRONOUN/n_c:0/subject} {VERB/n_c:0/was/were} vocalizing to attract prey."
+                    "cats_from": "m_c interrupted n_c:0 while {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} vocalizing to attract prey."
                 }
             }
         ],

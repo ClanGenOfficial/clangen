@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "partial_hearing_loss0",
+        "strings": [
+            "r_c0 is called in to assess m_c's hearing. While it's still present, m_c definitely isn't hearing clearly."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "partial_hearing_loss1",
+        "strings": [
+            "m_c keeps asking cats to repeat themselves, until it's clear that something about {PRONOUN/m_c/poss} hearing is weak and unreliable."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

@@ -1,0 +1,15 @@
+[
+    {
+        "event_id": "phantom_pain0",
+        "strings": [
+            "m_c's phantom pain has abated.",
+            "m_c's phantom pain is gone.",
+            "m_c's missing limb no longer hurts.",
+            "m_c feels much better: {PRONOUN/m_c/poss} missing limb no longer causing {PRONOUN/m_c/object} pain.",
+            "m_c is relieved to find {PRONOUN/m_c/poss} phantom pain gone."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

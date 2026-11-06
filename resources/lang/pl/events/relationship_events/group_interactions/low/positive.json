@@ -2,9 +2,9 @@
     {
         "event_id": "group_3_neutral_talk",
         "strings": [
-            "m_c confesses to r_c1 that {PRONOUN\/m_c\/subject} {VERB\/m_c\/have\/has} feelings for r_c2.",
-            "While m_c and r_c1 are talking, m_c gets the feeling that {PRONOUN\/m_c\/subject} can trust r_c1, and confesses that {PRONOUN\/m_c\/subject} {VERB\/m_c\/like\/likes} r_c2."
-        ],
+			"m_c confesses to r_c1 that {PRONOUN/m_c/subject} {VERB/m_c/have/has} feelings for r_c2.",
+			"While m_c and r_c1 are talking, m_c gets the feeling that {PRONOUN/m_c/subject} can trust r_c1, and confesses that {PRONOUN/m_c/subject} {VERB/m_c/like/likes} r_c2."
+		],
         "involved_cats": {
             "m_c": {},
             "r_c1": {},
@@ -12,57 +12,31 @@
         },
         "relationship_constraint": [
             {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c1"
-                ],
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
                 "mutual": false,
-                "constraints": [
-                    "listens_to"
-                ]
+                "constraints": ["listens_to"]
             },
             {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c2"
-                ],
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c2"],
                 "mutual": false,
-                "constraints": [
-                    "fancies",
-                    "-mates"
-                ]
+                "constraints": ["fancies", "-mates"]
             }
         ],
         "relationship_changes": [
             {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c1"
-                ],
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
                 "mutual": false,
-                "values": [
-                    "comfort",
-                    "trust"
-                ],
+                "values": ["comfort", "trust"],
                 "amount": 5
             },
             {
-                "cats_from": [
-                    "r_c1"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "comfort"
-                ],
+                "values": ["comfort"],
                 "amount": 5
             }
         ]
@@ -70,28 +44,19 @@
     {
         "event_id": "group_multicat_neutral_talk1",
         "strings": [
-            "m_c, multi_cat had a nice talk while eating.",
-            "m_c, multi_cat took a sunbath and had a little small talk."
-        ],
+			"m_c, multi_cat had a nice talk while eating.",
+			"m_c, multi_cat took a sunbath and had a little small talk."
+		],
         "involved_cats": {
             "m_c": {},
             "multi_cat": {}
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "m_c",
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c",
-                    "multi_cat"
-                ],
+                "cats_from": ["m_c", "multi_cat"],
+                "cats_to": ["m_c", "multi_cat"],
                 "mutual": false,
-                "values": [
-                    "comfort",
-                    "like"
-                ],
+                "values": ["comfort", "like"],
                 "amount": 5
             }
         ]
@@ -99,19 +64,17 @@
     {
         "event_id": "group_multicat_pos_chillstretches",
         "strings": [
-            "Late into the evening, m_c invites multi_cat to stretch with {PRONOUN\/m_c\/object} and enjoy each other's company.",
-            "m_c convinces multi_cat to wind down and stretch with {PRONOUN\/m_c\/object}.",
-            "m_c's eagerness to do early morning stretches rubs off on multi_cat.",
-            "m_c appreciates multi_cat joining {PRONOUN\/m_c\/object} to stretch late into the night so {PRONOUN\/m_c\/subject} wouldn't be alone.",
-            "m_c, multi_cat hang out while stretching.",
-            "m_c, multi_cat blow off steam by stretching with and venting to each other.",
-            "The moonlight encourages m_c, multi_cat to slow down and stretch."
-        ],
+			"Late into the evening, m_c invites multi_cat to stretch with {PRONOUN/m_c/object} and enjoy each other's company.",
+			"m_c convinces multi_cat to wind down and stretch with {PRONOUN/m_c/object}.",
+			"m_c's eagerness to do early morning stretches rubs off on multi_cat.",
+			"m_c appreciates multi_cat joining {PRONOUN/m_c/object} to stretch late into the night so {PRONOUN/m_c/subject} wouldn't be alone.",
+			"m_c, multi_cat hang out while stretching.",
+			"m_c, multi_cat blow off steam by stretching with and venting to each other.",
+			"The moonlight encourages m_c, multi_cat to slow down and stretch."
+		],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "-kitten"
-                ]
+                "status": ["-kitten"]
             },
             "multi_cat": {
                 "status": [
@@ -121,19 +84,10 @@
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat",
-                    "m_c"
-                ],
-                "cats_to": [
-                    "m_c",
-                    "multi_cat"
-                ],
+                "cats_from": ["multi_cat", "m_c"],
+                "cats_to": ["m_c", "multi_cat"],
                 "mutual": false,
-                "values": [
-                    "like",
-                    "comfort"
-                ],
+                "values": ["like", "comfort"],
                 "amount": 5
             }
         ]
@@ -192,19 +146,10 @@
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat",
-                    "m_c"
-                ],
-                "cats_to": [
-                    "m_c",
-                    "multi_cat"
-                ],
+                "cats_from": ["multi_cat", "m_c"],
+                "cats_to": ["m_c", "multi_cat"],
                 "mutual": true,
-                "values": [
-                    "like",
-                    "comfort"
-                ],
+                "values": ["like", "comfort"],
                 "amount": 5
             }
         ]
@@ -218,31 +163,18 @@
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "-kitten"
-                ]
+                "status": ["-kitten"]
             },
             "multi_cat": {
-                "status": [
-                    "-kitten"
-                ]
+                "status": ["-kitten"]
             }
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat",
-                    "m_c"
-                ],
-                "cats_to": [
-                    "multi_cat",
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat", "m_c"],
+                "cats_to": ["multi_cat", "m_c"],
                 "mutual": false,
-                "values": [
-                    "like",
-                    "trust"
-                ],
+                "values": ["like", "trust"],
                 "amount": 5
             }
         ]
@@ -255,31 +187,18 @@
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "apprentice"
-                ]
+                "status": ["apprentice"]
             },
             "multi_cat": {
-                "status": [
-                    "warrior",
-                    "deputy",
-                    "leader"
-                ]
+                "status": ["warrior", "deputy", "leader"]
             }
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "like",
-                    "respect"
-                ],
+                "values": ["like", "respect"],
                 "amount": 5
             }
         ]
@@ -295,12 +214,8 @@
         },
         "relationship_constraint": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
                 "mutual": false,
                 "constraints": [
                     "dislikes"
@@ -317,8 +232,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "like",
-                    "comfort"
+                    "like", "comfort"
                 ],
                 "amount": 5
             }
@@ -335,12 +249,8 @@
         },
         "relationship_constraint": [
             {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
                 "mutual": false,
                 "constraints": [
                     "avoids"
@@ -357,8 +267,7 @@
                 ],
                 "mutual": false,
                 "values": [
-                    "like",
-                    "comfort"
+                    "like", "comfort"
                 ],
                 "amount": 5
             }
@@ -373,41 +282,20 @@
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "warrior",
-                    "deputy",
-                    "leader"
-                ],
-                "past_status": [
-                    "apprentice"
-                ]
+                "status": ["warrior", "deputy", "leader"],
+                "past_status": ["apprentice"]
             },
             "multi_cat": {
-                "status": [
-                    "warrior",
-                    "deputy",
-                    "leader"
-                ],
-                "past_status": [
-                    "apprentice"
-                ]
+                "status": ["warrior", "deputy", "leader"],
+                "past_status": ["apprentice"]
             }
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat",
-                    "m_c"
-                ],
-                "cats_to": [
-                    "multi_cat",
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat", "m_c"],
+                "cats_to": ["multi_cat", "m_c"],
                 "mutual": false,
-                "values": [
-                    "like",
-                    "comfort"
-                ],
+                "values": ["like", "comfort"],
                 "amount": 5
             }
         ]
@@ -421,45 +309,20 @@
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "warrior",
-                    "deputy",
-                    "leader",
-                    "mediator",
-                    "medicine cat"
-                ],
-                "past_status": [
-                    "kitten"
-                ]
+                "status": ["warrior", "deputy", "leader", "mediator", "medicine cat"],
+                "past_status": ["kitten"]
             },
             "multi_cat": {
-                "status": [
-                    "warrior",
-                    "deputy",
-                    "leader",
-                    "mediator",
-                    "medicine cat"
-                ],
-                "past_status": [
-                    "kitten"
-                ]
+                "status": ["warrior", "deputy", "leader", "mediator", "medicine cat"],
+                "past_status": ["kitten"]
             }
         },
         "relationship_changes": [
             {
-                "cats_from": [
-                    "multi_cat",
-                    "m_c"
-                ],
-                "cats_to": [
-                    "multi_cat",
-                    "m_c"
-                ],
+                "cats_from": ["multi_cat", "m_c"],
+                "cats_to": ["multi_cat", "m_c"],
                 "mutual": false,
-                "values": [
-                    "like",
-                    "comfort"
-                ],
+                "values": ["like", "comfort"],
                 "amount": 5
             }
         ]

@@ -1,0 +1,12 @@
+[
+    {
+        "event_id": "absent_torn_pelt0",
+        "strings": [
+            "m_c has no idea where these scratches came from, but they're certainly there.",
+            "m_c accidentally tore {PRONOUN/m_c/poss} pelt when {PRONOUN/m_c/subject} {VERB/m_c/were/was} wandering the territory."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

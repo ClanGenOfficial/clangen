@@ -1,0 +1,9 @@
+[
+    {
+        "event_id": "flea_spread0",
+        "strings": ["Fleas have been hopping from pelt to pelt and have spread to multi_cat."],
+        "involved_cats": {
+            "multi_cat": {}
+        }
+    }
+]

@@ -2,13 +2,15 @@
     {
         "event_id": "elder_default0",
         "involved_cats": {
-            "m_c": {}
+            "m_c": {
+                "age": ["senior"]
+            }
         },
         "strings": [
-            "m_c wished to join the elders. The Clan honors {PRONOUN\/m_c\/object} and all the service m_c has given to them.",
-            "m_c has been looking forward to {PRONOUN\/m_c\/poss} moons of rest as an elder. {PRONOUN\/m_c\/subject\/CAP} happily {VERB\/m_c\/retire\/retires}, quickly settling into the elders' den. ",
-            "Time has taken its toll and m_c has noticed {PRONOUN\/m_c\/self} slowing down. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/have\/has} worked tirelessly for many moons, but it is time for {PRONOUN\/m_c\/object} to retire. ",
-            "As m_c enters into the sunset of {PRONOUN\/m_c\/poss} life, {PRONOUN\/m_c\/subject} {VERB\/m_c\/join\/joins} the ranks of the elders without regret, looking forward to the rest {PRONOUN\/m_c\/subject} {VERB\/m_c\/have\/has} earned."
+            "m_c wished to join the elders. The Clan honors {PRONOUN/m_c/object} and all the service m_c has given to them.",
+            "m_c has been looking forward to {PRONOUN/m_c/poss} moons of rest as an elder. {PRONOUN/m_c/subject/CAP} happily {VERB/m_c/retire/retires}, quickly settling into the elders' den. ",
+            "Time has taken its toll and m_c has noticed {PRONOUN/m_c/self} slowing down. {PRONOUN/m_c/subject/CAP} {VERB/m_c/have/has} worked tirelessly for many moons, but it is time for {PRONOUN/m_c/object} to retire. ",
+            "As m_c enters into the sunset of {PRONOUN/m_c/poss} life, {PRONOUN/m_c/subject} {VERB/m_c/join/joins} the ranks of the elders without regret, looking forward to the rest {PRONOUN/m_c/subject} {VERB/m_c/have/has} earned."
         ]
     },
     {
@@ -17,13 +19,15 @@
             "clan:leader"
         ],
         "involved_cats": {
-            "m_c": {}
+            "m_c": {
+                "age": ["senior"]
+            }
         },
         "strings": [
-            "lead_name proudly calls a Clan meeting to honor m_c's service to the Clan. It is time {PRONOUN\/m_c\/subject} {VERB\/m_c\/retire\/retires} peacefully to the elders' den.",
-            "m_c wishes to join the elders. lead_name calls a meeting and the Clan honors {PRONOUN\/m_c\/object} and all the service m_c has given to them.",
-            "m_c's been resistant to retiring, but the aches and pains of old age have worn {PRONOUN\/m_c\/object} down. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/approach\/approaches} lead_name, and {VERB\/m_c\/are\/is} honored for {PRONOUN\/m_c\/poss} tireless service. ",
-            "m_c holds {PRONOUN\/m_c\/poss} head up high as lead_name calls upon StarClan to witness m_c's service to c_n. This is a retirement hard-earned."
+            "lead_name proudly calls a Clan meeting to honor m_c's service to the Clan. It is time {PRONOUN/m_c/subject} {VERB/m_c/retire/retires} peacefully to the elders' den.",
+            "m_c wishes to join the elders. lead_name calls a meeting and the Clan honors {PRONOUN/m_c/object} and all the service m_c has given to them.",
+            "m_c's been resistant to retiring, but the aches and pains of old age have worn {PRONOUN/m_c/object} down. {PRONOUN/m_c/subject/CAP} {VERB/m_c/approach/approaches} lead_name, and {VERB/m_c/are/is} honored for {PRONOUN/m_c/poss} tireless service. ",
+            "m_c holds {PRONOUN/m_c/poss} head up high as lead_name calls upon StarClan to witness m_c's service to c_n. This is a retirement hard-earned."
         ]
     },
     {
@@ -41,7 +45,7 @@
             }
         },
         "strings": [
-            "m_c grins through the celebration of {PRONOUN\/m_c\/poss} retirement, looking forward to being the gossipiest elder on this side of the rising sun."
+            "m_c grins through the celebration of {PRONOUN/m_c/poss} retirement, looking forward to being the gossipiest elder on this side of the rising sun."
         ]
     },
     {
@@ -57,11 +61,12 @@
                         "bloodthirsty",
                         "vengeful"
                     ]
-                }
+                },
+                "past_status": ["warrior"]
             }
         },
         "strings": [
-            "m_c stops {PRONOUN\/m_c\/poss} tail from twitching as {PRONOUN\/m_c\/poss} retirement is announced. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/know\/knows} c_n will be fine without {PRONOUN\/m_c\/object} on the front lines, {PRONOUN\/m_c\/subject} {VERB\/m_c\/know\/knows} this is the right time to relax {PRONOUN\/m_c\/poss} claws and let {PRONOUN\/m_c\/poss} responsibilities fall from {PRONOUN\/m_c\/poss} paws, but... it's hard, letting go."
+            "m_c stops {PRONOUN/m_c/poss} tail from twitching as {PRONOUN/m_c/poss} retirement is announced. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} c_n will be fine without {PRONOUN/m_c/object} on the front lines, {PRONOUN/m_c/subject} {VERB/m_c/know/knows} this is the right time to relax {PRONOUN/m_c/poss} claws and let {PRONOUN/m_c/poss} responsibilities fall from {PRONOUN/m_c/poss} paws, but... it's hard, letting go."
         ]
     },
     {
@@ -77,11 +82,12 @@
                         "righteous",
                         "vengeful"
                     ]
-                }
+                },
+                "age": ["senior"]
             }
         },
         "strings": [
-            "m_c sits with a puffed out pelt of pride, hearing c_n celebrate {PRONOUN\/m_c\/poss} achievements. Retiring means trusting younger, fresher cats to take up the fight to keep c_n safe, but {PRONOUN\/m_c\/subject} {VERB\/m_c\/think\/thinks} {PRONOUN\/m_c\/subject}{VERB\/m_c\/'ve\/'s} done the best {PRONOUN\/m_c\/subject} could've to pass on {PRONOUN\/m_c\/poss} lessons."
+            "m_c sits with a puffed out pelt of pride, hearing c_n celebrate {PRONOUN/m_c/poss} achievements. Retiring means trusting younger, fresher cats to take up the fight to keep c_n safe, but {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} done the best {PRONOUN/m_c/subject} could've to pass on {PRONOUN/m_c/poss} lessons."
         ]
     },
     {
@@ -99,7 +105,63 @@
             }
         },
         "strings": [
-            "m_c takes a deep breath, and tries to see the celebration of {PRONOUN\/m_c\/poss} retirement as a compliment, not an exile to the elders' den. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/know\/knows} it isn't meant that way."
+            "m_c takes a deep breath, and tries to see the celebration of {PRONOUN/m_c/poss} retirement as a compliment, not an exile to the elders' den. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} it isn't meant that way."
+        ]
+    },
+    {
+        "event_id": "elder_adol_retire0",
+        "involved_cats": {
+            "m_c": {
+                "age": ["adolescent"]
+            }
+        },
+        "strings": [
+            "old_name decided {PRONOUN/m_c/subject}'d rather spend {PRONOUN/m_c/poss} time helping around camp and entertaining kits; {PRONOUN/m_c/subject} was warmly welcomed into the elders' den and given the name m_c in honor of {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "elder_adol_retire1",
+        "involved_cats": {
+            "m_c": {
+                "age": ["adolescent"]
+            },
+            "r_c0": {
+                "status": ["leader"],
+                "stat": {
+                    "trait": ["wise", "thoughtful", "calm", "sincere", "responsible"]
+                }
+            }
+        },
+        "strings": [
+            "Seeing old_name struggling the last few moons, r_c0 approached {PRONOUN/m_c/object} and promised that no one would think less of {PRONOUN/m_c/object} for retiring early, and that {PRONOUN/m_c/subject} would still be a valuable member of the Clan as an elder. {PRONOUN/m_c/subject/CAP} agreed; later that day, {PRONOUN/m_c/poss} elder ceremony was held and {PRONOUN/m_c/subject} were given the name m_c."
+        ]
+    },
+    {
+        "event_id": "elder_adult_retire0",
+        "involved_cats": {
+            "m_c": {
+                "age": ["-senior", "-adolescent"]
+            }
+        },
+        "strings": [
+            "m_c decided to retire from normal Clan duty. {PRONOUN/m_c/subject/CAP} just couldn't quite keep up anymore."
+        ]
+    },
+    {
+        "event_id": "elder_adult_retire1",
+        "involved_cats": {
+            "m_c": {
+                "age": ["-senior", "-adolescent"]
+            },
+            "r_c0": {
+                "status": ["leader"],
+                "stat": {
+                    "trait": ["wise", "thoughtful", "calm", "sincere", "responsible"]
+                }
+            }
+        },
+        "strings": [
+            "Seeing m_c struggling the last few moons, r_c0 approached {PRONOUN/m_c/object} and promised that no one would think less of {PRONOUN/m_c/object} for retiring early, and that {PRONOUN/m_c/subject} would still be a valuable member of the Clan as an elder. m_c agreed; later that day, {PRONOUN/m_c/poss} elder ceremony was held."
         ]
     }
 ]

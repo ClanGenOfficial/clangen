@@ -1,0 +1,12 @@
+[
+    {
+        "event_id": "grief_stricken_selective_mutism0",
+        "strings": [
+            "m_c's voice suddenly gives out mid-conversation, the words clogging {PRONOUN/m_c/poss} throat.",
+            "m_c's grief has lessened with time, but the anxiety of losing a loved one remains, manifesting as selective mutism."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

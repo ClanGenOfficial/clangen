@@ -71,7 +71,7 @@
         "injury": [
             {
              "cats": ["m_c"],
-             "injuries": ["mangled leg"]
+             "injuries": ["mangled_leg"]
             }
         ],
         "history": [

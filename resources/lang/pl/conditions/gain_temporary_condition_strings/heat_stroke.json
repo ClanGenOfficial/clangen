@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "heat_stroke0",
+        "strings": [
+            "m_c spent too long out in the sun. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} gotten heat stroke."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

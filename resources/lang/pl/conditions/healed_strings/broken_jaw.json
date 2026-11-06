@@ -1,0 +1,13 @@
+[
+    {
+        "event_id": "broken_jaw0",
+        "strings": [
+            "m_c's broken jaw has healed.",
+            "m_c has healed well from the broken jaw {PRONOUN/m_c/subject} suffered.",
+            "m_c's jaw no longer bothers {PRONOUN/m_c/object}: it seems to have healed from its break."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

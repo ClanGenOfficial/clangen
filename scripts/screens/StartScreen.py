@@ -39,7 +39,7 @@ from ..game_structure.screen_settings import MANAGER
 from ..game_structure.game.switches import switch_get_value, Switch
 from ..housekeeping.datadir import get_cache_dir
 from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
-from ..housekeeping.version import get_version_info
+from ..housekeeping.game_version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.windows.dev_tool_windows.tortie_patch_tool import TortiePatchToolWindow
 from scripts.ui.windows.dev_tool_windows.white_patch_tool import WhitePatchToolWindow
@@ -366,10 +366,11 @@ class StartScreen(Screens):
         self.closebtn.hide()
 
         self.update_button = UISurfaceImageButton(
-            ui_scale(pygame.Rect((577, 25), (153, 30))),
+            ui_scale(pygame.Rect((-190, 25), (185, 30))),
             "buttons.update_available",
-            get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
-            object_id="@buttonstyles_squoval",
+            get_button_dict(ButtonStyles.MAINMENU, (185, 30)),
+            object_id="@buttonstyles_mainmenu",
+            anchors={"right": "right", "right_target": self.elements["bug_report"]},
             manager=MANAGER,
             visible=False,
         )

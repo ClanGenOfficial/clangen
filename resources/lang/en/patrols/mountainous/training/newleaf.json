@@ -37,7 +37,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "This close to the nest, the eagles take remarkably little notice of other animals. r_c1 can even see sparrows nipping in and out of their own nests, tiny things woven into the eagle one. It's an opportunity to observe a side of the birds birds that r_c1 never expected to see — to learn their body language and watch them with their chicks."
+                    "This close to the nest, the eagles take remarkably little notice of other animals. r_c1 can even see sparrows nipping in and out of their own nests, tiny things woven into the eagle one. It's an opportunity to observe a side of the birds that r_c1 never expected to see — to learn their body language and watch them with their chicks."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -357,7 +357,7 @@
             "The cats head out into the crisp clear newleaf sun, and p_l leads them towards a massive messy eagle nest."
         ],
         "decline_strings": [
-            "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe."
+            "The patrol decides that investigating the eagle nest is too risky, seeing as its occupant could still be around. The training session is called off."
         ],
         "success_outcomes": [
             {

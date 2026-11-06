@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "raspy_lungs_persistent_exhaustion",
+        "strings": [
+            "The effort to keep {PRONOUN/m_c/poss} body running normally seems to have worn m_c down."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

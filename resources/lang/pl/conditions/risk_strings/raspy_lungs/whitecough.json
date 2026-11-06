@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "raspy_lungs_whitecough0",
+        "strings": [
+            "r_c0's worst fears are realized as whitecough has infected m_c thanks to {PRONOUN/m_c/poss} weakened lungs."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "raspy_lungs_whitecough1",
+        "strings": [
+            "m_c's weak lungs have left {PRONOUN/m_c/object} coughing and wheezing this moon, unable to resist potential sickness."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

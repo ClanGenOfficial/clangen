@@ -12,7 +12,7 @@
             "r_c breathes a sigh of relief, knowing that one of the Clan's most untrustworthy cats is gone.",
             "r_c is relieved that {PRONOUN/r_c/subject} no longer {VERB/r_c/have/has} to worry about m_c's lies, betrayal, or deceit again now that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} gone.",
             "r_c watches the camp entrance, not trusting that m_c is dead and that this is another trick, another reason to hold something over another cat's head",
-            "r_c asks everyone {PRONOUN/r_c/poss} {VERB/r_c/know/knows}, trying to make sure that m_c is actually dead and not another rumor {PRONOUN/m_c/subject} spread to lie about where {PRONOUN/m_c/subject} actually is."
+            "r_c asks everyone {PRONOUN/r_c/subject} {VERB/r_c/know/knows}, trying to make sure that m_c is actually dead and not another rumor {PRONOUN/m_c/subject} spread to lie about where {PRONOUN/m_c/subject} actually is."
         ]
     },
     "compassionate": {

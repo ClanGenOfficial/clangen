@@ -1,0 +1,27 @@
+[
+    {
+        "event_id": "venom_sickness_infection0",
+        "strings": [
+            "Despite the hard work of r_c0, an infection has found its way into m_c's body through the venom."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "venom_sickness_infection1",
+        "strings": [
+            "To make matters worse, m_c's wound has become infected from the venom.",
+            "m_c grows weaker - an infection has set in {PRONOUN/m_c/object} wound.",
+            "Left weak from the venom, m_c barely has the energy to notice the growing infection."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

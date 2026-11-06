@@ -1,8 +1,8 @@
 {
     "en": {
         "herb_used": {
-            "one": "m_c was given a %{herb} as treatment for %{condition}. %{effect}",
-            "many": "m_c was given %{herb} as treatment for %{condition}. %{effect}"
+            "one": "m_c was given a %{herb} as treatment for: %{condition}. %{effect}",
+            "many": "m_c was given %{herb} as treatment for: %{condition}. %{effect}"
         },
         "mortality_down": "{PRONOUN/m_c/subject/CAP} will be less likely to die.",
         "duration_down": "{PRONOUN/m_c/subject/CAP} will heal sooner.",

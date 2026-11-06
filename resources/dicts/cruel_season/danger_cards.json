@@ -11,7 +11,7 @@
   "plague_ridden": {
     "card_art": "danger/tooth_and_claw.png",
     "modifiers": {
-      "condition_related.med_infection_reduction": 0,
+      "condition_related.med_infection_reduction": 0.0,
       "condition_related.illness_outbreak_season": ["Leaf-bare", "Leaf-fall", "Greenleaf", "Newleaf"],
       "condition_related.illness_percentage_max": 1.25
     }
@@ -28,6 +28,13 @@
       "condition_related.war_injury_modifier": 235,
       "death_related.war_death_modifier": 340,
       "death_related.war_death_modifier_leader": 46
+    }
+  },
+  "miasma": {
+    "card_art": "danger/miasma.png",
+    "modifiers": {
+      "condition_related.illness_chance": 175
+
     }
   }
 }

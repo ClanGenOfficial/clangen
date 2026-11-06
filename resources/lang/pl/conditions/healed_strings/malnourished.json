@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "malnourished0",
+        "strings": [
+            "m_c finally feels energized again. It seems the newly consistent meals have done {PRONOUN/m_c/object} good."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

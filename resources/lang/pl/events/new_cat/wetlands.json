@@ -1,5 +1,5 @@
 [
-    {
+  {
         "event_id": "wtlnd_new_cat_lost_kitten1",
         "location": ["wetlands"],
         "season": ["any"],
@@ -12,24 +12,24 @@
         "new_cat": [
             ["backstory:abandoned1, abandoned4", "age:kitten"]
         ],
-        "relationships": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["n_c:0"],
-                "mutual": true,
-                "values": ["comfort", "like"],
-                "amount": 10,
-                "log": {
-                    "cats_from": "m_c found n_c:0 as a kitten and brought {PRONOUN/n_c:0/object} into the Clan."
-                }
+	"relationships": [
+          {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["comfort", "like"],
+            "amount": 10,
+            "log": {
+                "cats_from": "m_c found n_c:0 as a kitten and brought {PRONOUN/n_c:0/object} into the Clan."
             }
+          }
         ],
         "outsider": {
             "current_rep": ["welcoming"],
             "changed": 1
         }
     },
-    {
+  {
         "event_id": "wtlnd_new_cat_lost_kitten2",
         "location": ["wetlands"],
         "season": ["any"],
@@ -38,31 +38,33 @@
         "m_c": {
             "age": ["young adult", "adult", "senior adult", "senior"],
             "status": ["any"],
-            "trait": ["compassionate", "loving", "responsible", "thoughtful"]
+	    "trait": ["compassionate", "loving", "responsible", "thoughtful"]
         },
         "new_cat": [
             ["backstory:abandoned1, abandoned4", "age:kitten"]
         ],
-        "relationships": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["n_c:0"],
-                "mutual": true,
-                "values": ["comfort", "like"],
-                "amount": 10,
-                "log": {
-                    "cats_from": "m_c found n_c:0 as a kitten and brought {PRONOUN/n_c:0/object} into the Clan."
-                }
-            },
-            {
-                "cats_from": ["clan"],
-                "cats_to": ["m_c", "n_c:0"],
-                "values": ["like"],
-                "amount": -5,
-                "log": {
-                    "cats_from": "cat_from wasn't pleased when m_c brought n_c:0 back to the Clan."
-                }
+	"relationships": [
+          {
+            "cats_from": ["m_c"],
+            "cats_to": ["n_c:0"],
+            "mutual": true,
+            "values": ["comfort", "like"],
+            "amount": 10,
+            "log": {
+                "cats_from": "m_c found n_c:0 as a kitten and brought {PRONOUN/n_c:0/object} into the Clan."
             }
+          },
+	  {
+            "cats_from": ["clan"],
+            "cats_to": ["m_c", "n_c:0"],
+            "values": ["like"],
+            "amount": -5,
+            "log": {
+                "cats_from": "cat_from wasn't pleased when m_c brought n_c:0 back to the Clan."
+            }
+	  }
+
+
         ],
         "outsider": {
             "current_rep": ["hostile"],
@@ -78,14 +80,14 @@
         "m_c": {
             "age": ["young adult", "adult", "senior adult", "senior"],
             "status": ["leader", "deputy", "medicine cat", "warrior"]
-        },
+          },
         "new_cat": [
             ["age:has_kits", "meeting", "loner", "can_birth"],
             ["new_name", "parent:0", "backstory:abandoned1", "litter"]
         ],
         "outsider": {
-            "current_rep": ["neutral", "welcoming"],
-            "changed": 1
-        }
+              "current_rep": ["neutral", "welcoming"],
+              "changed": 1
+          }
     }
 ]

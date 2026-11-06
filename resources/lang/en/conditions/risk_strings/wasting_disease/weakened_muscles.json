@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "wasting_disease_weakened_muscles0",
+        "strings": [
+            "m_c's illness seems to be having an effect on {PRONOUN/m_c/poss} strength."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

@@ -833,7 +833,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "broken bone"
+                            "broken_bone"
                         ],
                         "scar_history": "m_c was scarred by a fox.",
                         "death_history": "m_c died of injuries inflicted by a fox."

@@ -1,0 +1,13 @@
+[
+    {
+        "event_id": "severe_burn0",
+        "strings": [
+            "m_c was lucky and recovered from the severe burn {PRONOUN/m_c/subject} got.",
+            "m_c has healed from {PRONOUN/m_c/poss} severe burn.",
+            "m_c's severe burn has finally healed."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

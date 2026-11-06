@@ -1287,7 +1287,7 @@
                             "n_c0"
                         ],
                         "condition": [
-                            "carrionplace disease"
+                            "carrionplace_disease"
                         ],
                         "no_results": true
                     }
@@ -1357,7 +1357,7 @@
                             "n_c0"
                         ],
                         "condition": [
-                            "carrionplace disease"
+                            "carrionplace_disease"
                         ],
                         "no_results": true
                     }
@@ -3322,7 +3322,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "claw-wound"
+                            "claw_wound"
                         ],
                         "scar_pool_override": [
                             "FACE",

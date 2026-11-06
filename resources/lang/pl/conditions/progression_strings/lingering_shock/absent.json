@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "lingering_shock_absent0",
+        "strings": [
+            "m_c fails to respond to r_c0 yet again, leading {PRONOUN/r_c0/subject} to accept m_c is never really coming back."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "lingering_shock_absent1",
+        "strings": [
+            "m_c never really came around again after going into shock."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

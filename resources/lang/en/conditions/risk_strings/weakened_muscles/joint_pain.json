@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "weakened_muscles_joint_pain",
+        "strings": [
+            "m_c's weaker muscles have left a strain on {PRONOUN/m_c/poss} joints."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

@@ -53,12 +53,13 @@ from scripts.game_structure.game.switches import (
 )
 from scripts.game_structure import game
 from scripts.housekeeping.datadir import get_save_dir
-from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
+from scripts.housekeeping.game_version import get_version_info, SAVE_VERSION_NUMBER
 from scripts.clan_package.clan_symbols import clan_symbol_sprite
 from scripts.clan_package.get_clan_cats import (
     get_living_clan_cat_count,
     find_alive_cats_with_rank,
 )
+from scripts.housekeeping.save_version_retrieval import get_version
 from scripts.screens.screens_core.screens_core import rebuild_top_menu_buttons
 
 
@@ -307,6 +308,11 @@ class Clan:
                 the_cat.backstory = "clan_founder"
             if the_cat.status.rank == CatRank.APPRENTICE:
                 the_cat.rank_change(CatRank.APPRENTICE, new_thought=False)
+            if get_config("clan_creation.reset_all_starting_skills"):
+                if the_cat.skills.primary:
+                    the_cat.skills.primary.points = 0
+                if the_cat.skills.secondary:
+                    the_cat.skills.secondary.points = 0
 
         # find non-selected cats from the 12 generated starters
         for c in switch_get_value(Switch.possible_cats):
@@ -424,6 +430,11 @@ class Clan:
         starting_priority = get_config("prey.feeding.starting_priority")
         for setting in ["hunter_first", "sick_injured_first"]:
             set_clan_setting(setting, True if starting_priority == setting else False)
+
+        # mentorship
+        if not get_config("roles.receive_mentor"):
+            set_clan_setting("assign_mentors", False)
+            save_clan_settings()
 
     def add_cat(self, cat):  # cat is a 'Cat' object
         """Adds cat into the list of clan cats"""
@@ -619,7 +630,8 @@ class Clan:
         ) or os.path.exists(
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "/clan.json"
         ):
-            version_info = self.load_clan_json()
+            version_info = get_version()
+            self.load_clan_json()
         elif os.path.exists(
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "clan.txt"
         ):
@@ -877,13 +889,6 @@ class Clan:
         if game.clan.game_mode != "classic":
             self.load_freshkill_pile(game.clan)
         switch_set_value(Switch.error_message, "")
-
-        # Return Version Info.
-        return {
-            "version_name": clan_data.get("version_name"),
-            "version_commit": clan_data.get("version_commit"),
-            "source_build": clan_data.get("source_build"),
-        }
 
     def load_pregnancy(self, clan):
         """

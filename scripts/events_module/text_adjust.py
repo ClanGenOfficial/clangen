@@ -403,7 +403,7 @@ def event_text_adjust(
         if abbr in text:
             if isinstance(cat, list):
                 cat_name = adjust_list_text([str(c.name) for c in cat])
-                text.replace(abbr, cat_name)
+                text = text.replace(abbr, cat_name)
             else:
                 replace_dict[abbr] = (str(cat.name), choice(cat.pronouns))
 

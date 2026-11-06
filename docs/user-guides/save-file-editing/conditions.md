@@ -14,7 +14,7 @@ The conditions file is boiled down to three main components:
 - `"condition type": {}`: the dict holding all the relevant conditions for the *specific condition type*.
     - You cannot, for example, have `"illnesses": {}` present twice in the file. If you have two illness conditions, they'll both go within the one condition type section.
 - `"condition name": {}`: the dict holding all the relevant information for the *specific condition*.
-    - This will be stuff like "one bad eye", "paralyzed", "weak leg" under the relevant "condition type", which in this case would be `"permanent condition": {}`
+    - This will be stuff like "one_bad_eye", "paralyzed", "weak_leg" under the relevant "condition type", which in this case would be `"permanent condition": {}`
 
 When adding to the same dict, you need to remember your commas and the placement of your brackets. Remember to utilize [jsonlint.com](https://jsonlint.com/) to check if the formatting is correct.
 
@@ -22,7 +22,7 @@ When adding to the same dict, you need to remember your commas and the placement
 
 Every type of condition has their own coding, so make sure you're applying the correct condition to the correct template! 
 
-For example, "one bad eye" is a permanent condition. You cannot use the template for injuries for "one bad eye". Otherwise, it will not recognize the condition and it'll be missing vital information.
+For example, "one_bad_eye" is a permanent condition. You cannot use the template for injuries for "one_bad_eye". Otherwise, it will not recognize the condition and it'll be missing vital information.
 
 ### Illnesses
 
@@ -141,7 +141,7 @@ Illnesses have their own information for every individual condition. Please refe
 | "illness_infectiousness": [],  | Unused code, please keep empty |
 | "risks": [],  |  Additional "small" conditions that may be given during the duration of the condition. |
 | "complication": null,  | Used in the situation where the condition is infected or festering. Add the condition "an infected wound" or "a festering wound" into illnesses, then add the corresponding "infected"/"festering" to replace null,  |
-| "cause_permanent": [],  | Possible given permanent conditions when an injury heals. Looks like "cause_permanent": ["lost a leg"],  |
+| "cause_permanent": [],  | Possible given permanent conditions when an injury heals. Looks like "cause_permanent": ["lost_leg"],  |
 |  "event_triggered": false, | Should be left as false if save file editing. |
 |  "potential_scars": [] | A list of potential scars the cat can get from this condition once it heals. "potential_scars": ["HALFTAIL","NOTAIL"]. |
 
@@ -196,7 +196,7 @@ Before editing:
             "moon_start": 4,
             "risks": [
                 {
-                    "name": "torn pelt",
+                    "name": "torn_pelt",
                     "chance": 20
                 }
             ],
@@ -220,7 +220,7 @@ After:
             "moon_start": 4,
             "risks": [
                 {
-                    "name": "torn pelt",
+                    "name": "torn_pelt",
                     "chance": 20
                 }
             ],
@@ -234,7 +234,7 @@ After:
             "moon_start": 4,
             "risks": [
                 {
-                    "name": "torn pelt",
+                    "name": "torn_pelt",
                     "chance": 20
                 }
             ],
@@ -280,7 +280,7 @@ Before editing:
             "moon_start": 4,
             "risks": [
                 {
-                    "name": "torn pelt",
+                    "name": "torn_pelt",
                     "chance": 20
                 }
             ],
@@ -303,7 +303,7 @@ Copy from the templates provided [here](#condition-templates) for the condition 
             "moon_start": 4,
             "risks": [
                 {
-                    "name": "torn pelt",
+                    "name": "torn_pelt",
                     "chance": 20
                 }
             ],
@@ -346,7 +346,7 @@ Now edit the new section for the condition you want. Go to the [conditions code 
                     "chance": 60
                 },
                 {
-                    "name": "torn pelt",
+                    "name": "torn_pelt",
                     "chance": 30
                 },
                 {
@@ -354,7 +354,7 @@ Now edit the new section for the condition you want. Go to the [conditions code 
                     "chance": 20
                 },
                 {
-                    "name": "joint pain",
+                    "name": "joint_pain",
                     "chance": 20
                 }
             ],
@@ -411,11 +411,11 @@ For example:
 
 Now edit the new section for the condition you want. Go to the [conditions code information](https://github.com/ClanGenOfficial/ClanGen/tree/development/resources/dicts/conditions) and use the information to edit the copied section to reflect the condition you want.
 
-Example with "lost a leg":
+Example with "lost_leg":
 ```json
 {
     "permanent conditions": {
-        "lost a leg": {
+        "lost_leg": {
             "severity": "major",
             "born_with": false,
             "moons_until": 0,
@@ -428,7 +428,7 @@ Example with "lost a leg":
                     "chance": 70
                 },
                 {
-                    "name": "phantom pain",
+                    "name": "phantom_pain",
                     "chance": 20
                 },
                 {
@@ -467,7 +467,7 @@ Let's say I want to get rid of fleas. Before editing:
             "moon_start": 4,
             "risks": [
                 {
-                    "name": "torn pelt",
+                    "name": "torn_pelt",
                     "chance": 20
                 }
             ],
@@ -475,7 +475,7 @@ Let's say I want to get rid of fleas. Before editing:
         }
     },
     "permanent conditions": {
-        "lost a leg": {
+        "lost_leg": {
             "severity": "major",
             "born_with": false,
             "moons_until": 0,
@@ -488,7 +488,7 @@ Let's say I want to get rid of fleas. Before editing:
                     "chance": 70
                 },
                 {
-                    "name": "phantom pain",
+                    "name": "phantom_pain",
                     "chance": 20
                 },
                 {
@@ -508,7 +508,7 @@ From "illnesses" until the bracket with the comma `},`, delete until it looks li
 ```json
 {
     "permanent conditions": {
-        "lost a leg": {
+        "lost_leg": {
             "severity": "major",
             "born_with": false,
             "moons_until": 0,
@@ -521,7 +521,7 @@ From "illnesses" until the bracket with the comma `},`, delete until it looks li
                     "chance": 70
                 },
                 {
-                    "name": "phantom pain",
+                    "name": "phantom_pain",
                     "chance": 20
                 },
                 {
@@ -555,7 +555,7 @@ Because it's not the only condition in "illnesses", I will delete only "heat str
             "moon_start": 4,
             "risks": [
                 {
-                    "name": "torn pelt",
+                    "name": "torn_pelt",
                     "chance": 20
                 }
             ],
@@ -587,7 +587,7 @@ After:
             "moon_start": 4,
             "risks": [
                 {
-                    "name": "torn pelt",
+                    "name": "torn_pelt",
                     "chance": 20
                 }
             ],
@@ -751,7 +751,7 @@ Before editing:
 ```json
 {
     "injuries": {
-        "claw-wound": {
+        "claw_wound": {
             "severity": "major",
             "mortality": 50,
             "duration": 3,
@@ -788,7 +788,7 @@ After removing pregnancy from the injuries condition type:
 ```json
 {
     "injuries": {
-        "claw-wound": {
+        "claw_wound": {
             "severity": "major",
             "mortality": 50,
             "duration": 3,
@@ -839,7 +839,7 @@ Before editing:
             "moon_start": 4,
             "risks": [
                 {
-                    "name": "torn pelt",
+                    "name": "torn_pelt",
                     "chance": 20
                 }
             ],
@@ -861,7 +861,7 @@ After removing "pregnant" and "injuries":
             "moon_start": 4,
             "risks": [
                 {
-                    "name": "torn pelt",
+                    "name": "torn_pelt",
                     "chance": 20
                 }
             ],

@@ -1,6 +1,6 @@
 {
   "kit_season": {
-    "card_art": "behavior/underpopulated.png",
+    "card_art": "behavior/mouths_to_feed.png",
     "modifiers": {
       "pregnancy.birth_cooldown": 2,
       "pregnancy.primary_chance_mated": 20,
@@ -8,7 +8,7 @@
     }
   },
   "mouths_to_feed": {
-    "card_art": "behavior/underpopulated.png",
+    "card_art": "behavior/mouths_to_feed.png",
     "modifiers": {
       "pregnancy.one_kit_possibility.young adult": 0,
       "pregnancy.one_kit_possibility.adult": 4,
@@ -76,27 +76,27 @@
     }
   },
   "heartless": {
-    "card_art": "behavior/sorrow.png",
+    "card_art": "behavior/mate_breakup.png",
     "modifiers": {
       "mates.allow_manual": false,
       "mates.allow_mating": false
     }
   },
   "clumsy_paws": {
-    "card_art": "behavior/sorrow.png",
+    "card_art": "behavior/mate_breakup.png",
     "modifiers": {
       "progress.difficulty_modifier": 0.5
     }
   },
   "mate_breakup": {
-    "card_art": "behavior/sorrow.png",
+    "card_art": "behavior/mate_breakup.png",
     "modifiers": {
       "mates.breakup.initial_chance.threshold": 360,
       "mates.breakup.initial_chance.default_chance": 15
     }
   },
   "weak_stars": {
-    "card_art": "behavior/sorrow.png",
+    "card_art": "behavior/weakened_stars.png",
     "modifiers": {
       "death_related.max_leader_lives": 5,
       "death_related.min_leader_lives": 1
@@ -112,7 +112,7 @@
   "burnout": {
     "card_art": "behavior/burnout.png",
     "modifiers": {
-      "medcats.medcat_base_capacity": 5
+      "condition_related.medcats.medcat_base_capacity": 5
     }
   }
 }

@@ -67,7 +67,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "heat exhaustion"
+                            "heat_exhaustion"
                         ],
                         "death_history": "p_l died from heat exhaustion after searching for lungwort in the greenleaf heat."
                     }
@@ -86,7 +86,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "heat stroke"
+                            "heat_stroke"
                         ],
                         "death_history": "p_l died from heat stroke after searching for lungwort in the greenleaf heat."
                     }
@@ -188,7 +188,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "heat exhaustion"
+                            "heat_exhaustion"
                         ],
                         "death_history": "r_c0 died from heat exhaustion after searching for lungwort in the greenleaf heat."
                     }

@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "snake_bite_infection0",
+        "strings": [
+            "r_c0 mutters something about plantain as m_c carefully licks around {PRONOUN/m_c/poss} snake bite wound. It's not healing like it should."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "snake_bite_infection1",
+        "strings": [
+            "Though the plantain leaves seem to be doing their job of healing the toxins, m_c's wound has started to feel warm to the touch."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

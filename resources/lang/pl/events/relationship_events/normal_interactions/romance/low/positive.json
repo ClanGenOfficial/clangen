@@ -4,7 +4,7 @@
         "strings": [
             "m_c is developing a crush on r_c.",
             "m_c might be reading a little too far into r_c's kindness.",
-            "m_c never realized how much {PRONOUN\/m_c\/subject} {VERB\/m_c\/love\/loves} spending time with r_c.",
+            "m_c never realized how much {PRONOUN/m_c/subject} {VERB/m_c/love/loves} spending time with r_c.",
             "m_c just noticed how beautiful r_c's eyes are."
         ],
         "relationship_constraint": [

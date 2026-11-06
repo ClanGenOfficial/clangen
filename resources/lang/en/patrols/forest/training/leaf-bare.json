@@ -312,7 +312,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "shivering"
+                            "dangerously_cold"
                         ],
                         "scar_history": "m_c was soaked in leaf-bare, and it progressed to scarring frostbite.",
                         "death_history": "m_c was soaked in leaf-bare, and the chill eventually killed {PRONOUN/m_c/object}."
@@ -495,7 +495,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "shivering"
+                            "dangerously_cold"
                         ],
                         "scar_history": "m_c was soaked in leaf-bare, and it progressed to scarring frostbite.",
                         "death_history": "m_c was soaked in leaf-bare, and the chill eventually killed {PRONOUN/m_c/object}."

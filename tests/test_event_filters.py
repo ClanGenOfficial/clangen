@@ -2,6 +2,10 @@ import unittest
 from copy import deepcopy
 from itertools import permutations
 
+from scripts.cat.conditions.gain_conditions import (
+    gain_temporary_condition,
+    gain_permanent_condition,
+)
 from scripts.cat.microservices.add_to_clan import add_to_clan, add_dependents_to_clan
 from scripts.cat.personality import Personality
 from scripts.cat.skills import Skill, SkillPath
@@ -13,21 +17,13 @@ from scripts.clan_resources.point_of_interest import (
     generate_and_add_new_poi,
     get_pois_by_category,
 )
-from scripts.cat.microservices.conditions import (
-    get_ill,
-    get_injured,
-    get_permanent_condition,
-)
 
 try:
     import tomllib
 except ImportError:
     import tomli as tomllib
 
-from random import Random
-
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatRank
 from scripts.cat.factories.test_cat_factory import TestCatFactory
 from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.cat.enums import CatRank, CatAge, CatSocial, CatGroup, CatStanding
@@ -2801,13 +2797,13 @@ class TestCatConstraint(unittest.TestCase):
         working_cat = cat_factory.create_cat()
         broken_cat = cat_factory.create_cat()
 
-        get_injured(broken_cat, name="broken bone")
+        gain_temporary_condition(broken_cat, "broken_bone")
         ill_cat = cat_factory.create_cat()
-        get_ill(cat=ill_cat, illness_name="greencough")
+        gain_temporary_condition(ill_cat, "greencough")
         born_para_cat = cat_factory.create_cat()
-        get_permanent_condition(born_para_cat, name="paralyzed", born_with=True)
+        gain_permanent_condition(born_para_cat, "paralyzed", is_congenital=True)
         acquired_para_cat = cat_factory.create_cat()
-        get_permanent_condition(acquired_para_cat, name="paralyzed", born_with=False)
+        gain_permanent_condition(acquired_para_cat, "paralyzed", is_congenital=False)
 
         # cat must be working and is
         with self.subTest("must work and is working"):
@@ -2835,7 +2831,7 @@ class TestCatConstraint(unittest.TestCase):
 
         # cat should have a condition and does
         test_dict = {
-            broken_cat: ["broken bone"],
+            broken_cat: ["broken_bone"],
             ill_cat: ["greencough"],
             born_para_cat: ["paralyzed"],
         }

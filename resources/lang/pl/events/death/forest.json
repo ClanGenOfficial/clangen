@@ -170,7 +170,7 @@
             }
         ]
     },
-    {
+        {
         "event_id": "fst_mushroom_death",
         "location": [
             "forest:camp1"
@@ -191,7 +191,7 @@
                 "-HEALER,1"
             ],
             "trait": [
-                "-nervous",
+               "-nervous",
                 "-strict",
                 "-thoughtful",
                 "-calm",
@@ -212,19 +212,19 @@
         ]
     },
     {
-        "event_id": "fst_death_extinction_bear",
-        "location": ["forest:camp3"],
-        "season": ["leaf-fall"],
-        "sub_type": ["mass_death"],
-        "frequency": 2,
-        "event_text": "multi_cat were killed after a shelter-seeking bear lumbered into the grotto and discovered it was occupied.",
-        "history": [
-            {
-                "cats": ["multi_cat"],
-                "death": "m_c was killed by a bear rampaging through camp."
-            }
-        ]
-    },
+    "event_id": "fst_death_extinction_bear",
+    "location": ["forest:camp3"],
+    "season": ["leaf-fall"],
+    "sub_type": ["mass_death"],
+    "frequency": 2,
+    "event_text": "multi_cat were killed after a shelter-seeking bear lumbered into the grotto and discovered it was occupied.",
+    "history": [
+      {
+        "cats": ["multi_cat"],
+        "death": "m_c was killed by a bear rampaging through camp."
+      }
+    ]
+},
     {
         "event_id": "fst_death_aconitekitten1",
         "location": [
@@ -306,13 +306,13 @@
         "event_text": "Melting snow fills the lake to bursting. Camp floods, the Clan scatters, and m_c and r_c cannot be found in the aftermath.",
         "m_c": {
             "skill": [
-                "-SWIMMER,1"
+                "-SWIMMER,1"  
             ],
             "dies": true
         },
         "r_c": {
             "skill": [
-                "-SWIMMER,1"
+                "-SWIMMER,1"  
             ],
             "dies": true
         },
@@ -364,6 +364,7 @@
                 "-newborn",
                 "-kitten"
             ],
+
             "dies": true
         },
         "history": [
@@ -372,6 +373,7 @@
                 "death": "m_c was torn apart by wolves."
             }
         ]
+        
     },
     {
         "event_id": "fst_death_wolf_kitten",

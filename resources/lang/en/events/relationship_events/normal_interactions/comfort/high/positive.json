@@ -87,6 +87,10 @@
             "m_c and r_c know more about each other than anyone else.",
             "m_c and r_c have multiple inside jokes with one another."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [
@@ -111,6 +115,10 @@
             "r_c knows secrets about m_c that {PRONOUN/m_c/subject} {VERB/m_c/haven't/hasn't} told anyone else.",
             "m_c always goes to r_c first when {PRONOUN/m_c/subject} needs advice."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [

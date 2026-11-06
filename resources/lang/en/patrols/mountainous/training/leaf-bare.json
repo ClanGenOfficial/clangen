@@ -252,7 +252,7 @@
                             "r_c1"
                         ],
                         "condition": [
-                            "running nose"
+                            "running_nose"
                         ]
                     }
                 ]
@@ -1066,7 +1066,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "constant nightmares"
+                            "constant_nightmares"
                         ]
                     }
                 ]
@@ -1277,7 +1277,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "shivering"
+                            "dangerously_cold"
                         ],
                         "scar_history": "m_c got frostbite while repairing some dens.",
                         "death_history": "m_c died after getting too cold while repairing some dens."
@@ -1810,7 +1810,7 @@
                             "patrol_cats"
                         ],
                         "condition": [
-                            "shivering"
+                            "dangerously_cold"
                         ],
                         "scar_history": "m_c was scarred from the bite of the cold of an avalanche, though {PRONOUN/m_c/subject} escaped with {PRONOUN/m_c/poss} life.",
                         "death_history": "The view point c_n thought was safe from avalanches... was not."

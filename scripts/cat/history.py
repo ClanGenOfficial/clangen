@@ -4,6 +4,7 @@ import i18n
 import os
 import ujson
 
+from scripts.cat.conditions.temporary_condition import TemporaryCondition
 from scripts.cat.enums import CatGroup
 from scripts.cat.skills import SkillPath
 from scripts.game_structure import game
@@ -346,7 +347,7 @@ class History:
                 "other_cat": other_cat.ID if other_cat else None,
             }
 
-    def remove_possible_history(self, condition):
+    def remove_possible_history(self, condition: str):
         """
         use to remove possible death/scar histories
         :param condition: condition linked to the death/scar you're removing
@@ -418,7 +419,7 @@ class History:
                     afterlife_acceptance_options[f"{afterlife}_default"]
                 )
 
-    def add_scar(self, scar_text, condition=None, other_cat=None):
+    def add_scar(self, scar_text, condition: str = None, other_cat=None):
         if not game.clan:
             return
 

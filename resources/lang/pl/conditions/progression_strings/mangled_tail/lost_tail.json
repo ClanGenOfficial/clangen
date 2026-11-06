@@ -1,0 +1,27 @@
+[
+    {
+        "event_id": "mangled_tail_lost_their_tail0",
+        "strings": [
+            "r_c0 helps m_c bury {PRONOUN/m_c/poss} tail wordlessly, hoping the ritual brings {PRONOUN/m_c/object} closure from the trauma of losing it.",
+            "When m_c wakes up, r_c0 has to explain to {PRONOUN/m_c/object} that {PRONOUN/r_c0/subject} removed m_c's tail as a last resort. The damage was too great."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "mangled_tail_lost_their_tail2",
+        "strings": [
+            "It's okay, m_c tells {PRONOUN/m_c/self}. A tail isn't the worst thing to lose, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to be fine! But {PRONOUN/m_c/subject} still {VERB/m_c/feel/feels} its absence no matter how hard {PRONOUN/m_c/subject} {VERB/m_c/try/tries} to force it from {PRONOUN/m_c/poss} mind.",
+            "m_c has healed from {PRONOUN/m_c/poss} mangled tail, but unfortunately the tail itself is gone."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

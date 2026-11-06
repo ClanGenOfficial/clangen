@@ -1,0 +1,13 @@
+[
+    {
+        "event_id": "broken_bone0",
+        "strings": [
+            "m_c's broken bone has healed.",
+            "m_c is happy to find {PRONOUN/m_c/poss} body pain-free: it seems {PRONOUN/m_c/poss} broken bone has finally healed.",
+            "m_c has healed from {PRONOUN/m_c/poss} broken bone."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

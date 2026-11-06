@@ -1,0 +1,13 @@
+[
+    {
+        "event_id": "dehydrated0",
+        "strings": [
+            "m_c has recovered from the dehydration {PRONOUN/m_c/subject} {VERB/m_c/were/was} suffering.",
+            "After a lot of water and rest, m_c finally feels better.",
+            "m_c is no longer dehydrated."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

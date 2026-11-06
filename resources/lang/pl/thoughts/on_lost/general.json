@@ -2,7 +2,10 @@
     {
         "event_id": "gen_newly_lost",
         "strings": [
-            "Looks around in confusion"
+            "Looks around in confusion",
+            "Wonders how far from c_n {PRONOUN/m_c/subject} {VERB/m_c/are/is}",
+            "Is preparing {PRONOUN/m_c/self} for the journey home",
+            "Wonders which way c_n is"
         ]
     }
 ]

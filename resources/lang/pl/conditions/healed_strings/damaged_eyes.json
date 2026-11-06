@@ -1,0 +1,13 @@
+[
+    {
+        "event_id": "damaged_eyes0",
+        "strings": [
+            "m_c's eyes have healed.",
+            "m_c's eyes are no longer damaged.",
+            "m_c's eyes have recovered from {PRONOUN/m_c/poss} injury."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

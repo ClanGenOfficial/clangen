@@ -27,11 +27,6 @@ def get_resource_directory(fallback=False):
 class GenerateEvents:
     loaded_events = {}
 
-    with open(
-        f"resources/dicts/conditions/injuries.json", "r", encoding="utf-8"
-    ) as read_file:
-        INJURIES = ujson.loads(read_file.read())
-
     @staticmethod
     def get_ongoing_event_dicts(file_path):
         events = None

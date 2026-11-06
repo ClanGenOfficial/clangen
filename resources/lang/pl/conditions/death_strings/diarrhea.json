@@ -1,0 +1,21 @@
+[
+    {
+        "event_id": "diarrhea0",
+        "strings": [
+            "m_c died of dehydration caused by diarrhea.",
+            "m_c's body could not keep up with the demands of {PRONOUN/m_c/poss} illness and {PRONOUN/m_c/subject} died.",
+            "Diarrhea is no joke, and the extreme dehydration it caused has killed m_c."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        },
+        "death": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "history": "m_c died of dehydration caused by diarrhea."
+            }
+        ]
+    }
+]

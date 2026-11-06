@@ -1,0 +1,19 @@
+[
+    {
+        "event_id": "head_damage0",
+        "strings": [
+            "m_c died from head damage."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        },
+        "death": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "history": "m_c died from head damage."
+            }
+        ]
+    }
+]

@@ -7,6 +7,10 @@
             "m_c never realized how much {PRONOUN/m_c/subject} {VERB/m_c/love/loves} spending time with r_c.",
             "m_c just noticed how beautiful r_c's eyes are."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [
@@ -62,6 +66,10 @@
             "m_c can't help but admire r_c's pelt.",
             "m_c can't help but smile seeing r_c smile."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [

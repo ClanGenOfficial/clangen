@@ -224,6 +224,11 @@
             "Is listening to a story r_c heard when {PRONOUN/r_c/subject} {VERB/r_c/were/was} a kit"
         ],
         "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice"
+                ]
+            },
             "r_c": {
                 "status": [
                     "warrior"
