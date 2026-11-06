@@ -52,6 +52,12 @@
       "ranks.only_leader_kits_deputy": true
     }
   },
+  "patrol_rota": {
+    "card_art": "society/patrol_rota.png",
+    "modifiers": {
+      "patrol_generation.patrolling_percent": 0.5
+    }
+  },
   "on_their_own": {
     "card_art": "society/on_their_own.png",
     "modifiers": {
