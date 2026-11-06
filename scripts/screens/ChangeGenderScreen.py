@@ -61,9 +61,11 @@ class ChangeGenderScreen(Screens):
                     switch_set_value(Switch.cat, self.previous_cat)
                     self.update_selected_cat()
             elif event.ui_element == self.elements.get("gender_save_button"):
-                if self.gender_entry_box.get_text():
-                    self.the_cat.genderalign = self.gender_entry_box.get_text()
-                    self.identity_change_confirmation.show()
+                if self.elements["gender_entry_box"].get_text():
+                    self.the_cat.genderalign = self.elements[
+                        "gender_entry_box"
+                    ].get_text()
+                    self.elements["identity_change_confirmation"].show()
                     self.update_selected_cat()
 
             elif event.ui_element == self.elements.get("add_pronoun_button"):
@@ -301,15 +303,17 @@ class ChangeGenderScreen(Screens):
             manager=MANAGER,
         )
 
-        self.elements["gender_entry_box"].placeholder_text = self.the_cat.genderalign_string
+        self.elements[
+            "gender_entry_box"
+        ].placeholder_text = self.the_cat.genderalign_string
         self.elements["gender_entry_box"].rebuild()
 
         gender_text = shorten_text_to_fit(self.the_cat.genderalign_string, 230, 30)
         self.elements["current_cat_gender"].set_text(gender_text)
         if gender_text != self.the_cat.genderalign_string:
-            self.elements["current_cat_gender_tooltip"].tool_tip_text = (
-                self.the_cat.genderalign_string
-            )
+            self.elements[
+                "current_cat_gender_tooltip"
+            ].tool_tip_text = self.the_cat.genderalign_string
             self.elements["current_cat_gender_tooltip"].rebuild()
             self.elements["current_cat_gender_tooltip"].show()
         else:
@@ -500,10 +504,10 @@ class ChangeGenderScreen(Screens):
         # kill everything
         self.back_button.kill()
         self.back_button = None
-        
+
         self.next_cat_button.kill()
         self.next_cat_button = None
-        
+
         self.previous_cat_button.kill()
         self.previous_cat_button = None
 
