@@ -7457,7 +7457,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_from and cat_to have the same supernatural gift of prophecy, and it led them to each other."
+                            "cats_from": "cat_from and cat_to have the same supernatural gift of prophecy, and enjoyed discussing each other's interpretations of their shared prophecy."
                         }
                     },
                     {
@@ -7594,7 +7594,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_from and cat_to have the same supernatural gift of prophecy, and it led them to each other."
+                            "cats_from": "cat_from and cat_to have the same supernatural gift of prophecy, and enjoyed discussing each other's interpretations of their shared prophecy."
                         }
                     },
                     {
@@ -8322,7 +8322,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_from became lost in POI, and cat_to rescued {PRONOUN/cat_from/object}."
+                            "cats_from": "cat_from became lost in POI for days, and was hungry and afraid when cat_to found and rescued {PRONOUN/cat_from/object}."
                         }
                     }
                 ],
@@ -8388,7 +8388,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_from became lost in POI, and cat_to rescued {PRONOUN/cat_from/object}."
+                            "cats_from": "cat_from became lost in POI, and cat_to rescued {PRONOUN/cat_from/object} by tracking {PRONOUN/cat_from/poss} scent through all the conflicting smells, which cat_from didn't even know a cat could do!"
                         }
                     }
                 ],
@@ -8447,14 +8447,14 @@
                         "cats_to": [
                             "s_c0"
                         ],
-                        "amount": 15,
+                        "amount": 10,
                         "values": [
                             "like",
-                            "respect",
+                            "comfort",
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_from became lost in POI, and cat_to rescued {PRONOUN/cat_from/object}."
+                            "cats_from": "cat_from became lost in POI, and cat_to built {PRONOUN/cat_from/object} a safe place to rest, complete with a meal, which meant a lot to cat_from when {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} so frightened and lost - even if it did end up being a trap."
                         }
                     }
                 ],
