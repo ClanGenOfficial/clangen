@@ -1228,12 +1228,12 @@ class Pelt:
         return (
             adjust_list_text(
                 [
-                    i18n.t(f"cat.eyes.{self.eye_colour}"),
-                    i18n.t(f"cat.eyes.{self.eye_colour2}"),
+                    i18n.t(f"cat.eyes.{self.eye_colour}", count=1),
+                    i18n.t(f"cat.eyes.{self.eye_colour2}", count=1),
                 ]
             )
             if self.eye_colour2
-            else i18n.t(f"cat.eyes.{self.eye_colour}")
+            else i18n.t(f"cat.eyes.{self.eye_colour}", count=2)
         )
 
     @staticmethod
