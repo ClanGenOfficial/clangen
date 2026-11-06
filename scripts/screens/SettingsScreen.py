@@ -36,6 +36,7 @@ from ..game_structure.localization import get_additional_lang_list
 from ..game_structure.screen_settings import (
     MANAGER,
     set_display_mode,
+    toggle_fullscreen,
 )
 from scripts.housekeeping.game_version import get_version_info
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
@@ -154,11 +155,9 @@ class SettingsScreen(Screens):
                 self.change_screen(game.last_screen_forupdate)
                 return
             if event.ui_element == self.fullscreen_toggle:
-                game_setting_toggle("fullscreen")
-                self.save_settings()
-                game_settings_save(self)
-                set_display_mode(
-                    fullscreen=game_setting_get("fullscreen"), source_screen=self
+                toggle_fullscreen(
+                    source_screen=self,
+                    theme=self.toggled_theme,
                 )
             elif event.ui_element == self.open_data_directory_button:
                 open_data_dir()

@@ -3,6 +3,8 @@ import os.path
 from typing import TYPE_CHECKING
 
 import ujson
+
+from scripts.game_structure import constants
 from scripts.game_structure.game.settings import (
     game_setting_get,
     game_setting_set,
@@ -31,7 +33,12 @@ screen_y = 700
 screen_scale = 1
 game_screen_size = (800, 700)
 MANAGER: Optional[pygame_gui.UIManager] = None
-screen: Optional[pygame.Surface] = None
+window: Optional[pygame.Window] = pygame.Window(
+    title="ClanGen", size=game_screen_size, resizable=True, mouse_focus=True
+)
+window.minimum_size = (800, 700)
+
+screen: Optional[pygame.Surface] = window.get_surface()
 curr_variable_dict = {}
 
 display_change_in_progress = False  # this acts as a lock to ensure we don't end up in a loop of fullscreen changes
@@ -60,9 +67,7 @@ def set_display_mode(
 
     display_change_in_progress = True
 
-    old_offset = offset
     old_scale = screen_scale
-    mouse_pos = pygame.mouse.get_pos()
 
     if fullscreen is None:
         fullscreen = game_setting_get("fullscreen")
@@ -73,37 +78,44 @@ def set_display_mode(
     if source_screen is not None:
         curr_variable_dict = source_screen.display_change_save()
 
+    # if fullscreen:
+    display_sizes = pygame.display.get_desktop_sizes()  # the primary display
+    screen_config["fullscreen_display"] = (
+        screen_config["fullscreen_display"]
+        if screen_config["fullscreen_display"] < len(display_sizes)
+        else 0
+    )
+    display_size = display_sizes[screen_config["fullscreen_display"]]
+    # display_size = [3840, 2160]
     if fullscreen:
-        display_sizes = pygame.display.get_desktop_sizes()  # the primary display
-        screen_config["fullscreen_display"] = (
-            screen_config["fullscreen_display"]
-            if screen_config["fullscreen_display"] < len(display_sizes)
-            else 0
-        )
-        display_size = display_sizes[screen_config["fullscreen_display"]]
-        # display_size = [3840, 2160]
-
-        determine_screen_scale(display_size[0], display_size[1])
-
-        screen = pygame.display.set_mode(
-            display_size, pygame.FULLSCREEN, display=screen_config["fullscreen_display"]
-        )
-        offset = (
-            floor((display_size[0] - screen_x) / 2),
-            floor((display_size[1] - screen_y) / 2),
-        )
-        game_screen_size = (screen_x, screen_y)
+        window.set_fullscreen(True)
     else:
+        window.set_windowed()
+        window.resizable = True
+
+    screen = window.get_surface()
+
+    if window.size == (800, 700):
         offset = (0, 0)
         screen_x = 800
         screen_y = 700
         screen_scale = 1
         game_screen_size = (800, 700)
-        screen = pygame.display.set_mode((screen_x, screen_y))
+        window.set_windowed()
+        screen = window.get_surface()
+    else:
+        determine_screen_scale(*window.size)
+        # screen = pygame.display.set_mode(
+        #     display_size, pygame.FULLSCREEN, display=screen_config["fullscreen_display"]
+        # )
+        offset = (
+            floor((window.size[0] - screen_x) / 2),
+            floor((window.size[1] - screen_y) / 2),
+        )
     game_screen_size = (screen_x, screen_y)
 
     if source_screen is None or MANAGER is None:
-        MANAGER = load_manager((screen_x, screen_y), offset, scale=screen_scale)
+        MANAGER = load_manager(game_screen_size, offset, scale=screen_scale)
     else:
         # generate new theme
         origin = "resources/theme/master_screen_scale.json"
@@ -124,21 +136,9 @@ def set_display_mode(
             game_settings_save(currentscreen=source_screen)
             source_screen.exit_screen()
 
-            if fullscreen:
-                mouse_pos = (
-                    (mouse_pos[0] * screen_scale) + offset[0],
-                    mouse_pos[1] * screen_scale + offset[1],
-                )
-            else:
-                mouse_pos = (
-                    (mouse_pos[0] - old_offset[0]) / old_scale,
-                    (mouse_pos[1] - old_offset[1]) / old_scale,
-                )
-
             MANAGER.clear_and_reset()
             MANAGER.set_window_resolution(game_screen_size)
             MANAGER.set_offset(offset)
-            pygame.mouse.set_pos(mouse_pos)
 
             all_screens.rebuild_all_screens()
 
@@ -160,49 +160,92 @@ def set_display_mode(
         )
         new_screen.display_change_load(curr_variable_dict)
 
-    # preloading the associated fonts
-    if not MANAGER.ui_theme.get_font_dictionary().check_font_preloaded(
-        f"notosans_bold_aa_{floor(11 * screen_scale)}"
-    ):
-        MANAGER.preload_fonts(
-            [
-                {
-                    "name": "notosans",
-                    "point_size": floor(11 * screen_scale),
-                    "style": "bold",
-                },
-                {
-                    "name": "notosans",
-                    "point_size": floor(13 * screen_scale),
-                    "style": "bold",
-                },
-                {
-                    "name": "notosans",
-                    "point_size": floor(15 * screen_scale),
-                    "style": "bold",
-                },
-                {
-                    "name": "notosans",
-                    "point_size": floor(13 * screen_scale),
-                    "style": "italic",
-                },
-                {
-                    "name": "notosans",
-                    "point_size": floor(15 * screen_scale),
-                    "style": "italic",
-                },
-                {
-                    "name": "notosans",
-                    "point_size": floor(17 * screen_scale),
-                    "style": "bold",
-                },  # this is only used on the allegiances screen?
-                {
-                    "name": "clangen",
-                    "point_size": floor(18 * screen_scale),
-                    "style": "regular",
-                },
-            ]
-        )
+    # preloading the associated fonts if we have an active UI
+    if MANAGER:
+        if not MANAGER.ui_theme.get_font_dictionary().check_font_preloaded(
+            f"notosans_bold_aa_{floor(11 * screen_scale)}"
+        ):
+            logger.debug(
+                f"Preloading font: notosans_bold_aa_{floor(11 * screen_scale)} (11)"
+            )
+            MANAGER.preload_fonts(
+                [
+                    {
+                        "name": "notosans",
+                        "point_size": floor(11 * screen_scale),
+                        "style": "regular",
+                    },
+                    {
+                        "name": "notosans",
+                        "point_size": floor(11 * screen_scale),
+                        "style": "bold",
+                    },
+                ]
+            )
+        if not MANAGER.ui_theme.get_font_dictionary().check_font_preloaded(
+            f"notosans_bold_aa_{floor(13 * screen_scale)}"
+        ):
+            logger.debug(
+                f"Preloading font: notosans_bold_aa_{floor(13 * screen_scale)} (13)"
+            )
+            MANAGER.preload_fonts(
+                [
+                    {
+                        "name": "notosans",
+                        "point_size": floor(13 * screen_scale),
+                        "style": "italic",
+                    },
+                    {
+                        "name": "notosans",
+                        "point_size": floor(13 * screen_scale),
+                        "style": "bold",
+                    },
+                ]
+            )
+        if not MANAGER.ui_theme.get_font_dictionary().check_font_preloaded(
+            f"notosans_bold_aa_{floor(15 * screen_scale)}"
+        ):
+            logger.debug("Preloading font: notosans_bold_aa_15")
+            MANAGER.preload_fonts(
+                [
+                    {
+                        "name": "notosans",
+                        "point_size": floor(15 * screen_scale),
+                        "style": "bold",
+                    },
+                    {
+                        "name": "notosans",
+                        "point_size": floor(15 * screen_scale),
+                        "style": "italic",
+                    },
+                ]
+            )
+        if not MANAGER.ui_theme.get_font_dictionary().check_font_preloaded(
+            f"notosans_bold_aa_{floor(17 * screen_scale)}"
+        ):
+            logger.debug("Preloading font: notosans_bold_aa_17")
+            MANAGER.preload_fonts(
+                [
+                    {
+                        "name": "notosans",
+                        "point_size": floor(17 * screen_scale),
+                        "style": "bold",
+                    },  # this is only used on the allegiances screen?
+                ]
+            )
+        if not MANAGER.ui_theme.get_font_dictionary().check_font_preloaded(
+            f"clangen_regular_aa_{floor(18 * screen_scale)}"
+        ):
+            logger.debug("Preloading font: clangen_regular_aa_18")
+            MANAGER.preload_fonts(
+                [
+                    {
+                        "name": "clangen",
+                        "point_size": floor(18 * screen_scale),
+                        "style": "regular",
+                    },
+                ]
+            )
 
     display_change_in_progress = False
     if source_screen is not None and show_confirm_dialog:
@@ -219,13 +262,14 @@ def determine_screen_scale(x, y):
     global screen_scale, screen_x, screen_y, offset, game_screen_size
 
     if game_setting_get("fullscreen scaling"):
-        scalex = (x - 20) // 80
-        scaley = (y - 20) // 70
+        max_x = round(x / 800, 1)
+        max_y = round(y / 700, 1)
+        screen_scale = min(max_x, max_y)
 
-        screen_scale = min(scalex, scaley) / 10
+        # screen_scale = min(scalex, scaley) / 100
 
-        screen_x = 800 * screen_scale
-        screen_y = 700 * screen_scale
+        screen_x = floor(800 * screen_scale)
+        screen_y = floor(700 * screen_scale)
     else:
         # this means screen scales in multiples of 200 x 175 which has a reasonable tradeoff for crunch
         scalex = x // 200
@@ -246,6 +290,7 @@ def toggle_fullscreen(
     source_screen: Optional["Screens"] = None,
     show_confirm_dialog: bool = True,
     ingame_switch: bool = True,
+    theme="light",
 ):
     """
     Swap between fullscreen modes. Wraps the necessary game save to store the new value.
@@ -253,6 +298,7 @@ def toggle_fullscreen(
     :param source_screen: Screen requesting the fullscreen toggle.
     :param show_confirm_dialog: True to show the confirm changes dialog, default True. Does nothing if source_screen is None.
     :param ingame_switch: Whether this was triggered by a user. Default True
+    :param theme: User's current UI theme. Defaults to light
     :return:
     """
     global display_change_in_progress
@@ -266,13 +312,17 @@ def toggle_fullscreen(
 
     game_setting_set("fullscreen", fullscreen)
     game_settings_save()
-
-    set_display_mode(
-        fullscreen=fullscreen,
-        source_screen=source_screen,
-        show_confirm_dialog=show_confirm_dialog,
-        ingame_switch=ingame_switch,
+    screen.fill(
+        constants.CONFIG["theme"][
+            ("dark" if theme == "light" else "light") + "_mode_background"
+        ]
     )
+
+    if fullscreen:
+        window.set_fullscreen(True)
+    else:
+        window.set_windowed()
+        window.size = (800, 700)
 
 
 def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: float):
