@@ -16112,8 +16112,8 @@
         },
         "chance_of_success": 30,
         "patrol_art": "POI",
-        "intro_strings": [
-            "p_l is out on a walk near the border when {PRONOUN/p_l/poss} body seizes, and {PRONOUN/p_l/subject} {VERB/p_l/stumble/stumbles}. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} struck by clair_list_taste_smell_emotional/p_l. {PRONOUN/p_l/subject/CAP} {VERB/p_l/find/finds} {PRONOUN/p_l/self} trembling and panting when the vision passes. Somecat is nearby, somecat important... {PRONOUN/p_l/subject/CAP} {VERB/p_l/turn/turns} {PRONOUN/p_l/poss} gaze towards POI."
+        "intro_strings": [            
+            "p_l is out on a walk near the border when {PRONOUN/p_l/poss} body seizes, and {PRONOUN/p_l/subject} {VERB/p_l/stumble/stumbles}. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} struck by clair_list_taste_smell_emotional/p_l. Something important is about to happen... {PRONOUN/p_l/subject/CAP} {VERB/p_l/turn/turns} {PRONOUN/p_l/poss} gaze towards POI."
         ],
         "decline_strings": [
             "p_l has been left too weak by the intensity of {PRONOUN/p_l/poss} clairvoyant vision. {PRONOUN/p_l/subject/CAP} {VERB/p_l/return/returns} to camp, and luckily {PRONOUN/p_l/poss} legs have stopped trembling by the time {PRONOUN/p_l/subject} {VERB/p_l/get/gets} there."
@@ -16122,9 +16122,9 @@
             {
                 "frequency": 4,
                 "exp_gained": 10,
-                "outcome_art": "cat_sprites/gen_foundscent_ApLn",
+                "outcome_art": "cat_sprites/gen_sitting_ApLn",
                 "strings": [
-                    "When p_l hasn't known how to interpret {PRONOUN/p_l/poss} visions before, going to POI has always been helpful. {PRONOUN/p_l/subject/CAP} {VERB/p_l/set/sets} out on the journey, experiencing clair_list_sound_taste_emotional/p_l more than once on the way. When {PRONOUN/p_l/subject} {VERB/p_l/arrive/arrives}, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} met with the strong scent of an unfamiliar cat, and {VERB/p_l/stagger/staggers} again with another vision - prophecy_list_smell/p_l. {PRONOUN/p_l/subject/CAP} {VERB/p_l/follow/follows} the scent, and quickly {VERB/p_l/catch/catches} up with the cat. When the cat glances at {PRONOUN/p_l/object}, {PRONOUN/p_l/subject} {VERB/p_l/see/sees} {PRONOUN/n_c0/object} stagger just like p_l does when {PRONOUN/p_l/subject} {VERB/p_l/receive/receives} a vision. The two cats' eyes meet with the recognition of two kindred spirits."
+                    "When p_l hasn't known how to interpret {PRONOUN/p_l/poss} feelings before, going to POI has always been helpful. {PRONOUN/p_l/subject/CAP} {VERB/p_l/set/sets} out on the journey, experiencing more flashes of vague imagery along the way. When {PRONOUN/p_l/subject} {VERB/p_l/arrive/arrives}, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} met with the figure of an unfamiliar cat. The stranger glances at {PRONOUN/p_l/object}, and {PRONOUN/p_l/subject} {VERB/p_l/see/sees} {PRONOUN/n_c0/object} stagger just like p_l does when {PRONOUN/p_l/subject} {VERB/p_l/receive/receives} a vision. The two cats' eyes meet with the recognition of kindred spirits."
                 ],
                 "involved_cats": {
                     "p_l": {
@@ -16192,7 +16192,8 @@
                         ],
                         "mutual": true,
                         "log": {
-                            "cats_from": "cat_from and cat_to found that they share the same supernatural powers."
+                            "cats_from": "cat_from experienced a clairvoyant vision about cat_to, and really wants to learn more about {PRONOUN/cat_to/object}.",
+                            "cats_to": "cat_from had the same clairvoyant powers as {PRONOUN/cat_to/object}, and {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} curious about how a Clancat may feel about their powers in comparison with how {PRONOUN/cat_to/subject}, as an loner, felt about {PRONOUN/cat_to/poss} abilities."
                         }
                     }
                 ],
@@ -16203,9 +16204,9 @@
             {
                 "frequency": 4,
                 "exp_gained": 10,
-                "outcome_art": "cat_sprites/gen_foundscent_WrLn",
+                "outcome_art": "cat_sprites/gen_sitting_WrLn",
                 "strings": [
-                    "p_l feels like these visions have <i>something</i> to do with POI, so {PRONOUN/p_l/subject} {VERB/p_l/set/sets} out on the journey. Along the way, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} hit by clair_list_sound_taste_emotional/p_l. When {PRONOUN/p_l/subject} {VERB/p_l/arrive/arrives}, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} met with the strong scent of an unfamiliar cat, and {VERB/p_l/stagger/staggers} again with another vision - prophecy_list_smell/p_l. {PRONOUN/p_l/subject/CAP} {VERB/p_l/follow/follows} the scent, and quickly {VERB/p_l/catch/catches} up with the cat. When the cat glances at {PRONOUN/p_l/object}, {PRONOUN/p_l/subject} {VERB/p_l/see/sees} {PRONOUN/n_c0/object} stagger just like p_l does when {PRONOUN/p_l/subject} {VERB/p_l/receive/receives} a vision. The two cats' eyes meet with the recognition of two kindred spirits."
+                    "p_l feels like these visions have <i>something</i> to do with POI, so {PRONOUN/p_l/subject} {VERB/p_l/set/sets} out on the journey. Along the way, {PRONOUN/p_l/subject} {VERB/p_l/experience/experiences} more flashes of vague imagery. When {PRONOUN/p_l/subject} {VERB/p_l/arrive/arrives}, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} met with the figure of an unfamiliar cat. The stranger glances at {PRONOUN/p_l/object}, and {PRONOUN/p_l/subject} {VERB/p_l/see/sees} {PRONOUN/n_c0/object} stagger just like p_l does when {PRONOUN/p_l/subject} {VERB/p_l/receive/receives} a vision. The two cats' eyes meet with the recognition of kindred spirits."
                 ],
                 "involved_cats": {
                     "p_l": {
@@ -16275,7 +16276,8 @@
                         ],
                         "mutual": true,
                         "log": {
-                            "cats_from": "cat_from and cat_to found that they share the same supernatural powers."
+                            "cats_from": "cat_from experienced a clairvoyant vision about cat_to, and really wanted to learn more about {PRONOUN/cat_to/object}.",
+                            "cats_to": "cat_from had the same clairvoyant powers as {PRONOUN/cat_to/object}, and {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} curious about how a Clancat may feel about their powers in comparison with how {PRONOUN/cat_to/subject}, as an loner, felt about {PRONOUN/cat_to/poss} abilities."
                         }
                     }
                 ],
@@ -16288,7 +16290,7 @@
                 "exp_gained": 15,
                 "outcome_art": "cat_sprites/gen_vision_Wr",
                 "strings": [
-                    "p_l gives {PRONOUN/p_l/self} a shake and sets out to find this cat. {PRONOUN/p_l/subject/CAP} {VERB/p_l/use/uses} {PRONOUN/p_l/poss} visions as a bat uses its chirps to find bugs, using the strength of the visions to pinpoint the cat causing them. {PRONOUN/p_l/subject/CAP} {VERB/p_l/find/finds} the cat just outside of POI, and the moment their eyes meet, {PRONOUN/p_l/subject} can see the cat shake with a vision of {PRONOUN/n_c0/poss} own. {PRONOUN/n_c0/subject/CAP} {VERB/n_c0/seem/seems} impressed that p_l tracked {PRONOUN/n_c0/object} down using clairvoyance, and after some talking, {PRONOUN/n_c0/subject} {VERB/n_c0/agree/agrees} to join c_n."
+                    "p_l gives {PRONOUN/p_l/self} a shake and sets out to find the source, fairly certain that there must be a cat nearby. {PRONOUN/p_l/subject/CAP} {VERB/p_l/use/uses} {PRONOUN/p_l/poss} visions as a bat uses its chirps to find bugs, using the strength of the feelings to pinpoint the cat causing them. {PRONOUN/p_l/subject/CAP} {VERB/p_l/find/finds} the stranger just outside of POI, and the moment their eyes meet, {PRONOUN/p_l/subject} can see the cat shake with a vision. {PRONOUN/n_c0/subject/CAP} {VERB/n_c0/seem/seems} impressed that p_l tracked {PRONOUN/n_c0/object} down using clairvoyance, and after some talking, {PRONOUN/n_c0/subject} {VERB/n_c0/agree/agrees} to join c_n."
                 ],
                 "involved_cats": {
                     "p_l": {
@@ -16357,8 +16359,8 @@
                         ],
                         "mutual": true,
                         "log": {
-                            "cats_from": "cat_from and cat_to found that they share the same supernatural powers, and cat_to agreed to join c_n.",
-                            "cats_to": "cat_from and cat_to found that they share the same supernatural powers, and cat_from convinced {PRONOUN/cat_to/object} to join c_n."
+                            "cats_from": "cat_from and cat_to found that they share the same clairvoyant powers, and cat_to agreed to join c_n.",
+                            "cats_to": "cat_from used {PRONOUN/cat_from/poss} clairvoyant powers to track down cat_to, and cat_from convinced {PRONOUN/cat_to/object} to join c_n."
                         }
                     }
                 ],
@@ -16373,7 +16375,7 @@
                 "exp_gained": 0,
                 "outcome_art": "cat_sprites/gen_solo_Wr",
                 "strings": [
-                    "p_l heads out for POI, but {PRONOUN/p_l/subject} never {VERB/p_l/experience/experiences} any more visions. When {PRONOUN/p_l/subject} {VERB/p_l/get/gets} to the moonplace, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} nothing at all out of the norm. Not even {PRONOUN/p_l/poss} ancestors speak to {PRONOUN/p_l/object}. Frustrated, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} home, where {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} immediately scolded for disappearing for so long without telling anyone, and assigned extra patrols to make up for the ones {PRONOUN/p_l/subject} missed."
+                    "p_l heads out for POI, but {PRONOUN/p_l/subject} never {VERB/p_l/experience/experiences} any more visions. When {PRONOUN/p_l/subject} {VERB/p_l/get/gets} to the moonplace, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} nothing at all out of the norm. Not even {PRONOUN/p_l/poss} ancestors speak to {PRONOUN/p_l/object}. Frustrated, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} home, where {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} immediately scolded for disappearing for so long without telling anyone."
                 ],
                 "involved_cats": {
                     "p_l": {
@@ -16397,7 +16399,7 @@
                             "respect"
                         ],
                         "log": {
-                            "cats_from": "cat_from heard that cat_to disappeared for a long time without telling anyone where {PRONOUN/cat_to/subject} went, and missed several patrols {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} assigned to."
+                            "cats_from": "cat_from heard that cat_to disappeared for a long time without telling anyone where {PRONOUN/cat_to/subject} went, shirking {PRONOUN/cat_from/poss} duties."
                         }
                     }
                 ]
@@ -16407,7 +16409,7 @@
                 "exp_gained": 0,
                 "outcome_art": "cat_sprites/gen_battle_ApRg",
                 "strings": [
-                    "p_l begins the journey to POI, expecting to receive more visions along the way. But {PRONOUN/p_l/subject} never {VERB/p_l/do/does}, and POI is unremarkable. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to expand {PRONOUN/p_l/poss} search, and when {PRONOUN/p_l/subject} {VERB/p_l/do/does}, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a cat in the distance. p_l calls out a greeting, and the cat begins racing towards {PRONOUN/p_l/object}, faster and faster. p_l realizes too late that that's not the cat causing {PRONOUN/p_l/poss} visions."
+                    "p_l begins the journey to POI, expecting to receive more visions along the way. But {PRONOUN/p_l/subject} never {VERB/p_l/do/does}, and POI is unremarkable. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to expand {PRONOUN/p_l/poss} search and eventually, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a cat in the distance. p_l calls out a greeting, hoping that {PRONOUN/p_l/subject} {VERB/p_l/were/was} meant to meet with this stranger. The cat begins racing towards {PRONOUN/p_l/object}, faster and faster. p_l realizes too late that this stranger has no good intentions."
                 ],
                 "involved_cats": {
                     "p_l": {
@@ -16436,8 +16438,8 @@
                         "condition": [
                             "battle_injury"
                         ],
-                        "scar_history": "m_c was scarred after being attacked by a rogue that {PRONOUN/m_c/subject} mistook for the cat from {PRONOUN/m_c/poss} visions.",
-                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after being attacked by a rogue that {PRONOUN/m_c/subject} mistook for the cat from {PRONOUN/m_c/poss} visions."
+                        "scar_history": "m_c was scarred after being attacked by a rogue while following a vision.",
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after being attacked by a rogue while following a vision."
                     }
                 ],
                 "relationship_changes": [
@@ -16468,7 +16470,7 @@
                 "exp_gained": 0,
                 "outcome_art": "cat_sprites/gen_battle_WrRg",
                 "strings": [
-                    "p_l begins the journey to POI, expecting to receive more visions along the way. But {PRONOUN/p_l/subject} never {VERB/p_l/do/does}, and POI is unremarkable. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to expand {PRONOUN/p_l/poss} search, and when {PRONOUN/p_l/subject} {VERB/p_l/do/does}, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a cat in the distance. p_l calls out a greeting, and the cat begins racing towards {PRONOUN/p_l/object}, faster and faster. This clearly isn't who p_l is looking for, and {PRONOUN/p_l/subject} {VERB/p_l/meet/meets} {PRONOUN/n_c0/object} halfway, claws bared."
+                    "p_l begins the journey to POI, expecting to receive more visions along the way. But {PRONOUN/p_l/subject} never {VERB/p_l/do/does}, and POI is unremarkable. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to expand {PRONOUN/p_l/poss} search and eventually, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a cat in the distance. p_l calls out a greeting, hoping that {PRONOUN/p_l/subject} {VERB/p_l/were/was} meant to meet with this stranger. The cat begins racing towards {PRONOUN/p_l/object}, faster and faster. p_l realizes {PRONOUN/n_c0/poss} intentions, and {PRONOUN/p_l/subject} {VERB/p_l/meet/meets} {PRONOUN/n_c0/object} halfway, claws bared."
                 ],
                 "involved_cats": {
                     "p_l": {
@@ -16499,8 +16501,8 @@
                         "condition": [
                             "battle_injury"
                         ],
-                        "scar_history": "m_c was scarred after being attacked by a rogue that {PRONOUN/m_c/subject} mistook for the cat from {PRONOUN/m_c/poss} visions.",
-                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after being attacked by a rogue that {PRONOUN/m_c/subject} mistook for the cat from {PRONOUN/m_c/poss} visions."
+                        "scar_history": "m_c was scarred after being attacked by a rogue while following a vision.",
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after being attacked by a rogue while following a vision."
                     },
                     {
                         "cats": [
@@ -16568,7 +16570,7 @@
                             "p_l"
                         ],
                         "body": false,
-                        "history": "This cat died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} ambushed by a rogue while searching for the cat causing {PRONOUN/m_c/poss} clairvoyant visions."
+                        "history": "This cat died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} ambushed by a rogue while searching for the cause of a vision."
                     }
                 ],
                 "reputation_changes": {
