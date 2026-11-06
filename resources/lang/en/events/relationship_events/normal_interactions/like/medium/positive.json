@@ -1071,5 +1071,46 @@
                 }
             }
         }
+    },
+    {
+        "event_id": "assist_weak_exhausted_cat",
+        "strings": [
+            "r_c is helping m_c with a task {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} struggling with.",
+            "r_c fetched some fresh-kill for m_c when {PRONOUN/m_c/subject} couldn't go get it {PRONOUN/m_c/self}.",
+            "r_c let m_c lean against {PRONOUN/r_c/subject} when {PRONOUN/m_c/subject} {VERB/m_c/were/was} losing {PRONOUN/m_c/poss} strength."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "health": {
+                "condition": [
+                    "exhausted",
+                    "persistent_exhaustion",
+                    "weakened_muscles",
+                    "temporary_weakness"
+                ]
+            }
+            },
+            "r_c": {}
+        }
+    },
+    {
+        "event_id": "assist_sore_cat",
+        "strings": [
+            "r_c helped massage m_c's sore muscles.",
+            "r_c brought m_c some herbs to soothe {PRONOUN/m_c/poss} uncomfortable muscles.",
+            "r_c ensured m_c got extra comfortable bedding so {PRONOUN/m_c/subject} could actually get some rest.",
+            "r_c helped m_c move something {PRONOUN/m_c/subject} {VERB/m_c/were/was} struggling with."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "health": {
+                "condition": [
+                    "sore",
+                    "weakened_muscles"
+                ]
+                }
+            },
+            "r_c": {}
+        }
     }
 ]
