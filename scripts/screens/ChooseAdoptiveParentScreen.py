@@ -10,6 +10,7 @@ from scripts.game_structure.propagating_thread import PropagatingThread
 from ..ui.elements.sprite_button import UISpriteButton
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton
+from ..ui.elements.checkbox import UICheckbox
 from ..ui.theme import get_text_box_theme
 from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset
 from .Screens import Screens
@@ -116,11 +117,21 @@ class ChooseAdoptiveParentScreen(Screens):
                     print("invalid next cat", self.next_cat)
 
             # Checkboxes
-            elif event.ui_element == self.checkboxes.get("mates_current_parents"):
-                self.mates_current_parents = not self.mates_current_parents
+            elif event.ui_element == self.checkboxes["mates_current_parents"]:
+                if self.checkboxes["mates_current_parents"].checked:
+                    self.checkboxes["mates_current_parents"].uncheck()
+                    self.mates_current_parents = False
+                else:
+                    self.checkboxes["mates_current_parents"].check()
+                    self.mates_current_parents = True
                 self.update_potential_parents_container()
-            elif event.ui_element == self.checkboxes.get("unrelated_only"):
-                self.unrelated_only = not self.unrelated_only
+            elif event.ui_element == self.checkboxes["unrelated_only"]:
+                if self.checkboxes["unrelated_only"].checked:
+                    self.checkboxes["unrelated_only"].uncheck()
+                    self.unrelated_only = False
+                else:
+                    self.checkboxes["unrelated_only"].check()
+                    self.unrelated_only = True
                 self.update_potential_parents_container()
 
             # Next and last page buttons
@@ -408,7 +419,7 @@ class ChooseAdoptiveParentScreen(Screens):
         """Updates everything in the mates container, including the list of current mates, checkboxes
         and the page"""
 
-        self.all_adoptive_parents = self.chunks(
+        self.all_adoptive_parents = self.get_list_chunks(
             [
                 Cat.fetch_cat(i)
                 for i in self.the_cat.adoptive_parents
@@ -492,36 +503,28 @@ class ChooseAdoptiveParentScreen(Screens):
         if "mates_current_parents" in self.checkboxes:
             self.checkboxes["mates_current_parents"].kill()
 
-        if self.mates_current_parents:
-            theme = "@checked_checkbox"
-        else:
-            theme = "@unchecked_checkbox"
-
-        self.checkboxes["mates_current_parents"] = UIImageButton(
-            ui_scale(pygame.Rect((553, 56), (34, 34))),
-            "",
-            object_id=theme,
+        self.checkboxes["mates_current_parents"] = UICheckbox(
+            position=(553, 56),
+            check=self.mates_current_parents,
             container=self.potential_container,
         )
 
-        self.all_potential_parents = self.chunks(self.get_valid_adoptive_parents(), 24)
+        self.all_potential_parents = self.get_list_chunks(
+            self.get_valid_adoptive_parents(), 24
+        )
 
         if "unrelated_only" in self.checkboxes:
             self.checkboxes["unrelated_only"].kill()
 
-        if self.unrelated_only:
-            theme = "@checked_checkbox"
-        else:
-            theme = "@unchecked_checkbox"
-
-        self.checkboxes["unrelated_only"] = UIImageButton(
-            ui_scale(pygame.Rect((553, 131), (34, 34))),
-            "",
-            object_id=theme,
+        self.checkboxes["unrelated_only"] = UICheckbox(
+            position=(553, 131),
+            check=self.unrelated_only,
             container=self.potential_container,
         )
 
-        self.all_potential_parents = self.chunks(self.get_valid_adoptive_parents(), 24)
+        self.all_potential_parents = self.get_list_chunks(
+            self.get_valid_adoptive_parents(), 24
+        )
 
         self.update_potential_mates_container_page()
 
@@ -706,7 +709,7 @@ class ChooseAdoptiveParentScreen(Screens):
             [
                 i18n.t("general.moons_age", count=self.the_cat.moons),
                 i18n.t(f"general.{self.the_cat.status.rank.lower()}", count=1),
-                self.the_cat.genderalign,
+                self.the_cat.genderalign_string,
                 i18n.t(f"cat.personality.{self.the_cat.personality.trait}"),
             ]
         )
@@ -888,7 +891,7 @@ class ChooseAdoptiveParentScreen(Screens):
             [
                 i18n.t("general.moons_age", count=self.selected_cat.moons),
                 i18n.t(f"general.{self.selected_cat.status.rank.lower()}", count=1),
-                self.selected_cat.genderalign,
+                self.selected_cat.genderalign_string,
                 i18n.t(f"cat.personality.{self.selected_cat.personality.trait}"),
             ]
         )

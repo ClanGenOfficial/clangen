@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "allergies_running_nose0",
+        "strings": [
+            "r_c0 sighs to see m_c headed towards {PRONOUN/r_c0/object} and goes to fix up {PRONOUN/r_c0/poss} normal herbal mix, hoping that the allergic reaction m_c keeps having fades soon."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "allergies_running_nose1",
+        "strings": [
+            "Seems it's allergy season! m_c has been sneezing and sniffling all moon."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

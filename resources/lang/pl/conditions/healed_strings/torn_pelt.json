@@ -1,0 +1,15 @@
+[
+    {
+        "event_id": "torn_pelt0",
+        "strings": [
+            "m_c's pelt is looking much better.",
+            "m_c's pelt is no longer torn.",
+            "m_c's pelt has recovered from being so torn.",
+            "m_c's torn pelt has healed.",
+            "m_c grooms {PRONOUN/m_c/poss} pelt, happy to find the tears and wounds in it gone."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

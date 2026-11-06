@@ -1,0 +1,31 @@
+{
+    "pl": {
+        "lean_meat": "The fresh-kill has gone scrawny and thin. All cats will need to eat more prey to survive.",
+        "forsaken": "The stars have turned away. Leaders will only be given one life.",
+        "for_the_throne": "Ambition rules. Deputies are more likely to murder the leader.",
+        "resolute": "The deputy stands firm in their goals: duration before warrior focus can change is doubled.",
+        "fated_paths": "Pawsteps are placed according to Silverpelt's design. Mates and ranks cannot be changed manually.",
+        "public_enemy": "The other Clans do not welcome new neighbors. All Clans will start as hostile.",
+        "all_kittens": "The Clan begins with only kittens. What left this group all alone in the world?",
+        "all_apprentices": "The Clan begins with only apprentices. Young and alone, how will they grow?",
+        "all_elders": "The Clan begins with only elders. How long will they last?",
+        "enmity": "The other Clans view this Clan with suspicion and hostility. Clan relations will be locked to hostile.",
+        "stolen_vitality": "To create something, something of equal value must be lost. When a leader is revived, a random Clanmate will die in their place.",
+        "survival_of_fittest": "The strongest deserve the most. Feeding order is locked at Experienced First. Feeding priority is locked at Hunters. Selective manual feeding is disabled.",
+        "kit_season": "The Clan's ranks are ever growing, perhaps more than is sustainable. Cats are more likely to have kits.",
+        "mouths_to_feed": "Litters are likely to be larger. Will the Clan be able to provide for all its kits?",
+        "plague_ridden": "Despite the efforts of the Clan, illness has made its home here. Disease and pest spread cannot be prevented by medicine cats.",
+        "one_cat": "A single cat wanders the world, searching for fellowship. The Clan will begin with one member.",
+        "young_old": "The ancient oak shelters a young sapling. The Clan will begin with one elder and one kitten.",
+        "barren_stocks": "No one planned ahead. The Clan begins without any herbs or fresh-kill.",
+        "always_newleaf": "The world always feels like it's just waking up into newleaf.",
+        "always_greenleaf": "There's no escape from the sweltering heat of greenleaf.",
+        "always_leaf-fall": "The leaves are perpetually the oranges and yellows of leaf-fall.",
+        "always_leaf-bare": "The lack of resources that accompany leaf-bare never seem to relent.",
+        "underpopulated": "Large litters are less common. How will the Clan continue with so few to carry it's legacy?",
+        "heartless": "Survival makes no room for romance. Cats cannot take mates.",
+        "clumsy_paws": "The Clan is all paws and no grace. Skills and experience come slowly.",
+        "malicious_aura": "Cats do not trust so easily. The Clan will permanently be seen as hostile by outsiders.",
+        "meagre_stocks": "The Clan ran out of time to gather resources. Starting herb and prey stocks will be halved."
+    }
+}

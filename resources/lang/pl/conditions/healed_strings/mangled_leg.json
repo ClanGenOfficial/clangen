@@ -1,0 +1,15 @@
+[
+    {
+        "event_id": "mangled_leg0",
+        "strings": [
+            "m_c has healed from {PRONOUN/m_c/poss} mangled leg.",
+            "m_c's mangled leg has healed up.",
+            "m_c's mangled leg is looking much better and seems to have healed well.",
+            "m_c's leg seems to be much better.",
+            "m_c's leg has healed."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

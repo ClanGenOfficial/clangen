@@ -11,8 +11,8 @@ from scripts.game_structure.game.switches import (
 
 class FpsCommand(Command):
     name = "fps"
-    description = "Toggle fps counter"
-    usage = "[value]"
+    description = "Toggle fps counter or set fps cap"
+    usage = "<cap: int>"
 
     def callback(self, args: List[str]):
         if len(args) == 1:
@@ -28,4 +28,4 @@ class FpsCommand(Command):
             else:
                 add_output_line_to_log(f"Invalid value, {args[0]}")
         elif len(args) == 0:
-            add_output_line_to_log(f"FPS cap is set to {switch_get_value('fps')}")
+            add_output_line_to_log(f"FPS cap is set to {switch_get_value(Switch.fps)}")

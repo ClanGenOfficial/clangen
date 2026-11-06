@@ -1,0 +1,468 @@
+[
+    {
+        "event_id": "group_3_positive_meditate",
+        "strings": [
+            "m_c is convincing r_c1 that r_c2 isn't so bad once you get to know {PRONOUN/r_c2/object}.",
+            "m_c chats with r_c1 about how r_c2 is a nice cat."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": ["charismatic", "loyal", "charming"]
+                }
+            },
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["likes"]
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["dislikes"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1", "r_c2"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": 5
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "values": ["like", "trust"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "much_ado_about_nothing",
+        "strings": [
+            "multi_cat decide they're going to get m_c and r_c1 together. They talk about how much m_c loves r_c1 in front of r_c1, and, to their pleasure, find the two talking later.",
+            "multi_cat planned to share tongues with m_c and r_c1, but didn't show, leaving m_c and r_c1 alone together.  Both cats end up having a great time, talking late into the night.",
+            "multi_cat tell m_c that r_c1 has a crush on {PRONOUN/m_c/object} and, while the lie was cleared up, they note how well m_c and r_c1 are getting along now that they're talking.",
+            "multi_cat convince r_c1 and r_c2 to try going on a date together and they end up having a great time!"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "age": ["young adult", "adult", "senior adult", "senior"]
+            },
+            "r_c1": {
+                "age": ["young adult", "adult", "senior adult", "senior"]
+            },
+            "multi_cat": {
+                "age": ["young adult", "adult", "senior adult", "senior"]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c", "r_c1"],
+                "mutual": false,
+                "constraints": ["likes"]
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "constraints": ["fancies", "-mates"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["multi_cat"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": 5
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": true,
+                "values": ["romance", "comfort"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "group_3_medicinecathelper",
+        "strings": [
+            "r_c1 tells r_c2 that m_c did a great job helping around the medicine cat den."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["-medicine cat"]
+            },
+            "r_c1": {
+                "status": ["medicine cat"]
+            },
+            "r_c2": {}
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c1", "r_c2"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": 5
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "group_3_medicinecatadmiration",
+        "strings": [
+            "m_c sees the skill with which r_c1 treats r_c2.",
+            "m_c is surprised by how efficiently r_c1 treats r_c2.",
+            "m_c watches r_c1 show kindness and compassion towards r_c2.",
+            "m_c caught a glimpse of r_c1 caring for r_c2 with confidence and grace."
+                ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["-medicine cat"]
+            },
+            "r_c1": {
+                "status": ["medicine cat"]
+            },
+            "r_c2": {
+                "health": {
+                    "working": false
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["like", "respect"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "group_3_defendrespect",
+        "strings": [
+            "m_c defends r_c1 from r_c2's rude remarks.",
+            "m_c calls out r_c2 for spreading a rumor about r_c1.",
+            "m_c comforts r_c1 when r_c2 says something cruel.",
+            "m_c won't stand for r_c2 calling r_c1's honor into question."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "constraints": ["praises", "likes"]
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "constraints": ["doubts"]
+                            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["trust", "respect"],
+                "amount": 10
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c2"],
+                "mutual": true,
+                "values": ["like", "trust"],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "event_id": "group_multicat_pos_gossipinghates",
+        "strings": [
+            "multi_cat discuss how they could drive m_c out of the Clan."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "multi_cat": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "constraints": [
+                    "hates"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "multi_cat"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust", "comfort"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "group_multicat_pos_gossipingfears",
+        "strings": [
+            "multi_cat discuss how they need to do something about m_c's presence in the Clan."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "multi_cat": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "constraints": [
+                    "fears"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "multi_cat"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust", "comfort"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "group_multicat_pos_polymateshigh",
+        "strings": [
+            "m_c gave multi_cat presents to show {PRONOUN/m_c/poss} affection.",
+            "m_c declared {PRONOUN/m_c/poss} love for multi_cat in the middle of camp.",
+            "m_c, multi_cat talked about having kits."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "multi_cat": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "mates"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": true,
+                "values": [
+                    "romance"
+                ],
+                "amount": 15
+            }
+        ]
+    },
+    {
+        "event_id": "group_multi_pos_supportblacksheep",
+        "strings": [
+            "m_c sees r_c1 stand up for r_c2 despite pushback from multi_cat.",
+            "m_c notices that r_c1 won't stand for multi_cat talking poorly about r_c2 behind {PRONOUN/r_c2/poss} back."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {},
+            "multi_cat": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["dislikes"]
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["likes"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["r_c1"],
+                "mutual": true,
+                "values": ["like", "trust"],
+                "amount": -5
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": 15
+            }
+        ]
+    },
+    {
+        "event_id": "group_3_pos_reconsider",
+        "strings": [
+            "The way r_c1 jumps to help r_c2 makes m_c think {PRONOUN/r_c1/subject} might not be all that bad.",
+            "m_c sees a more sympathetic side of r_c1 in how {PRONOUN/r_c1/subject} {VERB/r_c1/treat/treats} r_c2.",
+            "m_c softens toward r_c1, seeing {PRONOUN/r_c1/object} interact with r_c2.",
+            "m_c wants to apologize to r_c1 and finds {PRONOUN/r_c1/object} playing with r_c2.",
+            "m_c wants to hate r_c1 but after seeing {PRONOUN/r_c1/subject} having fun with r_c2, {PRONOUN/m_c/subject} just can't hate {PRONOUN/r_c1/object}."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["likes"]
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "constraints": ["dislikes"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["like", "comfort"],
+                "amount": 10
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": true,
+                "values": ["comfort", "like"],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "event_id": "group_multicat_pastoutsidersreminisce",
+        "strings": [
+            "m_c, multi_cat reminisce about life outside c_n.",
+            "m_c, multi_cat trade stories of their lives before they came to c_n.",
+            "m_c, multi_cat purr with laughter as they tell each other of scrapes they got into while living outside the Clan.",
+            "m_c, multi_cat agree they're glad they became part of c_n.",
+            "m_c, multi_cat talk about the worst part of life outside c_n.",
+            "m_c, multi_cat share their favorite stories of life before c_n.",
+            "m_c, multi_cat agree that c_n was the best thing to ever happen to them.",
+            "m_c, multi_cat wonder if they could ever go back to living on their own like they used to, now that they're accustomed to Clan life."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "past_status": ["loner", "rogue", "kittypet"],
+                "backstory": ["-abandoned_backstories", "-baby_loner_backstories", "-baby_kittypet_backstories", "-orphaned_backstories"]
+            },
+            "multi_cat": {
+                "past_status": ["loner", "rogue", "kittypet"],
+                "backstory": ["-abandoned_backstories", "-baby_loner_backstories", "-baby_kittypet_backstories", "-orphaned_backstories"]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat", "m_c"],
+                "cats_to": ["multi_cat", "m_c"],
+                "mutual": false,
+                "values": ["like", "comfort"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "event_id": "group_pos_medicinecatbonding",
+        "strings": [
+            "m_c, multi_cat discussed their favorite herbs and places to gather them in the territory.",
+            "m_c, multi_cat bonded over the unique privilege of communing with their ancestors.",
+            "m_c, multi_cat worked together to treat an injured Clanmate.",
+            "m_c, multi_cat are grateful for each other's specialties in healing.",
+            "m_c, multi_cat are discussing the state of the herbs throughout the territory.",
+            "m_c, multi_cat bond as they sort the herbs, realizing they agree on the placement of most of them.",
+            "m_c, multi_cat are quizzing each other on how to treat different maladies, just to keep each other sharp."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "medicine cat"
+                ]
+            },
+            "multi_cat": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c", "multi_cat"],
+                "cats_to": ["multi_cat", "m_c"],
+                "mutual": false,
+                "values": ["like", "comfort", "respect"],
+                "amount": 5
+            }
+        ]
+    }
+]

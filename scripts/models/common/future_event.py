@@ -11,7 +11,7 @@ from scripts.models.common.skill import Skill
 from scripts.models.common.status import Status
 
 from scripts.models.shortevent.event_subtype import EventSubtype
-from scripts.models.shortevent.cat import Cat
+from scripts.models.common.cat import Cat
 from scripts.models.shortevent.gender import GenderEnum
 
 

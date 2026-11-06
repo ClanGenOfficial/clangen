@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "recovering_from_birth_temporary_weakness0",
+        "strings": [
+            "m_c has recovered from kitting, but {PRONOUN/m_c/subject} still {VERB/m_c/need/needs} to get used to life outside the nursery."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

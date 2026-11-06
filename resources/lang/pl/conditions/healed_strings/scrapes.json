@@ -1,0 +1,15 @@
+[
+    {
+        "event_id": "scrapes0",
+        "strings": [
+            "m_c's scrapes have healed.",
+            "m_c's scrapes are all better.",
+            "m_c's scrapes are gone.",
+            "m_c is no longer all scraped up.",
+            "m_c has healed from all {PRONOUN/m_c/poss} scrapes."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

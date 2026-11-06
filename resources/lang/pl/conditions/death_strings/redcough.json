@@ -1,0 +1,21 @@
+[
+    {
+        "event_id": "redcough0",
+        "strings": [
+            "m_c died of redcough.",
+            "Redcough has finally taken m_c.",
+            "Redcough has killed m_c."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        },
+        "death": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "history": "m_c died of redcough."
+            }
+        ]
+    }
+]

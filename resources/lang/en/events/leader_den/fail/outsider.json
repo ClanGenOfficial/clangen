@@ -1174,7 +1174,7 @@
   },
   {
     "interaction_type": "invite",
-    "event_text": "Apparently, c_n is getting a reputation with the local rogues — every time c_n visits one of them, they go missing. m_c is nowhere to be found.",
+    "event_text": "Apparently, c_n is getting a reputation with the local rogues: every time c_n visits one of them, they go missing. m_c is nowhere to be found.",
     "reputation": ["welcoming"],
     "rep_change": 0,
     "m_c": {

@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "festering_wound_temporary_weakness0",
+        "strings": [
+            "While normal injuries are already hard to deal with, m_c needs extra time to recover after {PRONOUN/m_c/poss} festering wound has healed."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

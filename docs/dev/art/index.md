@@ -10,6 +10,8 @@
 
 [:clangen-paw: Patrol Art](patrol-sprites.md){.md-button .md-button--primary }
 
+[:clangen-scratches: Cruel Season Cards](cruel-season-cards.md){.md-button .md-button--primary }
+
 </div>
 
 New art contributors are highly encouraged to join the discord in order to collaborate more directly with the art team.

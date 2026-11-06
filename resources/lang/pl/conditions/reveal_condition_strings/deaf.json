@@ -1,0 +1,25 @@
+[
+    {
+        "event_id": "deaf0",
+        "strings": [
+            "When most kittens are learning to talk, m_c seems delayed. r_c0 is called, and {PRONOUN/r_c0/subject} {VERB/r_c0/report/reports} that while m_c will live life just fine, it appears {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} never been able to hear."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "deaf1",
+        "strings": [
+            "m_c isn't bothered by being deaf, though the Clan seems to want to comfort {PRONOUN/m_c/object} when everyone finds out that's why learning to talk has been so hard."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

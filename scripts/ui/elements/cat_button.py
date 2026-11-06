@@ -1,3 +1,7 @@
+import pygame
+import pygame_gui
+
+from scripts.game_input import INPUT_ACTION_PRESSED, Action, INPUT_ACTION_RELEASED
 from scripts.ui.elements.image_button import UIImageButton
 
 
@@ -58,3 +62,19 @@ class CatButton(UIImageButton):
 
     def set_id(self, id):
         self.cat_id = id
+
+    def process_event(self, event: pygame.event.Event) -> bool:
+        if self.is_focused and event.type == INPUT_ACTION_PRESSED:
+            if event.action == Action.CONFIRM:
+                self.on_self_event(
+                    pygame_gui.UI_BUTTON_START_PRESS,
+                    {"mouse_button": pygame.BUTTON_LEFT},
+                )
+        elif self.is_focused and event.type == INPUT_ACTION_RELEASED:
+            if event.action == Action.CONFIRM:
+                self.on_self_event(
+                    pygame_gui.UI_BUTTON_PRESSED,
+                    {"mouse_button": pygame.BUTTON_LEFT},
+                )
+
+        return super().process_event(event)

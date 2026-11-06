@@ -1,0 +1,19 @@
+[
+    {
+        "event_id": "shivering0",
+        "strings": [
+            "m_c got too cold and died."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        },
+        "death": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "history": "m_c got too cold and died."
+            }
+        ]
+    }
+]

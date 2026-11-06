@@ -1,0 +1,19 @@
+[
+    {
+        "event_id": "bite_wound0",
+        "strings": [
+            "m_c died from a bite-wound."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        },
+        "death": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "history": "m_c died from a bite-wound."
+            }
+        ]
+    }
+]

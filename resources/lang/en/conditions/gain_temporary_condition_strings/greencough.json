@@ -1,0 +1,129 @@
+[
+    {
+        "event_id": "gain_temporary_condition_greencough0",
+        "strings": [
+            "m_c has gotten greencough.",
+            "m_c is sick with greencough.",
+            "m_c wakes up feeling awful. {PRONOUN/m_c/subject/CAP} {VERB/m_c/appear/appears} to have contracted greencough.",
+            "m_c wakes up with a terrible cough and fever. This looks like greencough.",
+            "m_c's hacking can be heard from across camp ever since {PRONOUN/m_c/subject} contracted greencough.",
+            "Fever, chills, a horrible, mucusy cough; m_c has contracted greencough.",
+            "The horrible green phlegm m_c has started hacking up, alongside the fever and chills, points to greencough.",
+            "m_c's symptoms were mild at first, but now it's obvious: {PRONOUN/m_c/subject} {VERB/m_c/have/has} greencough."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    },
+    {
+        "event_id": "with_med_gain_greencough0",
+        "strings": [
+            "m_c has been diagnosed with greencough.",
+            "Feeling ill, m_c goes to the medicine den, where r_c0 diagnoses {PRONOUN/m_c/object} with greencough.",
+            "After m_c explains {PRONOUN/m_c/poss} symptoms of fever, coughing, and chills, r_c0 diagnoses {PRONOUN/m_c/object} with greencough.",
+            "m_c wakes up with a bad cough and fever. r_c0 diagnoses {PRONOUN/m_c/object} with greencough.",
+            "Fever, chills, a horrible, mucusy cough; r_c0 diagnoses m_c with greencough.",
+            "r_c0 hoped it would be the milder whitecough, but only greencough could cause the awful phlegmy hacking and high fever m_c is experiencing.",
+            "The horrible green phlegm m_c has started hacking up, alongside the fever and chills, make r_c0's diagnosis of greencough easy.",
+            "r_c0 instructs m_c to cough into a mossball. The greenish phlegm produced allows r_c0 to diagnose {PRONOUN/m_c/object} with greencough.",
+            "r_c0 searches {PRONOUN/r_c0/poss} herb stores. Catmint is the best treatment for the greencough m_c has contracted.",
+            "Sniffles quickly turned into a high fever and an awful, phlegmy cough. r_c0 diagnoses m_c with greencough."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-medicine cat",
+                    "-medicine cat apprentice"
+                ]
+            },
+            "r_c0": {
+                "status": [
+                    "medicine cat",
+                    "medicine cat apprentice"
+                ],
+                "group": [
+                    "match:m_c"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "kit_with_med_gain_greencough0",
+        "strings": [
+            "r_c0 instructs m_c to cough into a mossball. The greenish phlegm produced reveals greencough, a concerning diagnosis in such a young cat.",
+            "r_c0 fusses over {PRONOUN/r_c0/poss} newest patient. Greencough can be deadly to healthy adults, let alone a little kitten like m_c.",
+            "r_c0 searches the herb stores. Greencough is so often deadly in kittens like m_c, and catmint is the best treatment.",
+            "r_c0 hoped it would be the milder kittencough, but only greencough could cause the awful phlegmy hacking m_c is experiencing.",
+            "After being diagnosed with greencough, m_c blearily asks r_c0 if {PRONOUN/r_c0/subject}{VERB/m_c/'re/'s} going to be okay. r_c0 struggles to respond; greencough is harrowing in adults, let alone kits.",
+            "m_c's eyes are glassy with fever. r_c0 applies every treatment {PRONOUN/r_c0/subject} {VERB/m_c/know/knows}, but greencough is not a promising diagnosis in a kit.",
+            "m_c mumbles deliriously as r_c0 treats {PRONOUN/m_c/object}. Greencough is deadly in adults, let alone kittens."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "kitten"
+                ]
+            },
+            "r_c0": {
+                "status": [
+                    "medicine cat",
+                    "medicine cat apprentice"
+                ],
+                "group": [
+                    "match:m_c"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "med_gain_greencough0",
+        "strings": [
+            "m_c wakes up feeling awful. {PRONOUN/m_c/subject/CAP} {VERB/m_c/diagnose/diagnoses} {PRONOUN/m_c/self} with greencough.",
+            "m_c feverishly searches the herb stores. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} contracted greencough, and catmint is the best treatment.",
+            "The greenish phlegm m_c has been hacking up, alongside the fever and chills, makes {PRONOUN/m_c/poss} self-diagnosis of greencough easy.",
+            "In constant contact with disease, medicine cats are bound to sometimes get ill. m_c has contracted greencough."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "medicine cat",
+                    "medicine cat apprentice"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "only_med_gain_greencough0",
+        "tags": [
+            "-clan:medicine cat",
+            "-clan:medicine cat apprentice"
+        ],
+        "strings": [
+            "m_c has contracted greencough. As the only medicine cat, Clanmates worry what might happen while m_c is too sick to work.",
+            "m_c feverishly searches the herb stores. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} contracted greencough, and as the only medicine cat, must treat {PRONOUN/m_c/self}.",
+            "m_c, the only medicine cat, has been laid low by greencough."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "no_med_gain_greencough0",
+        "tags": [
+            "-clan:medicine cat(min:1)",
+            "-clan:medicine cat apprentice(min:1)"
+        ],
+        "strings": [
+            "m_c has contracted greencough. Without a medicine cat, Clanmates are unsure how to help {PRONOUN/m_c/object}.",
+            "As if knowing c_n is vulnerable without a medicine cat, greencough has struck m_c.",
+            "Clanmates provide comfortable nesting and the plumpest fresh-kill, but without a medicine cat, they are lost on how to truly treat m_c's new greencough."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

@@ -6,7 +6,8 @@ from pygame_gui.core import IContainerLikeInterface, UIElement, ObjectID
 from pygame_gui.core.gui_type_hints import RectLike, Coordinate
 from pygame_gui.core.interfaces import IUIManagerInterface
 
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
+from scripts.game_input import INPUT_ACTION_PRESSED, Action, INPUT_ACTION_RELEASED
+from scripts.ui.icon import Icon
 from scripts.ui.scale import ui_scale_value
 
 
@@ -84,15 +85,25 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
                 ),
             }
 
-        self._normal_image = image_dict["normal"]
-        self._hovered_image = (
-            image_dict["hovered"] if "hovered" in image_dict else self.normal_image
+        self._normal_images = (
+            image_dict["normal"]
+            if type(image_dict["normal"]) in [list, tuple]
+            else [image_dict["normal"]]
         )
-        self._selected_image = (
-            image_dict["selected"] if "selected" in image_dict else self.normal_image
+        self._hovered_images = (
+            image_dict.get("hovered", self._normal_images)
+            if type(image_dict.get("hovered", self._normal_images)) in [list, tuple]
+            else [image_dict["hovered"]]
         )
-        self._disabled_image = (
-            image_dict["disabled"] if "disabled" in image_dict else self.normal_image
+        self._selected_images = (
+            image_dict.get("selected", self._normal_images)
+            if type(image_dict.get("selected", self._normal_images)) in [list, tuple]
+            else [image_dict["selected"]]
+        )
+        self._disabled_images = (
+            image_dict.get("disabled", self._normal_images)
+            if type(image_dict.get("disabled", self._normal_images)) in [list, tuple]
+            else [image_dict["disabled"]]
         )
         super().__init__(
             relative_rect,
@@ -128,8 +139,11 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
                 text_rect = pygame.Rect(
                     relative_rect[0], relative_rect[1], relative_rect[2], -1
                 )
+            if self.text in Icon:
+                text_rect.y -= ui_scale_value(1)
+
             self.set_text("")
-            self.text_layer = UITextBoxTweaked(
+            self.text_layer = pygame_gui.elements.UITextBox(
                 temp_text,
                 text_rect,
                 object_id=(
@@ -140,7 +154,8 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
                 container=container,
                 starting_height=self.starting_height,
                 anchors=self.anchors,
-                line_spacing=0.95,
+                # line_spacing=0.95,
+                visible=visible,
             )
             self.join_focus_sets(self.text_layer)
             self.text_layer.disable()
@@ -226,34 +241,78 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
     def _set_active(self):
         self.drawable_shape.set_active_state("hovered")
 
-    @property
-    def normal_image(self):
-        return self._normal_image
+    def focus(self):
+        if not self.is_enabled or not self.visible:
+            return  # early return to prevent focusing of disabled buttons
+        super().focus()
+        self.drawable_shape.set_active_state("hovered")
+        if self.tool_tip is None and self.tool_tip_text is not None:
+            self.tool_tip = self.ui_manager.create_tool_tip(
+                text=self.tool_tip_text,
+                position=(self.get_abs_rect().bottomright, self.rect.centery),
+                hover_distance=(0, int(self.rect.height / 2)),
+                parent_element=self,
+                object_id=self.tool_tip_object_id,
+                wrap_width=self.tool_tip_wrap_width,
+                text_kwargs=self.tool_tip_text_kwargs,
+            )
 
-    @normal_image.setter
-    def normal_image(self, val):
+    def unfocus(self):
+        if not self.is_enabled:
+            self.drawable_shape.set_active_state("disabled")
+        elif self.hovered:
+            self.drawable_shape.set_active_state("hovered")
+        else:
+            self.drawable_shape.set_active_state("normal")
+        if self.tool_tip is not None:
+            self.tool_tip.kill()
+            self.tool_tip = None
+        super().unfocus()
+
+    def process_event(self, event: pygame.event.Event) -> bool:
+        if self.is_focused and event.type == INPUT_ACTION_PRESSED:
+            if event.action == Action.CONFIRM:
+                self.on_self_event(
+                    pygame_gui.UI_BUTTON_START_PRESS,
+                    {"mouse_button": pygame.BUTTON_LEFT},
+                )
+        elif self.is_focused and event.type == INPUT_ACTION_RELEASED:
+            if event.action == Action.CONFIRM:
+                self.on_self_event(
+                    pygame_gui.UI_BUTTON_PRESSED,
+                    {"mouse_button": pygame.BUTTON_LEFT},
+                )
+
+        return super().process_event(event)
+
+    @property
+    def normal_images(self):
+        return self._normal_images
+
+    @normal_images.setter
+    def normal_images(self, val):
         pass
 
     @property
-    def hovered_image(self):
-        return self._hovered_image
+    def hovered_images(self):
+        return self._hovered_images
 
-    @hovered_image.setter
-    def hovered_image(self, val):
+    @hovered_images.setter
+    def hovered_images(self, val):
         pass
 
     @property
-    def selected_image(self):
-        return self._selected_image
+    def selected_images(self):
+        return self._selected_images
 
-    @selected_image.setter
-    def selected_image(self, val):
+    @selected_images.setter
+    def selected_images(self, val):
         pass
 
     @property
-    def disabled_image(self):
-        return self._disabled_image
+    def disabled_images(self):
+        return self._disabled_images
 
-    @disabled_image.setter
-    def disabled_image(self, val):
+    @disabled_images.setter
+    def disabled_images(self, val):
         pass

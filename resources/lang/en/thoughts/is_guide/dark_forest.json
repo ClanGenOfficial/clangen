@@ -1,8 +1,7 @@
 [
-
     {
-        "id": "gen_guide_df",
-        "thoughts": [
+        "event_id": "gen_guide_df",
+        "strings": [
             "Hello. I am here to drag the dead cats of c_n into the Dark Forest."
         ]
     }

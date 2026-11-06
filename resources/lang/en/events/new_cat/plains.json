@@ -146,5 +146,58 @@
       ],
       "changed": 1
     }
+  },
+  {
+    "event_id": "pln_newcat_tunnels_refugee",
+    "location": [
+      "plains:camp2"
+    ],
+    "season": [
+      "any"
+    ],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 2,
+    "event_text": "m_c bumps into something in the darkness of camp. {PRONOUN/m_c/subject/CAP} {VERB/m_c/look/looks} up to find the glowing eyes of a stranger, who begs {PRONOUN/m_c/object} to hide {PRONOUN/n_c:0/object} from something chasing {PRONOUN/n_c:0/object}.",
+    "m_c": {
+      "age": [],
+      "status": [
+        "-kitten"
+      ]
+    },
+    "new_cat": [
+      [
+        "old_name",
+        "status:warrior",
+        "backstory:kittypet3,kittypet4,rogue3,refugee1,refugee2,refugee3,refugee4"
+      ]
+    ],
+    "relationships": [
+            {
+              "cats_from": ["m_c"],
+              "cats_to": ["n_c:0"],
+              "mutual": false,
+              "values": ["comfort", "like"],
+              "amount": 5,
+                "log": {
+                    "cats_from": "m_c bumped into n_c:0 and helped {PRONOUN/n_c:0/object} hide from whatever was chasing {PRONOUN/n_c:0/object}."
+                }
+            },
+            {
+              "cats_from": ["n_c:0"],
+              "cats_to": ["m_c"],
+              "values": ["trust"],
+              "amount": 10,
+              "log": {
+                "cats_from": "n_c:0 is thankful that m_c brought {PRONOUN/n_c:0/object} somewhere safe to hide from what was chasing {PRONOUN/n_c:0/object}."
+              }
+            }
+        ],
+    "outsider": {
+      "current_rep": [
+        "any"
+      ],
+      "changed": 1
+    }
   }
   ]

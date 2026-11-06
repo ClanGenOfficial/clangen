@@ -1,0 +1,27 @@
+[
+    {
+        "event_id": "lasting_grief_grief_stricken0",
+        "strings": [
+            "r_c0 presses {PRONOUN/r_c0/self} against m_c's side and purrs in the most comforting way {PRONOUN/r_c0/subject} can. m_c remains still and staring, {PRONOUN/m_c/poss} eyes full of a deep sadness."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "lasting_grief_grief_stricken1",
+        "strings": [
+            "m_c stalks angrily from camp, the grief that's welling up in {PRONOUN/m_c/poss} throat feeling like it will choke {PRONOUN/m_c/object}. m_c can't help but find it unfair that this sadness won't go away.",
+            "m_c breathes deeply, trying not to let the sudden wave of grief overtake {PRONOUN/m_c/object}, but it's hard and never really goes away.",
+            "m_c wakes abruptly and nearly wails at the wave of grief that hits {PRONOUN/m_c/object}. Today isn't starting well."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

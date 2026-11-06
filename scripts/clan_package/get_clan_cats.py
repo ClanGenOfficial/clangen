@@ -1,4 +1,7 @@
-from typing import Union, Type, TYPE_CHECKING, Tuple, List
+from random import choice
+from typing import Union, Type, TYPE_CHECKING, Tuple, List, Optional
+
+from scripts.cat_relations.relationship import create_one_relationship
 
 if TYPE_CHECKING:
     from scripts.cat.cats import Cat
@@ -66,7 +69,7 @@ def find_alive_cats_with_rank(
     ]
 
     if working:
-        alive_cats = [i for i in alive_cats if not i.not_working()]
+        alive_cats = [i for i in alive_cats if i.can_work()]
 
     if sort:
         alive_cats = sorted(alive_cats, key=lambda cat: cat.moons, reverse=True)
@@ -102,9 +105,9 @@ def get_cats_same_age(Cat, cat_to_match, age_range=10):
             continue
 
         if inter_cat.ID not in cat_to_match.relationships:
-            cat_to_match.create_one_relationship(inter_cat)
+            create_one_relationship(cat_to_match, inter_cat)
             if cat_to_match.ID not in inter_cat.relationships:
-                inter_cat.create_one_relationship(cat_to_match)
+                create_one_relationship(inter_cat, cat_to_match)
             continue
 
         if (
@@ -133,9 +136,9 @@ def get_possible_mates(cat) -> Tuple[List["Cat"], List["Cat"]]:
             continue
 
         if inter_cat.ID not in cat.relationships:
-            cat.create_one_relationship(inter_cat)
+            create_one_relationship(cat, inter_cat)
             if cat.ID not in inter_cat.relationships:
-                inter_cat.create_one_relationship(cat)
+                create_one_relationship(inter_cat, cat)
             continue
 
         if inter_cat.is_potential_mate(cat, for_love_interest=True):
@@ -143,3 +146,15 @@ def get_possible_mates(cat) -> Tuple[List["Cat"], List["Cat"]]:
                 existing_romance_mates.append(inter_cat)
             possible_mates.append(inter_cat)
     return possible_mates, existing_romance_mates
+
+
+def get_random_player_clan_cat(cat, not_allowed: list["Cat"] = None) -> Optional["Cat"]:
+    cat_list = [
+        c
+        for c in cat.all_cats.values()
+        if c.status.alive_in_player_clan and c not in not_allowed
+    ]
+    if not cat_list:
+        return None
+
+    return choice(cat_list)

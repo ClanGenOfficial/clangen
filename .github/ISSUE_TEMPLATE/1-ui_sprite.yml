@@ -12,6 +12,8 @@ body:
           required: true
         - label: This issue was encountered (or replicated) on a non-edited Clan
           required: true
+        - label: I confirm that I am NOT playing on a modded version of the game (e.g. LifeGen)
+          required: true
   - type: textarea
     id: description
     attributes:
@@ -50,7 +52,7 @@ body:
     id: patrol
     attributes:
       label: Patrol ID + Outcome Print (if applicable)
-      description: For assistance, see [\"what's a patrol ID and do I need it?\"](https://www.clangen.io/docs/report-a-bug#whats-a-patrol-id-do-i-need-it) and [\"how do I find the patrol ID?\"](https://www.clangen.io/docs/report-a-bug#how-do-i-find-the-patrol-id)
+      description: For assistance, see [\"what's a patrol ID and do I need it?\"](https://www.clangen.io/docs/report-a-bug/#whats-a-patrol-id-do-i-need-it) and [\"how do I find the patrol ID?\"](https://www.clangen.io/docs/report-a-bug/#how-do-i-find-the-patrol-id)
   - type: input
     id: version
     attributes:

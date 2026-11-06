@@ -11,6 +11,7 @@ class Skills(Enum):
     RUNNER = "RUNNER"
     CLIMBER = "CLIMBER"
     SWIMMER = "SWIMMER"
+    STEALTH = "STEALTH"
     SPEAKER = "SPEAKER"
     MEDIATOR = "MEDIATOR"
     CLEVER = "CLEVER"

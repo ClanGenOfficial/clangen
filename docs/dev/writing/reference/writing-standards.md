@@ -10,12 +10,12 @@
     No assumptions should be made about the gender of any cat. Nothing in the game is completely gender-locked, including pregnancy under certain settings, so all text should take this into account.
 
 
-# Why Writing for ClanGen is Different
+## Why Writing for ClanGen is Different
 - The nature of a game like ClanGen means most text is likely to be encountered *many times* over a single playthrough.
 - If text is brief and gives its information directly, it will serve its function the same way each time a player encounters it. If it's flowery and lyrical, the player will enjoy it the first time, but then all subsequent times, their eyes will skim over it.
 - That's not to say flowery writing doesn't have its place. Adding some extra sparkle to highly rare events can make them exciting and signal that something important and unusual is happening. As with character motivations, the more constrained and rare text is, the more descriptively it can be written.
 
-# Dos and Don'ts
+## Dos and Don'ts
 ### **DO:** Prioritize player creativity!
 Events can act as writing prompts. If a text generates over and over again, one way keep it interesting is ambiguity. You can add a single unusual detail in an event's text without elaborating on its meaning: the player will take it from there!
 ### **DON'T:** Over-describe
@@ -85,40 +85,76 @@ Event and flavor text should always use Americanized spelling.
 
 
 ## Being Mindful of Disabilities
-_by grif_
+*Written with the input of disabled ClanGen developers*
 
-When writing events related to permanent conditions, we need to be very mindful to avoid ableist rhetoric and inspiration sensationalism.  Some key points to avoid are as follows:
+Disabled cats should not be sidelined in favor of how their disability affects those around them:
+>For example, the "sad circumstances" of the "poor" parents of a disabled kitten. The kitten is the cat who is disabled and should not be ignored or regarded as a burden for their disability in favor of pitying their parental figures.
 
-- The idea that a cat is closer to a kitten than an adult
->EG: "crawling" for paralysed cats - this implies they are weaker and also implies they are kit-like. This then takes away the paralysed cat's perceived ability to decide for themself, even though it's accidental. 
->
->INSTEAD: use "clambering", "climbing", "stalking" - these allow a paralysed cat to give themselves agency. 
->
->EXCEPTIONS: "Dragged" can be used in an emotional usage, such as "Poppyheart... drags herself to her front paws, complaining about dawn patrol". 
+***
 
-- The idea that a cat "isn't" affected by their disability
->EG: "Wolfclaw... is proud that they can still work like the rest of the clan." This makes it seem like the cat is comparing themselves to the abled cats and sets up standards where a disabled cat cannot show their disability. This eventually means you're implying it's somehow "lesser" to be disabled. It might make sense for an insecure cat, but be careful!
->
->INSTEAD: Allow the disability to affect them, and focus on their personal achievements rather than comparing them to other cats. 
->
->EXCEPTIONS: "Raspy lungs", "joint pain", "allergies", "persistent headaches", "constantly dizzy", "recurring shock" - you can reword these into being happy their disability isn't as harsh this moon. These disabilities all come in "waves", where you can have a few days where you aren't as affected, and a few days where you're strongly affected. 
+Disability should not be portrayed as the ultimate tragedy of a cat's life. Their life does not end when they become disabled.
+>While ClanGen allows disabled cats to "retire" early, the cats aren't required to do so. Retiring also doesn't mean an "end" to their life within the Clan. They can still receive events and interactions. 
 
-- The idea that a disability is only negative
->EG: Any thoughts that give the idea that they'd prefer to be dead, excessive sadness about being disabled, etc.
->
->INSTEAD: Balance the thoughts out! Give them good thoughts alongside the bad! 
+***
 
-- The idea that disabled cats can't make their own choices
->EG: Excessive thoughts that imply a cat asking for another's opinion. 
->
->INSTEAD: Balance out the thoughts. Treat it like any other cat!
->
->EXCEPTIONS: Personality basis - insecure/gloomy/charismatic cats are more likely to ask for other opinions on personal things. 
+Avoid inspiration sensationalism. Inspiration sensationalism warps stories and images of disabled people in a way that allows a nondisabled audience to feel warm and fuzzy, but treats the disabled person as nothing more than an object that produces these positive feelings. 
+>Remember that there is a difference between "joy" and "inspiration". Disabled cats can feel joyful and fulfilled in their life without that joy being used solely as inspiration for those around them.
 
-- The idea that disability is inherently worse than being abled
->EG: Thoughts that imply shame or inherent upset about being disabled, comparison to abled cats, etc.
->
->INSTEAD: Use benign embarrassment! Maybe a cat with lasting grief fell asleep during a ceremony, or a cat with partial hearing loss misheard a request and brought moss instead of a mole.
+***
 
-When in doubt, please ask for feedback! We have multiple disabled contributors on the team and they've lended us their valuable perspectives time and time again.
+Disabled cats are not inherently worth less than their abled counterparts and should not be treated as such. Disabled cats have just as much power, autonomy, and dignity as abled cats.
+>Disabled cats should be allowed to engage with Clan life in all the same ways that abled cats can.
+
+***
+
+Cats are allowed to engage with the complexity of their individual disabilities, both the negatives and the positives. 
+>A cat who becomes paralyzed is allowed to wish that they could still walk on four paws, while also celebrating their accomplishments. A cat who is blind in one eye is allowed to struggle with their blindness, while still serving the Clan as a warrior or leader. Likewise, a disabled cat deciding to take a place in the elder den is a valid choice for a cat to make, and should not be treated as the end of their "usefulness" or "ability".
+
+> * `CatA is frustrated their pain has left them in the nest all day.`
+> 
+> * `CatA is excited to learn how to fight on three legs, even though it might be a little harder.`
+> 
+> * `CatB comforts CatA, insisting that they will never be a burden, despite their bad days.`
+
+***
+
+Some conditions can be more visible than others, but remember that the visibility of a condition does not determine its importance or impact. Invisible disabilities are just as impactful to a cat's life as more visible ones. 
+>Constantly dizzy and persistent headaches aren't conditions you can tell a cat has just from looking at them, but they still have profound effects on a cat's life. They still impact their level of activity and their capability to perform certain tasks.
+
+***
+
+When possible, seek advice from fellow developers with the disability you plan to write for or reference outside resources written by those with that disability. It's always best for those with a first-hand perspective to dictate how their experiences be portrayed.
+
+While the mainly-RNG controlled nature of ClanGen means nuance isn't particularly easy to add into individual events, writers are encouraged to allow nuance by creating a wide variety of events that portray the myriad aspects of disability.
+
+### What ways can we portray the lifestyle of a disabled cat?
+
+- "Tail signals" are a great stand-in for human sign language and can be used to communicate. 
+- While blindness absolutely affects a cat's ability, keep in mind that cats actually rely far more on their other senses! Whiskers, especially, help even seeing cats to navigate the surrounding space. When writing blind cats, consider having them follow a "guiding" Clanmate's scent/presence through complex obstacles or investigate their surroundings before making a move (such as feeling for a safe ledge before jumping up to it.) Have them rely on smell and hearing to understand what's happening around them.
+- The cats within this universe do not have the ability to create wheelchairs or prothesis for their paralyzed or mobility-impaired Clanmates. However, remember that cats are incredibly adaptible creatures. Real-life 3-legged, paralyzed, and weak-legged cats can still be incredibly agile and fast. There are ways in which they may struggle, but they aren't confined to just wandering around camp.
+- Remember that while these cats aren't so technologically advanced as to create complex tools like a wheelchair, they are still intelligent beings who can be creative in how they support their disabled Clanmates; and disabled cats are likewise intelligent beings who can be creative in how they support themselves.
+
+### How do we handle terminal conditions?
+
+Death, especially from terminal conditions, can be a difficult topic to handle. Our goal when communicating this aspect of disability is to use simple, direct language. 
+
+It's alright for cats to muse about a death they know is coming, for their loved ones to understand the potential consequences of a condition, and also alright for cats to react negatively about the oncoming loss. Writers should not look to sugarcoat death.
+
+### What are the "real world" counterparts of ClanGen conditions?
+
+Some of our conditions are named in a less scientific manner than their real-world counterparts, or are meant to be more "umbrella" terms for conditions that wouldn't be particularly diagnosable to cats living in the wild.
+
+| Condition Name       | Counterpart                                                                                                                                                                                                                                                                    |
+|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Raspy Lungs          | While this is also a consequence of temporary conditions like "water in lungs", the congenital versions of this condition are typically used to portray asthma                                                                                                                 |
+| Wasting Disease      | This is a catch-all condition, used to portray detrimental conditions that wouldn't have a clear cause without better medical technology. For example: diabetes, internal malformations, parasites                                                                             |
+| Strange Lump         | Cancerous tumors                                                                                                                                                                                                                                                               |
+| Absent               | Cognitive decline or psychological disconnect. This is based mainly off conditions like dementia or traumatic brain injuries, but can also be given as a result of conditions like lasting grief for the idea that a cat has emotionally/mentally disconnected from the world. |
+| Seizure Prone        | Epilepsy                                                                                                                                                                                                                                                                       |
+| Constantly Dizzy     | Chronic loss of balance                                                                                                                                                                                                                                                        |
+| Recurring Shock      | Post Traumatic Stress                                                                                                                                                                                                                                                          |
+| Lasting Grief        | Depression                                                                                                                                                                                                                                                                     |
+| Persistent Headaches | Chronic migraines                                                                                                                                                                                                                                                              |
+| Redcough             | A catch-all condition, used to portray internal damage that could lead towards a cat coughing up blood. While not a permanent condition, it is typically considered terminal and is rarely recovered from.                                                                     |
+
 

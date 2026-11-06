@@ -1,0 +1,28 @@
+{
+    "pl": {
+        "allow_romantic": "Allow romance",
+        "allow_romantic_tooltip": "Allow romance to change, if possible.",
+        "improve": "Improve",
+        "sabotage": "Sabotage",
+        "all": "All",
+        "negative": "Negative",
+        "positive": "Positive",
+        "select_cat0": "Choose a cat to influence.",
+        "select_cat1": "Choose a second cat to influence.",
+        "mediator_cant_work": "%{name} can't work this moon.",
+        "mediator_already_worked": "%{name} has already worked this moon.",
+        "mediator_ready_to_work": "%{name} can influence a relationship.",
+        "pair_already_mediated": "This pair has already been mediated this moon. ",
+        "sabotage_failed": "Sabotage Failed!",
+        "mediate_failed": "Mediate Failed!",
+        "romance": "Romance",
+        "like": "Like",
+        "respect": "Respect",
+        "comfort": "Comfort",
+        "trust": "Trust",
+        "output_increase": "%{trait} increased. ",
+        "output_decrease": "%{trait} decreased. ",
+        "output_sabotage_failed": "Sabotage Failed!\n",
+        "output_mediate_failed": "Mediate Failed!\n"
+    }
+}

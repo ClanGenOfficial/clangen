@@ -38,7 +38,7 @@ class AllegiancesScreen(Screens):
         self.heading = pygame_gui.elements.UITextBox(
             "screens.allegiances.heading",
             ui_scale(pygame.Rect((0, 115), (400, 40))),
-            text_kwargs={"clan_name": game.clan.displayname},
+            text_kwargs={"clan_name": game.clan.name},
             object_id=get_text_box_theme("#text_box_34_horizcenter_vertcenter"),
             manager=MANAGER,
             anchors={"centerx": "centerx"},
@@ -48,11 +48,11 @@ class AllegiancesScreen(Screens):
         self.show_menu_buttons()
         self.show_mute_buttons()
         self.set_disabled_menu_buttons(["allegiances"])
-        self.update_heading_text(f"{game.clan.displayname}Clan")
+        self.update_heading_text(game.clan.name)
         allegiance_list = self.get_allegiances_text()
 
         self.scroll_container = UIModifiedScrollingContainer(
-            ui_scale(pygame.Rect((50, 165), (715, 470))),
+            ui_scale(pygame.Rect((40, 165), (730, 470))),
             allow_scroll_x=False,
             allow_scroll_y=True,
             manager=MANAGER,

@@ -1,0 +1,34 @@
+[
+    {
+        "event_id": "wasting_disease0",
+        "strings": [
+            "r_c0 has been called in by m_c's worried parent. Unfortunately, that worry was well-founded, as m_c seems to have wasting disease."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "wasting_disease1",
+        "strings": [
+            "m_c seems weaker lately, unable to play as much or explore as far."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    },
+    {
+        "event_id": "wasting_disease2",
+        "strings": [
+            "m_c is a sickly kit and the Clan fears {PRONOUN/m_c/subject} may not live past kithood. Even if {PRONOUN/m_c/subject} {VERB/m_c/do/does}, this sickness may never leave {PRONOUN/m_c/object}."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

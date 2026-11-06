@@ -13,6 +13,8 @@
     "rest and recover": "rest_and_recover",
     "sabotage other clans": "sabotage_other_clans",
     "aid other clans": "aid_other_clans",
-    "raid other clans": "raid_other_clans"
+    "raid other clans": "raid_other_clans",
+    "show empty relation": "show_neutral_relation",
+    "show dead relation": "show_dead_relation"
 
 }

@@ -1,0 +1,10 @@
+{
+    "general": {
+        "body": [
+            "Other cats keep trying to console r_c, most of them mentioning 'the comfort of a parent.' On the outside, r_c nods politely and thanks them. But inwardly? {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} rolling {PRONOUN/r_c/poss} eyes. 'The comfort of a parent?' Yeah right, r_c's never known that, not from m_c."
+        ],
+        "no_body": [
+            "Other cats keep trying to console r_c, most of them mentioning 'the comfort of a parent.' On the outside, r_c nods politely and thanks them. But inwardly? {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} rolling {PRONOUN/r_c/poss} eyes. 'The comfort of a parent?' Yeah right, r_c's never known that, not from m_c."
+        ]
+    }
+}

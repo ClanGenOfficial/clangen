@@ -116,7 +116,7 @@ class UISaveButton:
         try:
             self.unsaved_state.disable()
             self.saving_state.show()
-            save_cats(switch_get_value(Switch.clan_name), Cat, game)
+            save_cats(switch_get_value(Switch.clan_save_id), Cat, game)
             game.clan.save_clan()
             game.clan.save_pregnancy(game.clan)
             game.save_events()

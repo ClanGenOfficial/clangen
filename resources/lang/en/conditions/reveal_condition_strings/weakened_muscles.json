@@ -1,0 +1,77 @@
+[
+    {
+        "event_id": "reveal_condition_weakened_muscles_kit0",
+        "strings": [
+            "r_c0 explained to m_c that {PRONOUN/m_c/poss} muscles seem to be a little weaker than normal. It might mean {PRONOUN/m_c/subject}'ll struggle with certain things more than others, but that isn't a failure."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "kitten"
+                ]
+            },
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ],
+                "group": [
+                    "player_clan"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "reveal_condition_weakened_muscles_kit1",
+        "strings": [
+            "m_c struggles more than other cats {PRONOUN/m_c/poss} age; {PRONOUN/m_c/subject} {VERB/m_c/appear/appears} to have weaker muscles than usual."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "kitten"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "reveal_condition_weakened_muscles_young_adult_adol0",
+        "strings": [
+            "When m_c learned {PRONOUN/m_c/poss} muscles are just not as strong as they should be, a whole lot of experiences suddenly made sense."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "adolescent",
+                    "young adult"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "reveal_condition_weakened_muscles_adult0",
+        "strings": [
+            "m_c is having more trouble with {PRONOUN/m_c/poss} usual activities than {PRONOUN/m_c/subject} used to have. {PRONOUN/m_c/poss/CAP} muscles seem to be weakening."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "-adolescent",
+                    "-kitten"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "reveal_condition_weakened_muscles_senior0",
+        "strings": [
+            "In {PRONOUN/m_c/poss} old age, m_c's muscles are growing weaker."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "senior"
+                ]
+            }
+        }
+    }
+]

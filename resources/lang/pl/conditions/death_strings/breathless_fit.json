@@ -1,0 +1,20 @@
+[
+    {
+        "event_id": "breathless_fit0",
+        "strings": [
+            "m_c suffocated to death during a breathless fit.",
+            "m_c's breathing got worse and worse, until {PRONOUN/m_c/subject} finally suffocated."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        },
+        "death": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "history": "m_c suffocated to death during a breathless fit."
+            }
+        ]
+    }
+]

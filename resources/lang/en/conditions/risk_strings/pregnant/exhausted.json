@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "pregnant_exhausted",
+        "strings": [
+            "m_c is looking forward to meeting {PRONOUN/m_c/poss} kits, but the pregnancy is exhausting."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

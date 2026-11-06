@@ -93,8 +93,6 @@ def read_clans():
     :return:
     """
     save_dir = Path(get_save_dir())
-    clanlist_path = Path(get_save_dir()) / "clanlist.txt"
-    """save_dir/clanlist.txt"""
     currentclan_path = Path(get_save_dir()) / "currentclan.txt"
     """save_dir/currentclan.txt"""
 
@@ -108,19 +106,7 @@ def read_clans():
     clan_list: List[str] = [d.name for d in save_dir.iterdir() if d.is_dir()]
     clan_list.sort()  # because iterdir doesn't guarantee an order, we guarantee alphabetical here
 
-    # the Clan specified in saves/clanlist.txt should be first in the list
-    # so that we can load it automatically
-    if clanlist_path.exists():
-        with open(clanlist_path, "r", encoding="utf-8") as f:
-            loaded_clan = f.read().strip().splitlines()
-            if loaded_clan:
-                loaded_clan = loaded_clan[0]
-            else:
-                loaded_clan = None
-        clanlist_path.unlink()
-        if loaded_clan:
-            safe_save(currentclan_path, loaded_clan)
-    elif currentclan_path.exists():
+    if currentclan_path.exists():
         with open(currentclan_path, "r", encoding="utf-8") as f:
             loaded_clan = f.read().strip()
     else:
@@ -135,3 +121,23 @@ def read_clans():
         print("No clans found")
         return None
     return clan_list
+
+
+def get_clan_json(clan: str):
+    """
+    Get the path of the clan.json of a clan.
+    Does not support TXT or CSV clans.
+    Raises FileNotFoundError if the clan.json does not exist.
+    :param clan: The name (ID) of the clan
+    :return: The path to the clan.json
+    """
+
+    save_dir = Path(get_save_dir())
+    if save_dir.exists():
+        old_path = save_dir / f"{clan}clan.json"
+        if old_path.exists():
+            return old_path
+        new_path = save_dir / clan / "clan.json"
+        if new_path.exists():
+            return new_path
+    raise FileNotFoundError

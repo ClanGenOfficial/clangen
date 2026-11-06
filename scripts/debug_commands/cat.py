@@ -1,6 +1,8 @@
 from typing import List
 
 from scripts.cat.cats import Cat
+from scripts.cat.factories.enums import CatType
+from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.debug_commands.command import Command
 from scripts.debug_commands.utils import add_output_line_to_log
 from scripts.game_structure import game
@@ -12,7 +14,7 @@ class AddCatCommand(Command):
     aliases = ["a"]
 
     def callback(self, args: List[str]):
-        cat = Cat()
+        cat = NewCatFactory.create_cat()
         game.clan.add_cat(cat)
         add_output_line_to_log(f"Added {cat.name} with ID {cat.ID}")
 
@@ -21,7 +23,7 @@ class RemoveCatCommand(Command):
     name = "remove"
     description = "Remove a cat"
     aliases = ["r"]
-    usage = "<cat name|id>"
+    usage = "<name: str|id: int>"
 
     def callback(self, args: List[str]):
         if len(args) == 0:
@@ -50,7 +52,7 @@ class ListCatsCommand(Command):
 class AgeCatsCommand(Command):
     name = "age"
     description = "Age a cat"
-    usage = "<cat name|id> [number]"
+    usage = "<name: str|id: int> <moons: int>"
 
     def callback(self, args: List[str]):
         if len(args) == 0:

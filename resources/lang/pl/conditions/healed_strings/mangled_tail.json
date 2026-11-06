@@ -1,0 +1,14 @@
+[
+    {
+        "event_id": "mangled_tail0",
+        "strings": [
+            "m_c's tail has healed well.",
+            "m_c's mangled tail seems to be fully healed.",
+            "m_c has recovered from {PRONOUN/m_c/poss} mangled tail.",
+            "m_c's tail is feeling much better."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

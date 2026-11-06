@@ -1,0 +1,54 @@
+[
+    {
+        "event_id": "mtn_bord_shortswim1",
+        "types": [
+            "border"
+        ],
+        "frequency": 3,
+        "location": [
+            "mountainous"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "backgrounds/gen_shortswim",
+        "intro_strings": [
+            "p_l looks at the small stream {PRONOUN/p_l/subject} {VERB/p_l/have/has} to cross to continue on to mark the border and {VERB/p_l/debate/debates} if {PRONOUN/p_l/subject} should stop for a quick swim to cool off."
+        ],
+        "decline_strings": [
+            "p_l decides to continue with the patrol instead."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "{PRONOUN/p_l/subject/CAP} {VERB/p_l/stop/stops} to swim for a few moments and {VERB/p_l/feel/feels} rejuvenated, cooled, and ready to continue."
+                ],
+                "exp_gained": 5
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "{PRONOUN/p_l/subject/CAP} {VERB/p_l/stick/sticks} to {PRONOUN/p_l/poss} task, although instead of leaping the little stream, p_l wades through it. The water cools {PRONOUN/p_l/poss} paws pleasantly."
+                ],
+                "exp_gained": 5
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "{PRONOUN/p_l/subject/CAP} {VERB/p_l/get/gets} distracted while splashing in the water. p_l swears {PRONOUN/p_l/subject} saw a fish, but it derails {PRONOUN/p_l/poss} border patrol completely, and {PRONOUN/p_l/subject} {VERB/p_l/get/gets} nothing done."
+                ],
+                "exp_gained": 0
+            }
+        ]
+    }
+]

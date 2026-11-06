@@ -1,0 +1,562 @@
+[
+    {
+        "event_id": "healed_stinky0",
+        "strings": [
+            "m_c finally managed to wash off the stink.",
+            "It took a half-moon, but m_c's stench finally wore off.",
+            "m_c no longer smells like something died on {PRONOUN/m_c/poss} pelt."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    },
+    {
+        "event_id": "healed_stinky_medhelp0",
+        "strings": [
+            "r_c0 had nothing to help rid m_c of the nasty smell plastered to {PRONOUN/m_c/poss} pelt. In the end, m_c just had to live with it for a half-moon until it finally went away on its own."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": ["medicine cat", "medicine cat apprentice"],
+                "group": ["match:m_c"],
+                "health": {
+                    "working": true
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -5,
+                "log": {
+                    "cats_from": "cat_to wasn't able to help cat_from get rid of the stink stuck to {PRONOUN/cat_from/poss} pelt."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "healed_stinky_medhelp_lavender0",
+        "strings": [
+            "r_c0 kindly offered m_c some leftover lavender to help mask {PRONOUN/m_c/poss} smell. Even after the stink had faded, m_c continued to wear the flower on {PRONOUN/m_c/poss} pelt."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": ["medicine cat", "medicine cat apprentice"],
+                "group": ["match:m_c"],
+                "stat": {
+                    "trait": ["thoughtful", "compassionate", "sincere"]
+                }
+            }
+        },
+        "gain_accessory": [
+            {
+                "cats": ["m_c"],
+                "accessory": ["LAVENDER"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort",
+                    "like"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "cat_to offered extra herbs to cat_from to help get the stink out of {PRONOUN/cat_from/poss} pelt."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "healed_stinky_clanavoidance0",
+        "tags": ["clan:warrior"],
+        "strings": [
+            "m_c wasn't very popular around camp for the half-moon it took for the stink to wear off. multi_cat, especially, seemed to disappear the moment {PRONOUN/m_c/subject} showed up.",
+            "multi_cat were quite uninterested in being anywhere near m_c until {PRONOUN/m_c/subject} finally started smelling more normal, it made for a bit of a tense half-moon."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["warrior"]
+            },
+            "multi_cat": {
+                "status": ["-newborn"],
+                "group": ["match:m_c"],
+                "health": {
+                    "working": true,
+                    "condition": ["-stinky"]
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c", "low_social"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -5,
+                "log": {
+                    "cats_from": "cat_from was disappointed that cat_to avoided {PRONOUN/m_c/object} while {PRONOUN/cat_from/subject} smelled bad."
+                }
+            },
+            {
+                "cats_from": [
+                    "m_c", "high_social"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "cat_from couldn't help but be amused by how cat_to avoided {PRONOUN/cat_from/object} while {PRONOUN/cat_from/subject} smelled bad."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "healed_stinky_warrior0",
+        "tags": ["clan:warrior"],
+        "strings": [
+            "m_c was an unpopular patrol-mate for quite a while, multi_cat especially avoided {PRONOUN/m_c/object}, but thankfully the stench wore off after a half-moon.",
+            "m_c couldn't help but notice how multi_cat avoided any sort of patrol assignment with {PRONOUN/m_c/object} until {PRONOUN/m_c/poss} unfortunate smell wore off later in the moon."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["warrior"]
+            },
+            "multi_cat": {
+                "status": ["warrior"],
+                "group": ["match:m_c"],
+                "health": {
+                    "working": true,
+                    "condition": ["-stinky"]
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c", "low_social"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -5,
+                "log": {
+                    "cats_from": "cat_from was disappointed that cat_to avoided {PRONOUN/m_c/object} while {PRONOUN/cat_from/subject} smelled bad."
+                }
+            },
+            {
+                "cats_from": [
+                    "m_c", "high_social"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "cat_from couldn't help but be amused by how cat_to avoided {PRONOUN/cat_from/object} while {PRONOUN/cat_from/subject} smelled bad."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "healed_stinky_warrior1",
+        "tags": ["clan:warrior"],
+        "strings": [
+            "m_c's stench no longer clears the warrior den when {PRONOUN/m_c/subject} {VERB/m_c/enter/enters}."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["warrior"]
+            }
+        }
+    },
+    {
+        "event_id": "healed_stinky_warrior_deputyassignment0",
+        "strings": [
+            "m_c didn't go on many patrols until the smell stuck to {PRONOUN/m_c/object} finally wore off. Perhaps r_c0 was attempting to spare the other warriors.",
+            "r_c0 sent m_c out on a lot of solo patrols this moon. The other warriors weren't too interested in being near m_c until that pervasive stink wore off."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["warrior"]
+            },
+            "r_c0": {
+                "status": ["deputy"],
+                "group": ["match:m_c"]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c", "low_social"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "cat_from enjoyed being sent on solo patrols by cat_to, even though it was due to {PRONOUN/cat_from/poss} smell."
+                }
+            },
+            {
+                "cats_from": [
+                    "m_c", "high_social"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -5,
+                "log": {
+                    "cats_from": "cat_from couldn't help but feel like cat_to was punishing {PRONOUN/cat_from/object} with solo patrols, even if it was just due to {PRONOUN/cat_from/poss} unfortunate smell."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "healed_stinky_deputy0",
+        "strings": [
+            "Unfortunately for the warriors, m_c plays a vital role in organization. Patrol meetings were only begrudgingly attended by multi_cat, until m_c's stink finally wore off."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["deputy"]
+            },
+            "multi_cat": {
+                "status": ["warrior"],
+                "group": ["match:m_c"],
+                "health": {
+                    "working": true,
+                    "condition": ["-stinky"]
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c", "low_social"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -5,
+                "log": {
+                    "cats_from": "cat_from was disappointed that cat_to avoided patrol meetings simply due to the unavoidable smell following {PRONOUN/cat_to/object}."
+                }
+            },
+            {
+                "cats_from": [
+                    "m_c", "high_social"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "cat_from couldn't help but be amused by how cat_to avoided patrol meetings in order to avoid cat_from's smell."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "healed_stinky_leader0",
+        "tags": ["clan:warrior"],
+        "strings": [
+            "Clan announcements were rather awkward for the half-moon it took the smell to wear off of m_c."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["leader"]
+            }
+        }
+    },
+    {
+        "event_id": "healed_stinky_apprentice0",
+        "tags": ["clan:apprentice"],
+        "strings": [
+            "m_c's stench no longer clears the apprentice den when {PRONOUN/m_c/subject} {VERB/m_c/enter/enters}.",
+            "The stench that followed {PRONOUN/m_c/object} around for half the moon did, at least, guarantee m_c wasn't assigned to any in-camp chores."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["apprentice"]
+            }
+        }
+    },
+    {
+        "event_id": "healed_stinky_apprentice1",
+        "strings": [
+            "multi_cat avoided training with m_c for most of the moon, but eventually the stench wore off and {PRONOUN/m_c/poss} presence could again be tolerated.",
+            "m_c was a truly unpopular apprentice to be around until the smell finally wore off. multi_cat, especially, had been avoiding {PRONOUN/m_c/object}."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["apprentice"]
+            },
+            "multi_cat": {
+                "status": ["apprentice"],
+                "group": ["match:m_c"],
+                "health": {
+                    "working": true,
+                    "condition": ["-stinky"]
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c", "low_social"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -5,
+                "log": {
+                    "cats_from": "cat_from was disappointed that cat_to avoided {PRONOUN/m_c/object} while {PRONOUN/cat_from/subject} smelled bad."
+                }
+            },
+            {
+                "cats_from": [
+                    "m_c", "high_social"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "cat_from couldn't help but be amused by how cat_to avoided {PRONOUN/cat_from/object} while {PRONOUN/cat_from/subject} smelled bad."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "healed_stinky_medcat0",
+        "tags": ["clan:apprentice"],
+        "strings": [
+            "The medicine cat den was an unpopular place until m_c's stench finally wore off."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["medicine cat", "medicine cat apprentice"]
+            }
+        }
+    },
+    {
+        "event_id": "healed_stinky_poi0",
+        "season": ["-leaf-bare"],
+        "poi": {
+            "tags": ["water"]
+        },
+        "strings": [
+            "m_c visited POI to stand in its waters for days before the stench finally wore off."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["-kitten"]
+            }
+        }
+    },
+    {
+        "event_id": "healed_stinky_poi0",
+        "season": ["leaf-bare"],
+        "poi": {
+            "tags": ["water"]
+        },
+        "strings": [
+            "m_c's stench wore off eventually, but {PRONOUN/m_c/subject} wished it had been warm enough to swim in POI. Perhaps the smell would have been gone sooner."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["-kitten"]
+            }
+        }
+    },
+    {
+        "event_id": "healed_stinky_season0",
+        "season": ["leaf-bare"],
+        "strings": [
+            "Despite m_c spending time each day rolling in the snow, it was still a half-moon before the stench wore off.",
+            "m_c spent a fair amount of time rubbing {PRONOUN/m_c/poss} pelt against the snow. Maybe it helped get rid of the stink, or maybe it had just worn off naturally."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    },
+    {
+        "event_id": "healed_stinky_season1",
+        "season": ["newleaf"],
+        "strings": [
+            "Despite m_c spending time each day rolling in fresh flowers, it was still a half-moon before the stench wore off.",
+            "m_c spent a fair amount of time rubbing {PRONOUN/m_c/poss} pelt with fresh flowers. Maybe it helped get rid of the stink, or maybe it had just worn off naturally."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    },
+    {
+        "event_id": "healed_stinky_season2",
+        "season": ["newleaf"],
+        "strings": [
+            "r_c0 spent a half-moon dutifully helping m_c rub flowers across {PRONOUN/m_c/poss} pelt until the smell stuck to {PRONOUN/m_c/object} finally went away."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "group": ["match:m_c"],
+                "stat": {
+                    "trait": ["thoughtful", "compassionate", "sincere"]
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "cat_from appreciated how much time cat_to spent helping {PRONOUN/cat_from/object} get rid of the smell stuck to {PRONOUN/cat_from/object}."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "healed_stinky_season3",
+        "season": ["leaf-bare"],
+        "strings": [
+            "r_c0 spent a half-moon dutifully helping m_c rub snow across {PRONOUN/m_c/poss} pelt until the smell stuck to {PRONOUN/m_c/object} finally went away."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "group": ["match:m_c"],
+                "stat": {
+                    "trait": ["thoughtful", "compassionate", "sincere"]
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "cat_from appreciated how much time cat_to spent helping {PRONOUN/cat_from/object} get rid of the smell stuck to {PRONOUN/cat_from/object}."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "healed_stinky_multiplestinky0",
+        "season": ["leaf-bare"],
+        "strings": [
+            "m_c and r_c0 spent a half-moon commiserating in {PRONOUN/m_c/poss} mutual stinkiness. Thankfully, the smell eventually wore off of m_c."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "group": ["match:m_c"],
+                "stat": {
+                    "trait": ["thoughtful", "compassionate", "sincere"]
+                },
+                "health": {
+                    "condition": ["stinky"]
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": true,
+                "values": [
+                    "like",
+                    "comfort"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "While neither of them enjoyed being so stinky, cat_from and cat_to appreciated that they were in it together."
+                }
+            }
+        ]
+    }
+]

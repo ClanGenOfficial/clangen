@@ -1,7 +1,14 @@
 {
     "en": {
         "heading": "m_c's Relationships",
-        "show_dead_checkbox": "Show Dead",
-        "show_empty_checkbox": "Show Empty"
+        "show_dead_relation_checkbox": "Show dead cats",
+        "show_neutral_relation_checkbox": "Show neutral relationships",
+        "show_family_only_checkbox": "Only show family members",
+        "show_romance_only_checkbox": "Only show romance-able cats",
+        "show_positive_checkbox": "Show positive relationships",
+        "show_negative_checkbox": "Show negative relationships",
+        "switch_cat": "View this cat's relationship page",
+        "view_log": "View more details about this relationship",
+        "profile": "View this cat's profile"
     }
 }

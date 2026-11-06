@@ -20,7 +20,7 @@ from importlib import reload
 from scripts.housekeeping.datadir import get_log_dir, setup_data_dir
 from scripts.housekeeping.log_cleanup import prune_logs
 from scripts.housekeeping.stream_duplexer import UnbufferedStreamDuplexer
-from scripts.housekeeping.version import VERSION_NAME, get_version_info
+from scripts.housekeeping.game_version import VERSION_NAME, get_version_info
 
 try:
     directory = os.path.dirname(__file__)
@@ -71,7 +71,14 @@ def log_crash(logtype, value, tb):
     """
     Log uncaught exceptions to file
     """
-    logging.critical("Uncaught exception", exc_info=(logtype, value, tb))
+    try:
+        version_number = get_version_info().version_number
+    except:  # don't want the crash handler to crash
+        version_number = "version unknown"
+    logging.critical(
+        f"Uncaught exception (ClanGen {version_number})",
+        exc_info=(logtype, value, tb),
+    )
     sys.__excepthook__(type, value, tb)
 
 

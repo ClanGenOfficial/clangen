@@ -1,35 +1,41 @@
 from random import choice, randrange, choices, sample
-from typing import List, Optional
+from typing import List, Optional, Dict
 
 import i18n
 
-from scripts.cat import pronouns
 from scripts.cat.cats import Cat
+from scripts.cat.conditions.gain_conditions import (
+    gain_temporary_condition,
+    gain_permanent_condition,
+)
+from scripts.cat.constants import CONDITION_GROUPS, TEMPORARY_CONDITIONS
+from scripts.cat.enums import CatAge, CatRank
 from scripts.cat.pelts import Pelt
+from scripts.cat.personality import Personality
+from scripts.cat.skills import SkillPath
 from scripts.cat_relations.relationship import Relationship
+from scripts.clan_package.cotc import change_clan_reputation, change_clan_relations
+from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.clan_package.settings import get_clan_setting
-from scripts.event_class import Single_Event
+from scripts.clan_resources.point_of_interest import get_poi_from_constraints
+from scripts.config import get_config
+from scripts.events_module.event_information import EventInformation
+from scripts.events_module.consequences import (
+    create_new_cat_block,
+    unpack_rel_block,
+    change_relationship_values,
+    check_stolen_vitality,
+)
 from scripts.events_module.future.prep_and_trigger import prep_future_event
-from scripts.events_module.relationship.relation_events import Relation_Events
-from scripts.game_structure import localization, game
+from scripts.events_module.relationship import relation_events
 from scripts.events_module.text_adjust import (
     event_text_adjust,
     get_leader_life_notice,
     adjust_list_text,
     history_text_adjust,
 )
-from scripts.events_module.consequences import (
-    create_new_cat_block,
-    unpack_rel_block,
-    change_relationship_values,
-)
-from scripts.clan_package.cotc import change_clan_reputation, change_clan_relations
-from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
-
-from scripts.cat.enums import CatAge, CatRank
-from scripts.cat.personality import Personality
-from scripts.cat.skills import SkillPath
 from scripts.game_structure import constants
+from scripts.game_structure import game
 
 
 class ShortEvent:
@@ -54,6 +60,7 @@ class ShortEvent:
         season: List[str] = None,
         sub_type: List[str] = None,
         tags: List[str] = None,
+        poi: Optional[Dict[str, List]] = None,
         text: str = "",
         new_accessory: List[str] = None,
         m_c=None,
@@ -85,6 +92,7 @@ class ShortEvent:
             )  # this increases the weight inversely to the number of season constraints
         self.sub_type = sub_type if sub_type else []
         self.tags = tags if tags else []
+        self.poi = poi if poi else {}
         self.text = text
         self.text_template = text
         self.new_accessory = new_accessory if new_accessory else []
@@ -188,6 +196,8 @@ class ShortEvent:
                 self.other_clan["current_rep"] = []
             if "changed" not in self.other_clan:
                 self.other_clan["changed"] = 0
+            if "temperament" not in self.other_clan:
+                self.other_clan["temperament"] = []
         self.supplies = supplies if supplies else []
         self.new_gender = new_gender
         self.future_event = future_event if future_event else {}
@@ -225,7 +235,7 @@ class ShortEvent:
         self.dead_cat_objects.clear()
 
         if other_clan:
-            self.other_clan_name = f"{other_clan.name}Clan"
+            self.other_clan_name = other_clan.name
 
         self.all_involved_cat_ids.append(self.main_cat.ID)
 
@@ -261,6 +271,13 @@ class ShortEvent:
             if self.handle_accessories() is False:
                 return
 
+        # find POI name if we need it
+        chosen_poi = None
+        if self.poi:
+            chosen_poi = get_poi_from_constraints(
+                self.poi.get("name"), self.poi.get("tags"), self.poi.get("category")
+            )
+
         # change relationships before killing anyone
         if self.relationships:
             # we're doing this here to make sure rel logs get adjusted text
@@ -273,6 +290,7 @@ class ShortEvent:
                 new_cats=self.new_cats,
                 other_clan=other_clan,
                 clan=game.clan,
+                chosen_poi=chosen_poi,
             )
             for change in self.relationships:
                 for group in change.get("log", []):
@@ -283,6 +301,7 @@ class ShortEvent:
                         random_cat=self.random_cat,
                         victim_cat=self.victim_cat,
                         new_cats=self.new_cats,
+                        chosen_poi=chosen_poi,
                     )
 
             unpack_rel_block(Cat, self.relationships, self)
@@ -302,10 +321,6 @@ class ShortEvent:
                 comfort=-30,
                 trust=-30,
             )
-
-        # update gender
-        if self.new_gender:
-            self.handle_transition()
 
         # kill cats
         self.handle_death()
@@ -347,6 +362,13 @@ class ShortEvent:
                 else:  # if freshkill isn't being adjusted, then it must be an herb supply
                     self.handle_herb_supply(block)
 
+        # affect affinity
+        if "murder" in self.sub_type:
+            self.random_cat.change_affinity(
+                starclan_change=get_config("affinity.murder.starclan_change"),
+                dark_forest_change=get_config("affinity.murder.dark_forest_change"),
+            )
+
         # adjust text again to account for info that wasn't available when we do rel changes
         self.text = event_text_adjust(
             Cat,
@@ -359,6 +381,7 @@ class ShortEvent:
             clan=game.clan,
             other_clan=other_clan,
             chosen_herb=self.chosen_herb,
+            chosen_poi=chosen_poi,
         )
 
         if self.chosen_herb:
@@ -367,7 +390,7 @@ class ShortEvent:
         self.gather_future_event()
 
         game.cur_events_list.append(
-            Single_Event(
+            EventInformation(
                 self.text + " " + self.additional_event_text,
                 self.types,
                 self.all_involved_cat_ids,
@@ -453,7 +476,7 @@ class ShortEvent:
                         main_cat=first_cat,
                     )
             else:
-                Relation_Events.welcome_new_cats([first_cat])
+                relation_events.trigger_joining_relationship_events([first_cat])
             self.all_involved_cat_ids.extend([cat.ID for cat in cat_list])
 
             if extra_text:
@@ -477,9 +500,10 @@ class ShortEvent:
                     if (
                         first_cat in (first_kit.parent1, first_kit.parent2)
                         and not first_cat.dead
-                        and not "recovering from birth" in first_cat.injuries
+                        and not "recovering_from_birth"
+                        in first_cat.temporary_conditions
                     ):
-                        first_cat.get_injured("recovering from birth")
+                        gain_temporary_condition(first_cat, "recovering_from_birth")
                         # only one parent gives birth, so we break
                         break
 
@@ -510,12 +534,17 @@ class ShortEvent:
                 for acc in Pelt.tail_accessories:
                     if acc in acc_list:
                         acc_list.remove(acc)
+            if "NOPAW" in self.main_cat.pelt.scars:
+                for acc in Pelt.paw_accessories:
+                    if acc in acc_list:
+                        acc_list.remove(acc)
 
         accessory_groups = [
             Pelt.collar_accessories,
             Pelt.head_accessories,
             Pelt.tail_accessories,
             Pelt.body_accessories,
+            Pelt.paw_accessories,
         ]
         if self.main_cat.pelt.accessory:
             for acc in self.main_cat.pelt.accessory:
@@ -538,20 +567,6 @@ class ShortEvent:
         else:
             self.main_cat.pelt.accessory = (choice(acc_list),)
             return None
-
-    def handle_transition(self):
-        """
-        handles updating gender_align and pronouns
-        """
-        possible_genders = getattr(self, "new_gender", [])
-
-        if possible_genders:
-            new_gender = choice(possible_genders)
-            self.main_cat.genderalign = new_gender
-
-            self.main_cat.pronouns = pronouns.get_new_pronouns(
-                self.main_cat.genderalign
-            )
 
     def handle_death(self):
         """
@@ -586,17 +601,21 @@ class ShortEvent:
                 self.types.append("birth_death")
 
             if cat.status.is_leader:
+                lives_lost = 0
                 if "all_lives" in self.tags:
-                    game.clan.leader_lives -= 10
+                    lives_lost = game.clan.leader_lives
+                    game.clan.leader_lives -= lives_lost
                 elif "some_lives" in self.tags:
-                    game.clan.leader_lives -= randrange(
-                        2, self.leads_current_life_count - 1
-                    )
+                    lives_lost = randrange(2, self.leads_current_life_count - 1)
+                    game.clan.leader_lives -= lives_lost
                 else:
+                    lives_lost = 1
                     game.clan.leader_lives -= 1
 
                 cat.die(body)
-                self.additional_event_text = get_leader_life_notice()
+                self.additional_event_text = get_leader_life_notice(cat.name)
+                if extra_text := check_stolen_vitality(cat, lives_lost):
+                    self.additional_event_text += " " + extra_text
 
             else:
                 cat.die(body)
@@ -748,15 +767,16 @@ class ShortEvent:
             # new_cat history
             for abbr in block["cats"]:
                 if "n_c" in abbr:
-                    for i, new_cat_objects in enumerate(self.new_cats):
-                        if new_cat_objects[i].dead:
+                    index = int(abbr.replace("n_c:", ""))
+                    for new_cat in self.new_cats[index]:
+                        if new_cat.dead:
                             death_history = history_text_adjust(
                                 block.get("death"),
                                 self.other_clan_name,
                                 game.clan,
                                 self.random_cat,
                             )
-                            new_cat_objects[i].history.add_death(
+                            new_cat.history.add_death(
                                 death_history, other_cat=self.random_cat
                             )
 
@@ -780,8 +800,8 @@ class ShortEvent:
             # find all possible injuries
             possible_injuries = []
             for injury in block["injuries"]:
-                if injury in constants.INJURY_GROUPS:
-                    possible_injuries.extend(constants.INJURY_GROUPS[injury])
+                if injury in CONDITION_GROUPS:
+                    possible_injuries.extend(CONDITION_GROUPS[injury])
                 else:
                     possible_injuries.append(injury)
 
@@ -790,23 +810,37 @@ class ShortEvent:
                 # MAIN CAT
                 if abbr == "m_c":
                     injury = choice(possible_injuries)
-                    self.main_cat.get_injured(injury, potential_scars=potential_scars)
+                    if injury in TEMPORARY_CONDITIONS:
+                        gain_temporary_condition(
+                            self.main_cat, injury, scar_pool_override=potential_scars
+                        )
+                    else:
+                        gain_permanent_condition(self.main_cat, injury)
                     self.handle_injury_history(self.main_cat, "m_c", injury)
 
                 # RANDOM CAT
                 elif abbr == "r_c":
                     injury = choice(possible_injuries)
-                    self.random_cat.get_injured(injury, potential_scars=potential_scars)
+                    if injury in TEMPORARY_CONDITIONS:
+                        gain_temporary_condition(
+                            self.random_cat, injury, scar_pool_override=potential_scars
+                        )
+                    else:
+                        gain_permanent_condition(self.random_cat, injury)
                     self.handle_injury_history(self.random_cat, "r_c", injury)
 
                 # NEW CATS
                 elif "n_c" in abbr:
-                    for i, new_cat_objects in enumerate(self.new_cats):
+                    index = int(abbr.replace("n_c:", ""))
+                    for new_cat in self.new_cats[index]:
                         injury = choice(possible_injuries)
-                        new_cat_objects[i].get_injured(
-                            injury, potential_scars=potential_scars
-                        )
-                        self.handle_injury_history(new_cat_objects[i], abbr, injury)
+                        if injury in TEMPORARY_CONDITIONS:
+                            gain_temporary_condition(
+                                new_cat, injury, scar_pool_override=potential_scars
+                            )
+                        else:
+                            gain_permanent_condition(new_cat, injury)
+                        self.handle_injury_history(new_cat, abbr, injury)
 
     def handle_injury_history(self, cat, cat_abbr, injury=None):
         """
@@ -835,15 +869,22 @@ class ShortEvent:
                 if "scar" not in block:
                     return
                 elif cat_abbr in block["cats"]:
-                    possible_scar = history_text_adjust(
-                        block["scar"], self.other_clan_name, game.clan, self.random_cat
-                    )
-                    possible_death = history_text_adjust(
-                        block["death"],
-                        self.other_clan_name,
-                        game.clan,
-                        self.random_cat,
-                    )
+                    possible_scar = ""
+                    possible_death = ""
+                    if "scar" in block:
+                        possible_scar = history_text_adjust(
+                            block["scar"],
+                            self.other_clan_name,
+                            game.clan,
+                            self.random_cat,
+                        )
+                    if "death" in block:
+                        possible_death = history_text_adjust(
+                            block["death"],
+                            self.other_clan_name,
+                            game.clan,
+                            self.random_cat,
+                        )
                     if possible_scar or possible_death:
                         cat.history.add_possible_history(
                             injury,

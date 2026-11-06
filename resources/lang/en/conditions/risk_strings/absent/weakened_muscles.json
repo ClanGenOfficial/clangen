@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "absent_weakened_muscles0",
+        "strings": [
+            "m_c's mind isn't fully there anymore, and now {PRONOUN/m_c/poss} strength seems to be declining, too."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

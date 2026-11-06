@@ -12,7 +12,6 @@ from scripts.game_structure.game.switches import (
 )
 from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
@@ -27,9 +26,6 @@ class SaveCheckWindow(GameWindow):
             ui_scale(pygame.Rect((250, 200), (300, 200))),
         )
 
-        self.clan_name = "UndefinedClan"
-        if game.clan:
-            self.clan_name = f"{game.clan.name}Clan"
         self.last_screen = last_screen
         self.isMainMenu = is_main_menu
         self.mm_btn = mm_btn
@@ -57,10 +53,10 @@ class SaveCheckWindow(GameWindow):
                 container=self,
                 anchors={"centerx": "centerx"},
             )
-        self.game_over_message = UITextBoxTweaked(
+        self.game_over_message = pygame_gui.elements.UITextBox(
             "windows.save_check_message",
             ui_scale(pygame.Rect((20, 20), (260, -1))),
-            line_spacing=1,
+            starting_height=top_stack_menu_layer_height,
             object_id="#text_box_30_horizcenter",
             container=self,
         )
@@ -124,7 +120,7 @@ class SaveCheckWindow(GameWindow):
                 if game.clan is not None:
                     self.save_button_saving_state.show()
                     self.save_button.disable()
-                    save_cats(switch_get_value(Switch.clan_name), Cat, game)
+                    save_cats(switch_get_value(Switch.clan_save_id), Cat, game)
                     game.clan.save_clan()
                     game.clan.save_pregnancy(game.clan)
                     game.save_events()

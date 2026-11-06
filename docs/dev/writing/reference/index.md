@@ -39,6 +39,12 @@ These articles hold information generally relevant when writing any content for 
 
     Guidelines on how to write content for specific traits. Following these will help keep our personality portrayals consistent.
 
+- __[Skill Dictionary](trait-dictionary.md)__
+
+    ---
+
+    Guidelines on how to write content for specific skills. Following these will help keep our personality portrayals consistent.
+
 - __[Biome Content](biomes.md)__
 
     ---

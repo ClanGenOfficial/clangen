@@ -1,0 +1,12 @@
+[
+    {
+        "event_id": "whitecough0",
+        "strings": [
+            "m_c has gotten whitecough.",
+            "m_c is sick with whitecough."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

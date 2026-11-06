@@ -1,0 +1,26 @@
+[
+    {
+        "event_id": "strange_lump_seizure0",
+        "strings": [
+            "m_c had a seizure recently. r_c0 says the lump looks different.",
+            "Nobody expected m_c to have a seizure out of the blue like that. r_c0 worries it's due to {PRONOUN/m_c/poss} lump."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "strange_lump_seizure2",
+        "strings": [
+            "m_c falters during {PRONOUN/m_c/poss} tasks, collapsing into a seizure. {PRONOUN/m_c/poss/CAP} Clanmates suspect that the culprit is the lump on m_c's body."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

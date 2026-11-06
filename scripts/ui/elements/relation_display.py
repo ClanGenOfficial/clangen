@@ -1,18 +1,18 @@
 import i18n
 import pygame
 import pygame_gui
+from pygame_gui.core import UIContainer
 
 from scripts.cat_relations.enums import RelType
 from scripts.ui.elements.relation_status_fill_bar import UIRelationStatusFillBar
 from scripts.ui.elements.relation_status_scale_bar import UIRelationStatusScaleBar
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.scale import ui_scale
 
 
-class UIRelationDisplay(pygame_gui.elements.UIAutoResizingContainer):
+class UIRelationDisplay(UIContainer):
     def __init__(
         self,
-        position: tuple,
+        unscaled_position: tuple,
         relationship,
         romance: bool = False,
         container=None,
@@ -20,12 +20,12 @@ class UIRelationDisplay(pygame_gui.elements.UIAutoResizingContainer):
         anchors=None,
         starting_height=1,
     ):
-        dimensions = (0, 0)
+        dimensions = (100, 160)
         self.rel_elements = {}
         bar_size = (96, 10)
 
         super().__init__(
-            relative_rect=ui_scale(pygame.Rect(position, dimensions)),
+            relative_rect=ui_scale(pygame.Rect(unscaled_position, dimensions)),
             container=container,
             manager=manager,
             anchors=anchors,
@@ -65,7 +65,7 @@ class UIRelationDisplay(pygame_gui.elements.UIAutoResizingContainer):
 
             # ROMANCE
         if romance:
-            self.rel_elements[f"romance_text"] = UITextBoxTweaked(
+            self.rel_elements[f"romance_text"] = pygame_gui.elements.UITextBox(
                 f"relationships.{relationship.romance_tier if relationship.romance_tier else 'neutral'}",
                 ui_scale(
                     pygame.Rect(
@@ -76,7 +76,7 @@ class UIRelationDisplay(pygame_gui.elements.UIAutoResizingContainer):
                 object_id="#text_box_26_horizcenter",
                 anchors={"top_target": prev_element},
                 container=self,
-                line_spacing=0.95,
+                # line_spacing=0.95,
             )
             self.rel_elements[f"romance_text"].set_tooltip(
                 i18n.t(f"relationships.romance", count=relationship.romance)

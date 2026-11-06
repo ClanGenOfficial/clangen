@@ -1,0 +1,16 @@
+[
+    {
+        "event_id": "gen_like_low_inc1",
+        "strings": [
+            "r_c welcomed m_c into the Clan."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": 5
+            }]
+    }
+]

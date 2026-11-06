@@ -1,0 +1,28 @@
+[
+    {
+        "event_id": "weakened_muscles_sore0",
+        "strings": [
+            "r_c0 noticed m_c seemed to have overworked {PRONOUN/m_c/self}, and gave {PRONOUN/m_c/object} a strict set of instructions to recover."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ],
+                "group": [
+                    "player_clan"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "weakened_muscles_sore1",
+        "strings": [
+            "m_c needed to take it slower this moon. {PRONOUN/m_c/subject/CAP} felt particularly sore."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

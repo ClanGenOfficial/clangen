@@ -3,7 +3,7 @@ import platform
 import subprocess
 import logging
 
-from scripts.housekeeping.version import get_version_info
+from scripts.housekeeping.game_version import get_version_info
 
 logger = logging.getLogger(__name__)
 

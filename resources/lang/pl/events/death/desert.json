@@ -1,0 +1,111 @@
+[
+  {
+          "event_id": "dst_death_any_rattlesnake1",
+          "location": ["desert"],
+          "season": ["any"],
+          "tags": [],
+          "frequency": 4,
+          "event_text": "m_c was killed by a rattlesnake out in the territory.",
+          "m_c": {
+              "status": ["apprentice", "warrior", "deputy", "leader"],
+              "dies": true
+          },
+          "history": [
+              {
+              "cats": ["m_c"],
+              "death": "m_c was killed by a rattlesnake."
+              }
+          ]
+  },
+  {
+          "event_id": "dst_death_any_rattlesnake2",
+          "location": ["desert"],
+          "season": ["any"],
+          "tags": [],
+          "frequency": 4,
+          "event_text": "m_c chased a kangaroo rat into a burrow, only to run right into the fatal fangs of a surprised rattlesnake.",
+          "m_c": {
+              "status": ["apprentice", "warrior", "deputy", "leader"],
+              "dies": true
+          },
+          "history": [
+              {
+              "cats": ["m_c"],
+              "death": "m_c was killed by a rattlesnake."
+              }
+          ]
+  },
+  {
+          "event_id": "dst_death_app_rattlesnake3",
+          "location": ["desert"],
+          "season": ["any"],
+          "tags": [],
+          "frequency": 4,
+          "event_text": "m_c jumped on top of a rattlesnake by mistake and was killed by the ensuing bite.",
+          "m_c": {
+              "status": ["apprentice"],
+              "dies": true
+          },
+          "history": [
+              {
+              "cats": ["m_c"],
+              "death": "m_c was killed by a rattlesnake."
+              }
+          ]
+  },
+  {
+          "event_id": "dst_death_any_mirage1",
+          "location": ["desert"],
+          "season": ["greenleaf", "newleaf"],
+          "tags": [],
+          "frequency": 4,
+          "event_text": "m_c died of dehydration after mistakenly following a mirage.",
+          "m_c": {
+              "status": ["apprentice", "warrior", "deputy", "leader"],
+              "dies": true
+          },
+          "history": [
+              {
+              "cats": ["m_c"],
+              "death": "m_c was misled by a mirage and died of dehydration."
+              }
+          ]
+  },
+  {
+          "event_id": "dst_death_any_scorpion1",
+          "location": ["desert"],
+          "season": ["any"],
+          "tags": [],
+          "frequency": 4,
+          "event_text": "m_c was killed after being stung by a scorpion.",
+          "m_c": {
+              "status": ["apprentice", "warrior", "deputy", "leader"],
+              "dies": true
+          },
+          "history": [
+              {
+              "cats": ["m_c"],
+              "death": "m_c was killed by a scorpion."
+              }
+          ]
+  },
+  {
+          "event_id": "dst_death_any_multitraitscorpion2",
+          "location": ["desert"],
+          "season": ["any"],
+          "tags": [],
+          "frequency": 4,
+          "event_text": "m_c was mistakenly stung by a scorpion during a hunt and succumbed to the venom.",
+          "m_c": {
+              "status": ["apprentice", "warrior", "deputy", "leader"],
+              "trait": ["ambitious", "bold", "charismatic", "competitive", "daring", "flamboyant", "insecure", "strange", "troublesome"],
+              "dies": true
+          },
+          "history": [
+              {
+              "cats": ["m_c"],
+              "death": "m_c was killed by a scorpion."
+              }
+          ]
+  }
+]

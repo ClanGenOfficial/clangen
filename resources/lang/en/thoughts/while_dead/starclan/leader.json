@@ -1,7 +1,7 @@
 [
     {
-        "id": "gen_dead_leader",
-        "thoughts": [
+        "event_id": "gen_dead_leader",
+        "strings": [
             "Watches c_n proudly",
             "Hopes {PRONOUN/m_c/subject} {VERB/m_c/have/has} been a good leader",
             "Is contemplating {PRONOUN/m_c/poss} legacy",
@@ -9,25 +9,35 @@
         ]
     },
     {
-        "id": "dead_leader_to_alive_leader",
-        "thoughts": [
+        "event_id": "dead_leader_to_alive_leader",
+        "strings": [
             "Approves of r_c's leadership choices",
             "Walks in r_c's dreams to impart wisdom and guidance",
             "Thinks r_c made some bad decisions lately",
             "Is glad that {PRONOUN/m_c/subject} chose r_c as {PRONOUN/m_c/poss} successor"
         ],
-        "random_status_constraint": [
-            "leader"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "leader"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
-        "id": "dead_leader_founder",
-        "thoughts": [
+        "event_id": "dead_leader_founder",
+        "strings": [
             "Is proud of being one of c_n's first leaders"
         ],
-        "main_backstory_constraint": ["clan_founder"]
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "clan_founder"
+                ]
+            }
+        }
     }
 ]

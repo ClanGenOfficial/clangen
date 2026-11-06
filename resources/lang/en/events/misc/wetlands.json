@@ -4,7 +4,7 @@
     "location": ["wetlands"],
     "season": ["newleaf", "greenleaf", "leaf-fall"],
     "frequency": 4,
-    "event_text": "Whilst m_c was poking around in the undergrowth, {PRONOUN/m_c/subject} ran nose first into a stinging nettle plant — Ouch!",
+    "event_text": "Whilst m_c was poking around in the undergrowth, {PRONOUN/m_c/subject} ran nose first into a stinging nettle plant.",
     "m_c": {
       "status": ["apprentice", "warrior", "elder", "kitten"]
     }

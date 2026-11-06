@@ -1,19 +1,20 @@
-import os
 import unittest
+from random import Random
 
 from scripts.cat.enums import CatRank, CatCompatibility
+from scripts.cat.factories.test_cat_factory import TestCatFactory
 from scripts.cat_relations.enums import RelType
 
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
-
 from scripts.cat.cats import Cat
+from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.cat_relations.relationship import Relationship
 from scripts.events_module.event_filters import (
     get_highest_romantic_relation,
     get_personality_compatibility,
 )
 from scripts.clan_package.get_clan_cats import get_alive_clan_queens
+
+cat_factory = TestCatFactory()
 
 
 class TestPersonalityCompatibility(unittest.TestCase):
@@ -56,8 +57,8 @@ class TestPersonalityCompatibility(unittest.TestCase):
     def test_some_neutral_combinations(self):
         # TODO: the one who updated the personality should update the tests!!
         pass
-        # cat1 = Cat()
-        # cat2 = Cat()
+        # cat1 = cat_factory.create_cat()
+        # cat2 = cat_factory.create_cat()
 
     #
     # cat1.personality.trait = self.current_traits[0]
@@ -84,8 +85,8 @@ class TestPersonalityCompatibility(unittest.TestCase):
         pass
 
     def test_false_trait(self):
-        cat1 = Cat(disable_random=True)
-        cat2 = Cat(disable_random=True)
+        cat1 = cat_factory.create_cat(disable_random=True)
+        cat2 = cat_factory.create_cat(disable_random=True)
         cat1.personality.trait = None
         cat2.personality.trait = None
         self.assertEqual(
@@ -99,10 +100,10 @@ class TestPersonalityCompatibility(unittest.TestCase):
 class TestCountRelation(unittest.TestCase):
     def test_2_cats_jealousy(self):
         # given
-        cat1 = Cat(disable_random=True)
-        cat2 = Cat(disable_random=True)
-        cat3 = Cat(disable_random=True)
-        cat4 = Cat(disable_random=True)
+        cat1 = cat_factory.create_cat(disable_random=True)
+        cat2 = cat_factory.create_cat(disable_random=True)
+        cat3 = cat_factory.create_cat(disable_random=True)
+        cat4 = cat_factory.create_cat(disable_random=True)
 
         relation_1_2 = Relationship(cat_from=cat1, cat_to=cat2)
         relation_3_2 = Relationship(cat_from=cat3, cat_to=cat2)
@@ -143,15 +144,15 @@ class TestCountRelation(unittest.TestCase):
 class TestHighestRomance(unittest.TestCase):
     def test_exclude_mate(self):
         # given
-        cat1 = Cat(disable_random=True)
-        cat2 = Cat(disable_random=True)
-        cat3 = Cat(disable_random=True)
-        cat4 = Cat(disable_random=True)
+        cat1 = cat_factory.create_cat(disable_random=True)
+        cat2 = cat_factory.create_cat(disable_random=True)
+        cat3 = cat_factory.create_cat(disable_random=True)
+        cat4 = cat_factory.create_cat(disable_random=True)
 
         # when
         cat1.mate.append(cat2.ID)
         cat2.mate.append(cat1.ID)
-        relation_1_2 = Relationship(cat_from=cat1, cat_to=cat2, mates=True)
+        relation_1_2 = Relationship(cat_from=cat1, cat_to=cat2)
         relation_1_3 = Relationship(cat_from=cat1, cat_to=cat3)
         relation_1_4 = Relationship(cat_from=cat1, cat_to=cat4)
         relation_1_2.romance = 60
@@ -173,15 +174,15 @@ class TestHighestRomance(unittest.TestCase):
 
     def test_include_mate(self):
         # given
-        cat1 = Cat(disable_random=True)
-        cat2 = Cat(disable_random=True)
-        cat3 = Cat(disable_random=True)
-        cat4 = Cat(disable_random=True)
+        cat1 = cat_factory.create_cat(disable_random=True)
+        cat2 = cat_factory.create_cat(disable_random=True)
+        cat3 = cat_factory.create_cat(disable_random=True)
+        cat4 = cat_factory.create_cat(disable_random=True)
 
         # when
         cat1.mate.append(cat2.ID)
         cat2.mate.append(cat1.ID)
-        relation_1_2 = Relationship(cat_from=cat1, cat_to=cat2, mates=True)
+        relation_1_2 = Relationship(cat_from=cat1, cat_to=cat2)
         relation_1_3 = Relationship(cat_from=cat1, cat_to=cat3)
         relation_1_4 = Relationship(cat_from=cat1, cat_to=cat4)
         relation_1_2.romance = 60
@@ -204,12 +205,24 @@ class TestHighestRomance(unittest.TestCase):
 
 class TestGetQueens(unittest.TestCase):
     def setUp(self) -> None:
-        self.test_cat1 = Cat(status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
-        self.test_cat2 = Cat(status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
-        self.test_cat3 = Cat(status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
-        self.test_cat4 = Cat(status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
-        self.test_cat5 = Cat(status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
-        self.test_cat6 = Cat(status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
+        self.test_cat1 = cat_factory.create_cat(
+            status_dict={"rank": CatRank.WARRIOR}, disable_random=True
+        )
+        self.test_cat2 = cat_factory.create_cat(
+            status_dict={"rank": CatRank.WARRIOR}, disable_random=True
+        )
+        self.test_cat3 = cat_factory.create_cat(
+            status_dict={"rank": CatRank.WARRIOR}, disable_random=True
+        )
+        self.test_cat4 = cat_factory.create_cat(
+            status_dict={"rank": CatRank.WARRIOR}, disable_random=True
+        )
+        self.test_cat5 = cat_factory.create_cat(
+            status_dict={"rank": CatRank.WARRIOR}, disable_random=True
+        )
+        self.test_cat6 = cat_factory.create_cat(
+            status_dict={"rank": CatRank.WARRIOR}, disable_random=True
+        )
 
     def tearDown(self) -> None:
         del self.test_cat1
@@ -233,6 +246,8 @@ class TestGetQueens(unittest.TestCase):
         self.test_cat4.status._change_rank(CatRank.APPRENTICE)
         self.test_cat4.parent1 = self.test_cat3.ID
 
+        inheritance_db.load_inheritances(Cat)
+
         # then
         living_cats = [self.test_cat1, self.test_cat2, self.test_cat3, self.test_cat4]
         self.assertEqual(
@@ -252,6 +267,8 @@ class TestGetQueens(unittest.TestCase):
 
         self.test_cat4.status._change_rank(CatRank.APPRENTICE)
         self.test_cat4.parent1 = self.test_cat3.ID
+
+        inheritance_db.load_inheritances(Cat)
 
         # then
         living_cats = [self.test_cat1, self.test_cat2, self.test_cat3, self.test_cat4]
@@ -278,6 +295,8 @@ class TestGetQueens(unittest.TestCase):
         self.test_cat6.status._change_rank(CatRank.APPRENTICE)
         self.test_cat6.parent1 = self.test_cat5.ID
         self.test_cat6.parent2 = self.test_cat4.ID
+
+        inheritance_db.load_inheritances(Cat)
 
         # then
         living_cats = [
@@ -311,6 +330,8 @@ class TestGetQueens(unittest.TestCase):
         self.test_cat6.status._change_rank(CatRank.APPRENTICE)
         self.test_cat6.parent1 = self.test_cat5.ID
         self.test_cat6.parent2 = self.test_cat4.ID
+
+        inheritance_db.load_inheritances(Cat)
 
         # then
         living_cats = [
@@ -346,6 +367,8 @@ class TestGetQueens(unittest.TestCase):
         self.test_cat6.parent1 = self.test_cat5.ID
         self.test_cat6.parent2 = self.test_cat4.ID
 
+        inheritance_db.load_inheritances(Cat)
+
         # then
         living_cats = [
             self.test_cat1,
@@ -373,6 +396,8 @@ class TestGetQueens(unittest.TestCase):
         self.test_cat4.parent1 = self.test_cat2.ID
         self.test_cat4.parent2 = self.test_cat1.ID
         self.test_cat4.adoptive_parents.append(self.test_cat3.ID)
+
+        inheritance_db.load_inheritances(Cat)
 
         # then
         living_cats = [

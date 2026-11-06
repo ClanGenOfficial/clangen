@@ -9,7 +9,7 @@ Thank you for your interest in contributing to the written content within ClanGe
 
     Guidelines and general knowledge that will help you in your ClanGen writing journey.
 
-- __[PatrolEvent](patrols.md)__
+- __[PatrolEvent](patrols/patrols.md)__
 
     ---
 
@@ -27,17 +27,23 @@ Thank you for your interest in contributing to the written content within ClanGe
 
     Guidelines on adding future event blocks to patrol and short events.
 
-- __[Leader Den Events](patrols.md)__
+- __[Leader Den Events](patrols/patrols.md)__
 
     ---
 
     Guidelines on adding new events triggered by leader's den actions.
 
-- __[Thoughts](thoughts.md)__
+- __[Thoughts](textpoolevents/thoughts.md)__
 
     ---
 
     Guidelines on adding new thoughts.
+
+- __[Relationship Events](textpoolevents/relationship-events.md)__
+
+    ---
+
+    Guidelines on adding new relationship events.
 
 - __[Leader Ceremonies](leader-ceremonies.md)__
 
@@ -51,10 +57,16 @@ Thank you for your interest in contributing to the written content within ClanGe
 
     Interested on localizing ClanGen into a new language? This is the place to go.
 
-- __[Advanced Documentation](patrols.md)__
+- __[Advanced Documentation](patrols/patrols.md)__
 
     ---
 
     More in-depth information on event handling. Heavy wip.
+
+- __[Tools](tools.md)__
+
+    ---
+
+    Tools that may help with writing for ClanGen.
 
 </div>

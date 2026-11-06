@@ -14,7 +14,7 @@ def clan_symbol_sprite(clan, return_string=False, force_light=False):
         possible_sprites = []
         for sprite in sprites.clan_symbols:
             name = sprite.strip("1234567890")
-            if f"symbol{clan.name.upper()}" == name:
+            if f"symbol{clan.prefix.upper()}" == name:
                 possible_sprites.append(sprite)
         if possible_sprites:
             clan.chosen_symbol = choice(possible_sprites)

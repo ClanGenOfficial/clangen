@@ -5,7 +5,6 @@ import i18n
 import pygame
 import pygame_gui
 
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.screens.enums import GameScreen
@@ -22,10 +21,9 @@ class CheckDeletionWindow(GameWindow):
         self.clan_name = clan_id
         self.reloadscreen = reloadscreen
 
-        self.delete_check_message = UITextBoxTweaked(
+        self.delete_check_message = pygame_gui.elements.UITextBox(
             "windows.delete_check_message",
             ui_scale(pygame.Rect((20, 20), (260, -1))),
-            line_spacing=1,
             object_id="#text_box_30_horizcenter",
             container=self,
             text_kwargs={
@@ -57,12 +55,15 @@ class CheckDeletionWindow(GameWindow):
             if event.ui_element == self.delete_it_button:
                 rempath = get_save_dir() + "/" + self.clan_name
                 shutil.rmtree(rempath)
+
+                # Removal of clan.json or clan.txt - not required
+                # for rearranged saves, kept for legacy.
+                if os.path.exists(rempath + "/clan.json"):
+                    os.remove(rempath + "/clan.json")
                 if os.path.exists(rempath + "clan.json"):
                     os.remove(rempath + "clan.json")
                 elif os.path.exists(rempath + "clan.txt"):
                     os.remove(rempath + "clan.txt")
-                else:
-                    print("No clan.json/txt???? Clan prolly wasnt initalized kekw")
                 self.kill()
                 self.reloadscreen(GameScreen.SWITCH_CLAN)
 

@@ -1,0 +1,26 @@
+[
+    {
+        "event_id": "frostbite_lost_a_leg0",
+        "strings": [
+            "m_c doesn't want to look at {PRONOUN/m_c/poss} leg. {PRONOUN/m_c/subject/CAP} can no longer feel it at all and it has begun to smell of rot. r_c0 says that it's probably best to remove it now before it gets worse, and m_c can't help but agree.",
+            "r_c0 tells m_c that the frostbite is far too severe. The leg will have to be removed completely."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "frostbite_lost_a_leg2",
+        "strings": [
+            "m_c awoke with one less leg than {PRONOUN/m_c/subject} went to sleep with. Admittedly, it's more of a relief than anything. {PRONOUN/m_c/poss/CAP} dead, frostbitten flesh no longer had any feeling left anyway."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

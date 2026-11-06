@@ -1,0 +1,21 @@
+[
+    {
+        "event_id": "festering_wound0",
+        "strings": [
+            "m_c has died from a festering wound.",
+            "A festering wound has killed m_c.",
+            "m_c's festering wound has finally killed {PRONOUN/m_c/object}."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        },
+        "death": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "history": "m_c has died from a festering wound."
+            }
+        ]
+    }
+]

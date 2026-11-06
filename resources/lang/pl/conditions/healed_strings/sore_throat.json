@@ -1,0 +1,12 @@
+[
+    {
+        "event_id": "sore_throat0",
+        "strings": [
+            "m_c's throat is no longer sore.",
+            "m_c's throat has healed."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
