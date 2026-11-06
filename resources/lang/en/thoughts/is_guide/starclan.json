@@ -2,7 +2,20 @@
     {
         "event_id": "gen_guide_sc",
         "strings": [
-            "Hello. I am here to guide the dead cats of c_n into StarClan."
+            "Hello. I am here to guide the dead cats of c_n into StarClan",
+            "Wants to sob at the thought of never fading",
+            "Wonders if {PRONOUN/m_c/subject} made the right choice in becoming a guide",
+            "Misses {PRONOUN/m_c/poss} family",
+            "Happily greets all the new cats {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} let into StarClan",
+            "Watches the Clans with annoyance",
+            "Watches the Clans happily",
+            "Shudders at the thought of dragging cats down to the Dark Forest",
+            "Frowns when the medicine cat gets {PRONOUN/m_c/poss} prophecy wrong",
+            "Frowns when the medicine cat gets {PRONOUN/m_c/poss} omen wrong",
+            "Purrs when the medicine cat gets {PRONOUN/m_c/poss} prophecy right",
+            "Purrs when the medicine cat gets {PRONOUN/m_c/poss} omen right",
+            "Prepares to send a prophecy to the medicine cat",
+            "Yelps when {PRONOUN/m_c/subject} almost {VERB/m_c/cross/crosses} the StarClan border into the Dark Forest"
         ]
     }
 ]
