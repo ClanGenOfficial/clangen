@@ -603,6 +603,9 @@ dev_tools = false
   debug_ensure_thought_index = 0
 
 [patrol_generation]
+  # amount of cats able to patrol, cannot go over 1
+  patrolling_percent = 1
+
   # modifies success rate based on game mode. higher = more difficult.
   difficulty_modifier = 2.5
   classic_difficulty_modifier = 1
