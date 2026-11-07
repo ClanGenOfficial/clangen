@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "constant_joint_pain_exhausted",
+        "strings": [
+            "m_c's painful joints are putting a strain on {PRONOUN/m_c/poss} body. m_c is left exhausted."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

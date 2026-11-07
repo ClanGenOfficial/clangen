@@ -9,6 +9,9 @@
             "r_c0": {
                 "status": [
                     "medicine cat"
+                ],
+                "group": [
+                    "player_clan"
                 ]
             }
         }

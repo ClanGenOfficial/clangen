@@ -24763,7 +24763,13 @@
                         }
                     }
                 },
-                "exp_gained": 30
+                "exp_gained": 30,
+                "supply": [
+                    {
+                        "type": "yew_berries",
+                        "adjust": "increase_small"
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -24783,7 +24789,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "condition": [
                             "poisoned"

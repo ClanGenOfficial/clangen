@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "poisoned_persistent_exhaustion0",
+        "strings": [
+            "m_c has healed from the poison in {PRONOUN/m_c/poss} body, but the effects will always linger."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

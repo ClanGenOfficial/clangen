@@ -1,6 +1,7 @@
 {
   "en": {
     "lean_meat": "Lean Meat",
+    "hunters_tribute": "Hunter's Tribute",
     "forsaken": "Forsaken",
     "for_the_throne": "Anything For The Throne",
     "fated_paths": "Fated Paths",
@@ -30,11 +31,15 @@
     "weak_stars": "Weakened Stars",
     "clumsy_paws": "Clumsy Paws",
     "meagre_stocks": "Meagre Stockpiles",
+    "on_their_own": "On Their Own",
     "mate_breakup": "Not Made To Last",
     "prideful": "Prideful",
     "burnout": "Burnout",
     "pride_and_joy": "Pride And Joy",
     "starcrossed_lovers": "Starcrossed Lovers",
-    "miasma": "Miasma"
+    "miasma": "Miasma",
+    "crowfood": "Crowfood Chaos",
+    "disorganized": "Disorganized",
+    "no_prior_knowledge": "No Prior Knowledge"
   }
 }

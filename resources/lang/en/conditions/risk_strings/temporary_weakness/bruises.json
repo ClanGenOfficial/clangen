@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "temporary_weakness_bruises0",
+        "strings": [
+            "m_c's body is still recovering after {PRONOUN/m_c/poss} condition and, apparently, that comes with bruising easily."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

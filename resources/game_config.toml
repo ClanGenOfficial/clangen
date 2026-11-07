@@ -294,19 +294,23 @@ dev_tools = false
   # relationship buffs represent "default" relationship values that are then lightly randomized
   # in order to create initial relationship values for cats
 
+  # see adoptive_parent_buff for adoptive parents
   [new_cat.parent_buff]
-    # default relationships buff for a kit's relationships to their parents
-    [new_cat.parent_buff.kit_to_parent]
-      romance = 0
-      like = 40
-      respect = 30
-      comfort = 70
-      trust = 60
+    # this is not applied for absent parents
+    variability = [0, 15]
 
     # default relationships buff for a parent's relationships to their kits
     [new_cat.parent_buff.parent_to_kit]
       romance = 0
       like = 60
+      respect = 30
+      comfort = 70
+      trust = 60
+
+    # default relationships buff for a kit's relationships to their parents
+    [new_cat.parent_buff.kit_to_parent]
+      romance = 0
+      like = 40
       respect = 30
       comfort = 70
       trust = 60
@@ -319,17 +323,28 @@ dev_tools = false
       comfort = -10
       trust = 0
 
-  [new_cat.sib_buff]
-    # default relationships buff for siblings' relationships in one direction
-    [new_cat.sib_buff.cat1_to_cat2]
+  [new_cat.adoptive_parent_buff]
+    variability = [0, 15]
+    [new_cat.adoptive_parent_buff.parent_to_kit]
       romance = 0
-      like = 40
-      respect = 10
+      like = 60
+      respect = 30
       comfort = 40
       trust = 30
 
-    # default relationships buff for siblings' relationships in the other direction
-    [new_cat.sib_buff.cat2_to_cat1]
+    [new_cat.adoptive_parent_buff.kit_to_parent]
+      romance = 0
+      like = 40
+      respect = 30
+      comfort = 70
+      trust = 60
+
+  [new_cat.sib_buff]
+    # applied for littermates_to_eachother
+    variability = [0, 15]
+
+    # default relationships buff for siblings' relationships in one direction
+    [new_cat.sib_buff.cat1_to_cat2]
       romance = 0
       like = 40
       respect = 10
@@ -339,23 +354,6 @@ dev_tools = false
     # default relationships buff for a newborn's relationship towards one of their littermates
     [new_cat.sib_buff.littermates_to_eachother]
       like = 20
-      comfort = 10
-      trust = 10
-
-  [new_cat.rel_buff]
-    # default relationships buff for new cats relationships to other cats in the clan
-    [new_cat.rel_buff.new_to_clan_cat]
-      romance = 0
-      like = 15
-      respect = 10
-      comfort = 15
-      trust = 15
-
-    # default relationships buff for clan cats' relationships to new cats in the clan
-    [new_cat.rel_buff.clan_cat_to_new]
-      romance = 0
-      like = 15
-      respect = 5
       comfort = 10
       trust = 10
 
@@ -540,6 +538,9 @@ dev_tools = false
   # base 1/chance that a cat will be chosen as a med cat apprentice
   base_medicine_app_chance = 41
 
+  # true means that apprentices will not receive mentors
+  receive_mentor = true
+
 [roles."medicine cat apprentice"]
   # maximum number of medicine cat apprentices to full medicine cats (e.g. 4 adult medcats can have 2 apps total)
   max_medcats_to_apps = 2
@@ -695,11 +696,11 @@ dev_tools = false
 
 [condition_related]
   # 10/chance an illness will occur
-  illness_chance = 270
+  illness_chance = 280
   classic_illness_chance = 500
 
   # how much the mortality will decrease each moon that the cat has a condition
-  moonskip_mortality_reduction = 0.05
+  moonskip_mortality_reduction = 0.10
   excluded_from_mortality_reduction = ["redcough", "starving", "malnourished"]
 
   # duration of applied conditions is multiplied by this number
@@ -733,26 +734,26 @@ dev_tools = false
   # dictates the chance for cats to get various diseases in each season
   [condition_related.seasonal_chances]
     [condition_related.seasonal_chances.newleaf]
-      running_nose = 2
-      stomachache = 1
+      running_nose = 3
+      stomachache = 2
       tick_fever = 1
     [condition_related.seasonal_chances.greenleaf]
-      fleas = 2
-      stomachache = 1
+      fleas = 3
+      stomachache = 2
       heat_exhaustion = 3
       heat_stroke = 1
       tick_fever = 1
     [condition_related.seasonal_chances.leaf-fall]
-      stomachache = 1
+      stomachache = 2
       greencough = 1
       kittencough = 1
-      running_nose = 3
+      running_nose = 4
     [condition_related.seasonal_chances.leaf-bare]
-      stomachache = 1
+      stomachache = 2
       greencough = 3
-      running_nose = 1
+      running_nose = 2
       kittencough = 4
-      yellowcough = 3
+      yellowcough = 1
 
 
 [clan_creation]
@@ -767,6 +768,8 @@ dev_tools = false
 
   minimum_membership = 7
   maximum_membership = 10
+
+  reset_all_starting_skills = false
 
   [clan_creation.ranks_needed]
     leader = true
@@ -795,6 +798,14 @@ dev_tools = false
   # permit player to change cat ranks
     all = true
     deputy = true
+
+[patrol_related]
+[patrol_related.allow_player_selection]
+  all = true
+  training = true
+  hunting = true
+  border = true
+  med = true
 
 
 [graduation]
@@ -882,7 +893,7 @@ dev_tools = false
       [focus.hunting.buff.HUNTER]
         tier = 1
         prey_increase = 2
-      [focus.hunting.buff.SWIMMER]
+      [focus.hunting.buff.RUNNER]
         tier = 1
         biome = ["plains", "desert"]
         injury_modifier = 2
@@ -890,7 +901,7 @@ dev_tools = false
         tier = 1
         biome = ["forest", "mountainous"]
         injury_modifier = 2
-      [focus.hunting.buff.RUNNER]
+      [focus.hunting.buff.SWIMMER]
         tier = 1
         biome = ["beach", "wetlands"]
         injury_modifier = 2
@@ -1012,7 +1023,6 @@ dev_tools = false
   [focus.hoarding]
     # injury chance of each warrior(leader/deputy to get injured
     injury_chance_warrior = 25
-    injury_chance_medicine_cat = 35
 
     # illness chance of each warrior(leader/deputy) to get sick
     illness_chance = 35
@@ -1206,6 +1216,9 @@ dev_tools = false
   # the higher this number, the more freshkill is required before the pile is "full/excessive"
   base_event_trigger_factor = 4
 
+  # defines the amount of time it takes for freshkill to rot
+  time_to_rot = 3
+
   # defines the amount of prey a Clan begins with
   start_amount = 60
 
@@ -1297,6 +1310,10 @@ dev_tools = false
       "queen/pregnant" = 4
       kitten = 0.5
       newborn = 0.25
+  
+  # the percentage of freshkill that is lost per moon, after the decay formula has run
+  [prey.prey_loss]
+    loss = 0
 
   # the bonus prey a hunter skill cat will catch according to exp rank
   [prey.hunter_exp_bonus]

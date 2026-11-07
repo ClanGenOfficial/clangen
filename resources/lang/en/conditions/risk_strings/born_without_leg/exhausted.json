@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "born_without_leg_exhausted",
+        "strings": [
+            "Even if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} used to it, m_c is feeling exhaused from getting around with a missing leg."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
