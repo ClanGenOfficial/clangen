@@ -20897,7 +20897,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_to brought cat_from to c_n"
+                            "cats_from": "cat_to brought cat_from to c_n."
                         }
                     },
                     {
@@ -20913,7 +20913,7 @@
                             "respect"
                         ],
                         "log": {
-                            "cats_from": "cat_from is grateful that cat_to sent {PRONOUN/cat_from/object} to have a good life in the Clan rather than raising {PRONOUN/cat_from/object} as a kittypet"
+                            "cats_from": "cat_from is grateful that cat_to sent {PRONOUN/cat_from/object} to have a good life in the Clan rather than raising {PRONOUN/cat_from/object} as a kittypet."
                         } 
                     },
                     {
@@ -20930,7 +20930,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_from is grateful that cat_to agreed to take {PRONOUN/cat_from/poss} kit to c_n to raise"
+                            "cats_from": "cat_from is grateful that cat_to agreed to take {PRONOUN/cat_from/poss} kit to c_n to raise."
                         }
                     }
                 ],
@@ -21061,7 +21061,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_to brought cat_from to c_n"
+                            "cats_from": "cat_to brought cat_from to c_n when {PRONOUN/cat_from/poss} parent abandoned {PRONOUN/cat_from/object}."
                         }
                     }
                 ],

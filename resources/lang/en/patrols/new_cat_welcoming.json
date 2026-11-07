@@ -16324,7 +16324,7 @@
             "The cats are forced to turn back. The Twolegs are doing some sort of ceremony that brings countless numbers of them onto their stone paths, and p_l isn't willing to risk trying to get by them."
         ],
         "success_outcomes": [
-             {
+            {
                 "frequency": 4,
                 "exp_gained": 10,
                 "outcome_art": "cat_sprites/gen_med_bumpheads_McLn",
@@ -16706,7 +16706,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_to brought cat_from to c_n"
+                            "cats_from": "cat_to brought cat_from to c_n when {PRONOUN/cat_from/poss} parent abandoned {PRONOUN/cat_from/object}."
                         }
                     }
                 ],
