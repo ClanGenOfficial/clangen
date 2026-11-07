@@ -18267,7 +18267,7 @@
                             "comfort"
                         ],
                         "log": {
-                            "cats_from": "cat_to rescued cat_from danger at POI as a kit."
+                            "cats_from": "cat_to rescued cat_from after {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} orphaned at POI as a kit."
                         }
                     }
                 ],
@@ -18615,7 +18615,7 @@
                             "romance"
                         ],
                         "log": {
-                            "cats_from": "cat_from and cat_to were deeply in love."
+                            "cats_from": "cat_from and cat_to were deeply in love, and chose to leave their original Clan together when just one of them had to leave."
                         }
                     },
                     {
@@ -19009,7 +19009,7 @@
                             "comfort"
                         ],
                         "log": {
-                            "cats_from": "cat_to rescued cat_from danger at POI as a kit."
+                            "cats_from": "cat_to rescued cat_from after {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} orphaned at POI as a kit."
                         }
                     }
                 ],
@@ -19357,7 +19357,7 @@
                             "romance"
                         ],
                         "log": {
-                            "cats_from": "cat_from and cat_to were deeply in love."
+                            "cats_from": "cat_from and cat_to were deeply in love, and chose to leave their original Clan together when just one of them had to leave."
                         }
                     },
                     {
@@ -20342,7 +20342,9 @@
                             "newborn"
                         ],
                         "backstory": [
-                            "abandoned1"
+                            "abandoned1",
+                            "abandoned2",
+                            "abandoned4"
                         ]
                     }
                 },
@@ -20438,7 +20440,9 @@
                             "newborn"
                         ],
                         "backstory": [
-                            "abandoned1"
+                            "abandoned1",
+                            "abandoned2",
+                            "abandoned4"
                         ]
                     }
                 },
@@ -20528,9 +20532,6 @@
                         },
                         "age": [
                             "newborn"
-                        ],
-                        "backstory": [
-                            "abandoned1"
                         ]
                     }
                 },
@@ -20595,9 +20596,6 @@
                         },
                         "age": [
                             "newborn"
-                        ],
-                        "backstory": [
-                            "abandoned1"
                         ]
                     }
                 },
