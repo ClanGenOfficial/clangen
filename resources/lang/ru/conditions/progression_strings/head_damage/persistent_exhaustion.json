@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "head_damage_persistent_exhaustion0",
+        "strings": [
+            "m_c might never really feel the same again after suffering head damage."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
