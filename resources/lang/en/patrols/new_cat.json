@@ -22711,8 +22711,8 @@
                             "torn_ear",
                             "torn_pelt"
                         ],
-                        "scar_history": "This cat was scarred after fighting off an eagle to rescue an outsider",
-                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after fighting off an eagle to rescue an outsider"
+                        "scar_history": "This cat was scarred after fighting off an eagle to rescue an outsider.",
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after fighting off an eagle to rescue an outsider."
                     },
                     {
                         "cats": [
@@ -22721,8 +22721,8 @@
                         "condition": [
                             "claw_wound"
                         ],
-                        "scar_history": "This cat was scarred after being caught by an eagle",
-                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after being caught by an eagle"
+                        "scar_history": "This cat was scarred after being caught by an eagle.",
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after being caught by an eagle."
                     }
                 ],
                 "relationship_changes": [
@@ -22740,7 +22740,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_from was grateful to cat_to for rescuing {PRONOUN/cat_from/object} and bringing {PRONOUN/cat_from/object} to c_n"
+                            "cats_from": "cat_from was grateful to cat_to for rescuing {PRONOUN/cat_from/object} and bringing {PRONOUN/cat_from/object} to c_n."
                         }
                     }
                 ],
@@ -22785,8 +22785,8 @@
                         "condition": [
                             "claw_wound"
                         ],
-                        "scar_history": "This cat was scarred after being caught by an eagle",
-                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after being caught by an eagle"
+                        "scar_history": "This cat was scarred after being caught by an eagle.",
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after being caught by an eagle."
                     }
                 ],
                 "relationship_changes": [
@@ -22805,7 +22805,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_from was grateful to cat_to for rescuing {PRONOUN/cat_from/object} from an eagle"
+                            "cats_from": "cat_from was grateful to cat_to for rescuing {PRONOUN/cat_from/object} from an eagle."
                         }
                     }
                 ],
@@ -22848,8 +22848,8 @@
                         "condition": [
                             "claw_wound"
                         ],
-                        "scar_history": "This cat was scarred after being caught by an eagle",
-                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after being caught by an eagle"
+                        "scar_history": "This cat was scarred after being caught by an eagle.",
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after being caught by an eagle."
                     }
                 ],
                 "supply": [
@@ -22873,7 +22873,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_from was grateful to cat_to for rescuing {PRONOUN/cat_from/object} from an eagle and bringing {PRONOUN/cat_from/object} to c_n"
+                            "cats_from": "cat_from was grateful to cat_to for rescuing {PRONOUN/cat_from/object} from an eagle and bringing {PRONOUN/cat_from/object} to c_n."
                         }
                     }
                 ],
@@ -22904,7 +22904,7 @@
                 "death": [
                     {
                         "cats": ["n_c0"],
-                        "history": "This cat was killed and eaten by an eagle"
+                        "history": "This cat was killed and eaten by an eagle."
                     }
                 ],
                 "reputation_changes": {
@@ -22918,7 +22918,7 @@
                 "strings": [
                     "s_c0 races ahead of the rest of the patrol. They're near the base of the cliffs that make up POI, and maybe s_c0 can intercept it! {PRONOUN/s_c0/subject/CAP} quickly {VERB/s_c0/scale/scales} the cliffs and settles into position. When the eagle approaches the outcrop, s_c0 wiggles {PRONOUN/s_c0/poss} haunches and <i>leaps</i>. The eagle is thrown off balance by the new weight on its wing and careens into the cliffside. s_c0 is thrown off the eagle and slides down the cliffside, hitting hard stone in multiple spots before {PRONOUN/s_c0/subject} {VERB/s_c0/flop/flops} limply into the soft mud at the base."                
                 ],
-                 "involved_cats": {
+                "involved_cats": {
                     "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
@@ -22949,8 +22949,8 @@
                         "condition": [
                             "broken_bone"
                         ],
-                        "scar_history": "This cat was scarred after falling off a cliff while fighting an eagle",
-                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after falling off a cliff while fighting an eagle"
+                        "scar_history": "This cat was scarred after falling off a cliff while fighting an eagle.",
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after falling off a cliff while fighting an eagle."
                     },
                     {
                         "cats": [
@@ -22960,8 +22960,8 @@
                             "blunt_force_injury",
                             "-broken_bone"
                         ],
-                        "scar_history": "This cat was scarred after falling off a cliff while fighting an eagle",
-                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after falling off a cliff while fighting an eagle"
+                        "scar_history": "This cat was scarred after falling off a cliff while fighting an eagle.",
+                        "death_history": "This cat died from {PRONOUN/m_c/poss} wounds after falling off a cliff while fighting an eagle."
                     }
                 ],
                 "reputation_changes": {
@@ -22975,7 +22975,7 @@
                 "strings": [
                     "The patrol is on the mountainside above POI. They can't reach the nest in the middle of the cliff, but the eagle will take the cat to a feeding post to eat. s_c0 urges the patrol to keep up, and they beat the eagle to the feeding post. Following s_c0's instructions, the patrol attempts to conceal themselves around the outcrop of rock. However, the eagle spots the cats, and simply chooses to fly to an outcrop that's much farther away to begin its meal."   
                 ],
-                 "involved_cats": {
+                "involved_cats": {
                     "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
@@ -22993,7 +22993,7 @@
                 "death": [
                     {
                         "cats": ["n_c0"],
-                        "history": "This cat was killed and eaten by an eagle"
+                        "history": "This cat was killed and eaten by an eagle."
                     }
                 ],
                 "reputation_changes": {
@@ -23069,7 +23069,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_from was grateful to cat_to for rescuing {PRONOUN/cat_from/object} and bringing {PRONOUN/cat_from/object} to c_n"
+                            "cats_from": "cat_from was grateful to cat_to for rescuing {PRONOUN/cat_from/object} and bringing {PRONOUN/cat_from/object} to c_n."
                         }
                     }
                 ],
@@ -23121,7 +23121,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_from was grateful to cat_to for rescuing {PRONOUN/cat_from/object} and bringing {PRONOUN/cat_from/object} to c_n"
+                            "cats_from": "cat_from was grateful to cat_to for rescuing {PRONOUN/cat_from/object} and bringing {PRONOUN/cat_from/object} to c_n."
                         }
                     }
                 ],
@@ -23173,7 +23173,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_from was grateful to cat_to for rescuing {PRONOUN/cat_from/object} and bringing {PRONOUN/cat_from/object} to c_n"
+                            "cats_from": "cat_from was grateful to cat_to for rescuing {PRONOUN/cat_from/object} and bringing {PRONOUN/cat_from/object} to c_n."
                         }
                     }
                 ],
