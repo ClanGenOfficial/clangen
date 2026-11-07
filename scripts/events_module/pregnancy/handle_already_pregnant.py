@@ -3,7 +3,7 @@ from typing import Optional, Dict, List
 
 import i18n
 
-from scripts.cat.cats import Cat
+from scripts.cat.cats import Cat, check_starcrossed_lovers
 from scripts.cat.conditions.gain_conditions import gain_temporary_condition
 from scripts.cat.enums import CatGroup, CatRank
 from scripts.cat.names import Name
@@ -248,6 +248,9 @@ def handle_two_moon_pregnant(cat: Cat):
         else:
             cat.die()
             death_event = i18n.t("conditions.pregnancy.kitting_death", name=cat.name)
+
+        if extra_result := check_starcrossed_lovers(cat):
+            death_event += " " + extra_result
         cat.history.add_death(death_text=death_event)
     elif not cat.status.is_outsider:  # if cat doesn't die, give recovering from birth
         gain_temporary_condition(cat, "recovering_from_birth", omit_moonskip=True)

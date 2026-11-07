@@ -5,7 +5,7 @@ from typing import Union, Literal
 
 import i18n
 
-from scripts.cat.cats import Cat
+from scripts.cat.cats import Cat, check_starcrossed_lovers
 from scripts.cat.conditions.gain_conditions import (
     gain_temporary_condition,
     gain_permanent_condition,
@@ -406,6 +406,31 @@ def _handle_death(
             # KILL
             __handle_death_history(c, block["history"], other_clan)
             c.die(body)
+
+            if extra_result := check_starcrossed_lovers(c):
+                results.append(extra_result)
+
+        # CREATE RESULTS
+        if block.get("no_results"):
+            continue
+
+        if player_cat_names:
+            results.append(
+                i18n.t(
+                    "cat.history.regular_death",
+                    cats=adjust_list_text(player_cat_names),
+                    count=len(player_cat_names),
+                )
+            )
+        # other cats get special text
+        if other_cat_names:
+            results.append(
+                i18n.t(
+                    "screens.patrol.dead_outsider",
+                    cats=adjust_list_text(other_cat_names),
+                    count=len(other_cat_names),
+                )
+            )
 
     return " ".join(results)
 
