@@ -88,6 +88,114 @@
         "ORANGE": {
             "one": "orange",
             "many": "orange"
+        },
+        "DAWN": {
+            "one": "dawn",
+            "many": "dawn"
+        },
+        "DUSK": {
+            "one": "dusk",
+            "many": "dusk"
+        },
+        "AURORA": {
+            "one": "aurora",
+            "many": "aurora"
+        },
+        "FOREST": {
+            "one": "forest green",
+            "many": "forest green"
+        },
+        "MUSTARD": {
+            "one": "mustard-yellow",
+            "many": "mustard-yellow"
+        },
+        "EARTHY": {
+            "one": "earthy brown",
+            "many": "earthy brown"
+        },
+        "SEA": {
+            "one": "sea blue",
+            "many": "sea blue"
+        },
+        "BLUEBELL": {
+            "one": "bluebell",
+            "many": "bluebell"
+        },
+		"OLIVE": {
+            "one": "olive",
+            "many": "olive"
+        },
+		"CATTAIL": {
+            "one": "cattail green",
+            "many": "cattail green"
+        },
+		"GRASSYGREEN": {
+            "one": "grassy green",
+            "many": "grassy green"
+        },
+		"FERN": {
+            "one": "fern green",
+            "many": "fern green"
+        },
+		"LICHEN": {
+            "one": "lichen green",
+            "many": "lichen green"
+        },
+		"MOSSY": {
+            "one": "mossy green",
+            "many": "mossy green"
+        },
+		"LEAF": {
+            "one": "leaf green",
+            "many": "leaf green"
+        },
+		"AQUAMARINE": {
+            "one": "aquamarine",
+            "many": "aquamarine"
+        },
+		"CACTUS": {
+            "one": "cactus green",
+            "many": "cactus green"
+        },
+        "MAPLE": {
+            "one": "light maple",
+            "many": "light maple"
+        },
+        "LIME": {
+            "one": "lime green",
+            "many": "lime green"
+        },
+        "SAND": {
+            "one": "sand brown",
+            "many": "sand brown"
+        },
+        "PERIWINKLE": {
+            "one": "periwinkle blue",
+            "many": "periwinkle blue"
+        },
+        "WILDFIRE": {
+            "one": "wildfire orange",
+            "many": "wildfire orange"
+        },
+		"WALNUT": {
+            "one": "walnut brown",
+            "many": "walnut brown"
+        },
+		"SWAMP": {
+            "one": "swampy green",
+            "many": "swampy green"
+        },
+		"ALGAE": {
+            "one": "algae green",
+            "many": "algae green"
+        },
+		"STORM": {
+            "one": "stormy gray",
+            "many": "stormy gray"
+        },
+		"PERIDOT": {
+            "one": "peridot green",
+            "many": "peridot green"
         }
     }
 }
