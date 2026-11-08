@@ -76,20 +76,20 @@
     }
   },
   "heartless": {
-    "card_art": "behavior/sorrow.png",
+    "card_art": "behavior/mate_breakup.png",
     "modifiers": {
       "mates.allow_manual": false,
       "mates.allow_mating": false
     }
   },
   "clumsy_paws": {
-    "card_art": "behavior/sorrow.png",
+    "card_art": "behavior/mate_breakup.png",
     "modifiers": {
       "progress.difficulty_modifier": 0.5
     }
   },
   "mate_breakup": {
-    "card_art": "behavior/sorrow.png",
+    "card_art": "behavior/mate_breakup.png",
     "modifiers": {
       "mates.breakup.initial_chance.threshold": 360,
       "mates.breakup.initial_chance.default_chance": 15

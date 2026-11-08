@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "starving_weakened_muscles0",
+        "strings": [
+            "The effects of starvation were heavy on m_c's body; {PRONOUN/m_c/subject}'ll never fully recover."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

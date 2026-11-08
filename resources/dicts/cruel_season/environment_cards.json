@@ -19,9 +19,15 @@
     }
   },
   "hunters_tribute": {
-    "card_art": "environment/tainted.png",
+    "card_art": "environment/hunters_tribute.png",
     "modifiers": {
       "prey.prey_loss.loss": 0.2
+    }
+  },
+  "healers_tribute": {
+    "card_art": "environment/healers_tribute.png",
+    "modifiers": {
+      "clan_resources.herbs.herb_loss": 0.2
     }
   },
   "always_newleaf": {
@@ -63,6 +69,12 @@
     "card_art": "environment/lean_meat.png",
     "modifiers": {
       "prey.time_to_rot": 1
+    }
+  },
+  "hostile_environs": {
+    "card_art": "environment/hostile_environs.png",
+    "modifiers": {
+      "patrol_generation.difficulty_modifier": 3.5
     }
   }
 }

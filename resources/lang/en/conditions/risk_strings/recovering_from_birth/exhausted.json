@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "recovering_from_birth_exhausted",
+        "strings": [
+            "Taking care of kits while healing is absolutely no joke, and m_c is feeling it."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
