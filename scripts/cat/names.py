@@ -363,7 +363,7 @@ class Name:
                     2
                 )  # Chance for True is '1/4'.
             else:
-                named_after_pelt = false
+                named_after_pelt = False
 
             named_after_biome = not random.getrandbits(3)  # 1/8
 
