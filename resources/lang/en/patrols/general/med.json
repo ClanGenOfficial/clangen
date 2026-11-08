@@ -51566,7 +51566,7 @@
         "patrol_art": "cat_sprites/gen_med_gatheringmoss_Mc",
         "intro_strings": [
             "p_l notices that the moss in the medicine cat den is getting old and organizes a patrol to gather more.",
-            "p_l gathers a patrol gather moss."
+            "p_l organizes a patrol gather moss."
         ],
         "decline_strings": [
             "A cat requires {PRONOUN/p_l/poss} attention just as {PRONOUN/p_l/subject} {VERB/p_l/are/is} ready to leave. Unfortunately, the moss will have to wait."
