@@ -116,8 +116,7 @@ class NewCatFactory(BaseCatFactory, ABC):
         }
 
         cat = Cat(**cat_params)
-        
-        
+
         # Actually let clanborn kits have biome-related names
         if cat.parent1:
             cat.name = Name(
@@ -126,7 +125,7 @@ class NewCatFactory(BaseCatFactory, ABC):
                 specsuffix_hidden=overrides.get("specsuffix_hidden", False),
                 load_existing_name=True,
                 cat=cat,
-                biome = game.clan.biome,
+                biome=game.clan.biome,
             )
         else:
             cat.name = Name(
@@ -136,7 +135,6 @@ class NewCatFactory(BaseCatFactory, ABC):
                 load_existing_name=True,
                 cat=cat,
             )
-
 
         Cat.all_cats[cat.ID] = cat
 

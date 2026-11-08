@@ -51,8 +51,7 @@ class Name:
             eyes = None
             pelt = None
             tortie_pattern = None
-            
-            
+
         prefix_type = "other_categories"
 
         name_fixpref = False
@@ -61,10 +60,12 @@ class Name:
             prefix_type = self.give_prefix(eyes, color, pelt, biome)
             # needed for random dice when we're changing the Prefix
             name_fixpref = True
-            
+
         # Set suffix
         if self.suffix is None:
-            self.give_suffix(eyes, color, pelt, biome, tortie_pattern, prefix_type) #pass prefix type if initial name generation
+            self.give_suffix(
+                eyes, color, pelt, biome, tortie_pattern, prefix_type
+            )  # pass prefix type if initial name generation
             if name_fixpref and self.prefix is None:
                 # needed for random dice when we're changing the Prefix
                 name_fixpref = False
@@ -227,49 +228,63 @@ class Name:
 
         # Add possible prefix categories to list.
         possible_prefix_categories = {
-            "eye_categories" : [],
+            "eye_categories": [],
             "fur_categories": [],
             "biome_categories": [],
-            "other_categories": [self.names_dict["normal_prefixes"]]
-            }
-      
+            "other_categories": [self.names_dict["normal_prefixes"]],
+        }
+
         if (
             eyes in self.names_dict["eye_prefixes"]
             and constants.CONFIG["cat_name_controls"]["allow_eye_names"]
         ):
-            possible_prefix_categories["eye_categories"].append(self.names_dict["eye_prefixes"][eyes])
-        
+            possible_prefix_categories["eye_categories"].append(
+                self.names_dict["eye_prefixes"][eyes]
+            )
+
         if colour in self.names_dict["colour_prefixes"]:
-            possible_prefix_categories["fur_categories"].append(self.names_dict["colour_prefixes"][colour])
-        
+            possible_prefix_categories["fur_categories"].append(
+                self.names_dict["colour_prefixes"][colour]
+            )
+
         if pelt in self.names_dict["pelt_prefixes"]:
-            possible_prefix_categories["fur_categories"].append(self.names_dict["pelt_prefixes"][pelt])
-            
+            possible_prefix_categories["fur_categories"].append(
+                self.names_dict["pelt_prefixes"][pelt]
+            )
+
         if biome is not None and biome in self.names_dict["biome_prefixes"]:
-            possible_prefix_categories["biome_categories"].append(self.names_dict["biome_prefixes"][biome])
+            possible_prefix_categories["biome_categories"].append(
+                self.names_dict["biome_prefixes"][biome]
+            )
 
         while True:
             # decided in constants.CONFIG: cat_name_controls
             if constants.CONFIG["cat_name_controls"]["always_name_after_appearance"]:
                 named_after_appearance = True
             else:
-                named_after_appearance = not random.getrandbits(2)  # Chance for True is 1/4
-            
-            named_after_biome = not random.getrandbits(3)  # chance for True is 1/8 
-            
+                named_after_appearance = not random.getrandbits(
+                    2
+                )  # Chance for True is 1/4
+
+            named_after_biome = not random.getrandbits(3)  # chance for True is 1/8
+
             if named_after_appearance:
-                prefix_category = random.choices(["eye_categories", "fur_categories"], weights = (1, 3))[0]
+                prefix_category = random.choices(
+                    ["eye_categories", "fur_categories"], weights=(1, 3)
+                )[0]
             elif named_after_biome:
-               prefix_category = "biome_categories"
+                prefix_category = "biome_categories"
             else:
                 prefix_category = "other_categories"
-            
+
             # If chosen category is empty, set chosen category to normal
             if possible_prefix_categories[prefix_category] == []:
                 prefix_category = "other_categories"
-            
-            self.prefix = random.choice(random.choice(possible_prefix_categories[prefix_category]))
-            
+
+            self.prefix = random.choice(
+                random.choice(possible_prefix_categories[prefix_category])
+            )
+
             # prevent prefix duplications from happening
             if self.prefix in self.prefix_history or not self._usable_name(
                 self.prefix, self.suffix
@@ -284,71 +299,100 @@ class Name:
                 return prefix_category
 
     # Generate possible suffix
-    def give_suffix(self, eyes, colour, pelt, biome, tortie_pattern, prefix_type = "other_categories"):
+    def give_suffix(
+        self, eyes, colour, pelt, biome, tortie_pattern, prefix_type="other_categories"
+    ):
         """Generate possible suffix."""
         self.load_localized_names()
-        
-        
+
         possible_suffix_categories = {
-            "eye_desc_categories" : [self.names_dict["eye_desc_suffixes"]], #!!! change
-            "fur_desc_categories": [self.names_dict["pelt_desc_suffixes"]], #!!! change
-            
-            "eye_categories" : [],
+            "eye_desc_categories": [self.names_dict["eye_desc_suffixes"]],  #!!! change
+            "fur_desc_categories": [self.names_dict["pelt_desc_suffixes"]],  #!!! change
+            "eye_categories": [],
             "fur_categories": [],
             "biome_categories": [],
-            "other_categories": [self.names_dict["normal_suffixes"]]
-            }
-  
-        if (constants.CONFIG["cat_name_controls"]["allow_eye_names"] and eyes in self.names_dict["eye_suffixes"]):
-            possible_suffix_categories["eye_categories"].append(self.names_dict["eye_suffixes"][eyes])
-            
-        if (colour in self.names_dict["colour_suffixes"]):
-            possible_suffix_categories["fur_categories"].append(self.names_dict["colour_suffixes"][colour])
-            
-        if (pelt in self.names_dict["pelt_suffixes"]):
-            possible_suffix_categories["fur_categories"].append(self.names_dict["pelt_suffixes"][pelt])
-            
-        if (pelt in ("Tortie", "Calico") and tortie_pattern in self.names_dict["tortie_pelt_suffixes"]):
-            possible_suffix_categories["fur_categories"].append(self.names_dict["tortie_pelt_suffixes"][tortie_pattern])
-            
-        if biome in self.names_dict["biome_suffixes"]:
-            possible_suffix_categories["biome_categories"].append(self.names_dict["biome_suffixes"][biome])
+            "other_categories": [self.names_dict["normal_suffixes"]],
+        }
 
+        if (
+            constants.CONFIG["cat_name_controls"]["allow_eye_names"]
+            and eyes in self.names_dict["eye_suffixes"]
+        ):
+            possible_suffix_categories["eye_categories"].append(
+                self.names_dict["eye_suffixes"][eyes]
+            )
+
+        if colour in self.names_dict["colour_suffixes"]:
+            possible_suffix_categories["fur_categories"].append(
+                self.names_dict["colour_suffixes"][colour]
+            )
+
+        if pelt in self.names_dict["pelt_suffixes"]:
+            possible_suffix_categories["fur_categories"].append(
+                self.names_dict["pelt_suffixes"][pelt]
+            )
+
+        if (
+            pelt in ("Tortie", "Calico")
+            and tortie_pattern in self.names_dict["tortie_pelt_suffixes"]
+        ):
+            possible_suffix_categories["fur_categories"].append(
+                self.names_dict["tortie_pelt_suffixes"][tortie_pattern]
+            )
+
+        if biome in self.names_dict["biome_suffixes"]:
+            possible_suffix_categories["biome_categories"].append(
+                self.names_dict["biome_suffixes"][biome]
+            )
 
         # If prefix describes fur color/pattern, limit suffixes to non-appearance and fur desc
         if prefix_type == "fur_categories":
             possible_suffix_categories["eye_categories"] = []
             possible_suffix_categories["fur_categories"] = []
             possible_suffix_categories["eye_desc_categories"] = []
-        
+
         # If prefix describes eye color, limit suffixes to non-appearance and eye desc
         if prefix_type == "eye_categories":
             possible_suffix_categories["eye_categories"] = []
             possible_suffix_categories["fur_categories"] = []
             possible_suffix_categories["fur_desc_categories"] = []
-        
+
         while True:
             if pelt is not None or pelt != "SingleColour":
-                named_after_pelt = not random.getrandbits(2)  # Chance for True is '1/4'.
+                named_after_pelt = not random.getrandbits(
+                    2
+                )  # Chance for True is '1/4'.
             else:
                 named_after_pelt = false
-                
+
             named_after_biome = not random.getrandbits(3)  # 1/8
-               
-               
+
             if named_after_pelt:
-                suffix_category = random.choices(["eye_categories", "fur_categories", "eye_desc_categories", "fur_desc_categories"], weights = (2, 5, 1, 2))[0]
+                suffix_category = random.choices(
+                    [
+                        "eye_categories",
+                        "fur_categories",
+                        "eye_desc_categories",
+                        "fur_desc_categories",
+                    ],
+                    weights=(2, 5, 1, 2),
+                )[0]
             elif named_after_biome:
-               suffix_category = "biome_categories"
+                suffix_category = "biome_categories"
             else:
-                suffix_category = random.choices(["other_categories", "eye_desc_categories", "fur_desc_categories"], weights = (10, 1, 2))[0]
-            
+                suffix_category = random.choices(
+                    ["other_categories", "eye_desc_categories", "fur_desc_categories"],
+                    weights=(10, 1, 2),
+                )[0]
+
             # If chosen category is empty, set chosen category to normal
             if possible_suffix_categories[suffix_category] == []:
                 suffix_category = "other_categories"
-                
-            self.suffix = random.choice(random.choice(possible_suffix_categories[suffix_category]))
-            
+
+            self.suffix = random.choice(
+                random.choice(possible_suffix_categories[suffix_category])
+            )
+
             if self._usable_name(self.prefix, self.suffix):
                 return
 
