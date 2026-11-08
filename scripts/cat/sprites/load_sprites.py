@@ -391,7 +391,7 @@ class Sprites:
 
             # these have multiple sprite sheets, so are handled differently from the others
             elif data in multi_sheet_data:
-                if data.get("sprite_lists_differ", False):
+                if isinstance(data.get("sprite_list"), dict):
                     for spritesheet in data["spritesheet"]:
                         self.load_sheet(
                             spritesheet,

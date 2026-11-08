@@ -34,17 +34,15 @@ The `sprite_list` will be a list containing multiple lists or dicts. Each list/d
 
 If you have added your new sprite set to the end of a row, then you will locate that row's list/dict and add the name of the new set to the end. If you have created a new row, then you will need to add a new list/dict to the end of the `sprite_list`.
 
-### Special Information
+### List or Dictionary
 
-Some `DATA` sheets will contain extra information: `sprite_lists_differ` and `common_sheet_name`. 
+If you are only using one `spritesheet`, then the `sprite_list` should be a list. Otherwise, you'll need to decide how the multiple spritesheets should be treated and make the `sprite_list` a list or a dictionary accordingly.
 
-#### sprite_lists_differ
+When `sprite_list` is a list, a `spritesheet` list will treat each spritesheet listed as having the exact same `sprite_list`. This is useful in instances like scars; where there's a mask sheet and a "normal" sheet that contain differing layers of the same scars. However, if each spritesheet holds entirely unique sprites, then `sprite_list` needs to be a dictionary.
 
-`sprite_lists_differ` is used to change the behavior of the `sprite_list` when `spritesheet` is a list. By default, a `spritesheet` list will treat each spritesheet listed as having the exact same `sprite_list`. This is useful in instances like scars; where there's a mask sheet and a "normal" sheet that contain differing layers of the same sprites. However, if each spritesheet holds entirely unique sprites, then you can set `sprite_lists_differ` to `true`.
+#### Examples
 
-If you do so, `sprite_list` should be made into a dictionary, with each key being a spritesheet name and the value being the sprite list for that spritesheet. For example:
-
-This is the default style.
+For example, the file could look like this while using a list for a single spritesheet:
 ```json
     "spritesheet": "patches_white_little",
     "sprite_list": [
@@ -68,13 +66,12 @@ This is the default style.
     ]
 ```
 
-This is altered to work with a list of spritesheets that utilize differing sprite lists
+This is altered to work with a list of spritesheets that utilize differing sprite lists:
 ```json
     "spritesheet": [
         "patches_white_little0", 
         "patches_white_little1"
     ],
-    "sprite_lists_differ": true,
     "sprite_list": {
         "patches_white_little0": [
             [
@@ -99,9 +96,13 @@ This is altered to work with a list of spritesheets that utilize differing sprit
     }
 ```
 
+### Special Information
+
+Some `DATA` sheets will contain extra information: `common_sheet_name`. 
+
 #### common_sheet_name
 
-`common_sheet_name` can be used to alter how the code will name the sprites. This is best used when utilizing multiple spritesheets, especially if setting `sprite_lists_differ` to `true`. In our earlier example regarding `sprite_lists_differ` we would want to set the `common_sheet_name` to something like `patches_white_little` to ensure that all the little white patches are referenced consistently, despite technically being part of different spritesheets. If we have no reason to reference spritesheets individually, then it's better to give them a common reference name.
+`common_sheet_name` can be used to alter how the code will name the sprites. This is best used when utilizing multiple spritesheets. In our earlier example regarding `sprite_list` as a dictionary, we would want to set the `common_sheet_name` to something like `patches_white_little` to ensure that all the little white patches are referenced consistently, despite technically being part of different spritesheets. If we have no reason to reference spritesheets individually, then it's better to give them a common reference name.
 
 If the `common_sheet_name` is not set, then the code will name the sprites using the name of their spritesheet.
 
