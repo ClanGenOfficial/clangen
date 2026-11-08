@@ -51554,73 +51554,24 @@
         ]
     },
     {
-        "event_id": "gen_med_mossgathering",
+        "event_id": "gen_med_mossgathering_group",
         "types": [
             "herb_gathering"
         ],
         "frequency": 4,
         "required_cat_types": {
-            "patrol_cats": [1, 4]
+            "patrol_cats": [2, 4]
         },
         "chance_of_success": 70,
         "patrol_art": "cat_sprites/gen_med_gatheringmoss_Mc",
         "intro_strings": [
-            "p_l notices that the moss in the medicine cat den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more."
+            "p_l notices that the moss in the medicine cat den is getting old and organizes a patrol to gather more.",
+            "p_l gathers a patrol gather moss."
         ],
         "decline_strings": [
             "A cat requires {PRONOUN/p_l/poss} attention just as {PRONOUN/p_l/subject} {VERB/p_l/are/is} ready to leave. Unfortunately, the moss will have to wait."
         ],
         "success_outcomes": [
-            {
-                "required_cat_types": {
-                    "patrol_cats": [1, 1]
-                },
-                "frequency": 4,
-                "strings": [
-                    "p_l makes {PRONOUN/p_l/poss} way to {PRONOUN/p_l/poss} favorite moss patch. {PRONOUN/p_l/subject/CAP} {VERB/p_l/slice/slices} patches with {PRONOUN/p_l/poss} claws, careful to exclude any roots or dirt. Once {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} satisfied with {PRONOUN/p_l/poss} pile, {PRONOUN/p_l/subject} gently {VERB/p_l/wrap/wraps} {PRONOUN/p_l/poss} jaws around the heap and {VERB/p_l/make/makes} {PRONOUN/p_l/poss} way back to camp."
-                ],
-                "exp_gained": 10,
-                "supply": [
-                    {
-                        "type": "moss",
-                        "adjust": "increase_medium"
-                    }
-                ],
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "some_clan"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": 6,
-                        "log": {
-                            "cats_from": "cat_from is grateful for cat_to's diligence in gathering moss."
-                        }
-                    }
-                ]
-            },
-            {
-                "required_cat_types": {
-                    "patrol_cats": [1, 1]
-                },
-                "frequency": 2,
-                "strings": [
-                    "p_l arrives at {PRONOUN/p_l/poss} favorite moss gathering patch. The moss is tender and fluffy beneath {PRONOUN/p_l/poss} paws. With all the nagging responsibilities weighing on {PRONOUN/p_l/object} as a medicine cat, p_l supposes it might be alright to take a moment away from {PRONOUN/p_l/poss} duties to relax. p_l nestles into the soft moss for a quick respite. {PRONOUN/p_l/subject/CAP} {VERB/p_l/awaken/awakens} refreshed and {VERB/m_c/are/is} still able to gather a few pieces of moss before sunset."
-                ],
-                "exp_gained": 5,
-                "supply": [
-                    {
-                        "type": "moss",
-                        "adjust": "increase_small"
-                    }
-                ]
-            },
             {
                 "required_cat_types": {
                     "patrol_cats": [2, 2]
@@ -51770,49 +51721,11 @@
         ],
         "fail_outcomes": [
             {
-                "required_cat_types": {
-                    "patrol_cats": [
-                        1,
-                        4
-                    ]
-                },
+                "frequency": 4,
                 "strings": [
                     "Mouse-dung! When p_l gets to the best moss gathering spot, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} that some animal has dug up most of the moss. {PRONOUN/p_l/subject/CAP}'ll have to leave the rest to repopulate before gathering from this spot again."
                 ],
-                "exp_gained": 0,
-                "frequency": 4
-            },
-            {
-                "required_cat_types": {
-                    "patrol_cats": [
-                        1,
-                        1
-                    ]
-                },
-                "strings": [
-                    "p_l arrives at {PRONOUN/p_l/poss} favorite moss gathering patch. The moss is tender and fluffy beneath {PRONOUN/p_l/poss} paws. With all the nagging responsibilities weighing on {PRONOUN/p_l/object} as a medicine cat, p_l supposes it might be alright to take a moment away from {PRONOUN/p_l/poss} duties to relax. p_l nestles into the soft moss for a quick respite... only to wake after dusk and return to camp empty-pawed."
-                ],
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "some_clan",
-                            "high_lawful"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -3,
-                        "log": {
-                            "cats_from": "cat_from thought it was odd that cat_to spent so long out \"gathering moss\" only to return with empty paws."
-                        }
-                    }
-                ],
-                "exp_gained": 0,
-                "frequency": 2
+                "exp_gained": 0
             },
             {
                 "required_cat_types": {
@@ -51870,6 +51783,105 @@
                         }
                     }
                 ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_med_mossgathering_solo",
+        "types": [
+            "herb_gathering"
+        ],
+        "frequency": 4,
+        "required_cat_types": {
+            "patrol_cats": [1, 1]
+        },
+        "chance_of_success": 70,
+        "patrol_art": "cat_sprites/gen_med_gatheringmoss_Mc",
+        "intro_strings": [
+            "p_l notices that the moss in the medicine cat den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to gather more."
+        ],
+        "decline_strings": [
+            "A cat requires {PRONOUN/p_l/poss} attention just as {PRONOUN/p_l/subject} {VERB/p_l/are/is} ready to leave. Unfortunately, the moss will have to wait."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l makes {PRONOUN/p_l/poss} way to {PRONOUN/p_l/poss} favorite moss patch. {PRONOUN/p_l/subject/CAP} {VERB/p_l/slice/slices} patches with {PRONOUN/p_l/poss} claws, careful to exclude any roots or dirt. Once {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} satisfied with {PRONOUN/p_l/poss} pile, {PRONOUN/p_l/subject} gently {VERB/p_l/wrap/wraps} {PRONOUN/p_l/poss} jaws around the heap and {VERB/p_l/make/makes} {PRONOUN/p_l/poss} way back to camp."
+                ],
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "moss",
+                        "adjust": "increase_medium"
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 6,
+                        "log": {
+                            "cats_from": "cat_from is grateful for cat_to's diligence in gathering moss."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "strings": [
+                    "p_l arrives at {PRONOUN/p_l/poss} favorite moss gathering patch. The moss is tender and fluffy beneath {PRONOUN/p_l/poss} paws. With all the nagging responsibilities weighing on {PRONOUN/p_l/object} as a medicine cat, p_l supposes it might be alright to take a moment away from {PRONOUN/p_l/poss} duties to relax. p_l nestles into the soft moss for a quick respite. {PRONOUN/p_l/subject/CAP} {VERB/p_l/awaken/awakens} refreshed and {VERB/p_l/are/is} still able to gather a few pieces of moss before sunset."
+                ],
+                "exp_gained": 5,
+                "supply": [
+                    {
+                        "type": "moss",
+                        "adjust": "increase_small"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "strings": [
+                    "Mouse-dung! When p_l gets to the best moss gathering spot, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} that some animal has dug up most of the moss. {PRONOUN/p_l/subject/CAP}'ll have to leave the rest to repopulate before gathering from this spot again."
+                ],
+                "exp_gained": 0,
+                "frequency": 4
+            },
+            {
+                "strings": [
+                    "p_l arrives at {PRONOUN/p_l/poss} favorite moss gathering patch. The moss is tender and fluffy beneath {PRONOUN/p_l/poss} paws. With all the nagging responsibilities weighing on {PRONOUN/p_l/object} as a medicine cat, p_l supposes it might be alright to take a moment away from {PRONOUN/p_l/poss} duties to relax. p_l nestles into the soft moss for a quick respite... only to wake after dusk and return to camp empty-pawed."
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "some_clan",
+                            "high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "cat_from thought it was odd that cat_to spent so long out \"gathering moss\" only to return with empty paws."
+                        }
+                    }
+                ],
+                "exp_gained": 0,
+                "frequency": 2
             }
         ]
     }
