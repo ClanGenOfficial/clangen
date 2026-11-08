@@ -1208,13 +1208,20 @@ class Clan:
                     file_path, "r", encoding="utf-8"
                 ) as read_file:  # pylint: disable=redefined-outer-name
                     resources = ujson.load(read_file)
-                    clan.quarantine_nests = defaultdict(int)
-                    clan.quarantine_nests.update(resources.get("quarantine_nests", {}))
-                    clan.current_nest_build_count = defaultdict(int)
-                    clan.current_nest_build_count.update(
-                        resources.get("current_nest_build_count", {})
-                    )
-                    clan.quarantined_cats = resources.get("quarantined_cats", [])
+                    if "medicine_den" in resources:
+                        clan.quarantine_nests = defaultdict(int)
+                        clan.quarantine_nests.update(
+                            resources["medicine_den"].get("quarantine_nests", {})
+                        )
+                        clan.current_nest_build_count = defaultdict(int)
+                        clan.current_nest_build_count.update(
+                            resources["medicine_den"].get(
+                                "current_nest_build_count", {}
+                            )
+                        )
+                        clan.quarantined_cats = resources["medicine_den"].get(
+                            "quarantined_cats", []
+                        )
             else:
                 clan.quarantine_nests = defaultdict(int)
                 clan.current_nest_build_count = defaultdict(int)
@@ -1231,9 +1238,11 @@ class Clan:
         safe_save(
             f"{get_save_dir()}/{game.clan.save_id}/den_resources.json",
             {
-                "quarantine_nests": clan.quarantine_nests,
-                "current_nest_build_count": clan.current_nest_build_count,
-                "quarantined_cats": clan.quarantined_cats,
+                "medicine_den": {
+                    "quarantine_nests": clan.quarantine_nests,
+                    "current_nest_build_count": clan.current_nest_build_count,
+                    "quarantined_cats": clan.quarantined_cats,
+                }
             },
         )
 
