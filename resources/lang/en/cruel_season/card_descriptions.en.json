@@ -40,6 +40,7 @@
     "miasma": "A toxic smog hangs over the Clan, allowing illness to run rampant. The chance of illness is increased.",
     "crowfood": "Freshkill in this territory never seems to preserve quite right. Freshkill will rot much quicker.",
     "disorganized": "The Clan scrambles as they struggle to find a common goal. Patrols will always be of a random type.",
-    "no_prior_knowledge": "The founders of the Clan seem to run on hopes and dreams, rather than talent. All starting cat skills are set to the lowest tier."
+    "no_prior_knowledge": "The founders of the Clan seem to run on hopes and dreams, rather than talent. All starting cat skills are set to the lowest tier.",
+    "hostile_environs": "The world has no kindness in store for the Clan. Patrols will be more difficult."
   }
 }
