@@ -4336,6 +4336,7 @@
             "Daydreams of defending POI from invaders",
             "Is discussing POI with r_c"
         ],
+        "involved_cats": {
         "m_c": {
                  "group": [
                     "player_clan"
@@ -4346,7 +4347,8 @@
                     "player_clan"
                 ]
         }
-    },
+    }
+},
     {
         "event_id": "poi_terrain_not_kit",
         "poi": {
@@ -4460,11 +4462,13 @@
         "strings": [
             "Wonders why c_n decided to set up so close to POI"
         ],
+        "involved_cats": {
         "m_c": {
                  "group": [
                     "player_clan"
                 ]
         }
+    }
     },
     {
         "event_id": "poi_danger_gen1",
@@ -4476,6 +4480,7 @@
             "Is intimidated at the thought of POI",
             "Is having a bad dream about POI"
         ],
+        "involved_cats": {
         "m_c": {
                  "group": [
                     "player_clan"
@@ -4489,6 +4494,7 @@
                 ]
             }
         }
+    }
     },
     {
         "event_id": "poi_danger_gen2",
@@ -4498,6 +4504,7 @@
         "strings": [
             "Wonders if POI is haunted"
         ],
+        "involved_cats": {
         "m_c": {
                  "group": [
                     "player_clan"
@@ -4515,6 +4522,7 @@
                 "must_have_both": false
             }
         }
+    }
     },
     {
         "event_id": "poi_danger_working",
