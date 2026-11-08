@@ -5888,7 +5888,7 @@
         "chance_of_success": 30,
         "patrol_art": "POI",
         "intro_strings": [
-            "p_l moves carefully through the neutral ground that leads to POI. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} come to find out why it's plaguing {PRONOUN/p_l/poss} dreams lately. {PRONOUN/p_l/poss/CAP} dreams have been screaming out dream_list/p_l. They show POI shining with bright white light, pulsing in time with the heartbeat of an unseen cat that {PRONOUN/p_l/subject} can feel walking beside {PRONOUN/p_l/object}. With each dream, POI gets closer and closer, and last sleep, it was just a pawstep away."
+            "p_l moves carefully through the neutral ground that leads to POI. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} come to find out why it's plaguing {PRONOUN/p_l/poss} dreams with dream_list/p_l. They show POI shining with bright white light, pulsing in time with the heartbeat of an unseen cat that {PRONOUN/p_l/subject} can feel walking beside {PRONOUN/p_l/object}. With each dream, POI gets closer and closer, and last sleep, it was just a pawstep away."
         ],
         "decline_strings": [
             "p_l is forced to turn back when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} across a patrol from o_c_n, made up of warriors bringing their new apprentices to see the holy place for the first time. {PRONOUN/p_l/subject/CAP} {VERB/p_l/slip/slips} away before they can notice {PRONOUN/p_l/object} and ask any questions."
