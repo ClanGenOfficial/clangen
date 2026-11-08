@@ -10,9 +10,9 @@ import random
 
 # pylint: enable=line-too-long
 import traceback
+from collections import defaultdict
 
 import i18n
-from black.trans import defaultdict
 
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.conditions.coverage_check import (
