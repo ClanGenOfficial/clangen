@@ -5,6 +5,7 @@ from scripts.ui.elements.image_button import UIImageButton
 from scripts.ui.elements.modified_image import UIModifiedImage
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure import image_cache
+from scripts.ui.focus_matrix import ElementFocusMap
 from scripts.ui.scale import ui_scale, ui_scale_dimensions
 
 
@@ -33,7 +34,9 @@ class UICheckbox(UIImageButton):
         starting_height: int = 1,
         check: bool = False,
         anchors=None,
+        focus_map: ElementFocusMap = None,
     ):
+        self.focus_map = focus_map
         self.checked = check
         relative_rect = ui_scale(pygame.Rect(position, (34, 34)))
 

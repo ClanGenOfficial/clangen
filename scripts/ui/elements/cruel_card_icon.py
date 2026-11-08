@@ -6,6 +6,7 @@ from pygame_gui.core import ObjectID, UIElement, IContainerLikeInterface
 from pygame_gui.core.interfaces import IUIManagerInterface
 
 from scripts.ui.elements.image_button import UIImageButton
+from scripts.ui.focus_matrix import ElementFocusMap
 from scripts.ui.scale import ui_scale
 
 
@@ -21,6 +22,7 @@ class UICruelCardIcon(UIImageButton):
         anchors: Dict[str, Union[str, UIElement]] = None,
         visible: int = 1,
         manager: Optional[IUIManagerInterface] = None,
+        focus_map: ElementFocusMap = None,
     ):
         super().__init__(
             relative_rect=ui_scale(pygame.Rect(unscaled_position, (26, 38))),
@@ -32,6 +34,7 @@ class UICruelCardIcon(UIImageButton):
             object_id=object_id,
             anchors=anchors,
             visible=visible,
+            focus_map=focus_map,
         )
 
         self.name = name

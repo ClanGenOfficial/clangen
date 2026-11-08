@@ -3,6 +3,8 @@ from pygame_gui.core.gui_type_hints import RectLike
 from pygame_gui.core.interfaces import IUIManagerInterface
 from pygame_gui.elements import UIAutoResizingContainer
 
+from scripts.ui.focus_matrix import ElementFocusMap
+
 
 class UIDropDownContainer(UIAutoResizingContainer):
     def __init__(
@@ -17,6 +19,7 @@ class UIDropDownContainer(UIAutoResizingContainer):
         child_trigger_close: bool = False,
         starting_selection: list = None,
         open_on_hover: bool = False,
+        focus_map: ElementFocusMap = None,
     ):
         """
         Holds all the elements of a dropdown and coordinates its basic responses.
@@ -34,6 +37,7 @@ class UIDropDownContainer(UIAutoResizingContainer):
 
         """
         self.open_on_hover = open_on_hover
+        self.focus_map = focus_map
 
         super().__init__(
             relative_rect=relative_rect,
