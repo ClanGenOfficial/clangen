@@ -28,6 +28,7 @@ from scripts.events_module.text_adjust import (
     find_text_width,
     adjust_list_text,
 )
+from scripts.game_input import INPUT_ACTION_PRESSED
 from scripts.game_structure import game, image_cache
 from scripts.game_structure.game import Switch
 from scripts.game_structure.game.switches import switch_set_value
@@ -145,6 +146,13 @@ class MedDenScreen(Screens):
                 self.change_screen(GameScreen.PROFILE)
 
     def handle_quarantine_event(self, event):
+        if event.type == INPUT_ACTION_PRESSED:
+            # this is specifically used to detect a focused cat in the cat list
+            if self.current_focus in self.elements["cat_list"].cat_sprites.values():
+                self.update_potential_quarantine_display(
+                    self.current_focus.return_cat_object()
+                )
+
         if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
             if event.ui_element in self.elements["cat_list"].cat_sprites.values():
                 self.update_potential_quarantine_display(
@@ -609,12 +617,21 @@ class MedDenScreen(Screens):
         if not self.meds:
             self.elements["build_nest"].disable()
 
+        self.add_to_map(
+            [
+                self.elements["prior_nest_page_arrow"],
+                self.elements["next_nest_page_arrow"],
+                self.elements["build_nest"],
+            ]
+        )
+
         self.update_nest_display()
 
     def update_nest_display(self):
         """
         Displays the nests and the quarantined cats
         """
+        self.remove_from_map([x for x in self.nest_images.values()])
         for ele in self.nest_images.values():
             ele.kill()
         if self.elements.get("quarantine_cat_list"):
@@ -670,6 +687,7 @@ class MedDenScreen(Screens):
                     self.nest_images[f"nest{i}"].tool_tip_delay = 0
                     i += 1
 
+            self.add_to_map([x for x in self.nest_images.values()])
             # this is a really weird thing to have to do for the cat list display
             # but, it's necessary since we're doing weird stuff by displaying the nests separate from the cats
             # while also having the arrows control both the nest display and the cat display at once
@@ -701,6 +719,7 @@ class MedDenScreen(Screens):
                 )
                 for i, cat in enumerate(current_cat_chunk):
                     self.nest_images[f"nest{i}"].tool_tip_text = None
+                    self.remove_from_map([self.nest_images[f"nest{i}"]])
 
             if self.current_quarantine_page == 1:
                 self.elements["prior_nest_page_arrow"].disable()
