@@ -6236,7 +6236,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_to's supernatural powers led cat_from to {PRONOUN/cat_to/object}, but {PRONOUN/cat_to/subject} did take cat_from away from c_n."
+                            "cats_from": "cat_to's supernatural powers led cat_from to {PRONOUN/cat_to/object} and the two left c_n's territory together."
                         }
                     },
                     {
@@ -6253,7 +6253,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_to's supernatural powers allowed {PRONOUN/cat_to/object} to find cat_from."
+                            "cats_from": "cat_to and cat_from shared the same power of dreaming, and cat_from was honored that {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} willing to leave {PRONOUN/cat_to/poss} home behind to join {PRONOUN/cat_from/object} for their great destiny."
                         }
                     }
                 ]
@@ -6335,7 +6335,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_to's supernatural powers led cat_from to {PRONOUN/cat_to/object}, but {PRONOUN/cat_to/subject} did take cat_from away from c_n."
+                            "cats_from": "cat_to's supernatural powers led cat_from to {PRONOUN/cat_to/object} and the two left c_n's territory together."
                         }
                     },
                     {
@@ -6352,7 +6352,7 @@
                             "trust"
                         ],
                         "log": {
-                            "cats_from": "cat_to's supernatural powers allowed {PRONOUN/cat_to/object} to find cat_fro."
+                            "cats_from": "cat_to and cat_from shared the same power of dreaming, and cat_from was honored that {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} willing to leave {PRONOUN/cat_to/poss} home behind to join {PRONOUN/cat_from/object} for their great destiny."
                         }
                     }
                 ]
