@@ -257,7 +257,10 @@ class ProfileScreen(Screens):
             if event.ui_element == self.manage_roles:
                 self.change_screen(GameScreen.CHANGE_ROLE)
             elif event.ui_element == self.change_mentor_button:
-                self.change_screen(GameScreen.CHOOSE_MENTOR)
+                if not get_config("roles.receive_mentor"):
+                    CruelLockedAction()
+                else:
+                    self.change_screen(GameScreen.CHOOSE_MENTOR)
         # Personal Tab
         elif self.open_tab == "personal":
             if event.ui_element == self.change_name_button:
@@ -2286,7 +2289,7 @@ class ProfileScreen(Screens):
                 self.kill_cat_button.enable()
 
                 # no exile allowed if not in a clan
-                if not self.the_cat.status.is_clancat:
+                if not self.the_cat.status.alive_in_player_clan:
                     self.exile_cat_button.disable()
                     self.leave_clan_button.disable()
 

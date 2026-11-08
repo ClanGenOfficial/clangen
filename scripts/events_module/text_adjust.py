@@ -1,8 +1,8 @@
+import logging
 import re
 from math import floor
 from random import choice, sample, randint
-from typing import Type, List, TYPE_CHECKING, Union
-import logging
+from typing import Type, List, TYPE_CHECKING
 
 import i18n
 import pygame
@@ -16,11 +16,6 @@ from scripts.cat.pronouns import (
 )
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
-from scripts.clan_resources.point_of_interest import (
-    get_random_poi_by_tag,
-    get_random_poi_by_category,
-    get_poi_names_set,
-)
 from scripts.game_structure import localization, game
 from scripts.game_structure.game import switch_get_value, Switch
 from scripts.game_structure.localization import load_lang_resource, get_lang_config
@@ -706,7 +701,7 @@ def selective_replace(text, pattern, replacement):
 
 
 def shorten_text_to_fit(
-    name, length_limit, font_size=None, font_type="resources/fonts/NotoSans-Medium.ttf"
+    name, length_limit, font_size=15, font_type="resources/fonts/NotoSans-Medium.ttf"
 ):
     length_limit = length_limit * scripts.game_structure.screen_settings.screen_scale
     font = _get_font_object(font_size, font_type)
@@ -743,8 +738,6 @@ def find_text_width(
 
 
 def _get_font_object(font_size, font_type):
-    if font_size is None:
-        font_size = 15
     font_size = floor(font_size * scripts.game_structure.screen_settings.screen_scale)
     if font_type == "clangen":
         font_type = "resources/fonts/clangen.ttf"
