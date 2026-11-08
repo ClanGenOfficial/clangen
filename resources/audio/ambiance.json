@@ -9,21 +9,21 @@
     },
 
     "beach": {
-        "base": ["biome_beach/beach_base.mp3"],
+        "base": ["biome_beach/BBC_beach_base_2.mp3", "biome_beach/beach_base.mp3"],
         "fjord": ["biome_beach/fjord_pebble1.mp3", "biome_beach/fjord_pebble2.mp3", "biome_beach/fjord_pebble3.mp3"],
         "shipwreck": ["biome_beach/shipwreck_creak1.mp3", "biome_beach/shipwreck_creak2.mp3"]
     },
     "forest": {
-        "base": ["biome_forest/forest_base.mp3"],
+        "base": ["biome_forest/BBC_forest_base_2.mp3", "biome_forest/forest_base.mp3"],
         "lakeside": ["biome_forest/lakeside_splash_and_loons.mp3", "biome_forest/lakeside_waves.mp3", "biome_forest/lakeside_wind.mp3"]
     },
     "mountainous": {
-        "base": ["biome_mountainous/mountain_base.mp3"],
+        "base": ["biome_mountainous/BBC_mountain_base_2.mp3", "biome_mountainous/mountain_base.mp3"],
         "cavern": ["biome_mountainous/cavern_bats.mp3", "biome_mountainous/cavern_drip1.mp3", "biome_mountainous/cavern_dripping2.mp3"],
         "crystal_river": ["biome_mountainous/crystal_river_synth.mp3", "biome_mountainous/crystal_river_water1.mp3", "biome_mountainous/crystal_river_water2.mp3"]
     },
     "plains": {
-        "base": ["biome_plains/plains_base.mp3"],
+        "base": ["biome_plains/BBC_plains_base_2.mp3", "biome_plains/plains_base.mp3"],
         "tunnels": ["biome_plains/tunnels_digging1.mp3", "biome_plains/tunnels_digging2.mp3"],
         "wastelands": ["biome_plains/wasteland_construction.mp3", "biome_plains/wasteland_crow.mp3", "biome_plains/wasteland_hawk.mp3", "biome_plains/wasteland_squeaky1.mp3", "biome_plains/wasteland_squeaky2.mp3"]
     }
