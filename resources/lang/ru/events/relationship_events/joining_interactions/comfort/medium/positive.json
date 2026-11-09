@@ -1,0 +1,23 @@
+[
+    {
+        "event_id": "gen_comfort_med_pos1",
+        "strings": [
+            "r_c and m_c bonded over their preferred nesting materials while m_c was getting comfortable in {PRONOUN\/m_c\/poss} new den."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": 10
+            }
+        ]
+    }
+]

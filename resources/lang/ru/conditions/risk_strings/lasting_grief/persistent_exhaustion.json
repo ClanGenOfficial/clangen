@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "lasting_grief_persistent_exhaustion",
+        "strings": [
+            "Grief is tiring, especially if it never leaves. m_c wonders if this exhaustion will stay permanently, too."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

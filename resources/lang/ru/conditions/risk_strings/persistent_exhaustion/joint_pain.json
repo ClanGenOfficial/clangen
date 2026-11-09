@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "persistent_exhaustion_joint_pain",
+        "strings": [
+            "m_c's joints feel painful and swollen from the effort needed to move around."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
