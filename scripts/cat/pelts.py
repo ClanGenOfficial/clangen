@@ -131,8 +131,9 @@ class Pelt:
             for sprite_list in data["sprite_list"]:
                 white_list.extend(sprite_list)
         else:
-            for sprite_list in data["sprite_list"].values():
-                white_list.extend(sprite_list)
+            for sheet in data["sprite_list"].values():
+                for sprite_list in sheet:
+                    white_list.extend(sprite_list)
 
     # have to remove FULLWHITE as it's handled special
     if "FULLWHITE" in mostly_white:
@@ -270,7 +271,7 @@ class Pelt:
     ) -> None:
         self.name = name
         self.colour = colour
-        self.white_patches = white_patches
+        self.white_patches: str = white_patches
         self.eye_colour = eye_color
         self.eye_colour2 = eye_colour2
         self.tortie_base = tortie_base
@@ -1054,6 +1055,8 @@ class Pelt:
         for p in parents:
             if p:
                 if p.pelt.white_patches:
+                    if isinstance(p.pelt.white_patches, list):
+                        pass
                     par_whitepatches.add(p.pelt.white_patches)
                 if p.pelt.points:
                     par_points.append(p.pelt.points)
