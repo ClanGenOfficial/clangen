@@ -111,13 +111,19 @@ class SpawnTintColoursCommand(Command):
         dilute_tint_colours = sprites.cat_tints["dilute_tint_colours"].keys()
         remove_tone_tint_colours = sprites.cat_tints["remove_tone_tint_colours"].keys()
 
-        possible_tints_str = ", ".join(
-            set(tint_colours and dilute_tint_colours and remove_tone_tint_colours)
+        possible_tints_str = (
+            ", ".join(set(tint_colours))
+            + ", "
+            + ", ".join(set(dilute_tint_colours))
+            + ", "
+            + ", ".join(set(remove_tone_tint_colours))
         )
 
         tint_name = args[1]
         if not (
-            tint_name in tint_colours + dilute_tint_colours + remove_tone_tint_colours
+            tint_name in tint_colours
+            or tint_name in dilute_tint_colours
+            or tint_name in remove_tone_tint_colours
         ):
             add_output_line_to_log(
                 f"Tint {tint_name} does not seem to exist! Possible tints are {possible_tints_str}."
@@ -175,7 +181,7 @@ class SpawnTintsCommand(Command):
             colour_tints = sprites.cat_tints["possible_tints"][color_group]
         else:
             colour_tints = []
-        possible_tints = base_tints + colour_tints
+        possible_tints = [None] + base_tints + colour_tints
 
         for tint in possible_tints:
             cat = NewCatFactory.create_cat(

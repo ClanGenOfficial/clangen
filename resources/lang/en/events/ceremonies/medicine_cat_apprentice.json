@@ -57,7 +57,7 @@
     },
     {
         "event_id": "med_app_no_mentor0",
-        "tags": ["-clan:medicine cat(min:1)"],
+        "tags": ["-clan:medicine cat(min:1)", "-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "has_mentor": {
@@ -540,6 +540,13 @@
         ]
     },
     {
+    "event_id": "med_app_nevermentor_default",
+    "tags": ["card:on_their_own"],
+    "strings": [
+        "<i>Sure,</i> the unpredictability of hunting and fighting is appealing to most kits. However, m_c decided to take a different, slightly more predictable path as a medicine cat apprentice."
+    ]
+},
+{
         "event_id": "med_app_POI_moonplace0",
         "involved_cats": {
             "m_c": {
