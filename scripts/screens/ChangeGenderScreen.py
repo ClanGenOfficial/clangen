@@ -344,7 +344,8 @@ class ChangeGenderScreen(Screens):
         """Updates the cat's list of current pronouns."""
 
         number_of_pronouns = len(self.the_cat.pronouns)
-
+        interactable_elements = []
+        
         for pronounset in self.the_cat.pronouns:
             pro_container = self._generate_pronoun_box(
                 pronounset,
@@ -357,8 +358,10 @@ class ChangeGenderScreen(Screens):
             if number_of_pronouns > 1:
                 remove_butt = self._generate_removal_button(pro_container)
                 self.cat_pronoun_removal_buttons.append(remove_butt)
-                self.add_to_map(remove_butt)
+                interactable_elements.append(remove_butt)
 
+        self.add_to_map(interactable_elements)
+        
         min_scrollable_height = ui_scale_value(
             max(100, len(self.the_cat.pronouns) * 45 + 5)
         )
@@ -375,7 +378,8 @@ class ChangeGenderScreen(Screens):
         all_pronouns = self.pronouns_dict + pronouns.get_custom_pronouns()
 
         number_of_default = len(self.pronouns_dict)
-
+        interactable_elements = []
+        
         for n, pronounset in enumerate(all_pronouns):
             pro_container = self._generate_pronoun_box(
                 pronounset,
@@ -393,12 +397,14 @@ class ChangeGenderScreen(Screens):
             if n >= number_of_default:
                 remove_butt = self._generate_removal_button(pro_container)
                 self.saved_pronoun_removal_buttons.append(remove_butt)
-                self.add_to_map(remove_butt)
+                interactable_elements.append(remove_butt)
 
             add_butt = self._generate_add_button(pro_container, remove_butt)
             self.saved_pronoun_add_buttons.append(add_butt)
-            self.add_to_map(add_butt)
+            interactable_elements.append(add_butt)
 
+        self.add_to_map(interactable_elements)
+        
         min_scrollable_height = ui_scale_value(max(100, len(all_pronouns) * 45 + 5))
 
         self.saved_pronoun_scrolling_container.set_scrollable_area_dimensions(
