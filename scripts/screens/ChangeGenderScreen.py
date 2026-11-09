@@ -92,6 +92,8 @@ class ChangeGenderScreen(Screens):
     def screen_switches(self):
         super().screen_switches()
 
+        interactable_elements = []
+        
         temp = load_lang_resource("pronouns.{lang}.json")
 
         self.pronouns_dict = [
@@ -106,6 +108,8 @@ class ChangeGenderScreen(Screens):
             sound_id="page_flip",
             manager=MANAGER,
         )
+        interactable_elements.append(self.next_cat_button)
+
         self.previous_cat_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (153, 30))),
             "buttons.previous_cat",
@@ -114,6 +118,8 @@ class ChangeGenderScreen(Screens):
             sound_id="page_flip",
             manager=MANAGER,
         )
+        interactable_elements.append(self.previous_cat_button)
+
         self.back_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 60), (105, 30))),
             "buttons.back",
@@ -121,6 +127,7 @@ class ChangeGenderScreen(Screens):
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
+        interactable_elements.append(self.back_button)
 
         self.elements["gender_box"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((336, 120), (298, 165))),
@@ -174,6 +181,7 @@ class ChangeGenderScreen(Screens):
                 "left_target": self.next_cat_button,
             },
         )
+        interactable_elements.append(self.elements["help_button"])
 
         self.current_pronoun_scrolling_container = (
             pygame_gui.elements.UIScrollingContainer(
@@ -224,6 +232,7 @@ class ChangeGenderScreen(Screens):
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
+        interactable_elements.append(self.elements["add_pronoun_button"])
 
         self.elements["identity_change_confirmation"] = pygame_gui.elements.UITextBox(
             "screens.change_gender.identity_changed_confirmation",
@@ -263,6 +272,7 @@ class ChangeGenderScreen(Screens):
             manager=MANAGER,
         )
         self.elements["gender_entry_box"].set_text_length_limit(50)
+        interactable_elements.append(self.elements["gender_entry_box"])
 
         self.elements["gender_save_button"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((532, 220), (73, 30))),
@@ -272,6 +282,9 @@ class ChangeGenderScreen(Screens):
             starting_height=2,
             manager=MANAGER,
         )
+        interactable_elements.append(self.elements["gender_entry_box"])
+
+        self.add_to_map(interactable_elements)
 
         self.update_selected_cat()
         self.preset_update()
@@ -344,6 +357,7 @@ class ChangeGenderScreen(Screens):
             if number_of_pronouns > 1:
                 remove_butt = self._generate_removal_button(pro_container)
                 self.cat_pronoun_removal_buttons.append(remove_butt)
+                self.add_to_map(remove_butt)
 
         min_scrollable_height = ui_scale_value(
             max(100, len(self.the_cat.pronouns) * 45 + 5)
@@ -379,9 +393,11 @@ class ChangeGenderScreen(Screens):
             if n >= number_of_default:
                 remove_butt = self._generate_removal_button(pro_container)
                 self.saved_pronoun_removal_buttons.append(remove_butt)
+                self.add_to_map(remove_butt)
 
             add_butt = self._generate_add_button(pro_container, remove_butt)
             self.saved_pronoun_add_buttons.append(add_butt)
+            self.add_to_map(add_butt)
 
         min_scrollable_height = ui_scale_value(max(100, len(all_pronouns) * 45 + 5))
 
@@ -485,10 +501,11 @@ class ChangeGenderScreen(Screens):
             if pronoun not in ("conju", "gender", "ID")
         )
 
-    def reset_cat_buttons_and_boxes(self):
+    def reset_cat_buttons_and_boxes(self):        
         for i in self.cat_pronoun_elements:
             i.kill()
 
+        self.remove_from_map(self.cat_pronoun_removal_buttons)
         self.cat_pronoun_elements = []
         self.cat_pronoun_removal_buttons = []
 
@@ -496,6 +513,8 @@ class ChangeGenderScreen(Screens):
         for i in self.saved_pronoun_elements:
             i.kill()
 
+        self.remove_from_map(self.saved_pronoun_add_buttons)
+        self.remove_from_map(self.saved_pronoun_add_buttons)
         self.saved_pronoun_elements = []
         self.saved_pronoun_removal_buttons = []
         self.saved_pronoun_add_buttons = []
