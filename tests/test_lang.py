@@ -1,6 +1,7 @@
 # Tests for localization
 import unittest
 from random import Random
+from unittest.mock import patch
 
 import i18n
 import ujson
@@ -8,6 +9,7 @@ import ujson
 from scripts.cat.factories.test_cat_factory import TestCatFactory
 
 from scripts.cat.cats import Cat
+from scripts.game_structure import monkeypatch
 from scripts.game_structure.localization import (
     set_lang_config_directory,
 )
@@ -17,7 +19,7 @@ from scripts.events_module.text_adjust import event_text_adjust
 cat_factory = TestCatFactory()
 
 
-class TestLocalisation(unittest.TestCase):
+class TestPronounLocalization(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         with open(
@@ -114,3 +116,92 @@ class TestLocalisation(unittest.TestCase):
                     ),
                     value[1]["subject"],
                 )
+
+
+@patch("i18n.translator.translate", new=monkeypatch.i18n_translate)
+class TestPluralization(unittest.TestCase):
+    def setUp(self):
+        self.prior_language = i18n.config.get("locale")
+
+    def tearDown(self):
+        i18n.config.set("locale", self.prior_language)
+
+    def test_pluralization_en(self):
+        # given
+        i18n.config.set("locale", "en")
+        i18n.translations.add(
+            "foo.plural",
+            {
+                "zero": "zero",
+                "one": "one",
+                "many": "many",
+            },
+            locale="en",
+        )
+
+        # then
+        self.assertEqual(i18n.t("foo.plural", count=0), "zero")
+        self.assertEqual(i18n.t("foo.plural", count=1), "one")
+        self.assertEqual(i18n.t("foo.plural", count=2), "many")
+        self.assertEqual(i18n.t("foo.plural", count=100), "many")
+        self.assertEqual(i18n.t("foo.plural", count=1.2), "many")
+
+    def test_pluralization_ru(self):
+        # given
+        i18n.config.set("locale", "ru")
+        i18n.translations.add(
+            "foo.plural",
+            {
+                "zero": "zero",
+                "one": "one",
+                "two": "two",
+                "few": "few",
+                "many": "many",
+                "other": "other",
+            },
+            locale="ru",
+        )
+
+        # then
+        self.assertEqual(i18n.t("foo.plural", count=0), "many")
+        self.assertEqual(i18n.t("foo.plural", count=1), "one")
+        self.assertEqual(i18n.t("foo.plural", count=2), "few")
+        self.assertEqual(i18n.t("foo.plural", count=4), "few")
+        self.assertEqual(i18n.t("foo.plural", count=22), "few")
+        self.assertEqual(i18n.t("foo.plural", count=24), "few")
+        self.assertEqual(i18n.t("foo.plural", count=5), "many")
+        self.assertEqual(i18n.t("foo.plural", count=19), "many")
+        self.assertEqual(i18n.t("foo.plural", count=11), "one")
+        self.assertEqual(i18n.t("foo.plural", count=12), "many")
+        self.assertEqual(i18n.t("foo.plural", count=21), "one")
+        self.assertEqual(i18n.t("foo.plural", count=100), "many")
+        self.assertEqual(i18n.t("foo.plural", count=101), "one")
+        self.assertEqual(i18n.t("foo.plural", count=102), "few")
+        self.assertEqual(i18n.t("foo.plural", count=1.2), "other")
+
+    def test_pluralization_pu(self):
+        # given
+        i18n.config.set("locale", "pu")
+        i18n.translations.add(
+            "foo.plural",
+            {
+                "zero": "zero",
+                "one": "one",
+                "two": "two",
+                "few": "few",
+                "many": "many",
+                "other": "other",
+            },
+            locale="pu",
+        )
+
+        # then
+        self.assertEqual(i18n.t("foo.plural", count=0), "many")
+        self.assertEqual(i18n.t("foo.plural", count=1), "one")
+        self.assertEqual(i18n.t("foo.plural", count=2), "few")
+        self.assertEqual(i18n.t("foo.plural", count=4), "few")
+        self.assertEqual(i18n.t("foo.plural", count=23), "few")
+        self.assertEqual(i18n.t("foo.plural", count=5), "many")
+        self.assertEqual(i18n.t("foo.plural", count=19), "many")
+        self.assertEqual(i18n.t("foo.plural", count=20), "many")
+        self.assertEqual(i18n.t("foo.plural", count=1.2), "other")
