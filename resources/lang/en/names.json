@@ -9,35 +9,38 @@
     },
 
   "normal_suffixes" : [
-    "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur",
-    "tuft", "tuft", "tuft", "tuft", "tuft", "tooth", "tooth", "tooth", "tooth", "tooth",
-    "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt",
-    "tail", "tail", "tail", "tail", "tail", "tail", "tail", "claw", "claw", "claw", "claw", "claw", "claw",
-    "foot", "foot", "foot", "foot", "foot", "whisker", "whisker", "whisker", "whisker", "whisker", "whisker",
+    "tuft", "tuft", "tooth", "tooth", "tooth", "tooth", "tooth", "claw", "claw", "claw", "claw", "claw", "claw",
     "heart", "heart", "heart", "heart", "heart", "heart", "heart", "heart",
-    "arch", "ash", "aster", "back", "badger", "bark", "bat", "beak", "beam", "bee", "beetle", "bellow", "belly", "berry",
+    "arch", "ash", "aster",  "badger", "bark", "bat", "beak", "beam", "bee", "beetle", "bellow","berry",
     "billow", "bird", "bite", "blaze", "blink", "bloom", "blossom", "blotch", "blur", "bone", "bounce", "bound", "bracken", "bramble",
     "branch", "break", "breeze", "briar", "bright", "brook", "brush", "bubble", "bud", "bumble", "burn", "burr", "burst", "bush", "buzz",
-    "call", "catcher", "chase", "chaser", "chasm", "chest", "chill", "chirp", "chomp", "cinder", "clash", "cloud", "clover",
+    "call", "catcher", "chase", "chaser", "chasm", "chill", "chirp", "chomp", "cinder", "clash", "cloud", "clover",
     "crackle", "crash", "crawl", "creek", "crest", "cry", "curl", "current", "daisy", "dance", "dapple", "dart", "dash", "dawn",
-    "daze", "dazzle", "dew", "dream", "drift", "drizzle", "drop", "dusk", "dust", "eagle", "ear", "ears", "echo", "egg", "ember",
-    "eye", "eyes", "face", "falcon", "fall", "fang", "feather", "fern", "fin", "fire", "fish", "flake", "flame", "flare", "flash",
+    "daze", "dazzle", "dew", "dream", "drift", "drizzle", "drop", "dusk", "dust", "eagle",  "echo", "egg", "ember",
+    "falcon", "fall", "fang", "feather", "fern", "fin", "fire", "fish", "flake", "flame", "flare", "flash",
     "fleck", "flick", "flicker", "flight", "flip", "flit", "flood", "flow", "flower", "fluff", "flutter", "fog", "fox", "freeze", "frost", "fruit",
-    "fuzz", "frill", "gale", "gaze", "ghost", "glare", "gleam", "glide", "glint", "glow", "goose", "gorse", "grass", "growl", "hail", "hare",
+    "fuzz", "frill", "gale", "ghost",  "gleam", "glide", "glint", "glow", "goose", "gorse", "grass", "growl", "hail", "hare",
     "haven", "hawk", "haze", "heather", "hiss", "hollow", "holly", "honey", "hop", "hope", "howl", "hunt", "husk", "ice", "iris", "ivy", "jaw",
-    "jay", "joy", "jumble", "jump", "kestrel", "kick", "kite", "knoll", "lake", "larch", "laurel", "leaf", "leap", "leg", "leopard",
+    "jay", "joy", "jumble", "jump", "kestrel", "kick", "kite", "knoll", "lake", "larch", "laurel", "leaf", "leap",  "leopard",
     "light", "lightning", "lilac", "lily", "lion", "lotus", "lunge", "mallow", "mane", "mark", "mask", "meadow", "mimic", "minnow", "mist",
-    "moon", "moor", "moss", "moth", "mouse", "munch", "murk", "muzzle", "needle", "nest", "nettle", "newt", "nibble", "night", "nip",
-    "noise", "nose", "nudge", "nut", "nuzzle", "pad", "patch", "path", "peak", "petal", "plume", "pond", "pool", "poppy", "pounce", "prance",
+    "moon", "moor", "moss", "moth", "mouse", "munch", "murk",  "needle", "nest", "nettle", "newt", "nibble", "night", "nip",
+    "noise",  "nudge", "nut", "nuzzle", "pad", "patch", "path", "peak", "petal", "plume", "pond", "pool", "poppy", "pounce", "prance",
     "prickle", "prowl", "puddle", "puff", "purr", "quill", "quiver", "rain", "rapid", "raven", "reed", "rip", "ripple", "rise", "river",
     "roach", "roar", "rock", "roll", "root", "rose", "rumble", "rump", "run", "runner", "rush", "rustle", "scar", "scratch", "screech",
     "seed", "seeker", "shade", "shadow", "shard", "shell", "shimmer", "shine", "shiver", "shock", "shriek", "sight", "silk", "skip",
     "skitter", "sky", "slash", "slip", "snap", "snarl", "snout", "snow", "soar", "song", "spark", "speck", "speckle", "spider",
     "spike", "spirit", "splash", "splinter", "spore", "spot", "spots", "spring", "sprout", "stalk", "stem", "step", "sting", "stone",
     "storm", "streak", "stream", "stretch", "strike", "stride", "stripe", "sun", "swarm", "swipe", "swoop", "talon", "tangle",
-    "thistle", "thorn", "thrift", "throat", "thrush", "thud", "thunder", "tiger", "timber", "toe", "tooth", "trail", "tree",
+    "thistle", "thorn", "thrift",  "thrush", "thud", "thunder", "tiger", "timber", "tooth", "trail", "tree",
     "trot", "tumble", "twist", "valley", "wander", "watcher", "water", "wave", "web", "weaver", "whisper", "whistle", "wiggle", "willow", "wind",
-	  "wing", "wish", "wisp", "zoom"
+	"wing", "wish", "wisp", "zoom"
+  ],
+  "pelt_desc_suffixes" : [
+    "fur","fur","fur","fur", "pelt", "pelt","pelt","pelt",
+    "back", "belly", "chest", "ear", "ears", "face", "foot", "jaw", "leg", "muzzle", "nose", "pad", "pelt", "tail", "throat", "toe", "whisker"
+  ],
+  "eye_desc_suffixes" : [
+    "blink", "eye", "eye", "eyes", "eyes", "gaze", "glare", "sight"
   ],
 	"pelt_prefixes": {
     "TwoColour": ["Patch", "Bright", "Half", "Arch", "Spot", "Lion", "Dove", "Swan"],
@@ -74,15 +77,15 @@
     "Bengal": ["leopard", "dapple", "speckle", "spots", "speck", "freckle", "fleck", "blotch", "bloom", "flower", "spot", "bite", "flower", "blossom"],
     "Rosette": ["leopard", "dapple", "speckle", "spots", "dapple", "freckle", "fleck", "blotch", "flower", "bloom", "bite", "flower", "blossom"],
     "Smoke": ["fade", "dusk", "dawn", "smoke", "cloud", "dust", "mist", "storm", "fog", "blur", "haze", "daze"],
-    "Ticked": ["spots", "pelt", "speckle", "freckle", "flake", "fleck", "thrush", "swarm", "speck", "spot"],
+    "Ticked": ["spots",  "speckle", "freckle", "flake", "fleck", "thrush", "swarm", "speck", "spot"],
     "Mackerel": ["tiger", "stripe", "feather", "leaf", "stripe", "fern", "thorn", "thistle", "bee", "bumble", "branch", "streak", "scratch",
     "nettle", "needle"],
     "Classic": ["tiger", "stripe", "feather", "leaf", "stripe", "fern", "swirl", "thorn", "thistle", "bee", "bumble", "branch", "streak",
     "scratch", "nettle", "needle"],
     "Sokoke": ["tiger", "stripe", "feather", "leaf", "stripe", "fern", "swirl", "shard", "whirl", "bee", "bumble", "streak", "scratch", "feather",
     "needle"],
-    "Agouti": ["back", "pelt", "fur", "tail", "flake", "fleck", "freckle", "streak", "scratch", "stripe", "speck", "speckle", "needle", "thrush", "swarm"],
-    "Singlestripe": ["stripe", "stripe", "streak", "back", "back", "shade", "stem", "shadow", "tail", "tail", "arch", "scratch", "ridge", "lion", "needle"],
+    "Agouti": ["flake", "fleck", "freckle", "streak", "scratch", "stripe", "speck", "speckle", "needle", "thrush", "swarm"],
+    "Singlestripe": ["stripe", "stripe", "streak",  "shade", "stem", "shadow",  "arch", "scratch", "ridge", "lion", "needle"],
     "Masked": ["tiger", "stripe", "mask", "mask", "shade", "thorn", "thistle", "bee", "bumble", "branch", "streak", "scratch", "badger", "raccoon",
     "needle"],
     "Freckled": ["fleck", "speckle", "speckle", "speck", "dapple", "spot", "spots", "freckle", "freckle", "flake", "swarm"],
@@ -99,11 +102,11 @@
     "Bengal": ["dapple", "speckle", "spots", "speck", "fern", "freckle", "leopard", "fleck", "blotch", "bite", "flower", "blossom", "bloom"],
     "Rosette": ["dapple", "speckle", "spots", "dapple", "fern", "freckle", "leopard", "fleck", "blotch", "bite", "flower", "blossom", "bloom"],
     "Smoke": ["fade", "dusk", "dawn", "smoke", "blur", "cloud", "dust", "mist", "storm", "fog", "haze", "daze"],
-    "Ticked": ["spots", "pelt", "speckle", "freckle", "flake", "fleck", "thrush", "swarm"],
+    "Ticked": ["spots",  "speckle", "freckle", "flake", "fleck", "thrush", "swarm"],
     "Mackerel": ["stripe", "feather", "fern", "tiger", "leaf", "thorn", "thistle", "bee", "bumble", "branch", "streak", "scratch", "needle"],
     "Classic": ["stripe", "feather", "fern", "tiger", "leaf", "swirl", "thorn", "thistle", "bee", "bumble", "branch", "streak", "scratch", "needle"],
     "Sokoke": ["stripe", "feather", "fern", "tiger", "leaf", "stripe", "swirl", "shard", "whirl", "bee", "bumble", "streak", "scratch", "needle"],
-    "Agouti": ["back", "pelt", "fur", "dapple", "flake", "fleck", "freckle", "streak", "scratch", "stripe", "needle"],
+    "Agouti": ["dapple", "flake", "fleck", "freckle", "streak", "scratch", "stripe", "needle"],
     "Singlestripe": ["stripe", "back", "shade", "stem", "patch", "streak", "stripe", "back", "shadow", "arch", "ridge"],
     "Freckled": ["fleck", "speckle", "speckle", "speck", "dapple", "spot", "spots", "freckle", "freckle", "flake", "swarm"],
     "Masked": ["stripe", "dapple", "mask", "mask", "shade", "tiger", "thorn", "thistle", "bee", "bumble", "branch", "streak", "scratch",
@@ -381,7 +384,7 @@
 	"root", "owl", "twig", "wood", "moth", "bark", "branch", "burr"
     ],
     "MALLOW": [
-	"root","twig", "wood", "moth", "bark", "branch", "burr", "back"
+	"root","twig", "wood", "moth", "bark", "branch", "burr"
     ],
     "DARKBROWN": [
 	"root", "bark", "shade", "owl", "oak", "wood", "moth", "branch", "burr"
@@ -554,7 +557,7 @@
 
 	"eye_suffixes": {
     "YELLOW": [
-    "blaze", "shine", "bee", "beam", "wasp", "honey", "lightning", "gaze", "glare", "gleam", "shimmer", "shine", "sun", "light",
+    "blaze", "shine", "bee", "beam", "wasp", "honey", "lightning",  "gleam", "shimmer", "shine", "sun", "light",
     "burn"
     ],
     "AMBER": [
@@ -579,7 +582,7 @@
     "storm", "stone", "pebble", "boulder", "pool", "lake", "dew", "fog", "freeze", "frost", "hail", "ice", "minnow", "shimmer", "shiver", "cloud"
     ],
     "CYAN": [
-    "sky", "river", "stream", "pool", "lake", "chill", "creek", "dew", "freeze", "frost", "hail", "ice", "splash", "gaze", "glare",
+    "sky", "river", "stream", "pool", "lake", "chill", "creek", "dew", "freeze", "frost", "hail", "ice", "splash", "glare",
     "gleam", "water", "shimmer", "shine", "shiver", "spring"
     ],
     "EMERALD": [
@@ -587,16 +590,16 @@
     ],
     "PALEBLUE": [
     "frost", "sky", "pool", "lake", "freeze", "pond", "dew", "brook", "bubble", "chill", "creek", "dew", "hail", "ice", "splash",
-    "gaze", "glare", "gleam", "water", "shimmer", "shine", "shiver", "spring", "light"
+    "glare", "gleam", "water", "shimmer", "shine", "shiver", "spring", "light"
     ],
     "PALEYELLOW": [
-    "shine", "bee", "beam", "wasp", "honey", "lightning", "gaze", "glare", "gleam", "shimmer", "shine", "sun", "light"
+    "shine", "bee", "beam", "wasp", "honey", "lightning",  "glare", "gleam", "shimmer", "shine", "sun", "light"
     ],
     "GOLD": [
-    "blaze", "shine", "sun", "bee", "wasp", "honey", "lightning", "gaze", "glare", "gleam", "light", "burn"
+    "blaze", "shine", "sun", "bee", "wasp", "honey", "lightning",  "glare", "gleam", "light", "burn"
     ],
     "HEATHERBLUE": [
-    "frost", "fog", "sky", "dawn", "dream", "dew", "freeze", "chill", "hail", "jay", "splash", "gaze", "glare", "gleam", "water", "shimmer",
+    "frost", "fog", "sky", "dawn", "dream", "dew", "freeze", "chill", "hail", "jay", "splash", "glare", "gleam", "water", "shimmer",
     "shiver", "heather", "spring"
     ],
     "COPPER": [
@@ -609,7 +612,7 @@
     "sky", "dusk", "lake", "pool", "brook", "bubble", "flood", "jay", "water", "spring"
     ],
     "SUNLITICE": [
-    "frost", "sky", "dawn", "shimmer", "beam", "glow", "gaze", "glare", "gleam", "chill", "jay", "splash", "water", "shine", "shiver",
+    "frost", "sky", "dawn", "shimmer", "beam", "glow",  "glare", "gleam", "chill", "jay", "splash", "water", "shine", "shiver",
     "spring", "light"
     ],
     "GREENYELLOW": [
@@ -627,7 +630,7 @@
 	"DAWN": ["blaze", "fire", "scorch", "flame", "flare", "ember", "fox", "vixen", "burn", "dawn", "leaf", "seed"],
     "DUSK": ["bark", "burr", "moth", "murk", "nut", "root", "splinter", "wood", "branch", "twig", "leaf", "seed", "owl", "dusk"],
     "AURORA": ["dusk", "holly", "moss", "willow", "storm", "leaf", "sprout", "seed", "clover", "fern", "ivy", "meadow", "lake", "pool", "river", "flood"],
-    "FOREST": ["leaf", "sprout", "seed", "fern", "clover", "ivy", "meadow", "moss", "light", "shine", "spring", "light", "shine", "gaze"],
+    "FOREST": ["leaf", "sprout", "seed", "fern", "clover", "ivy", "meadow", "moss", "light", "shine", "spring", "light", "shine"],
     "MUSTARD": ["blaze", "fox", "vixen", "burn", "honey", "leaf", "seed"],
     "EARTHY": ["bark", "burr", "moth", "murk", "nut", "root", "splinter", "wood", "branch", "twig", "owl", "leaf", "seed"],
     "SEA": ["dusk", "daze", "shade", "pebble", "rock", "stone", "boulder", "smoke", "cinder", "night", "shadow",  "lake", "pond", "flood", "storm", "rain", "sky", "pool"],
@@ -644,9 +647,9 @@
     "MAPLE": ["leaf", "seed", "blaze", "shine", "fire", "flame", "flare", "ember", "fox", "vixen", "burn"],
     "LIME": ["leaf", "sprout", "seed", "clover", "fern", "ivy", "meadow", "moss", "willow"],
     "SAND": ["sun", "beam", "shine", "spark", "blaze", "honey", "flash", "bee", "lion", "cougar"],
-    "PERIWINKLE": ["fog", "sky", "dawn", "dream", "dew", "freeze", "chill", "hail", "jay", "splash", "gaze", "glare", "gleam", "water", "shimmer",
+    "PERIWINKLE": ["fog", "sky", "dawn", "dream", "dew", "freeze", "chill", "hail", "jay", "splash","gleam", "glare", "water", "shimmer",
     "shiver", "heather", "dusk", "daze", "storm"],
-    "WILDFIRE": ["blaze", "fire", "scorch", "flame", "flare", "ember", "fox", "vixen", "burn", "gaze"]
+    "WILDFIRE": ["blaze", "fire", "scorch", "flame", "flare", "ember", "fox", "vixen", "burn"]
   },
 
 
