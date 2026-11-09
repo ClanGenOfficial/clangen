@@ -624,5 +624,47 @@
                 ]
             }
         ]
+    },
+    {
+        "event_id": "judging_weak_exhausted_cat",
+        "strings": [
+            "m_c thinks r_c is playing up {PRONOUN/r_c/poss} struggles.",
+            "m_c thinks r_c's just being lazy.",
+            "m_c wonders why r_c gets to laze around all day.",
+            "m_c is annoyed at r_c's inability to do certain things."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                "trait": [
+                    "cold",
+                    "vengeful",
+                    "fierce",
+                    "insecure",
+                    "grumpy",
+                    "gloomy",
+                    "arrogant"
+                ]
+            },
+                "health": {
+                "condition": [
+                    "-exhausted",
+                    "-persistent_exhaustion",
+                    "-weakened_muscles",
+                    "-temporary_weakness"
+                ]
+            }
+            },
+            "r_c": {
+                "health": {
+                "condition": [
+                    "exhausted",
+                    "persistent_exhaustion",
+                    "weakened_muscles",
+                    "temporary_weakness"
+                ]
+            }
+            }
+        }
     }
 ]
