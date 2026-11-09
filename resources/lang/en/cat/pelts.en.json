@@ -49,6 +49,10 @@
             "one": "ginger",
             "many": "pale ginger"
         },
+        "HONEY": {
+            "one": "golden",
+            "many": "golden"
+        },
         "GOLDEN": {
             "one": "golden",
             "many": "golden"
