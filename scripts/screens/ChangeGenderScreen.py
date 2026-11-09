@@ -345,7 +345,7 @@ class ChangeGenderScreen(Screens):
 
         number_of_pronouns = len(self.the_cat.pronouns)
         interactable_elements = []
-        
+
         for pronounset in self.the_cat.pronouns:
             pro_container = self._generate_pronoun_box(
                 pronounset,
@@ -361,7 +361,7 @@ class ChangeGenderScreen(Screens):
                 interactable_elements.append(remove_butt)
 
         self.add_to_map(interactable_elements)
-        
+
         min_scrollable_height = ui_scale_value(
             max(100, len(self.the_cat.pronouns) * 45 + 5)
         )
@@ -379,7 +379,7 @@ class ChangeGenderScreen(Screens):
 
         number_of_default = len(self.pronouns_dict)
         interactable_elements = []
-        
+
         for n, pronounset in enumerate(all_pronouns):
             pro_container = self._generate_pronoun_box(
                 pronounset,
@@ -404,7 +404,7 @@ class ChangeGenderScreen(Screens):
             interactable_elements.append(add_butt)
 
         self.add_to_map(interactable_elements)
-        
+
         min_scrollable_height = ui_scale_value(max(100, len(all_pronouns) * 45 + 5))
 
         self.saved_pronoun_scrolling_container.set_scrollable_area_dimensions(
