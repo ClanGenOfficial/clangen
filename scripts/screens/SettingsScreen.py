@@ -32,7 +32,7 @@ from ..ui.theme import get_text_box_theme
 from ..ui.scale import ui_scale, ui_scale_dimensions
 from .Screens import Screens
 from .enums import GameScreen
-from ..game_structure.localization import get_additional_lang_list
+from ..game_structure.localization import get_languages
 from ..game_structure.screen_settings import (
     MANAGER,
     set_display_mode,
@@ -807,39 +807,36 @@ class SettingsScreen(Screens):
 
         # CHECKBOXES (ehhh) FOR LANGUAGES
         if self.sub_menu == "language":
-            self.checkboxes["en"] = UIImageButton(
-                ui_scale(pygame.Rect((310, 200), (180, 51))),
-                "",
-                object_id="#english_lang_button",
-                manager=MANAGER,
-            )
             # dict insertion order is guaranteed in python 3.7+
-            additional_langs = get_additional_lang_list()
-            prev_lang_checkbox = self.checkboxes["en"]
+            languages = get_languages()
+            lang_codes = list(languages.keys())
 
-            # sorry I don't know of a better way to implement this
-            if len(additional_langs) > 0:
-                *languages, last_lang = additional_langs.items()
-                for lang, native_name in languages:
-                    self.checkboxes[lang] = UISurfaceImageButton(
+            for i, code in enumerate(lang_codes):
+                native_name = languages[code]
+                if i == 0:
+                    self.checkboxes[code] = UIImageButton(
+                        ui_scale(pygame.Rect((310, 200), (180, 51))),
+                        native_name,
+                        object_id="#first_lang_button",
+                        manager=MANAGER,
+                    )
+                else:
+                    # last
+                    if i == len(lang_codes) - 1:
+                        style = ButtonStyles.LADDER_BOTTOM
+                        object_id = "@buttonstyles_ladder_bottom"
+                    else:
+                        style = ButtonStyles.LADDER_MIDDLE
+                        object_id = "@buttonstyles_ladder_middle"
+                    prev_lang = lang_codes[i - 1]
+                    self.checkboxes[code] = UISurfaceImageButton(
                         ui_scale(pygame.Rect((310, 0), (180, 37))),
                         native_name,
-                        get_button_dict(ButtonStyles.LADDER_MIDDLE, (180, 37)),
-                        object_id="@buttonstyles_ladder_middle",
+                        get_button_dict(style, (180, 37)),
+                        object_id=object_id,
                         manager=MANAGER,
-                        anchors={"top_target": prev_lang_checkbox},
+                        anchors={"top_target": self.checkboxes[prev_lang]},
                     )
-                    prev_lang_checkbox = self.checkboxes[lang]
-
-                lang, native_name = last_lang
-                self.checkboxes[lang] = UISurfaceImageButton(
-                    ui_scale(pygame.Rect((310, 0), (180, 37))),
-                    native_name,
-                    get_button_dict(ButtonStyles.LADDER_BOTTOM, (180, 37)),
-                    object_id="@buttonstyles_ladder_bottom",
-                    manager=MANAGER,
-                    anchors={"top_target": prev_lang_checkbox},
-                )
 
             language = MANAGER.get_locale()
             if language in self.checkboxes:
