@@ -15,19 +15,17 @@
             "exhausted": 0.1
         },
         "treatment_strength": {
-            "1": [
+            "1": [],
+            "2": [
                 "juniper",
                 "ragwort",
                 "marigold",
-                "dandelion"
-            ],
-            "2": [
+                "dandelion",
                 "daisy",
-                "poppy"
-            ],
-            "3": [
+                "poppy",
                 "elder_leaves"
-            ]
+            ],
+            "3": []
         }
     },
     "absent": {
@@ -45,17 +43,15 @@
             "weakened_muscles": 0.05
         },
         "treatment_strength": {
-            "1": [
-                "daisy",
-                "betony"
-            ],
+            "1": [],
             "2": [
-                "thyme"
-            ],
-            "3": [
+                "daisy",
+                "betony",
+                "thyme",
                 "juniper",
                 "ragwort"
-            ]
+            ],
+            "3": []
         }
     }
 }

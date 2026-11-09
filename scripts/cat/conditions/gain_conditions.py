@@ -97,7 +97,11 @@ def _handle_condition_side_effect(cat, side_effects: dict[str, float]):
                         # we have an available herb, so we use it and move on to the next side effect
                         avoided = True
                         game.clan.herb_supply.remove_herb(herb, -1)
-                        text = i18n.t("screens.med_den.blood_loss", name=cat.name)
+                        text = i18n.t(
+                            "screens.med_den.blood_loss",
+                            name=cat.name,
+                            herb=i18n.t(f"conditions.herbs.{herb}", count=1),
+                        )
                         game.herb_events_list.append(text)
                         break
 
