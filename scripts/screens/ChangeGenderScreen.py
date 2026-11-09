@@ -93,7 +93,7 @@ class ChangeGenderScreen(Screens):
         super().screen_switches()
 
         interactable_elements = []
-        
+
         temp = load_lang_resource("pronouns.{lang}.json")
 
         self.pronouns_dict = [
@@ -501,7 +501,7 @@ class ChangeGenderScreen(Screens):
             if pronoun not in ("conju", "gender", "ID")
         )
 
-    def reset_cat_buttons_and_boxes(self):        
+    def reset_cat_buttons_and_boxes(self):
         for i in self.cat_pronoun_elements:
             i.kill()
 
