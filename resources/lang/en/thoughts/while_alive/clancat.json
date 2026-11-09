@@ -4460,7 +4460,9 @@
             "tags": ["danger"]
         },
         "strings": [
-            "Wonders why c_n decided to set up so close to POI"
+            "Wonders why c_n decided to set up so close to POI",
+            "Is thinking about how hazardous POI is to the Clan",
+            "Is having a bad dream about POI"
         ],
         "involved_cats": {
         "m_c": {
@@ -4477,8 +4479,7 @@
         },
         "strings": [
             "Wonders just how many lives POI has claimed...",
-            "Is intimidated at the thought of POI",
-            "Is having a bad dream about POI"
+            "Is intimidated at the thought of POI"
         ],
         "involved_cats": {
         "m_c": {
@@ -4490,16 +4491,17 @@
                     "skittish",
                     "shy",
                     "nervous",
-                    "strange"
+                    "strange",
+                    "insecure"
                 ]
             }
         }
     }
     },
     {
-        "event_id": "poi_danger_gen2",
+        "event_id": "poi_danger_haunted",
         "poi": {
-            "tags": ["danger"]
+            "tags": ["danger:tainted", "danger:unstable"]
         },
         "strings": [
             "Wonders if POI is haunted"
@@ -4525,16 +4527,12 @@
     }
     },
     {
-        "event_id": "poi_danger_working",
+        "event_id": "poi_danger_closecall",
         "poi": {
             "tags": ["danger"]
         },
         "strings": [
-            "Had a close call by POI",
-            "Shudders at the idea of going near POI",
-            "Hopes POI doesn't claim {PRONOUN/m_c/poss} life...",
-            "Thought {PRONOUN/m_c/subject} heard a scary noise by POI and has been puffed up ever since",
-            "Spends as little time at POI as {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to"
+            "Had a close call by POI"
         ],
         "involved_cats": {
             "m_c": {
@@ -4556,11 +4554,15 @@
         }
     },
     {
-        "event_id": "poi_danger_working",
+        "event_id": "poi_danger_working_fear",
         "poi": {
             "tags": ["danger"]
         },
         "strings": [
+            "Shudders at the idea of going near POI",
+            "Hopes POI doesn't claim {PRONOUN/m_c/poss} life...",
+            "Thought {PRONOUN/m_c/subject} heard a scary noise by POI and has been puffed up ever since",
+            "Spends as little time at POI as {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to",
             "Is extra jumpy when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} at POI"
         ],
         "involved_cats": {
@@ -4579,6 +4581,9 @@
                 "stat": {
                 "trait": [
                     "nervous",
+                    "careful",
+                    "gloomy",
+                    "lonesome",
                     "insecure"
                 ]
                 },
