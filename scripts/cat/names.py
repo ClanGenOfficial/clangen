@@ -78,13 +78,12 @@ class Name:
         if prefix is None or suffix is None:
             return True
 
-        name = prefix + suffix
+        name = i18n.t("cat.names.name_format", prefix=prefix, suffix=suffix)
 
         # Prevent triple letter names from joining prefix and suffix from occurring (ex. Beeeye)
         # Prevent crash on empty prefix or suffix (e.g. empty-suffix loner names)
-        if not prefix or not suffix:
-            triple_letter = False
-        else:
+        triple_letter = False
+        if prefix and suffix and name == prefix + suffix:
             possible_three_letter = (
                 prefix[-2:] + suffix[0],
                 prefix[-1] + suffix[:2],
@@ -337,21 +336,21 @@ class Name:
             if self._usable_name(self.prefix, self.suffix):
                 return
 
-    def get_specsuffix_name(self, rank: CatRank = CatRank.LEADER):
+    def _get_specsuffix_name_parts(self, rank):
         """
         Return the cat's name with the appropriate special suffix. If no specsuffix is given for that rank, returns
-        default prefix + suffix. If specsuffix_hidden is true, return default prefix + suffix.
+        default prefix and suffix. If specsuffix_hidden is true, return default prefix and suffix.
         :param rank: CatRank matching
-        :return: Cat's name string
+        :return: a length-two tuple in the form (prefix, suffix)
         """
         self.load_localized_names()
 
         if rank in self.names_dict["special_suffixes"] and not self.specsuffix_hidden:
-            return self.prefix + self.names_dict["special_suffixes"][rank]
+            return self.prefix, self.names_dict["special_suffixes"][rank]
 
-        return self.prefix + self.suffix
+        return self.prefix, self.suffix
 
-    def __repr__(self):
+    def _get_name_parts(self):
         # Handles predefined suffixes (such as newborns being kit),
         # then suffixes based on ages (fixes #2004, just trust me)
         self.load_localized_names()
@@ -370,9 +369,9 @@ class Name:
             }
             if self.cat.age in age_to_rank:
                 rank = age_to_rank[self.cat.age]
-                return self.prefix + self.names_dict["special_suffixes"][rank]
+                return self.prefix, self.names_dict["special_suffixes"][rank]
             else:
-                return self.prefix + self.suffix
+                return self.prefix, self.suffix
 
         if self.cat.status.is_former_clancat:
             old_rank = self.cat.status.find_prior_clan_rank()
@@ -381,18 +380,31 @@ class Name:
                 old_rank in self.names_dict["special_suffixes"]
                 and not self.specsuffix_hidden
             ):
-                return self.prefix + self.names_dict["special_suffixes"][old_rank]
+                return self.prefix, self.names_dict["special_suffixes"][old_rank]
 
         if (
             self.cat.status.rank in self.names_dict["special_suffixes"]
             and not self.specsuffix_hidden
         ):
             return (
-                self.prefix + self.names_dict["special_suffixes"][self.cat.status.rank]
+                self.prefix,
+                self.names_dict["special_suffixes"][self.cat.status.rank],
             )
         if constants.CONFIG["fun"]["april_fools"]:
-            return f"{self.prefix}egg"
-        return self.prefix + self.suffix
+            # TODO localize this too?
+            return self.prefix, "egg"
+        return self.prefix, self.suffix
+
+    def get_specsuffix_name(self, rank: CatRank = CatRank.LEADER):
+        prefix, suffix = self._get_specsuffix_name_parts(rank)
+        return i18n.t("cat.names.name_format", prefix=prefix, suffix=suffix)
+
+    def get_name(self):
+        prefix, suffix = self._get_name_parts()
+        return i18n.t("cat.names.name_format", prefix=prefix, suffix=suffix)
+
+    def __repr__(self):
+        return self.get_name()
 
 
 Name.load_localized_names()
