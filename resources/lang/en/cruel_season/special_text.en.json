@@ -13,6 +13,11 @@
       "some": "%{dead_name} lost their lives this moon to a mysterious force.",
       "many": "The cats of %{clan_name} stare to the stars, wondering what they possibly did to warrant such a cruel fate. %{dead_name} have all lost their lives, leaving the clan feeling broken."
     },  
-    "sinkhole_history": "A mysterious force took the life of m_c."
+    "sinkhole_history": "A mysterious force took the life of m_c.",
+    "herb_loss": "The Clan pays tribute through offerings of %{herbs}.",
+    "tribute_prey":{
+      "one": "One piece of prey was offered as tribute.",
+      "many": "%{count} pieces of prey were offered as a tribute."            
+    }
   }
 }
