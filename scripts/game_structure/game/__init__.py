@@ -83,6 +83,7 @@ current_screen = GameScreen.START
 clicked = False
 keyspressed = []
 switch_screens = False
+savecheck = False
 
 """
 To give us the deprecation warnings/errors
