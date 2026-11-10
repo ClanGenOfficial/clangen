@@ -418,7 +418,9 @@ class MedDenScreen(Screens):
 
         self.elements["med_image"] = UISpriteButton(
             ui_scale(pygame.Rect((435, 150), (150, 150))),
-            displayed_med_cat.sprite if displayed_med_cat else pygame.Surface((50, 50), pygame.HWSURFACE | pygame.SRCALPHA),
+            displayed_med_cat.sprite
+            if displayed_med_cat
+            else pygame.Surface((50, 50), pygame.HWSURFACE | pygame.SRCALPHA),
             cat_object=displayed_med_cat,
             manager=MANAGER,
         )
@@ -428,14 +430,18 @@ class MedDenScreen(Screens):
         if not self.elements.get("med_name"):
             self.elements["med_name"] = pygame_gui.elements.ui_label.UILabel(
                 ui_scale(pygame.Rect((-60, 140), (225, 30))),
-                shorten_text_to_fit(str(displayed_med_cat.name), 137, 15) if displayed_med_cat else "",
+                shorten_text_to_fit(str(displayed_med_cat.name), 137, 15)
+                if displayed_med_cat
+                else "",
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 manager=MANAGER,
                 anchors={"left_target": self.elements["med_image"]},
             )
         else:
             self.elements["med_name"].set_text(
-                shorten_text_to_fit(str(displayed_med_cat.name), 137, 15) if displayed_med_cat else ""
+                shorten_text_to_fit(str(displayed_med_cat.name), 137, 15)
+                if displayed_med_cat
+                else ""
             )
 
         # display info
