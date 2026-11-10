@@ -130,5 +130,8 @@ class SaveCheckWindow(GameWindow):
                 if self.isMainMenu:
                     self.mm_btn.enable()
 
-                # only allow one instance of this window
         return super().process_event(event)
+
+    def kill(self):
+        game.savecheck = False
+        super().kill()
