@@ -56,6 +56,7 @@ class KillCat(GameWindow):
 
         if not cat.status.is_leader:
             self.all_lives_check.hide()
+            self.all_lives_check.uncheck()
 
         self.death_entry_box = pygame_gui.elements.UITextEntryBox(
             ui_scale(pygame.Rect((25, 55), (400, 75))),
