@@ -1724,7 +1724,7 @@ def check_sinkhole():
     if game.clan.age % 12 != 0:
         return
 
-    percent_killed = random.randint(0, 50) / 100
+    percent_killed = random.random() / 2
     cat_amount = get_living_clan_cat_count(Cat)
 
     count_to_kill = round(cat_amount * percent_killed)
@@ -1734,7 +1734,7 @@ def check_sinkhole():
     while len(dead_cats) < count_to_kill:
         c = get_random_player_clan_cat(Cat, not_allowed=dead_cats)
         c = Cat.fetch_cat(c)
-        if c and c not in dead_cats:
+        if c:
             dead_cats.append(c)
             c.die()
             if c.status.is_leader:
