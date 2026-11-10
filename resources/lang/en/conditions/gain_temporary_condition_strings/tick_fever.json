@@ -16,12 +16,8 @@
     },
     {
         "event_id": "with_med_gain_tick_fever0",
-        "tags": [
-            "clan:warrior"
-        ],
         "strings": [
             "After a tick bite becomes a fever and rash, m_c goes to the medicine den, where r_c0 diagnoses {PRONOUN/m_c/object} with tick fever.",
-            "After diagnosing m_c with tick fever, r_c0 instructs every Clanmate to check themselves for bites. One infected bug often means more.",
             "High fever, pounding headache, full-body rash; though r_c0 insists tick fever is rarely fatal, m_c <i>feels</i> about halfway dead.",
             "r_c0 searches the herb stores. m_c's newly diagnosed tick fever is rarely serious, but goldenrod and mullein are best for hastening recovery.",
             "Shivering with fever and headache as {PRONOUN/m_c/subject} {VERB/m_c/choke/chokes} down r_c0's foul herb paste, m_c marvels at how a tiny tick bite could cause such awful sickness.",
@@ -88,16 +84,56 @@
         "event_id": "no_med_gain_tick_fever0",
         "tags": [
             "-clan:medicine cat(min:1)",
+            "-clan:medicine cat apprentice(min:1)"
+        ],
+        "strings": [
+            "Nature doesn't care if c_n is without a medicine cat. It's tick season, and one of the horrible little parasites has given m_c tick fever.",
+            "Tick fever is a mild disease... but will it stay that way for m_c, without a medicine cat's treatment?"
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    },
+    {
+        "event_id": "no_med_with_clanmates_gain_tick_fever0",
+        "tags": [
+            "-clan:medicine cat(min:1)",
             "-clan:medicine cat apprentice(min:1)",
             "clan:warrior"
         ],
         "strings": [
-            "Nature doesn't care if c_n is without a medicine cat. It's tick season, and one of the horrible little parasites has given m_c tick fever.",
-            "Tick fever is a mild disease... but will it stay that way for m_c, without a medicine cat's treatment?",
-            "Clanmates provide the plumpest fresh-kill and a quiet den for the headache, but without a medicine cat, they are lost on how to truly treat m_c's new tick fever."
+            "Clanmates provide the plumpest fresh-kill and a quiet den for the headache, but without a medicine cat, they are lost on how to truly treat m_c's new tick fever.",
+            "A tension has hung in the air ever since m_c contracted tick fever. It's usually a mild disease, but without a medicine cat, nothing is certain."
         ],
         "involved_cats": {
             "m_c": {}
+        }
+    },
+    {
+        "event_id": "with_med_with_clanmates_gain_tick_fever0",
+        "tags": [
+            "clan:warrior"
+        ],
+        "strings": [
+            "Concerned Clanmates brought m_c to the medicine den after {PRONOUN/m_c/poss} tick bite became a rash and fever. r_c0 diagnoses {PRONOUN/m_c/object} tick fever.",
+            "After diagnosing m_c with tick fever, r_c0 instructs every Clanmate to check themselves for bites. One infected bug often means more."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-medicine cat",
+                    "-medicine cat apprentice"
+                ]
+            },
+            "r_c0": {
+                "status": [
+                    "medicine cat",
+                    "medicine cat apprentice"
+                ],
+                "group": [
+                    "match:m_c"
+                ]
+            }
         }
     }
 ]
