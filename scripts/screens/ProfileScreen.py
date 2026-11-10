@@ -1858,8 +1858,7 @@ class ProfileScreen(Screens):
             self.condition_data[f"desc_{con}"] = pygame_gui.elements.UITextBox(
                 con["details"],
                 details_rect,
-                # line_spacing=0.75,
-                object_id="#text_box_22_horizcenter",
+                object_id="#text_box_22_horizcenter_spacing_75",
                 container=self.condition_data[f"bg_{con}"],
                 manager=MANAGER,
                 anchors={"bottom": "bottom", "centerx": "centerx"},
