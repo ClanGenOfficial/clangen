@@ -47,7 +47,7 @@
             "selected_border": "#00000000",
             "normal_text_shadow": "#00000000"
         },
-        "misc": {"shadow_width": "0", "tool_tip_delay": "0", "text_horiz_alignment": "center"}
+        "misc": {"shadow_width": "0", "tool_tip_delay": "0", "text_horiz_alignment": "center", "auto_scale_images": "1"}
     },
     "#search_entry_box": {
         "font": {"name": "notosans", "size": "13"},
@@ -106,7 +106,7 @@
     "#help_button.tool_tip": {"misc": {"rect_width": "400"}},
     "#leader_ceremony_button.tool_tip": {"misc": {"rect_width": "150"}},
     "#med_cat_den_hover.tool_tip": {"misc": {"rect_width": "160"}},
-    "#med_cat_den_hover_big.tool_tip": {"misc": {"rect_width": "280"}},
+    "#med_cat_den_hover_big.tool_tip": {"misc": {"rect_width": "260"}},
     "#blank_button.tool_tip": {"misc": {"rect_width": "350"}},
     "#blank_button_dark.tool_tip": {"misc": {"rect_width": "350"}},
     "#blank_button_small.tool_tip": {"misc": {"rect_width": "250"}},
@@ -288,7 +288,7 @@
             "link_hover": "#2F4C2F",
             "link_selected": "#2F4C2F"
         },
-        "misc": {"border_width": "0", "shadow_width": "0"}
+        "misc": {"border_width": "0", "shadow_width": "0", "line_spacing": "1"}
     },
     "#text_box_14": {"prototype": "text_box", "font": {"size": "7", "name": "notosans"}},
     "#text_box_14_horizleft": {
@@ -472,6 +472,10 @@
     "#text_box_40_horizcenter": {
         "prototype": "#text_box_40",
         "misc": {"text_horiz_alignment": "center"}
+    },
+    "#text_box_40_horizleft": {
+        "prototype": "#text_box_40",
+        "misc": {"text_horiz_alignment": "left"}
     },
     "vertical_scroll_bar": {
         "misc": {"border_width": "2", "enable_arrow_buttons": "1"},
@@ -1020,6 +1024,7 @@
         }
     },
     "#patrol_again": {
+        "prototype": "@image_button",
         "images": {
             "normal_image": {
                 "path": "resources\/images\/buttons\/patrol_again.png"
@@ -1039,6 +1044,7 @@
         "images": {"normal_image": {"path": "resources\/images\/new_update.png"}}
     },
     "#exit_window_button": {
+        "prototype": "@image_button",
         "images": {
             "normal_image": {
                 "path": "resources\/images\/buttons\/exit_window_button.png"

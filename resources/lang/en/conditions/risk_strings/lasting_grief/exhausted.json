@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "lasting_grief_exhausted",
+        "strings": [
+            "Sometimes, m_c is just tired of the grief."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

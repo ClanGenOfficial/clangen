@@ -17,7 +17,7 @@ from scripts.game_structure import game, constants
 from scripts.screens import all_screens
 from scripts.screens.enums import GameScreen
 from scripts.ui.windows.dev_tool_windows.white_patch_tool import WhitePatchToolWindow
-from scripts.ui.windows.tortie_patch_tool import TortiePatchToolWindow
+from scripts.ui.windows.dev_tool_windows.tortie_patch_tool import TortiePatchToolWindow
 
 
 class SettingsCommand(Command):

@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "tick_fever_temporary_weakness0",
+        "strings": [
+            "m_c's body won't immediately be back to normal after suffering tick fever."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

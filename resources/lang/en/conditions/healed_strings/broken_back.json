@@ -2,8 +2,8 @@
     {
         "event_id": "healed_broken_back0",
         "strings": [
-            "m_c's broken back has healed. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} made a full recovery against all odds.",
-            "m_c is ecstatic to be walking around freely again, {PRONOUN/m_c/poss} broken back finally healed."
+            "m_c's broken back has healed. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'ve/'s} made a full recovery against all odds, though {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a little unused to moving {PRONOUN/m_c/poss} body freely.",
+            "m_c is ecstatic to be walking around freely again, {PRONOUN/m_c/poss} broken back finally healed, though it'll take a moment to get used to that again."
         ],
         "involved_cats": {
             "m_c": {}

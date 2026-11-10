@@ -115,18 +115,30 @@ class Pelt:
 
     # WHITE MARKINGS
     little_white: list = list(sprites.WHITE_PATCH_COMBOS.get("little", {}).keys())
-    for sprite_list in sprites.WHITE_LITTLE_DATA["sprite_list"]:
-        little_white.extend(sprite_list)
     mid_white: list = list(sprites.WHITE_PATCH_COMBOS.get("mid", {}).keys())
-    for sprite_list in sprites.WHITE_MID_DATA["sprite_list"]:
-        mid_white.extend(sprite_list)
     high_white: list = list(sprites.WHITE_PATCH_COMBOS.get("high", {}).keys())
-    for sprite_list in sprites.WHITE_HIGH_DATA["sprite_list"]:
-        high_white.extend(sprite_list)
     mostly_white: list = list(sprites.WHITE_PATCH_COMBOS.get("mostly", {}).keys())
-    for sprite_list in sprites.WHITE_MOSTLY_DATA["sprite_list"]:
-        # have to remove FULLWHITE as it's handled special
-        mostly_white.extend([x for x in sprite_list if x != "FULLWHITE"])
+    for data, white_list in zip(
+        [
+            sprites.WHITE_LITTLE_DATA,
+            sprites.WHITE_MID_DATA,
+            sprites.WHITE_HIGH_DATA,
+            sprites.WHITE_MOSTLY_DATA,
+        ],
+        [little_white, mid_white, high_white, mostly_white],
+    ):
+        if isinstance(data["sprite_list"], list):
+            for sprite_list in data["sprite_list"]:
+                white_list.extend(sprite_list)
+        else:
+            for sheet in data["sprite_list"].values():
+                for sprite_list in sheet:
+                    white_list.extend(sprite_list)
+
+    # have to remove FULLWHITE as it's handled special
+    if "FULLWHITE" in mostly_white:
+        mostly_white.remove("FULLWHITE")
+
     vitiligo_markings: list = []
     for sprite_list in sprites.WHITE_VITILIGO_DATA["sprite_list"]:
         vitiligo_markings.extend(sprite_list)
@@ -259,7 +271,7 @@ class Pelt:
     ) -> None:
         self.name = name
         self.colour = colour
-        self.white_patches = white_patches
+        self.white_patches: str = white_patches
         self.eye_colour = eye_color
         self.eye_colour2 = eye_colour2
         self.tortie_base = tortie_base
@@ -1043,6 +1055,8 @@ class Pelt:
         for p in parents:
             if p:
                 if p.pelt.white_patches:
+                    if isinstance(p.pelt.white_patches, list):
+                        pass
                     par_whitepatches.add(p.pelt.white_patches)
                 if p.pelt.points:
                     par_points.append(p.pelt.points)
@@ -1263,12 +1277,12 @@ class Pelt:
         return (
             adjust_list_text(
                 [
-                    i18n.t(f"cat.eyes.{self.eye_colour}"),
-                    i18n.t(f"cat.eyes.{self.eye_colour2}"),
+                    i18n.t(f"cat.eyes.{self.eye_colour}", count=1),
+                    i18n.t(f"cat.eyes.{self.eye_colour2}", count=1),
                 ]
             )
             if self.eye_colour2
-            else i18n.t(f"cat.eyes.{self.eye_colour}")
+            else i18n.t(f"cat.eyes.{self.eye_colour}", count=2)
         )
 
     @staticmethod

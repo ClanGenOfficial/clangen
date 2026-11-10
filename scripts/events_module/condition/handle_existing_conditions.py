@@ -138,9 +138,10 @@ def handle_temporary_conditions(cat: Cat):
     """
     conditions_to_remove = []
     event_list: list[EventInformation] = []
-    progression_events = []
 
     for condition in cat.temporary_conditions.copy():
+        condition_events = []
+        progression_events = []
         if condition.omit_moonskip:
             condition.omit_moonskip = False
             continue
@@ -191,7 +192,7 @@ def handle_temporary_conditions(cat: Cat):
                     # stick it on the end if we've got it
                     event.text = " ".join([event.text, scar_event])
 
-                event_list.append(event)
+                condition_events.append(event)
 
             cat.history.remove_possible_history(condition.name)
             conditions_to_remove.append(condition)
@@ -202,11 +203,9 @@ def handle_temporary_conditions(cat: Cat):
                     if condition == c.current_complication:
                         c.current_complication = None
 
-        elif state == ConditionState.CONTINUING:
-            if condition in conditions_to_remove:
-                # we don't want to give a risk if the condition was removed
-                continue
-
+        elif (
+            state == ConditionState.CONTINUING and condition not in conditions_to_remove
+        ):
             # decrease mortality on all conditions (mimicking the idea that the cat is healing in increments)
             if condition.mortality and condition.name not in get_config(
                 "condition_related.excluded_from_mortality_reduction"
@@ -224,13 +223,23 @@ def handle_temporary_conditions(cat: Cat):
             )
 
             if additional_events:
-                event_list.extend(additional_events)
+                condition_events.extend(additional_events)
 
-    # add progression events to the end of the event_list
-    # we want them at the end for continuity purposes,
-    # i.e. cat heals from mangled leg -> discovers the leg is weakened
-    if progression_events:
-        event_list.extend(progression_events)
+        # add progression events to the end of the condition_events
+        # we want them at the end for continuity purposes,
+        # i.e. cat heals from mangled leg -> discovers the leg is weakened
+        if progression_events:
+            condition_events.extend(progression_events)
+
+        if condition_events:
+            full_event = condition_events[0]
+            full_event.text = " ".join([e.text for e in condition_events])
+            for e in condition_events:
+                full_event.cats_involved.extend(
+                    [c for c in e.cats_involved if c not in full_event.cats_involved]
+                )
+
+            event_list.append(full_event)
 
     for c in conditions_to_remove:
         cat.remove_condition(c.name)
@@ -245,9 +254,10 @@ def handle_permanent_conditions(cat: Cat):
     """
     event_list: list[EventInformation] = []
     conditions_to_remove = []
-    progression_events = []
 
     for condition in cat.permanent_conditions.copy():
+        condition_events = []
+        progression_events = []
         if condition.omit_moonskip:
             continue
 
@@ -276,30 +286,38 @@ def handle_permanent_conditions(cat: Cat):
             break
 
         elif state == ConditionState.REVEALED:
-            event_list.append(
+            condition_events.append(
                 generate_condition_event(
                     path=f"conditions/reveal_condition_strings/{condition.name}.json",
                     involved_cats={"m_c": cat},
                 )
             )
 
-        elif state == ConditionState.CONTINUING:
-            if condition in conditions_to_remove:
-                # we don't want to give a risk if the condition was removed
-                continue
-
+        elif (
+            state == ConditionState.CONTINUING and condition not in conditions_to_remove
+        ):
             additional_events, conditions_to_remove = _check_risks(
                 cat, condition, conditions_to_remove
             )
 
             if additional_events:
-                event_list.extend(additional_events)
+                condition_events.extend(additional_events)
 
         # add progression events to the end of the event_list
         # we want them at the end for continuity purposes,
         # i.e. cat heals from mangled leg -> discovers the leg is weakened
         if progression_events:
-            event_list.extend(progression_events)
+            condition_events.extend(progression_events)
+
+        if condition_events:
+            full_event = condition_events[0]
+            full_event.text = " ".join([e.text for e in condition_events])
+            for e in condition_events:
+                full_event.cats_involved.extend(
+                    [c for c in e.cats_involved if c not in full_event.cats_involved]
+                )
+
+            event_list.append(full_event)
 
     for c in conditions_to_remove:
         cat.temporary_conditions.remove(c)

@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "broken_back_weakened_muscles0",
+        "strings": [
+            "The after-effects of m_c's broken back will always linger."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

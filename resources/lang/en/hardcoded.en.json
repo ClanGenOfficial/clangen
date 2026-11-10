@@ -49,9 +49,9 @@
             "many": "Fleas have been hopping from pelt to pelt and now %{cats} are all infested."
         },
         "illness_spread": "%{illness} has spread around the camp. %{cats} have been infected.",
-        "scar_event0": "m_c's %{condition} has healed, but {PRONOUN/m_c/subject}'ll always carry evidence of it on {PRONOUN/m_c/poss} pelt.",
-        "scar_event1": "m_c healed from {PRONOUN/m_c/poss} %{condition} but will forever be marked by a scar.",
-        "scar_event2": "m_c's %{condition} has healed, but the injury left {PRONOUN/m_c/object} scarred.",
+        "scar_event0": "m_c will always carry evidence of the experience on {PRONOUN/m_c/poss} pelt.",
+        "scar_event1": "m_c will forever be marked by a scar.",
+        "scar_event2": "m_c was left scarred.",
         "move_on_dead_mate": "m_c will always love r_c, but has decided to move on.",
         "expired_prey": {
             "one": "A piece of freshkill expired and was removed from the freshkill pile.",
@@ -60,10 +60,6 @@
         "consumed_prey": {
             "one": "One piece of prey was consumed.",
             "many": "%{count} pieces of prey were consumed."
-        },
-        "tribute_prey":{
-            "one": "One piece of prey was offered as tribute.",
-            "many": "%{count} pieces of prey were offered as a tribute."            
         }
     }
 }

@@ -5,7 +5,6 @@ import pygame_gui
 from scripts.config import get_config
 from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.windows.window_base_class import GameWindow
@@ -19,13 +18,12 @@ class CruelCardLimit(GameWindow):
             window_display_title="Cruel Card Limit",
         )
 
-        self.limit_message = UITextBoxTweaked(
+        self.limit_message = pygame_gui.elements.UITextBox(
             i18n.t(
                 "windows.cruel_card_limit",
                 amount=get_config("cruel_season.card_limit"),
             ),
             ui_scale(pygame.Rect((0, 30), (220, -1))),
-            line_spacing=1,
             manager=MANAGER,
             object_id="#text_box_30_horizcenter",
             container=self,
