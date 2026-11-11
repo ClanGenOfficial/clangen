@@ -540,7 +540,7 @@ def _build_single_layer(
 
         return (
             _build_pelt(cat, pelt_recipe, palette, sprite),
-            layer_info.get("blendmode"),
+            layer_info.get("blend_mode"),
             layer_info.get("opacity", 100),
         )
 
