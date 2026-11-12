@@ -29,7 +29,7 @@ from scripts.clan_resources.freshkill import (
 )
 from scripts.clan_resources.point_of_interest import get_poi_from_constraints
 from scripts.config import get_config
-from scripts.events_module.consequences import unpack_rel_block, check_stolen_vitality
+from scripts.events_module.consequences import unpack_rel_block, gather_cat_objects, check_stolen_vitality
 from scripts.events_module.future.prep_and_trigger import prep_future_event
 from scripts.events_module.parameter_dicts import SupplyDict
 from scripts.events_module.patrol.create_new_cat import updated_create_new_cat
@@ -479,12 +479,9 @@ def _handle_conditions(
     for block in event.condition:
         # gather up the kitties
         cat_list = []
-        for abbr, cat in event_involved_cats.items():
-            if abbr in block["cats"]:
-                if isinstance(event_involved_cats[abbr], list):
-                    cat_list.extend(event_involved_cats[abbr])
-                else:
-                    cat_list.append(event_involved_cats[abbr])
+        cat_list = gather_cat_objects(
+            Cat, block.get("cats"), event, None, event_involved_cats
+        )
 
         possible_conditions = []
         for tag in block["condition"]:
