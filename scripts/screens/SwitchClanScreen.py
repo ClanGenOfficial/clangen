@@ -26,6 +26,7 @@ from scripts.ui.windows.delete_check import CheckDeletionWindow
 
 logger = logging.getLogger(__name__)
 
+
 class SwitchClanScreen(Screens):
     def __init__(self, name=None):
         super().__init__(name)
@@ -53,7 +54,7 @@ class SwitchClanScreen(Screens):
             "biome": "",
             "camp_bg": "",
             "clan_symbol": None,
-            "gamemode": ""
+            "gamemode": "",
         }
         self.info_frame = None
         self.info_frame_bg = None
@@ -63,7 +64,6 @@ class SwitchClanScreen(Screens):
         self.load_save_button = None
         self.delete_save_button = None
         self.current_clan_text = None
-
 
     def handle_event(self, event):
         """
@@ -109,7 +109,7 @@ class SwitchClanScreen(Screens):
                 CheckDeletionWindow(
                     self.change_screen,
                     self.selected_clan,
-                    self.selected_clan_info["displayname"]
+                    self.selected_clan_info["displayname"],
                 )
 
         # EXIT
@@ -147,7 +147,7 @@ class SwitchClanScreen(Screens):
         )
 
         self.main_container = pygame_gui.core.UIContainer(
-            ui_scale(pygame.Rect((0, 0), (570, 450))),
+            ui_scale(pygame.Rect((0, 0), (560, 450))),
             manager=MANAGER,
             anchors={
                 "centerx": "centerx",
@@ -202,9 +202,11 @@ class SwitchClanScreen(Screens):
         for i in range(8):
             self.clan_list_nameplates.append(
                 pygame_gui.elements.UIImage(
-                    ui_scale(pygame.Rect(
-                        (8, -2) if len(self.clan_list_nameplates) > 0 else (8, 2),
-                        (205, 43))
+                    ui_scale(
+                        pygame.Rect(
+                            (8, -2) if len(self.clan_list_nameplates) > 0 else (8, 2),
+                            (205, 43),
+                        )
                     ),
                     get_box(BoxStyles.NAMEPLATE, (205, 43)),
                     starting_height=0,
@@ -213,7 +215,8 @@ class SwitchClanScreen(Screens):
                     anchors={
                         "top_target": self.clan_list_nameplates[-1],
                         "left": "left",
-                    } if len(self.clan_list_nameplates) > 0
+                    }
+                    if len(self.clan_list_nameplates) > 0
                     else {
                         "top_target": self.clan_list_header,
                         "left": "left",
@@ -284,25 +287,29 @@ class SwitchClanScreen(Screens):
         end = self.current_page * 9
         start = end - 8
 
-        for clan in (self.clan_list[start:end]):
+        for clan in self.clan_list[start:end]:
             clan_button_name = self._get_clan_values(clan, nameonly=True)
             if not clan_button_name:
                 continue
 
-            self.clan_buttons.append(UISurfaceImageButton(
-                ui_scale(pygame.Rect((0, 0), (200, 41))),
-                "general.clan",
-                get_button_dict(ButtonStyles.DROPDOWN, (200, 41)),
-                text_kwargs={"name": clan_button_name},
-                object_id=pygame_gui.core.ObjectID("#text_box_34_horizcenter_vertcenter", "#dark"),
-                manager=MANAGER,
-                container=self.clan_button_container,
-                anchors=(
-                    {"top_target": self.clan_buttons[-1]}
-                    if len(self.clan_buttons) % 8 != 0
-                    else {"top": "top"}
-                ),
-            ))
+            self.clan_buttons.append(
+                UISurfaceImageButton(
+                    ui_scale(pygame.Rect((0, 0), (200, 41))),
+                    "general.clan",
+                    get_button_dict(ButtonStyles.DROPDOWN, (200, 41)),
+                    text_kwargs={"name": clan_button_name},
+                    object_id=pygame_gui.core.ObjectID(
+                        "#text_box_34_horizcenter_vertcenter", "#dark"
+                    ),
+                    manager=MANAGER,
+                    container=self.clan_button_container,
+                    anchors=(
+                        {"top_target": self.clan_buttons[-1]}
+                        if len(self.clan_buttons) % 8 != 0
+                        else {"top": "top"}
+                    ),
+                )
+            )
 
     def create_info_display(self):
         """
@@ -310,8 +317,8 @@ class SwitchClanScreen(Screens):
         """
         # INFO BOX
         self.info_frame = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((0, 0), (350, 450))),
-            get_box(BoxStyles.FRAME, (350, 450)),
+            ui_scale(pygame.Rect((0, 0), (340, 450))),
+            get_box(BoxStyles.FRAME, (330, 450)),
             starting_height=2,
             container=self.main_container,
             manager=MANAGER,
@@ -321,8 +328,8 @@ class SwitchClanScreen(Screens):
             },
         )
         self.info_frame_bg = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((4, 0), (342, 442))),
-            get_box(BoxStyles.INNER_BOX, (342, 442)),
+            ui_scale(pygame.Rect((4, 0), (332, 442))),
+            get_box(BoxStyles.INNER_BOX, (332, 442)),
             starting_height=0,
             container=self.main_container,
             manager=MANAGER,
@@ -365,10 +372,7 @@ class SwitchClanScreen(Screens):
             object_id="#text_box_30_horizcenter",
             manager=MANAGER,
             container=self.main_container,
-            anchors={
-                "left_target": self.next_page_button,
-                "bottom": "bottom"
-            },
+            anchors={"left_target": self.next_page_button, "bottom": "bottom"},
         )
 
     def create_info_body(self):
@@ -416,7 +420,7 @@ class SwitchClanScreen(Screens):
             },
         )
         self.info_body["save_id"] = pygame_gui.elements.UITextBox(
-            f"ID: {self.selected_clan_info["save_id"]}",
+            f"ID: {self.selected_clan_info['save_id']}",
             ui_scale(pygame.Rect((0, 0), (320, 29))),
             object_id="#text_box_26_horizleft",
             starting_height=1,
@@ -432,7 +436,7 @@ class SwitchClanScreen(Screens):
             ui_scale(pygame.Rect((0, 3), (320, 33))),
             text_kwargs={
                 "gamemode": i18n.t(
-                    f"screens.make_clan.{self.selected_clan_info["gamemode"]}_label"
+                    f"screens.make_clan.{self.selected_clan_info['gamemode']}_label"
                 )
             },
             object_id="#text_box_30_horizleft",
@@ -448,9 +452,7 @@ class SwitchClanScreen(Screens):
             "screens.switch_clan.biome",
             ui_scale(pygame.Rect((0, 0), (320, 33))),
             text_kwargs={
-                "biome": i18n.t(
-                    f"screens.make_clan.{self.selected_clan_info["biome"]}"
-                )
+                "biome": i18n.t(f"screens.make_clan.{self.selected_clan_info['biome']}")
             },
             object_id="#text_box_30_horizleft",
             starting_height=1,
@@ -464,11 +466,7 @@ class SwitchClanScreen(Screens):
         self.info_body["camp"] = pygame_gui.elements.UITextBox(
             "screens.switch_clan.camp",
             ui_scale(pygame.Rect((0, 0), (320, 33))),
-            text_kwargs={
-                "camp": i18n.t(
-                    f"screens.make_clan.{self._get_camp_name()}"
-                )
-            },
+            text_kwargs={"camp": i18n.t(f"screens.make_clan.{self._get_camp_name()}")},
             object_id="#text_box_30_horizleft",
             starting_height=1,
             manager=MANAGER,
@@ -495,7 +493,7 @@ class SwitchClanScreen(Screens):
             },
         )
         # spare room for last date played info TODO in a future enhancement
-        
+
     def update_screen(self):
         """
         Updates screen elements and selected clan info
@@ -536,7 +534,7 @@ class SwitchClanScreen(Screens):
             text_kwargs={
                 "current_page": self.current_page,
                 "total_page": ceil(len(self.clan_list) / 8),
-            }
+            },
         )
 
     def _get_clan_values(self, clan, nameonly=False) -> dict | str:
@@ -569,9 +567,9 @@ class SwitchClanScreen(Screens):
             "Forest": ["classic", "gully", "grotto", "lakeside"],
             "Mountainous": ["cliff", "cavern", "crystal_river", "ruins"],
             "Plains": ["grasslands", "tunnels", "wastelands", "bridge"],
-            "Beach": ["tidepools", "tidal_cave", "shipwreck", "fjord"]
+            "Beach": ["tidepools", "tidal_cave", "shipwreck", "fjord"],
         }
 
         index = int(self.selected_clan_info["camp_bg"].replace("camp", ""))
-        index -= 1 # camps count from 1
+        index -= 1  # camps count from 1
         return "_".join(("camp", camp_names[self.selected_clan_info["biome"]][index]))
