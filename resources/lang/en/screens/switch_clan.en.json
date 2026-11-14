@@ -1,8 +1,16 @@
 {
     "en": {
-        "current_clan": {
-            "zero": "There is no Clan currently loaded.",
-            "one": "The currently loaded Clan is %{clan}\n(id: %{clan_id})."
+        "current_clan": "This is the currently loaded Clan.",
+        "your_clans": "Your Clans",
+        "page_number_text": "Page %{current_page} of %{total_page}",
+        "game_mode": "<b>Game mode:</b> %{gamemode}",
+        "biome": "<b>Biome:</b> %{biome}",
+        "camp": "<b>Camp:</b> %{camp}",
+        "clan_age": {
+            "zero": "<b>Clan age:</b> %{age} moons",
+            "one": "<b>Clan age:</b> %{age} moon",
+            "some": "<b>Clan age:</b> %{age} moons",
+            "many": "<b>Clan age:</b> %{age} moons"
         }
     }
 }
