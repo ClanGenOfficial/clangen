@@ -171,7 +171,7 @@ class TestPluralization(unittest.TestCase):
         self.assertEqual(i18n.t("foo.plural", count=24), "few")
         self.assertEqual(i18n.t("foo.plural", count=5), "many")
         self.assertEqual(i18n.t("foo.plural", count=19), "many")
-        self.assertEqual(i18n.t("foo.plural", count=11), "one")
+        self.assertEqual(i18n.t("foo.plural", count=11), "many")
         self.assertEqual(i18n.t("foo.plural", count=12), "many")
         self.assertEqual(i18n.t("foo.plural", count=21), "one")
         self.assertEqual(i18n.t("foo.plural", count=100), "many")
