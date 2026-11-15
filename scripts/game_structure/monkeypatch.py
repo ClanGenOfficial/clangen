@@ -100,7 +100,7 @@ def pluralize_russian(key, translation, count):
             return translation["other"]
         else:
             return translation["many"]
-    if "one" in translation and count != 11 and number_endswith(count, 10, 1, 1):
+    if "one" in translation and (count % 10 == 1 and count % 100 != 11):
         return translation["one"]
     elif "few" in translation and (
         number_endswith(count, 10, 2, 4) and not number_endswith(count, 100, 12, 14)
