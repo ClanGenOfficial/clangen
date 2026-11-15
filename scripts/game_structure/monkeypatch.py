@@ -29,25 +29,25 @@ def translate(text: str, **kwargs):
     output = i18n.t(text, **kwargs)
     if game.event_editing:
         return output
-    dict = {}
+    temp_dict = {}
     for cat in groups:
         if cat in kwargs and cat in output:
-            dict[cat] = kwargs[cat]
+            temp_dict[cat] = kwargs[cat]
     for role in other:
         if role in kwargs:
-            dict[role] = kwargs[role]
-    if dict is not None:
+            temp_dict[role] = kwargs[role]
+    if temp_dict is not None:
         return event_text_adjust(
             Cat,
             output,
-            main_cat=dict.get("m_c"),
-            random_cat=dict.get("r_c"),
-            victim_cat=dict.get("mur_c"),
-            new_cats=dict.get("new_cats"),
-            multi_cats=dict.get("multi_cats"),
-            clan=dict.get("clan", game.clan),
-            other_clan=dict.get("other_clan"),
-            chosen_herb=dict.get("chosen_herb"),
+            main_cat=temp_dict.get("m_c"),
+            random_cat=temp_dict.get("r_c"),
+            victim_cat=temp_dict.get("mur_c"),
+            new_cats=temp_dict.get("new_cats"),
+            multi_cats=temp_dict.get("multi_cats"),
+            clan=temp_dict.get("clan", game.clan),
+            other_clan=temp_dict.get("other_clan"),
+            chosen_herb=temp_dict.get("chosen_herb"),
         )
     return output
 
@@ -90,7 +90,7 @@ def pluralize_russian(key, translation, count):
             return translation["other"]
         else:
             return translation["many"]
-    if "one" in translation and number_endswith(count, 10, 1, 1):
+    if "one" in translation and count != 11 and number_endswith(count, 10, 1, 1):
         return translation["one"]
     elif "few" in translation and (
         number_endswith(count, 10, 2, 4) and not number_endswith(count, 100, 12, 14)
@@ -114,10 +114,10 @@ def pluralize_polish(key, translation, count):
             return translation["other"]
         else:
             return translation["many"]
-    if "one" in translation and number_endswith(count, 10, 1, 1):
+    if count == 1 and "one" in translation:
         return translation["one"]
     elif "few" in translation and (
-        number_endswith(count, 10, 2, 4) or number_endswith(count, 100, 12, 14)
+        number_endswith(count, 10, 2, 4) and not number_endswith(count, 100, 12, 14)
     ):
         return translation["few"]
     elif "many" in translation and (
