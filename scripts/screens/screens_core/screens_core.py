@@ -688,4 +688,5 @@ def feather_surface(surface, feather_width):
                 surface.set_at((x, y), (0, 0, 0, alpha))
 
 
-rebuild_core()
+if pygame_gui.ui_manager.get_default_manager():
+    rebuild_core()

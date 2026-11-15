@@ -14,8 +14,6 @@ from random import choice, choices, randint, getrandbits
 from typing import Literal, Optional
 
 import i18n
-import pygame.display
-import pygame_gui.ui_manager
 import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
@@ -173,8 +171,7 @@ class Clan:
         if self_run_init_functions:
             self.post_initialization_functions()
 
-        if pygame.display.get_init() and pygame_gui.ui_manager.get_default_manager():
-            rebuild_top_menu_buttons()
+        rebuild_top_menu_buttons()
 
     @property
     def current_season(self) -> str:
