@@ -75,13 +75,23 @@ def number_endswith(count, modulo, start, end):
 
 
 def pluralize(key, translation, count, locale):
-    match locale:
-        case "ru":  # RUSSIAN
-            return pluralize_russian(key, translation, count)
-        case "pu":  # POLISH
-            return pluralize_polish(key, translation, count)
-        case _:
-            return i18n.translator.pluralize(key, translation, count)
+    return_value = key
+    try:
+        if type(translation) != dict:
+            return_value = translation
+            raise KeyError("use of count without dict for key {0}".format(key))
+        match locale:
+            case "ru":  # RUSSIAN
+                return pluralize_russian(key, translation, count)
+            case "pu":  # POLISH
+                return pluralize_polish(key, translation, count)
+            case _:
+                return i18n.translator.pluralize(key, translation, count)
+    except KeyError as e:
+        if i18n.config.get("error_on_missing_plural"):
+            raise e
+        else:
+            return return_value
 
 
 def pluralize_russian(key, translation, count):
