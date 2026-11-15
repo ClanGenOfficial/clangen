@@ -2245,7 +2245,7 @@
             {
                 "frequency": 4,
                 "required_cat_types": {
-                    "normal adult": [1, 1]
+                    "apprentice": [-1, -1]
                 },
                 "strings": [
                     "The pawprints lead to a trespassing rogue. p_l quickly hides {PRONOUN/p_l/self} and sets up an ambush that sends the rogue fleeing off c_n territory."
@@ -2306,7 +2306,7 @@
             {
                 "frequency": 3,
                 "required_cat_types": {
-                    "normal adult": [1, 1]
+                    "apprentice": [-1, -1]
                 },
                 "strings": [
                     "p_l soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat."
@@ -2333,7 +2333,7 @@
             {
                 "frequency": 4,
                 "required_cat_types": {
-                    "normal adult": [1, 1]
+                    "apprentice": [-1, -1]
                 },
                 "strings": [
                     "The pawprints lead to a trespassing rogue. p_l throws {PRONOUN/p_l/self} at the rogue, hissing furiously, and drives {PRONOUN/n_c0/object} off c_n territory."
@@ -2404,7 +2404,7 @@
                     "beach"
                 ],
                 "required_cat_types": {
-                    "normal adult": [1, 1]
+                    "apprentice": [-1, -1]
                 },
                 "strings": [
                     "The pawprints lead to a trespassing rogue. p_l sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize {PRONOUN/n_c0/subject}{VERB/n_c0/'ve/'s} been caught and trapped by c_n, and {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} escorted to the border with the lesson firmly learned."
@@ -2475,7 +2475,7 @@
                     "forest"
                 ],
                 "required_cat_types": {
-                    "normal adult": [1, 1]
+                    "apprentice": [-1, -1]
                 },
                 "strings": [
                     "The pawprints lead to a trespassing rogue. p_l climbs into the trees to set up a trap, rigging a branch to fall on the rogue's head; and it works, sending the startled intruder yowling as they flee c_n territory."
@@ -2546,7 +2546,7 @@
                     "plains"
                 ],
                 "required_cat_types": {
-                    "normal adult": [1, 1]
+                    "apprentice": [-1, -1]
                 },
                 "strings": [
                     "The pawprints lead to a trespassing rogue. s_c0 tries to set up a trap by using grass to cover an abandoned rabbit burrow. The intruder falls right in and cowers to realize {PRONOUN/n_c0/subject}{VERB/n_c0/'ve/'s} been caught and trapped by c_n, and {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} escorted to the border with the lesson firmly learned."
@@ -2617,7 +2617,7 @@
                     "wetlands"
                 ],
                 "required_cat_types": {
-                    "normal adult": [1, 1]
+                    "apprentice": [-1, -1]
                 },
                 "strings": [
                     "The pawprints lead to a trespassing rogue. p_l sets up a trap by using the marshy terrain to cut off the rogue's escape path. It makes the startled intruder cower to realize {PRONOUN/n_c0/subject}{VERB/n_c0/'ve/'s} been caught and trapped by c_n, and {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} escorted to the border with the lesson firmly learned."
@@ -2685,7 +2685,7 @@
             {
                 "frequency": 4,
                 "required_cat_types": {
-                    "normal adult": [1, 1]
+                    "apprentice": [-1, -1]
                 },
                 "strings": [
                     "Boldly, p_l follows the pawprints to a trespassing rogue and confronts {PRONOUN/n_c0/object}. Fur puffed up and scowling, {PRONOUN/p_l/subject} {VERB/p_l/demand/demands} the rogue leave c_n territory. Intimidated by {PRONOUN/p_l/poss} confidence, the rogue gives in and leaves without a fight."
@@ -2771,9 +2771,16 @@
                     "apprentice": [1, 1]
                 },
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. p_l quickly hides {PRONOUN/p_l/self} and sets up an ambush that lets {PRONOUN/p_l/object} pretend to be a far bigger and more impressive fighter. It sends the rogue fleeing off c_n territory."
+                    "The pawprints lead to a trespassing rogue. p_l quickly hides {PRONOUN/p_l/self} to set up an ambush, eager for this chance to prove {PRONOUN/p_l/self}. When {PRONOUN/p_l/subject} bursts from cover, {PRONOUN/p_l/subject} {VERB/p_l/appear/appears} far bigger and mightier than {PRONOUN/p_l/subject} {VERB/p_l/are/is}, and it sends the rogue fleeing off c_n territory."
                 ],
                 "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": [
+                                "-careful"
+                            ]
+                        }
+                    },
                     "n_c0": {
                         "can_create_new_cat": {},
                         "status": ["rogue"],
@@ -2825,6 +2832,46 @@
                         }
                     }
                 ]
+            },
+            {
+                "frequency": 4,
+                "required_cat_types": {
+                    "apprentice": [1, 1]
+                },
+                "strings": [
+                    "The pawprints lead to a trespassing rogue. p_l quickly hides {PRONOUN/p_l/self}, thanking the stars {PRONOUN/p_l/subject} {VERB/p_l/weren't/wasn't} noticed. It would be far too risky to challenge the tresspasser by {PRONOUN/p_l/self}, so {PRONOUN/p_l/subject} returns to camp to report the situation."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": [
+                                "calm",
+                                "careful",
+                                "compassionate",
+                                "gloomy",
+                                "insecure",
+                                "nervous",
+                                "responsible",
+                                "sincere"
+                            ]
+                        }
+                    },
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["rogue"],
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    }
+                },
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
+                    }
+                ],
+                "exp_gained": 10
             }
         ],
         "fail_outcomes": [
@@ -2839,7 +2886,7 @@
             {
                 "frequency": 4,
                 "required_cat_types": {
-                    "normal adult": [1, 1]
+                    "apprentice": [-1, -1]
                 },
                 "strings": [
                     "The pawprints lead to a trespassing rogue. p_l throws {PRONOUN/p_l/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and p_l isn't as good of a fighter as {PRONOUN/p_l/subject}'d like to think. The rogue escapes {PRONOUN/p_l/poss} grasp and runs off further into c_n territory."
@@ -3121,7 +3168,7 @@
             {
                 "frequency": 3,
                 "required_cat_types": {
-                    "normal adult": [1, 1]
+                    "apprentice": [-1, -1]
                 },
                 "strings": [
                     "Following the trail with {PRONOUN/p_l/poss} nose to the ground, p_l doesn't see the blow coming. {PRONOUN/p_l/subject/CAP} {VERB/p_l/haul/hauls} {PRONOUN/p_l/self} to {PRONOUN/p_l/poss} feet, spitting with outrage, but the rogue that did it has already turned and run."
