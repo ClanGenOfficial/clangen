@@ -54,11 +54,13 @@ def save_clan_settings():
         clan_settings,
     )
 
+
 def save_default_settings():
     safe_save(
         Path(get_save_dir()) / "default_clan_settings.json",
-        clan_settings
+        clan_settings,
     )
+
 
 def get_clan_setting(name: str, *, default=None):
     return clan_settings.get(name, default)
