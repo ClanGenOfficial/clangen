@@ -33,6 +33,7 @@ from ..game_structure.constants import DISPLAY_SETTINGS
 from ..housekeeping.game_version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.windows.cruel_locked_action import CruelLockedAction
+from scripts.clan_package.settings.clan_settings import save_default_settings
 
 logger = logging.getLogger(__name__)
 
@@ -103,7 +104,7 @@ class ClanSettingsScreen(Screens):
             elif event.ui_element == self.save_default_button:
                 # NEED TO MAKE SETTINGS_SAVE WORK!!
                 # self.save_default()
-                # default_settings_save(self)
+                save_default_settings()
                 self.settings_changed = False
                 self.update_save_button()
                 return
