@@ -277,7 +277,6 @@ class Clan:
             ),
         )
 
-        self.instructor.dead = True
         self.instructor.dead_for = randint(20, 200)
         self.add_cat(self.instructor)
         self.all_other_clans = []
@@ -785,7 +784,6 @@ class Clan:
                 )
             )
             # update_sprite(game.clan.instructor)
-            game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
 
         game.clan.instructor.assign_thought(CatThought.IS_GUIDE)

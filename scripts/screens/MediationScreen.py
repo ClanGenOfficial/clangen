@@ -744,10 +744,12 @@ class MediationScreen(Screens):
                 other_cat, get_clan_setting("first cousin mates")
             ):
                 allow_romance = False
+                self.elements["romance_checkbox"].uncheck()
                 self.elements["romance_checkbox"].hide()
                 self.elements["romance_text"].hide()
             else:
                 allow_romance = True
+                self.elements["romance_checkbox"].check()
                 self.elements["romance_checkbox"].show()
                 self.elements["romance_text"].show()
 
