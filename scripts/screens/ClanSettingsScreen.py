@@ -125,7 +125,7 @@ class ClanSettingsScreen(Screens):
                 return
             elif event.ui_element == self.checkboxes.get("affair") and not get_config(
                 "mates.allow_mating"
-            ):
+            ):  
                 set_clan_setting("affair", False)
                 self.checkboxes["affair"].uncheck()
                 CruelLockedAction()
@@ -227,7 +227,7 @@ class ClanSettingsScreen(Screens):
         )
 
         self.save_default_button = UISurfaceImageButton(
-            ui_scale(pygame.Rect((0, 550), (150, 30))),
+            ui_scale(pygame.Rect((0, 560), (150, 30))),
             "buttons.save_as_default",
             get_button_dict(ButtonStyles.SQUOVAL, (150, 30)),
             object_id="@buttonstyles_squoval",
