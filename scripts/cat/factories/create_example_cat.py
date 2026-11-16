@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from random import sample, choices
+from random import sample, choices, randint
 from typing import TYPE_CHECKING
 
 from scripts.cat.enums import CatRank
@@ -18,12 +18,16 @@ def create_example_cats(majority_rank: CatRank, rank_weights: dict) -> list["Cat
     chosen_cats = []
     for cat_index in range(12):
         if cat_index in majority_rank_cats:
-            chosen_cats.append(NewCatFactory.create_cat(rank=majority_rank))
+            new_cat = NewCatFactory.create_cat(rank=majority_rank)
         else:
             random_rank = choices(
                 list(rank_weights.keys()), list(rank_weights.values())
             )[0]
-            chosen_cats.append(NewCatFactory.create_cat(rank=random_rank))
+            new_cat = NewCatFactory.create_cat(rank=random_rank)
+
+        if new_cat.moons >= 140:
+            new_cat.moons = randint(120, 140)
+        chosen_cats.append(new_cat)
 
     return chosen_cats
 

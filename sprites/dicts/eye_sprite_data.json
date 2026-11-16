@@ -1,7 +1,5 @@
 {
-    "spritesheet": [
-        "eyes"
-    ],
+    "spritesheet": "eyes",
     "sprite_list": [
         {
             "YELLOW": "yellow",
