@@ -489,7 +489,7 @@
             "m_c wants to asks r_c2 to eat with {PRONOUN/m_c/object}, but {PRONOUN/r_c2/subject}{VERB/r_c2/'re/'s} busy with r_c1.",
             "r_c2 accuses m_c of copying one of r_c1's jokes.",
             "m_c wishes that r_c2 liked {PRONOUN/m_c/object} as much as {PRONOUN/r_c2/subject} {VERB/r_c2/like/likes} r_c1.",
-            "m_c wants to get to know r_c2 better, but {PRONOUN/r_c2/subject}{VERB/r_c2/'re/'s} already close to r_c."
+            "m_c wants to get to know r_c2 better, but {PRONOUN/r_c2/subject}{VERB/r_c2/'re/'s} already close to r_c1."
         ],
         "involved_cats": {
             "m_c": {},
