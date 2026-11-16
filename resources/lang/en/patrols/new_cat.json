@@ -20529,7 +20529,8 @@
                         },
                         "age": [
                             "newborn"
-                        ]
+                        ],
+                        "status": ["kittypet"]
                     }
                 },
                 "death": [
@@ -20593,7 +20594,8 @@
                         },
                         "age": [
                             "newborn"
-                        ]
+                        ],
+                        "status": ["kittypet"]
                     }
                 },
                 "death": [
