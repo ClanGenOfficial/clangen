@@ -19,7 +19,7 @@ class TagEnum(Enum):
     high_lives = "high_lives"
     mid_lives = "mid_lives"
     low_lives = "low_lives"
-    clan_apps = "clan:apps"
+    clan_apps = "clan:any_app"
     clan_warrior_like = "clan:warrior-like"
     lost = "lost"
     kit_manipulated = "kit_manipulated"

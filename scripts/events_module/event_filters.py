@@ -207,21 +207,12 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
                 if sub_tag_check.group(2):
                     minimums.append(int(sub_tag_check.group(2)))
                 else:
-                    if sub_tag_check.group(1) in CatRank and sub_tag_check.group(
-                        1
-                    ) not in [
-                        CatRank.LEADER,
-                        CatRank.DEPUTY,
-                    ]:
-                        minimums.append(2)
-                        # Default Minimum is 2 for non deputy, non leader ranks.
-                    else:
-                        # Default minimun is 1 for anything else.
                         minimums.append(1)
+                # Default minimun is 1 unless otherwise specified.
 
             for rank, mi in zip(ranks, minimums):
                 rank_matched = True
-                if rank == "apps":
+                if rank == "any_app":
                     if (
                         not len(
                             find_alive_cats_with_rank(

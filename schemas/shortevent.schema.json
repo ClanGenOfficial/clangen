@@ -1988,7 +1988,7 @@
         "high_lives",
         "mid_lives",
         "low_lives",
-        "clan:apps",
+        "clan:any_app",
         "clan:warrior-like",
         "lost",
         "kit_manipulated",
