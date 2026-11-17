@@ -1697,7 +1697,7 @@
     {
         "event_id": "kit_story_kitsitter_to_other_kit",
         "tags": [
-            "clan:kitten"
+            "clan:kitten(min:2)"
         ],
         "strings": [
             "Always has the best games in the nursery!",

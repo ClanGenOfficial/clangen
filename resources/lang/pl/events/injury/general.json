@@ -378,7 +378,7 @@
             "any"
         ],
         "tags": [
-            "clan:kitten"
+            "clan:kitten(min:2)"
         ],
         "frequency": 4,
         "event_text": "m_c was play-fighting with the kits, but may have overdone it a bit. {PRONOUN/m_c/subject/CAP}'ll be sore for the next few days.",
@@ -9080,7 +9080,7 @@
             "any"
         ],
         "tags": [
-            "clan:kitten"
+            "clan:kitten(min:2)"
         ],
         "frequency": 4,
         "event_text": "m_c isn't as young as {PRONOUN/m_c/subject} used to be, and {PRONOUN/m_c/subject} {VERB/m_c/decline/declines} giving another badger ride to nap off the happy soreness that comes with being the kits' current favorite chew toy.",

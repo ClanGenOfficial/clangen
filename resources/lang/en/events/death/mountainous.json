@@ -24,7 +24,6 @@
         "location": ["mountainous:camp4"],
         "season": ["any"],
         "sub_type": [],
-        "tags": ["clan:kitten"],
         "frequency": 2,
         "event_text": "m_c snuck out of camp and was lost to the strange, angular tunnels, nothing left to find but blood and weasel-scent.",
         "m_c": {

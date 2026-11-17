@@ -6267,7 +6267,7 @@
             "any"
         ],
         "tags": [
-            "clan:kitten"
+            "clan:kitten(min:2)"
         ],
         "frequency": 4,
         "event_text": "m_c was killed defending the kits during a o_c_n raid.",

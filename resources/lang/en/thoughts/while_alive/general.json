@@ -488,7 +488,7 @@
     },
     {
         "event_id": "calm_to_kit",
-        "tags": ["clan:kitten"],
+        "tags": ["clan:kitten(min:2)"],
         "strings": [
             "Is unable to be scared, no matter how much the kits try"
         ],

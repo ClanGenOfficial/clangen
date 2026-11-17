@@ -2337,7 +2337,7 @@
             "leaf-fall"
         ],
         "tags": [
-            "clan:kitten"
+            "clan:kitten(min:2)"
         ],
         "frequency": 4,
         "event_text": "The older cats fondly watched the kits dashing in and out of leaf piles at the edge of camp.",
@@ -2845,7 +2845,7 @@
             "any"
         ],
         "tags": [
-            "clan:kitten"
+            "clan:kitten(min:2)"
         ],
         "frequency": 2,
         "event_text": "m_c listened as r_c told the story of how {PRONOUN/r_c/subject} fell in love with {PRONOUN/r_c/poss} mate to a group of starry-eyed kits.",
@@ -2961,7 +2961,7 @@
             "any"
         ],
         "tags": [
-            "clan:kitten"
+            "clan:kitten(min:2)"
         ],
         "frequency": 3,
         "event_text": "m_c and r_c watched the Clan's kits play and exchanged significant glances.",
@@ -7991,7 +7991,7 @@
         "location": ["any"],
         "season": ["newleaf"],
         "sub_type": [],
-        "tags": ["clan:kitten"],
+        "tags": ["clan:kitten(min:2)"],
         "poi": {
             "tags": ["trees"]
         },
@@ -8464,7 +8464,7 @@
             "any"
         ],
         "tags": [
-            "clan:kitten"
+            "clan:kitten(min:2)"
         ],
         "frequency": 4,
         "event_text": "m_c called out one morning to some eager kits, and after they situated themselves in front of m_c, {PRONOUN/m_c/subject} wove the kits a thrilling story of times long past.",
