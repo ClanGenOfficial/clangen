@@ -25,12 +25,14 @@
         "id": "gen_romance_high_pos_hunkyrogue",
         "strings": [
             "r_c was enthralled by m_c and wanted to know all {PRONOUN/r_c/poss} roguish tales.",
-            "r_c is blushing over m_c's sleek pelt and rippling muscles."
+            "r_c was blushing over m_c's sleek pelt and rippling muscles."
         ],
-        "r_c": {
-            "past_status": [
-                "rogue"
-            ]
+        "involved_cats": {
+            "r_c": {
+                "past_status": [
+                    "rogue"
+                ]
+            }
         }
     }
 ]

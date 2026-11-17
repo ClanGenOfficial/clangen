@@ -4,5 +4,20 @@
         "strings": [
 			"r_c didn't make a good first impression, and m_c felt doubtful about {PRONOUN/r_c/object}."
         ]
+    },
+     {
+        "event_id": "gen_trust_high_neg2",
+        "strings": [
+            "m_c could tell r_c felt uneasy about an outsider joining the Clan.",
+            "m_c knew r_c questioned the decision to allow {PRONOUN/m_c/object} to join the Clan."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["trust"],
+                "amount": -5
+            }]
     }
 ]

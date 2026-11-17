@@ -2,7 +2,23 @@
     {
         "event_id": "gen_trust_med_pos1",
         "strings": [
-			"r_c made sure m_c was personally introduced to everyone in the Clan."
+			"r_c made sure m_c was personally introduced to everyone in the Clan.",
+            "r_c advocated strongly for m_c to join the Clan.",
+            "r_c told m_c to let {PRONOUN/m_c/object} know if they ever needed any help adjusting to Clan life."
         ]
+    },
+    {
+        "event_id": "gen_trust_med_pos_medcat",
+        "strings": [
+			"r_c made sure m_c knew to come to {PRONOUN/r_c/object} if {PRONOUN/m_c/subject} were injured or ill."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "medicine cat",
+                    "medicine cat apprentice"
+                ]
+            }
+        }
     }
 ]
