@@ -207,7 +207,7 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
                 if sub_tag_check.group(2):
                     minimums.append(int(sub_tag_check.group(2)))
                 else:
-                        minimums.append(1)
+                    minimums.append(1)
                 # Default minimun is 1 unless otherwise specified.
 
             for rank, mi in zip(ranks, minimums):
