@@ -747,7 +747,7 @@
             "any"
         ],
         "tags": [
-            "clan:warrior"
+            "clan:warrior(min:2)"
         ],
         "frequency": 4,
         "event_text": "m_c has been getting more and more frustrated by the number of ticks {PRONOUN/m_c/subject} {VERB/m_c/have/has}, but doesn't want to bother anyone with {PRONOUN/m_c/poss} troubles. Regardless, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} found out when someone spots {PRONOUN/m_c/object} scratching at the bites.",
@@ -788,7 +788,7 @@
             "any"
         ],
         "tags": [
-            "clan:warrior"
+            "clan:warrior(min:2)"
         ],
         "frequency": 2,
         "event_text": "m_c tried to interject and de-escalate an argument between two Clanmates, but r_c retaliated at the interruption. m_c limps away, fresh clawmarks scored through {PRONOUN/m_c/poss} pelt.",

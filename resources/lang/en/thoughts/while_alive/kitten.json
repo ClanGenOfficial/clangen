@@ -1567,7 +1567,7 @@
     {
         "event_id": "kit_constantly_climbing",
         "tags": [
-            "clan:warrior"
+            "clan:warrior(min:2)"
         ],
         "strings": [
             "Has to be pried from the walls... again",

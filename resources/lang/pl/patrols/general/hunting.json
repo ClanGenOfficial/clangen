@@ -10952,7 +10952,7 @@
         "season": [
             "newleaf"
         ],
-        "tags": ["clan:warrior-like"],
+        "tags": ["clan:warrior-like(min:2)"],
         "required_cat_types": {
             "patrol_cats": [
                 1,
@@ -11490,7 +11490,7 @@
         "season": [
             "greenleaf"
         ],
-        "tags": ["clan:warrior-like"],
+        "tags": ["clan:warrior-like(min:2)"],
         "required_cat_types": {
             "patrol_cats": [
                 1,
@@ -12028,7 +12028,7 @@
                 1
             ]
         },
-        "tags": ["clan:warrior-like"],
+        "tags": ["clan:warrior-like(min:2)"],
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
         "intro_strings": [
@@ -12546,7 +12546,7 @@
         "season": [
             "leaf-bare"
         ],
-        "tags": ["clan:warrior-like"],
+        "tags": ["clan:warrior-like(min:2)"],
         "required_cat_types": {
             "patrol_cats": [
                 1,
