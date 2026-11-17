@@ -2,7 +2,9 @@
     {
         "event_id": "gen_comfort_med_pos1",
         "strings": [
-			"r_c and m_c bonded over their preferred nesting materials while m_c was getting comfortable in {PRONOUN/m_c/poss} new den."
+			"r_c and m_c bonded over their preferred nesting materials while m_c was getting comfortable in {PRONOUN/m_c/poss} new den.",
+            "r_c didn't seem apprehensive at all about m_c.",
+            "r_c invited m_c to share fresh kill with {PRONOUN/r_c/object}."
         ],
         "relationship_changes": [
             {
