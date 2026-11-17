@@ -2,7 +2,9 @@
     {
         "event_id": "gen_like_high_dec1",
         "strings": [
-			"r_c made a rude comment while m_c was getting acquainted with the camp."
+			"r_c made a rude comment while m_c was getting acquainted with the camp.",
+            "m_c remarked that r_c reminded {PRONOUN/m_c/object} of a former adversary.",
+            "r_c made it clear that {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} agree with m_c joining the Clan."
         ],
         "relationship_changes": [
             {

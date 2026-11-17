@@ -2,7 +2,8 @@
     {
         "event_id": "gen_like_low_dec1",
         "strings": [
-            "r_c avoided being introduced to m_c."
+            "r_c avoided being introduced to m_c.",
+            "r_c made little effort to welcome m_c."
         ],
         "relationship_changes": [
             {

@@ -2,7 +2,8 @@
     {
         "event_id": "gen_like_med_inc1",
         "strings": [
-			"r_c asked m_c if {PRONOUN/m_c/subject} could use some help getting to know the other Clan members."
+			"r_c asked m_c if {PRONOUN/m_c/subject} could use some help getting to know the other Clan members.",
+            "r_c reminded m_c of some of {PRONOUN/m_c/poss} old friends."
         ]
     },
     {
