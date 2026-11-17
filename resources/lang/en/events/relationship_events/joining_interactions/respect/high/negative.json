@@ -2,7 +2,30 @@
     {
         "event_id": "gen_respect_high_neg1",
         "strings": [
-            "m_c couldn't help but envy the place r_c already has in the Clan."
+            "m_c couldn't help but envy the place r_c already has in the Clan.",
+            "m_c didn't understand why {PRONOUN/m_c/poss} new Clanmates took r_c so seriously."
+        ]
+    },
+    {
+        "event_id": "gen_respect_high_neg_rogue",
+        "strings":[
+            "r_c told m_c that {PRONOUN/m_c/subject} would always be a lying, cheating rogue."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "past_status": [
+                    "rogue"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": -10
+            }
         ]
     }
 ]

@@ -2,7 +2,8 @@
     {
         "event_id": "gen_respect_med_pos1",
         "strings": [
-			"m_c seemed to admire r_c from the moment they met."
+			"m_c seemed to admire r_c from the moment they met.",
+            "r_c made sure m_c was personally introduced to everyone in the Clan."
         ]
     }
 ]
