@@ -14,7 +14,7 @@
             }]
     },
     {
-        "id": "gen_romance_high_pos_loveatfirstsight",
+        "event_id": "gen_romance_high_pos_loveatfirstsight",
         "strings": [
 			"r_c thought m_c was the most beautiful cat that has ever set foot in camp.",
             "When m_c first met r_c time seemed to slow down.",
@@ -22,7 +22,7 @@
         ]
     },
     {
-        "id": "gen_romance_high_pos_hunkyrogue",
+        "event_id": "gen_romance_high_pos_hunkyrogue",
         "strings": [
             "r_c was enthralled by m_c and wanted to know all {PRONOUN/r_c/poss} roguish tales.",
             "r_c was blushing over m_c's sleek pelt and rippling muscles."
