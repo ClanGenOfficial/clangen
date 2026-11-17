@@ -8420,7 +8420,7 @@
             "any"
         ],
         "tags": [
-            "clan:apps"
+            "clan:any_app"
         ],
         "frequency": 4,
         "event_text": "m_c called the younger cats to {PRONOUN/m_c/poss} den one afternoon to tell stories of the Clan's past.",

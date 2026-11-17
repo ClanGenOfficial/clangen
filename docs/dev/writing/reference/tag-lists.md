@@ -52,7 +52,7 @@ These tags are used for more general filtering purposes.
 | string            | use                                                                                                                                                            |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | clan:{status}     | event only occurs if the clan has at least 2 cats with the given status (do not include curly brackets in tag, tag should look something like: `clan:newborn`) |
-| clan:apps         | event only occurs if the clan has at least one living apprentice, this includes ALL types of apps (medicine, mediator, and warrior)                            |
+| clan:any_app      | event only occurs if the clan has at least one living apprentice, this includes ALL types of apps (medicine, mediator, and warrior)                            |
 | clan:warrior-like | event only occurs if the clan has at least one warrior-like role (leader, warrior or deputy)                                                                   |
 
 You can override the default minimums by including `(min:#)` after the status or status group. For example, `"clan:warrior(min:5)"` would require at least 5 warriors. 
