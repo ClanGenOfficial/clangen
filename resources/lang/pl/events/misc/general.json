@@ -12242,7 +12242,7 @@
             "war"
         ],
         "tags": [
-            "clan:elder"
+            "clan:elder(min:2)"
         ],
         "frequency": 2,
         "event_text": "m_c has been heavily relying on the tactical advice and experience of the elders, namely r_c.",
