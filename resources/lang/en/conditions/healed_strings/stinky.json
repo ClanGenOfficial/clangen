@@ -324,7 +324,7 @@
     },
     {
         "event_id": "healed_stinky_apprentice0",
-        "tags": ["clan:apprentice"],
+        "tags": ["clan:apprentice(min:2)"],
         "strings": [
             "m_c's stench no longer clears the apprentice den when {PRONOUN/m_c/subject} {VERB/m_c/enter/enters}.",
             "The stench that followed {PRONOUN/m_c/object} around for half the moon did, at least, guarantee m_c wasn't assigned to any in-camp chores."
@@ -391,7 +391,7 @@
     },
     {
         "event_id": "healed_stinky_medcat0",
-        "tags": ["clan:apprentice"],
+        "tags": ["clan:warrior-like(min:2)"],
         "strings": [
             "The medicine cat den was an unpopular place until m_c's stench finally wore off."
         ],

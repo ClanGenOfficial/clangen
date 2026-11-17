@@ -11,7 +11,7 @@
       "war"
     ],
     "tags": [
-      "clan:apprentice"
+      "clan:apprentice(min:2)"
     ],
     "frequency": 3,
     "event_text": "The apprentices are learning how to ambush enemies from tall trees.",

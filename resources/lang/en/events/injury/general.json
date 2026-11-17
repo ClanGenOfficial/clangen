@@ -705,7 +705,7 @@
             "any"
         ],
         "tags": [
-            "clan:apprentice"
+            "clan:warrior-like(min:2)"
         ],
         "frequency": 4,
         "event_text": "m_c keeps pointedly reminding other cats that {PRONOUN/m_c/poss} ticks haven't been seen to yet, clearly uncomfortable with the itchy bites dotting {PRONOUN/m_c/poss} pelt.",

@@ -11,7 +11,7 @@
             "war"
         ],
         "tags": [
-            "clan:apprentice"
+            "clan:apprentice(min:2)"
         ],
         "frequency": 4,
         "event_text": "The apprentices are learning how to weaponize stones and boulders in the mountainous landscape.",

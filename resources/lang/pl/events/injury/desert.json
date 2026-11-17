@@ -819,9 +819,6 @@
             "leaf-fall",
             "newleaf"
         ],
-        "tags": [
-            "clan:apprentice"
-        ],
         "frequency": 3,
         "event_text": "m_c thanks r_c for the water, squeezing the precious liquid gently out of the soaked moss the apprentice has brought. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} want {PRONOUN/m_c/poss} dehydration to get any worse.",
         "m_c": {
