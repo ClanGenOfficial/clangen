@@ -95,8 +95,7 @@
     {
         "event_id": "only_med_gain_greencough0",
         "tags": [
-            "-clan:medicine cat",
-            "-clan:medicine cat apprentice"
+            "-clan:medicine cat(min:2)"
         ],
         "strings": [
             "m_c has contracted greencough. As the only medicine cat, Clanmates worry what might happen while m_c is too sick to work.",
@@ -114,8 +113,8 @@
     {
         "event_id": "no_med_gain_greencough0",
         "tags": [
-            "-clan:medicine cat(min:1)",
-            "-clan:medicine cat apprentice(min:1)"
+            "-clan:medicine cat",
+            "-clan:medicine cat apprentice"
         ],
         "strings": [
             "m_c has contracted greencough. Without a medicine cat, Clanmates are unsure how to help {PRONOUN/m_c/object}.",
