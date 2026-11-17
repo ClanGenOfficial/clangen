@@ -2,7 +2,10 @@
     {
         "event_id": "gen_romance_low_neg1",
         "strings": [
-			"m_c didn't spare r_c a second glance."
+			"m_c didn't spare r_c a second glance.",
+            "m_c no longer found r_c charming.",
+            "r_c seemed less interested in m_c after {PRONOUN/m_c/subject} joined the Clan.",
+            "r_c was more interested in {PRONOUN/r_c/poss} fantasy of m_c than m_c actually joining the Clan."
         ],
         "relationship_changes": [
             {

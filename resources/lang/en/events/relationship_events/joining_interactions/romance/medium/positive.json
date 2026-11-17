@@ -12,5 +12,12 @@
                 "values": ["romance"],
                 "amount": 5
             }]
+    },
+    {
+        "event_id": "gen_romance_med_pos2",
+        "strings": [
+			"m_c thought {PRONOUN/m_c/subject} and r_c were fated to meet.",
+            "m_c is falling head over paws for r_c."
+        ]
     }
 ]

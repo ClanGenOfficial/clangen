@@ -2,7 +2,9 @@
     {
         "event_id": "gen_romance_high_neg1",
         "strings": [
-			"It seems distance did not make the heart grow fonder: m_c had been avoiding r_c."
+			"It seems distance did not make the heart grow fonder: m_c had been avoiding r_c.",
+            "m_c and r_c's dreams of romance were thwarted by the realization that they might not actually like each other that much.",
+            "Characteristics that r_c found charming quickly revealed themselves to be character flaws when m_c joined c_n."
         ],
         "relationship_changes": [
             {
