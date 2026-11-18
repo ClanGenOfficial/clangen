@@ -307,6 +307,7 @@ class ClanSettingsScreen(Screens):
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = "general"
         self.save_default_button.show()
+        self.update_save_button()
         self.refresh_checkboxes()
 
     def open_roles_settings(self):
@@ -316,6 +317,7 @@ class ClanSettingsScreen(Screens):
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = "role"
         self.save_default_button.show()
+        self.update_save_button()
         self.refresh_checkboxes()
 
     def open_relation_settings(self):
@@ -324,7 +326,8 @@ class ClanSettingsScreen(Screens):
         self.relation_settings_button.disable()
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = "relation"
-
+        self.save_default_button.show()
+        self.update_save_button()
         self.refresh_checkboxes()
 
     def open_clan_stats(self):
