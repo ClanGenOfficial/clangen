@@ -102,8 +102,6 @@ class ClanSettingsScreen(Screens):
                 self.open_clan_stats()
                 return
             elif event.ui_element == self.save_default_button:
-                # NEED TO MAKE SETTINGS_SAVE WORK!!
-                # self.save_default()
                 save_default_settings()
                 self.settings_changed = False
                 self.update_save_button()
@@ -146,7 +144,7 @@ class ClanSettingsScreen(Screens):
                     else:
                         value.check()
                     self.settings_changed = True
-                    # self.update_save_button()
+                    self.update_save_button()
 
                     scroll_pos = None
                     if (
