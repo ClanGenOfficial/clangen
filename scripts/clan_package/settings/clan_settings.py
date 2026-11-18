@@ -86,18 +86,36 @@ def reset_loaded_clan_settings():
     global clan_settings
 
     clan_settings = {}
+    for _setting in all_settings:  # Add all the settings to the settings dictionary
+        for setting_name, value in _setting.items():
+            clan_settings[setting_name] = value
+
+    for setting, values in _clan_settings["other"].items():
+        clan_settings[setting] = values[0]
+        setting_lists[setting] = values
+
     if os.path.exists(
         get_save_dir() + "/default_clan_settings.json",
     ):
         print("DEBUG: Default settings found!")
-    else:
-        for _setting in all_settings:  # Add all the settings to the settings dictionary
-            for setting_name, value in _setting.items():
-                clan_settings[setting_name] = value
+        with open(
+            get_save_dir() + "/default_clan_settings.json",
+            "r",
+            encoding="utf-8",
+        ) as write_file:
+            _load_settings = ujson.loads(write_file.read())
 
-        for setting, values in _clan_settings["other"].items():
-            clan_settings[setting] = values[0]
-            setting_lists[setting] = values
+        _load_copy = _load_settings.copy()
+        for key, value in _load_copy.items():
+            # update keys
+            if key in _old_save_conversion:
+                _load_settings[_old_save_conversion[key]] = value
+                _load_settings.pop(key)
+
+        # loading settings from converted dict
+        for key, value in _load_settings.items():
+            if key in clan_settings:
+                clan_settings[key] = value
 
 
 # Init Settings
