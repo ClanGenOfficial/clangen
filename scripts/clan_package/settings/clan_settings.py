@@ -86,14 +86,18 @@ def reset_loaded_clan_settings():
     global clan_settings
 
     clan_settings = {}
+    if os.path.exists(
+        get_save_dir() + "/default_clan_settings.json",
+    ):
+        print("DEBUG: Default settings found!")
+    else:
+        for _setting in all_settings:  # Add all the settings to the settings dictionary
+            for setting_name, value in _setting.items():
+                clan_settings[setting_name] = value
 
-    for _setting in all_settings:  # Add all the settings to the settings dictionary
-        for setting_name, value in _setting.items():
-            clan_settings[setting_name] = value
-
-    for setting, values in _clan_settings["other"].items():
-        clan_settings[setting] = values[0]
-        setting_lists[setting] = values
+        for setting, values in _clan_settings["other"].items():
+            clan_settings[setting] = values[0]
+            setting_lists[setting] = values
 
 
 # Init Settings
