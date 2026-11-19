@@ -1097,7 +1097,9 @@
             "border"
         ],
         "frequency": 1,
-        "tags": [],
+        "tags": [
+            "romance"
+        ],
         "required_cat_types": {
             "patrol_cats": [
                 1,
@@ -1117,9 +1119,9 @@
             ]
         },
         "chance_of_success": 40,
-        "patrol_art": "cat_sprites/gen_train_talking_WrOw",
+        "patrol_art": "cat_sprites/gen_happycat_Ow",
         "intro_strings": [
-            "p_l slinks out of camp to the o_c_n border. A pair of eyes gleam from the bushes, then {PRONOUN/p_l/poss} secret beloved appears. p_l breathes in the o_c_n scent, feeling a guilty rush of delight {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt so many times before. But tonight is different. Tonight, p_l's o_c_n lover has come to give {PRONOUN/p_l/object} an ultimatum."
+            "p_l slinks out of camp to the o_c_n border. A pair of eyes gleam from the bushes, then {PRONOUN/p_l/poss} secret beloved appears. p_l breathes in the o_c_n scent, feeling the guilty rush of delight {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt so many times before. But tonight is different. Tonight, p_l's lover has come to give {PRONOUN/p_l/object} an ultimatum."
         ],
         "decline_strings": [
             "p_l admits {PRONOUN/p_l/subject} can't stay and hurries back to camp."
@@ -1129,7 +1131,8 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_flowerdate_WrOw",
                 "strings": [
-                    "p_l begs n_c0 to come back with {PRONOUN/p_l/object}. n_c0 shakes {PRONOUN/n_c0/poss} head regretfully, reminding {PRONOUN/p_l/object} that their Clans would never accept it. Instead, n_c0 declares {PRONOUN/n_c0/poss} intent to live beyond the borders, and asks p_l to join {PRONOUN/n_c0/object} when {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} ready."
+                    "p_l begs n_c0 to come back with {PRONOUN/p_l/object}. n_c0 shakes {PRONOUN/n_c0/poss} head regretfully, reminding {PRONOUN/p_l/object} that their Clans would never accept it. Instead, n_c0 declares {PRONOUN/n_c0/poss} intent to live beyond the borders, and asks p_l to join {PRONOUN/n_c0/object} when {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} ready.",
+                    "n_c0 urges p_l to give up {PRONOUN/p_l/poss} life in c_n and join {PRONOUN/n_c0/object} in o_c_n. When p_l refuses, n_c0 bows {PRONOUN/n_c0/poss} head and admits {PRONOUN/n_c0/subject} can't live without {PRONOUN/p_l/object}. n_c0 will wait for p_l beyond the border, until p_l is ready to start their life together away from the Clans."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -1138,8 +1141,17 @@
                                 "p_l"
                             ]
                         },
+                        "standing": {
+                            "group": ["other_clan"],
+                            "currently": ["left"]
+                        },
                         "status": [
-                            "clancat"
+                            "loner",
+                            "rogue"
+                        ],
+                        "backstory": [
+                            "otherclan1",
+                            "otherclan4"
                         ]
                     }
                 },
@@ -1210,7 +1222,7 @@
             },
             {
                 "frequency": 1,
-                "outcome_art": "cat_sprites/gen_flowerdate_WrOw",
+                "outcome_art": "cat_sprites/gen_bumpheads_WrOw",
                 "strings": [
                     "p_l begs n_c0 to come back with {PRONOUN/p_l/object} and gasps in joy when n_c0 agrees. With one last look over {PRONOUN/n_c0/poss} shoulder to {PRONOUN/n_c0/poss} old Clan, n_c0 follows {PRONOUN/n_c0/poss} mate to their new life together."
                 ],
@@ -1223,6 +1235,10 @@
                         },
                         "status": [
                             "clancat"
+                        ],
+                        "backstory": [
+                            "otherclan1",
+                            "otherclan4"
                         ]
                     }
                 },
@@ -1270,7 +1286,9 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "high_lawful"
+                            "clan",
+                            "high_lawful",
+                            "-n_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1289,185 +1307,11 @@
                         ]
                     }
                 ]
-            },
-            {
-                "frequency": 4,
-                "outcome_art": "cat_sprites/gen_flowerdate_WrOw",
-                "strings": [
-                    "n_c0 urges p_l to give up {PRONOUN/p_l/poss} life in c_n and join {PRONOUN/n_c0/object} in o_c_n. When p_l refuses, n_c0 bows {PRONOUN/n_c0/poss} head and admits {PRONOUN/n_c0/subject} can't live without {PRONOUN/p_l/object}. n_c0 will wait for p_l beyond the border, until p_l is ready to start their life together away from the Clans."
-                ],
-                "involved_cats": {
-                    "n_c0": {
-                        "can_create_new_cat": {
-                            "assign_mate": [
-                                "p_l"
-                            ]
-                        },
-                        "status": [
-                            "clancat"
-                        ]
-                    }
-                },
-                "exp_gained": 20,
-                "reputation_changes": {
-                    "other_clan": -1
-                },
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "n_c0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "like"
-                        ],
-                        "amount": 46,
-                        "log": {
-                            "cats_from": "cat_from and cat_to have been meeting in secret."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "n_c0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "trust",
-                            "comfort"
-                        ],
-                        "amount": 28,
-                        "log": {
-                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "n_c0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "comfort",
-                            "respect"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from begged cat_to to join c_n, but cat_to refused and left Clan-life altogether."
-                        }
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
-                ]
             }
         ],
         "fail_outcomes": [
             {
-                "frequency": 1,
-                "outcome_art": "cat_sprites/gen_flowerdate_WrOw",
-                "strings": [
-                    "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} made up {PRONOUN/p_l/poss} mind. p_l presses {PRONOUN/p_l/poss} pelt to n_c0's, purring bittersweetly. {PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} said {PRONOUN/p_l/poss} goodbyes, and so has n_c0. Now all that's left is to travel to the outer border together to start their shared life."
-                ],
-                "involved_cats": {
-                    "n_c0": {
-                        "can_create_new_cat": {
-                            "assign_mate": [
-                                "p_l"
-                            ]
-                        },
-                        "status": [
-                            "clancat"
-                        ]
-                    }
-                },
-                "exp_gained": 5,
-                "reputation_changes": {
-                    "other_clan": -3
-                },
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "n_c0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "romance",
-                            "like"
-                        ],
-                        "amount": 46,
-                        "log": {
-                            "cats_from": "cat_from and cat_to have been meeting in secret."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "n_c0"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "trust",
-                            "comfort"
-                        ],
-                        "amount": 28,
-                        "log": {
-                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "n_c0"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "comfort",
-                            "like",
-                            "respect"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from and cat_to decided to leave Clan-life and travel together, free from the confines of their old lives."
-                        }
-                    }
-                ],
-                "lost": [
-                    {
-                        "cats": [
-                            "p_l"
-                        ]
-                    }
-                ],
-                "meet": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
+                "frequency": 3,
                 "outcome_art": "cat_sprites/gen_flowerdate_WrOw",
                 "strings": [
                     "p_l and n_c0 spend one last night together, and though p_l tries to convince {PRONOUN/n_c0/object} that the birdsong is the nightingale and not the lark, n_c0 knows better. {PRONOUN/n_c0/subject/CAP} can't bear to live in this fantasy any longer. Though p_l calls after n_c0, {PRONOUN/n_c0/subject} {VERB/n_c0/do/does}n't look back as {PRONOUN/n_c0/subject} {VERB/n_c0/flee/flees} into the rosy dawn."
@@ -1530,22 +1374,21 @@
                         "cats_from": [
                             "p_l"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "comfort",
-                            "trust",
-                            "romance"
+                            "trust"
                         ],
-                        "amount": -5,
+                        "amount": -10,
                         "log": {
-                            "cats_from": "cat_to had lost faith in their love's resilience and, despite cat_from's pleading, ran from {PRONOUN/cat_from/object}."
+                            "cats_from": "cat_from pleaded with cat_to, but {PRONOUN/cat_to/subject} made it clear their secret meetings were over.",
+                            "cats_to": "cat_to lost faith in their love's resilience and decided not to meet with cat_from anymore."
                         }
                     }
                 ],
                 "condition": [
                     {
                         "cats": [
-                            "n_c0",
                             "p_l"
                         ],
                         "condition": [
@@ -1562,10 +1405,10 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 2,
                 "outcome_art": "cat_sprites/gen_battle_WrOw",
                 "strings": [
-                    "As they discuss running away together, p_l and n_c0 lose track of time together and only realize the sun is rising when a o_c_n dawn patrol catches them together on the border. n_c0's Clanmates are enraged and, despite n_c0's wails of protest, pounce on p_l, clawing {PRONOUN/p_l/object} within a mouse-length of {PRONOUN/p_l/poss} life. n_c0, horrified by {PRONOUN/n_c0/poss} Clanmates' actions, flees the territory."
+                    "As they discuss running away together, p_l and n_c0 lose track of time. They only realize the sun is rising when a o_c_n dawn patrol catches them together on the border. n_c0's Clanmates are enraged and, despite {PRONOUN/p_l/poss} wails of protest, pounce on p_l, clawing {PRONOUN/p_l/object} within a mouse-length of {PRONOUN/p_l/poss} life. n_c0, horrified and overwhelmed, runs away."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -1576,6 +1419,20 @@
                         },
                         "status": [
                             "clancat"
+                        ]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "warrior",
+                            "deputy"
+                        ]
+                    },
+                    "n_c2": {
+                        "can_create_new_cat": {},
+                        "status": [
+                            "warrior",
+                            "apprentice"
                         ]
                     }
                 },
@@ -1625,14 +1482,33 @@
                         "cats_from": [
                             "p_l"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "comfort",
                             "trust"
                         ],
-                        "amount": -10,
+                        "amount": -20,
                         "log": {
-                            "cats_from": "While the two were meeting, cat_to's Clanmates attacked and nearly killed cat_from. cat_to ran from the territories altogether."
+                            "cats_from": "While the two were meeting, cat_to's Clanmates attacked and nearly killed cat_from."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "n_c1",
+                            "n_c2"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from was attacked by {PRONOUN/cat_to/poss} mate's Clanmates and nearly killed.",
+                            "cats_to": "cat_to attacked cat_from at the border."
                         }
                     }
                 ],
@@ -1646,22 +1522,14 @@
                         ],
                         "scar_history": "m_c was scarred by {PRONOUN/m_c/poss} mate's Clanmates.",
                         "death_history": "m_c died from injuries inflicted by {PRONOUN/m_c/poss} mate's Clanmates."
-                    },
-                    {
-                        "cats": [
-                            "n_c0"
-                        ],
-                        "condition": [
-                            "grief_stricken"
-                        ],
-                        "scar_history": "m_c was scarred by {PRONOUN/m_c/poss} mate's Clanmates.",
-                        "death_history": "m_c died from injuries inflicted by {PRONOUN/m_c/poss} mate's Clanmates."
                     }
                 ],
                 "meet": [
                     {
                         "cats": [
-                            "n_c0"
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
                         ]
                     }
                 ]
@@ -1670,7 +1538,7 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_battle_WrOw",
                 "strings": [
-                    "As they discuss running away together, p_l and n_c0 lose track of time together and only realize the sun is rising when a o_c_n dawn patrol catches them together on the border. n_c0's Clanmates are enraged. Though n_c0 tries to pull them off p_l, the o_c_n warriors leave p_l cold on the ground. n_c0 flees, howling in grief for {PRONOUN/n_c0/poss} lost love."
+                    "As they discuss running away together, p_l and n_c0 lose track of time. They only realize the sun is rising when a o_c_n dawn patrol catches them together on the border. n_c0's Clanmates are enraged. Though n_c0 tries to pull them off p_l, the o_c_n warriors leave p_l cold on the ground. n_c0 flees, howling in grief for {PRONOUN/n_c0/poss} lost love."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -1720,7 +1588,7 @@
                         ],
                         "amount": 28,
                         "log": {
-                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other until cat_from's Clan killed cat_to."
+                            "cats_from": "Despite their Clans' differences, cat_from and cat_to found comfort in each other."
                         }
                     }
                 ],
@@ -1729,7 +1597,7 @@
                         "cats": [
                             "p_l"
                         ],
-                        "history": "m_c was killed by {PRONOUN/m_c/poss} mate's Clanmates."
+                        "history": "m_c was killed when {PRONOUN/m_c/poss} mate's Clanmates found them meeting in secret."
                     }
                 ],
                 "condition": [
@@ -1738,10 +1606,8 @@
                             "n_c0"
                         ],
                         "condition": [
-                            "grief_stricken",
-                            "lasting_grief"
-                        ],
-                        "death_history": "m_c was killed by {PRONOUN/m_c/poss} mate's Clanmates."
+                            "grief_stricken"
+                        ]
                     }
                 ],
                 "meet": [
@@ -1753,19 +1619,26 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 1,
                 "outcome_art": "cat_sprites/gen_battle_WrOw",
                 "strings": [
-                    "p_l and n_c2 spend the night discussing their future. At dawn, a patrol from o_c_n arrives and finds p_l on their territory. Before n_c2 can explain, one hot-blooded warrior pounces on p_l and goes for {PRONOUN/p_l/poss} throat, but p_l sinks {PRONOUN/p_l/poss} jaws into the warrior's neck first. n_c2 wails that p_l has killed {PRONOUN/n_c2/poss} sibling, then flees, leaving p_l and the remaining o_c_n warriors staring at each other."
+                    "As they discuss their future, p_l and n_c2 lose track of time. They only realize the sun is rising when a o_c_n dawn patrol catches them together. Before n_c2 can explain, one warrior pounces on p_l and goes for {PRONOUN/p_l/poss} throat, but p_l sinks {PRONOUN/p_l/poss} jaws into {PRONOUN/n_c1/poss} neck first. n_c2 wails over the fallen cat, crying that p_l has killed {PRONOUN/n_c2/poss} sibling. p_l can do nothing but flee from the enraged o_c_n warriors."
                 ],
                 "involved_cats": {
+                    "p_l": {
+                        "age": [
+                            "young adult",
+                            "adult",
+                            "senior adult"
+                        ]
+                    },
                     "n_c0": {
                         "can_create_new_cat": {},
-                        "status": [
-                            "clancat"
-                        ],
                         "age": [
                             "senior"
+                        ],
+                        "status": [
+                            "clancat"
                         ]
                     },
                     "n_c1": {
@@ -1775,10 +1648,7 @@
                             ]
                         },
                         "status": [
-                            "clancat"
-                        ],
-                        "age": [
-                            "adult"
+                            "warrior"
                         ]
                     },
                     "n_c2": {
@@ -1790,14 +1660,14 @@
                                 "n_c0"
                             ]
                         },
-                        "past_status": [
+                        "status": [
                             "clancat"
                         ]
                     }
                 },
                 "exp_gained": 0,
                 "reputation_changes": {
-                    "other_clan": -7
+                    "other_clan": -10
                 },
                 "relationship_changes": [
                     {
@@ -1843,11 +1713,12 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "trust"
+                            "respect",
+                            "comfort"
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "When cat_to killed cat_from's sibling, cat_from fled, {PRONOUN/cat_from/poss} heart torn."
+                            "cats_from": "cat_to killed cat_from's sibling in a self-defense."
                         }
                     }
                 ],
@@ -1856,8 +1727,8 @@
                         "cats": [
                             "n_c1"
                         ],
-                        "history": "This cat died while wandering.",
-                        "no_results": false
+                        "history": "This cat was killed by {PRONOUN/m_c/poss} sibling's mate from c_n.",
+                        "no_results": true
                     }
                 ],
                 "condition": [
@@ -1873,8 +1744,7 @@
                 "meet": [
                     {
                         "cats": [
-                            "n_c2",
-                            "n_c0"
+                            "n_c2"
                         ]
                     }
                 ]
@@ -1885,7 +1755,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_battle_WrOw",
                 "strings": [
-                    "As they discuss running away together, p_l and n_c0 lose track of time together and only realize the sun is rising when a c_n dawn patrol finds them. p_l tries to calm {PRONOUN/p_l/poss} Clanmates, but it's futile. They pounce on n_c0, and though p_l tries to defend {PRONOUN/n_c0/object}, n_c0 is too grievously injured in the fray."
+                    "As they discuss running away together, p_l and n_c0 lose track of time and only realize the sun is rising when a c_n dawn patrol finds them. p_l tries to calm {PRONOUN/p_l/poss} Clanmates, but it's futile. They pounce on n_c0, and though p_l tries to defend {PRONOUN/n_c0/object}, n_c0 is fatally injured in the fray."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -1948,11 +1818,12 @@
                         "mutual": false,
                         "values": [
                             "trust",
+                            "respect",
                             "comfort"
                         ],
-                        "amount": -15,
+                        "amount": -20,
                         "log": {
-                            "cats_from": "The death of {PRONOUN/cat_from/poss} mate at the paws of {PRONOUN/cat_from/poss} own Clan left cat_from embittered and wary."
+                            "cats_from": "cat_from lost {PRONOUN/cat_from/poss} mate at the paws of {PRONOUN/cat_from/poss} own Clan."
                         }
                     },
                     {
@@ -1969,7 +1840,7 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -15,
+                        "amount": -10,
                         "log": {
                             "cats_from": "cat_from heard about cat_to's unfortunate cross-Clan relationship."
                         }
@@ -1985,9 +1856,10 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "respect",
+                            "comfort"
                         ],
-                        "amount": 15,
+                        "amount": 10,
                         "log": {
                             "cats_from": "cat_from heard about cat_to's cross-Clan relationship and couldn't help admiring the romance of it all, despite its unfortunate ending."
                         }
@@ -1999,13 +1871,6 @@
                             "n_c0"
                         ],
                         "history": "m_c was killed by {PRONOUN/m_c/poss} mate's Clanmates."
-                    },
-                    {
-                        "cats": [
-                            "n_c0"
-                        ],
-                        "history": "This cat died while wandering.",
-                        "no_results": false
                     }
                 ],
                 "condition": [
@@ -2015,14 +1880,6 @@
                         ],
                         "condition": [
                             "grief_stricken"
-                        ],
-                        "death_history": "m_c was killed by {PRONOUN/m_c/poss} mate's Clanmates."
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": [
-                            "n_c0"
                         ]
                     }
                 ]
@@ -2047,7 +1904,7 @@
                 },
                 "exp_gained": 0,
                 "reputation_changes": {
-                    "other_clan": -3
+                    "other_clan": -1
                 },
                 "relationship_changes": [
                     {
@@ -2092,15 +1949,16 @@
                             "clan",
                             "high_lawful"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "comfort",
                             "respect",
                             "trust"
                         ],
-                        "amount": -15,
+                        "amount": -10,
                         "log": {
-                            "cats_from": "cat_from heard about cat_to's unfortunate cross-Clan relationship."
+                            "cats_from": "cat_from heard about cat_to's cross-Clan relationship.",
+                            "cats_to": "cat_to resents {PRONOUN/cat_to/poss} Clanmates opposing {PRONOUN/cat_to/poss} cross-Clan relationship."
                         }
                     },
                     {
@@ -2114,12 +1972,18 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "respect",
+                            "comfort"
                         ],
-                        "amount": 15,
+                        "amount": 10,
                         "log": {
                             "cats_from": "cat_from heard about cat_to's cross-Clan relationship and couldn't help admiring the romance of it all."
                         }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": ["n_c0"]
                     }
                 ]
             }
@@ -2127,9 +1991,9 @@
         "antag_fail_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites/gen_battle_WrOw",
+                "outcome_art": "cat_sprites/gen_bigfight_WrWrOw",
                 "strings": [
-                    "p_l and n_c0 spend moonhigh together discussing whether to run away together, but then a rustle from both sides of the border reveals that their Clans have found them. Before p_l or n_c0 can explain, battle erupts between the two patrols, fur flying and blood soaking the ground. Both p_l and n_c0 are left cold in the aftermath, still reaching out for each other."
+                    "p_l and n_c0 spend moonhigh discussing whether to run away together, but then a rustle from both sides of the border reveals that their Clans have found them. Before they can explain, battle erupts between the two patrols, fur flying and blood soaking the ground. Both p_l and n_c0 are left cold in the aftermath, still reaching out for each other."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -2145,68 +2009,15 @@
                 },
                 "exp_gained": 0,
                 "reputation_changes": {
-                    "other_clan": -7
+                    "other_clan": -10
                 },
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "high_lawful"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "comfort",
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -15,
-                        "log": {
-                            "cats_from": "cat_from heard about cat_to's unfortunate cross-Clan relationship."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "clan",
-                            "low_lawful",
-                            "high_social"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 15,
-                        "log": {
-                            "cats_from": "cat_from heard about cat_to's cross-Clan relationship and couldn't help admiring the romance of it all, despite its unfortunate ending."
-                        }
-                    }
-                ],
                 "death": [
                     {
                         "cats": [
                             "p_l",
                             "n_c0"
                         ],
-                        "history": "m_c died in a fight with {PRONOUN/m_c/poss} mate's Clanmates."
-                    },
-                    {
-                        "cats": [
-                            "n_c0"
-                        ],
-                        "history": "This cat died while wandering.",
-                        "no_results": false
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": [
-                            "n_c0"
-                        ]
+                        "history": "m_c died in a fight between {PRONOUN/m_c/poss} mate's Clan and {PRONOUN/m_c/poss} own."
                     }
                 ]
             }

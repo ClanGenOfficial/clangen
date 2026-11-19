@@ -2489,7 +2489,7 @@
             "r_c0": {}
         },
         "strings": [
-            "m_c is overjoyed to finally be an apprentice. But why, oh why, did lead_name assign r_c0 as {PRONOUN/m_c/poss} mentor? {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/are/is} the worst!",
+            "m_c is overjoyed to finally be an apprentice. But why, oh why, did lead_name assign r_c0 as {PRONOUN/m_c/poss} mentor? {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} the worst!",
             "m_c rolls {PRONOUN/m_c/poss} eyes when {PRONOUN/m_c/subject} {VERB/m_c/hear/hears} that r_c0 will be {PRONOUN/m_c/poss} mentor. Really? It couldn't be anybody else? r_c0 shoots {PRONOUN/m_c/object} a stern glare as m_c sullenly walks over to greet {PRONOUN/r_c0/object}."
         ],
         "relationship_constraint": [
