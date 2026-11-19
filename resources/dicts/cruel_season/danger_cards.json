@@ -13,7 +13,8 @@
     "modifiers": {
       "condition_related.med_infection_reduction": 0.0,
       "condition_related.illness_outbreak_season": ["Leaf-bare", "Leaf-fall", "Greenleaf", "Newleaf"],
-      "condition_related.illness_percentage_max": 1.25
+      "condition_related.illness_percentage_max": 1.25,
+      "clan_resources.den.medicine.allow_quarantine": false
     }
   },
   "stolen_vitality": {

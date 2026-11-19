@@ -732,16 +732,18 @@ dev_tools = false
   # dictates the chance for cats to get various diseases in each season
   [condition_related.seasonal_chances]
     [condition_related.seasonal_chances.newleaf]
+      fleas = 2
       running_nose = 3
       stomachache = 2
       tick_fever = 1
     [condition_related.seasonal_chances.greenleaf]
-      fleas = 3
+      fleas = 6
       stomachache = 2
       heat_exhaustion = 3
       heat_stroke = 1
       tick_fever = 1
     [condition_related.seasonal_chances.leaf-fall]
+      fleas = 2
       stomachache = 2
       greencough = 1
       kittencough = 1
@@ -1137,6 +1139,17 @@ dev_tools = false
     mainmenu_tint = [239, 229, 206]
 
 [clan_resources]
+  [clan_resources.den]
+    [clan_resources.den.medicine]
+      allow_quarantine = true
+      base_build_limit = 1
+      build_limit_bonus_skills = ["CAMP"]
+      
+      quarantine_nest_expiration = 6
+  
+      [clan_resources.den.medicine.quarantine_nest_recipe]
+        moss = 5
+
   [clan_resources.herbs]
     # set to True if the Clan should begin with no herbs
     empty_starting_storage = false
@@ -1163,6 +1176,9 @@ dev_tools = false
     herb_loss = 0.0
 
     gathering_variance = [-1, 1]
+
+ 
+
     [clan_resources.herbs.increase_amounts]
       increase_tiny = 2
       increase_small = 3

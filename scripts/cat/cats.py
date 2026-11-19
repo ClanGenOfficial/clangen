@@ -1338,6 +1338,9 @@ class Cat:
         if not self.temporary_conditions:
             return True
 
+        if self.ID in game.clan.quarantined_cats:
+            return False
+
         return all(
             condition.severity == "minor" for condition in self.temporary_conditions
         )

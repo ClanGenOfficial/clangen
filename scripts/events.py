@@ -10,6 +10,7 @@ import random
 
 # pylint: enable=line-too-long
 import traceback
+from collections import defaultdict
 
 import i18n
 
@@ -37,6 +38,7 @@ from scripts.clan_package.get_clan_cats import (
     get_living_clan_cat_count,
 )
 from scripts.clan_package.settings import get_clan_setting, set_clan_setting
+from scripts.clan_resources.den_resources import quarantine_nest
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
 from scripts.config import get_config
 from scripts.events_module.ceremony.perform_ceremony import (
@@ -122,6 +124,9 @@ def one_moon():
 
     # age up the clan, set current season
     game.clan.age += 1
+
+    # handle the nests moonskip
+    quarantine_nest.handle_moonskip()
 
     update_afterlife_temper()
     pregnancy_events.increment_pregnancy_age()
@@ -1566,7 +1571,8 @@ def attempt_outbreak():
                 stopping_chance += buffs[skill]["outbreak_prevention_modifier"]
 
     # gather possible infections
-    possible_infections: dict[str, float] = {}
+    possible_infections: dict[str, float] = defaultdict(float)
+    possible_quarantine_infections: dict[str, float] = defaultdict(float)
     for _cat in infectious_cats:
         if stopping_chance:
             if not int(random.random() * stopping_chance):
@@ -1584,17 +1590,21 @@ def attempt_outbreak():
             ):
                 continue
 
-            if condition.name in possible_infections:
-                possible_infections[condition.name] = (
-                    possible_infections[condition.name] + condition.infectiousness
-                )
-
+            if _cat.ID in game.clan.quarantined_cats:
+                possible_quarantine_infections[
+                    condition.name
+                ] += condition.infectiousness
             else:
-                possible_infections[condition.name] = condition.infectiousness
+                possible_infections[condition.name] += condition.infectiousness
 
     for infection in possible_infections:
         possible_infections[infection] = min(
             0.9, max(0.01, possible_infections[infection] - infection_prevention)
+        )
+    for infection in possible_quarantine_infections:
+        possible_quarantine_infections[infection] = min(
+            0.9,
+            max(0.01, possible_quarantine_infections[infection] - infection_prevention),
         )
 
     # the cats who are allowed to get sick
@@ -1611,10 +1621,9 @@ def attempt_outbreak():
         return
 
     # key is condition, value is list of cats infected with it
-    created_infections = {}
+    created_infections = defaultdict(list)
     # now find who will get what infection
     for condition, infectiousness in possible_infections.items():
-        created_infections[condition] = []
         for _cat in vulnerable_cats:
             # collect immune system debuffs
             immune_system_effect = 0.0
@@ -1634,6 +1643,32 @@ def attempt_outbreak():
 
         if max_infected_allowed <= 0:
             break
+
+    # now try to infect medicine cats who are caring for quarantined cats
+    if max_infected_allowed:
+        for condition, infectiousness in possible_quarantine_infections.items():
+            for _cat in [
+                c for c in vulnerable_cats if c.status.rank.is_any_medicine_rank()
+            ]:
+                # collect immune system debuffs
+                immune_system_effect = 0.0
+                for _con in _cat.temporary_conditions + _cat.permanent_conditions:
+                    immune_system_effect += _con.immune_system_effect
+
+                # now see if they get infected
+                if random.random() <= min(0.9, infectiousness + immune_system_effect):
+                    created_infections[condition].append(_cat)
+                    max_infected_allowed -= 1
+
+                if max_infected_allowed <= 0:
+                    break
+
+            for c in created_infections[condition]:
+                if c in vulnerable_cats:
+                    vulnerable_cats.remove(c)
+
+            if max_infected_allowed <= 0:
+                break
 
     for condition, cats in created_infections.items():
         if len(cats) < 2:

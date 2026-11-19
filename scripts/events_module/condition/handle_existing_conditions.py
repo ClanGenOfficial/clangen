@@ -19,6 +19,7 @@ from scripts.cat.conditions.temporary_condition import TemporaryCondition
 from scripts.cat.constants import TEMPORARY_CONDITIONS, PERMANENT_CONDITIONS
 from scripts.cat.enums import CatRank, CatAge
 from scripts.clan_package.settings import get_clan_setting
+from scripts.clan_resources.den_resources.quarantine_nest import remove_nest
 from scripts.clan_resources.freshkill import (
     FRESHKILL_ACTIVE,
     MAL_PERCENTAGE,
@@ -243,6 +244,12 @@ def handle_temporary_conditions(cat: Cat):
 
     for c in conditions_to_remove:
         cat.remove_condition(c.name)
+
+    # remove quarantine if need be
+    if cat.ID in game.clan.quarantined_cats:
+        if not any([con.infectiousness for con in cat.temporary_conditions]):
+            game.clan.quarantined_cats.remove(cat.ID)
+            remove_nest(occupying_cat=cat)
 
     if event_list:
         game.cur_events_list.extend(event_list)
