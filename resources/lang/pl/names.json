@@ -2832,6 +2832,49 @@
             "Orange"
         ]
     },
+
+
+  "comment": [
+    "Physical skills (hunting, fighting, swimming, climbing, running, stealth) often have to do with body parts they use for their skills, actions they may use in their skill, words that give strong imagery to stength, speed, etc,.",
+    "Sense often has to do with the 5 senses, exploration, or details.",
+    "Healer names often have to do with herbs or actions taken to heal. Though this may sound sweet and comfy, not all medicine seems kind to the patient in the moment. Should still be applicable to warriors and mediators.",
+    "Kit skill names are often comfortable, cozy, and nice, but parents can be vicious to protect their kits. That duality is represented in names.",
+    "The camp is the home and heart of the clan. Suffixes often have to do with what makes up the camp or how it makes the clan feel to be in a well managed one.",
+    "Teacher skilled cats are often named after young animals or plants, actions of teaching, or important first lessons.",
+    "Story and lore skills can go hand in hand, but story has more emphasis on meaning while lore has emphasis on truth (or percieved truth).",
+    "Speaker, insightful, and mediator all focus on influence and reading others. Speakers are more well, outspoken and often named after animal calls, mediators help bridge or destroy gaps and are often named after group animals, and insightful cats are great at reading cats, often named for clever animals.",
+    "Clever cats are also often named for clever animals, though they may also be named for their quick thinking.",
+    "Star and dark cats are some of the most favored or digraced in their names.",
+    "Supernatural skills otherwise tend to stick to what they may experience due to their skills. Ghost cats catching glimpses of floating spirits, omen cats named after omen items, dreamers are sleepy, etc,."
+  ],
+
+	"primary_suffixes": {
+    "HUNTER": ["bird", "bite", "bone", "bound", "burrow", "burst", "catcher", "chase", "chaser", "chomp", "claw", "hare", "hunt", "leap", "lunge", "mouse", "munch", "nose", "pounce", "prowl", "rabbit", "sniff", "stalk", "swipe", "toad", "tooth", "trail"],
+    "FIGHTER": ["antler", "badger", "bear", "bite", "blaze", "blur", "bone", "break", "clash", "claw", "fang", "flash", "fox", "growl", "hiss", "kick", "leopard", "lion", "scar", "scratch", "screech", "slash", "snap", "snarl", "sting", "strike", "thud", "tiger", "tooth"],
+    "CLIMBER": ["bark", "branch", "breeze", "cliff", "cloud", "crag", "dart", "gale", "goat", "ivy", "leaf", "lizard", "nut", "peak", "scale", "sky", "snow", "spider", "tree"],
+    "SWIMMER": ["brook", "bubble", "creek", "duck", "fish", "flood", "gill", "lake", "minnow", "pond", "puddle", "river", "splash", "swan", "tide", "turtle", "wade", "wave"],
+    "RUNNER": ["blur", "bound", "breeze", "dart", "dash", "falcon", "flash", "flight", "gale", "hare", "hop", "horse", "leg", "pad", "rabbit", "run", "runner", "rush", "step", "stride", "trot", "wind", "zoom"],
+    "STEALTH": ["breeze", "fog", "prowl", "shade", "shadow", "snake", "stalk", "step", "watcher", "whisper", "wisp"],
+    "SENSE": ["ear", "eye", "foot", "noise", "nose", "sight", "wander"],
+    "HEALER": ["berry", "blossom", "break", "heart", "honey", "husk", "leaf", "mallow", "moss", "oak", "patch", "petal", "pollen",  "poppy", "root", "sting"],
+    "KIT": ["bear", "blink", "bramble", "bud", "egg", "feather", "goose", "honey", "hop", "joy", "moss", "nest", "nuzzle", "purr", "roar", "swan", "thorn"],
+    "CAMP": ["bramble", "briar", "brush", "burrow", "cave", "haven", "heart", "joy", "moss", "nest", "thicket", "thorn", "tunnel", "weaver"],
+    "TEACHER": ["bud", "egg", "fawn", "flow", "lamb", "mimic", "nudge", "path", "point", "push", "soar", "spike", "sprout", "stretch", "trail"],
+    "STORY": ["dream", "drip", "song", "stretch", "throat", "weaver", "web"],
+    "LORE": ["drip", "mark", "path", "shard", "song", "throat", "trail", "pool", "weaver"],
+    "SPEAKER": ["bark", "bellow", "call", "caw", "chirp", "croak", "cry", "honey", "purr", "roar", "song", "whisper"],
+    "MEDIATOR": ["bee", "blink", "call", "deer", "ear", "echo", "eye", "heart", "honey", "joy", "mimic", "purr", "sight", "swarm", "watcher", "whisper"],
+    "CLEVER": ["crow", "fox", "jay", "owl", "raven", "rook", "sharp", "shrike", "sky", "tongue", "trick", "twist", "wit"],
+    "INSIGHTFUL": ["crow", "ear", "eye", "mask", "owl", "raven", "sight"],
+    "STAR": ["beam", "bright", "flight", "gaze", "glow", "hope", "light", "moon", "path", "rise", "shimmer", "shine", "spirit", "sun", "wisp"],
+    "DARK": ["fall", "flare", "gaze", "hollow", "hope", "joy", "light", "moon", "murk", "night", "path", "rise", "shadow", "wisp"],
+    "GHOST": ["chill", "echo", "flicker", "ghost", "glow", "sight", "spirit", "whisper", "wisp"],
+    "OMEN": ["bone", "bud", "burn", "cloud", "crackle", "cry", "fang", "feather", "fire", "flame", "flash", "flood", "flower", "flutter", "glare", "lightning", "mist", "moth", "petal", "rain", "ripple", "rustle", "screech", "seeker", "shine", "spark", "splash", "sprout", "storm", "talon", "thorn", "thunder", "tooth", "wing", "wish", "wisp"],
+    "DREAM": ["dawn", "dream", "drift", "dusk", "hop", "nest", "wish"],
+    "CLAIRVOYANT": ["daze", "flicker", "fog", "gaze", "path", "sight", "trail", "watcher", "whisper"],
+    "PROPHET": ["flash", "flicker", "sight", "twist", "whisper", "wish", "wisp"]
+  },
+
     "comment": [
         "Silly names include fandom references, scientific terms, memes, and fantasy\/mythology names (ex: Hatsune Miku, Dipole, Meowyman, Charon)",
         "Human names are names primarily given to humans or places (ex: Fred, Alice).",
