@@ -261,6 +261,24 @@ class HerbSupply:
                 expired.append(self.herb[herb_name])
                 self.storage[herb_name].pop(-1)
 
+        # healers tribute
+        taken_herbs = []
+        for herb_name in self.base_herb_list:
+            herb_loss = round(
+                self.total_of_herb(herb_name)
+                * get_config("clan_resources.herbs.herb_loss")
+            )
+            if herb_loss > 0:
+                self.remove_herb(herb_name, herb_loss)
+                if herb_loss > 1:
+                    taken_herbs.append(
+                        f"{herb_loss} {self.herb[herb_name].plural_display}"
+                    )
+                else:
+                    taken_herbs.append(
+                        f"{herb_loss} {self.herb[herb_name].singular_display}"
+                    )
+
         # add log entry to inform player of removal
         if expired:
             self.log.append(
@@ -269,7 +287,13 @@ class HerbSupply:
                     herbs=adjust_list_text([herb.plural_display for herb in expired]),
                 )
             )
-
+        if taken_herbs:
+            self.log.append(
+                i18n.t(
+                    "cruel_season.special_text.herb_loss",
+                    herbs=adjust_list_text(taken_herbs),
+                )
+            )
         game.herb_events_list.extend(self.log)
 
     def total_of_herb(self, herb) -> int:

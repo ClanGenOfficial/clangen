@@ -557,8 +557,8 @@ def handle_lead_den_event():
                                 invited_cat.specsuffix_hidden = False
                         # if cat is an apprentice, make sure they get a mentor!
                         if (
-                            invited_cat.status.rank
-                            and get_config("roles.receive_mentor") == CatRank.APPRENTICE
+                            invited_cat.status.rank.is_any_apprentice_rank()
+                            and get_config("roles.receive_mentor")
                         ):
                             invited_cat.update_mentor()
                         # if the cat chose to become a mediator but the settings don't allow it, make them a warrior instead

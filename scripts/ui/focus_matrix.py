@@ -1,5 +1,7 @@
 from typing import Optional
 
+import pygame
+
 import scripts.game_structure.screen_settings
 from pygame import display
 from pygame_gui.core import UIElement
@@ -276,7 +278,20 @@ def _set_focus(new_focus: UIElement, old_focus: Optional[UIElement] = None):
     if switch_get_value(Switch.keybinds_live):
         if old_focus:
             old_focus.unfocus()
+            if old_focus.tool_tip:
+                old_focus.tool_tip.kill()
         new_focus.focus()
+        if new_focus.tool_tip_text:
+            x, y = new_focus.get_abs_rect().x, new_focus.get_abs_rect().bottom
+            new_focus.tool_tip = new_focus.ui_manager.create_tool_tip(
+                text=new_focus.tool_tip_text,
+                position=(x, y),
+                hover_distance=(0, ui_scale_value(10)),
+                parent_element=new_focus,
+                object_id=new_focus.tool_tip_object_id,
+                wrap_width=new_focus.tool_tip_wrap_width,
+                text_kwargs=new_focus.tool_tip_text_kwargs,
+            )
 
 
 def _valid_row(current_map, disallowed_element, possible_row) -> list:

@@ -6,10 +6,6 @@ from pygame_gui.core import IContainerLikeInterface, UIElement, ObjectID
 from pygame_gui.core.gui_type_hints import RectLike, Coordinate
 from pygame_gui.core.interfaces import IUIManagerInterface, IUIElementInterface
 
-from scripts.game_input import INPUT_ACTION_PRESSED, Action, INPUT_ACTION_RELEASED
-from scripts.game_structure import game
-from scripts.game_structure.screen_settings import screen
-
 
 class UIImageButton(pygame_gui.elements.UIButton):
     """Subclass of pygame_gui's button class. This allows for auto-scaling of the
@@ -166,3 +162,18 @@ class UIImageButton(pygame_gui.elements.UIButton):
 
     def return_sound_id(self):
         return self.sound_id
+
+    def focus(self):
+        if not self.is_enabled or not self.visible:
+            return  # early return to prevent focusing of disabled buttons
+        super().focus()
+        self.drawable_shape.set_active_state("hovered")
+
+    def unfocus(self):
+        if not self.is_enabled:
+            self.drawable_shape.set_active_state("disabled")
+        elif self.hovered:
+            self.drawable_shape.set_active_state("hovered")
+        else:
+            self.drawable_shape.set_active_state("normal")
+        super().unfocus()
