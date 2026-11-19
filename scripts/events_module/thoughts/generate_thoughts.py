@@ -288,6 +288,11 @@ def _load_allowed_thoughts(thought_type: CatThought, main_cat: Cat):
         else:
             thoughts = load_text_pool_events(f"{new_path}/outsider.json")
 
+    elif thought_type == CatThought.ON_LEFT:
+        social = main_cat.status.social
+        thoughts = load_text_pool_events(f"{new_path}/{social}.json")
+        thoughts.extend(_get_general(main_cat, new_path))
+
     # thought types with just a general path
     elif thought_type in (
         CatThought.ON_JOIN,
