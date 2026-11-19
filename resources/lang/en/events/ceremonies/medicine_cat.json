@@ -2,7 +2,11 @@
     {
         "event_id": "med_default0",
         "involved_cats": {
-            "m_c": {}
+            "m_c": {
+                "name": {
+                    "has_suffix": true
+                }
+            }
         },
         "strings": [
             "(old_name) is given {PRONOUN/m_c/poss} full name of m_c and welcomed as a full medicine cat.",
@@ -12,7 +16,11 @@
     {
         "event_id": "med_default1",
         "involved_cats": {
-            "m_c": {},
+            "m_c": {
+                "name": {
+                    "has_suffix": true
+                }
+            },
             "r_c0": {
                 "group": [
                     "player_clan"
@@ -49,6 +57,9 @@
         "event_id": "med_unprepared0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "current_exp": ["untrained", "learning"]
             }
         },
@@ -61,6 +72,9 @@
         "event_id": "med_early_grad0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "current_exp": ["prepared"],
                 "age": ["adolescent"]
             }
@@ -73,6 +87,9 @@
         "event_id": "med_unprepared_poi",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "current_exp": ["untrained", "learning"]
             }
         },
@@ -87,6 +104,9 @@
         "event_id": "med_unprepared_notworking",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "current_exp": ["untrained", "learning"],
                 "health": {
                     "working": false
@@ -101,7 +121,11 @@
     {
         "event_id": "med_dead_mentor0",
         "involved_cats": {
-            "m_c": {},
+            "m_c": {
+                "name": {
+                    "has_suffix": true
+                }
+            },
             "r_c0": {
                 "group": [
                     "afterlife"
@@ -130,6 +154,9 @@
         "event_id": "med_dead_mentor1",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "current_exp": ["prepared"]
             },
             "r_c0": {
@@ -160,6 +187,9 @@
         "event_id": "med_prepared0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "current_exp": ["prepared"]
             },
             "r_c0": {
@@ -194,7 +224,11 @@
         "event_id": "med_no_healers0",
         "tags": ["-clan:medicine cat"],
         "involved_cats": {
-            "m_c": {}
+            "m_c": {
+                "name": {
+                    "has_suffix": true
+                }
+            }
         },
         "strings": [
             "The time has come for (old_name) to be given {PRONOUN/m_c/poss} full medicine cat name. (old_name) requests that one of the other Clans' medicine cats name {PRONOUN/m_c/object}. The eldest of the medicine cats steps forward and gives (old_name) the name m_c.",
@@ -205,6 +239,9 @@
         "event_id": "med_eager0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "adventurous"
@@ -220,6 +257,9 @@
         "event_id": "med_compassionate0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "current_exp": ["prepared"],
                 "stat": {
                     "trait": [
@@ -239,6 +279,9 @@
         "event_id": "med_powerful0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "ambitious",
@@ -257,6 +300,9 @@
         "event_id": "med_bloodthirsty0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "bloodthirsty"
@@ -272,6 +318,9 @@
         "event_id": "med_stubborn0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "bold",
@@ -290,6 +339,9 @@
         "event_id": "med_calm0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "calm"
@@ -305,6 +357,9 @@
         "event_id": "med_careful0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "careful"
@@ -320,6 +375,9 @@
         "event_id": "med_charming",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "flamboyant",
@@ -336,6 +394,9 @@
         "event_id": "med_lighthearted",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "flamboyant",
@@ -357,6 +418,9 @@
         "event_id": "med_unfeeling0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "gloomy",
@@ -374,6 +438,9 @@
         "event_id": "med_self_assured0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "cunning",
@@ -392,6 +459,9 @@
         "event_id": "med_unconventional0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "daring",
@@ -410,6 +480,9 @@
         "event_id": "med_faithful0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "faithful"
@@ -425,6 +498,9 @@
         "event_id": "med_teeth0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "fierce",
@@ -442,6 +518,9 @@
         "event_id": "med_unsure0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "gloomy",
@@ -461,6 +540,9 @@
         "event_id": "med_insecure0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "insecure"
@@ -476,6 +558,9 @@
         "event_id": "med_loyal0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "loyal"
@@ -491,6 +576,9 @@
         "event_id": "med_responsible0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "responsible"
@@ -506,6 +594,9 @@
         "event_id": "med_righteous0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "righteous"
@@ -521,6 +612,9 @@
         "event_id": "med_self_named0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "grumpy",
@@ -540,6 +634,9 @@
         "event_id": "med_cunning0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "cunning"
@@ -555,6 +652,9 @@
         "event_id": "med_strict0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "strict"
@@ -570,6 +670,9 @@
         "event_id": "med_thoughtful0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "thoughtful"
@@ -586,6 +689,9 @@
         "event_id": "med_troublesome",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "troublesome"
@@ -601,6 +707,9 @@
         "event_id": "med_vengeful",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "stat": {
                     "trait": [
                         "vengeful"
@@ -617,6 +726,9 @@
         "event_id": "med_dead_parent0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "backstory": [
                     "-orphaned_backstories"
                 ]
@@ -650,6 +762,9 @@
         "event_id": "med_dead_both_parents0",
         "involved_cats": {
             "m_c": {
+                "name": {
+                    "has_suffix": true
+                },
                 "backstory": [
                     "-orphaned_backstories"
                 ]
@@ -685,5 +800,24 @@
                 ]
             }
         ]
-    }
+    },
+    {
+        "event_id": "med_name_refusal0",
+        "involved_cats": {
+            "m_c": {
+                "name": {
+                    "has_suffix": false
+                },
+                "backstory": [
+                    "loner_backstories",
+                    "kittypet_backstories"
+                ]
+              }
+            },
+        "poi": {
+            "category": "moonplace"
+        },
+        "strings": [
+            "(old_name) has spent {PRONOUN/m_c/poss} time since joining the clan learning the ways of the medicine cat, and it has finally paid off. At the next half moon {PRONOUN/m_c/subject} {VERB/m_c/are/was} taken to recieve {PRONOUN/m_c/poss} new name in front of StarClan. (old_name), however, stops the ceremony to say {PRONOUN/m_c/subject} {VERB/m_c/are/was} going back to {PRONOUN/m_c/poss} old name. StarClan met {PRONOUN/m_c/object} as m_c and they will have {PRONOUN/m_c/object} as m_c."]
+}
 ]
