@@ -4277,6 +4277,11 @@
                         "age": [
                             "adult",
                             "senior adult"
+                        ],
+                        "status": [
+                            "loner",
+                            "kittypet",
+                            "rogue"
                         ]
                     },
                     "n_c1": {
@@ -4346,6 +4351,11 @@
                         "age": [
                             "adult",
                             "senior adult"
+                        ],
+                        "status": [
+                            "loner",
+                            "kittypet",
+                            "rogue"
                         ]
                     },
                     "n_c1": {
@@ -4487,6 +4497,11 @@
                         "age": [
                             "adult",
                             "senior adult"
+                        ],
+                        "status": [
+                            "loner",
+                            "kittypet",
+                            "rogue"
                         ]
                     },
                     "n_c1": {
@@ -4563,6 +4578,11 @@
                         "age": [
                             "adult",
                             "senior adult"
+                        ],
+                        "status": [
+                            "loner",
+                            "kittypet",
+                            "rogue"
                         ]
                     },
                     "n_c1": {
@@ -4716,7 +4736,12 @@
                             "adult",
                             "senior adult"
                         ],
-                        "gender": ["can_birth"]
+                        "gender": ["can_birth"],
+                        "status": [
+                            "loner",
+                            "kittypet",
+                            "rogue"
+                        ]
                     },
                     "n_c1": {
                         "can_create_new_cat": {
@@ -4784,7 +4809,12 @@
                             "adult",
                             "senior adult"
                         ],
-                        "gender": ["can_birth"]
+                        "gender": ["can_birth"],
+                        "status": [
+                            "loner",
+                            "kittypet",
+                            "rogue"
+                        ]
                     },
                     "n_c1": {
                         "can_create_new_cat": {
@@ -4929,7 +4959,12 @@
                             "adult",
                             "senior adult"
                         ],
-                        "gender": ["can_birth"]
+                        "gender": ["can_birth"],
+                        "status": [
+                            "loner",
+                            "kittypet",
+                            "rogue"
+                        ]
                     },
                     "n_c1": {
                         "can_create_new_cat": {
@@ -5002,7 +5037,12 @@
                             "adult",
                             "senior adult"
                         ],
-                        "gender": ["can_birth"]
+                        "gender": ["can_birth"],
+                        "status": [
+                            "loner",
+                            "kittypet",
+                            "rogue"
+                        ]
                     },
                     "n_c1": {
                         "can_create_new_cat": {
@@ -5148,7 +5188,12 @@
                             "adult",
                             "senior adult"
                         ],
-                        "gender": ["can_birth"]
+                        "gender": ["can_birth"],
+                        "status": [
+                            "loner",
+                            "kittypet",
+                            "rogue"
+                        ]
                     },
                     "n_c1": {
                         "can_create_new_cat": {
@@ -5216,7 +5261,12 @@
                             "adult",
                             "senior adult"
                         ],
-                        "gender": ["can_birth"]
+                        "gender": ["can_birth"],
+                        "status": [
+                            "loner",
+                            "kittypet",
+                            "rogue"
+                        ]
                     },
                     "n_c1": {
                         "can_create_new_cat": {
@@ -5367,7 +5417,12 @@
                             "adult",
                             "senior adult"
                         ],
-                        "gender": ["can_birth"]
+                        "gender": ["can_birth"],
+                        "status": [
+                            "loner",
+                            "kittypet",
+                            "rogue"
+                        ]
                     },
                     "n_c1": {
                         "can_create_new_cat": {
@@ -5440,7 +5495,12 @@
                             "adult",
                             "senior adult"
                         ],
-                        "gender": ["can_birth"]
+                        "gender": ["can_birth"],
+                        "status": [
+                            "loner",
+                            "kittypet",
+                            "rogue"
+                        ]
                     },
                     "n_c1": {
                         "can_create_new_cat": {
@@ -5581,6 +5641,9 @@
                         "can_create_new_cat": {},
                         "age": [
                             "adolescent"
+                        ],
+                        "status": [
+                            "loner"
                         ]
                     }
                 },
@@ -5685,6 +5748,9 @@
                         "can_create_new_cat": {},
                         "age": [
                             "adolescent"
+                        ],
+                        "status": [
+                            "loner"
                         ]
                     }
                 },
