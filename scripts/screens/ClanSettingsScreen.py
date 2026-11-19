@@ -82,7 +82,10 @@ class ClanSettingsScreen(Screens):
                 subprocess.Popen(["xdg-open", event.link_target])
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.fullscreen_toggle:
-                toggle_fullscreen(source_screen=self)
+                toggle_fullscreen(
+                    source_screen=self,
+                    theme="dark" if game_setting_get("dark_mode") else "light",
+                )
             elif event.ui_element == self.open_data_directory_button:
                 open_data_dir()
                 return
