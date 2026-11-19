@@ -231,7 +231,9 @@ while 1:
                 or not game.clan
             ):
                 quit_game(savesettings=False)
-            else:
+            elif not game.savecheck:
+                # only allow one instance of this window
+                game.savecheck = True
                 SaveCheckWindow(switch_get_value(Switch.cur_screen), False, None)
 
         # MOUSE CLICK
