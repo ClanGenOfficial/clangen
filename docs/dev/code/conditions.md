@@ -168,6 +168,9 @@ These are written with the key as the condition name and the value as the percen
 }
 ```
 
+!!! important
+    If a condition has a duration of 1, then it will never apply risks. Risks are only applied while in the `CONTINUING` state. With a duration of 1, the only states that the condition will be able to attain are `HEALED` and `FATAL`.
+
 ***
 
 #### treatment_strength: dict[str, list[str]]
@@ -191,6 +194,17 @@ A `treatment_strength` parameter could look like:
 }
 ```
 
+Each strength offers different effects:
+
+1. Lowers `infectiousness` or `immune_system_effect`
+2. Lowers `risk` or `progression` chances
+3. Lowers `mortality` or `duration`
+
+If a condition doesn't utilize one of the affected parameters, then don't list any herbs for it. For example, if a condition has no `infectiousness` or `immune_system_effect` then it should have no herbs in the `"1"` list.
+
+!!! tip
+    Remember that giving a condition a duration of 1 means that it will heal on the next moon. As such, lowering its duration would have no effect on the gameplay.
+
 The [Herb Dictionary](../writing/reference/herbs.md) is available as a reference for what herbs are available and how they should be used in ClanGen.
 
 ***
@@ -199,7 +213,7 @@ The [Herb Dictionary](../writing/reference/herbs.md) is available as a reference
 A list of possible scars that this condition can apply once healed.
 
 !!! important
-  Do not list scars that can be given by progressions that the cat can "heal" into. For example, do not list `NOPAW` as a possible scar for `mangled_leg`. `mangled_leg` is able to progress into `lost_leg`. `lost_leg` will list `NOPAW` as a scar and will give that scar IF the `mangled_leg` progresses into `lost_leg`.
+    Do not list scars that can be given by progressions that the cat can "heal" into. For example, do not list `NOPAW` as a possible scar for `mangled_leg`. `mangled_leg` is able to progress into `lost_leg`. `lost_leg` will list `NOPAW` as a scar and will give that scar IF the `mangled_leg` progresses into `lost_leg`.
 
 
 ***

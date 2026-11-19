@@ -25,7 +25,7 @@ class BaseCondition:
         return self.name
 
     def apply_lack_of_herb(self, effect: HerbEffect):
-        if effect == HerbEffect.RISK:
+        if effect == HerbEffect.RISKS:
             for risk in self.risks:
                 self.risks[risk] += min(
                     0.99,
@@ -49,27 +49,32 @@ class BaseCondition:
                     + get_config("clan_resources.herbs.base_mortality_effect"),
                 )
 
-    def apply_herb_effect(
-        self, effect: HerbEffect, strength: int, amount_modifier: float
-    ):
-        if effect == HerbEffect.RISK:
+        if effect == HerbEffect.IMMUNE_SYSTEM_EFFECT:
+            if self.immune_system_effect:
+                self.immune_system_effect = min(
+                    0.99,
+                    self.immune_system_effect
+                    + get_config("clan_resources.herbs.base_immune_system_effect"),
+                )
+
+    def apply_herb_effect(self, effect: HerbEffect):
+        if effect == HerbEffect.RISKS:
             for risk in self.risks:
                 self.risks[risk] = max(
                     0.01,
                     self.risks[risk]
-                    - (get_config("clan_resources.herbs.base_risk_effect"))
-                    + amount_modifier * strength,
+                    - (get_config("clan_resources.herbs.base_risk_effect")),
                 )
 
         elif effect == HerbEffect.PROGRESSION:
             for progression in self.progression:
+                if self.progression[progression]["chance"] == 2.0:
+                    continue
+
                 self.progression[progression]["chance"] = max(
                     0.01,
                     self.progression[progression]["chance"]
-                    - (
-                        get_config("clan_resources.herbs.base_progression_effect")
-                        + amount_modifier * strength
-                    ),
+                    - (get_config("clan_resources.herbs.base_progression_effect")),
                 )
 
         elif effect == HerbEffect.MORTALITY:
@@ -77,8 +82,13 @@ class BaseCondition:
                 self.mortality = max(
                     0.01,
                     self.mortality
-                    + (
-                        get_config("clan_resources.herbs.base_mortality_effect")
-                        + amount_modifier * strength
-                    ),
+                    + (get_config("clan_resources.herbs.base_mortality_effect")),
+                )
+
+        elif effect == HerbEffect.IMMUNE_SYSTEM_EFFECT:
+            if self.immune_system_effect:
+                self.immune_system_effect = max(
+                    0.01,
+                    self.immune_system_effect
+                    + (get_config("clan_resources.herbs.base_immune_system_effect")),
                 )

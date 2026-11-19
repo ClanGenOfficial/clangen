@@ -30,17 +30,15 @@
             "exhausted": 0.1
         },
         "treatment_strength": {
-            "1": [
-                "marigold",
-                "ragwort"
-            ],
+            "1": [],
             "2": [
+                "marigold",
+                "ragwort",
                 "daisy",
-                "juniper"
-            ],
-            "3": [
+                "juniper",
                 "dandelion"
-            ]
+            ],
+            "3": []
         },
         "possible_scars": [
             "NOPAW"
@@ -62,16 +60,14 @@
             "exhausted": 0.06
         },
         "treatment_strength": {
-            "1": [
-                "marigold",
-                "ragwort"
-            ],
+            "1": [],
             "2": [
-                "daisy"
-            ],
-            "3": [
+                "marigold",
+                "ragwort",
+                "daisy",
                 "juniper"
-            ]
+            ],
+            "3": []
         },
         "possible_scars": [
             "NOPAW"
@@ -91,19 +87,17 @@
             "joint_pain": 0.25
         },
         "treatment_strength": {
-            "1": [
+            "1": [],
+            "2": [
                 "marigold",
                 "ragwort",
-                "dandelion"
-            ],
-            "2": [
+                "dandelion",
                 "juniper",
-                "daisy"
-            ],
-            "3": [
+                "daisy",
                 "poppy",
                 "thyme"
-            ]
+            ],
+            "3": []
         },
         "possible_scars": [
             "MANLEG"
@@ -115,11 +109,11 @@
         "can_be_acquired": true,
         "moons_until_discovery": [2,4],
         "mortality": {},
-        "immune_system_effect": 0.25,
+        "immune_system_effect": 0.30,
         "progression": {},
         "risks": {
             "running_nose": 0.25,
-            "redcough": 0.05,
+            "redcough": 0.20,
             "weakened_muscles": 0.15,
             "persistent_exhaustion": 0.05,
             "exhausted": 0.2
@@ -133,10 +127,10 @@
             ],
             "2": [
                 "betony",
-                "tansy"
+                "tansy",
+                "poppy"
             ],
             "3": [
-                "poppy"
             ]
         }
     },
@@ -146,12 +140,12 @@
         "can_be_acquired": true,
         "moons_until_discovery": [5,90],
         "mortality": {},
-        "immune_system_effect": 0.1,
+        "immune_system_effect": 0.2,
         "progression": {},
         "risks": {
             "seizure": 0.05,
             "paralyzed": 0.05,
-            "redcough": 0.10,
+            "redcough": 0.15,
             "weakened_muscles": 0.15,
             "persistent_exhaustion": 0.2
         },
@@ -164,10 +158,10 @@
             ],
             "2": [
                 "betony",
-                "mullein"
+                "mullein",
+                "poppy"
             ],
             "3": [
-                "poppy"
             ]
         }
     },
@@ -279,15 +273,14 @@
         },
         "treatment_strength": {
             "1": [
-                "ragwort"
             ],
             "2": [
-                "juniper"
-            ],
-            "3": [
+                "ragwort",
+                "juniper",
                 "thyme",
                 "betony"
-            ]
+            ],
+            "3": []
         }
     },
     "constantly_dizzy": {
@@ -323,15 +316,13 @@
             "exhausted": 0.1
         },
         "treatment_strength": {
-            "1": [
-                "poppy"
-            ],
+            "1": [],
             "2": [
-                "juniper"
-            ],
-            "3": [
+                "poppy",
+                "juniper",
                 "thyme"
-            ]
+            ],
+            "3": []
         }
     },
     "persistent_headaches": {
@@ -347,15 +338,13 @@
             "headache": 0.3
         },
         "treatment_strength": {
-            "1": [
-                "rosemary"
-            ],
+            "1": [],
             "2": [
-                "juniper"
-            ],
-            "3": [
+                "rosemary",
+                "juniper",
                 "poppy"
-            ]
+            ],
+            "3": []
         }
     },
     "persistent_exhaustion": {
@@ -381,12 +370,11 @@
             ],
             "2": [
                 "betony",
-                "ragwort"
-            ],
-            "3": [
+                "ragwort",
                 "juniper",
                 "thyme"
-            ]
+            ],
+            "3": []
         }
     },
     "weakened_muscles": {
@@ -411,18 +399,16 @@
             "breathless_fit": 0.05
         },
         "treatment_strength": {
-            "1": [
-                "daisy",
-                "ragwort"
-            ],
+            "1": [],
             "2": [
+                "daisy",
+                "ragwort",
                 "betony",
-                "elder_leaves"
-            ],
-            "3": [
+                "elder_leaves",
                 "juniper",
                 "thyme"
-            ]
+            ],
+            "3": []
         }
     }
 }

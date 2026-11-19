@@ -12,11 +12,10 @@
             "diarrhea_dehydrated": 0.7
         },
         "treatment_strength": {
-            "1": [
-                "betony",
-                "mullein"
-            ],
+            "1": [],
             "2": [
+                "betony",
+                "mullein",
                 "thyme"
             ],
             "3": [
@@ -45,12 +44,11 @@
         "progression": {},
         "risks": {},
         "treatment_strength": {
-            "1": [
-                "ragwort",
-                "juniper"
-            ],
+            "1": [],
             "2": [],
             "3": [
+                "ragwort",
+                "juniper",
                 "moss"
             ]
         }
@@ -195,11 +193,11 @@
         },
         "risks": {},
         "treatment_strength": {
-            "1": [
+            "1": [],
+            "2": [
                 "juniper",
                 "ragwort"
             ],
-            "2": [],
             "3": [
                 "moss"
             ]
@@ -218,14 +216,9 @@
         "progression": {},
         "risks": {},
         "treatment_strength": {
-            "1": [
-                "juniper"
-            ],
+            "1": [],
             "2": [],
-            "3": [
-                "thyme",
-                "poppy"
-            ]
+            "3": []
         }
     },
     "grief_stricken": {
@@ -257,10 +250,9 @@
             "constant_nightmares": 0.3
         },
         "treatment_strength": {
-            "1": [
-                "poppy"
-            ],
+            "1": [],
             "2": [
+                "poppy",
                 "juniper"
             ],
             "3": [
@@ -337,13 +329,12 @@
             "infection": 0.2
         },
         "treatment_strength": {
-            "1": [
+            "1": [],
+            "2": [
                 "cobwebs",
                 "marigold",
                 "tansy",
-                "moss"
-            ],
-            "2": [
+                "moss",
                 "wild_garlic",
                 "horsetail",
                 "oak_leaves"
@@ -394,13 +385,12 @@
             "infection": 0.2
         },
         "treatment_strength": {
-            "1": [
+            "1": [],
+            "2": [
                 "cobwebs",
                 "marigold",
                 "tansy",
-                "moss"
-            ],
-            "2": [
+                "moss",
                 "wild_garlic",
                 "horsetail",
                 "oak_leaves"
@@ -441,13 +431,12 @@
             "infection": 0.2
         },
         "treatment_strength": {
-            "1": [
+            "1": [],
+            "2": [
                 "cobwebs",
                 "marigold",
                 "tansy",
-                "moss"
-            ],
-            "2": [
+                "moss",
                 "wild_garlic",
                 "horsetail",
                 "oak_leaves"
@@ -486,13 +475,12 @@
             "infection": 0.2
         },
         "treatment_strength": {
-            "1": [
+            "1": [],
+            "2": [
                 "cobwebs",
                 "marigold",
                 "tansy",
-                "moss"
-            ],
-            "2": [
+                "moss",
                 "wild_garlic",
                 "horsetail",
                 "oak_leaves"
@@ -526,13 +514,12 @@
             "infection": 0.2
         },
         "treatment_strength": {
-            "1": [
+            "1": [],
+            "2": [
                 "cobwebs",
                 "marigold",
                 "tansy",
-                "moss"
-            ],
-            "2": [
+                "moss",
                 "wild_garlic",
                 "horsetail",
                 "oak_leaves"
@@ -615,17 +602,15 @@
         },
         "risks": {},
         "treatment_strength": {
-            "1": [
+            "1": [],
+            "2": [
                 "marigold",
                 "ragwort",
-                "oak_leaves"
-            ],
-            "2": [
-                "daisy"
-            ],
-            "3": [
+                "oak_leaves",
+                "daisy",
                 "poppy"
-            ]
+            ],
+            "3": []
         }
     },
     "sprain": {
@@ -639,15 +624,9 @@
         "progression": {},
         "risks": {},
         "treatment_strength": {
-            "1": [
-                "poppy"
-            ],
-            "2": [
-                "dandelion"
-            ],
-            "3": [
-                "elder_leaves"
-            ]
+            "1": [],
+            "2": [],
+            "3": []
         }
     },
     "phantom_pain": {
@@ -661,15 +640,9 @@
         "progression": {},
         "risks": {},
         "treatment_strength": {
-            "1": [
-                "raspberry"
-            ],
-            "2": [
-                "dandelion"
-            ],
-            "3": [
-                "poppy"
-            ]
+            "1": [],
+            "2": [],
+            "3": []
         }
     },
     "frostbite": {
@@ -762,17 +735,17 @@
             "exhausted": 0.15
         },
         "treatment_strength": {
-            "1": [
+            "1": [],
+            "2": [
                 "oak_leaves",
                 "juniper",
                 "ragwort",
                 "moss",
                 "thyme"
             ],
-            "2": [
+            "3": [
                 "raspberry"
-            ],
-            "3": []
+            ]
         }
     },
     "water_in_lungs": {
@@ -849,13 +822,12 @@
             "infection": 0.3
         },
         "treatment_strength": {
-            "1": [
+            "1": [],
+            "2": [
                 "cobwebs",
                 "oak_leaves",
                 "juniper",
-                "ragwort"
-            ],
-            "2": [
+                "ragwort",
                 "marigold",
                 "wild_garlic"
             ],
@@ -897,10 +869,9 @@
         },
         "risks": {},
         "treatment_strength": {
-            "1": [
-                "ragwort"
-            ],
+            "1": [],
             "2": [
+                "ragwort",
                 "juniper"
             ],
             "3": [
@@ -935,10 +906,9 @@
         },
         "risks": {},
         "treatment_strength": {
-            "1": [
-                "ragwort"
-            ],
+            "1": [],
             "2": [
+                "ragwort",
                 "juniper"
             ],
             "3": [
@@ -968,11 +938,11 @@
             "sore_throat": 0.1
         },
         "treatment_strength": {
-            "1": [
+            "1": [],
+            "2": [
                 "ragwort",
                 "juniper"
             ],
-            "2": [],
             "3": [
                 "moss"
             ]
@@ -1051,10 +1021,9 @@
             "severe_headache": 0.1
         },
         "treatment_strength": {
-            "1": [
-                "ragwort"
-            ],
+            "1": [],
             "2": [
+                "ragwort",
                 "dandelion"
             ],
             "3": [
@@ -1100,14 +1069,15 @@
         },
         "risks": {},
         "treatment_strength": {
-            "1": [
+            "1": [],
+            "2": [
                 "dandelion",
                 "tansy",
-                "juniper",
-                "ragwort"
+                "juniper"
             ],
-            "2": [],
-            "3": []
+            "3": [
+                "ragwort"
+            ]
         }
     },
     "severe_headache": {
@@ -1121,15 +1091,9 @@
         "progression": {},
         "risks": {},
         "treatment_strength": {
-            "1": [
-                "juniper"
-            ],
-            "2": [
-                "thyme"
-            ],
-            "3": [
-                "poppy"
-            ]
+            "1": [],
+            "2": [],
+            "3": []
         }
     },
     "pregnant": {
@@ -1142,11 +1106,15 @@
         "side_effect": {},
         "progression": {},
         "risks": {
-            "exhausted": 0.05
+            "exhausted": 0.10
         },
         "treatment_strength": {
             "1": [],
-            "2": [],
+            "2": [
+                "betony",
+                "juniper",
+                "ragwort"
+            ],
             "3": []
         }
     },
@@ -1175,10 +1143,9 @@
                 "ragwort",
                 "tansy"
             ],
-            "2": [
-                "thyme"
-            ],
+            "2": [],
             "3": [
+                "thyme",
                 "juniper"
             ]
         }
@@ -1206,13 +1173,12 @@
             "infection": 0.3
         },
         "treatment_strength": {
-            "1": [
+            "1": [],
+            "2": [
                 "cobwebs",
                 "marigold",
                 "juniper",
-                "ragwort"
-            ],
-            "2": [
+                "ragwort",
                 "moss",
                 "oak_leaves"
             ],
@@ -1298,10 +1264,7 @@
         "risks": {},
         "treatment_strength": {
             "1": [],
-            "2": [
-                "ragwort",
-                "juniper"
-            ],
+            "2": [],
             "3": []
         }
     }   

@@ -7,6 +7,9 @@
         "mortality_down": "{PRONOUN/m_c/subject/CAP} will be less likely to die.",
         "duration_down": "{PRONOUN/m_c/subject/CAP} will heal sooner.",
         "risks_down": "The risks associated with {PRONOUN/m_c/poss} condition are lowered.",
+        "progression_down": "{PRONOUN/m_c/poss/CAP} condition will be less likely to progress to something greater.",
+        "infectiousness_down": "{PRONOUN/m_c/poss/CAP} condition will be less likely to spread to others.",
+        "immune_system_effect_down": "The condition's impact on {PRONOUN/m_c/poss} immune system will be lessened.",
         "elder_leaves": {
             "one": "elder leaf bundle",
             "many": "elder leaf bundles"
