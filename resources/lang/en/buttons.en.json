@@ -51,6 +51,8 @@
         "clan_saved": "saved!",
         "keep_cards": "keep",
         "replace_cards": "replace",
-        "confirm": "confirm"
+        "confirm": "confirm",
+        "load_save": "load save",
+        "delete": "delete"
     }
 }
