@@ -6066,7 +6066,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c0 catches the rabbit, but later {PRONOUN/r_c0/subject} and the cats who eat it become violently ill."
+                    "r_c0 catches the rabbit and brings it to camp, but later {PRONOUN/r_c0/subject} and any cats who eat it become violently ill."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -15606,7 +15606,7 @@
                     "tags": ["danger:tainted"]
                 },
                 "strings": [
-                    "The patrol comes back to camp from POI, each carrying a fat rat. The Clan celebrates this good fortune with a feast, but later on, many grow ill. The Clan must sort through their fresh-kill for contamination."
+                    "The patrol comes back to camp from POI, each carrying a fat rat. The Clan celebrates this good fortune with a feast, but later on, some grow ill. The Clan must sort through their fresh-kill for contamination."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 0,
@@ -15616,7 +15616,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "patrol_cats"
                         ],
                         "cats_from": [
                             "clan"
@@ -15628,14 +15628,13 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from heard that cat_to was the one who caught the rat that made the Clan sick."
+                            "cats_from": "cat_from heard that cat_to was part of the patrol who caught the rat that made the Clan sick."
                         }
                     }
                 ],
                 "condition": [
                     {
                         "cats": [
-                            "r_c0",
                             "some_clan"
                         ],
                         "condition": [
@@ -16022,7 +16021,7 @@
                     "tags": ["danger:tainted"]
                 },
                 "strings": [
-                    "p_l comes back to camp from POI, carrying a fat rat. The Clan celebrates this good fortune with a feast, but later on, many grow ill. The Clan must sort through their fresh-kill for contamination."
+                    "p_l comes back to camp from POI, carrying a fat rat. The Clan celebrates this good fortune with a feast, but later on, some grow ill. The Clan must sort through their fresh-kill for contamination."
                 ],
                 "outcome_art": "POI",
                 "exp_gained": 0,
@@ -16048,7 +16047,6 @@
                 "condition": [
                     {
                         "cats": [
-                            "p_l",
                             "some_clan"
                         ],
                         "condition": [
