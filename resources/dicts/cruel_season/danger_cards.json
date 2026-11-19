@@ -30,6 +30,12 @@
       "death_related.war_death_modifier_leader": 46
     }
   },
+  "sinkhole": {
+    "card_art": "danger/for_the_throne.png",
+    "modifiers": {
+      "cruel_season.event.sinkhole": true
+    }
+  },
   "miasma": {
     "card_art": "danger/miasma.png",
     "modifiers": {
