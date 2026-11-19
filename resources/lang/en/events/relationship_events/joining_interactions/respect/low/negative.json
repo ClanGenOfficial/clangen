@@ -2,7 +2,23 @@
     {
         "event_id": "gen_respect_low_neg1",
         "strings": [
-			"m_c began to feel excluded when r_c interrupted {PRONOUN/m_c/object}."
+			"m_c began to feel excluded when r_c interrupted {PRONOUN/m_c/object}.",
+            "r_c's first impression left m_c doubtful of {PRONOUN/r_c/object}."
         ]
+    },
+    {
+        "event_id": "gen_respect_low_neg2",
+        "strings": [
+			"m_c heard r_c snickering about {PRONOUN/m_c/poss} origins under {PRONOUN/r_c/poss} breath.",
+            "r_c stayed aloof from m_c and made no effort to introduce {PRONOUN/r_c/self}."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": -5
+            }]
     }
 ]

@@ -2,7 +2,8 @@
     {
         "event_id": "gen_like_high_inc1",
         "strings": [
-			"r_c and m_c became fast friends."
+			"r_c and m_c became fast friends.",
+            "m_c and r_c already share tongues."
         ],
         "relationship_changes": [
             {

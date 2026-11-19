@@ -2,7 +2,30 @@
     {
         "event_id": "gen_respect_med_neg1",
         "strings": [
-			"r_c made a comment that left m_c feeling embarrassed about {PRONOUN/m_c/poss} origins."
+			"r_c made a comment that left m_c feeling embarrassed about {PRONOUN/m_c/poss} origins.",
+            "r_c seemed disdainful of m_c's presence since {PRONOUN/m_c/subject} joined the Clan. "
+        ]
+    },
+    {
+        "event_id": "gen_respect_med_neg_kittypet",
+        "strings":[
+            "r_c told m_c to let {PRONOUN/r_c/object} know if {PRONOUN/m_c/subject} needed an escort back to their cozy Twoleg den."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "past_status": [
+                    "kittypet"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": -5
+            }
         ]
     }
 ]

@@ -2,7 +2,9 @@
     {
         "event_id": "gen_comfort_high_inc1",
         "strings": [
-			"r_c and m_c had no trouble discovering common interests."
+			"r_c and m_c had no trouble discovering common interests.",
+            "m_c was welcomed warmly by r_c.",
+            "r_c felt an immediate kinship with m_c."
         ],
         "relationship_changes": [
             {

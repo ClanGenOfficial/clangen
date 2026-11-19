@@ -2,7 +2,9 @@
     {
         "event_id": "gen_trust_high_pos1",
         "strings": [
-			"r_c shut down rumors about m_c before they could spread, and m_c was grateful."
+			"r_c shut down rumors about m_c before they could spread, and m_c was grateful.",
+            "r_c helped m_c build their nest.",
+            "r_c had m_c's back when others were skeptical of the decision to let m_c join the Clan."
         ],
         "relationship_changes": [
             {
@@ -12,5 +14,18 @@
                 "values": ["trust"],
                 "amount": 5
             }]
+    },
+    {
+        "event_id": "gen_trust_high_pos_kitten_m_c",
+        "strings": [
+			"m_c took to r_c after {PRONOUN/r_c/subject} offered to show {PRONOUN/m_c/object} around camp via badger-ride."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "kitten"
+                ]
+            }
+        }
     }
 ]

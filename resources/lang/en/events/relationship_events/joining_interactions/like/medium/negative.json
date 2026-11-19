@@ -2,7 +2,8 @@
     {
         "event_id": "gen_like_med_dec1",
         "strings": [
-			"r_c scoffed when m_c introduced {PRONOUN/m_c/self}."
+			"r_c scoffed when m_c introduced {PRONOUN/m_c/self}.",
+            "r_c felt like m_c was looking down on Clancats."
         ],
         "relationship_changes": [
             {

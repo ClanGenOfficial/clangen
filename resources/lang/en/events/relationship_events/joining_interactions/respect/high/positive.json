@@ -2,7 +2,34 @@
     {
         "event_id": "gen_respect_high_pos1",
         "strings": [
-			"m_c had been copying r_c's every move since {PRONOUN/m_c/subject} joined the Clan."
+			"m_c had been copying r_c's every move since {PRONOUN/m_c/subject} joined the Clan.",
+            "r_c made an effort to understand what drew m_c to join c_n."
         ]
+    },
+    {
+        "event_id": "gen_respect_high_pos_kittypet",
+        "strings":[
+            "m_c recognized r_c as a cat who had never demeaned kittypets during encounters near the border."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "past_status": [
+                    "kittypet"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "gen_respect_high_pos_kitten_r_c",
+        "strings":[
+            "m_c was thrilled when r_c bounded up to {PRONOUN/m_c/object} to ask {PRONOUN/m_c/object} about {PRONOUN/m_c/poss} life."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "age": [
+                    "kitten"
+                ]
+            }
+        }
     }
 ]

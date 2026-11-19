@@ -2,7 +2,8 @@
     {
         "event_id": "gen_like_low_inc1",
         "strings": [
-            "r_c welcomed m_c into the Clan."
+            "r_c welcomed m_c into the Clan.",
+            "m_c cheerfully introduced {PRONOUN/m_c/self} to r_c."
         ],
         "relationship_changes": [
             {

@@ -4,5 +4,20 @@
         "strings": [
 			"r_c made a questionable decision, and m_c found it a poor first impression."
         ]
+    },
+    {
+        "event_id": "gen_trust_med_neg2",
+        "strings": [
+            "m_c was told that r_c was wary of {PRONOUN/m_c/object} joining the Clan.",
+            "m_c thought {PRONOUN/m_c/subject} saw r_c talking about {PRONOUN/m_c/object} behind {PRONOUN/m_c/poss} back when {PRONOUN/m_c/subject} joined the Clan."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["trust"],
+                "amount": -10
+            }]
     }
 ]
