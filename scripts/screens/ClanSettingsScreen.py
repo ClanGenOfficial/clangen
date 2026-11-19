@@ -33,6 +33,7 @@ from ..game_structure.constants import DISPLAY_SETTINGS
 from ..housekeeping.game_version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.windows.cruel_locked_action import CruelLockedAction
+from scripts.clan_package.settings.clan_settings import save_default_settings
 
 logger = logging.getLogger(__name__)
 
@@ -100,6 +101,11 @@ class ClanSettingsScreen(Screens):
             elif event.ui_element == self.clan_stats_button:
                 self.open_clan_stats()
                 return
+            elif event.ui_element == self.save_default_button:
+                save_default_settings()
+                self.settings_changed = False
+                self.update_save_button()
+                return
             self.handle_checkbox_events(event)
             self.menu_button_pressed(event)
             self.mute_button_pressed(event)
@@ -138,7 +144,7 @@ class ClanSettingsScreen(Screens):
                     else:
                         value.check()
                     self.settings_changed = True
-                    # self.update_save_button()
+                    self.update_save_button()
 
                     scroll_pos = None
                     if (
@@ -219,6 +225,15 @@ class ClanSettingsScreen(Screens):
             tool_tip_text="buttons.open_data_directory_tooltip",
         )
 
+        self.save_default_button = UISurfaceImageButton(
+            ui_scale(pygame.Rect((0, 560), (150, 30))),
+            "buttons.save_as_default",
+            get_button_dict(ButtonStyles.SQUOVAL, (150, 30)),
+            object_id="@buttonstyles_squoval",
+            manager=MANAGER,
+            anchors={"centerx": "centerx"},
+        )
+
         rect = ui_scale(pygame.Rect((0, 0), (158, 36)))
         rect.bottomright = ui_scale_offset((-5, -25))
         self.fullscreen_toggle = UIImageButton(
@@ -282,6 +297,8 @@ class ClanSettingsScreen(Screens):
         del self.fullscreen_toggle
         self.game_settings_button.kill()
         del self.game_settings_button
+        self.save_default_button.kill()
+        del self.save_default_button
 
     def open_general_settings(self):
         """Opens and draws general_settings"""
@@ -289,7 +306,8 @@ class ClanSettingsScreen(Screens):
         self.general_settings_button.disable()
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = "general"
-
+        self.save_default_button.show()
+        self.update_save_button()
         self.refresh_checkboxes()
 
     def open_roles_settings(self):
@@ -298,7 +316,8 @@ class ClanSettingsScreen(Screens):
         self.role_settings_button.disable()
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = "role"
-
+        self.save_default_button.show()
+        self.update_save_button()
         self.refresh_checkboxes()
 
     def open_relation_settings(self):
@@ -307,10 +326,12 @@ class ClanSettingsScreen(Screens):
         self.relation_settings_button.disable()
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = "relation"
-
+        self.save_default_button.show()
+        self.update_save_button()
         self.refresh_checkboxes()
 
     def open_clan_stats(self):
+        self.save_default_button.hide()
         self.enable_all_menu_buttons()
         self.clan_stats_button.disable()
         self.clear_sub_settings_buttons_and_text()
@@ -471,3 +492,12 @@ class ClanSettingsScreen(Screens):
         TODO: DOCS
         """
         super().on_use()
+
+    def update_save_button(self):
+        """
+        Updates the disabled state the save button
+        """
+        if not self.settings_changed:
+            self.save_default_button.disable()
+        else:
+            self.save_default_button.enable()
