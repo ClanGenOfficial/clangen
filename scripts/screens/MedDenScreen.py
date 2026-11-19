@@ -410,7 +410,7 @@ class MedDenScreen(Screens):
         """
         Updates the med cat display
         """
-        displayed_med_cat = self.meds[0]
+        displayed_med_cat = self.meds[0] if self.meds else None
 
         # create cat image
         if self.elements.get("med_image"):
@@ -418,7 +418,9 @@ class MedDenScreen(Screens):
 
         self.elements["med_image"] = UISpriteButton(
             ui_scale(pygame.Rect((435, 150), (150, 150))),
-            displayed_med_cat.sprite,
+            displayed_med_cat.sprite
+            if displayed_med_cat
+            else pygame.Surface((50, 50), pygame.HWSURFACE | pygame.SRCALPHA),
             cat_object=displayed_med_cat,
             manager=MANAGER,
         )
@@ -428,7 +430,9 @@ class MedDenScreen(Screens):
         if not self.elements.get("med_name"):
             self.elements["med_name"] = pygame_gui.elements.ui_label.UILabel(
                 ui_scale(pygame.Rect((-60, 140), (225, 30))),
-                shorten_text_to_fit(str(displayed_med_cat.name), 137, 15),
+                shorten_text_to_fit(str(displayed_med_cat.name), 137, 15)
+                if displayed_med_cat
+                else "",
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 manager=MANAGER,
                 anchors={"left_target": self.elements["med_image"]},
@@ -436,20 +440,25 @@ class MedDenScreen(Screens):
         else:
             self.elements["med_name"].set_text(
                 shorten_text_to_fit(str(displayed_med_cat.name), 137, 15)
+                if displayed_med_cat
+                else ""
             )
 
         # display info
-        med_trait = i18n.t(f"cat.personality.{displayed_med_cat.personality.trait}")
-        med_skill = displayed_med_cat.skills.skill_string(short=True)
-        med_exp = i18n.t(
-            "general.exp_label", exp=displayed_med_cat.experience_level_string
-        )
-        work_status = (
-            i18n.t("general.can_work")
-            if displayed_med_cat.can_work()
-            else i18n.t("general.cant_work")
-        )
-        info_text = "<br>".join([med_trait, med_skill, med_exp, work_status])
+        if displayed_med_cat:
+            med_trait = i18n.t(f"cat.personality.{displayed_med_cat.personality.trait}")
+            med_skill = displayed_med_cat.skills.skill_string(short=True)
+            med_exp = i18n.t(
+                "general.exp_label", exp=displayed_med_cat.experience_level_string
+            )
+            work_status = (
+                i18n.t("general.can_work")
+                if displayed_med_cat.can_work()
+                else i18n.t("general.cant_work")
+            )
+            info_text = "<br>".join([med_trait, med_skill, med_exp, work_status])
+        else:
+            info_text = ""
         if not self.elements.get("med_info"):
             self.elements["med_info"] = pygame_gui.elements.UITextBox(
                 info_text,
@@ -494,6 +503,13 @@ class MedDenScreen(Screens):
                 [self.elements["next_med_arrow"], self.elements["prior_med_arrow"]]
             )
 
+        if not displayed_med_cat:
+            self.elements["prior_med_arrow"].disable()
+            self.elements["next_med_arrow"].disable()
+        else:
+            self.elements["prior_med_arrow"].enable()
+            self.elements["next_med_arrow"].enable()
+
         if not self.elements.get("med_message"):
             self.elements["med_message"] = pygame_gui.elements.UITextBox(
                 "",
@@ -504,46 +520,49 @@ class MedDenScreen(Screens):
                 },
             )
 
-            # message on size of clan that can be cared for
-            # this is not created for classic clans
-            if not game.clan.game_mode == "classic":
-                # MESSAGE IF NO MEDS
-                if not self.meds:
-                    self.coverage_message = choice(MESSAGES["no_meds_warning"])
-                # MESSAGE IF SINGLE NON-WORKING MED
-                elif len(self.meds) == 1 and not self.meds[0].can_work():
-                    self.coverage_message = event_text_adjust(
-                        Cat=Cat,
-                        text=choice(MESSAGES["single_not_working"]),
-                        main_cat=self.meds[0],
-                        clan=game.clan,
-                    )
-                # MESSAGE IF ALL OF MULTIPLE MEDS ARE NOT WORKING
-                elif len(self.meds) >= 2 and not any([c.can_work() for c in self.meds]):
-                    self.coverage_message = event_text_adjust(
-                        Cat=Cat,
-                        text=choice(MESSAGES["many_not_working"]),
-                        clan=game.clan,
-                    )
-                # MESSAGE IF A MED CAN WORK
-                else:
-                    amount_of_clan_covered = amount_of_clan_covered_total(
-                        Cat.all_cats.values()
-                    )
-                    self.coverage_message = i18n.t(
-                        "screens.med_den.meds_cover",
-                        clansize=amount_of_clan_covered,
-                        count=len(self.meds),
-                    )
+        # message on size of clan that can be cared for
+        # this is not created for classic clans
+        if not game.clan.game_mode == "classic":
+            # MESSAGE IF NO MEDS
+            if not self.meds:
+                self.coverage_message = choice(MESSAGES["no_meds_warning"])
+            # MESSAGE IF SINGLE NON-WORKING MED
+            elif len(self.meds) == 1 and not self.meds[0].can_work():
+                self.coverage_message = event_text_adjust(
+                    Cat=Cat,
+                    text=choice(MESSAGES["single_not_working"]),
+                    main_cat=self.meds[0],
+                    clan=game.clan,
+                )
+            # MESSAGE IF ALL OF MULTIPLE MEDS ARE NOT WORKING
+            elif len(self.meds) >= 2 and not any([c.can_work() for c in self.meds]):
+                self.coverage_message = event_text_adjust(
+                    Cat=Cat,
+                    text=choice(MESSAGES["many_not_working"]),
+                    clan=game.clan,
+                )
+            # MESSAGE IF A MED CAN WORK
+            else:
+                amount_of_clan_covered = amount_of_clan_covered_total(
+                    Cat.all_cats.values()
+                )
+                self.coverage_message = i18n.t(
+                    "screens.med_den.meds_cover",
+                    clansize=amount_of_clan_covered,
+                    count=len(self.meds),
+                )
 
-        if not self.med_messages.get(displayed_med_cat.ID):
-            self.med_messages[
-                displayed_med_cat.ID
-            ] = game.clan.herb_supply.get_status_message(displayed_med_cat)
+        if displayed_med_cat:
+            if not self.med_messages.get(displayed_med_cat.ID):
+                self.med_messages[
+                    displayed_med_cat.ID
+                ] = game.clan.herb_supply.get_status_message(displayed_med_cat)
 
-        self.elements["med_message"].set_text(
-            f"{self.coverage_message}<br>{self.med_messages[displayed_med_cat.ID]}"
-        )
+            self.elements["med_message"].set_text(
+                f"{self.coverage_message}<br>{self.med_messages[displayed_med_cat.ID]}"
+            )
+        else:
+            self.elements["med_message"].set_text(self.coverage_message)
 
     def update_tab_and_page(self, changed_tab=False):
         """
