@@ -2337,7 +2337,7 @@
             "leaf-fall"
         ],
         "tags": [
-            "clan:kitten"
+            "clan:kitten(min:2)"
         ],
         "frequency": 4,
         "event_text": "The older cats fondly watched the kits dashing in and out of leaf piles at the edge of camp.",
@@ -2845,7 +2845,7 @@
             "any"
         ],
         "tags": [
-            "clan:kitten"
+            "clan:kitten(min:2)"
         ],
         "frequency": 2,
         "event_text": "m_c listened as r_c told the story of how {PRONOUN/r_c/subject} fell in love with {PRONOUN/r_c/poss} mate to a group of starry-eyed kits.",
@@ -2961,7 +2961,7 @@
             "any"
         ],
         "tags": [
-            "clan:kitten"
+            "clan:kitten(min:2)"
         ],
         "frequency": 3,
         "event_text": "m_c and r_c watched the Clan's kits play and exchanged significant glances.",
@@ -3440,7 +3440,7 @@
             "greenleaf"
         ],
         "tags": [
-            "clan:warrior"
+            "clan:warrior(min:2)"
         ],
         "frequency": 3,
         "event_text": "m_c chased fireflies around the camp while the warriors slept.",
@@ -3543,7 +3543,7 @@
             "greenleaf"
         ],
         "tags": [
-            "clan:warrior"
+            "clan:warrior(min:2)"
         ],
         "frequency": 4,
         "event_text": "m_c and r_c chased fireflies around the camp while the warriors tried to sleep.",
@@ -3588,7 +3588,7 @@
             "leaf-fall"
         ],
         "tags": [
-            "clan:warrior"
+            "clan:warrior(min:2)"
         ],
         "frequency": 4,
         "event_text": "m_c and r_c led a small leaf-gathering hunt, which the adult cats watched with amused purrs.",
@@ -3713,7 +3713,7 @@
             "leaf-bare"
         ],
         "tags": [
-            "clan:warrior"
+            "clan:warrior(min:2)"
         ],
         "frequency": 4,
         "event_text": "m_c and r_c flicked snow at the warriors, giggling from their hiding place behind the nursery.",
@@ -7991,7 +7991,7 @@
         "location": ["any"],
         "season": ["newleaf"],
         "sub_type": [],
-        "tags": ["clan:kitten"],
+        "tags": ["clan:kitten(min:2)"],
         "poi": {
             "tags": ["trees"]
         },
@@ -8420,7 +8420,7 @@
             "any"
         ],
         "tags": [
-            "clan:apps"
+            "clan:any_app(min:2)"
         ],
         "frequency": 4,
         "event_text": "m_c called the younger cats to {PRONOUN/m_c/poss} den one afternoon to tell stories of the Clan's past.",
@@ -8464,7 +8464,7 @@
             "any"
         ],
         "tags": [
-            "clan:kitten"
+            "clan:kitten(min:2)"
         ],
         "frequency": 4,
         "event_text": "m_c called out one morning to some eager kits, and after they situated themselves in front of m_c, {PRONOUN/m_c/subject} wove the kits a thrilling story of times long past.",
@@ -11377,7 +11377,7 @@
             "war"
         ],
         "tags": [
-            "clan:warrior"
+            "clan:warrior(min:2)"
         ],
         "frequency": 4,
         "event_text": "More warriors have been posted around the edges of camp to keep watch on m_c's order.",
@@ -12242,7 +12242,7 @@
             "war"
         ],
         "tags": [
-            "clan:elder"
+            "clan:elder(min:2)"
         ],
         "frequency": 2,
         "event_text": "m_c has been heavily relying on the tactical advice and experience of the elders, namely r_c.",
@@ -14398,7 +14398,7 @@
             "-desert"
         ],
         "season": ["leaf-fall", "newleaf", "greenleaf"],
-        "tags": ["clan:warrior"],
+        "tags": ["clan:warrior(min:2)"],
         "frequency": 4,
         "event_text": "m_c doesn't care what the warriors say; thunder is definitely dangerous and horrible. r_c agrees, the kittens finding comfort in each other during a storm this moon.",
         "m_c": {

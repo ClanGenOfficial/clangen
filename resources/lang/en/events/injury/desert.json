@@ -664,7 +664,7 @@
             "greenleaf"
         ],
         "tags": [
-            "clan:kitten"
+            "clan:kitten(min:2)"
         ],
         "frequency": 1,
         "event_text": "A piece of stray Twoleg trash ignites in the dry heat of the sun, threatening the nursery. m_c leads the efforts to rescue the kits, and will happily trade {PRONOUN/m_c/poss} singed coat and the acrid smell of burned fur for the safety of the young ones.",
@@ -818,9 +818,6 @@
             "greenleaf",
             "leaf-fall",
             "newleaf"
-        ],
-        "tags": [
-            "clan:apprentice"
         ],
         "frequency": 3,
         "event_text": "m_c thanks r_c for the water, squeezing the precious liquid gently out of the soaked moss the apprentice has brought. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} want {PRONOUN/m_c/poss} dehydration to get any worse.",

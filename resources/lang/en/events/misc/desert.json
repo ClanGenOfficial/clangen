@@ -665,7 +665,7 @@
         "event_id": "dst_misc_greenleaf_kitkit1",
         "location": ["desert"],
         "season": ["greenleaf"],
-        "tags": ["clan:warrior"],
+        "tags": ["clan:warrior(min:2)"],
         "frequency": 4,
         "event_text": "m_c and r_c emerge from the nursery as the chill of night takes over, their energy contrasting the tired warriors napping on the sun-warmed rocks.",
         "m_c": {
@@ -693,7 +693,7 @@
           "desert"
         ],
         "season": ["leaf-fall"],
-      "tags": ["clan:warrior"],
+      "tags": ["clan:warrior(min:2)"],
         "frequency": 4,
         "event_text": "m_c doesn't care what the warriors say, thunder is definitely dangerous and horrible. r_c agrees, the kittens finding comfort in each other.",
         "m_c": {
@@ -1042,7 +1042,7 @@
     "location": ["desert"],
     "season": ["any"],
     "sub_type": ["war"],
-    "tags": ["clan:apprentice"],
+    "tags": ["clan:apprentice(min:2)"],
     "frequency": 3,
     "event_text": "The apprentices of the Clan are taking special training to learn how to blind their enemies with dust from the ground.",
     "m_c": {

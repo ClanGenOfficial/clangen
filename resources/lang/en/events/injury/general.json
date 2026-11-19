@@ -406,7 +406,7 @@
             "any"
         ],
         "tags": [
-            "clan:kitten"
+            "clan:kitten(min:2)"
         ],
         "frequency": 4,
         "event_text": "m_c was play-fighting with the kits, but may have overdone it a bit. {PRONOUN/m_c/subject/CAP}'ll be sore for the next few days.",
@@ -705,7 +705,7 @@
             "any"
         ],
         "tags": [
-            "clan:apprentice"
+            "clan:warrior-like(min:2)"
         ],
         "frequency": 4,
         "event_text": "m_c keeps pointedly reminding other cats that {PRONOUN/m_c/poss} ticks haven't been seen to yet, clearly uncomfortable with the itchy bites dotting {PRONOUN/m_c/poss} pelt.",
@@ -747,7 +747,7 @@
             "any"
         ],
         "tags": [
-            "clan:warrior"
+            "clan:warrior(min:2)"
         ],
         "frequency": 4,
         "event_text": "m_c has been getting more and more frustrated by the number of ticks {PRONOUN/m_c/subject} {VERB/m_c/have/has}, but doesn't want to bother anyone with {PRONOUN/m_c/poss} troubles. Regardless, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} found out when someone spots {PRONOUN/m_c/object} scratching at the bites.",
@@ -788,7 +788,7 @@
             "any"
         ],
         "tags": [
-            "clan:warrior"
+            "clan:warrior(min:2)"
         ],
         "frequency": 2,
         "event_text": "m_c tried to interject and de-escalate an argument between two Clanmates, but r_c retaliated at the interruption. m_c limps away, fresh clawmarks scored through {PRONOUN/m_c/poss} pelt.",
@@ -9108,7 +9108,7 @@
             "any"
         ],
         "tags": [
-            "clan:kitten"
+            "clan:kitten(min:2)"
         ],
         "frequency": 4,
         "event_text": "m_c isn't as young as {PRONOUN/m_c/subject} used to be, and {PRONOUN/m_c/subject} {VERB/m_c/decline/declines} giving another badger ride to nap off the happy soreness that comes with being the kits' current favorite chew toy.",
