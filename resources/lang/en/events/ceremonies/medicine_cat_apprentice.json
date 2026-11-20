@@ -1,6 +1,7 @@
 [
     {
         "event_id": "med_app_default0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {}
         },
@@ -10,6 +11,7 @@
     },
     {
         "event_id": "med_app_default1",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {},
             "r_c0": {}
@@ -77,6 +79,7 @@
     },
     {
         "event_id": "med_app_dead_parent0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "backstory": [
@@ -110,6 +113,7 @@
     },
     {
         "event_id": "med_app_dead_both_parents0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "backstory": [
@@ -149,6 +153,7 @@
     },
     {
         "event_id": "med_app_stand_out0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -198,6 +203,7 @@
     },
     {
         "event_id": "med_app_nefarious0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -248,6 +254,7 @@
     },
     {
         "event_id": "med_app_unsure0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -298,6 +305,7 @@
     },
     {
         "event_id": "med_app_faithful0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -313,6 +321,7 @@
     },
     {
         "event_id": "med_app_wise0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -328,6 +337,7 @@
     },
     {
         "event_id": "med_app_thoughtful0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -376,6 +386,7 @@
     },
     {
         "event_id": "med_app_loving0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -391,6 +402,7 @@
     },
     {
         "event_id": "med_app_self_assured0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -445,6 +457,7 @@
     },
     {
         "event_id": "med_app_vengeful0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -493,6 +506,7 @@
     },
     {
         "event_id": "med_app_adventurous0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -548,6 +562,7 @@
 },
 {
         "event_id": "med_app_POI_moonplace0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -597,6 +612,7 @@
     },
     {
         "event_id": "med_app_POI_moonplace1",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -662,6 +678,7 @@
     },
     {
         "event_id": "med_app_POI_moonplace2",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -713,6 +730,7 @@
     },
     {
         "event_id": "med_app_POI_darkmoonpool",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -762,6 +780,7 @@
     },
     {
         "event_id": "med_app_POI_darkwhisperingcave",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -811,6 +830,7 @@
     },
     {
         "event_id": "med_app_POI_darkmothermouth",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {

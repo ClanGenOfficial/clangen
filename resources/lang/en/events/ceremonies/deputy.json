@@ -102,6 +102,7 @@
     },
     {
         "event_id": "deputy_clan_unsure0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "has_apprentice": {
@@ -129,6 +130,20 @@
         },
         "strings": [
             "The Clan is without a leader, but a new deputy must still be named. m_c is chosen as the new deputy. r_c0 nods {PRONOUN/dep_name/poss} approval."
+        ]
+    },
+    {
+        "event_id": "deputy_clan_oto0",
+        "tags": ["card:on_their_own"],
+        "involved_cats": {
+            "m_c": {
+                "has_apprentice": {
+                    "former": false
+                }
+            }
+        },
+        "strings": [
+            "m_c stands proud before the Clan as the new deputy. {PRONOUN/m_c/subject/CAP} {VERB/m_c/have/has} proven {PRONOUN/m_c/self} time and time again through skill and courage, and {VERB/m_c/are/is} ready to take on the responsibilities of {PRONOUN/m_c/poss} new role."
         ]
     }
 ]

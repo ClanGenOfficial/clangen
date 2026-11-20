@@ -1,6 +1,7 @@
 [
     {
         "event_id": "app_default0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {}
         },
@@ -10,6 +11,7 @@
     },
     {
         "event_id": "app_default1",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {},
             "r_c0": {}
@@ -72,6 +74,7 @@
     {
         "event_id": "app_no_leader0",
         "tags": [
+            "-card:on_their_own",
             "-clan:leader"
         ],
         "involved_cats": {
@@ -118,6 +121,7 @@
     },
     {
         "event_id": "app_living_parent0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {},
             "r_c0": {},
@@ -178,6 +182,7 @@
     },
     {
         "event_id": "app_living_parent1",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {},
             "r_c0": {},
@@ -249,6 +254,7 @@
     },
     {
         "event_id": "app_dead_parent0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "backstory": [
@@ -314,6 +320,7 @@
     },
     {
         "event_id": "app_dead_parent1",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "backstory": [
@@ -394,6 +401,7 @@
     },
     {
         "event_id": "app_dead_both_parents0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "backstory": [
@@ -463,6 +471,7 @@
     },
     {
         "event_id": "app_living_both_parents0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {},
             "r_c1": {
@@ -516,6 +525,7 @@
     },
     {
         "event_id": "app_dead_both_parents0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "backstory": [
@@ -604,6 +614,7 @@
     },
     {
         "event_id": "app_dead_both_parents1",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "backstory": [
@@ -690,6 +701,7 @@
     },
     {
         "event_id": "app_leader_mentor",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {},
             "r_c0": {
@@ -734,6 +746,7 @@
     },
     {
         "event_id": "app_unsure0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -802,6 +815,7 @@
     },
     {
         "event_id": "app_unsure0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -870,6 +884,7 @@
     },
     {
         "event_id": "app_unsure1",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -925,6 +940,7 @@
     },
     {
         "event_id": "app_eager0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -1000,6 +1016,7 @@
     },
     {
         "event_id": "app_eager1",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -1044,6 +1061,7 @@
     },
     {
         "event_id": "app_eager2",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "past_status": [
@@ -1106,6 +1124,7 @@
     },
     {
         "event_id": "app_playing_cool0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -1165,6 +1184,7 @@
     },
     {
         "event_id": "app_high_hopes0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -1223,6 +1243,7 @@
     },
     {
         "event_id": "app_eager2",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -1284,6 +1305,7 @@
     },
     {
         "event_id": "app_abandoned0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "backstory": [
@@ -1330,6 +1352,7 @@
     },
     {
         "event_id": "app_serious0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -1391,6 +1414,7 @@
     },
     {
         "event_id": "app_joyful0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -1446,6 +1470,7 @@
     },
     {
         "event_id": "app_serious1",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -1505,6 +1530,7 @@
     },
     {
         "event_id": "app_impress0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -1568,6 +1594,7 @@
     },
     {
         "event_id": "app_decisive0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -1607,6 +1634,7 @@
     },
     {
         "event_id": "app_duty0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -1643,6 +1671,7 @@
     },
     {
         "event_id": "app_safety0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -1683,6 +1712,7 @@
     },
     {
         "event_id": "app_battle_eager0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -1742,6 +1772,7 @@
     },
     {
         "event_id": "app_pester0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -1797,7 +1828,8 @@
     {
         "event_id": "app_taking_charge0",
         "tags": [
-            "clan:leader"
+            "clan:leader",
+            "-card:on_their_own"
         ],
         "involved_cats": {
             "m_c": {
@@ -1855,7 +1887,8 @@
     {
         "event_id": "app_taking_charge1",
         "tags": [
-            "clan:leader"
+            "clan:leader",
+            "-card:on_their_own"
         ],
         "involved_cats": {
             "m_c": {
@@ -1892,7 +1925,8 @@
     {
         "event_id": "app_silly0",
         "tags": [
-            "clan:leader"
+            "clan:leader",
+            "-card:on_their_own"
         ],
         "involved_cats": {
             "m_c": {
@@ -1934,7 +1968,8 @@
     {
         "event_id": "app_skittish0",
         "tags": [
-            "clan:leader"
+            "clan:leader",
+            "-card:on_their_own"
         ],
         "involved_cats": {
             "m_c": {
@@ -1982,6 +2017,7 @@
     },
     {
         "event_id": "app_skittish1",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -2014,6 +2050,7 @@
     },
     {
         "event_id": "app_preen0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -2069,7 +2106,8 @@
     {
         "event_id": "app_skittish_mentor_bold0",
         "tags": [
-            "clan:leader"
+            "clan:leader",
+            "-card:on_their_own"
         ],
         "involved_cats": {
             "m_c": {
@@ -2141,7 +2179,8 @@
     {
         "event_id": "app_pawful0",
         "tags": [
-            "clan:leader"
+            "clan:leader",
+            "-card:on_their_own"
         ],
         "involved_cats": {
             "m_c": {
@@ -2194,7 +2233,8 @@
     {
         "event_id": "app_blunt0",
         "tags": [
-            "clan:leader", "clan:warrior"
+            "clan:leader", "clan:warrior",
+            "-card:on_their_own"
         ],
         "involved_cats": {
             "m_c": {
@@ -2218,6 +2258,7 @@
     },
     {
         "event_id": "app_faith0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -2248,6 +2289,7 @@
     },
     {
         "event_id": "app_glum0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -2286,7 +2328,8 @@
     {
         "event_id": "app_glum1",
         "tags": [
-            "clan:leader"
+            "clan:leader",
+            "-card:on_their_own"
         ],
         "involved_cats": {
             "m_c": {
@@ -2482,7 +2525,8 @@
 {
         "event_id": "app_mentor_dislikes0",
         "tags": [
-            "clan:leader"
+            "clan:leader",
+            "-card:on_their_own"
         ],
         "involved_cats": {
             "m_c": {},
@@ -2529,7 +2573,8 @@
     {
         "event_id": "app_no_mentor_dislikes0",
         "tags": [
-            "clan:leader"
+            "clan:leader",
+            "-card:on_their_own"
         ],
         "involved_cats": {
             "m_c": {
@@ -2638,7 +2683,7 @@
     {
         "event_id": "app_no_mentor_mentor_hoping1",
         "tags": [
-            "clan:leader", "-card:pride_and_joy"
+            "clan:leader", "-card:pride_and_joy", "-card:on_their_own"
         ],
         "involved_cats": {
             "m_c": {
@@ -2678,7 +2723,8 @@
     {
         "event_id": "app_mentor_likes0",
         "tags": [
-            "clan:leader"
+            "clan:leader",
+            "-card:on_their_own"
         ],
         "involved_cats": {
             "m_c": {},
@@ -2724,7 +2770,8 @@
     {
         "event_id": "app_mentor_sibling0",
         "tags": [
-            "clan:leader"
+            "clan:leader",
+            "-card:on_their_own"
         ],
         "involved_cats": {
             "m_c": {},
@@ -2771,7 +2818,8 @@
     {
         "event_id": "app_mentor_sibling_parentHappy0",
         "tags": [
-            "clan:leader"
+            "clan:leader",
+            "-card:on_their_own"
         ],
         "involved_cats": {
             "m_c": {},
@@ -2846,7 +2894,7 @@
     },
     {
         "event_id": "app_healer1",
-        "tags": [],
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -2893,6 +2941,7 @@
     },
     {
         "event_id": "app_spiritual1",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
@@ -2964,6 +3013,7 @@
     },
     {
         "event_id": "mentor_spiritual1",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {},
             "r_c0": {
@@ -3031,7 +3081,8 @@
     {
         "event_id": "app_POI_terrain0",
         "tags": [
-            "clan:leader"
+            "clan:leader",
+            "-card:on_their_own"
         ],
         "poi": {
             "category": "terrain"
@@ -3083,7 +3134,8 @@
     {
         "event_id": "app_POI_terrain1",
         "tags": [
-            "clan:leader"
+            "clan:leader",
+            "-card:on_their_own"
         ],
         "poi": {
             "category": "terrain"
@@ -3136,6 +3188,7 @@
     },
     {
         "event_id": "app_POI_covered",
+        "tags": ["-card:on_their_own"],
         "poi": {
             "tags": ["covered"],
             "category": "terrain"
@@ -3183,7 +3236,8 @@
     {
         "event_id": "app_POI_prey",
         "tags": [
-            "clan:leader"
+            "clan:leader",
+            "-card:on_their_own"
         ],
         "poi": {
             "tags": ["prey"]
@@ -3239,7 +3293,8 @@
     {
         "event_id": "app_POI_water",
         "tags": [
-            "clan:leader"
+            "clan:leader",
+            "-card:on_their_own"
         ],
         "poi": {
             "tags": ["water"]
@@ -3291,7 +3346,8 @@
     {
         "event_id": "app_POI_moonplace",
         "tags": [
-            "clan:medicine cat"
+            "clan:medicine cat",
+            "-card:on_their_own"
         ],
         "poi": {
             "category": "moonplace"
@@ -3342,6 +3398,7 @@
     },
     {
         "event_id": "app_POI_gathering",
+        "tags": ["-card:on_their_own"],
         "poi": {
             "category": "gathering"
         },
@@ -3410,6 +3467,7 @@
     },
     {
         "event_id": "app_POI_twoleg",
+        "tags": ["-card:on_their_own"],
         "poi": {
             "tags": ["Twolegs:present"]
         },
