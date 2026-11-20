@@ -102,6 +102,7 @@
     },
     {
         "event_id": "deputy_clan_unsure0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "has_apprentice": {
