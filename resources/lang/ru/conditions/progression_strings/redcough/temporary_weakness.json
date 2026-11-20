@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "redcough_temporary_weakness0",
+        "strings": [
+            "Understandably, m_c's body won't immediately be back to normal after suffering redcough."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

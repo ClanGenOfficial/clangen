@@ -1,0 +1,285 @@
+[
+    {
+        "event_id": "bch_train_leaffall_lifeguarding_storyloreswimmerlocked1",
+        "types": [
+            "training"
+        ],
+        "frequency": 3,
+        "location": [
+            "beach"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ],
+            "apprentice": [
+                1,
+                5
+            ],
+            "normal adult": [
+                1,
+                5
+            ]
+        },
+        "involved_cats": {
+            "s_c0": {
+                "prior_abbreviation": [
+                    "any"
+                ],
+                "stat": {
+                    "skill": [
+                        "STORY,1",
+                        "LORE,1",
+                        "SWIMMER,1"
+                    ]
+                },
+                "status": [
+                    "-apprentice"
+                ]
+            },
+            "r_c1": {
+                "status": [
+                    "apprentice"
+                ]
+            }
+        },
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites\/bch_train_session1_ApWr",
+        "intro_strings": [
+            "The patrol practices holding another cat's head above the water, using the calm (but <i>very<\/i> chilly) waters of a rockpool. r_c1 shivers, despite being huddled with s_c0. Why couldn't {PRONOUN\/r_c1\/subject} practice this on a hot sunny day?"
+        ],
+        "decline_strings": [
+            "Taking a break turns into ending the patrol early."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/gen_train_soggykittyhappy_Ap",
+                "strings": [
+                    "s_c0 sits on the windward side of r_c1, trying to give {PRONOUN\/r_c1\/object} a little more shelter. It's understandable, {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/sympathize\/sympathizes}, but r_c1 can't rely on cats in distress only showing up when the sea is inviting. The sympathy (and a little physical warmth) puts cheer back into r_c1, and {PRONOUN\/r_c1\/subject} {VERB\/r_c1\/take\/takes} {PRONOUN\/r_c1\/poss} next turn at lifeguarding practice with enthusiasm."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "SWIMMER,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "cat_to both cheered and warmed cat_from up on a training patrol during a lesson about rescuing other cats from the water."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to practiced rescuing cats from the water."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/gen_train_soggykittyhappy_Ap",
+                "strings": [
+                    "s_c0 nods. Lifeguarding isn't easy, even in practice. But {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/offer\/offers} up the story of a kitten saved by a c_n warrior who had the strength and will to keep the little ball of fur above the waves under nearly impossible circumstances. It makes r_c1 sit up straight, proud to be carrying on that tradition."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "LORE,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "cat_from listened intently to cat_to's story of how a c_n warrior rescued a kitten from the water."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to practiced rescuing cats from the water."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/gen_bord_story_WrWrWr",
+                "strings": [
+                    "Doesn't r_c1 want to be an ocean dancer, one of the many cats in c_n's ancestry who managed to master the waves, streaking in and out to save lives that have been lost to the ocean's jaws, s_c0 asks? And well, when {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/put\/puts} it like <i>that<\/i>... r_c1's motivation returns."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "STORY,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "cat_from was convinced of the importance of learning to rescue cats from the water by cat_to's stories of ocean dancers."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to practiced rescuing cats from the water."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/gen_train_sunny_WrWr",
+                "strings": [
+                    "Learning the art of water rescue is important, of course, but safety comes first. r_c1 has {PRONOUN\/r_c1\/poss} pelt licked dry and warm again, and the patrol is called off early."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "like"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from appreciated that cat_to was willing to cut a training session short to warm {PRONOUN\/cat_from\/object} up."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/gen_train_soggykittymad_Ap",
+                "strings": [
+                    "r_c1 is right \u2014 this is far, far too cold of a pool to train in, and {PRONOUN\/r_c1\/subject}{VERB\/r_c1\/'re\/'s} shivering too badly to continue. Time to go home. p_l apologizes for bringing the patrol out here."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from thought cat_to's choice of freezing cold water for lifeguarding training was at fault for r_c1's shivering."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c1"
+                        ],
+                        "condition": [
+                            "dangerously_cold"
+                        ],
+                        "scar_history": "m_c was scarred from the bite of the cold rockpool {PRONOUN\/m_c\/subject} swam in as an apprentice.",
+                        "death_history": "Falling into a cold rockpool gave m_c problems that eventually resulted in {PRONOUN\/m_c\/poss} death."
+                    }
+                ]
+            }
+        ]
+    }
+]

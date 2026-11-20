@@ -1,0 +1,250 @@
+[
+    {
+        "event_id": "pln_new_cat_litter_deadparent1",
+        "location": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 1,
+        "event_text": "m_c returned to camp carrying a litter of kittens, explaining that {PRONOUN\/m_c\/subject} found them mewling in a patch of grass, near the cooling body of a loner.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "new_cat": [
+            [
+                "age:has_kits",
+                "meeting",
+                "loner",
+                "dead"
+            ],
+            [
+                "new_name",
+                "parent:0",
+                "backstory:orphaned1, orphaned2",
+                "litter"
+            ]
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "n_c:1"
+                ],
+                "mutual": true,
+                "values": [
+                    "comfort",
+                    "like"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "m_c found n_c:1 near {PRONOUN\/n_c:1\/poss} dead parent and brought {PRONOUN\/n_c:1\/object} into the Clan."
+                }
+            }
+        ],
+        "outsider": {
+            "current_rep": [
+                "welcoming"
+            ],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "pln_new_cat_lost_kittypet1",
+        "location": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 1,
+        "event_text": "m_c rescued a kittypet hopelessly lost in some tunnels, who is so impressed, {PRONOUN\/n_c:0\/subject} {VERB\/n_c:0\/ask\/asks} to join the Clan!",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "new_cat": [
+            [
+                "kittypet",
+                "exists"
+            ]
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": true,
+                "values": [
+                    "comfort",
+                    "like"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c found n_c:0 in the tunnels and brought {PRONOUN\/n_c:0\/object} to the Clan."
+                }
+            }
+        ],
+        "outsider": {
+            "current_rep": [
+                "welcoming"
+            ],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "gen_newcat_senior_barncat",
+        "location": [
+            "plains"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "m_c encounters an aging kittypet near a Twoleg structure. n_c:0 is looking for a new home; {PRONOUN\/n_c:0\/subject} just can't mouse like {PRONOUN\/n_c:0\/subject} used to. In exchange, n_c:0 can show c_n all the tricks to hunting in and about these \"barns.\"",
+        "m_c": {
+            "age": [],
+            "status": [
+                "-kitten",
+                "-apprentice",
+                "-elder"
+            ],
+            "dies": false
+        },
+        "new_cat": [
+            [
+                "kittypet",
+                "age:senior",
+                "old_name"
+            ]
+        ],
+        "outsider": {
+            "current_rep": [
+                "neutral",
+                "welcoming"
+            ],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "pln_newcat_bridge_traincat",
+        "location": [
+            "plains:camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "A stranger hops down from a slow-moving Thundersnake near camp, curious about the group of cats. When m_c explains, n_c:0 asks to stick around and see what clan life is all about.",
+        "m_c": {
+            "age": [],
+            "status": [
+                "-kitten",
+                "-apprentice"
+            ]
+        },
+        "new_cat": [
+            [
+                "old_name",
+                "age:young adult"
+            ]
+        ],
+        "outsider": {
+            "current_rep": [
+                "any"
+            ],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "pln_newcat_tunnels_refugee",
+        "location": [
+            "plains:camp2"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "m_c bumps into something in the darkness of camp. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/look\/looks} up to find the glowing eyes of a stranger, who begs {PRONOUN\/m_c\/object} to hide {PRONOUN\/n_c:0\/object} from something chasing {PRONOUN\/n_c:0\/object}.",
+        "m_c": {
+            "age": [],
+            "status": [
+                "-kitten"
+            ]
+        },
+        "new_cat": [
+            [
+                "old_name",
+                "status:warrior",
+                "backstory:kittypet3,kittypet4,rogue3,refugee1,refugee2,refugee3,refugee4"
+            ]
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort",
+                    "like"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "m_c bumped into n_c:0 and helped {PRONOUN\/n_c:0\/object} hide from whatever was chasing {PRONOUN\/n_c:0\/object}."
+                }
+            },
+            {
+                "cats_from": [
+                    "n_c:0"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "trust"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "n_c:0 is thankful that m_c brought {PRONOUN\/n_c:0\/object} somewhere safe to hide from what was chasing {PRONOUN\/n_c:0\/object}."
+                }
+            }
+        ],
+        "outsider": {
+            "current_rep": [
+                "any"
+            ],
+            "changed": 1
+        }
+    }
+]

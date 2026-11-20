@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "venom_sickness_seizure0",
+        "strings": [
+            "m_c is having seizures as a side effect of the venom."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

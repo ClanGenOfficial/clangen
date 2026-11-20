@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "carrionplace_disease_temporary_weakness0",
+        "strings": [
+            "m_c's body won't immediately be back to normal after suffering carrionplace disease."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

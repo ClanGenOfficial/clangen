@@ -1,0 +1,26 @@
+[
+    {
+        "event_id": "general_death_dark_forest_thoughts",
+        "strings": [
+            "Is startled to find {PRONOUN\/m_c\/self} wading in the muck of a shadowed forest",
+            "Is watching {PRONOUN\/m_c\/poss} own vigil",
+            "Wants to comfort a Clanmate who is grieving over {PRONOUN\/m_c\/object}"
+        ]
+    },
+    {
+        "event_id": "star_death_dark_forest",
+        "strings": [
+            "Is shocked to find {PRONOUN\/m_c\/self} here and not StarClan",
+            "Just can't believe {PRONOUN\/m_c\/subject} ended up in the Dark Forest. Was StarClan not watching over c_n?"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "STAR,1"
+                    ]
+                }
+            }
+        }
+    }
+]

@@ -1,0 +1,419 @@
+[
+    {
+        "event_id": "fst_death_war_any1",
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 1,
+        "event_text": "m_c was killed by a falling branch during a battle in a heavily wooded area of the forest.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was crushed by a falling branch."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_dog_any1",
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "m_c was found dead underneath a clawed oak tree surrounded by the stench of dog.",
+        "m_c": {
+            "skill": [
+                "-CLIMBER,2"
+            ],
+            "trait": [
+                "nervous",
+                "daring",
+                "ambitious",
+                "oblivious"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c fell out of a tree while trying to escape from a dog."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_tree_any1",
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [],
+        "frequency": 1,
+        "event_text": "m_c was crushed when a tree fell into camp.",
+        "m_c": {
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was crushed by a falling tree."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_owl_anylead3",
+        "location": [
+            "forest:camp1_camp2_camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "no_body"
+        ],
+        "frequency": 2,
+        "event_text": "m_c was carried off by an owl, never to be seen again.",
+        "m_c": {
+            "age": [
+                "kitten",
+                "adolescent"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was carried away by an owl."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_death_owl_any1",
+        "location": [
+            "forest:camp1_camp2_camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "no_body"
+        ],
+        "frequency": 2,
+        "event_text": "r_c spotted a circling shadow and yowled a warning to m_c. {PRONOUN\/r_c\/subject\/CAP} {VERB\/r_c\/were\/was}n't fast enough to save m_c from the owl.",
+        "m_c": {
+            "age": [
+                "kitten",
+                "adolescent"
+            ],
+            "status": [
+                "any"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy"
+            ],
+            "skill": [
+                "-RUNNER,2"
+            ]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was grabbed by an owl, never to be seen again."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "comfort"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from was too slow to save cat_to from an owl."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "fst_mushroom_death",
+        "location": [
+            "forest:camp1"
+        ],
+        "season": [
+            "newleaf",
+            "greenleaf"
+        ],
+        "frequency": 2,
+        "event_text": "m_c finds a curious azure mushroom. Surely one bite wouldn't hurt... {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/are\/is} found dead in {PRONOUN\/m_c\/poss} nest later that evening.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "skill": [
+                "-CLEVER,1",
+                "-SENSE,2",
+                "-HEALER,1"
+            ],
+            "trait": [
+                "-nervous",
+                "-strict",
+                "-thoughtful",
+                "-calm",
+                "-responsible",
+                "-wise",
+                "-cunning",
+                "-careful"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c ate a beautiful but deadly mushroom."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_extinction_bear",
+        "location": [
+            "forest:camp3"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "sub_type": [
+            "mass_death"
+        ],
+        "frequency": 2,
+        "event_text": "multi_cat were killed after a shelter-seeking bear lumbered into the grotto and discovered it was occupied.",
+        "history": [
+            {
+                "cats": [
+                    "multi_cat"
+                ],
+                "death": "m_c was killed by a bear rampaging through camp."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_aconitekitten1",
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "newleaf",
+            "greenleaf"
+        ],
+        "frequency": 3,
+        "event_text": "m_c sneaks out of camp and plays with pretty violet flowers. Later, r_c finds {PRONOUN\/m_c\/object} lying in the poisonous aconite, motionless.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "trait": [
+                "fearless",
+                "impulsive"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "-kitten",
+                "-adolescent"
+            ]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was poisoned by aconite."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_lake1",
+        "location": [
+            "forest:camp4"
+        ],
+        "season": [
+            "greenleaf",
+            "leaf-fall"
+        ],
+        "frequency": 2,
+        "event_text": "During a storm, the lake bursts its banks. Thanks to m_c, everyone makes it out of camp in time. Everyone, except for {PRONOUN\/m_c\/object}.",
+        "m_c": {
+            "age": [
+                "-kitten",
+                "-adolescent"
+            ],
+            "trait": [
+                "compassionate",
+                "confident",
+                "daring",
+                "loyal"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c died when the camp was flooded by the overflowing lake."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_lake2",
+        "location": [
+            "forest:camp4"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "frequency": 2,
+        "event_text": "Melting snow fills the lake to bursting. Camp floods, the Clan scatters, and m_c and r_c cannot be found in the aftermath.",
+        "m_c": {
+            "skill": [
+                "-SWIMMER,1"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "skill": [
+                "-SWIMMER,1"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c",
+                    "r_c"
+                ],
+                "death": "m_c died when the camp was flooded by the overflowing lake."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_lake3",
+        "location": [
+            "forest:camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 3,
+        "event_text": "m_c toddles into the lake but finds {PRONOUN\/m_c\/self} unable to swim for long. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/do\/does}n't make it back to shore.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c drowned while trying to swim in the lake."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_wolf",
+        "location": [
+            "forest"
+        ],
+        "season": [],
+        "frequency": 1,
+        "event_text": "m_c is torn apart by wolves.",
+        "m_c": {
+            "age": [
+                "-newborn",
+                "-kitten"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was torn apart by wolves."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_wolf_kitten",
+        "location": [
+            "forest"
+        ],
+        "season": [],
+        "frequency": 1,
+        "event_text": "m_c wanders out of camp alone. When c_n finds {PRONOUN\/m_c\/object}, even r_c can't recognize {PRONOUN\/m_c\/object}.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "relationship_status": [
+                "child\/parent"
+            ],
+            "dies": true
+        },
+        "r_c": {},
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was torn apart by wolves."
+            }
+        ]
+    }
+]

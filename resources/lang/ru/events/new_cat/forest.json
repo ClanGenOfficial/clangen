@@ -1,0 +1,165 @@
+[
+    {
+        "event_id": "fst_new_cat_lost_kitten1",
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "event_text": "m_c returned to camp with a kitten tottering behind {PRONOUN\/m_c\/object} and explains that {PRONOUN\/m_c\/subject} found {PRONOUN\/n_c:0\/object} wandering lost in the forest, no parent in sight.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "new_cat": [
+            [
+                "backstory:abandoned1, abandoned4",
+                "age:kitten"
+            ]
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": true,
+                "values": [
+                    "comfort",
+                    "like"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c found n_c:0 wandering the forest as a kitten and brought {PRONOUN\/n_c:0\/object} into the Clan."
+                }
+            }
+        ],
+        "outsider": {
+            "current_rep": [
+                "welcoming"
+            ],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "fst_new_cat_lost_kitten2",
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 1,
+        "event_text": "m_c found an abandoned kitten wandering around the forest and takes {PRONOUN\/n_c:0\/object} back to camp. Though c_n isn't happy about it, m_c persuades them to let n_c:0 stay in the Clan.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ],
+            "trait": [
+                "compassionate",
+                "loving",
+                "responsible",
+                "thoughtful"
+            ]
+        },
+        "new_cat": [
+            [
+                "backstory:abandoned1, abandoned4",
+                "age:kitten"
+            ]
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": true,
+                "values": [
+                    "comfort",
+                    "like"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "m_c found n_c:0 wandering the forest as a kitten and brought {PRONOUN\/n_c:0\/object} into the Clan."
+                }
+            }
+        ],
+        "outsider": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "fst_new_cat_birdsong",
+        "location": [
+            "forest:camp1"
+        ],
+        "season": [
+            "newleaf",
+            "greenleaf"
+        ],
+        "frequency": 2,
+        "event_text": "m_c hears a swallow's call and discovers a loner perfectly mimicking birdsong. The strange cat chirps that {PRONOUN\/m_c\/subject} ruined {PRONOUN\/n_c:0\/poss} hunt and stalks off.",
+        "m_c": {
+            "age": [],
+            "status": [
+                "-newborn",
+                "-kitten",
+                "-elder"
+            ]
+        },
+        "new_cat": [
+            [
+                "meeting",
+                "loner",
+                "exists"
+            ]
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": true,
+                "values": [
+                    "like"
+                ],
+                "amount": -5,
+                "log": {
+                    "cats_from": "m_c interrupted n_c:0 while {PRONOUN\/n_c:0\/subject} {VERB\/n_c:0\/was\/were} vocalizing to attract prey."
+                }
+            }
+        ],
+        "outsider": {
+            "current_rep": [
+                "any"
+            ],
+            "changed": -1
+        }
+    }
+]

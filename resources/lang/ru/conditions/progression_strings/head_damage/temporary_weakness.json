@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "head_damage_temporary_weakness0",
+        "strings": [
+            "m_c's body won't immediately be back to normal after suffering head damage."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

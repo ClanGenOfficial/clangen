@@ -1,0 +1,12 @@
+[
+    {
+        "event_id": "lasting_grief_absent0",
+        "strings": [
+            "m_c just hasn't been the same since the vigil.",
+            "m_c still seems to be living in a daze."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]

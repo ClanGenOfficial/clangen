@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "venom_sickness_failing_eyesight0",
+        "strings": [
+            "While the venom is gone, it was strong enough to do permanent damage. m_c's eyes don't work as well as they used to."
+        ],
+        "involved_cats": {
+            "m_c": {}
+        }
+    }
+]
