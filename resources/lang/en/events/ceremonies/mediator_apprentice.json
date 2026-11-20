@@ -1,6 +1,7 @@
 [
     {
         "event_id": "mediator_app_default0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {}
         },
@@ -10,6 +11,7 @@
     },
     {
         "event_id": "mediator_app_default1",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {},
             "r_c0": {}
@@ -77,6 +79,7 @@
     },
     {
         "event_id": "mediator_app_well_suited0",
+        "tags": ["-card:on_their_own"],
         "involved_cats": {
             "m_c": {
                 "stat": {
