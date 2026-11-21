@@ -110,8 +110,9 @@ class Pelt:
 
     # TORTIE PATCHES
     tortie_patches: list = list(sprites.TORTIE_PATCH_COMBOS.keys())
-    for sprite_list in sprites.TORTIE_DATA["sprite_list"]:
-        tortie_patches.extend(sprite_list)
+    for key, sprite_list in sprites.TORTIE_DATA["sprite_list"].items():
+        for sub_list in sprite_list:
+            tortie_patches.extend(sub_list)
 
     # WHITE MARKINGS
     little_white: list = list(sprites.WHITE_PATCH_COMBOS.get("little", {}).keys())
