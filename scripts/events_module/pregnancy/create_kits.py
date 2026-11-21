@@ -272,7 +272,9 @@ def get_kits(
 
             y = randrange(var_min, var_max)
             rel_dict = {reltype: change + y for (reltype, change) in sib_buff.items()}
-            change_relationship_values(cats_from=[kitten], cats_to=[second_kitten], **rel_dict)
+            change_relationship_values(
+                cats_from=[kitten], cats_to=[second_kitten], **rel_dict
+            )
 
     # check if the possible adoptive cat is not already in the family tree and
     # add them as adoptive parents if not
