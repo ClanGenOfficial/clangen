@@ -118,19 +118,29 @@ print("Version Name: ", VERSION_NAME)
 print("Running on commit " + get_version_info().version_number)
 
 import pygame_gui
+import i18n
 
-from scripts.game_structure.monkeypatch import translate
+from scripts.game_structure.monkeypatch import translate, i18n_translate
 
 # MONKEYPATCH
 
 pygame_gui.core.utility.translate = translate
+i18n.translator.translate = i18n_translate
+found = 0
 for module_name, module in list(sys.modules.items()):
     if module and hasattr(module, "translate"):  # Check for the attribute
         if (
             module.translate is pygame_gui.core.utility.translate
         ):  # Ensure it's the original reference
             setattr(module, "translate", translate)
-            break
+            found += 1
+            if found > 1:
+                break
+        elif module.translate is i18n.translator.translate:
+            setattr(module, "translate", i18n_translate)
+            found += 1
+            if found > 1:
+                break
 
 for module_name, module in list(sys.modules.items()):
     if module_name.startswith(f"pygame_gui."):
