@@ -442,8 +442,23 @@ class Sprites:
                     )
 
                     for patch in patches:
-                        addition = self.sprites[f"{sheet_name}{patch}_{i}"]
-                        new_patch.blit(
+
+                        if patch.startswith("sub/"):
+                            patch = patch.removeprefix("sub/")
+                            addition = self.sprites[f"{sheet_name}{patch}_{i}"]
+
+                            addition.fill((0, 0, 0, 255),
+                            special_flags=pygame.BLEND_RGBA_MULT)
+
+                            new_patch.blit(
+                            addition,
+                            (0, 0),
+                            special_flags=pygame.BLEND_RGBA_SUB
+                        )
+
+                        else:
+                            addition = self.sprites[f"{sheet_name}{patch}_{i}"]
+                            new_patch.blit(
                             addition,
                             (0, 0),
                         )
