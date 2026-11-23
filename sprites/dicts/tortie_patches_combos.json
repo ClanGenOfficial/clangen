@@ -344,5 +344,9 @@
     "VALENTINES": [
         "HEARTBEAT",
         "FRECKLED"
+    ],
+    "SHIMMER": [
+        "POWDERSNOW",
+        "sub/HEARTBEAT"
     ]
 }
