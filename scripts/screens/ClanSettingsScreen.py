@@ -226,7 +226,9 @@ class ClanSettingsScreen(Screens):
             "buttons.disable_fullscreen"
             if game_setting_get("fullscreen")
             else "buttons.enable_fullscreen",
-            object_id="#toggle_fullscreen_button",
+            object_id="#disable_fullscreen_button"
+            if game_setting_get("fullscreen")
+            else "#enable_fullscreen_button",
             manager=MANAGER,
             starting_height=2,
             tool_tip_text=(
