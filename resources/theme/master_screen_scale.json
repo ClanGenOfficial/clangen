@@ -777,32 +777,32 @@
     "#enable_fullscreen_button": {
         "images": {
             "normal_image": {
-                "path": "resources\/images\/buttons\/enable_fullscreen.png"
+                "path": "resources\/images\/buttons\/fullscreen_enable.png"
             },
             "hovered_image": {
-                "path": "resources\/images\/buttons\/enable_fullscreen_hover.png"
+                "path": "resources\/images\/buttons\/fullscreen_enable_hover.png"
             },
             "selected_image": {
-                "path": "resources\/images\/buttons\/enable_fullscreen_hover.png"
+                "path": "resources\/images\/buttons\/fullscreen_enable_hover.png"
             },
             "disabled_image": {
-                "path": "resources\/images\/buttons\/enable_fullscreen_unavailable.png"
+                "path": "resources\/images\/buttons\/fullscreen_enable_unavailable.png"
             }
         }
     },
     "#disable_fullscreen_button": {
         "images": {
             "normal_image": {
-                "path": "resources\/images\/buttons\/disable_fullscreen.png"
+                "path": "resources\/images\/buttons\/fullscreen_disable.png"
             },
             "hovered_image": {
-                "path": "resources\/images\/buttons\/disable_fullscreen_hover.png"
+                "path": "resources\/images\/buttons\/fullscreen_disable_hover.png"
             },
             "selected_image": {
-                "path": "resources\/images\/buttons\/disable_fullscreen_hover.png"
+                "path": "resources\/images\/buttons\/fullscreen_disable_hover.png"
             },
             "disabled_image": {
-                "path": "resources\/images\/buttons\/disable_fullscreen_unavailable.png"
+                "path": "resources\/images\/buttons\/fullscreen_disable_unavailable.png"
             }
         }
     },
