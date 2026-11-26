@@ -774,19 +774,35 @@
             }
         }
     },
-    "#toggle_fullscreen_button": {
+    "#enable_fullscreen_button": {
         "images": {
             "normal_image": {
-                "path": "resources\/images\/buttons\/toggle_fullscreen.png"
+                "path": "resources\/images\/buttons\/fullscreen_enable.png"
             },
             "hovered_image": {
-                "path": "resources\/images\/buttons\/toggle_fullscreen_hover.png"
+                "path": "resources\/images\/buttons\/fullscreen_enable_hover.png"
             },
             "selected_image": {
-                "path": "resources\/images\/buttons\/toggle_fullscreen_hover.png"
+                "path": "resources\/images\/buttons\/fullscreen_enable_hover.png"
             },
             "disabled_image": {
-                "path": "resources\/images\/buttons\/toggle_fullscreen_unavailable.png"
+                "path": "resources\/images\/buttons\/fullscreen_enable_unavailable.png"
+            }
+        }
+    },
+    "#disable_fullscreen_button": {
+        "images": {
+            "normal_image": {
+                "path": "resources\/images\/buttons\/fullscreen_disable.png"
+            },
+            "hovered_image": {
+                "path": "resources\/images\/buttons\/fullscreen_disable_hover.png"
+            },
+            "selected_image": {
+                "path": "resources\/images\/buttons\/fullscreen_disable_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources\/images\/buttons\/fullscreen_disable_unavailable.png"
             }
         }
     },

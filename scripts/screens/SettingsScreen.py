@@ -283,13 +283,17 @@ class SettingsScreen(Screens):
 
         self.fullscreen_toggle = UIImageButton(
             ui_scale(pygame.Rect((617, 25), (158, 36))),
-            "buttons.toggle_fullscreen",
-            object_id="#toggle_fullscreen_button",
+            "buttons.disable_fullscreen"
+            if game_setting_get("fullscreen")
+            else "buttons.enable_fullscreen",
+            object_id="#disable_fullscreen_button"
+            if game_setting_get("fullscreen")
+            else "#enable_fullscreen_button",
             manager=MANAGER,
             tool_tip_text=(
-                "buttons.toggle_fullscreen_windowed"
+                "buttons.disable_fullscreen_tooltip"
                 if game_setting_get("fullscreen")
-                else "buttons.toggle_fullscreen_fullscreen"
+                else "buttons.enable_fullscreen_tooltip"
             ),
             tool_tip_text_kwargs={
                 "screentext": (

@@ -223,14 +223,18 @@ class ClanSettingsScreen(Screens):
         rect.bottomright = ui_scale_offset((-5, -25))
         self.fullscreen_toggle = UIImageButton(
             rect,
-            "buttons.toggle_fullscreen",
-            object_id="#toggle_fullscreen_button",
+            "buttons.disable_fullscreen"
+            if game_setting_get("fullscreen")
+            else "buttons.enable_fullscreen",
+            object_id="#disable_fullscreen_button"
+            if game_setting_get("fullscreen")
+            else "#enable_fullscreen_button",
             manager=MANAGER,
             starting_height=2,
             tool_tip_text=(
-                "buttons.toggle_fullscreen_windowed"
+                "buttons.disable_fullscreen_tooltip"
                 if game_setting_get("fullscreen")
-                else "buttons.toggle_fullscreen_fullscreen"
+                else "buttons.enable_fullscreen_tooltip"
             ),
             anchors={
                 "bottom": "bottom",
